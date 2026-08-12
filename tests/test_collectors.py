@@ -86,6 +86,28 @@ def test_date_range_query_is_inclusive_of_both_endpoints():
     assert "submittedDate:[202608010000 TO 202608112359]" in q
 
 
+def test_long_ranges_are_split_into_windows():
+    """arXiv 500s on `start` past 10,000, so a 90-day backfill must be chunked."""
+    c = ArxivCollector.__new__(ArxivCollector)
+    c.WINDOW_DAYS = 7
+    windows = list(ArxivCollector._windows(c, date(2026, 5, 14), date(2026, 8, 11)))
+
+    assert len(windows) == 13
+    assert windows[0][0] == date(2026, 5, 14)
+    assert windows[-1][1] == date(2026, 8, 11)
+    # Contiguous and non-overlapping.
+    for (_, prev_end), (next_start, _) in zip(windows, windows[1:]):
+        assert (next_start - prev_end).days == 1
+
+
+def test_short_ranges_are_a_single_window():
+    c = ArxivCollector.__new__(ArxivCollector)
+    c.WINDOW_DAYS = 7
+    assert list(ArxivCollector._windows(c, date(2026, 8, 11), date(2026, 8, 11))) == [
+        (date(2026, 8, 11), date(2026, 8, 11))
+    ]
+
+
 def test_normalize_arxiv_id_handles_every_shape():
     assert normalize_arxiv_id("2608.01234v3") == "2608.01234"
     assert normalize_arxiv_id("arXiv:2608.01234") == "2608.01234"

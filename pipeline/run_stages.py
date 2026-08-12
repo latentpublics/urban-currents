@@ -183,10 +183,9 @@ def stage_classify(run: Run) -> list[Item]:
 def stage_select(run: Run, threshold: Optional[float] = None, top_n: Optional[int] = None) -> list[Item]:
     items = read_input(run, "select")
     thr = cfg("classifier.threshold", 0.5) if threshold is None else threshold
-    n = cfg("classifier.select_top_n", 24) if top_n is None else top_n
+    n = int(cfg("classifier.select_top_n", 24) if top_n is None else top_n)
     above = [it for it in items if it.scores.relevance >= thr]
-    above.sort(key=lambda it: (-it.scores.relevance, it.work_key))
-    selected = above[: int(n)]
+    selected = _select_with_source_quota(above, n, float(cfg("classifier.arxiv_min_share", 0.5)))
     for it in selected:
         apply_rule_signals(it)
         apply_badges(it)
@@ -195,6 +194,31 @@ def stage_select(run: Run, threshold: Optional[float] = None, top_n: Optional[in
     run.stage("select", "OK")
     run.save()
     return selected
+
+
+def _select_with_source_quota(candidates: list[Item], n: int, arxiv_min_share: float) -> list[Item]:
+    """Fill the daily list with a floor on arXiv items.
+
+    The classifier is trained on whitelist-journal articles, so a journal article
+    scores ~0.99 close to by construction — it came from a journal on the list.
+    Ranking a mixed day purely by that score fills every slot with journal items
+    (measured 2026-08-11: 23 of 24) and pushes out the preprints, which are the
+    part of the day that is actually new. A floor, not a fixed split: if arXiv
+    has fewer qualifying items than its quota, journals take the remainder.
+    """
+    by_score = sorted(candidates, key=lambda it: (-it.scores.relevance, it.work_key))
+    if n <= 0 or arxiv_min_share <= 0:
+        return by_score[:n]
+
+    arxiv = [it for it in by_score if it.ids.arxiv]
+    other = [it for it in by_score if not it.ids.arxiv]
+    quota = min(len(arxiv), int(round(n * arxiv_min_share)))
+
+    picked = arxiv[:quota]
+    picked += other[: n - len(picked)]
+    if len(picked) < n:  # journals ran out; give the slack back to arXiv
+        picked += arxiv[quota : quota + (n - len(picked))]
+    return sorted(picked, key=lambda it: (-it.scores.relevance, it.work_key))
 
 
 # --------------------------------------------------------------------------

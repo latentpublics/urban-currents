@@ -199,9 +199,11 @@ def summarize_items(
         n += 1
 
     save_overlay_stash(run, stash)
+    # "PARTIAL" has to mean some work landed. A cap hit on the first call, or an
+    # auth/credit failure, produced nothing at all and should read as SKIPPED.
     status = "OK"
     if budget_stop:
-        status = "PARTIAL"
+        status = "PARTIAL" if n else "SKIPPED"
     return {
         "status": status,
         "summarized": n,

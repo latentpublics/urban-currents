@@ -98,6 +98,28 @@ def train(holdout: float, seed: int, out_dir: Path) -> dict:
             entry["false_positive_rate"] = round(float(pred[mask].mean()), 4)
         per_source[src] = entry
 
+    # Threshold sweep by source. The headline AUC hides the decision that
+    # actually matters: at 0.5 the model keeps ~99% of journal positives but only
+    # ~68% of arXiv urban positives, and arXiv urban papers are the ones this
+    # product exists to surface. This table is what a threshold choice should be
+    # argued from.
+    sweep = []
+    for t in [round(0.05 * i, 2) for i in range(2, 17)]:
+        p_t = (proba >= t).astype(int)
+        row: dict = {"threshold": t}
+        for src in sorted(set(sources[te])):
+            mask = sources[te] == src
+            if y[te][mask].max() == 1:
+                row[f"{src}_recall"] = round(
+                    float(recall_score(y[te][mask], p_t[mask], zero_division=0)), 4
+                )
+            else:
+                row[f"{src}_fpr"] = round(float(p_t[mask].mean()), 4)
+        row["overall_precision"] = round(
+            float(precision_score(y[te], p_t, zero_division=0)), 4
+        )
+        sweep.append(row)
+
     p_curve, r_curve, t_curve = precision_recall_curve(y[te], proba)
     curve = [
         {"threshold": round(float(t), 3), "precision": round(float(p), 4), "recall": round(float(r), 4)}
@@ -130,6 +152,7 @@ def train(holdout: float, seed: int, out_dir: Path) -> dict:
             "recall_at_threshold": round(rec, 4),
         },
         "per_source": per_source,
+        "threshold_sweep": sweep,
         "pr_curve": curve,
         "trainset_meta": json.loads(
             (RUNS / "trainset" / "trainset.meta.json").read_text(encoding="utf-8")

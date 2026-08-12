@@ -69,19 +69,39 @@ class ArxivCollector:
             time.sleep(self.interval - elapsed)
         self._last_request = time.monotonic()
 
+    # A 429 from arXiv means "you have been asking too fast for a while"; the
+    # ordinary 3/6/12s backoff is far too short and just earns another 429.
+    RATE_LIMIT_COOLDOWN_S = 90.0
+
     def _fetch(self, params: dict) -> str:
         last: Optional[Exception] = None
-        for attempt in range(self.max_retries):
+        attempts = self.max_retries
+        attempt = 0
+        while attempt < attempts:
             self._throttle()
             try:
                 r = self._http().get(self.api_url, params=params)
+                if r.status_code == 429:
+                    retry_after = float(r.headers.get("Retry-After") or 0)
+                    wait = max(self.RATE_LIMIT_COOLDOWN_S, retry_after)
+                    last = RuntimeError("429 rate limited")
+                    # Rate limiting is recoverable and worth more patience than a
+                    # transient error, so it does not consume a normal attempt.
+                    attempts = max(attempts, attempt + 3)
+                    # Slow down permanently for the rest of the run. Returning to
+                    # the old cadence after a 429 just earns the next one.
+                    self.interval = min(self.interval * 1.5, 12.0)
+                    time.sleep(wait)
+                    attempt += 1
+                    continue
                 r.raise_for_status()
                 return r.text
             except Exception as e:  # noqa: BLE001
                 last = e
-                # arXiv returns empty or 5xx under load; back off rather than hammer.
+                # arXiv returns empty bodies or 5xx under load; back off.
                 time.sleep(self.interval * (2**attempt))
-        raise RuntimeError(f"arXiv request failed after {self.max_retries} attempts: {last}")
+                attempt += 1
+        raise RuntimeError(f"arXiv request failed after {attempt} attempts: {last}")
 
     # -- Query -----------------------------------------------------------
 
@@ -93,6 +113,12 @@ class ArxivCollector:
         hi = end.strftime("%Y%m%d") + "2359"
         return f"({cats}) AND submittedDate:[{lo} TO {hi}]"
 
+    # The legacy arXiv API refuses `start` beyond 10,000 with a 500, so a long
+    # range has to be split into windows that each stay under that ceiling.
+    # Seven days runs ~2,200 items across our seven categories — a wide margin.
+    PAGING_LIMIT = 10000
+    WINDOW_DAYS = 7
+
     def collect(
         self,
         d: date,
@@ -100,8 +126,45 @@ class ArxivCollector:
         max_pages: Optional[int] = None,
     ) -> list[Item]:
         start = backfill_from or d
-        query = self.date_range_query(self.categories, start, d)
         items: dict[str, Item] = {}
+        pages_used = 0
+
+        for w_start, w_end in self._windows(start, d):
+            try:
+                got, pages = self._collect_window(
+                    w_start, w_end, None if max_pages is None else max_pages - pages_used
+                )
+            except Exception as e:  # noqa: BLE001
+                # One bad window must not discard the rest of a 90-day backfill.
+                # The gap is recorded so the report can say which days are thin.
+                self.run.error(
+                    f"collect.arxiv: window {w_start}..{w_end} failed: "
+                    f"{type(e).__name__}: {e}"
+                )
+                continue
+            pages_used += pages
+            for item in got:
+                items.setdefault(item.work_key, item)
+            if max_pages is not None and pages_used >= max_pages:
+                break
+
+        return sorted(items.values(), key=lambda it: it.work_key)
+
+    def _windows(self, start: date, end: date) -> Iterator[tuple[date, date]]:
+        if (end - start).days < self.WINDOW_DAYS:
+            yield start, end
+            return
+        cursor = start
+        while cursor <= end:
+            stop = min(cursor + timedelta(days=self.WINDOW_DAYS - 1), end)
+            yield cursor, stop
+            cursor = stop + timedelta(days=1)
+
+    def _collect_window(
+        self, start: date, end: date, max_pages: Optional[int]
+    ) -> tuple[list[Item], int]:
+        query = self.date_range_query(self.categories, start, end)
+        items: list[Item] = []
         offset = 0
         page_no = 0
 
@@ -114,22 +177,28 @@ class ArxivCollector:
                 "sortOrder": "descending",
             }
             xml = self._fetch(params)
-            self.run.write_raw(f"arxiv/{start}_{d}_p{page_no:03d}.xml", xml)
+            self.run.write_raw(f"arxiv/{start}_{end}_p{page_no:03d}.xml", xml)
             page = parse_atom(xml)
 
             for entry in page.entries:
                 item = entry_to_item(entry)
                 if item is not None:
-                    items.setdefault(item.work_key, item)
+                    items.append(item)
 
             page_no += 1
             offset += self.page_size
             if not page.entries or offset >= page.total_results:
                 break
+            if offset >= self.PAGING_LIMIT:
+                self.run.error(
+                    f"collect.arxiv: window {start}..{end} has {page.total_results} "
+                    f"results, above the {self.PAGING_LIMIT} paging limit; truncated"
+                )
+                break
             if max_pages is not None and page_no >= max_pages:
                 break
 
-        return sorted(items.values(), key=lambda it: it.work_key)
+        return items, page_no
 
 
 # --------------------------------------------------------------------------

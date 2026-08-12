@@ -24,8 +24,28 @@ embedding:
   batch_size: 32
 
 classifier:
-  threshold: 0.5               # calibrated probability; selection cut
+  # Calibrated probability, so this cut is interpretable. Set from the measured
+  # per-source sweep in models/clf-*.json rather than left at 0.5:
+  #
+  #   thr    arXiv-urban recall   journal recall   negative FPR   holdout precision
+  #   0.50         0.682               0.995          0.044            0.953
+  #   0.35         0.768               0.998          0.094            0.907
+  #   0.25         0.820               0.998          0.142            0.867
+  #
+  # At 0.5 the model drops a third of the arXiv urban papers this product exists
+  # to surface. Recall is worth more than precision here because `select_top_n`
+  # already caps daily volume and items are ranked by score — a lower floor
+  # changes what can reach the list, not how long the list is.
+  # REVIEW: YJUN's call. 0.25 buys 5 more points of arXiv recall for 4 points of
+  # precision; 0.5 is the conservative end.
+  threshold: 0.35
   select_top_n: 24             # per-day cap on items that go to summarize
+  # Floor on the arXiv share of the daily list. A journal article scores ~0.99
+  # nearly by construction (the classifier was trained on those journals), so
+  # pure score ranking fills every slot with journal items and drops the
+  # preprints — the genuinely new part of the day. 0 disables the quota.
+  # REVIEW: YJUN's call on the split.
+  arxiv_min_share: 0.5
   holdout_fraction: 0.2
   random_state: 42
 

@@ -80,18 +80,28 @@ def embed(texts: Sequence[str], use_cache: bool = True, show_progress: bool = Fa
 
     if todo:
         model = _model()
-        batch = [texts[i] for i in todo]
-        computed = model.encode(
-            batch,
-            batch_size=int(cfg("embedding.batch_size", 32)),
-            normalize_embeddings=True,
-            show_progress_bar=show_progress,
-            convert_to_numpy=True,
-        )
-        for i, vec in zip(todo, computed):
-            vectors[i] = vec.astype(np.float32)
-            if use_cache:
-                np.save(CACHE_DIR / f"{_cache_key(texts[i])}.npy", vectors[i])
+        batch_size = int(cfg("embedding.batch_size", 32))
+        # Encode in chunks and flush the cache after each one. A single
+        # model.encode() over 20k abstracts takes tens of minutes on CPU, and if
+        # it is interrupted every vector is lost — which would make the 90-day
+        # backfill effectively un-resumable.
+        chunk = max(batch_size * 8, 256)
+        for start in range(0, len(todo), chunk):
+            window = todo[start : start + chunk]
+            computed = model.encode(
+                [texts[i] for i in window],
+                batch_size=batch_size,
+                normalize_embeddings=True,
+                show_progress_bar=False,
+                convert_to_numpy=True,
+            )
+            for i, vec in zip(window, computed):
+                vectors[i] = vec.astype(np.float32)
+                if use_cache:
+                    np.save(CACHE_DIR / f"{_cache_key(texts[i])}.npy", vectors[i])
+            if show_progress:
+                done = min(start + chunk, len(todo))
+                print(f"  embedded {done}/{len(todo)}", flush=True)
 
     return np.vstack([v for v in vectors if v is not None]) if vectors else np.zeros((0, 0))
 

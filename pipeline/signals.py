@@ -40,10 +40,14 @@ _SAMPLE = re.compile(
 )
 _N_EQUALS = re.compile(r"\bn\s*=\s*\d[\d,]*", re.I)
 
-# "2019-2023", "from 2010 to 2024", "between 2015 and 2020"
-_TEMPORAL = re.compile(
-    r"\b(?:19|20)\d{2}\s*(?:-|–|—|to|through|and)\s*(?:19|20)\d{2}\b"
-    r"|\b(?:from|between)\s+(?:19|20)\d{2}\b"
+# A full range is the informative detail, so it is matched first. A single
+# alternation would report "from 2019" for "...from 2019-2023", because regex
+# scanning is left-to-right by position rather than by specificity.
+_TEMPORAL_RANGE = re.compile(
+    r"\b(?:19|20)\d{2}\s*(?:-|–|—|to|through|and)\s*(?:19|20)\d{2}\b", re.I
+)
+_TEMPORAL_LOOSE = re.compile(
+    r"\b(?:from|between|since)\s+(?:19|20)\d{2}\b"
     r"|\b\d+\s+(?:years|months|weeks)\s+of\b",
     re.I,
 )
@@ -85,7 +89,8 @@ def sample_size_signal(item: Item) -> Signal:
 
 
 def temporal_signal(item: Item) -> Signal:
-    m = _TEMPORAL.search(_text(item))
+    text = _text(item)
+    m = _TEMPORAL_RANGE.search(text) or _TEMPORAL_LOOSE.search(text)
     if m:
         return Signal(value=True, detail=m.group(0).strip(), confidence="high", basis="rule")
     return Signal(value=False, confidence="medium", basis="rule")

@@ -29,18 +29,14 @@ def repo(tmp_path: Path, monkeypatch):
 
     from pipeline import config, paths
 
+    # Reloading `paths` re-executes it inside the same module object, so every
+    # module that looks up `paths.X` at call time picks up the new root. Only
+    # modules that copied a path into a module-level constant need reloading —
+    # and reloading more than that would break exception-class identity
+    # (`except LLMBudgetExceeded` stops matching a freshly created class).
     importlib.reload(paths)
     config.reset_caches()
-    # Modules that captured module-level path constants at import time.
-    for name in (
-        "pipeline.store",
-        "pipeline.metrics",
-        "pipeline.llm",
-        "pipeline.validate",
-        "pipeline.graph.build",
-        "pipeline.filters.embed",
-    ):
-        importlib.reload(importlib.import_module(name))
+    importlib.reload(importlib.import_module("pipeline.filters.embed"))
     paths.ensure_dirs()
     yield tmp_path
     config.reset_caches()

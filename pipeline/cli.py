@@ -258,6 +258,20 @@ def graph():
 
 
 @app.command()
+def backfill(
+    days: int = typer.Option(90, help="Days to look back from --date"),
+    date_: Optional[str] = DateOpt,
+    source: str = typer.Option("arxiv", help="all | arxiv | openalex"),
+    max_pages: Optional[int] = typer.Option(None, help="Cap pages per source (testing)"),
+):
+    """Collect, gate, classify and score a date range. Does NOT summarise."""
+    from .calibrate import run_backfill
+
+    meta = run_backfill(_date(date_), days=days, sources=source, max_pages=max_pages)
+    typer.echo(json.dumps(meta, indent=2))
+
+
+@app.command()
 def calibrate(
     apply: bool = typer.Option(False, "--apply", help="Write the threshold into config/scoring.yaml"),
     target_low: float = typer.Option(0.30),

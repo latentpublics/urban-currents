@@ -9,6 +9,7 @@ is more informative than a tag nobody can filter on.
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from typing import Iterable, Optional
 
@@ -79,6 +80,9 @@ class Vocabulary:
         return self._by_surface[surface], round(score / 100.0, 4)
 
 
+_PUNCT = re.compile(r"[^\w\s\-]", re.UNICODE)
+
+
 def _norm(s: str) -> str:
     return " ".join(s.lower().replace("-", " ").replace("_", " ").split())
 
@@ -87,6 +91,33 @@ def _norm(s: str) -> str:
 class MatchResult:
     refs: list[EntityRef]
     unmatched: list[str]
+
+
+def scan_text(text: str, facet: str, vocab: Optional[Vocabulary] = None) -> list[EntityRef]:
+    """Find vocabulary surface forms directly in a title+abstract.
+
+    No LLM involved, so it works during the 90-day backfill (which must not
+    summarise, PRD §10) and as a fallback when the API key is missing. Recall is
+    lower than the LLM overlay — it only sees terms already in the vocabulary —
+    but precision is high and the cost is zero, which is the right trade for
+    computing the novelty component over thousands of historical items.
+    """
+    v = vocab or Vocabulary.load(facet)
+    # Punctuation has to become whitespace, not vanish: a term that ends a
+    # sentence ("...on satellite imagery.") would otherwise never match, which
+    # silently costs a large share of the scan's recall.
+    haystack = " " + _norm(_PUNCT.sub(" ", text)) + " "
+    hits: dict[str, EntityRef] = {}
+    for surface, entry in v._by_surface.items():
+        if len(surface) < 3:
+            continue
+        if f" {surface} " in haystack:
+            # Keep the longest matching surface form's confidence.
+            existing = hits.get(entry.id)
+            conf = round(min(0.95, 0.6 + 0.02 * len(surface.split())), 4)
+            if existing is None or (existing.confidence or 0) < conf:
+                hits[entry.id] = EntityRef(id=entry.id, label=entry.label, confidence=conf)
+    return sorted(hits.values(), key=lambda r: r.id)
 
 
 def match_facet(candidates: Iterable[str], facet: str, vocab: Optional[Vocabulary] = None) -> MatchResult:

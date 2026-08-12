@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from datetime import date
 
-import pytest
 
 from pipeline import run_stages, store
 from pipeline.collectors.base import ARXIV_SOURCE_ID

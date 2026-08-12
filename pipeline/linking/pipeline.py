@@ -20,7 +20,7 @@ from .. import store
 from ..metrics import Run
 from ..models import Entity, Item
 from .places import link_places
-from .vocab_match import Vocabulary, match_facet
+from .vocab_match import Vocabulary, match_facet, scan_text
 
 
 def _overlay_stash(run: Run) -> dict[str, dict[str, list[str]]]:
@@ -41,6 +41,7 @@ def link_items(
     vocabs = {f: Vocabulary.load(f) for f in ("methods", "data", "tools")}
 
     topics_from_openalex = 0
+    rule_matched = 0
     unmatched_counts = {"methods": 0, "data": 0, "tools": 0, "places": 0}
 
     for item in items:
@@ -48,8 +49,15 @@ def link_items(
 
         cands = stash.get(item.work_key) if use_llm else None
         if not cands:
-            if item.entities.places_status == "not_attempted":
-                item.entities.places_status = "not_attempted"
+            # No LLM candidates (backfill, missing key, or a summarize failure):
+            # fall back to scanning the abstract for known vocabulary. Lower
+            # recall, zero cost, and it keeps the novelty score meaningful.
+            text = f"{item.bibliography.title} {item.bibliography.abstract or ''}"
+            for facet in ("methods", "data", "tools"):
+                refs = scan_text(text, facet, vocabs[facet])
+                if refs:
+                    setattr(item.entities, facet, refs)
+            rule_matched += 1
             continue
 
         for facet in ("methods", "data", "tools"):
@@ -77,6 +85,7 @@ def link_items(
     return {
         "status": "OK",
         "topics_from_openalex": topics_from_openalex,
+        "rule_matched_items": rule_matched,
         "unmatched_methods": unmatched_counts["methods"],
         "unmatched_data": unmatched_counts["data"],
         "unmatched_tools": unmatched_counts["tools"],

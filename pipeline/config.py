@@ -53,6 +53,10 @@ def anthropic_key() -> Optional[str]:
     return secret("ANTHROPIC_API_KEY")
 
 
+def google_key() -> Optional[str]:
+    return secret("GOOGLE_API_KEY")
+
+
 def contact_email() -> str:
     return secret("CONTACT_EMAIL") or "urban-currents@example.com"
 

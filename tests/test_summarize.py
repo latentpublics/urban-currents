@@ -113,9 +113,12 @@ def test_response_is_cached_and_not_requested_twice(repo):
         return LLMResponse(text=json.dumps(GOOD), input_tokens=10, output_tokens=5,
                            model="claude-sonnet-5")
 
-    summarize_items([_item()], run, client=LLMClient(caller=counting))
+    client = LLMClient(caller=counting)
+    summarize_items([_item()], run, client=client)
     assert calls["n"] == 1
-    assert cache_get("summarize/papers@0.2.0", "arxiv:2608.01234") is not None
+    # Read the version off the client rather than hard-coding it: bumping a
+    # prompt is a routine act and must not look like a test failure.
+    assert cache_get(client.prompt_version, "arxiv:2608.01234") is not None
 
     summarize_items([_item()], run, client=LLMClient(caller=counting))
     assert calls["n"] == 1, "second run should have been served from the cache"

@@ -54,13 +54,34 @@ classifier:
   random_state: 42
 
 llm:
-  model: "claude-sonnet-5"
+  # gemini | anthropic. The Anthropic path is kept working; the account simply
+  # has no credit. Summaries and extraction can move to different providers
+  # later — that is why this is not hard-coded.
+  provider: gemini
+  model: "gemini-3.5-flash"
   max_tokens: 1200
-  prompt_version: "summarize/papers@0.2.0"
-  # Hard stops so a runaway loop cannot burn the budget.
-  max_summaries_per_run: 30
-  max_summaries_total: 60
+
+  # Thinking OFF, and this is a cost setting, not a quality one. Gemini 3.x
+  # bills reasoning tokens as output. Measured on a one-word prompt:
+  # thinking_level="low" -> 95 thought tokens, thinking_budget=0 -> 0.
+  # This work is formatting, not reasoning.
+  thinking: false
+
   cache_enabled: true
+
+  # Hard stops so a development loop cannot burn the budget quietly.
+  max_calls_per_run: 60
+  max_calls_total: 200
+  max_spend_usd: 10.0
+
+  # Per-task overrides. Each task owns its prompt version, so editing one
+  # prompt does not invalidate the other's cache (the reason D8 was reverted).
+  summarize:
+    prompt_version: "summarize/papers@0.3.0"
+    max_tokens: 900
+  extract:
+    prompt_version: "extract/overlay@0.1.0"
+    max_tokens: 600
 
 gate:
   # Low-volume, high-yield categories skip the keyword gate entirely (PRD §5.3).

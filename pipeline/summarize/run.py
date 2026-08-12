@@ -20,8 +20,13 @@ import json
 from pathlib import Path
 from typing import Any, Optional, Sequence
 
-from ..config import cfg
-from ..llm import LLMBudgetExceeded, LLMClient, LLMUnavailable, parse_json
+from ..llm import (
+    LLMBudgetExceeded,
+    LLMClient,
+    LLMQuotaExhausted,
+    LLMUnavailable,
+    parse_json,
+)
 from ..metrics import Run
 from ..models import Item, LlmProvenance, SummaryEn
 from ..signals import Signal, apply_badges, apply_rule_signals, geographic_scope_from_llm
@@ -29,6 +34,29 @@ from ..signals import Signal, apply_badges, apply_rule_signals, geographic_scope
 PROMPT_PATH = Path(__file__).parent / "prompts" / "papers.md"
 
 REQUIRED_KEYS = ("what", "why")
+
+GEOGRAPHIC_SCOPES = [
+    "single_city",
+    "multi_city",
+    "national",
+    "global",
+    "not_applicable",
+]
+
+# Passed to the provider for constrained decoding where it is supported, and
+# embedded in the prompt where it is not. Client-side validation runs either way.
+SUMMARY_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "what": {"type": "string"},
+        "why": {"type": "string"},
+        "caveats": {"type": ["string", "null"]},
+        "geographic_scope": {"type": "string", "enum": GEOGRAPHIC_SCOPES},
+        "data_available": {"type": ["boolean", "null"]},
+    },
+    "required": ["what", "why", "geographic_scope"],
+    "additionalProperties": False,
+}
 
 
 def system_prompt() -> str:
@@ -125,7 +153,8 @@ def summarize_items(
     client: Optional[LLMClient] = None,
 ) -> dict[str, Any]:
     """Summarise in place. Returns stage stats; never raises for one bad item."""
-    prompt_version = cfg("llm.prompt_version", "summarize/papers@0.2.0")
+    client = client or LLMClient(task="summarize")
+    prompt_version = client.prompt_version
     for it in items:
         apply_rule_signals(it)
         apply_badges(it)
@@ -133,9 +162,11 @@ def summarize_items(
     if not use_llm:
         return {"status": "SKIPPED", "summarized": 0, "reason": "use_llm=False"}
 
-    client = client or LLMClient()
     if not client.available():
-        run.error("summarize: ANTHROPIC_API_KEY unavailable; items left unsummarized")
+        run.error(
+            f"summarize: no usable {client.provider_name} credentials; "
+            f"items left unsummarized"
+        )
         return {"status": "SKIPPED", "summarized": 0, "reason": "no_api_key"}
 
     system = system_prompt()
@@ -155,7 +186,13 @@ def summarize_items(
                 user=user_prompt(item),
                 cache_key=cache_key(item),
                 prompt_version=prompt_version,
+                schema=SUMMARY_SCHEMA,
             )
+        except LLMQuotaExhausted as e:
+            # Provider quota, not our cap: save what exists and stop cleanly.
+            budget_stop = str(e)
+            run.error(f"summarize: {e}")
+            break
         except LLMBudgetExceeded as e:
             budget_stop = str(e)
             run.error(f"summarize: {e}")
@@ -176,10 +213,11 @@ def summarize_items(
                     "non-empty 'what' and 'why' strings. Respond with JSON only.",
                     cache_key=cache_key(item) + ".retry",
                     prompt_version=prompt_version,
+                    schema=SUMMARY_SCHEMA,
                 )
                 payload = validate_payload(parse_json(retry.text))
                 resp = retry
-            except (LLMBudgetExceeded, LLMUnavailable) as e:
+            except (LLMBudgetExceeded, LLMQuotaExhausted, LLMUnavailable) as e:
                 run.error(f"summarize retry: {e}")
                 payload = None
 
@@ -199,6 +237,8 @@ def summarize_items(
         n += 1
 
     save_overlay_stash(run, stash)
+    run.metrics.stages["summarize.model"] = client.model or ""
+    run.metrics.stages["summarize.provider"] = client.provider_name or ""
     # "PARTIAL" has to mean some work landed. A cap hit on the first call, or an
     # auth/credit failure, produced nothing at all and should read as SKIPPED.
     status = "OK"

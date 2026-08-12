@@ -18,7 +18,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional, Sequence
 
-from ..config import arxiv_vocab
+from ..config import arxiv_vocab, cfg
 from ..models import Item
 from ..paths import MODELS
 from .embed import embed, embed_text
@@ -74,6 +74,24 @@ class TrainedClassifier:
 
 
 def latest_model_path() -> Optional[Path]:
+    """The model to use, named explicitly where possible.
+
+    Picking the lexicographically last file was fine when there was one model a
+    day; with variants on disk (``clf-v1-…``, ``clf-v2-…``, ``clf-v3-…``) it
+    silently selects ``v3`` — which the comparison showed is the *worst* of the
+    three. Which model is in production is a decision, so it is written down in
+    ``classifier.model_version`` rather than inferred from a filename sort.
+    """
+    pinned = cfg("classifier.model_version")
+    if pinned:
+        p = MODELS / f"{pinned}.joblib"
+        if p.exists():
+            return p
+        # A pin that does not resolve is a configuration error worth seeing.
+        raise FileNotFoundError(
+            f"classifier.model_version={pinned!r} but {p} does not exist; "
+            f"train it or update config/pipeline.yaml"
+        )
     candidates = sorted(MODELS.glob("clf-*.joblib"))
     return candidates[-1] if candidates else None
 

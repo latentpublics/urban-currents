@@ -1,0 +1,159 @@
+{
+  "embedding_dim": 768,
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "eval_meta": {
+    "negatives": 600,
+    "positive_definition": "published in a whitelist journal AND has an arXiv location",
+    "positives": 200,
+    "seed": 42,
+    "since": "2020-01-01",
+    "strict_pool_available": 224,
+    "until": "2026-06-30"
+  },
+  "headline_task": "arxiv_urban_vs_arxiv_other",
+  "journal_sanity_check": {},
+  "metrics": {
+    "at_threshold": {
+      "0.35": {
+        "flagged_rate": 0.3525,
+        "precision": 0.7021,
+        "recall": 0.99
+      }
+    },
+    "auc": 0.9886,
+    "average_precision": 0.9694,
+    "mean_proba_negative": 0.1819,
+    "mean_proba_positive": 0.8775,
+    "n": 800,
+    "n_positive": 200,
+    "sweep": [
+      {
+        "flagged_rate": 0.6725,
+        "precision": 0.3717,
+        "recall": 1.0,
+        "threshold": 0.1
+      },
+      {
+        "flagged_rate": 0.5663,
+        "precision": 0.4415,
+        "recall": 1.0,
+        "threshold": 0.15
+      },
+      {
+        "flagged_rate": 0.48,
+        "precision": 0.5208,
+        "recall": 1.0,
+        "threshold": 0.2
+      },
+      {
+        "flagged_rate": 0.4175,
+        "precision": 0.5928,
+        "recall": 0.99,
+        "threshold": 0.25
+      },
+      {
+        "flagged_rate": 0.3825,
+        "precision": 0.6471,
+        "recall": 0.99,
+        "threshold": 0.3
+      },
+      {
+        "flagged_rate": 0.3525,
+        "precision": 0.7021,
+        "recall": 0.99,
+        "threshold": 0.35
+      },
+      {
+        "flagged_rate": 0.33,
+        "precision": 0.7462,
+        "recall": 0.985,
+        "threshold": 0.4
+      },
+      {
+        "flagged_rate": 0.3113,
+        "precision": 0.7831,
+        "recall": 0.975,
+        "threshold": 0.45
+      },
+      {
+        "flagged_rate": 0.2925,
+        "precision": 0.8162,
+        "recall": 0.955,
+        "threshold": 0.5
+      },
+      {
+        "flagged_rate": 0.28,
+        "precision": 0.8482,
+        "recall": 0.95,
+        "threshold": 0.55
+      },
+      {
+        "flagged_rate": 0.2687,
+        "precision": 0.8698,
+        "recall": 0.935,
+        "threshold": 0.6
+      },
+      {
+        "flagged_rate": 0.255,
+        "precision": 0.8971,
+        "recall": 0.915,
+        "threshold": 0.65
+      },
+      {
+        "flagged_rate": 0.2462,
+        "precision": 0.9086,
+        "recall": 0.895,
+        "threshold": 0.7
+      },
+      {
+        "flagged_rate": 0.2325,
+        "precision": 0.9355,
+        "recall": 0.87,
+        "threshold": 0.75
+      },
+      {
+        "flagged_rate": 0.2112,
+        "precision": 0.9467,
+        "recall": 0.8,
+        "threshold": 0.8
+      },
+      {
+        "flagged_rate": 0.185,
+        "precision": 0.9662,
+        "recall": 0.715,
+        "threshold": 0.85
+      },
+      {
+        "flagged_rate": 0.16,
+        "precision": 0.9844,
+        "recall": 0.63,
+        "threshold": 0.9
+      }
+    ]
+  },
+  "n_train": 4716,
+  "random_state": 42,
+  "threshold": 0.35,
+  "trained_at": "2026-08-13",
+  "trainset_meta": {
+    "arxiv_positive_total": 716,
+    "arxiv_subfields": "3322|3313",
+    "counts": {
+      "arxiv_other": 4000,
+      "arxiv_strict": 24,
+      "arxiv_subfield": 692,
+      "total": 4716
+    },
+    "eval_ids_excluded": 800,
+    "note": "arXiv-only task: no journal positives at all",
+    "openalex_cost_usd": 0.0069,
+    "seed": 42,
+    "since": "2024-01-01",
+    "strict_share_of_arxiv_positives": 0.034,
+    "until": "2026-06-30",
+    "uses_strict_definition": true,
+    "variant": "v3"
+  },
+  "variant": "v3",
+  "version": "clf-v3-2026-08-13"
+}

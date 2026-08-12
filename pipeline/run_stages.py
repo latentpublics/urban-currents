@@ -175,10 +175,29 @@ def stage_gate(run: Run) -> list[Item]:
 
 
 def stage_classify(run: Run) -> list[Item]:
+    """Score relevance for arXiv candidates only.
+
+    A whitelist-journal article is relevant by membership — that is what putting
+    the journal on the list asserted. Running the classifier over it adds no
+    information (it returns ~0.99 because it was trained on those journals) and
+    costs an embedding, so those items are assigned 1.0 with an explicit
+    ``classifier_version`` of ``whitelist-membership`` rather than a model
+    number that would look like a prediction.
+    """
     items = read_input(run, "classify")
+    journal_items = [it for it in items if _is_whitelist_journal(it)]
+    arxiv_items = [it for it in items if not _is_whitelist_journal(it)]
+
+    for it in journal_items:
+        it.scores.relevance = 1.0
+        it.scores.components.relevance = 1.0
+        it.provenance.classifier_version = "whitelist-membership"
+
     with run.timed("classify_s"):
-        pred = score_items(items)
-    run.count("classified", len(items))
+        pred = score_items(arxiv_items)
+
+    run.count("classified", len(arxiv_items))
+    setattr(run.metrics.counts, "classify_skipped_journal", len(journal_items))
     run.metrics.stages["classify.model"] = pred.version
     write_stage(run, "classify", items)
     run.stage("classify", "OK")
@@ -191,45 +210,120 @@ def stage_classify(run: Run) -> list[Item]:
 # --------------------------------------------------------------------------
 
 
-def stage_select(run: Run, threshold: Optional[float] = None, top_n: Optional[int] = None) -> list[Item]:
+def _whitelist_source_ids() -> set[str]:
+    from .config import journals_vocab
+
+    return {
+        s["id"]
+        for s in (journals_vocab().get("sources") or [])
+        if s.get("id") and s.get("include", True)
+    }
+
+
+def _is_whitelist_journal(item: Item) -> bool:
+    src = item.bibliography.primary_location.source_id
+    return bool(src) and src in _whitelist_source_ids()
+
+
+def journal_rank_score(item: Item) -> float:
+    """PLACEHOLDER ranking for the journal path.
+
+    There is no signal here yet for the question that actually matters —
+    "is this the *kind* of paper we cover?" *Cities* publishes qualitative case
+    studies, theory pieces and policy commentary alongside the data-and-method
+    work this digest is about, and the relevance classifier cannot tell them
+    apart because it was trained on those journals wholesale.
+
+    So this ranks on the score components that do not depend on relevance:
+    artifact completeness, novelty, and cluster multiplicity. That is a weak
+    proxy and it is labelled as one rather than dressed up.
+
+    **Replace once Q1b labels exist.** The `q` drop reason ("urban research but
+    not our kind") in `uc review --label relevance` is being collected precisely
+    to train the classifier that belongs here.
+    """
+    c = item.scores.components
+    return round(
+        0.5 * c.artifact_completeness + 0.3 * c.novelty + 0.2 * c.source_multiplicity, 4
+    )
+
+
+def stage_select(
+    run: Run, threshold: Optional[float] = None, top_n: Optional[int] = None
+) -> list[Item]:
+    """Fill the day's list from two independent entry paths (roadmap §2.1).
+
+    | path    | entry                        | ranking                  |
+    |---------|------------------------------|--------------------------|
+    | journal | whitelist membership          | placeholder, see above   |
+    | arxiv   | classifier probability >= thr | probability              |
+
+    Phase 0 put both through one classifier and then imposed an arXiv quota to
+    stop journal articles taking every slot (D14). The quota treated a symptom:
+    a whitelist article scores ~0.99 nearly by construction, so the classifier
+    added no information on that side and its score could not rank within it.
+    Separate paths make the quota unnecessary — each path owns its slots.
+    """
     items = read_input(run, "select")
-    thr = cfg("classifier.threshold", 0.5) if threshold is None else threshold
-    n = int(cfg("classifier.select_top_n", 24) if top_n is None else top_n)
-    above = [it for it in items if it.scores.relevance >= thr]
-    selected = _select_with_source_quota(above, n, float(cfg("classifier.arxiv_min_share", 0.5)))
-    for it in selected:
+    thr = cfg("classifier.threshold", 0.35) if threshold is None else threshold
+
+    journal_slots = int(cfg("selection.slots.journal", 12))
+    arxiv_slots = int(cfg("selection.slots.arxiv", 12))
+    if top_n is not None:
+        # An explicit --top splits evenly between the two paths.
+        journal_slots = int(top_n) // 2
+        arxiv_slots = int(top_n) - journal_slots
+
+    journal_pool = [it for it in items if _is_whitelist_journal(it)]
+    arxiv_pool = [
+        it for it in items if not _is_whitelist_journal(it) and it.scores.relevance >= thr
+    ]
+
+    for it in journal_pool:
         apply_rule_signals(it)
         apply_badges(it)
+    for it in arxiv_pool:
+        apply_rule_signals(it)
+        apply_badges(it)
+
+    from .score.headline import score_item
+
+    seen = _seen_entity_ids(exclude={it.work_key for it in items})
+    for it in journal_pool:
+        score_item(it, seen)
+    journal_pool.sort(key=lambda it: (-journal_rank_score(it), it.work_key))
+    arxiv_pool.sort(key=lambda it: (-it.scores.relevance, it.work_key))
+
+    journal_taken = journal_pool[:journal_slots]
+    arxiv_taken = arxiv_pool[:arxiv_slots]
+
+    # A path that cannot fill its slots lends them to the other, and the fact is
+    # recorded — a short day should be visible, not silently patched over.
+    spare = (journal_slots - len(journal_taken)) + (arxiv_slots - len(arxiv_taken))
+    if spare:
+        journal_taken += journal_pool[len(journal_taken) : len(journal_taken) + spare]
+        spare = journal_slots + arxiv_slots - len(journal_taken) - len(arxiv_taken)
+        if spare:
+            arxiv_taken += arxiv_pool[len(arxiv_taken) : len(arxiv_taken) + spare]
+
+    selected = journal_taken + arxiv_taken
+    selected.sort(key=lambda it: (-it.scores.headline, -it.scores.relevance, it.work_key))
+
+    setattr(run.metrics.counts, "journal_candidates", len(journal_pool))
+    setattr(run.metrics.counts, "arxiv_candidates", len(arxiv_pool))
+    setattr(run.metrics.counts, "selected_journal", len(journal_taken))
+    setattr(run.metrics.counts, "selected_arxiv", len(arxiv_taken))
+    if len(journal_taken) < journal_slots or len(arxiv_taken) < arxiv_slots:
+        run.error(
+            f"select: short day — journal {len(journal_taken)}/{journal_slots}, "
+            f"arxiv {len(arxiv_taken)}/{arxiv_slots}"
+        )
+
     run.count("selected", len(selected))
     write_stage(run, "select", selected)
     run.stage("select", "OK")
     run.save()
     return selected
-
-
-def _select_with_source_quota(candidates: list[Item], n: int, arxiv_min_share: float) -> list[Item]:
-    """Fill the daily list with a floor on arXiv items.
-
-    The classifier is trained on whitelist-journal articles, so a journal article
-    scores ~0.99 close to by construction — it came from a journal on the list.
-    Ranking a mixed day purely by that score fills every slot with journal items
-    (measured 2026-08-11: 23 of 24) and pushes out the preprints, which are the
-    part of the day that is actually new. A floor, not a fixed split: if arXiv
-    has fewer qualifying items than its quota, journals take the remainder.
-    """
-    by_score = sorted(candidates, key=lambda it: (-it.scores.relevance, it.work_key))
-    if n <= 0 or arxiv_min_share <= 0:
-        return by_score[:n]
-
-    arxiv = [it for it in by_score if it.ids.arxiv]
-    other = [it for it in by_score if not it.ids.arxiv]
-    quota = min(len(arxiv), int(round(n * arxiv_min_share)))
-
-    picked = arxiv[:quota]
-    picked += other[: n - len(picked)]
-    if len(picked) < n:  # journals ran out; give the slack back to arXiv
-        picked += arxiv[quota : quota + (n - len(picked))]
-    return sorted(picked, key=lambda it: (-it.scores.relevance, it.work_key))
 
 
 # --------------------------------------------------------------------------

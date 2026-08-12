@@ -1,21 +1,44 @@
-"""Build the relevance-classifier training set (PRD §5.4).
+"""Build relevance-classifier training sets and a shared evaluation set.
 
-Positives (~4,000): works from the whitelist journals, **but only 70% of them.**
-The other 30% are arXiv papers carrying an urban OpenAlex topic. That split is
-not a rounding detail — journal abstracts are written in planning and social
-science prose, arXiv abstracts in ML prose. Train on journals alone and the
-model scores down exactly the arXiv urban-computing papers this product exists
-to surface.
+The core idea is unchanged (PRD §5.4): do not hand-define what counts as urban
+research, take the field's own settled answer. What changed in Phase 0b is
+*which* answer we take for the arXiv side, and how the result is judged.
 
-Negatives (~4,000): arXiv cs.LG / cs.CV / cs.AI from the same period, with the
-positives removed and anything carrying an urban subfield topic excluded.
+**The task the classifier actually has.** After the entry paths split (N4), a
+whitelist-journal article enters on membership and never touches the classifier.
+So the only job left is **arXiv-urban vs arXiv-other**, and that is the only
+thing worth measuring. A shared arXiv-only evaluation set is built once here and
+excluded from every training set, so the variants are compared on identical
+ground.
 
-Output: ``runs/trainset/trainset.jsonl`` — one row per example with the text the
-classifier will see, its label, and its source, so per-source recall can be
-measured later (PRD §5.4, "measured failure mode").
+**Positive definitions.**
+
+- ``journal`` — articles from whitelist journals. Same as Phase 0.
+- ``arxiv_strict`` — **published in a whitelist journal AND carrying an arXiv
+  location.** The cleanest definition available: it does not depend on OpenAlex
+  subfield classification, and "a journal in this field accepted it" is not
+  circular. The catch is volume — only ~224 exist since 2020, so it cannot fill
+  a training set alone.
+- ``arxiv_subfield`` — arXiv-primary works whose ``primary_topic.subfield.id``
+  is in a given set. Phase 0 used 3322|3313|**3305**, and 3305 (Geography,
+  Planning and Development) contributed 409 of 1,102 — the suspected source of
+  the soft-social-science false positives. v2 narrows it to 3322|3313.
+
+**Variants.**
+
+| variant | journal positives | arXiv positives | negatives |
+|---|---|---|---|
+| v1 | yes | subfield 3322/3313/3305 | arXiv non-urban |
+| v2 | yes | strict + subfield 3322/3313 | arXiv non-urban |
+| v3 | **no** | strict + subfield 3322/3313 | arXiv non-urban |
+
+v3 exists to answer a question v2 alone cannot: do journal positives help the
+arXiv task, or does their prose style hurt it? Embeddings are local, so asking
+costs nothing but time.
 
 Usage:
-    uv run python scripts/build_trainset.py [--positives 4000] [--negatives 4000]
+    uv run python scripts/build_trainset.py --variant v2
+    uv run python scripts/build_trainset.py --eval-only
 """
 
 from __future__ import annotations
@@ -25,6 +48,7 @@ import json
 import random
 import sys
 from pathlib import Path
+from typing import Any, Optional
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -36,8 +60,32 @@ from pipeline.metrics import OpenAlexBudget  # noqa: E402
 from pipeline.paths import RUNS  # noqa: E402
 
 OUT_DIR = RUNS / "trainset"
+EVAL_PATH = OUT_DIR / "eval_arxiv.jsonl"
 MIN_ABSTRACT_CHARS = 200
-ARXIV_POSITIVE_SHARE = 0.30
+
+NARROW_SUBFIELDS = "3322|3313"
+WIDE_SUBFIELDS = "3322|3313|3305"
+
+VARIANTS = {
+    "v1": {
+        "journal_positives": 2800,
+        "arxiv_subfields": WIDE_SUBFIELDS,
+        "use_strict": False,
+        "note": "Phase 0 baseline: subfield 3322/3313/3305, journal positives included",
+    },
+    "v2": {
+        "journal_positives": 2800,
+        "arxiv_subfields": NARROW_SUBFIELDS,
+        "use_strict": True,
+        "note": "strict (journal-accepted arXiv) + narrowed subfields, journal positives included",
+    },
+    "v3": {
+        "journal_positives": 0,
+        "arxiv_subfields": NARROW_SUBFIELDS,
+        "use_strict": True,
+        "note": "arXiv-only task: no journal positives at all",
+    },
+}
 
 
 def _budget() -> OpenAlexBudget:
@@ -47,7 +95,7 @@ def _budget() -> OpenAlexBudget:
     )
 
 
-def _row(work: dict, label: int, source: str) -> dict | None:
+def _row(work: dict, label: int, source: str) -> Optional[dict]:
     title = work.get("display_name") or ""
     abstract = invert_abstract(work.get("abstract_inverted_index"))
     if not title or not abstract or len(abstract) < MIN_ABSTRACT_CHARS:
@@ -66,7 +114,7 @@ def _row(work: dict, label: int, source: str) -> dict | None:
     }
 
 
-def collect(pyalex, query, budget, want: int, label: int, source: str, per_page: int) -> list[dict]:
+def collect(query, budget, want: int, label: int, source: str, per_page: int) -> list[dict]:
     rows: list[dict] = []
     seen: set[str] = set()
     for page in query.paginate(per_page=per_page, n_max=None):
@@ -81,26 +129,95 @@ def collect(pyalex, query, budget, want: int, label: int, source: str, per_page:
     return rows[:want]
 
 
-def build(n_pos: int, n_neg: int, since: str, until: str, seed: int) -> Path:
-    pyalex = configure_pyalex()
-    budget = _budget()
-    rng = random.Random(seed)
-
-    doc = journals_vocab()
-    source_ids = [s["id"] for s in (doc.get("sources") or []) if s.get("include", True)]
-    if not source_ids:
+def whitelist_ids() -> list[str]:
+    ids = [s["id"] for s in (journals_vocab().get("sources") or []) if s.get("include", True)]
+    if not ids:
         raise SystemExit("vocab/sources/journals.yaml has no included sources")
+    return ids
 
-    per_page = int(cfg("openalex.per_page", 100))
-    n_journal = int(n_pos * (1 - ARXIV_POSITIVE_SHARE))
-    n_arxiv_pos = n_pos - n_journal
 
-    print(f"positives: {n_journal} from {len(source_ids)} journals, {n_arxiv_pos} from arXiv")
+def _chunks(seq: list[str], n: int = 40) -> list[list[str]]:
+    return [seq[i : i + n] for i in range(0, len(seq), n)]
 
-    # -- positives, journals --------------------------------------------
-    journal_rows: list[dict] = []
-    chunks = [source_ids[i : i + 40] for i in range(0, len(source_ids), 40)]
-    want_each = max(1, n_journal // len(chunks) + 1)
+
+# --------------------------------------------------------------------------
+# Positive / negative pools
+# --------------------------------------------------------------------------
+
+
+def fetch_arxiv_strict(pyalex, budget, since: str, until: str, per_page: int) -> list[dict]:
+    """Works published in a whitelist journal that also have an arXiv location.
+
+    The date floor is deliberately earlier than the other pools: this definition
+    is scarce, and it does not decay with age the way a topical query does.
+    """
+    rows: list[dict] = []
+    seen: set[str] = set()
+    for chunk in _chunks(whitelist_ids()):
+        q = pyalex.Works().filter(
+            **{
+                "primary_location.source.id": "|".join(chunk),
+                "locations.source.id": ARXIV_SOURCE_ID,
+                "from_publication_date": since,
+                "to_publication_date": until,
+                "type": "article",
+                "language": "en",
+                "has_abstract": True,
+            }
+        )
+        for r in collect(q, budget, 10_000, 1, "arxiv_strict", per_page):
+            if r["id"] not in seen:
+                seen.add(r["id"])
+                rows.append(r)
+    return rows
+
+
+def fetch_arxiv_subfield(
+    pyalex, budget, subfields: str, want: int, since: str, until: str, per_page: int
+) -> list[dict]:
+    q = (
+        pyalex.Works()
+        .filter(
+            **{
+                "primary_location.source.id": ARXIV_SOURCE_ID,
+                "primary_topic.subfield.id": subfields,
+                "from_publication_date": since,
+                "to_publication_date": until,
+                "language": "en",
+                "has_abstract": True,
+            }
+        )
+        .sort(publication_date="desc")
+    )
+    return collect(q, budget, want, 1, "arxiv_subfield", per_page)
+
+
+def fetch_arxiv_negatives(
+    pyalex, budget, want: int, since: str, until: str, per_page: int
+) -> list[dict]:
+    q = (
+        pyalex.Works()
+        .filter(
+            **{
+                "primary_location.source.id": ARXIV_SOURCE_ID,
+                "from_publication_date": since,
+                "to_publication_date": until,
+                "language": "en",
+                "has_abstract": True,
+            }
+        )
+        .filter_not(**{"primary_topic.subfield.id": WIDE_SUBFIELDS})
+        .sort(publication_date="desc")
+    )
+    return collect(q, budget, want, 0, "arxiv_other", per_page)
+
+
+def fetch_journal_positives(
+    pyalex, budget, want: int, since: str, until: str, per_page: int, rng: random.Random
+) -> list[dict]:
+    rows: list[dict] = []
+    chunks = _chunks(whitelist_ids())
+    want_each = max(1, want // len(chunks) + 1)
     for chunk in chunks:
         q = (
             pyalex.Works()
@@ -116,94 +233,168 @@ def build(n_pos: int, n_neg: int, since: str, until: str, seed: int) -> Path:
             )
             .sort(cited_by_count="desc")
         )
-        journal_rows.extend(collect(pyalex, q, budget, want_each, 1, "journal", per_page))
-        if len(journal_rows) >= n_journal:
+        rows.extend(collect(q, budget, want_each, 1, "journal", per_page))
+        if len(rows) >= want:
             break
-    rng.shuffle(journal_rows)
-    journal_rows = journal_rows[:n_journal]
-
-    # -- positives, arXiv urban -----------------------------------------
-    subfields = [str(s) for s in (cfg("openalex.whitelist_subfields", ["3322"]) or [])]
-    q = (
-        pyalex.Works()
-        .filter(
-            **{
-                "primary_location.source.id": ARXIV_SOURCE_ID,
-                "primary_topic.subfield.id": "|".join(subfields),
-                "from_publication_date": since,
-                "to_publication_date": until,
-                "language": "en",
-                "has_abstract": True,
-            }
-        )
-        .sort(publication_date="desc")
-    )
-    arxiv_pos = collect(pyalex, q, budget, n_arxiv_pos, 1, "arxiv_urban", per_page)
-
-    # -- negatives -------------------------------------------------------
-    # arXiv works outside the urban subfields. `filter_not` on the subfield keeps
-    # the obvious positives out; the id overlap check below catches the rest.
-    q = (
-        pyalex.Works()
-        .filter(
-            **{
-                "primary_location.source.id": ARXIV_SOURCE_ID,
-                "from_publication_date": since,
-                "to_publication_date": until,
-                "language": "en",
-                "has_abstract": True,
-            }
-        )
-        .filter_not(**{"primary_topic.subfield.id": "|".join(subfields)})
-        .sort(publication_date="desc")
-    )
-    negatives = collect(pyalex, q, budget, int(n_neg * 1.3), 0, "arxiv_other", per_page)
-
-    positive_ids = {r["id"] for r in journal_rows} | {r["id"] for r in arxiv_pos}
-    negatives = [r for r in negatives if r["id"] not in positive_ids]
-    rng.shuffle(negatives)
-    negatives = negatives[:n_neg]
-
-    rows = journal_rows + arxiv_pos + negatives
     rng.shuffle(rows)
+    return rows[:want]
 
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out = OUT_DIR / "trainset.jsonl"
-    with out.open("w", encoding="utf-8", newline="\n") as fh:
+
+# --------------------------------------------------------------------------
+# Writing
+# --------------------------------------------------------------------------
+
+
+def write_jsonl(path: Path, rows: list[dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="\n") as fh:
         for r in rows:
             fh.write(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n")
 
+
+def read_jsonl(path: Path) -> list[dict]:
+    if not path.exists():
+        return []
+    return [
+        json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()
+    ]
+
+
+def build_eval_set(
+    pyalex, budget, n_pos: int, n_neg: int, since: str, until: str, per_page: int,
+    seed: int,
+) -> dict[str, Any]:
+    """The shared arXiv-only holdout every variant is judged on.
+
+    Positives use the strict definition because it is the most defensible ground
+    truth available: a journal in the field accepted the paper. Built once and
+    excluded from every training set, so variant scores are comparable.
+    """
+    rng = random.Random(seed)
+    strict = fetch_arxiv_strict(pyalex, budget, since, until, per_page)
+    rng.shuffle(strict)
+    positives = strict[:n_pos]
+
+    negatives = fetch_arxiv_negatives(pyalex, budget, n_neg * 2, "2024-01-01", until, per_page)
+    rng.shuffle(negatives)
+    negatives = negatives[:n_neg]
+
+    rows = positives + negatives
+    rng.shuffle(rows)
+    write_jsonl(EVAL_PATH, rows)
+
     meta = {
+        "positives": len(positives),
+        "negatives": len(negatives),
+        "strict_pool_available": len(strict),
+        "positive_definition": "published in a whitelist journal AND has an arXiv location",
         "since": since,
         "until": until,
         "seed": seed,
-        "counts": {
-            "journal_positive": len(journal_rows),
-            "arxiv_positive": len(arxiv_pos),
-            "negative": len(negatives),
-            "total": len(rows),
-        },
-        "arxiv_positive_share": ARXIV_POSITIVE_SHARE,
-        "journals_used": len(source_ids),
-        "openalex_cost_usd": round(budget.spent, 6),
-        "openalex_calls": budget.calls,
     }
-    (OUT_DIR / "trainset.meta.json").write_text(
+    (OUT_DIR / "eval_arxiv.meta.json").write_text(
         json.dumps(meta, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n"
     )
     print(json.dumps(meta, indent=2))
-    return out
+    return meta
+
+
+def build_variant(
+    variant: str, n_arxiv_pos: int, n_neg: int, since: str, until: str, seed: int
+) -> dict[str, Any]:
+    spec = VARIANTS[variant]
+    pyalex = configure_pyalex()
+    budget = _budget()
+    rng = random.Random(seed)
+    per_page = int(cfg("openalex.per_page", 100))
+
+    eval_ids = {r["id"] for r in read_jsonl(EVAL_PATH)}
+    if not eval_ids:
+        raise SystemExit("build the shared eval set first: --eval-only")
+
+    arxiv_rows: list[dict] = []
+    if spec["use_strict"]:
+        arxiv_rows += fetch_arxiv_strict(pyalex, budget, "2020-01-01", until, per_page)
+    strict_kept = len([r for r in arxiv_rows if r["id"] not in eval_ids])
+
+    need = max(0, n_arxiv_pos - strict_kept)
+    arxiv_rows += fetch_arxiv_subfield(
+        pyalex, budget, spec["arxiv_subfields"], need, since, until, per_page
+    )
+
+    journal_rows: list[dict] = []
+    if spec["journal_positives"]:
+        journal_rows = fetch_journal_positives(
+            pyalex, budget, int(spec["journal_positives"]), since, until, per_page, rng
+        )
+
+    negatives = fetch_arxiv_negatives(pyalex, budget, int(n_neg * 1.4), since, until, per_page)
+
+    # Nothing in the shared eval set may appear in training, or the comparison
+    # measures memorisation rather than generalisation.
+    seen: set[str] = set()
+    rows: list[dict] = []
+    for r in arxiv_rows + journal_rows + negatives:
+        if r["id"] in eval_ids or r["id"] in seen:
+            continue
+        seen.add(r["id"])
+        rows.append(r)
+
+    positives = [r for r in rows if r["label"] == 1]
+    negs = [r for r in rows if r["label"] == 0][:n_neg]
+    rows = positives + negs
+    rng.shuffle(rows)
+
+    out_dir = OUT_DIR / variant
+    write_jsonl(out_dir / "trainset.jsonl", rows)
+
+    by_source: dict[str, int] = {}
+    for r in rows:
+        by_source[r["source"]] = by_source.get(r["source"], 0) + 1
+    arxiv_pos = sum(v for k, v in by_source.items() if k.startswith("arxiv_") and k != "arxiv_other")
+    meta = {
+        "variant": variant,
+        "note": spec["note"],
+        "arxiv_subfields": spec["arxiv_subfields"],
+        "uses_strict_definition": spec["use_strict"],
+        "counts": {"total": len(rows), **by_source},
+        "arxiv_positive_total": arxiv_pos,
+        "strict_share_of_arxiv_positives": (
+            round(by_source.get("arxiv_strict", 0) / arxiv_pos, 3) if arxiv_pos else 0.0
+        ),
+        "eval_ids_excluded": len(eval_ids),
+        "since": since,
+        "until": until,
+        "seed": seed,
+        "openalex_cost_usd": round(budget.spent, 6),
+    }
+    (out_dir / "trainset.meta.json").write_text(
+        json.dumps(meta, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n"
+    )
+    print(json.dumps(meta, indent=2))
+    return meta
 
 
 def main() -> None:
     p = argparse.ArgumentParser()
-    p.add_argument("--positives", type=int, default=4000)
+    p.add_argument("--variant", choices=sorted(VARIANTS), default="v2")
+    p.add_argument("--eval-only", action="store_true", help="Build the shared eval set and stop")
+    p.add_argument("--eval-positives", type=int, default=200)
+    p.add_argument("--eval-negatives", type=int, default=600)
+    p.add_argument("--arxiv-positives", type=int, default=1100)
     p.add_argument("--negatives", type=int, default=4000)
     p.add_argument("--since", default="2024-01-01")
     p.add_argument("--until", default="2026-06-30")
     p.add_argument("--seed", type=int, default=int(cfg("classifier.random_state", 42)))
     a = p.parse_args()
-    build(a.positives, a.negatives, a.since, a.until, a.seed)
+
+    if a.eval_only:
+        build_eval_set(
+            configure_pyalex(), _budget(), a.eval_positives, a.eval_negatives,
+            "2020-01-01", a.until, int(cfg("openalex.per_page", 100)), a.seed,
+        )
+        return
+    build_variant(a.variant, a.arxiv_positives, a.negatives, a.since, a.until, a.seed)
 
 
 if __name__ == "__main__":

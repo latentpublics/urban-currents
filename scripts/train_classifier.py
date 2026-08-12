@@ -1,19 +1,23 @@
-"""Train the relevance classifier (PRD §5.4).
+"""Train the relevance classifier and judge it on the task it actually has.
 
 Local embeddings (``BAAI/bge-base-en-v1.5``) → logistic regression. The output is
 a **calibrated probability**, which is the practical reason this beats a seed
-centroid: a threshold on it can be interpreted and defended, whereas a threshold
-on cosine similarity is a number someone picked.
+centroid: a threshold on it can be interpreted and defended.
 
-Reports 20% holdout AUC, precision/recall, and — because that is the failure mode
-the design predicts (PRD §5.4, §10) — **per-source recall**, so journal bias
-against arXiv papers shows up as a number rather than a suspicion.
+**The headline metric is arXiv-only.** Phase 0 reported AUC 0.976 on a holdout
+that was mostly whitelist-journal articles against random ML papers — a nearly
+self-evident task, and one the classifier no longer performs: after the entry
+paths split (N4) a journal article enters on membership and never reaches the
+model. What remains is arXiv-urban vs arXiv-other, which is materially harder,
+and that is what ``metrics`` now reports. Journal numbers are kept as a sanity
+check, clearly labelled as such.
 
-Writes ``models/clf-{date}.joblib`` and a sibling ``.json`` with the metrics and
-the training metadata. ``provenance.classifier_version`` records which one ran.
+Evaluation uses the shared ``runs/trainset/eval_arxiv.jsonl`` — built once,
+excluded from every training set — so variants are comparable.
 
 Usage:
-    uv run python scripts/train_classifier.py [--holdout 0.2]
+    uv run python scripts/train_classifier.py --variant v2
+    uv run python scripts/train_classifier.py --variant v1 --no-save
 """
 
 from __future__ import annotations
@@ -23,6 +27,7 @@ import json
 import sys
 from datetime import date
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 
@@ -32,150 +37,156 @@ from pipeline.config import cfg  # noqa: E402
 from pipeline.filters.embed import embed  # noqa: E402
 from pipeline.paths import MODELS, RUNS  # noqa: E402
 
-TRAINSET = RUNS / "trainset" / "trainset.jsonl"
+TRAINSET_DIR = RUNS / "trainset"
+EVAL_PATH = TRAINSET_DIR / "eval_arxiv.jsonl"
+
+SWEEP_THRESHOLDS = [round(0.05 * i, 2) for i in range(2, 19)]
 
 
 def load_rows(path: Path) -> list[dict]:
-    rows = []
-    for line in path.read_text(encoding="utf-8").splitlines():
-        if line.strip():
-            rows.append(json.loads(line))
-    return rows
-
-
-def train(holdout: float, seed: int, out_dir: Path) -> dict:
-    from sklearn.linear_model import LogisticRegression
-    from sklearn.metrics import (
-        average_precision_score,
-        precision_recall_curve,
-        precision_score,
-        recall_score,
-        roc_auc_score,
-    )
-    from sklearn.model_selection import train_test_split
-
-    rows = load_rows(TRAINSET)
-    if not rows:
-        raise SystemExit(f"no training data at {TRAINSET}")
-    print(f"loaded {len(rows)} examples")
-
-    texts = [r["text"] for r in rows]
-    y = np.array([r["label"] for r in rows])
-    sources = np.array([r["source"] for r in rows])
-
-    print("embedding (cached on disk; first run downloads the model)...")
-    X = embed(texts, show_progress=True)
-    print(f"embeddings: {X.shape}")
-
-    idx = np.arange(len(rows))
-    tr, te = train_test_split(idx, test_size=holdout, random_state=seed, stratify=y)
-
-    clf = LogisticRegression(max_iter=2000, C=1.0, class_weight="balanced", random_state=seed)
-    clf.fit(X[tr], y[tr])
-
-    proba = clf.predict_proba(X[te])[:, 1]
-    auc = float(roc_auc_score(y[te], proba))
-    ap = float(average_precision_score(y[te], proba))
-
-    threshold = float(cfg("classifier.threshold", 0.5))
-    pred = (proba >= threshold).astype(int)
-    prec = float(precision_score(y[te], pred, zero_division=0))
-    rec = float(recall_score(y[te], pred, zero_division=0))
-
-    # Per-source recall on the holdout: the predicted failure mode is that
-    # journal-heavy training scores arXiv urban papers too low.
-    per_source = {}
-    for src in sorted(set(sources[te])):
-        mask = sources[te] == src
-        if not mask.any():
-            continue
-        entry = {"n": int(mask.sum()), "mean_proba": round(float(proba[mask].mean()), 4)}
-        if y[te][mask].max() == 1:
-            entry["recall_at_threshold"] = round(
-                float(recall_score(y[te][mask], pred[mask], zero_division=0)), 4
-            )
-        else:
-            entry["false_positive_rate"] = round(float(pred[mask].mean()), 4)
-        per_source[src] = entry
-
-    # Threshold sweep by source. The headline AUC hides the decision that
-    # actually matters: at 0.5 the model keeps ~99% of journal positives but only
-    # ~68% of arXiv urban positives, and arXiv urban papers are the ones this
-    # product exists to surface. This table is what a threshold choice should be
-    # argued from.
-    sweep = []
-    for t in [round(0.05 * i, 2) for i in range(2, 17)]:
-        p_t = (proba >= t).astype(int)
-        row: dict = {"threshold": t}
-        for src in sorted(set(sources[te])):
-            mask = sources[te] == src
-            if y[te][mask].max() == 1:
-                row[f"{src}_recall"] = round(
-                    float(recall_score(y[te][mask], p_t[mask], zero_division=0)), 4
-                )
-            else:
-                row[f"{src}_fpr"] = round(float(p_t[mask].mean()), 4)
-        row["overall_precision"] = round(
-            float(precision_score(y[te], p_t, zero_division=0)), 4
-        )
-        sweep.append(row)
-
-    p_curve, r_curve, t_curve = precision_recall_curve(y[te], proba)
-    curve = [
-        {"threshold": round(float(t), 3), "precision": round(float(p), 4), "recall": round(float(r), 4)}
-        for p, r, t in zip(p_curve[:-1:20], r_curve[:-1:20], t_curve[::20])
+    if not path.exists():
+        raise SystemExit(f"missing {path}")
+    return [
+        json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()
     ]
 
-    version = f"clf-{date.today().isoformat()}"
-    out_dir.mkdir(parents=True, exist_ok=True)
-    model_path = out_dir / f"{version}.joblib"
 
-    import joblib
+def trainset_path(variant: str) -> Path:
+    p = TRAINSET_DIR / variant / "trainset.jsonl"
+    # Phase 0's single trainset lives one level up; fall back so the old file
+    # stays usable without being copied around.
+    return p if p.exists() else TRAINSET_DIR / "trainset.jsonl"
 
-    joblib.dump(clf, model_path)
 
+def _metrics_at(y, proba, threshold: float) -> dict[str, float]:
+    from sklearn.metrics import precision_score, recall_score
+
+    pred = (proba >= threshold).astype(int)
+    return {
+        "precision": round(float(precision_score(y, pred, zero_division=0)), 4),
+        "recall": round(float(recall_score(y, pred, zero_division=0)), 4),
+        "flagged_rate": round(float(pred.mean()), 4),
+    }
+
+
+def evaluate(clf, rows: list[dict], threshold: float) -> dict[str, Any]:
+    from sklearn.metrics import average_precision_score, roc_auc_score
+
+    if not rows:
+        return {}
+    X = embed([r["text"] for r in rows])
+    y = np.array([r["label"] for r in rows])
+    proba = clf.predict_proba(X)[:, 1]
+
+    out: dict[str, Any] = {
+        "n": len(rows),
+        "n_positive": int(y.sum()),
+        "auc": round(float(roc_auc_score(y, proba)), 4) if len(set(y)) > 1 else None,
+        "average_precision": (
+            round(float(average_precision_score(y, proba)), 4) if len(set(y)) > 1 else None
+        ),
+        "at_threshold": {str(threshold): _metrics_at(y, proba, threshold)},
+        "mean_proba_positive": round(float(proba[y == 1].mean()), 4) if (y == 1).any() else None,
+        "mean_proba_negative": round(float(proba[y == 0].mean()), 4) if (y == 0).any() else None,
+    }
+    out["sweep"] = [
+        {"threshold": t, **_metrics_at(y, proba, t)} for t in SWEEP_THRESHOLDS
+    ]
+    return out
+
+
+def train(variant: str, seed: int, threshold: float, save: bool) -> dict[str, Any]:
+    from sklearn.linear_model import LogisticRegression
+
+    rows = load_rows(trainset_path(variant))
+    eval_rows = load_rows(EVAL_PATH)
+    eval_ids = {r["id"] for r in eval_rows}
+
+    leaked = [r for r in rows if r["id"] in eval_ids]
+    rows = [r for r in rows if r["id"] not in eval_ids]
+    if leaked:
+        print(f"dropped {len(leaked)} rows that also appear in the eval set")
+
+    print(f"variant {variant}: {len(rows)} training rows, {len(eval_rows)} eval rows")
+
+    X = embed([r["text"] for r in rows], show_progress=True)
+    y = np.array([r["label"] for r in rows])
+    clf = LogisticRegression(max_iter=2000, C=1.0, class_weight="balanced", random_state=seed)
+    clf.fit(X, y)
+
+    # The headline: arXiv-urban vs arXiv-other on the shared holdout.
+    arxiv_eval = evaluate(clf, eval_rows, threshold)
+
+    # Sanity check only — this is the task the classifier no longer performs.
+    journal_rows = [r for r in rows if r["source"] == "journal"]
+    journal_check: dict[str, Any] = {}
+    if journal_rows:
+        sample = journal_rows[:400]
+        Xj = embed([r["text"] for r in sample])
+        pj = clf.predict_proba(Xj)[:, 1]
+        journal_check = {
+            "n": len(sample),
+            "mean_proba": round(float(pj.mean()), 4),
+            "share_above_threshold": round(float((pj >= threshold).mean()), 4),
+            "note": "in-sample sanity check, not a performance claim",
+        }
+
+    version = f"clf-{variant}-{date.today().isoformat()}"
     meta = {
         "version": version,
+        "variant": variant,
         "trained_at": date.today().isoformat(),
         "embedding_model": cfg("embedding.model"),
         "embedding_dim": int(X.shape[1]),
-        "n_examples": len(rows),
-        "n_train": int(len(tr)),
-        "n_holdout": int(len(te)),
-        "holdout_fraction": holdout,
-        "random_state": seed,
+        "n_train": len(rows),
         "threshold": threshold,
-        "metrics": {
-            "auc": round(auc, 4),
-            "average_precision": round(ap, 4),
-            "precision_at_threshold": round(prec, 4),
-            "recall_at_threshold": round(rec, 4),
-        },
-        "per_source": per_source,
-        "threshold_sweep": sweep,
-        "pr_curve": curve,
+        "random_state": seed,
+        "headline_task": "arxiv_urban_vs_arxiv_other",
+        "metrics": arxiv_eval,
+        "journal_sanity_check": journal_check,
         "trainset_meta": json.loads(
-            (RUNS / "trainset" / "trainset.meta.json").read_text(encoding="utf-8")
+            (trainset_path(variant).parent / "trainset.meta.json").read_text(encoding="utf-8")
         )
-        if (RUNS / "trainset" / "trainset.meta.json").exists()
+        if (trainset_path(variant).parent / "trainset.meta.json").exists()
+        else {},
+        "eval_meta": json.loads((TRAINSET_DIR / "eval_arxiv.meta.json").read_text(encoding="utf-8"))
+        if (TRAINSET_DIR / "eval_arxiv.meta.json").exists()
         else {},
     }
-    (out_dir / f"{version}.json").write_text(
-        json.dumps(meta, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n"
-    )
 
-    print(json.dumps({k: meta[k] for k in ("version", "metrics", "per_source")}, indent=2))
-    print(f"model: {model_path}")
+    if save:
+        import joblib
+
+        MODELS.mkdir(parents=True, exist_ok=True)
+        joblib.dump(clf, MODELS / f"{version}.joblib")
+        (MODELS / f"{version}.json").write_text(
+            json.dumps(meta, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n"
+        )
+        print(f"model: {MODELS / (version + '.joblib')}")
+
+    print(
+        json.dumps(
+            {
+                "version": version,
+                "arxiv_auc": arxiv_eval.get("auc"),
+                "arxiv_ap": arxiv_eval.get("average_precision"),
+                "at_threshold": arxiv_eval.get("at_threshold"),
+                "journal_sanity_check": journal_check,
+            },
+            indent=2,
+        )
+    )
     return meta
 
 
 def main() -> None:
     p = argparse.ArgumentParser()
-    p.add_argument("--holdout", type=float, default=float(cfg("classifier.holdout_fraction", 0.2)))
+    p.add_argument("--variant", default="v2")
     p.add_argument("--seed", type=int, default=int(cfg("classifier.random_state", 42)))
-    p.add_argument("--out", default=str(MODELS))
+    p.add_argument("--threshold", type=float, default=float(cfg("classifier.threshold", 0.35)))
+    p.add_argument("--no-save", action="store_true")
     a = p.parse_args()
-    train(a.holdout, a.seed, Path(a.out))
+    train(a.variant, a.seed, a.threshold, save=not a.no_save)
 
 
 if __name__ == "__main__":

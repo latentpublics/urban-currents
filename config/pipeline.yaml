@@ -42,16 +42,27 @@ classifier:
   # changes what can reach the list, not how long the list is.
   # REVIEW: YJUN's call. 0.25 buys 5 more points of arXiv recall for 4 points of
   # precision; 0.5 is the conservative end.
+  # Which trained model is in production. Named explicitly: with several
+  # variants on disk, picking the last filename alphabetically selects v3, which
+  # the comparison showed is the worst of the three.
+  model_version: "clf-v2-2026-08-13"
+
   threshold: 0.35
-  select_top_n: 24             # per-day cap on items that go to summarize
-  # Floor on the arXiv share of the daily list. A journal article scores ~0.99
-  # nearly by construction (the classifier was trained on those journals), so
-  # pure score ranking fills every slot with journal items and drops the
-  # preprints — the genuinely new part of the day. 0 disables the quota.
-  # REVIEW: YJUN's call on the split.
-  arxiv_min_share: 0.5
+  select_top_n: 24             # kept for reference; selection.slots is authoritative
   holdout_fraction: 0.2
   random_state: 42
+
+selection:
+  # Two independent entry paths (roadmap §2.1). A whitelist-journal article
+  # enters on membership and never touches the classifier; an arXiv preprint
+  # enters on classifier probability. Each path owns its slots, which is why the
+  # old `classifier.arxiv_min_share` quota is gone — it was treating a symptom.
+  # A path that cannot fill its slots lends them to the other, and the run
+  # records that it happened.
+  # REVIEW: YJUN's call on the split.
+  slots:
+    journal: 12
+    arxiv: 12
 
 llm:
   # gemini | anthropic. The Anthropic path is kept working; the account simply

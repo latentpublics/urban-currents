@@ -128,6 +128,32 @@ def test_merge_collapses_the_pair_and_keeps_the_arxiv_work_key():
     assert set(merged.provenance.collectors) == {"arxiv", "openalex"}
 
 
+def test_merge_scales_to_a_backfill_sized_batch():
+    """The fuzzy pass is blocked by first-author surname. Unblocked it is O(n^2):
+    a 90-day backfill (~40,000 candidates) never finishes."""
+    import time
+
+    from pipeline.models import Ids as _Ids
+
+    cands = [
+        Item(
+            work_key=f"arxiv:2608.{i:05d}",
+            ids=_Ids(arxiv=f"2608.{i:05d}"),
+            bibliography=Bibliography(
+                title=f"Distinct study {i} of a completely separate subject",
+                authors=[Author(name=f"Given{i} Surname{i}")],
+            ),
+        )
+        for i in range(4000)
+    ]
+    t0 = time.monotonic()
+    result = merge_candidates(cands, run_date=date(2026, 8, 11))
+    elapsed = time.monotonic() - t0
+
+    assert len(result.items) == 4000  # all distinct
+    assert elapsed < 10, f"merge took {elapsed:.1f}s for 4,000 candidates"
+
+
 def test_unrelated_papers_are_not_merged():
     other = preprint(work_key="arxiv:2608.09999")
     other.ids = Ids(arxiv="2608.09999")

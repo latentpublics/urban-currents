@@ -156,14 +156,28 @@ def merge_candidates(candidates: Iterable[Item], run_date: Optional[date] = None
             else:
                 seen[k] = i
 
-    # Rule 3: fuzzy title + surname, only between items not already clustered.
-    for i in range(n):
-        for j in range(i + 1, n):
-            if find(i) == find(j):
-                continue
-            if fuzzy_same(cands[i], cands[j]):
-                union(i, j)
-                basis.setdefault(find(i), "title_author_fuzzy")
+    # Rule 3: fuzzy title + surname. Blocked by first-author surname first —
+    # `fuzzy_same` already requires the surnames to be equal, so comparing across
+    # different surnames can never match. Without the block this is O(n^2): a
+    # 90-day backfill of ~40,000 candidates would need ~800M title comparisons
+    # and never finishes.
+    buckets: dict[str, list[int]] = {}
+    for i, it in enumerate(cands):
+        surname = _first_author_surname(it)
+        if surname:
+            buckets.setdefault(surname, []).append(i)
+
+    for members in buckets.values():
+        if len(members) < 2:
+            continue
+        for a in range(len(members)):
+            for b in range(a + 1, len(members)):
+                i, j = members[a], members[b]
+                if find(i) == find(j):
+                    continue
+                if fuzzy_same(cands[i], cands[j]):
+                    union(i, j)
+                    basis.setdefault(find(i), "title_author_fuzzy")
 
     groups: dict[int, list[int]] = {}
     for i in range(n):

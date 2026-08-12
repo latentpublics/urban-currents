@@ -58,6 +58,19 @@ def test_preview_is_self_contained_and_card_count_matches(repo, sample_date):
     assert parser.title_seen
 
 
+def test_novelty_ignores_the_batch_being_scored(repo, sample_date):
+    """Otherwise a re-run sees the items' own tags as 'already seen', novelty
+    collapses to zero, and every headline score shifts."""
+    run_stages.run_all(sample_date, fixture=True, use_llm=False)
+    first = {it.work_key: it.scores.headline for it in store.iter_items()}
+
+    run_stages.run_all(sample_date, fixture=True, use_llm=False)
+    second = {it.work_key: it.scores.headline for it in store.iter_items()}
+
+    assert first == second
+    assert any(v > 0 for v in first.values())
+
+
 def test_pipeline_is_idempotent(repo, sample_date):
     """Running the same date twice must leave content/ byte-identical (PRD §9)."""
     run_stages.run_all(sample_date, fixture=True, use_llm=False)

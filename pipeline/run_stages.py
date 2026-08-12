@@ -266,7 +266,10 @@ def stage_summarize(run: Run, use_llm: bool = True, limit: Optional[int] = None)
 
 def stage_score(run: Run) -> list[Item]:
     items = read_input(run, "score")
-    seen = _seen_entity_ids()
+    # Exclude the items being scored. On a re-run they are already in content/,
+    # and counting their own tags as "previously seen" would drive novelty to
+    # zero and change every headline score — breaking idempotency (PRD §9).
+    seen = _seen_entity_ids(exclude={it.work_key for it in items})
     score_all(items, seen)
     write_stage(run, "score", items)
     run.stage("score", "OK")
@@ -274,10 +277,13 @@ def stage_score(run: Run) -> list[Item]:
     return items
 
 
-def _seen_entity_ids() -> set[str]:
+def _seen_entity_ids(exclude: Optional[set[str]] = None) -> set[str]:
     """Overlay entity IDs already in the archive — the basis of the novelty term."""
+    exclude = exclude or set()
     seen: set[str] = set()
     for it in store.iter_items():
+        if it.work_key in exclude:
+            continue
         for e in it.entities.methods + it.entities.data + it.entities.tools:
             seen.add(e.id)
     return seen

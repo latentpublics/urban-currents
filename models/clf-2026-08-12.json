@@ -5,27 +5,27 @@
   "metrics": {
     "auc": 0.9761,
     "average_precision": 0.9815,
-    "precision_at_threshold": 0.953,
-    "recall_at_threshold": 0.9103
+    "precision_at_threshold": 0.9068,
+    "recall_at_threshold": 0.9359
   },
   "n_examples": 7897,
   "n_holdout": 1580,
   "n_train": 6317,
   "per_source": {
     "arxiv_other": {
-      "false_positive_rate": 0.0437,
+      "false_positive_rate": 0.0938,
       "mean_proba": 0.1242,
       "n": 800
     },
     "arxiv_urban": {
       "mean_proba": 0.6765,
       "n": 211,
-      "recall_at_threshold": 0.6825
+      "recall_at_threshold": 0.7678
     },
     "journal": {
       "mean_proba": 0.9544,
       "n": 569,
-      "recall_at_threshold": 0.9947
+      "recall_at_threshold": 0.9982
     }
   },
   "pr_curve": [
@@ -426,7 +426,7 @@
     }
   ],
   "random_state": 42,
-  "threshold": 0.5,
+  "threshold": 0.35,
   "threshold_sweep": [
     {
       "arxiv_other_fpr": 0.3513,

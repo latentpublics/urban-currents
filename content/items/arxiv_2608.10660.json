@@ -1,0 +1,153 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Continuous and reliable localization is essential for autonomous driving. Cross-view visual localization matches ground images with satellite maps, providing complementary localization cues for pipelines that depend on Global Navigation Satellite System (GNSS) signals and high-definition (HD) maps. Most existing cross-view visual localization methods process each frame independently, leaving temporal information underused and limiting accuracy under dynamic occlusion, illumination variation, and repetitive textures. This study proposes a temporal-context-enhanced framework for cross-view sequence visual localization. The proposed recurrent cross-frame module aggregates historical context from the previous state to enhance the coarse ground feature of each current frame. These enhanced features facilitate satellite candidate-region classification, while hierarchical fine-grained features enable precise local offset estimation. On the CVIS dataset, the proposed method reduces mean localization error from 3.80 m to 1.57 m and increases R@1 m from 8.14% to 40.22%. Direct transfer to KITTI-CVL achieves a mean error of 2.61 m, with target-domain fine-tuning further reducing the mean error to 2.27 m. Zero-shot field experiments on a real-world vehicle achieve a mean error of 2.84 m and R@5 m of 96.86%. These results demonstrate that temporal context enhancement significantly improves cross-view localization accuracy and supports robust deployment on public benchmarks and real-world roads.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Jiaping Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shaobo Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zhen Wang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.10660v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10660v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-11",
+    "title": "Cross-View Sequential Visual Localization with Spatio-Temporal Context Modeling for Autonomous Driving"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-11_2608.10660",
+    "members": [
+      "arxiv:2608.10660"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_attempted",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.10660",
+    "doi": "10.48550/arxiv.2608.10660",
+    "openalex": null,
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-2026-08-12",
+    "collected_at": "2026-08-12T13:34:08Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.0,
+    "llm": null,
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 0,
+      "out": 0
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8274,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.331,
+    "relevance": 0.8274
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": null,
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": null
+  },
+  "track": "papers",
+  "updated": "2026-08-11",
+  "work_key": "arxiv:2608.10660"
+}

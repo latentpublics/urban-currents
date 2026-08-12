@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 from . import paths, store
-from .config import scoring_config
+from .config import cfg, scoring_config
 from .models import Metrics
 
 PENDING_HUMAN = "PENDING-HUMAN"
@@ -241,6 +241,33 @@ def build_report(out_path: Optional[Path] = None) -> Path:
             ])
         L.extend(_table(["source", "n", "mean probability", "recall / FPR"], rows))
         A("")
+
+        sweep = clf.get("threshold_sweep") or []
+        if sweep:
+            A("**Threshold sweep.** The headline AUC hides the decision that "
+              "actually matters. The selection threshold is set from this table, "
+              "not from a default:")
+            A("")
+            L.extend(
+                _table(
+                    ["threshold", "arXiv-urban recall", "journal recall",
+                     "negative FPR", "holdout precision"],
+                    [
+                        [r["threshold"], _fmt(r.get("arxiv_urban_recall"), 3),
+                         _fmt(r.get("journal_recall"), 3),
+                         _fmt(r.get("arxiv_other_fpr"), 3),
+                         _fmt(r.get("overall_precision"), 3)]
+                        for r in sweep
+                    ],
+                )
+            )
+            A("")
+            A(f"Configured selection threshold: **{cfg('classifier.threshold')}**. "
+              "Note that holdout precision is measured on a roughly balanced "
+              "sample; the live base rate is far lower, so live precision is "
+              "lower than this column suggests. Q1b's labelling is the test that "
+              "settles it.")
+            A("")
     if trainset:
         c = trainset.get("counts", {})
         A(f"Training set: {c.get('journal_positive')} journal positives + "
@@ -359,6 +386,22 @@ def build_report(out_path: Optional[Path] = None) -> Path:
       "cost is zero — which is what makes backfills and retraining free.")
     A("")
 
+    # -- source mix -------------------------------------------------------
+    A("## What actually gets published")
+    A("")
+    from_arxiv = sum(1 for i in items if i.ids.arxiv)
+    from_journal = len(items) - from_arxiv
+    A(f"Of {len(items)} published items, **{from_arxiv} came from arXiv** and "
+      f"{from_journal} from whitelist journals.")
+    A("")
+    A(f"The split is enforced: `classifier.arxiv_min_share` is "
+      f"{cfg('classifier.arxiv_min_share')}. Without it the daily list fills "
+      f"with journal articles, because the classifier was trained on those "
+      f"journals and scores their articles ~0.99 close to by construction. "
+      f"Measured on 2026-08-11 with the quota disabled: 23 of 24 slots were "
+      f"journal articles.")
+    A("")
+
     # -- archive ----------------------------------------------------------
     A("## Archive")
     A("")
@@ -397,6 +440,37 @@ def build_report(out_path: Optional[Path] = None) -> Path:
             ["date", "fetched", "after gate", "selected", "summarised", "published",
              "skipped / failed"], rows))
         A("")
+
+    # -- what is not measured ---------------------------------------------
+    A("## What this report does not know")
+    A("")
+    unknown: list[str] = []
+    if p_at_10 is None:
+        unknown.append(
+            "**Q1b precision@10** — needs `uc review --label relevance` over 5 days "
+            "× 30 items. This is the number that decides whether the filter is "
+            "usable in practice; the holdout AUC does not answer it."
+        )
+    if review_median is None:
+        unknown.append(
+            "**Q4 review time** — needs `uc review` run by a human. The CLI records "
+            "it automatically; nothing else can."
+        )
+    if not calib or calib.get("status") != "OK":
+        unknown.append("**Q2 and Q3** — need `uc backfill --days 90` then `uc calibrate`.")
+    if not gate:
+        unknown.append("**Gate recall** — needs `uc gate-recall` after a backfill.")
+    summarised_any = any(i.summary.en and i.summary.en.what for i in items)
+    if not summarised_any:
+        unknown.append(
+            "**Summary quality and per-item LLM cost** — no summaries were "
+            "generated, so neither can be reported. See the run errors for why."
+        )
+    if not unknown:
+        unknown.append("Nothing outstanding.")
+    for u in unknown:
+        A(f"- {u}")
+    A("")
 
     A("---")
     A("")

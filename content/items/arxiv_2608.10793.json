@@ -1,0 +1,169 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The aim of this paper is to (1) identify textual and visual themes and sub-themes associated with the #wellbeing hashtag on Instagram, (2) assess their varying levels of engagement and (3) investigate gender bias present in the analysed visual narratives. This study employs a range of big data analysis techniques to investigate various dimensions of wellbeing on Instagram. Initially, a sample of 9,844 posts was processed using data mining and text analysis methods to identify and categorise significant hashtags, which facilitated the classification of posts into thematic clusters through hierarchical clustering. Engagement was then assessed using non-parametric statistical tests. Additionally, computer vision models were used to analyse and classify visual narratives, grouping images into communities based on visual similarities. Finally, gender representation in the images was examined using object detection models. The study reveals that the discourse around #wellbeing on Instagram is predominantly feminised and focuses primarily on mental, psychological and spiritual aspects. Therapeutic and positive psychology narratives are the most prevalent and engaging, while physical activity and nutrition play a relatively secondary role. Two major macro-narratives emerge: firstly, mental health and emotional wellbeing, often featuring hashtags related to therapy, self-discovery, spirituality and motivational quotes; secondly, though less prominently, themes and visual narratives concerning physical activity and healthy habits, emphasising exercise and nutrition.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ainara Larrondo-Ureta",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Simón Peña-Fernández",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jordi Morales-i-Gras",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.SI"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.10793v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10793v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-11",
+    "title": "Shaping the notion of #wellbeing in the therapy culture context: an analysis through Instagram narratives"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-11_2608.10793",
+    "members": [
+      "arxiv:2608.10793"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.62,
+        "id": "data:social-media",
+        "label": "social media data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 0.64,
+        "id": "method:clustering",
+        "label": "clustering"
+      },
+      {
+        "confidence": 0.64,
+        "id": "method:text-analysis",
+        "label": "text analysis"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_attempted",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.10793",
+    "doi": "10.1108/jcom-01-2024-0017",
+    "openalex": null,
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-2026-08-12",
+    "collected_at": "2026-08-12T13:34:08Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.0,
+    "llm": null,
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 0,
+      "out": 0
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 1.0,
+      "relevance": 0.8791,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.5516,
+    "relevance": 0.8791
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": null,
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "9,844 posts",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": null
+  },
+  "track": "papers",
+  "updated": "2026-08-11",
+  "work_key": "arxiv:2608.10793"
+}

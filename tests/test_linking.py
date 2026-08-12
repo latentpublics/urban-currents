@@ -10,7 +10,19 @@ from pipeline.linking.places import link_places, resolve_place
 from pipeline.linking.vocab_match import Vocabulary, match_facet, scan_text
 from pipeline.metrics import Run
 from pipeline.models import Bibliography, EntityRef, Item, TopicRef
-from pipeline.summarize.run import save_overlay_stash
+
+
+def _fake_extractor(payload: dict):
+    """An LLMClient whose extraction call always returns `payload`."""
+    import json
+
+    from pipeline.llm import LLMClient, LLMResponse
+
+    def caller(system, user):
+        return LLMResponse(text=json.dumps(payload), input_tokens=10, output_tokens=5,
+                           model="gemini-3.5-flash")
+
+    return LLMClient(task="extract", caller=caller)
 
 
 def _item(work_key="arxiv:2608.01234", abstract="") -> Item:
@@ -74,20 +86,17 @@ def test_scan_text_returns_nothing_for_unrelated_prose(repo):
 def test_llm_candidates_only_enter_entities_through_the_vocabulary(repo):
     """PRD §9: zero free strings in entities."""
     run = Run.for_date(date(2026, 8, 11))
-    item = _item()
-    save_overlay_stash(
-        run,
+    item = _item(abstract="An abstract long enough to be summarised.")
+    client = _fake_extractor(
         {
-            item.work_key: {
-                "methods": ["graph neural network", "an entirely made up technique"],
-                "data": ["street view imagery"],
-                "tools": ["OSMnx"],
-                "places": ["Seoul", "Atlantis"],
-            }
-        },
+            "methods": ["graph neural network", "an entirely made up technique"],
+            "data": ["street view imagery"],
+            "tools": ["OSMnx"],
+            "places": ["Seoul", "Atlantis"],
+        }
     )
 
-    stats = link_items([item], run, use_llm=True)
+    stats = link_items([item], run, use_llm=True, client=client)
 
     assert [r.id for r in item.entities.methods] == ["method:gnn"]
     assert [r.id for r in item.entities.data] == ["data:street-view"]
@@ -96,9 +105,11 @@ def test_llm_candidates_only_enter_entities_through_the_vocabulary(repo):
     assert stats["unmatched_methods"] == 1
     assert stats["unmatched_places"] == 1
 
-    unmatched = (run.dir / "unmatched.jsonl").read_text(encoding="utf-8")
+    # Candidates are normalised to lower case before matching, so the log holds
+    # the normalised form.
+    unmatched = (run.dir / "unmatched.jsonl").read_text(encoding="utf-8").lower()
     assert "an entirely made up technique" in unmatched
-    assert "Atlantis" in unmatched
+    assert "atlantis" in unmatched
 
 
 def test_link_falls_back_to_text_scan_without_llm_candidates(repo):
@@ -171,3 +182,69 @@ def test_edges_are_derived_and_byte_stable(repo):
     assert first == second
     assert b'"type": "uses_method"' in first
     assert b'"type": "cites"' in first
+
+
+# --------------------------------------------------------------------------
+# Overlay extraction (its own prompt and version — D24 reverted D8)
+# --------------------------------------------------------------------------
+
+
+def test_extraction_has_its_own_prompt_version(repo):
+    """The whole point of the split: editing the summary prompt must not
+    invalidate extraction's cache, and vice versa."""
+    from pipeline.llm import LLMClient
+
+    assert LLMClient(task="extract").prompt_version != LLMClient(task="summarize").prompt_version
+
+
+def test_extraction_normalises_and_caps_candidate_lists(repo):
+    from pipeline.linking.extract import normalize_payload
+
+    out = normalize_payload(
+        {
+            "methods": ["GNN", "gnn", "  Graph Neural Network  ", "a", "b", "c", "d", "e"],
+            "data": ["Street View Imagery"],
+            "tools": [],
+            "places": None,
+        }
+    )
+    assert out["methods"][:2] == ["gnn", "graph neural network"]  # deduped, lowered
+    assert len(out["methods"]) <= 6
+    assert out["data"] == ["street view imagery"]
+    assert out["tools"] == [] and out["places"] == []
+
+
+def test_extraction_rejects_a_non_object_response(repo):
+    from pipeline.linking.extract import normalize_payload
+
+    assert normalize_payload(None) is None
+    assert normalize_payload(["not", "an", "object"]) is None
+
+
+def test_extraction_is_skipped_without_credentials(repo):
+    from pipeline.linking.extract import extract_overlay
+    from pipeline.llm import LLMClient
+
+    run = Run.for_date(date(2026, 8, 11))
+    item = _item(abstract="Some abstract.")
+    results, stats = extract_overlay([item], run, client=LLMClient(task="extract"))
+    assert results == {}
+    assert stats["status"] == "SKIPPED"
+
+
+def test_extraction_failure_leaves_the_rule_scan_result(repo):
+    """An extraction failure must cost tags, not the run."""
+    from pipeline.llm import LLMClient, LLMResponse
+
+    def broken(system, user):
+        return LLMResponse(text="not json", input_tokens=1, output_tokens=1,
+                           model="gemini-3.5-flash")
+
+    run = Run.for_date(date(2026, 8, 11))
+    item = _item(abstract="We train a convolutional neural network on satellite imagery.")
+    stats = link_items(
+        [item], run, use_llm=True, client=LLMClient(task="extract", caller=broken)
+    )
+    assert stats["extracted"] == 0
+    # Fell through to the vocabulary scan rather than ending up with nothing.
+    assert "method:cnn" in [r.id for r in item.entities.methods]

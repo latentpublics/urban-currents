@@ -5,10 +5,11 @@ Phase 0. Bibliography, links, publication status and authors are written by
 collectors and never accepted from the model, which will otherwise invent an
 author list and a year without hesitation.
 
-One call per item produces both the two-layer summary and the overlay entity
-candidates (methods / data / tools / places). Splitting them would double the
-call count against a 60-summary budget for no gain: both need the same abstract
-and the same reading.
+This stage produces the two-layer summary only. Overlay entity extraction lives
+in ``pipeline/linking`` with its own prompt and version (D24 reverted D8): the
+two jobs want different things — prose quality here, schema compliance there —
+and sharing a prompt slot meant neither could be tuned without invalidating the
+other's cache.
 
 Schema violation → one retry → ``review.status = "pending"`` and the run
 continues. One item failing must never stop the day's issue.
@@ -110,41 +111,6 @@ def apply_payload(item: Item, payload: dict[str, Any], model: str, prompt_versio
     apply_badges(item)
 
 
-def overlay_candidates(payload: dict[str, Any]) -> dict[str, list[str]]:
-    """Raw strings from the model. They are only ever *candidates*; nothing
-    reaches ``entities`` until it matches controlled vocabulary (PRD §9)."""
-    out = {}
-    for facet in ("methods", "data", "tools", "places"):
-        vals = payload.get(facet) or []
-        if isinstance(vals, list):
-            out[facet] = [str(v).strip().lower() for v in vals if str(v).strip()][:6]
-        else:
-            out[facet] = []
-    return out
-
-
-def stash_path(run: Run) -> Path:
-    return run.dir / "overlay_candidates.json"
-
-
-def load_overlay_stash(run: Run) -> dict[str, dict[str, list[str]]]:
-    p = stash_path(run)
-    if not p.exists():
-        return {}
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except Exception:
-        return {}
-
-
-def save_overlay_stash(run: Run, stash: dict[str, dict[str, list[str]]]) -> None:
-    stash_path(run).write_text(
-        json.dumps(stash, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
-        newline="\n",
-    )
-
-
 def summarize_items(
     items: Sequence[Item],
     run: Run,
@@ -170,7 +136,6 @@ def summarize_items(
         return {"status": "SKIPPED", "summarized": 0, "reason": "no_api_key"}
 
     system = system_prompt()
-    stash = load_overlay_stash(run)
     n = 0
     failures = 0
     budget_stop: Optional[str] = None
@@ -228,7 +193,6 @@ def summarize_items(
             continue
 
         apply_payload(item, payload, model=resp.model, prompt_version=prompt_version)
-        stash[item.work_key] = overlay_candidates(payload)
         item.provenance.cost_usd = round(item.provenance.cost_usd + resp.cost_usd, 6)
         item.provenance.tokens.input += resp.input_tokens
         item.provenance.tokens.output += resp.output_tokens
@@ -236,7 +200,6 @@ def summarize_items(
         run.add_tokens(resp.input_tokens, resp.output_tokens)
         n += 1
 
-    save_overlay_stash(run, stash)
     run.metrics.stages["summarize.model"] = client.model or ""
     run.metrics.stages["summarize.provider"] = client.provider_name or ""
     # "PARTIAL" has to mean some work landed. A cap hit on the first call, or an

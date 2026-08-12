@@ -148,15 +148,19 @@ def test_per_run_call_cap_stops_the_stage(repo):
     assert "cap reached" in (stats["budget_stop"] or "")
 
 
-def test_overlay_candidates_are_stashed_for_the_link_stage(repo):
+def test_summarize_no_longer_returns_overlay_candidates(repo):
+    """D24 reverted D8: extraction is a separate call with its own prompt
+    version, so the summary payload must not carry entity facets any more."""
     run = Run.for_date(date(2026, 8, 11))
-    summarize_items([_item()], run, client=LLMClient(caller=fake_caller(GOOD)))
+    item = _item()
+    payload = dict(GOOD)
+    payload["methods"] = ["should be ignored"]
+    summarize_items([item], run, client=LLMClient(caller=fake_caller(payload)))
 
-    from pipeline.summarize.run import load_overlay_stash
-
-    stash = load_overlay_stash(run)
-    assert stash["arxiv:2608.01234"]["methods"] == ["convolutional neural network"]
-    assert "seoul" in stash["arxiv:2608.01234"]["places"]
+    assert item.summary.en.what
+    # Nothing from the summary call reaches entities.
+    assert item.entities.methods == []
+    assert not (run.dir / "overlay_candidates.json").exists()
 
 
 # --------------------------------------------------------------------------

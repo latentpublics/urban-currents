@@ -3,9 +3,12 @@
 Three sources, in order of trust:
 
 1. **OpenAlex passthrough** — topics / people / orgs, verbatim, no LLM.
-2. **LLM overlay** — methods / data / tools candidates, produced as a by-product
-   of the summarize call, then matched against controlled vocabulary. Nothing
-   unmatched reaches ``entities``; it goes to ``unmatched.jsonl`` instead.
+2. **LLM overlay** — methods / data / tools candidates from a dedicated
+   extraction call (``linking/extract.py``, its own prompt and version), then
+   matched against controlled vocabulary. Nothing unmatched reaches
+   ``entities``; it goes to ``unmatched.jsonl`` instead. When no LLM is
+   available the abstract is scanned against the vocabulary directly — lower
+   recall, zero cost, and it keeps ``novelty`` meaningful during backfills.
 3. **Places** — best-effort, and an empty result is a normal outcome.
 
 Also maintains ``content/entities/`` nodes and their counts.
@@ -17,16 +20,12 @@ from datetime import date
 from typing import Any, Optional, Sequence
 
 from .. import store
+from ..llm import LLMClient
 from ..metrics import Run
 from ..models import Entity, Item
+from .extract import extract_overlay
 from .places import link_places
 from .vocab_match import Vocabulary, match_facet, scan_text
-
-
-def _overlay_stash(run: Run) -> dict[str, dict[str, list[str]]]:
-    from ..summarize.run import load_overlay_stash
-
-    return load_overlay_stash(run)
 
 
 def link_items(
@@ -34,10 +33,16 @@ def link_items(
     run: Run,
     use_llm: bool = True,
     resolve_places_online: bool = False,
+    client: Optional[LLMClient] = None,
 ) -> dict[str, Any]:
-    """Link in place. ``use_llm`` only controls whether overlay candidates are
-    consumed — the OpenAlex passthrough runs regardless."""
-    stash = _overlay_stash(run)
+    """Link in place. ``use_llm`` controls only the extraction call — the
+    OpenAlex passthrough and the rule-based fallback run regardless."""
+    extract_stats: dict[str, Any] = {"status": "SKIPPED", "extracted": 0}
+    stash: dict[str, dict[str, list[str]]] = {}
+    if use_llm:
+        with run.timed("extract_s"):
+            stash, extract_stats = extract_overlay(items, run, client=client)
+
     vocabs = {f: Vocabulary.load(f) for f in ("methods", "data", "tools")}
 
     topics_from_openalex = 0
@@ -83,7 +88,10 @@ def link_items(
             )
 
     return {
-        "status": "OK",
+        "status": extract_stats.get("status", "OK") if use_llm else "OK",
+        "extracted": extract_stats.get("extracted", 0),
+        "extract_prompt_version": extract_stats.get("prompt_version"),
+        "extract_stop_reason": extract_stats.get("stop_reason"),
         "topics_from_openalex": topics_from_openalex,
         "rule_matched_items": rule_matched,
         "unmatched_methods": unmatched_counts["methods"],

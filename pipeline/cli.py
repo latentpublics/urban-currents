@@ -7,12 +7,22 @@ summarize must not require re-collecting (PRD §5). ``uc run`` chains them.
 from __future__ import annotations
 
 import json
+import sys
 import webbrowser
 from datetime import date, timedelta
 from pathlib import Path
 from typing import Optional
 
 import typer
+
+# Windows consoles default to a legacy code page (cp949 here), which turns an
+# em dash in a status line into a crash after the work is already done.
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:  # pragma: no cover - stream may not support it
+            pass
 
 from . import paths, run_stages, store
 from .metrics import Run

@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from . import paths
-from .models import CANONICAL_PREFIXES, Entity, Issue, Item
+from .models import CANONICAL_PREFIXES, Entity, Issue, Item, work_key_to_filename
 
 
 @dataclass
@@ -69,7 +69,7 @@ def check_entity_ids(result: ValidationResult, items: list[Item]) -> int:
 def check_issue_references(result: ValidationResult, issues: list[Issue]) -> None:
     for issue in issues:
         for wk in issue.items:
-            if not (paths.ITEMS / (wk.replace(":", "_") + ".json")).exists():
+            if not (paths.ITEMS / work_key_to_filename(wk)).exists():
                 result.fail(f"issue {issue.date}: references missing item {wk}")
         if issue.headline.present and issue.headline.work_key not in issue.items:
             result.fail(f"issue {issue.date}: headline item not in items list")

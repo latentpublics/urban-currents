@@ -1,0 +1,289 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Electric buses are central to urban decarbonization, yet public transportation operators face uncertainty regarding battery degradation, climate sensitivity, and the economic value of vehicle-to-grid (V2G) services. This paper proposes a two-stage framework to address these challenges. First, degradation models are calibrated using accelerated aging tests on Lithium Iron Phosphate (LFP) and Nickel Manganese Cobalt (NMC) cells under bus-representative conditions. Second, these models are embedded in a fleet-level dispatch optimization that co-optimizes charging and V2G participation while internalizing battery wear. Monthly throughput-to-end-of-life anchors are derived from weather profiles and incorporated into an annual model. Results show that LFP sustains 2.3–2.4 times the throughput-to-end-of-life of NMC, more than doubling the expected battery lifetime. Degradation-aware dispatch reduces annual operating costs by 12.6% and shifts V2G activity away from wear-prone batteries. Sensitivity analyses confirm robustness to changes in energy prices and replacement costs, providing actionable guidance for climate-resilient fleet electrification. By translating laboratory battery evidence into procurement, scheduling, and market-design guidance for public transport operators, the study bridges battery science, operations-research modeling for decision support, and transport policy, informing the interdisciplinary debate on how cities can electrify public transport at the lowest long-term economic and environmental cost.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Institute for Systems Engineering and Computers",
+            "ror": "https://ror.org/033wn8m60"
+          },
+          {
+            "name": "McGill University",
+            "ror": "https://ror.org/01pxwe438"
+          }
+        ],
+        "name": "Jônatas Augusto Manzolli",
+        "openalex": "A5047696121",
+        "orcid": "https://orcid.org/0000-0003-1043-6417"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Université de Sherbrooke",
+            "ror": "https://ror.org/00kybxq39"
+          }
+        ],
+        "name": "Pascal Messier",
+        "openalex": "A5004623558",
+        "orcid": "https://orcid.org/0000-0002-4465-1804"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Université de Sherbrooke",
+            "ror": "https://ror.org/00kybxq39"
+          },
+          {
+            "name": "Polytechnic Institute of Coimbra",
+            "ror": "https://ror.org/01n8x4993"
+          },
+          {
+            "name": "Institute for Systems Engineering and Computers",
+            "ror": "https://ror.org/033wn8m60"
+          }
+        ],
+        "name": "João Pedro F. Trovão",
+        "openalex": "A5146562663",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Institute for Systems Engineering and Computers",
+            "ror": "https://ror.org/033wn8m60"
+          },
+          {
+            "name": "University of Coimbra",
+            "ror": "https://ror.org/04z8k9a98"
+          }
+        ],
+        "name": "Carlos Henggeler Antunes",
+        "openalex": "A5140749022",
+        "orcid": "https://orcid.org/0000-0003-4754-2168"
+      }
+    ],
+    "categories": [],
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102171",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-11",
+    "title": "Battery chemistry, climate exposure, and V2G economics in electric bus fleets: A two-stage degradation-aware dispatch framework"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-11_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102171"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/033wn8m60",
+        "label": "Institute for Systems Engineering and Computers"
+      },
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/01pxwe438",
+        "label": "McGill University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/00kybxq39",
+        "label": "Université de Sherbrooke"
+      },
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/01n8x4993",
+        "label": "Polytechnic Institute of Coimbra"
+      },
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/04z8k9a98",
+        "label": "University of Coimbra"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1043-6417",
+        "label": "Jônatas Augusto Manzolli"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4465-1804",
+        "label": "Pascal Messier"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146562663",
+        "label": "João Pedro F. Trovão"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4754-2168",
+        "label": "Carlos Henggeler Antunes"
+      }
+    ],
+    "places": [],
+    "places_status": "not_attempted",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10768",
+        "is_primary": true,
+        "label": "Electric Vehicles and Infrastructure",
+        "score": 0.8766,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10663",
+        "is_primary": false,
+        "label": "Advanced Battery Technologies Research",
+        "score": 0.1122,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10808",
+        "is_primary": false,
+        "label": "Electric and Hybrid Vehicle Technologies",
+        "score": 0.0034,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-08-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1970862825",
+      "openalex:W1979716586",
+      "openalex:W1985140644",
+      "openalex:W2017136542",
+      "openalex:W2027501364",
+      "openalex:W2051896694",
+      "openalex:W2054878923",
+      "openalex:W2071699585",
+      "openalex:W2526790593",
+      "openalex:W2612647368",
+      "openalex:W2962135525",
+      "openalex:W3008211866",
+      "openalex:W3036231060",
+      "openalex:W3083390773",
+      "openalex:W4200320158",
+      "openalex:W4283261370",
+      "openalex:W4310723408",
+      "openalex:W4385395008",
+      "openalex:W4385679615",
+      "openalex:W4386102763",
+      "openalex:W4391180034",
+      "openalex:W4400720272",
+      "openalex:W4405743998",
+      "openalex:W4410770032"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102171",
+    "openalex": "W7202155808",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "heuristic-v0",
+    "collected_at": "2026-08-12T13:34:14Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.0,
+    "llm": null,
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 0,
+      "out": 0
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-12T13:34:14Z",
+    "doi": "10.1016/j.trip.2026.102171",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 0.51,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.244,
+    "relevance": 0.51
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": null,
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": null
+  },
+  "track": "papers",
+  "updated": "2026-08-11",
+  "work_key": "doi:10.1016/j.trip.2026.102171"
+}

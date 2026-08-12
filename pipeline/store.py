@@ -82,8 +82,12 @@ def save_item(item: Item, today: Optional[date] = None) -> bool:
     if existing is not None:
         a = existing.model_dump(mode="json", by_alias=True)
         b = item.model_dump(mode="json", by_alias=True)
-        a.pop("updated", None)
-        b.pop("updated", None)
+        # `updated` and `collected_at` describe the run, not the paper. Letting
+        # them count as changes would rewrite every file on every run and bury
+        # real diffs.
+        for d in (a, b):
+            d.pop("updated", None)
+            d.get("provenance", {}).pop("collected_at", None)
         if a == b:
             return False  # genuinely unchanged: leave the file (and mtime) alone
         item.updated = today or item.updated or existing.updated

@@ -105,6 +105,17 @@ def stage_collect(
             run.count("openalex_fetched", len(got))
             items.extend(got)
 
+            # Enrichment pass: fill ids.openalex / graph / topics on arXiv items.
+            # Best-effort by design — arXiv indexing lags by days (PRD §5.1).
+            arxiv_items = [it for it in items if it.ids.arxiv and not it.ids.openalex]
+            if arxiv_items:
+
+                def _enrich():
+                    c = OpenAlexCollector(run)
+                    return c.enrich(arxiv_items)
+
+                _guard(run, "collect.enrich", _enrich)
+
     write_stage(run, "collect", items)
     run.stage("collect", "OK" if items else run.metrics.stages.get("collect", "OK"))
     run.save()
@@ -276,6 +287,9 @@ def stage_issue(run: Run, d: date) -> Issue:
             from .dedup.merge import _merge_pair
 
             it = _merge_pair(existing.model_copy(deep=True), it)
+            # Badges were computed at `select`; a state change after that would
+            # otherwise leave a published paper still wearing a preprint badge.
+            apply_badges(it)
             after = it.publication_status.state
             if prior_date and prior_date != today and before != after:
                 from .models import StatusChange

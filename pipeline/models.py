@@ -255,7 +255,10 @@ class Review(StrictModel):
 # Item
 # --------------------------------------------------------------------------
 
-_WORK_KEY_RE = re.compile(r"^[a-z]+:[A-Za-z0-9._/\-]+$")
+# DOIs are far less tidy than the examples suggest: parentheses, angle brackets
+# and semicolons all occur in the wild (10.1016/s1361-9209(26)00356-1). Constrain
+# the scheme, not the body; `work_key_to_filename` handles what a path cannot hold.
+_WORK_KEY_RE = re.compile(r"^(arxiv|doi|openalex):\S+$")
 
 
 class Item(StrictModel):
@@ -296,8 +299,14 @@ class Item(StrictModel):
         return work_key_to_filename(self.work_key)
 
 
+_PATH_HOSTILE = re.compile(r'[:/\\<>|?*"]')
+
+
 def work_key_to_filename(work_key: str) -> str:
-    return work_key.replace(":", "_").replace("/", "_") + ".json"
+    """``content/items/{work_key}.json`` with path-hostile characters mapped to
+    '_' (PRD §6). The mapping is one-way on purpose — ``work_key`` inside the
+    file stays canonical, and nothing reconstructs it from the filename."""
+    return _PATH_HOSTILE.sub("_", work_key) + ".json"
 
 
 # --------------------------------------------------------------------------

@@ -1,0 +1,134 @@
+# Controlled vocabulary — methods. Two levels: family → method.
+#
+# Entries marked `review: true` were bootstrapped automatically from training-set
+# abstracts by `scripts/bootstrap_vocab.py` and have NOT been curated by a human.
+# Curating them is a Phase 0 manual task: check the label, fold duplicates into
+# `aliases`, set the right family, then delete the `review` key.
+#
+# `id` must start with `method:` — free strings never reach `entities`.
+
+families:
+  - id: method:deep-learning
+    label: deep learning
+    aliases: [neural network, neural networks, deep neural network]
+    methods:
+      - id: method:gnn
+        label: graph neural network
+        aliases: [gnn, gnns, graph neural networks, graph convolutional network, gcn,
+                  graph attention network, gat, message passing neural network]
+      - id: method:cnn
+        label: convolutional neural network
+        aliases: [cnn, cnns, convolutional network, resnet, convnet]
+      - id: method:transformer
+        label: transformer
+        aliases: [transformers, attention mechanism, vision transformer, vit, bert]
+      - id: method:rnn
+        label: recurrent neural network
+        aliases: [rnn, lstm, long short-term memory, gru]
+      - id: method:diffusion-model
+        label: diffusion model
+        aliases: [diffusion models, denoising diffusion]
+      - id: method:llm
+        label: large language model
+        aliases: [llm, llms, large language models, foundation model, gpt]
+      - id: method:self-supervised
+        label: self-supervised learning
+        aliases: [contrastive learning, representation learning, pretraining]
+
+  - id: method:statistical-modeling
+    label: statistical modeling
+    aliases: [statistical model, statistical analysis]
+    methods:
+      - id: method:regression
+        label: regression
+        aliases: [linear regression, ols, logistic regression, regression analysis,
+                  fixed effects, panel regression]
+      - id: method:causal-inference
+        label: causal inference
+        aliases: [difference-in-differences, did, instrumental variable,
+                  regression discontinuity, propensity score, synthetic control,
+                  natural experiment, causal effect]
+      - id: method:bayesian
+        label: bayesian inference
+        aliases: [bayesian, hierarchical bayesian, mcmc, markov chain monte carlo]
+      - id: method:spatial-econometrics
+        label: spatial econometrics
+        aliases: [spatial autoregressive, spatial lag, spatial error model,
+                  geographically weighted regression, gwr, spatial regression]
+      - id: method:survival-analysis
+        label: survival analysis
+        aliases: [hazard model, cox model, duration model]
+
+  - id: method:machine-learning
+    label: machine learning
+    aliases: [supervised learning, predictive model, predictive modeling]
+    methods:
+      - id: method:gradient-boosting
+        label: gradient boosting
+        aliases: [xgboost, lightgbm, gradient boosted trees, catboost]
+      - id: method:random-forest
+        label: random forest
+        aliases: [random forests, decision tree, ensemble model]
+      - id: method:clustering
+        label: clustering
+        aliases: [k-means, kmeans, dbscan, hierarchical clustering, community detection]
+      - id: method:dimensionality-reduction
+        label: dimensionality reduction
+        aliases: [pca, principal component analysis, umap, t-sne, embedding]
+      - id: method:reinforcement-learning
+        label: reinforcement learning
+        aliases: [rl, deep reinforcement learning, q-learning, multi-agent rl]
+
+  - id: method:simulation
+    label: simulation
+    aliases: [simulation model, computational model]
+    methods:
+      - id: method:agent-based-model
+        label: agent-based model
+        aliases: [abm, agent based modeling, agent-based simulation, multi-agent simulation]
+      - id: method:traffic-assignment
+        label: traffic assignment
+        aliases: [network equilibrium, user equilibrium, traffic simulation, sumo]
+      - id: method:optimization
+        label: optimization
+        aliases: [linear programming, integer programming, mixed integer,
+                  combinatorial optimization, heuristic optimization]
+      - id: method:digital-twin
+        label: digital twin
+        aliases: [urban digital twin]
+
+  - id: method:spatial-analysis
+    label: spatial analysis
+    aliases: [geospatial analysis, gis analysis]
+    methods:
+      - id: method:accessibility-analysis
+        label: accessibility analysis
+        aliases: [accessibility measure, two-step floating catchment, 2sfca,
+                  isochrone, travel time analysis]
+      - id: method:network-analysis
+        label: network analysis
+        aliases: [graph analysis, centrality, street network analysis,
+                  space syntax, complex networks]
+      - id: method:spatial-clustering
+        label: spatial clustering
+        aliases: [hot spot analysis, getis-ord, local moran, lisa, spatial autocorrelation]
+      - id: method:remote-sensing-classification
+        label: remote sensing classification
+        aliases: [land cover classification, image classification,
+                  semantic segmentation, change detection]
+
+  - id: method:qualitative
+    label: qualitative and survey methods
+    aliases: []
+    methods:
+      - id: method:survey
+        label: survey
+        aliases: [questionnaire, stated preference, discrete choice experiment,
+                  travel survey, household survey]
+      - id: method:interview
+        label: interview
+        aliases: [semi-structured interview, focus group, ethnography]
+      - id: method:text-analysis
+        label: text analysis
+        aliases: [topic modeling, lda, sentiment analysis, natural language processing,
+                  content analysis]

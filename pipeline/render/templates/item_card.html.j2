@@ -1,0 +1,38 @@
+{#- One item card. Phase 1's Astro <ItemCard> component mirrors this DOM. -#}
+<article class="uc-card" id="{{ card.anchor }}" data-work-key="{{ card.work_key }}">
+  <h2 class="uc-card__title">
+    {%- if card.landing_url %}<a href="{{ card.landing_url }}">{{ card.title }}</a>
+    {%- else %}{{ card.title }}{% endif -%}
+  </h2>
+  <p class="uc-card__byline">{{ card.byline }}</p>
+
+  {% if card.what %}<p class="uc-card__what">{{ card.what }}</p>{% endif %}
+  {% if card.why %}<p class="uc-card__why">{{ card.why }}</p>{% endif %}
+  {% if card.caveats %}<p class="uc-card__caveats">{{ card.caveats }}</p>{% endif %}
+  {% if not card.what and not card.why %}
+  <p class="uc-card__pending">Summary pending review.</p>
+  {% endif %}
+
+  {% if card.badges %}
+  <ul class="uc-badges">
+    {% for badge in card.badges %}<li class="uc-badge uc-badge--{{ badge }}">{{ badge }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if card.facets %}
+  <div class="uc-facets">
+    {% for facet in card.facets %}
+    <div class="uc-facet uc-facet--{{ facet.name }}">
+      <span class="uc-facet__name">{{ facet.name }}</span>
+      <ul class="uc-facet__tags">
+        {% for tag in facet.tags %}<li class="uc-tag" data-entity-id="{{ tag.id }}">{{ tag.label }}</li>{% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <p class="uc-card__links">
+    {% for link in card.links %}<span></span><a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+  </p>
+</article>

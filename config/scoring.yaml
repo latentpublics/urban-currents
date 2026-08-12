@@ -1,0 +1,25 @@
+# Headline score weights (PRD §5.6). Tuning these during Phase 0 is expected.
+weights:
+  relevance: 0.40
+  source_multiplicity: 0.20
+  artifact_completeness: 0.20
+  novelty: 0.20
+
+# Cluster size at which source_multiplicity saturates at 1.0.
+source_multiplicity_saturation: 3
+
+# artifact_completeness contributions; capped at 1.0.
+artifact_completeness:
+  code: 0.4
+  data: 0.4
+  published: 0.2
+
+# Quiet-day threshold. Calibrated from the 90-day backfill distribution so that
+# the headline rate lands in 30-50% (PRD §5.6, Q3). `uc calibrate` rewrites this.
+headline_threshold: 0.5
+calibration:
+  quantile: null
+  headline_rate: null
+  n_scored: null
+  calibrated_at: null
+  source: "default"

@@ -1,0 +1,10 @@
+# Geocoding exception mappings for place resolution.
+#
+# De-prioritised in PRD v1.1: Places is not a signature axis in Phase 0 and
+# Wikidata lookup is best-effort. This file starts empty on purpose — entries
+# are added only when a real mis-resolution is observed, not pre-emptively.
+
+aliases: {}
+# Example shape, once entries exist:
+# aliases:
+#   "nyc": {id: "wikidata:Q60", label: "New York City"}

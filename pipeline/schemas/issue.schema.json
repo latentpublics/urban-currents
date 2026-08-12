@@ -1,0 +1,169 @@
+{
+  "$defs": {
+    "Headline": {
+      "additionalProperties": false,
+      "properties": {
+        "line": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line"
+        },
+        "present": {
+          "default": false,
+          "title": "Present",
+          "type": "boolean"
+        },
+        "work_key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Work Key"
+        }
+      },
+      "title": "Headline",
+      "type": "object"
+    },
+    "ScanMeta": {
+      "additionalProperties": false,
+      "properties": {
+        "arxiv_categories": {
+          "default": 0,
+          "title": "Arxiv Categories",
+          "type": "integer"
+        },
+        "candidates_after_gate": {
+          "default": 0,
+          "title": "Candidates After Gate",
+          "type": "integer"
+        },
+        "candidates_scanned": {
+          "default": 0,
+          "title": "Candidates Scanned",
+          "type": "integer"
+        },
+        "items_published": {
+          "default": 0,
+          "title": "Items Published",
+          "type": "integer"
+        },
+        "journals": {
+          "default": 0,
+          "title": "Journals",
+          "type": "integer"
+        },
+        "minutes_saved_estimate": {
+          "default": 0,
+          "title": "Minutes Saved Estimate",
+          "type": "integer"
+        }
+      },
+      "title": "ScanMeta",
+      "type": "object"
+    },
+    "StatusChange": {
+      "additionalProperties": false,
+      "properties": {
+        "from": {
+          "title": "From",
+          "type": "string"
+        },
+        "journal": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Journal"
+        },
+        "to": {
+          "title": "To",
+          "type": "string"
+        },
+        "work_key": {
+          "title": "Work Key",
+          "type": "string"
+        }
+      },
+      "required": [
+        "work_key",
+        "from",
+        "to"
+      ],
+      "title": "StatusChange",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "One daily edition. Immutable once published.",
+  "properties": {
+    "date": {
+      "format": "date",
+      "title": "Date",
+      "type": "string"
+    },
+    "headline": {
+      "$ref": "#/$defs/Headline"
+    },
+    "items": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Items",
+      "type": "array"
+    },
+    "quiet_day": {
+      "default": false,
+      "title": "Quiet Day",
+      "type": "boolean"
+    },
+    "run_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Run Id"
+    },
+    "scan_meta": {
+      "$ref": "#/$defs/ScanMeta"
+    },
+    "schema_version": {
+      "default": "0.2.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "status_changes": {
+      "items": {
+        "$ref": "#/$defs/StatusChange"
+      },
+      "title": "Status Changes",
+      "type": "array"
+    }
+  },
+  "required": [
+    "date"
+  ],
+  "title": "Issue",
+  "type": "object"
+}

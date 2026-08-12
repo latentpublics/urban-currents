@@ -1,0 +1,142 @@
+/* Inlined into preview.html. No external requests, no webfonts, no images.
+   Phase 1's Astro components take these class names over verbatim, so renaming
+   anything here is a cross-phase change, not a cosmetic one. */
+
+:root {
+  --uc-ink: #16181d;
+  --uc-ink-soft: #555a63;
+  --uc-line: #e3e5ea;
+  --uc-bg: #ffffff;
+  --uc-bg-soft: #f7f8fa;
+  --uc-accent: #1f5fa8;
+  --uc-badge-bg: #eef1f6;
+  --uc-quiet: #7a7f88;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --uc-ink: #e8eaee;
+    --uc-ink-soft: #a3a9b4;
+    --uc-line: #2c3038;
+    --uc-bg: #14161a;
+    --uc-bg-soft: #1b1e24;
+    --uc-accent: #7fb0e8;
+    --uc-badge-bg: #232830;
+    --uc-quiet: #8b919c;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 2rem 1rem 4rem;
+  background: var(--uc-bg);
+  color: var(--uc-ink);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.uc-issue { max-width: 46rem; margin: 0 auto; }
+
+.uc-issue__masthead {
+  border-bottom: 2px solid var(--uc-ink);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.uc-issue__title { font-size: 1.5rem; font-weight: 700; margin: 0; letter-spacing: -0.01em; }
+.uc-issue__date { color: var(--uc-ink-soft); font-size: 0.95rem; margin: 0.25rem 0 0; }
+
+.uc-scanmeta {
+  font-size: 0.82rem;
+  color: var(--uc-ink-soft);
+  margin: 0 0 2rem;
+  font-variant-numeric: tabular-nums;
+}
+.uc-scanmeta__sep { margin: 0 0.4rem; opacity: 0.5; }
+
+.uc-headline {
+  background: var(--uc-bg-soft);
+  border-left: 3px solid var(--uc-accent);
+  padding: 1rem 1.25rem;
+  margin-bottom: 2.5rem;
+}
+.uc-headline__label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--uc-ink-soft);
+  margin: 0 0 0.35rem;
+}
+.uc-headline__line { font-size: 1.12rem; font-weight: 600; margin: 0; line-height: 1.45; }
+.uc-headline--quiet .uc-headline__line { font-weight: 400; color: var(--uc-quiet); font-style: italic; }
+
+.uc-cards { display: flex; flex-direction: column; gap: 2rem; }
+
+.uc-card { border-top: 1px solid var(--uc-line); padding-top: 1.25rem; }
+.uc-card__title { font-size: 1.05rem; font-weight: 650; margin: 0 0 0.35rem; line-height: 1.4; }
+.uc-card__title a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--uc-line); }
+.uc-card__title a:hover { border-bottom-color: var(--uc-accent); }
+.uc-card__byline { font-size: 0.85rem; color: var(--uc-ink-soft); margin: 0 0 0.75rem; }
+
+.uc-card__what { margin: 0 0 0.6rem; }
+.uc-card__why { margin: 0 0 0.6rem; color: var(--uc-ink-soft); }
+.uc-card__why::before {
+  content: "Why it matters — ";
+  font-weight: 600;
+  color: var(--uc-ink);
+}
+.uc-card__caveats { margin: 0 0 0.6rem; font-size: 0.9rem; color: var(--uc-ink-soft); }
+.uc-card__pending {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  color: var(--uc-quiet);
+  font-style: italic;
+}
+
+.uc-badges { list-style: none; display: flex; flex-wrap: wrap; gap: 0.35rem; padding: 0; margin: 0.5rem 0; }
+.uc-badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--uc-badge-bg);
+  color: var(--uc-ink-soft);
+  border-radius: 2px;
+  padding: 0.15rem 0.4rem;
+}
+.uc-badge--code, .uc-badge--data { color: var(--uc-accent); }
+
+.uc-facets { margin: 0.75rem 0 0; font-size: 0.82rem; }
+.uc-facet { display: flex; gap: 0.4rem; margin-bottom: 0.25rem; align-items: baseline; }
+.uc-facet__name {
+  color: var(--uc-ink-soft);
+  text-transform: lowercase;
+  min-width: 4.5rem;
+  flex: 0 0 auto;
+}
+.uc-facet__tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.3rem; padding: 0; margin: 0; }
+.uc-tag { color: var(--uc-ink); }
+.uc-tag::after { content: ","; color: var(--uc-ink-soft); }
+.uc-tag:last-child::after { content: ""; }
+
+.uc-card__links { font-size: 0.82rem; margin: 0.6rem 0 0; }
+.uc-card__links a { color: var(--uc-accent); text-decoration: none; }
+.uc-card__links a:hover { text-decoration: underline; }
+.uc-card__links span + a::before { content: " · "; color: var(--uc-ink-soft); }
+
+.uc-status-changes { margin-top: 3rem; border-top: 1px solid var(--uc-line); padding-top: 1rem; }
+.uc-status-changes__title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--uc-ink-soft);
+  margin: 0 0 0.5rem;
+}
+.uc-status-changes ul { margin: 0; padding-left: 1.1rem; font-size: 0.88rem; color: var(--uc-ink-soft); }
+
+.uc-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--uc-line);
+  font-size: 0.75rem;
+  color: var(--uc-quiet);
+}

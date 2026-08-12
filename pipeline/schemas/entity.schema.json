@@ -1,0 +1,119 @@
+{
+  "$defs": {
+    "Canonical": {
+      "additionalProperties": false,
+      "properties": {
+        "openalex": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Openalex"
+        },
+        "wikidata": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Wikidata"
+        }
+      },
+      "title": "Canonical",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "aliases": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Aliases",
+      "type": "array"
+    },
+    "canonical": {
+      "$ref": "#/$defs/Canonical"
+    },
+    "facet": {
+      "enum": [
+        "topics",
+        "methods",
+        "data",
+        "tools",
+        "people",
+        "orgs",
+        "places"
+      ],
+      "title": "Facet",
+      "type": "string"
+    },
+    "first_seen": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "First Seen"
+    },
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "item_count": {
+      "default": 0,
+      "title": "Item Count",
+      "type": "integer"
+    },
+    "label": {
+      "title": "Label",
+      "type": "string"
+    },
+    "last_seen": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Last Seen"
+    },
+    "parent": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Parent"
+    }
+  },
+  "required": [
+    "id",
+    "facet",
+    "label"
+  ],
+  "title": "Entity",
+  "type": "object"
+}

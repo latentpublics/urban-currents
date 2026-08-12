@@ -1,0 +1,47 @@
+# Pipeline configuration. Values here are meant to be tuned during Phase 0.
+
+arxiv:
+  # PRD §5.1
+  categories: [cs.CY, cs.SI, cs.LG, cs.CV, cs.AI, stat.AP, physics.soc-ph]
+  request_interval_s: 3.0
+  max_retries: 3
+  page_size: 200
+  api_url: "http://export.arxiv.org/api/query"
+
+openalex:
+  # A free key gives a $1/day budget. We stop a stage at 80% of it.
+  daily_budget_usd: 1.0
+  budget_stop_fraction: 0.8
+  per_page: 100          # hard maximum as of 2026-08; the docs previously said 200
+  arxiv_source_id: "S4306400194"
+  # Subfields used to build the journal whitelist (PRD §5.4).
+  whitelist_subfields: ["3322", "3305", "3313"]
+  whitelist_max_sources: 200
+
+embedding:
+  provider: local              # local | none. Swappable for a hosted API later.
+  model: "BAAI/bge-base-en-v1.5"
+  batch_size: 32
+
+classifier:
+  threshold: 0.5               # calibrated probability; selection cut
+  select_top_n: 24             # per-day cap on items that go to summarize
+  holdout_fraction: 0.2
+  random_state: 42
+
+llm:
+  model: "claude-sonnet-5"
+  max_tokens: 1200
+  prompt_version: "summarize/papers@0.2.0"
+  # Hard stops so a runaway loop cannot burn the budget.
+  max_summaries_per_run: 30
+  max_summaries_total: 60
+  cache_enabled: true
+
+gate:
+  # Low-volume, high-yield categories skip the keyword gate entirely (PRD §5.3).
+  ungated_categories: [cs.CY, cs.SI, stat.AP, physics.soc-ph]
+  gated_categories: [cs.LG, cs.CV, cs.AI]
+
+review:
+  minutes_saved_per_item: 7

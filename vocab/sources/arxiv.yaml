@@ -1,0 +1,83 @@
+# arXiv categories and the volume gate (PRD §5.3).
+#
+# cs.LG / cs.CV / cs.AI carry ~90% of daily volume at the lowest yield, so only
+# keyword-gated items from those go to the classifier. The other four categories
+# are small and high-yield, so they skip the gate entirely.
+#
+# The gate is deliberately generous: its recall is measured once per Phase 0
+# (`uc gate-recall`) and widened if more than 3 of 200 sampled rejects score
+# above threshold.
+
+categories:
+  ungated: [cs.CY, cs.SI, stat.AP, physics.soc-ph]
+  gated: [cs.LG, cs.CV, cs.AI]
+
+# Matched case-insensitively against title + abstract, OR semantics.
+# Entries ending in '*' are prefix matches.
+keywords:
+  - urban
+  - city
+  - cities
+  - metropolitan
+  - municipal
+  - neighborhood
+  - neighbourhood
+  - mobility
+  - transport
+  - transportation
+  - traffic
+  - travel demand
+  - land use
+  - land cover
+  - street
+  - streetscape
+  - street view
+  - poi
+  - point of interest
+  - built environment
+  - housing
+  - real estate
+  - gentrification
+  - segregation
+  - spatial
+  - geospatial
+  - gis
+  - satellite
+  - remote sensing
+  - aerial imagery
+  - census
+  - pedestrian
+  - walkability
+  - transit
+  - commut*
+  - ridership
+  - ride-hailing
+  - bike shar*
+  - micromobility
+  - parking
+  - zoning
+  - infrastructur*
+  - building footprint
+  - population density
+  - human mobility
+  - origin-destination
+  - accessibility
+  - air quality
+  - urban heat
+  - flood
+  - energy consumption
+  - smart city
+  - geographic
+  - geography
+  - region*
+  - district
+  - settlement
+  - migration
+  - amenit*
+  - place*
+  - trajector*
+  - mobile phone data
+  - taxi
+  - road network
+  - osm
+  - openstreetmap

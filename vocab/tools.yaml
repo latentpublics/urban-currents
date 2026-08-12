@@ -1,0 +1,68 @@
+# Controlled vocabulary — named software tools, keyed by GitHub repo where one
+# exists. Tools are only tagged when the abstract names them explicitly.
+#
+# IDs use the `github:owner/repo` prefix. Tools without a GitHub home get a
+# `method:`-free `github:` placeholder only if the repo genuinely exists;
+# otherwise leave them out rather than inventing an ID.
+
+items:
+  - id: github:gboeing/osmnx
+    label: OSMnx
+    aliases: [osmnx]
+  - id: github:geopandas/geopandas
+    label: GeoPandas
+    aliases: [geopandas]
+  - id: github:conveyal/r5
+    label: R5
+    aliases: [r5, r5r]
+  - id: github:valhalla/valhalla
+    label: Valhalla
+    aliases: [valhalla]
+  - id: github:Project-OSRM/osrm-backend
+    label: OSRM
+    aliases: [osrm, open source routing machine]
+  - id: github:eclipse-sumo/sumo
+    label: SUMO
+    aliases: [sumo, simulation of urban mobility]
+  - id: github:matsim-org/matsim-libs
+    label: MATSim
+    aliases: [matsim]
+  - id: github:UDST/urbansim
+    label: UrbanSim
+    aliases: [urbansim]
+  - id: github:UDST/pandana
+    label: Pandana
+    aliases: [pandana]
+  - id: github:pysal/pysal
+    label: PySAL
+    aliases: [pysal, esda, spreg, momepy]
+  - id: github:giswqs/geemap
+    label: geemap
+    aliases: [geemap, google earth engine, earth engine]
+  - id: github:google/or-tools
+    label: OR-Tools
+    aliases: [or-tools, ortools]
+  - id: github:pyg-team/pytorch_geometric
+    label: PyTorch Geometric
+    aliases: [pytorch geometric, pyg]
+  - id: github:dmlc/dgl
+    label: DGL
+    aliases: [deep graph library, dgl]
+  - id: github:scikit-learn/scikit-learn
+    label: scikit-learn
+    aliases: [scikit-learn, sklearn]
+  - id: github:facebookresearch/segment-anything
+    label: Segment Anything
+    aliases: [segment anything, sam]
+  - id: github:ultralytics/ultralytics
+    label: YOLO
+    aliases: [yolo, yolov8, ultralytics]
+  - id: github:openai/CLIP
+    label: CLIP
+    aliases: [clip]
+  - id: github:mit-ll/spacenet
+    label: SpaceNet
+    aliases: [spacenet]
+  - id: github:microsoft/GlobalMLBuildingFootprints
+    label: Microsoft Building Footprints
+    aliases: [microsoft building footprints, global ml building footprints]

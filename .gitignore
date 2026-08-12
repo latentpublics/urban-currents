@@ -1,0 +1,19 @@
+.env
+.venv/
+prompts/
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Run artifacts: raw API responses, metrics, previews. Regenerable, often large.
+runs/
+
+# Trained models are build outputs; the training metadata JSON is committed.
+models/*.joblib
+
+# Local embedding cache
+.cache/

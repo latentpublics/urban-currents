@@ -1,0 +1,1098 @@
+{
+  "$defs": {
+    "Author": {
+      "additionalProperties": false,
+      "properties": {
+        "institutions": {
+          "items": {
+            "$ref": "#/$defs/Institution"
+          },
+          "title": "Institutions",
+          "type": "array"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "openalex": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Openalex"
+        },
+        "orcid": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Orcid"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Author",
+      "type": "object"
+    },
+    "Bibliography": {
+      "additionalProperties": false,
+      "description": "Written by collectors from source metadata only. The LLM never touches this.",
+      "properties": {
+        "abstract": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstract"
+        },
+        "authors": {
+          "items": {
+            "$ref": "#/$defs/Author"
+          },
+          "title": "Authors",
+          "type": "array"
+        },
+        "categories": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Categories",
+          "type": "array"
+        },
+        "primary_location": {
+          "$ref": "#/$defs/PrimaryLocation"
+        },
+        "publication_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Publication Date"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "title": "Bibliography",
+      "type": "object"
+    },
+    "Cluster": {
+      "additionalProperties": false,
+      "properties": {
+        "cluster_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cluster Id"
+        },
+        "members": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Members",
+          "type": "array"
+        },
+        "merge_basis": {
+          "default": "singleton",
+          "enum": [
+            "doi_match",
+            "arxiv_location",
+            "title_author_fuzzy",
+            "singleton"
+          ],
+          "title": "Merge Basis",
+          "type": "string"
+        }
+      },
+      "title": "Cluster",
+      "type": "object"
+    },
+    "Entities": {
+      "additionalProperties": false,
+      "properties": {
+        "data": {
+          "items": {
+            "$ref": "#/$defs/EntityRef"
+          },
+          "title": "Data",
+          "type": "array"
+        },
+        "methods": {
+          "items": {
+            "$ref": "#/$defs/EntityRef"
+          },
+          "title": "Methods",
+          "type": "array"
+        },
+        "orgs": {
+          "items": {
+            "$ref": "#/$defs/EntityRef"
+          },
+          "title": "Orgs",
+          "type": "array"
+        },
+        "people": {
+          "items": {
+            "$ref": "#/$defs/EntityRef"
+          },
+          "title": "People",
+          "type": "array"
+        },
+        "places": {
+          "items": {
+            "$ref": "#/$defs/PlaceRef"
+          },
+          "title": "Places",
+          "type": "array"
+        },
+        "places_status": {
+          "default": "not_attempted",
+          "enum": [
+            "resolved",
+            "unspecified",
+            "not_applicable",
+            "not_attempted"
+          ],
+          "title": "Places Status",
+          "type": "string"
+        },
+        "tools": {
+          "items": {
+            "$ref": "#/$defs/EntityRef"
+          },
+          "title": "Tools",
+          "type": "array"
+        },
+        "topics": {
+          "items": {
+            "$ref": "#/$defs/TopicRef"
+          },
+          "title": "Topics",
+          "type": "array"
+        }
+      },
+      "title": "Entities",
+      "type": "object"
+    },
+    "EntityRef": {
+      "additionalProperties": false,
+      "description": "A reference to an entity node. ``id`` must carry a canonical prefix \u2014\nfree strings in ``entities`` are a hard error (PRD \u00a79).",
+      "properties": {
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label"
+      ],
+      "title": "EntityRef",
+      "type": "object"
+    },
+    "Graph": {
+      "additionalProperties": false,
+      "description": "Taken from OpenAlex verbatim. The citation graph is free.",
+      "properties": {
+        "cited_by_count": {
+          "default": 0,
+          "title": "Cited By Count",
+          "type": "integer"
+        },
+        "referenced_works": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Referenced Works",
+          "type": "array"
+        },
+        "related_works": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Related Works",
+          "type": "array"
+        }
+      },
+      "title": "Graph",
+      "type": "object"
+    },
+    "Ids": {
+      "additionalProperties": false,
+      "description": "OpenAlex convention: identifiers accumulate here, work_key never changes.",
+      "properties": {
+        "arxiv": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Arxiv"
+        },
+        "doi": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Doi"
+        },
+        "openalex": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Openalex"
+        },
+        "pmid": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pmid"
+        }
+      },
+      "title": "Ids",
+      "type": "object"
+    },
+    "Institution": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        },
+        "ror": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ror"
+        }
+      },
+      "title": "Institution",
+      "type": "object"
+    },
+    "LlmProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "prompt_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prompt Version"
+        }
+      },
+      "title": "LlmProvenance",
+      "type": "object"
+    },
+    "PlaceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "role": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Role"
+        }
+      },
+      "required": [
+        "id",
+        "label"
+      ],
+      "title": "PlaceRef",
+      "type": "object"
+    },
+    "PrimaryLocation": {
+      "additionalProperties": false,
+      "properties": {
+        "landing_page_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Landing Page Url"
+        },
+        "pdf_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pdf Url"
+        },
+        "source_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Id"
+        },
+        "source_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Name"
+        },
+        "type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Type"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        }
+      },
+      "title": "PrimaryLocation",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "classifier_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Classifier Version"
+        },
+        "collected_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Collected At"
+        },
+        "collectors": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Collectors",
+          "type": "array"
+        },
+        "cost_usd": {
+          "default": 0.0,
+          "title": "Cost Usd",
+          "type": "number"
+        },
+        "llm": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/LlmProvenance"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "pipeline_version": {
+          "default": "0.2.0",
+          "title": "Pipeline Version",
+          "type": "string"
+        },
+        "tokens": {
+          "$ref": "#/$defs/Tokens"
+        }
+      },
+      "title": "Provenance",
+      "type": "object"
+    },
+    "PublicationStatus": {
+      "additionalProperties": false,
+      "properties": {
+        "detected_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Detected At"
+        },
+        "doi": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Doi"
+        },
+        "journal": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Journal"
+        },
+        "source_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Id"
+        },
+        "state": {
+          "default": "preprint",
+          "enum": [
+            "preprint",
+            "published"
+          ],
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "title": "PublicationStatus",
+      "type": "object"
+    },
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "edits": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Edits",
+          "type": "array"
+        },
+        "reviewer_notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewer Notes"
+        },
+        "status": {
+          "default": "pending",
+          "enum": [
+            "pending",
+            "approved",
+            "rejected",
+            "edited"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "title": "Review",
+      "type": "object"
+    },
+    "ScoreComponents": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_completeness": {
+          "default": 0.0,
+          "title": "Artifact Completeness",
+          "type": "number"
+        },
+        "novelty": {
+          "default": 0.0,
+          "title": "Novelty",
+          "type": "number"
+        },
+        "relevance": {
+          "default": 0.0,
+          "title": "Relevance",
+          "type": "number"
+        },
+        "source_multiplicity": {
+          "default": 0.0,
+          "title": "Source Multiplicity",
+          "type": "number"
+        }
+      },
+      "title": "ScoreComponents",
+      "type": "object"
+    },
+    "Scores": {
+      "additionalProperties": false,
+      "properties": {
+        "components": {
+          "$ref": "#/$defs/ScoreComponents"
+        },
+        "headline": {
+          "default": 0.0,
+          "title": "Headline",
+          "type": "number"
+        },
+        "relevance": {
+          "default": 0.0,
+          "title": "Relevance",
+          "type": "number"
+        }
+      },
+      "title": "Scores",
+      "type": "object"
+    },
+    "Signal": {
+      "additionalProperties": false,
+      "description": "A structured judgement. Cheap, reusable as badge / filter / graph property.",
+      "properties": {
+        "basis": {
+          "default": "rule",
+          "enum": [
+            "rule",
+            "llm",
+            "openalex"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "confidence": {
+          "default": "medium",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "detail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Detail"
+        },
+        "url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Url"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Signal",
+      "type": "object"
+    },
+    "Signals": {
+      "additionalProperties": false,
+      "properties": {
+        "code_available": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Signal"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "data_available": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Signal"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "geographic_scope": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Signal"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "is_retracted": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Signal"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "sample_size_reported": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Signal"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "temporal_coverage_reported": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Signal"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "Signals",
+      "type": "object"
+    },
+    "Summary": {
+      "additionalProperties": false,
+      "properties": {
+        "en": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SummaryEn"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "Summary",
+      "type": "object"
+    },
+    "SummaryEn": {
+      "additionalProperties": false,
+      "properties": {
+        "caveats": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Caveats"
+        },
+        "what": {
+          "default": "",
+          "title": "What",
+          "type": "string"
+        },
+        "why": {
+          "default": "",
+          "title": "Why",
+          "type": "string"
+        }
+      },
+      "title": "SummaryEn",
+      "type": "object"
+    },
+    "Tokens": {
+      "additionalProperties": false,
+      "properties": {
+        "in": {
+          "default": 0,
+          "title": "In",
+          "type": "integer"
+        },
+        "out": {
+          "default": 0,
+          "title": "Out",
+          "type": "integer"
+        }
+      },
+      "title": "Tokens",
+      "type": "object"
+    },
+    "TopicRef": {
+      "additionalProperties": false,
+      "properties": {
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "is_primary": {
+          "default": false,
+          "title": "Is Primary",
+          "type": "boolean"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Score"
+        },
+        "subfield": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Subfield"
+        }
+      },
+      "required": [
+        "id",
+        "label"
+      ],
+      "title": "TopicRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "One artifact (one paper). Permanent and mutable.",
+  "properties": {
+    "badges": {
+      "items": {
+        "enum": [
+          "code",
+          "data",
+          "preprint",
+          "published"
+        ],
+        "type": "string"
+      },
+      "title": "Badges",
+      "type": "array"
+    },
+    "bibliography": {
+      "$ref": "#/$defs/Bibliography"
+    },
+    "cluster": {
+      "$ref": "#/$defs/Cluster"
+    },
+    "entities": {
+      "$ref": "#/$defs/Entities"
+    },
+    "first_published": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "First Published"
+    },
+    "graph": {
+      "$ref": "#/$defs/Graph"
+    },
+    "ids": {
+      "$ref": "#/$defs/Ids"
+    },
+    "lens": {
+      "anyOf": [
+        {
+          "enum": [
+            "behavior",
+            "system"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Lens"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "publication_status": {
+      "$ref": "#/$defs/PublicationStatus"
+    },
+    "review": {
+      "$ref": "#/$defs/Review"
+    },
+    "schema_version": {
+      "default": "0.2.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "scores": {
+      "$ref": "#/$defs/Scores"
+    },
+    "signals": {
+      "$ref": "#/$defs/Signals"
+    },
+    "summary": {
+      "$ref": "#/$defs/Summary"
+    },
+    "track": {
+      "const": "papers",
+      "default": "papers",
+      "title": "Track",
+      "type": "string"
+    },
+    "updated": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Updated"
+    },
+    "work_key": {
+      "title": "Work Key",
+      "type": "string"
+    }
+  },
+  "required": [
+    "work_key",
+    "bibliography"
+  ],
+  "title": "Item",
+  "type": "object"
+}

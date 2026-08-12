@@ -1,0 +1,5 @@
+# The pipeline writes LF and compares files byte-for-byte to prove idempotency.
+# Git must not rewrite line endings underneath it on Windows.
+* text=auto eol=lf
+*.png binary
+*.joblib binary

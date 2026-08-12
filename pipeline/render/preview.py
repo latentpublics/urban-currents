@@ -8,7 +8,7 @@ class names, so the card layout decision is made once, not twice.
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Iterable, Optional
+from typing import Iterable
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
@@ -126,6 +126,3 @@ def write_preview(issue: Issue, items: Iterable[Item], out_path: Path) -> Path:
     out_path.write_text(render_issue(issue, items), encoding="utf-8", newline="\n")
     return out_path
 
-
-def preview_path(run_dir: Path, date: Optional[str] = None) -> Path:
-    return run_dir / "preview.html"

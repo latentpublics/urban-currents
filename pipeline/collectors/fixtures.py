@@ -110,6 +110,3 @@ def fixture_items(for_date: Optional[date] = None) -> list[Item]:
             it.bibliography.publication_date = for_date
     return items
 
-
-def fixture_categories() -> dict[str, list[str]]:
-    return {f"arxiv:{r['arxiv']}": r["categories"] for r in _RAW}

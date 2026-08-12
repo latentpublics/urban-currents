@@ -13,7 +13,6 @@ from __future__ import annotations
 
 import hashlib
 import functools
-from pathlib import Path
 from typing import Optional, Sequence
 
 import numpy as np
@@ -105,14 +104,3 @@ def embed(texts: Sequence[str], use_cache: bool = True, show_progress: bool = Fa
 
     return np.vstack([v for v in vectors if v is not None]) if vectors else np.zeros((0, 0))
 
-
-def embedding_available() -> bool:
-    try:
-        _model()
-        return True
-    except Exception:
-        return False
-
-
-def cache_path() -> Path:
-    return CACHE_DIR

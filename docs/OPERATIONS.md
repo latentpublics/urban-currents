@@ -25,6 +25,13 @@ review times are always under-reported.
 
 ## Daily run
 
+**Run for the day before yesterday, not yesterday.** arXiv indexes submissions
+with a lag: a `submittedDate` query for yesterday can return `totalResults=0`
+while the same query returns hundreds a day later. Measured on 2026-08-13 —
+2026-08-12 returned 0 items, 2026-08-11 returned 311. A run that collects nothing
+records `collect: EMPTY` and says so in `errors`; that is not a quiet day, it
+means come back tomorrow.
+
 ```bash
 uv run uc run --date 2026-08-14          # every stage
 uv run uc review --date 2026-08-14       # human checkpoint (opens the preview)

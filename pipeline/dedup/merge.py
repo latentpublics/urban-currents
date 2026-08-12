@@ -92,7 +92,12 @@ def _merge_pair(base: Item, other: Item) -> Item:
                 a.institutions = o.institutions
     if not bib.publication_date and obib.publication_date:
         bib.publication_date = obib.publication_date
-    bib.categories = sorted(set(bib.categories) | set(obib.categories))
+    # Append rather than sort: arXiv puts the primary category first and that
+    # ordering is information. Sorting also made the merge non-idempotent — the
+    # first write kept arXiv's order, every later merge re-sorted it.
+    for c in obib.categories:
+        if c not in bib.categories:
+            bib.categories.append(c)
     # Keep the journal location if one side has it; arXiv stays reachable via ids.
     if other.publication_status.state == "published" and (
         bib.primary_location.type in (None, "repository")

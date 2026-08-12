@@ -101,7 +101,7 @@ def check_e2e(d: date, skip: bool) -> Check:
         return c
     code, out = run(["uv", "run", "uc", "run", "--date", str(d)])
     stages = [ln.strip() for ln in out.splitlines() if ln.strip().startswith("[")]
-    failed = [s for s in stages if "FAILED" in s]
+    failed = [s for s in stages if "FAILED" in s or "EMPTY" in s]
     skipped = [s for s in stages if "SKIPPED" in s]
     c.evidence = stages
     if code != 0 or failed:

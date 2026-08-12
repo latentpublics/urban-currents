@@ -321,9 +321,3 @@ def entry_to_item(entry: dict) -> Optional[Item]:
 def _utcnow() -> datetime:
     return datetime.now(timezone.utc).replace(microsecond=0)
 
-
-def daterange(start: date, end: date) -> Iterator[date]:
-    d = start
-    while d <= end:
-        yield d
-        d += timedelta(days=1)

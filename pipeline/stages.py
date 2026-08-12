@@ -55,10 +55,6 @@ def read_stage(run: Run, stage: str) -> list[Item]:
     return out
 
 
-def previous_stage(stage: str) -> str:
-    i = STAGE_ORDER.index(stage)
-    return STAGE_ORDER[i - 1]
-
 
 def read_input(run: Run, stage: str) -> list[Item]:
     """Read the output of whichever earlier stage most recently produced data.

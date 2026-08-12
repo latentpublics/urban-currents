@@ -209,6 +209,17 @@ def test_preprint_to_published_updates_the_item_and_creates_no_new_one(repo):
     assert change.journal == "Cities"
 
 
+def test_merge_preserves_category_order(repo):
+    """arXiv puts the primary category first. A merge that re-sorted the list
+    also made the second run of a day rewrite every file."""
+    a = preprint()
+    b = preprint()
+    b.bibliography.categories = ["cs.AI", "cs.CV"]
+    merged = merge_candidates([a, b]).items[0]
+    assert merged.bibliography.categories[:2] == ["cs.CV", "cs.CY"]
+    assert "cs.AI" in merged.bibliography.categories
+
+
 def test_same_day_rerun_still_publishes(repo):
     """The 'already published' check keys off issue membership, so re-running a
     day is idempotent rather than producing an empty issue."""

@@ -25,11 +25,11 @@ MAX_ACCEPTABLE_MISSES = 3
 
 
 def _rejected_files() -> list[Path]:
-    """Rejected-item logs, backfill first — it holds the largest sample."""
-    out = []
-    backfill = sorted(paths.RUNS.glob("backfill_*/gate_rejected.jsonl"))
-    daily = sorted(paths.RUNS.glob("run_*/gate_dropped.jsonl"))
-    return backfill + daily if (backfill or daily) else out
+    """Rejected-item logs. The backfill log comes first — it is far larger, and
+    the daily logs only carry titles, not the abstracts the classifier needs."""
+    return sorted(paths.RUNS.glob("backfill_*/gate_rejected.jsonl")) + sorted(
+        paths.RUNS.glob("run_*/gate_dropped.jsonl")
+    )
 
 
 def load_rejected() -> list[dict]:

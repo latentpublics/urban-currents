@@ -78,21 +78,51 @@ def cost_summary(runs: list[Metrics]) -> dict[str, Any]:
     }
 
 
-def category_intake(runs: list[Metrics]) -> dict[str, int]:
-    """Actual arXiv intake per category, counted from the Items we collected."""
-    counter: Counter[str] = Counter()
-    for item in store.iter_items():
-        for c in item.bibliography.categories:
-            counter[c] += 1
-    backfill = paths.RUNS / "backfill" / "scores.jsonl"
-    if backfill.exists():
-        for line in backfill.read_text(encoding="utf-8").splitlines():
+def category_intake() -> dict[str, dict[str, int]]:
+    """Per-category arXiv intake and gate outcome, measured over the backfill.
+
+    Counts both sides of the gate — the items that passed (``backfill/scores.jsonl``)
+    and the ones it rejected (``backfill_*/gate_rejected.jsonl``) — so the pass
+    rate is a measurement rather than an inference. Cross-listed papers count
+    under each of their categories, so the columns sum above the item total.
+    """
+    passed: Counter[str] = Counter()
+    rejected: Counter[str] = Counter()
+    days: set[str] = set()
+
+    scores = paths.RUNS / "backfill" / "scores.jsonl"
+    if scores.exists():
+        for line in scores.read_text(encoding="utf-8").splitlines():
             if not line.strip():
                 continue
             row = json.loads(line)
+            days.add(row.get("date") or "")
             for c in row.get("categories") or []:
-                counter[c] += 1
-    return dict(counter.most_common())
+                passed[c] += 1
+
+    for p in sorted(paths.RUNS.glob("backfill_*/gate_rejected.jsonl")):
+        for line in p.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            days.add(row.get("date") or "")
+            for c in row.get("categories") or []:
+                rejected[c] += 1
+
+    n_days = max(1, len({d for d in days if d}))
+    out: dict[str, dict[str, int]] = {}
+    for cat in sorted(set(passed) | set(rejected), key=lambda c: -(passed[c] + rejected[c])):
+        total = passed[cat] + rejected[cat]
+        out[cat] = {
+            "total": total,
+            "per_day": round(total / n_days, 1),
+            "through_gate": passed[cat],
+            "gate_pass_rate": round(passed[cat] / total, 3) if total else 0.0,
+        }
+    return out
 
 
 # --------------------------------------------------------------------------
@@ -307,12 +337,22 @@ def build_report(out_path: Optional[Path] = None) -> Path:
           f"range {dd.get('min_per_day')}–{dd.get('max_per_day')}.")
         A("")
 
-    cats = category_intake(runs)
+    cats = category_intake()
     if cats:
-        A("**arXiv intake by category** (counted across every collected item; "
-          "cross-listed papers appear under each of their categories):")
+        A("**arXiv intake and gate outcome by category**, measured over the "
+          "backfill. Cross-listed papers count under each of their categories, so "
+          "the totals sum above the item count. The four low-volume categories "
+          "are not gated at all (PRD §5.3), which is why their pass rate is 1.0:")
         A("")
-        L.extend(_table(["category", "items"], [[k, v] for k, v in list(cats.items())[:15]]))
+        L.extend(
+            _table(
+                ["category", "items", "per day", "through gate", "gate pass rate"],
+                [
+                    [k, v["total"], v["per_day"], v["through_gate"], v["gate_pass_rate"]]
+                    for k, v in list(cats.items())[:15]
+                ],
+            )
+        )
         A("")
 
     if gate:

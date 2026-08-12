@@ -116,8 +116,19 @@ def stage_collect(
 
                 _guard(run, "collect.enrich", _enrich)
 
+    if not items:
+        # arXiv's submittedDate index lags: a query for "yesterday" can legitimately
+        # return zero while the same query a day later returns hundreds. Silence
+        # here reads as "a quiet day" when it actually means "come back later".
+        run.error(
+            f"collect: zero candidates for {d}. arXiv indexes submissions with a "
+            f"lag — re-run this date tomorrow before treating it as a quiet day."
+        )
+        run.stage("collect", "EMPTY")
+    else:
+        run.stage("collect", "OK")
+
     write_stage(run, "collect", items)
-    run.stage("collect", "OK" if items else run.metrics.stages.get("collect", "OK"))
     run.save()
     return items
 

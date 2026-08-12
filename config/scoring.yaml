@@ -16,10 +16,11 @@ artifact_completeness:
 
 # Quiet-day threshold. Calibrated from the 90-day backfill distribution so that
 # the headline rate lands in 30-50% (PRD §5.6, Q3). `uc calibrate` rewrites this.
-headline_threshold: 0.5
+headline_threshold: 0.5872
 calibration:
-  quantile: null
-  headline_rate: null
-  n_scored: null
-  calibrated_at: null
-  source: "default"
+  quantile: 0.6
+  headline_rate: 0.4
+  n_scored: 2419
+  n_days: 90
+  calibrated_at: 2026-08-13
+  source: "backfill"

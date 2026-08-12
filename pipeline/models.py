@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import re
 from datetime import date, datetime
-from typing import Annotated, Literal, Optional
+from typing import Literal, Optional
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
@@ -447,4 +447,3 @@ class Metrics(StrictModel):
     errors: list[str] = Field(default_factory=list)
 
 
-AnnotatedItem = Annotated[Item, "content/items/{work_key}.json"]

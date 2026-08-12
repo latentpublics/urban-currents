@@ -64,7 +64,13 @@
     "merge_basis": "singleton"
   },
   "entities": {
-    "data": [],
+    "data": [
+      {
+        "confidence": 0.66,
+        "id": "data:poi",
+        "label": "points of interest"
+      }
+    ],
     "methods": [],
     "orgs": [],
     "people": [],
@@ -87,8 +93,8 @@
   },
   "lens": null,
   "provenance": {
-    "classifier_version": "heuristic-v0",
-    "collected_at": "2026-08-12T13:34:08Z",
+    "classifier_version": "clf-2026-08-12",
+    "collected_at": "2026-08-12T16:23:26Z",
     "collectors": [
       "arxiv"
     ],
@@ -116,12 +122,12 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 0.0,
-      "relevance": 0.95,
+      "novelty": 1.0,
+      "relevance": 0.9812,
       "source_multiplicity": 0.0
     },
-    "headline": 0.38,
-    "relevance": 0.95
+    "headline": 0.5925,
+    "relevance": 0.9812
   },
   "signals": {
     "code_available": {

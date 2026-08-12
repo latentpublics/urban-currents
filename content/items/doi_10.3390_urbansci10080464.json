@@ -71,7 +71,13 @@
   },
   "entities": {
     "data": [],
-    "methods": [],
+    "methods": [
+      {
+        "confidence": 0.62,
+        "id": "method:survey",
+        "label": "survey"
+      }
+    ],
     "orgs": [
       {
         "confidence": null,
@@ -175,8 +181,8 @@
   },
   "lens": null,
   "provenance": {
-    "classifier_version": "heuristic-v0",
-    "collected_at": "2026-08-12T13:34:14Z",
+    "classifier_version": "clf-2026-08-12",
+    "collected_at": "2026-08-12T16:23:28Z",
     "collectors": [
       "openalex"
     ],
@@ -189,7 +195,7 @@
     }
   },
   "publication_status": {
-    "detected_at": "2026-08-12T13:34:14Z",
+    "detected_at": "2026-08-12T16:23:28Z",
     "doi": "10.3390/urbansci10080464",
     "journal": "Urban Science",
     "source_id": "S4210174142",
@@ -204,12 +210,12 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.2,
-      "novelty": 0.0,
-      "relevance": 0.625,
+      "novelty": 1.0,
+      "relevance": 0.9939,
       "source_multiplicity": 0.0
     },
-    "headline": 0.29,
-    "relevance": 0.625
+    "headline": 0.6376,
+    "relevance": 0.9939
   },
   "signals": {
     "code_available": {

@@ -70,8 +70,20 @@
     "merge_basis": "singleton"
   },
   "entities": {
-    "data": [],
-    "methods": [],
+    "data": [
+      {
+        "confidence": 0.66,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 0.64,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
     "orgs": [],
     "people": [],
     "places": [],
@@ -93,8 +105,8 @@
   },
   "lens": null,
   "provenance": {
-    "classifier_version": "heuristic-v0",
-    "collected_at": "2026-08-12T13:34:08Z",
+    "classifier_version": "clf-2026-08-12",
+    "collected_at": "2026-08-12T16:23:26Z",
     "collectors": [
       "arxiv"
     ],
@@ -122,12 +134,12 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 0.0,
-      "relevance": 0.51,
+      "novelty": 1.0,
+      "relevance": 0.7631,
       "source_multiplicity": 0.0
     },
-    "headline": 0.204,
-    "relevance": 0.51
+    "headline": 0.5052,
+    "relevance": 0.7631
   },
   "signals": {
     "code_available": {

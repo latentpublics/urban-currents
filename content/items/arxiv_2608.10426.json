@@ -76,7 +76,13 @@
     "people": [],
     "places": [],
     "places_status": "not_attempted",
-    "tools": [],
+    "tools": [
+      {
+        "confidence": 0.62,
+        "id": "github:openai/CLIP",
+        "label": "CLIP"
+      }
+    ],
     "topics": []
   },
   "first_published": "2026-08-11",
@@ -93,8 +99,8 @@
   },
   "lens": null,
   "provenance": {
-    "classifier_version": "heuristic-v0",
-    "collected_at": "2026-08-12T13:34:11Z",
+    "classifier_version": "clf-2026-08-12",
+    "collected_at": "2026-08-12T16:23:26Z",
     "collectors": [
       "arxiv"
     ],
@@ -122,12 +128,12 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 0.0,
-      "relevance": 0.74,
+      "novelty": 1.0,
+      "relevance": 0.649,
       "source_multiplicity": 0.0
     },
-    "headline": 0.296,
-    "relevance": 0.74
+    "headline": 0.4596,
+    "relevance": 0.649
   },
   "signals": {
     "code_available": {

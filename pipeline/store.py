@@ -80,6 +80,16 @@ def save_item(item: Item, today: Optional[date] = None) -> bool:
             existing = None
 
     if existing is not None:
+        # `detected_at` means "when we first saw this publication state", not
+        # "when we last looked". The collector stamps it with now() on every
+        # pass, so without this the file is rewritten on every run and the
+        # idempotency guarantee fails on a single timestamp.
+        if (
+            existing.publication_status.state == item.publication_status.state
+            and existing.publication_status.detected_at is not None
+        ):
+            item.publication_status.detected_at = existing.publication_status.detected_at
+
         a = existing.model_dump(mode="json", by_alias=True)
         b = item.model_dump(mode="json", by_alias=True)
         # `updated` and `collected_at` describe the run, not the paper. Letting

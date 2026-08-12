@@ -5,9 +5,9 @@ Two modes:
 - **full review** — opens the day's preview, then walks the items with
   ``[a]pprove / [r]eject / [e]dit / [s]kip``. Editing opens the Item JSON in
   ``$EDITOR`` and records the field paths that changed in ``review.edits``.
-- **labelling** (``--label relevance``) — a fast keep/drop pass over the top N by
-  classifier score, appended to ``runs/labels/relevance.jsonl``. This is what
-  produces the precision@10 number in Q1.
+- **labelling** (``--label relevance``) — lives in ``pipeline/labeling.py``.
+  It is a separate module because it grew a different job: its output is the
+  training set for a classifier that does not exist yet, not only a measurement.
 
 **The elapsed time is the point.** Q4 asks whether review fits in 15 minutes a
 day, and self-reported times are always under-reported, so the clock starts and
@@ -19,7 +19,6 @@ callables; the interactive path is never driven by automation.
 
 from __future__ import annotations
 
-import json
 import os
 import subprocess
 import tempfile
@@ -28,9 +27,9 @@ import webbrowser
 from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
-from typing import Any, Callable, Iterable, Optional
+from typing import Any, Callable, Optional
 
-from . import paths, store
+from . import store
 from .metrics import Run
 from .models import Item
 
@@ -180,105 +179,15 @@ def run_review_session(
 # --------------------------------------------------------------------------
 
 
-def labels_path(facet: str) -> Path:
-    paths.LABELS.mkdir(parents=True, exist_ok=True)
-    return paths.LABELS / f"{facet}.jsonl"
+# --------------------------------------------------------------------------
+# Labelling mode lives in pipeline/labeling.py — see the note above.
+# Re-exported here so `uc review --label …` and existing imports keep working.
+# --------------------------------------------------------------------------
 
-
-def candidates_for_labelling(d: date, top: int) -> list[Item]:
-    """Top-N of the day's classified candidates, highest score first."""
-    from .stages import read_stage
-
-    run = Run.for_date(d)
-    items = read_stage(run, "classify") or read_stage(run, "select")
-    items.sort(key=lambda it: (-it.scores.relevance, it.work_key))
-    return items[:top]
-
-
-def append_labels(facet: str, rows: Iterable[dict]) -> int:
-    path = labels_path(facet)
-    n = 0
-    with path.open("a", encoding="utf-8", newline="\n") as fh:
-        for row in rows:
-            fh.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
-            n += 1
-    return n
-
-
-def run_labeling_session(
-    d: date, facet: str = "relevance", top: int = 30, prompt: Prompt = _default_prompt
-) -> int:
-    items = candidates_for_labelling(d, top)
-    if not items:
-        print(f"no classified candidates for {d}; run `uc classify --date {d}` first")
-        return 0
-
-    print(f"labelling {len(items)} candidates for {d} — [k]eep / [d]rop / [s]kip")
-    started = time.monotonic()
-    rows = []
-    for rank, item in enumerate(items, start=1):
-        print(f"\n{rank}. [{item.scores.relevance:.3f}] {item.bibliography.title}")
-        print(f"   {(item.bibliography.abstract or '')[:240]}")
-        answer = prompt("   [k]eep / [d]rop / [s]kip: ")
-        if answer.startswith("s"):
-            continue
-        rows.append(
-            {
-                "date": str(d),
-                "work_key": item.work_key,
-                "rank": rank,
-                "score": item.scores.relevance,
-                "label": "keep" if answer.startswith("k") else "drop",
-                "source": "arxiv" if item.ids.arxiv else "journal",
-                "classifier_version": item.provenance.classifier_version,
-            }
-        )
-
-    n = append_labels(facet, rows)
-    elapsed = time.monotonic() - started
-    run = Run.for_date(d)
-    run.metrics.timing["label_s"] = round(
-        run.metrics.timing.get("label_s", 0.0) + elapsed, 1
-    )
-    run.save()
-    print(f"\nwrote {n} labels to {labels_path(facet)} in {elapsed / 60:.1f} min")
-    return n
-
-
-def precision_at_k(facet: str = "relevance", k: int = 10) -> dict:
-    """Q1's precision@10, computed from whatever labels exist so far."""
-    path = labels_path(facet)
-    if not path.exists():
-        return {"labelled_days": 0, "precision_at_k": None, "k": k, "n_labels": 0}
-
-    by_day: dict[str, list[dict]] = {}
-    total = 0
-    for line in path.read_text(encoding="utf-8").splitlines():
-        if not line.strip():
-            continue
-        row = json.loads(line)
-        by_day.setdefault(row["date"], []).append(row)
-        total += 1
-
-    per_day = []
-    for day, rows in sorted(by_day.items()):
-        rows.sort(key=lambda r: r["rank"])
-        topk = rows[:k]
-        if not topk:
-            continue
-        per_day.append(sum(1 for r in topk if r["label"] == "keep") / len(topk))
-
-    by_source: dict[str, dict[str, int]] = {}
-    for rows in by_day.values():
-        for r in rows:
-            b = by_source.setdefault(r.get("source", "unknown"), {"keep": 0, "drop": 0})
-            b[r["label"]] = b.get(r["label"], 0) + 1
-
-    return {
-        "labelled_days": len(per_day),
-        "n_labels": total,
-        "k": k,
-        "precision_at_k": round(sum(per_day) / len(per_day), 4) if per_day else None,
-        "per_day": [round(p, 4) for p in per_day],
-        "by_source": by_source,
-    }
+from .labeling import (  # noqa: E402,F401
+    labels_path,
+    load_labels,
+    precision_at_k,
+    run_labeling_session,
+    stratified_sample,
+)

@@ -15,8 +15,6 @@ from pipeline.review import (
     ReviewOutcome,
     changed_paths,
     flatten,
-    precision_at_k,
-    run_labeling_session,
     run_review_session,
 )
 
@@ -126,37 +124,10 @@ def test_review_of_a_missing_issue_is_not_an_error(repo):
 
 
 # --------------------------------------------------------------------------
-# Labelling mode and Q1
+# Labelling mode moved to pipeline/labeling.py — see tests/test_labeling.py.
+# What stays here is the full review mode, because Q4's timing depends on it and
+# the labelling rework was not allowed to touch it.
 # --------------------------------------------------------------------------
-
-
-def test_labelling_appends_rows_and_times_the_session(repo):
-    _seed_day(repo)
-    n = run_labeling_session(DAY, top=3, prompt=_answers("k", "k", "d"))
-    assert n == 3
-
-    rows = (repo / "runs" / "labels" / "relevance.jsonl").read_text(encoding="utf-8")
-    assert rows.count("\n") == 3
-    assert '"label": "keep"' in rows
-    assert '"label": "drop"' in rows
-    assert "label_s" in Run.for_date(DAY).metrics.timing
-
-
-def test_precision_at_k_is_computed_from_labels(repo):
-    _seed_day(repo)
-    run_labeling_session(DAY, top=3, prompt=_answers("k", "k", "d"))
-
-    result = precision_at_k(k=10)
-    assert result["labelled_days"] == 1
-    assert result["n_labels"] == 3
-    assert result["precision_at_k"] == round(2 / 3, 4)
-    assert result["by_source"]["arxiv"]["keep"] == 2
-
-
-def test_precision_at_k_reports_absence_rather_than_zero(repo):
-    result = precision_at_k(k=10)
-    assert result["precision_at_k"] is None
-    assert result["n_labels"] == 0
 
 
 # --------------------------------------------------------------------------

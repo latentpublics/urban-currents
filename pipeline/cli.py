@@ -197,9 +197,14 @@ def run(
 def review(
     date_: Optional[str] = DateOpt,
     label: Optional[str] = typer.Option(None, help="Fast labelling mode, e.g. --label relevance"),
-    top: int = typer.Option(30, help="Items to label in labelling mode"),
+    top: int = typer.Option(30, help="Items to label per day (split evenly by source)"),
 ):
-    """Review a day's issue, recording elapsed time and every edited field path."""
+    """Review a day's issue, recording elapsed time and every edited field path.
+
+    With ``--label relevance`` it runs the Q1b labelling pass instead: a
+    stratified sample of the day's candidates, resumable, with a reason on every
+    drop.
+    """
     from .review import run_labeling_session, run_review_session
 
     d = _date(date_)
@@ -207,6 +212,17 @@ def review(
         run_labeling_session(d, facet=label, top=top)
     else:
         run_review_session(d)
+
+
+@app.command()
+def labels(
+    facet: str = typer.Option("relevance", help="Which label file to summarise"),
+    k: int = typer.Option(10, help="k for precision@k"),
+):
+    """Summarise collected labels: precision@k and drop reasons, per source."""
+    from .labeling import precision_at_k
+
+    typer.echo(json.dumps(precision_at_k(facet=facet, k=k), indent=2))
 
 
 @app.command()

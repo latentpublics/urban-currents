@@ -165,7 +165,7 @@ def build_report(out_path: Optional[Path] = None) -> Path:
     gate = load_json(paths.RUNS / "gate_recall.json")
     trainset = load_json(paths.RUNS / "trainset" / "trainset.meta.json")
 
-    from .review import precision_at_k
+    from .labeling import precision_at_k
 
     labels = precision_at_k(k=10)
     costs = cost_summary(runs)
@@ -190,7 +190,14 @@ def build_report(out_path: Optional[Path] = None) -> Path:
 
     auc = (clf or {}).get("metrics", {}).get("auc")
     q1_auc_ok = None if auc is None else auc >= 0.9
-    p_at_10 = labels.get("precision_at_k")
+    # Q1b is per source on purpose (roadmap §2.3). A blended number would hide
+    # which entry path is failing, so the verdict is the weaker of the two.
+    per_source_p = {
+        src: v.get(f"precision_at_{labels.get('k', 10)}")
+        for src, v in (labels.get("by_source") or {}).items()
+    }
+    measured_p = [v for v in per_source_p.values() if v is not None]
+    p_at_10 = min(measured_p) if measured_p else None
     q1_p_ok = None if p_at_10 is None else p_at_10 >= 0.7
 
     median_day = (calib or {}).get("daily_distribution", {}).get("median_per_day")
@@ -213,8 +220,9 @@ def build_report(out_path: Optional[Path] = None) -> Path:
             ["Q", "Question", "Criterion", "Measured", "Verdict"],
             [
                 ["Q1a", "Is the filter usable?", "holdout AUC >= 0.9", _fmt(auc), _verdict(q1_auc_ok)],
-                ["Q1b", "Is the filter usable?", "precision@10 >= 0.7",
-                 _fmt(p_at_10) if p_at_10 is not None else PENDING_HUMAN,
+                ["Q1b", "Is the filter usable?", "precision@10 >= 0.7 (per source)",
+                 ", ".join(f"{s}: {_fmt(v, 3)}" for s, v in per_source_p.items())
+                 if measured_p else PENDING_HUMAN,
                  _verdict(q1_p_ok) if p_at_10 is not None else PENDING_HUMAN],
                 ["Q2", "Is there enough signal for a daily?", "median >= 5 items/day",
                  _fmt(median_day, 1), _verdict(q2_ok)],
@@ -425,6 +433,38 @@ def build_report(out_path: Optional[Path] = None) -> Path:
     A("Embeddings are local (`BAAI/bge-base-en-v1.5` on CPU), so their marginal "
       "cost is zero — which is what makes backfills and retraining free.")
     A("")
+
+    # -- labels -----------------------------------------------------------
+    A("## Q1b labels (roadmap §2.3)")
+    A("")
+    if not labels.get("n_labels"):
+        A("No labels yet. `uc review --label relevance --date …` collects them; "
+          "`uc labels` summarises them.")
+        A("")
+    else:
+        A(f"{labels['n_labels']} labels over {labels['days_labelled']} day(s). "
+          f"{labels['summaries_available']:.0%} of labelled items had a summary "
+          f"on screen.")
+        A("")
+        rows = []
+        for src, v in labels["by_source"].items():
+            rows.append([
+                src, v["n_labels"], v["days"],
+                _fmt(v.get(f"precision_at_{labels['k']}"), 3),
+                _fmt(v["keep_rate"], 3),
+                v["drop_reasons"]["not_urban"],
+                v["drop_reasons"]["not_our_kind"],
+                v["drop_reasons"]["weak"],
+            ])
+        L.extend(_table(
+            ["source", "labels", "days", f"precision@{labels['k']}", "keep rate",
+             "drop: not urban", "drop: not our kind", "drop: weak"], rows))
+        A("")
+        A("**The two drop reasons point at different problems.** *not urban* is a "
+          "classifier error. *not our kind* is a coverage question nothing in the "
+          "pipeline answers yet — it is the training signal for the classifier "
+          "that will replace the journal path's placeholder ranking.")
+        A("")
 
     # -- source mix -------------------------------------------------------
     A("## What actually gets published")

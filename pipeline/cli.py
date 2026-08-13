@@ -341,6 +341,109 @@ def graph():
 
 
 @app.command()
+def promote(
+    date_: Optional[str] = DateOpt,
+    since: Optional[str] = typer.Option(None, help="Only consider issues from this date on"),
+    no_llm: bool = typer.Option(False, "--no-llm", help="Recover abstracts without summarising"),
+):
+    """Retry enrichment for unreadable items and promote any that gain an abstract.
+
+    Published issues are immutable: a past issue's `unreadable` list is never
+    edited. A promoted item joins the next run's candidate pool, the way a
+    preprint that becomes a journal article does.
+    """
+    from .promote import promote as run_promote
+
+    result = run_promote(
+        _date(date_),
+        since=date.fromisoformat(since) if since else None,
+        use_llm=not no_llm,
+    )
+    typer.echo(json.dumps(result, indent=2, ensure_ascii=False))
+
+
+@app.command()
+def citations(
+    rebuild: bool = typer.Option(True, help="Rebuild the reference base first"),
+    neighbours: int = typer.Option(3, help="Top coupled neighbours to sample per item"),
+):
+    """Build the citation layer: reference base, internal cites, coupling.
+
+    All build outputs under `content/graph/`. Nothing here is published or
+    rendered; `runs/coupling_neighbours.json` is a sample for eyeballing quality.
+    """
+    from .graph.citation import (
+        build_coupling,
+        build_reference_base,
+        internal_citation_edges,
+        top_neighbours,
+    )
+
+    if rebuild:
+        typer.echo(json.dumps({"references": build_reference_base()}))
+    internal = internal_citation_edges()
+    coupling = build_coupling()
+    typer.echo(json.dumps({"cites_internal": len(internal), "coupling": coupling}))
+
+    out = paths.RUNS / "coupling_neighbours.json"
+    out.write_text(
+        json.dumps(top_neighbours(k=neighbours), indent=2, ensure_ascii=False, sort_keys=True),
+        encoding="utf-8",
+        newline="\n",
+    )
+    typer.echo(f"[OK] citations — neighbours sample: {out}")
+
+
+@app.command()
+def canon(
+    top: Optional[int] = typer.Option(None, help="How many in-scope candidates to keep"),
+):
+    """Rank the works this archive keeps citing. Selection only, never published."""
+    from .graph.canon import build_candidates
+
+    result = build_candidates(**({"top_n": top} if top else {}))
+    typer.echo(json.dumps(
+        {k: v for k, v in result.items() if k not in ("candidates", "out_of_scope_examples")},
+        indent=2,
+    ))
+
+
+@app.command()
+def centrality(
+    metapath: str = typer.Option("method-method", help="method-method | data-method | researcher-researcher"),
+    window: int = typer.Option(90, help="Days of archive to include"),
+    min_degree: int = typer.Option(3, help="Drop nodes below this degree first"),
+    stability_check: bool = typer.Option(True, "--stability/--no-stability"),
+):
+    """Betweenness and degree over a metapath projection. Analysis only."""
+    from .graph.centrality import (
+        centrality as compute,
+        project,
+        researcher_projection,
+        stability as measure_stability,
+    )
+
+    weights = (
+        researcher_projection(window)
+        if metapath == "researcher-researcher"
+        else project(metapath, days=window)
+    )
+    result = compute(weights, min_degree=min_degree)
+    payload = {
+        "metapath": metapath,
+        "window_days": window,
+        "nodes": result["nodes"],
+        "edges": result["edges"],
+        "nodes_after_floor": result.get("nodes_after_floor"),
+        "betweenness_top": result["betweenness"][:10],
+        "degree_top": result["degree"][:10],
+    }
+    if stability_check:
+        payload["stability"] = measure_stability(metapath, min_degree=min_degree)
+    typer.echo(json.dumps(payload, indent=2, ensure_ascii=False))
+
+
+@app.command()
 def backfill(
     days: int = typer.Option(90, help="Days to look back from --date"),
     date_: Optional[str] = DateOpt,

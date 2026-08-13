@@ -108,3 +108,22 @@ gate:
 
 review:
   minutes_saved_per_item: 7
+
+citation:
+  # Bibliographic coupling: two papers sharing references. Computable the day
+  # both appear, which is the point — co-citation needs the field to have
+  # reacted, and this does not.
+  #
+  # Minimum shared references to record a pair. One or two shared references is
+  # mostly coincidence in a field with a common canon; the measured distribution
+  # is in the phase 0d report.
+  min_shared_references: 3
+  # Coupling over the whole archive is O(n^2) and the archive grows daily.
+  # Pairs are only computed within this many days of each other, which is also
+  # the honest scope: "read this alongside" is a claim about what is current.
+  coupling_window_days: 90
+  # Canon candidates: how many of the most-cited works to resolve and keep.
+  canon_top_n: 300
+  # A citation from a recent item counts for more. Half-life in days: an item
+  # published a year ago contributes about a quarter of a fresh one.
+  canon_half_life_days: 180

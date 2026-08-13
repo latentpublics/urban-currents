@@ -35,6 +35,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from pipeline.collectors.abstracts import abstract_source_for_publisher  # noqa: E402
 from pipeline.collectors.openalex import configure_pyalex  # noqa: E402
 from pipeline.config import cfg  # noqa: E402
 from pipeline.paths import VOCAB  # noqa: E402
@@ -302,6 +303,9 @@ def build(since: str, top: int, out_path: Path) -> int:
         lines.append(f"    name: {_yaml_str(r['name'])}")
         lines.append(f"    issn_l: {_yaml_str(r['issn_l'])}")
         lines.append(f"    publisher: {_yaml_str(r['publisher'])}")
+        # Which route reaches this publisher's abstracts. A routing field, not
+        # an exclusion rule — see scripts/annotate_journal_abstract_source.py.
+        lines.append(f"    abstract_source: \"{abstract_source_for_publisher(r['publisher'])}\"")
         lines.append(f"    works_count: {r['works_count']}")
         lines.append(f"    subfield_works: {r['subfield_works']}")
         lines.append(f"    subfields: [{', '.join(chr(34) + s + chr(34) for s in r['subfields'])}]")

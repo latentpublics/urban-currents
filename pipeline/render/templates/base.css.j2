@@ -140,3 +140,56 @@ body {
   font-size: 0.75rem;
   color: var(--uc-quiet);
 }
+
+/* `Also published today` — deliberately low-weight. These are records we could
+   not read, so the section must not compete with the cards for attention; it
+   sits after them, smaller, in the soft ink. */
+.uc-also {
+  margin-top: 3rem;
+  border-top: 1px solid var(--uc-line);
+  padding-top: 1rem;
+}
+.uc-also__title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--uc-ink-soft);
+  margin: 0 0 0.4rem;
+}
+.uc-also__note {
+  font-size: 0.82rem;
+  color: var(--uc-quiet);
+  margin: 0 0 0.9rem;
+  max-width: 46rem;
+}
+.uc-also__list { list-style: none; padding: 0; margin: 0; }
+.uc-also__item {
+  font-size: 0.88rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--uc-line);
+}
+.uc-also__item:last-child { border-bottom: 0; }
+.uc-also__item-title { display: block; color: var(--uc-ink); }
+.uc-also__item-title a { color: var(--uc-ink); text-decoration: none; }
+.uc-also__item-title a:hover { text-decoration: underline; }
+.uc-also__byline {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--uc-ink-soft);
+  margin-top: 0.15rem;
+}
+.uc-also__sep { padding: 0 0.35rem; color: var(--uc-quiet); }
+.uc-also__tags { display: block; font-size: 0.75rem; margin-top: 0.2rem; }
+.uc-tag--topic { color: var(--uc-ink-soft); }
+/* Matched against the title alone, so it is shown as weaker evidence than a
+   tag drawn from a full record. */
+.uc-tag--from-title { color: var(--uc-quiet); font-style: italic; }
+
+.uc-scanmeta__unreadable { color: var(--uc-quiet); }
+
+.uc-attribution {
+  margin-top: 0.8rem;
+  font-size: 0.72rem;
+  color: var(--uc-quiet);
+  max-width: 46rem;
+}

@@ -65,6 +65,47 @@ PUBLISHER_BY_PREFIX = {
 }
 
 
+# Which route can reach a publisher's abstracts, keyed by the publisher name
+# OpenAlex reports. Percentages are Crossref deposit rates for current articles,
+# measured 2026-08-13 (docs/abstract-sources-and-attribution.md §1).
+#
+# This is a **routing** field, not an exclusion rule. A journal whose abstracts
+# we cannot get stays on the whitelist and its articles still publish, in
+# `Also published today`. Reviewing the whitelist now has two axes — is this
+# urban research, and can we read it — and they are answered separately.
+_ABSTRACT_SOURCE_BY_PUBLISHER = {
+    "elsevier": "none",             # 4.84%, and the terms forbid the rest
+    "taylor & francis": "none",     # 0.065%, and no API exists
+    "informa": "none",              # Taylor & Francis' parent
+    "ieee": "none",                 # 1.07%, terms forbid LLM processing
+    "american society of civil engineers": "none",   # 3.09%
+    "springer": "springer_api",     # 24.6% via Crossref, full corpus via its own API
+    "nature": "springer_api",
+    "biomed central": "springer_api",
+    "wiley": "crossref",            # 66.5%
+    "sage": "crossref",             # 76.5%
+    "frontiers": "crossref",        # 90.6%
+    "multidisciplinary digital publishing institute": "crossref",  # MDPI, 98.2%
+    "mdpi": "crossref",
+}
+
+
+def abstract_source_for_publisher(publisher: Optional[str]) -> str:
+    """Best route to this publisher's abstracts, or `openalex` if it already has them.
+
+    `openalex` is the default because the publishers that withdrew are the
+    exception; assuming a withdrawal we have not measured would understate
+    coverage and send needless requests.
+    """
+    if not publisher:
+        return "openalex"
+    name = publisher.lower()
+    for needle, source in _ABSTRACT_SOURCE_BY_PUBLISHER.items():
+        if needle in name:
+            return source
+    return "openalex"
+
+
 def doi_prefix(item: Item) -> Optional[str]:
     doi = item.ids.doi
     return doi.split("/", 1)[0] if doi and "/" in doi else None

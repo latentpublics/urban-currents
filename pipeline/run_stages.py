@@ -14,6 +14,7 @@ from datetime import date
 from typing import Optional
 
 from . import store
+from .collectors.abstracts import publisher_of
 from .config import cfg
 from .dedup.merge import merge_candidates
 from .filters.classifier import score_items
@@ -309,19 +310,17 @@ def journal_rank_score(item: Item) -> float:
     not our kind") in `uc review --label relevance` is being collected precisely
     to train the classifier that belongs here.
     """
-    # An item with no abstract cannot be summarised, so its card carries a title
-    # and nothing else. Measured on the five prepared days: 5-10 of 24 published
-    # cards were in that state, all journal-side (several Elsevier titles expose
-    # no abstract to OpenAlex). Rank them last rather than dropping them — the
-    # bibliography is still a real record, and whether such an item should
-    # publish at all is a product decision, not this function's to make.
-    if not (item.bibliography.abstract or "").strip():
-        return -1.0
-
     c = item.scores.components
     return round(
         0.5 * c.artifact_completeness + 0.3 * c.novelty + 0.2 * c.source_multiplicity, 4
     )
+
+
+UNREADABLE_STAGE = "unreadable"
+
+
+def has_abstract(item: Item) -> bool:
+    return bool((item.bibliography.abstract or "").strip())
 
 
 def fill_slots(
@@ -333,9 +332,14 @@ def fill_slots(
     their scores. `stage_select` uses it to publish a day; the backfill uses it
     to work out which of a day's candidates *would* have published, which is the
     population the quiet-day threshold is calibrated on. One rule, one place.
+
+    An item with no abstract is not eligible for a journal slot. Its card would
+    be a title and nothing else, and it publishes in `Also published today`
+    instead. Enforced here rather than in `stage_select` so the backfill's idea
+    of what would publish keeps matching what does.
     """
     journal_pool = sorted(
-        (it for it in items if _is_whitelist_journal(it)),
+        (it for it in items if _is_whitelist_journal(it) and has_abstract(it)),
         key=lambda it: (-journal_rank_score(it), it.work_key),
     )
     arxiv_pool = sorted(
@@ -388,7 +392,20 @@ def stage_select(
         journal_slots = int(top_n) // 2
         arxiv_slots = int(top_n) - journal_slots
 
-    journal_pool = [it for it in items if _is_whitelist_journal(it)]
+    # An item no source could give an abstract for cannot be summarised, so its
+    # card would carry a title and nothing else. Measured on the five prepared
+    # days: 5-10 of 24 published cards were in that state. They are not dropped
+    # and not ranked last — they leave the slot competition entirely and publish
+    # in `Also published today`, where the facts we do have are stated and
+    # nothing is invented. Ranking them last was the earlier half-measure; two
+    # mechanisms for one decision is one too many.
+    unreadable = [
+        it for it in items if _is_whitelist_journal(it) and not has_abstract(it)
+    ]
+    write_stage(run, UNREADABLE_STAGE, unreadable)
+    run.count("unreadable", len(unreadable))
+
+    journal_pool = [it for it in items if _is_whitelist_journal(it) and has_abstract(it)]
     arxiv_pool = [
         it for it in items if not _is_whitelist_journal(it) and it.scores.relevance >= thr
     ]
@@ -547,6 +564,24 @@ def stage_issue(run: Run, d: date) -> Issue:
     for it in publish:
         store.save_item(it, today=d)
 
+    # `Also published today` (P3). These appeared in a tracked journal and no
+    # source could give us an abstract, so no card can be written about them.
+    # They are stored as ordinary Items — same work_key, no summary — so that
+    # the day an abstract turns up, the same record is promoted to a real card
+    # rather than published twice. `published_index` reads `issue.items` only,
+    # which is what makes that promotion possible.
+    unreadable = [
+        it for it in read_stage(run, UNREADABLE_STAGE)
+        if not already.get(it.work_key)
+    ]
+    for it in unreadable:
+        store.save_item(it, today=d)
+
+    by_publisher: dict[str, int] = {}
+    for it in unreadable:
+        name = publisher_of(it)
+        by_publisher[name] = by_publisher.get(name, 0) + 1
+
     headline_item = pick_headline(publish)
     scan = ScanMeta(
         arxiv_categories=len(cfg("arxiv.categories", []) or []),
@@ -556,6 +591,8 @@ def stage_issue(run: Run, d: date) -> Issue:
         candidates_after_gate=int(run.metrics.counts.after_gate),
         items_published=len(publish),
         minutes_saved_estimate=len(publish) * int(cfg("review.minutes_saved_per_item", 7)),
+        unreadable_count=len(unreadable),
+        unreadable_by_publisher=dict(sorted(by_publisher.items())),
     )
     issue = Issue(
         date=d,
@@ -567,11 +604,13 @@ def stage_issue(run: Run, d: date) -> Issue:
         quiet_day=headline_item is None,
         scan_meta=scan,
         items=sorted(it.work_key for it in publish),
+        unreadable=sorted(it.work_key for it in unreadable),
         status_changes=status_changes,
         run_id=run.run_id,
     )
     store.save_issue(issue)
     run.count("published", len(publish))
+    run.count("unreadable_published", len(unreadable))
     write_stage(run, "issue", publish)
     run.stage("issue", "OK")
     run.save()
@@ -594,7 +633,10 @@ def stage_preview(run: Run, d: date):
     if issue is None:
         raise StageSkipped(f"no issue for {d}; run `uc issue --date {d}` first")
     items = [it for it in (store.load_item(k) for k in issue.items) if it is not None]
-    out = write_preview(issue, items, run.dir / "preview.html")
+    unreadable = [
+        it for it in (store.load_item(k) for k in issue.unreadable) if it is not None
+    ]
+    out = write_preview(issue, items, run.dir / "preview.html", unreadable=unreadable)
     run.stage("preview", "OK")
     run.save()
     return out

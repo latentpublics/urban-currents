@@ -93,12 +93,65 @@ def build_card(item: Item) -> dict:
     }
 
 
+def build_unreadable_row(item: Item) -> dict:
+    """One line of `Also published today` — facts only (P3).
+
+    No LLM has touched this item and none will: it has no abstract, so there is
+    nothing to summarise and any sentence about it would be invented. What can
+    be stated is what the bibliography already says, plus the controlled-
+    vocabulary terms that match its **title**.
+
+    Those terms are computed here rather than written into `entities`. A tag
+    inferred from a title alone is a display affordance, not evidence; storing
+    it would feed the novelty term and the entity graph from a source we have
+    said is not good enough to summarise from.
+    """
+    from ..linking.vocab_match import Vocabulary, scan_text
+
+    authors = item.bibliography.authors
+    names = [a.name for a in authors[:3]]
+    if len(authors) > 3:
+        names.append("et al.")
+
+    # First author's institution: the one affiliation a reader uses to place a
+    # paper at a glance. Absent for many records, and absent is fine.
+    affiliation = None
+    if authors and authors[0].institutions:
+        affiliation = authors[0].institutions[0].name
+
+    title = item.bibliography.title or ""
+    tags: list[str] = []
+    for facet in ("methods", "data", "tools"):
+        try:
+            vocab = Vocabulary.load(facet)
+        except Exception:  # noqa: BLE001 - a missing vocab file is not fatal here
+            continue
+        for ref in scan_text(title, facet, vocab):
+            if ref.label not in tags:
+                tags.append(ref.label)
+
+    doi = item.ids.doi
+    return {
+        "work_key": item.work_key,
+        "title": title,
+        "url": item.bibliography.primary_location.landing_page_url
+        or (f"https://doi.org/{doi}" if doi else None),
+        "authors": ", ".join(names),
+        "affiliation": affiliation,
+        "journal": item.bibliography.primary_location.source_name,
+        "topics": [t.label for t in item.entities.topics[:3]],
+        "title_terms": tags[:4],
+    }
+
+
 def _status_change_text(change) -> str:
     journal = f" in {change.journal}" if change.journal else ""
     return f"{change.work_key}: {change.from_} → {change.to}{journal}"
 
 
-def render_issue(issue: Issue, items: Iterable[Item]) -> str:
+def render_issue(
+    issue: Issue, items: Iterable[Item], unreadable: Iterable[Item] = ()
+) -> str:
     by_key = {it.work_key: it for it in items}
     ordered = [by_key[k] for k in issue.items if k in by_key]
     # Headline first, then descending headline score.
@@ -111,6 +164,7 @@ def render_issue(issue: Issue, items: Iterable[Item]) -> str:
         issue=issue,
         scan_meta=issue.scan_meta,
         cards=[build_card(it) for it in ordered],
+        unreadable=[build_unreadable_row(it) for it in unreadable],
         status_changes=[
             {"work_key": c.work_key, "text": _status_change_text(c)}
             for c in issue.status_changes
@@ -121,8 +175,15 @@ def render_issue(issue: Issue, items: Iterable[Item]) -> str:
     )
 
 
-def write_preview(issue: Issue, items: Iterable[Item], out_path: Path) -> Path:
+def write_preview(
+    issue: Issue,
+    items: Iterable[Item],
+    out_path: Path,
+    unreadable: Iterable[Item] = (),
+) -> Path:
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(render_issue(issue, items), encoding="utf-8", newline="\n")
+    out_path.write_text(
+        render_issue(issue, items, unreadable), encoding="utf-8", newline="\n"
+    )
     return out_path
 

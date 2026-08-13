@@ -126,13 +126,22 @@ def group_sources_for_subfield(pyalex, subfield: str, since: str) -> dict[str, i
         )
         .group_by("primary_location.source.id")
     )
-    groups = q.get(per_page=200)
+    # Paginated. A single `get(per_page=200)` returns the first 200 groups and
+    # silently stops, so any journal ranked below 200th *within a subfield* was
+    # invisible to this builder — which is how Environment and Planning B:
+    # Planning and Design never entered the candidate pool at all, and how
+    # Environment and Planning A and the Journal of Urban Design entered it too
+    # far down to survive the row cap below. The subfields return roughly 1,600
+    # groups each, so the first page was about an eighth of the field.
     out: dict[str, int] = {}
-    for g in groups:
-        key = (g.get("key") or "").rsplit("/", 1)[-1]
-        if key and key.startswith("S"):
-            out[key] = int(g.get("count") or 0)
-    return out, float((getattr(groups, "meta", {}) or {}).get("cost_usd") or 0.0)
+    cost = 0.0
+    for page in q.paginate(per_page=200, n_max=None):
+        cost += float((getattr(page, "meta", {}) or {}).get("cost_usd") or 0.0)
+        for g in page:
+            key = (g.get("key") or "").rsplit("/", 1)[-1]
+            if key and key.startswith("S"):
+                out[key] = int(g.get("count") or 0)
+    return out, cost
 
 
 def fetch_sources(pyalex, ids: list[str]) -> dict[str, dict]:
@@ -243,7 +252,12 @@ def build(since: str, top: int, out_path: Path) -> int:
                 "manual": on_hand_list,
             }
         )
-        if len(rows) >= top:
+        # `top` caps the list, not the *examination*. A source that fails the
+        # concentration test still belongs in the file marked `include: false`,
+        # because the review is over what was considered as much as over what
+        # was kept — and breaking here meant sources past the cap were never
+        # even written down as rejected.
+        if sum(1 for r in rows if r["include"]) >= top:
             break
 
     have = {r["name"].lower().strip() for r in rows}

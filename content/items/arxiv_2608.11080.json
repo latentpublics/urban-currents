@@ -74,11 +74,67 @@
     ],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-3350-2457",
+        "label": "Shutong Zhu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146995994",
+        "label": "Tianxing Wu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146983705",
+        "label": "Runfeng Liu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146958475",
+        "label": "Yuang Gu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147023537",
+        "label": "Xuan He"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147025398",
+        "label": "Yuan Zhu"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.4494,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.1208,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.1004,
+        "subfield": "2203"
+      }
+    ]
   },
   "first_published": "2026-08-11",
   "graph": {
@@ -89,7 +145,7 @@
   "ids": {
     "arxiv": "2608.11080",
     "doi": "10.48550/arxiv.2608.11080",
-    "openalex": null,
+    "openalex": "W7202250724",
     "pmid": null
   },
   "lens": null,
@@ -98,7 +154,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004866,
     "llm": {

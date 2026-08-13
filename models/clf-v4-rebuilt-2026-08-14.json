@@ -1,0 +1,166 @@
+{
+  "embedding_dim": 768,
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "eval_meta": {
+    "negatives": 600,
+    "positive_definition": "published in a whitelist journal AND has an arXiv location",
+    "positives": 200,
+    "seed": 42,
+    "since": "2020-01-01",
+    "strict_pool_available": 224,
+    "until": "2026-06-30"
+  },
+  "headline_task": "arxiv_urban_vs_arxiv_other",
+  "journal_sanity_check": {
+    "mean_proba": 0.9539,
+    "n": 400,
+    "note": "in-sample sanity check, not a performance claim",
+    "share_above_threshold": 0.9975
+  },
+  "metrics": {
+    "at_threshold": {
+      "0.35": {
+        "flagged_rate": 0.29,
+        "precision": 0.8448,
+        "recall": 0.98
+      }
+    },
+    "auc": 0.9939,
+    "average_precision": 0.9834,
+    "mean_proba_negative": 0.0999,
+    "mean_proba_positive": 0.89,
+    "n": 800,
+    "n_positive": 200,
+    "sweep": [
+      {
+        "flagged_rate": 0.4587,
+        "precision": 0.5422,
+        "recall": 0.995,
+        "threshold": 0.1
+      },
+      {
+        "flagged_rate": 0.3837,
+        "precision": 0.6482,
+        "recall": 0.995,
+        "threshold": 0.15
+      },
+      {
+        "flagged_rate": 0.3412,
+        "precision": 0.7289,
+        "recall": 0.995,
+        "threshold": 0.2
+      },
+      {
+        "flagged_rate": 0.32,
+        "precision": 0.7773,
+        "recall": 0.995,
+        "threshold": 0.25
+      },
+      {
+        "flagged_rate": 0.3088,
+        "precision": 0.7976,
+        "recall": 0.985,
+        "threshold": 0.3
+      },
+      {
+        "flagged_rate": 0.29,
+        "precision": 0.8448,
+        "recall": 0.98,
+        "threshold": 0.35
+      },
+      {
+        "flagged_rate": 0.2838,
+        "precision": 0.8634,
+        "recall": 0.98,
+        "threshold": 0.4
+      },
+      {
+        "flagged_rate": 0.27,
+        "precision": 0.8981,
+        "recall": 0.97,
+        "threshold": 0.45
+      },
+      {
+        "flagged_rate": 0.26,
+        "precision": 0.9231,
+        "recall": 0.96,
+        "threshold": 0.5
+      },
+      {
+        "flagged_rate": 0.2462,
+        "precision": 0.9391,
+        "recall": 0.925,
+        "threshold": 0.55
+      },
+      {
+        "flagged_rate": 0.2387,
+        "precision": 0.9529,
+        "recall": 0.91,
+        "threshold": 0.6
+      },
+      {
+        "flagged_rate": 0.2325,
+        "precision": 0.9677,
+        "recall": 0.9,
+        "threshold": 0.65
+      },
+      {
+        "flagged_rate": 0.2313,
+        "precision": 0.9676,
+        "recall": 0.895,
+        "threshold": 0.7
+      },
+      {
+        "flagged_rate": 0.2213,
+        "precision": 0.9774,
+        "recall": 0.865,
+        "threshold": 0.75
+      },
+      {
+        "flagged_rate": 0.215,
+        "precision": 0.9767,
+        "recall": 0.84,
+        "threshold": 0.8
+      },
+      {
+        "flagged_rate": 0.2013,
+        "precision": 0.9876,
+        "recall": 0.795,
+        "threshold": 0.85
+      },
+      {
+        "flagged_rate": 0.1825,
+        "precision": 0.9863,
+        "recall": 0.72,
+        "threshold": 0.9
+      }
+    ]
+  },
+  "n_train": 7045,
+  "note": "Trained from journals.rebuilt.v2.yaml (166 -> 164 included). Comparison only; classifier.model_version is unchanged.",
+  "random_state": 42,
+  "threshold": 0.35,
+  "trained_at": "2026-08-14",
+  "trainset_meta": {
+    "arxiv_positive_total": 727,
+    "arxiv_subfields": "3322|3313",
+    "counts": {
+      "arxiv_other": 4000,
+      "arxiv_strict": 37,
+      "arxiv_subfield": 690,
+      "journal": 2318,
+      "total": 7045
+    },
+    "eval_ids_excluded": 800,
+    "note": "strict (journal-accepted arXiv) + narrowed subfields, journal positives included",
+    "openalex_cost_usd": 0.0096,
+    "seed": 42,
+    "since": "2024-01-01",
+    "strict_share_of_arxiv_positives": 0.051,
+    "until": "2026-06-30",
+    "uses_strict_definition": true,
+    "variant": "v2"
+  },
+  "variant": "v4-rebuilt",
+  "version": "clf-v4-rebuilt-2026-08-14"
+}

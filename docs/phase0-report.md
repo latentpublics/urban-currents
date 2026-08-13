@@ -1,6 +1,6 @@
 # Urban Currents — Phase 0 report
 
-Generated 2026-08-13T14:35:53+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
+Generated 2026-08-13T22:17:00+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
 
 ## The four questions (PRD §1)
 
@@ -187,23 +187,23 @@ Current `config/scoring.yaml` threshold: 0.444 (source: backfill).
 | days of runs | 6 |
 | items published | 120 |
 | items summarised | 119 |
-| LLM (daily runs) | $0.9625 |
-| OpenAlex (daily runs) | $0.0195 |
+| LLM (daily runs) | $0.9816 |
+| OpenAlex (daily runs) | $0.0201 |
 | embeddings (local) | $0.0 |
-| total (daily runs) | $0.982 |
-| per published item | $0.00818 |
-| monthly estimate | $4.91 |
-| tokens in / out (all tasks) | 1120335 / 157949 |
+| total (daily runs) | $1.0017 |
+| per published item | $0.00835 |
+| monthly estimate | $5.009 |
+| tokens in / out (all tasks) | 1215191 / 170967 |
 
 **Per task, cumulative** — every LLM call ever made from this repository, including calls outside a daily run (labelling preparation, re-runs against a cold cache). The daily-run figures above are a subset of this, which is why they are smaller:
 
 | task | calls | cost |
 |---|---|---|
-| extract | 467 | $0.954846 |
-| summarize | 269 | $0.940179 |
-| **total** | 738 | **$1.902311** |
+| extract | 471 | $0.961475 |
+| summarize | 273 | $0.952713 |
+| **total** | 746 | **$1.921474** |
 
-Tokens: 708713 in, 93248 out, 0 thinking. Summarize and extract run one call each per item (D8 was reverted in N1), so a per-item token figure divided by the published count describes neither task on its own.
+Tokens: 715825 in, 94192 out, 0 thinking. Summarize and extract run one call each per item (D8 was reverted in N1), so a per-item token figure divided by the published count describes neither task on its own.
 
 Embeddings are local (`BAAI/bge-base-en-v1.5` on CPU), so their marginal cost is zero — which is what makes backfills and retraining free.
 
@@ -229,20 +229,20 @@ Where the depth holding 0.7 is below the slot count, the path is being asked for
 
 Across 5 issues, **120 items were `published`** — 63 from arXiv and 57 from whitelist journals.
 
-`content/items/` holds 221 files, 101 more than the issues reference. Those are items an earlier selection rule published and the current one does not; they are still part of the archive novelty is measured against, which is why the difference is counted rather than rounded away.
+`content/items/` holds 222 files, 102 more than the issues reference. Those are items an earlier selection rule published and the current one does not; they are still part of the archive novelty is measured against, which is why the difference is counted rather than rounded away.
 
 The split is structural, not a quota. Each entry path owns its slots — journal 12, arXiv 12 — and a path that cannot fill its own lends them to the other, which the run records. The earlier `classifier.arxiv_min_share` quota is gone (N4): it was treating a symptom, since a whitelist article scores ~0.99 nearly by construction and the classifier could not rank within that path at all. Measured on 2026-08-11 under the old single-classifier design: 23 of 24 slots went to journal articles.
 
 ## What we could not read
 
-**97 items across 5 issues had no abstract from any source** and published in `Also published today` instead of as cards — 97/217 of everything that reached an issue. Springer Nature withdrew its non-OA abstracts from OpenAlex in 2022 and Elsevier followed in 2024; Crossref and Springer's own API are asked for what they can still supply, and what none of them has cannot be summarised, because the abstract is the only evidence a summary is allowed to use.
+**91 items across 5 issues had no abstract from any source** and published in `Also published today` instead of as cards — 91/211 of everything that reached an issue. Springer Nature withdrew its non-OA abstracts from OpenAlex in 2022 and Elsevier followed in 2024; Crossref and Springer's own API are asked for what they can still supply, and what none of them has cannot be summarised, because the abstract is the only evidence a summary is allowed to use.
 
 | publisher | `unreadable` items |
 |---|---|
-| Elsevier | 57 |
-| Copernicus | 12 |
-| Taylor & Francis | 11 |
+| Elsevier | 58 |
 | Springer | 9 |
+| Copernicus | 9 |
+| Taylor & Francis | 7 |
 | Sage | 3 |
 | Springer Nature | 3 |
 | Taylor & Francis (Routledge) | 2 |
@@ -253,13 +253,13 @@ This is the one blind spot the pipeline can measure exactly, and the count is st
 
 | thing | count |
 |---|---|
-| items | 221 |
-| items with a summary | 124 |
+| items | 222 |
+| items with a summary | 128 |
 | issues | 5 |
 | quiet days | 0 |
-| items with an OpenAlex ID | 199 |
-| items with referenced_works | 135 |
-| published (journal) items | 157 |
+| items with an OpenAlex ID | 205 |
+| items with referenced_works | 136 |
+| published (journal) items | 158 |
 
 ## Runs
 
@@ -269,7 +269,7 @@ This is the one blind spot the pipeline can measure exactly, and the count is st
 | 2026-08-06 | 381 | 200 | 24 | 24 | 24 | enrich.springer |
 | 2026-08-07 | 384 | 210 | 24 | 24 | 24 | enrich.springer |
 | 2026-08-10 | 452 | 232 | 24 | 23 | 24 | enrich.springer |
-| 2026-08-11 | 403 | 206 | 24 | 24 | 24 | enrich.springer |
+| 2026-08-11 | 403 | 208 | 24 | 24 | 24 | enrich.springer |
 | 2026-08-13 | 0 | 0 | 0 | 0 | 0 | - |
 
 ## What this report does not know

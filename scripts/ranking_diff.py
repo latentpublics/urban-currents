@@ -87,6 +87,7 @@ def main() -> None:
             "kept": row["label"] == "keep",
             "venue_prior": prior.get(venue),
             "references": aff.get("references", 0),
+            "foundation_hits": aff.get("foundation_hits", 0),
             **{k: aff.get(k) for k in SIGNALS},
         })
 

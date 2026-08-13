@@ -13,9 +13,9 @@
 # REVIEW:   1. entries with `manual: true` — young journals a count ranking misses
 # REVIEW:   2. `include: false` entries with concentration near the threshold
 # REVIEW:   3. anything included that is not urban research
-# REVIEW: currently 164 of 370 journals are included.
+# REVIEW: currently 161 of 370 journals are included.
 #
-generated_at: 2026-08-13T21:49:57+00:00
+generated_at: 2026-08-13T21:55:00+00:00
 generated_since: 2023-01-01
 subfields:
   - id: "3322"
@@ -334,6 +334,7 @@ sources:
     subfields: ["3305", "3322"]
     concentration: 0.579
     english_share: 0.52
+    title_script: "diacritic"  # REVIEW: language
     include: true  # auto
   - id: "S158923391"
     name: "Journal of Urban Affairs"
@@ -459,6 +460,7 @@ sources:
     subfields: ["3305", "3313", "3322"]
     concentration: 0.0362
     english_share: 1.0
+    title_script: "diacritic"  # REVIEW: language
     include: false  # REVIEW
   - id: "S153445956"
     name: "Urban Geography"
@@ -1290,6 +1292,7 @@ sources:
     subfields: ["3305", "3313", "3322"]
     concentration: 0.0259
     english_share: 0.8611
+    title_script: "diacritic"  # REVIEW: language
     include: false  # REVIEW
   - id: "S2764805623"
     name: "Japanese Journal of Human Geography"
@@ -1346,6 +1349,7 @@ sources:
     subfields: ["3305", "3313", "3322"]
     concentration: 0.0
     english_share: 0.3681
+    title_script: "diacritic"  # REVIEW: language
     include: false  # REVIEW
   - id: "S4210237828"
     name: "Juridical scientific and electronic journal"
@@ -1787,6 +1791,7 @@ sources:
     subfields: ["3305", "3313", "3322"]
     concentration: 0.1825
     english_share: 1.0
+    title_script: "non_latin"  # REVIEW: language
     include: false  # REVIEW
   - id: "S35062419"
     name: "Journal of Urban Design"
@@ -1952,6 +1957,7 @@ sources:
     subfields: ["3305"]
     concentration: 0.2773
     english_share: 1.0
+    title_script: "diacritic"  # REVIEW: language
     include: true  # auto
   - id: "S160765276"
     name: "Imago Mundi"
@@ -2074,6 +2080,7 @@ sources:
     subfields: ["3305", "3313", "3322"]
     concentration: 0.5487
     english_share: 0.898
+    title_script: "diacritic"  # REVIEW: language
     include: true  # auto
   - id: "S171183513"
     name: "Current Issues in Tourism"
@@ -2151,6 +2158,7 @@ sources:
     subfields: ["3313", "3322"]
     concentration: 0.6196
     english_share: 0.35
+    title_script: "diacritic"  # REVIEW: language
     include: false  # auto
   - id: "S4210202867"
     name: "Środowisko Mieszkaniowe"
@@ -2162,6 +2170,7 @@ sources:
     subfields: ["3322"]
     concentration: 0.6152
     english_share: 1.0
+    title_script: "diacritic"  # REVIEW: language
     include: true  # auto
   - id: "S4210236818"
     name: "Dialogues in Urban Research"
@@ -2404,6 +2413,7 @@ sources:
     subfields: ["3313"]
     concentration: 0.2221
     english_share: 1.0
+    title_script: "non_latin"  # REVIEW: language
     include: false  # REVIEW
   - id: "S132076093"
     name: "Planning Theory & Practice"
@@ -2470,6 +2480,7 @@ sources:
     subfields: ["3305", "3313", "3322"]
     concentration: 0.1837
     english_share: 1.0
+    title_script: "non_latin"  # REVIEW: language
     include: false  # REVIEW
   - id: "S43295729"
     name: "Remote Sensing"
@@ -2624,6 +2635,7 @@ sources:
     subfields: ["3305", "3313", "3322"]
     concentration: 0.0645
     english_share: 1.0
+    title_script: "non_latin"  # REVIEW: language
     include: false  # REVIEW
   - id: "S2764743818"
     name: "Journal of Archaeological Science Reports"
@@ -3375,7 +3387,8 @@ sources:
     subfields: ["3305", "3322"]
     concentration: 0.2681
     english_share: 1.0
-    include: true  # auto
+    title_script: "non_latin"  # REVIEW: language
+    include: false  # auto
   - id: "S4210223082"
     name: "Asian Transport Studies"
     issn_l: "2185-5560"
@@ -3430,6 +3443,7 @@ sources:
     subfields: ["3305"]
     concentration: 0.2428
     english_share: 1.0
+    title_script: "diacritic"  # REVIEW: language
     include: false  # REVIEW
   - id: "S196821226"
     name: "Computers & Industrial Engineering"
@@ -3518,6 +3532,7 @@ sources:
     subfields: ["3305", "3322"]
     concentration: 0.4816
     english_share: 0.6829
+    title_script: "diacritic"  # REVIEW: language
     include: true  # auto
   - id: "S4210221254"
     name: "Földrajzi Közlemények"
@@ -3529,6 +3544,7 @@ sources:
     subfields: ["3305", "3322"]
     concentration: 0.6304
     english_share: 0.5833
+    title_script: "diacritic"  # REVIEW: language
     include: true  # auto
   - id: "S4306516388"
     name: "Journal of urban regeneration and renewal"
@@ -3595,7 +3611,8 @@ sources:
     subfields: ["3305", "3313", "3322"]
     concentration: 0.2557
     english_share: 0.6429
-    include: true  # auto
+    title_script: "non_latin"  # REVIEW: language
+    include: false  # auto
   - id: "S153485742"
     name: "Socio-Economic Planning Sciences"
     issn_l: "0038-0121"
@@ -3650,6 +3667,7 @@ sources:
     subfields: ["3313", "3322"]
     concentration: 0.1031
     english_share: 1.0
+    title_script: "non_latin"  # REVIEW: language
     include: false  # REVIEW
   - id: "S4210197898"
     name: "EKONOMIKA I UPRAVLENIE PROBLEMY RESHENIYA"
@@ -3694,6 +3712,7 @@ sources:
     subfields: ["3313", "3322"]
     concentration: 0.2332
     english_share: 0.3699
+    title_script: "diacritic"  # REVIEW: language
     include: false  # REVIEW
   - id: "S4210238804"
     name: "Frontiers in Business Economics and Management"
@@ -3892,7 +3911,8 @@ sources:
     subfields: ["3322"]
     concentration: 0.2723
     english_share: 0.5909
-    include: true  # auto
+    title_script: "non_latin"  # REVIEW: language
+    include: false  # auto
   - id: "S4210206754"
     name: "International Journal of Innovative Technologies in Social Science"
     issn_l: "2544-9338"
@@ -4002,6 +4022,7 @@ sources:
     subfields: ["3305"]
     concentration: 0.258
     english_share: 0.8667
+    title_script: "diacritic"  # REVIEW: language
     include: true  # auto
   - id: "S4394906730"
     name: "Aetas"

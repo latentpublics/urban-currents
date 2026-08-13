@@ -63,6 +63,20 @@ selection:
   slots:
     journal: 12
     arxiv: 12
+  # How the journal path ranks its candidates. The path has no ranking today —
+  # every whitelist article scores relevance 1.0 by membership — and the rebuilt
+  # whitelist would take candidates from about 51 a day to about 90 for the same
+  # 12 slots, so the twelve would be chosen arbitrarily.
+  #
+  # placeholder      : current behaviour (journal_rank_score)
+  # venue_prior      : subfield-normalised journal metric (phase 0g T2)
+  # canon_affinity   : overlap with the foundation canon (phase 0g T3-2)
+  # composite        : both
+  #
+  # DEFAULT STAYS placeholder. YJUN has labelled 30 items and the label file
+  # records the rank each was shown at; changing the ranking before labelling
+  # finishes would leave those labels attributable to no ranking at all.
+  journal_ranking: placeholder
 
 llm:
   # gemini | anthropic. The Anthropic path is kept working; the account simply

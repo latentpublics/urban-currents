@@ -86,7 +86,48 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5140001952",
+        "label": "Ismail Ismail Tijjani"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146986812",
+        "label": "Sunusi Muhammad Ibrahim"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5020544757",
+        "label": "Amina Ibrahim Khaleel"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146997451",
+        "label": "Lanre Olusegun Akinola"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147005625",
+        "label": "Fatima Isa Jibrin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0000-3776",
+        "label": "Muhammad Bashir Aliyu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146986881",
+        "label": "Abdullahi Abdussalam Dalhat"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146957099",
+        "label": "Abdullahi Suiudeen"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [
@@ -96,7 +137,32 @@
         "label": "YOLO"
       }
     ],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10616",
+        "is_primary": true,
+        "label": "Smart Agriculture and AI",
+        "score": 0.981,
+        "subfield": "1110"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10036",
+        "is_primary": false,
+        "label": "Advanced Neural Network Applications",
+        "score": 0.0048,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10111",
+        "is_primary": false,
+        "label": "Remote Sensing in Agriculture",
+        "score": 0.0021,
+        "subfield": "2303"
+      }
+    ]
   },
   "first_published": "2026-08-11",
   "graph": {
@@ -107,7 +173,7 @@
   "ids": {
     "arxiv": "2608.11053",
     "doi": "10.48550/arxiv.2608.11053",
-    "openalex": null,
+    "openalex": "W7202282770",
     "pmid": null
   },
   "lens": null,
@@ -116,7 +182,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006003,
     "llm": {

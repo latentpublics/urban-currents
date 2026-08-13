@@ -302,6 +302,22 @@ def precision_at_k(facet: str = "relevance", k: int = 10) -> dict:
             if topk:
                 per_day.append(sum(1 for r in topk if r["label"] == "keep") / len(topk))
 
+        # Precision at every depth, not just at k. The daily list gives each
+        # path a fixed number of slots, so what decides whether the path is
+        # usable is how far down its ranking precision survives — a path that
+        # holds 1.0 to rank 4 and 0.5 by rank 12 is not failing at ranking, it
+        # is being asked for more items than it has.
+        depth: list[float] = []
+        max_depth = max((len(v) for v in by_day.values()), default=0)
+        for pos in range(1, max_depth + 1):
+            at_pos = []
+            for day_rows in by_day.values():
+                head = sorted(day_rows, key=lambda r: r.get("rank", 0))[:pos]
+                if len(head) == pos:
+                    at_pos.append(sum(1 for r in head if r["label"] == "keep") / pos)
+            if at_pos:
+                depth.append(round(sum(at_pos) / len(at_pos), 4))
+
         reasons = Counter(r["label"] for r in srows if r["label"] in DROP_LABELS)
         n_drops = sum(reasons.values())
 
@@ -315,6 +331,10 @@ def precision_at_k(facet: str = "relevance", k: int = 10) -> dict:
                 round(sum(per_day) / len(per_day), 4) if per_day else None
             ),
             "per_day": [round(p, 4) for p in per_day],
+            "precision_by_depth": depth,
+            "depth_holding_0.7": max(
+                (i + 1 for i, p in enumerate(depth) if p >= 0.7), default=0
+            ),
             "keep_rate": round(
                 sum(1 for r in srows if r["label"] == "keep") / len(srows), 4
             ),

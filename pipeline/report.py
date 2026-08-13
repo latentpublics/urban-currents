@@ -199,6 +199,12 @@ def build_report(out_path: Optional[Path] = None) -> Path:
     measured_p = [v for v in per_source_p.values() if v is not None]
     p_at_10 = min(measured_p) if measured_p else None
     q1_p_ok = None if p_at_10 is None else p_at_10 >= 0.7
+    # Q1b was planned as five labelled days (roadmap §4.1). A verdict from one
+    # is a reading, not a result, and this is the number that decides Phase 1 —
+    # so the sample size travels with it instead of being a column away.
+    Q1B_PLANNED_DAYS = 5
+    days_labelled = labels.get("days_labelled") or 0
+    q1b_thin = 0 < days_labelled < Q1B_PLANNED_DAYS
 
     median_day = (calib or {}).get("daily_distribution", {}).get("median_per_day")
     q2_ok = None if median_day is None else median_day >= 5
@@ -222,8 +228,10 @@ def build_report(out_path: Optional[Path] = None) -> Path:
                 ["Q1a", "Is the filter usable?", "holdout AUC >= 0.9", _fmt(auc), _verdict(q1_auc_ok)],
                 ["Q1b", "Is the filter usable?", "precision@10 >= 0.7 (per source)",
                  ", ".join(f"{s}: {_fmt(v, 3)}" for s, v in per_source_p.items())
+                 + (f" ({days_labelled} of {Q1B_PLANNED_DAYS} days)" if q1b_thin else "")
                  if measured_p else PENDING_HUMAN,
-                 _verdict(q1_p_ok) if p_at_10 is not None else PENDING_HUMAN],
+                 (f"{_verdict(q1_p_ok)} (PROVISIONAL)" if q1b_thin else _verdict(q1_p_ok))
+                 if p_at_10 is not None else PENDING_HUMAN],
                 ["Q2", "Is there enough signal for a daily?", "median >= 5 items/day",
                  _fmt(median_day, 1), _verdict(q2_ok)],
                 # A rate inside the band is not a passing Q3 when the score it
@@ -561,6 +569,36 @@ def build_report(out_path: Optional[Path] = None) -> Path:
           "that will replace the journal path's placeholder ranking.")
         A("")
 
+        # How far down each path's ranking precision survives, against the slots
+        # that path is actually asked to fill.
+        depth_rows = []
+        for src, v in (labels.get("by_source") or {}).items():
+            curve = v.get("precision_by_depth") or []
+            if not curve:
+                continue
+            slots = cfg(f"selection.slots.{src}")
+            depth_rows.append([
+                src,
+                slots,
+                v.get("depth_holding_0.7"),
+                ", ".join(
+                    f"@{i}: {p}" for i, p in enumerate(curve, 1) if i in (1, 4, 8, 12, 15)
+                ),
+            ])
+        if depth_rows:
+            L.extend(_table(
+                ["path", "daily slots", "depth holding 0.7", "precision by depth"],
+                depth_rows,
+            ))
+            A("")
+            A("Where the depth holding 0.7 is below the slot count, the path is "
+              "being asked for more items than it has good ones — the fix is the "
+              "slot split or a better ranker, not a higher threshold. Raising the "
+              "arXiv threshold does not help: at 0.7 the 90-day backfill yields a "
+              "median of 6 arXiv candidates a day and at 0.8 it yields 3, so the "
+              "path could not fill 12 slots at any precision.")
+            A("")
+
     # -- source mix -------------------------------------------------------
     A("## What actually gets published")
     A("")
@@ -569,12 +607,15 @@ def build_report(out_path: Optional[Path] = None) -> Path:
     A(f"Of {len(items)} published items, **{from_arxiv} came from arXiv** and "
       f"{from_journal} from whitelist journals.")
     A("")
-    A(f"The split is enforced: `classifier.arxiv_min_share` is "
-      f"{cfg('classifier.arxiv_min_share')}. Without it the daily list fills "
-      f"with journal articles, because the classifier was trained on those "
-      f"journals and scores their articles ~0.99 close to by construction. "
-      f"Measured on 2026-08-11 with the quota disabled: 23 of 24 slots were "
-      f"journal articles.")
+    A(f"The split is structural, not a quota. Each entry path owns its slots — "
+      f"journal {cfg('selection.slots.journal')}, arXiv "
+      f"{cfg('selection.slots.arxiv')} — and a path that cannot fill its own "
+      f"lends them to the other, which the run records. The earlier "
+      f"`classifier.arxiv_min_share` quota is gone (N4): it was treating a "
+      f"symptom, since a whitelist article scores ~0.99 nearly by construction "
+      f"and the classifier could not rank within that path at all. Measured on "
+      f"2026-08-11 under the old single-classifier design: 23 of 24 slots went "
+      f"to journal articles.")
     A("")
 
     # -- archive ----------------------------------------------------------

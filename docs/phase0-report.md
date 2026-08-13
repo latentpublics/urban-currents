@@ -1,18 +1,16 @@
 # Urban Currents — Phase 0 report
 
-Generated 2026-08-13T00:08:29+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
+Generated 2026-08-13T01:31:36+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
 
 ## The four questions (PRD §1)
 
 | Q | Question | Criterion | Measured | Verdict |
 |---|---|---|---|---|
 | Q1a | Is the filter usable? | holdout AUC >= 0.9 | 0.9886 | PASS |
-| Q1b | Is the filter usable? | precision@10 >= 0.7 (per source) | PENDING-HUMAN | PENDING-HUMAN |
+| Q1b | Is the filter usable? | precision@10 >= 0.7 (per source) | arxiv: 0.5, journal: 0.9 (1 of 5 days) | FAIL (PROVISIONAL) |
 | Q2 | Is there enough signal for a daily? | median >= 5 items/day | 72 | PASS |
 | Q3 | Where does the quiet-day line go? | headline rate 30-50% | 0.367 | PROVISIONAL |
 | Q4 | Does review fit the budget? | median <= 15 min/day | PENDING-HUMAN | PENDING-HUMAN |
-
-> Q1b and Q4 require a human at the keyboard: `uc review --label relevance` for precision@10, `uc review` for the timing. They are marked PENDING-HUMAN rather than guessed.
 
 ## Relevance classifier (PRD §5.4)
 
@@ -169,13 +167,27 @@ Embeddings are local (`BAAI/bge-base-en-v1.5` on CPU), so their marginal cost is
 
 ## Q1b labels (roadmap §2.3)
 
-No labels yet. `uc review --label relevance --date …` collects them; `uc labels` summarises them.
+30 labels over 1 day(s). 100% of labelled items had a summary on screen.
+
+| source | labels | days | precision@10 | keep rate | drop: not urban | drop: not our kind | drop: weak |
+|---|---|---|---|---|---|---|---|
+| arxiv | 15 | 1 | 0.5 | 0.4 | 3 | 5 | 1 |
+| journal | 15 | 1 | 0.9 | 0.867 | 0 | 2 | 0 |
+
+**The two drop reasons point at different problems.** *not urban* is a classifier error. *not our kind* is a coverage question nothing in the pipeline answers yet — it is the training signal for the classifier that will replace the journal path's placeholder ranking.
+
+| path | daily slots | depth holding 0.7 | precision by depth |
+|---|---|---|---|
+| arxiv | 12 | 5 | @1: 1.0, @4: 1.0, @8: 0.625, @12: 0.5, @15: 0.4 |
+| journal | 12 | 15 | @1: 1.0, @4: 1.0, @8: 1.0, @12: 0.8333, @15: 0.8667 |
+
+Where the depth holding 0.7 is below the slot count, the path is being asked for more items than it has good ones — the fix is the slot split or a better ranker, not a higher threshold. Raising the arXiv threshold does not help: at 0.7 the 90-day backfill yields a median of 6 arXiv candidates a day and at 0.8 it yields 3, so the path could not fill 12 slots at any precision.
 
 ## What actually gets published
 
 Of 156 published items, **63 came from arXiv** and 93 from whitelist journals.
 
-The split is enforced: `classifier.arxiv_min_share` is None. Without it the daily list fills with journal articles, because the classifier was trained on those journals and scores their articles ~0.99 close to by construction. Measured on 2026-08-11 with the quota disabled: 23 of 24 slots were journal articles.
+The split is structural, not a quota. Each entry path owns its slots — journal 12, arXiv 12 — and a path that cannot fill its own lends them to the other, which the run records. The earlier `classifier.arxiv_min_share` quota is gone (N4): it was treating a symptom, since a whitelist article scores ~0.99 nearly by construction and the classifier could not rank within that path at all. Measured on 2026-08-11 under the old single-classifier design: 23 of 24 slots went to journal articles.
 
 ## Archive
 
@@ -201,7 +213,6 @@ The split is enforced: `classifier.arxiv_min_share` is None. Without it the dail
 
 ## What this report does not know
 
-- **Q1b precision@10** — needs `uc review --label relevance` over 5 days × 30 items. This is the number that decides whether the filter is usable in practice; the holdout AUC does not answer it.
 - **Q4 review time** — needs `uc review` run by a human. The CLI records it automatically; nothing else can.
 
 ---

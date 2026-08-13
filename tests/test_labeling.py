@@ -271,3 +271,23 @@ def test_items_without_an_abstract_are_excluded_from_the_sample(repo):
     sample = stratified_sample(DAY, per_source=15)
     assert sample, "the sample must not be empty"
     assert all((it.bibliography.abstract or "").strip() for it, _, _ in sample)
+
+
+def test_precision_is_reported_at_every_depth_not_only_at_k(repo):
+    """A path that holds 1.0 to rank 4 and 0.5 by rank 12 is not failing at
+    ranking — it is being asked for more items than it has. precision@10 alone
+    cannot tell those apart, and the slot split is the decision it informs."""
+    _seed_candidates(repo)
+    # arXiv side: 4 keeps, then drops. Journal side: all keeps.
+    answers = ["k"] * 4 + ["q"] * 6 + ["k"] * 10
+    run_labeling_session(DAY, top=20, prompt=_answers(*answers), printer=lambda *a: None)
+
+    arxiv = precision_at_k(k=10)["by_source"]["arxiv"]
+    curve = arxiv["precision_by_depth"]
+
+    assert curve[0] == 1.0 and curve[3] == 1.0, "clean to rank 4"
+    assert curve[9] == 0.4, "and 4 of 10 by rank 10"
+    assert arxiv["depth_holding_0.7"] == 5, "0.7 survives to rank 5, not beyond"
+
+    journal = precision_at_k(k=10)["by_source"]["journal"]
+    assert journal["depth_holding_0.7"] == len(journal["precision_by_depth"])

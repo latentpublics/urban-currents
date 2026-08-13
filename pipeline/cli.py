@@ -394,6 +394,24 @@ def citations(
     typer.echo(f"[OK] citations — neighbours sample: {out}")
 
 
+@app.command("accumulate-canon")
+def accumulate_canon(
+    date_: Optional[str] = DateOpt,
+    max_ids: Optional[int] = typer.Option(None, help="Override the budget-derived id cap"),
+):
+    """Fold a day into the reference base and resolve what the budget allows.
+
+    Takes at most  of the OpenAlex day budget.
+    Unresolved IDs wait in  and go first
+    tomorrow; the queue length is recorded in metrics, because a queue that only
+    grows means the budget is too small.
+    """
+    from .graph.daily_canon import accumulate_day
+
+    result = accumulate_day(_date(date_), max_ids=max_ids)
+    typer.echo(json.dumps(result, indent=2))
+
+
 @app.command()
 def canon(
     top: Optional[int] = typer.Option(None, help="How many in-scope candidates to keep"),

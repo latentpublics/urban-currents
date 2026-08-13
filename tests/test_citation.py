@@ -350,3 +350,58 @@ def test_every_exclusion_names_the_work_it_removes():
         assert entry.get("id"), entry
         assert entry.get("removes"), f"{entry['id']} names no work it removes"
         assert entry.get("why"), f"{entry['id']} gives no reason"
+
+
+# --------------------------------------------------------------------------
+# R3 — daily accumulation stays inside its budget and its queue drains
+# --------------------------------------------------------------------------
+
+
+def test_the_pending_queue_is_ordered_by_how_much_we_cite(repo, monkeypatch):
+    """Resolving in arbitrary order spends days on the tail before reaching the
+    head. 139,540 distinct references, of which 23,362 are cited more than once."""
+    from pipeline.graph import daily_canon
+
+    for i in range(3):
+        store.save_item(_item(f"doi:{i}", ["openalex:W_hot", f"openalex:W_cold{i}"]), today=DAY)
+
+    asked: list[list[str]] = []
+
+    def fake_resolve(ids, batch=50):
+        asked.append(list(ids))
+        return [], 0.0
+
+    monkeypatch.setattr(daily_canon, "_resolve", fake_resolve)
+    daily_canon.accumulate_day(DAY, max_ids=2)
+
+    assert asked and asked[0][0] == "openalex:W_hot", "the most-cited goes first"
+
+
+def test_running_the_same_day_twice_leaves_no_duplicate_records(repo, monkeypatch):
+    from pipeline.graph import daily_canon
+    from pipeline.graph.citation import load_reference_base
+
+    store.save_item(_item("doi:a", ["openalex:W1", "openalex:W2"]), today=DAY)
+    monkeypatch.setattr(daily_canon, "_resolve", lambda ids, batch=50: ([], 0.0))
+
+    daily_canon.accumulate_day(DAY)
+    daily_canon.accumulate_day(DAY)
+
+    keys = [r["work_key"] for r in load_reference_base()]
+    assert len(keys) == len(set(keys))
+
+
+def test_the_queue_shrinks_as_ids_resolve(repo, monkeypatch):
+    from pipeline.graph import daily_canon
+
+    store.save_item(_item("doi:a", [f"openalex:W{i}" for i in range(6)]), today=DAY)
+
+    def resolve_two(ids, batch=50):
+        return [{"openalex_id": i, "title": i} for i in ids[:2]], 0.0
+
+    monkeypatch.setattr(daily_canon, "_resolve", resolve_two)
+    first = daily_canon.accumulate_day(DAY, max_ids=2)
+    second = daily_canon.accumulate_day(DAY, max_ids=2)
+
+    assert first["pending_after"] == 4
+    assert second["pending_after"] == 2, "the queue must actually drain"

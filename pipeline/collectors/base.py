@@ -75,11 +75,58 @@ def work_key_from(
 _WS = re.compile(r"\s+")
 _PUNCT = re.compile(r"[^\w\s]", re.UNICODE)
 
+# JATS and HTML markup arrives inside OpenAlex and Crossref titles and
+# abstracts. Found in the Q1b label data as
+# `<scp>DIFFERENTIATED INFRASTRUCTURAL CITIZENSHIP</scp> : Claims-Making…` —
+# a title the labeller had to read past, and one that would have shipped on a
+# card. Stripped at collection so no stage downstream has to know about it.
+_TAG = re.compile(r"</?([a-zA-Z][a-zA-Z0-9:_-]*)(?:\s[^<>]*?)?/?>")
+
+# Inline tags vanish; block-level tags leave a space behind. The distinction is
+# not cosmetic: `H<sub>2</sub>O` must not become `H 2 O`, and
+# `<jats:p>One.</jats:p><jats:p>Two.</jats:p>` must not become `One.Two.`
+_INLINE_TAGS = {
+    "sub", "sup", "i", "b", "em", "strong", "scp", "sc", "italic", "bold",
+    "underline", "monospace", "roman", "sans-serif", "span", "a", "code",
+    "inline-formula", "tex-math", "styled-content",
+}
+_ENTITIES = {
+    "&amp;": "&", "&lt;": "<", "&gt;": ">", "&quot;": '"',
+    "&apos;": "'", "&nbsp;": " ", "&#x2010;": "-", "&#8208;": "-",
+}
+# Markup removal leaves the space that used to sit outside the tag stranded
+# before punctuation: `</scp> : Claims` → `  : Claims`.
+_SPACE_BEFORE_PUNCT = re.compile(r"\s+([,.;:!?)\]}])")
+_SPACE_AFTER_OPEN = re.compile(r"([(\[{])\s+")
+
+
+def strip_markup(value: Optional[str]) -> Optional[str]:
+    """Remove JATS/HTML tags and normalise the whitespace they leave behind.
+
+    Only tags are removed, never their content: `<scp>CITIZENSHIP</scp>`
+    carries a real word. Unrecognised entities are left alone rather than
+    guessed at — a literal `&` in a title is more likely than a typo'd entity.
+    """
+    if value is None:
+        return None
+
+    def _replace(m: re.Match) -> str:
+        name = m.group(1).lower()
+        return "" if name.split(":")[-1] in _INLINE_TAGS else " "
+
+    text = _TAG.sub(_replace, value)
+    for entity, char in _ENTITIES.items():
+        text = text.replace(entity, char)
+    text = _WS.sub(" ", text.replace("\n", " "))
+    text = _SPACE_BEFORE_PUNCT.sub(r"\1", text)
+    text = _SPACE_AFTER_OPEN.sub(r"\1", text)
+    return text.strip() or None
+
 
 def clean_text(value: Optional[str]) -> Optional[str]:
     if value is None:
         return None
-    return _WS.sub(" ", value.replace("\n", " ")).strip() or None
+    return strip_markup(value)
 
 
 def normalize_title(title: str) -> str:

@@ -508,6 +508,17 @@
     "Provenance": {
       "additionalProperties": false,
       "properties": {
+        "abstract_source": {
+          "default": "none",
+          "enum": [
+            "openalex",
+            "crossref",
+            "springer_api",
+            "none"
+          ],
+          "title": "Abstract Source",
+          "type": "string"
+        },
         "classifier_version": {
           "anyOf": [
             {

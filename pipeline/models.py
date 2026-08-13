@@ -234,6 +234,9 @@ class Tokens(StrictModel):
     model_config = ConfigDict(populate_by_name=True, extra="forbid")
 
 
+AbstractSource = Literal["openalex", "crossref", "springer_api", "none"]
+
+
 class Provenance(StrictModel):
     collected_at: Optional[datetime] = None
     collectors: list[str] = Field(default_factory=list)
@@ -242,6 +245,11 @@ class Provenance(StrictModel):
     classifier_version: Optional[str] = None
     cost_usd: float = 0.0
     tokens: Tokens = Field(default_factory=Tokens)
+    # Where the abstract actually came from. Publishers withdrew abstracts from
+    # OpenAlex at different times, so "we have an abstract" and "OpenAlex had an
+    # abstract" stopped being the same statement; the enrichment order is
+    # openalex → crossref → springer_api, and `none` is a measurable outcome.
+    abstract_source: AbstractSource = "none"
 
 
 class Review(StrictModel):
@@ -327,6 +335,12 @@ class ScanMeta(StrictModel):
     candidates_after_gate: int = 0
     items_published: int = 0
     minutes_saved_estimate: int = 0
+    # Items that appeared in a tracked journal and could not be summarised
+    # because no source exposes their abstract. Counted, and counted by
+    # publisher, because it is the one blind spot this pipeline can measure
+    # exactly and nobody else publishes.
+    unreadable_count: int = 0
+    unreadable_by_publisher: dict[str, int] = Field(default_factory=dict)
 
 
 class StatusChange(StrictModel):
@@ -347,6 +361,12 @@ class Issue(StrictModel):
     quiet_day: bool = False
     scan_meta: ScanMeta = Field(default_factory=ScanMeta)
     items: list[str] = Field(default_factory=list)
+    # `Also published today`: work_keys that appeared in a tracked journal but
+    # have no abstract from any source, so no card can be written about them.
+    # A separate list rather than a flag inside `items` because they occupy no
+    # slot and carry no summary — and because an item that later gains an
+    # abstract is promoted into `items` without changing its identity.
+    unreadable: list[str] = Field(default_factory=list)
     status_changes: list[StatusChange] = Field(default_factory=list)
     run_id: Optional[str] = None
 

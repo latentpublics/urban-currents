@@ -89,6 +89,36 @@ def gate(date_: Optional[str] = DateOpt):
 
 
 @app.command()
+def enrich(
+    date_: Optional[str] = DateOpt,
+    source: str = typer.Option("all", help="all | crossref | springer | none"),
+):
+    """Recover abstracts publishers withdrew from OpenAlex.
+
+    Springer Nature still serves, from its own free Metadata API, the abstracts
+    it removed from OpenAlex in 2022 — roughly a quarter of the journal path.
+    It needs `SPRINGER_API_KEY` in `.env` (register at dev.springernature.com);
+    without it that half is recorded SKIPPED and the run continues.
+    """
+    run = _run(date_)
+    picked = {
+        "all": ("crossref", "springer"),
+        "crossref": ("crossref",),
+        "springer": ("springer",),
+        "none": (),
+    }.get(source)
+    if picked is None:
+        raise typer.BadParameter("source must be all, crossref, springer or none")
+    items = run_stages.stage_enrich(run, sources=picked)
+    counts = {
+        k: v for k, v in run.metrics.counts.model_dump().items()
+        if k.startswith("abstract_")
+    }
+    _echo_stage(run, "enrich", len(items))
+    typer.echo(json.dumps(counts))
+
+
+@app.command()
 def classify(date_: Optional[str] = DateOpt):
     """Score relevance with the trained classifier (or the labelled fallback)."""
     run = _run(date_)

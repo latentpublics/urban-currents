@@ -17,6 +17,11 @@ STAGE_ORDER = [
     "collect",
     "dedup",
     "gate",
+    # Before `classify`, not after: the classifier reads title + abstract, and
+    # the journal ranking sends an item with no abstract to the back. An
+    # abstract recovered after either of those has already been judged without
+    # it. Only gate survivors are enriched, so the request count is small.
+    "enrich",
     "classify",
     "select",
     "link",

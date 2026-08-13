@@ -170,6 +170,58 @@ def stage_gate(run: Run) -> list[Item]:
 
 
 # --------------------------------------------------------------------------
+# enrich
+# --------------------------------------------------------------------------
+
+
+def stage_enrich(
+    run: Run, sources: tuple[str, ...] = ("crossref", "springer"), enricher=None
+) -> list[Item]:
+    """Recover abstracts publishers withdrew from OpenAlex (phase 0c, P1/P2).
+
+    Only whitelist-journal candidates are asked about: an arXiv record always
+    carries its own abstract, so a request for one is a request wasted. Runs
+    before `classify` so a recovered abstract is in front of the classifier and
+    the journal ranking rather than behind them.
+    """
+    from .collectors.abstracts import enrich_abstracts, needs_abstract
+
+    items = read_input(run, "enrich")
+    targets = [it for it in items if _is_whitelist_journal(it) and needs_abstract(it)]
+
+    if not targets:
+        # Still stamp provenance, so `abstract_source` is a fact about every
+        # item rather than only about the ones this stage happened to touch.
+        enrich_abstracts(items, run, sources=())
+        write_stage(run, "enrich", items)
+        run.stage("enrich", "OK")
+        run.save()
+        return items
+
+    counts = enrich_abstracts(targets, run, enricher=enricher, sources=sources)
+    for it in items:
+        if it.provenance.abstract_source == "none" and not needs_abstract(it):
+            it.provenance.abstract_source = "openalex"
+
+    for name, n in counts.items():
+        if name != "attempted":
+            run.count(f"abstract_{name}", n)
+    run.count("abstract_attempted", counts["attempted"])
+
+    from .config import secret
+
+    if "springer" in sources and not secret("SPRINGER_API_KEY"):
+        # A missing key is a SKIPPED sub-step, not a failure: the run continues
+        # and the recoverable items simply stay unreadable for now.
+        run.stage("enrich.springer", "SKIPPED")
+
+    write_stage(run, "enrich", items)
+    run.stage("enrich", "OK")
+    run.save()
+    return items
+
+
+# --------------------------------------------------------------------------
 # classify
 # --------------------------------------------------------------------------
 
@@ -559,11 +611,17 @@ def run_all(
     fixture: bool = False,
     use_llm: bool = True,
     summarize_limit: Optional[int] = None,
+    enrich: bool = True,
 ) -> Run:
     run = Run.for_date(d)
     _guard(run, "collect", lambda: stage_collect(run, d, sources=sources, fixture=fixture))
     _guard(run, "dedup", lambda: stage_dedup(run, d))
     _guard(run, "gate", lambda: stage_gate(run))
+    _guard(
+        run,
+        "enrich",
+        lambda: stage_enrich(run, sources=("crossref", "springer") if enrich else ()),
+    )
     _guard(run, "classify", lambda: stage_classify(run))
     _guard(run, "select", lambda: stage_select(run))
     _guard(run, "link", lambda: stage_link(run, use_llm=use_llm))

@@ -27,6 +27,7 @@ from ..metrics import BudgetExceeded, OpenAlexBudget, Run
 from ..models import Bibliography, Ids, Item, PrimaryLocation, Provenance, PublicationStatus
 from .base import (
     ARXIV_SOURCE_ID,
+    clean_text,
     invert_abstract,
     normalize_arxiv_id,
     normalize_doi,
@@ -399,7 +400,9 @@ def work_to_item(work: dict) -> Optional[Item]:
         topics_from_work,
     )
 
-    title = work.get("display_name") or work.get("title")
+    # OpenAlex passes publisher markup through: JATS `<scp>`, `<i>`, `<sub>`
+    # and friends turn up inside `display_name` (P4-1).
+    title = clean_text(work.get("display_name") or work.get("title"))
     if not title:
         return None
 

@@ -68,6 +68,18 @@
           "default": 0,
           "title": "Minutes Saved Estimate",
           "type": "integer"
+        },
+        "unreadable_by_publisher": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Unreadable By Publisher",
+          "type": "object"
+        },
+        "unreadable_count": {
+          "default": 0,
+          "title": "Unreadable Count",
+          "type": "integer"
         }
       },
       "title": "ScanMeta",
@@ -158,6 +170,13 @@
         "$ref": "#/$defs/StatusChange"
       },
       "title": "Status Changes",
+      "type": "array"
+    },
+    "unreadable": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Unreadable",
       "type": "array"
     }
   },

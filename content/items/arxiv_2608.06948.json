@@ -122,7 +122,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -165,6 +165,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:33:54Z",
     "collectors": [
@@ -174,7 +175,7 @@
     "cost_usd": 0.005589,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -251,9 +252,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The evaluation is limited to synthetic grids of colored squares and OpenAI models, rather than real-world GIS interfaces or a broader suite of open-source LMMs.",
-      "what": "This study introduces a modality transfer task to evaluate the ability of Large Multimodal Models (LMMs) to translate spatial information between visual and textual formats. The task requires one LMM instance to describe an image of colored squares in a regular grid, and a second instance to reconstruct the original image based solely on that textual description. Testing OpenAI's LMMs on this task revealed that the models struggle to accurately reconstruct even these simple spatial grids.",
-      "why": "It identifies and quantifies a critical bottleneck in the development of autonomous GIS agents, demonstrating that current state-of-the-art models lack the robust, multi-modal spatial alignment required to execute human-like GIS workflows that rely on translating between visual maps and text."
+      "caveats": "The evaluation is limited to synthetic grids of colored squares rather than real-world geographic maps or complex spatial datasets.",
+      "what": "This study introduces a modality transfer task to evaluate how well Large Multimodal Models (LMMs) translate spatial information between visual and textual formats. The experiment requires one OpenAI LMM instance to describe a grid of colored squares in text, and a second instance to reconstruct the original visual grid based solely on that description.",
+      "why": "It establishes a fundamental benchmark for autonomous GIS agents, demonstrating that current state-of-the-art LMMs fail to reliably preserve simple spatial layouts when moving between text and image modalities, revealing a critical bottleneck in multi-modal alignment."
     }
   },
   "track": "papers",

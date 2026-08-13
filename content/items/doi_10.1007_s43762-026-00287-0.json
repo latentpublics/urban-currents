@@ -265,6 +265,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:40:46Z",
     "collectors": [
@@ -273,7 +274,7 @@
     "cost_usd": 0.006771,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -350,9 +351,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on smartphone-based location data from a single commercial provider (SafeGraph), which may introduce demographic biases in who is tracked and represented in the visitation rates.",
-      "what": "This study evaluated the predictive power of smartphone-derived place visitation data from SafeGraph Patterns (visitation rates to 120 place categories) alongside 12 demographic and social determinants of health variables from the 2019 American Community Survey to estimate 22 CDC health measures at the census tract level. Using hierarchical regression across urban and rural US census tracts, the model showed that adding visitation data increased the mean R² by 7.5% overall, with a 7.6% improvement in urban areas and a 12.5% improvement in rural areas. The largest predictive gains occurred for binge drinking in urban areas (38.8% increase) and depression in rural areas (48.9% increase), with visits to drinking places serving as the strongest predictor.",
-      "why": "It demonstrates that dynamic, daily activity patterns captured via mobile device location data can measure local health outcomes more accurately than static demographic and socioeconomic indicators alone, particularly in rural areas where traditional data is often sparse."
+      "caveats": "The study relies on smartphone-derived location data, which may introduce demographic biases in who is tracked, and uses static 2019 survey data as a baseline.",
+      "what": "This study integrated smartphone-derived place visitation data across 120 categories from SafeGraph Patterns with 12 demographic and social determinants of health variables from the 2019 American Community Survey to estimate 22 CDC health measures at the census tract level. Using hierarchical regression analysis, the model evaluated how routine activity patterns affect health predictions in both urban and rural tracts classified by USDA codes.",
+      "why": "The research demonstrates that dynamic mobility data significantly improves small-area health estimations over static demographic indicators alone, yielding a 7.5% average increase in R² that rises to 12.5% in rural areas. It establishes that specific visitation behaviors, particularly visits to drinking establishments, serve as powerful predictors for localized health outcomes like binge drinking and depression."
     }
   },
   "track": "papers",

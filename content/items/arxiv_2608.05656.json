@@ -102,7 +102,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -145,6 +145,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:27:15Z",
     "collectors": [
@@ -154,7 +155,7 @@
     "cost_usd": 0.005172,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -231,12 +232,12 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings rely on self-reported perspectives from a self-selected sample of AISE researchers rather than direct observations of evaluation practices or funding allocations.",
-      "what": "This study examines the acceptance and barriers of human-subject research in AI Safety & Ethics (AISE) through an expert survey of 93 researchers and 17 in-depth interviews across technical, sociotechnical, governance, and normative backgrounds. It identifies that while human research is widely considered valuable, its adoption is hindered by perceived validity issues, resource constraints, and disciplinary preferences, with technical researchers showing the lowest valuation of human methods and lower rates of cross-disciplinary collaboration.",
-      "why": "It documents and explains the systemic epistemic tension that sidelines empirical human-subject research in favor of technical benchmarks, offering a framework to integrate human-centric evidence into AI safety evaluations without falling into performative 'human-washing'."
+      "caveats": "The findings rely on self-reported survey and interview data from a self-selected sample of AI safety and ethics researchers.",
+      "what": "This study surveyed 93 experts and interviewed 17 researchers across technical, sociotechnical, governance, and normative backgrounds to analyze the barriers to adopting human-subject research in AI Safety and Ethics. The findings reveal that while researchers generally value human-centered evidence, its integration is hindered by perceived validity issues, resource constraints, and methodological preferences, with technical researchers showing the lowest valuation of human methods and the lowest rates of interdisciplinary collaboration.",
+      "why": "It identifies and documents the specific epistemic and structural barriers that prevent human-centered empirical research from being integrated into AI safety evaluations, offering a framework to prevent 'human-washing' in technical benchmarks."
     }
   },
   "track": "papers",
-  "updated": "2026-08-08",
+  "updated": "2026-08-06",
   "work_key": "arxiv:2608.05656"
 }

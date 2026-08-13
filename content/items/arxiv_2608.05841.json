@@ -128,6 +128,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:27:15Z",
     "collectors": [
@@ -137,7 +138,7 @@
     "cost_usd": 0.005305,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -161,11 +162,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.4,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 0.8532,
       "source_multiplicity": 0.0
     },
-    "headline": 0.6213,
+    "headline": 0.4213,
     "relevance": 0.8532
   },
   "signals": {
@@ -214,9 +215,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The system's collection efficiency relies on a grid-based scraping method that may capture high rates of duplicate records depending on the query frequency.",
-      "what": "The researchers developed SnapScope, an open-source platform for collecting and exploring public, geotagged Snapchat stories at a city scale. They deployed the system over Riyadh, Saudi Arabia, collecting 515,364 unique public snaps across 23 days using a 1 km grid of 2,740 query points, and verified its collection efficiency with a saturation probe showing a 94.8% duplicate rate.",
-      "why": "It provides a reproducible, city-agnostic system to harvest and analyze ephemeral, hyper-local social media data that was previously inaccessible due to the lack of a documented API."
+      "caveats": null,
+      "what": "The researchers developed SnapScope, an open-source platform for harvesting and analyzing public, geotagged Snapchat stories at a city scale. They tested the system in Riyadh, Saudi Arabia, collecting 515,364 unique snaps over 23 days using a 1 km grid of 2,740 query points, with a saturation probe showing that 94.8% of returned records in consecutive runs were duplicates.",
+      "why": "It provides a reproducible, city-agnostic pipeline and interactive interface to collect and explore ephemeral social media data that was previously inaccessible due to the lack of a documented API."
     }
   },
   "track": "papers",

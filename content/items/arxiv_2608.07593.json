@@ -47,7 +47,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -90,6 +90,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:20:14Z",
     "collectors": [
@@ -99,7 +100,7 @@
     "cost_usd": 0.005667,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -176,9 +177,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The system was only evaluated as a briefly deployed prototype and lacks a formal user study, presenting risks of latency, high cost, and cultural stereotyping in its locality-based inferences.",
-      "what": "The paper presents an agentic dining-recommendation system that uses a large language model to orchestrate Google location services and a weather service, reasoning in natural language to generate region-sensitive, weather-appropriate food recommendations. The system leverages the cultural and culinary world knowledge latent in the LLM to map weather conditions to culturally appropriate comfort foods without requiring per-region rule tables or specialized training data.",
-      "why": "It introduces an architectural pattern that replaces brittle, hand-crafted rules and specialized training data with LLM-based reasoning, enabling recommender systems to scale culturally nuanced, context-aware recommendations across different regions."
+      "caveats": "The system's performance has not been validated through a formal user study, and the underlying model carries a risk of cultural stereotyping in its location-based reasoning.",
+      "what": "The researchers designed and built a prototype dining recommendation system that uses a large language model to orchestrate Google location services and a weather API. Instead of relying on hard-coded rules, the system uses the model's latent cultural knowledge to recommend food that fits both the local weather and regional culinary traditions.",
+      "why": "It demonstrates an architectural pattern for context-aware recommendation that replaces brittle, hand-crafted rule tables with natural language reasoning, allowing systems to scale region-specific recommendations without specialized training data."
     }
   },
   "track": "papers",

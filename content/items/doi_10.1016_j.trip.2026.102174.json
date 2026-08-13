@@ -132,7 +132,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -245,6 +245,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:31:18Z",
     "collectors": [
@@ -253,7 +254,7 @@
     "cost_usd": 0.001694,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -330,9 +331,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The analysis relies on a structural matrix-based modeling approach (MICMAC) to map variables, which is inherently dependent on the subjective ranking and selection of the thirteen input variables.",
-      "what": "This study analyzes the interrelations and indirect influences of thirteen strategic variables across political, economic, social, technological, legal, and environmental domains shaping the trucking industry's trajectory toward 2030. Using cross-impact matrix multiplication applied to a ranking (MICMAC) analysis, it evaluates how drivers like digitalization, artificial intelligence, and policy shifts impact industry outcomes.",
-      "why": "It establishes that technological adoption (digitalization and AI) will be the primary driver of change, while company economics will remain the most dependent variable and the influence of policy is projected to decrease by 2030."
+      "caveats": "The analysis relies on a structural matrix methodology (MICMAC) which models perceived relationships among variables rather than empirical, real-world operational data.",
+      "what": "This study analyzes the future of the trucking industry toward 2030 by evaluating 13 strategic variables across political, economic, social, technological, legal, and environmental domains. Using cross-impact matrix multiplication applied to a ranking (MICMAC) analysis, the research models the interrelations and indirect influences among these variables, finding that digitalization and artificial intelligence are highly influential drivers, while company economics remains the most dependent variable and policy influence is projected to decline.",
+      "why": "It establishes a structured, systemic hierarchy of the forces shaping freight transport, demonstrating that technological adoption will supersede policy drivers in dictating the economic viability of trucking firms over the next decade."
     }
   },
   "track": "papers",

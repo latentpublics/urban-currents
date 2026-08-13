@@ -174,6 +174,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:45:52Z",
     "collectors": [
@@ -182,7 +183,7 @@
     "cost_usd": 0.001909,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -259,9 +260,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on a scoping review of existing quantitative literature, meaning the identified relationships are subject to the methodological limitations and varied designs of the 34 underlying studies.",
-      "what": "This scoping review synthesizes quantitative evidence from 34 studies conducted in high-density Asian cities to map built environment correlates of physical activity using the '5Ds' framework. The synthesis reveals that Design and Destination Accessibility are the most consistent predictors of physical activity, particularly for leisure, while Density and Diversity show complex, non-linear associations, and Distance to Transit has a weaker relationship primarily limited to walking.",
-      "why": "It establishes that the standard '5Ds' framework operates differently in hyper-dense Asian contexts compared to Western cities, demonstrating that density and diversity do not have simple linear relationships with physical activity when baseline urban density is already extremely high."
+      "caveats": "The findings are based on a scoping review of existing literature, which relies on the varying methodologies and potential biases of the 34 included studies.",
+      "what": "This scoping review synthesizes quantitative evidence from 34 studies to map the relationships between the neighborhood built environment and physical activity in high-density Asian cities. Using the '5Ds' framework, the analysis evaluates how density, diversity, design, destination accessibility, and distance to transit correlate with active behavior, finding that design and destination accessibility are the most consistent predictors of leisure-time physical activity.",
+      "why": "It demonstrates that standard urban design frameworks behave differently in hyper-dense Asian contexts, where density and land-use diversity exhibit complex, non-linear threshold effects rather than the straightforward positive correlations typically observed in Western cities."
     }
   },
   "track": "papers",

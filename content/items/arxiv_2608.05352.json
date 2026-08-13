@@ -145,6 +145,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:20:14Z",
     "collectors": [
@@ -154,7 +155,7 @@
     "cost_usd": 0.005055,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -231,9 +232,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The model's performance and utility are illustrated using a single case study in the Cape Floristic Region, without a comparative benchmark against other spatio-temporal modeling techniques.",
-      "what": "The paper introduces the spatio-temporal generalized dissimilarity mixed model (stGDMM), extending previous spatial-only models to analyze beta diversity across both space and time. The model is demonstrated using Bray-Curtis dissimilarity metrics applied to a biodiversity dataset from the Cape Floristic Region in South Africa.",
-      "why": "It provides a statistical framework to model ecological beta diversity over joint space-time pairs, enabling researchers to quantify how species composition changes dynamically across both geographic distance and temporal intervals simultaneously."
+      "caveats": "The model's performance and applicability are demonstrated using only a single ecological dataset from South Africa.",
+      "what": "The study introduces the spatio-temporal generalized dissimilarity mixed model (stGDMM), extending previous spatial-only models to capture dynamic changes in beta diversity over both space and time. The model's utility is demonstrated using a biodiversity dataset of Bray-Curtis dissimilarity measures from the Cape Floristic Region in South Africa.",
+      "why": "It provides a formal statistical framework to analyze how species composition differences evolve across both spatial distances and temporal intervals simultaneously, resolving stochastic limitations of foundational generalized dissimilarity models."
     }
   },
   "track": "papers",

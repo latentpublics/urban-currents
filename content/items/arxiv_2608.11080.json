@@ -76,7 +76,7 @@
     "orgs": [],
     "people": [],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": []
   },
@@ -94,6 +94,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
@@ -102,7 +103,7 @@
     "cost_usd": 0.004866,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -180,8 +181,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "The authors developed the Rail Transit Station Knowledge Graph (RTSKG), a dataset that models spatial and semantic interactions among urban entities including rail transit stations, road segments, and points of interest. The dataset is structured under a unified schema and was evaluated on two downstream tasks: station-area store recommendation and knowledge-enhanced ridership prediction.",
-      "why": "It provides a structured, linked-data framework that explicitly connects heterogeneous urban entities around transit hubs, enabling researchers to incorporate complex spatial and semantic relationships into predictive urban models."
+      "what": "The researchers built the Rail Transit Station Knowledge Graph (RTSKG), a dataset that models spatial and semantic interactions between rail transit stations, road segments, and points of interest. The dataset uses a unified schema to integrate these heterogeneous urban entities and was evaluated using two downstream tasks: station-area store recommendation and knowledge-enhanced ridership prediction.",
+      "why": "It provides a structured, linked-data framework that explicitly connects physical transit infrastructure with surrounding urban features, enabling more accurate spatial analysis and predictive modeling than traditional, isolated datasets allow."
     }
   },
   "track": "papers",

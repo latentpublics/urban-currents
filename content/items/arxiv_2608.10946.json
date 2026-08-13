@@ -82,6 +82,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
@@ -90,7 +91,7 @@
     "cost_usd": 0.005079,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -167,9 +168,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The framework's empirical validation is demonstrated using a simplified model compared against a single national-scale dataset from the Netherlands.",
-      "what": "The Multiplex Affiliation-based Random Spatially-embedded (MARS) graph framework replicates the construction of register-based social networks by modeling how individuals associate through shared institutions. A simple implementation of MARS successfully recovered structural properties matching the population-scale register-based social network of the Netherlands, demonstrating that increased spatial freedom correlates with decreased social cohesion.",
-      "why": "It provides a generative model specifically designed for register-based networks, enabling researchers to analyze and validate the structural properties of administrative population data without compromising privacy or relying on models that ignore spatial and institutional constraints."
+      "caveats": "The empirical validation is demonstrated using a simplified model implementation rather than the full MARS framework.",
+      "what": "The Multiplex Affiliation-based Random Spatially-embedded (MARS) graph framework replicates the generative processes of register-based social networks. The framework's statistical properties were derived and tested using a simplified model calibrated against the population-scale register-based social network of the Netherlands, analyzing how spatial tie strength influences network closure.",
+      "why": "It provides a theoretical framework capable of replicating and analyzing government-curated administrative microdata networks, demonstrating that increased spatial freedom correlates with a decline in social cohesion."
     }
   },
   "track": "papers",

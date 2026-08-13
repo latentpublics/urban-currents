@@ -128,6 +128,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:20:14Z",
     "collectors": [
@@ -137,7 +138,7 @@
     "cost_usd": 0.005365,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -161,11 +162,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 0.9968,
       "source_multiplicity": 0.0
     },
-    "headline": 0.5987,
+    "headline": 0.3987,
     "relevance": 0.9968
   },
   "signals": {
@@ -214,9 +215,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on GPS trajectories from a single shared micromobility system, which may not fully represent the route choices of private e-bike owners.",
-      "what": "This study models shared e-bike route choices in Washington, DC, using GPS trajectory data from the Capital Bikeshare system. It estimates a Path Size Logit model using a hybrid choice set of observed routes and shortest paths, combining GIS-based infrastructure variables with computer vision-derived street-level visual features from Street View images.",
-      "why": "It demonstrates that roadway hierarchy moderates the influence of bicycle facilities, showing that dedicated cycling infrastructure has a much stronger effect on route choice along major roads than minor roads, and establishes that incorporating street-level greenery improves route choice model performance."
+      "caveats": "The findings are based on shared e-bike trips from a single municipal bikeshare system, which may not fully represent the route preferences of private e-bike owners.",
+      "what": "This study modeled shared e-bike route choices in Washington, DC, using GPS trajectory data from the Capital Bikeshare system. The researchers estimated a Path Size Logit model using a hybrid choice set of observed routes and shortest paths, combining GIS-based infrastructure data with computer vision-derived street-level greenery features from Street View images. The model reveals that e-bike riders prioritize routes that minimize conflicts with vehicles and pedestrians, and that bicycle facilities have a significantly larger positive impact on route choice along major roads than along minor roads.",
+      "why": "It demonstrates that incorporating street-level visual features like tree canopy improves route choice models, and quantifies how the behavioral influence of cycling infrastructure varies depending on the underlying roadway hierarchy and trip length."
     }
   },
   "track": "papers",

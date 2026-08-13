@@ -106,6 +106,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:33:54Z",
     "collectors": [
@@ -115,7 +116,7 @@
     "cost_usd": 0.004809,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -193,8 +194,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "The study evaluates historical longevity trends using a Bayesian change-point framework applied to annual gains at the best-practice frontier and across individual record-holding countries over nearly two centuries. It finds no evidence that the expected annual gain in life expectancy has changed, but shows strong evidence that the variance of these gains has shifted through distinct historical regimes, with the most regular progress occurring in recent decades.",
-      "why": "The findings challenge the prevailing consensus that flattening cumulative life expectancy records signal an approaching biological limit to human lifespan, demonstrating instead that this flattening is a statistical artifact of a low-variance regime around an unchanged mean pace of improvement."
+      "what": "This study evaluates claims of slowing human longevity progress by applying a Bayesian change-point framework to annual life expectancy gains across nearly two centuries of data from record-holding countries. The analysis reveals that while the variance of annual gains has shifted through distinct historical regimes, the expected mean annual gain has remained unchanged, with the most regular progress occurring in recent decades.",
+      "why": "It demonstrates that the recent flattening of cumulative life expectancy records is a statistical artifact of a low-variance regime rather than a decline in the underlying pace of improvement. This challenges the prevailing assumption that a biological ceiling to human lifespan is approaching, reframing the best-practice frontier as an empirical benchmark of historical conditions rather than an absolute limit."
     }
   },
   "track": "papers",

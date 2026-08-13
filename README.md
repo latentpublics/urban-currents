@@ -30,6 +30,13 @@ collect → dedup → gate → classify → select → link → summarize → sc
 - **gate** — the three high-volume arXiv categories (cs.LG, cs.CV, cs.AI) must
   clear a generous keyword filter. The other four skip it. The gate's recall is
   measured, not assumed.
+- **enrich** — Springer Nature withdrew its non-OA abstracts from OpenAlex in
+  2022 and Elsevier followed in 2024, so half the journal path arrives with no
+  abstract at all. Crossref and Springer's own free API are asked, in that
+  order, for the ones they can still supply. What no source has is published
+  anyway, under *Also published today*, with the facts we do have and nothing
+  invented — the abstract is the only evidence a summary is allowed to use, and
+  without it there is no summary to write.
 - **classify** — logistic regression over local `bge-base-en-v1.5` embeddings,
   trained on what Urban Studies / Geography-Planning / Transportation journals
   publish rather than on a hand-picked seed set. The output is a calibrated
@@ -110,7 +117,16 @@ These are the expensive ones to change later, so they are fixed early:
 Phase 0. Not deployed, not scheduled, no site. Phase 1 adds the Astro site and
 inherits the schema, the `content/` layout, and the render templates' DOM.
 
-## Licence
+## Licence and attribution
 
 Content derived from OpenAlex, which is CC0. arXiv metadata is used under
 arXiv's terms of use.
+
+Thank you to arXiv for use of its open access interoperability. This service was
+not reviewed or approved by, nor does it necessarily express or reflect the
+policies or opinions of, arXiv.
+
+Papers are always linked to arXiv; no PDF or source is served from here.
+Abstracts are read but never republished — summaries are written from the facts
+in them, because the abstracts themselves stay under their publishers'
+copyright.

@@ -149,6 +149,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:38:32Z",
     "collectors": [
@@ -157,7 +158,7 @@
     "cost_usd": 0.001992,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -197,8 +198,8 @@
       "value": false
     },
     "data_available": {
-      "basis": "rule",
-      "confidence": "low",
+      "basis": "llm",
+      "confidence": "medium",
       "detail": null,
       "url": null,
       "value": false
@@ -234,9 +235,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The analysis is based on a single historical case study of one public building in Sakarya, which may limit its direct applicability to other regional contexts with different political or seismic histories.",
-      "what": "This study traces the life cycle of the Sakarya Government House in Türkiye, a pioneering example of postwar International Style architecture, from its construction through its structural strengthening after the 1967 Akyazı earthquake to its demolition in 2005 following the 1999 Marmara earthquake. It analyzes how these three historical moments reflect shifting tensions between local and central planning authorities, the expansion of neoliberal development rights, and the spatial fragmentation driven by post-disaster urban reconfiguration.",
-      "why": "It documents how state-led modernist architecture in regional Anatolia functioned as both a spatial instrument of national modernization and a vulnerable target of shifting post-disaster urban policies, demonstrating how seismic events are leveraged to justify the dismantling of public heritage."
+      "caveats": "The study is a historical qualitative case study focused on a single civic building, which may limit its direct applicability to non-state or residential architectural histories.",
+      "what": "This study traces the life cycle of the Sakarya Government House in Turkey, a prominent example of postwar International Style architecture, across three historical phases: its initial construction as a symbol of state modernization, its structural reinforcement following the 1967 Akyazı earthquake, and its eventual demolition in 2005 after the 1999 Marmara earthquake. The analysis details how central-local planning conflicts, neoliberal zoning expansions, and post-disaster urban policies shaped the building's physical trajectory and ultimate removal.",
+      "why": "It demonstrates how state-sponsored modernist architecture in provincial Anatolia served as a physical instrument of national political alignment, and how subsequent seismic disasters were leveraged by neoliberal urban policies to justify the demolition and fragmentation of public heritage."
     }
   },
   "track": "papers",

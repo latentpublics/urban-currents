@@ -63,7 +63,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -106,6 +106,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:20:14Z",
     "collectors": [
@@ -115,7 +116,7 @@
     "cost_usd": 0.005433,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -192,9 +193,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are presented as a high-level synthesis and framework analysis rather than an empirical study with a specific quantitative dataset.",
-      "what": "The report analyzes data center sustainability and circularity, identifying limitations in the Power Usage Effectiveness (PUE) metric and mapping trade-offs between cooling energy and water consumption. It proposes new metrics covering compute efficiency, transformation efficiency, and cooling overhead, while evaluating waste heat recovery, material circularity via the 9R framework, and the grid impacts of onsite mitigation measures like battery storage.",
-      "why": "It exposes how current industry-standard metrics like PUE misattribute energy losses and fail to account for exploding compute energy, providing a more accurate framework for measuring actual data center efficiency and the resource trade-offs between on-site water use and upstream power generation."
+      "caveats": null,
+      "what": "This report analyzes data center sustainability metrics, identifying structural flaws in the Power Usage Effectiveness (PUE) metric, which conflates cooling and power provisioning while misallocating server fan and transformation losses. It maps the operational trade-offs between on-site water use and upstream electricity-related water consumption, proposes an alternative waste heat recovery metric based on avoided energy rather than recovered volume, and applies the 9R circularity framework to data center product design, materials, and grid interactions.",
+      "why": "It exposes how the industry's primary efficiency metric (PUE) misdirects sustainability efforts by focusing on infrastructure rather than exploding compute energy, while providing a clearer framework for balancing water-energy trade-offs and grid integration challenges."
     }
   },
   "track": "papers",

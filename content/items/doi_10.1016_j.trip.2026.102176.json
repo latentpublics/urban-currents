@@ -126,6 +126,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:42:09Z",
     "collectors": [
@@ -134,7 +135,7 @@
     "cost_usd": 0.002043,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -211,9 +212,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study does not propose new regulatory models, but rather synthesizes the existing discourse on space traffic management and liability reform.",
-      "what": "This paper evaluates the legal and policy regimes for space sustainability against the physical challenges of space debris, drawing on the European Space Agency Annual Space Environment Report 2025 and legal research. It compares the regulatory differences between the EU's market-driven proposed Space Act and the US's coordination-driven regulatory approach, identifying a governance gap where mega-constellation deployment and active debris removal technologies outpace binding international law.",
-      "why": "It demonstrates that the existing Cold War-era treaty framework, which relies on voluntary soft-law guidelines and fault-based liability standards, is structurally inadequate to prevent cascading debris events like the Kessler Syndrome."
+      "caveats": "The study synthesizes existing legal discourse and reports rather than introducing novel quantitative models or new frameworks for regulatory reform.",
+      "what": "This paper evaluates the legal and policy frameworks governing space sustainability against the physical threat of cascading space debris, utilizing data from the European Space Agency Annual Space Environment Report 2025. It analyzes how current voluntary guidelines and fault-based liability standards fail to address the Kessler Syndrome, and contrasts the market-driven regulatory approach of the proposed EU Space Act with the coordination-focused model of the United States.",
+      "why": "It demonstrates that the rapid deployment of commercial mega-constellations and active debris removal technologies has created a critical governance gap, proving that Cold War-era treaty regimes are structurally inadequate for managing a congested, finite orbital environment."
     }
   },
   "track": "papers",

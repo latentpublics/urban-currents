@@ -68,7 +68,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -111,6 +111,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:33:54Z",
     "collectors": [
@@ -120,7 +121,7 @@
     "cost_usd": 0.005043,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -198,8 +199,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "The study evaluates eleven Visual Place Recognition (VPR) methods across six datasets using a new metric, Distractor-Augmented Recall (DAR), to measure how often models mistakenly match images based on shared environmental conditions (like weather or lighting) rather than actual location. It also tests two condition suppression techniques, INLP and LEACE, to remove these environmental distractors from VPR descriptors.",
-      "why": "It establishes that standard VPR evaluation metrics fail to capture a model's susceptibility to environmental distractors, and demonstrates that removing condition information from image descriptors improves retrieval robustness without degrading standard performance."
+      "what": "The study evaluates eleven Visual Place Recognition (VPR) methods across six datasets using a new metric, Distractor-Augmented Recall (DAR), which measures how often models mistakenly match images based on shared environmental conditions rather than actual geographic locations. To address this vulnerability, the researchers applied two condition suppression techniques, Iterative Nullspace Projection (INLP) and Concept Erasure (LEACE), to remove weather, seasonal, and illumination features from the image descriptors.",
+      "why": "It establishes that standard VPR evaluation metrics fail to account for condition-based distractors common in crowdsourced map databases, and demonstrates that explicitly suppressing environmental condition data improves retrieval robustness without degrading standard performance."
     }
   },
   "track": "papers",

@@ -334,6 +334,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:27:17Z",
     "collectors": [
@@ -342,7 +343,7 @@
     "cost_usd": 0.006016,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -419,9 +420,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on geotagged social media posts as a proxy for public thermal sensitivity, which may reflect demographic biases inherent to platform users.",
-      "what": "This study analyzed approximately 1.9 million geotagged temperature-related social media posts across 367 Chinese cities in 2017, 2020, and 2022 to construct a city-scale sensitivity index measuring responsiveness to thermal shocks. The analysis revealed that perception sensitivity to cooling (0.114%/°C) is 2.3 times higher than to warming (0.049%/°C) on average, with high-sensitivity hotspots concentrated in southwestern China and low-sensitivity coldspots in northwestern and northeastern regions.",
-      "why": "It quantifies subjective human thermal perception at a national scale in real-time, demonstrating a pronounced asymmetry in how populations react to cooling versus warming and mapping how climatic, environmental, and socioeconomic factors modulate this sensitivity."
+      "caveats": "The study relies on geotagged social media posts, which may introduce demographic biases as social media users do not perfectly represent the entire urban population.",
+      "what": "This study analyzed 1.9 million geotagged temperature-related social media posts across 367 Chinese cities in 2017, 2020, and 2022 to construct a city-scale thermal sensitivity index. The analysis revealed that public perception sensitivity to cooling is 2.3 times higher (0.114%/°C) than to warming (0.049%/°C) on average, though the gap narrows under extreme temperatures. High-sensitivity hotspots are clustered in southwestern China, while low-sensitivity coldspots are concentrated in the northwest and northeast.",
+      "why": "It establishes that human sensitivity to temperature fluctuations is highly asymmetric and spatially heterogeneous, providing a method to use social media as a real-time sensor for subjective thermal stress to inform targeted urban early warning systems."
     }
   },
   "track": "papers",

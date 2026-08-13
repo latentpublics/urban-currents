@@ -96,7 +96,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -139,6 +139,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:20:14Z",
     "collectors": [
@@ -148,7 +149,7 @@
     "cost_usd": 0.005281,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -172,11 +173,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 0.5773,
       "source_multiplicity": 0.0
     },
-    "headline": 0.4309,
+    "headline": 0.2309,
     "relevance": 0.5773
   },
   "signals": {
@@ -225,9 +226,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The framework's performance gains were evaluated exclusively through simulated XR-driven mobile edge computing scenarios rather than a physical network deployment.",
-      "what": "A multi-agent reinforcement learning (MARL) framework using the Heterogeneous-Agent Proximal Policy Optimization (HAPPO) algorithm was developed to schedule time-sensitive network (TSN) traffic queues in mobile edge computing environments. Tested in simulations of dynamic extended reality (XR) traffic flows, the decentralized framework models each queue as an autonomous agent to capture inter-queue dependencies. The approach reduced average frame waiting times by up to 26.8% and worst-case delays by approximately 16.8% compared to baseline schedulers.",
-      "why": "It replaces static optimization and centralized scheduling models with an adaptive, decentralized mechanism capable of coordinating multiple co-located traffic queues under continuously changing network conditions."
+      "caveats": "The performance improvements and coordination capabilities were evaluated exclusively within a simulated environment rather than a physical mobile edge computing deployment.",
+      "what": "This study develops a multi-agent reinforcement learning framework for online traffic scheduling in Time-Sensitive Networking (TSN) within mobile edge computing environments. Using the Heterogeneous-Agent Proximal Policy Optimization (HAPPO) algorithm, the model treats each TSN queue as an autonomous agent to capture inter-queue dependencies. Simulation results show the framework reduces average frame waiting times by up to 26.8% and worst-case delays by approximately 16.8% compared to existing schedulers.",
+      "why": "It introduces a decentralized, adaptive scheduling capability that can handle dynamic, co-located extended reality (XR) traffic flows, moving beyond the static optimization and centralized models that fail when traffic patterns change."
     }
   },
   "track": "papers",

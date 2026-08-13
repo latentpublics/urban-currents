@@ -80,7 +80,12 @@ def check_issue_references(
     # selection rule stays behind. It is worth counting because the archive is
     # what novelty is measured against — unreferenced items quietly raise the
     # baseline, and a number here is how anyone would notice.
-    published = {wk for issue in issues for wk in issue.items}
+    # `unreadable` counts as referenced: those items are published, in their own
+    # section, and the whole point of the separate list is that they are still
+    # part of the issue.
+    published = {
+        wk for issue in issues for wk in (list(issue.items) + list(issue.unreadable))
+    }
     orphans = [it.work_key for it in items if it.work_key not in published]
     if orphans:
         result.note(

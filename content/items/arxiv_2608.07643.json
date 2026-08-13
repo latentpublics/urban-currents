@@ -79,7 +79,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -122,6 +122,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:33:54Z",
     "collectors": [
@@ -131,7 +132,7 @@
     "cost_usd": 0.005333,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -208,9 +209,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The system's performance is highly sensitive to specific geometric sampling thresholds, including a resolution floor and a frame rate floor below which accuracy collapses due to vehicle aliasing.",
-      "what": "The study develops and evaluates a class-agnostic, purely geometric traffic-sensing pipeline for Single Board Computers that counts vehicles using background subtraction and software inductive loop detectors instead of deep learning object detectors. Tested on Raspberry Pi hardware across four videos and a field deployment, the self-calibrating geometric rule achieved 83.3% to 100% counting accuracy and 91% accuracy in the field, while also calculating average vehicle speeds.",
-      "why": "It establishes a highly resource-efficient traffic monitoring capability that runs on low-power edge hardware without requiring pre-trained object models, annotated training data, or high-compute tracking pipelines."
+      "caveats": "The system's performance is highly sensitive to specific geometric thresholds, showing a collapse in accuracy below certain resolution and frame rate limits where vehicles alias past the detection line.",
+      "what": "This study develops and tests a class-agnostic, purely geometric vehicle counting pipeline designed to run on low-power Single Board Computers like the Raspberry Pi. The system uses background subtraction to detect moving blobs and applies two counting rules across a virtual line: a constant average speed rule with an analytical accuracy of about 86%, and a self-calibrating rule that reconstructs lane geometry to count vehicles and estimate their speed. Tested across four videos and a field deployment, the self-calibrating method achieved 83.3% to 100% accuracy, outperforming a blob-tracking baseline (91% versus 37.5%) under the same hardware constraints.",
+      "why": "It demonstrates that reliable traffic monitoring and speed estimation can be achieved on cheap, edge-compute hardware without the need for pre-trained deep learning models, annotated datasets, or high power budgets. This provides a viable deployment path for tracking rare vehicle classes, protecting privacy, and bootstrapping training data in resource-constrained settings."
     }
   },
   "track": "papers",

@@ -235,6 +235,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:20:16Z",
     "collectors": [
@@ -243,7 +244,7 @@
     "cost_usd": 0.004659,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -267,11 +268,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.2,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.64,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
@@ -320,9 +321,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on the perceived effectiveness reported by professionals rather than empirical microclimate measurements of the parks themselves.",
-      "what": "The study surveyed 87 urban design and planning professionals from local government, state government, and private practice in Western Australia to assess the perceived effectiveness of park climate adaptation strategies. The survey evaluated thermal comfort interventions across three distinct climate zones: Hot semi-arid (BSh), Hot desert (BWh), and Mediterranean (Csa).",
-      "why": "It establishes a professional consensus favoring nature-based solutions for park cooling, while simultaneously highlighting a critical planning conflict between these greening strategies and declining water availability for irrigation in arid regions."
+      "caveats": "The findings rely entirely on the perceived effectiveness of strategies by professionals rather than empirical microclimate measurements.",
+      "what": "A survey of 87 urban design and planning professionals from local government, state government, and private practice in Western Australia evaluates the perceived effectiveness of park climate adaptation strategies. The study focuses on local parks under hot daytime conditions across three distinct climate zones: Hot semi-arid (BSh), Hot desert (BWh), and Mediterranean (Csa).",
+      "why": "It establishes a professional consensus favoring nature-based solutions for park cooling, while simultaneously highlighting a critical planning conflict between these irrigation-dependent strategies and declining regional rainfall."
     }
   },
   "track": "papers",

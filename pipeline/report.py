@@ -737,6 +737,38 @@ def build_report(out_path: Optional[Path] = None) -> Path:
       f"to journal articles.")
     A("")
 
+    # -- abstract coverage ------------------------------------------------
+    A("## What we could not read")
+    A("")
+    unreadable_keys = {wk for issue in issues for wk in issue.unreadable}
+    by_publisher: dict[str, int] = {}
+    for issue in issues:
+        for name, n in (issue.scan_meta.unreadable_by_publisher or {}).items():
+            by_publisher[name] = by_publisher.get(name, 0) + n
+    if not unreadable_keys:
+        A("No items are currently unreadable, or no issue has recorded any.")
+        A("")
+    else:
+        total = len(unreadable_keys) + len(published_items)
+        A(f"**{len(unreadable_keys)} items across {len(issues)} issues had no "
+          f"abstract from any source** and published in `Also published today` "
+          f"instead of as cards — {len(unreadable_keys)}/{total} of everything "
+          f"that reached an issue. Springer Nature withdrew its non-OA abstracts "
+          f"from OpenAlex in 2022 and Elsevier followed in 2024; Crossref and "
+          f"Springer's own API are asked for what they can still supply, and "
+          f"what none of them has cannot be summarised, because the abstract is "
+          f"the only evidence a summary is allowed to use.")
+        A("")
+        L.extend(_table(
+            ["publisher", "`unreadable` items"],
+            sorted(by_publisher.items(), key=lambda kv: -kv[1]),
+        ))
+        A("")
+        A("This is the one blind spot the pipeline can measure exactly, and the "
+          "count is stated rather than hidden. It names publishers here because "
+          "this is the engineering report; the reader-facing section names none.")
+        A("")
+
     # -- archive ----------------------------------------------------------
     A("## Archive")
     A("")

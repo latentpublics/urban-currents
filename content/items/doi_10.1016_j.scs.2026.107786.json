@@ -277,6 +277,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:31:18Z",
     "collectors": [
@@ -285,7 +286,7 @@
     "cost_usd": 0.002359,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -362,9 +363,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on a simulation model of a single Australian suburb and may vary under different climate zones, building standards, or utility tariff structures.",
-      "what": "This study modeled and compared six neighbourhood-scale cooling and energy storage configurations for an Australian suburb using TRNSYS simulations with high-resolution meteorological, load, and tariff data. The configurations evaluated combinations of individual, district, and community-shared cooling architectures with either battery or phase-change material thermal energy storage (TES). A district cooling system with a centralised battery achieved the highest primary energy saving at 98.6% but cost USD 1.36 million, while a community system with centralised TES achieved an 86.1% primary energy saving at a much lower life cycle cost of USD 0.55 million.",
-      "why": "It establishes that community-shared thermal energy storage is the most cost-effective pathway for suburban cooling decarbonisation, offering a viable alternative to expensive centralised battery systems while still achieving high primary energy savings."
+      "caveats": "The findings are based on a simulation model of a single Australian suburb, which may limit direct generalisation to regions with different tariffs, climates, or building standards.",
+      "what": "This study simulated six neighbourhood-scale cooling and storage configurations for an Australian suburb using a TRNSYS model driven by high-resolution meteorological, load, and tariff data. The analysis compared individual, district, and community-shared systems using either battery or phase-change material thermal energy storage (TES) combined with household solar photovoltaics. A district cooling system with a centralised battery achieved the highest primary energy savings at 98.6% but cost USD 1.36 million, while a community system with centralised TES delivered 86.1% energy savings at a much lower life cycle cost of USD 0.55 million.",
+      "why": "It establishes that community-scale thermal energy storage is the most cost-effective architecture for decarbonising suburban cooling, offering a viable alternative to expensive centralized battery systems while still drastically reducing grid dependence."
     }
   },
   "track": "papers",

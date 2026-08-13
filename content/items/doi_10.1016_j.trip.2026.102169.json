@@ -173,6 +173,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:42:09Z",
     "collectors": [
@@ -181,7 +182,7 @@
     "cost_usd": 0.001961,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -221,8 +222,8 @@
       "value": false
     },
     "data_available": {
-      "basis": "rule",
-      "confidence": "low",
+      "basis": "llm",
+      "confidence": "medium",
       "detail": null,
       "url": null,
       "value": false
@@ -258,9 +259,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on qualitative interviews and document reviews from two specific urban regions in Norway, which may limit generalizability to different institutional and political contexts.",
-      "what": "This study analyzes how the COVID-19 pandemic affected strategic land-use and mobility planning in two Norwegian urban regions. The analysis is based on 21 in-depth interviews with leading planning professionals conducted in 2021 and 2024, alongside a review of planning documents from before, during, and after the pandemic.",
-      "why": "It demonstrates that pre-pandemic sustainable mobility goals and planning discourses remained highly resilient to pandemic-induced travel behavior changes due to strong institutional anchoring, though it exposes critical vulnerabilities in these strategies' reliance on public transit funding and strict anti-sprawl land-use policies."
+      "caveats": "The findings are based on a small sample of professional interviews and document reviews restricted to two urban regions in a single country with highly specific governance structures.",
+      "what": "This study analyzed how the COVID-19 pandemic affected long-term sustainable land-use and transport planning in two Norwegian urban regions. The researchers conducted 21 in-depth interviews with leading planning professionals across two waves in 2021 and 2024, and reviewed planning documents spanning the pre-pandemic, mid-pandemic, and post-pandemic periods. The analysis reveals that despite temporary shifts in travel behavior, pre-existing sustainable mobility goals and strategies remained unchanged due to strong political anchoring and institutionalized agreements.",
+      "why": "It demonstrates that highly institutionalized urban planning frameworks can withstand major external shocks without abandoning sustainability targets, while also identifying that these strategies remain vulnerable to rising public transit costs and threats to anti-sprawl policies."
     }
   },
   "track": "papers",

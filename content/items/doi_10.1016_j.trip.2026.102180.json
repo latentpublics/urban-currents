@@ -54,7 +54,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -126,6 +126,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:34:57Z",
     "collectors": [
@@ -134,7 +135,7 @@
     "cost_usd": 0.002226,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -212,8 +213,8 @@
   "summary": {
     "en": {
       "caveats": "The analysis relies on cross-sectional data, which limits the ability to observe how these structural relationships and priorities evolve over time.",
-      "what": "The study analyzes the structural dynamics of the Sustainable Freight Transport (SFT) index using a four-stage analytical pipeline that combines expectation-maximization clustering, Bayesian network classification, partial least squares path modeling, and importance-performance map analysis. It evaluates the interrelationships among economic, social, and environmental pillars, finding that the environmental dimension is the strongest determinant of sustainable freight performance, while the social pillar acts as a key mediator transmitting the effects of economic and environmental improvements.",
-      "why": "It establishes the empirical structural architecture of freight sustainability, demonstrating that social outcomes are mediated by economic and environmental performance rather than acting as an independent direct driver."
+      "what": "This study analyzes the structural dynamics of the Sustainable Freight Transport (SFT) index using a four-stage analytical pipeline that combines expectation-maximization clustering, Bayesian network tree-augmented naive Bayes classification, partial least squares path modeling, and importance-performance map analysis. The model evaluates the interrelationships between economic, social, and environmental pillars, finding that the environmental dimension is the strongest driver of overall performance, while the social pillar acts as a key mediator transmitting the benefits of economic and environmental improvements.",
+      "why": "It establishes the structural architecture and hierarchical dependencies between different sustainability dimensions in freight systems, moving beyond isolated pillar analyses to show how social outcomes depend on environmental and economic progress."
     }
   },
   "track": "papers",

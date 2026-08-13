@@ -112,7 +112,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -204,6 +204,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:31:18Z",
     "collectors": [
@@ -212,7 +213,7 @@
     "cost_usd": 0.001971,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -289,9 +290,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The abstract does not disclose the source, size, or geographic location of the dataset used to estimate the model.",
-      "what": "This study models how travel-based activities influence mode choice and the value of travel time savings (VTTS) using an attitude-based approach to control for self-selection and endogeneity bias. The model was tested on travel choices, revealing that preferences for travel time use increase the probability of choosing rail for trips over 5 km and car driving for trips under 5 km. When controlling for these preferences and travel context characteristics, travel-based activities had a non-significant effect on VTTS.",
-      "why": "It demonstrates that travel time use drives mode choice self-selection rather than directly altering the value of travel time savings itself, correcting a common endogeneity bias in demand modeling."
+      "caveats": "The study relies on self-reported attitudes and preferences to capture travel time use, which may introduce measurement errors compared to direct observations of in-transit behavior.",
+      "what": "This study models how travel-based activity preferences influence mode choice and the value of travel time savings (VTTS) using an attitude-based approach. The model controls for endogeneity and self-selection by incorporating traveller characteristics and travel context variables. The findings show that travel time use preferences increase the probability of choosing rail for trips longer than 5 km and car driving for trips under 5 km, while travel-based activities showed non-significant effects on VTTS once these preferences and context variables were controlled.",
+      "why": "It demonstrates that accounting for travel-time-use preferences and context variables can effectively eliminate endogeneity bias in VTTS estimates, providing a more accurate framework for predicting mode shifts toward public transport or autonomous vehicles."
     }
   },
   "track": "papers",

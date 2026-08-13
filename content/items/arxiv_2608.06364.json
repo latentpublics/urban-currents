@@ -64,6 +64,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:27:15Z",
     "collectors": [
@@ -72,7 +73,7 @@
     "cost_usd": 0.004929,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -149,9 +150,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on a qualitative interpretive approach and forensic analysis of a selected sample of Android applications, which may not represent the entire mobile shopping ecosystem in Nigeria.",
-      "what": "This study analyzes the use of artificial intelligence in selected Android mobile shopping applications in Nigeria and evaluates their platform transparency. Using forensic analysis of the applications combined with contextual document analysis, the research assesses how AI features are disclosed to users and examines broader socio-economic patterns of digital platform dependence and AI awareness in the country.",
-      "why": "It provides empirical evidence on the gap between widespread AI implementation and limited user transparency in a developing e-commerce market, establishing a baseline for individual digital sovereignty and user control in regions with growing platform dependence."
+      "caveats": "The study relies on a qualitative, interpretive approach and forensic analysis of selected apps rather than a comprehensive, market-wide audit of all mobile shopping platforms.",
+      "what": "This study analyzes the presence of AI features and the transparency of their disclosure in Nigerian Android mobile shopping applications using a forensic analysis of selected apps combined with contextual document analysis. The findings reveal widespread implementation of AI technologies across these e-commerce platforms, contrasted by very limited disclosure and transparency regarding how the AI is used.",
+      "why": "It provides empirical evidence on how the lack of platform transparency in a rapidly growing e-commerce market undermines individual digital sovereignty, establishing a baseline of user awareness and control in a developing digital economy."
     }
   },
   "track": "papers",

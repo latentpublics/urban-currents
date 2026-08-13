@@ -217,6 +217,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:27:18Z",
     "collectors": [
@@ -225,7 +226,7 @@
     "cost_usd": 0.004998,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -249,11 +250,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.2,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.64,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
@@ -302,9 +303,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The empirical findings are based on qualitative interviews and document analysis focused primarily on a single post-conflict city context.",
-      "what": "The study analyzes the expansion and persistence of informal urban development in Herat, Afghanistan, using data from 24 semi-structured interviews with urban actors and officials, a focus group discussion, and a review of policy documents. It identifies that informality is reproduced through delayed planning, selective enforcement, institutional ambiguity, and reliance on extra-legal actors, spanning both low-income and elite-driven developments.",
-      "why": "It demonstrates that urban informality is not merely a consequence of state incapacity or poverty, but is actively produced and institutionalized as a core component of urban governance through deliberate administrative practices and fragmented international interventions."
+      "caveats": "The empirical findings are primarily based on qualitative interviews and policy reviews focused on a single Afghan city, which may limit direct generalizability to other post-conflict contexts.",
+      "what": "This study analyzes the persistence of informal urban development in Herat, Afghanistan, using data from one focus group discussion, 24 semi-structured interviews with urban officials and actors in Herat and Kabul, and a review of policy documents. The thematic analysis reveals that informality is driven by delayed planning, selective regulatory enforcement, institutional ambiguity, and reliance on extra-legal actors, spanning both low-income and elite-driven commercial and residential developments.",
+      "why": "It demonstrates that informal urban development is not merely a consequence of state incapacity, but is actively reproduced through governance practices and legal ambiguity, functioning as an integral component of post-conflict urban governance rather than an exception to it."
     }
   },
   "track": "papers",

@@ -195,6 +195,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:27:17Z",
     "collectors": [
@@ -203,7 +204,7 @@
     "cost_usd": 0.004854,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -243,8 +244,8 @@
       "value": false
     },
     "data_available": {
-      "basis": "llm",
-      "confidence": "medium",
+      "basis": "rule",
+      "confidence": "low",
       "detail": null,
       "url": null,
       "value": false
@@ -280,9 +281,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on qualitative empirical data from a single city, Shenzhen, which may limit its direct applicability to Chinese cities with different property market dynamics or administrative structures.",
-      "what": "This study analyzes housing activism and urban redevelopment in Shenzhen's urban villages, focusing on the concurrent practices of property owners, migrant tenants, NGOs, and intellectuals. It details how municipal governance uses redevelopment initiatives, regulatory frameworks, market compensation, consent rules, police mobilization, and digital censorship to prioritize property owners while marginalizing non-owning migrant tenants.",
-      "why": "The research demonstrates that urban villages are shaped by systemic deficits in the rights to appropriate and participate, showing that current redevelopment frameworks actively exclude non-owners from urban citizenship and decision-making."
+      "caveats": "The findings are based on a qualitative analysis of a single Chinese megacity, which may limit direct generalizability to cities with different regulatory and property rights regimes.",
+      "what": "This study analyzes housing activism and urban redevelopment in Shenzhen, examining the actions of both property owners and non-owners, including migrant tenants, non-governmental organizations, and intellectuals. It details how municipal redevelopment initiatives, regulatory frameworks, market compensation, consent rules, police mobilization, and digital censorship collectively marginalize non-owning residents.",
+      "why": "It demonstrates that Chinese urban redevelopment operates on a rationality of 'privileged recognition' that systematically prioritizes property owners and aesthetic space, showing that the 'right to the city' framework must be expanded to include non-owners who are typically cast as passive victims."
     }
   },
   "track": "papers",

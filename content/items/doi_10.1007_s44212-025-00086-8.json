@@ -128,7 +128,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -208,6 +208,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:27:19Z",
     "collectors": [
@@ -216,7 +217,7 @@
     "cost_usd": 0.003546,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -293,9 +294,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The performance and robustness of the system are demonstrated using experimental ground vehicle data, but the abstract does not specify the variety of urban environments or driving conditions tested.",
-      "what": "This paper introduces a GNSS/INS/Mamba-ODO navigation framework that maps raw IMU outputs to 3D vehicle velocity using asymmetric sequence segmentation, multi-scale temporal modeling, and a state-space sequence learning backbone. Ground vehicle experiments demonstrate that the method achieves a mean Root Mean Square Error (RMSE) of 0.22 m/s in 3D velocity estimation and maintains a 3D positioning RMSE within 0.20 m during a 120-second GNSS outage.",
-      "why": "It replaces traditional velocity constraints that degrade due to inaccurate installation angle estimations, enabling highly accurate and robust vehicle positioning in GNSS-denied urban environments without relying on precise physical alignment of the Inertial Measurement Unit."
+      "caveats": null,
+      "what": "This paper introduces a GNSS/INS/Mamba-ODO navigation framework that maps raw IMU outputs directly to 3D velocity using asymmetric sequence segmentation, multi-scale temporal modeling, and a state-space sequence learning backbone. Tested in real-world ground vehicle experiments, the method achieves a mean 3D velocity estimation error of 0.22 m/s and maintains a 3D positioning error under 0.20 m during a 120-second GNSS outage.",
+      "why": "It eliminates the reliance on manual installation angle calibration between the IMU and the vehicle frame, allowing vehicles to maintain sub-meter positioning accuracy in dense urban canyons where GNSS signals are blocked."
     }
   },
   "track": "papers",

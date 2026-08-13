@@ -57,7 +57,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [
       {
         "confidence": 1.0,
@@ -106,6 +106,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:27:15Z",
     "collectors": [
@@ -115,7 +116,7 @@
     "cost_usd": 0.0063,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -139,11 +140,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 0.8581,
       "source_multiplicity": 0.0
     },
-    "headline": 0.5432,
+    "headline": 0.3432,
     "relevance": 0.8581
   },
   "signals": {
@@ -192,9 +193,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The model relies on training with synthetic data from the CARLA simulator before fine-tuning on real-world imagery, which may affect its immediate out-of-the-box performance in environments with highly novel visual characteristics.",
-      "what": "The paper develops a two-stage geometry-aware localization pipeline that estimates vehicle footprints on the road plane from monocular roadside surveillance cameras. The method uses a YOLO-based detector followed by a ResNet34 regression network to predict the four corner points of a vehicle's base, calculating the final position as the geometric center. Evaluated on the DAIR-V2X dataset, the approach reduced the mean image-space localization error from 31.77 to 15.30 pixels and decreased median ground-plane error for medium-range vehicles from 5.52 m to 0.90 m.",
-      "why": "It provides a highly accurate method for localizing vehicles using standard, single-camera roadside infrastructure, overcoming the severe perspective distortion and parallax errors that typically degrade bounding-box-center estimation methods."
+      "caveats": "The pipeline's performance gains rely heavily on contextual information surrounding the detector bounding box, which may vary under different environmental or occlusion conditions.",
+      "what": "A two-stage geometry-aware pipeline was developed to localize vehicles by projecting their footprints onto the road plane using monocular roadside surveillance cameras. The system combines a YOLO-based detector with a ResNet34 regression network to predict the four corner points of a vehicle's base, which was trained on CARLA synthetic data and fine-tuned on the DAIR-V2X dataset. On real-world imagery, the method reduced the mean image-space localization error by 51.8% from 31.77 to 15.30 pixels, and cut median ground-plane errors for medium-range vehicles from 5.52 m to 0.90 m.",
+      "why": "It overcomes the severe localization inaccuracies caused by perspective distortion and parallax in standard bounding-box-center methods, particularly for large or distant vehicles captured by elevated cameras."
     }
   },
   "track": "papers",

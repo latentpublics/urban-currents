@@ -101,7 +101,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -172,6 +172,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:38:33Z",
     "collectors": [
@@ -180,7 +181,7 @@
     "cost_usd": 0.002035,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -231,7 +232,7 @@
       "confidence": "medium",
       "detail": null,
       "url": null,
-      "value": "single_city"
+      "value": "not_applicable"
     },
     "is_retracted": {
       "basis": "rule",
@@ -257,9 +258,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on the socioeconomic characteristics of a vehicle's departure location as a proxy for the individual driver's actual socioeconomic profile.",
-      "what": "The study analyzed speeding and hard-braking behaviors by linking high-resolution vehicle trajectory data to the socioeconomic profiles of drivers' departure locations. Using ordinary least squares and multiscale geographically weighted regression, it identified positive correlations between speeding rates and household median income, educational attainment, drivers aged 20–59, and Black or African American populations, while finding negative correlations with disability rates and older drivers.",
-      "why": "It demonstrates a method to infer the socioeconomic characteristics of drivers using telematics departure locations, enabling transportation agencies to identify demographic patterns in risky driving behaviors without relying solely on crash records or surveys."
+      "caveats": "The study relies on the socioeconomic characteristics of a vehicle's departure location as a proxy for the individual driver's actual demographic profile.",
+      "what": "This study analyzed high-resolution vehicle trajectory data to correlate speeding and hard-braking behaviors with the socioeconomic profiles of drivers' departure locations. Using multiscale geographically weighted regression, the analysis mapped driving events against demographic variables such as income, education, age, race, and disability status, finding that both behaviors positively correlate with drivers aged 20–59 and Black or African American populations, while negatively correlating with disability rates and older drivers.",
+      "why": "It demonstrates how high-resolution telematics data can be linked to spatial demographics at departure points, offering a way to identify risky driving patterns across different socioeconomic groups without relying solely on lagging crash databases or self-reported surveys."
     }
   },
   "track": "papers",

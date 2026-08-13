@@ -127,6 +127,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:27:15Z",
     "collectors": [
@@ -136,7 +137,7 @@
     "cost_usd": 0.00447,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -160,11 +161,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 0.766,
       "source_multiplicity": 0.0
     },
-    "headline": 0.5064,
+    "headline": 0.3064,
     "relevance": 0.766
   },
   "signals": {
@@ -213,9 +214,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on a single qualitative focus group with practitioners in the United States, which may not capture the regulatory and operational realities of other jurisdictions.",
-      "what": "This study conducts a qualitative analysis of findings from an in-person focus group with UAV and counter-UAV practitioners from US industry and government organizations. It identifies five categories of real-world operational challenges in UAV incident response: situational awareness, fragmented reporting and interorganizational coordination, forensic and attribution limitations, legal and policy gaps, and training shortfalls.",
-      "why": "It shifts the focus of UAV forensics from purely technical data extraction methods to the socio-technical and organizational realities faced by actual incident handlers, establishing a baseline of practical challenges that hinder effective response."
+      "caveats": "The findings are based on a single qualitative focus group with US-based practitioners, which may not capture the regulatory and operational realities of other jurisdictions.",
+      "what": "This study conducted an in-person focus group with UAV and counter-UAV practitioners from US government and industry organizations to analyze how drone incidents are managed in real-world settings. Qualitative analysis of the session identified five primary operational hurdles: poor airspace visibility, fragmented interorganizational reporting, technical forensic limitations, legal gaps, and insufficient training capacity.",
+      "why": "It shifts the focus of UAV forensics from purely technical data extraction to the socio-technical and organizational realities of incident response, mapping out systemic coordination and policy barriers that practitioners face."
     }
   },
   "track": "papers",

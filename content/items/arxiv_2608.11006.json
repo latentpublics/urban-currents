@@ -6,13 +6,23 @@
     "abstract": "Governments worldwide have responded to the rapid expansion of AI by publishing national and regional AI strategies. Comparing national and regional AI strategies to identify their convergences and divergences can uncover their common practices, understand regional variations, and provide policy designers a comprehensive set of policy design elements for their ongoing AI strategy developments. Yet, existing work has not examined their underlying policy design elements or assessed whether those elements are horizontally (country-to-country) or vertical (region-to-country) converging or diverging over time. This paper addresses that gap by coding and analyzing 74 national and 3 regional AI strategies drawn from a global scan of all 205 UN member and non-member states. The coding used a latent-inductive approach organized around three functional policy design elements: goals, approaches, and principles. Two research questions guided the analysis: to what degree are national AI strategies becoming horizontally convergent or divergent over time; and to what degree are national strategies becoming vertically convergent or divergent with those countries' regional AI strategy. Results indicate strong horizontal convergence around economic competitiveness, research support, and ethical AI use, alongside persistent divergence in human rights goals, participatory governance approaches, and human-centric principles. Across the three regions, the AU exhibits the highest vertical convergence, the EU demonstrated strong alignment on regulatory and economic priorities but diverges on human-centric values, and the Nordic-Baltic Region displays mixed vertical convergence. These findings offer policy designers a comprehensive evidence base for identifying emerging AI policy design choice norms as AI strategies are developed and updated.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "CEIMIA",
+            "ror": null
+          }
+        ],
         "name": "Benjamin Faveri",
         "openalex": null,
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Ottawa",
+            "ror": null
+          }
+        ],
         "name": "Brie Bhasin",
         "openalex": null,
         "orcid": null
@@ -64,6 +74,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
@@ -72,7 +83,7 @@
     "cost_usd": 0.005213,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -149,9 +160,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on a qualitative coding of published strategy documents, which may not reflect actual policy implementation or enforcement.",
-      "what": "This paper coded and analyzed 74 national and 3 regional AI strategies from a global scan of UN member and non-member states using a latent-inductive approach. It evaluated horizontal (country-to-country) and vertical (region-to-country) convergence across three policy design elements: goals, approaches, and principles. The analysis reveals strong horizontal convergence around economic competitiveness, research support, and ethical AI use, alongside persistent divergence in human rights goals, participatory governance, and human-centric principles.",
-      "why": "It establishes a systematic empirical baseline of global AI policy design choices, revealing where international norms are solidifying (such as economic and research support) and where national strategies remain fragmented (such as human rights and governance)."
+      "caveats": "The analysis is based on a qualitative coding of policy documents, which reflects stated strategic intentions rather than actual regulatory enforcement or implementation outcomes.",
+      "what": "This study coded and analyzed 74 national and 3 regional AI strategies from a global scan of 205 states using a latent-inductive approach. It evaluated horizontal and vertical policy convergence across three design elements: goals, approaches, and principles. The analysis revealed strong horizontal convergence around economic competitiveness, research support, and ethical AI use, but persistent divergence regarding human rights, participatory governance, and human-centric principles.",
+      "why": "It provides the first systematic empirical evidence of how national AI policies align with or diverge from regional frameworks, mapping out which policy elements are becoming global norms and which remain highly localized."
     }
   },
   "track": "papers",

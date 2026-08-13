@@ -165,6 +165,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:42:09Z",
     "collectors": [
@@ -173,7 +174,7 @@
     "cost_usd": 0.001883,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -250,9 +251,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on qualitative case study interviews and do not provide quantitative measurements of the scale or economic impact of these informal logistics practices.",
-      "what": "This study analyzes how e-commerce outsourcing practices foster informality in last-mile logistics using an inductive qualitative case study design. The research is based on semi-structured interviews with five key stakeholder groups: delivery drivers, e-commerce companies, public sector representatives, logistics and road safety experts, and society representatives.",
-      "why": "It demonstrates how the outsourcing of last-mile logistics systematically transfers operational risks and negative externalities—such as road crashes, congestion, and precarious labor conditions—from private e-commerce firms to informal workers and the public, revealing how regulatory gaps institutionalize these informal practices."
+      "caveats": "The findings are based on qualitative case study interviews, which may limit their direct generalizability to regions with different regulatory frameworks or labor market structures.",
+      "what": "This study uses an inductive qualitative approach and an instrumental case study design to analyze how e-commerce outsourcing drives informality in last-mile logistics. The research is based on semi-structured interviews with five stakeholder groups: delivery drivers, e-commerce firms, public sector officials, logistics and road safety experts, and community representatives.",
+      "why": "It demonstrates how the outsourcing of last-mile deliveries systematically transfers operational risks and costs from private e-commerce companies to informal workers and the public, establishing that current regulatory gaps institutionalize these negative externalities."
     }
   },
   "track": "papers",

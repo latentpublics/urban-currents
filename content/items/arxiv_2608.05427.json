@@ -111,6 +111,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:20:14Z",
     "collectors": [
@@ -120,7 +121,7 @@
     "cost_usd": 0.004473,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -198,8 +199,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "An optimization framework for school network reorganization is developed using a novel Integer Linear Programming formulation that integrates geographical, administrative, and educational criteria. The model was evaluated using a synthetic benchmark generator and applied to a real-world case study of the complete public school network in the Calabria region of Italy. Additionally, the formulation was adapted into a constrained quadratic model and executed within a hybrid quantum optimization environment to test its compatibility with quantum computing.",
-      "why": "It provides a scalable decision-support tool that allows educational planners to balance demographic shifts and territorial accessibility while demonstrating that complex school-dimensioning problems can be solved using emerging hybrid quantum optimization technologies."
+      "what": "An optimization framework for school network reorganization was developed using an Integer Linear Programming formulation that balances demographic trends, territorial accessibility, and educational criteria. The model was validated using a synthetic benchmark generator and applied to a real-world case study of the entire public school network in Italy's Calabria region. Additionally, the formulation was adapted into a constrained quadratic model and executed within a hybrid quantum optimization environment.",
+      "why": "It establishes a scalable method for regional school consolidation that can be solved using both classical and emerging quantum computing architectures, allowing planners to evaluate complex policy scenarios and resource allocations across large geographic areas."
     }
   },
   "track": "papers",

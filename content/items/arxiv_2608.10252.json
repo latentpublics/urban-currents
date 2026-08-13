@@ -82,6 +82,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:40:42Z",
     "collectors": [
@@ -90,7 +91,7 @@
     "cost_usd": 0.005354,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -167,9 +168,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The empirical application and validation of the model are limited to a single city, Brasília.",
-      "what": "The study models the joint return periods of maximum air temperature and minimum relative humidity in Brasília, Brazil, using a copula-based approach combined with an extreme value framework. By testing multiple copula families, including rotated versions, the model successfully captures the asymmetric, tail-dependent, and multimodal joint density patterns observed in the local climate data.",
-      "why": "It provides a method to quantify the expected frequency of compound extreme events—specifically simultaneous high temperatures and low humidity—which allows local planners to measure and monitor wildfire and environmental risks under complex, multimodal climate regimes."
+      "caveats": "The empirical application and validation of this bimodal extreme value framework are limited to a single city.",
+      "what": "This study models the joint return periods of extreme heat and low humidity in Brasília, Brazil, using a copula-based approach combined with a novel extreme value framework for bimodal data. The researchers evaluated multiple copula families, including rotated versions, to capture the asymmetric dependence structure and the multimodal joint density of maximum air temperature and minimum relative humidity.",
+      "why": "The model successfully reproduces multimodal patterns that suggest the presence of multiple distinct climate regimes, providing a more accurate statistical tool to quantify the frequency of concurrent hot and dry events that trigger wildfires."
     }
   },
   "track": "papers",

@@ -208,6 +208,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:45:51Z",
     "collectors": [
@@ -216,7 +217,7 @@
     "cost_usd": 0.002022,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -293,9 +294,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on data from a single extreme weather event in one city, and the findings are limited to residents who had active internet access and Facebook accounts during the power outages.",
-      "what": "This study analyzed online-offline mutual aid interactions during the December 2022 Buffalo blizzard by manually collecting Facebook conversations, using machine learning to identify mutual-aid messages, and applying social network analysis to map user interactions. The analysis reveals that residents self-organized to deliver practical, informational, and emotional support, forming a network of weak ties that bridged disconnected individuals to distribute life-saving resources.",
-      "why": "It demonstrates how virtual spaces function as digital urban commons, proving that emergent social capital and weak ties among strangers can rapidly scale up physical crisis response when formal emergency services are halted."
+      "caveats": "The findings are based on a single extreme weather event in one city and rely on data from a single social media platform.",
+      "what": "This study analyzed online-offline mutual aid interactions during the December 2022 Buffalo blizzard by manually collecting Facebook conversations, classifying mutual-aid messages with machine learning, and mapping user interactions with social network analysis. The analysis categorized the digital exchanges into practical, informational, and emotional support, mapping how these connections formed networks of weak ties among disconnected residents.",
+      "why": "It demonstrates that virtual spaces function as digital urban commons, proving that emergent social capital among strangers can organize and deliver life-saving physical resources when formal emergency services are completely halted."
     }
   },
   "track": "papers",

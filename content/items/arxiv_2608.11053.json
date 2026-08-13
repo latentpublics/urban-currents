@@ -1,6 +1,5 @@
 {
   "badges": [
-    "data",
     "preprint"
   ],
   "bibliography": {
@@ -113,6 +112,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
@@ -121,7 +121,7 @@
     "cost_usd": 0.006003,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -144,12 +144,12 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.4,
+      "artifact_completeness": 0.0,
       "novelty": 0.0,
       "relevance": 0.6107,
       "source_multiplicity": 0.0
     },
-    "headline": 0.3243,
+    "headline": 0.2443,
     "relevance": 0.6107
   },
   "signals": {
@@ -161,11 +161,11 @@
       "value": false
     },
     "data_available": {
-      "basis": "llm",
-      "confidence": "medium",
+      "basis": "rule",
+      "confidence": "low",
       "detail": null,
       "url": null,
-      "value": true
+      "value": false
     },
     "geographic_scope": {
       "basis": "llm",
@@ -198,9 +198,9 @@
   },
   "summary": {
     "en": {
-      "caveats": null,
-      "what": "The study evaluated six deep learning object detection models (YOLOv5, YOLOv8, YOLO11, YOLO26, Faster R-CNN, and RT-DETR) using a manually collected dataset of 3,382 images of sesame, cabbage, and tomato crops from Nigerian farms. The transformer-based RT-DETR model achieved the highest performance with a precision of 0.768 and mAP@0.5:0.95 of 0.624, while Faster R-CNN performed the poorest with an mAP@0.5 of 0.466.",
-      "why": "It establishes baseline performance metrics for modern computer vision models on real-world, uncontrolled agricultural conditions in an underrepresented region, moving beyond the idealized, controlled datasets typically used in precision agriculture research."
+      "caveats": "The evaluation is limited to three specific crop types (sesame, cabbage, and tomato) within a single national context.",
+      "what": "The study evaluated six object detection models—YOLOv5, YOLOv8, YOLO11, YOLO26, Faster R-CNN, and RT-DETR—using the AgriAISeg dataset, which contains 3,382 manually collected images of sesame, cabbage, and tomato crops from Nigerian farms. The transformer-based RT-DETR model achieved the highest performance with a precision of 0.768 and an mAP@0.5:0.95 of 0.624, while Faster R-CNN performed poorly with an mAP@0.5 of 0.466.",
+      "why": "It establishes performance benchmarks for modern computer vision models on real-world, uncontrolled African agricultural data, proving that one-stage and transformer-based detectors are more resilient to complex field conditions like occlusion and changing illumination than older two-stage detectors."
     }
   },
   "track": "papers",

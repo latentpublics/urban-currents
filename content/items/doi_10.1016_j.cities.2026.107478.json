@@ -177,6 +177,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:40:44Z",
     "collectors": [
@@ -185,7 +186,7 @@
     "cost_usd": 0.005157,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -262,9 +263,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The empirical analysis is limited to the Warsaw metropolitan area, meaning the specific spatial typologies and development dynamics may not directly represent peri-urban areas in other national contexts.",
-      "what": "The study analyzes spatial development dynamics in the peri-urban area of Warsaw, Poland, using spatial data from 2014 to 2024 to identify intensive zones of residential development and map their morphological characteristics. It establishes a typology of development forms based on density, continuity, diversity, and multifunctionality, revealing a fragmented, functionally monotonous urban fabric that relies heavily on individual transportation.",
-      "why": "It demonstrates that current peri-urban development in Poland's capital region directly contradicts sustainable planning principles, providing empirical evidence to support the formal recognition and integrated planning of peri-urban zones as distinct administrative entities."
+      "caveats": "The empirical analysis is limited to the metropolitan area of a single Polish city, Warsaw.",
+      "what": "This study analyzes spatial development patterns in Warsaw's peri-urban fringe and neighboring rural municipalities using spatial data from 2014 to 2024. It maps the most intensive zones of residential expansion along administrative borders, establishing a typology of development forms based on density, continuity, diversity, and multifunctionality. The analysis reveals a highly fragmented, functionally monotonous urban fabric that lacks public infrastructure and relies heavily on private car transit.",
+      "why": "It provides empirical evidence of how administrative boundaries fail to contain urban sprawl, demonstrating that transitional fringe zones require formal recognition as distinct planning entities to prevent unsustainable, car-dependent development."
     }
   },
   "track": "papers",

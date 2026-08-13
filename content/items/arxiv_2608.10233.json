@@ -78,6 +78,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:40:42Z",
     "collectors": [
@@ -86,7 +87,7 @@
     "cost_usd": 0.005311,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -110,11 +111,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 0.6937,
       "source_multiplicity": 0.0
     },
-    "headline": 0.4775,
+    "headline": 0.2775,
     "relevance": 0.6937
   },
   "signals": {
@@ -163,9 +164,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies entirely on satellite-derived GRACE observations and unsupervised machine learning proxies without validation against physical, in-situ groundwater measurements.",
-      "what": "This study analyzed groundwater storage anomalies in Ghana from 2004 to 2024 using GRACE satellite data, Z-score standardization, and an ensemble-based Isolation Forest machine learning framework. The model identified 12 anomalous months (5 deficits and 7 surpluses), revealing persistent groundwater deficits from 2004 to 2009, increasing positive anomalies after 2018, and distinct spatial patterns with more frequent deficits in northern Ghana and stronger surpluses in the south.",
-      "why": "It establishes a practical, unsupervised framework for detecting subtle groundwater deviations in data-scarce regions without relying on long-term in-situ monitoring networks."
+      "caveats": "The study relies entirely on satellite-derived GRACE data and unsupervised modeling due to a lack of long-term, in-situ groundwater measurements to validate the detected anomalies on the ground.",
+      "what": "This study analyzed groundwater storage anomalies in Ghana from 2004 to 2024 using GRACE satellite data, Z-score standardization, and an ensemble-based Isolation Forest machine learning model. The framework identified 12 anomalous months, consisting of 5 deficit and 7 surplus events, revealing a persistent groundwater deficit from 2004 to 2009 and a shift to positive anomalies after 2018. Spatial patterns showed more frequent deficits in northern Ghana and stronger surplus events in the south.",
+      "why": "It establishes a practical, unsupervised monitoring framework that can detect subtle groundwater deviations in data-scarce regions without relying on extensive in-situ observations or conventional rigid statistical thresholds."
     }
   },
   "track": "papers",

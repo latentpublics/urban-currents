@@ -107,7 +107,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -150,6 +150,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:40:42Z",
     "collectors": [
@@ -159,7 +160,7 @@
     "cost_usd": 0.005505,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -236,9 +237,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study evaluates the tools based on their technical endpoints and retrieval patterns rather than testing them against a known, ground-truth baseline of all platform activity.",
-      "what": "This study systematically compares three TikTok data collection tools—the official TikTok Research API, Pyktok, and Apify—across five endpoints: User, Hashtag, Keyword, Comment, and Related Video. The evaluation reveals substantial cross-tool discrepancies in retrieved content, particularly for hashtag and keyword searches, where the API's back-end calls and the scraping tools' front-end methods capture different time periods and popularity levels. Only the user endpoint yielded comprehensive and consistent results across all three tools.",
-      "why": "It demonstrates that different data acquisition tools introduce systematic methodological confounds, challenging the assumption that researchers can retrieve randomized or comparable samples from TikTok."
+      "caveats": "The study evaluates the tools based on their performance at a specific point in time, which may change as TikTok updates its API and scraping protections.",
+      "what": "This study systematically compares three TikTok data collection tools—the official TikTok Research API, Pyktok, and Apify—across five endpoints: User, Hashtag, Keyword, Comment, and Related Video. The evaluation reveals substantial discrepancies in retrieved content for hashtag and keyword searches, driven by the tools' reliance on either back-end API calls (Research API) or front-end web scraping (Apify and Pyktok). Only the user endpoint produced consistent and comprehensive results across all three methods.",
+      "why": "It demonstrates that different data acquisition tools introduce systematic biases regarding the time periods and popularity levels of retrieved content, challenging the assumption that researchers can obtain randomized samples from the platform."
     }
   },
   "track": "papers",

@@ -292,6 +292,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:20:16Z",
     "collectors": [
@@ -300,7 +301,7 @@
     "cost_usd": 0.007263,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -324,11 +325,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.2,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.64,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
@@ -340,8 +341,8 @@
       "value": false
     },
     "data_available": {
-      "basis": "llm",
-      "confidence": "medium",
+      "basis": "rule",
+      "confidence": "low",
       "detail": null,
       "url": null,
       "value": false
@@ -377,9 +378,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on a cross-sectional study of 21 origin-destination pairs in a single Colombian city, which may limit direct generalization to other informal transit networks.",
-      "what": "The study measured real-time PM2.5 and Black Carbon (BC) exposure across 21 origin-destination pairs in Soledad, Colombia, comparing public buses, informal motorized three-wheeled vehicles (MTWs), and private cars. Using portable low-cost sensors, a microAeth, and GPS devices, the researchers estimated inhaled doses based on demographic profiles and trained a Bayesian Neural Network Classifier to predict high-risk exposure scenarios with 70% accuracy. Buses and MTWs recorded the highest mean PM2.5 concentrations at 33.0 and 27.5 μg/m³ respectively, with peak MTW hotspot exposures reaching 959 μg/m³ for PM2.5 and 545 μg/m³ for BC.",
-      "why": "It provides the first empirical evidence in Latin America of traffic-related air pollution exposure inside informal motorized three-wheelers, revealing extreme gender-based health inequalities where women inhale PM2.5 and BC doses up to 68 times higher than men across the evaluated modes."
+      "caveats": "The study relies on a cross-sectional design in a single Colombian city, which may limit the direct generalizability of the specific exposure levels to other Latin American urban contexts.",
+      "what": "This study measured PM 2.5 and Black Carbon (BC) exposure across 21 origin-destination pairs in Soledad, Colombia, comparing buses, private cars, and informal motorized three-wheeled vehicles (MTWs). Using portable sensors, GPS, and a Bayesian Neural Network Classifier, the researchers found that buses and MTWs had the highest mean PM 2.5 concentrations at 33.0 and 27.5 Ιg/m³ respectively, with peak MTW exposures reaching 959 Ιg/m³. The predictive neural network model achieved a 70% accuracy rate in identifying high-exposure scenarios based on route, mode, and travel time.",
+      "why": "It provides the first empirical evidence of air pollution exposure inside informal motorized three-wheelers in Latin America, revealing a stark gender disparity where women inhale up to 68 times more PM 2.5 and BC than men across the studied transit modes."
     }
   },
   "track": "papers",

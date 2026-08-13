@@ -90,6 +90,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:40:42Z",
     "collectors": [
@@ -99,7 +100,7 @@
     "cost_usd": 0.005859,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -176,9 +177,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The framework characterizes compatible mechanism laws and observation mappings rather than estimating direct causal effects of specific rating factors.",
-      "what": "The paper develops a multiscale causal Directed Acyclic Graph (DAG) framework that links annual motor insurance rating factors to short-term road safety mechanisms. The framework consists of a crash-occurrence graph built from 72 study-edge records, an observation layer mapping rating variables to latent behaviors, and a downstream crash-to-claim process. It was evaluated using diagnostic examples from the French freMTPL2freq portfolio and a Spanish age-mediation dataset to demonstrate how aggregate insurance data fails to identify specific crash-generating mechanisms.",
-      "why": "It establishes the mathematical limits of using annual insurance policy data to infer real-time road safety and crash causes, proving that stronger mechanistic claims require trip-level intermediate states and linked crash-claim observations rather than aggregate annual metrics."
+      "caveats": "The framework's empirical demonstrations are limited to aggregate, coarse-resolution insurance portfolios from France and Spain, which lack the high-resolution trip telemetry needed to resolve specific physical crash mechanisms.",
+      "what": "The study introduces a multiscale causal directed acyclic graph (DAG) framework that bridges the gap between annual motor insurance claims and short-term crash-generating processes. The framework integrates a crash-occurrence graph built from 72 study-edge records, an observation layer mapping rating variables to latent behaviors, and a downstream claim-administration process. It was tested using diagnostic examples from the French freMTPL2freq portfolio and a Spanish age-mediation dataset to demonstrate how aggregate insurance metrics fail to isolate specific crash mechanisms.",
+      "why": "It establishes the mathematical limits of using annual insurance rating factors to infer actual road safety behaviors, proving that stronger causal claims about crash mechanisms require trip-level data and linked crash-claim records rather than aggregated policy-year statistics."
     }
   },
   "track": "papers",

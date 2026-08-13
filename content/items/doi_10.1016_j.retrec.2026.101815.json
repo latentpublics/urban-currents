@@ -127,6 +127,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:40:44Z",
     "collectors": [
@@ -135,7 +136,7 @@
     "cost_usd": 0.005607,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -212,9 +213,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on a single study area in Soweto and rely on hypothetical stated preference scenarios alongside revealed choices.",
-      "what": "The study conducted revealed and stated preference surveys to analyze mode choices among public transport users in Soweto, Johannesburg, across six modes including bus rapid transit, minibus taxis, and walking. Using multinomial, nested, and latent class logit models, the analysis identified two distinct user segments: a 'transfer sensitive' group averse to transfers and waiting, and a 'walk sensitive' group that tolerates transfers but is highly averse to walking.",
-      "why": "It provides empirical evidence of preference heterogeneity among public transport users in a Sub-Saharan African township context, establishing that users are not a homogeneous market and showing how specific service design changes like reducing stop distances or transfers will affect different segments."
+      "caveats": "The study relies on hypothetical stated preference scenarios alongside revealed choices, which may not perfectly capture actual commuting decisions.",
+      "what": "Using revealed and stated preference surveys from public transport users in Soweto, Johannesburg, this study analyzed travel choices across six modes, including minibus taxis, bus rapid transit, and rail. The researchers estimated multinomial, nested, and latent class logit models to identify preference heterogeneity among commuters. The latent class model successfully segmented the population into two distinct groups: a 'transfer sensitive' group averse to transfers and waiting, and a 'walk sensitive' group that tolerates transfers but strongly dislikes walking.",
+      "why": "It provides empirical evidence of distinct commuter segments within a major Sub-Saharan African township, moving beyond simple income-based segmentation. This allows transit planners to design targeted interventions, such as minimizing transfers or reducing stop distances, to match the specific tolerance thresholds of different local user groups."
     }
   },
   "track": "papers",

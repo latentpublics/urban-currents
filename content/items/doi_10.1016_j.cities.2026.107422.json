@@ -142,6 +142,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:20:16Z",
     "collectors": [
@@ -150,7 +151,7 @@
     "cost_usd": 0.005225,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -227,9 +228,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The analysis is limited to a small sample of 12 German municipalities, which may restrict the generalizability of the identified narrative profiles to other national or institutional contexts.",
-      "what": "This study analyzes digitalization narratives within the smart city strategy documents of 12 German cities using the Narrative Policy Framework and the capability approach. It identifies six distinct digitalization narratives across three public problem areas, focusing on how citizens are characterized and how digital technology is narrated to influence their capabilities. A cluster analysis of these narrative profiles was conducted to examine how local structural characteristics, such as city size, centrality, and socioeconomic growth, relate to the chosen strategies.",
-      "why": "It reveals how municipalities frame the relationship between digital technology and citizen quality of life, showing that smart city strategies are shaped by local structural contexts rather than being uniform, technology-driven plans."
+      "caveats": "The findings are based on a small sample of 12 municipalities within a single national context, which may limit how well these specific narrative profiles generalize to other countries.",
+      "what": "This study analyzed the smart city strategy documents of 12 German municipalities using the Narrative Policy Framework and the capability approach. The mixed-methods analysis identified six distinct digitalization narratives across three public problem areas, focusing on how citizens are characterized and how digital technology is projected to affect their capabilities. Cluster analysis was then used to group the municipalities into narrative profiles and examine how these profiles relate to local structural characteristics such as city size, centrality, and socioeconomic growth.",
+      "why": "It reveals how local governments discursively construct the relationship between technology and citizen well-being, showing that smart city strategies are shaped by specific local structural contexts rather than a uniform digital agenda."
     }
   },
   "track": "papers",

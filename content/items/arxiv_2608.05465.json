@@ -143,6 +143,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:20:14Z",
     "collectors": [
@@ -152,7 +153,7 @@
     "cost_usd": 0.005509,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -229,9 +230,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on GPS trajectory data from a single city, which may limit the generalizability of the route choice preferences to cities with different street layouts, topography, or micromobility regulations.",
-      "what": "The study analyzes e-scooter route choice in Washington, DC, using GPS trajectory data and a Path Size Logit model integrated with visual streetscape features extracted from Google Street View imagery. It finds that on major roads, only protected bicycle facilities significantly increase route attractiveness, while on minor roads both protected and designated lanes provide utility gains. Additionally, roadway infrastructure was found to exert a stronger influence on route choice than visual streetscape features like tree, building, and wall coverage, though the latter still provide explanatory power.",
-      "why": "It demonstrates that the effectiveness of cycling infrastructure is highly dependent on the roadway context, and reveals that widespread sidewalk riding likely reflects a lack of attractive on-street alternatives rather than an inherent preference for pedestrian spaces."
+      "caveats": "The findings are based on a single city, Washington, DC, where specific local regulations and sidewalk paving materials may limit generalizability to other urban contexts.",
+      "what": "This study analyzed e-scooter route choices in Washington, DC, using GPS trajectory data and a Path Size Logit model. The model combined roadway infrastructure data with visual streetscape features, such as tree, building, and wall coverage, extracted from Google Street View images using computer vision. The analysis revealed that protected bicycle facilities are necessary to attract riders on major roads, whereas both protected and designated lanes suffice on minor roads; it also found that sidewalk riding is common but only asphalt-paved sidewalks yield positive utility.",
+      "why": "It demonstrates that the effectiveness of cycling infrastructure is highly dependent on the surrounding roadway context, and proves that while visual streetscape features like summer tree canopy influence route choice, physical roadway infrastructure remains the primary determinant of where e-scooter users ride."
     }
   },
   "track": "papers",

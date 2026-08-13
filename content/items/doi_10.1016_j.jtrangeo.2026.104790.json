@@ -159,6 +159,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:20:16Z",
     "collectors": [
@@ -167,7 +168,7 @@
     "cost_usd": 0.005625,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -244,9 +245,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are limited to a citywide analysis and may not capture highly localized, sub-kilometer dynamics of infrastructure-induced displacement.",
-      "what": "This study analyzed the relationship between cycling infrastructure expansion and gentrification in Berlin from 2014 to 2021 at a 1 km2 grid-cell resolution. By combining annual OpenStreetMap data with socioeconomic and rental-market data, the researchers modeled the association between the bike path to street length ratio and a socioeconomic index. The longitudinal models found no citywide association between socioeconomic development or gentrification and cycling infrastructure expansion, showing instead that distance to the city center is the strongest predictor of new infrastructure.",
-      "why": "The study provides empirical European evidence to a debate previously dominated by North American case studies, demonstrating that cycling infrastructure investments do not inherently drive neighborhood gentrification at a citywide scale."
+      "caveats": "The findings are limited to citywide patterns in Berlin and may not capture highly localized, neighborhood-specific gentrification dynamics driven by individual cycling projects.",
+      "what": "This study analyzed the relationship between cycling infrastructure expansion and gentrification in Berlin from 2014 to 2021 using annual OpenStreetMap data and socioeconomic indicators mapped to a 1 km² grid. The analysis measured the bike path to street length ratio across on-street and off-street networks, finding that lower socioeconomic status areas actually had higher baseline bicycle-path coverage. Longitudinal and linear probability models revealed no robust citywide association between socioeconomic upgrading or gentrification and the expansion of cycling infrastructure, which was instead primarily driven by proximity to the city center.",
+      "why": "It provides empirical European evidence to a debate previously dominated by North American case studies, demonstrating that cycling infrastructure investments do not inherently trigger neighborhood gentrification at a citywide scale."
     }
   },
   "track": "papers",

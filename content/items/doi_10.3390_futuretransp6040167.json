@@ -208,6 +208,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:45:52Z",
     "collectors": [
@@ -216,7 +217,7 @@
     "cost_usd": 0.002262,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -256,8 +257,8 @@
       "value": false
     },
     "data_available": {
-      "basis": "llm",
-      "confidence": "medium",
+      "basis": "rule",
+      "confidence": "low",
       "detail": null,
       "url": null,
       "value": false
@@ -293,9 +294,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The framework's empirical demonstration is limited to a small sample of five operators within a single national regulatory context.",
-      "what": "This study develops a multi-criteria decision-support framework that integrates Service Failure Indicators and Complaint Resolution Indicators into an Entropy-based Composite Quality Index, ranking operators using the MARCOS method. The framework's utility is demonstrated using regulatory operational data from five major express delivery operators in the Republic of Serbia.",
-      "why": "It establishes a unified evaluation model that combines operational service failures with complaint resolution effectiveness, replacing the common practice of assessing these two dimensions in isolation."
+      "caveats": "The framework was demonstrated using a small sample size of only five express delivery operators within a single national regulatory context.",
+      "what": "This study develops a decision-support framework that combines Service Failure Indicators and Complaint Resolution Indicators into an Entropy-based Composite Quality Index, using the MARCOS multi-criteria decision-making method to rank operators. The framework's utility was demonstrated by evaluating and ranking five major express delivery operators in the Republic of Serbia using regulatory operational data.",
+      "why": "It bridges the gap between operational service quality and complaint handling, providing regulators and managers with a unified benchmarking tool that evaluates both service failures and resolution effectiveness simultaneously rather than in isolation."
     }
   },
   "track": "papers",

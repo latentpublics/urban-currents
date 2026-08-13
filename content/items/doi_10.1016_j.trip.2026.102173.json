@@ -131,6 +131,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:34:57Z",
     "collectors": [
@@ -139,7 +140,7 @@
     "cost_usd": 0.002295,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -217,8 +218,8 @@
   "summary": {
     "en": {
       "caveats": "The proposed digital architecture and maturity index are conceptual models and have not yet been deployed or empirically tested in the Grand Faw Port.",
-      "what": "This study designs a layered digital architecture for Iraq's Grand Faw Port and the broader Development Road Corridor, integrating IoT, Port Community Systems, AI-based predictive planning, and digital twins. The framework is built using a semi-quantitative benchmarking of leading smart ports to establish a Digital Maturity Index, alongside conceptual systems modeling to address fragmented infrastructure and limited interoperability.",
-      "why": "It establishes a structured digital and institutional blueprint for corridor-scale integration in developing countries, shifting the focus from isolated smart-port technologies to the governance and policy alignment required to connect maritime hubs with inland transit networks."
+      "what": "This study designs a layered digital architecture for Iraq's Grand Faw Port and the broader Development Road Corridor, integrating IoT systems, Port Community Systems, Terminal Operating Systems, AI predictive planning, and digital twins. The framework is built using a semi-quantitative benchmarking of leading global smart ports, a Digital Maturity Index to evaluate transferable practices, and conceptual systems modeling.",
+      "why": "It provides a blueprint for developing countries to transition from isolated port technologies to integrated, corridor-scale digital systems, addressing the institutional and governance barriers that typically stall multimodal transport efficiency."
     }
   },
   "track": "papers",

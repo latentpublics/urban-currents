@@ -206,6 +206,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:42:09Z",
     "collectors": [
@@ -214,7 +215,7 @@
     "cost_usd": 0.002097,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -291,9 +292,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on a scenario-based stated adaptation experiment rather than observed, real-world travel and charging behavior.",
-      "what": "Using a scenario-based stated adaptation experiment with 1,506 private battery electric vehicle (BEV) owners in Shanghai, China, this study analyzed joint travel-charging responses to adverse weather. Latent class analysis identified four distinct response patterns—status quo maintenance, cautious adjustment, adaptive rescheduling, and protective withdrawal—which were then modeled against weather conditions, sociodemographics, and psychological factors. The findings show that rainfall and wind induce protective or avoidance behaviors, temperature shifts the balance between maintenance and adjustment, and extreme conditions increase non-status quo behaviors.",
-      "why": "It establishes a behavioral evidence base showing how weather directly links travel and charging decisions, moving beyond isolated analyses of either travel behavior or charging demand to help operators manage infrastructure resilience under extreme weather."
+      "caveats": "The findings are based on a scenario-based stated adaptation experiment rather than observed real-world GPS and charging logs, which may introduce hypothetical bias.",
+      "what": "This study analyzes how battery electric vehicle owners simultaneously adapt their travel and charging behaviors during adverse weather using a two-stage analytical framework. Latent class analysis and an integrated choice model were applied to 1,506 stated adaptation survey responses from private electric vehicle owners in Shanghai, China, evaluating reactions to temperature, wind, and rainfall. The model identified four distinct behavioral patterns: status quo maintenance, cautious adjustment, adaptive rescheduling, and protective withdrawal.",
+      "why": "It establishes a direct behavioral link between weather conditions and combined mobility-charging decisions, demonstrating that rainfall and wind trigger avoidance behaviors while temperature fluctuations dictate whether drivers adjust or maintain their routines. This provides infrastructure operators with empirical evidence to predict grid load shifts and manage charging network resilience during extreme weather events."
     }
   },
   "track": "papers",

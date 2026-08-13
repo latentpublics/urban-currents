@@ -264,6 +264,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:45:51Z",
     "collectors": [
@@ -272,7 +273,7 @@
     "cost_usd": 0.001908,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -349,9 +350,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on macro-level panel data up to 2022 and does not capture firm-level operational dynamics or the specific mechanisms of the post-pandemic recovery period.",
-      "what": "This study analyzes the relationship between green logistics and Vietnam's export performance with CPTPP partners using an augmented gravity model and panel data from 2010 to 2018 and 2022. Estimated via Feasible Generalized Least Squares, the analysis reveals that Vietnam's domestic Green Logistics Performance (GLP) is positively associated with its export value, while the GLP of importing partner countries is negatively associated with Vietnam's export performance.",
-      "why": "The findings demonstrate a dual role for green logistics in international trade, showing that while domestic greening enhances export competitiveness, the green logistics standards of importing nations can act as a non-tariff barrier for developing country exporters."
+      "caveats": "The analysis relies on macro-level panel data and is restricted to Vietnam's trade relationships within the CPTPP framework, which may not generalize to other developing nations or bilateral trade agreements.",
+      "what": "Using an augmented gravity model and panel data spanning 2010 to 2018 and 2022, this study analyzed how green logistics performance affects Vietnam's exports to other CPTPP nations. Feasible Generalized Least Squares estimation revealed that while Vietnam's domestic green logistics performance is positively associated with its export values, the green logistics performance of importing partner countries is negatively associated with Vietnam's export performance.",
+      "why": "The study demonstrates that green logistics operates as a double-edged sword in international trade, acting as a domestic driver of export competitiveness while simultaneously functioning as a non-tariff barrier when enforced by importing nations against a developing economy."
     }
   },
   "track": "papers",

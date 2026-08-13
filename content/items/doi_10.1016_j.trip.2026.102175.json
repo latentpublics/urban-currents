@@ -241,6 +241,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:38:32Z",
     "collectors": [
@@ -249,7 +250,7 @@
     "cost_usd": 0.002169,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -326,9 +327,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study is presented as a proof-of-concept, meaning the specific psychoacoustic thresholds and amenity cost calculations may require local calibration before direct policy application.",
-      "what": "This study develops a spatial analysis method that models pedestrian exposure to traffic noise annoyance by integrating Psychoacoustic Annoyance as a perceptual indicator into a pedestrian isochrone network. The approach calculates walkable catchment isochrones with a quantifiable Amenity Cost to evaluate walk-quality for 18 primary schools across metropolitan Melbourne, Australia.",
-      "why": "It shifts the evaluation of pedestrian infrastructure from objective noise emission levels to a receiver-centric, psychological stress metric, allowing urban planners to visually identify and mitigate invisible acoustic barriers on children's routes to school."
+      "caveats": "The study serves as a proof-of-concept and does not validate the modeled psychoacoustic annoyance against actual behavioral or psychological responses from the children in the study areas.",
+      "what": "This study introduces a spatial analysis method that models children's exposure to traffic noise on school commutes by integrating psychoacoustic annoyance as a perceptual metric into pedestrian isochrone networks. The approach was tested across catchments for 18 primary schools in metropolitan Melbourne, Australia, calculating a spatial 'Amenity Cost' to map walk-quality from a receiver-centric perspective.",
+      "why": "It shifts the evaluation of pedestrian infrastructure from objective noise emission levels to human psychological perception, allowing urban planners to visually identify quiet, child-friendly routes and test the impact of noise-mitigation interventions."
     }
   },
   "track": "papers",

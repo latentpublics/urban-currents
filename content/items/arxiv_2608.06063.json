@@ -154,6 +154,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:27:15Z",
     "collectors": [
@@ -163,7 +164,7 @@
     "cost_usd": 0.006247,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -240,9 +241,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study population was limited to participants of genetically inferred European ancestry, which may limit the generalizability of the risk models to more diverse populations.",
-      "what": "The study integrated genomic data, electronic health records, and longitudinal Fitbit wearable data from 3,030 adults to model the risk of incident major depressive disorder (MDD). Using time-varying Cox models, it analyzed monthly physical activity and sleep features alongside MDD polygenic risk scores (PRS) over a baseline period of 180 days, identifying 284 incident MDD cases. Incorporating both genetic risk and longitudinal wearable behaviors improved model discrimination, raising the C-index from 0.637 to 0.705.",
-      "why": "It demonstrates that passive, real-world behavioral tracking can be combined with genetic risk scores to improve clinical risk prediction for depression, revealing that individuals with high genetic liability require more favorable behavioral patterns (such as higher step counts and stable sleep) to maintain the same risk level as those with lower genetic liability."
+      "caveats": "The study population was limited to participants of genetically inferred European ancestry, which restricts the generalizability of the genetic risk findings to more diverse populations.",
+      "what": "The study integrated genomic data, electronic health records, and longitudinal Fitbit wearable data from 3,030 adults of genetically inferred European ancestry to model the risk of major depressive disorder (MDD). Using time-varying Cox models, it tracked 284 incident MDD cases over a baseline period of 180 days, measuring the interaction between MDD polygenic risk scores (PRS) and monthly physical activity and sleep metrics. Combining PRS, baseline and monthly wearable features, and their interactions improved model discrimination, raising the C-index from 0.637 to 0.705.",
+      "why": "It demonstrates that objective, long-term wearable data and genetic risk scores provide complementary predictive value for depression, showing that individuals with high genetic liability require more favorable behavioral patterns, such as higher step counts and stable sleep, to maintain a comparable risk profile to those with lower genetic risk."
     }
   },
   "track": "papers",

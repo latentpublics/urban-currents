@@ -206,6 +206,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:31:18Z",
     "collectors": [
@@ -214,7 +215,7 @@
     "cost_usd": 0.002432,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -291,9 +292,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study uses an ecological time-series design, which analyzes aggregate provincial data rather than individual-level exposure and localized microclimates.",
-      "what": "This ecological time-series study analyzed the relationship between daily apparent temperature and occupational accidents in the primary and construction sectors across five Spanish provinces over a 17-year period. Using Generalized Additive Models and Distributed Lag Non-linear Models, the study found that occupational accident risk increases at high temperatures in southern provinces, while northern and central provinces show increased risk at thermal extremes, particularly during low temperatures. In the primary sector, accident risk peaked at 34°C in Cantabria (RR 1.73) and 38°C in Pontevedra (RR 1.48), while construction accidents were significantly associated with heat only in Seville, peaking at 40°C (RR 1.38).",
-      "why": "The study establishes that occupational vulnerability to temperature is highly localized and sector-specific, demonstrating that uniform national safety thresholds fail to account for how regional climate variations and specific outdoor industries interact with thermal stress."
+      "caveats": "The study relies on an ecological time-series design, which analyzes aggregate provincial data rather than individual-level exposure and circumstances.",
+      "what": "This ecological time-series study analyzed the relationship between daily occupational accidents and Apparent Temperature (AT) over a 17-year period across five Spanish provinces, focusing on the primary and construction sectors. Using a Generalized Additive Model combined with a Distributed Lag Non-linear Model, the researchers found that occupational accidents in the primary sector increase with AT in northern coastal provinces, peaking at 34°C in Cantabria (RR 1.73) and 38°C in Pontevedra (RR 1.48). In construction, a statistically significant association was found only in Seville, where the risk of accidents peaks at 40°C (RR 1.38).",
+      "why": "The study demonstrates that the relationship between thermal stress and workplace accidents is highly localized and sector-specific, showing that northern agricultural workers face elevated risk at high temperatures while southern construction workers are highly vulnerable to extreme heat."
     }
   },
   "track": "papers",

@@ -120,6 +120,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:40:42Z",
     "collectors": [
@@ -129,7 +130,7 @@
     "cost_usd": 0.006402,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -153,11 +154,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 0.6964,
       "source_multiplicity": 0.0
     },
-    "headline": 0.4786,
+    "headline": 0.2786,
     "relevance": 0.6964
   },
   "signals": {
@@ -207,8 +208,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "A dual-branch YOLO11 deep learning model was developed to detect small-scale fishing vessels using 10-meter panchromatic and 40-meter RGB nighttime light imagery from the SDGSAT-1 satellite. Applied to the western coast of India across a 2022-2023 dataset, the model detected 31,525 vessel instances with a precision of 0.99 and an mAP@50 of 0.96. Cross-matching with Automatic Identification System (AIS) data revealed that 77.3% (24,379) of the detected vessels operated without active AIS transmissions.",
-      "why": "It establishes a highly accurate method for detecting 'dark vessels' that evade traditional tracking systems, revealing that more than three-quarters of the fishing vessels operating off India's western coast are unmonitored by standard AIS."
+      "what": "A dual-branch YOLO11 deep learning model was developed to detect small-scale fishing vessels by fusing 10-meter panchromatic and 40-meter RGB nighttime light imagery from the SDGSAT-1 satellite. Applied to the western coast of India across a 2022-2023 dataset, the model detected 31,525 vessel instances, achieving a precision of 0.99 and an mAP@50 of 0.96. Cross-matching with Automatic Identification System (AIS) data revealed that 77.3% (24,379) of the detected vessels operated without active AIS transmissions.",
+      "why": "It establishes a highly accurate method for identifying 'dark vessels' that evade traditional tracking systems, revealing that more than three-quarters of the fishing fleet along India's western coast operates without active AIS monitoring."
     }
   },
   "track": "papers",

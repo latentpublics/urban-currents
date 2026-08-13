@@ -54,7 +54,7 @@
     "orgs": [],
     "people": [],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": []
   },
@@ -72,6 +72,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:33:54Z",
     "collectors": [
@@ -80,7 +81,7 @@
     "cost_usd": 0.004806,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -157,9 +158,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The empirical evaluation is limited to a CPU-based experimental setup for a single multi-label classification task, which may not represent emission dynamics on GPU- or TPU-accelerated hardware commonly used for large-scale deep learning.",
-      "what": "This paper reviews Green AI optimization techniques and carbon measurement tools, and conducts an empirical evaluation of six deep learning models on a CPU-based setup for a multi-label classification task. The experiment quantifies carbon emissions across different lifecycle stages, finding that the training phase is the primary source of emissions and that increased architectural complexity does not systematically yield proportional gains in accuracy.",
-      "why": "It establishes empirical evidence that model selection can be optimized for environmental cost without automatic sacrifices in predictive performance, challenging the practice of defaulting to highly complex architectures."
+      "caveats": "The empirical evaluation is limited to a CPU-based experimental setup for a single multi-label classification task, which may not represent the emission dynamics of GPU- or TPU-accelerated environments.",
+      "what": "This paper reviews Green AI optimization techniques and carbon measurement tools, and conducts an empirical evaluation of six deep learning models performing a multi-label classification task on a CPU-based setup. The experiment quantifies carbon emissions across different lifecycle stages, finding that the training phase is the primary source of emissions and that increased model complexity does not yield proportional gains in accuracy.",
+      "why": "It demonstrates that model selection can be optimized for environmental impact without necessarily sacrificing predictive performance, providing a basis for integrating carbon footprint metrics directly into AI system design."
     }
   },
   "track": "papers",

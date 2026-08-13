@@ -105,6 +105,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:20:14Z",
     "collectors": [
@@ -114,7 +115,7 @@
     "cost_usd": 0.006174,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -191,9 +192,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on a single, highly unique coastal city (Venice, specifically focusing on areas like the Lido Islands), which may limit the generalizability of the specific weather and seasonal thresholds to other urban geographies.",
-      "what": "The study analyzed 158,401 origin-destination (OD) day observations across 50 spatial zones over a two-year period in Venice to model how temporal and environmental conditions shape daily shared micro-mobility flows. Using a generalized additive mixed model (GAMM), the research linked daily temperature, rainfall, and PM10 concentrations to OD-pair connections. The model revealed a significant non-linear association between temperature and demand across seasons, quantified reduced demand during moderate and heavy rainfall, and identified a season-dependent, non-monotonic relationship between PM10 levels and vehicle usage.",
-      "why": "It measures the non-linear and seasonal sensitivities of micro-mobility demand to specific weather and air quality thresholds, moving beyond simple linear assumptions to show that environmental barriers like pollution trigger complex avoidance-versus-adoption behaviors rather than uniform declines."
+      "caveats": "The findings are based on a single, highly unique island city context (Venice and the Lido Islands), which may limit generalizability to more typical inland urban environments.",
+      "what": "The study analyzed 158,401 origin-destination (OD) daily observations over a two-year period across 50 spatial zones in Venice to understand how weather and air quality affect shared micro-mobility. Using a generalized additive mixed model (GAMM), the researchers modeled the non-linear relationships between daily temperature, rainfall, PM10 concentrations, and trip demand. The findings reveal a seasonal, non-linear relationship for temperature, a significant drop in trips during moderate to heavy rain, and a season-dependent, non-monotonic response to PM10 levels.",
+      "why": "It demonstrates that micro-mobility demand is not just a function of vehicle availability but is highly sensitive to fluctuating environmental conditions, revealing complex behaviors like season-specific pollution avoidance and localized seasonal demand spikes."
     }
   },
   "track": "papers",

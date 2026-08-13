@@ -1,0 +1,179 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "In this paper, we test different methods for multivariate detection of outliers in the data of transmitted heat energy in the selected substation of local District Heating System, by also considering outside ambient temperature, namely Z-score (univariate, as a benchmark), Mahalanobis distances, Principal Component Analysis (PCA), Isolation Forest and Hotelling's T-squared test. The overall research aims at uncovering irregular plant operation, with a wider objective of identifying the opportunities for reducing the consumption of gas in central heating plants as well as the CO2 emission. The proposed approach considers specific domain circumstances, such as irrelevance of zero transmit-ted energy timepoints as indication of off-grid plant. The outcomes of the different methods are discussed with domain experts. It was concluded that PCA, Isolation Forest and Hotelling method provide relevant results. Finally, we adopt the ensemble method (selection based on the agreement of all three methods on the detected outliers) as the final approach.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Rajko Turudija",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dušan Stojiljković",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Milan Zdravković",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Marko Ignjatović",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "eess.SY"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.11375v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.11375v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-11",
+    "title": "Towards an approach to multivariate outlier detection for District Heating System data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-11_2608.11375",
+    "members": [
+      "arxiv:2608.11375"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:dimensionality-reduction",
+        "label": "dimensionality reduction"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.11375",
+    "doi": "10.1007/978-3-031-71419-1_5",
+    "openalex": null,
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-13T03:06:30Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00542,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1891,
+      "out": 287
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8537,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3415,
+    "relevance": 0.8537
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The proposed ensemble method was developed and tested using data from only a single selected substation.",
+      "what": "The study tested five outlier detection methods—Z-score, Mahalanobis distances, Principal Component Analysis (PCA), Isolation Forest, and Hotelling's T-squared test—on transmitted heat energy and ambient temperature data from a single district heating substation. Domain experts evaluated the results, leading to the development of an ensemble model that identifies anomalies based on the consensus of PCA, Isolation Forest, and the Hotelling method.",
+      "why": "It establishes a validated, domain-specific anomaly detection approach that filters out irrelevant zero-energy data points, enabling operators to pinpoint irregular plant behaviors and target gas consumption and carbon emission reductions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-11",
+  "work_key": "arxiv:2608.11375"
+}

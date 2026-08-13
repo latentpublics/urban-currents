@@ -195,6 +195,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:34:57Z",
     "collectors": [
@@ -203,7 +204,7 @@
     "cost_usd": 0.001829,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -243,8 +244,8 @@
       "value": false
     },
     "data_available": {
-      "basis": "llm",
-      "confidence": "medium",
+      "basis": "rule",
+      "confidence": "low",
       "detail": null,
       "url": null,
       "value": false
@@ -280,9 +281,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on a qualitative assessment of event permanence and spatial integration across only the five largest centers, which may not represent the entire widespread system of smaller Polish accommodation sites.",
-      "what": "This study evaluates the integration of Ukrainian refugees in Poland by analyzing the urban context of the five largest collective accommodation centers (CACs) using a three-phase GIS and artificial intelligence framework based on 15-minute city principles. It maps the spatial relationship between these centers and their surrounding neighborhoods, alongside documenting local integration events.",
-      "why": "It demonstrates that while small-scale, decentralized refugee accommodation centers successfully host inclusive community events, these initiatives fail to leave a lasting physical or structural imprint on the urban landscape due to their lack of permanence."
+      "caveats": "The study focuses exclusively on the five largest collective accommodation centers, which may not represent the dynamics of the wider, more dispersed network of smaller centers across Poland.",
+      "what": "This study evaluated the urban integration of collective accommodation centers (CACs) for Ukrainian refugees in Poland using an experimental, three-phase research framework that combined artificial intelligence with GIS environments. Focusing on the five largest CACs, the analysis assessed their integration into the surrounding neighborhoods against the principles of the 15-minute city and documented local integration initiatives.",
+      "why": "It demonstrates that while local integration events occurred, they lacked permanence, meaning these accommodation centers missed the opportunity to leave a lasting, positive physical or social imprint on the surrounding urban landscape."
     }
   },
   "track": "papers",

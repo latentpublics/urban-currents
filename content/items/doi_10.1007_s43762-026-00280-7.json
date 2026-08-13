@@ -132,6 +132,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:40:46Z",
     "collectors": [
@@ -140,7 +141,7 @@
     "cost_usd": 0.005358,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -180,8 +181,8 @@
       "value": false
     },
     "data_available": {
-      "basis": "llm",
-      "confidence": "medium",
+      "basis": "rule",
+      "confidence": "low",
       "detail": null,
       "url": null,
       "value": false
@@ -217,9 +218,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The model's performance and applicability were validated using data from only a single district in Chongqing.",
-      "what": "The study develops a zero-shot trajectory generation method based on a self-supervised diffusion model that generates synthetic vehicle trajectories using only aggregated traffic flow statistics and public road network topology, without any complete single-vehicle trajectory annotations. The model treats surveillance traffic flow distributions as conditioning information to guide a denoising process, and was validated using real-world traffic datasets from the Dadukou District of Chongqing.",
-      "why": "It enables the generation of realistic, high-quality vehicle trajectories in regions where individual GPS tracking data is unavailable or restricted, relying instead on readily accessible aggregate flow counts and road network maps."
+      "caveats": "The model's performance and applicability have only been validated using traffic datasets from a single district in Chongqing.",
+      "what": "The researchers developed a zero-shot trajectory generation method based on a self-supervised diffusion model that uses only aggregated traffic flow statistics and public road network topology. The model treats surveillance traffic flow distributions as conditioning information to guide its denoising process through an adaptive optimization framework, bypassing the need for complete single-vehicle trajectory annotations. The method was validated using real-world traffic datasets from the Dadukou District in Chongqing, producing synthetic trajectories that closely match the similarity and distribution of real trajectories.",
+      "why": "It establishes a capability to generate realistic, high-quality vehicle trajectories in areas where individual tracking data is unavailable or restricted, relying instead on easily accessible aggregate flow statistics and public maps."
     }
   },
   "track": "papers",

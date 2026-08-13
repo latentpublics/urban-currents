@@ -51,7 +51,7 @@
     "orgs": [],
     "people": [],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": []
   },
@@ -69,6 +69,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
@@ -77,7 +78,7 @@
     "cost_usd": 0.004728,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -154,9 +155,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on a literature review of existing studies rather than new empirical data on current newsroom practices.",
-      "what": "This paper conducts a systematic literature review of studies on audience participation in news media to analyze the decline of citizen journalism and user-generated content over the last two decades. The review synthesizes findings regarding low audience interest in creating informative content, journalistic resistance to non-professional contributions, and corporate strategies that prioritize monetizing participation.",
-      "why": "It conceptualizes audience participation as 'mediatised participation' rather than an open democratic tool, demonstrating that the original ideal of citizen journalism has largely failed to integrate into professional media structures."
+      "caveats": "The findings are based on a literature review of existing academic studies rather than new empirical data on current newsroom practices.",
+      "what": "This paper presents a critical review of audience participation in news media by conducting a systematic literature review of studies published over the last two decades. It synthesizes findings on citizen journalism and user-generated content, documenting a general decline in audience interest in creating news content, persistent professional resistance from journalists, and corporate strategies focused primarily on monetizing participation.",
+      "why": "It reframes the once-celebrated concept of citizen journalism as a failed innovation, demonstrating that active audience participation has been constrained and transformed into a highly controlled, mediatised phenomenon rather than a democratic equalizer."
     }
   },
   "track": "papers",

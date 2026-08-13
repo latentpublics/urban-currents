@@ -328,6 +328,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:48:02Z",
     "collectors": [
@@ -336,7 +337,7 @@
     "cost_usd": 0.005835,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -376,8 +377,8 @@
       "value": false
     },
     "data_available": {
-      "basis": "rule",
-      "confidence": "low",
+      "basis": "llm",
+      "confidence": "medium",
       "detail": null,
       "url": null,
       "value": false
@@ -414,8 +415,8 @@
   "summary": {
     "en": {
       "caveats": "The findings are based on a descriptive literature review and qualitative case studies rather than primary empirical measurements of technology performance or flood mitigation outcomes.",
-      "what": "This study evaluates flood risk and resilience strategies across four coastal African cities—Accra, Cape Town, Mombasa, and Tunis—by analyzing peer-reviewed articles, policy reports, and technical documents published between 2000 and 2024. The comparative thematic analysis maps how smart technologies are applied across disaster risk management phases, revealing that Accra focuses on community-based GIS systems, Cape Town utilizes real-time predictive modeling, Mombasa pilots low-cost IoT sensors, and Tunis integrates smart tools into urban planning.",
-      "why": "It establishes a comparative baseline of smart technology adoption in African coastal cities, identifying how institutional capacity and resource constraints shape the practical deployment of flood resilience tools."
+      "what": "This study evaluates flood risk and resilience strategies across four coastal African cities—Accra, Cape Town, Mombasa, and Tunis—by analyzing peer-reviewed articles, policy reports, and technical documents published between 2000 and 2024. The comparative thematic analysis reveals distinct local approaches: Accra focuses on community-based early warning and GIS; Cape Town utilizes real-time monitoring and predictive modeling; Mombasa pilots low-cost IoT sensors; and Tunis integrates smart tools into urban planning.",
+      "why": "It documents how smart city technologies are being adapted to different institutional and resource constraints in African coastal urban centers, identifying shared systemic barriers such as funding deficits, data gaps, and fragmented governance."
     }
   },
   "track": "papers",

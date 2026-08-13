@@ -167,6 +167,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:40:45Z",
     "collectors": [
@@ -175,7 +176,7 @@
     "cost_usd": 0.006958,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -252,9 +253,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The estimated reductions in malnutrition burden are theoretical, model-based associations under specific assumptions rather than evidence of directly preventable outcomes.",
-      "what": "The study modeled subnational spatial variation and structural determinants of stunting and underweight among 198,443 children under five across 24 Sub-Saharan African countries using Demographic and Health Survey data from 2015 to 2023. Using generalized additive models with spatial smoothing, it mapped localized hotspots and calculated that 45% to 89% of the malnutrition burden is statistically associated with structural and socioeconomic risk factors, such as maternal education and household wealth. Stunting prevalence ranged from 16% to 55% and underweight from 5% to 29% across the studied regions.",
-      "why": "It reveals localized, subnational hotspots of child malnutrition that are typically obscured by national-level averages, while demonstrating that the same structural and socioeconomic disadvantages consistently drive these outcomes across diverse national contexts."
+      "caveats": "The estimated reductions in malnutrition burden are theoretical, model-based associations under specific assumptions rather than direct evidence of preventable outcomes.",
+      "what": "This study analyzed subnational spatial variation in stunting and underweight among 198,443 children under five across 24 Sub-Saharan African countries using Demographic and Health Survey data from 2015 to 2023. Using generalized additive models with spatial smoothing, the researchers mapped localized hotspots and found that stunting prevalence ranged from 16% to 55% and underweight from 5% to 29%. Children in the highest cumulative disadvantage quartile faced significantly higher odds of growth failure, with structural and socioeconomic risk factors statistically associated with 45% to 89% of the malnutrition burden.",
+      "why": "It demonstrates that national averages obscure critical localized hotspots of child malnutrition, providing high-resolution spatial maps and population-attributable risk estimates that allow policymakers to target resources to specific subnational areas of cumulative disadvantage."
     }
   },
   "track": "papers",

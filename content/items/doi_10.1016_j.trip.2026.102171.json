@@ -138,7 +138,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -206,6 +206,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:45:51Z",
     "collectors": [
@@ -214,7 +215,7 @@
     "cost_usd": 0.002163,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -292,8 +293,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "A two-stage fleet-level dispatch optimization framework was developed to co-optimize electric bus charging and vehicle-to-grid (V2G) participation while accounting for battery wear. The framework calibrates degradation models using accelerated aging tests on Lithium Iron Phosphate (LFP) and Nickel Manganese Cobalt (NMC) cells under representative bus conditions, incorporating monthly weather profiles. The degradation-aware dispatch reduces annual operating costs by 12.6%, and results show that LFP batteries sustain 2.3 to 2.4 times the throughput-to-end-of-life of NMC batteries, more than doubling expected lifetimes.",
-      "why": "It quantifies the economic trade-offs of V2G services by directly linking laboratory-derived battery degradation rates under varying climate conditions to fleet-level operational dispatch decisions, allowing operators to prevent premature battery wear."
+      "what": "The study presents a two-stage dispatch optimization framework that integrates battery degradation models calibrated from accelerated aging tests of Lithium Iron Phosphate (LFP) and Nickel Manganese Cobalt (NMC) cells. Tested under representative transit conditions and weather profiles, the model co-optimizes charging and vehicle-to-grid (V2G) participation while accounting for battery wear. The results demonstrate that LFP cells sustain 2.3 to 2.4 times the throughput-to-end-of-life of NMC cells, and the degradation-aware dispatch strategy reduces annual fleet operating costs by 12.6%.",
+      "why": "It provides transit operators with a quantified, climate-sensitive comparison of battery chemistries and a scheduling method that prevents V2G revenue from being erased by premature battery wear."
     }
   },
   "track": "papers",

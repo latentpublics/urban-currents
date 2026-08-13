@@ -50,6 +50,8 @@ SPRINGER_PREFIXES = ("10.1007", "10.1186", "10.1038", "10.1057", "10.1140", "10.
 PUBLISHER_BY_PREFIX = {
     "10.1016": "Elsevier",
     "10.1080": "Taylor & Francis",
+    # Routledge book chapters, which reach the whitelist through their series.
+    "10.4324": "Taylor & Francis (Routledge)",
     "10.1007": "Springer",
     "10.1186": "Springer (BMC)",
     "10.1038": "Springer Nature",
@@ -60,6 +62,7 @@ PUBLISHER_BY_PREFIX = {
     "10.1061": "ASCE",
     "10.1109": "IEEE",
     "10.3389": "Frontiers",
+    "10.5194": "Copernicus",
     "10.1017": "Cambridge",
     "10.1093": "Oxford",
 }

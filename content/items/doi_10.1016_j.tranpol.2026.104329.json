@@ -199,6 +199,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:34:57Z",
     "collectors": [
@@ -207,7 +208,7 @@
     "cost_usd": 0.002214,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -284,9 +285,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The risk models are built on a relatively small sample size of 216 crashes, though they are weighted to be population-representative.",
-      "what": "The study quantifies injury-risk thresholds for rear-end collisions using Event Data Recorder measurements from 216 two-vehicle crashes in the US Crash Investigation Sampling System (2016–2024). Binary logistic regression models show that moderate-injury risk (MAIS 2) reaches a 10% probability at a relative impact speed of 43 km/h, while serious-injury risk (MAIS 3+F) reaches 10% at 88 km/h. Minor injuries (MAIS 1) occur frequently (30%–40% probability) even at near-zero speeds with minimal dependence on speed.",
-      "why": "It establishes empirical, population-weighted speed thresholds for different injury severities in rear-end crashes, providing specific calibration targets for autonomous emergency braking systems and speed management policies."
+      "caveats": "The analysis is based on a relatively small sample size of 216 crashes, which may limit the precision of the risk curves at extreme speeds.",
+      "what": "This study analyzed 216 two-vehicle rear-end crashes from the US Crash Investigation Sampling System (2016–2024) using Event Data Recorder measurements to model injury risk. Binary logistic regression models calculated the probability of minor, moderate, and serious-or-fatal injuries based on both striking-vehicle speed and relative impact speed. The findings show that moderate-injury risk reaches a 10% probability at an impact speed of 43 km/h, while serious-injury risk hits the 10% threshold at an impact speed of 88 km/h.",
+      "why": "It establishes empirical, population-weighted speed thresholds for rear-end crash injuries, correcting previous unweighted estimates that overrepresented crash severity. These specific velocity limits provide concrete benchmarks for calibrating autonomous emergency braking systems and setting urban speed limits under Safe System frameworks."
     }
   },
   "track": "papers",

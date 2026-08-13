@@ -190,6 +190,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:20:14Z",
     "collectors": [
@@ -199,7 +200,7 @@
     "cost_usd": 0.00606,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -223,11 +224,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 0.7022,
       "source_multiplicity": 0.0
     },
-    "headline": 0.4809,
+    "headline": 0.2809,
     "relevance": 0.7022
   },
   "signals": {
@@ -277,8 +278,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "The study evaluated 15 machine learning models, including the Tabular Prior-Data Fitted Network (TabPFN), to predict post-wildfire debris flows using basin-scale observations across the western United States. TabPFN achieved the highest unaugmented predictive performance with a threat score of 0.637, while SHAP analysis revealed that short-duration rainfall intensity and storm accumulation are the primary predictive features. Synthetic data augmentation using TabPFN-generated samples improved the performance of almost all models, yielding a mean threat score increase of up to 0.041 for deep learning models.",
-      "why": "It establishes that TabPFN and synthetic data augmentation can successfully mitigate the challenge of scarce training data in hazard prediction, while demonstrating that rainfall metrics are significantly more influential predictors of post-wildfire debris flows than burn severity or terrain features."
+      "what": "The study evaluated 15 machine learning models, including the Tabular Prior-Data Fitted Network (TabPFN), to predict post-wildfire debris flows using basin-scale observations from the western United States. TabPFN achieved the highest unaugmented performance with a threat score of 0.637, while SHAP analysis revealed that short-duration rainfall intensity and storm accumulation were the primary predictive features. Augmenting the limited training data with TabPFN-generated synthetic samples improved the performance of almost all models, yielding a maximum threat score increase of 0.041 for deep learning architectures.",
+      "why": "It establishes a highly accurate predictive framework for post-wildfire hazards and demonstrates that synthetic data augmentation can successfully overcome the chronic shortage of physical debris-flow observations."
     }
   },
   "track": "papers",

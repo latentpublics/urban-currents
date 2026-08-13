@@ -226,6 +226,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:20:17Z",
     "collectors": [
@@ -234,7 +235,7 @@
     "cost_usd": 0.005706,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -258,11 +259,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.2,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.64,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
@@ -312,8 +313,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "The study models pedestrian accessibility to leisure green spaces in Sintra, Portugal, using network-based service area analysis with a 15-minute walking threshold. It finds that 21% of the population (approximately 82,000 residents) lacks walkable access, and uses a GIS-based multi-criteria decision analysis to identify 96 highly suitable candidate areas for new green spaces. Implementing five priority sites (14–27 ha) is projected to extend walkable access to approximately 68,200 residents.",
-      "why": "It provides a replicable, equity-oriented spatial framework that moves beyond simple buffer-based proximity measures to help planners operationalize 15-minute city goals using realistic network routing and topographic constraints."
+      "what": "This study models pedestrian accessibility to leisure green spaces in Sintra, Portugal, using network-based service area analysis with a 15-minute walking threshold that accounts for topography and street connectivity. The analysis reveals that 21% of the population (approximately 82,000 residents) lacks walkable access to these spaces, particularly in dense eastern neighbourhoods. To address this, a GIS-based multi-criteria decision analysis was deployed to identify 96 highly suitable candidate areas, selecting five priority sites ranging from 14 to 27 hectares.",
+      "why": "It provides a replicable, equity-oriented spatial framework that moves beyond simple buffer-based proximity measures to help planners implement 15-minute city goals. The proposed interventions demonstrate a measurable potential impact, showing how five targeted site selections could extend walkable green space access to an additional 68,200 residents."
     }
   },
   "track": "papers",

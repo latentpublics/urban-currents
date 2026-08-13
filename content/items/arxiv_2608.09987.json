@@ -39,7 +39,7 @@
     "orgs": [],
     "people": [],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": []
   },
@@ -57,6 +57,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:27:15Z",
     "collectors": [
@@ -65,7 +66,7 @@
     "cost_usd": 0.005061,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -142,9 +143,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on theoretical modeling and numerical simulations rather than empirical, real-world mixed-autonomy traffic data.",
-      "what": "This study integrates a microscopic Stackelberg game-theoretic model of human-CAV cut-in maneuvers into a macroscopic kinematic wave framework to analyze mixed-autonomy traffic. Numerical simulations and theoretical analysis reveal that human exploitation of defensive CAVs acts as a deterministic destabilizer, with a critical instability regime occurring at an intermediate CAV penetration rate of approximately 45 percent.",
-      "why": "It quantifies how individual strategic interactions between human drivers and automated vehicles scale up to cause network-level traffic instability and phantom jams, proving that early-deployment defensive CAVs can paradoxically degrade overall road capacity."
+      "caveats": "The findings are based on theoretical analysis and numerical simulations rather than empirical, real-world mixed-autonomy traffic data.",
+      "what": "This study integrates a microscopic Stackelberg game-theoretic model of human-CAV cut-in maneuvers into a macroscopic kinematic wave framework to analyze mixed-autonomy traffic. The model identifies an exploitation window where human drivers execute aggressive merges in front of defensive automated vehicles, translating these interactions into a continuous friction parameter that modifies the traffic conservation law. Numerical simulations reveal a convex relationship between CAV penetration and system efficiency, with a critical instability regime peaking at approximately 45 percent penetration.",
+      "why": "It mathematically links individual strategic driving behaviors to network-level traffic instability, proving that the defensive programming of early-stage automated vehicles paradoxically triggers phantom traffic jams and reduces overall road capacity."
     }
   },
   "track": "papers",

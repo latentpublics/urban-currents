@@ -100,7 +100,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -143,6 +143,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:27:15Z",
     "collectors": [
@@ -152,7 +153,7 @@
     "cost_usd": 0.005424,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -230,8 +231,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "The researchers developed HoloWorld, a unified 3D generation framework that synthesizes indoor and outdoor urban environments with explicit spatial and visual correspondence. The system uses a cross-scale world context to autoregressively generate urban exteriors across blocks, grounding them in 3D building instances and footprints to generate geometry-constrained indoor layouts. In comparative evaluations, the framework improved the average Aesthetic Quality Score (AQS) over state-of-the-art models by 7.68% and achieved the highest average Realistic Detail Ratio (RDR).",
-      "why": "It establishes a generative capability to synthesize continuous, multi-scale 3D urban environments where building interiors directly correspond to their specific exterior structures and visual identities, a transition previously blocked by the independent synthesis of indoor and outdoor domains."
+      "what": "The researchers developed HoloWorld, a text-driven 3D generation framework that synthesizes unified indoor and outdoor urban environments using a continuously updated cross-scale world context. The system autoregressively generates urban exteriors across blocks and grounds them in 3D building footprints to generate geometry-constrained, matching indoor layouts. In evaluations, the framework improved the average Aesthetic Quality Score (AQS) by 7.68% over current state-of-the-art models and achieved the highest average Realistic Detail Ratio (RDR).",
+      "why": "It establishes a method to generate coherent 3D virtual cities where individual building interiors maintain explicit spatial, geometric, and visual correspondence with their external structures, a capability previously limited by the independent synthesis of indoor and outdoor environments."
     }
   },
   "track": "papers",

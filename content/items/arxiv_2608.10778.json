@@ -57,7 +57,7 @@
     "orgs": [],
     "people": [],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": []
   },
@@ -75,6 +75,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
@@ -83,7 +84,7 @@
     "cost_usd": 0.004914,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -160,9 +161,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The student survey is limited to a sample of 141 participants enrolled specifically in Communication and Education programs, which may not represent the broader university student population.",
-      "what": "This study analyzes the integration of technology in media education by conducting semi-structured in-depth interviews with leading academic experts and surveying 141 university students in Communication and Education programs. It measures how recent technological advances relate to information consumption challenges, such as disinformation and deepfakes, and evaluates how these issues are addressed in university curricula.",
-      "why": "It documents a critical gap where technological tools are integrated into education only superficially, establishing that current teacher training is insufficient to help students critically evaluate and question the digital content they consume."
+      "caveats": "The empirical findings are limited to the perspectives of a specific cohort of communication and education university students and selected academic experts, which may not represent broader educational contexts.",
+      "what": "This study analyzes the integration of technology in media education by surveying 141 university students in Communication and Education programs and conducting semi-structured, in-depth interviews with academic experts. The research evaluates how emerging digital challenges like deepfakes, disinformation, and incidental information exposure are addressed in higher education curricula.",
+      "why": "It documents a critical gap where technological tools are integrated into classrooms only superficially, identifying specific deficiencies in teacher training that prevent students from developing the critical media literacy needed to navigate modern misinformation."
     }
   },
   "track": "papers",

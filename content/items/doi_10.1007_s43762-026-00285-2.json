@@ -68,7 +68,7 @@
     ],
     "people": [],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -135,6 +135,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:40:46Z",
     "collectors": [
@@ -143,7 +144,7 @@
     "cost_usd": 0.005603,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -167,11 +168,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.2,
-      "novelty": 1.0,
+      "novelty": 0.5,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.64,
+    "headline": 0.54,
     "relevance": 1.0
   },
   "signals": {
@@ -220,9 +221,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The optimization relies on spatial proxy indicators for safety and accessibility rather than direct measurements of long-term elderly user experiences.",
-      "what": "The study develops an automated spatial optimization framework for age-friendly homestay interiors by integrating a lightweight SegNet model for floor plan element detection with space syntax and Visibility Graph Analysis. Using a hybrid optimization algorithm combining NSGA-II and Simulated Annealing, the model achieves a mean Intersection over Union of 0.89 and precision/recall scores above 0.90 to optimize layout indicators like accessibility, fall-risk exposure, and wayfinding complexity.",
-      "why": "It replaces subjective, experience-based layout practices with an automated, quantifiable design pipeline that directly links spatial recognition to multi-objective algorithmic optimization."
+      "caveats": "The optimization relies entirely on spatial proxy indicators rather than direct measurements of actual elderly user experiences or long-term behavioral data within the spaces.",
+      "what": "This study develops an automated spatial optimization framework for age-friendly homestay interiors by combining a lightweight SegNet model with space syntax and Visibility Graph Analysis. The SegNet model detects architectural floor plan elements with a mean Intersection over Union of 0.89 and precision and recall exceeding 0.90. A hybrid optimization algorithm combining Non-dominated Sorting Genetic Algorithm II and Simulated Annealing then generates layouts that optimize proxy indicators for accessibility, fall-risk exposure, visual recognizability, and wayfinding, achieving a hypervolume indicator of 0.72.",
+      "why": "It replaces subjective, experience-based layout practices with a quantifiable and automated design workflow, allowing designers to systematically balance caregiving safety, cognitive clarity, and physical accessibility in short-term elderly accommodations."
     }
   },
   "track": "papers",

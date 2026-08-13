@@ -140,6 +140,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:33:54Z",
     "collectors": [
@@ -149,7 +150,7 @@
     "cost_usd": 0.005785,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -226,9 +227,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The evaluation is conducted on a constructed pseudo-NGP benchmark rather than a live deployment of completely unmapped historical names.",
-      "what": "This study identifies non-gazetteer place names (NGPs)—historical, vernacular, or colloquial landmarks—from digitized specimen records of the Allan Herbarium in New Zealand and evaluates methods to georeference them. By leveraging repeated occurrences of the same place name across different records and inverting spatial relation terms, the authors test deterministic, probabilistic, and LLM-based methods on a pseudo-NGP benchmark. The probabilistic inference method achieved the highest accuracy with a median error of 1.43 km (36% accuracy at 1 km), outperforming the LLM-based method which had a median error of 1.80 km.",
-      "why": "It establishes a method to recover and map historical and informal place names that are missing from modern gazetteers, demonstrating that traditional probabilistic modeling outperforms large language models when high spatial precision is required for text-based spatial inference."
+      "caveats": "The performance of the georeferencing methods was evaluated on a constructed pseudo-benchmark rather than directly on completely unmapped historical place names.",
+      "what": "This study develops and compares deterministic, probabilistic, and Large Language Model (LLM) methods to georeference historical, vernacular, or colloquial place names absent from modern gazetteers. Using digitized specimen records from the Allan Herbarium in New Zealand, the approach extracts and inverts spatial relation terms from repeated occurrences of these names to constrain their locations. On a pseudo-non-gazetteer benchmark, the probabilistic model achieved the highest accuracy with a median error of 1.43 km, outperforming the LLM's median error of 1.80 km.",
+      "why": "It establishes a method to recover lost historical and informal geography by leveraging the spatial context embedded in natural history collections, demonstrating that traditional probabilistic modeling still outperforms LLMs when high spatial precision is required."
     }
   },
   "track": "papers",

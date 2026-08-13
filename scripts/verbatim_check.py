@@ -68,12 +68,15 @@ def summary_text(item) -> str:
 def measure(threshold: int = 8) -> dict:
     rows = []
     checked = 0
+    by_version: dict[str, int] = {}
     for item in store.iter_items():
         abstract = item.bibliography.abstract or ""
         summary = summary_text(item)
         if not abstract.strip() or not summary.strip():
             continue
         checked += 1
+        version = item.provenance.llm.prompt_version if item.provenance.llm else None
+        by_version[version] = by_version.get(version, 0) + 1
         a_words, s_words = words(abstract), words(summary)
         run, at = longest_common_run(s_words, a_words)
         if run >= threshold:
@@ -98,9 +101,27 @@ def measure(threshold: int = 8) -> dict:
 
     rows.sort(key=lambda r: (-r["prose_words"], -r["run_length"]))
     prose_over = [r for r in rows if r["prose_words"] >= threshold]
+
+    # Split by prompt version, because `content/` holds items from more than one.
+    # A pooled rate cannot tell whether the no-verbatim rule worked: items an
+    # earlier selection published and the current one does not keep the
+    # summaries they were written with, and they are the majority here.
+    per_version: dict[str, dict] = {}
+    for version, n in by_version.items():
+        over = [r for r in rows if r["prompt_version"] == version]
+        prose = [r for r in over if r["prose_words"] >= threshold]
+        per_version[version or "unknown"] = {
+            "summaries": n,
+            "over_threshold": len(over),
+            "over_threshold_prose_only": len(prose),
+            "share_prose_only": round(len(prose) / n, 4) if n else None,
+            "longest_prose_run": max((r["prose_words"] for r in prose), default=0),
+        }
+
     return {
         "threshold_words": threshold,
         "summaries_checked": checked,
+        "by_prompt_version": per_version,
         "over_threshold": len(rows),
         "share_over_threshold": round(len(rows) / checked, 4) if checked else None,
         # The number to act on: runs that are still over the line once digits

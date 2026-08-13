@@ -117,6 +117,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:20:14Z",
     "collectors": [
@@ -126,7 +127,7 @@
     "cost_usd": 0.005088,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -150,11 +151,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 0.9539,
       "source_multiplicity": 0.0
     },
-    "headline": 0.5816,
+    "headline": 0.3816,
     "relevance": 0.9539
   },
   "signals": {
@@ -203,9 +204,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The empirical findings are based on a single, unnamed European city during the specific conditions of the COVID-19 pandemic restrictions.",
-      "what": "The study analyzes workplace dependence (WPD) by pairing fine-grained hourly population data with detailed company records in a large European city, comparing workplace activity during periods of low versus high COVID-19 restrictions. It finds that while industry and firm productivity drive physical attendance, the relationship between WPD, income, and gender is highly contingent on distance from the city center, revealing a 'service trap' of high WPD in female-majority and income-diverse locations near the urban core.",
-      "why": "It demonstrates that remote-work inequalities are not just individual but are spatially structured, showing that the urban core retains a highly place-bound, vulnerable service workforce despite overall shifts toward flexible work."
+      "caveats": "The empirical findings are derived from a single, unnamed European city, which may limit generalizability to urban areas with different spatial layouts or economic structures.",
+      "what": "Using hourly population data paired with detailed company records in a European city, this study measures physical workplace attendance across different levels of COVID-19 restrictions to identify the drivers of workplace dependence. The analysis reveals that while industry type and firm productivity dictate physical attendance overall, the influence of income and gender depends heavily on proximity to the city center.",
+      "why": "It demonstrates that remote-work inequalities are spatially structured, revealing a 'service trap' where female-majority and income-diverse areas near the urban core remain highly dependent on physical workplaces due to a concentrated, place-bound service economy."
     }
   },
   "track": "papers",

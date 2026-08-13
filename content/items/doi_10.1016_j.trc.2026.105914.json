@@ -113,7 +113,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -210,6 +210,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:45:51Z",
     "collectors": [
@@ -218,7 +219,7 @@
     "cost_usd": 0.00261,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -258,8 +259,8 @@
       "value": false
     },
     "data_available": {
-      "basis": "rule",
-      "confidence": "low",
+      "basis": "llm",
+      "confidence": "medium",
       "detail": null,
       "url": null,
       "value": false
@@ -269,7 +270,7 @@
       "confidence": "medium",
       "detail": null,
       "url": null,
-      "value": "multi_city"
+      "value": "not_applicable"
     },
     "is_retracted": {
       "basis": "rule",
@@ -295,9 +296,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The framework's evaluation is limited to longitudinal trajectory prediction in monitored corridors, meaning its performance in complex multi-lane changing or intersection scenarios remains untested.",
-      "what": "The study develops a Mixed-Granularity Physics-Informed Deep Learning (MPIDL) framework for multi-step longitudinal vehicle trajectory prediction. It couples an LSTM microscopic module predicting vehicle-level accelerations with an ANN macroscopic module that estimates velocity-density fields regularized by the Aw-Rascle-Zhang traffic-flow model. Evaluated on the NGSIM and ZTD datasets, the framework achieves lower Average Displacement Error and Final Displacement Error than baseline models while maintaining physical consistency.",
-      "why": "It bridges the gap between highly accurate but unconstrained deep learning models and physically consistent but less accurate physics-based models, allowing real-time, physically consistent trajectory predictions because the computationally heavy macroscopic module is discarded during inference."
+      "caveats": "Although the framework is trained jointly using both micro and macro modules, the macroscopic constraints are discarded during inference, meaning real-time physical consistency relies on the patterns learned during training rather than active runtime enforcement.",
+      "what": "The Mixed-Granularity Physics-Informed Deep Learning (MPIDL) framework predicts multi-step longitudinal vehicle trajectories by coupling a microscopic LSTM module with a macroscopic ANN module. The microscopic module predicts vehicle-level accelerations from historical speed, headway, and relative-speed sequences, while the macroscopic module estimates joint velocity-density fields regularized by the Aw-Rascle-Zhang traffic-flow model. Evaluated on the NGSIM and ZTD datasets, the framework achieves lower Average Displacement Error and Final Displacement Error than standard physics-based and deep learning baselines.",
+      "why": "It bridges the gap between micro-level vehicle dynamics and macro-level traffic flow theory, ensuring that individual trajectory predictions remain physically consistent with overall traffic density and velocity fields without sacrificing real-time inference speed."
     }
   },
   "track": "papers",

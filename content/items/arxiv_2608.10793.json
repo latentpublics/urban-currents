@@ -62,7 +62,7 @@
     "orgs": [],
     "people": [],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": []
   },
@@ -80,6 +80,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
@@ -88,7 +89,7 @@
     "cost_usd": 0.005527,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -139,7 +140,7 @@
       "confidence": "medium",
       "detail": null,
       "url": null,
-      "value": "global"
+      "value": "not_applicable"
     },
     "is_retracted": {
       "basis": "rule",
@@ -165,9 +166,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on a relatively small sample of under 10,000 posts from a single social media platform, which may limit generalizability to broader cultural definitions of wellbeing.",
-      "what": "The study analyzed 9,844 Instagram posts containing the hashtag #wellbeing using hierarchical clustering of hashtags, non-parametric engagement tests, computer vision for image clustering, and object detection for gender representation. It found that the #wellbeing discourse is predominantly feminized and dominated by mental, psychological, and spiritual themes over physical activity and nutrition, with therapeutic and positive psychology narratives generating the highest engagement.",
-      "why": "It measures and characterizes the specific cultural shift of 'wellbeing' on social media, demonstrating that the digital narrative has transitioned from physical fitness toward a highly feminized, therapeutic, and self-discovery-oriented concept."
+      "caveats": "The findings are based on a relatively small sample of under 10,000 posts from a single social media platform, which may not represent broader cultural shifts outside of Instagram's specific user demographics.",
+      "what": "The study analyzed 9,844 Instagram posts tagged with #wellbeing using hierarchical clustering, non-parametric statistical tests, and computer vision object detection models. It mapped the textual and visual themes of these posts, measured user engagement across different categories, and evaluated gender representation in the images.",
+      "why": "It demonstrates that online wellbeing discourse is heavily feminized and dominated by mental, psychological, and spiritual narratives rather than physical fitness or nutrition. This provides empirical evidence of how social media platforms shift the public understanding of wellness toward therapeutic and self-discovery frameworks."
     }
   },
   "track": "papers",

@@ -132,6 +132,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:27:15Z",
     "collectors": [
@@ -141,7 +142,7 @@
     "cost_usd": 0.005675,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -192,7 +193,7 @@
       "confidence": "medium",
       "detail": null,
       "url": null,
-      "value": "not_applicable"
+      "value": "national"
     },
     "is_retracted": {
       "basis": "rule",
@@ -218,9 +219,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "Forecasting error increases progressively as the prediction horizon is extended.",
-      "what": "A hybrid machine learning framework was developed to forecast herd-level cattle weight trajectories using automated sensing observations from 2022 to 2024 in southeastern Australia. The framework aggregates animal-level predictions using demographic variables, weekly live weight observations, and lagged environmental predictors. Among the architectures tested, a cascade model combining Gradient Boosting, Random Forest, and Neural Networks performed best, achieving a test R^2 of 0.889, an RMSE of 21.319 kg, and an MAE of 15.462 kg.",
-      "why": "The framework demonstrates that hybrid machine learning architectures can maintain robust forecasting performance under sparse and irregular observation conditions, overcoming a major limitation of recurrent sequential models in grazing-based livestock management."
+      "caveats": "Forecasting errors scale up progressively as the prediction horizon is extended.",
+      "what": "A hybrid machine learning framework was developed to forecast herd-level cattle weight using automated sensing data collected between 2022 and 2024 in southeastern Australia. The system aggregates animal-level predictions into herd trajectories using weekly live weights, demographics, and lagged environmental variables. A cascade architecture combining Gradient Boosting, Random Forest, and Neural Networks outperformed recurrent sequential baselines, achieving a test R^2 of 0.889, an RMSE of 21.319 kg, and an MAE of 15.462 kg.",
+      "why": "The framework demonstrates that hybrid machine learning architectures maintain predictive robustness even when livestock observations are sparse and irregular, a common limitation in commercial grazing operations."
     }
   },
   "track": "papers",

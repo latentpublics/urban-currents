@@ -230,6 +230,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:33:56Z",
     "collectors": [
@@ -238,7 +239,7 @@
     "cost_usd": 0.005853,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -315,9 +316,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on POI data from a specific panelist dataset, which serves as a proxy for comprehensive daily activity-travel behavior.",
-      "what": "This study tracks the multi-year temporal dynamics of individual activity-travel patterns using longitudinal Point of Interest (POI) data from 15,720 unique panelists in the United States between February 2020 and May 2022. Applying spectral clustering to mobility indicators, the researchers identified six distinct mobility styles, finding that while high-activity styles rebounded beyond pre-pandemic levels by mid-2022, elevated at-home dwell times persisted. The analysis also reveals that higher-income individuals were more likely to transition to lower-mobility styles during the peak of pandemic restrictions.",
-      "why": "It establishes a structured framework to simplify complex, multi-year activity-travel patterns into six interpretable, trackable profiles, measuring how structural behavioral adaptations and social inequities persist long after an initial disruption."
+      "caveats": "The findings rely on mobile device Point of Interest data as a proxy for complete individual activity-travel behavior, which may not capture all trips or non-POI-based movements.",
+      "what": "This study analyzed longitudinal Point of Interest data from 15,720 panelists in the United States between February 2020 and May 2022 to track long-term behavioral adaptations to the COVID-19 pandemic. Using spectral clustering on mobility indicators, the researchers identified six distinct mobility styles, finding that high at-home dwell times persisted into mid-2022 even as high-activity travel styles rebounded past pre-pandemic levels. The analysis also revealed that higher-income individuals were more likely to transition to lower-mobility styles during peak restriction periods.",
+      "why": "It provides a structured framework to reduce complex, multi-year activity-travel patterns into six interpretable profiles, demonstrating that major disruptions cause uneven, long-term structural changes in mobility habits across different income groups rather than just temporary shifts."
     }
   },
   "track": "papers",

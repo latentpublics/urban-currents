@@ -178,6 +178,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:38:32Z",
     "collectors": [
@@ -186,7 +187,7 @@
     "cost_usd": 0.00223,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -263,9 +264,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The models were trained and validated on an extremely small sample size of 26 observations along a single river corridor, and five singleton classes had to be excluded from the held-out error estimation.",
-      "what": "This proof-of-concept study predicts barge tow size by linking high-resolution satellite imagery along the Lower Mississippi River to Automatic Identification System (AIS) towing-vessel trajectories. Using a dataset of 26 observations, the researchers extracted 39 features related to vessel geometry, speed, heading variability, and path efficiency to train six regression models. The Poisson and support vector regressors performed best, achieving mean absolute errors of approximately 1.92 barges using key features like course entropy and the interaction between trip duration and speed variability.",
-      "why": "It demonstrates that barge tow configurations can be inferred directly from the movement behavior of towing vessels, offering a potential way to monitor freight volume and schedule locks in near real-time without requiring physical transponders on individual barges."
+      "caveats": "The predictive models were trained and validated on an extremely small sample size of 26 total observations along a single river corridor.",
+      "what": "This proof-of-concept study predicts the number of barges in a tow configuration by analyzing 39 trajectory features derived from Automatic Identification System (AIS) transponders on towing vessels. Using high-resolution satellite imagery along the Lower Mississippi River to label 26 observed tow instances, the researchers trained six regression models, finding that Poisson and support vector regressors achieved the lowest mean absolute errors of 1.920 and 1.922 barges, respectively. The most predictive features across the models were course entropy and the interaction between trip duration and speed variability.",
+      "why": "It demonstrates that barge fleet sizes can be estimated in near real-time from the movement patterns of the towing vessel alone, offering a potential way to bypass the lack of tracking transponders on individual cargo barges for lock and berth scheduling."
     }
   },
   "track": "papers",

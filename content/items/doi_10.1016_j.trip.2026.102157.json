@@ -154,6 +154,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:45:51Z",
     "collectors": [
@@ -162,7 +163,7 @@
     "cost_usd": 0.001838,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -202,8 +203,8 @@
       "value": false
     },
     "data_available": {
-      "basis": "rule",
-      "confidence": "low",
+      "basis": "llm",
+      "confidence": "medium",
       "detail": null,
       "url": null,
       "value": false
@@ -239,9 +240,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on qualitative interview data from a single national context, which may reflect specific UK regulatory and insurance market structures.",
-      "what": "This paper investigates the role of motor insurers in transport governance and future mobility innovations through 40 semi-structured interviews with insurers and stakeholders in the United Kingdom. It maps how these actors view emerging connected, automated, shared, and electric mobility trends, identifying three key domains of influence: legal obligations, safety monitoring through data practices, and financial risk management.",
-      "why": "It establishes that motor insurers act as active gatekeepers whose varying appetite for risk and willingness to design new insurance products directly accelerates or hinders the adoption of specific transport innovations."
+      "caveats": "The findings are based on qualitative interview data from a single national context, which may reflect the specific regulatory and market conditions of the United Kingdom.",
+      "what": "This study investigates the role of motor insurers in shaping transport governance and future mobility innovations through 40 semi-structured interviews with insurers and stakeholders in the United Kingdom. It maps how these actors view emerging connected, automated, shared, and electric mobility trends, identifying three key domains of influence: legal obligations, safety monitoring via data practices, and financial risk management.",
+      "why": "It demonstrates that insurers act as active gatekeepers whose varying appetite for risk and product innovation directly accelerates or hinders the adoption of new transport technologies."
     }
   },
   "track": "papers",

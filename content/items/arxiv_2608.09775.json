@@ -140,6 +140,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:40:42Z",
     "collectors": [
@@ -149,7 +150,7 @@
     "cost_usd": 0.005566,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -227,8 +228,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "The proposed AirFlow framework forecasts air quality by routing pollutant channels through a statistic-guided normalization mechanism based on their 24-hour autocorrelation, and modeling temporal dynamics using a hierarchical dual-stream state model. Evaluated on real-world datasets from multiple cities, the model achieved the best performance in 34 out of 36 metric comparisons, reducing root mean square error by up to 11.11% compared to state-of-the-art baselines while requiring only 0.0483M parameters and 0.0215G FLOPs.",
-      "why": "It demonstrates that air quality forecasting accuracy can be significantly improved without the computational overhead of graph propagation or predefined signal decomposition, by instead tailoring normalization and temporal modeling to the distinct rates of change of individual pollutants."
+      "what": "The AirFlow forecasting framework models air quality using a dual-stream state space architecture that processes station-level multivariate observations without relying on graph propagation or predefined signal decomposition. It introduces a statistic-guided normalization routing mechanism based on 24-hour autocorrelation and distribution drift, alongside a hierarchical dual-stream state model with gated bidirectional cross-attention. Tested on real-world multi-city datasets, the model outperformed state-of-the-art baselines in 34 out of 36 metric comparisons, reducing root mean square error by up to 11.11% while requiring only 0.0483M parameters and 0.0215G FLOPs.",
+      "why": "It demonstrates that air quality forecasting can be significantly improved by tailoring normalization and temporal modeling to the distinct periodicities and drift rates of individual pollutants, rather than forcing all channels through a single shared backbone. This achieves superior accuracy with a highly compact parameter footprint suitable for resource-constrained urban monitoring systems."
     }
   },
   "track": "papers",

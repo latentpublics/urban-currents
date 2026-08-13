@@ -212,6 +212,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:33:57Z",
     "collectors": [
@@ -220,7 +221,7 @@
     "cost_usd": 0.005463,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -297,9 +298,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on self-reported survey data from a single university campus, which may limit generalizability to other regional or institutional contexts.",
-      "what": "This study surveyed 304 tertiary students at the Kwame Nkrumah University of Science and Technology (KNUST) using a concurrent mixed-methods design to analyze how they perceive and use campus green spaces. The findings show that students primarily use these spaces for academic and social purposes, such as group discussions, reading, and meeting friends, while physical activities are rare, with 82.25% and 77.70% of respondents reporting they never cycle or jog in these spaces, respectively.",
-      "why": "It establishes empirical evidence on the specific usage patterns of campus green spaces in an African university context, shifting the planning focus from physical recreation to supporting informal academic activities through targeted infrastructure like seating and charging ports."
+      "caveats": "The findings are based on a self-reported survey at a single university campus, which may not represent student behaviors and green space designs at other institutions.",
+      "what": "A survey of 304 students at the Kwame Nkrumah University of Science and Technology (KNUST) analyzed how campus green spaces are utilized. The study found that students primarily use these areas for academic and social purposes, such as group discussions, meeting friends, and reading, while physical activities are rare, with 82.25% and 77.70% of respondents never using the spaces for cycling or jogging, respectively.",
+      "why": "It provides empirical evidence of how African university students interact with campus nature, demonstrating that these spaces function primarily as informal academic and social hubs rather than recreational sports facilities."
     }
   },
   "track": "papers",

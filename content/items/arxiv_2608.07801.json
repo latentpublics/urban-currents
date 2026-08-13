@@ -155,6 +155,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:33:54Z",
     "collectors": [
@@ -164,7 +165,7 @@
     "cost_usd": 0.006561,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -241,9 +242,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The critical nitrogen dilution curve and models were developed and validated specifically for high-yielding, medium-to-tall cotton varieties grown in the Texas Coastal Plains, which may limit direct transferability to other cotton varieties or growing regions.",
-      "what": "The study developed and evaluated machine learning models to estimate cotton growth and nitrogen status indicators using UAV-based multispectral imagery, plant height, and fractional canopy cover collected over three years. Random forest and extreme gradient boosting models achieved high validation accuracies, with R2 values up to 0.88 for dry biomass weight, 0.84 for plant nitrogen uptake, and 0.86 for plant nitrogen concentration.",
-      "why": "It demonstrates that combining spectral reflectance with physical crop morphology features in decision-tree models allows for the reliable, non-destructive estimation of critical nitrogen nutrition indices during early vegetative stages, enabling more precise fertilizer management."
+      "caveats": "The critical nitrogen dilution curve and resulting nutrition index were calibrated specifically for high-yielding, medium-to-tall cotton varieties in the Texas Coastal Plains, which may limit direct application to other cotton varieties or growing regions.",
+      "what": "The study developed and evaluated machine learning models to estimate cotton dry biomass weight, plant nitrogen uptake, and plant nitrogen concentration using multispectral and morphological data from unmanned aerial vehicles. Drawing on a three-year field study in the Texas Coastal Plains, the researchers compared simple regression, multiple linear regression, random forest regression, and extreme gradient boosting models. The random forest and extreme gradient boosting models achieved the highest validation accuracies, yielding R2 values up to 0.88 for biomass and 0.86 for nitrogen concentration.",
+      "why": "It establishes a reliable method for non-destructive, early-season monitoring of crop nitrogen status, allowing farmers to make precise decisions on fertilizer timing and application rates before flowering."
     }
   },
   "track": "papers",

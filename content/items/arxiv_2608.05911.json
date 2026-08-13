@@ -149,6 +149,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:27:15Z",
     "collectors": [
@@ -158,7 +159,7 @@
     "cost_usd": 0.005554,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -236,8 +237,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "The paper develops an end-to-end, IIIF-based pipeline that extracts, parses, and geocodes commercial advertisements from the 20th-century digitised Armenian press of France. To overcome the lack of off-the-shelf OCR models for Western Armenian, the pipeline uses vision-language models (VLMs) to process curved scans and generate structured records. The authors release a 500-page Western Armenian press corpus containing 3,270 advertisement-level annotations, alongside a unified Label Studio annotation template.",
-      "why": "It establishes a reproducible workflow that allows researchers to extract structured spatial data from historical corpora in under-resourced languages without relying on pre-existing, high-quality OCR models."
+      "what": "The researchers built an end-to-end pipeline using vision-language models to locate, read, parse, and geocode commercial advertisements from 20th-century digitised Armenian newspapers in France. The pipeline was evaluated on a newly created corpus of 500 pages of the Western Armenian press containing 3,270 annotated advertisements, successfully mapping the historical Parisian Armenian commercial community despite the curved scans and lack of standard OCR support for Western Armenian.",
+      "why": "It demonstrates that vision-language models can successfully bootstrap structured spatial data from highly under-resourced historical languages and distorted physical scans where conventional optical character recognition workflows fail."
     }
   },
   "track": "papers",

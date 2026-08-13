@@ -170,7 +170,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -213,6 +213,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:31:21Z",
     "collectors": [
@@ -221,7 +222,7 @@
     "cost_usd": 0.001536,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -298,9 +299,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The abstract does not disclose the sample size, demographic characteristics, or geographic location of the surveyed public, making the generalizability of the behavioral pathways difficult to assess.",
-      "what": "The study adapts the Value-Belief-Norm framework to analyze the social, environmental, and psychological drivers of public support for urban agriculture. It maps distinct behavioral pathways for different forms of support, finding that financial donations are socially motivated, participation is driven by experience, and both purchasing and policy advocacy are rooted in a sense of perceived responsibility.",
-      "why": "It identifies specific, actionable psychological pathways for different types of public engagement, allowing urban planners and advocates to target their mobilization strategies based on whether they need funding, volunteers, consumers, or policy support."
+      "caveats": "The findings are based on self-reported behavioral intentions and psychological frameworks rather than observed, real-world participation or policy outcomes.",
+      "what": "This study adapts the Value-Belief-Norm framework to analyze the social, environmental, and psychological drivers of public support for urban agriculture. It maps public backing across four distinct behaviors: financial donations, active participation, purchasing produce, and policy advocacy. The analysis reveals that support operates through distinct pathways, showing that donations are driven by social factors, participation by personal experience, and both purchasing and policy advocacy by a sense of responsibility.",
+      "why": "It demonstrates that public support for urban agriculture is not a uniform attitude but a set of distinct behaviors requiring tailored mobilization strategies, shifting the focus from individual consumption to civic and institutional advocacy."
     }
   },
   "track": "papers",

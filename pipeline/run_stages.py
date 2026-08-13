@@ -204,10 +204,22 @@ def stage_enrich(
         if it.provenance.abstract_source == "none" and not needs_abstract(it):
             it.provenance.abstract_source = "openalex"
 
-    for name, n in counts.items():
-        if name != "attempted":
-            run.count(f"abstract_{name}", n)
+    # Counted over every candidate, not over the ones this stage asked about.
+    # `enrich_abstracts` only sees the items that needed help, so its `openalex`
+    # tally is 0 by construction — reporting that as "OpenAlex supplied none"
+    # would be the same implicit-population mistake the calibration had.
     run.count("abstract_attempted", counts["attempted"])
+    run.count("abstract_candidates", len(items))
+    for name in ("crossref", "springer_api"):
+        run.count(f"abstract_{name}", counts[name])
+    run.count(
+        "abstract_openalex",
+        sum(1 for it in items if it.provenance.abstract_source == "openalex"),
+    )
+    run.count(
+        "abstract_none",
+        sum(1 for it in items if it.provenance.abstract_source == "none"),
+    )
 
     from .config import secret
 
@@ -549,6 +561,40 @@ def _seen_entity_ids(exclude: Optional[set[str]] = None) -> set[str]:
 # --------------------------------------------------------------------------
 
 
+def _restore_run_outputs(merged: Item, fresh: Item) -> None:
+    """Let this run's derived fields win over the stored copy's.
+
+    `_merge_pair` exists to fold an arXiv preprint and an OpenAlex Work into one
+    record, so it accumulates: the base keeps what it has and takes only what it
+    lacks. That is right for identity and bibliography, and wrong for anything a
+    stage just computed. Folding the archive in as `base` meant a re-run's
+    summary, signals and scores were all discarded in favour of the stored ones.
+
+    Found by bumping the summarize prompt to 0.4.0: 121 summaries were
+    regenerated, the stage file carried every one of them, and `content/` still
+    said `summarize/papers@0.3.0`. A prompt version could never reach a
+    published item, which makes `uc summarize --date` pointless for one.
+
+    Idempotency is unaffected (PRD §9): a second run of the same date recomputes
+    the same values from the same cache, so the bytes still match.
+    """
+    if fresh.summary.en and fresh.summary.en.what:
+        merged.summary = fresh.summary
+        merged.provenance.llm = fresh.provenance.llm
+        merged.signals = fresh.signals
+    # The overlay is this run's reading of the abstract, and scores are computed
+    # against today's archive. Both are outputs, not accumulated facts.
+    for facet in ("methods", "data", "tools"):
+        if getattr(fresh.entities, facet):
+            setattr(merged.entities, facet, getattr(fresh.entities, facet))
+    if fresh.entities.places or fresh.entities.places_status != "not_attempted":
+        merged.entities.places = fresh.entities.places
+        merged.entities.places_status = fresh.entities.places_status
+    merged.scores = fresh.scores
+    merged.badges = fresh.badges
+    merged.provenance.abstract_source = fresh.provenance.abstract_source
+
+
 def stage_issue(run: Run, d: date) -> Issue:
     """Publish Items and the Issue.
 
@@ -571,7 +617,9 @@ def stage_issue(run: Run, d: date) -> Issue:
             before = existing.publication_status.state
             from .dedup.merge import _merge_pair
 
+            fresh = it
             it = _merge_pair(existing.model_copy(deep=True), it)
+            _restore_run_outputs(it, fresh)
             # Badges were computed at `select`; a state change after that would
             # otherwise leave a published paper still wearing a preprint badge.
             apply_badges(it)

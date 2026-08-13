@@ -145,6 +145,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:40:42Z",
     "collectors": [
@@ -154,7 +155,7 @@
     "cost_usd": 0.006609,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -178,11 +179,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.4,
-      "novelty": 0.6667,
+      "novelty": 0.3333,
       "relevance": 0.682,
       "source_multiplicity": 0.0
     },
-    "headline": 0.4861,
+    "headline": 0.4195,
     "relevance": 0.682
   },
   "signals": {
@@ -231,9 +232,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The performance of the models varies significantly depending on whether they are trained on empirical survey data (RECS) or synthetic, simulation-based data (ResStock).",
-      "what": "The study quantifies the trade-off between predictive accuracy and input accessibility in residential energy estimation by training five machine learning models on two nationally representative U.S. datasets: the survey-based RECS and the simulation-based ResStock. Full-feature models achieved R2 scores of 0.90 for ResStock and 0.73 for RECS using CatBoost, but restricting inputs to ten low-burden, homeowner-accessible variables reduced performance to R2 of 0.62 and 0.61 respectively. For a highly homogeneous cohort of single-family detached homes in a single climate zone, the reduced-input model performance improved to R2 = 0.85.",
-      "why": "It establishes the empirical limits of using machine learning for energy estimation when detailed building audits are unavailable, proving that algorithmic complexity cannot compensate for missing physical and behavioral data unless applied to highly homogeneous housing cohorts."
+      "caveats": "The findings rely on one empirical survey dataset and one synthetic simulation dataset, meaning the observed model performance is bound to the specific generation methods and biases of RECS and ResStock.",
+      "what": "This study evaluated five machine learning models (CatBoost, XGBoost, LightGBM, Random Forest, and Neural Networks) to estimate residential energy use under constrained data conditions, using the RECS and ResStock datasets. While full-feature CatBoost models achieved R2 scores of 0.90 on ResStock and 0.73 on RECS, restricting inputs to ten easily accessible variables (such as weather and basic administrative records) dropped performance to R2 scores of 0.62 and 0.61 respectively. However, restricting the low-input model to a homogeneous subset of single-family detached homes in Climate Zone 6A built between 2000 and 2010 restored predictive accuracy to R2 = 0.85.",
+      "why": "It quantifies the exact performance penalty of omitting detailed physical and behavioral data from energy models, demonstrating that algorithmic complexity cannot overcome missing inputs unless the target housing stock is highly homogeneous."
     }
   },
   "track": "papers",

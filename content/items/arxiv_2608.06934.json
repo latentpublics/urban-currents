@@ -107,6 +107,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:33:54Z",
     "collectors": [
@@ -116,7 +117,7 @@
     "cost_usd": 0.005769,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -193,9 +194,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study's empirical evaluation is limited to Australian urban, suburban, and regional environments, which may not represent pedestrian perceptions in other global contexts.",
-      "what": "The study introduces a dataset of 29,870 walkability ratings from 1,196 respondents linked to sidewalk-view imagery across Australian environments, alongside a user-conditioned multimodal deep learning framework that fuses visual features with respondent-level attributes. Sidewalk-view images were found to receive significantly higher walkability ratings than matched vehicle-mounted street-view images. The user-conditioned model improved rank agreement with observed ratings by 65% over an image-only baseline, achieving a quadratic weighted kappa of 0.47 compared to 0.29.",
-      "why": "It demonstrates that who is evaluating an environment carries predictive weight beyond image content alone, enabling a shift from aggregated, observer-independent walkability scores toward models that represent diverse, subjective pedestrian experiences."
+      "caveats": "The predictive performance of the user-conditioned model, while a substantial improvement over the baseline, remains moderate with a quadratic weighted kappa of 0.47.",
+      "what": "The study introduces a dataset of 29,870 walkability ratings from 1,196 respondents paired with sidewalk-view imagery across urban, suburban, and regional Australia, and develops a user-conditioned multimodal deep learning framework that fuses visual features with individual rater attributes. The user-conditioned model improved rank agreement with observed ratings by 65% over an image-only baseline, achieving a quadratic weighted kappa of 0.47 compared to 0.29. Additionally, a viewpoint comparison revealed that sidewalk-view images receive significantly higher walkability ratings than matched, vehicle-mounted street-view images.",
+      "why": "It demonstrates that walkability is not perceived uniformly and provides a method to model subjective, user-specific environmental assessments rather than relying on aggregated, observer-independent scores. It also establishes that the choice between sidewalk-level and street-level imagery systematically biases walkability survey results."
     }
   },
   "track": "papers",

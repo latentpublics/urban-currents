@@ -102,6 +102,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:27:15Z",
     "collectors": [
@@ -111,7 +112,7 @@
     "cost_usd": 0.005064,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -189,8 +190,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "The study analyzes the frequency and popularity distributions of given names in the USA and France over a period of more than 100 years using official government datasets. It applies Lorenz and Pareto curves to measure name inequality, finding that the Gini coefficient remained stable within a narrow range of 0.85 to 0.95, and models these distributions using the physical phenomenon of Rayleigh-Jeans thermalization and condensation. Time correlation analysis reveals that name stability persisted until the mid-twentieth century before undergoing significant changes.",
-      "why": "It demonstrates that the distribution of cultural traits like given names follows the same thermodynamic statistical patterns as wealth inequality and physical energy states, establishing a novel mathematical link between social naming conventions and physical thermalization processes."
+      "what": "This study analyzes the frequency and popularity distributions of given names in the USA and France over a period of more than 100 years using official government datasets. By applying Lorenz and Pareto curves, the analysis reveals that name distributions remain stable over time with a Gini coefficient consistently between 0.85 and 0.95. The researchers model these distributions using the Rayleigh-Jeans thermalization and condensation framework from physics, finding that name popularity levels behave like energy states with stable time correlations until the mid-twentieth century, after which they changed significantly.",
+      "why": "It demonstrates that the dynamics of cultural choices, specifically naming conventions, follow the same thermodynamic statistical laws and inequality distributions as wealth accumulation and physical systems."
     }
   },
   "track": "papers",

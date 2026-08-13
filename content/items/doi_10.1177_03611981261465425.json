@@ -91,7 +91,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -169,6 +169,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:45:51Z",
     "collectors": [
@@ -177,7 +178,7 @@
     "cost_usd": 0.001839,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -254,9 +255,9 @@
   },
   "summary": {
     "en": {
-      "caveats": null,
-      "what": "This study evaluated the influence of nano-TiO2 on the pore system characteristics, scaling resistance, and freeze-thaw performance of concretes made with and without supplementary cementitious materials, specifically Class C fly ash and Grade 100 slag cement. The results demonstrate that nano-TiO2 significantly improves the frost resistance of fly ash concrete compared to mixtures containing only ordinary Portland cement or slag cement. A new, practical indicator for characterizing the concrete pore system was developed to correlate pore structure directly with frost resistance.",
-      "why": "It establishes a previously unmeasured synergistic interaction between nano-TiO2 and fly ash, providing a concrete design pathway to improve the durability of fly ash-based mixtures under freeze-thaw conditions."
+      "caveats": "The findings are based on laboratory-scale material testing rather than long-term field deployments under real-world weathering conditions.",
+      "what": "This study evaluated the impact of nano-TiO2 on the pore structures, scaling resistance, and freeze-thaw performance of concrete mixtures made with ordinary Portland cement, Class C fly ash, and Grade 100 slag cement. The findings demonstrate that nano-TiO2 significantly enhances frost resistance specifically in fly ash concrete, and the study introduces a simplified indicator to correlate pore system characteristics directly with durability.",
+      "why": "It establishes a previously unmeasured synergistic interaction between nano-TiO2 and fly ash, providing a practical method to predict concrete durability and optimize the use of supplementary cementitious materials in cold-weather infrastructure."
     }
   },
   "track": "papers",

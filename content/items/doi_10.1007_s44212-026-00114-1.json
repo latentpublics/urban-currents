@@ -206,6 +206,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:48:02Z",
     "collectors": [
@@ -214,7 +215,7 @@
     "cost_usd": 0.00545,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -254,8 +255,8 @@
       "value": false
     },
     "data_available": {
-      "basis": "llm",
-      "confidence": "medium",
+      "basis": "rule",
+      "confidence": "low",
       "detail": null,
       "url": null,
       "value": false
@@ -292,8 +293,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "This paper presents a distributed data governance architecture for smart cities that combines a unified data registration standard, a probe-driven dynamic data catalog, and local Large Language Models (LLMs) for semantic data coordination. The system was deployed in Suining City, China, across 50 departments and 151 systems, and a load test of 83,909 simulated requests demonstrated an average response time of 730 ms, a maximum latency of 1,443 ms, and an error rate of 0.12%.",
-      "why": "It demonstrates a viable architecture for secure, cross-departmental smart city data sharing that respects ownership boundaries by restricting LLMs to semantic interpretation while relying on deterministic policy engines and human review for compliance decisions."
+      "what": "This paper presents a distributed data governance architecture for smart cities that combines a unified registration standard, a probe-driven dynamic catalog, and local Large Language Models (LLMs) for semantic coordination. The system was deployed in Suining City, China, connecting 151 systems across 50 departments. In a load test of 83,909 simulated requests, the platform achieved an average response time of 730 ms, a maximum latency of 1,443 ms, and an error rate of 0.12%.",
+      "why": "It demonstrates a viable architecture for cross-departmental data sharing that respects ownership boundaries by restricting LLMs to semantic interpretation while using deterministic policy engines and human review to enforce security and compliance."
     }
   },
   "track": "papers",

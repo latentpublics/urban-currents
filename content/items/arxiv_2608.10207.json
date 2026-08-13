@@ -74,6 +74,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:40:42Z",
     "collectors": [
@@ -82,7 +83,7 @@
     "cost_usd": 0.005691,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -106,11 +107,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 0.5,
+      "novelty": 0.0,
       "relevance": 0.7827,
       "source_multiplicity": 0.0
     },
-    "headline": 0.4131,
+    "headline": 0.3131,
     "relevance": 0.7827
   },
   "signals": {
@@ -159,9 +160,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The controller's performance was evaluated in simulations calibrated to only two bus routes, and zero-shot transfer to new routes showed limited immediate generalization without fine-tuning.",
-      "what": "The study develops a deep Q-learning controller for event-driven bus holding that incorporates offline LLM-generated semantic embeddings of bus stops, capturing physical attributes, surrounding activity context, and historical operational characteristics. Tested in stochastic simulations calibrated with data from two bus routes, the semantic controller reduced headway variability by 32.0%, bus bunching events by 69.2%, and passenger waiting times by 24.0% compared to a calibrated Daganzo baseline.",
-      "why": "It demonstrates that embedding functional and operational stop context into reinforcement learning controllers improves headway regularity over traditional spacing-only models, while enabling faster policy adaptation on new routes through warm-start fine-tuning."
+      "caveats": "While warm-start fine-tuning accelerated early learning during cross-route transfers, cold-start training still yielded the best final performance, indicating limits to immediate zero-shot policy generalization.",
+      "what": "The study introduces a deep Q-learning controller for event-driven bus holding that incorporates offline, LLM-generated semantic stop embeddings representing physical attributes, surrounding activities, and historical operations. Tested on stochastic simulations calibrated with real-world data from two bus routes, the semantic controller reduced headway variability by 32.0%, bus bunching events by 69.2%, and passenger waiting times by 24.0% compared to a calibrated Daganzo baseline.",
+      "why": "It demonstrates that embedding semantic context about transit stops, rather than relying solely on instantaneous operational data or route-specific IDs, improves control trade-offs and accelerates policy adaptation when transferring reinforcement learning models to new routes."
     }
   },
   "track": "papers",

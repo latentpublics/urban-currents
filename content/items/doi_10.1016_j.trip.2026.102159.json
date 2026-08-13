@@ -181,6 +181,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:38:32Z",
     "collectors": [
@@ -189,7 +190,7 @@
     "cost_usd": 0.001994,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -266,9 +267,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on self-reported survey data from a single post-disaster event in Vermont, which may limit the generalizability of the specific recovery trajectories to other geographic regions.",
-      "what": "This study analyzes post-flood transportation access among people experiencing homelessness (PEH) following the 2023 Vermont floods using mixed-methods survey data collected in-person and online. The analysis compares short- and long-term changes in perceived transportation access, travel modes, vehicle access, and recovery assistance between individuals unhoused prior to the flood and those displaced by it.",
-      "why": "It provides rare empirical evidence showing that PEH experience deeper and more prolonged transportation disruptions than housed populations, revealing a mismatch between formal disaster recovery systems and the mobility needs of housing-unstable populations."
+      "caveats": "The study relies on self-reported survey data from a single state-level disaster event, which may limit generalizability to urban areas with different baseline transit systems and homelessness services.",
+      "what": "This study analyzes post-disaster transportation access for people experiencing homelessness (PEH) following the 2023 Vermont floods using mixed-methods survey data collected both in-person and online. It compares the short- and long-term mobility disruptions, travel modes, and recovery assistance experiences of individuals who were unhoused prior to the flood against those displaced into homelessness by the disaster.",
+      "why": "It provides rare empirical evidence showing that transportation access for unhoused populations remains severely constrained long after physical infrastructure recovers, exposing a mismatch between formal disaster recovery systems and the actual mobility needs of housing-insecure individuals."
     }
   },
   "track": "papers",

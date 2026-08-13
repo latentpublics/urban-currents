@@ -69,7 +69,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -112,6 +112,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:20:14Z",
     "collectors": [
@@ -121,7 +122,7 @@
     "cost_usd": 0.004863,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -198,9 +199,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The improved method's accuracy and physical insights are demonstrated only on a simplified model with a maximum velocity of one.",
-      "what": "The study develops an improved mean-field analysis for single-lane cellular automata traffic models by combining the Car-Oriented-Mean-Field (COMF) theory with the 2-site cluster method. The hybrid analytical method is designed to capture both short- and long-range correlations in models with inhomogeneous stationary states, and its accuracy is demonstrated using the Velocity-Dependent-Randomization (VDR) model with a maximum velocity of 1.",
-      "why": "The new analytical method successfully captures phase separation and slow-to-start rules in stochastic traffic models, providing a theoretical capability to analyze inhomogeneous stationary states that classical mean-field theories cannot accurately describe."
+      "caveats": "The analytical improvements are demonstrated only on a simplified traffic model where the maximum velocity is restricted to one.",
+      "what": "The study introduces an enhanced mean-field analysis for cellular automata models of single-lane vehicular traffic by merging the Car-Oriented-Mean-Field theory with the 2-site cluster method. This combined approach is designed to capture both short- and long-range spatial correlations, and its performance is demonstrated on the Velocity-Dependent-Randomization model with a maximum velocity of one.",
+      "why": "It provides a theoretical framework capable of analyzing traffic models with inhomogeneous stationary states and phase separation, such as those with slow-to-start rules, which classical mean-field theories fail to accurately describe."
     }
   },
   "track": "papers",

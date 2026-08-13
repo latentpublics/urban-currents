@@ -80,7 +80,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -123,6 +123,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:20:14Z",
     "collectors": [
@@ -132,7 +133,7 @@
     "cost_usd": 0.004905,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -210,8 +211,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "The paper introduces a personalized federated sparse adaptation framework for adapting pretrained time-series foundation models to building energy forecasting. The framework uses a temporal mixture-of-experts adapter with a sequence-level router that maps 168-hour context windows to specialized experts, tested across 50 buildings and three foundation model backbones.",
-      "why": "It demonstrates that personalized federated learning outperforms both purely global and purely local adaptation strategies for building energy data, showing that federated foundation model adaptation must be tailored to both individual client characteristics and the specific model backbone."
+      "what": "This study introduces a personalized federated sparse adaptation framework for adapting time-series foundation models to building energy forecasting. The framework uses a heterogeneous temporal mixture-of-experts adapter with a sequence-level router that maps 168-hour context windows to specialized experts. Evaluated across 50 buildings and three foundation model backbones, the personalized federated learning approach consistently outperformed both global federated learning and purely local training.",
+      "why": "It demonstrates that adapting large time-series models for private, distributed building energy data requires a balance between shared global knowledge and client-specific temporal behaviors, proving that adaptation strategies must be tailored to both the specific model backbone and the individual client."
     }
   },
   "track": "papers",

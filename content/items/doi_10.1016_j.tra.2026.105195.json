@@ -199,6 +199,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:42:09Z",
     "collectors": [
@@ -207,7 +208,7 @@
     "cost_usd": 0.002061,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -284,9 +285,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on property transactions within a single metropolitan area, and the observed price drops during the testing and early operation phases are attributed to noise and vibration without direct measurement of those environmental externalities.",
-      "what": "This study analyzed the impact of Montreal's Réseau express métropolitain (REM) light rail project on housing prices across four distinct phases: announcement, construction, testing, and initial operation. Using a difference-in-differences design on panel data of 14,711 residential property transactions from 2013 to 2023, it measured price changes within an 800-meter catchment area. The analysis reveals that initial announcement premiums persisted through construction, but were largely offset during testing and early operation near the active branch, likely due to operational externalities like noise and vibration, while properties near unopened branches maintained their premiums.",
-      "why": "It demonstrates that transit-induced property appreciation is not a permanent, linear upward trend, but rather a dynamic process where actual operations can depress the speculative premiums generated during the planning and construction phases."
+      "caveats": "The findings are based on a single transit project in Montreal, which may limit generalizability to cities with different housing market dynamics or transit technologies.",
+      "what": "This study analyzed the impact of Montreal's Réseau express métropolitain (REM) light rail project on housing prices across four distinct phases: announcement, construction, testing, and initial operation. Using a difference-in-differences approach on panel data of 14,711 residential property transactions from 2013 to 2023, the researchers measured price changes within 800 meters of both operating and under-construction branches. The initial announcement premium persisted through construction, but testing and early operations offset these gains near the active branch, likely due to noise and vibration, while properties near unopened branches maintained their elevated values.",
+      "why": "It demonstrates that transit-induced property value appreciation is not a simple upward trajectory, but a dynamic process where early speculative gains can be erased by the negative externalities of actual operations. This temporal variation suggests that land value capture policies must be carefully timed rather than assuming permanent post-construction price premiums."
     }
   },
   "track": "papers",

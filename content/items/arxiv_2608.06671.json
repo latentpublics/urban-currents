@@ -204,6 +204,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:33:54Z",
     "collectors": [
@@ -213,7 +214,7 @@
     "cost_usd": 0.005313,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -290,9 +291,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The framework's performance and utility were evaluated using a single disease (COVID-19) within a single state (Virginia).",
-      "what": "The EpiFlow framework processes wastewater viral loads (WVL) and incorporates them into a time-varying forecasting model to predict COVID-19 hospital admissions. Tested across Virginia and its health regions, the framework uses entropy measures to assess predictability and causality tests to capture temporal dynamics, resulting in a 20 percentage point improvement in forecast coverage compared to baseline models.",
-      "why": "It establishes that wastewater data can reliably improve real-time hospital burden forecasting even during challenging periods of low disease prevalence or delayed reporting, providing a validated method to maintain early-warning capabilities when clinical reporting declines."
+      "caveats": "The framework's performance was evaluated using a single state's health regions and specifically for COVID-19, meaning its utility for other pathogens or different regional governance structures remains to be tested.",
+      "what": "The researchers developed EpiFlow, a framework that processes wastewater viral loads, analyzes their causal relationship with disease burden using entropy and causality tests, and integrates them into a time-varying forecasting model. The framework was evaluated by forecasting COVID-19 hospital admissions across Virginia and its health regions, simulating the effects of reporting delays and varying disease prevalence.",
+      "why": "It demonstrates that incorporating wastewater data improves hospital admission forecast accuracy and increases forecast coverage by 20 percentage points, proving that wastewater signals remain reliable predictors even during low-prevalence periods or when data reporting is delayed."
     }
   },
   "track": "papers",

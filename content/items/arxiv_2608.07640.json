@@ -140,6 +140,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:33:54Z",
     "collectors": [
@@ -149,7 +150,7 @@
     "cost_usd": 0.005575,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -227,8 +228,8 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "The paper introduces HeatCast, a Landsat-based benchmark dataset and evaluation harness for monthly Land Surface Temperature (LST) forecasting at 30 m resolution across 124 U.S. cities from 2013 to June 2025. It evaluates a CNN+LSTM model and Earthformer on next-month forecasting, finding that Earthformer achieves a 7.74 K RMSE, and that forecasting from eight non-LST channels alone (such as elevation and spectral indices) yields a 7.72 K RMSE.",
-      "why": "It establishes the first shared, high-resolution benchmark for neighborhood-scale urban heat forecasting, replacing fragmented, single-city studies with a standardized dataset and evaluation framework across over a hundred cities."
+      "what": "This study introduces HeatCast, a Landsat-based benchmark dataset for monthly Land Surface Temperature (LST) forecasting at 30 m resolution across 124 U.S. cities from 2013 through June 2025. The dataset includes monthly tiles containing LST, elevation, surface reflectance, spectral indices, broadband albedo, and Local Climate Zone labels. Evaluating two deep learning models on next-month forecasting, the Earthformer model achieved a 7.74 K RMSE, outperforming a CNN+LSTM model which scored 10.42 K.",
+      "why": "It establishes the first shared, high-resolution benchmark for neighborhood-scale urban heat forecasting, demonstrating that predicting LST from non-temperature environmental channels yields higher accuracy than relying on historical temperature data alone."
     }
   },
   "track": "papers",

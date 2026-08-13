@@ -82,7 +82,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -196,6 +196,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:20:17Z",
     "collectors": [
@@ -204,7 +205,7 @@
     "cost_usd": 0.004536,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -228,11 +229,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.2,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.5
     },
-    "headline": 0.74,
+    "headline": 0.54,
     "relevance": 1.0
   },
   "signals": {
@@ -281,9 +282,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The strategy's performance and feasibility are demonstrated solely through simulation, without empirical validation on real-world road networks or physical CAV fleets.",
-      "what": "The paper designs and simulates a perimeter-free regional traffic management strategy that temporarily holds connected and autonomous vehicles (CAVs) with the longest remaining travel distances at existing parking facilities during congestion. Simulation results under various parking configurations and CAV penetration rates show that this strategy reduces travel times for both non-held vehicles and a portion of the held vehicles.",
-      "why": "It introduces a traffic control capability that utilizes existing parking infrastructure as temporary holding zones, avoiding the localized queue accumulation and bottlenecking typical of traditional perimeter metering control."
+      "caveats": "The performance of the strategy is demonstrated solely through simulations, and the abstract does not specify the exact scale, city network, or empirical parameters used in the model.",
+      "what": "This study designs and simulates a regional traffic management strategy that directs a subset of connected and autonomous vehicles (CAVs) with the longest remaining travel distances to temporarily wait at existing parking facilities during congestion. The strategy was tested via simulations under various parking locations, capacities, and CAV penetration rates to measure its impact on travel times.",
+      "why": "It introduces a perimeter-free traffic control method that utilizes existing parking infrastructure to mitigate local queue accumulation, demonstrating that holding vehicles with long remaining trips can reduce travel times even for some of the delayed vehicles."
     }
   },
   "track": "papers",

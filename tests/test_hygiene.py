@@ -127,3 +127,47 @@ def test_every_edge_carries_the_items_date():
     item = _item()
     item.entities.people = [EntityRef(id="orcid:0000-0001-0000-0000", label="Ada")]
     assert all(e.date == DAY for e in edges_for_item(item))
+
+
+# --------------------------------------------------------------------------
+# A re-run's own outputs must reach content/
+# --------------------------------------------------------------------------
+
+
+def test_a_resummarised_item_updates_in_the_archive(repo):
+    """`_merge_pair` accumulates — the base keeps what it has. Folding the
+    stored copy in as base meant a re-run's summary was thrown away, so a
+    prompt version bump could never reach a published item. Found when 121
+    summaries were regenerated at 0.4.0 and content/ still said 0.3.0."""
+    from pipeline.models import LlmProvenance, SummaryEn
+    from pipeline.run_stages import _restore_run_outputs
+
+    stored = _item()
+    stored.summary.en = SummaryEn(what="Old what.", why="Old why.")
+    stored.provenance.llm = LlmProvenance(model="m", prompt_version="papers@0.3.0")
+
+    fresh = _item()
+    fresh.summary.en = SummaryEn(what="New what.", why="New why.")
+    fresh.provenance.llm = LlmProvenance(model="m", prompt_version="papers@0.4.0")
+    fresh.scores.headline = 0.77
+
+    _restore_run_outputs(stored, fresh)
+
+    assert stored.summary.en.what == "New what."
+    assert stored.provenance.llm.prompt_version == "papers@0.4.0"
+    assert stored.scores.headline == 0.77
+
+
+def test_a_run_that_produced_no_summary_does_not_erase_the_stored_one(repo):
+    """`--no-llm`, a missing key, or a budget stop must not blank the archive."""
+    from pipeline.models import LlmProvenance, SummaryEn
+    from pipeline.run_stages import _restore_run_outputs
+
+    stored = _item()
+    stored.summary.en = SummaryEn(what="Old what.", why="Old why.")
+    stored.provenance.llm = LlmProvenance(model="m", prompt_version="papers@0.3.0")
+
+    _restore_run_outputs(stored, _item())
+
+    assert stored.summary.en.what == "Old what."
+    assert stored.provenance.llm.prompt_version == "papers@0.3.0"

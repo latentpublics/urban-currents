@@ -97,6 +97,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:27:15Z",
     "collectors": [
@@ -106,7 +107,7 @@
     "cost_usd": 0.003852,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -183,9 +184,9 @@
   },
   "summary": {
     "en": {
-      "caveats": null,
-      "what": "The paper introduces a fuzzy network jump model for clustering time-varying observations on weighted graphs, incorporating spatial and temporal regularization to ensure smooth cluster assignments. The model's performance was validated through a simulation study and applied to traffic-network data from San Francisco to identify dynamic traffic regimes across connected road segments.",
-      "why": "It provides a new capability to perform soft, time-varying clustering on graph-structured data while simultaneously accounting for both spatial connectivity and temporal continuity."
+      "caveats": "The empirical application of the model is demonstrated on a single city's road network, meaning its performance on different network topologies remains to be fully documented.",
+      "what": "The study introduces a fuzzy network jump model designed for soft dynamic clustering of time-varying data on weighted graphs, incorporating spatial and temporal regularization to ensure smooth cluster transitions. The model's performance was validated through simulations across varying spatial dependencies and applied to a traffic-network dataset from San Francisco to identify evolving traffic regimes across connected road segments.",
+      "why": "It provides a new capability to model and cluster time-varying network data with soft, probabilistic memberships rather than hard boundaries, allowing researchers to track how spatial-temporal phenomena like traffic congestion gradually transition between states."
     }
   },
   "track": "papers",

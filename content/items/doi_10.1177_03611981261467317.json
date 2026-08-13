@@ -113,7 +113,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -172,6 +172,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:45:51Z",
     "collectors": [
@@ -180,7 +181,7 @@
     "cost_usd": 0.002393,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -231,7 +232,7 @@
       "confidence": "medium",
       "detail": null,
       "url": null,
-      "value": "national"
+      "value": "not_applicable"
     },
     "is_retracted": {
       "basis": "rule",
@@ -257,9 +258,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings and recommended protocol are based on five plant-produced asphalt mixtures specific to Louisiana's specifications and materials.",
-      "what": "The study evaluated three alternative loose-mixture long-term aging (LTA) protocols (135°C for 6 hours, 135°C for 8 hours, and 120°C for 20 hours) against the standard benchmark of 85°C for 5 days on compacted samples. Testing five plant-produced asphalt mixtures from Louisiana, the researchers measured cracking resistance using semicircular bend (SCB) tests and analyzed extracted binder properties. The 135°C for 6 hours protocol was found to most closely replicate the benchmark's binder fatigue factor and mixture cracking resistance.",
-      "why": "It establishes a significantly faster, 6-hour laboratory aging protocol that matches the chemical and mechanical outcomes of the traditional 5-day method, removing a major time barrier to implementing balanced mix design (BMD) in routine highway quality assurance testing."
+      "caveats": "The findings and recommended protocol are based on five plant-produced asphalt mixtures evaluated under Louisiana Department of Transportation and Development specifications, which may limit immediate generalizability to other regional material standards.",
+      "what": "The study evaluated three alternative long-term aging protocols on loose mixtures (135°C for 6 hours, 135°C for 8 hours, and 120°C for 20 hours) against the standard benchmark of 85°C for 5 days on compacted samples. Testing was conducted on five plant-produced asphalt mixtures using loaded wheel tracking and semicircular bend tests, alongside binder extraction and frequency sweep testing. The 135°C for 6 hours protocol was found to most closely replicate the benchmark's cracking resistance and binder fatigue performance.",
+      "why": "It identifies a significantly faster, 6-hour laboratory aging protocol that can replace a 5-day benchmark, removing a major time bottleneck that has previously restricted the use of balanced mix design in routine quality assurance testing for road construction."
     }
   },
   "track": "papers",

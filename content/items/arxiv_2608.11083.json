@@ -82,6 +82,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
@@ -90,7 +91,7 @@
     "cost_usd": 0.005424,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -167,9 +168,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The models show placement-dependent transferability, with coordinate-only k-NN degrading substantially and Random Forest showing highly variable errors when applied to held-out gateways.",
-      "what": "The study evaluates Random Forest (using LiDAR-derived terrain features) and k-Nearest Neighbors (using coordinate data) models for LoRa path loss prediction, systematically analyzing how accuracy scales with training set size using real-world measurements from an urban deployment. Under random pooled splits, both machine learning models outperform empirical baselines, achieving root-mean-square error (RMSE) values below 6.5 dB compared to 9.7 dB for the best baseline model.",
-      "why": "It establishes the empirical sample size requirements for machine learning-based path loss models in smart city deployments and demonstrates that while these models excel at within-deployment interpolation, their performance degrades when transferring to unseen gateway locations."
+      "caveats": "The models show limited spatial generalizability, with the coordinate-only k-NN model degrading substantially and the Random Forest model showing highly placement-dependent errors when tested on unseen gateways.",
+      "what": "This study evaluates machine learning models for LoRa path loss prediction using real-world measurements from an urban deployment, testing how training set size affects accuracy. A Random Forest model using LiDAR-derived terrain features and a k-Nearest Neighbors model using coordinate data were compared against empirical and specialized LPWAN baselines. At maximum training size, both machine learning models achieved root-mean-square errors below 6.5 dB, outperforming the best baseline model which scored 9.7 dB.",
+      "why": "It demonstrates that machine learning models can significantly improve path loss prediction accuracy for smart city network planning compared to traditional empirical models, though their performance depends heavily on whether the model must generalize to unseen gateway locations."
     }
   },
   "track": "papers",

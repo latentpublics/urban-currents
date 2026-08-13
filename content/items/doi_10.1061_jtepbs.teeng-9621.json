@@ -210,6 +210,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:38:33Z",
     "collectors": [
@@ -218,7 +219,7 @@
     "cost_usd": 0.001985,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -295,9 +296,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The model's performance and training feedback loops were evaluated solely within a simulated environment of a single intersection, which may not capture the complexity of real-world driver behavior or network-wide traffic dynamics.",
-      "what": "The study develops a joint optimization model that combines a multiagent deep Q-network (MADQN) for CAV trajectory control with an adaptive queue-pressure signal control strategy. The model was evaluated using simulation experiments on a real-world multidirectional intersection, testing performance across varying CAV penetration rates using a global reward function that minimizes average delay and energy consumption.",
-      "why": "It demonstrates that coordinating vehicle trajectories and signal phases simultaneously can reduce traffic delays even at low CAV penetration rates, providing a pathway to incremental traffic efficiency gains during the transition to fully automated fleets."
+      "caveats": "The performance of the optimization model is demonstrated solely through simulation experiments rather than a physical deployment.",
+      "what": "The study presents a joint optimization model that combines a multiagent deep Q-network (MADQN) for controlling connected and automated vehicle (CAV) trajectories with an adaptive signal control strategy based on queue pressure. Tested via simulation on a real-world multidirectional intersection, the model integrates real-time vehicle states and signal phases to optimize a global reward of average delay and energy consumption.",
+      "why": "It demonstrates that intersection delays can be reduced even at low CAV penetration rates, with compounding benefits to both delay and energy efficiency as the proportion of automated vehicles increases."
     }
   },
   "track": "papers",

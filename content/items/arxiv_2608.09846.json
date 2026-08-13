@@ -94,6 +94,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:40:42Z",
     "collectors": [
@@ -103,7 +104,7 @@
     "cost_usd": 0.005061,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -143,8 +144,8 @@
       "value": false
     },
     "data_available": {
-      "basis": "llm",
-      "confidence": "medium",
+      "basis": "rule",
+      "confidence": "low",
       "detail": null,
       "url": null,
       "value": false
@@ -180,9 +181,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The framework's performance and feasibility were demonstrated using synthetic experiments and historical data in a controlled computational environment rather than a real-world deployment.",
-      "what": "This paper develops a conceptual framework and computational prototype for real-time climate risk nowcasting to support agricultural supply chains in Colombia. The system integrates short-term precipitation forecasting with supply chain risk modeling using historical meteorological observations and official agricultural time-series data, translating weather forecasts into threshold-based risk indicators for inventory, sourcing, and transport decisions.",
-      "why": "It establishes a method to convert raw, short-term meteorological forecasts directly into actionable logistics risk signals without relying on computationally expensive satellite imagery or computer vision pipelines."
+      "caveats": "The framework's feasibility was demonstrated using synthetic and historical data experiments in a controlled computational environment rather than a real-world deployment.",
+      "what": "This paper develops a conceptual early warning system architecture that integrates short-term climate nowcasting with supply chain risk modeling for Colombian agriculture. Using historical meteorological observations, official agricultural time series, and reanalysis products, the framework translates precipitation nowcasts into threshold-based risk indicators for logistics, inventory, and sourcing without relying on satellite imagery or computer vision.",
+      "why": "It establishes a method to convert immediate, localized weather forecasts directly into actionable supply chain decisions, allowing agricultural logistics operators to anticipate disruptions from extreme weather rather than reacting after they occur."
     }
   },
   "track": "papers",

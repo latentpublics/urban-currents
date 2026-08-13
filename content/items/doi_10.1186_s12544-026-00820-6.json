@@ -91,7 +91,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -148,6 +148,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:45:52Z",
     "collectors": [
@@ -156,7 +157,7 @@
     "cost_usd": 0.001911,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -233,9 +234,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The tool's current evaluation relies on simulated or proxy data rather than real-world transport and vessel data, and it does not yet integrate ecological factors.",
-      "what": "The study develops a modular cost-benefit analysis (CBA) tool that calculates Net-Present-Values (NPV) and Benefit-Cost-Ratios (BCR) for individual and combined nautical bottlenecks, using a Greedy-Algorithm to rank and prioritize infrastructure rehabilitation projects along a transport corridor.",
-      "why": "It demonstrates a strong path dependency in waterway infrastructure, proving that isolated rehabilitation measures are mostly ineffective and that economic benefits are only unlocked when all bottlenecks along a corridor are addressed in coordination."
+      "caveats": "The tool's current evaluation relies on simulated or proxy inputs rather than real-world transport, vessel, and ecological data.",
+      "what": "The study develops a modular cost-benefit analysis tool that calculates Net-Present-Values and Benefit-Cost-Ratios for individual and combined waterway bottlenecks, using a Greedy-Algorithm to rank and prioritize rehabilitation projects along a transport corridor.",
+      "why": "It demonstrates a strong path dependency in waterway infrastructure investments, proving that isolated bottleneck removals are mostly ineffective and that economic benefits are only unlocked when all interconnected bottlenecks along a corridor are rehabilitated."
     }
   },
   "track": "papers",

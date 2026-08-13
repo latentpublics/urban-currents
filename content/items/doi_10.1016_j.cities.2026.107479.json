@@ -176,6 +176,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T18:33:56Z",
     "collectors": [
@@ -184,7 +185,7 @@
     "cost_usd": 0.005748,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -261,9 +262,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on a qualitative case study of a single city with a unique historical and religious context, which may limit direct generalizability to other urban welfare regimes.",
-      "what": "This study investigates the role of faith-based organizations in Rome's food aid system using a qualitative research design based on documentary analysis, non-participant observation, and semi-structured interviews. It finds that welfare retrenchment and weak public steering have entrenched these organizations as dominant providers, sustaining emergency service continuity but reproducing a fragmented, charitable model with scarce policy integration. While recent policy developments have advanced a rights-based understanding of food poverty, they have not yet redistributed resources or institutional authority.",
-      "why": "The research demonstrates how historical path dependencies and public sector retreat can lock a major European capital into a fragmented, charity-led food governance model, showing that discursive shifts toward food rights do not automatically translate into structural policy and resource redistribution."
+      "caveats": "The findings are based on a qualitative case study of a single city with a unique historical and religious context, which may limit generalizability to cities with different welfare traditions or religious landscapes.",
+      "what": "This study investigates the dominant role of faith-based organizations in Rome's food aid system using a qualitative research design that combines documentary analysis, non-participant observation, and semi-structured interviews. It traces how welfare retrenchment and weak public steering allowed these religious groups to become the primary providers of food assistance, establishing a fragmented, charity-based model with low policy integration.",
+      "why": "It demonstrates how historically accumulated resources and organizational capacity can lock in non-state, faith-based actors as the default welfare providers, showing that even when policy discourse shifts toward a rights-based approach, actual redistribution of institutional authority and resources remains highly resistant to change."
     }
   },
   "track": "papers",

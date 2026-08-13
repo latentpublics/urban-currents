@@ -73,7 +73,7 @@
       }
     ],
     "places": [],
-    "places_status": "unspecified",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -116,6 +116,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-12T18:33:54Z",
     "collectors": [
@@ -125,7 +126,7 @@
     "cost_usd": 0.00483,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -149,11 +150,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 1.0,
+      "novelty": 0.0,
       "relevance": 0.9503,
       "source_multiplicity": 0.0
     },
-    "headline": 0.5801,
+    "headline": 0.3801,
     "relevance": 0.9503
   },
   "signals": {
@@ -202,9 +203,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The abstract does not specify the baseline methods used for comparison or the geographic scale of the industrial case studies.",
-      "what": "This paper implements a deep reinforcement learning (DRL) agent to solve the Vehicle Routing Problem (VRP) across three industrial logistics use cases involving external truck network design. The DRL-optimized routes achieved a total cost reduction of over 10% compared to baseline results.",
-      "why": "It demonstrates that deep reinforcement learning can successfully navigate the complex constraints, information opacity, and uncertainty of real-world industrial truck routing to outperform traditional baseline planning methods."
+      "caveats": null,
+      "what": "This study applies deep reinforcement learning (DRL) to optimize vehicle routing across three distinct external truck network logistics use cases. The DRL agent's optimized routes achieved a total cost reduction of over 10% compared to baseline routing results.",
+      "why": "It demonstrates that deep reinforcement learning can successfully navigate the complex constraints, information opacity, and human behavioral uncertainties of real-world industrial logistics, outperforming traditional baseline routing methods."
     }
   },
   "track": "papers",

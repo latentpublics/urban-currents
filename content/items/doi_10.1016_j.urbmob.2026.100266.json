@@ -233,6 +233,7 @@
   },
   "lens": null,
   "provenance": {
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-12T23:38:32Z",
     "collectors": [
@@ -241,7 +242,7 @@
     "cost_usd": 0.002407,
     "llm": {
       "model": "gemini-3.5-flash",
-      "prompt_version": "summarize/papers@0.3.0"
+      "prompt_version": "summarize/papers@0.4.0"
     },
     "pipeline_version": "0.2.0",
     "tokens": {
@@ -318,9 +319,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The empirical findings and model validation are based on a single case study city, which may limit direct generalizability to cities with different climate profiles or transport dynamics.",
-      "what": "The study developed and validated a Multilevel Structural Equation Modelling framework that links objective built-environment audits with subjective pedestrian perceptions, using 720 on-site surveys and structured field audits across 30 urban locations in Da Nang, Vietnam. It found that individual-level accessibility has the largest standardized effect on perceived environmental quality, followed by comfort, safety, and pleasurability, which together explain 51.7% of the variance. Objective environmental quality at the location level accounted for 71.1% of the between-location variance, with spatial analysis revealing that tourism and recreation areas are prioritized over essential service areas.",
-      "why": "It empirically tests and adapts the Walking Needs Hierarchy for a tropical, motorcycle-dominated Global South city, demonstrating that comfort is more critical to pedestrians in this context than traditional Western-centric models assume. This provides a validated methodology to measure and address micro-scale pedestrian stressors and spatial inequalities in rapidly urbanizing regions."
+      "caveats": "The findings are based on a single-city study of Da Nang, which may limit direct generalizability to cities with different climate profiles or lower levels of motorcycle dominance.",
+      "what": "The study developed and validated a Multilevel Structural Equation Modelling framework that integrates objective field audits with 720 subjective pedestrian surveys across 30 locations in Da Nang, Vietnam. At the individual level, accessibility had the strongest influence on perceived environmental quality, followed by comfort, safety, and pleasurability, explaining 51.7% of the variance. At the location level, objective environmental quality accounted for 71.1% of the variance in perceived quality, while spatial analysis revealed that tourism and recreation zones are prioritized for pedestrian infrastructure over essential service areas.",
+      "why": "It provides an empirical test of the Walking Needs Hierarchy tailored to a tropical, motorcycle-dominated Southeast Asian city, demonstrating that comfort plays a much larger role in pedestrian perception than traditional Western, car-centric models assume."
     }
   },
   "track": "papers",

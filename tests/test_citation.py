@@ -288,3 +288,65 @@ def test_an_item_that_already_has_an_abstract_is_no_longer_a_candidate(repo):
     store.save_issue(Issue(date=DAY, items=[], unreadable=["doi:recovered"]))
 
     assert unreadable_items() == []
+
+
+# --------------------------------------------------------------------------
+# R0 — canon scope: the corpus decides, not the polling list
+# --------------------------------------------------------------------------
+
+
+def _work(topic_id: str, subfield_id: str, source_id: str = "S999") -> dict:
+    return {
+        "id": "https://openalex.org/W1",
+        "display_name": "A Work",
+        "primary_topic": {
+            "id": f"https://openalex.org/{topic_id}",
+            "display_name": topic_id,
+            "subfield": {"id": f"https://openalex.org/{subfield_id}", "display_name": subfield_id},
+        },
+        "primary_location": {"source": {"id": f"https://openalex.org/{source_id}"}},
+    }
+
+
+def test_the_venue_rule_dropped_work_our_own_corpus_had_cited(repo):
+    """Ewing & Handy in the Journal of Urban Design: cited three times by our
+    papers and excluded for appearing in a journal we do not poll daily."""
+    from pipeline.graph.canon import _in_scope
+
+    off_whitelist = _work("T10000", "3322", source_id="S_NOT_POLLED")
+    assert _in_scope(off_whitelist, {"S_POLLED"}, "venue") is False
+    assert _in_scope(off_whitelist, {"S_POLLED"}, "subfield") is True
+
+
+def test_a_generic_instrument_is_excluded_by_topic(repo):
+    """Hu & Bentler sits in the same subfield as Moran's I, so the exclusion has
+    to be finer than subfield or it takes the wrong one."""
+    from pipeline.graph.canon import _in_scope
+
+    psychometrics = _work("T10467", "1803")
+    morans_i = _work("T11798", "1803")
+
+    assert _in_scope(psychometrics, set(), "subfield") is False
+    assert _in_scope(morans_i, set(), "subfield") is True, "Moran's I must survive"
+
+
+def test_scope_modes_are_independent(repo):
+    from pipeline.graph.canon import _in_scope
+
+    polled_but_generic = _work("T10467", "1803", source_id="S_POLLED")
+    assert _in_scope(polled_but_generic, {"S_POLLED"}, "venue") is True
+    assert _in_scope(polled_but_generic, {"S_POLLED"}, "subfield") is False
+    assert _in_scope(polled_but_generic, {"S_POLLED"}, "both") is False
+
+
+def test_every_exclusion_names_the_work_it_removes():
+    """An exclusion without evidence is a guess with a config entry."""
+    from pipeline.config import vocab_file
+
+    doc = vocab_file("canon_exclude_subfields.yaml")
+    entries = (doc.get("topics") or []) + (doc.get("subfields") or [])
+    assert entries, "the exclusion list must not be empty"
+    for entry in entries:
+        assert entry.get("id"), entry
+        assert entry.get("removes"), f"{entry['id']} names no work it removes"
+        assert entry.get("why"), f"{entry['id']} gives no reason"

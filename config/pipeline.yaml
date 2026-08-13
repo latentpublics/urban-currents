@@ -124,6 +124,15 @@ citation:
   coupling_window_days: 90
   # Canon candidates: how many of the most-cited works to resolve and keep.
   canon_top_n: 300
+  # Entry to the canon list: our own corpus cited it at least this many times.
+  # One citation is one paper's reading list; two is a shared reference.
+  canon_min_citations: 2
+  # venue | subfield | both.  was the original rule — published in a
+  # whitelist journal — and it let a 159-entry operational list overrule our own
+  # corpus.  excludes generic research instruments by OpenAlex
+  # classification instead (vocab/canon_exclude_subfields.yaml), which is what
+  # the exclusion is actually about. Kept switchable so the change is testable.
+  canon_scope_mode: subfield
   # A citation from a recent item counts for more. Half-life in days: an item
   # published a year ago contributes about a quarter of a fresh one.
   canon_half_life_days: 180

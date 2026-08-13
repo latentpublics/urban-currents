@@ -1,0 +1,98 @@
+# Canon exclusions — what to drop from the canon candidate list, and why.
+#
+# The canon rule changed in phase 0e (R0). It used to ask "was this published in
+# a whitelist journal", which is the wrong question: `journals.yaml` answers
+# "which journals should we poll every day", a list that has to stay small for
+# operational reasons. Using it to decide what counts as our field let a list
+# built for one purpose overrule our own corpus, which had already testified by
+# citing the work.
+#
+# Entry is now: **our corpus cited it at least twice**, whatever the venue.
+# Exclusion is by OpenAlex classification, and this file is that list.
+#
+# ---------------------------------------------------------------------------
+# Why topics rather than subfields
+# ---------------------------------------------------------------------------
+#
+# The directive proposed excluding by `primary_topic.subfield`. Measured against
+# the works our corpus actually cites twice or more, subfield is too coarse —
+# every candidate subfield contains something that belongs:
+#
+#   subfield 1803 Management Science and Operations Research
+#     - Hu & Bentler, cutoff criteria for fit indexes   <- generic tool
+#     - Fornell & Larcker, structural equation models   <- generic tool
+#     - Moran, NOTES ON CONTINUOUS STOCHASTIC PHENOMENA <- Moran's I. Foundational
+#                                                          spatial statistics.
+#   subfield 3600 General Health Professions
+#     - Braun & Clarke, thematic analysis               <- generic tool
+#     - Arksey & O'Malley, scoping studies              <- generic tool
+#     - The Unaccommodated Woman: Home, Homelessness    <- core urban housing
+#
+# Excluding either subfield would have cost Moran's I and a housing monograph to
+# remove four method texts. `primary_topic` is one level finer and separates them
+# exactly, so exclusion is defined at topic level and the subfield list is left
+# empty rather than filled with something the evidence contradicts.
+#
+# Two subfields that looked excludable and are not, recorded so nobody proposes
+# them again: **2002 Economics and Econometrics** holds LISA, Getis-Ord and GWR,
+# and **2307 Health, Toxicology and Mutagenesis** holds the entire urban green
+# space literature.
+#
+# Every entry below names the work it removes. An exclusion without a named
+# example does not belong in this file.
+
+# OpenAlex topic IDs. These remove generic research instruments — the things
+# every field cites because everyone needs them, which is different from the
+# things this field cites because they are its foundations.
+topics:
+  - id: "T10467"
+    name: "Psychometric Methodologies and Testing"
+    removes:
+      - "Cutoff criteria for fit indexes in covariance structure analysis (Hu & Bentler)"
+      - "Evaluating Structural Equation Models with Unobservable Variables (Fornell & Larcker)"
+    why: >
+      Structural equation modelling validity criteria. Cited by urban research
+      that runs an SEM, the way a field cites its statistics software.
+
+  - id: "T10068"
+    name: "Technology Adoption and User Behaviour"
+    removes:
+      - "A new criterion for assessing discriminant validity (Henseler et al.)"
+    why: >
+      A PLS-SEM discriminant validity criterion. Same category as the above; it
+      sits under a different subfield only because of where it was published.
+
+  - id: "T12196"
+    name: "Community Health and Development"
+    removes:
+      - "Using thematic analysis in psychology (Braun & Clarke)"
+    why: >
+      The standard qualitative coding method, cited across every social science.
+      Around 189,000 citations worldwide against 3 in this archive — the ratio
+      is characteristic of a general instrument, though the ratio is reported
+      as a column and never used to exclude automatically.
+
+  - id: "T11639"
+    name: "Mental Health and Patient Involvement"
+    removes:
+      - "Scoping studies: towards a methodological framework (Arksey & O'Malley)"
+    why: >
+      A literature-review methodology. Cited by urban papers that ran a scoping
+      review, not by urban papers building on its content.
+
+  - id: "T10357"
+    name: "Efficiency Analysis Using DEA"
+    removes:
+      - "Some Models for Estimating Technical and Scale Inefficiencies in DEA (Banker et al.)"
+      - "A slacks-based measure of super-efficiency in data envelopment analysis"
+    why: >
+      Data envelopment analysis method papers. The least certain entry here —
+      DEA is heavily used in transport efficiency work, so these are cited as a
+      technique by papers that are themselves in scope. Removing the method
+      papers does not remove those. Revisit if a genuine urban DEA paper
+      appears under this topic.
+
+# Deliberately empty. Subfield granularity was measured and rejected above; the
+# mechanism stays so a future exclusion can use it if a whole subfield ever is
+# genuinely out of scope.
+subfields: []

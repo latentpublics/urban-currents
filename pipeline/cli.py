@@ -397,11 +397,17 @@ def citations(
 @app.command()
 def canon(
     top: Optional[int] = typer.Option(None, help="How many in-scope candidates to keep"),
+    mode: Optional[str] = typer.Option(None, help="Scope rule: venue | subfield | both"),
 ):
     """Rank the works this archive keeps citing. Selection only, never published."""
     from .graph.canon import build_candidates
 
-    result = build_candidates(**({"top_n": top} if top else {}))
+    kwargs: dict = {}
+    if top:
+        kwargs["top_n"] = top
+    if mode:
+        kwargs["mode"] = mode
+    result = build_candidates(**kwargs)
     typer.echo(json.dumps(
         {k: v for k, v in result.items() if k not in ("candidates", "out_of_scope_examples")},
         indent=2,

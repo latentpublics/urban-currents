@@ -104,18 +104,63 @@ def _date_precision(work: dict) -> str:
     return "day"
 
 
-def _in_scope(work: dict, whitelist_ids: set[str]) -> bool:
-    loc = work.get("primary_location") or {}
-    source = loc.get("source") or {}
-    sid = (source.get("id") or "").rsplit("/", 1)[-1]
-    if sid and sid in whitelist_ids:
-        return True
-    # arXiv, by its OpenAlex source id.
-    return sid == cfg("openalex.arxiv_source_id", "S4306400194")
+def exclusions() -> dict[str, set[str]]:
+    """Topic and subfield IDs to drop, from `vocab/canon_exclude_subfields.yaml`."""
+    from ..config import vocab_file
+
+    doc = vocab_file("canon_exclude_subfields.yaml") or {}
+    return {
+        "topics": {t["id"] for t in (doc.get("topics") or []) if t.get("id")},
+        "subfields": {s["id"] for s in (doc.get("subfields") or []) if s.get("id")},
+    }
+
+
+def _ids(work: dict) -> tuple[str, str, str]:
+    pt = work.get("primary_topic") or {}
+    topic = (pt.get("id") or "").rsplit("/", 1)[-1]
+    subfield = ((pt.get("subfield") or {}).get("id") or "").rsplit("/", 1)[-1]
+    source = ((work.get("primary_location") or {}).get("source") or {}).get("id") or ""
+    return topic, subfield, source.rsplit("/", 1)[-1]
+
+
+def _in_scope(work: dict, whitelist_ids: set[str], mode: str = "subfield") -> bool:
+    """Whether a cited work belongs in the canon list.
+
+    `venue` is the original rule and is kept so the change is reversible and
+    measurable: published in a whitelist journal or on arXiv. It was wrong
+    because `journals.yaml` answers "what do we poll daily", and using it here
+    let a 159-entry operational list overrule our own corpus — three of our
+    papers cited Ewing & Handy's urban design qualities and it was dropped for
+    appearing in a journal we do not poll.
+
+    `subfield` is the rule now in force, and despite the name it excludes at
+    **topic** level: entry is being cited twice by our corpus, and the only way
+    out is being a generic research instrument, named in
+    `vocab/canon_exclude_subfields.yaml` with the work each entry removes.
+    Subfield granularity was measured and rejected — see that file.
+    """
+    topic, subfield, source_id = _ids(work)
+
+    if mode in ("venue", "both"):
+        in_venue = bool(source_id) and (
+            source_id in whitelist_ids
+            or source_id == cfg("openalex.arxiv_source_id", "S4306400194")
+        )
+        if mode == "venue":
+            return in_venue
+        if not in_venue:
+            return False
+
+    ex = exclusions()
+    return topic not in ex["topics"] and subfield not in ex["subfields"]
 
 
 def resolve_candidates(
-    rows: list[dict], top_n: Optional[int] = None, batch: int = 50
+    rows: list[dict],
+    top_n: Optional[int] = None,
+    batch: int = 50,
+    mode: Optional[str] = None,
+    min_citations: Optional[int] = None,
 ) -> dict[str, Any]:
     """Fetch metadata for the highest-scoring works and keep the in-scope ones."""
     from ..collectors.openalex import configure_pyalex
@@ -126,9 +171,16 @@ def resolve_candidates(
         return {"status": "NO_KEY", "why": "OPENALEX_KEY is not set"}
 
     top_n = int(cfg("citation.canon_top_n", 300) if top_n is None else top_n)
+    mode = mode or str(cfg("citation.canon_scope_mode", "subfield"))
+    # Entry is our own corpus citing it more than once. One citation is one
+    # paper's reading list; two is the beginning of a shared reference.
+    min_citations = int(
+        cfg("citation.canon_min_citations", 2) if min_citations is None else min_citations
+    )
+    eligible = [r for r in rows if r["archive_citations"] >= min_citations]
     # Over-fetch: the scope filter drops works from outside the field, and the
     # aim is `top_n` in-scope candidates rather than `top_n` fetched.
-    pool = rows[: top_n * 3]
+    pool = eligible[: top_n * 3]
     whitelist = {
         s["id"] for s in (journals_vocab().get("sources") or [])
         if s.get("id") and s.get("include", True)
@@ -155,6 +207,9 @@ def resolve_candidates(
         if work is None:
             continue
         loc = (work.get("primary_location") or {}).get("source") or {}
+        topic, subfield, source_id = _ids(work)
+        pt = work.get("primary_topic") or {}
+        world = work.get("cited_by_count") or 0
         entry = {
             **{k: v for k, v in row.items() if k != "citing_items"},
             "title": work.get("display_name"),
@@ -162,27 +217,48 @@ def resolve_candidates(
             "publication_date": work.get("publication_date"),
             "date_precision": _date_precision(work),
             "venue": loc.get("display_name"),
+            "venue_id": source_id or None,
+            "topic": pt.get("display_name"),
+            "topic_id": topic or None,
+            "subfield": (pt.get("subfield") or {}).get("display_name"),
+            "subfield_id": subfield or None,
             "authors": [
                 (a.get("author") or {}).get("display_name")
                 for a in (work.get("authorships") or [])[:5]
             ],
-            "openalex_cited_by_count": work.get("cited_by_count"),
+            "openalex_cited_by_count": world,
+            # A general research instrument is cited enormously by everyone and
+            # a little by us. Reported as a column so a human skimming the list
+            # can recognise one; never used to exclude, because the boundary is
+            # arbitrary and heavily cited genuine canon exists.
+            "world_to_archive_ratio": (
+                round(world / row["archive_citations"], 1)
+                if row["archive_citations"] else None
+            ),
             "citing_items": row["citing_items"],
         }
-        (candidates if _in_scope(work, whitelist) else out_of_scope).append(entry)
+        (candidates if _in_scope(work, whitelist, mode) else out_of_scope).append(entry)
 
     candidates.sort(key=lambda r: (-r["weighted_score"], r["openalex_id"]))
+    out_of_scope.sort(key=lambda r: -r["weighted_score"])
     return {
         "status": "OK",
         "generated_from": "content/graph/references.jsonl",
+        "scope_mode": mode,
+        "min_archive_citations": min_citations,
         "distinct_referenced_works": len(rows),
+        "eligible_by_citation_count": len(eligible),
         "considered": len(pool),
         "resolved": len(fetched),
         "in_scope": len(candidates),
         "out_of_scope": len(out_of_scope),
         "out_of_scope_examples": [
-            {"title": e["title"], "venue": e["venue"], "archive_citations": e["archive_citations"]}
-            for e in sorted(out_of_scope, key=lambda r: -r["weighted_score"])[:10]
+            {
+                "title": e["title"], "venue": e["venue"], "topic": e["topic"],
+                "archive_citations": e["archive_citations"],
+                "openalex_cited_by_count": e["openalex_cited_by_count"],
+            }
+            for e in out_of_scope[:10]
         ],
         "half_life_days": float(cfg("citation.canon_half_life_days", 180)),
         "openalex_cost_usd": round(cost, 6),

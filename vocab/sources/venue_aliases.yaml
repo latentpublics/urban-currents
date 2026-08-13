@@ -1,0 +1,69 @@
+# Journals that changed name, and the OpenAlex source IDs on each side.
+#
+# A renamed journal gets a new ISSN-L, so ISSN-L — the identifier designed to
+# survive format changes — deliberately does not merge them. The back catalogue
+# keeps being cited under the old ID while everything new appears under the new
+# one, which splits a journal's citation count in two.
+#
+# **Aggregation only.** This is applied when counting how much our corpus leans
+# on a venue: canon venue rankings, whitelist gap detection. It is *not* applied
+# to `journals.yaml`, because there is no reason to poll a title that stopped
+# publishing — a defunct name is a citation target, not a collection target.
+#
+# ---------------------------------------------------------------------------
+# Automatic detection was attempted and does not work
+# ---------------------------------------------------------------------------
+#
+# - **`alternate_titles`**: empty on both Annals records, and on the two
+#   Environment and Planning B records it holds each journal's *own* subtitle
+#   ("Planning & design", "Urban analytics and city science") with nothing
+#   pointing across. It records what a journal has been called, not what
+#   preceded it.
+# - **`issn` lists**: no overlap. The print and electronic ISSNs both change
+#   with the title.
+# - **Title stems**: grouping the 396 known sources by their first four title
+#   words returns 8 groups, of which 3 are real renames and 5 are unrelated
+#   journals sharing a generic prefix — "International Journal of Urban and
+#   Regional Research" beside "International Journal of Urban Sciences". It also
+#   misses the Annals pair, which diverges at the fourth word. The heuristic can
+#   propose; it cannot decide.
+#
+# So pairs are listed by hand as they are found, with the evidence for each. An
+# unlisted rename is undercounted rather than wrong, which is the safe failure.
+
+pairs:
+  - current: "S4210191690"
+    current_name: "Environment and Planning B: Urban Analytics and City Science"
+    previous: "S4210169418"
+    previous_name: "Environment and Planning B: Planning and Design"
+    evidence: >
+      Renamed in 2017. ISSN-L 2399-8083 (current) against 0265-8135 (previous);
+      the current record is on the whitelist and idle, the previous one carries
+      40 citations from our corpus.
+
+  - current: "S2764498735"
+    current_name: "Annals of the American Association of Geographers"
+    previous: "S152953893"
+    previous_name: "Annals of the Association of American Geographers"
+    evidence: >
+      Renamed in 2016 when the AAG changed its own name. ISSN-L 2469-4452
+      against 0004-5608. The previous title carries 60 citations from our
+      corpus and was flagged as a whitelist gap in phase 0e for that reason.
+
+  - current: "S79990064"
+    current_name: "Journal of the American Planning Association"
+    previous: "S4210179328"
+    previous_name: "Journal of the American Institute of Planners"
+    evidence: >
+      Renamed in 1979. Both are in the citation record because JAPA's
+      pre-1979 volumes — including Arnstein's Ladder of Citizen Participation
+      (1969) and Hansen's How Accessibility Shapes Land Use (1959), both in the
+      canon foundation list — appear under the earlier title.
+
+  - current: "S111872859"
+    current_name: "International Journal of Geographical Information Science"
+    previous: "S4210181446"
+    previous_name: "International Journal of Geographical Information Systems"
+    evidence: >
+      Renamed in 1997, Systems to Science. Found by the title-stem heuristic and
+      confirmed by hand; the two records cover consecutive year ranges.

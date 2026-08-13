@@ -48,6 +48,40 @@ from pipeline.paths import VOCAB  # noqa: E402
 # Where the two disagree the row is marked REVIEW rather than silently decided.
 CONCENTRATION_THRESHOLD = 0.25
 MIN_SUBFIELD_WORKS = 20
+# Minimum share of a source's subfield output that is in English. Set at 0.5 in
+# phase 0g: `language: en` filters works and not sources, so a journal that
+# publishes mostly in another language qualified on its English minority. Half
+# is the point at which "this is an English-language journal" stops being true.
+ENGLISH_SHARE_MIN = 0.5
+
+
+def title_script_signal(name: str) -> str:
+    """`non_latin`, `diacritic`, or `ascii` — a second, independent language read.
+
+    `english_share` alone does not work, and measuring showed why: OpenAlex tags
+    the works of `Środowisko Mieszkaniowe` (Polish) and `Культура и искусство`
+    (Russian) as English, so both score 1.00 and are indistinguishable from
+    Nature. No threshold can separate them.
+
+    A title in a non-Latin script is decisive and excludes. Latin-with-diacritics
+    is not: `Archaeology in Oceania/Archæology & physical anthropology` is an
+    English journal with a ligature, so those are flagged for review rather than
+    dropped. Neither signal is sufficient alone, and neither is
+    `english_share` — which still catches `Cadernos Metrópole` at 0.35 and
+    `Aetas` at 0.46, both plain-ASCII titles the script test would miss.
+    """
+    import unicodedata
+
+    scripts = set()
+    for ch in name or "":
+        if ch.isalpha():
+            try:
+                scripts.add(unicodedata.name(ch).split()[0])
+            except ValueError:
+                pass
+    if scripts - {"LATIN"}:
+        return "non_latin"
+    return "diacritic" if any(ord(c) > 127 for c in name or "") else "ascii"
 
 SUBFIELD_NAMES = {
     "3322": "Urban Studies",
@@ -103,6 +137,41 @@ MANUAL_CANDIDATES = [
     "Applied Geography",
     "Geographical Analysis",
 ]
+
+
+def group_sources_for_subfield_any_language(
+    pyalex, subfield: str, since: str
+) -> tuple[dict[str, int], float]:
+    """The same grouping without the language filter — the denominator.
+
+    `language: en` filters *works*, not sources, so a journal publishing mostly
+    in Hungarian or Polish qualifies on its English minority. Measured in phase
+    0f: at least 11 of 166 included entries. The 200-result cap had been hiding
+    this by accident, and removing the cap exposed it.
+
+    Dividing the English count by this gives `english_share`, which is a property
+    of the source rather than of the works that happened to match.
+    """
+    q = (
+        pyalex.Works()
+        .filter(
+            **{
+                "primary_topic.subfield.id": subfield,
+                "from_publication_date": since,
+                "type": "article",
+            }
+        )
+        .group_by("primary_location.source.id")
+    )
+    out: dict[str, int] = {}
+    cost = 0.0
+    for page in q.paginate(per_page=200, n_max=None):
+        cost += float((getattr(page, "meta", {}) or {}).get("cost_usd") or 0.0)
+        for g in page:
+            key = (g.get("key") or "").rsplit("/", 1)[-1]
+            if key and key.startswith("S"):
+                out[key] = int(g.get("count") or 0)
+    return out, cost
 
 
 def group_sources_for_subfield(pyalex, subfield: str, since: str) -> dict[str, int]:
@@ -209,12 +278,18 @@ def build(since: str, top: int, out_path: Path) -> int:
     subfields = [str(s) for s in (cfg("openalex.whitelist_subfields", ["3322"]) or [])]
 
     per_subfield: dict[str, dict[str, int]] = {}
+    any_language: dict[str, int] = defaultdict(int)
     total_cost = 0.0
     for sf in subfields:
         counts, cost = group_sources_for_subfield(pyalex, sf, since)
         total_cost += cost
         per_subfield[sf] = counts
-        print(f"subfield {sf} ({SUBFIELD_NAMES.get(sf, '?')}): {len(counts)} candidate sources")
+        all_counts, cost = group_sources_for_subfield_any_language(pyalex, sf, since)
+        total_cost += cost
+        for sid, n in all_counts.items():
+            any_language[sid] += n
+        print(f"subfield {sf} ({SUBFIELD_NAMES.get(sf, '?')}): {len(counts)} candidate sources "
+              f"({len(all_counts)} in any language)")
 
     combined: dict[str, int] = defaultdict(int)
     membership: dict[str, list[str]] = defaultdict(list)
@@ -237,6 +312,12 @@ def build(since: str, top: int, out_path: Path) -> int:
         conc = subfield_concentration(s, sf_set)
         name = s.get("display_name") or sid
         on_hand_list = name.lower().strip() in manual_lookup
+        # English share of this source's subfield output. A source we cannot
+        # read is not a source we can summarise, and the classifier embeds
+        # English text — so this is scope, not convenience.
+        denominator = any_language.get(sid, 0)
+        english_share = round(n / denominator, 4) if denominator else None
+        script = title_script_signal(name)
         rows.append(
             {
                 "id": sid,
@@ -247,8 +328,15 @@ def build(since: str, top: int, out_path: Path) -> int:
                 "subfield_works": n,
                 "subfields": sorted(membership[sid]),
                 "concentration": conc,
+                "english_share": english_share,
+                "title_script": script,
                 "include": on_hand_list
-                or (conc >= CONCENTRATION_THRESHOLD and n >= MIN_SUBFIELD_WORKS),
+                or (
+                    conc >= CONCENTRATION_THRESHOLD
+                    and n >= MIN_SUBFIELD_WORKS
+                    and (english_share is None or english_share >= ENGLISH_SHARE_MIN)
+                    and script != "non_latin"
+                ),
                 "manual": on_hand_list,
             }
         )
@@ -324,6 +412,10 @@ def build(since: str, top: int, out_path: Path) -> int:
         lines.append(f"    subfield_works: {r['subfield_works']}")
         lines.append(f"    subfields: [{', '.join(chr(34) + s + chr(34) for s in r['subfields'])}]")
         lines.append(f"    concentration: {r['concentration']}")
+        if r.get("english_share") is not None:
+            lines.append(f"    english_share: {r['english_share']}")
+        if r.get("title_script") and r["title_script"] != "ascii":
+            lines.append(f"    title_script: \"{r['title_script']}\"  # REVIEW: language")
         if r["manual"]:
             lines.append("    manual: true")
         signals_disagree = (r["concentration"] >= CONCENTRATION_THRESHOLD) != (

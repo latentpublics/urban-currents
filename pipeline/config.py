@@ -94,7 +94,13 @@ def journals_vocab() -> dict[str, Any]:
     a 90-day backfill asks ~25,000 times, which turned a 160-entry YAML parse
     into the dominant cost of the stage.
     """
-    path = paths.VOCAB / "sources" / "journals.yaml"
+    # `UC_JOURNALS_FILE` points this at a different list without touching
+    # `journals.yaml`. Added in phase 0g so a rebuilt whitelist could be trained
+    # and evaluated against — comparing a candidate list means running the whole
+    # trainset build on it, and the only alternative was overwriting the file
+    # the comparison is against.
+    override = os.environ.get("UC_JOURNALS_FILE")
+    path = Path(override) if override else paths.VOCAB / "sources" / "journals.yaml"
     stamp = path.stat().st_mtime_ns if path.exists() else 0
     if _JOURNALS_CACHE.get("stamp") != stamp or _JOURNALS_CACHE.get("path") != str(path):
         _JOURNALS_CACHE.clear()

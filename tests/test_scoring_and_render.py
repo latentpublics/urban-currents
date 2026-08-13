@@ -551,3 +551,41 @@ def test_the_daily_volume_is_reported_per_entry_path(repo):
     assert dd["median_per_day"] == 26
     assert dd["by_source"]["journal"]["median_per_day"] == 20
     assert dd["by_source"]["arxiv"]["median_per_day"] == 6
+
+
+def test_arxiv_candidate_volume_is_reported_at_every_plausible_floor(repo):
+    """Precision says how good the items above a floor are; this says whether
+    there are enough of them. A floor yielding 3 a day for 12 slots is not a
+    precision decision, it is a decision to stop filling the path."""
+    import json
+
+    from pipeline.calibrate import _scores_path, arxiv_candidates_by_floor, backfill_dir
+
+    backfill_dir().mkdir(parents=True, exist_ok=True)
+    with _scores_path().open("w", encoding="utf-8") as fh:
+        for day in range(10):
+            # 20 candidates a day: relevance 0.30, 0.33, … 0.87.
+            for i in range(20):
+                fh.write(json.dumps({
+                    "work_key": f"arxiv:26{day:02d}.{i:05d}",
+                    "date": f"2026-05-{day + 1:02d}",
+                    "relevance": 0.30 + i * 0.03, "headline": 0.4,
+                    "components": {}, "categories": [], "source": "arxiv",
+                    "selected": True, "published": i < 12,
+                }) + "\n")
+
+    result = arxiv_candidates_by_floor()
+    assert result["status"] == "OK"
+    assert result["days"] == 10
+    by_floor = {r["floor"]: r for r in result["floors"]}
+
+    # 18 of 20 clear 0.35; only 2 clear 0.85, so the high floor starves the path.
+    assert by_floor[0.35]["median_per_day"] == 18
+    assert by_floor[0.35]["days_short_of_slots"] == 0
+    assert by_floor[0.90]["days_short_of_slots"] == 10
+
+
+def test_candidate_volume_reports_absence_rather_than_zero(repo):
+    from pipeline.calibrate import arxiv_candidates_by_floor
+
+    assert arxiv_candidates_by_floor()["status"] == "NO_DATA"

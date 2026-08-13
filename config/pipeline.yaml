@@ -81,14 +81,21 @@ llm:
   cache_enabled: true
 
   # Hard stops so a development loop cannot burn the budget quietly.
+  #
+  # `max_calls_total` is per task and counts calls, not money — it is a
+  # runaway-loop guard, and `max_spend_usd` is the one that guards the wallet.
+  # Raised from 200 in phase 0c: a prompt version bump necessarily invalidates
+  # that task's cache, so 0.3.0 -> 0.4.0 (the no-verbatim rule) means
+  # re-summarising the whole archive, and 148 + 120 already crossed the old
+  # ceiling. Measured spend at the time: $0.76 of the $10 that actually binds.
   max_calls_per_run: 60
-  max_calls_total: 200
+  max_calls_total: 600
   max_spend_usd: 10.0
 
   # Per-task overrides. Each task owns its prompt version, so editing one
   # prompt does not invalidate the other's cache (the reason D8 was reverted).
   summarize:
-    prompt_version: "summarize/papers@0.3.0"
+    prompt_version: "summarize/papers@0.4.0"
     max_tokens: 900
   extract:
     prompt_version: "extract/overlay@0.1.0"

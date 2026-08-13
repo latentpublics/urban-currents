@@ -311,6 +311,53 @@ def daily_distribution(rows: list[dict], threshold: float) -> dict[str, Any]:
     return out
 
 
+CANDIDATE_FLOORS = (0.35, 0.50, 0.70, 0.90, 0.95)
+
+
+def arxiv_candidates_by_floor(
+    rows: Optional[list[dict]] = None, floors: tuple[float, ...] = CANDIDATE_FLOORS
+) -> dict[str, Any]:
+    """How many arXiv candidates a day clears each possible relevance floor (P5).
+
+    The companion to the score-band precision table. Precision says how good the
+    items above a floor are; this says whether there are enough of them. The
+    arXiv path is asked for 12 slots a day, so a floor that yields a median of 3
+    is not a precision decision, it is a decision to stop filling the path.
+
+    Measurement only. The threshold is `classifier.threshold` and moving it is
+    YJUN's call, on labels from more than one day.
+    """
+    rows = load_scores() if rows is None else rows
+    if not rows:
+        return {"status": "NO_DATA", "hint": "run `uc backfill --days 90` first"}
+
+    by_day: dict[str, list[float]] = {}
+    for r in rows:
+        if r.get("source") == "arxiv" and r.get("date"):
+            by_day.setdefault(r["date"], []).append(float(r["relevance"]))
+
+    slots = int(cfg("selection.slots.arxiv", 12))
+    out = []
+    for floor in floors:
+        counts = sorted(sum(1 for v in vs if v >= floor) for vs in by_day.values())
+        out.append({
+            "floor": floor,
+            "median_per_day": _quantile(counts, 0.5),
+            "p25_per_day": _quantile(counts, 0.25),
+            "p75_per_day": _quantile(counts, 0.75),
+            "min_per_day": counts[0] if counts else 0,
+            "max_per_day": counts[-1] if counts else 0,
+            "days_short_of_slots": sum(1 for c in counts if c < slots),
+        })
+    return {
+        "status": "OK",
+        "days": len(by_day),
+        "arxiv_slots": slots,
+        "configured_threshold": float(cfg("classifier.threshold", 0.35)),
+        "floors": out,
+    }
+
+
 def _novelty_decay(published: list[dict]) -> dict[str, Any]:
     """Mean novelty per month across the replayed range.
 

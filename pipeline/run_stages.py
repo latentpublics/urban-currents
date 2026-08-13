@@ -469,6 +469,37 @@ def stage_link(run: Run, use_llm: bool = True) -> list[Item]:
 # --------------------------------------------------------------------------
 
 
+def reconcile_places_status(items: list[Item]) -> int:
+    """Distinguish "no place to find" from "we did not find one" (P4-2).
+
+    `link_places` returns `unspecified` whenever it resolves nothing, which
+    collapses two different facts. `PlacesStatus` has carried `not_applicable`
+    since the schema was written and nothing ever set it, so an item the LLM
+    judged to have no study area at all — `signals.geographic_scope =
+    not_applicable` — was recorded identically to one whose city we simply could
+    not resolve.
+
+    It has to happen here rather than in `link`, because `link` runs before
+    `summarize` and the scope is not known until the summary call returns.
+
+    Places is a de-prioritised axis (PRD §2, v1.1), which is exactly why this
+    matters: the field is being filled now and read later. A wrong value written
+    today is an archive nobody can trust when the axis is revived.
+    """
+    changed = 0
+    for item in items:
+        scope = item.signals.geographic_scope
+        if (
+            scope is not None
+            and scope.value == "not_applicable"
+            and not item.entities.places
+            and item.entities.places_status != "not_applicable"
+        ):
+            item.entities.places_status = "not_applicable"
+            changed += 1
+    return changed
+
+
 def stage_summarize(run: Run, use_llm: bool = True, limit: Optional[int] = None) -> list[Item]:
     items = read_input(run, "summarize")
     from .summarize.run import summarize_items
@@ -476,6 +507,7 @@ def stage_summarize(run: Run, use_llm: bool = True, limit: Optional[int] = None)
     with run.timed("summarize_s"):
         stats = summarize_items(items, run, use_llm=use_llm, limit=limit)
     run.count("summarized", stats.get("summarized", 0))
+    reconcile_places_status(items)
     write_stage(run, "summarize", items)
     run.stage("summarize", stats.get("status", "OK"))
     run.save()

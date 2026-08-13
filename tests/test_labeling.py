@@ -291,3 +291,36 @@ def test_precision_is_reported_at_every_depth_not_only_at_k(repo):
 
     journal = precision_at_k(k=10)["by_source"]["journal"]
     assert journal["depth_holding_0.7"] == len(journal["precision_by_depth"])
+
+
+def test_precision_is_broken_out_by_score_band(repo):
+    """precision@10 averages over a range where the classifier's confidence
+    varies by 60 points. The band table is what answers "where should the
+    threshold go" — measurement only; nothing here moves a default."""
+    _seed_candidates(repo)
+    # arXiv candidates are seeded in descending score order.
+    answers = ["k"] * 4 + ["n"] * 6 + ["k"] * 10
+    run_labeling_session(DAY, top=20, prompt=_answers(*answers), printer=lambda *a: None)
+
+    arxiv = precision_at_k(k=10)["by_source"]["arxiv"]
+    assert arxiv["score_is_single_valued"] is False
+    assert arxiv["score_bands"], "arXiv scores span more than one value"
+    for band in arxiv["score_bands"]:
+        assert 0.0 <= band["keep_rate"] <= 1.0
+        assert band["n"] > 0
+        assert set(band["drop_reasons"]) == {"not_urban", "not_our_kind", "weak"}
+
+
+def test_the_journal_path_reports_no_bands_because_it_has_one_score(repo):
+    """Every whitelist article scores exactly 1.0 by membership (N4), so a band
+    table would be one row pretending to be a distribution."""
+    _seed_candidates(repo)
+    run_labeling_session(
+        DAY, top=20, prompt=_answers(*(["k"] * 20)), printer=lambda *a: None
+    )
+
+    journal = precision_at_k(k=10)["by_source"]["journal"]
+    assert journal["score_is_single_valued"] is True
+    assert journal["score_bands"] == []
+    # The drop reasons are still reported: they are what varies on that path.
+    assert "drop_reasons" in journal

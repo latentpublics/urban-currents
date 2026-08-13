@@ -49,6 +49,11 @@ LABEL_KEYS: dict[str, str] = {
 }
 DROP_LABELS = ("drop_not_urban", "drop_not_our_kind", "drop_weak")
 
+# Classifier score bands for the precision table (P5). Narrow at the top because
+# that is where the selection threshold could plausibly move to, and where a
+# handful of labels changes the answer.
+SCORE_BANDS = ((0.95, 1.01), (0.90, 0.95), (0.70, 0.90), (0.35, 0.70))
+
 LABEL_PROMPT = "   [k]eep / [n]ot urban / not our kind [q] / [w]eak / [s]kip: "
 LABEL_LEGEND = (
     "  k  keep — worth publishing as a card\n"
@@ -318,6 +323,38 @@ def precision_at_k(facet: str = "relevance", k: int = 10) -> dict:
             if at_pos:
                 depth.append(round(sum(at_pos) / len(at_pos), 4))
 
+        # Precision by classifier score band (P5). This is the table that
+        # answers "where should the threshold go" when enough labels exist;
+        # a single precision@10 cannot, because it averages over a range in
+        # which the classifier's confidence varies by 60 points.
+        #
+        # The journal path has no bands: every whitelist article scores exactly
+        # 1.0 by membership (N4), so its distribution is one point and the drop
+        # reasons are the only thing that varies. Reported as such rather than
+        # rendered as a table with one row.
+        scores = [float(r.get("score", 0.0)) for r in srows]
+        single_valued = len(set(round(s, 4) for s in scores)) <= 1
+        bands: list[dict] = []
+        if not single_valued:
+            for low, high in SCORE_BANDS:
+                in_band = [r for r in srows if low <= float(r.get("score", 0.0)) < high]
+                if not in_band:
+                    continue
+                kept = sum(1 for r in in_band if r["label"] == "keep")
+                band_reasons = Counter(
+                    r["label"] for r in in_band if r["label"] in DROP_LABELS
+                )
+                bands.append({
+                    "band": f"{low}-{high}" if high <= 1.0 else f">={low}",
+                    "n": len(in_band),
+                    "keep_rate": round(kept / len(in_band), 4),
+                    "drop_reasons": {
+                        "not_urban": band_reasons.get("drop_not_urban", 0),
+                        "not_our_kind": band_reasons.get("drop_not_our_kind", 0),
+                        "weak": band_reasons.get("drop_weak", 0),
+                    },
+                })
+
         reasons = Counter(r["label"] for r in srows if r["label"] in DROP_LABELS)
         n_drops = sum(reasons.values())
 
@@ -331,6 +368,8 @@ def precision_at_k(facet: str = "relevance", k: int = 10) -> dict:
                 round(sum(per_day) / len(per_day), 4) if per_day else None
             ),
             "per_day": [round(p, 4) for p in per_day],
+            "score_bands": bands,
+            "score_is_single_valued": single_valued,
             "precision_by_depth": depth,
             "depth_holding_0.7": max(
                 (i + 1 for i, p in enumerate(depth) if p >= 0.7), default=0

@@ -276,10 +276,20 @@ def labels(
     facet: str = typer.Option("relevance", help="Which label file to summarise"),
     k: int = typer.Option(10, help="k for precision@k"),
 ):
-    """Summarise collected labels: precision@k and drop reasons, per source."""
+    """Summarise collected labels: precision@k, score bands, drop reasons.
+
+    Everything here is per source and measurement only. Neither
+    `classifier.threshold` nor `selection.slots` is derived from it — those are
+    YJUN's calls, and one labelled day is not enough to make them.
+    """
+    from .calibrate import arxiv_candidates_by_floor
     from .labeling import precision_at_k
 
-    typer.echo(json.dumps(precision_at_k(facet=facet, k=k), indent=2))
+    out = precision_at_k(facet=facet, k=k)
+    # The other half of the threshold question: precision says how good the
+    # items above a floor are, this says whether there are enough of them.
+    out["arxiv_candidates_by_floor"] = arxiv_candidates_by_floor()
+    typer.echo(json.dumps(out, indent=2))
 
 
 @app.command()

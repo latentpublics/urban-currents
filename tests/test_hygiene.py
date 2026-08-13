@@ -1,0 +1,129 @@
+"""Data hygiene (phase 0c, P4).
+
+Three separate problems that share a shape: a field is being filled now and read
+much later, so a wrong value written today is an archive nobody can trust when
+the axis it belongs to is revived.
+"""
+
+from __future__ import annotations
+
+from datetime import date
+
+from pipeline.collectors.base import clean_text
+from pipeline.graph.build import edges_for_item
+from pipeline.models import (
+    Author,
+    Bibliography,
+    EntityRef,
+    Ids,
+    Institution,
+    Item,
+    PlaceRef,
+    Signal,
+    TopicRef,
+)
+from pipeline.run_stages import reconcile_places_status
+
+DAY = date(2026, 8, 11)
+
+
+def _item(**kw) -> Item:
+    kw.setdefault("bibliography", Bibliography(title="A Paper"))
+    return Item(
+        work_key=kw.pop("work_key", "arxiv:2608.00001"), first_published=DAY, **kw
+    )
+
+
+# --------------------------------------------------------------------------
+# P4-1 — markup in titles
+# --------------------------------------------------------------------------
+
+
+def test_a_title_arrives_without_publisher_markup():
+    """The exact string that reached the Q1b labeller."""
+    raw = "<scp>DIFFERENTIATED INFRASTRUCTURAL CITIZENSHIP</scp> : Claims‐Making"
+    assert clean_text(raw) == "DIFFERENTIATED INFRASTRUCTURAL CITIZENSHIP: Claims‐Making"
+
+
+def test_clean_text_still_collapses_ordinary_whitespace():
+    assert clean_text("  two\n  lines  ") == "two lines"
+    assert clean_text(None) is None
+    assert clean_text("   ") is None
+
+
+# --------------------------------------------------------------------------
+# P4-2 — places_status
+# --------------------------------------------------------------------------
+
+
+def test_a_paper_with_no_study_area_is_not_recorded_as_unresolved():
+    """`not_applicable` has been in the schema since it was written and nothing
+    ever set it: "there is no place" and "we could not find the place" were
+    stored identically."""
+    item = _item()
+    item.signals.geographic_scope = Signal(value="not_applicable", basis="llm")
+    assert item.entities.places_status == "not_attempted"
+
+    assert reconcile_places_status([item]) == 1
+    assert item.entities.places_status == "not_applicable"
+
+
+def test_an_unresolved_place_stays_unspecified():
+    """The distinction only holds if the other side keeps its own value."""
+    item = _item()
+    item.signals.geographic_scope = Signal(value="city", basis="llm")
+    item.entities.places_status = "unspecified"
+
+    assert reconcile_places_status([item]) == 0
+    assert item.entities.places_status == "unspecified"
+
+
+def test_a_resolved_place_is_never_overwritten():
+    """A scope of not_applicable next to a resolved place is a contradiction;
+    the resolved place is the harder evidence, so it wins."""
+    item = _item()
+    item.signals.geographic_scope = Signal(value="not_applicable", basis="llm")
+    item.entities.places = [PlaceRef(id="wikidata:Q60", label="New York City")]
+    item.entities.places_status = "resolved"
+
+    assert reconcile_places_status([item]) == 0
+    assert item.entities.places_status == "resolved"
+
+
+def test_reconciling_twice_changes_nothing_the_second_time():
+    item = _item()
+    item.signals.geographic_scope = Signal(value="not_applicable", basis="llm")
+    reconcile_places_status([item])
+    assert reconcile_places_status([item]) == 0
+
+
+# --------------------------------------------------------------------------
+# P4-3 — author and affiliation edges
+# --------------------------------------------------------------------------
+
+
+def test_author_and_affiliation_edges_are_emitted():
+    """People & Orgs is a Phase 2 signature candidate and centrality needs these
+    edges to already exist. If they stop being written, the archive has to be
+    reprocessed to get them back — so this is asserted, not assumed."""
+    item = _item(
+        bibliography=Bibliography(
+            title="A Paper",
+            authors=[Author(name="Ada Lovelace", institutions=[Institution(ror="ror:x")])],
+        ),
+    )
+    item.entities.people = [EntityRef(id="orcid:0000-0001-0000-0000", label="Ada Lovelace")]
+    item.entities.orgs = [EntityRef(id="ror:https://ror.org/012345678", label="Test University")]
+    item.entities.topics = [TopicRef(id="openalex:T1", label="Urban Studies", score=0.9)]
+
+    edges = {(e.type, e.dst) for e in edges_for_item(item)}
+
+    assert ("authored_by", "orcid:0000-0001-0000-0000") in edges
+    assert ("affiliated_with", "ror:https://ror.org/012345678") in edges
+    assert ("has_topic", "openalex:T1") in edges
+
+
+def test_every_edge_carries_the_items_date():
+    item = _item()
+    item.entities.people = [EntityRef(id="orcid:0000-0001-0000-0000", label="Ada")]
+    assert all(e.date == DAY for e in edges_for_item(item))

@@ -123,13 +123,17 @@ def _ids(work: dict) -> tuple[str, str, str]:
     return topic, subfield, source.rsplit("/", 1)[-1]
 
 
-def instrument_topics() -> tuple[set[str], float]:
-    """Topic IDs whose works are instruments, and the ratio fallback threshold."""
+def instrument_topics() -> tuple[set[str], set[str], float]:
+    """Foundation topics, instrument topics, and the ratio fallback threshold."""
     from ..config import vocab_file
 
     doc = vocab_file("canon_instrument_topics.yaml") or {}
+    ids = lambda key: {  # noqa: E731
+        t["id"] for t in (doc.get(key) or []) if t.get("id")
+    }
     return (
-        {t["id"] for t in (doc.get("topics") or []) if t.get("id")},
+        ids("foundation_topics"),
+        ids("instrument_topics") | ids("topics"),
         float(doc.get("ratio_threshold", 800)),
     )
 
@@ -137,14 +141,17 @@ def instrument_topics() -> tuple[set[str], float]:
 def classify_candidate(topic_id: Optional[str], ratio: Optional[float]) -> tuple[str, str]:
     """`foundation` or `instrument`, and which signal decided it.
 
-    Topic first: the ratio interleaves the two kinds through the whole middle of
-    its range — Tobler at 346 sits next to difference-in-differences at 327 —
-    so a threshold alone must be wrong about one of them. The ratio still
-    catches instruments in topics nobody has listed yet, which is why it stays
-    as a fallback and why anything it decides is marked as such.
+    Topic decides; the ratio only speaks for topics on neither list. It cannot
+    decide on its own because it interleaves the two kinds through the middle of
+    its range — Tobler at 346 next to difference-in-differences at 327 — and it
+    also misfires upward, on work that is cited by everyone *because it founded
+    a literature*: Haraway at 1,113 and Costanza at 2,018 are foundations that
+    any workable threshold would call instruments.
     """
-    topics, threshold = instrument_topics()
-    if topic_id and topic_id in topics:
+    foundations, instruments, threshold = instrument_topics()
+    if topic_id and topic_id in foundations:
+        return "foundation", "topic"
+    if topic_id and topic_id in instruments:
         return "instrument", "topic"
     if ratio is not None and ratio >= threshold:
         return "instrument", "ratio"

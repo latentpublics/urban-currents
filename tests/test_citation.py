@@ -417,7 +417,7 @@ def test_a_listed_instrument_topic_beats_a_low_ratio(repo):
     topic can tell them apart."""
     from pipeline.graph.canon import classify_candidate, instrument_topics
 
-    topics, _ = instrument_topics()
+    _, topics, _ = instrument_topics()
     an_instrument_topic = sorted(topics)[0]
 
     cls, basis = classify_candidate(an_instrument_topic, 5.0)
@@ -427,7 +427,7 @@ def test_a_listed_instrument_topic_beats_a_low_ratio(repo):
 def test_the_ratio_still_catches_topics_nobody_listed(repo):
     from pipeline.graph.canon import classify_candidate, instrument_topics
 
-    _, threshold = instrument_topics()
+    *_, threshold = instrument_topics()
     assert classify_candidate("T_UNLISTED", threshold + 1) == ("instrument", "ratio")
     assert classify_candidate("T_UNLISTED", threshold - 1)[0] == "foundation"
 
@@ -447,17 +447,29 @@ def test_spatial_statistics_is_not_an_instrument(repo):
     from pipeline.config import vocab_file
 
     doc = vocab_file("canon_instrument_topics.yaml")
-    names = {t["name"] for t in doc["topics"]}
-    assert "Spatial and Panel Data Analysis" not in names
+    names = {t["name"] for t in doc["instrument_topics"]}
+    assert not any("Spatial" in n for n in names)
 
 
 def test_every_instrument_topic_names_a_work_it_classifies():
     from pipeline.config import vocab_file
 
     doc = vocab_file("canon_instrument_topics.yaml")
-    assert doc["topics"]
-    for entry in doc["topics"]:
+    entries = doc["instrument_topics"] + doc["foundation_topics"]
+    assert entries
+    for entry in entries:
         assert entry.get("id") and entry.get("classifies") and entry.get("why"), entry
+
+
+def test_a_foundation_topic_overrides_the_ratio(repo):
+    """Haraway runs at 1,113 and Costanza at 2,018. Being cited by everyone
+    because you founded a literature is the opposite of being borrowed kit."""
+    from pipeline.graph.canon import classify_candidate, instrument_topics
+
+    foundations, _, threshold = instrument_topics()
+    assert foundations, "the override list must not be empty"
+    a_foundation_topic = sorted(foundations)[0]
+    assert classify_candidate(a_foundation_topic, threshold * 5) == ("foundation", "topic")
 
 
 # --------------------------------------------------------------------------

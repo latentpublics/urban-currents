@@ -1,108 +1,162 @@
-# Canon classes — which candidates are `instrument` rather than `foundation`.
-#
-# Both lists stay. The split is not a filter, it is a label: "what this field is
-# built on" and "what this field runs on" are two things worth saying, and
-# putting Tobler and XGBoost in one ranking says neither clearly.
+# Canon classes — `foundation` (what this field is built on) and `instrument`
+# (what it runs on). Both lists are kept. The split is a label, not a filter:
+# putting Tobler and XGBoost in one ranking says neither clearly, and "what does
+# this field run on" is worth publishing in its own right.
 #
 # ---------------------------------------------------------------------------
 # Why the ratio alone cannot do this
 # ---------------------------------------------------------------------------
 #
-# Phase 0e added `world_to_archive_ratio` — worldwide citations divided by ours —
-# and at the extremes it works: LSTM 3,709 and PRISMA 4,195 against Ewing and
-# Cervero at 57. In the middle it does not. Measured over the 300 candidates the
-# distribution has no natural gap, and the 300-1600 band interleaves the two
-# kinds beyond rescue:
+# Phase 0e added `world_to_archive_ratio` — worldwide citations over ours. At
+# the extremes it works: LSTM 3,709 against Ewing and Cervero 57. In the middle
+# it does not. The 300 candidates have no natural gap and the 300-1600 band
+# interleaves the two kinds:
 #
-#   327  Difference-in-differences with variation in treatment timing  <- instrument
-#   330  From local explanations to global understanding (SHAP)        <- instrument
-#   336  Local Indicators of Spatial Association (LISA)                <- foundation
-#   346  A Computer Movie Simulating Urban Growth in the Detroit Region <- foundation
-#   368  Estimating dynamic treatment effects in event studies         <- instrument
-#   408  The Analysis of Spatial Association (Getis-Ord)               <- foundation
-#   433  Two-Way Fixed Effects Estimators                              <- instrument
-#   452  NOTES ON CONTINUOUS STOCHASTIC PHENOMENA (Moran's I)          <- foundation
+#   327  Difference-in-differences with variation in treatment timing  instrument
+#   330  From local explanations to global understanding (SHAP)        instrument
+#   336  Local Indicators of Spatial Association (LISA)                foundation
+#   346  A Computer Movie Simulating Urban Growth (Tobler)             foundation
+#   408  The Analysis of Spatial Association (Getis-Ord)               foundation
+#   452  NOTES ON CONTINUOUS STOCHASTIC PHENOMENA (Moran's I)          foundation
 #
-# Tobler at 346 and difference-in-differences at 327 are adjacent. Any single
+# Tobler at 346 sits next to difference-in-differences at 327. Any single
 # threshold through that band demotes the first law of geography or promotes an
-# econometrics estimator.
+# econometrics estimator. So topic decides, and the ratio only catches topics
+# nobody has listed yet.
 #
-# So topic is the primary signal and the ratio is the fallback for topics not
-# listed here — the same shape as `canon_exclude_subfields.yaml`, and for the
-# same reason.
+# **The ratio also misfires upward**, which is why `foundation_topics` exists.
+# Haraway's Situated Knowledges runs at 1,113 and Costanza's ecosystem services
+# valuation at 2,018 — both far above any threshold, and both foundational.
+# Being cited by everyone is not the same as being borrowed equipment.
 #
 # ---------------------------------------------------------------------------
 # The judgement this file encodes
 # ---------------------------------------------------------------------------
 #
-# **`Spatial and Panel Data Analysis` is deliberately absent.** LISA, Getis-Ord
-# and Moran's I are methods papers by any ordinary reading, and they are still
-# foundations *of this field* — spatial statistics is not borrowed equipment
-# here, it is the discipline's own apparatus. An econometric estimator or a
-# gradient booster is borrowed; a spatial autocorrelation statistic is not.
-# That distinction is a judgement and it is the whole content of this file.
+# **Spatial statistics is not an instrument here.** LISA, Getis-Ord and Moran's I
+# are methods papers by any ordinary reading and still foundations *of this
+# field*: spatial autocorrelation is its own apparatus, not kit borrowed from
+# somewhere else. An econometric estimator or a gradient booster is borrowed.
+# That distinction is the entire content of this file.
 #
-# Every entry names a work it classifies. One that names none does not belong.
+# Topic IDs are read from resolved OpenAlex records, not guessed. Every entry
+# names a work it classifies; one that names none does not belong.
 
-topics:
-  - id: "T10577"
-    name: "Advanced Causal Inference Techniques"
+# Foundational whatever the ratio says. Checked before everything else.
+foundation_topics:
+  - id: "T12320"
+    name: "Feminist epistemology and situated knowledge"
     classifies:
-      - "Difference-in-differences with variation in treatment timing"
-      - "Estimating dynamic treatment effects in event studies"
-      - "Two-Way Fixed Effects Estimators with Heterogeneous Treatment Effects"
+      - "Situated Knowledges: The Science Question in Feminism (Haraway), ratio 1,113"
     why: >
-      Econometric identification strategies. Urban research uses them to
-      evaluate a policy; it does not build on them the way it builds on
-      accessibility theory.
+      Critical urban research builds on it directly — positionality and
+      situated knowledge are arguments this literature makes, not tools it
+      picks up.
 
-  - id: "T11512"
-    name: "Explainable Artificial Intelligence (XAI)"
+  - id: "T12013"
+    name: "Ecosystem services valuation"
     classifies:
-      - "From local explanations to global understanding with explainable AI (SHAP)"
+      - "The value of the world's ecosystem services and natural capital (Costanza), ratio 2,018"
     why: >
-      A model interpretation technique, cited by papers that ran a model.
+      Foundational to how urban green space research frames value. Enormously
+      cited because it founded a literature, which is the opposite of the
+      pattern the ratio is looking for.
 
-  - id: "T10883"
-    name: "Neural Networks and Applications"
+# General research instruments. The field runs on these and did not produce them.
+instrument_topics:
+  - id: "T10320"
+    name: "Machine learning methods (trees, boosting, recurrent nets)"
     classifies:
       - "Random Forests (Breiman)"
-      - "Greedy function approximation: A gradient boosting machine (Friedman)"
+      - "Greedy function approximation: a gradient boosting machine (Friedman)"
       - "Long Short-Term Memory"
-    why: >
-      General machine-learning method papers. The field runs on them and did not
-      produce them.
+    why: General-purpose learning algorithms, arriving from machine learning finished.
 
-  - id: "T10688"
-    name: "Machine Learning and Data Classification"
-    classifies:
-      - "XGBoost"
-    why: >
-      Same category as the above; a different OpenAlex topic for the same kind
-      of thing, which is why this is a list rather than a single rule.
+  - id: "T12535"
+    name: "Gradient boosting systems"
+    classifies: ["XGBoost"]
+    why: Same category, separate OpenAlex topic — which is why this is a list.
 
-  - id: "T11337"
-    name: "Meta-analysis and systematic reviews"
-    classifies:
-      - "The PRISMA 2020 statement"
-    why: >
-      A reporting guideline for reviews. Cited by any field that publishes one.
+  - id: "T10775"
+    name: "Deep learning"
+    classifies: ["Deep learning (LeCun, Bengio, Hinton)"]
+    why: A review of the method, cited by papers that used it.
 
-  - id: "T11289"
-    name: "Behavioral Health and Interventions"
-    classifies:
-      - "The theory of planned behavior (Ajzen)"
+  - id: "T12026"
+    name: "Explainable AI"
+    classifies: ["From local explanations to global understanding (SHAP)"]
+    why: A model interpretation technique.
+
+  - id: "T11206"
+    name: "Physics-informed machine learning"
+    classifies: ["Physics-informed neural networks"]
+    why: A modelling technique borrowed from computational physics.
+
+  - id: "T10845"
+    name: "Difference-in-differences and causal panel methods"
+    classifies: ["Difference-in-differences with variation in treatment timing"]
     why: >
-      A general behavioural model. Heavily used in travel behaviour research and
+      Econometric identification. Urban research uses it to evaluate a policy;
+      it does not build on it the way it builds on accessibility theory.
+
+  - id: "T10314"
+    name: "Mediation and moderation analysis"
+    classifies: ["The moderator-mediator variable distinction (Baron & Kenny)"]
+    why: A statistical procedure for testing an effect, cited across all of social science.
+
+  - id: "T13398"
+    name: "Mixed-effects modelling software"
+    classifies: ["Fitting Linear Mixed-Effects Models Using lme4"]
+    why: A software citation.
+
+  - id: "T11875"
+    name: "Statistical learning texts"
+    classifies: ["The Elements of Statistical Learning"]
+    why: A textbook.
+
+  - id: "T10799"
+    name: "Clustering validity and bibliometric software"
+    classifies:
+      - "Silhouettes: a graphical aid to the interpretation of cluster analysis"
+      - "Software survey: VOSviewer"
+    why: A cluster quality measure and a bibliometrics tool.
+
+  - id: "T10848"
+    name: "Multiobjective evolutionary optimisation"
+    classifies: ["A fast and elitist multiobjective genetic algorithm (NSGA-II)"]
+    why: An optimisation algorithm, used in network design and siting problems.
+
+  - id: "T11542"
+    name: "Planned behaviour and intention models"
+    classifies: ["The theory of planned behavior (Ajzen)"]
+    why: >
+      A general behavioural model, heavily used in travel behaviour research and
       not of it — it arrives from social psychology already finished.
 
-# Ratio fallback for topics not listed above. Set at 800 because Holling's
-# resilience paper sits at 672 and Arnstein's ladder at 569, and both are
-# foundations — a threshold below either would be wrong on a case the directive
-# named. The nearest instrument above it is gradient boosting at 900.
+  - id: "T10206"
+    name: "Systematic review reporting standards"
+    classifies: ["The PRISMA 2020 statement"]
+    why: A reporting guideline for reviews.
+
+  - id: "T12443"
+    name: "Scoping review reporting standards"
+    classifies: ["PRISMA Extension for Scoping Reviews"]
+    why: As above, for scoping reviews.
+
+  - id: "T11797"
+    name: "Information theory"
+    classifies: ["A Mathematical Theory of Communication (Shannon)"]
+    why: >
+      Entropy measures reach urban research through diversity and segregation
+      indices. Foundational to information theory, borrowed equipment here.
+
+# Fallback for topics on neither list. Set at 800 because Holling's resilience
+# paper sits at 672 and Arnstein's ladder at 569 and both are foundations — a
+# threshold below either would be wrong on a case that was named in advance. The
+# nearest instrument above it is gradient boosting at 900.
 #
-# This is a provisional number, not a discovered one: the distribution has no
-# natural gap, so it is set to the widest interval that keeps the known cases
-# right. Anything classified by this fallback rather than by topic is marked
-# `class_basis: ratio` so it can be audited.
+# Provisional, not discovered: the distribution has no natural gap, so this is
+# the widest interval that keeps the known cases right. Anything decided here
+# rather than by topic is marked `class_basis: ratio` so it can be audited, and
+# the misfires that marking exposed are what produced `foundation_topics`.
 ratio_threshold: 800

@@ -1,6 +1,6 @@
 # Urban Currents — Phase 0 report
 
-Generated 2026-08-13T07:59:07+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
+Generated 2026-08-13T14:35:53+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
 
 ## The four questions (PRD §1)
 
@@ -188,22 +188,22 @@ Current `config/scoring.yaml` threshold: 0.444 (source: backfill).
 | items published | 120 |
 | items summarised | 119 |
 | LLM (daily runs) | $0.9625 |
-| OpenAlex (daily runs) | $0.0189 |
+| OpenAlex (daily runs) | $0.0195 |
 | embeddings (local) | $0.0 |
-| total (daily runs) | $0.9814 |
+| total (daily runs) | $0.982 |
 | per published item | $0.00818 |
-| monthly estimate | $4.907 |
-| tokens in / out (all tasks) | 1022767 / 144615 |
+| monthly estimate | $4.91 |
+| tokens in / out (all tasks) | 1120335 / 157949 |
 
 **Per task, cumulative** — every LLM call ever made from this repository, including calls outside a daily run (labelling preparation, re-runs against a cold cache). The daily-run figures above are a subset of this, which is why they are smaller:
 
 | task | calls | cost |
 |---|---|---|
-| extract | 124 | $0.261304 |
+| extract | 467 | $0.954846 |
 | summarize | 269 | $0.940179 |
-| **total** | 395 | **$1.208769** |
+| **total** | 738 | **$1.902311** |
 
-Tokens: 408842 in, 66166 out, 0 thinking. Summarize and extract run one call each per item (D8 was reverted in N1), so a per-item token figure divided by the published count describes neither task on its own.
+Tokens: 708713 in, 93248 out, 0 thinking. Summarize and extract run one call each per item (D8 was reverted in N1), so a per-item token figure divided by the published count describes neither task on its own.
 
 Embeddings are local (`BAAI/bge-base-en-v1.5` on CPU), so their marginal cost is zero — which is what makes backfills and retraining free.
 

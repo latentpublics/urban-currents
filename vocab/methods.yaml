@@ -18,6 +18,10 @@
 # REVIEW: nothing here is adopted. To adopt one, move it into a family,
 # REVIEW: give it a stable id, fold near-duplicates into `aliases`, and
 # REVIEW: delete it from this block.
+# REVIEW: `candidates:` below came from the extraction queue in phase 0e.
+# REVIEW: nothing here is adopted. To adopt one, move it into a family,
+# REVIEW: give it a stable id, fold near-duplicates into `aliases`, and
+# REVIEW: delete it from this block.
 
 families:
 - id: method:deep-learning
@@ -267,39 +271,195 @@ families:
     - natural language processing
     - content analysis
 candidates:
+- label: comparative analysis
+  suggested_id: method:comparative-analysi
+  occurrences: 8
+  seen_in: Modelling state-level crash fatalities by a network-constrained inhomogeneous poisson point
+    process
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: historical analysis
+  suggested_id: method:historical-analysi
+  occurrences: 8
+  seen_in: The politics of green in Leinefelde’s housing environment
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: qualitative analysis
+  suggested_id: method:qualitative-analysi
+  occurrences: 7
+  seen_in: 'Provincialising Patriarchy: Methodological Interventions in Geography'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: case study
+  suggested_id: method:case-study
+  occurrences: 7
+  seen_in: 'ENVIRONMENTAL STATECRAFT AND CHANGING ENVIRONMENTAL POLITICS: Chengdu''s Ecological Preservation
+    and Eco‐development'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: systematic review
+  suggested_id: method:systematic-review
+  occurrences: 6
+  seen_in: 'Exploring rewilding as a potential design approach to improve urban biodiversity: A systematic
+    review of the literature'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: literature review
+  suggested_id: method:literature-review
+  occurrences: 6
+  seen_in: 'Accessibility in Bus-Based Public Transport Across European Cities: A Bibliometric and Thematic
+    Review of Bus Stop and Station Infrastructure for Inclusive Urban Mobility'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: document analysis
+  suggested_id: method:document-analysi
+  occurrences: 5
+  seen_in: 'METHODOLOGICAL FRAMEWORKS FOR SUSTAINABLE RURAL SETTLEMENT PLANNING IN UZBEKISTAN: INTEGRATING
+    LOW-RISE COURTYARD HOUSING AS A CASE STUDY'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: thematic analysis
+  suggested_id: method:thematic-analysi
+  occurrences: 5
+  seen_in: User Experience-Bаsed Evаluаtion of Tаctile Mаp Production Methods for Wаyfinding Аmong People
+    with Visuаl Impаirments
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: descriptive analysis
+  suggested_id: method:descriptive-analysi
+  occurrences: 5
+  seen_in: 'Lost Gatherers in the 21st Century: Probability of Area, Spatial Behavior, Risk Factors and
+    Vulnerability'
+  source: extraction queue (phase 0e R5, phase 0f S3)
 - label: computer vision
   suggested_id: method:computer-vision
   occurrences: 4
-  source: extraction queue (phase 0e R5)
-- label: qualitative analysis
-  suggested_id: method:qualitative-analysi
+  seen_in: null
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: analytic hierarchy process
+  suggested_id: method:analytic-hierarchy-process
+  occurrences: 4
+  seen_in: GIS-based multi-criteria and network accessibility analysis for identifying suitable areas
+    for urban leisure green spaces in Sintra, Portugal
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: scoping review
+  suggested_id: method:scoping-review
+  occurrences: 4
+  seen_in: 'Urban air mobility vertiports: A bibliometric analysis and scoping review of physical site
+    selection, design, and integration with ground transport'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: descriptive statistics
+  suggested_id: method:descriptive-statistic
+  occurrences: 4
+  seen_in: User Experience-Bаsed Evаluаtion of Tаctile Mаp Production Methods for Wаyfinding Аmong People
+    with Visuаl Impаirments
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: ethnographic research
+  suggested_id: method:ethnographic-research
+  occurrences: 4
+  seen_in: 'INFRASTRUCTURAL CONCEALMENT: Everyday Festival Economies and Riverine Ecologies in Kolkata'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: multi-criteria decision analysis
+  suggested_id: method:multi-criteria-decision-analysi
   occurrences: 3
-  source: extraction queue (phase 0e R5)
-- label: comparative analysis
-  suggested_id: method:comparative-analysi
+  seen_in: GIS-based multi-criteria and network accessibility analysis for identifying suitable areas
+    for urban leisure green spaces in Sintra, Portugal
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: mixed-methods approach
+  suggested_id: method:mixed-methods-approach
   occurrences: 3
-  source: extraction queue (phase 0e R5)
+  seen_in: 'Bridging sustainability and digitalization: A comparative analysis of German smart city strategies'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: cluster analysis
+  suggested_id: method:cluster-analysi
+  occurrences: 3
+  seen_in: 30 years of tendering regional rail services in Germany – A data-based analysis of long-term
+    effects and the impact of network characteristics on competition
+  source: extraction queue (phase 0e R5, phase 0f S3)
 - label: object detection
   suggested_id: method:object-detection
   occurrences: 3
-  source: extraction queue (phase 0e R5)
-- label: multi-agent reinforcement learning
-  suggested_id: method:multi-agent-reinforcement-learning
-  occurrences: 2
-  source: extraction queue (phase 0e R5)
-- label: path size logit model
-  suggested_id: method:path-size-logit-model
-  occurrences: 2
-  source: extraction queue (phase 0e R5)
-- label: expert interviews
-  suggested_id: method:expert-interview
-  occurrences: 2
-  source: extraction queue (phase 0e R5)
-- label: qualitative research design
-  suggested_id: method:qualitative-research-design
-  occurrences: 2
-  source: extraction queue (phase 0e R5)
-- label: isolation forest
-  suggested_id: method:isolation-forest
-  occurrences: 2
-  source: extraction queue (phase 0e R5)
+  seen_in: null
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: empirical analysis
+  suggested_id: method:empirical-analysi
+  occurrences: 3
+  seen_in: 'Provincialising Patriarchy: Methodological Interventions in Geography'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: support vector regression
+  suggested_id: method:support-vector-regression
+  occurrences: 3
+  seen_in: 'Baseline Estimation and System Performance Assessment of Municipal Solid Waste in Tourism
+    Areas: A Case Study of Phuket, Thailand'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: policy document analysis
+  suggested_id: method:policy-document-analysi
+  occurrences: 3
+  seen_in: 'Bridging sustainability and digitalization: A comparative analysis of German smart city strategies'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: multiscale geographically weighted regression
+  suggested_id: method:multiscale-geographically-weighted-regression
+  occurrences: 3
+  seen_in: Use of Geographically Weighted Regression and Multiscale Geographically Weighted Regression
+    to Account for Spatially Heterogeneous Property Value Impacts of Heavy Rail Transit Stations
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: conceptual framework
+  suggested_id: method:conceptual-framework
+  occurrences: 3
+  seen_in: 'ENVIRONMENTAL STATECRAFT AND CHANGING ENVIRONMENTAL POLITICS: Chengdu''s Ecological Preservation
+    and Eco‐development'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: generalized additive models
+  suggested_id: method:generalized-additive-model
+  occurrences: 3
+  seen_in: 'Geospatial Modelling of Stunting and Underweight Among Children Under Five Years: Insights
+    from Sub-Saharan Africa'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: spatial interpolation
+  suggested_id: method:spatial-interpolation
+  occurrences: 3
+  seen_in: 'GIS-BASED ENVIRONMENTAL RISK ASSESSMENT IN INDUSTRIAL CITIES: METHODOLOGICAL FRAMEWORK AND
+    APPLICATION TO ALMALYK, UZBEKISTAN'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: in-depth interviews
+  suggested_id: method:in-depth-interview
+  occurrences: 3
+  seen_in: 'Interstitiality as practice: Exploring the discursive practices producing the tech city'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: systematic literature review
+  suggested_id: method:systematic-literature-review
+  occurrences: 3
+  seen_in: 'Road traffic noise analysis in urban roundabouts: a systematic review'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: correlation analysis
+  suggested_id: method:correlation-analysi
+  occurrences: 3
+  seen_in: 'South by Southwest: Shifting Streamflow Drought in Catchments with an Intermittent Streamflow
+    Regime in the Conterminous United States'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: case studies
+  suggested_id: method:case-studie
+  occurrences: 3
+  seen_in: 'METHODOLOGICAL FRAMEWORKS FOR SUSTAINABLE RURAL SETTLEMENT PLANNING IN UZBEKISTAN: INTEGRATING
+    LOW-RISE COURTYARD HOUSING AS A CASE STUDY'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: sensitivity analysis
+  suggested_id: method:sensitivity-analysi
+  occurrences: 3
+  seen_in: Optimization of Emergency Bus Bridging Service with Mixed Diesel–Electric Fleets under Metro
+    Disruptions
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: qualitative content analysis
+  suggested_id: method:qualitative-content-analysi
+  occurrences: 3
+  seen_in: 'Bridging sustainability and digitalization: A comparative analysis of German smart city strategies'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: remote sensing
+  suggested_id: method:remote-sensing
+  occurrences: 3
+  seen_in: 'GIS-BASED ENVIRONMENTAL RISK ASSESSMENT IN INDUSTRIAL CITIES: METHODOLOGICAL FRAMEWORK AND
+    APPLICATION TO ALMALYK, UZBEKISTAN'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: structural equation modeling
+  suggested_id: method:structural-equation-modeling
+  occurrences: 3
+  seen_in: 'Bridging the digital divide in urban mobility: a latent class choice analysis of older adults’
+    preferences for autonomous vehicles in China'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: qualitative interviews
+  suggested_id: method:qualitative-interview
+  occurrences: 3
+  seen_in: Matters of caring for neglected spaces
+  source: extraction queue (phase 0e R5, phase 0f S3)

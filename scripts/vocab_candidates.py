@@ -53,10 +53,17 @@ def normalise(term: str) -> str:
     return t[:-1] if t.endswith("s") and not t.endswith("ss") else t
 
 
-def load_unmatched() -> dict[str, Counter]:
-    """Deduped by (work_key, facet, term): a re-run must not inflate a term."""
+def load_unmatched() -> tuple[dict[str, Counter], dict[tuple, str]]:
+    """Deduped by (work_key, facet, term): a re-run must not inflate a term.
+
+    Reads the daily runs' `unmatched.jsonl` and, if present, the phase 0f bulk
+    extraction over a 300-item stratified sample (`runs/vocab_bulk.json`). The
+    five-day sample was too small for a frequency floor to separate a real term
+    from a one-paper coinage; 300 items across 127 subfields is not.
+    """
     seen: set[tuple] = set()
     per_facet: dict[str, Counter] = defaultdict(Counter)
+    examples: dict[tuple, str] = {}
     for path in glob.glob(str(ROOT / "runs" / "run_*" / "unmatched.jsonl")):
         for line in Path(path).read_text(encoding="utf-8").splitlines():
             if not line.strip():
@@ -73,7 +80,18 @@ def load_unmatched() -> dict[str, Counter]:
                 continue
             seen.add(key)
             per_facet[facet][term] += 1
-    return per_facet
+
+    bulk = ROOT / "runs" / "vocab_bulk.json"
+    if bulk.exists():
+        payload = json.loads(bulk.read_text(encoding="utf-8"))
+        for row in payload.get("top_unmatched") or []:
+            facet, term = row["facet"], row["term"].strip().lower()
+            if facet not in FACET_FILES or not term:
+                continue
+            per_facet[facet][term] += int(row.get("count") or 0)
+            if row.get("example_title"):
+                examples.setdefault((facet, term), row["example_title"])
+    return per_facet, examples
 
 
 def existing_surfaces(doc: dict) -> dict[str, str]:
@@ -127,14 +145,14 @@ def add_alias(doc: dict, entry_id: str, alias: str) -> bool:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--min-items", type=int, default=2,
+    ap.add_argument("--min-items", type=int, default=3,
                     help="Distinct items that must propose a term for it to be a candidate")
     ap.add_argument("--check", action="store_true", help="report without writing")
     a = ap.parse_args()
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-    per_facet = load_unmatched()
+    per_facet, examples = load_unmatched()
     merged: list[tuple[str, str, str]] = []
     proposed: dict[str, list[tuple[str, int]]] = {}
 
@@ -163,7 +181,10 @@ def main() -> None:
                 "suggested_id": f"{facet.rstrip('s') if facet != 'data' else 'data'}:"
                                 + re.sub(r"[^a-z0-9]+", "-", normalise(term)).strip("-"),
                 "occurrences": n,
-                "source": "extraction queue (phase 0e R5)",
+                # One real title per term, so a reviewer does not have to guess
+                # what a bare phrase was describing.
+                "seen_in": examples.get((facet, term)),
+                "source": "extraction queue (phase 0e R5, phase 0f S3)",
             }
             for term, n in candidates
         ]

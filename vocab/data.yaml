@@ -15,6 +15,10 @@
 # REVIEW: nothing here is adopted. To adopt one, move it into a family,
 # REVIEW: give it a stable id, fold near-duplicates into `aliases`, and
 # REVIEW: delete it from this block.
+# REVIEW: `candidates:` below came from the extraction queue in phase 0e.
+# REVIEW: nothing here is adopted. To adopt one, move it into a family,
+# REVIEW: give it a stable id, fold near-duplicates into `aliases`, and
+# REVIEW: delete it from this block.
 
 items:
 - id: data:street-view
@@ -185,55 +189,96 @@ items:
   - era5
   - climate reanalysis
 candidates:
+- label: survey data
+  suggested_id: data:survey-data
+  occurrences: 25
+  seen_in: 'A Place-Based Methodological Approach to Measure Urban Memory in a Post-Urbicide Context:
+    The Case of Sarajevo'
+  source: extraction queue (phase 0e R5, phase 0f S3)
 - label: interviews
   suggested_id: data:interview
-  occurrences: 4
-  source: extraction queue (phase 0e R5)
+  occurrences: 18
+  seen_in: 'Provincialising Patriarchy: Methodological Interventions in Geography'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: interview transcripts
+  suggested_id: data:interview-transcript
+  occurrences: 10
+  seen_in: Exploring children’s contact with nature and pro-environmental behaviours in Beijing, China
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: policy documents
+  suggested_id: data:policy-document
+  occurrences: 10
+  seen_in: 'From fragmented drainage interventions to integrated urban flood management: Evidence from
+    Accra, Ghana'
+  source: extraction queue (phase 0e R5, phase 0f S3)
 - label: demographic data
   suggested_id: data:demographic-data
-  occurrences: 3
-  source: extraction queue (phase 0e R5)
+  occurrences: 8
+  seen_in: GIS-based multi-criteria and network accessibility analysis for identifying suitable areas
+    for urban leisure green spaces in Sintra, Portugal
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: academic literature
+  suggested_id: data:academic-literature
+  occurrences: 5
+  seen_in: Perceptions of rewilding in European abandoned agricultural lands
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: temperature data
+  suggested_id: data:temperature-data
+  occurrences: 4
+  seen_in: 'HERITAGE MUSEUM BUILDINGS UNDER CLIMATE STRESS: MAPPING DETERIORATION ACROSS URBAN AND COASTAL
+    REGIONS'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: elevation
+  suggested_id: data:elevation
+  occurrences: 4
+  seen_in: 'Estimating Future Urban Heat Island Effect Based on Shared Socioeconomic Pathway Scenario:
+    A Case Study of Busan City'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: observational data
+  suggested_id: data:observational-data
+  occurrences: 4
+  seen_in: 'HOME ENVIRONMENT SAFETY RISKS AND PERCEIVED SAFETY AMONG EMPTY-NESTER ELDERLY IN NANCHANG,
+    CHINA: A MIXED-METHODS STUDY'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: historical records
+  suggested_id: data:historical-record
+  occurrences: 4
+  seen_in: 'The Pensionados: the Philippines’ colonial architect-planners and the propagation of the city
+    beautiful planning paradigm'
+  source: extraction queue (phase 0e R5, phase 0f S3)
 - label: weather data
   suggested_id: data:weather-data
   occurrences: 3
-  source: extraction queue (phase 0e R5)
-- label: interview transcripts
-  suggested_id: data:interview-transcript
+  seen_in: null
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: survey responses
+  suggested_id: data:survey-response
   occurrences: 3
-  source: extraction queue (phase 0e R5)
-- label: policy documents
-  suggested_id: data:policy-document
+  seen_in: Pedestrian Signing at Uncontrolled Crosswalks
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: synthetic data
+  suggested_id: data:synthetic-data
   occurrences: 3
-  source: extraction queue (phase 0e R5)
-- label: survey data
-  suggested_id: data:survey-data
+  seen_in: Assessing the Impact of Spatial Resolution and Hyperparameters on Automatic Agricultural Parcel
+    Delineation Using the Segment Anything Model With Multi‐Resolution and Super‐Resolved Satellite Imagery
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: spatial data
+  suggested_id: data:spatial-data
   occurrences: 3
-  source: extraction queue (phase 0e R5)
-- label: temperature data
-  suggested_id: data:temperature-data
-  occurrences: 2
-  source: extraction queue (phase 0e R5)
-- label: gps trajectory data
-  suggested_id: data:gps-trajectory-data
-  occurrences: 2
-  source: extraction queue (phase 0e R5)
-- label: images
-  suggested_id: data:image
-  occurrences: 2
-  source: extraction queue (phase 0e R5)
-- label: automatic identification system data
-  suggested_id: data:automatic-identification-system-data
-  occurrences: 2
-  source: extraction queue (phase 0e R5)
-- label: hashtags
-  suggested_id: data:hashtag
-  occurrences: 2
-  source: extraction queue (phase 0e R5)
-- label: panel data
-  suggested_id: data:panel-data
-  occurrences: 2
-  source: extraction queue (phase 0e R5)
-- label: social media posts
-  suggested_id: data:social-media-post
-  occurrences: 2
-  source: extraction queue (phase 0e R5)
+  seen_in: Ontology-based Textual Location Description Framework for Multidimensional Features
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: planning documents
+  suggested_id: data:planning-document
+  occurrences: 3
+  seen_in: 'Planning historic-city expansion: housing and social differentiation in Évora, Portugal, 1940s'
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: population density
+  suggested_id: data:population-density
+  occurrences: 3
+  seen_in: The impact of compact city characteristics on economic performance of cities in different sizes
+  source: extraction queue (phase 0e R5, phase 0f S3)
+- label: ethnographic data
+  suggested_id: data:ethnographic-data
+  occurrences: 3
+  seen_in: 'ALL POSSIBLE PASTS: Heritage, Simulacra, and Gentrification in Seoul'
+  source: extraction queue (phase 0e R5, phase 0f S3)

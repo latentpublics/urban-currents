@@ -54,6 +54,20 @@ def normalize_openalex_id(value: Optional[str]) -> Optional[str]:
     return value.strip().rsplit("/", 1)[-1] or None
 
 
+def normalize_ror(value: Optional[str]) -> Optional[str]:
+    """``https://ror.org/02mhbdp94`` → ``02mhbdp94``.
+
+    OpenAlex reports institution RORs as full URLs, which produced entity IDs
+    like ``ror:https://ror.org/02mhbdp94`` — the prefix announces the scheme and
+    then the value repeats it. Every other canonical prefix in this schema
+    carries a bare identifier (``orcid:0000-…``, ``openalex:W123``), and it also
+    made entity filenames read ``https___ror.org_02mhbdp94.json``.
+    """
+    if not value:
+        return None
+    return value.strip().rstrip("/").rsplit("/", 1)[-1] or None
+
+
 def arxiv_doi(arxiv_id: str) -> str:
     return f"10.48550/arxiv.{arxiv_id}"
 

@@ -202,7 +202,11 @@ def test_work_to_item_takes_openalex_entities_verbatim():
     assert item.entities.topics[0].is_primary is True
     assert item.entities.topics[0].subfield == "3322"
     assert item.entities.people[0].id == "orcid:0000-0002-1825-0097"
-    assert item.entities.orgs[0].id == "ror:https://ror.org/03dbr7087"
+    # Bare ROR, not the URL OpenAlex reports: every canonical prefix in this
+    # schema carries a bare identifier, and `ror:https://ror.org/…` repeated the
+    # scheme inside its own value (migrated in phase 0d).
+    assert item.entities.orgs[0].id == "ror:03dbr7087"
+    assert item.bibliography.authors[0].institutions[0].ror == "03dbr7087"
     # OpenAlex field names are preserved, not renamed (PRD §12).
     assert item.graph.referenced_works == ["openalex:W2145", "openalex:W3011"]
     assert item.graph.cited_by_count == 4

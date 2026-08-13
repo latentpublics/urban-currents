@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from typing import Any, Optional
 
-from ..collectors.base import normalize_openalex_id
+from ..collectors.base import normalize_openalex_id, normalize_ror
 from ..models import Author, EntityRef, Graph, Institution, TopicRef
 
 
@@ -64,7 +64,7 @@ def orgs_from_work(work: dict[str, Any]) -> list[EntityRef]:
     seen: set[str] = set()
     for a in work.get("authorships") or []:
         for inst in a.get("institutions") or []:
-            ror = inst.get("ror")
+            ror = normalize_ror(inst.get("ror"))
             oa = normalize_openalex_id(inst.get("id"))
             if ror:
                 eid = f"ror:{ror}"
@@ -105,7 +105,7 @@ def authors_from_work(work: dict[str, Any]) -> list[Author]:
                 orcid=author.get("orcid"),
                 openalex=normalize_openalex_id(author.get("id")),
                 institutions=[
-                    Institution(ror=i.get("ror"), name=i.get("display_name"))
+                    Institution(ror=normalize_ror(i.get("ror")), name=i.get("display_name"))
                     for i in (a.get("institutions") or [])
                 ],
             )

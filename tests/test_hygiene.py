@@ -171,3 +171,31 @@ def test_a_run_that_produced_no_summary_does_not_erase_the_stored_one(repo):
 
     assert stored.summary.en.what == "Old what."
     assert stored.provenance.llm.prompt_version == "papers@0.3.0"
+
+
+# --------------------------------------------------------------------------
+# Q0-1 — ROR identifiers are bare, like every other canonical prefix
+# --------------------------------------------------------------------------
+
+
+def test_a_ror_url_becomes_a_bare_identifier():
+    from pipeline.collectors.base import normalize_ror
+
+    assert normalize_ror("https://ror.org/02mhbdp94") == "02mhbdp94"
+    assert normalize_ror("https://ror.org/02mhbdp94/") == "02mhbdp94"
+    assert normalize_ror("02mhbdp94") == "02mhbdp94"
+    assert normalize_ror(None) is None
+    assert normalize_ror("") is None
+
+
+def test_the_ror_migration_round_trips():
+    """It has to be reversible: an identifier migration that cannot be undone is
+    a decision nobody can walk back."""
+    from scripts.migrate_ror_ids import to_bare, to_url
+
+    url = "ror:https://ror.org/02mhbdp94"
+    bare = "ror:02mhbdp94"
+    assert to_bare(url) == bare
+    assert to_url(bare) == url
+    assert to_bare(bare) == bare, "already migrated: leave it alone"
+    assert to_url(url) == url

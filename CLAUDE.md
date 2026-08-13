@@ -6,9 +6,15 @@ editing the document.
 
 ## Standing rules
 
-- **Everything committed is written in English.** Code, comments, docstrings,
-  commit messages, `README.md`, `docs/OPERATIONS.md`, published content. (Design
-  discussion with YJUN happens in Korean; none of it lands in the repo.)
+- **English for anything published or executed.** Code, comments, docstrings,
+  identifiers, commit messages, `README.md`, render templates, and everything
+  under `content/`.
+  **Korean is allowed for internal working documents** — `docs/` analysis and
+  decision notes, and all of `prompts/`. The earlier rule said "everything
+  committed", which was read literally enough to keep three analysis documents
+  out of git entirely; a re-clone would have lost them, and `docs/PRD-phase0.md`
+  is Korean and has been committed since the first milestone. The line is what
+  a reader outside the project sees, not what language a thought arrived in.
 - **`content/` is pipeline output. Never hand-edit it.** That includes
   `content/items/`, `content/issues/`, `content/entities/`, and
   `content/graph/edges.jsonl`. To change what is in there, change the stage that

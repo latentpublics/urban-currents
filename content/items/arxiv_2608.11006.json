@@ -46,7 +46,7 @@
     "orgs": [],
     "people": [],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": []
   },
@@ -64,17 +64,20 @@
   },
   "lens": null,
   "provenance": {
-    "classifier_version": "clf-2026-08-12",
-    "collected_at": "2026-08-12T16:23:26Z",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
       "arxiv"
     ],
-    "cost_usd": 0.0,
-    "llm": null,
+    "cost_usd": 0.005213,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
-      "in": 0,
-      "out": 0
+      "in": 2006,
+      "out": 245
     }
   },
   "publication_status": {
@@ -94,11 +97,11 @@
     "components": {
       "artifact_completeness": 0.0,
       "novelty": 0.0,
-      "relevance": 0.7908,
+      "relevance": 0.772,
       "source_multiplicity": 0.0
     },
-    "headline": 0.3163,
-    "relevance": 0.7908
+    "headline": 0.3088,
+    "relevance": 0.772
   },
   "signals": {
     "code_available": {
@@ -115,7 +118,13 @@
       "url": null,
       "value": false
     },
-    "geographic_scope": null,
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
     "is_retracted": {
       "basis": "rule",
       "confidence": "high",
@@ -139,7 +148,11 @@
     }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The findings are based on a qualitative coding of published strategy documents, which may not reflect actual policy implementation or enforcement.",
+      "what": "This paper coded and analyzed 74 national and 3 regional AI strategies from a global scan of UN member and non-member states using a latent-inductive approach. It evaluated horizontal (country-to-country) and vertical (region-to-country) convergence across three policy design elements: goals, approaches, and principles. The analysis reveals strong horizontal convergence around economic competitiveness, research support, and ethical AI use, alongside persistent divergence in human rights goals, participatory governance, and human-centric principles.",
+      "why": "It establishes a systematic empirical baseline of global AI policy design choices, revealing where international norms are solidifying (such as economic and research support) and where national strategies remain fragmented (such as human rights and governance)."
+    }
   },
   "track": "papers",
   "updated": "2026-08-11",

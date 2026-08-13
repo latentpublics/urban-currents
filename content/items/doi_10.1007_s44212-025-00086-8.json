@@ -1,0 +1,304 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "<title>Abstract</title> In complex urban environments, vehicle-integrated navigation systems based on Global Navigation Satellite Systems (GNSS) aided Inertial Navigation Systems (INS) typically rely on nonholonomic constraints (NHC) and odometer velocity to improve navigation accuracy. However, the performance of such systems is often degraded due to inaccurate estimation of the installation angles between the Inertial Measurement Unit (IMU) and the vehicle frame. To address this challenge, this paper proposes a precise urban vehicle navigation method based on a 3D velocity constraint using the Mamba model. The proposed GNSS/INS/Mamba-ODO framework learns a direct and efficient mapping from raw IMU outputs to 3D velocity through asymmetric sequence segmentation, multi-scale temporal modeling, and a state-space sequence learning backbone. By replacing traditional velocity constraints, the method significantly enhances positioning robustness in GNSS-denied urban areas. Ground vehicle experiments demonstrate that the proposed approach achieves a mean Root Mean Square Error (RMSE) of 0.22 m/s in 3D velocity estimation. Furthermore, during a 120 sGNSS outage, the 3D positioning RMSE remains within 0.20 m, confirming the accuracy and robustness of the proposed method in real-world urban scenarios.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Beihang University",
+            "ror": "https://ror.org/00wk2mp56"
+          }
+        ],
+        "name": "Feifan Lin",
+        "openalex": "A5114233655",
+        "orcid": "https://orcid.org/0009-0005-0633-8859"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Beihang University",
+            "ror": "https://ror.org/00wk2mp56"
+          }
+        ],
+        "name": "Qingzhong Cai",
+        "openalex": "A5022141423",
+        "orcid": "https://orcid.org/0000-0002-9956-4740"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hubei University of Technology",
+            "ror": "https://ror.org/02d3fj342"
+          }
+        ],
+        "name": "Yuan Huizheng",
+        "openalex": "A5084858977",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "https://ror.org/0030zas98"
+          }
+        ],
+        "name": "Yue Yu",
+        "openalex": "A5000295734",
+        "orcid": "https://orcid.org/0000-0003-3529-585X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Beihang University",
+            "ror": "https://ror.org/00wk2mp56"
+          }
+        ],
+        "name": "Ruizhao Cheng",
+        "openalex": "A5032050297",
+        "orcid": "https://orcid.org/0000-0002-7384-6803"
+      }
+    ],
+    "categories": [],
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s44212-025-00086-8",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44212-025-00086-8.pdf",
+      "source_id": "S4387283136",
+      "source_name": "Urban Informatics",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-06",
+    "title": "A precise urban vehicle navigation method based on 3D velocity Mamba constraint"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-06_10.1007/s44212-0",
+    "members": [
+      "doi:10.1007/s44212-025-00086-8"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/00wk2mp56",
+        "label": "Beihang University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/02d3fj342",
+        "label": "Hubei University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/0030zas98",
+        "label": "Hong Kong Polytechnic University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0005-0633-8859",
+        "label": "Feifan Lin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9956-4740",
+        "label": "Qingzhong Cai"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5084858977",
+        "label": "Yuan Huizheng"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3529-585X",
+        "label": "Yue Yu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7384-6803",
+        "label": "Ruizhao Cheng"
+      }
+    ],
+    "places": [],
+    "places_status": "not_attempted",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11325",
+        "is_primary": true,
+        "label": "Inertial Sensor and Navigation",
+        "score": 0.9996,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10326",
+        "is_primary": false,
+        "label": "Indoor and Outdoor Localization Technologies",
+        "score": 0.9993,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10655",
+        "is_primary": false,
+        "label": "GNSS positioning and interference",
+        "score": 0.9953,
+        "subfield": "2202"
+      }
+    ]
+  },
+  "first_published": "2026-08-06",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W3029142183",
+      "openalex:W3196297704",
+      "openalex:W4225839231",
+      "openalex:W4312791547",
+      "openalex:W4312920079",
+      "openalex:W4319990415",
+      "openalex:W4385063002",
+      "openalex:W4388145568",
+      "openalex:W4389319255",
+      "openalex:W4389426605",
+      "openalex:W4389444027",
+      "openalex:W4389692425",
+      "openalex:W4395027749",
+      "openalex:W4400446538",
+      "openalex:W4401349710",
+      "openalex:W4402630604",
+      "openalex:W4402830355",
+      "openalex:W4403977303",
+      "openalex:W4404293732",
+      "openalex:W4405598966",
+      "openalex:W4406415116",
+      "openalex:W4406753940",
+      "openalex:W4407864930",
+      "openalex:W4411203094",
+      "openalex:W4411442985"
+    ],
+    "related_works": [
+      "openalex:W2952426663",
+      "openalex:W2038430283",
+      "openalex:W2346939607",
+      "openalex:W2990396425",
+      "openalex:W4388078487",
+      "openalex:W4309766231",
+      "openalex:W4205459552",
+      "openalex:W3005570398",
+      "openalex:W3005892436",
+      "openalex:W3044239796"
+    ]
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s44212-025-00086-8",
+    "openalex": "W4413797294",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-12T18:27:19Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.003546,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1038,
+      "out": 221
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-12T18:27:19Z",
+    "doi": "10.1007/s44212-025-00086-8",
+    "journal": "Urban Informatics",
+    "source_id": "S4387283136",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance and robustness of the system are demonstrated using experimental ground vehicle data, but the abstract does not specify the variety of urban environments or driving conditions tested.",
+      "what": "This paper introduces a GNSS/INS/Mamba-ODO navigation framework that maps raw IMU outputs to 3D vehicle velocity using asymmetric sequence segmentation, multi-scale temporal modeling, and a state-space sequence learning backbone. Ground vehicle experiments demonstrate that the method achieves a mean Root Mean Square Error (RMSE) of 0.22 m/s in 3D velocity estimation and maintains a 3D positioning RMSE within 0.20 m during a 120-second GNSS outage.",
+      "why": "It replaces traditional velocity constraints that degrade due to inaccurate installation angle estimations, enabling highly accurate and robust vehicle positioning in GNSS-denied urban environments without relying on precise physical alignment of the Inertial Measurement Unit."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-06",
+  "work_key": "doi:10.1007/s44212-025-00086-8"
+}

@@ -1,0 +1,217 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The demand for maritime surveillance has given rise to the need for monitoring fishing vessel activities, particularly in addressing the challenge of \"dark vessels\" that operate without Automatic Identification System (AIS) transmission. This study presents a novel approach for detecting small-scale fishing vessels using nighttime light (NTL) imagery from the SDGSAT-1 satellite, combined with deep learning techniques to enhance fishing monitoring awareness along the western coast of India. A dual-branch YOLO11 architecture was developed to exploit both the 10-meter panchromatic and 40-meter RGB imagery from SDGSAT-1. The custom model architecture was specifically optimized for small object detection in NTL imagery, featuring parallel convolutional backbones that process both modalities before concatenation for enhanced feature extraction. The dual-branch YOLO11 model demonstrated optimal performance with a precision of 0.99, recall of 0.93, F1-score of 0.96, and mAP@50 of 0.96, significantly outperforming single-branch implementations of YOLOv5s, YOLOv8s, and standard YOLO11s architectures. When applied to the western coast of India, the model detected 31525 vessel instances across the temporal dataset spanning 2022-23. Cross-matching analysis with AIS data revealed that only 7146 (22.7%) of detected vessels had corresponding AIS transmissions, while 24379 (77.3%) were identified as potential dark vessels. Spatio-temporal analysis showed peak fishing activity during January-April, with a primary activity corridor parallel to the coastline within 50-100 km, corresponding to productive continental shelf areas. This research contributes to maritime surveillance capabilities by highlighting the effectiveness of nighttime lights satellite imagery for fishing vessel detection and provides valuable insights into fishing patterns and potential regulatory compliance issues in Indian waters.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Shantakar Mohanty",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Prasun Kumar Gupta",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Raian Vargas Maretto",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG",
+      "eess.IV",
+      "stat.AP"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.09360v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09360v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-10",
+    "title": "Deep Learning based Detection of Fishing Vessels and Fishing Monitoring using Nightlight Images"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-10_2608.09360",
+    "members": [
+      "arxiv:2608.09360"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5146447893",
+        "label": "Shantakar Mohanty"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0689-4167",
+        "label": "Prasun Kumar Gupta"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4983-2700",
+        "label": "Raian Vargas Maretto"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11963",
+        "is_primary": true,
+        "label": "Impact of Light on Environment and Health",
+        "score": 0.7331,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11164",
+        "is_primary": false,
+        "label": "Remote Sensing and LiDAR Applications",
+        "score": 0.0718,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10851",
+        "is_primary": false,
+        "label": "Optical Wireless Communication Technologies",
+        "score": 0.024,
+        "subfield": "2208"
+      }
+    ]
+  },
+  "first_published": "2026-08-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.09360",
+    "doi": "10.48550/arxiv.2608.09360",
+    "openalex": "W7202197241",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:40:42Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.006402,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2168,
+      "out": 350
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 1.0,
+      "relevance": 0.6964,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4786,
+    "relevance": 0.6964
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "A dual-branch YOLO11 deep learning model was developed to detect small-scale fishing vessels using 10-meter panchromatic and 40-meter RGB nighttime light imagery from the SDGSAT-1 satellite. Applied to the western coast of India across a 2022-2023 dataset, the model detected 31,525 vessel instances with a precision of 0.99 and an mAP@50 of 0.96. Cross-matching with Automatic Identification System (AIS) data revealed that 77.3% (24,379) of the detected vessels operated without active AIS transmissions.",
+      "why": "It establishes a highly accurate method for detecting 'dark vessels' that evade traditional tracking systems, revealing that more than three-quarters of the fishing vessels operating off India's western coast are unmonitored by standard AIS."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-10",
+  "work_key": "arxiv:2608.09360"
+}

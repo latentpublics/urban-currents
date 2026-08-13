@@ -1,0 +1,236 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Time-sensitive networking (TSN) is increasingly integrated into mobile edge computing (MEC) to support applications with stringent latency requirements, such as extended reality (XR). However, existing TSN scheduling solutions predominantly rely on static optimization techniques or centralized learning models that are based on fixed traffic patterns, limiting their effectiveness in dynamic environments. In practice, MEC environments often host multiple co-located XR traffic flows whose characteristics evolve over time, creating complex inter-queue dependencies that current schedulers fail to capture. Addressing these challenges requires adaptive, decentralized scheduling mechanisms capable of coordinating multiple TSN queues under varying traffic conditions. To this end, this paper proposes a multi-agent reinforcement learning (MARL) framework for TSN scheduling, where each TSN queue is modeled as an autonomous agent. The Heterogeneous-Agent Proximal Policy Optimization (HAPPO) algorithm is employed to explicitly model inter-agent dependencies and jointly optimize service delivery across queues. The simulation results demonstrate that the proposed approach reduces average frame waiting times by up to 26.8% and worst-case delays by approximately 16.8%, highlighting its effectiveness in dynamic XR-driven MEC scenarios.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Marcos Carvalho",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Fatih Temiz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shavbo Salehi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Melike Erol-Kantarci",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Daniel F. Macedo",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.NI",
+      "cs.AI"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.05346v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.05346v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-05",
+    "title": "Multi-Agent Reinforcement Learning for Online Traffic Scheduling in Time-Sensitive Application"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-05_2608.05346",
+    "members": [
+      "arxiv:2608.05346"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5145958869",
+        "label": "Marcos Carvalho"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146025752",
+        "label": "Fatih Temiz"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5055943275",
+        "label": "Shavbo Salehi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5145988126",
+        "label": "Melike Erol-Kantarci"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5135663590",
+        "label": "Daniel F. Macedo"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12216",
+        "is_primary": true,
+        "label": "Network Time Synchronization Technologies",
+        "score": 0.9656,
+        "subfield": "1705"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13553",
+        "is_primary": false,
+        "label": "Age of Information Optimization",
+        "score": 0.0063,
+        "subfield": "1705"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10933",
+        "is_primary": false,
+        "label": "Real-Time Systems Scheduling",
+        "score": 0.0054,
+        "subfield": "1708"
+      }
+    ]
+  },
+  "first_published": "2026-08-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.05346",
+    "doi": "10.48550/arxiv.2608.05346",
+    "openalex": "W7201855749",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:20:14Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005281,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1846,
+      "out": 279
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 1.0,
+      "relevance": 0.5773,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4309,
+    "relevance": 0.5773
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance gains were evaluated exclusively through simulated XR-driven mobile edge computing scenarios rather than a physical network deployment.",
+      "what": "A multi-agent reinforcement learning (MARL) framework using the Heterogeneous-Agent Proximal Policy Optimization (HAPPO) algorithm was developed to schedule time-sensitive network (TSN) traffic queues in mobile edge computing environments. Tested in simulations of dynamic extended reality (XR) traffic flows, the decentralized framework models each queue as an autonomous agent to capture inter-queue dependencies. The approach reduced average frame waiting times by up to 26.8% and worst-case delays by approximately 16.8% compared to baseline schedulers.",
+      "why": "It replaces static optimization and centralized scheduling models with an adaptive, decentralized mechanism capable of coordinating multiple co-located traffic queues under continuously changing network conditions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-05",
+  "work_key": "arxiv:2608.05346"
+}

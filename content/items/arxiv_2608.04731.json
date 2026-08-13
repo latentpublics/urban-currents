@@ -1,0 +1,209 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "We propose an improved mean-field analysis of cellular automata models of single-lane vehicular traffic. By combining aspects of the Car-Oriented-Mean-Field (COMF) theory and the 2-site cluster method, which have been previously successfully applied to similar models, we aim to capture both short- and long-range correlations more accurately. In contrast to classical mean-field theories, the improved method is well suited for models with inhomogeneous stationary states and able to capture the essential properties of phase separation, e.g. in models with slow-to-start rules. The improved accuracy and new physical insights are illustrated through an application to the VDR model with $v_{\\text{max}}=1$.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Yasar Efe Dai",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Andreas Schadschneider",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Michael Schreckenberg",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cond-mat.stat-mech",
+      "nlin.CG",
+      "physics.soc-ph"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.04731v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.04731v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-05",
+    "title": "An improved car-oriented mean-field theory for stochastic traffic flow models"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-05_2608.04731",
+    "members": [
+      "arxiv:2608.04731"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5088487758",
+        "label": "Yasar Efe Dai"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2054-7973",
+        "label": "Andreas Schadschneider"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0823-2338",
+        "label": "Michael Schreckenberg"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": true,
+        "label": "Traffic control and management",
+        "score": 0.9624,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11500",
+        "is_primary": false,
+        "label": "Evacuation and Crowd Dynamics",
+        "score": 0.0103,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11195",
+        "is_primary": false,
+        "label": "Simulation Techniques and Applications",
+        "score": 0.003,
+        "subfield": "1803"
+      }
+    ]
+  },
+  "first_published": "2026-08-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.04731",
+    "doi": "10.48550/arxiv.2608.04731",
+    "openalex": "W7196925262",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:20:14Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.004863,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1676,
+      "out": 261
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.6914,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.2766,
+    "relevance": 0.6914
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The improved method's accuracy and physical insights are demonstrated only on a simplified model with a maximum velocity of one.",
+      "what": "The study develops an improved mean-field analysis for single-lane cellular automata traffic models by combining the Car-Oriented-Mean-Field (COMF) theory with the 2-site cluster method. The hybrid analytical method is designed to capture both short- and long-range correlations in models with inhomogeneous stationary states, and its accuracy is demonstrated using the Velocity-Dependent-Randomization (VDR) model with a maximum velocity of 1.",
+      "why": "The new analytical method successfully captures phase separation and slow-to-start rules in stochastic traffic models, providing a theoretical capability to analyze inhomogeneous stationary states that classical mean-field theories cannot accurately describe."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-05",
+  "work_key": "arxiv:2608.04731"
+}

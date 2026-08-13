@@ -1,0 +1,262 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "AI models are becoming increasingly adept at understanding and processing spatial information, thereby facilitating agentic problem-solving in spatial tasks and workflows. However, most of the research on their spatial capabilities (e.g., spatial reasoning) has focused on the textual modality as input and output. This contrasts with the human approach to GIS workflows, where text and visual modalities are often used together, interchangeably, and in a complementary manner. Thus, to truly achieve an automated GIS analysis pipeline or carry out human-designed GIS workflows, AI models --- Large Multimodal Models (LMMs) in particular --- need to be able to seamlessly transition between image- and text-based modalities that are traditionally used in such workflows. We present a modality transfer task that (1) asks an LMM to first describe an input image of colored squares in a regular grid, and (2) asks a new LMM instance to re-generate an image of the original spatial scene using the textual description output by the former model. This task quantifies the ability of LMMs to transfer spatial information between image and text modalities. Ultimately, by examining the modality transfer capability of LMMs through the lens of spatial information theory, this work highlights a critical bottleneck: achieving strong and robust geospatial understanding in LMMs requires rigorous, multi-modal alignment. Our results indicate that recent LMMs (here from OpenAI) still struggle with modality transfer, when tasked with re-generating an image of a simple spatial grid of color squares.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ivan Majic",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zexian Huang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Franziska Hübl",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Krzysztof Janowicz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Meilin Shi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mina Karimi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zilong Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alexandra Fortacz-Lazan",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.06948v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.06948v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-07",
+    "title": "LMM Modality Transfer: A Pre-requisite for Autonomous GIS Agents"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-07_2608.06948",
+    "members": [
+      "arxiv:2608.06948"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0834-3791",
+        "label": "Ivan Majić"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146299074",
+        "label": "Zexian Huang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146293144",
+        "label": "Franziska Hübl"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146317723",
+        "label": "Krzysztof Janowicz"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6039-7810",
+        "label": "Meilin Shi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146369731",
+        "label": "Mina Karimi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146333864",
+        "label": "Zilong Liu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146410462",
+        "label": "Alexandra Fortacz-Lazan"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11714",
+        "is_primary": true,
+        "label": "Multimodal Machine Learning Applications",
+        "score": 0.3552,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11596",
+        "is_primary": false,
+        "label": "Constraint Satisfaction and Optimization",
+        "score": 0.2607,
+        "subfield": "1705"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11904",
+        "is_primary": false,
+        "label": "Spatial Cognition and Navigation",
+        "score": 0.1419,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-08-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.06948",
+    "doi": "10.4230/lipics.cosit.2026.14",
+    "openalex": "W7202128628",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:33:54Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005589,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1986,
+      "out": 290
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.5548,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.2219,
+    "relevance": 0.5548
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The evaluation is limited to synthetic grids of colored squares and OpenAI models, rather than real-world GIS interfaces or a broader suite of open-source LMMs.",
+      "what": "This study introduces a modality transfer task to evaluate the ability of Large Multimodal Models (LMMs) to translate spatial information between visual and textual formats. The task requires one LMM instance to describe an image of colored squares in a regular grid, and a second instance to reconstruct the original image based solely on that textual description. Testing OpenAI's LMMs on this task revealed that the models struggle to accurately reconstruct even these simple spatial grids.",
+      "why": "It identifies and quantifies a critical bottleneck in the development of autonomous GIS agents, demonstrating that current state-of-the-art models lack the robust, multi-modal spatial alignment required to execute human-like GIS workflows that rely on translating between visual maps and text."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-07",
+  "work_key": "arxiv:2608.06948"
+}

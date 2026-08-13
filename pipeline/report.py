@@ -226,8 +226,12 @@ def build_report(out_path: Optional[Path] = None) -> Path:
                  _verdict(q1_p_ok) if p_at_10 is not None else PENDING_HUMAN],
                 ["Q2", "Is there enough signal for a daily?", "median >= 5 items/day",
                  _fmt(median_day, 1), _verdict(q2_ok)],
+                # A rate inside the band is not a passing Q3 when the score it
+                # thresholds is degenerate. The verdict follows the measurement,
+                # and the measurement says the formula cannot carry a line yet.
                 ["Q3", "Where does the quiet-day line go?", "headline rate 30-50%",
-                 _fmt(rate, 3), _verdict(q3_ok)],
+                 _fmt(rate, 3),
+                 "PROVISIONAL" if (calib or {}).get("provisional") else _verdict(q3_ok)],
                 ["Q4", "Does review fit the budget?", "median <= 15 min/day",
                  _fmt(review_median, 1) if review_median else PENDING_HUMAN,
                  _verdict(q4_ok) if review_median else PENDING_HUMAN],
@@ -323,23 +327,34 @@ def build_report(out_path: Optional[Path] = None) -> Path:
         A(f"Backfill {backfill_meta['start']} → {backfill_meta['end']} "
           f"({backfill_meta['days']} days):")
         A("")
+        # Every count carries the name of the population it counts. The
+        # calibration bug this report documents was a number computed on one
+        # population and read as another; a bare "17,093" sitting next to a
+        # bare "37,390" reads as a loss rather than a filter.
         L.extend(
             _table(
-                ["stage", "count"],
+                ["population", "count", "meaning"],
                 [
-                    ["candidates collected", backfill_meta.get("candidates")],
-                    ["after dedup", backfill_meta.get("after_dedup")],
-                    ["after gate", backfill_meta.get("after_gate")],
-                    ["rejected by gate", backfill_meta.get("gate_rejected")],
-                    [f"above relevance {backfill_meta.get('selection_threshold')}",
-                     backfill_meta.get("selected")],
+                    ["`collected`", backfill_meta.get("candidates"),
+                     "records returned by arXiv + OpenAlex"],
+                    ["`after_dedup`", backfill_meta.get("after_dedup"),
+                     "preprint and journal record merged into one"],
+                    ["`after_gate`", backfill_meta.get("after_gate"),
+                     "cleared the keyword gate — the scored population"],
+                    ["`gate_rejected`", backfill_meta.get("gate_rejected"),
+                     "dropped by the gate"],
+                    ["`above_threshold`", backfill_meta.get("selected"),
+                     f"journal by membership, or arXiv ≥ "
+                     f"{backfill_meta.get('selection_threshold')}"],
+                    ["`published`", backfill_meta.get("published"),
+                     "would have filled the 24 daily slots"],
                 ],
             )
         )
         A("")
     if calib and calib.get("daily_distribution"):
         dd = calib["daily_distribution"]
-        A(f"Per-day selected items over {dd.get('days_observed')} days — "
+        A(f"Per-day `above_threshold` items over {dd.get('days_observed')} days — "
           f"median **{_fmt(dd.get('median_per_day'), 1)}**, "
           f"p25 {_fmt(dd.get('p25_per_day'), 1)}, p75 {_fmt(dd.get('p75_per_day'), 1)}, "
           f"range {dd.get('min_per_day')}–{dd.get('max_per_day')}.")
@@ -385,13 +400,93 @@ def build_report(out_path: Optional[Path] = None) -> Path:
     if not calib or calib.get("status") != "OK":
         A("Not calibrated. Run `uc backfill --days 90` then `uc calibrate --apply`.")
     else:
-        A(f"Chosen threshold **{calib['headline_threshold']}** — the "
-          f"{calib['quantile']} quantile of daily top scores across "
-          f"{calib['n_days']} days, giving a headline rate of "
-          f"**{calib['headline_rate']:.1%}** against a 30–50% target "
-          f"({'in band' if calib['in_band'] else 'OUT OF BAND'}).")
+        if calib.get("provisional"):
+            A("**PROVISIONAL — Q3 is not settled.** A threshold was found that "
+              "lands in the target band, but landing in the band is not the "
+              "same as the threshold meaning something:")
+            A("")
+            for reason in calib.get("reasons") or []:
+                A(f"- {reason}")
+            A("")
+            A("Recorded, not worked around. Moving the weights until the number "
+              "looks better is where the figures would start lying. The formula "
+              "is PRD §5.6's to change.")
+            A("")
+
+        A(f"Chosen threshold **{calib['headline_threshold']}**, giving a "
+          f"headline rate of **{calib['headline_rate']:.1%}** across "
+          f"{calib['n_days']} days against a 30–50% target "
+          f"({'in band' if calib['in_band'] else 'OUT OF BAND'}). Measured on "
+          f"the {calib.get('n_selected')} items that would have been "
+          f"`{calib.get('population', 'published')}`, not on the candidate "
+          f"pool — a day's headline is the top card of its issue.")
         A("")
-        A("Headline-score quantiles over the selected backfill items:")
+
+        audit = calib.get("component_audit")
+        if audit:
+            A("**What each weighted component actually does.** A component that "
+              "takes one value across a path contributes nothing to ranking on "
+              "that path, whatever weight it carries:")
+            A("")
+            rows_a = []
+            for name, a in audit.items():
+                for path, s in (a.get("by_source") or {}).items():
+                    rows_a.append([
+                        f"`{name}`", a.get("weight"), path, s["distinct_values"],
+                        f"{s['modal_value']} @ {s['modal_share']:.1%}",
+                    ])
+            L.extend(_table(
+                ["component", "weight", "path", "distinct values", "modal value"],
+                rows_a,
+            ))
+            A("")
+
+        qm = calib.get("quantile_method")
+        if qm:
+            A(f"The threshold is enumerated rather than estimated. The daily "
+              f"top scores take only {qm['distinct_daily_tops']} distinct "
+              f"values, because every day publishes a whitelist journal "
+              f"article and those score identically; a quantile lands inside "
+              f"that tie and reports a {qm['rate']:.1%} rate at threshold "
+              f"{qm['threshold']}. Each distinct top is tried instead and the "
+              f"measured rate closest to the band's middle wins.")
+            A("")
+
+        decay = calib.get("novelty_decay")
+        if decay:
+            A("**The novelty term dies.** The overlay vocabulary is a closed "
+              "list, so once the archive has seen it the term goes to zero and "
+              "stays there. Mean novelty of published items, by month of the "
+              "backfill:")
+            A("")
+            L.extend(_table(["month", "mean novelty", "items"],
+                            [[m, v["mean"], v["n"]] for m, v in decay.items()]))
+            A("")
+            A("In steady state a whitelist journal article scores a flat 0.44 "
+              "and only an arXiv item carrying code or data links can lift a "
+              "day above it. Whether a term that saturates in two weeks belongs "
+              "in the headline formula is PRD §5.6's question — recorded here, "
+              "not decided here.")
+            A("")
+
+        offset = load_json(paths.RUNS / "backfill" / "novelty_offset.json")
+        mat = (offset or {}).get("archive_maturity") or {}
+        if mat.get("status") == "OK":
+            live_rate = sum(1 for i in issues if not i.quiet_day)
+            A(f"**The live rate will not match this yet.** {live_rate} of "
+              f"{len(issues)} published days currently carry a headline. The "
+              f"threshold was calibrated against an archive {mat['archive_items_replay']} "
+              f"items deep; `content/` holds {mat['archive_items_live']} behind "
+              f"those days, so almost every tag is still fresh — mean novelty "
+              f"{mat['novelty_live_mean']} live against {mat['novelty_replay_mean']} "
+              f"in the replay, worth {mat['headline_mean_shift']} on the headline "
+              f"score. The LLM tags the backfill lacks account for only "
+              f"{(offset.get('headline_score_offset') or {}).get('mean_shift')} of "
+              f"that. It decays on its own as days accumulate; it is the archive "
+              f"being young, not the threshold being wrong.")
+            A("")
+
+        A("Headline-score quantiles over the published backfill items:")
         A("")
         L.extend(_table(["quantile", "score"],
                         [[q, v] for q, v in calib["score_quantiles"].items()]))

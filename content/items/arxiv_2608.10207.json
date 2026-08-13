@@ -1,0 +1,170 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Bus bunching degrades service regularity and increases passenger waiting in high-frequency transit. Existing reinforcement-learning-based holding controllers primarily rely on instantaneous operational variables or route-specific stop identifiers, which provide limited information about the functional and operational context of individual stops and constrain policy reuse across routes. This study introduces an LLM-assisted semantic stop representation for event-driven bus holding control. An LLM is used offline to transform heterogeneous stop information, including physical attributes, surrounding activity context, and historical operational characteristics, into fixed semantic embeddings that are incorporated into a deep Q-learning controller without requiring real-time LLM inference. Experiments are conducted in stochastic simulations calibrated with observed data from two bus routes. Compared with the best calibrated Daganzo baseline, the semantic controller reduces headway variability, bunching events, and passenger waiting time by 32.0%, 69.2%, and 24.0%, respectively. A route-specific stop identifier does not improve the spacing-only controller, whereas semantic stop information improves headway regularity, waiting time, and holding effort, providing a more favorable overall trade-off across control objectives. Cross-route experiments further show that zero-shot transfer provides limited immediate generalization, while warm-start fine-tuning accelerates early-stage learning and improves transferred policies; cold-start training nevertheless achieves the best final performance. These findings suggest that semantic state representations can complement conventional operational states and support adaptation-based policy reuse across related transit routes.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Xin Dong",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Vikash V. Gayah",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.10207v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10207v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-10",
+    "title": "Mitigating Bus Bunching with Reinforcement Learning Enhanced by Semantic Stop Embedding"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-10_2608.10207",
+    "members": [
+      "arxiv:2608.10207"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:reinforcement-learning",
+        "label": "reinforcement learning"
+      },
+      {
+        "confidence": 0.9286,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.10207",
+    "doi": "10.48550/arxiv.2608.10207",
+    "openalex": null,
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:40:42Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005691,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1976,
+      "out": 303
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.5,
+      "relevance": 0.7827,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4131,
+    "relevance": 0.7827
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The controller's performance was evaluated in simulations calibrated to only two bus routes, and zero-shot transfer to new routes showed limited immediate generalization without fine-tuning.",
+      "what": "The study develops a deep Q-learning controller for event-driven bus holding that incorporates offline LLM-generated semantic embeddings of bus stops, capturing physical attributes, surrounding activity context, and historical operational characteristics. Tested in stochastic simulations calibrated with data from two bus routes, the semantic controller reduced headway variability by 32.0%, bus bunching events by 69.2%, and passenger waiting times by 24.0% compared to a calibrated Daganzo baseline.",
+      "why": "It demonstrates that embedding functional and operational stop context into reinforcement learning controllers improves headway regularity over traditional spacing-only models, while enabling faster policy adaptation on new routes through warm-start fine-tuning."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-10",
+  "work_key": "arxiv:2608.10207"
+}

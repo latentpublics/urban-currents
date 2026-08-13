@@ -1,0 +1,220 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Federated adaptation of time-series foundation models (TSFMs) is attractive for building energy forecasting because meter data are private, distributed, and highly non-IID. However, a single parameter-sharing strategy is unlikely to serve all pretrained TSFMs or building clients: fully shared adapters can suppress building-specific temporal behavior, while fully local adaptation discards cross-building transfer. We propose a personalized federated sparse adaptation framework with a heterogeneous temporal mixture-of-experts (MoE) adapter placed after the pretrained TSFM representation. A sequence-level router maps each 168-hour context window to a top-$k$ subset of experts specialized for periodicity, long-range interactions, local variation, trend-residual structure, and multi-resolution behavior. We compare global FL, local training, and personalized FL variants with globally shared or client-private expert banks. Across 50 buildings and three TSFM backbones, personalization consistently outperforms Global FL-MoE and Local MoE, while the best sparse-adaptation strategy varies by backbone and metric. Routing behavior further reveals client-level expert specialization, expert concentration, and near-uniform routing across backbones, showing that federated TSFM adaptation should be both client-aware and backbone-aware.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Priyanka Nihalchandani",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Naman Srivastava",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Varun Ojha",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Pandarasamy Arjunan",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "stat.ML"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.04695v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.04695v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-05",
+    "title": "Personalized Federated Sparse Adaptation of Time-Series Foundation Models"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-05_2608.04695",
+    "members": [
+      "arxiv:2608.04695"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5128752480",
+        "label": "Priyanka Nihalchandani"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7521-6525",
+        "label": "Naman Srivastava"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0000-5592-8218",
+        "label": "Varun Ojha"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7697-3576",
+        "label": "Pandarasamy Arjunan"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12205",
+        "is_primary": true,
+        "label": "Time Series Analysis and Forecasting",
+        "score": 0.2101,
+        "subfield": "1711"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11052",
+        "is_primary": false,
+        "label": "Energy Load and Power Forecasting",
+        "score": 0.1706,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10121",
+        "is_primary": false,
+        "label": "Building Energy and Comfort Optimization",
+        "score": 0.1168,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-08-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.04695",
+    "doi": "10.48550/arxiv.2608.04695",
+    "openalex": "W7196973574",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:20:14Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.004905,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1896,
+      "out": 229
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.5305,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.2122,
+    "relevance": 0.5305
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "50 buildings",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The paper introduces a personalized federated sparse adaptation framework for adapting pretrained time-series foundation models to building energy forecasting. The framework uses a temporal mixture-of-experts adapter with a sequence-level router that maps 168-hour context windows to specialized experts, tested across 50 buildings and three foundation model backbones.",
+      "why": "It demonstrates that personalized federated learning outperforms both purely global and purely local adaptation strategies for building energy data, showing that federated foundation model adaptation must be tailored to both individual client characteristics and the specific model backbone."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-05",
+  "work_key": "arxiv:2608.04695"
+}

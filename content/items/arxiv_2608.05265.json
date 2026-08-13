@@ -1,0 +1,287 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Prediction of post-wildfire debris flows is critical for mitigating hazards to communities, infrastructure, and resources during intense rainfall in recently burned areas. However, identifying reliable machine learning models is complicated by overlapping debris-flow and non-debris-flow events in feature space, the need for model interpretability, and limited training data. This paper addresses these challenges through a systematic evaluation of machine learning models in terms of predictive performance, feature importance, and synthetic data augmentation. Using basin-scale observations of post-wildfire debris-flow events across the western United States, we compare 15 models, including the Tabular Prior-Data Fitted Network (TabPFN). Repeated stratified cross-validation shows that TabPFN achieves the highest unaugmented performance with a threat score of 0.637, closely followed by the best tree-based models. SHapley Additive exPlanations (SHAP) are used to identify the features driving predictions, revealing that short-duration rainfall intensity and storm accumulation consistently rank highest, while burn severity and terrain features contribute less. We further evaluate synthetic data augmentation using TabPFN-generated samples to address the scarcity of debris-flow observations. Synthetic augmentation improves the performance of all models except CNN, with the largest mean threat score increase of +0.041 among the deep learning models. By combining rigorous model benchmarking, interpretable feature analysis, and synthetic data augmentation, this work provides a comprehensive framework for improving post-wildfire debris-flow prediction.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Quinn Ledingham",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zhengsen Xu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yimin Zhu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zack Dewis",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mabel Heffring",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Saeid Taleghanidoozdoozan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Motasem Alkayid",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Megan Greenwood",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Lincoln Linlin Xu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.05265v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.05265v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-05",
+    "title": "Evaluating Machine Learning Models for Post-Wildfire Debris-Flow Prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-05_2608.05265",
+    "members": [
+      "arxiv:2608.05265"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5120031503",
+        "label": "Quinn Ledingham"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5145982328",
+        "label": "Zhengsen Xu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5145958982",
+        "label": "Yimin Zhu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5122124480",
+        "label": "Zack Dewis"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5118889304",
+        "label": "Mabel Heffring"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9586-0016",
+        "label": "Saeid Taleghanidoozdoozan"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5118889303",
+        "label": "Motasem Alkayid"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5085734932",
+        "label": "M. Greenwood"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5122244118",
+        "label": "Lincoln Linlin Xu"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10555",
+        "is_primary": true,
+        "label": "Fire effects on ecosystems",
+        "score": 0.6124,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10535",
+        "is_primary": false,
+        "label": "Landslides and related hazards",
+        "score": 0.3114,
+        "subfield": "2308"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12597",
+        "is_primary": false,
+        "label": "Fire Detection and Safety Systems",
+        "score": 0.0245,
+        "subfield": "2213"
+      }
+    ]
+  },
+  "first_published": "2026-08-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.05265",
+    "doi": "10.48550/arxiv.2608.05265",
+    "openalex": "W7201870386",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:20:14Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.00606,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1988,
+      "out": 342
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 1.0,
+      "relevance": 0.7022,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4809,
+    "relevance": 0.7022
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study evaluated 15 machine learning models, including the Tabular Prior-Data Fitted Network (TabPFN), to predict post-wildfire debris flows using basin-scale observations across the western United States. TabPFN achieved the highest unaugmented predictive performance with a threat score of 0.637, while SHAP analysis revealed that short-duration rainfall intensity and storm accumulation are the primary predictive features. Synthetic data augmentation using TabPFN-generated samples improved the performance of almost all models, yielding a mean threat score increase of up to 0.041 for deep learning models.",
+      "why": "It establishes that TabPFN and synthetic data augmentation can successfully mitigate the challenge of scarce training data in hazard prediction, while demonstrating that rainfall metrics are significantly more influential predictors of post-wildfire debris flows than burn severity or terrain features."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-05",
+  "work_key": "arxiv:2608.05265"
+}

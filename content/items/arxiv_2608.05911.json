@@ -1,0 +1,246 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This paper presents an end-to-end, IIIF-based pipeline that turns the digitised Armenian press of France into an interactive map of the 20th-century Parisian Armenian commercial community. On each page, commercial advertisements are located, read, and parsed into structured records, which are then geocoded and placed on the map. Western Armenian is under-resourced and unsupported by off-the-shelf layout and OCR models, so the pipeline uses vision-language models (VLMs) as a data-bootstrapping strategy: they produce usable structured records at a scale hand annotation could not reach, and stay reliable on the strongly curved scans where conventional line-level CRNN OCR breaks down. The contribution includes a 500-page Western Armenian press corpus with 3,270 advertisement-level annotations, a Label Studio template that captures detection and semantic fields in a single annotation pass, and a reproducible workflow transposable to other under-resourced historical corpora. More broadly, the work shows that VLM-driven data bootstrapping is an effective lever for under-resourced historical languages such as (Western) Armenian.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "CJM, LIPN",
+            "ror": null
+          }
+        ],
+        "name": "Chahan Vidal-Gorène",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "UFAR",
+            "ror": null
+          }
+        ],
+        "name": "Seda Kirakosyan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "UFAR",
+            "ror": null
+          }
+        ],
+        "name": "Edita Matevosyan",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.05911v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.05911v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-06",
+    "title": "Mapping Armenian Paris: Extracting and Geocoding Commercial Advertisements from the 20th-Century Diaspora Press"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-06_2608.05911",
+    "members": [
+      "arxiv:2608.05911"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/0105bs557",
+        "label": "De Lijn (Belgium)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/04gq4y167",
+        "label": "UFA (United States)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/05w92f868",
+        "label": "Fondation Université Française en Arménie"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1567-6508",
+        "label": "Chahan Vidal-Gorène"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5145959561",
+        "label": "Seda Kirakosyan"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146016869",
+        "label": "Edita Matevosyan"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q90",
+        "label": "Paris",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12377",
+        "is_primary": true,
+        "label": "Digital Humanities and Scholarship",
+        "score": 0.1588,
+        "subfield": "1208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13910",
+        "is_primary": false,
+        "label": "Computational and Text Analysis Methods",
+        "score": 0.1008,
+        "subfield": "3300"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": false,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.0515,
+        "subfield": "3305"
+      }
+    ]
+  },
+  "first_published": "2026-08-06",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.05911",
+    "doi": "10.48550/arxiv.2608.05911",
+    "openalex": "W7201838568",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:27:15Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005554,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1866,
+      "out": 306
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.7017,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3607,
+    "relevance": 0.7017
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The paper develops an end-to-end, IIIF-based pipeline that extracts, parses, and geocodes commercial advertisements from the 20th-century digitised Armenian press of France. To overcome the lack of off-the-shelf OCR models for Western Armenian, the pipeline uses vision-language models (VLMs) to process curved scans and generate structured records. The authors release a 500-page Western Armenian press corpus containing 3,270 advertisement-level annotations, alongside a unified Label Studio annotation template.",
+      "why": "It establishes a reproducible workflow that allows researchers to extract structured spatial data from historical corpora in under-resourced languages without relying on pre-existing, high-quality OCR models."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-06",
+  "work_key": "arxiv:2608.05911"
+}

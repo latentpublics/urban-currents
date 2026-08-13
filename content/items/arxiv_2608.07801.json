@@ -1,0 +1,252 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Precision nitrogen (N) management (PNM) for cotton requires in-season monitoring of crop growth parameters and N status indicators to decide fertilizer timing, placement, and application rates for optimal canopy development and yield. This study developed remote sensing and machine learning-based methods to estimate cotton dry biomass weight (DBW), plant N uptake (PNU), plant N concentration (PNC), critical N dilution (Nc), and nitrogen nutrition index (NNI) to support PNM. To achieve this, a three-year field-based N-management study was conducted and unmanned aerial vehicle (UAV)-based multispectral images were acquired between early vegetative growth and flowering stages, critical for fertilizer applications. Spatiotemporally consistent spectral and morphological plant features, including plant height (PH) and fractional canopy cover (FCC), provided reliable model training inputs. DBW, PNU, and PNC estimates from simple regression using vegetation indices (VIs), multiple linear regression (MLR) combining VIs, PH, and FCC, and decision-tree models, random forest regression (RFR) and extreme gradient boosting (XGB), combining spectral reflectance, PH, and FCC were evaluated using trial-held-out (THO) and leave-one-year-out (LOYO) validation methods. The best validation accuracies were from RFRTHO (R2 = 0.88 and MAPE = 23.14% for DBW; R2 = 0.84 and MAPE = 20.61% for PNU; R2 = 0.85 and MAPE = 7.82% for PNC) and XGBTHO (R2 = 0.87 and MAPE = 21.91% for DBW; R2 = 0.81 and MAPE = 21.40% for PNU; R2 = 0.86 and MAPE = 7.66% for PNC). Nc was calculated from model estimated DBW and PNC for high-yielding, medium-to-tall cotton varieties grown in the Texas Coastal Plains and validated using ground-truth biomass measurements. NNI derived from XGBTHO outputs performed marginally better than NNI from RFRTHO in identifying N-deficient plots and multi-level N-stress categorization.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Vaishali Swaminathan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Nithya Rajan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "J Alex Thomasson",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Amrit Shrestha",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Karem Meza Capcha",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Robert Hardin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Pramod Pokhrel",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "eess.IV",
+      "cs.LG"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.07801v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07801v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-07",
+    "title": "Integrating spectral and morphological plant features with decision-tree models for early-season cotton biomass and nitrogen status estimation from multi-year UAV data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-07_2608.07801",
+    "members": [
+      "arxiv:2608.07801"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3040-3495",
+        "label": "Vaishali Swaminathan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3798-2629",
+        "label": "Nithya Rajan"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146564638",
+        "label": "J Alex Thomasson"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4305-5824",
+        "label": "Amrit Shrestha"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5115082459",
+        "label": "KAREM MEZA CAPCHA"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146496560",
+        "label": "Robert Hardin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0289-8710",
+        "label": "Pramod Pokhrel"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10111",
+        "is_primary": true,
+        "label": "Remote Sensing in Agriculture",
+        "score": 0.9138,
+        "subfield": "2303"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10770",
+        "is_primary": false,
+        "label": "Soil Geostatistics and Mapping",
+        "score": 0.0226,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10616",
+        "is_primary": false,
+        "label": "Smart Agriculture and AI",
+        "score": 0.0056,
+        "subfield": "1110"
+      }
+    ]
+  },
+  "first_published": "2026-08-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.07801",
+    "doi": "10.48550/arxiv.2608.07801",
+    "openalex": "W7202211528",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:33:54Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.006561,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2364,
+      "out": 335
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.5562,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.2225,
+    "relevance": 0.5562
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The critical nitrogen dilution curve and models were developed and validated specifically for high-yielding, medium-to-tall cotton varieties grown in the Texas Coastal Plains, which may limit direct transferability to other cotton varieties or growing regions.",
+      "what": "The study developed and evaluated machine learning models to estimate cotton growth and nitrogen status indicators using UAV-based multispectral imagery, plant height, and fractional canopy cover collected over three years. Random forest and extreme gradient boosting models achieved high validation accuracies, with R2 values up to 0.88 for dry biomass weight, 0.84 for plant nitrogen uptake, and 0.86 for plant nitrogen concentration.",
+      "why": "It demonstrates that combining spectral reflectance with physical crop morphology features in decision-tree models allows for the reliable, non-destructive estimation of critical nitrogen nutrition indices during early vegetative stages, enabling more precise fertilizer management."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-07",
+  "work_key": "arxiv:2608.07801"
+}

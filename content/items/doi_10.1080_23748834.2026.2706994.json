@@ -70,7 +70,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": [
       {
@@ -174,21 +174,24 @@
   },
   "lens": null,
   "provenance": {
-    "classifier_version": "clf-2026-08-12",
-    "collected_at": "2026-08-12T16:23:30Z",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-12T23:45:52Z",
     "collectors": [
       "openalex"
     ],
-    "cost_usd": 0.0,
-    "llm": null,
+    "cost_usd": 0.001909,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
-      "in": 0,
-      "out": 0
+      "in": 1814,
+      "out": 278
     }
   },
   "publication_status": {
-    "detected_at": "2026-08-12T16:23:30Z",
+    "detected_at": "2026-08-12T23:45:52Z",
     "doi": "10.1080/23748834.2026.2706994",
     "journal": "Cities & Health",
     "source_id": "S4210220597",
@@ -204,11 +207,11 @@
     "components": {
       "artifact_completeness": 0.2,
       "novelty": 0.0,
-      "relevance": 0.9978,
+      "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.4391,
-    "relevance": 0.9978
+    "headline": 0.44,
+    "relevance": 1.0
   },
   "signals": {
     "code_available": {
@@ -225,7 +228,13 @@
       "url": null,
       "value": false
     },
-    "geographic_scope": null,
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
     "is_retracted": {
       "basis": "rule",
       "confidence": "high",
@@ -249,7 +258,11 @@
     }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The findings are based on a scoping review of existing quantitative literature, meaning the identified relationships are subject to the methodological limitations and varied designs of the 34 underlying studies.",
+      "what": "This scoping review synthesizes quantitative evidence from 34 studies conducted in high-density Asian cities to map built environment correlates of physical activity using the '5Ds' framework. The synthesis reveals that Design and Destination Accessibility are the most consistent predictors of physical activity, particularly for leisure, while Density and Diversity show complex, non-linear associations, and Distance to Transit has a weaker relationship primarily limited to walking.",
+      "why": "It establishes that the standard '5Ds' framework operates differently in hyper-dense Asian contexts compared to Western cities, demonstrating that density and diversity do not have simple linear relationships with physical activity when baseline urban density is already extremely high."
+    }
   },
   "track": "papers",
   "updated": "2026-08-11",

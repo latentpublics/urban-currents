@@ -112,10 +112,23 @@ def stratified_sample(
     from .stages import read_stage
 
     run = Run.for_date(d)
-    # `classify` is the candidate pool: everything that cleared the gate and was
-    # scored, before the daily slots were applied.
-    items = read_stage(run, "classify") or read_stage(run, "select")
+    # `labeling_pool` is the classify pool with summaries attached (written by
+    # `uc prepare-labeling`). Fall back to `classify` — the raw candidate pool —
+    # so the sample is still correct before preparation has run, just without
+    # summaries on screen.
+    items = (
+        read_stage(run, "labeling_pool")
+        or read_stage(run, "classify")
+        or read_stage(run, "select")
+    )
     thr = float(cfg("classifier.threshold", 0.35) if threshold is None else threshold)
+
+    # An item with no abstract cannot be summarised and cannot be judged on
+    # anything but its title. These labels are training data, and a label guessed
+    # from a title is noise — fewer clean labels beat more dirty ones. Measured
+    # 2026-08-05: 6 of 30 sampled items had no abstract, all journal-side
+    # (several Elsevier titles expose none to OpenAlex).
+    items = [it for it in items if (it.bibliography.abstract or "").strip()]
 
     journal = [it for it in items if item_source(it) == "journal"]
     arxiv = [
@@ -325,4 +338,81 @@ def precision_at_k(facet: str = "relevance", k: int = 10) -> dict:
         "summaries_available": round(
             sum(1 for r in rows if r.get("has_summary")) / len(rows), 3
         ),
+    }
+
+
+# --------------------------------------------------------------------------
+# Preparation
+# --------------------------------------------------------------------------
+
+LABELING_POOL_STAGE = "labeling_pool"
+
+
+def prepare_day(
+    d: date,
+    per_source: int = 15,
+    threshold: Optional[float] = None,
+    summarize: bool = True,
+    client=None,
+) -> dict[str, Any]:
+    """Give every item in the day's labelling sample a summary.
+
+    The published issue carries 24 items; the labelling sample is 30 drawn from
+    a wider pool, so a handful each day would otherwise reach the labeller with
+    no summary. That is not a cosmetic gap — labelling from abstracts is roughly
+    three times slower, which is the difference between Q4 being measurable in
+    15 minutes a day and not.
+
+    Writes ``stages/labeling_pool.jsonl``, which ``stratified_sample`` prefers.
+    """
+    from .stages import read_stage, write_stage
+    from .summarize.run import summarize_items
+
+    run = Run.for_date(d)
+    pool_items = read_stage(run, "classify")
+    if not pool_items:
+        return {"date": str(d), "status": "NO_CANDIDATES", "sample": 0}
+
+    without_abstract = sum(
+        1 for it in pool_items if not (it.bibliography.abstract or "").strip()
+    )
+
+    sample = stratified_sample(d, per_source=per_source, threshold=threshold)
+    sample_keys = {it.work_key for it, _, _ in sample}
+
+    # Summaries already produced for the published issue are reused rather than
+    # regenerated — same cache key, but this avoids even the lookup.
+    published = {it.work_key: it for it in read_stage(run, "summarize")}
+    by_key = {it.work_key: it for it in pool_items}
+    for key, done in published.items():
+        if key in by_key and done.summary.en:
+            by_key[key].summary = done.summary
+            by_key[key].signals = done.signals
+            by_key[key].provenance = done.provenance
+
+    needs = [
+        by_key[k]
+        for k in sorted(sample_keys)
+        if k in by_key and not (by_key[k].summary.en and by_key[k].summary.en.what)
+    ]
+
+    stats: dict[str, Any] = {"needed": len(needs), "summarized": 0}
+    if summarize and needs:
+        stats.update(summarize_items(needs, run, client=client))
+
+    write_stage(run, LABELING_POOL_STAGE, list(by_key.values()))
+
+    with_summary = sum(
+        1 for k in sample_keys if by_key.get(k) and by_key[k].summary.en
+        and by_key[k].summary.en.what
+    )
+    return {
+        "date": str(d),
+        "status": "OK",
+        "sample": len(sample),
+        "with_summary": with_summary,
+        "missing_summary": len(sample_keys) - with_summary,
+        # Recorded rather than hidden: it is a coverage bias in the label set.
+        "candidates_without_abstract": without_abstract,
+        **{k: v for k, v in stats.items() if k in ("needed", "summarized", "failures", "status")},
     }

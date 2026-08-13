@@ -1,0 +1,274 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Inland waterways move substantial freight by barge, yet tow configuration, which is important for berth and lock scheduling, remains difficult to observe in near real-time because Automatic Identification System (AIS) transponders are carried by towing vessels rather than barges. This proof-of-concept study evaluates whether barge count can be inferred from AIS-derived towing-vessel trajectories. High-resolution satellite imagery along the Lower Mississippi River was used to label tow instances and link observed barge counts to corresponding AIS trajectories. For each matched trip, 39 features describing vessel geometry, speed and acceleration behavior, course and heading variability, and path efficiency were computed. Recursive feature elimination with cross-validation identified model-specific feature subsets, and six regression models were evaluated. Under a custom two-fold internal validation of 21 observations from non-singleton tow-size classes, the Poisson and support vector regressors produced nearly identical mean absolute errors of 1.920 and 1.922 barges, respectively. Five singleton observations were retained during training but excluded from held-out error estimation because their classes could not be represented in both folds. The Poisson regressor retained 12 features, whereas the support vector regressor retained one interaction feature. Course entropy and the interaction between trip duration and speed variability were the most frequently selected features across models. The findings provide preliminary evidence that tow size may be inferred from towing-vessel behavior even when barges are not represented in AIS messages. Broader validation using larger datasets, additional river corridors, nested model evaluation, and partial-trip trajectories is required before operational deployment.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Arkansas at Fayetteville",
+            "ror": "https://ror.org/05jbt9m15"
+          }
+        ],
+        "name": "Geoffery Agorku",
+        "openalex": "A5024915436",
+        "orcid": "https://orcid.org/0009-0000-7716-0334"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Arkansas at Fayetteville",
+            "ror": "https://ror.org/05jbt9m15"
+          }
+        ],
+        "name": "Sarah Hernandez",
+        "openalex": "A5136589403",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Arkansas at Fayetteville",
+            "ror": "https://ror.org/05jbt9m15"
+          }
+        ],
+        "name": "Hayley Hames",
+        "openalex": "A5127747573",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Arkansas at Fayetteville",
+            "ror": "https://ror.org/05jbt9m15"
+          }
+        ],
+        "name": "Cade Wagner",
+        "openalex": "A5146018953",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102178",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-07",
+    "title": "Predicting barge tow size on inland waterways using vessel trajectory-derived features: proof of concept"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-07_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102178"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/05jbt9m15",
+        "label": "University of Arkansas at Fayetteville"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0000-7716-0334",
+        "label": "Geoffery Agorku"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5136589403",
+        "label": "Sarah Hernandez"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5127747573",
+        "label": "Hayley Hames"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146018953",
+        "label": "Cade Wagner"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11622",
+        "is_primary": true,
+        "label": "Maritime Navigation and Safety",
+        "score": 0.9052,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11223",
+        "is_primary": false,
+        "label": "Maritime Ports and Logistics",
+        "score": 0.0709,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12126",
+        "is_primary": false,
+        "label": "Maritime Transport Emissions and Efficiency",
+        "score": 0.0038,
+        "subfield": "2305"
+      }
+    ]
+  },
+  "first_published": "2026-08-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1504781240",
+      "openalex:W1964357740",
+      "openalex:W1996932454",
+      "openalex:W2003780266",
+      "openalex:W2122825543",
+      "openalex:W2143426320",
+      "openalex:W2526026507",
+      "openalex:W2911964244",
+      "openalex:W3042352505",
+      "openalex:W4224235340",
+      "openalex:W4281690538",
+      "openalex:W4293661231",
+      "openalex:W4296125434",
+      "openalex:W4389662548",
+      "openalex:W4392103329",
+      "openalex:W4396691912",
+      "openalex:W4399773344",
+      "openalex:W4401254079",
+      "openalex:W4403336764",
+      "openalex:W4404844613",
+      "openalex:W4405183420",
+      "openalex:W4407786723",
+      "openalex:W4410903695",
+      "openalex:W4411690971",
+      "openalex:W4413458119",
+      "openalex:W4415935577"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102178",
+    "openalex": "W7201878873",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-12T23:38:32Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00223,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2038,
+      "out": 326
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-12T23:38:32Z",
+    "doi": "10.1016/j.trip.2026.102178",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 1.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.64,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "21 observations",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The models were trained and validated on an extremely small sample size of 26 observations along a single river corridor, and five singleton classes had to be excluded from the held-out error estimation.",
+      "what": "This proof-of-concept study predicts barge tow size by linking high-resolution satellite imagery along the Lower Mississippi River to Automatic Identification System (AIS) towing-vessel trajectories. Using a dataset of 26 observations, the researchers extracted 39 features related to vessel geometry, speed, heading variability, and path efficiency to train six regression models. The Poisson and support vector regressors performed best, achieving mean absolute errors of approximately 1.92 barges using key features like course entropy and the interaction between trip duration and speed variability.",
+      "why": "It demonstrates that barge tow configurations can be inferred directly from the movement behavior of towing vessels, offering a potential way to monitor freight volume and schedule locks in near real-time without requiring physical transponders on individual barges."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-07",
+  "work_key": "doi:10.1016/j.trip.2026.102178"
+}

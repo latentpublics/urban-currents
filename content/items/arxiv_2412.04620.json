@@ -1,0 +1,292 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This paper proposes a novel perimeter-free regional traffic management strategy for networks under a connected and autonomous vehicle (CAV) environment. The proposed strategy requires a subset of CAVs to temporarily wait at nearby parking facilities when the network is congested. After a designated holding time, these CAVs are allowed to re-enter the network. Doing so helps reduce congestion and improve overall operational efficiency. Unlike traditional perimeter control approaches, the proposed strategy leverages existing parking infrastructure to temporarily hold vehicles in a way that partially avoids local queue accumulation issues. Further, holding the vehicles with the longest remaining travel distances creates a self-reinforcing mechanism that helps reduce congestion more quickly than perimeter metering control. Simulation results show that the proposed strategy not only reduces the travel time for vehicles that are not held, but can also reduce the travel times for some of the held vehicles as well. Importantly, its performance has been demonstrated under various configurations of parking locations and capacities and CAV penetration rates.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Maine",
+            "ror": "https://ror.org/01adr0w49"
+          }
+        ],
+        "name": "Hao Liu",
+        "openalex": "A5100458819",
+        "orcid": "https://orcid.org/0000-0002-5319-9514"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Pennsylvania State University",
+            "ror": "https://ror.org/04p491231"
+          }
+        ],
+        "name": "Vikash V. Gayah",
+        "openalex": "A5003021595",
+        "orcid": "https://orcid.org/0000-0002-0648-3360"
+      }
+    ],
+    "categories": [],
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/21680566.2026.2711065",
+      "pdf_url": null,
+      "source_id": "S2498450034",
+      "source_name": "Transportmetrica B Transport Dynamics",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-05",
+    "title": "A CAV-based perimeter-free regional traffic control utilizing existing parking infrastructure"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-05_2412.04620",
+    "members": [
+      "arxiv:2412.04620",
+      "doi:10.1080/21680566.2026.2711065"
+    ],
+    "merge_basis": "doi_match"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/01adr0w49",
+        "label": "University of Maine"
+      },
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/04p491231",
+        "label": "Pennsylvania State University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5319-9514",
+        "label": "Hao Liu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0648-3360",
+        "label": "Vikash V. Gayah"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12546",
+        "is_primary": true,
+        "label": "Smart Parking Systems Research",
+        "score": 0.9819,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.9551,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10761",
+        "is_primary": false,
+        "label": "Vehicular Ad Hoc Networks (VANETs)",
+        "score": 0.9153,
+        "subfield": "2208"
+      }
+    ]
+  },
+  "first_published": "2026-08-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W4401244787",
+      "openalex:W2074500080",
+      "openalex:W1984523211",
+      "openalex:W4283704075",
+      "openalex:W2998187693",
+      "openalex:W2485902895",
+      "openalex:W2032668704",
+      "openalex:W3014223101",
+      "openalex:W4394675456",
+      "openalex:W2901209815",
+      "openalex:W2164863800",
+      "openalex:W2092930278",
+      "openalex:W2156451341",
+      "openalex:W2962917186",
+      "openalex:W2015742367",
+      "openalex:W2114531005",
+      "openalex:W2065748588",
+      "openalex:W2160085675",
+      "openalex:W4318477659",
+      "openalex:W2971289541",
+      "openalex:W3094390271",
+      "openalex:W2498017881",
+      "openalex:W3175186335",
+      "openalex:W2794842204",
+      "openalex:W4221140529",
+      "openalex:W4400030219",
+      "openalex:W4402740227",
+      "openalex:W2993539758",
+      "openalex:W2019974229",
+      "openalex:W2906438979",
+      "openalex:W3209607425",
+      "openalex:W2793867888",
+      "openalex:W2006715767",
+      "openalex:W2169761784",
+      "openalex:W2255423439",
+      "openalex:W2154500405",
+      "openalex:W2940480291",
+      "openalex:W4392877134",
+      "openalex:W2969644280",
+      "openalex:W4312156712",
+      "openalex:W2933570795",
+      "openalex:W2565612488",
+      "openalex:W4367047459",
+      "openalex:W2007894170",
+      "openalex:W2894849109",
+      "openalex:W2066309118",
+      "openalex:W3118776076",
+      "openalex:W4281552978",
+      "openalex:W2057831030",
+      "openalex:W2761964598",
+      "openalex:W2109199369",
+      "openalex:W1989143246",
+      "openalex:W2765276013",
+      "openalex:W4286110462",
+      "openalex:W2527545631",
+      "openalex:W2800510943",
+      "openalex:W245910416",
+      "openalex:W3119193881",
+      "openalex:W4320516585"
+    ],
+    "related_works": [
+      "openalex:W4391375266",
+      "openalex:W2899084033",
+      "openalex:W2748952813",
+      "openalex:W2488601361",
+      "openalex:W1977612671",
+      "openalex:W4235563942",
+      "openalex:W1970646112",
+      "openalex:W147598813",
+      "openalex:W4297493199",
+      "openalex:W2064010689"
+    ]
+  },
+  "ids": {
+    "arxiv": "2412.04620",
+    "doi": "10.1080/21680566.2026.2711065",
+    "openalex": "W4405173224",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-12T18:20:17Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.004536,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1764,
+      "out": 210
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-12T18:20:17Z",
+    "doi": "10.1080/21680566.2026.2711065",
+    "journal": "Transportmetrica B Transport Dynamics",
+    "source_id": "S2498450034",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 1.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.5
+    },
+    "headline": 0.74,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The strategy's performance and feasibility are demonstrated solely through simulation, without empirical validation on real-world road networks or physical CAV fleets.",
+      "what": "The paper designs and simulates a perimeter-free regional traffic management strategy that temporarily holds connected and autonomous vehicles (CAVs) with the longest remaining travel distances at existing parking facilities during congestion. Simulation results under various parking configurations and CAV penetration rates show that this strategy reduces travel times for both non-held vehicles and a portion of the held vehicles.",
+      "why": "It introduces a traffic control capability that utilizes existing parking infrastructure as temporary holding zones, avoiding the localized queue accumulation and bottlenecking typical of traditional perimeter metering control."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-05",
+  "work_key": "arxiv:2412.04620"
+}

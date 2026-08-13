@@ -1,0 +1,203 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This report analyses data centre (DC) sustainability and circularity, revealing existing synergies and trade-offs: The PUE is too coarse, mixing cooling and power provisioning. It wrongly attributes server fan consumption and transformation losses to IT energy. It does not measure compute but infrastructure efficiency, which is already outstanding. Compute energy, however, is exploding. Better energy metrics for DCs would thus cover i) compute efficiency, ii) transformation efficiency, and iii) cooling overhead. Trade-offs exist between cooling energy and water as well as on-site and upstream water: Consuming water on-site lowers the cooling energy, which also lowers the water consumed upstream in power generation. For 'wet' electricity, there is little competition: It is worth spending more on-site energy to save both electricity and related upstream water. For 'dry' electricity, there is a trade-off. Waste heat recovery brings energy circularity but has limited uses and is not the same energy quality, a fact not reflected by current metrics. A better metric would consider the avoided energy through heat recovery instead of the amount recovered. Material circularity can be achieved by interpreting the 9R framework in the context of DCs. Circularity-enhancing measures can be categorised into product design, process design and business models, choice of materials, and operating conditions. Together, they have effects across all circularity levels. The relation between DCs and the power grid is complex. Modern DCs present new challenges for the grid. Mitigation includes battery storage and onsite generation. These measures have, in turn, further consequences, both beneficial and detrimental. They can offer grid flexibility as well as innovations in the field of energy. But they also bring noise, pollution, and GHGs, and compete with the energy sector for resources.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Vlad C. Coroamă",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Oana Dumbravă",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.OH",
+      "cs.CY"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.04571v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.04571v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-05",
+    "title": "Circular Economy Synergies and Trade-offs in Data Centres"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-05_2608.04571",
+    "members": [
+      "arxiv:2608.04571"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:energy-consumption",
+        "label": "energy consumption data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9292-3886",
+        "label": "Vlad C. Coroamă"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5145421432",
+        "label": "Oana Dumbravă"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12238",
+        "is_primary": true,
+        "label": "Green IT and Sustainability",
+        "score": 0.3468,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10101",
+        "is_primary": false,
+        "label": "Cloud Computing and Resource Management",
+        "score": 0.154,
+        "subfield": "1710"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12017",
+        "is_primary": false,
+        "label": "Recycling and Waste Management Techniques",
+        "score": 0.0576,
+        "subfield": "2311"
+      }
+    ]
+  },
+  "first_published": "2026-08-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.04571",
+    "doi": "10.48550/arxiv.2608.04571",
+    "openalex": "W7197016204",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:20:14Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005433,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2092,
+      "out": 255
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 1.0,
+      "relevance": 0.7638,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.5055,
+    "relevance": 0.7638
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are presented as a high-level synthesis and framework analysis rather than an empirical study with a specific quantitative dataset.",
+      "what": "The report analyzes data center sustainability and circularity, identifying limitations in the Power Usage Effectiveness (PUE) metric and mapping trade-offs between cooling energy and water consumption. It proposes new metrics covering compute efficiency, transformation efficiency, and cooling overhead, while evaluating waste heat recovery, material circularity via the 9R framework, and the grid impacts of onsite mitigation measures like battery storage.",
+      "why": "It exposes how current industry-standard metrics like PUE misattribute energy losses and fail to account for exploding compute energy, providing a more accurate framework for measuring actual data center efficiency and the resource trade-offs between on-site water use and upstream power generation."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-05",
+  "work_key": "arxiv:2608.04571"
+}

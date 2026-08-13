@@ -49,7 +49,7 @@
     "data": [],
     "methods": [
       {
-        "confidence": 0.62,
+        "confidence": 1.0,
         "id": "method:survey",
         "label": "survey"
       }
@@ -57,7 +57,7 @@
     "orgs": [],
     "people": [],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": []
   },
@@ -75,17 +75,20 @@
   },
   "lens": null,
   "provenance": {
-    "classifier_version": "clf-2026-08-12",
-    "collected_at": "2026-08-12T16:23:26Z",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
       "arxiv"
     ],
-    "cost_usd": 0.0,
-    "llm": null,
+    "cost_usd": 0.004914,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
-      "in": 0,
-      "out": 0
+      "in": 1842,
+      "out": 239
     }
   },
   "publication_status": {
@@ -104,12 +107,12 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 1.0,
-      "relevance": 0.6494,
+      "novelty": 0.0,
+      "relevance": 0.5981,
       "source_multiplicity": 0.0
     },
-    "headline": 0.4598,
-    "relevance": 0.6494
+    "headline": 0.2392,
+    "relevance": 0.5981
   },
   "signals": {
     "code_available": {
@@ -126,7 +129,13 @@
       "url": null,
       "value": false
     },
-    "geographic_scope": null,
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
     "is_retracted": {
       "basis": "rule",
       "confidence": "high",
@@ -150,7 +159,11 @@
     }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The student survey is limited to a sample of 141 participants enrolled specifically in Communication and Education programs, which may not represent the broader university student population.",
+      "what": "This study analyzes the integration of technology in media education by conducting semi-structured in-depth interviews with leading academic experts and surveying 141 university students in Communication and Education programs. It measures how recent technological advances relate to information consumption challenges, such as disinformation and deepfakes, and evaluates how these issues are addressed in university curricula.",
+      "why": "It documents a critical gap where technological tools are integrated into education only superficially, establishing that current teacher training is insufficient to help students critically evaluate and question the digital content they consume."
+    }
   },
   "track": "papers",
   "updated": "2026-08-11",

@@ -46,18 +46,12 @@
     "merge_basis": "singleton"
   },
   "entities": {
-    "data": [
-      {
-        "confidence": 0.66,
-        "id": "data:social-media",
-        "label": "social media data"
-      }
-    ],
+    "data": [],
     "methods": [],
     "orgs": [],
     "people": [],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": []
   },
@@ -75,17 +69,20 @@
   },
   "lens": null,
   "provenance": {
-    "classifier_version": "clf-2026-08-12",
-    "collected_at": "2026-08-12T16:23:26Z",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
       "arxiv"
     ],
-    "cost_usd": 0.0,
-    "llm": null,
+    "cost_usd": 0.004728,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
-      "in": 0,
-      "out": 0
+      "in": 1838,
+      "out": 219
     }
   },
   "publication_status": {
@@ -104,12 +101,12 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 1.0,
-      "relevance": 0.7372,
+      "novelty": 0.0,
+      "relevance": 0.782,
       "source_multiplicity": 0.0
     },
-    "headline": 0.4949,
-    "relevance": 0.7372
+    "headline": 0.3128,
+    "relevance": 0.782
   },
   "signals": {
     "code_available": {
@@ -120,13 +117,19 @@
       "value": false
     },
     "data_available": {
-      "basis": "rule",
-      "confidence": "low",
+      "basis": "llm",
+      "confidence": "medium",
       "detail": null,
       "url": null,
       "value": false
     },
-    "geographic_scope": null,
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
     "is_retracted": {
       "basis": "rule",
       "confidence": "high",
@@ -150,7 +153,11 @@
     }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The findings are based on a literature review of existing studies rather than new empirical data on current newsroom practices.",
+      "what": "This paper conducts a systematic literature review of studies on audience participation in news media to analyze the decline of citizen journalism and user-generated content over the last two decades. The review synthesizes findings regarding low audience interest in creating informative content, journalistic resistance to non-professional contributions, and corporate strategies that prioritize monetizing participation.",
+      "why": "It conceptualizes audience participation as 'mediatised participation' rather than an open democratic tool, demonstrating that the original ideal of citizen journalism has largely failed to integrate into professional media structures."
+    }
   },
   "track": "papers",
   "updated": "2026-08-11",

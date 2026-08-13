@@ -1,0 +1,165 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Instant delivery platforms have become a critical component of urban logistics, increasingly relying on crowdsourced couriers to fulfill highly dynamic orders. In real-world systems, couriers are not exclusive to a single platform and may concurrently serve multiple platforms, while each platform can only observe its own orders and couriers' interactions due to privacy and operational constraints. This results in a multi-platform dispatch environment with inherent partial observability. However, most existing works on dispatch optimization assume full courier observability and mandatory assignment acceptance, causing substantial performance degradation when deployed in realistic multi-platform settings. In this paper, we propose POLO, a partially observable multi-agent reinforcement learning framework for dispatching optimization in multi-platform instant delivery systems. POLO firstly models each platform-grid pair as an independent agent that learns dispatch policies solely from platform-local observations, aligning the learning process with real-world privacy and operational constraints. To support effective decision-making under incomplete and heterogeneous courier information, POLO introduces a novel attention-based policy representation that selectively aggregates inter-courier information. Moreover, we design a counterfactual reward shaping mechanism to mitigate the non-stationarity induced by joint actions across grids, leading to more stable and scalable learning. We develop a high-fidelity simulator to evaluate dispatch performance under varying numbers of platforms and system scales. Extensive experiments demonstrate that POLO consistently outperforms strong baselines in terms of platform revenue and courier travel efficiency, highlighting its robustness and effectiveness in realistic multi-platform settings.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Fengming Yao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Man Luo",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.10897v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10897v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-11",
+    "title": "Partially Observable Learning for Multi-Platform Dispatch Optimization"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-11_2608.10897",
+    "members": [
+      "arxiv:2608.10897"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.10897",
+    "doi": "10.48550/arxiv.2608.10897",
+    "openalex": null,
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:47:59Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005148,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1968,
+      "out": 244
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.557,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.2228,
+    "relevance": 0.557
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and robustness were evaluated exclusively within a simulated environment rather than a real-world deployment.",
+      "what": "The paper introduces POLO, a partially observable multi-agent reinforcement learning framework for dispatching optimization in multi-platform instant delivery systems. POLO models each platform-grid pair as an independent agent that learns dispatch policies solely from platform-local observations, using an attention-based policy representation to aggregate inter-courier information and a counterfactual reward shaping mechanism to stabilize learning. The framework was evaluated using a high-fidelity simulator under varying numbers of platforms and system scales, outperforming baseline methods in platform revenue and courier travel efficiency.",
+      "why": "It enables delivery platforms to optimize dispatch decisions under realistic conditions where couriers work across multiple competing platforms and individual platforms can only observe their own local data."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-11",
+  "work_key": "arxiv:2608.10897"
+}

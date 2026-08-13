@@ -1,0 +1,194 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "We introduce a fuzzy network jump model for clustering time-varying observations indexed by the nodes of a weighted graph. The framework allows flexible graph representations with spatial and temporal regularization promoting smooth soft cluster assignments across connected nodes and consecutive time points. Estimation is performed through an efficient alternating optimization scheme that exploits the quadratic structure of the regularization terms. A simulation study covering different levels of spatial dependence and cluster overlap shows that the proposed method accurately recovers the true membership probabilities and outperforms competing clustering methods. An application to traffic-network data for the city of San Francisco identifies interpretable traffic regimes and reveals their evolution over time and across connected road segments.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Federico P. Cortese",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.ME",
+      "stat.AP",
+      "stat.ML"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.05786v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.05786v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-06",
+    "title": "Fuzzy network jump models for soft dynamic clustering of graph-structured data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-06_2608.05786",
+    "members": [
+      "arxiv:2608.05786"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5138551788",
+        "label": "Federico P. Cortese"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q62",
+        "label": "San Francisco",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10637",
+        "is_primary": true,
+        "label": "Advanced Clustering Algorithms Research",
+        "score": 0.4085,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.2798,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11106",
+        "is_primary": false,
+        "label": "Data Management and Algorithms",
+        "score": 0.0534,
+        "subfield": "1711"
+      }
+    ]
+  },
+  "first_published": "2026-08-06",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.05786",
+    "doi": "10.48550/arxiv.2608.05786",
+    "openalex": "W7201888021",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:27:15Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.003852,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1632,
+      "out": 156
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.865,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.346,
+    "relevance": 0.865
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The paper introduces a fuzzy network jump model for clustering time-varying observations on weighted graphs, incorporating spatial and temporal regularization to ensure smooth cluster assignments. The model's performance was validated through a simulation study and applied to traffic-network data from San Francisco to identify dynamic traffic regimes across connected road segments.",
+      "why": "It provides a new capability to perform soft, time-varying clustering on graph-structured data while simultaneously accounting for both spatial connectivity and temporal continuity."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-06",
+  "work_key": "arxiv:2608.05786"
+}

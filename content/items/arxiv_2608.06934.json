@@ -1,0 +1,204 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Visual perception of walkability varies substantially across individuals, reflecting differences in personal characteristics, experiences, and preferences. Existing studies, however, often reduce these diverse judgements to aggregated scores, implicitly assuming uniform perception, and commonly rely on vehicle-mounted street-view imagery that does not reflect the pedestrian's visual experience. This paper introduces a dataset of 29,870 walkability ratings from 1,196 respondents, linking sidewalk-view imagery across urban, suburban, and regional Australian environments with individual rater attributes, and proposes the first user-conditioned multimodal deep learning framework for walkability perception, fusing visual features with respondent-level representations. A viewpoint-comparison study shows that sidewalk-view images receive significantly higher walkability ratings than matched street-view images, indicating that imagery source is a substantive design decision in perception surveys. The user-conditioned model improves rank agreement with observed ratings by 65% over an image-only baseline (quadratic weighted kappa 0.47 vs. 0.29), demonstrating that who is evaluating an environment carries predictive indication beyond image content alone. These findings support moving from aggregated, observer-independent walkability scores toward models that represent diverse users, enabling more inclusive assessment of pedestrian environments.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Moloud Damandeh",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Meead Saberi",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.06934v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.06934v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-07",
+    "title": "Walkable to Whom? Capturing Subjective Variability in Walkability Perception Using Multimodal Deep Learning"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-07_2608.06934",
+    "members": [
+      "arxiv:2608.06934"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5146406867",
+        "label": "Moloud Damandeh"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6526-239X",
+        "label": "Meead Saberi"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.7513,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.0745,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0429,
+        "subfield": "2307"
+      }
+    ]
+  },
+  "first_published": "2026-08-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.06934",
+    "doi": "10.48550/arxiv.2608.06934",
+    "openalex": "W7202136620",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:33:54Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005769,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1896,
+      "out": 325
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9675,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.467,
+    "relevance": 0.9675
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "1,196 respondents",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study's empirical evaluation is limited to Australian urban, suburban, and regional environments, which may not represent pedestrian perceptions in other global contexts.",
+      "what": "The study introduces a dataset of 29,870 walkability ratings from 1,196 respondents linked to sidewalk-view imagery across Australian environments, alongside a user-conditioned multimodal deep learning framework that fuses visual features with respondent-level attributes. Sidewalk-view images were found to receive significantly higher walkability ratings than matched vehicle-mounted street-view images. The user-conditioned model improved rank agreement with observed ratings by 65% over an image-only baseline, achieving a quadratic weighted kappa of 0.47 compared to 0.29.",
+      "why": "It demonstrates that who is evaluating an environment carries predictive weight beyond image content alone, enabling a shift from aggregated, observer-independent walkability scores toward models that represent diverse, subjective pedestrian experiences."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-07",
+  "work_key": "arxiv:2608.06934"
+}

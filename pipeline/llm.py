@@ -92,11 +92,23 @@ class LLMResponse:
 
 @dataclass
 class UsageState:
+    """Cumulative LLM usage, split by task.
+
+    The per-task split matters because the caps are stated per task: "no more
+    than 200 summaries" is a different sentence from "no more than 200 API
+    calls", and extraction runs one call per item alongside summarize. Sharing
+    one counter would make a summary budget silently half a summary budget.
+    """
+
     calls: int = 0
     input_tokens: int = 0
     output_tokens: int = 0
     thinking_tokens: int = 0
     cost_usd: float = 0.0
+    by_task: dict = field(default_factory=dict)
+
+    def task(self, name: str) -> dict:
+        return self.by_task.setdefault(name, {"calls": 0, "cost_usd": 0.0})
 
     @classmethod
     def path(cls) -> Path:
@@ -401,9 +413,11 @@ class LLMClient:
                 f"per-run LLM cap reached ({self.max_calls_this_run} calls)"
             )
         usage = UsageState.load()
-        if usage.calls >= self.max_calls_total:
+        task_calls = usage.task(self.task)["calls"]
+        if task_calls >= self.max_calls_total:
             raise LLMBudgetExceeded(
-                f"cumulative LLM cap reached ({usage.calls}/{self.max_calls_total} calls)"
+                f"cumulative {self.task} cap reached "
+                f"({task_calls}/{self.max_calls_total} calls)"
             )
         if usage.cost_usd >= self.max_spend_usd:
             raise LLMBudgetExceeded(
@@ -441,6 +455,9 @@ class LLMClient:
         usage.output_tokens += resp.output_tokens
         usage.thinking_tokens += resp.thinking_tokens
         usage.cost_usd = round(usage.cost_usd + resp.cost_usd, 6)
+        bucket = usage.task(self.task)
+        bucket["calls"] += 1
+        bucket["cost_usd"] = round(bucket["cost_usd"] + resp.cost_usd, 6)
         usage.save()
 
         if self.cache_enabled:

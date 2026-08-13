@@ -1,0 +1,174 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Groundwater variability in Ghana remains poorly characterized due to limited long-term in-situ observations. This study investigates groundwater storage anomalies using GRACE-derived data from 2004-2024 combined with statistical analysis and unsupervised machine learning. Groundwater anomalies were standardized using Z-scores, while an ensemble-based Isolation Forest framework was applied for anomaly detection. The results revealed substantial temporal variability, with persistent groundwater deficits during 2004-2009 followed by increasing positive anomalies after 2018. A total of 12 anomalous months were identified, comprising 5 deficit and 7 surplus events, with the strongest anomalies associated with groundwater deficits. Spatial analysis showed more frequent deficit anomalies in northern Ghana and stronger surplus occurrence in southern regions. Comparison with statistical thresholds further indicated that the machine learning framework captured additional subtle deviations beyond conventional threshold-based methods. Overall, the integration of GRACE observations with unsupervised anomaly detection provides a practical framework for groundwater monitoring in data-scarce environments.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "George Yamoah Afrifa",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Theophilus Ansah-Narh",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Marcellin Atemkeng",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.ET",
+      "cs.AI",
+      "physics.app-ph",
+      "physics.geo-ph"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.10233v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10233v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-10",
+    "title": "Unsupervised Detection of Groundwater Storage Anomalies in Ghana Using GRACE Satellite Data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-10_2608.10233",
+    "members": [
+      "arxiv:2608.10233"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:statistical-modeling",
+        "label": "statistical modeling"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.10233",
+    "doi": "10.48550/arxiv.2608.10233",
+    "openalex": null,
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:40:42Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005311,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1794,
+      "out": 291
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 1.0,
+      "relevance": 0.6937,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4775,
+    "relevance": 0.6937
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2004-2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies entirely on satellite-derived GRACE observations and unsupervised machine learning proxies without validation against physical, in-situ groundwater measurements.",
+      "what": "This study analyzed groundwater storage anomalies in Ghana from 2004 to 2024 using GRACE satellite data, Z-score standardization, and an ensemble-based Isolation Forest machine learning framework. The model identified 12 anomalous months (5 deficits and 7 surpluses), revealing persistent groundwater deficits from 2004 to 2009, increasing positive anomalies after 2018, and distinct spatial patterns with more frequent deficits in northern Ghana and stronger surpluses in the south.",
+      "why": "It establishes a practical, unsupervised framework for detecting subtle groundwater deviations in data-scarce regions without relying on long-term in-situ monitoring networks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-10",
+  "work_key": "arxiv:2608.10233"
+}

@@ -1,0 +1,301 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Wastewater-based surveillance is an effective tool for disease monitoring and can provide early warning of outbreaks. Although wastewater viral loads (WVL) correlate with disease burden, their utility for improving real-time forecasting remains under investigation. During the early phases of an epidemic, many indicators can effectively monitor disease spread, but their reliability may decline because of reporting fatigue and low prevalence. Hospital burden can vary substantially even during low-prevalence periods, making accurate forecasting of burden indicators essential for minimizing disease impacts. In this paper, we present principled approaches for processing wastewater data, characterizing its relationship with burden indicators, and generating real-time forecasts. We assess the predictability of WVL using entropy measures. We analyze the relationship between WVL and burden indicators using causality tests that capture temporal dynamics and the leading-indicator behavior of WVL. We incorporate these insights into a time-varying forecasting model that accounts for the evolving relationship between the signals. We also evaluate the effects of delays in WVL reporting through simulations. We test the utility of our methods by forecasting COVID-19 hospital admissions across Virginia and its health regions during periods of varying disease prevalence. Incorporating WVL improves forecast accuracy relative to baseline models, particularly during critical epidemic phases, and results in a 20 percentage point improvement in forecast coverage. Our results demonstrate that WVL signals can improve infectious disease forecasting even under conditions of low prevalence or delayed reporting.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Aniruddha Adiga",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jingyuan Chou",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Gursharn Kaur",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Andrew Warren",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Srinivasan Venkatramanan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Baltazar Espinoza",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Bryan Lewis",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Justin Crow",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alexandra Lorentz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rekha Singh",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Madhav Marathe",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.06671v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.06671v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-07",
+    "title": "EpiFlow: A framework for improving the utility of wastewater signals for disease forecasting"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-07_2608.06671",
+    "members": [
+      "arxiv:2608.06671"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.9524,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5396-1978",
+        "label": "Aniruddha Adiga"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5112429062",
+        "label": "Jingyuan Chou"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0900-0600",
+        "label": "Gursharn Kaur"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143460400",
+        "label": "Andrew Warren"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0874-8692",
+        "label": "Srinivasan Venkatramanan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6280-3277",
+        "label": "Baltazar Espinoza"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146419486",
+        "label": "Bryan Lewis"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5033775512",
+        "label": "Justin Crow"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5120178998",
+        "label": "Alexandra Lorentz"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146309884",
+        "label": "Rekha Singh"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146322339",
+        "label": "Madhav Marathe"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11754",
+        "is_primary": true,
+        "label": "SARS-CoV-2 detection and testing",
+        "score": 0.9296,
+        "subfield": "2725"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10410",
+        "is_primary": false,
+        "label": "COVID-19 epidemiological studies",
+        "score": 0.0291,
+        "subfield": "2611"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11331",
+        "is_primary": false,
+        "label": "Fecal contamination and water quality",
+        "score": 0.012,
+        "subfield": "2312"
+      }
+    ]
+  },
+  "first_published": "2026-08-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.06671",
+    "doi": "10.48550/arxiv.2608.06671",
+    "openalex": "W7202146962",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:33:54Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005313,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1952,
+      "out": 265
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.6462,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.2585,
+    "relevance": 0.6462
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and utility were evaluated using a single disease (COVID-19) within a single state (Virginia).",
+      "what": "The EpiFlow framework processes wastewater viral loads (WVL) and incorporates them into a time-varying forecasting model to predict COVID-19 hospital admissions. Tested across Virginia and its health regions, the framework uses entropy measures to assess predictability and causality tests to capture temporal dynamics, resulting in a 20 percentage point improvement in forecast coverage compared to baseline models.",
+      "why": "It establishes that wastewater data can reliably improve real-time hospital burden forecasting even during challenging periods of low disease prevalence or delayed reporting, providing a validated method to maintain early-warning capabilities when clinical reporting declines."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-07",
+  "work_key": "arxiv:2608.06671"
+}

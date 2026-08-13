@@ -213,3 +213,24 @@ def test_an_unresolvable_pin_is_an_error_not_a_silent_fallback(repo, monkeypatch
                         if k == "classifier.model_version" else d)
     with pytest.raises(FileNotFoundError):
         clf_mod.latest_model_path()
+
+
+def test_unsummarisable_items_rank_last_in_the_journal_path(repo):
+    """An item with no abstract yields a card with only a title. Measured on the
+    prepared days: 5-10 of 24 published cards were in that state."""
+    wl = _whitelist_source_id()
+    with_abstract = journal_item(1, wl)
+    without = journal_item(2, wl)
+    without.bibliography.abstract = None
+
+    assert run_stages.journal_rank_score(without) < run_stages.journal_rank_score(
+        with_abstract
+    )
+
+    # 16 journal candidates for 12 slots, with the arXiv path full so no slots
+    # are lent: the one that cannot be summarised is the one left out. Still
+    # publishable in principle — just last in line.
+    items = [without] + [journal_item(i, wl) for i in range(10, 25)]
+    items += [arxiv_item(i, 0.9) for i in range(12)]
+    _, selected = _run_select(repo, items)
+    assert without.work_key not in {it.work_key for it in selected}

@@ -1,0 +1,306 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Connected and automated vehicles (CAVs) have the potential to significantly improve the efficiency and safety of urban intersections, yet their benefits depend strongly on penetration rates and their interaction with signal control strategies. This study proposes a joint optimization model that integrates a multiagent deep Q-network (MADQN)-based strategy for CAV trajectory control and an adaptive strategy for signal phase adjustment in mixed traffic. The proposed model incorporates key states from both vehicles and signals, including speed, acceleration, queue length, and phase information, and employs a global reward that combines average delay and energy consumption. An adaptive signal control driven by queue pressure dynamically adjusts phase durations in response to real-time traffic conditions, with its outcomes feeding back into the environment for CAVs training. Simulation experiments conducted on a real-world multidirectional intersection demonstrate that the proposed model effectively reduces delays across most movements even at low CAV penetration rates. As the CAV penetration rate increases, consistent and more pronounced reductions in both delay and energy consumption are observed for all movements.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Southeast University",
+            "ror": "https://ror.org/00cf0ab87"
+          }
+        ],
+        "name": "Ruochuan Fan",
+        "openalex": "A5031201063",
+        "orcid": "https://orcid.org/0000-0001-7739-1116"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Southeast University",
+            "ror": "https://ror.org/00cf0ab87"
+          }
+        ],
+        "name": "Jian Lu",
+        "openalex": "A5146002277",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Leeds",
+            "ror": "https://ror.org/024mrxd33"
+          }
+        ],
+        "name": "Xian Liu",
+        "openalex": "A5028687055",
+        "orcid": "https://orcid.org/0000-0002-5398-4707"
+      }
+    ],
+    "categories": [],
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9621",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-07",
+    "title": "Joint Optimization of CAV Trajectories and Signal Phase Control in Mixed Traffic at Signalized Intersections"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-07_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-9621"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/00cf0ab87",
+        "label": "Southeast University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/024mrxd33",
+        "label": "University of Leeds"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7739-1116",
+        "label": "Ruochuan Fan"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146002277",
+        "label": "Jian Lu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5398-4707",
+        "label": "Xian Liu"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": true,
+        "label": "Traffic control and management",
+        "score": 0.9812,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.0062,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0022,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-08-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1965455100",
+      "openalex:W1972711079",
+      "openalex:W2001581518",
+      "openalex:W2084952317",
+      "openalex:W2124657875",
+      "openalex:W2127072232",
+      "openalex:W2146544184",
+      "openalex:W2417891663",
+      "openalex:W2527545631",
+      "openalex:W2606206351",
+      "openalex:W2607080081",
+      "openalex:W2616273432",
+      "openalex:W2748232066",
+      "openalex:W2763204767",
+      "openalex:W2796138865",
+      "openalex:W2800510943",
+      "openalex:W2862204210",
+      "openalex:W2884002829",
+      "openalex:W2903400114",
+      "openalex:W2903709398",
+      "openalex:W2913230672",
+      "openalex:W2976036462",
+      "openalex:W3033103407",
+      "openalex:W3046978647",
+      "openalex:W3047304847",
+      "openalex:W3083796330",
+      "openalex:W3087431945",
+      "openalex:W3119836530",
+      "openalex:W3120190876",
+      "openalex:W3129357966",
+      "openalex:W3137070073",
+      "openalex:W3183782879",
+      "openalex:W3191588546",
+      "openalex:W3195266085",
+      "openalex:W3205097773",
+      "openalex:W3211314014",
+      "openalex:W3214806984",
+      "openalex:W4205361279",
+      "openalex:W4210747472",
+      "openalex:W4226071977",
+      "openalex:W4281709050",
+      "openalex:W4287985486",
+      "openalex:W4288425262",
+      "openalex:W4295339118",
+      "openalex:W4309299196",
+      "openalex:W4310358880",
+      "openalex:W4312131163",
+      "openalex:W4313304705",
+      "openalex:W4361197077",
+      "openalex:W4362578147",
+      "openalex:W4362722602",
+      "openalex:W4376112638",
+      "openalex:W4376631496",
+      "openalex:W4377832175",
+      "openalex:W4379046680",
+      "openalex:W4379469740",
+      "openalex:W4380149055",
+      "openalex:W4384825628",
+      "openalex:W4385067564",
+      "openalex:W4385076188",
+      "openalex:W4385323184",
+      "openalex:W4385708762",
+      "openalex:W4387431619",
+      "openalex:W4388205696",
+      "openalex:W4400033254",
+      "openalex:W4403954626",
+      "openalex:W4411402083",
+      "openalex:W4414071244",
+      "openalex:W7122482982"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-9621",
+    "openalex": "W7201879764",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-12T23:38:33Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.001985,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1794,
+      "out": 274
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-12T23:38:33Z",
+    "doi": "10.1061/jtepbs.teeng-9621",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance and training feedback loops were evaluated solely within a simulated environment of a single intersection, which may not capture the complexity of real-world driver behavior or network-wide traffic dynamics.",
+      "what": "The study develops a joint optimization model that combines a multiagent deep Q-network (MADQN) for CAV trajectory control with an adaptive queue-pressure signal control strategy. The model was evaluated using simulation experiments on a real-world multidirectional intersection, testing performance across varying CAV penetration rates using a global reward function that minimizes average delay and energy consumption.",
+      "why": "It demonstrates that coordinating vehicle trajectories and signal phases simultaneously can reduce traffic delays even at low CAV penetration rates, providing a pathway to incremental traffic efficiency gains during the transition to fully automated fleets."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-07",
+  "work_key": "doi:10.1061/jtepbs.teeng-9621"
+}

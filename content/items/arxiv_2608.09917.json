@@ -1,0 +1,247 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "TikTok's global growth has made it a prime platform for both entertainment and political discourse, prompting increased social science research. However, this rapidly evolving research field faces a fundamental reproducibility crisis. TikTok's opaque algorithmic systems hinder researchers from drawing meaningful empirical inferences, while the lack of standardized data collection methods compounds these challenges. This study addresses these methodological gaps by systematically comparing three data collection tools - the official TikTok Research API, Pyktok, and Apify. We evaluated five endpoints: User, Hashtag, Keyword, Comment, and Related Video. Results show substantial cross-tool differences, especially for hashtag and keyword searches. The Research API uses back-end API calls, whereas Apify and Pyktok rely on front-end web scraping, producing systematic differences in the time periods and popularity levels represented in retrieved content. The three tools yielded comprehensive and consistent results only for the user endpoint. Our results question whether these tools can acquire truly random[-ized] samples, as they introduce methodological confounds that may compromise research validity in ways not yet fully understood. Based on these results, we offer methodological, transparency, and ethical recommendations and guidelines to increase TikTok research quality.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Gayoung Jeon",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Cameron Moy",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Silvia Teliz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Cristina Monzer",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Nicolette Alayon",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Deen Freelon",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.SI",
+      "cs.HC"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.09917v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09917v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-10",
+    "title": "WhichTok? Comparing Three TikTok Data Acquisition Tools"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-10_2608.09917",
+    "members": [
+      "arxiv:2608.09917"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:social-media",
+        "label": "social media data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5117571195",
+        "label": "Gayoung Jeon"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146554040",
+        "label": "Cameron Moy"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138512417",
+        "label": "Silvia Téliz"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2479-4063",
+        "label": "Cristina Monzer"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5124950277",
+        "label": "Nicolette Alayón"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146480539",
+        "label": "Deen Freelon"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11147",
+        "is_primary": true,
+        "label": "Misinformation and Its Impacts",
+        "score": 0.2364,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12027",
+        "is_primary": false,
+        "label": "Social Media in Health Education",
+        "score": 0.0468,
+        "subfield": "3306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10355",
+        "is_primary": false,
+        "label": "Impact of Technology on Adolescents",
+        "score": 0.0461,
+        "subfield": "3312"
+      }
+    ]
+  },
+  "first_published": "2026-08-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.09917",
+    "doi": "10.48550/arxiv.2608.09917",
+    "openalex": "W7202182186",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:40:42Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005505,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1840,
+      "out": 305
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.7909,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3164,
+    "relevance": 0.7909
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study evaluates the tools based on their technical endpoints and retrieval patterns rather than testing them against a known, ground-truth baseline of all platform activity.",
+      "what": "This study systematically compares three TikTok data collection tools—the official TikTok Research API, Pyktok, and Apify—across five endpoints: User, Hashtag, Keyword, Comment, and Related Video. The evaluation reveals substantial cross-tool discrepancies in retrieved content, particularly for hashtag and keyword searches, where the API's back-end calls and the scraping tools' front-end methods capture different time periods and popularity levels. Only the user endpoint yielded comprehensive and consistent results across all three tools.",
+      "why": "It demonstrates that different data acquisition tools introduce systematic methodological confounds, challenging the assumption that researchers can retrieve randomized or comparable samples from TikTok."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-10",
+  "work_key": "arxiv:2608.09917"
+}

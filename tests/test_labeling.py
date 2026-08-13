@@ -245,3 +245,29 @@ def test_precision_reports_absence_rather_than_zero(repo):
     assert result["n_labels"] == 0
     assert result["by_source"] == {}
     assert "no labels yet" in result["note"]
+
+
+def test_items_without_an_abstract_are_excluded_from_the_sample(repo):
+    """A label guessed from a title alone is noise, and these labels are
+    training data. Measured on 2026-08-05: 6 of 30 sampled items had no
+    abstract, all journal-side."""
+    wl = _whitelist_source_id()
+    items = []
+    for i in range(20):
+        it = arxiv_item(i, 0.9)
+        if i % 2 == 0:
+            it.bibliography.abstract = ""
+        items.append(it)
+    for i in range(20):
+        it = journal_item(i, wl)
+        it.scores.relevance = 1.0
+        if i % 2 == 0:
+            it.bibliography.abstract = None
+        items.append(it)
+
+    run = Run.for_date(DAY)
+    write_stage(run, "classify", items)
+
+    sample = stratified_sample(DAY, per_source=15)
+    assert sample, "the sample must not be empty"
+    assert all((it.bibliography.abstract or "").strip() for it, _, _ in sample)

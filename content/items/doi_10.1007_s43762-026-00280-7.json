@@ -1,0 +1,228 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Vehicle trajectory data play a crucial role in modern intelligent transportation systems. Traditional generative models, such as Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs), often struggle to accurately capture the distributional characteristics of trajectories in real-world scenarios. Moreover, conventional traffic trajectory generation methods face challenges due to their reliance on real-world road network data that are difficult to acquire and have limited availability. To address these issues, this study leverages the inherent correlation between surveillance camera data and vehicle trajectories, developing a zero-shot trajectory generation method (defined as generating valid trajectories without any complete single-vehicle trajectory annotations, only using aggregated traffic flow statistics and road network topology) based on a diffusion model. We treat surveillance traffic flow distributions as conditioning information to guide the denoising process continuously, employing an adaptive optimization framework to generate compliant and high-quality trajectories. All experiments are validated on real-world traffic datasets from Dadukou District, Chongqing. Notably, the entire model training process does not use any complete single-vehicle trajectory annotations, relying only on aggregated traffic flow statistics and public road network topology. Using surveillance traffic flow data as input, the generated synthetic trajectories not only align closely with real trajectories but also demonstrate comparable effectiveness. Extensive experiments validate the efficacy of the proposed method in zero-shot trajectory generation tasks, showing excellent performance in both trajectory similarity and distributional similarity.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Chengdu University of Information Technology",
+            "ror": "https://ror.org/01yxwrh59"
+          }
+        ],
+        "name": "TongHao Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chengdu University of Information Technology",
+            "ror": "https://ror.org/01yxwrh59"
+          }
+        ],
+        "name": "JiaoLing Zheng",
+        "openalex": null,
+        "orcid": "https://orcid.org/0009-0006-2087-1497"
+      }
+    ],
+    "categories": [],
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s43762-026-00280-7",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s43762-026-00280-7.pdf",
+      "source_id": "S4210175573",
+      "source_name": "Computational Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-10",
+    "title": "Zero-shot trajectory generation with self-supervised diffusion model"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-10_10.1007/s43762-0",
+    "members": [
+      "doi:10.1007/s43762-026-00280-7"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:diffusion-model",
+        "label": "diffusion model"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/01yxwrh59",
+        "label": "Chengdu University of Information Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0006-2087-1497",
+        "label": "JiaoLing Zheng"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.577,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0605,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.0513,
+        "subfield": "2212"
+      }
+    ]
+  },
+  "first_published": "2026-08-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2794842204",
+      "openalex:W3035078642",
+      "openalex:W3035597366",
+      "openalex:W3040099731",
+      "openalex:W3048236912",
+      "openalex:W3110929880",
+      "openalex:W3157716083",
+      "openalex:W3206719683",
+      "openalex:W3211927032",
+      "openalex:W4213168906",
+      "openalex:W4214923579",
+      "openalex:W4309609199",
+      "openalex:W4313156423",
+      "openalex:W4322755796",
+      "openalex:W4387195417",
+      "openalex:W4415428959",
+      "openalex:W7133238010"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s43762-026-00280-7",
+    "openalex": "W7202086200",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-12T18:40:46Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005358,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1928,
+      "out": 274
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-12T18:40:46Z",
+    "doi": "10.1007/s43762-026-00280-7",
+    "journal": "Computational Urban Science",
+    "source_id": "S4210175573",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 1.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.64,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance and applicability were validated using data from only a single district in Chongqing.",
+      "what": "The study develops a zero-shot trajectory generation method based on a self-supervised diffusion model that generates synthetic vehicle trajectories using only aggregated traffic flow statistics and public road network topology, without any complete single-vehicle trajectory annotations. The model treats surveillance traffic flow distributions as conditioning information to guide a denoising process, and was validated using real-world traffic datasets from the Dadukou District of Chongqing.",
+      "why": "It enables the generation of realistic, high-quality vehicle trajectories in regions where individual GPS tracking data is unavailable or restricted, relying instead on readily accessible aggregate flow counts and road network maps."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-10",
+  "work_key": "doi:10.1007/s43762-026-00280-7"
+}

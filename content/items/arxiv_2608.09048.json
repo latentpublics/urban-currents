@@ -1,0 +1,246 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Deep learning-based building footprint extraction from high-resolution imagery often produces topologically inconsistent vectors unfit for direct GIS database ingestion. To address this, we present a multidomain GeoAI quality control framework that automates error detection to systematically purify vector footprint databases. Candidate footprints were generated across five UAV survey sites in Bangladesh using U-Net (ResNet-34) and SAM-LoRA (ViT-B). The extracted raster masks were vectorized, geometrically regularized, and consolidated under a spatial-exclusivity constraint to eliminate duplicate representations. We used twenty-four predictors capturing geometric, spatial-contextual, and raster-derived spectral and texture properties. Machine Learning (ML) classifiers were trained on a development partition (Sites B-D) and rigorously validated on a spatially independent test set (Site E) excluded from hyperparameter tuning and class balancing. The experimental results demonstrate that geometric and spatial-contextual predictors using Decision Tree (DT) provide the most effective discriminatory evidence for identifying object-level boundary deformations. DT achieved an accuracy of 95.31%, an F1-score of 91.06%, and a Matthews correlation coefficient (MCC) of 0.880 on the unseen testing site. At the database level, this framework successfully identified 87.34% of erroneous footprints while maintaining 98.31% of acceptable structures, reducing the residual error proportion from 27.32% to 4.62% and improving final database purity to 95.38%. This translates into a relative error reduction of 83.09%. The findings indicate that post-segmentation object-level ML provides a highly transferable, robust mechanism for automated quality assurance in production-ready geographic information system (GIS) workflows.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Shah Imran Ahsan Chowdhury",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kazi Jihadur Rashid",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rajsree Das Tuli",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rahul Saha",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Bulbul Ahammad",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.09048v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09048v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-10",
+    "title": "GeoAI-based post-segmentation quality validation of building footprints via spatial feature engineering"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-10_2608.09048",
+    "members": [
+      "arxiv:2608.09048"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:building-footprint",
+        "label": "building footprints"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5113246698",
+        "label": "Shah Imran Ahsan Chowdhury"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9524-825X",
+        "label": "Kazi Jihadur Rashid"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146567691",
+        "label": "Rajsree Das Tuli"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146517182",
+        "label": "Rahul Saha"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146578217",
+        "label": "Bulbul Ahammad"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11164",
+        "is_primary": true,
+        "label": "Remote Sensing and LiDAR Applications",
+        "score": 0.3978,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11211",
+        "is_primary": false,
+        "label": "3D Surveying and Cultural Heritage",
+        "score": 0.17,
+        "subfield": "1907"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10689",
+        "is_primary": false,
+        "label": "Remote-Sensing Image Classification",
+        "score": 0.0905,
+        "subfield": "2214"
+      }
+    ]
+  },
+  "first_published": "2026-08-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.09048",
+    "doi": "10.48550/arxiv.2608.09048",
+    "openalex": "W7202213083",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:40:42Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.006096,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2120,
+      "out": 324
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 1.0,
+      "relevance": 0.8575,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.543,
+    "relevance": 0.8575
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework was validated on a spatially independent test set within the same national context of Bangladesh, meaning its performance on highly diverse global urban morphologies remains untested.",
+      "what": "The study developed a GeoAI quality control framework that automates error detection in deep learning-extracted building footprints using 24 geometric, spatial-contextual, and raster-derived predictors. Tested on UAV imagery across five survey sites in Bangladesh using U-Net and SAM-LoRA models, a Decision Tree classifier achieved 95.31% accuracy on an unseen test site, reducing the proportion of erroneous footprints in the database from 27.32% to 4.62%.",
+      "why": "It automates the purification of vectorized building footprints, providing a highly transferable mechanism to make deep learning segmentation outputs immediately viable for production-ready GIS databases without manual inspection."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-10",
+  "work_key": "arxiv:2608.09048"
+}

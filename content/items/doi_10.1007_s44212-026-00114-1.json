@@ -1,0 +1,302 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Effective governance and secure sharing of data resources remain key challenges in smart-city development, where cross-department collaboration is constrained by data ownership boundaries and compliance requirements. This paper proposes a distributed data governance architecture that integrates a unified data registration standard, a probe-driven dynamic data catalog, and on-premises local LLM data coordination to support compliant cross-system discovery and access. The architecture follows a “one body with two wings” ownership-centric approach that balances lawful sharing and security protection, and it explicitly bounds the Local LLM to semantic interpretation and explanation while deterministic policy engines and human review enforce final decisions. We report a production deployment in Suining City, China, spanning 50 departments and 151 systems. A representative load test on the deployed platform processed 83,909 simulated requests and achieved an average response time of 730 ms, a maximum latency of 1,443 ms, and an observed error rate of 0.12%, demonstrating stable city-scale operation. Overall, the work provides deployment-grounded architectural insights for scalable and policy-pluggable smart-city data governance.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Suizhou Central Hospital",
+            "ror": "https://ror.org/00q3p9p08"
+          },
+          {
+            "name": "Chengdu University",
+            "ror": "https://ror.org/034z67559"
+          }
+        ],
+        "name": "Xuying Zheng",
+        "openalex": "A5146347095",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Suizhou Central Hospital",
+            "ror": "https://ror.org/00q3p9p08"
+          },
+          {
+            "name": "Chengdu University",
+            "ror": "https://ror.org/034z67559"
+          }
+        ],
+        "name": "Fang Miao",
+        "openalex": "A5146323295",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Suizhou Central Hospital",
+            "ror": "https://ror.org/00q3p9p08"
+          },
+          {
+            "name": "Chengdu University",
+            "ror": "https://ror.org/034z67559"
+          }
+        ],
+        "name": "Fasheng Yi",
+        "openalex": "A5146310233",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chengdu University",
+            "ror": "https://ror.org/034z67559"
+          }
+        ],
+        "name": "Wenjie Fan",
+        "openalex": "A5146356987",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Suizhou Central Hospital",
+            "ror": "https://ror.org/00q3p9p08"
+          }
+        ],
+        "name": "Jun Zhuo",
+        "openalex": "A5110186516",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chengdu University",
+            "ror": "https://ror.org/034z67559"
+          }
+        ],
+        "name": "Erga Wang",
+        "openalex": "A5146339216",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s44212-026-00114-1",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44212-026-00114-1.pdf",
+      "source_id": "S4387283136",
+      "source_name": "Urban Informatics",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-11",
+    "title": "A distributed data governance architecture for smart cities based on data unified registration, dynamic catalog, and local LLM data coordination"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-11_10.1007/s44212-0",
+    "members": [
+      "doi:10.1007/s44212-026-00114-1"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/00q3p9p08",
+        "label": "Suizhou Central Hospital"
+      },
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/034z67559",
+        "label": "Chengdu University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5146347095",
+        "label": "Xuying Zheng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146323295",
+        "label": "Fang Miao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146310233",
+        "label": "Fasheng Yi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146356987",
+        "label": "Wenjie Fan"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5110186516",
+        "label": "Jun Zhuo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146339216",
+        "label": "Erga Wang"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11479",
+        "is_primary": true,
+        "label": "Smart Cities and Technologies",
+        "score": 0.8133,
+        "subfield": "2214"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10953",
+        "is_primary": false,
+        "label": "E-Government and Public Services",
+        "score": 0.0407,
+        "subfield": "3320"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0115,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-08-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W4206728778",
+      "openalex:W4365146843",
+      "openalex:W4381614370",
+      "openalex:W4401396940"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s44212-026-00114-1",
+    "openalex": "W7202116135",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-12T18:48:02Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00545,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1870,
+      "out": 294
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-12T18:48:02Z",
+    "doi": "10.1007/s44212-026-00114-1",
+    "journal": "Urban Informatics",
+    "source_id": "S4387283136",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This paper presents a distributed data governance architecture for smart cities that combines a unified data registration standard, a probe-driven dynamic data catalog, and local Large Language Models (LLMs) for semantic data coordination. The system was deployed in Suining City, China, across 50 departments and 151 systems, and a load test of 83,909 simulated requests demonstrated an average response time of 730 ms, a maximum latency of 1,443 ms, and an error rate of 0.12%.",
+      "why": "It demonstrates a viable architecture for secure, cross-departmental smart city data sharing that respects ownership boundaries by restricting LLMs to semantic interpretation while relying on deterministic policy engines and human review for compliance decisions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-11",
+  "work_key": "doi:10.1007/s44212-026-00114-1"
+}

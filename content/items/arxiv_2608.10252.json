@@ -1,0 +1,178 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Climate change has become a growing concern, particularly in regions experiencing increasingly frequent extreme events. In Brasília, the capital of Brazil, significant shifts in climate patterns have drawn attention, including episodes of intense heat, unusually cold weather, and prolonged dry periods, often accompanied by wildfires. These phenomena directly affect the population and local ecosystems, requiring detailed analyses to understand their causes and effects. In this work, the return period for the joint distribution of maximum air temperature and minimum relative humidity in Brasília is determined using a copula-based approach. First, the dependence structure between the variables is modeled through a copula, while the marginal distributions are fitted using the novel methodology for modelling extreme values in complex systems. Different copula families, including rotated versions, were evaluated using information criteria, leading to the selection of a model that adequately captured the dependence structure, including asymmetry and tail behavior. The selected model also reproduced the multimodal pattern observed in the joint density, a feature consistent with the possible presence of multiple climate regimes. In the context of climate data modelling, the bivariate return level was determined using a conditional approach to assess the occurrence of extreme scenarios characterized by high temperatures combined with low relative humidity. This analysis makes it possible to quantify the expected frequency of such events, providing valuable information for environmental risk monitoring, the planning of preventive measures, and the development of climate change adaptation strategies in the region.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Beatriz G da Cruz Albernaz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Cira E G Otiniano",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Carolyne Soares de Brito",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Fidel E C Morales",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Enzo Porto Brasil",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.ME",
+      "stat.AP"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.10252v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.10252v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-10",
+    "title": "Joint return levels of maximum temperature and minimum relative humidity by combining copulas with an extreme value framework for bimodal data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-10_2608.10252",
+    "members": [
+      "arxiv:2608.10252"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.10252",
+    "doi": "10.48550/arxiv.2608.10252",
+    "openalex": null,
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:40:42Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005354,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1950,
+      "out": 270
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.6931,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.2772,
+    "relevance": 0.6931
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical application and validation of the model are limited to a single city, Brasília.",
+      "what": "The study models the joint return periods of maximum air temperature and minimum relative humidity in Brasília, Brazil, using a copula-based approach combined with an extreme value framework. By testing multiple copula families, including rotated versions, the model successfully captures the asymmetric, tail-dependent, and multimodal joint density patterns observed in the local climate data.",
+      "why": "It provides a method to quantify the expected frequency of compound extreme events—specifically simultaneous high temperatures and low humidity—which allows local planners to measure and monitor wildfire and environmental risks under complex, multimodal climate regimes."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-10",
+  "work_key": "arxiv:2608.10252"
+}

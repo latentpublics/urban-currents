@@ -1,0 +1,208 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Long-term Visual Place Recognition (VPR) is typically evaluated by matching queries from one condition against a database from another. Crowdsourced map databases, however, may mix conditions and include images that resemble the query in condition but depict different places. In the presence of these distractors, a method may retrieve by condition similarity rather than place identity. We argue that this susceptibility arises because the discriminability of VPR methods allows them to encode information such as illumination, weather, and seasonal appearance in their descriptors. We therefore introduce Distractor-Augmented Recall (DAR) to isolate and quantify the effect of distractors, and propose condition suppression to remove condition information from VPR descriptors. Across eleven methods and six datasets, method rankings under DAR@1 differ from those under Recall@1 (R@1), while applying INLP and LEACE as condition suppression methods generally improves DAR@1 without reducing R@1. Thus, distractor robustness is distinct from standard retrieval performance and can be improved by suppressing condition information.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Beomsu Kim",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Minwoo Jung",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Giseop Kim",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.06847v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.06847v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-07",
+    "title": "Are Visual Place Recognition Models Recognizing Places or Conditions? Distractor-Augmented Evaluation and Condition Suppression"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-07_2608.06847",
+    "members": [
+      "arxiv:2608.06847"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0871-8805",
+        "label": "Beomsu Kim"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146429351",
+        "label": "Minwoo Jung"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146415916",
+        "label": "Giseop Kim"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10627",
+        "is_primary": true,
+        "label": "Advanced Image and Video Retrieval Techniques",
+        "score": 0.2268,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11714",
+        "is_primary": false,
+        "label": "Multimodal Machine Learning Applications",
+        "score": 0.1133,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": false,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.1089,
+        "subfield": "3305"
+      }
+    ]
+  },
+  "first_published": "2026-08-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.06847",
+    "doi": "10.48550/arxiv.2608.06847",
+    "openalex": "W7202132643",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:33:54Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005043,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1802,
+      "out": 260
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.7229,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.2892,
+    "relevance": 0.7229
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study evaluates eleven Visual Place Recognition (VPR) methods across six datasets using a new metric, Distractor-Augmented Recall (DAR), to measure how often models mistakenly match images based on shared environmental conditions (like weather or lighting) rather than actual location. It also tests two condition suppression techniques, INLP and LEACE, to remove these environmental distractors from VPR descriptors.",
+      "why": "It establishes that standard VPR evaluation metrics fail to capture a model's susceptibility to environmental distractors, and demonstrates that removing condition information from image descriptors improves retrieval robustness without degrading standard performance."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-07",
+  "work_key": "arxiv:2608.06847"
+}

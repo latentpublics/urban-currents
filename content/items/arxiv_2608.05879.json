@@ -1,0 +1,240 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Text-driven 3D generation has advanced rapidly in creating large-scale outdoor environments and detailed indoor scenes, but these domains are usually synthesized independently, lacking the correspondence required for a coherent urban world. We present HoloWorld, a unified indoor-outdoor urban world generation framework built on a continuously updated cross-scale world context. Initializing from a user description, HoloWorld progressively represents and updates the diverse world information, from city-scale planning to individual buildings, allowing generated interiors to maintain explicit correspondence with their associated exterior buildings. Conditioned on the evolving context and previously generated neighboring blocks, HoloWorld autoregressively generates urban exteriors with consistent spatial organization and visual identity across blocks. The generated exterior representations are further grounded in 3D building instances and footprints, enabling building-specific indoor generation with geometry-constrained layouts and inherited appearance characteristics. To our knowledge, HoloWorld is the first framework to unify indoor and outdoor generation within a coherent 3D urban world. Extensive experiments demonstrate that HoloWorld achieves superior urban exterior generation performance, improving the average AQS score over the SOTA by 7.68\\% and obtaining the highest average RDR score, while maintaining strong building-level indoor-outdoor correspondence and cross-block continuity within a unified 3D urban world.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Xiaobin Huang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zilong Huang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yang Luo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hongchao Fan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yiping Chen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ting Han",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.05879v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.05879v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-06",
+    "title": "To See a World in a Living Context: Unified Indoor-Outdoor Urban World Generation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-06_2608.05879",
+    "members": [
+      "arxiv:2608.05879"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5146058551",
+        "label": "Xiaobin Huang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146009204",
+        "label": "Zilong Huang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146022581",
+        "label": "Yang Luo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146020756",
+        "label": "Hongchao Fan"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5145937932",
+        "label": "Yiping Chen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5145965726",
+        "label": "Ting Han"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10719",
+        "is_primary": true,
+        "label": "3D Shape Modeling and Analysis",
+        "score": 0.5893,
+        "subfield": "2206"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12698",
+        "is_primary": false,
+        "label": "3D Modeling in Geospatial Applications",
+        "score": 0.0852,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10775",
+        "is_primary": false,
+        "label": "Generative Adversarial Networks and Image Synthesis",
+        "score": 0.044,
+        "subfield": "1707"
+      }
+    ]
+  },
+  "first_published": "2026-08-06",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.05879",
+    "doi": "10.48550/arxiv.2608.05879",
+    "openalex": "W7201867680",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:27:15Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005424,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1912,
+      "out": 284
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.7215,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.2886,
+    "relevance": 0.7215
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed HoloWorld, a unified 3D generation framework that synthesizes indoor and outdoor urban environments with explicit spatial and visual correspondence. The system uses a cross-scale world context to autoregressively generate urban exteriors across blocks, grounding them in 3D building instances and footprints to generate geometry-constrained indoor layouts. In comparative evaluations, the framework improved the average Aesthetic Quality Score (AQS) over state-of-the-art models by 7.68% and achieved the highest average Realistic Detail Ratio (RDR).",
+      "why": "It establishes a generative capability to synthesize continuous, multi-scale 3D urban environments where building interiors directly correspond to their specific exterior structures and visual identities, a transition previously blocked by the independent synthesis of indoor and outdoor domains."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-06",
+  "work_key": "arxiv:2608.05879"
+}

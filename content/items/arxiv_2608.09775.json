@@ -1,0 +1,237 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Accurate air quality forecasting is essential for public health and urban environmental management, but remains challenging because pollutant channels differ in periodicity and distribution drift, while their concentration trajectories contain both multi-scale dependencies and rapid changes. Recent methods have improved spatial dependency learning and meteorological covariate modeling. However, pollutant channels are still passed through the same normalization rule and temporal backbone, using a shared latent representation for channel-specific distributions and changes at different rates. To address this limitation, we propose AirFlow, a pollutant-aware dual-stream framework that operates on station multivariate observations without additional graph propagation or predefined signal decomposition. Specifically, AirFlow designs two novel blocks: (1) a statistic-guided normalization routing mechanism that selects a normalization path for each pollutant according to its 24-hour autocorrelation and distribution drift; and (2) a hierarchical dual-stream state model that combines multi-scale state space propagation with learnable response coefficients, where gated bidirectional cross-attention exchanges information and adaptively fuses the resulting representations. Experiments on real-world data from multiple cities show that AirFlow achieves the best performance in 34 of 36 metrics comparisons, with reductions of up to 11.11% root mean square error over the state-of-the-art baseline. AirFlow also requires only 0.0483M parameters and 0.0215G FLOPs, achieving high forecasting accuracy with low computational overhead.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Fan Yang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Nan Chen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yijie Dong",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yuchen Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Wei Zhang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI",
+      "cs.CE",
+      "cs.LG"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.09775v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09775v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-10",
+    "title": "AirFlow: Context Preserving and Multi-Rate State Modeling for Air Quality Forecasting"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-10_2608.09775",
+    "members": [
+      "arxiv:2608.09775"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:air-quality",
+        "label": "air quality measurements"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5146572869",
+        "label": "Fan Yang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146498636",
+        "label": "Nan Chen"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8989-3893",
+        "label": "Yijie Dong"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146497833",
+        "label": "Yuchen Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146522831",
+        "label": "Wei Zhang"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12120",
+        "is_primary": true,
+        "label": "Air Quality Monitoring and Forecasting",
+        "score": 0.9446,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0311,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12761",
+        "is_primary": false,
+        "label": "Data Stream Mining Techniques",
+        "score": 0.0031,
+        "subfield": "1702"
+      }
+    ]
+  },
+  "first_published": "2026-08-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.09775",
+    "doi": "10.48550/arxiv.2608.09775",
+    "openalex": "W7202208442",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:40:42Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005566,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1970,
+      "out": 290
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 1.0,
+      "relevance": 0.621,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4484,
+    "relevance": 0.621
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The proposed AirFlow framework forecasts air quality by routing pollutant channels through a statistic-guided normalization mechanism based on their 24-hour autocorrelation, and modeling temporal dynamics using a hierarchical dual-stream state model. Evaluated on real-world datasets from multiple cities, the model achieved the best performance in 34 out of 36 metric comparisons, reducing root mean square error by up to 11.11% compared to state-of-the-art baselines while requiring only 0.0483M parameters and 0.0215G FLOPs.",
+      "why": "It demonstrates that air quality forecasting accuracy can be significantly improved without the computational overhead of graph propagation or predefined signal decomposition, by instead tailoring normalization and temporal modeling to the distinct rates of change of individual pollutants."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-10",
+  "work_key": "arxiv:2608.09775"
+}

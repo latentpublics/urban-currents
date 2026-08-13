@@ -82,9 +82,26 @@ def arxiv_vocab() -> dict[str, Any]:
     return _load_yaml(paths.VOCAB / "sources" / "arxiv.yaml")
 
 
+_JOURNALS_CACHE: dict[str, Any] = {}
+
+
 def journals_vocab() -> dict[str, Any]:
-    # Not cached: `build_journal_whitelist.py` rewrites it mid-session.
-    return _load_yaml(paths.VOCAB / "sources" / "journals.yaml")
+    """Whitelist journals, cached against the file's mtime.
+
+    Deliberately not an lru_cache: `build_journal_whitelist.py` rewrites this
+    file mid-session and the new list has to take effect. But it also cannot be
+    re-parsed per call — `_is_whitelist_journal` asks for it once per item, and
+    a 90-day backfill asks ~25,000 times, which turned a 160-entry YAML parse
+    into the dominant cost of the stage.
+    """
+    path = paths.VOCAB / "sources" / "journals.yaml"
+    stamp = path.stat().st_mtime_ns if path.exists() else 0
+    if _JOURNALS_CACHE.get("stamp") != stamp or _JOURNALS_CACHE.get("path") != str(path):
+        _JOURNALS_CACHE.clear()
+        _JOURNALS_CACHE.update(
+            {"stamp": stamp, "path": str(path), "doc": _load_yaml(path)}
+        )
+    return _JOURNALS_CACHE["doc"]
 
 
 def vocab_file(name: str) -> dict[str, Any]:
@@ -92,6 +109,7 @@ def vocab_file(name: str) -> dict[str, Any]:
 
 
 def reset_caches() -> None:
+    _JOURNALS_CACHE.clear()
     pipeline_config.cache_clear()
     scoring_config.cache_clear()
     arxiv_vocab.cache_clear()

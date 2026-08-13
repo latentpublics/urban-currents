@@ -210,14 +210,29 @@ def stage_classify(run: Run) -> list[Item]:
 # --------------------------------------------------------------------------
 
 
+_WHITELIST_IDS: dict[int, set[str]] = {}
+
+
 def _whitelist_source_ids() -> set[str]:
+    """Included whitelist source IDs, memoised against the parsed document.
+
+    `journals_vocab()` is already mtime-cached; this avoids rebuilding the set
+    itself once per item, which a backfill does tens of thousands of times.
+    """
     from .config import journals_vocab
 
-    return {
-        s["id"]
-        for s in (journals_vocab().get("sources") or [])
-        if s.get("id") and s.get("include", True)
-    }
+    doc = journals_vocab()
+    key = id(doc)
+    cached = _WHITELIST_IDS.get(key)
+    if cached is None:
+        _WHITELIST_IDS.clear()
+        cached = {
+            s["id"]
+            for s in (doc.get("sources") or [])
+            if s.get("id") and s.get("include", True)
+        }
+        _WHITELIST_IDS[key] = cached
+    return cached
 
 
 def _is_whitelist_journal(item: Item) -> bool:
@@ -242,10 +257,57 @@ def journal_rank_score(item: Item) -> float:
     not our kind") in `uc review --label relevance` is being collected precisely
     to train the classifier that belongs here.
     """
+    # An item with no abstract cannot be summarised, so its card carries a title
+    # and nothing else. Measured on the five prepared days: 5-10 of 24 published
+    # cards were in that state, all journal-side (several Elsevier titles expose
+    # no abstract to OpenAlex). Rank them last rather than dropping them — the
+    # bibliography is still a real record, and whether such an item should
+    # publish at all is a product decision, not this function's to make.
+    if not (item.bibliography.abstract or "").strip():
+        return -1.0
+
     c = item.scores.components
     return round(
         0.5 * c.artifact_completeness + 0.3 * c.novelty + 0.2 * c.source_multiplicity, 4
     )
+
+
+def fill_slots(
+    items: list[Item], threshold: float, journal_slots: int, arxiv_slots: int
+) -> tuple[list[Item], list[Item]]:
+    """Which items fill a day's two sets of slots, ranked and lent.
+
+    Pure: no Run, no stage files, no scoring — the items must already carry
+    their scores. `stage_select` uses it to publish a day; the backfill uses it
+    to work out which of a day's candidates *would* have published, which is the
+    population the quiet-day threshold is calibrated on. One rule, one place.
+    """
+    journal_pool = sorted(
+        (it for it in items if _is_whitelist_journal(it)),
+        key=lambda it: (-journal_rank_score(it), it.work_key),
+    )
+    arxiv_pool = sorted(
+        (
+            it
+            for it in items
+            if not _is_whitelist_journal(it) and it.scores.relevance >= threshold
+        ),
+        key=lambda it: (-it.scores.relevance, it.work_key),
+    )
+
+    journal_taken = journal_pool[:journal_slots]
+    arxiv_taken = arxiv_pool[:arxiv_slots]
+
+    # A path that cannot fill its slots lends them to the other. The caller
+    # records that it happened — a short day should be visible, not silently
+    # patched over.
+    spare = (journal_slots - len(journal_taken)) + (arxiv_slots - len(arxiv_taken))
+    if spare:
+        journal_taken = journal_pool[: len(journal_taken) + spare]
+        spare = journal_slots + arxiv_slots - len(journal_taken) - len(arxiv_taken)
+        if spare:
+            arxiv_taken = arxiv_pool[: len(arxiv_taken) + spare]
+    return journal_taken, arxiv_taken
 
 
 def stage_select(
@@ -291,21 +353,8 @@ def stage_select(
     seen = _seen_entity_ids(exclude={it.work_key for it in items})
     for it in journal_pool:
         score_item(it, seen)
-    journal_pool.sort(key=lambda it: (-journal_rank_score(it), it.work_key))
-    arxiv_pool.sort(key=lambda it: (-it.scores.relevance, it.work_key))
 
-    journal_taken = journal_pool[:journal_slots]
-    arxiv_taken = arxiv_pool[:arxiv_slots]
-
-    # A path that cannot fill its slots lends them to the other, and the fact is
-    # recorded — a short day should be visible, not silently patched over.
-    spare = (journal_slots - len(journal_taken)) + (arxiv_slots - len(arxiv_taken))
-    if spare:
-        journal_taken += journal_pool[len(journal_taken) : len(journal_taken) + spare]
-        spare = journal_slots + arxiv_slots - len(journal_taken) - len(arxiv_taken)
-        if spare:
-            arxiv_taken += arxiv_pool[len(arxiv_taken) : len(arxiv_taken) + spare]
-
+    journal_taken, arxiv_taken = fill_slots(items, thr, journal_slots, arxiv_slots)
     selected = journal_taken + arxiv_taken
     selected.sort(key=lambda it: (-it.scores.headline, -it.scores.relevance, it.work_key))
 

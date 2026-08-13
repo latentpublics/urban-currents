@@ -1,0 +1,187 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Road safety mechanisms operate within seconds, minutes and trips, whereas motor insurance observes liability claims aggregated over policy years. An annual rating coefficient can therefore predict claims accurately while leaving the crash-generating process unresolved. We propose a multiscale causal DAG framework with three parts: a proposed crash-occurrence graph constructed from a structured, non-exhaustive map of 72 study--edge records; a separate observation layer linking conventional rating variables to latent exposure, context and behaviour; and a downstream crash-to-claim process that includes reporting, responsibility attribution and claim administration. The formal contribution is set-valued: it characterizes which annual mechanism laws and claim-observation mappings are compatible with an observed insurance contrast and retained external evidence, rather than estimating a causal effect of a rating factor. Diagnostic examples show the limits of that interpretation. A sublinear mileage relation constrains aggregate exposure without identifying its composition. In the French freMTPL2freq portfolio, the 18--20 versus 40--49 claim-frequency relativity is 3.388 after vehicle/geographic adjustment and 1.235 after conditioning on medium-resolution bonus--malus categories; the latter is a different conditional predictive contrast because bonus--malus summarizes endogenous prior insurance history. A Spanish age-mediation estimate narrows only one coarse bookkeeping block under explicit transport-sensitivity assumptions, and the resulting region remains wide. The practical implication is a data requirement: stronger mechanistic claims need trip-level intermediate states and linked crash--claim observations.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Arthur Charpentier",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP",
+      "econ.EM",
+      "stat.ME"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.09441v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09441v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-10",
+    "title": "From Rating Factors to Crash Mechanisms: A Multiscale Causal DAG Framework Linking Motor Insurance and Road Safety"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-10_2608.09441",
+    "members": [
+      "arxiv:2608.09441"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5146453931",
+        "label": "Arthur Charpentier"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": true,
+        "label": "Traffic and Road Safety",
+        "score": 0.477,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11720",
+        "is_primary": false,
+        "label": "Probability and Risk Models",
+        "score": 0.0742,
+        "subfield": "1803"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10243",
+        "is_primary": false,
+        "label": "Statistical Methods and Bayesian Inference",
+        "score": 0.0479,
+        "subfield": "2613"
+      }
+    ]
+  },
+  "first_published": "2026-08-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.09441",
+    "doi": "10.48550/arxiv.2608.09441",
+    "openalex": "W7202205089",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:40:42Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005859,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2004,
+      "out": 317
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.6877,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.2751,
+    "relevance": 0.6877
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework characterizes compatible mechanism laws and observation mappings rather than estimating direct causal effects of specific rating factors.",
+      "what": "The paper develops a multiscale causal Directed Acyclic Graph (DAG) framework that links annual motor insurance rating factors to short-term road safety mechanisms. The framework consists of a crash-occurrence graph built from 72 study-edge records, an observation layer mapping rating variables to latent behaviors, and a downstream crash-to-claim process. It was evaluated using diagnostic examples from the French freMTPL2freq portfolio and a Spanish age-mediation dataset to demonstrate how aggregate insurance data fails to identify specific crash-generating mechanisms.",
+      "why": "It establishes the mathematical limits of using annual insurance policy data to infer real-time road safety and crash causes, proving that stronger mechanistic claims require trip-level intermediate states and linked crash-claim observations rather than aggregate annual metrics."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-10",
+  "work_key": "arxiv:2608.09441"
+}

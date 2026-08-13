@@ -1,0 +1,237 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Biological specimen records collected by natural history institutions constitute a rich source of temporal geographic knowledge, capturing biodiversity information about regional landscapes as they were recorded at different times. Using digitised data from the Allan Herbarium (New Zealand), this study identifies place names in these specimen locality descriptions that are absent from current gazetteers; we refer to these as non-gazetteer place names (NGPs). These place names are typically historical, vernacular, or colloquial and were used as landmarks to describe a specimen's location at the time of collection. We then investigate the problem of georeferencing the NGPs using only the limited information available in the specimen records. To resolve this, we leverage repeated occurrences of the same place name across specimen records with different specimen locations and spatial relation terms, extracting and inverting these relations to derive constraints on NGP locations. This approach is instantiated within deterministic, probabilistic, and LLM-based methods, enabling a comparative analysis of their strengths and limitations for text-based spatial inference. On a pseudo-NGP benchmark, probabilistic inference achieves the highest accuracy (median error 1.43 km; A@1 km 36%), while the LLM yields competitive but less precise estimates (median error 1.80 km; A@1 km 31%), indicating that, despite advances in LLMs, traditional modelling remains advantageous when high spatial precision is required.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Aneesha Fernando",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Surangika Ranathunga",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kristin Stock",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Raj Prasanna",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Christopher B. Jones",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.IR"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.06884v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.06884v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-07",
+    "title": "Georeferencing Non-Gazetteered Place Names using Biological Specimen Records"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-07_2608.06884",
+    "members": [
+      "arxiv:2608.06884"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5120846150",
+        "label": "Aneesha Fernando"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0701-0204",
+        "label": "Surangika Ranathunga"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146284097",
+        "label": "Kristin Stock"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5608-6558",
+        "label": "Raj Prasanna"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146323079",
+        "label": "Christopher B. Jones"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10895",
+        "is_primary": true,
+        "label": "Species Distribution and Climate Change",
+        "score": 0.9095,
+        "subfield": "2302"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": false,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.0071,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10005",
+        "is_primary": false,
+        "label": "Ecology and Vegetation Dynamics Studies",
+        "score": 0.007,
+        "subfield": "2309"
+      }
+    ]
+  },
+  "first_published": "2026-08-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.06884",
+    "doi": "10.48550/arxiv.2608.06884",
+    "openalex": "W7202142829",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:33:54Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005785,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1954,
+      "out": 317
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 1.0,
+      "relevance": 0.7704,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.5082,
+    "relevance": 0.7704
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The evaluation is conducted on a constructed pseudo-NGP benchmark rather than a live deployment of completely unmapped historical names.",
+      "what": "This study identifies non-gazetteer place names (NGPs)—historical, vernacular, or colloquial landmarks—from digitized specimen records of the Allan Herbarium in New Zealand and evaluates methods to georeference them. By leveraging repeated occurrences of the same place name across different records and inverting spatial relation terms, the authors test deterministic, probabilistic, and LLM-based methods on a pseudo-NGP benchmark. The probabilistic inference method achieved the highest accuracy with a median error of 1.43 km (36% accuracy at 1 km), outperforming the LLM-based method which had a median error of 1.80 km.",
+      "why": "It establishes a method to recover and map historical and informal place names that are missing from modern gazetteers, demonstrating that traditional probabilistic modeling outperforms large language models when high spatial precision is required for text-based spatial inference."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-07",
+  "work_key": "arxiv:2608.06884"
+}

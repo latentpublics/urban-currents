@@ -66,13 +66,27 @@ def check_entity_ids(result: ValidationResult, items: list[Item]) -> int:
     return violations
 
 
-def check_issue_references(result: ValidationResult, issues: list[Issue]) -> None:
+def check_issue_references(
+    result: ValidationResult, issues: list[Issue], items: list[Item]
+) -> None:
     for issue in issues:
         for wk in issue.items:
             if not (paths.ITEMS / work_key_to_filename(wk)).exists():
                 result.fail(f"issue {issue.date}: references missing item {wk}")
         if issue.headline.present and issue.headline.work_key not in issue.items:
             result.fail(f"issue {issue.date}: headline item not in items list")
+
+    # Not an error: `store` never deletes, so an item dropped by a changed
+    # selection rule stays behind. It is worth counting because the archive is
+    # what novelty is measured against — unreferenced items quietly raise the
+    # baseline, and a number here is how anyone would notice.
+    published = {wk for issue in issues for wk in issue.items}
+    orphans = [it.work_key for it in items if it.work_key not in published]
+    if orphans:
+        result.note(
+            f"items: {len(orphans)} not referenced by any issue "
+            f"(e.g. {', '.join(sorted(orphans)[:3])})"
+        )
 
 
 def check_edges(result: ValidationResult) -> None:
@@ -104,7 +118,7 @@ def validate_content() -> ValidationResult:
         if facet_dir.is_dir():
             _validate_dir(result, facet_dir, Entity, f"entities/{facet_dir.name}")
     check_entity_ids(result, items)
-    check_issue_references(result, issues)
+    check_issue_references(result, issues, items)
     check_edges(result)
     result.lines.append(
         f"{'PASS' if result.ok else 'FAIL'}: {result.checked} files checked, "

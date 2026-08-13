@@ -1,0 +1,229 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Commercial grazing systems yield irregular livestock observations, which challenge cattle growth forecasting. This study developed a hybrid machine learning framework for herd level cattle weight forecasting using automated sensing observations collected between 2022 and 2024 in southeastern Australia. Weekly live weight observations, demographic variables, and lagged environmental predictors were integrated into structured forecasting datasets. Herd level forecasting trajectories were generated through temporal aggregation of animal level predictions. Four hybrid architecture families were evaluated, including residual, stacked, cascade, and ensemble assisted frameworks. ARIMA, LSTM, and GRU models were used as comparative baselines. Independent testing demonstrated strong predictive agreement across multiple forecasting horizons. The cascade GB to RF to NN architecture achieved the best performance, with a test R^2 of 0.889, RMSE of 21.319 kg, and MAE of 15.462 kg. Hybrid architectures maintained greater robustness than recurrent sequential models under sparse observation conditions. Forecasting error increased progressively across extended prediction horizons. Feature importance analysis identified animal age, rainfall, and temperature as dominant predictors influencing herd level growth forecasting. The proposed framework may support feed allocation, grazing management, and livestock marketing decisions under heterogeneous sensing environments.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Muhammad Riaz Hasib Hossain",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rafiqul Islam",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shawn R. McGrath",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Md Zahidul Islam",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "David W. Lamb",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.06001v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.06001v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-06",
+    "title": "Hybrid Machine Learning Framework for Herd-Level Cattle Growth Pattern and Weight Gain Forecasting in Grazing-Based Production Systems"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-06_2608.06001",
+    "members": [
+      "arxiv:2608.06001"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0007-5705-8974",
+        "label": "Muhammad Riaz Hasib Hossain"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146056652",
+        "label": "Rafiqul Islam"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4737-4267",
+        "label": "Shawn McGrath"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5144222092",
+        "label": "Md Zahidul Islam"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5145989090",
+        "label": "David W. Lamb"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10838",
+        "is_primary": true,
+        "label": "Animal Behavior and Welfare Studies",
+        "score": 0.2573,
+        "subfield": "3404"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12365",
+        "is_primary": false,
+        "label": "Effects of Environmental Stressors on Livestock",
+        "score": 0.2464,
+        "subfield": "1103"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10594",
+        "is_primary": false,
+        "label": "Genetic and phenotypic traits in livestock",
+        "score": 0.0817,
+        "subfield": "1311"
+      }
+    ]
+  },
+  "first_published": "2026-08-06",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.06001",
+    "doi": "10.48550/arxiv.2608.06001",
+    "openalex": "W7201850234",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:27:15Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005675,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1882,
+      "out": 317
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.3959,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.1584,
+    "relevance": 0.3959
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2022 and 2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Forecasting error increases progressively as the prediction horizon is extended.",
+      "what": "A hybrid machine learning framework was developed to forecast herd-level cattle weight trajectories using automated sensing observations from 2022 to 2024 in southeastern Australia. The framework aggregates animal-level predictions using demographic variables, weekly live weight observations, and lagged environmental predictors. Among the architectures tested, a cascade model combining Gradient Boosting, Random Forest, and Neural Networks performed best, achieving a test R^2 of 0.889, an RMSE of 21.319 kg, and an MAE of 15.462 kg.",
+      "why": "The framework demonstrates that hybrid machine learning architectures can maintain robust forecasting performance under sparse and irregular observation conditions, overcoming a major limitation of recurrent sequential models in grazing-based livestock management."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-06",
+  "work_key": "arxiv:2608.06001"
+}

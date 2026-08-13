@@ -1,0 +1,242 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Generalized dissimilarity models (GDMs) have emerged as a valuable tool for formal statistical analysis of biodiversity. In particular, beta diversity, measured using dissimilarity measures, e.g., the Bray-Curtis dissimilarity in our case, provides a statistical summary of the difference in species composition between sites. It also provides novel data for spatial and spatio-temporal modeling as it resides over the product space of one space-time pair and a second space-time pair. In earlier work we developed the spatial generalized dissimilarity mixed model (spGDMM) to remedy some of the stochastic issues concerned with the foundational GDM in the literature. Here, we extend that work to include dynamics. We find much richer modeling opportunities as we consider beta diversity with regard to change in time as well as space. We illustrate with a dataset from the Cape Floristic Region (CFR) in South Africa.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Philip A. White",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Henry A. Frye",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jasper A. Slingsby",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "John A. Silander,",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hana Petersen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alan E. Gelfand",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.ME",
+      "q-bio.PE",
+      "stat.AP"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.05352v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.05352v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-05",
+    "title": "Joint Spatial and Temporal Generalized Dissimilarity Mixed Modeling (stGDMM) for Beta Diversity"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-05_2608.05352",
+    "members": [
+      "arxiv:2608.05352"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5145945513",
+        "label": "Philip A. White"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146033054",
+        "label": "Henry A. Frye"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1246-1181",
+        "label": "Jasper A. Slingsby"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8535-4710",
+        "label": "John A. Silander"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8617-3671",
+        "label": "Hana Petersen"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5671-9212",
+        "label": "Alan E. Gelfand"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10895",
+        "is_primary": true,
+        "label": "Species Distribution and Climate Change",
+        "score": 0.1831,
+        "subfield": "2302"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10243",
+        "is_primary": false,
+        "label": "Statistical Methods and Bayesian Inference",
+        "score": 0.1703,
+        "subfield": "2613"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11911",
+        "is_primary": false,
+        "label": "Spatial and Panel Data Analysis",
+        "score": 0.1112,
+        "subfield": "2002"
+      }
+    ]
+  },
+  "first_published": "2026-08-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.05352",
+    "doi": "10.48550/arxiv.2608.05352",
+    "openalex": "W7201840872",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:20:14Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005055,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1750,
+      "out": 270
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.6579,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.2632,
+    "relevance": 0.6579
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance and utility are illustrated using a single case study in the Cape Floristic Region, without a comparative benchmark against other spatio-temporal modeling techniques.",
+      "what": "The paper introduces the spatio-temporal generalized dissimilarity mixed model (stGDMM), extending previous spatial-only models to analyze beta diversity across both space and time. The model is demonstrated using Bray-Curtis dissimilarity metrics applied to a biodiversity dataset from the Cape Floristic Region in South Africa.",
+      "why": "It provides a statistical framework to model ecological beta diversity over joint space-time pairs, enabling researchers to quantify how species composition changes dynamically across both geographic distance and temporal intervals simultaneously."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-05",
+  "work_key": "arxiv:2608.05352"
+}

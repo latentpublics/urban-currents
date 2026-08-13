@@ -46,29 +46,23 @@
     "merge_basis": "singleton"
   },
   "entities": {
-    "data": [
-      {
-        "confidence": 0.62,
-        "id": "data:social-media",
-        "label": "social media data"
-      }
-    ],
+    "data": [],
     "methods": [
       {
-        "confidence": 0.64,
-        "id": "method:clustering",
-        "label": "clustering"
-      },
-      {
-        "confidence": 0.64,
+        "confidence": 1.0,
         "id": "method:text-analysis",
         "label": "text analysis"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:clustering",
+        "label": "clustering"
       }
     ],
     "orgs": [],
     "people": [],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": []
   },
@@ -86,17 +80,20 @@
   },
   "lens": null,
   "provenance": {
-    "classifier_version": "clf-2026-08-12",
-    "collected_at": "2026-08-12T16:23:26Z",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
       "arxiv"
     ],
-    "cost_usd": 0.0,
-    "llm": null,
+    "cost_usd": 0.005527,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
-      "in": 0,
-      "out": 0
+      "in": 1926,
+      "out": 293
     }
   },
   "publication_status": {
@@ -115,12 +112,12 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 1.0,
-      "relevance": 0.8791,
+      "novelty": 0.5,
+      "relevance": 0.8697,
       "source_multiplicity": 0.0
     },
-    "headline": 0.5516,
-    "relevance": 0.8791
+    "headline": 0.4479,
+    "relevance": 0.8697
   },
   "signals": {
     "code_available": {
@@ -137,7 +134,13 @@
       "url": null,
       "value": false
     },
-    "geographic_scope": null,
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
     "is_retracted": {
       "basis": "rule",
       "confidence": "high",
@@ -161,7 +164,11 @@
     }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The findings are based on a relatively small sample of under 10,000 posts from a single social media platform, which may limit generalizability to broader cultural definitions of wellbeing.",
+      "what": "The study analyzed 9,844 Instagram posts containing the hashtag #wellbeing using hierarchical clustering of hashtags, non-parametric engagement tests, computer vision for image clustering, and object detection for gender representation. It found that the #wellbeing discourse is predominantly feminized and dominated by mental, psychological, and spiritual themes over physical activity and nutrition, with therapeutic and positive psychology narratives generating the highest engagement.",
+      "why": "It measures and characterizes the specific cultural shift of 'wellbeing' on social media, demonstrating that the digital narrative has transitioned from physical fitness toward a highly feminized, therapeutic, and self-discovery-oriented concept."
+    }
   },
   "track": "papers",
   "updated": "2026-08-11",

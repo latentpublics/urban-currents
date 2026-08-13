@@ -47,11 +47,24 @@
   },
   "entities": {
     "data": [],
-    "methods": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:network-analysis",
+        "label": "network analysis"
+      }
+    ],
     "orgs": [],
     "people": [],
-    "places": [],
-    "places_status": "not_attempted",
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q55",
+        "label": "Netherlands",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
     "tools": [],
     "topics": []
   },
@@ -69,17 +82,20 @@
   },
   "lens": null,
   "provenance": {
-    "classifier_version": "clf-2026-08-12",
-    "collected_at": "2026-08-12T16:23:26Z",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
       "arxiv"
     ],
-    "cost_usd": 0.0,
-    "llm": null,
+    "cost_usd": 0.005079,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
-      "in": 0,
-      "out": 0
+      "in": 1760,
+      "out": 271
     }
   },
   "publication_status": {
@@ -99,11 +115,11 @@
     "components": {
       "artifact_completeness": 0.0,
       "novelty": 0.0,
-      "relevance": 0.7405,
+      "relevance": 0.7032,
       "source_multiplicity": 0.0
     },
-    "headline": 0.2962,
-    "relevance": 0.7405
+    "headline": 0.2813,
+    "relevance": 0.7032
   },
   "signals": {
     "code_available": {
@@ -120,7 +136,13 @@
       "url": null,
       "value": false
     },
-    "geographic_scope": null,
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
     "is_retracted": {
       "basis": "rule",
       "confidence": "high",
@@ -144,7 +166,11 @@
     }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The framework's empirical validation is demonstrated using a simplified model compared against a single national-scale dataset from the Netherlands.",
+      "what": "The Multiplex Affiliation-based Random Spatially-embedded (MARS) graph framework replicates the construction of register-based social networks by modeling how individuals associate through shared institutions. A simple implementation of MARS successfully recovered structural properties matching the population-scale register-based social network of the Netherlands, demonstrating that increased spatial freedom correlates with decreased social cohesion.",
+      "why": "It provides a generative model specifically designed for register-based networks, enabling researchers to analyze and validate the structural properties of administrative population data without compromising privacy or relying on models that ignore spatial and institutional constraints."
+    }
   },
   "track": "papers",
   "updated": "2026-08-11",

@@ -1,0 +1,224 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Unmanned Aerial Vehicles are now widely used across business, government, and recreational contexts, creating new challenges for incident response and digital forensics. While previous forensics research has largely focused on the extraction of technical data from UAV systems, minimal empirical work has examined how UAV incidents are handled in real-world settings or what challenges incident handlers face during this response. To address this gap, this paper reports findings from an in-person focus group with UAV and counter-UAV practitioners from industry and government organizations in the United States. Using qualitative analysis, several key challenges are identified, including situational awareness and airspace visibility, fragmented reporting and interorganizational coordination, forensic and attribution limitations, legal and policy gaps, and shortfalls in training and operational capacity. The research extends socio-technical incident response research to the UAV domain by providing practitioner-driven insight into UAV incident response and highlighting opportunities to strengthen incident response in this domain.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "George Grispos",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Joel Elson",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Austin Doctor",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Suat Cubukcu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.06472v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.06472v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-06",
+    "title": "Organizational and Socio-Technical Challenges in UAV Incidents: Evidence from a Practitioner Focus Group"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-06_2608.06472",
+    "members": [
+      "arxiv:2608.06472"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:interview",
+        "label": "interview"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3468-0182",
+        "label": "George Grispos"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5144458478",
+        "label": "Joel Elson"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5135120214",
+        "label": "Austin Doctor"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1905-8838",
+        "label": "Suat Çubukçu"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12034",
+        "is_primary": true,
+        "label": "Digital and Cyber Forensics",
+        "score": 0.3549,
+        "subfield": "1710"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11133",
+        "is_primary": false,
+        "label": "UAV Applications and Optimization",
+        "score": 0.1056,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10809",
+        "is_primary": false,
+        "label": "Occupational Health and Safety Research",
+        "score": 0.0425,
+        "subfield": "3614"
+      }
+    ]
+  },
+  "first_published": "2026-08-06",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.06472",
+    "doi": "10.48550/arxiv.2608.06472",
+    "openalex": "W7202122477",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:27:15Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.00447,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1756,
+      "out": 204
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 1.0,
+      "relevance": 0.766,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.5064,
+    "relevance": 0.766
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a single qualitative focus group with practitioners in the United States, which may not capture the regulatory and operational realities of other jurisdictions.",
+      "what": "This study conducts a qualitative analysis of findings from an in-person focus group with UAV and counter-UAV practitioners from US industry and government organizations. It identifies five categories of real-world operational challenges in UAV incident response: situational awareness, fragmented reporting and interorganizational coordination, forensic and attribution limitations, legal and policy gaps, and training shortfalls.",
+      "why": "It shifts the focus of UAV forensics from purely technical data extraction methods to the socio-technical and organizational realities faced by actual incident handlers, establishing a baseline of practical challenges that hinder effective response."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-06",
+  "work_key": "arxiv:2608.06472"
+}

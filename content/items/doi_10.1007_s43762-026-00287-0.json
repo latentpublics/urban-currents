@@ -1,0 +1,361 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Population-level health measures at small geographic scales (e.g., census tracts), including health conditions, preventive behaviors, risk factors, and overall health status, are crucial for guiding effective health planning and policymaking. It has been well established that demographic and social determinants of health (SDOH) factors contribute to health disparities and thus are usually applied to predict health measure estimation. However, demographic and SDOH indicators are often static and fail to account for the dynamic aspects of daily life. This study explores the role of resident routine activity derived from place visitation big data in estimating health measures at the census tract level in the United States and tests this hypothesis across both urban and rural regions. Hierarchical regression analysis was conducted using demographic and SDOH data (12 variables from the 2019 American Community Survey), and smartphone-based place visitation data (visitation rates to 120 categories of places from SafeGraph Patterns). We analyzed 22 health measures from the CDC’s Population-Level Analysis and Community Estimates (PLACES) dataset, classifying census tracts as urban or rural using the USDA’s Rural-Urban Commuting Area (RUCA) codes. The results showed that incorporating place visitation data significantly contributes to health measure estimation beyond traditional demographic and SDOH variables (mean R² increased by 7.5%). This improvement varied substantially between urban (7.6%) and rural areas (12.5%). Among all health measures, Binge drinking exhibited the greatest predictive gains in the urban analysis (38.8%) and Depression has the highest predictive gains in the rural area (48.9%), with Drinking Places (Alcoholic Beverages) consistently identified as the place category contributing most to model predictions. This study suggests that place visitation big data can be useful auxiliary data source for small-area health measure estimation, complementing traditional demographic and SDOH variables.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Pennsylvania State University",
+            "ror": "https://ror.org/04p491231"
+          }
+        ],
+        "name": "Temitope Akinboyewa",
+        "openalex": "A5146234788",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Pennsylvania State University",
+            "ror": "https://ror.org/04p491231"
+          }
+        ],
+        "name": "Huan Ning",
+        "openalex": "A5048472635",
+        "orcid": "https://orcid.org/0000-0003-3698-3240"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Pennsylvania State University",
+            "ror": "https://ror.org/04p491231"
+          }
+        ],
+        "name": "Zhenlong Li",
+        "openalex": "A5073915674",
+        "orcid": "https://orcid.org/0000-0002-8938-5466"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Pennsylvania State University",
+            "ror": "https://ror.org/04p491231"
+          }
+        ],
+        "name": "M. Naser Lessani",
+        "openalex": "A5146205048",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of South Carolina Upstate",
+            "ror": "https://ror.org/00t9hhv14"
+          },
+          {
+            "name": "University of South Carolina",
+            "ror": "https://ror.org/02b6qw903"
+          },
+          {
+            "name": "Beijing Institute of Big Data Research",
+            "ror": "https://ror.org/00s1sz824"
+          }
+        ],
+        "name": "Xiaoming Li",
+        "openalex": "A5100452150",
+        "orcid": "https://orcid.org/0000-0003-3899-7021"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of South Carolina Upstate",
+            "ror": "https://ror.org/00t9hhv14"
+          },
+          {
+            "name": "University of South Carolina",
+            "ror": "https://ror.org/02b6qw903"
+          },
+          {
+            "name": "Beijing Institute of Big Data Research",
+            "ror": "https://ror.org/00s1sz824"
+          }
+        ],
+        "name": "Shan Qiao",
+        "openalex": "A5146207750",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s43762-026-00287-0",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s43762-026-00287-0.pdf",
+      "source_id": "S4210175573",
+      "source_name": "Computational Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-10",
+    "title": "Exploring the role of place visitation big data on small area health measure estimation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-10_10.1007/s43762-0",
+    "members": [
+      "doi:10.1007/s43762-026-00287-0"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/04p491231",
+        "label": "Pennsylvania State University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/00t9hhv14",
+        "label": "University of South Carolina Upstate"
+      },
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/02b6qw903",
+        "label": "University of South Carolina"
+      },
+      {
+        "confidence": null,
+        "id": "ror:https://ror.org/00s1sz824",
+        "label": "Beijing Institute of Big Data Research"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5146234788",
+        "label": "Temitope Akinboyewa"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3698-3240",
+        "label": "Huan Ning"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8938-5466",
+        "label": "Zhenlong Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146205048",
+        "label": "M. Naser Lessani"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3899-7021",
+        "label": "Xiaoming Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146207750",
+        "label": "Shan Qiao"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": true,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.2035,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11819",
+        "is_primary": false,
+        "label": "Data-Driven Disease Surveillance",
+        "score": 0.0704,
+        "subfield": "2713"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11539",
+        "is_primary": false,
+        "label": "Survey Methodology and Nonresponse",
+        "score": 0.0681,
+        "subfield": "3312"
+      }
+    ]
+  },
+  "first_published": "2026-08-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2295598076",
+      "openalex:W2789962014",
+      "openalex:W2793797331",
+      "openalex:W2802759985",
+      "openalex:W2995129893",
+      "openalex:W3015054443",
+      "openalex:W3025369740",
+      "openalex:W3043974822",
+      "openalex:W3093856726",
+      "openalex:W3119853034",
+      "openalex:W3137297425",
+      "openalex:W3198432782",
+      "openalex:W3198941843",
+      "openalex:W3202069842",
+      "openalex:W3206682544",
+      "openalex:W3207200978",
+      "openalex:W4200355014",
+      "openalex:W4210650291",
+      "openalex:W4212795790",
+      "openalex:W4220775361",
+      "openalex:W4224302381",
+      "openalex:W4226066902",
+      "openalex:W4312693882",
+      "openalex:W4313360690",
+      "openalex:W4313364496",
+      "openalex:W4315754279",
+      "openalex:W4361294675",
+      "openalex:W4380244404",
+      "openalex:W4386502007",
+      "openalex:W4387326320",
+      "openalex:W4388635038",
+      "openalex:W4391019486",
+      "openalex:W4392135043",
+      "openalex:W4392864725",
+      "openalex:W4393929923",
+      "openalex:W4396995894",
+      "openalex:W4399195038",
+      "openalex:W4399266848",
+      "openalex:W4400060644",
+      "openalex:W4402971406",
+      "openalex:W4403889764",
+      "openalex:W4412529429",
+      "openalex:W4413138501"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s43762-026-00287-0",
+    "openalex": "W7202048628",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-12T18:40:46Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006771,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2138,
+      "out": 396
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-12T18:40:46Z",
+    "doi": "10.1007/s43762-026-00287-0",
+    "journal": "Computational Urban Science",
+    "source_id": "S4210175573",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on smartphone-based location data from a single commercial provider (SafeGraph), which may introduce demographic biases in who is tracked and represented in the visitation rates.",
+      "what": "This study evaluated the predictive power of smartphone-derived place visitation data from SafeGraph Patterns (visitation rates to 120 place categories) alongside 12 demographic and social determinants of health variables from the 2019 American Community Survey to estimate 22 CDC health measures at the census tract level. Using hierarchical regression across urban and rural US census tracts, the model showed that adding visitation data increased the mean R² by 7.5% overall, with a 7.6% improvement in urban areas and a 12.5% improvement in rural areas. The largest predictive gains occurred for binge drinking in urban areas (38.8% increase) and depression in rural areas (48.9% increase), with visits to drinking places serving as the strongest predictor.",
+      "why": "It demonstrates that dynamic, daily activity patterns captured via mobile device location data can measure local health outcomes more accurately than static demographic and socioeconomic indicators alone, particularly in rural areas where traditional data is often sparse."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-10",
+  "work_key": "doi:10.1007/s43762-026-00287-0"
+}

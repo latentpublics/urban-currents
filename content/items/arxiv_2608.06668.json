@@ -1,0 +1,213 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "As an important component of the supply chain industry, transportation has experienced rapid development in the past decade with the assistance of digital platforms and intelligent algorithms. Within the field of transportation research, Vehicle Routing Problem (VRP) has remained a persistent and enduring challenge. In the realm of management science, experts, and scholars from both the industrial and academic sectors have continuously explored optimization models and algorithms to effectively address routing problems, from the classical Traveling Salesman Problem to the more general Vehicle Routing Problem. These models and algorithms are applied in real-world industrial scenarios to achieve cost optimization and reduce carbon footprints. However, due to the complexity of real-world problems, numerous specific constraints are often added, and challenges such as information opacity, uncertainty, and irrational human behavior may arise. Therefore, deploying and optimizing mathematical models for VRP in practical scenarios while maintaining optimal results poses numerous challenges. This paper discusses and provides solutions for three different logistic use cases involving external truck network design. Through these industrial case study, the paper introduces how deep reinforcement learning-based vehicle routing optimization has been implemented. As a result, it can be observed that the routes optimized by reinforcement learning agent have over 10% total cost compared to baseline results. Furthermore, the paper proposes that in future research, DRL algorithms for vehicle routing problems could be generalized into more variations of VRP.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Siliang Lu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dan Hu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Lili Wu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.06668v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.06668v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-07",
+    "title": "Vehicle routing problem using deep reinforcement learning - A case study about truck planning in the industry"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-07_2608.06668",
+    "members": [
+      "arxiv:2608.06668"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:reinforcement-learning",
+        "label": "reinforcement learning"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5121214498",
+        "label": "Siliang Lu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5036342077",
+        "label": "Dan Hu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146301604",
+        "label": "Lili Wu"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": true,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.9687,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10100",
+        "is_primary": false,
+        "label": "Metaheuristic Optimization Algorithms Research",
+        "score": 0.0022,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12306",
+        "is_primary": false,
+        "label": "Urban and Freight Transport Logistics",
+        "score": 0.0016,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-08-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.06668",
+    "doi": "10.48550/arxiv.2608.06668",
+    "openalex": "W7202118761",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:33:54Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.00483,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1930,
+      "out": 215
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 1.0,
+      "relevance": 0.9503,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.5801,
+    "relevance": 0.9503
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The abstract does not specify the baseline methods used for comparison or the geographic scale of the industrial case studies.",
+      "what": "This paper implements a deep reinforcement learning (DRL) agent to solve the Vehicle Routing Problem (VRP) across three industrial logistics use cases involving external truck network design. The DRL-optimized routes achieved a total cost reduction of over 10% compared to baseline results.",
+      "why": "It demonstrates that deep reinforcement learning can successfully navigate the complex constraints, information opacity, and uncertainty of real-world industrial truck routing to outperform traditional baseline planning methods."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-07",
+  "work_key": "arxiv:2608.06668"
+}

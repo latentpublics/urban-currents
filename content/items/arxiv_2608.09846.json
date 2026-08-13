@@ -1,0 +1,191 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This paper presents a methodological framework for real-time climate risk assessment using data-driven nowcasting techniques to enhance supply chain resilience in Colombian agricultural contexts. Climate variability in Colombia, characterized by irregular rainfall, temperature fluctuations, and recurrent extreme events, has a direct impact on agricultural production and logistics, particularly for time sensitive crops. The proposed approach integrates short term climate forecasting based on historical meteorological observations with supply chain risk modeling to establish a conceptual early warning system architecture. A prototype implementation developed in a controlled computational environment demonstrates the feasibility of the framework using historical meteorological and agricultural time series derived from official statistics and reanalysis products, without reliance on satellite imagery or computer vision components. The methodology addresses the integration of climate nowcasting with supply chain decision making through explicit risk mapping, threshold-based categorization, and stakeholder-oriented risk signals. Results from synthetic and historical data experiments indicate that short term precipitation nowcasts can be translated into actionable risk indicators for agricultural supply chains, supporting anticipatory decisions related to inventory, sourcing, and transport.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Hernan J. Silva-Sosa",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.09846v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09846v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-10",
+    "title": "Real-Time Climate Risk Assessment for Supply Chain Resilience: A Data-Driven Nowcasting Framework for Colombian Agriculture"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-10_2608.09846",
+    "members": [
+      "arxiv:2608.09846"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5146467079",
+        "label": "Hernan J. Silva-Sosa"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11864",
+        "is_primary": true,
+        "label": "Supply Chain Resilience and Risk Management",
+        "score": 0.211,
+        "subfield": "1408"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11807",
+        "is_primary": false,
+        "label": "Infrastructure Resilience and Vulnerability Analysis",
+        "score": 0.1769,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10439",
+        "is_primary": false,
+        "label": "Climate change impacts on agriculture",
+        "score": 0.1064,
+        "subfield": "1105"
+      }
+    ]
+  },
+  "first_published": "2026-08-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.09846",
+    "doi": "10.48550/arxiv.2608.09846",
+    "openalex": "W7202215001",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:40:42Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005061,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1802,
+      "out": 262
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 1.0,
+      "relevance": 0.7849,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.514,
+    "relevance": 0.7849
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and feasibility were demonstrated using synthetic experiments and historical data in a controlled computational environment rather than a real-world deployment.",
+      "what": "This paper develops a conceptual framework and computational prototype for real-time climate risk nowcasting to support agricultural supply chains in Colombia. The system integrates short-term precipitation forecasting with supply chain risk modeling using historical meteorological observations and official agricultural time-series data, translating weather forecasts into threshold-based risk indicators for inventory, sourcing, and transport decisions.",
+      "why": "It establishes a method to convert raw, short-term meteorological forecasts directly into actionable logistics risk signals without relying on computationally expensive satellite imagery or computer vision pipelines."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-10",
+  "work_key": "arxiv:2608.09846"
+}

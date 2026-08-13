@@ -214,6 +214,33 @@ def review(
         run_review_session(d)
 
 
+@app.command("prepare-labeling")
+def prepare_labeling(
+    date_: Optional[str] = DateOpt,
+    days: int = typer.Option(1, help="Prepare this many days, ending at --date"),
+    per_source: int = typer.Option(15, help="Sample size per source per day"),
+    no_llm: bool = typer.Option(False, "--no-llm", help="Build the pool without summarising"),
+):
+    """Make sure every item in the labelling sample has a summary.
+
+    The published issue carries 24 items but the labelling sample is 30 drawn
+    from a wider pool, so some candidates would otherwise reach the labeller
+    with only an abstract — roughly three times slower to judge.
+    """
+    from .labeling import prepare_day
+
+    end = _date(date_)
+    results = []
+    for i in range(days - 1, -1, -1):
+        d = end - timedelta(days=i)
+        r = prepare_day(d, per_source=per_source, summarize=not no_llm)
+        results.append(r)
+        typer.echo(json.dumps(r))
+    ready = sum(r.get("with_summary", 0) for r in results)
+    total = sum(r.get("sample", 0) for r in results)
+    typer.echo(f"\n[OK] {ready}/{total} labelling items have a summary")
+
+
 @app.command()
 def labels(
     facet: str = typer.Option("relevance", help="Which label file to summarise"),
@@ -277,10 +304,15 @@ def graph():
 def backfill(
     days: int = typer.Option(90, help="Days to look back from --date"),
     date_: Optional[str] = DateOpt,
-    source: str = typer.Option("arxiv", help="all | arxiv | openalex"),
+    source: str = typer.Option("all", help="all | arxiv | openalex"),
     max_pages: Optional[int] = typer.Option(None, help="Cap pages per source (testing)"),
 ):
-    """Collect, gate, classify and score a date range. Does NOT summarise."""
+    """Collect, gate, classify and score a date range. Does NOT summarise.
+
+    Defaults to both sources: a threshold calibrated on arXiv alone does not
+    describe a population that is half journal articles scoring 1.0 by
+    membership.
+    """
     from .calibrate import run_backfill
 
     meta = run_backfill(_date(date_), days=days, sources=source, max_pages=max_pages)

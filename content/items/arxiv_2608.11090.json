@@ -1,0 +1,160 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "As LLMs have become a flashpoint for scientific research, computer scientists and STS scholars have advocated the use of open-weight models. Since LLM research has matured and more high-quality model families are available, have researchers adopted open-weight models? We present the first systematic study of model selection in scientific research, analyzing 21 million full-text articles through June 2026 from the Semantic Scholar Open Research Corpus (S2ORC). We employ a mixed NLP pipeline to extract model occurrences in article full text and determine whether they are used or merely mentioned by researchers. We divide our corpus into single- and multi-model family studies, which we take as a proxy for applied and foundational AI research. We find GPT-family models dominate both single- and multi-family research, but that both areas are becoming more diverse over time. In single-family papers, open-weight model use rises steadily, reaching 44.0% in 2026. However, we find that recent growth is driven by the availability of high-quality open-weight Chinese models. Further, a logistic regression model finds that open-weight adoption is heterogeneously distributed, estimating that researchers at Chinese institutions have 2.23 times the odds of using an open-weight model, accounting for 44.0% of the increase in open-weight adoption since 2023. A complementary multinomial model shows this association is concentrated in Chinese open-weight models: in 2026, their adjusted use is 37.1% among papers with Chinese affiliations, a 27.9 percentage-point over papers with no observed China link. These findings suggest that open-weight adoption in science is not a general turn toward open science, but part of a broader realignment of model ecosystems in which platforms and markets, and the sociocultural and geopolitical contexts which shape them, determine which AI systems become scientific instruments.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Zackary Okun Dunivin",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.11090v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.11090v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-11",
+    "title": "Who Uses Open-Weight Models? China and the Shifting Geography of AI in Science"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-11_2608.11090",
+    "members": [
+      "arxiv:2608.11090"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.11090",
+    "doi": "10.48550/arxiv.2608.11090",
+    "openalex": null,
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:47:59Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006424,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2182,
+      "out": 350
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.4884,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.1954,
+    "relevance": 0.4884
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "since 2023",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on model mentions within scientific publications as a proxy for actual research adoption and uses single- versus multi-model family studies to categorize applied versus foundational AI research.",
+      "what": "This study analyzes 21 million full-text scientific articles through June 2026 from the Semantic Scholar Open Research Corpus to track the adoption of open-weight Large Language Models (LLMs). Using a mixed NLP pipeline to distinguish model use from mere mentions, the analysis reveals that while GPT-family models dominate, open-weight model use in single-family papers rose to 44.0% in 2026. Logistic and multinomial regression models show this growth is heavily driven by Chinese institutions, whose researchers have 2.23 times the odds of using open-weight models, with their adjusted use of Chinese open-weight models reaching 37.1% in 2026.",
+      "why": "It demonstrates that the adoption of open-weight models in scientific research is not a uniform shift toward open science, but is instead highly stratified by geopolitical context and the regional availability of specific model ecosystems."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-11",
+  "work_key": "arxiv:2608.11090"
+}

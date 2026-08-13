@@ -1,0 +1,237 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Land Surface Temperature (LST) is a widely used satellite-derived measure of urban surface heat, but there is no shared benchmark for forecasting it at 30 m. Prior studies usually cover one to three cities, use kilometer-scale products, or do not release data and code. We introduce HeatCast, a Landsat-based benchmark for monthly LST forecasting across 124 U.S. cities from 2013 through June 2025. HeatCast contains 30 m monthly tiles with LST, elevation, surfacereflectance RGB, three spectral indices, broadband albedo, quality masks, and Local Climate Zone (LCZ) labels, together with a fixed temporal split, LCZ-stratified metrics, and a reference evaluation harness. We evaluate a CNN+LSTM and Earthformer on next-month forecasting, where Earthformer reaches 7.74 K RMSE against 10.42 K for the CNN+LSTM. Forecasting from the eight nonLST channels alone reaches 7.72 K, against 8.15 K from LST history and 8.68 K from RGB. The data, code, and weights are released under MIT at https://doi.org/10.57967/hf/9889.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Jesus Guerrero",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Isaac Corley",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Leon Najafirad",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Maryam Tabar",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Paul Rad",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.07640v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07640v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-07",
+    "title": "HeatCast: A Benchmark for Neighborhood-Scale LST Forecasting across 124 U.S. Cities"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-07_2608.07640",
+    "members": [
+      "arxiv:2608.07640"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5102741715",
+        "label": "Jesus Guerrero"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146580953",
+        "label": "Isaac Corley"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146544738",
+        "label": "Leon Najafirad"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146550918",
+        "label": "Maryam Tabar"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5114027757",
+        "label": "Paul Rad"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.995,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11225",
+        "is_primary": false,
+        "label": "Geothermal Energy Systems and Applications",
+        "score": 0.0007,
+        "subfield": "2105"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11333",
+        "is_primary": false,
+        "label": "Climate change and permafrost",
+        "score": 0.0004,
+        "subfield": "1902"
+      }
+    ]
+  },
+  "first_published": "2026-08-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.07640",
+    "doi": "10.48550/arxiv.2608.07640",
+    "openalex": "W7202182708",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:33:54Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005575,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1946,
+      "out": 295
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.7203,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3681,
+    "relevance": 0.7203
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "from 2013",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The paper introduces HeatCast, a Landsat-based benchmark dataset and evaluation harness for monthly Land Surface Temperature (LST) forecasting at 30 m resolution across 124 U.S. cities from 2013 to June 2025. It evaluates a CNN+LSTM model and Earthformer on next-month forecasting, finding that Earthformer achieves a 7.74 K RMSE, and that forecasting from eight non-LST channels alone (such as elevation and spectral indices) yields a 7.72 K RMSE.",
+      "why": "It establishes the first shared, high-resolution benchmark for neighborhood-scale urban heat forecasting, replacing fragmented, single-city studies with a standardized dataset and evaluation framework across over a hundred cities."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-07",
+  "work_key": "arxiv:2608.07640"
+}

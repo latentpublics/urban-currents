@@ -1,5 +1,6 @@
 {
   "badges": [
+    "data",
     "preprint"
   ],
   "bibliography": {
@@ -66,7 +67,7 @@
   "entities": {
     "data": [
       {
-        "confidence": 0.66,
+        "confidence": 1.0,
         "id": "data:poi",
         "label": "points of interest"
       }
@@ -75,7 +76,7 @@
     "orgs": [],
     "people": [],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": []
   },
@@ -93,17 +94,20 @@
   },
   "lens": null,
   "provenance": {
-    "classifier_version": "clf-2026-08-12",
-    "collected_at": "2026-08-12T16:23:26Z",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:47:59Z",
     "collectors": [
       "arxiv"
     ],
-    "cost_usd": 0.0,
-    "llm": null,
+    "cost_usd": 0.004866,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
-      "in": 0,
-      "out": 0
+      "in": 1804,
+      "out": 240
     }
   },
   "publication_status": {
@@ -121,13 +125,13 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.4,
       "novelty": 1.0,
-      "relevance": 0.9812,
+      "relevance": 0.9835,
       "source_multiplicity": 0.0
     },
-    "headline": 0.5925,
-    "relevance": 0.9812
+    "headline": 0.6734,
+    "relevance": 0.9835
   },
   "signals": {
     "code_available": {
@@ -138,13 +142,19 @@
       "value": false
     },
     "data_available": {
-      "basis": "rule",
-      "confidence": "low",
+      "basis": "llm",
+      "confidence": "medium",
       "detail": null,
       "url": null,
-      "value": false
+      "value": true
     },
-    "geographic_scope": null,
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
     "is_retracted": {
       "basis": "rule",
       "confidence": "high",
@@ -168,7 +178,11 @@
     }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": null,
+      "what": "The authors developed the Rail Transit Station Knowledge Graph (RTSKG), a dataset that models spatial and semantic interactions among urban entities including rail transit stations, road segments, and points of interest. The dataset is structured under a unified schema and was evaluated on two downstream tasks: station-area store recommendation and knowledge-enhanced ridership prediction.",
+      "why": "It provides a structured, linked-data framework that explicitly connects heterogeneous urban entities around transit hubs, enabling researchers to incorporate complex spatial and semantic relationships into predictive urban models."
+    }
   },
   "track": "papers",
   "updated": "2026-08-11",

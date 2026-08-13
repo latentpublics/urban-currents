@@ -1,0 +1,208 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "School network reorganization is a strategic planning problem that requires balancing demographic trends, territorial accessibility, educational requirements, and institutional constraints while ensuring an efficient allocation of public resources. This paper proposes an optimization framework for school dimensioning decisions based on a novel Integer Linear Programming formulation integrating geographical, administrative, and educational criteria. A synthetic benchmark generator is introduced to evaluate the scalability and computational performance of the model on artificial instances, while a real-world case study involving the complete public school network of the Calabria region (Italy) is conducted using actual institutional, territorial, and demographic data. The proposed approach effectively identifies optimal aggregation plans under different policy scenarios while preserving the structural characteristics of the educational system. Furthermore, the model is reformulated as a constrained quadratic model and implemented within a hybrid quantum optimization environment, demonstrating its compatibility with emerging quantum technologies. The results highlight the robustness of the proposed methodology and its potential as a decision-support tool for sustainable and equitable school network planning.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Alessia Ciacco",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Luigi Di Puglia Pugliese",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Francesca Guerriero",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY",
+      "quant-ph"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.05427v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.05427v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-05",
+    "title": "School network reorganization under educational and spatial constraints using classical and quantum optimization"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-05_2608.05427",
+    "members": [
+      "arxiv:2608.05427"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-4840-3135",
+        "label": "Alessia Ciacco"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5135765721",
+        "label": "Luigi Di Puglia Pugliese"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3887-1317",
+        "label": "Francesca Guerriero"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12401",
+        "is_primary": true,
+        "label": "Scheduling and Timetabling Solutions",
+        "score": 0.1901,
+        "subfield": "1803"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10848",
+        "is_primary": false,
+        "label": "Advanced Multi-Objective Optimization Algorithms",
+        "score": 0.0779,
+        "subfield": "1703"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10674",
+        "is_primary": false,
+        "label": "School Choice and Performance",
+        "score": 0.065,
+        "subfield": "3304"
+      }
+    ]
+  },
+  "first_published": "2026-08-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.05427",
+    "doi": "10.48550/arxiv.2608.05427",
+    "openalex": "W7201870899",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:20:14Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.004473,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1758,
+      "out": 204
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.6935,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.2774,
+    "relevance": 0.6935
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "An optimization framework for school network reorganization is developed using a novel Integer Linear Programming formulation that integrates geographical, administrative, and educational criteria. The model was evaluated using a synthetic benchmark generator and applied to a real-world case study of the complete public school network in the Calabria region of Italy. Additionally, the formulation was adapted into a constrained quadratic model and executed within a hybrid quantum optimization environment to test its compatibility with quantum computing.",
+      "why": "It provides a scalable decision-support tool that allows educational planners to balance demographic shifts and territorial accessibility while demonstrating that complex school-dimensioning problems can be solved using emerging hybrid quantum optimization technologies."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-05",
+  "work_key": "arxiv:2608.05427"
+}

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, timedelta
 from html.parser import HTMLParser
 
 from pipeline.calibrate import _quantile, calibrate_threshold, daily_distribution
@@ -311,3 +311,225 @@ def test_class_names_are_the_phase1_contract(repo):
         "uc-badge", "uc-facets", "uc-facet__tags", "uc-tag", "uc-card__links",
     ):
         assert expected in html, f"missing class {expected}"
+
+
+# --------------------------------------------------------------------------
+# Backfill aging — the archive the novelty term is measured against
+# --------------------------------------------------------------------------
+
+
+def _tagged(key: str, day: int, tags: list[str], relevance: float = 0.9) -> Item:
+    it = Item(
+        work_key=key,
+        first_published=date(2026, 5, day),
+        bibliography=Bibliography(title="A Paper"),
+    )
+    it.scores.relevance = relevance
+    it.entities.methods = [EntityRef(id=t, label=t.split(":", 1)[1]) for t in tags]
+    return it
+
+
+def test_backfill_novelty_ages_day_by_day(repo):
+    """A tag published in May is not still novel in August.
+
+    Scoring the whole range against one frozen archive was pinning novelty near
+    1.0 for a few items every day, which put 78 of 90 daily top scores on the
+    same value and left no threshold able to reach the 30-50% band.
+    """
+    from pipeline.calibrate import score_days
+
+    first = _tagged("arxiv:2605.00001", 1, ["method:clustering"])
+    later = _tagged("arxiv:2605.00002", 2, ["method:clustering"])
+
+    # Deliberately out of order: the walk sorts by date, it does not trust input.
+    rows = {r["work_key"]: r for r in score_days([later, first], set(), 0.35)}
+
+    assert rows["arxiv:2605.00001"]["components"]["novelty"] == 1.0
+    assert rows["arxiv:2605.00002"]["components"]["novelty"] == 0.0
+
+
+def test_only_published_items_age_the_archive(repo):
+    """24 of ~190 candidates a day reach content/. A tag on an item that never
+    published was never seen, so it is still novel when it reappears."""
+    from pipeline.calibrate import score_days
+
+    # 30 candidates for 24 slots; ranked by relevance, so t24..t29 miss out.
+    day_one = [
+        _tagged(f"arxiv:2605.1{i:04d}", 1, [f"method:t{i}"], relevance=0.9 - i / 1000)
+        for i in range(30)
+    ]
+    published_tag = _tagged("arxiv:2605.20000", 2, ["method:t0"])
+    dropped_tag = _tagged("arxiv:2605.20001", 2, ["method:t29"])
+
+    rows = {
+        r["work_key"]: r
+        for r in score_days(day_one + [published_tag, dropped_tag], set(), 0.35)
+    }
+
+    assert sum(1 for r in rows.values() if r["date"] == "2026-05-01" and r["published"]) == 24
+    assert rows["arxiv:2605.20000"]["components"]["novelty"] == 0.0
+    assert rows["arxiv:2605.20001"]["components"]["novelty"] == 1.0
+
+
+def test_an_undated_item_neither_publishes_nor_ages_the_archive(repo):
+    from pipeline.calibrate import score_days
+
+    undated = Item(
+        work_key="arxiv:2605.30000",
+        bibliography=Bibliography(title="No date"),
+    )
+    undated.scores.relevance = 0.9
+    undated.entities.methods = [EntityRef(id="method:clustering", label="clustering")]
+
+    rows = {r["work_key"]: r for r in score_days([undated], set(), 0.35)}
+    assert rows["arxiv:2605.30000"]["published"] is False
+    assert rows["arxiv:2605.30000"]["date"] == ""
+
+
+def test_the_threshold_is_calibrated_on_what_would_publish(repo):
+    """The day's headline is the top card of its issue, not the top of a pool
+    the reader never sees."""
+    import json
+
+    from pipeline.calibrate import _scores_path, backfill_dir
+
+    backfill_dir().mkdir(parents=True, exist_ok=True)
+    rows = []
+    for i in range(100):
+        day = f"2026-05-{(i % 28) + 1:02d}"
+        rows.append({
+            "work_key": f"arxiv:2608.{i:05d}", "date": day, "relevance": 0.9,
+            "headline": i / 100, "components": {}, "categories": [],
+            "source": "arxiv", "selected": True, "published": True,
+        })
+        # A higher-scoring candidate on every day that never reaches the issue.
+        rows.append({
+            "work_key": f"arxiv:2609.{i:05d}", "date": day, "relevance": 0.9,
+            "headline": 0.99, "components": {}, "categories": [],
+            "source": "arxiv", "selected": True, "published": False,
+        })
+    with _scores_path().open("w", encoding="utf-8") as fh:
+        for r in rows:
+            fh.write(json.dumps(r) + "\n")
+
+    result = calibrate_threshold(0.30, 0.50)
+    assert result["population"] == "published"
+    assert result["n_selected"] == 100
+    # Had the unpublished 0.99s counted, every daily top would be 0.99 and no
+    # threshold could split the days at all.
+    assert result["headline_threshold"] < 0.99
+    assert result["in_band"] is True
+
+
+def test_a_tied_daily_top_does_not_defeat_the_calibration(repo):
+    """57 of 90 days share one top score, because every day publishes a
+    whitelist journal article and they all score exactly 0.44. A quantile lands
+    inside that tie and `>=` then admits all of them — a 100% headline rate when
+    one increment higher gives 37%. The rate is enumerated, not estimated."""
+    import json
+
+    from pipeline.calibrate import _scores_path, backfill_dir
+
+    backfill_dir().mkdir(parents=True, exist_ok=True)
+    rows = []
+    for i in range(90):
+        day = date(2026, 5, 14) + timedelta(days=i)
+        # 57 days peak at the tie value; 33 rise above it.
+        top = 0.44 if i < 57 else 0.44 + (i - 56) / 1000
+        rows.append({
+            "work_key": f"arxiv:2608.{i:05d}", "date": str(day), "relevance": 0.9,
+            "headline": top, "components": {"novelty": 0.0}, "categories": [],
+            "source": "journal", "selected": True, "published": True,
+        })
+    with _scores_path().open("w", encoding="utf-8") as fh:
+        for r in rows:
+            fh.write(json.dumps(r) + "\n")
+
+    result = calibrate_threshold(0.30, 0.50)
+    assert result["quantile_method"]["rate"] == 1.0, "the tie must still be visible"
+    assert result["in_band"] is True
+    assert result["headline_threshold"] > 0.44
+    assert 0.30 <= result["headline_rate"] <= 0.50
+
+
+def test_calibration_records_that_novelty_dies(repo):
+    """A closed overlay vocabulary saturates. The report should be able to say
+    so with a number rather than leaving it in a comment."""
+    import json
+
+    from pipeline.calibrate import _scores_path, backfill_dir
+
+    backfill_dir().mkdir(parents=True, exist_ok=True)
+    with _scores_path().open("w", encoding="utf-8") as fh:
+        for i in range(30):
+            row = {
+                "work_key": f"arxiv:2608.{i:05d}",
+                "date": f"2026-0{5 if i < 15 else 8}-{(i % 15) + 1:02d}",
+                "relevance": 0.9, "headline": 0.44 + i / 1000,
+                "components": {"novelty": 1.0 if i < 15 else 0.0},
+                "categories": [], "source": "journal",
+                "selected": True, "published": True,
+            }
+            fh.write(json.dumps(row) + "\n")
+
+    decay = calibrate_threshold(0.30, 0.50)["novelty_decay"]
+    assert decay["2026-05"]["mean"] == 1.0
+    assert decay["2026-08"]["mean"] == 0.0
+
+
+def test_a_threshold_on_a_degenerate_score_is_marked_provisional(repo):
+    """Landing in the band is not the same as the threshold meaning something.
+    Every weighted component is one value on the journal path, so the number is
+    reported with the reason it cannot be trusted rather than presented clean."""
+    import json
+
+    from pipeline.calibrate import _scores_path, backfill_dir
+
+    backfill_dir().mkdir(parents=True, exist_ok=True)
+    rows = []
+    for i in range(90):
+        day = date(2026, 5, 14) + timedelta(days=i)
+        rows.append({
+            "work_key": f"doi:10.0000/{i:05d}", "date": str(day), "relevance": 1.0,
+            "headline": 0.44 if i < 57 else 0.44 + (i - 56) / 1000,
+            "components": {"relevance": 1.0, "novelty": 0.0,
+                           "artifact_completeness": 0.2, "source_multiplicity": 0.0},
+            "categories": [], "source": "journal", "selected": True, "published": True,
+        })
+    with _scores_path().open("w", encoding="utf-8") as fh:
+        for r in rows:
+            fh.write(json.dumps(r) + "\n")
+
+    result = calibrate_threshold(0.30, 0.50)
+    assert result["in_band"] is True, "the band is reachable — that is the trap"
+    assert result["provisional"] is True
+    assert any("journal path" in r for r in result["reasons"])
+
+    audit = result["component_audit"]
+    assert audit["relevance"]["by_source"]["journal"]["distinct_values"] == 1
+    assert audit["relevance"]["by_source"]["journal"]["modal_share"] == 1.0
+
+
+def test_a_healthy_distribution_is_not_marked_provisional(repo):
+    """The flag has to be able to clear itself, or it is decoration."""
+    import json
+
+    from pipeline.calibrate import _scores_path, backfill_dir
+
+    backfill_dir().mkdir(parents=True, exist_ok=True)
+    with _scores_path().open("w", encoding="utf-8") as fh:
+        for i in range(90):
+            day = date(2026, 5, 14) + timedelta(days=i)
+            fh.write(json.dumps({
+                "work_key": f"arxiv:2608.{i:05d}", "date": str(day),
+                "relevance": 0.5 + i / 400, "headline": 0.2 + i / 200,
+                "components": {"relevance": 0.5 + i / 400, "novelty": i / 90,
+                               "artifact_completeness": (i % 5) / 5,
+                               "source_multiplicity": (i % 3) / 3},
+                "categories": [], "source": "arxiv", "selected": True,
+                "published": True,
+            }) + "\n")
+
+    result = calibrate_threshold(0.30, 0.50)
+    assert result["provisional"] is False
+    assert result["reasons"] == []

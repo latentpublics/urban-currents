@@ -1,0 +1,219 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Traffic data collection is dominated today by deep object detectors followed by tracking-by-detection, a pipeline that presupposes what is often missing in practice: a detector already trained on the class one wants to count. We revisit a purely geometric traffic-sensing pipeline for Single Board Computers in which detection is class-agnostic: moving objects come from background subtraction and thresholding, and counting is decided by a geometric rule on an imaginary line across the road, a software inductive loop detector. With no object model, training set or per-object trajectory, it runs faster than real time on Raspberry Pi class hardware. Two counting rules are described: a constant average speed rule, whose expected accuracy is derived analytically as about 86% under a Gaussian speed distribution, and a self-calibrating pre-calibration rule that recovers the lane geometry from blob statistics and counts edges of lane occupancy, additionally yielding per-vehicle average speed at no extra cost. Over four videos the latter counts with 83.3%-100% accuracy; in a field deployment it reaches 91% against 37.5% for a blob-tracking baseline under the same compute budget. We report the observations of that period in detail: the resolution floor below which accuracy collapses, the frame rate floor at which vehicles alias past the counting line, the gap between short curated clips and long uncontrolled footage, and the trade-off between Python (easier to tune, 100% CPU) and C++ (40% CPU, thermally viable). These are properties of the sampling geometry, not of the hardware of the time, and still constrain edge deployments. We close by arguing where motion-based, class-agnostic detection remains the right tool: open-set classes with no annotated data, tight power budgets, privacy-constrained installations, and the cold start of mining training crops to bootstrap a learned detector.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Lucas Gouveia Omena Lopes",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "William W. M. Lira",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alexandre M. Lima",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Thales M. A. Vieira",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.07643v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07643v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-07",
+    "title": "Data collection from highways: a geometric, class-agnostic approach to embedded vehicle counting"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-07_2608.07643",
+    "members": [
+      "arxiv:2608.07643"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7761-7293",
+        "label": "Lucas Gouveia Omena Lopes"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146471385",
+        "label": "William W. M. Lira"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5126278496",
+        "label": "Alexandre M. Lima"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5081575455",
+        "label": "Thales M. A. Vieira"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": true,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.4904,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10331",
+        "is_primary": false,
+        "label": "Video Surveillance and Tracking Methods",
+        "score": 0.2153,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10036",
+        "is_primary": false,
+        "label": "Advanced Neural Network Applications",
+        "score": 0.1182,
+        "subfield": "1707"
+      }
+    ]
+  },
+  "first_published": "2026-08-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.07643",
+    "doi": "10.48550/arxiv.2608.07643",
+    "openalex": "W7202155050",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:33:54Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005333,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2158,
+      "out": 233
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.6683,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.2673,
+    "relevance": 0.6683
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The system's performance is highly sensitive to specific geometric sampling thresholds, including a resolution floor and a frame rate floor below which accuracy collapses due to vehicle aliasing.",
+      "what": "The study develops and evaluates a class-agnostic, purely geometric traffic-sensing pipeline for Single Board Computers that counts vehicles using background subtraction and software inductive loop detectors instead of deep learning object detectors. Tested on Raspberry Pi hardware across four videos and a field deployment, the self-calibrating geometric rule achieved 83.3% to 100% counting accuracy and 91% accuracy in the field, while also calculating average vehicle speeds.",
+      "why": "It establishes a highly resource-efficient traffic monitoring capability that runs on low-power edge hardware without requiring pre-trained object models, annotated training data, or high-compute tracking pipelines."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-07",
+  "work_key": "arxiv:2608.07643"
+}

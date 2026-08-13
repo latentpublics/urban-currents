@@ -1,0 +1,242 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Residential energy estimates are often needed before detailed envelope characteristics, equipment efficiencies, infiltration, sensor, or billing data are available. This study quantifies the trade-off between predictive accuracy and input accessibility using two nationally representative U.S. residential-energy datasets: the survey-based Residential Energy Consumption Survey (RECS) and the simulation-based ResStock dataset. Full-feature models were first used to establish dataset-specific performance benchmarks. For total-energy estimation, the models were subsequently restricted to ten low-burden variables obtainable from occupants, administrative records, or location-based weather data without an on-site energy audit. Among CatBoost, XGBoost, LightGBM, Random Forest, and Neural Networks, CatBoost consistently achieved the highest predictive performance for the full-feature analysis, reaching R2 = 0.90 for ResStock and R2 = 0.73 for RECS. When the feature set was restricted to ten homeowner-accessible inputs to simulate realistic deployment conditions, model performance converged to R2 = 0.61 for RECS and R2 = 0.62 for ResStock, showing that algorithmic complexity cannot fully compensate for missing physical and behavioral information. However, for a more homogeneous ResStock cohort consisting of single-family detached, natural-gas-heated homes in Climate Zone 6A constructed between 2000 and 2010, a reduced-input model improved accuracy to R2 = 0.85, demonstrating the value of targeted modeling for homogeneous populations. The results indicate that tree-based ensemble models can serve as high-fidelity emulators of national-scale residential energy datasets. However, careful consideration of feature availability, dataset origin (empirical vs. synthetic), and applicable use cases are also important.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Aditya Ramnarayan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Fatih Evren",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Patti Gunderson",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Samuel Rosenberg",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.09255v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.09255v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-10",
+    "title": "Full-Feature versus Limited-Input Machine Learning for Residential Energy Estimation: A Comparative Analysis of RECS and ResStock Under Realistic Input Constraints"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-10_2608.09255",
+    "members": [
+      "arxiv:2608.09255"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:gradient-boosting",
+        "label": "gradient boosting"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0001-7397-0281",
+        "label": "Aditya Ramnarayan"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146567668",
+        "label": "Fatih Evren"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5049431829",
+        "label": "Patti Gunderson"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5108477042",
+        "label": "S. ROSENBERG"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10121",
+        "is_primary": true,
+        "label": "Building Energy and Comfort Optimization",
+        "score": 0.7618,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10603",
+        "is_primary": false,
+        "label": "Smart Grid Energy Management",
+        "score": 0.1471,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11336",
+        "is_primary": false,
+        "label": "Energy and Environment Impacts",
+        "score": 0.0077,
+        "subfield": "2310"
+      }
+    ]
+  },
+  "first_published": "2026-08-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.09255",
+    "doi": "10.48550/arxiv.2608.09255",
+    "openalex": "W7202199496",
+    "pmid": null
+  },
+  "lens": null,
+  "provenance": {
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-12T18:40:42Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.006609,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.3.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2132,
+      "out": 379
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.6667,
+      "relevance": 0.682,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4861,
+    "relevance": 0.682
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2000 and 2010",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance of the models varies significantly depending on whether they are trained on empirical survey data (RECS) or synthetic, simulation-based data (ResStock).",
+      "what": "The study quantifies the trade-off between predictive accuracy and input accessibility in residential energy estimation by training five machine learning models on two nationally representative U.S. datasets: the survey-based RECS and the simulation-based ResStock. Full-feature models achieved R2 scores of 0.90 for ResStock and 0.73 for RECS using CatBoost, but restricting inputs to ten low-burden, homeowner-accessible variables reduced performance to R2 of 0.62 and 0.61 respectively. For a highly homogeneous cohort of single-family detached homes in a single climate zone, the reduced-input model performance improved to R2 = 0.85.",
+      "why": "It establishes the empirical limits of using machine learning for energy estimation when detailed building audits are unavailable, proving that algorithmic complexity cannot compensate for missing physical and behavioral data unless applied to highly homogeneous housing cohorts."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-10",
+  "work_key": "arxiv:2608.09255"
+}

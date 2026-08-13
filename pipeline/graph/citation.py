@@ -75,6 +75,66 @@ def iter_run_candidates() -> Iterator[Item]:
             break
 
 
+def iter_raw_openalex_works() -> Iterator[dict]:
+    """Every OpenAlex Work ever written to `runs/*/raw/openalex/`.
+
+    The 90-day backfill collected and scored 37,390 candidates and kept the
+    responses verbatim, so the references for those days are already on disk.
+    Re-fetching them would be paying for what we have — measured, 88% of the
+    backfill's journal works carry `referenced_works` in the stored response.
+    """
+    import json as _json
+
+    for raw_dir in sorted(paths.RUNS.glob("*/raw/openalex")):
+        for path in sorted(raw_dir.glob("*.json")):
+            try:
+                payload = _json.loads(path.read_text(encoding="utf-8"))
+            except Exception:  # noqa: BLE001 - a truncated response is not fatal
+                continue
+            works = payload if isinstance(payload, list) else (payload.get("results") or [])
+            for work in works:
+                if isinstance(work, dict) and work.get("id"):
+                    yield work
+
+
+def _work_reference_record(work: dict) -> Optional[dict]:
+    """A reference-base row from a raw OpenAlex Work, or None if unusable."""
+    from ..collectors.base import normalize_doi, normalize_openalex_id
+    from ..collectors.openalex import _arxiv_id_from_work
+
+    refs = [
+        f"openalex:{normalize_openalex_id(w)}"
+        for w in (work.get("referenced_works") or [])
+        if normalize_openalex_id(w)
+    ]
+    if not refs:
+        return None
+
+    arxiv_id = _arxiv_id_from_work(work)
+    doi = normalize_doi(work.get("doi"))
+    oa_id = normalize_openalex_id(work.get("id"))
+    # Same work_key priority as the collector (PRD §5.2), so a row harvested
+    # here and the same paper collected live are one record, not two.
+    if arxiv_id:
+        work_key = f"arxiv:{arxiv_id}"
+    elif doi:
+        work_key = f"doi:{doi}"
+    elif oa_id:
+        work_key = f"openalex:{oa_id}"
+    else:
+        return None
+
+    return {
+        "work_key": work_key,
+        "date": str(work.get("publication_date") or ""),
+        "published": False,
+        "referenced_works": sorted(set(refs)),
+        # Not written to the file: used only to recognise a paper we already
+        # hold under a different key.
+        "identifiers": {v.lower() for v in (arxiv_id, doi, oa_id) if v},
+    }
+
+
 def build_reference_base(out: Optional[Path] = None) -> dict[str, int]:
     """Write `content/graph/references.jsonl` — work_key to referenced Work IDs.
 
@@ -101,6 +161,40 @@ def build_reference_base(out: Optional[Path] = None) -> dict[str, int]:
             "published": False,
             "referenced_works": sorted(set(item.graph.referenced_works)),
         }
+    from_runs = len(rows) - published
+
+    # Every identifier already claimed by a live record. A raw response has not
+    # been through dedup, so the journal version of a paper we already hold as a
+    # preprint arrives under its DOI and becomes a second record — which showed
+    # up as coupling pairs with a Jaccard of exactly 1.0, two work_keys with
+    # byte-identical reference lists. Matching on identifiers catches what the
+    # work_key alone cannot.
+    claimed: set[str] = set()
+    for item in store.iter_items():
+        for value in (item.ids.arxiv, item.ids.doi, item.ids.openalex):
+            if value:
+                claimed.add(value.lower())
+    for item in iter_run_candidates():
+        for value in (item.ids.arxiv, item.ids.doi, item.ids.openalex):
+            if value:
+                claimed.add(value.lower())
+
+    # Harvested last so a live record always wins: it has been through dedup and
+    # merging, and the raw response has not.
+    harvested = 0
+    deduped = 0
+    for work in iter_raw_openalex_works():
+        record = _work_reference_record(work)
+        if record is None or record["work_key"] in rows:
+            continue
+        if record["identifiers"] & claimed:
+            deduped += 1
+            continue
+        claimed |= record["identifiers"]
+        rows[record["work_key"]] = {
+            k: v for k, v in record.items() if k != "identifiers"
+        }
+        harvested += 1
 
     target = out or (paths.GRAPH / REFERENCES_FILE)
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -108,11 +202,21 @@ def build_reference_base(out: Optional[Path] = None) -> dict[str, int]:
         json.dumps(rows[k], ensure_ascii=False, sort_keys=True) for k in sorted(rows)
     ]
     store.write_text_atomic(target, "\n".join(lines) + ("\n" if lines else ""))
+    mentions = [len(r["referenced_works"]) for r in rows.values()]
+    distinct = {ref for r in rows.values() for ref in r["referenced_works"]}
     return {
         "records": len(rows),
+        # Populations, kept apart: what an issue carried, what was scored and
+        # not published, and what the backfill's stored responses already held.
         "published": published,
-        "unpublished": len(rows) - published,
-        "reference_mentions": sum(len(r["referenced_works"]) for r in rows.values()),
+        "from_run_stages": from_runs,
+        "harvested_from_raw": harvested,
+        "harvest_deduped": deduped,
+        "reference_mentions": sum(mentions),
+        "distinct_references": len(distinct),
+        "median_references_per_record": (
+            sorted(mentions)[len(mentions) // 2] if mentions else 0
+        ),
     }
 
 

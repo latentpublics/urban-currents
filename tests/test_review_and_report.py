@@ -174,3 +174,63 @@ def test_cost_summary_extrapolates_only_from_real_days(repo):
     assert costs["days"] == 1
     assert costs["published"] == 3
     assert costs["total_usd"] == 0.0
+
+
+# --------------------------------------------------------------------------
+# The report must describe the model that is actually running
+# --------------------------------------------------------------------------
+
+
+def _write_model_meta(repo, version: str, auc: float) -> None:
+    import json
+
+    from pipeline import paths
+
+    paths.MODELS.mkdir(parents=True, exist_ok=True)
+    (paths.MODELS / f"{version}.json").write_text(
+        json.dumps({
+            "version": version,
+            "variant": version.split("-")[1],
+            "embedding_model": "test-embeddings",
+            "embedding_dim": 8,
+            "threshold": 0.35,
+            "n_train": 100,
+            "headline_task": "arxiv_urban_vs_arxiv_other",
+            "metrics": {"auc": auc, "average_precision": 0.9, "n": 80,
+                        "at_threshold": {"0.35": {"precision": 0.8, "recall": 0.9,
+                                                  "flagged_rate": 0.3}}},
+        }),
+        encoding="utf-8",
+    )
+
+
+def test_the_report_reads_the_pinned_model_not_the_last_filename(repo, monkeypatch):
+    """With v1/v2/v3 on disk a filename sort picks v3 — the variant the
+    comparison rejected — and its AUC became the headline figure while the
+    pipeline ran v2."""
+    from pipeline import config, report
+
+    _write_model_meta(repo, "clf-v1-2026-08-13", 0.11)
+    _write_model_meta(repo, "clf-v2-2026-08-13", 0.22)
+    _write_model_meta(repo, "clf-v3-2026-08-13", 0.33)
+
+    monkeypatch.setattr(
+        report, "cfg",
+        lambda k, d=None: "clf-v2-2026-08-13" if k == "classifier.model_version" else d,
+    )
+    assert report.load_classifier_meta()["metrics"]["auc"] == 0.22
+
+    config.reset_caches()
+
+
+def test_a_pin_with_no_metadata_is_named_not_swapped_for_another_model(repo, monkeypatch):
+    from pipeline import report
+
+    _write_model_meta(repo, "clf-v3-2026-08-13", 0.33)
+    monkeypatch.setattr(
+        report, "cfg",
+        lambda k, d=None: "clf-v9-nonexistent" if k == "classifier.model_version" else d,
+    )
+    meta = report.load_classifier_meta()
+    assert "clf-v9-nonexistent" in meta["error"]
+    assert "metrics" not in meta

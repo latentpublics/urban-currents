@@ -40,9 +40,29 @@ def load_runs() -> list[Metrics]:
 
 
 def load_classifier_meta() -> Optional[dict]:
+    """Metadata for the model that is actually in production.
+
+    The filename sort this used to do picks `clf-v3-…` out of a directory
+    holding v1, v2 and v3 — the variant the comparison rejected as the worst of
+    the three. The report was publishing its metrics as Phase 0's headline
+    figure while the pipeline ran v2. Which model is in production is written
+    down in `classifier.model_version`, so the report reads the same pin the
+    pipeline does (D36 fixed only the pipeline side).
+    """
     metas = sorted(paths.MODELS.glob("clf-*.json"))
     if not metas:
         return None
+    pinned = cfg("classifier.model_version")
+    if pinned:
+        p = paths.MODELS / f"{pinned}.json"
+        if p.exists():
+            return json.loads(p.read_text(encoding="utf-8"))
+        # Models exist but not the pinned one: name it rather than quietly
+        # reporting a different model's metrics.
+        return {
+            "version": str(pinned),
+            "error": f"pinned model {pinned!r} has no metadata at {p.name}",
+        }
     return json.loads(metas[-1].read_text(encoding="utf-8"))
 
 
@@ -163,7 +183,8 @@ def build_report(out_path: Optional[Path] = None) -> Path:
     calib = load_json(paths.RUNS / "backfill" / "calibration.json")
     backfill_meta = load_json(paths.RUNS / "backfill" / "backfill.meta.json")
     gate = load_json(paths.RUNS / "gate_recall.json")
-    trainset = load_json(paths.RUNS / "trainset" / "trainset.meta.json")
+    # Training-set counts come from the adopted model's own `trainset_meta`, not
+    # from runs/trainset/, which describes whichever build ran last.
 
     from .labeling import precision_at_k
 
@@ -206,8 +227,19 @@ def build_report(out_path: Optional[Path] = None) -> Path:
     days_labelled = labels.get("days_labelled") or 0
     q1b_thin = 0 < days_labelled < Q1B_PLANNED_DAYS
 
-    median_day = (calib or {}).get("daily_distribution", {}).get("median_per_day")
-    q2_ok = None if median_day is None else median_day >= 5
+    dd_all = (calib or {}).get("daily_distribution", {})
+    median_day = dd_all.get("median_per_day")
+    # Reported per path: the journal count clears by membership, so a pooled
+    # median answers "how many whitelist articles appeared" as much as it
+    # answers "is there enough signal". The verdict takes the weaker path.
+    median_by_path = {
+        src: v.get("median_per_day")
+        for src, v in (dd_all.get("by_source") or {}).items()
+    }
+    weakest_median = min(
+        (v for v in median_by_path.values() if v is not None), default=median_day
+    )
+    q2_ok = None if weakest_median is None else weakest_median >= 5
 
     rate = (calib or {}).get("headline_rate")
     q3_ok = None if rate is None else 0.30 <= rate <= 0.50
@@ -233,7 +265,9 @@ def build_report(out_path: Optional[Path] = None) -> Path:
                  (f"{_verdict(q1_p_ok)} (PROVISIONAL)" if q1b_thin else _verdict(q1_p_ok))
                  if p_at_10 is not None else PENDING_HUMAN],
                 ["Q2", "Is there enough signal for a daily?", "median >= 5 items/day",
-                 _fmt(median_day, 1), _verdict(q2_ok)],
+                 ", ".join(f"{s}: {_fmt(v, 1)}" for s, v in median_by_path.items())
+                 if median_by_path else _fmt(median_day, 1),
+                 _verdict(q2_ok)],
                 # A rate inside the band is not a passing Q3 when the score it
                 # thresholds is degenerate. The verdict follows the measurement,
                 # and the measurement says the formula cannot carry a line yet.
@@ -259,40 +293,64 @@ def build_report(out_path: Optional[Path] = None) -> Path:
     if not clf:
         A("No trained model found under `models/`. The pipeline falls back to a "
           "keyword heuristic recorded as `classifier_version: heuristic-v0`.")
+    elif clf.get("error"):
+        A(f"**{clf['error']}** — the pipeline runs `{clf['version']}` but this "
+          f"report cannot describe it. Metrics below would belong to a different "
+          f"model, so none are shown.")
+        A("")
     else:
-        m = clf["metrics"]
-        A(f"Model `{clf['version']}` — {clf['embedding_model']} embeddings "
-          f"({clf['embedding_dim']}d) into logistic regression.")
+        m = clf.get("metrics") or {}
+        ev = clf.get("eval_meta") or {}
+        thr = str(clf.get("threshold"))
+        at_thr = (m.get("at_threshold") or {}).get(thr) or {}
+
+        A(f"Model `{clf['version']}`"
+          + (f" (variant {clf['variant']})" if clf.get("variant") else "")
+          + f" — {clf['embedding_model']} embeddings ({clf['embedding_dim']}d) "
+          f"into logistic regression, pinned in `classifier.model_version`.")
         A("")
         L.extend(
             _table(
                 ["metric", "value"],
                 [
-                    ["holdout AUC", _fmt(m.get("auc"))],
+                    ["evaluation AUC", _fmt(m.get("auc"))],
                     ["average precision", _fmt(m.get("average_precision"))],
-                    [f"precision @ {clf.get('threshold')}", _fmt(m.get("precision_at_threshold"))],
-                    [f"recall @ {clf.get('threshold')}", _fmt(m.get("recall_at_threshold"))],
-                    ["training examples", clf.get("n_examples")],
-                    ["holdout examples", clf.get("n_holdout")],
+                    [f"precision @ {thr}", _fmt(at_thr.get("precision"))],
+                    [f"recall @ {thr}", _fmt(at_thr.get("recall"))],
+                    [f"flagged rate @ {thr}", _fmt(at_thr.get("flagged_rate"))],
+                    ["training examples", clf.get("n_train")],
+                    ["evaluation examples", m.get("n")],
                 ],
             )
         )
         A("")
-        A("**Per-source behaviour on the holdout.** The predicted failure mode is "
-          "that journal-heavy training scores arXiv urban papers too low "
-          "(PRD §5.4, §10), so it is measured directly:")
-        A("")
-        rows = []
-        for src, v in (clf.get("per_source") or {}).items():
-            rows.append([
-                src, v.get("n"), _fmt(v.get("mean_proba")),
-                _fmt(v.get("recall_at_threshold")) if "recall_at_threshold" in v
-                else f"FPR {_fmt(v.get('false_positive_rate'))}",
-            ])
-        L.extend(_table(["source", "n", "mean probability", "recall / FPR"], rows))
-        A("")
 
-        sweep = clf.get("threshold_sweep") or []
+        # The single most quotable number in this report, next to the reason it
+        # does not answer the question people will quote it for.
+        if ev:
+            A(f"**These numbers describe one task: `{clf.get('headline_task')}`.** "
+              f"The evaluation set is {ev.get('positives')} positives — "
+              f"\"{ev.get('positive_definition')}\" — against {ev.get('negatives')} "
+              f"negatives drawn from other arXiv papers. Both sides are "
+              f"unambiguous, so this measures telling clear cases apart. The hard "
+              f"live cases are the borderline ones, and they are not in this set; "
+              f"its base rate is also far above the live one, so **live precision "
+              f"is lower than the table above**. This comparison answers \"which "
+              f"variant\", not \"is the classifier good enough\". **Q1b is the only "
+              f"measurement that answers the second question, and Phase 1 Go/No-Go "
+              f"rests on Q1b, not on this AUC.**")
+            A("")
+
+        sanity = clf.get("journal_sanity_check")
+        if sanity:
+            A(f"Journal sanity check: mean probability {_fmt(sanity.get('mean_proba'))} "
+              f"over {sanity.get('n')} whitelist articles, "
+              f"{(sanity.get('share_above_threshold') or 0):.1%} above threshold. "
+              f"{sanity.get('note')} — and since N4 the journal path does not "
+              f"consult the classifier at all, so this bounds nothing in production.")
+            A("")
+
+        sweep = m.get("sweep") or []
         if sweep:
             A("**Threshold sweep.** The headline AUC hides the decision that "
               "actually matters. The selection threshold is set from this table, "
@@ -300,33 +358,35 @@ def build_report(out_path: Optional[Path] = None) -> Path:
             A("")
             L.extend(
                 _table(
-                    ["threshold", "arXiv-urban recall", "journal recall",
-                     "negative FPR", "holdout precision"],
+                    ["threshold", "precision", "recall", "flagged rate"],
                     [
-                        [r["threshold"], _fmt(r.get("arxiv_urban_recall"), 3),
-                         _fmt(r.get("journal_recall"), 3),
-                         _fmt(r.get("arxiv_other_fpr"), 3),
-                         _fmt(r.get("overall_precision"), 3)]
+                        [r.get("threshold"), _fmt(r.get("precision"), 3),
+                         _fmt(r.get("recall"), 3), _fmt(r.get("flagged_rate"), 3)]
                         for r in sweep
                     ],
                 )
             )
             A("")
-            A(f"Configured selection threshold: **{cfg('classifier.threshold')}**. "
-              "Note that holdout precision is measured on a roughly balanced "
-              "sample; the live base rate is far lower, so live precision is "
-              "lower than this column suggests. Q1b's labelling is the test that "
-              "settles it.")
+            A(f"Configured selection threshold: **{cfg('classifier.threshold')}**.")
             A("")
-    if trainset:
-        c = trainset.get("counts", {})
-        A(f"Training set: {c.get('journal_positive')} journal positives + "
-          f"{c.get('arxiv_positive')} arXiv-urban positives + {c.get('negative')} "
-          f"negatives = {c.get('total')}. The arXiv share of positives is "
-          f"{trainset.get('arxiv_positive_share')} by design — journal prose and "
-          f"arXiv prose differ, and training on journals alone down-scores exactly "
-          f"the arXiv urban computing papers this product exists to find.")
-        A("")
+
+        # From the adopted model's own metadata, not from a separate trainset
+        # file that may describe a different build.
+        tm = clf.get("trainset_meta") or {}
+        c = tm.get("counts") or {}
+        if c:
+            A(f"Training set ({tm.get('variant', clf.get('variant'))}): "
+              f"{c.get('journal')} journal positives + "
+              f"{tm.get('arxiv_positive_total')} arXiv-urban positives "
+              f"({c.get('arxiv_subfield')} by subfield, {c.get('arxiv_strict')} "
+              f"strict) + {c.get('arxiv_other')} negatives = {c.get('total')}. "
+              f"Journal positives are kept even though the journal path no longer "
+              f"consults the classifier: dropping them costs precision "
+              f"(0.85 → 0.70 measured, variant v3), because they are still valid "
+              f"training signal for what urban research reads like. Separating "
+              f"the entry paths and separating the training set are different "
+              f"decisions.")
+            A("")
 
     # -- volume -----------------------------------------------------------
     A("## Volume and gate (PRD §5.3, Q2)")
@@ -362,10 +422,27 @@ def build_report(out_path: Optional[Path] = None) -> Path:
         A("")
     if calib and calib.get("daily_distribution"):
         dd = calib["daily_distribution"]
-        A(f"Per-day `above_threshold` items over {dd.get('days_observed')} days — "
-          f"median **{_fmt(dd.get('median_per_day'), 1)}**, "
-          f"p25 {_fmt(dd.get('p25_per_day'), 1)}, p75 {_fmt(dd.get('p75_per_day'), 1)}, "
-          f"range {dd.get('min_per_day')}–{dd.get('max_per_day')}.")
+        A(f"Per-day `above_threshold` items over {dd.get('days_observed')} days, "
+          f"by entry path:")
+        A("")
+        dist_rows = [
+            [path, _fmt(v.get("median_per_day"), 1), _fmt(v.get("p25_per_day"), 1),
+             _fmt(v.get("p75_per_day"), 1),
+             f"{v.get('min_per_day')}–{v.get('max_per_day')}"]
+            for path, v in (dd.get("by_source") or {}).items()
+        ]
+        dist_rows.append([
+            "**both**", f"**{_fmt(dd.get('median_per_day'), 1)}**",
+            _fmt(dd.get("p25_per_day"), 1), _fmt(dd.get("p75_per_day"), 1),
+            f"{dd.get('min_per_day')}–{dd.get('max_per_day')}",
+        ])
+        L.extend(_table(["path", "median/day", "p25", "p75", "range"], dist_rows))
+        A("")
+        A("The pooled median is not comparable with the arXiv-only figure this "
+          "report carried before journals entered the backfill. A whitelist "
+          "article clears by membership, so the journal row measures how many "
+          "whitelist articles appeared, not how many cleared a judgement — the "
+          "arXiv row is the one that answers \"is there enough signal\".")
         A("")
 
     cats = category_intake()
@@ -522,17 +599,44 @@ def build_report(out_path: Optional[Path] = None) -> Path:
                 ["days of runs", costs["days"]],
                 ["items published", costs["published"]],
                 ["items summarised", costs["summarized"]],
-                ["LLM", f"${costs['llm_usd']}"],
-                ["OpenAlex", f"${costs['openalex_usd']}"],
+                ["LLM (daily runs)", f"${costs['llm_usd']}"],
+                ["OpenAlex (daily runs)", f"${costs['openalex_usd']}"],
                 ["embeddings (local)", f"${costs['embedding_usd']}"],
-                ["total", f"${costs['total_usd']}"],
+                ["total (daily runs)", f"${costs['total_usd']}"],
                 ["per published item", f"${costs['per_item_usd']}" if costs["per_item_usd"] else "n/a"],
                 ["monthly estimate", f"${costs['monthly_estimate_usd']}" if costs["monthly_estimate_usd"] else "n/a"],
-                ["tokens in / out", f"{costs['tokens_in']} / {costs['tokens_out']}"],
+                ["tokens in / out (all tasks)",
+                 f"{costs['tokens_in']} / {costs['tokens_out']}"],
             ],
         )
     )
     A("")
+
+    # The token row above counts summarize and extract together while the cost
+    # rows count only what daily runs booked, so the two do not reconcile on
+    # their own. The per-task ledger is the one that does.
+    usage = load_json(paths.STATE / "llm_usage.json") or {}
+    by_task = usage.get("by_task") or {}
+    if by_task:
+        A("**Per task, cumulative** — every LLM call ever made from this "
+          "repository, including calls outside a daily run (labelling "
+          "preparation, re-runs against a cold cache). The daily-run figures "
+          "above are a subset of this, which is why they are smaller:")
+        A("")
+        L.extend(_table(
+            ["task", "calls", "cost"],
+            [[t, v.get("calls"), f"${v.get('cost_usd')}"]
+             for t, v in sorted(by_task.items())]
+            + [["**total**", usage.get("calls"), f"**${usage.get('cost_usd')}**"]],
+        ))
+        A("")
+        A(f"Tokens: {usage.get('input_tokens')} in, {usage.get('output_tokens')} "
+          f"out, {usage.get('thinking_tokens')} thinking. Summarize and extract "
+          f"run one call each per item (D8 was reverted in N1), so a per-item "
+          f"token figure divided by the published count describes neither task "
+          f"on its own.")
+        A("")
+
     A("Embeddings are local (`BAAI/bge-base-en-v1.5` on CPU), so their marginal "
       "cost is zero — which is what makes backfills and retraining free.")
     A("")
@@ -602,10 +706,25 @@ def build_report(out_path: Optional[Path] = None) -> Path:
     # -- source mix -------------------------------------------------------
     A("## What actually gets published")
     A("")
-    from_arxiv = sum(1 for i in items if i.ids.arxiv)
-    from_journal = len(items) - from_arxiv
-    A(f"Of {len(items)} published items, **{from_arxiv} came from arXiv** and "
-      f"{from_journal} from whitelist journals.")
+    # `items` is every file under content/items/, which is not the same as what
+    # the issues carry: `store` never deletes, so items dropped by a changed
+    # selection rule stay on disk. The published population is the union of the
+    # issues' own lists.
+    published_keys = {wk for issue in issues for wk in issue.items}
+    published_items = [i for i in items if i.work_key in published_keys]
+    from_arxiv = sum(1 for i in published_items if i.ids.arxiv)
+    from_journal = len(published_items) - from_arxiv
+    A(f"Across {len(issues)} issues, **{len(published_items)} items were "
+      f"`published`** — {from_arxiv} from arXiv and {from_journal} from "
+      f"whitelist journals.")
+    orphans = len(items) - len(published_items)
+    if orphans:
+        A("")
+        A(f"`content/items/` holds {len(items)} files, {orphans} more than the "
+          f"issues reference. Those are items an earlier selection rule "
+          f"published and the current one does not; they are still part of the "
+          f"archive novelty is measured against, which is why the difference is "
+          f"counted rather than rounded away.")
     A("")
     A(f"The split is structural, not a quota. Each entry path owns its slots — "
       f"journal {cfg('selection.slots.journal')}, arXiv "

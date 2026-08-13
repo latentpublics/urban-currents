@@ -1,36 +1,60 @@
 # Urban Currents — Phase 0 report
 
-Generated 2026-08-13T01:31:36+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
+Generated 2026-08-13T01:43:39+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
 
 ## The four questions (PRD §1)
 
 | Q | Question | Criterion | Measured | Verdict |
 |---|---|---|---|---|
-| Q1a | Is the filter usable? | holdout AUC >= 0.9 | 0.9886 | PASS |
+| Q1a | Is the filter usable? | holdout AUC >= 0.9 | 0.9938 | PASS |
 | Q1b | Is the filter usable? | precision@10 >= 0.7 (per source) | arxiv: 0.5, journal: 0.9 (1 of 5 days) | FAIL (PROVISIONAL) |
-| Q2 | Is there enough signal for a daily? | median >= 5 items/day | 72 | PASS |
+| Q2 | Is there enough signal for a daily? | median >= 5 items/day | arxiv: 18, journal: 51 | PASS |
 | Q3 | Where does the quiet-day line go? | headline rate 30-50% | 0.367 | PROVISIONAL |
 | Q4 | Does review fit the budget? | median <= 15 min/day | PENDING-HUMAN | PENDING-HUMAN |
 
 ## Relevance classifier (PRD §5.4)
 
-Model `clf-v3-2026-08-13` — BAAI/bge-base-en-v1.5 embeddings (768d) into logistic regression.
+Model `clf-v2-2026-08-13` (variant v2) — BAAI/bge-base-en-v1.5 embeddings (768d) into logistic regression, pinned in `classifier.model_version`.
 
 | metric | value |
 |---|---|
-| holdout AUC | 0.9886 |
-| average precision | 0.9694 |
-| precision @ 0.35 | not measured |
-| recall @ 0.35 | not measured |
-| training examples | None |
-| holdout examples | None |
+| evaluation AUC | 0.9938 |
+| average precision | 0.9835 |
+| precision @ 0.35 | 0.8522 |
+| recall @ 0.35 | 0.98 |
+| flagged rate @ 0.35 | 0.2875 |
+| training examples | 7512 |
+| evaluation examples | 800 |
 
-**Per-source behaviour on the holdout.** The predicted failure mode is that journal-heavy training scores arXiv urban papers too low (PRD §5.4, §10), so it is measured directly:
+**These numbers describe one task: `arxiv_urban_vs_arxiv_other`.** The evaluation set is 200 positives — "published in a whitelist journal AND has an arXiv location" — against 600 negatives drawn from other arXiv papers. Both sides are unambiguous, so this measures telling clear cases apart. The hard live cases are the borderline ones, and they are not in this set; its base rate is also far above the live one, so **live precision is lower than the table above**. This comparison answers "which variant", not "is the classifier good enough". **Q1b is the only measurement that answers the second question, and Phase 1 Go/No-Go rests on Q1b, not on this AUC.**
 
-| source | n | mean probability | recall / FPR |
+Journal sanity check: mean probability 0.9642 over 400 whitelist articles, 100.0% above threshold. in-sample sanity check, not a performance claim — and since N4 the journal path does not consult the classifier at all, so this bounds nothing in production.
+
+**Threshold sweep.** The headline AUC hides the decision that actually matters. The selection threshold is set from this table, not from a default:
+
+| threshold | precision | recall | flagged rate |
 |---|---|---|---|
+| 0.1 | 0.575 | 0.995 | 0.432 |
+| 0.15 | 0.668 | 0.995 | 0.372 |
+| 0.2 | 0.754 | 0.995 | 0.33 |
+| 0.25 | 0.791 | 0.985 | 0.311 |
+| 0.3 | 0.811 | 0.985 | 0.304 |
+| 0.35 | 0.852 | 0.98 | 0.287 |
+| 0.4 | 0.878 | 0.97 | 0.276 |
+| 0.45 | 0.906 | 0.965 | 0.266 |
+| 0.5 | 0.931 | 0.95 | 0.255 |
+| 0.55 | 0.943 | 0.915 | 0.242 |
+| 0.6 | 0.963 | 0.905 | 0.235 |
+| 0.65 | 0.968 | 0.9 | 0.233 |
+| 0.7 | 0.973 | 0.89 | 0.229 |
+| 0.75 | 0.977 | 0.855 | 0.219 |
+| 0.8 | 0.982 | 0.83 | 0.211 |
+| 0.85 | 0.987 | 0.785 | 0.199 |
+| 0.9 | 0.986 | 0.7 | 0.177 |
 
-Training set: 2800 journal positives + 1097 arXiv-urban positives + 4000 negatives = 7897. The arXiv share of positives is 0.3 by design — journal prose and arXiv prose differ, and training on journals alone down-scores exactly the arXiv urban computing papers this product exists to find.
+Configured selection threshold: **0.35**.
+
+Training set (v2): 2796 journal positives + 716 arXiv-urban positives (692 by subfield, 24 strict) + 4000 negatives = 7512. Journal positives are kept even though the journal path no longer consults the classifier: dropping them costs precision (0.85 → 0.70 measured, variant v3), because they are still valid training signal for what urban research reads like. Separating the entry paths and separating the training set are different decisions.
 
 ## Volume and gate (PRD §5.3, Q2)
 
@@ -45,7 +69,15 @@ Backfill 2026-05-14 → 2026-08-11 (90 days):
 | `above_threshold` | 6311 | journal by membership, or arXiv ≥ 0.35 |
 | `published` | 2157 | would have filled the 24 daily slots |
 
-Per-day `above_threshold` items over 90 days — median **72**, p25 49.8, p75 86.8, range 22–182.
+Per-day `above_threshold` items over 90 days, by entry path:
+
+| path | median/day | p25 | p75 | range |
+|---|---|---|---|---|
+| arxiv | 18 | 12 | 23.8 | 4–43 |
+| journal | 51 | 34.5 | 64 | 11–148 |
+| **both** | **72** | 49.8 | 86.8 | 22–182 |
+
+The pooled median is not comparable with the arXiv-only figure this report carried before journals entered the backfill. A whitelist article clears by membership, so the journal row measures how many whitelist articles appeared, not how many cleared a judgement — the arXiv row is the one that answers "is there enough signal".
 
 **arXiv intake and gate outcome by category**, measured over the backfill. Cross-listed papers count under each of their categories, so the totals sum above the item count. The four low-volume categories are not gated at all (PRD §5.3), which is why their pass rate is 1.0:
 
@@ -155,13 +187,23 @@ Current `config/scoring.yaml` threshold: 0.444 (source: backfill).
 | days of runs | 5 |
 | items published | 120 |
 | items summarised | 120 |
-| LLM | $0.5284 |
-| OpenAlex | $0.0036 |
+| LLM (daily runs) | $0.5284 |
+| OpenAlex (daily runs) | $0.0036 |
 | embeddings (local) | $0.0 |
-| total | $0.532 |
+| total (daily runs) | $0.532 |
 | per published item | $0.00443 |
 | monthly estimate | $3.192 |
-| tokens in / out | 485268 / 70700 |
+| tokens in / out (all tasks) | 485268 / 70700 |
+
+**Per task, cumulative** — every LLM call ever made from this repository, including calls outside a daily run (labelling preparation, re-runs against a cold cache). The daily-run figures above are a subset of this, which is why they are smaller:
+
+| task | calls | cost |
+|---|---|---|
+| extract | 120 | $0.253165 |
+| summarize | 148 | $0.494993 |
+| **total** | 270 | **$0.755444** |
+
+Tokens: 263233 in, 40065 out, 0 thinking. Summarize and extract run one call each per item (D8 was reverted in N1), so a per-item token figure divided by the published count describes neither task on its own.
 
 Embeddings are local (`BAAI/bge-base-en-v1.5` on CPU), so their marginal cost is zero — which is what makes backfills and retraining free.
 
@@ -185,7 +227,9 @@ Where the depth holding 0.7 is below the slot count, the path is being asked for
 
 ## What actually gets published
 
-Of 156 published items, **63 came from arXiv** and 93 from whitelist journals.
+Across 5 issues, **120 items were `published`** — 63 from arXiv and 57 from whitelist journals.
+
+`content/items/` holds 156 files, 36 more than the issues reference. Those are items an earlier selection rule published and the current one does not; they are still part of the archive novelty is measured against, which is why the difference is counted rather than rounded away.
 
 The split is structural, not a quota. Each entry path owns its slots — journal 12, arXiv 12 — and a path that cannot fill its own lends them to the other, which the run records. The earlier `classifier.arxiv_min_share` quota is gone (N4): it was treating a symptom, since a whitelist article scores ~0.99 nearly by construction and the classifier could not rank within that path at all. Measured on 2026-08-11 under the old single-classifier design: 23 of 24 slots went to journal articles.
 

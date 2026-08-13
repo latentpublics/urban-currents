@@ -533,3 +533,21 @@ def test_a_healthy_distribution_is_not_marked_provisional(repo):
     result = calibrate_threshold(0.30, 0.50)
     assert result["provisional"] is False
     assert result["reasons"] == []
+
+
+def test_the_daily_volume_is_reported_per_entry_path(repo):
+    """A whitelist article clears by membership, so pooling the paths turns
+    "is there enough signal" into "how many whitelist articles appeared". The
+    pooled median moved 28 -> 72 when journals joined the backfill."""
+    from pipeline.calibrate import daily_distribution
+
+    rows = []
+    for i in range(10):
+        day = f"2026-05-{i + 1:02d}"
+        rows += [{"date": day, "relevance": 1.0, "source": "journal"}] * 20
+        rows += [{"date": day, "relevance": 0.9, "source": "arxiv"}] * 6
+
+    dd = daily_distribution(rows, 0.35)
+    assert dd["median_per_day"] == 26
+    assert dd["by_source"]["journal"]["median_per_day"] == 20
+    assert dd["by_source"]["arxiv"]["median_per_day"] == 6

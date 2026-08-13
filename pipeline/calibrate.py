@@ -274,21 +274,41 @@ def _quantile(sorted_values: list[float], q: float) -> float:
     return sorted_values[lo] * (1 - frac) + sorted_values[hi] * frac
 
 
-def daily_distribution(rows: list[dict], threshold: float) -> dict[str, Any]:
-    """Q2: per-day count of items that clear the selection threshold."""
+def _spread(rows: list[dict], threshold: float, all_days: list[str]) -> dict[str, Any]:
     per_day = Counter(r["date"] for r in rows if r["relevance"] >= threshold)
-    all_days = sorted({r["date"] for r in rows if r["date"]})
     counts = sorted(per_day.get(d, 0) for d in all_days)
     return {
-        "days_observed": len(all_days),
         "median_per_day": _quantile(counts, 0.5) if counts else 0,
         "p25_per_day": _quantile(counts, 0.25) if counts else 0,
         "p75_per_day": _quantile(counts, 0.75) if counts else 0,
         "min_per_day": counts[0] if counts else 0,
         "max_per_day": counts[-1] if counts else 0,
         "total_selected": sum(counts),
-        "per_day": {d: per_day.get(d, 0) for d in all_days},
     }
+
+
+def daily_distribution(rows: list[dict], threshold: float) -> dict[str, Any]:
+    """Q2: per-day count of items that clear the selection threshold.
+
+    Split by entry path as well as pooled. A whitelist journal article clears by
+    membership, so the journal column is "how many whitelist articles appeared",
+    which is a volume measurement but not a *signal* measurement — nothing was
+    judged. Pooling the two moved this number from 28 to 72 when journals joined
+    the backfill, and a reader comparing it with the earlier figure would read
+    that as the field getting busier rather than the population changing.
+    """
+    all_days = sorted({r["date"] for r in rows if r["date"]})
+    per_day = Counter(r["date"] for r in rows if r["relevance"] >= threshold)
+    out: dict[str, Any] = {
+        "days_observed": len(all_days),
+        **_spread(rows, threshold, all_days),
+        "per_day": {d: per_day.get(d, 0) for d in all_days},
+        "by_source": {
+            src: _spread([r for r in rows if r.get("source") == src], threshold, all_days)
+            for src in sorted({r.get("source", "?") for r in rows})
+        },
+    }
+    return out
 
 
 def _novelty_decay(published: list[dict]) -> dict[str, Any]:

@@ -1,0 +1,88 @@
+# Terms that must never become vocabulary entries, and why.
+#
+# **This does not stop extraction.** The LLM keeps proposing these, they keep
+# landing in `runs/*/unmatched.jsonl`, and their frequencies stay visible — the
+# only thing this list does is keep them out of `candidates:`. Suppressing them
+# at extraction would hide how much of the model's output is generic, which is a
+# number worth watching.
+#
+# ---------------------------------------------------------------------------
+# The test these entries fail
+# ---------------------------------------------------------------------------
+#
+# The overlay exists to make a graph: two tags that meet in one paper become
+# adjacent, and a tag earns its place if learning that it met another tag tells
+# you something. `kernel density estimation` meeting `street view imagery` is a
+# bridge between a spatial statistic and a data source. `case study` meeting
+# `interviews` is two ways of saying "this is qualitative social science".
+#
+# So the bar is **information, not frequency**. `case study` appeared 7 times in
+# the phase 0f sample, more than most entries that were kept, and it is still
+# worthless here: it is a research design that a third of the corpus shares, so
+# it partitions nothing and connects everything to everything.
+#
+# The `data` facet is treated more leniently: `survey data` and `interview
+# transcripts` are at least *sources*, and knowing a paper used administrative
+# microdata rather than a survey is a real distinction. Only the contentless
+# ones are rejected here.
+
+methods:
+  - term: "case study"
+    also: ["case studies"]
+    why: >
+      A research design, not a method. Shared by a large share of the corpus, so
+      it links everything to everything and distinguishes nothing.
+
+  - term: "literature review"
+    also: ["systematic review", "scoping review", "systematic literature review",
+           "narrative review", "review"]
+    why: >
+      Describes what kind of paper this is, not what it did. Already carried by
+      the item's own type, and the PRISMA guideline it cites is classified as an
+      instrument in the canon for the same reason.
+
+  - term: "comparative analysis"
+    also: ["descriptive analysis", "exploratory analysis", "empirical analysis",
+           "descriptive statistics", "correlation analysis"]
+    why: >
+      Generic analytic verbs. Almost every quantitative paper does all of them,
+      so the tag carries no discrimination — unlike `kernel density estimation`,
+      which names a specific technique with specific inputs.
+
+  - term: "qualitative analysis"
+    also: ["qualitative content analysis", "thematic analysis", "document analysis",
+           "content analysis", "narrative analysis"]
+    why: >
+      A family of qualitative coding procedures. The distinction between them is
+      real to a methodologist and invisible in a one-line card; as tags they
+      cluster the qualitative half of the corpus into one undifferentiated blob.
+
+  - term: "historical analysis"
+    why: A period of study rather than a technique.
+
+  - term: "mixed-methods"
+    also: ["mixed methods", "mixed-methods approach", "mixed methods approach"]
+    why: A statement that two other categories were combined, both already generic.
+
+  - term: "conceptual framework"
+    also: ["analytical framework", "theoretical framework"]
+    why: >
+      Every paper has one. Naming it as a method tags the existence of thinking.
+
+  - term: "policy analysis"
+    why: >
+      A field of application, not a method, and one that overlaps most of the
+      journal path by construction.
+
+data:
+  - term: "literature"
+    also: ["academic literature", "published literature"]
+    why: >
+      Not a data source in the sense this facet means — a review's inputs are
+      papers, and `has_topic` already carries what they were about.
+
+  - term: "primary data"
+    also: ["secondary data", "raw data", "empirical data", "observational data"]
+    why: >
+      Says how the data was obtained relative to the authors, not what it is.
+      `survey data` and `gps trajectory data` are kept because they name a source.

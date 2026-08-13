@@ -19,6 +19,10 @@
 # REVIEW: nothing here is adopted. To adopt one, move it into a family,
 # REVIEW: give it a stable id, fold near-duplicates into `aliases`, and
 # REVIEW: delete it from this block.
+# REVIEW: `candidates:` below came from the extraction queue in phase 0e.
+# REVIEW: nothing here is adopted. To adopt one, move it into a family,
+# REVIEW: give it a stable id, fold near-duplicates into `aliases`, and
+# REVIEW: delete it from this block.
 
 items:
 - id: data:street-view
@@ -217,11 +221,6 @@ candidates:
   seen_in: GIS-based multi-criteria and network accessibility analysis for identifying suitable areas
     for urban leisure green spaces in Sintra, Portugal
   source: extraction queue (phase 0e R5, phase 0f S3)
-- label: academic literature
-  suggested_id: data:academic-literature
-  occurrences: 5
-  seen_in: Perceptions of rewilding in European abandoned agricultural lands
-  source: extraction queue (phase 0e R5, phase 0f S3)
 - label: temperature data
   suggested_id: data:temperature-data
   occurrences: 4
@@ -233,12 +232,6 @@ candidates:
   occurrences: 4
   seen_in: 'Estimating Future Urban Heat Island Effect Based on Shared Socioeconomic Pathway Scenario:
     A Case Study of Busan City'
-  source: extraction queue (phase 0e R5, phase 0f S3)
-- label: observational data
-  suggested_id: data:observational-data
-  occurrences: 4
-  seen_in: 'HOME ENVIRONMENT SAFETY RISKS AND PERCEIVED SAFETY AMONG EMPTY-NESTER ELDERLY IN NANCHANG,
-    CHINA: A MIXED-METHODS STUDY'
   source: extraction queue (phase 0e R5, phase 0f S3)
 - label: historical records
   suggested_id: data:historical-record
@@ -252,7 +245,7 @@ candidates:
   seen_in: null
   source: extraction queue (phase 0e R5, phase 0f S3)
 - label: survey responses
-  suggested_id: data:survey-response
+  suggested_id: data:survey-responsis
   occurrences: 3
   seen_in: Pedestrian Signing at Uncontrolled Crosswalks
   source: extraction queue (phase 0e R5, phase 0f S3)
@@ -282,3 +275,10 @@ candidates:
   occurrences: 3
   seen_in: 'ALL POSSIBLE PASTS: Heritage, Simulacra, and Gentrification in Seoul'
   source: extraction queue (phase 0e R5, phase 0f S3)
+rejected:
+- label: academic literature
+  occurrences: 5
+  reason: extraction_stoplist.yaml
+- label: observational data
+  occurrences: 4
+  reason: extraction_stoplist.yaml

@@ -199,3 +199,94 @@ def test_the_ror_migration_round_trips():
     assert to_url(bare) == url
     assert to_bare(bare) == bare, "already migrated: leave it alone"
     assert to_url(url) == url
+
+
+# --------------------------------------------------------------------------
+# T0 — identifiers are a lock-in point, so the slug rule has to be right
+# --------------------------------------------------------------------------
+
+
+def _singularise(word: str) -> str:
+    import sys
+    from pathlib import Path
+
+    scripts = str(Path(__file__).resolve().parent.parent / "scripts")
+    if scripts not in sys.path:
+        sys.path.insert(0, scripts)
+    from vocab_candidates import singularise
+
+    return singularise(word)
+
+
+def test_words_that_only_look_plural_keep_their_s():
+    """`analysis` and `statistics` produced `method:comparative-analysi` and
+    `method:descriptive-statistic`. Caught before approval this time; after
+    approval it would have been a migration."""
+    for word in ("analysis", "statistics", "economics", "hypothesis", "basis",
+                 "mass", "census", "series", "species", "informatics", "robotics"):
+        assert _singularise(word) == word, word
+
+
+def test_real_plurals_are_still_singularised():
+    cases = {
+        "interviews": "interview", "methods": "method", "images": "image",
+        "analyses": "analysis", "studies": "study", "cities": "city",
+        "boxes": "box", "matrices": "matrix", "indices": "index",
+    }
+    for plural, singular in cases.items():
+        assert _singularise(plural) == singular, plural
+
+
+def test_only_the_last_word_is_singularised():
+    from vocab_candidates import normalise
+
+    assert normalise("comparative analysis") == "comparative analysis"
+    assert normalise("descriptive statistics") == "descriptive statistics"
+    assert normalise("case studies") == "case study"
+    assert normalise("Kernel Density Estimation") == "kernel density estimation"
+
+
+def test_no_candidate_identifier_ends_in_a_mangled_stem():
+    """The whole point of the rule: nothing in the files carries the bug."""
+    import yaml
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parent.parent
+    for name in ("methods", "data", "tools"):
+        doc = yaml.safe_load((root / "vocab" / f"{name}.yaml").read_text(encoding="utf-8")) or {}
+        for entry in doc.get("candidates") or []:
+            slug = entry["suggested_id"]
+            assert not slug.endswith("-analysi"), slug
+            assert not slug.endswith("-statistic"), slug
+            assert not slug.endswith("-serie"), slug
+
+
+def test_the_stoplist_gives_a_reason_for_every_rejection():
+    """A rejection with no recorded why is indistinguishable from an oversight,
+    and the next harvest proposes the same term again."""
+    import yaml
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parent.parent
+    doc = yaml.safe_load((root / "vocab" / "extraction_stoplist.yaml").read_text(encoding="utf-8"))
+    assert doc
+    for facet, entries in doc.items():
+        for entry in entries:
+            assert entry.get("term"), entry
+            assert entry.get("why"), f"{facet}/{entry.get('term')} gives no reason"
+
+
+def test_generic_activities_do_not_reach_candidates():
+    """`case study` appeared more often than most kept terms and is still
+    worthless: it partitions nothing and connects everything to everything."""
+    import yaml
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parent.parent
+    doc = yaml.safe_load((root / "vocab" / "methods.yaml").read_text(encoding="utf-8")) or {}
+    labels = {c["label"] for c in doc.get("candidates") or []}
+    for term in ("case study", "literature review", "thematic analysis",
+                 "comparative analysis", "descriptive statistics"):
+        assert term not in labels, term
+    rejected = {c["label"] for c in doc.get("rejected") or []}
+    assert "case study" in rejected

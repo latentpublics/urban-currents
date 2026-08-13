@@ -41,16 +41,94 @@ sys.path.insert(0, str(ROOT))
 import yaml  # noqa: E402
 
 VOCAB = ROOT / "vocab"
+STOPLIST = VOCAB / "extraction_stoplist.yaml"
 FACET_FILES = {"methods": "methods.yaml", "data": "data.yaml", "tools": "tools.yaml"}
 # Version suffixes on a named tool: yolov5, yolo11, gpt-4. The base name is the
 # entry; the version is not a separate thing to track.
 _VERSION_SUFFIX = re.compile(r"^(?P<base>[a-z][a-z\- ]*?)[ \-]?v?\d[\w.\-]*$")
 
 
+# English endings that look plural and are not. Stripping the `s` produced
+# `method:comparative-analysi` and `method:descriptive-statistic`, and an
+# identifier is a lock-in point — the same lesson as the `ror:` migration, except
+# these were caught before anything was approved rather than after.
+#
+# `-is`  : analysis, basis, hypothesis, thesis, synthesis, emphasis, axis
+# `-ics` : statistics, economics, informatics, robotics, dynamics, logistics
+# `-ss`  : mass, class, access
+# `-us`  : consensus, census, corpus, apparatus
+_NOT_PLURAL = re.compile(r"(?:[aeiou]sis|is|ics|ss|us)$")
+# Singular words ending in `-ies` or `-es`, which no suffix rule can tell from
+# a plural. Listed because they turn up in method names.
+_SINGULAR_EXCEPTIONS = {"series", "species", "diabetes"}
+# Irregulars no suffix rule can settle. Latin `-ices` goes to both `-ix`
+# (matrices/matrix) and `-ex` (indices/index), so the ones this domain actually
+# uses are listed rather than guessed at.
+_IRREGULAR = {
+    "indices": "index",
+    "vertices": "vertex",
+    "appendices": "appendix",
+    "criteria": "criterion",
+    "phenomena": "phenomenon",
+    "analyses": "analysis",
+}
+
+
+def singularise(word: str) -> str:
+    """Strip a trailing plural `s`, leaving words that only look plural alone.
+
+    `analysis` and `statistics` are the cases that made this necessary: the old
+    rule produced `method:comparative-analysi` and `method:descriptive-statistic`
+    in candidate identifiers, and an identifier is a lock-in point — the same
+    lesson as the `ror:` migration, except these were caught before approval
+    rather than after.
+    """
+    if word in _IRREGULAR:
+        return _IRREGULAR[word]
+    if word in _SINGULAR_EXCEPTIONS:
+        return word
+    if word.endswith("ices") and len(word) > 5:
+        return word[:-4] + "ix"          # matrices -> matrix, indices -> index
+    if word.endswith("ies") and len(word) > 4:
+        return word[:-3] + "y"           # studies -> study, cities -> city
+    if word.endswith("ses") and len(word) > 4:
+        return word[:-2] + "is"          # analyses -> analysis, bases -> basis
+    if re.search(r"(?:xes|zes|ches|shes)$", word):
+        return word[:-2]                 # boxes -> box, matches -> match
+    if _NOT_PLURAL.search(word):
+        return word
+    return word[:-1] if word.endswith("s") else word
+
+
+def load_stoplist() -> dict[str, set[str]]:
+    """Terms that never become candidates, by facet.
+
+    Loaded rather than hard-coded so the reason for each stays next to it: a
+    rejection with no recorded why is indistinguishable from an oversight, and
+    the next harvest will propose the same term again.
+    """
+    if not STOPLIST.exists():
+        return {}
+    doc = yaml.safe_load(STOPLIST.read_text(encoding="utf-8")) or {}
+    out: dict[str, set[str]] = {}
+    for facet, entries in doc.items():
+        terms: set[str] = set()
+        for entry in entries or []:
+            for value in [entry.get("term")] + list(entry.get("also") or []):
+                if value:
+                    terms.add(normalise(str(value)))
+        out[facet] = terms
+    return out
+
+
 def normalise(term: str) -> str:
     t = term.strip().lower().replace("-", " ")
     t = re.sub(r"\s+", " ", t)
-    return t[:-1] if t.endswith("s") and not t.endswith("ss") else t
+    if not t:
+        return t
+    words = t.split(" ")
+    words[-1] = singularise(words[-1])
+    return " ".join(words)
 
 
 def load_unmatched() -> tuple[dict[str, Counter], dict[tuple, str]]:
@@ -153,8 +231,10 @@ def main() -> None:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
     per_facet, examples = load_unmatched()
+    stoplist = load_stoplist()
     merged: list[tuple[str, str, str]] = []
     proposed: dict[str, list[tuple[str, int]]] = {}
+    rejected: dict[str, list[tuple[str, int]]] = {}
 
     for facet, counter in per_facet.items():
         path = VOCAB / FACET_FILES[facet]
@@ -162,19 +242,33 @@ def main() -> None:
         surfaces = existing_surfaces(doc)
 
         candidates: list[tuple[str, int]] = []
+        rejected_here: list[tuple[str, int]] = []
+        stop = stoplist.get(facet, set())
         for term, n in counter.most_common():
             entry_id = find_alias(term, surfaces)
             if entry_id:
                 if add_alias(doc, entry_id, term):
                     merged.append((facet, term, entry_id))
                 continue
-            if n >= a.min_items:
-                candidates.append((term, n))
+            if n < a.min_items:
+                continue
+            # Frequency earns a hearing, not a place. A term that is common
+            # *because* everyone does it carries no information for the graph.
+            (rejected_here if normalise(term) in stop else candidates).append((term, n))
         proposed[facet] = candidates
+        rejected[facet] = rejected_here
 
         if a.check:
             continue
 
+        doc["rejected"] = [
+            {
+                "label": term,
+                "occurrences": n,
+                "reason": "extraction_stoplist.yaml",
+            }
+            for term, n in rejected[facet]
+        ]
         doc["candidates"] = [
             {
                 "label": term,
@@ -209,9 +303,12 @@ def main() -> None:
         print(f"  {facet:<8} {term:<40} -> {entry_id}")
     print()
     for facet, cands in sorted(proposed.items()):
-        print(f"{facet}: {len(cands)} candidates at >= {a.min_items} items")
+        print(f"{facet}: {len(cands)} candidates, "
+              f"{len(rejected.get(facet, []))} rejected, at >= {a.min_items} items")
         for term, n in cands[:15]:
             print(f"    {n:>3}  {term}")
+        for term, n in rejected.get(facet, [])[:10]:
+            print(f"    {n:>3}  {term}   [rejected]")
     if a.check:
         print("\n(--check: nothing written)")
 

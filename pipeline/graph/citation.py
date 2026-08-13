@@ -34,6 +34,7 @@ from ..models import Item
 
 REFERENCES_FILE = "references.jsonl"
 COUPLING_FILE = "coupling.jsonl"
+WORK_INDEX_FILE = "work_index.jsonl"
 
 
 # --------------------------------------------------------------------------
@@ -218,6 +219,70 @@ def build_reference_base(out: Optional[Path] = None) -> dict[str, int]:
             sorted(mentions)[len(mentions) // 2] if mentions else 0
         ),
     }
+
+
+def build_work_index(out: Optional[Path] = None) -> dict[str, int]:
+    """Title, authors, year and venue for every work_key we hold references for.
+
+    The canon card needs to name the papers that cite a work, and 87 of 92
+    citing items were harvested backfill records with no bibliography at all —
+    the reference base stores what a paper *cites*, not what it *is*. All of it
+    is already in `runs/*/raw/`, so this costs nothing.
+
+    A separate file rather than new entries in `content/items/`: that directory
+    means "published" (D69), and these records were scored and never published.
+    """
+    from ..collectors.base import clean_text, normalize_doi, normalize_openalex_id
+
+    rows: dict[str, dict] = {}
+
+    # Published items first — they carry the merged, deduped bibliography.
+    for item in store.iter_items():
+        rows[item.work_key] = {
+            "work_key": item.work_key,
+            "title": item.bibliography.title,
+            "authors": [a.name for a in item.bibliography.authors[:5]],
+            "year": (item.first_published.year if item.first_published else None),
+            "venue": item.bibliography.primary_location.source_name,
+            "doi": item.ids.doi,
+            "published": True,
+        }
+    published = len(rows)
+
+    for work in iter_raw_openalex_works():
+        record = _work_reference_record(work)
+        if record is None or record["work_key"] in rows:
+            continue
+        loc = (work.get("primary_location") or {}).get("source") or {}
+        rows[record["work_key"]] = {
+            "work_key": record["work_key"],
+            "title": clean_text(work.get("display_name")),
+            "authors": [
+                (a.get("author") or {}).get("display_name")
+                for a in (work.get("authorships") or [])[:5]
+            ],
+            "year": work.get("publication_year"),
+            "venue": loc.get("display_name"),
+            "doi": normalize_doi(work.get("doi")),
+            "openalex": normalize_openalex_id(work.get("id")),
+            "published": False,
+        }
+
+    target = out or (paths.GRAPH / WORK_INDEX_FILE)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    lines = [store.jsonl_line(rows[k]) for k in sorted(rows)]
+    store.write_text_atomic(target, "\n".join(lines) + ("\n" if lines else ""))
+    return {
+        "records": len(rows),
+        "from_content_items": published,
+        "from_raw": len(rows) - published,
+        "with_title": sum(1 for r in rows.values() if r.get("title")),
+    }
+
+
+def load_work_index(path: Optional[Path] = None) -> dict[str, dict]:
+    p = path or (paths.GRAPH / WORK_INDEX_FILE)
+    return {r["work_key"]: r for r in store.read_jsonl(p) if r.get("work_key")}
 
 
 def load_reference_base(path: Optional[Path] = None) -> list[dict]:

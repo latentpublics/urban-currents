@@ -31,6 +31,46 @@ def dumps(model: BaseModel) -> str:
     return json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
 
 
+# U+2028 LINE SEPARATOR and U+2029 PARAGRAPH SEPARATOR, by codepoint so the
+# source file itself never contains one.
+_LS = chr(0x2028)
+_PS = chr(0x2029)
+
+
+def jsonl_line(data: object) -> str:
+    """One JSONL record, safe to read back with `splitlines()`.
+
+    `json.dumps(..., ensure_ascii=False)` emits U+2028 LINE SEPARATOR and U+2029
+    literally — they are valid inside a JSON string — but Python's
+    `str.splitlines()` treats both as line breaks. A paper title containing one
+    therefore wrote a record that could never be parsed back, and the file only
+    failed when something tried to read it. Escaping them keeps the file both
+    human-readable and round-trippable.
+    """
+    text = json.dumps(data, ensure_ascii=False, sort_keys=True)
+    return text.replace(_LS, "\\u2028").replace(_PS, "\\u2029")
+
+
+def read_jsonl(path: Path, on_error: Optional[list] = None) -> list:
+    """Parse a JSONL file, collecting unparseable lines rather than dying on one.
+
+    A store that a single bad line makes unreadable is a store that loses
+    everything to one interrupted write.
+    """
+    if not path.exists():
+        return []
+    out = []
+    for lineno, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        if not line.strip():
+            continue
+        try:
+            out.append(json.loads(line))
+        except json.JSONDecodeError as e:
+            if on_error is not None:
+                on_error.append({"line": lineno, "error": str(e)})
+    return out
+
+
 def write_text_atomic(path: Path, text: str) -> bool:
     """Write ``text`` to ``path``. Returns True if the file changed on disk."""
     path.parent.mkdir(parents=True, exist_ok=True)

@@ -405,3 +405,88 @@ def test_the_queue_shrinks_as_ids_resolve(repo, monkeypatch):
 
     assert first["pending_after"] == 4
     assert second["pending_after"] == 2, "the queue must actually drain"
+
+
+# --------------------------------------------------------------------------
+# S0 — foundation and instrument are two lists, not a filter
+# --------------------------------------------------------------------------
+
+
+def test_a_listed_instrument_topic_beats_a_low_ratio(repo):
+    """Difference-in-differences sits at ratio 327, below Tobler's 346. Only the
+    topic can tell them apart."""
+    from pipeline.graph.canon import classify_candidate, instrument_topics
+
+    topics, _ = instrument_topics()
+    an_instrument_topic = sorted(topics)[0]
+
+    cls, basis = classify_candidate(an_instrument_topic, 5.0)
+    assert (cls, basis) == ("instrument", "topic")
+
+
+def test_the_ratio_still_catches_topics_nobody_listed(repo):
+    from pipeline.graph.canon import classify_candidate, instrument_topics
+
+    _, threshold = instrument_topics()
+    assert classify_candidate("T_UNLISTED", threshold + 1) == ("instrument", "ratio")
+    assert classify_candidate("T_UNLISTED", threshold - 1)[0] == "foundation"
+
+
+def test_holling_and_arnstein_stay_foundations(repo):
+    """Both have high ratios and both are foundations. A rule that demotes them
+    is wrong, whatever else it gets right."""
+    from pipeline.graph.canon import classify_candidate
+
+    assert classify_candidate("T10202", 672.0)[0] == "foundation"  # Holling
+    assert classify_candidate("T10704", 569.0)[0] == "foundation"  # Arnstein
+
+
+def test_spatial_statistics_is_not_an_instrument(repo):
+    """LISA, Getis-Ord and Moran's I are method papers and still foundations of
+    this field — spatial statistics is its own apparatus, not borrowed kit."""
+    from pipeline.config import vocab_file
+
+    doc = vocab_file("canon_instrument_topics.yaml")
+    names = {t["name"] for t in doc["topics"]}
+    assert "Spatial and Panel Data Analysis" not in names
+
+
+def test_every_instrument_topic_names_a_work_it_classifies():
+    from pipeline.config import vocab_file
+
+    doc = vocab_file("canon_instrument_topics.yaml")
+    assert doc["topics"]
+    for entry in doc["topics"]:
+        assert entry.get("id") and entry.get("classifies") and entry.get("why"), entry
+
+
+# --------------------------------------------------------------------------
+# The JSONL stores survive a title that contains a line separator
+# --------------------------------------------------------------------------
+
+
+def test_a_line_separator_in_a_title_does_not_split_the_record():
+    """U+2028 is legal inside a JSON string and `splitlines()` breaks on it, so
+    one paper title silently corrupted the resolved store."""
+    import json as _json
+
+    from pipeline.store import jsonl_line
+
+    row = {"openalex_id": "openalex:W1", "title": "Before" + chr(0x2028) + "After"}
+    line = jsonl_line(row)
+
+    assert len(line.splitlines()) == 1
+    assert _json.loads(line) == row
+
+
+def test_one_bad_line_does_not_make_the_whole_store_unreadable(repo, tmp_path):
+    from pipeline.store import read_jsonl
+
+    p = tmp_path / "store.jsonl"
+    p.write_text('{"a": 1}\n{"a": broken\n{"a": 3}\n', encoding="utf-8")
+
+    errors: list = []
+    rows = read_jsonl(p, on_error=errors)
+
+    assert [r["a"] for r in rows] == [1, 3]
+    assert len(errors) == 1

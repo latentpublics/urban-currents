@@ -143,6 +143,10 @@ canon:
   # priorities backwards. What the budget cannot resolve waits in
   # runs/state/canon_pending.jsonl and is tried first the next day, and the
   # queue length goes into metrics so a queue that only grows is visible.
+  # Which class a rotating canon card draws from first. `foundation` is what
+  # the field is built on; `instrument` is what it runs on. Both lists are
+  # kept and both are worth publishing, but the default lead is foundation.
+  card_class_priority: [foundation, instrument]
   daily_budget_fraction: 0.2
   # And a wall-clock ceiling, which is the one that actually binds. On cost
   # alone a fifth of the day budget buys 50,000 ids, or 1,000 requests and the

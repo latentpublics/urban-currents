@@ -123,6 +123,70 @@ def _ids(work: dict) -> tuple[str, str, str]:
     return topic, subfield, source.rsplit("/", 1)[-1]
 
 
+def instrument_topics() -> tuple[set[str], float]:
+    """Topic IDs whose works are instruments, and the ratio fallback threshold."""
+    from ..config import vocab_file
+
+    doc = vocab_file("canon_instrument_topics.yaml") or {}
+    return (
+        {t["id"] for t in (doc.get("topics") or []) if t.get("id")},
+        float(doc.get("ratio_threshold", 800)),
+    )
+
+
+def classify_candidate(topic_id: Optional[str], ratio: Optional[float]) -> tuple[str, str]:
+    """`foundation` or `instrument`, and which signal decided it.
+
+    Topic first: the ratio interleaves the two kinds through the whole middle of
+    its range — Tobler at 346 sits next to difference-in-differences at 327 —
+    so a threshold alone must be wrong about one of them. The ratio still
+    catches instruments in topics nobody has listed yet, which is why it stays
+    as a fallback and why anything it decides is marked as such.
+    """
+    topics, threshold = instrument_topics()
+    if topic_id and topic_id in topics:
+        return "instrument", "topic"
+    if ratio is not None and ratio >= threshold:
+        return "instrument", "ratio"
+    return "foundation", "topic" if topic_id else "default"
+
+
+def _work_from_cache(row: dict) -> dict:
+    """Re-shape a `canon_resolved.jsonl` row into the OpenAlex Work shape.
+
+    The cache stores the handful of fields the canon needs rather than the whole
+    Work, so this rebuilds just enough for `_ids`, `_in_scope` and the candidate
+    entry to read it the same way they read a live response.
+    """
+    return {
+        "id": f"https://openalex.org/{row['openalex_id'].split(':', 1)[-1]}",
+        "display_name": row.get("title"),
+        "publication_year": row.get("year"),
+        "publication_date": row.get("publication_date"),
+        "cited_by_count": row.get("cited_by_count"),
+        "primary_topic": {
+            "id": f"https://openalex.org/{row['topic_id']}" if row.get("topic_id") else None,
+            "display_name": row.get("topic"),
+            "subfield": (
+                {
+                    "id": f"https://openalex.org/{row['subfield_id']}",
+                    "display_name": row.get("subfield"),
+                }
+                if row.get("subfield_id") else {}
+            ),
+        },
+        "primary_location": {
+            "source": {
+                "id": f"https://openalex.org/{row['venue_id']}" if row.get("venue_id") else None,
+                "display_name": row.get("venue"),
+            }
+        },
+        "authorships": [
+            {"author": {"display_name": name}} for name in (row.get("authors") or [])
+        ],
+    }
+
+
 def _in_scope(work: dict, whitelist_ids: set[str], mode: str = "subfield") -> bool:
     """Whether a cited work belongs in the canon list.
 
@@ -187,11 +251,28 @@ def resolve_candidates(
     }
 
     by_id = {r["openalex_id"]: r for r in pool}
-    bare = [k.split(":", 1)[1] if ":" in k else k for k in by_id]
-    cost = 0.0
+
+    # The daily stage and the backlog script already resolved much of this into
+    # `runs/state/canon_resolved.jsonl`. Reading it first is the whole point of
+    # that work: without this the store was written and never read, and every
+    # canon rebuild re-fetched what was already on disk.
+    from .daily_canon import load_resolved
+
+    cached = load_resolved()
     fetched: dict[str, dict] = {}
-    for start in range(0, len(bare), batch):
-        chunk = bare[start : start + batch]
+    missing: list[str] = []
+    for key in by_id:
+        bare_key = key.split(":", 1)[1] if ":" in key else key
+        row = cached.get(key)
+        if row and row.get("title"):
+            fetched[bare_key] = _work_from_cache(row)
+        else:
+            missing.append(bare_key)
+
+    from_cache = len(fetched)
+    cost = 0.0
+    for start in range(0, len(missing), batch):
+        chunk = missing[start : start + batch]
         results, meta = (
             pyalex.Works().filter(openalex_id="|".join(chunk)).get(
                 per_page=batch, return_meta=True
@@ -237,6 +318,9 @@ def resolve_candidates(
             ),
             "citing_items": row["citing_items"],
         }
+        entry["class"], entry["class_basis"] = classify_candidate(
+            topic or None, entry["world_to_archive_ratio"]
+        )
         (candidates if _in_scope(work, whitelist, mode) else out_of_scope).append(entry)
 
     candidates.sort(key=lambda r: (-r["weighted_score"], r["openalex_id"]))
@@ -250,6 +334,8 @@ def resolve_candidates(
         "eligible_by_citation_count": len(eligible),
         "considered": len(pool),
         "resolved": len(fetched),
+        "resolved_from_cache": from_cache,
+        "resolved_by_fetch": len(fetched) - from_cache,
         "in_scope": len(candidates),
         "out_of_scope": len(out_of_scope),
         "out_of_scope_examples": [
@@ -260,6 +346,15 @@ def resolve_candidates(
             }
             for e in out_of_scope[:10]
         ],
+        "classes": {
+            "foundation": sum(1 for c in candidates if c["class"] == "foundation"),
+            "instrument": sum(1 for c in candidates if c["class"] == "instrument"),
+        },
+        "class_basis": {
+            basis: sum(1 for c in candidates if c["class_basis"] == basis)
+            for basis in ("topic", "ratio", "default")
+        },
+        "card_class_priority": list(cfg("canon.card_class_priority", ["foundation"]) or []),
         "half_life_days": float(cfg("citation.canon_half_life_days", 180)),
         "openalex_cost_usd": round(cost, 6),
         "candidates": candidates[:top_n],

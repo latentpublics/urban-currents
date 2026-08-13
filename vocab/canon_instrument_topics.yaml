@@ -1,0 +1,108 @@
+# Canon classes — which candidates are `instrument` rather than `foundation`.
+#
+# Both lists stay. The split is not a filter, it is a label: "what this field is
+# built on" and "what this field runs on" are two things worth saying, and
+# putting Tobler and XGBoost in one ranking says neither clearly.
+#
+# ---------------------------------------------------------------------------
+# Why the ratio alone cannot do this
+# ---------------------------------------------------------------------------
+#
+# Phase 0e added `world_to_archive_ratio` — worldwide citations divided by ours —
+# and at the extremes it works: LSTM 3,709 and PRISMA 4,195 against Ewing and
+# Cervero at 57. In the middle it does not. Measured over the 300 candidates the
+# distribution has no natural gap, and the 300-1600 band interleaves the two
+# kinds beyond rescue:
+#
+#   327  Difference-in-differences with variation in treatment timing  <- instrument
+#   330  From local explanations to global understanding (SHAP)        <- instrument
+#   336  Local Indicators of Spatial Association (LISA)                <- foundation
+#   346  A Computer Movie Simulating Urban Growth in the Detroit Region <- foundation
+#   368  Estimating dynamic treatment effects in event studies         <- instrument
+#   408  The Analysis of Spatial Association (Getis-Ord)               <- foundation
+#   433  Two-Way Fixed Effects Estimators                              <- instrument
+#   452  NOTES ON CONTINUOUS STOCHASTIC PHENOMENA (Moran's I)          <- foundation
+#
+# Tobler at 346 and difference-in-differences at 327 are adjacent. Any single
+# threshold through that band demotes the first law of geography or promotes an
+# econometrics estimator.
+#
+# So topic is the primary signal and the ratio is the fallback for topics not
+# listed here — the same shape as `canon_exclude_subfields.yaml`, and for the
+# same reason.
+#
+# ---------------------------------------------------------------------------
+# The judgement this file encodes
+# ---------------------------------------------------------------------------
+#
+# **`Spatial and Panel Data Analysis` is deliberately absent.** LISA, Getis-Ord
+# and Moran's I are methods papers by any ordinary reading, and they are still
+# foundations *of this field* — spatial statistics is not borrowed equipment
+# here, it is the discipline's own apparatus. An econometric estimator or a
+# gradient booster is borrowed; a spatial autocorrelation statistic is not.
+# That distinction is a judgement and it is the whole content of this file.
+#
+# Every entry names a work it classifies. One that names none does not belong.
+
+topics:
+  - id: "T10577"
+    name: "Advanced Causal Inference Techniques"
+    classifies:
+      - "Difference-in-differences with variation in treatment timing"
+      - "Estimating dynamic treatment effects in event studies"
+      - "Two-Way Fixed Effects Estimators with Heterogeneous Treatment Effects"
+    why: >
+      Econometric identification strategies. Urban research uses them to
+      evaluate a policy; it does not build on them the way it builds on
+      accessibility theory.
+
+  - id: "T11512"
+    name: "Explainable Artificial Intelligence (XAI)"
+    classifies:
+      - "From local explanations to global understanding with explainable AI (SHAP)"
+    why: >
+      A model interpretation technique, cited by papers that ran a model.
+
+  - id: "T10883"
+    name: "Neural Networks and Applications"
+    classifies:
+      - "Random Forests (Breiman)"
+      - "Greedy function approximation: A gradient boosting machine (Friedman)"
+      - "Long Short-Term Memory"
+    why: >
+      General machine-learning method papers. The field runs on them and did not
+      produce them.
+
+  - id: "T10688"
+    name: "Machine Learning and Data Classification"
+    classifies:
+      - "XGBoost"
+    why: >
+      Same category as the above; a different OpenAlex topic for the same kind
+      of thing, which is why this is a list rather than a single rule.
+
+  - id: "T11337"
+    name: "Meta-analysis and systematic reviews"
+    classifies:
+      - "The PRISMA 2020 statement"
+    why: >
+      A reporting guideline for reviews. Cited by any field that publishes one.
+
+  - id: "T11289"
+    name: "Behavioral Health and Interventions"
+    classifies:
+      - "The theory of planned behavior (Ajzen)"
+    why: >
+      A general behavioural model. Heavily used in travel behaviour research and
+      not of it — it arrives from social psychology already finished.
+
+# Ratio fallback for topics not listed above. Set at 800 because Holling's
+# resilience paper sits at 672 and Arnstein's ladder at 569, and both are
+# foundations — a threshold below either would be wrong on a case the directive
+# named. The nearest instrument above it is gradient boosting at 900.
+#
+# This is a provisional number, not a discovered one: the distribution has no
+# natural gap, so it is set to the widest interval that keeps the known cases
+# right. Anything classified by this fallback rather than by topic is marked
+# `class_basis: ratio` so it can be audited.
+ratio_threshold: 800

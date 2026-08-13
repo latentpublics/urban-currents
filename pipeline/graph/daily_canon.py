@@ -45,15 +45,17 @@ def _resolved_path() -> Path:
 
 
 def load_resolved() -> dict[str, dict]:
-    p = _resolved_path()
-    if not p.exists():
-        return {}
-    out = {}
-    for line in p.read_text(encoding="utf-8").splitlines():
-        if line.strip():
-            row = json.loads(line)
-            out[row["openalex_id"]] = row
-    return out
+    """Unparseable lines are skipped, not fatal.
+
+    A store that one bad line makes unreadable loses everything to a single
+    interrupted write — which is exactly what happened when a title containing
+    U+2028 split a record in two (see `store.jsonl_line`).
+    """
+    bad: list = []
+    rows = store.read_jsonl(_resolved_path(), on_error=bad)
+    if bad:
+        print(f"canon_resolved.jsonl: skipped {len(bad)} unparseable line(s)")
+    return {r["openalex_id"]: r for r in rows if r.get("openalex_id")}
 
 
 def load_pending() -> list[str]:
@@ -61,9 +63,7 @@ def load_pending() -> list[str]:
     if not p.exists():
         return []
     return [
-        json.loads(line)["openalex_id"]
-        for line in p.read_text(encoding="utf-8").splitlines()
-        if line.strip()
+        r["openalex_id"] for r in store.read_jsonl(p) if r.get("openalex_id")
     ]
 
 
@@ -71,7 +71,7 @@ def _write_pending(ids: list[str]) -> None:
     _pending_path().parent.mkdir(parents=True, exist_ok=True)
     store.write_text_atomic(
         _pending_path(),
-        "\n".join(json.dumps({"openalex_id": i}) for i in sorted(set(ids)))
+        "\n".join(store.jsonl_line({"openalex_id": i}) for i in sorted(set(ids)))
         + ("\n" if ids else ""),
     )
 
@@ -84,11 +84,7 @@ def _append_resolved(rows: list[dict]) -> None:
         existing[row["openalex_id"]] = row
     store.write_text_atomic(
         _resolved_path(),
-        "\n".join(
-            json.dumps(existing[k], ensure_ascii=False, sort_keys=True)
-            for k in sorted(existing)
-        )
-        + "\n",
+        "\n".join(store.jsonl_line(existing[k]) for k in sorted(existing)) + "\n",
     )
 
 
@@ -193,7 +189,9 @@ def _resolve(ids: list[str], batch: int = 50) -> tuple[list[dict], float]:
                 "publication_date": w.get("publication_date"),
                 "venue": loc.get("display_name"),
                 "venue_id": (loc.get("id") or "").rsplit("/", 1)[-1] or None,
+                "topic": pt.get("display_name"),
                 "topic_id": (pt.get("id") or "").rsplit("/", 1)[-1] or None,
+                "subfield": (pt.get("subfield") or {}).get("display_name"),
                 "subfield_id": ((pt.get("subfield") or {}).get("id") or "").rsplit("/", 1)[-1] or None,
                 "authors": [
                     (a.get("author") or {}).get("display_name")

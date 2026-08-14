@@ -188,6 +188,8 @@ from .labeling import (  # noqa: E402,F401
     labels_path,
     load_labels,
     precision_at_k,
+    probe_summary,
     run_labeling_session,
+    run_probe_session,
     stratified_sample,
 )

@@ -324,3 +324,43 @@ def test_the_journal_path_reports_no_bands_because_it_has_one_score(repo):
     assert journal["score_bands"] == []
     # The drop reasons are still reported: they are what varies on that path.
     assert "drop_reasons" in journal
+
+
+# --------------------------------------------------------------------------
+# The affinity probe's band split (phase 0h)
+# --------------------------------------------------------------------------
+
+
+def test_affinity_bands_cut_at_the_66th_percentile_of_the_positives():
+    from pipeline.labeling import affinity_bands
+
+    pool = {f"W{i}": {"canon_affinity": float(i)} for i in range(0, 10)}
+    pool["Wz"] = {"canon_affinity": 0.0}
+    spec = affinity_bands(pool)
+    # Positives are 1..9; the 66th percentile of nine values is the sixth.
+    assert spec["high_cut"] == 6.0
+    assert spec["sizes"]["high"] == 4  # 6, 7, 8, 9
+    assert spec["sizes"]["mid"] == 5  # 1..5
+    assert spec["sizes"]["zero"] == 2  # W0 and Wz
+    assert "66th percentile" in spec["high_cut_basis"]
+
+
+def test_zero_affinity_and_no_references_are_not_the_same_band():
+    # A candidate with no reference list has affinity zero because nothing was
+    # available to score it with. Counting it as "cites no canon" would put a
+    # coverage gap inside the probe's negative band.
+    from pipeline.labeling import affinity_bands
+
+    pool = {
+        "W1": {"canon_affinity": 0.0, "refs_total": 30},
+        "W2": {"canon_affinity": 5.0, "refs_total": 40},
+    }
+    spec = affinity_bands(pool)
+    assert spec["bands"]["zero"] == ["W1"]
+    # The refs-less ones never reach this function; `affinity_pool` drops them
+    # and returns the count separately, which is what makes the band honest.
+    import inspect
+
+    from pipeline.labeling import affinity_pool
+
+    assert inspect.signature(affinity_pool).parameters["require_refs"].default is True

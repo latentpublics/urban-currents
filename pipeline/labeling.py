@@ -29,6 +29,7 @@ timing, and it is not this module's business.
 from __future__ import annotations
 
 import json
+import sys
 import time
 from collections import Counter
 from datetime import date
@@ -65,22 +66,51 @@ LABEL_LEGEND = (
 )
 
 
+# Label files whose sampling is a ranked top-N per source, which is what
+# precision@k is defined over. Anything else is a different experiment wearing
+# the same row shape.
+RANKED_FACETS = frozenset({"relevance"})
+
+# Label files sampled some other way. They may not be pooled with the ranked
+# ones, and `precision_at_k` refuses them outright rather than returning a
+# number that looks fine.
+PROBE_FACETS = frozenset({"affinity_probe"})
+
+
+class LabelSetMisuse(RuntimeError):
+    """Raised when a probe label set is used where a ranked one is required."""
+
+
 def labels_path(facet: str = "relevance") -> Path:
     paths.LABELS.mkdir(parents=True, exist_ok=True)
     return paths.LABELS / f"{facet}.jsonl"
 
 
 def load_labels(facet: str = "relevance") -> list[dict]:
+    """Read one label file, and refuse it if it holds rows drawn two ways.
+
+    The write guard stops the pipeline from mixing them; this stops a file that
+    was mixed some other way — a hand-edit, a `cat a.jsonl >> b.jsonl` — from
+    being summarised as though it were one sample.
+    """
     path = labels_path(facet)
     if not path.exists():
         return []
+    expected = sampling_of(facet)
     out = []
     for line in path.read_text(encoding="utf-8").splitlines():
-        if line.strip():
-            try:
-                out.append(json.loads(line))
-            except json.JSONDecodeError:
-                continue
+        if not line.strip():
+            continue
+        try:
+            row = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if row.get("sampling", "ranked_top_n") != expected:
+            raise LabelSetMisuse(
+                f"{path} contains a {row.get('sampling')!r} row but is a "
+                f"{expected!r} label set — the two cannot be summarised together"
+            )
+        out.append(row)
     return out
 
 
@@ -89,11 +119,38 @@ def labelled_keys(facet: str = "relevance") -> set[tuple[str, str]]:
     return {(r.get("date", ""), r.get("work_key", "")) for r in load_labels(facet)}
 
 
+def sampling_of(facet: str) -> str:
+    """How a label file was drawn. The one fact that decides what it can measure."""
+    if facet in PROBE_FACETS:
+        return "band_stratified"
+    return "ranked_top_n"
+
+
 def append_labels(facet: str, rows: Iterable[dict]) -> int:
+    """Append judgements, refusing rows drawn a different way than the file.
+
+    The guard is on the write, not only on the read. Two files with the same row
+    shape are one careless append away from becoming one file, and by the time a
+    ranked row sits inside the probe there is nothing left to detect it with —
+    the mixing is invisible in the data and shows up only as a precision figure
+    that is quietly wrong.
+    """
+    expected = sampling_of(facet)
+    checked = []
+    for row in rows:
+        found = row.get("sampling", "ranked_top_n")
+        if found != expected:
+            raise LabelSetMisuse(
+                f"refusing to write a {found!r} row into {facet!r} "
+                f"({expected!r}); these are different experiments and their "
+                f"labels are not interchangeable"
+            )
+        checked.append(row)
+
     path = labels_path(facet)
     n = 0
     with path.open("a", encoding="utf-8", newline="\n") as fh:
-        for row in rows:
+        for row in checked:
             fh.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
             n += 1
     return n
@@ -193,6 +250,9 @@ def label_row(
         "classifier_version": item.provenance.classifier_version,
         "model_version": cfg("classifier.model_version"),
         "threshold": threshold,
+        # Stated on the row, not inferred from the filename: this is a ranked
+        # top-N draw, which is what makes precision@k defined over it.
+        "sampling": "ranked_top_n",
         "labelled_at": utcnow().isoformat(),
     }
 
@@ -282,7 +342,25 @@ def precision_at_k(facet: str = "relevance", k: int = 10) -> dict:
     drop reasons hides whether the problem is the classifier (`n`) or an
     unanswered coverage question (`q`). Both distinctions are the reason this
     tool exists, so neither is collapsed here.
+
+    **Probe label sets are refused, not merged.** `precision@k` means "of the top
+    k the ranking offered, how many were worth publishing", so it is only defined
+    over a ranked top-N sample. `affinity_probe.jsonl` is drawn across affinity
+    bands on purpose — it deliberately over-samples the bottom, which is exactly
+    what would make a precision figure computed over it meaningless. The rows
+    have the same shape, which is why this refuses by name instead of hoping
+    nobody points it here.
     """
+    if facet in PROBE_FACETS:
+        raise LabelSetMisuse(
+            f"{facet!r} is a band-stratified probe, not a ranked sample; "
+            f"precision@k is undefined over it. Use `probe_summary({facet!r})`."
+        )
+    if facet not in RANKED_FACETS:
+        raise LabelSetMisuse(
+            f"{facet!r} is not a known ranked label set "
+            f"(expected one of {sorted(RANKED_FACETS)})"
+        )
     rows = load_labels(facet)
     if not rows:
         return {
@@ -475,3 +553,428 @@ def prepare_day(
         "candidates_without_abstract": without_abstract,
         **{k: v for k, v in stats.items() if k in ("needed", "summarized", "failures", "status")},
     }
+
+
+# --------------------------------------------------------------------------
+# Affinity probe (phase 0h, U0-2)
+# --------------------------------------------------------------------------
+
+AFFINITY_BANDS = ("high", "mid", "zero")
+
+
+def affinity_pool(
+    dates: list[date], exclude_labelled: bool = True, require_refs: bool = True
+) -> tuple[dict[str, dict], dict[str, list[str]]]:
+    """Unlabelled journal candidates with their canon affinity.
+
+    **Journal path only.** `canon_affinity` needs a reference list and only 5%
+    of arXiv items have one, so an arXiv probe would measure the absence of data
+    rather than the signal. Stated here and in the probe file.
+
+    **Items with no reference list at all are excluded** (`require_refs`), and
+    that is not a detail. Measured over the five prepared days, 21 of the 82
+    zero-affinity candidates have no references in our base — their affinity is
+    zero because we hold nothing to score, not because they cite nothing
+    canonical. Left in, a fifth of the zero band would be a coverage gap wearing
+    the costume of a negative result, and a low keep rate there would read as
+    "the signal works" when it measured nothing. The count is reported.
+    """
+    from .graph.citation import load_reference_base
+    from .metrics import Run
+    from .run_stages import _is_whitelist_journal, has_abstract
+    from .stages import read_stage
+
+    scripts_dir = str(paths.ROOT / "scripts")
+    if scripts_dir not in sys.path:
+        sys.path.insert(0, scripts_dir)
+    from journal_metrics import canon_affinity, canon_sets  # type: ignore
+
+    foundation, _ = canon_sets()
+    refs = {
+        r["work_key"]: (r.get("referenced_works") or []) for r in load_reference_base()
+    }
+    already = {r["work_key"] for r in load_labels("relevance")} if exclude_labelled else set()
+    already |= {r["work_key"] for r in load_labels("affinity_probe")}
+
+    pool: dict[str, dict] = {}
+    no_refs: set[str] = set()
+    for d in dates:
+        for item in read_stage(Run.for_date(d), "classify") or []:
+            if not (_is_whitelist_journal(item) and has_abstract(item)):
+                continue
+            if item.work_key in already or item.work_key in pool:
+                continue
+            item_refs = refs.get(item.work_key, [])
+            if not item_refs and require_refs:
+                no_refs.add(item.work_key)
+                continue
+            pool[item.work_key] = {
+                "item": item,
+                "date": str(d),
+                "canon_affinity": canon_affinity(item_refs, foundation),
+                "canon_hits": sum(1 for r in item_refs if r in foundation),
+                "refs_total": len(item_refs),
+            }
+    # Returned, not logged: a pool smaller than the candidate count is a
+    # population change, and the caller has to be able to report what it lost.
+    return pool, {"no_references": sorted(no_refs)}
+
+
+def affinity_bands(pool: dict[str, dict], high_cut: Optional[float] = None) -> dict:
+    """Split the pool into high / mid / zero, and say where the cut came from.
+
+    The positive values are heavily right-skewed — measured over the five
+    prepared days, 53 positives running 1.03 to 28.8 with a median of 2.88 — so
+    the interesting boundary is not the midpoint of the range. The upper third
+    of the positive mass is where the values start to separate; below it they
+    cluster between 2 and 3.6 and are not distinguishable by eye or by score.
+    """
+    positives = sorted(v["canon_affinity"] for v in pool.values() if v["canon_affinity"] > 0)
+    if high_cut is None:
+        high_cut = positives[int(0.66 * (len(positives) - 1))] if positives else 0.0
+
+    bands: dict[str, list[str]] = {b: [] for b in AFFINITY_BANDS}
+    for key, row in pool.items():
+        value = row["canon_affinity"]
+        band = "zero" if value == 0 else ("high" if value >= high_cut else "mid")
+        bands[band].append(key)
+    return {
+        "high_cut": round(float(high_cut), 4),
+        "high_cut_basis": "66th percentile of non-zero affinity in the pool",
+        "positives": len(positives),
+        "bands": bands,
+        "sizes": {b: len(v) for b, v in bands.items()},
+    }
+
+
+def affinity_probe_sample(
+    dates: list[date], per_band: int = 10, seed: int = 42
+) -> tuple[list[tuple[Item, str, int]], dict]:
+    """A band-stratified probe sample: `per_band` from high / mid / zero.
+
+    The ranked sample answers "of the top the ranking offered, how many were
+    good", which is precision@k. It cannot answer "does a high affinity actually
+    mean keep", because it never shows the bottom of the distribution. This does
+    the opposite on purpose — equal draws from each band — which is exactly why
+    its labels must never be pooled with the ranked ones.
+    """
+    import random
+
+    pool, excluded = affinity_pool(dates)
+    spec = affinity_bands(pool)
+    spec["excluded_no_references"] = len(excluded["no_references"])
+    rng = random.Random(seed)
+
+    picked: list[tuple[Item, str, int]] = []
+    per_band_keys: dict[str, list[str]] = {}
+    for band in AFFINITY_BANDS:
+        keys = sorted(spec["bands"][band])
+        rng.shuffle(keys)
+        chosen = keys[:per_band]
+        per_band_keys[band] = chosen
+        for rank, key in enumerate(chosen, start=1):
+            picked.append((pool[key]["item"], band, rank))
+
+    spec["sampled"] = {b: len(v) for b, v in per_band_keys.items()}
+    spec["pool_size"] = len(pool)
+    spec["detail"] = {
+        key: {k: v for k, v in pool[key].items() if k != "item"}
+        for keys in per_band_keys.values()
+        for key in keys
+    }
+    return picked, spec
+
+
+def probe_row(
+    item: Item, band: str, rank: int, label: str, detail: dict, venue_prior: Optional[float]
+) -> dict[str, Any]:
+    """One probe judgement, carrying everything needed to re-score the signal.
+
+    The band and the affinity are stored with the label so this file alone can
+    re-evaluate `canon_affinity` later without recomputing a pool that will have
+    changed by then.
+    """
+    return {
+        "work_key": item.work_key,
+        "title": item.bibliography.title,
+        "date": detail.get("date", ""),
+        "label": LABEL_KEYS.get(label, label),
+        "band": band,
+        "rank_in_band": rank,
+        "canon_affinity": detail.get("canon_affinity"),
+        "canon_hits": detail.get("canon_hits"),
+        "refs_total": detail.get("refs_total"),
+        "venue_prior": venue_prior,
+        "source": "journal",
+        "sampling": "band_stratified",
+        "labelled_at": utcnow().isoformat(),
+        # Stated in every row: this file is not a ranked sample and no
+        # precision@k may be computed from it.
+        "not_for_precision_at_k": True,
+    }
+
+
+def probe_summary(facet: str = "affinity_probe") -> dict[str, Any]:
+    """Keep rate by affinity band — what a probe can answer and precision cannot.
+
+    Deliberately not called `precision_at_k`. The question here is whether the
+    signal separates, and the answer is a comparison of keep rates across bands,
+    not a figure about the top of a ranking.
+    """
+    if facet in RANKED_FACETS:
+        raise LabelSetMisuse(
+            f"{facet!r} is a ranked sample; use `precision_at_k({facet!r})`"
+        )
+    rows = load_labels(facet)
+    if not rows:
+        return {
+            "n_labels": 0,
+            "by_band": {},
+            "note": "no probe labels yet — run `uc review --label affinity`",
+        }
+
+    by_band: dict[str, dict] = {}
+    for band in AFFINITY_BANDS:
+        in_band = [r for r in rows if r.get("band") == band]
+        if not in_band:
+            continue
+        kept = sum(1 for r in in_band if r.get("label") == "keep")
+        reasons = Counter(r["label"] for r in in_band if r.get("label") in DROP_LABELS)
+        by_band[band] = {
+            "n": len(in_band),
+            "keep_rate": round(kept / len(in_band), 4),
+            "drop_reasons": {
+                "not_urban": reasons.get("drop_not_urban", 0),
+                "not_our_kind": reasons.get("drop_not_our_kind", 0),
+                "weak": reasons.get("drop_weak", 0),
+            },
+            "median_affinity": round(
+                sorted(r.get("canon_affinity") or 0 for r in in_band)[len(in_band) // 2], 4
+            ),
+        }
+    return {
+        "n_labels": len(rows),
+        "sampling": "band_stratified over canon_affinity — journal path only",
+        "population_note": (
+            "arXiv is excluded: canon_affinity needs a reference list and only "
+            "5% of arXiv items have one, so an arXiv probe would measure missing "
+            "data rather than the signal."
+        ),
+        "not_comparable_with": "relevance.jsonl (ranked top-N sampling)",
+        "by_band": by_band,
+    }
+
+
+def venue_prior_map() -> dict[str, Optional[float]]:
+    """`prestige_pct_in_subfield` by source id, from the 0g metrics run.
+
+    Recorded on each probe row rather than recomputed later: the percentile is
+    relative to the subfield population as it stood when the labels were taken,
+    and that population moves.
+    """
+    path = paths.ROOT / "runs/journal_metrics.json"
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {
+        s["id"]: s.get("prestige_pct_in_subfield") for s in data.get("sources", [])
+    }
+
+
+def _render_probe(item: Item, band: str, detail: dict, position: str) -> str:
+    """Same shape as the ranked renderer, minus the rank and the score.
+
+    The band is deliberately *not* shown. The probe asks whether affinity
+    predicts the judgement, so telling the labeller which band an item came from
+    would be handing them the answer.
+    """
+    lines = [
+        f"\n{'-' * 72}",
+        f"  {position}  [{detail.get('date', '')}]  journal",
+        f"  {item.bibliography.title}",
+    ]
+    en = item.summary.en
+    if en and en.what:
+        lines.append(f"\n  WHAT: {en.what}")
+        if en.why:
+            lines.append(f"  WHY : {en.why}")
+    else:
+        lines.append(f"\n  (no summary) {(item.bibliography.abstract or '')[:400]}")
+    tags = [e.label for e in item.entities.methods + item.entities.data][:6]
+    if tags:
+        lines.append(f"  tags: {', '.join(tags)}")
+    return "\n".join(lines)
+
+
+def run_probe_session(
+    dates: list[date],
+    per_band: int = 10,
+    facet: str = "affinity_probe",
+    prompt=None,
+    printer=print,
+) -> dict[str, Any]:
+    """Label the band-stratified affinity probe. Resumable, like the ranked pass.
+
+    Writes to `runs/labels/affinity_probe.jsonl` and nowhere else. The file it
+    writes cannot be fed to `precision_at_k` — see `LabelSetMisuse` — because the
+    sampling here is equal draws per band, which is the opposite of a ranked
+    top-N and would silently corrupt any precision figure it entered.
+    """
+    if facet in RANKED_FACETS:
+        raise LabelSetMisuse(
+            f"{facet!r} is the ranked label set; the probe must not write into it"
+        )
+    if prompt is None:  # pragma: no cover - interactive
+        def prompt(message: str) -> str:
+            return input(message).strip().lower()
+
+    picked, spec = affinity_probe_sample(dates, per_band=per_band)
+    if not picked:
+        printer("no unlabelled journal candidates with references for those dates")
+        return {"labelled": 0, "remaining": 0, "counts": {}, "spec": spec}
+
+    # Summaries prepared for exactly these picks, if `uc prepare-probe` has run.
+    prepared = {it.work_key: it for it in _load_probe_pool()}
+    picked = [
+        (prepared.get(it.work_key, it), band, rank) for (it, band, rank) in picked
+    ]
+
+    done = {r["work_key"] for r in load_labels(facet)}
+    todo = [(it, b, r) for (it, b, r) in picked if it.work_key not in done]
+
+    printer(
+        f"\naffinity probe — {len(todo)} of {len(picked)} remaining "
+        f"({spec['sampled']}, high cut {spec['high_cut']})"
+    )
+    if len(todo) < len(picked):
+        printer(f"({len(picked) - len(todo)} already labelled; resuming)")
+    printer("  journal path only — arXiv items have no reference lists to score")
+    printer(LABEL_LEGEND)
+    printer("  type 'quit' to stop — everything answered so far is saved")
+
+    priors = venue_prior_map()
+    started = time.monotonic()
+    rows: list[dict] = []
+    counts: Counter = Counter()
+    stopped = False
+
+    for i, (item, band, rank) in enumerate(todo, start=1):
+        detail = spec["detail"][item.work_key]
+        printer(_render_probe(item, band, detail, f"{i}/{len(todo)}"))
+        answer = (prompt(LABEL_PROMPT) or "").strip().lower()
+        if answer in ("quit", "exit"):
+            stopped = True
+            break
+        key = answer[:1] if answer[:1] in LABEL_KEYS else "s"
+        if LABEL_KEYS[key] == "skip":
+            counts["skip"] += 1
+            continue
+        counts[LABEL_KEYS[key]] += 1
+        source_id = item.bibliography.primary_location.source_id
+        rows.append(
+            probe_row(item, band, rank, key, detail, priors.get(source_id))
+        )
+
+    n = append_labels(facet, rows)
+    elapsed = time.monotonic() - started
+    printer(
+        f"\nwrote {n} probe labels to {labels_path(facet)} in {elapsed / 60:.1f} min "
+        f"({dict(counts)})"
+    )
+    remaining = len(todo) - n
+    if remaining > 0:
+        printer(
+            f"{remaining} left — re-run the same command to continue"
+            + (" (stopped early)" if stopped else "")
+        )
+    return {
+        "labelled": n,
+        "remaining": max(0, remaining),
+        "counts": dict(counts),
+        "stopped_early": stopped,
+        "high_cut": spec["high_cut"],
+        "sampled": spec["sampled"],
+        "pool_size": spec["pool_size"],
+    }
+
+
+PROBE_POOL_FILE = "affinity_probe_pool.jsonl"
+
+
+def probe_pool_path() -> Path:
+    paths.LABELS.mkdir(parents=True, exist_ok=True)
+    return paths.LABELS / PROBE_POOL_FILE
+
+
+def prepare_probe(
+    dates: list[date], per_band: int = 10, summarize: bool = True, client=None
+) -> dict[str, Any]:
+    """Summarise the probe's 30 items so they can be judged at the ranked pace.
+
+    The ranked sample was prepared per day and only the 15+15 it drew were
+    summarised. The probe draws from the whole unlabelled journal pool, so most
+    of its picks arrive with an abstract and nothing else — roughly three times
+    slower to judge, which is the difference between 30 labels in one sitting and
+    30 labels spread over a week.
+
+    Written to its own file, not into any stage output. The probe is a side
+    experiment and must not alter what the pipeline would produce for these
+    dates; `content/` and every stage file are left exactly as they were.
+    """
+    from .summarize.run import summarize_items
+
+    picked, spec = affinity_probe_sample(dates, per_band=per_band)
+    if not picked:
+        return {"status": "NO_CANDIDATES", "sample": 0}
+
+    items = [it for it, _, _ in picked]
+    have = {it.work_key: it for it in _load_probe_pool()}
+    for it in items:
+        done = have.get(it.work_key)
+        if done is not None and done.summary.en and done.summary.en.what:
+            it.summary = done.summary
+            it.signals = done.signals
+            it.provenance = done.provenance
+
+    needs = [it for it in items if not (it.summary.en and it.summary.en.what)]
+    stats: dict[str, Any] = {"needed": len(needs), "summarized": 0}
+    if summarize and needs:
+        by_day: dict[str, list[Item]] = {}
+        for it in needs:
+            by_day.setdefault(spec["detail"][it.work_key]["date"], []).append(it)
+        summarized = 0
+        for day, group in sorted(by_day.items()):
+            out = summarize_items(group, Run.for_date(date.fromisoformat(day)), client=client)
+            summarized += int(out.get("summarized", 0))
+        stats["summarized"] = summarized
+
+    merged = {it.work_key: it for it in have.values()}
+    merged.update({it.work_key: it for it in items})
+    lines = [
+        merged[k].model_dump_json(by_alias=True) for k in sorted(merged)
+    ]
+    probe_pool_path().write_text(
+        "\n".join(lines) + ("\n" if lines else ""), encoding="utf-8", newline="\n"
+    )
+
+    with_summary = sum(1 for it in items if it.summary.en and it.summary.en.what)
+    return {
+        "status": "OK",
+        "sample": len(items),
+        "with_summary": with_summary,
+        "missing_summary": len(items) - with_summary,
+        "bands": spec["sampled"],
+        "high_cut": spec["high_cut"],
+        **stats,
+    }
+
+
+def _load_probe_pool() -> list[Item]:
+    path = probe_pool_path()
+    if not path.exists():
+        return []
+    out = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            out.append(Item.model_validate_json(line))
+    return out

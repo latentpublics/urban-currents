@@ -228,20 +228,55 @@ def review(
     date_: Optional[str] = DateOpt,
     label: Optional[str] = typer.Option(None, help="Fast labelling mode, e.g. --label relevance"),
     top: int = typer.Option(30, help="Items to label per day (split evenly by source)"),
+    limit: int = typer.Option(30, help="--label affinity: probe size, split evenly by band"),
+    days: int = typer.Option(7, help="--label affinity: days of candidates to draw from"),
 ):
     """Review a day's issue, recording elapsed time and every edited field path.
 
     With ``--label relevance`` it runs the Q1b labelling pass instead: a
     stratified sample of the day's candidates, resumable, with a reason on every
     drop.
+
+    With ``--label affinity`` it runs the affinity probe: equal draws from the
+    high / mid / zero `canon_affinity` bands, journal path only, written to a
+    **separate** file. The two are different experiments and their labels are
+    never pooled — see `pipeline.labeling.LabelSetMisuse`.
     """
-    from .review import run_labeling_session, run_review_session
+    from .review import run_labeling_session, run_probe_session, run_review_session
 
     d = _date(date_)
-    if label:
+    if label in ("affinity", "affinity_probe"):
+        dates = [d - timedelta(days=i) for i in range(days - 1, -1, -1)]
+        run_probe_session(dates, per_band=max(1, limit // 3))
+    elif label:
         run_labeling_session(d, facet=label, top=top)
     else:
         run_review_session(d)
+
+
+@app.command("prepare-probe")
+def prepare_probe_cmd(
+    date_: Optional[str] = DateOpt,
+    days: int = typer.Option(7, help="Days of candidates to draw the probe from"),
+    limit: int = typer.Option(30, help="Probe size, split evenly by affinity band"),
+    no_llm: bool = typer.Option(False, "--no-llm", help="Pick the sample without summarising"),
+):
+    """Summarise the affinity probe's picks so they judge as fast as the ranked pass.
+
+    Writes `runs/labels/affinity_probe_pool.jsonl` only. No stage output and no
+    part of `content/` is touched — the probe must not change what the pipeline
+    would have produced for these dates.
+    """
+    from .labeling import prepare_probe
+
+    d = _date(date_)
+    dates = [d - timedelta(days=i) for i in range(days - 1, -1, -1)]
+    typer.echo(
+        json.dumps(
+            prepare_probe(dates, per_band=max(1, limit // 3), summarize=not no_llm),
+            indent=2,
+        )
+    )
 
 
 @app.command("prepare-labeling")
@@ -281,8 +316,19 @@ def labels(
     Everything here is per source and measurement only. Neither
     `classifier.threshold` nor `selection.slots` is derived from it — those are
     YJUN's calls, and one labelled day is not enough to make them.
+
+    **One label file at a time, and the summary follows the sampling.** The
+    ranked file gets precision@k; the affinity probe gets band keep rates. There
+    is no `--facet all`, because the only thing pooling them could produce is a
+    number that looks like precision and is not one.
     """
     from .calibrate import arxiv_candidates_by_floor
+    from .labeling import PROBE_FACETS, probe_summary
+
+    if facet in PROBE_FACETS:
+        typer.echo(json.dumps(probe_summary(facet), indent=2))
+        return
+
     from .labeling import precision_at_k
 
     out = precision_at_k(facet=facet, k=k)

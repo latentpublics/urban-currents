@@ -1,6 +1,5 @@
 .env
 .venv/
-prompts/
 
 __pycache__/
 *.py[cod]
@@ -9,8 +8,16 @@ __pycache__/
 .ruff_cache/
 .mypy_cache/
 
+# Working prompts are byproducts, but the reports and the decision log are not:
+# they are the only record of why the code is the way it is.
+prompts/*
+!prompts/reports/
+
 # Run artifacts: raw API responses, metrics, previews. Regenerable, often large.
-runs/
+# Labels are the exception — a human made them and they cannot be regenerated.
+runs/*
+!runs/labels/
+runs/labels/*_pool.jsonl
 
 # Trained models are build outputs; the training metadata JSON is committed.
 models/*.joblib

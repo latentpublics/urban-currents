@@ -107,6 +107,13 @@ def _row(work: dict, label: int, source: str) -> Optional[dict]:
         "title": title,
         "abstract": abstract,
         "text": embed_text(title, abstract),
+        # Which journal a positive came from. Not a feature — the classifier
+        # never sees it — but without it there is no way to ask whether a
+        # training set is 160 journals or five journals wearing 160 names, which
+        # is the whole question when the whitelist widens (U4).
+        "venue_id": (
+            ((work.get("primary_location") or {}).get("source") or {}).get("id") or ""
+        ).rsplit("/", 1)[-1],
         "primary_topic": ((work.get("primary_topic") or {}).get("display_name")),
         "subfield": (
             ((work.get("primary_topic") or {}).get("subfield") or {}).get("id") or ""
@@ -212,6 +219,67 @@ def fetch_arxiv_negatives(
     return collect(q, budget, want, 0, "arxiv_other", per_page)
 
 
+def fetch_journal_positives_per_journal(
+    pyalex,
+    budget,
+    since: str,
+    until: str,
+    per_page: int,
+    rng: random.Random,
+    floor: int = 5,
+    ceiling: int = 40,
+) -> list[dict]:
+    """One query per journal, with a floor and a ceiling on what each contributes.
+
+    The chunked sampler asks 40 journals at once sorted by citation count, so a
+    chunk's quota is filled by whichever of its journals publishes most and is
+    cited hardest — and a small journal in a chunk with *Cities* in it can
+    contribute nothing at all. Widening the whitelist makes that worse, not
+    better: the same quota spreads over more chunks while the same few journals
+    keep answering it.
+
+    The cost is one request per journal instead of one per chunk, which at 161
+    journals is real but small. Whether it is worth paying is what this measures.
+    """
+    rows: list[dict] = []
+    per_journal: dict[str, int] = {}
+    for sid in whitelist_ids():
+        q = (
+            pyalex.Works()
+            .filter(
+                **{
+                    "primary_location.source.id": sid,
+                    "from_publication_date": since,
+                    "to_publication_date": until,
+                    "type": "article",
+                    "language": "en",
+                    "has_abstract": True,
+                }
+            )
+            .sort(cited_by_count="desc")
+        )
+        got = collect(q, budget, ceiling, 1, "journal", per_page)
+        per_journal[sid] = len(got)
+        # A journal that cannot meet the floor contributes what it has. Dropping
+        # it would reintroduce exactly the bias this is meant to remove.
+        rows.extend(got)
+    rng.shuffle(rows)
+    below_floor = sum(1 for n in per_journal.values() if n < floor)
+    print(
+        json.dumps({
+            "per_journal_sampling": {
+                "journals": len(per_journal),
+                "floor": floor,
+                "ceiling": ceiling,
+                "below_floor": below_floor,
+                "at_ceiling": sum(1 for n in per_journal.values() if n >= ceiling),
+                "rows": len(rows),
+            }
+        })
+    )
+    return rows
+
+
 def fetch_journal_positives(
     pyalex, budget, want: int, since: str, until: str, per_page: int, rng: random.Random
 ) -> list[dict]:
@@ -300,9 +368,21 @@ def build_eval_set(
 
 
 def build_variant(
-    variant: str, n_arxiv_pos: int, n_neg: int, since: str, until: str, seed: int
+    variant: str,
+    n_arxiv_pos: int,
+    n_neg: int,
+    since: str,
+    until: str,
+    seed: int,
+    journal_cap: Optional[int] = None,
+    per_journal: bool = False,
+    per_journal_floor: int = 5,
+    per_journal_ceiling: int = 40,
+    out_name: Optional[str] = None,
 ) -> dict[str, Any]:
-    spec = VARIANTS[variant]
+    spec = dict(VARIANTS[variant])
+    if journal_cap is not None:
+        spec["journal_positives"] = journal_cap
     pyalex = configure_pyalex()
     budget = _budget()
     rng = random.Random(seed)
@@ -324,9 +404,15 @@ def build_variant(
 
     journal_rows: list[dict] = []
     if spec["journal_positives"]:
-        journal_rows = fetch_journal_positives(
-            pyalex, budget, int(spec["journal_positives"]), since, until, per_page, rng
-        )
+        if per_journal:
+            journal_rows = fetch_journal_positives_per_journal(
+                pyalex, budget, since, until, per_page, rng,
+                floor=per_journal_floor, ceiling=per_journal_ceiling,
+            )[: int(spec["journal_positives"])]
+        else:
+            journal_rows = fetch_journal_positives(
+                pyalex, budget, int(spec["journal_positives"]), since, until, per_page, rng
+            )
 
     negatives = fetch_arxiv_negatives(pyalex, budget, int(n_neg * 1.4), since, until, per_page)
 
@@ -345,7 +431,7 @@ def build_variant(
     rows = positives + negs
     rng.shuffle(rows)
 
-    out_dir = OUT_DIR / variant
+    out_dir = OUT_DIR / (out_name or variant)
     write_jsonl(out_dir / "trainset.jsonl", rows)
 
     by_source: dict[str, int] = {}
@@ -353,7 +439,14 @@ def build_variant(
         by_source[r["source"]] = by_source.get(r["source"], 0) + 1
     arxiv_pos = sum(v for k, v in by_source.items() if k.startswith("arxiv_") and k != "arxiv_other")
     meta = {
-        "variant": variant,
+        "variant": out_name or variant,
+        "base_variant": variant,
+        "journal_positive_cap": spec["journal_positives"],
+        "journal_sampling": (
+            f"per_journal floor={per_journal_floor} ceiling={per_journal_ceiling}"
+            if per_journal
+            else "chunked (40 journals per query, cited_by_count desc)"
+        ),
         "note": spec["note"],
         "arxiv_subfields": spec["arxiv_subfields"],
         "uses_strict_definition": spec["use_strict"],
@@ -386,6 +479,13 @@ def main() -> None:
     p.add_argument("--since", default="2024-01-01")
     p.add_argument("--until", default="2026-06-30")
     p.add_argument("--seed", type=int, default=int(cfg("classifier.random_state", 42)))
+    # U4 (phase 0h): measure what a wider whitelist needs from the sampler.
+    # Nothing here changes a default — the variants are named and compared.
+    p.add_argument("--journal-cap", type=int, help="Override the journal positive cap")
+    p.add_argument("--per-journal", action="store_true", help="Sample per journal, not per chunk")
+    p.add_argument("--per-journal-floor", type=int, default=5)
+    p.add_argument("--per-journal-ceiling", type=int, default=40)
+    p.add_argument("--out-name", help="Write under runs/trainset/<name> instead of the variant")
     a = p.parse_args()
 
     if a.eval_only:
@@ -394,7 +494,14 @@ def main() -> None:
             "2020-01-01", a.until, int(cfg("openalex.per_page", 100)), a.seed,
         )
         return
-    build_variant(a.variant, a.arxiv_positives, a.negatives, a.since, a.until, a.seed)
+    build_variant(
+        a.variant, a.arxiv_positives, a.negatives, a.since, a.until, a.seed,
+        journal_cap=a.journal_cap,
+        per_journal=a.per_journal,
+        per_journal_floor=a.per_journal_floor,
+        per_journal_ceiling=a.per_journal_ceiling,
+        out_name=a.out_name,
+    )
 
 
 if __name__ == "__main__":

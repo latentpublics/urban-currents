@@ -76,17 +76,61 @@ def iter_run_candidates() -> Iterator[Item]:
             break
 
 
-def iter_raw_openalex_works() -> Iterator[dict]:
-    """Every OpenAlex Work ever written to `runs/*/raw/openalex/`.
+# Which runs the reference base is allowed to read. The canon's claim is "what
+# our corpus stands on", and our corpus is what the pipeline collected — not
+# every response any script happened to receive while measuring something.
+CITATION_ORIGINS = frozenset({"collect", "backfill"})
+
+
+def run_origin(run_dir: Path) -> str:
+    """What a run on disk was for: recorded if known, inferred if it predates the field.
+
+    Runs written before `Metrics.origin` existed carry no tag, and re-running
+    them to acquire one would cost real OpenAlex requests for nothing. The
+    inference uses the stages the run actually recorded, which is the same fact
+    the tag would have stored.
+    """
+    import json as _json
+
+    metrics = run_dir / "metrics.json"
+    if not metrics.exists():
+        return "unattributed"
+    try:
+        data = _json.loads(metrics.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001 - an unreadable run is not a usable one
+        return "unattributed"
+    recorded = data.get("origin")
+    if recorded:
+        return str(recorded)
+    stages = data.get("stages") or {}
+    if "collect" in stages:
+        return "collect"
+    if "backfill" in stages:
+        return "backfill"
+    return "unattributed"
+
+
+def iter_raw_openalex_works(origins: frozenset = CITATION_ORIGINS) -> Iterator[dict]:
+    """Every OpenAlex Work written by a **collection** run.
 
     The 90-day backfill collected and scored 37,390 candidates and kept the
     responses verbatim, so the references for those days are already on disk.
     Re-fetching them would be paying for what we have — measured, 88% of the
     backfill's journal works carry `referenced_works` in the stored response.
+
+    Reading every `runs/*/raw/openalex` was the earlier behaviour and it was
+    not, in fact, pulling in foreign responses — the trainset builder writes no
+    raw files at all, so nothing on disk today comes from anywhere but a collect
+    or a backfill. The filter exists because that was true by accident: any
+    future script that calls a collector to measure something would have had its
+    responses join the archive silently, and "our archive" would have changed
+    meaning without anything recording that it had.
     """
     import json as _json
 
     for raw_dir in sorted(paths.RUNS.glob("*/raw/openalex")):
+        if run_origin(raw_dir.parent.parent) not in origins:
+            continue
         for path in sorted(raw_dir.glob("*.json")):
             try:
                 payload = _json.loads(path.read_text(encoding="utf-8"))

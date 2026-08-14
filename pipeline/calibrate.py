@@ -145,6 +145,7 @@ def run_backfill(
 
     start = end - timedelta(days=days - 1)
     run = Run(f"backfill_{start}_{end}", end)
+    run.metrics.origin = "backfill"
     from .run_stages import _is_whitelist_journal
 
     candidates: list[Item] = []

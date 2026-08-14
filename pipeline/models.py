@@ -458,6 +458,12 @@ class Metrics(StrictModel):
 
     run_id: str
     date: Optional[DateT] = None
+    # What this run was for. The citation layer's population is "works the
+    # pipeline collected", and without this the only way to tell a collection
+    # from a measurement that happened to call a collector is the directory
+    # name. `collect` | `backfill` feed the reference base; anything else does
+    # not (see `pipeline.graph.citation.CITATION_ORIGINS`).
+    origin: str = "collect"
     counts: Counts = Field(default_factory=Counts)
     cost: Cost = Field(default_factory=Cost)
     tokens: Tokens = Field(default_factory=Tokens)

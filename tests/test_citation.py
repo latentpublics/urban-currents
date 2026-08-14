@@ -502,3 +502,58 @@ def test_one_bad_line_does_not_make_the_whole_store_unreadable(repo, tmp_path):
 
     assert [r["a"] for r in rows] == [1, 3]
     assert len(errors) == 1
+
+
+# --------------------------------------------------------------------------
+# What the reference base is allowed to read (phase 0h, U2)
+# --------------------------------------------------------------------------
+
+
+def _raw_run(name: str, work_id: str, metrics: dict) -> None:
+    import json as _json
+
+    run_dir = paths.RUNS / name
+    (run_dir / "raw" / "openalex").mkdir(parents=True, exist_ok=True)
+    (run_dir / "raw" / "openalex" / "page.json").write_text(
+        _json.dumps([{"id": work_id, "referenced_works": ["https://openalex.org/W9"]}]),
+        encoding="utf-8",
+    )
+    (run_dir / "metrics.json").write_text(_json.dumps(metrics), encoding="utf-8")
+
+
+def test_only_collection_runs_feed_the_reference_base(repo):
+    from pipeline.graph.citation import iter_raw_openalex_works
+
+    _raw_run("run_2026-08-01", "https://openalex.org/W1", {"run_id": "r", "origin": "collect"})
+    _raw_run("backfill_x", "https://openalex.org/W2", {"run_id": "b", "origin": "backfill"})
+    _raw_run("trainset_x", "https://openalex.org/W3", {"run_id": "t", "origin": "trainset"})
+    _raw_run("enrich_x", "https://openalex.org/W4", {"run_id": "e", "origin": "enrich"})
+
+    got = {w["id"] for w in iter_raw_openalex_works()}
+    assert got == {"https://openalex.org/W1", "https://openalex.org/W2"}
+
+
+def test_a_run_written_before_the_origin_field_is_read_from_its_stages(repo):
+    # Re-running a month of collection to acquire a tag would cost real requests
+    # for a fact the run already recorded.
+    from pipeline.graph.citation import iter_raw_openalex_works, run_origin
+
+    _raw_run("run_old", "https://openalex.org/W5", {"run_id": "o", "stages": {"collect": "OK"}})
+    _raw_run("meas_old", "https://openalex.org/W6", {"run_id": "m", "stages": {"canon": "OK"}})
+
+    assert run_origin(paths.RUNS / "run_old") == "collect"
+    assert run_origin(paths.RUNS / "meas_old") == "unattributed"
+    assert {w["id"] for w in iter_raw_openalex_works()} == {"https://openalex.org/W5"}
+
+
+def test_a_run_with_no_metrics_is_not_silently_included(repo):
+    import json as _json
+
+    from pipeline.graph.citation import iter_raw_openalex_works
+
+    run_dir = paths.RUNS / "mystery" / "raw" / "openalex"
+    run_dir.mkdir(parents=True, exist_ok=True)
+    (run_dir / "page.json").write_text(
+        _json.dumps([{"id": "https://openalex.org/W7"}]), encoding="utf-8"
+    )
+    assert list(iter_raw_openalex_works()) == []

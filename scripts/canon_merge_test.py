@@ -533,7 +533,7 @@ def main() -> None:
     a_pass = sep_b is None or sep_a is None or sep_a >= sep_b - 1e-9
     b_pass = after["zero_band"] < before["zero_band"]
 
-    # C on the anchors alone has no power here — eight issues yield two anchor
+    # C on the anchors alone has no power here — five issues yield two anchor
     # lines, and "unchanged" over n=2 is not evidence of anything. The
     # composition of what would be added does have power, so C passes only if
     # the anchors do not tilt AND the additions are not more transport-heavy

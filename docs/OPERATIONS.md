@@ -20,7 +20,7 @@ Exits non-zero when there are unpublished dates, so it also works as a check.
 
 `last_success` and `last_issue` are different facts and both are reported. Every
 issue published before the outcome model existed has no run-log row, so a null
-`last_success` beside eight published issues means "the log starts later", not
+`last_success` beside a populated archive means "the log starts later", not
 "nothing has ever worked".
 
 ```bash

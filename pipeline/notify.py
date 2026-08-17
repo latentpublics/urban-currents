@@ -242,7 +242,7 @@ def status() -> dict[str, Any]:
     # The run log and the archive answer different questions, and right now they
     # disagree: every issue published before X3 exists without a log row. Showing
     # only `last_success` would read as "nothing has ever worked" to someone
-    # looking at eight issues on the site. Both, so the gap is visible instead of
+    # looking at a working archive. Both, so the gap is visible instead of
     # alarming.
     # Filenames, not parsed models: status must stay answerable on the day a
     # bad file would stop it from being answered.

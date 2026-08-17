@@ -598,3 +598,68 @@ def test_candidate_volume_reports_absence_rather_than_zero(repo):
     from pipeline.calibrate import arxiv_candidates_by_floor
 
     assert arxiv_candidates_by_floor()["status"] == "NO_DATA"
+
+
+# --------------------------------------------------------------------------
+# The synthesis box: measured zeros, and silence where nothing was measured
+# --------------------------------------------------------------------------
+
+
+def test_a_row_is_absent_when_the_measurement_was_impossible(repo):
+    """Silence and zero are different claims and the box must not confuse them.
+
+    "No items share references today" over a day where nothing had a
+    bibliography is a sentence about our coverage wearing the costume of a
+    finding.
+    """
+    from pipeline.models import Synthesis
+    from pipeline.render.preview import build_synthesis
+
+    item = _item()
+    issue = _issue_with([item])
+    issue.synthesis = Synthesis(deviation_status="NO_BASELINE", deviation_note="4 days")
+
+    rows = {r["label"]: r for r in build_synthesis(issue, [item])["rows"]}
+    assert rows["tag shift"]["measurable"] is False   # baseline too short
+    assert rows["coupling"]["measurable"] is False    # no reference lists
+    assert rows["institutions"]["measurable"] is True  # every item has a byline
+
+
+def test_a_measured_zero_is_stated(repo):
+    from pipeline.models import Synthesis
+    from pipeline.render.preview import build_synthesis
+
+    item = _item()
+    issue = _issue_with([item])
+    issue.synthesis = Synthesis(deviation_status="OK")
+
+    rows = {r["label"]: r for r in build_synthesis(issue, [item])["rows"]}
+    assert rows["tag shift"]["measurable"] is True
+    assert rows["tag shift"]["entries"] == []
+    assert "no tag ran above" in rows["tag shift"]["empty_text"]
+
+
+def test_a_quiet_day_keeps_the_box_and_drops_only_the_paragraph(repo):
+    """W0-1: the mockup consoles the reader on a quiet day. We do not.
+
+    The paragraph is absent when there is no measured link, and the box has to
+    stand up without it — which is a CSS problem, not a reason to write one.
+    """
+    from pipeline.models import Synthesis
+    from pipeline.render.preview import render_issue
+
+    item = _item()
+    issue = _issue_with([item])
+    issue.synthesis = Synthesis(
+        deviation_status="OK",
+        paragraph=None,
+        paragraph_omitted_reason="0 measured links",
+    )
+    html = render_issue(issue, [item])
+    # The stylesheet is inlined, so every class name appears in the document
+    # whether or not it was used. The assertion has to be on the markup.
+    body = html[html.index("<body>"):]
+
+    assert '<section class="uc-synthesis">' in body
+    assert '<p class="uc-synthesis__paragraph">' not in body
+    assert "paragraph omitted: 0 measured links" in body

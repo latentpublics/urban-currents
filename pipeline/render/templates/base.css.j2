@@ -280,36 +280,94 @@ body {
   max-width: 46rem;
 }
 
-/* Synthesis layer (phase 0i). Block flow only — this has to hold together in
+/* "Today, together" (phase 0j). Block flow only — this has to hold together in
    an email client, where floats, grids and flex are unreliable. No colour
-   carries meaning; the section is legible in plain text. */
+   carries meaning; the section is legible as plain text.
+
+   The paragraph is absent more often than not, so the box is designed around
+   the rows: a fixed label column gives it structure whether or not the closing
+   sentence exists. */
 .uc-synthesis {
+  background: var(--uc-bg-soft);
+  padding: 1rem 1.25rem;
   margin: 1.5rem 0 2rem;
-  padding: 1rem 0 0;
-  border-top: 1px solid #d9d9d9;
 }
-.uc-synthesis__paragraph {
-  margin: 0 0 1.25rem;
-  font-size: 1.02rem;
-  line-height: 1.6;
-}
-.uc-synthesis__block { margin: 0 0 1rem; }
 .uc-synthesis__title {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.75rem;
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #666;
+  color: var(--uc-meta);
 }
-.uc-synthesis__list { margin: 0; padding-left: 1.1rem; line-height: 1.5; }
-.uc-synthesis__list > li { margin-bottom: 0.3rem; }
+.uc-synthesis__facts { margin: 0; }
+.uc-synthesis__row {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.3rem 0;
+  border-top: 1px solid var(--uc-hairline);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.uc-synthesis__row:first-child { border-top: 0; }
+.uc-synthesis__label {
+  width: 88px;
+  flex: 0 0 88px;
+  color: var(--uc-meta);
+  font-size: 0.78rem;
+  line-height: 1.9;
+}
+.uc-synthesis__value { margin: 0; flex: 1 1 auto; min-width: 0; }
 .uc-synthesis__work { font-style: italic; }
-.uc-synthesis__cite { color: #555; }
-.uc-synthesis__shared {
-  margin: 0.2rem 0 0.4rem;
-  padding-left: 1rem;
-  font-size: 0.9rem;
-  color: #555;
+/* A measured zero is stated in the same ink as a measured something. It is not
+   an error state and must not look like one. */
+.uc-synthesis__zero { color: var(--uc-meta); }
+.uc-synthesis__shared { display: inline; }
+.uc-synthesis__shared > summary {
+  display: inline;
+  cursor: pointer;
+  color: var(--uc-meta);
+  font-size: 0.85rem;
 }
-.uc-synthesis__first { margin: 0.75rem 0 0; font-weight: 600; }
+.uc-synthesis__shared ul {
+  margin: 0.25rem 0 0.25rem 1rem;
+  padding: 0;
+  font-size: 0.85rem;
+  color: var(--uc-faint);
+}
+.uc-synthesis__paragraph {
+  margin: 0.9rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--uc-hairline);
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .uc-synthesis__row { flex-direction: column; gap: 0.1rem; padding: 0.45rem 0; }
+  .uc-synthesis__label { width: auto; flex: none; line-height: 1.4; }
+}
+
+/* `Also published today` — two lines: title, then everything we do have in the
+   faintest ink. Nothing in this section was written by a model. */
+.uc-also { margin: 2rem 0 0; border-top: 1px solid var(--uc-line); padding-top: 1rem; }
+.uc-also__title {
+  margin: 0 0 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--uc-meta);
+}
+.uc-also__note { margin: 0 0 0.75rem; font-size: 0.85rem; color: var(--uc-faint); }
+.uc-also__list { list-style: none; padding: 0; margin: 0; }
+.uc-also__item { padding: 0.4rem 0; border-top: 1px solid var(--uc-hairline); }
+.uc-also__item:first-child { border-top: 0; }
+.uc-also__item-title { display: block; font-size: 0.95rem; line-height: 1.4; }
+.uc-also__item-title a { color: var(--uc-ink); text-decoration: none; }
+.uc-also__item-title a:hover { text-decoration: underline; }
+.uc-also__byline { display: block; font-size: 0.8rem; color: var(--uc-faint); margin-top: 0.1rem; }
+.uc-also__sep { opacity: 0.6; }
+.uc-tag--from-title { font-style: italic; }
+
+.uc-footer__ilp { margin: 0 0 0.25rem; color: var(--uc-meta); }
+.uc-footer__build { margin: 0 0 0.5rem; }

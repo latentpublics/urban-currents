@@ -17,12 +17,14 @@
     <p class="uc-issue__date">{{ issue.date }}</p>
   </header>
 
+  {#- Scope, then verdict. `candidates_after_gate` is still recorded and still
+      in the report; it is off the screen because "through the gate" is our
+      internal vocabulary and a reader cannot act on it. -#}
   <p class="uc-scanmeta">
-    {{ scan_meta.candidates_scanned }} candidates scanned<span class="uc-scanmeta__sep">·</span>
-    {{ scan_meta.candidates_after_gate }} through the gate<span class="uc-scanmeta__sep">·</span>
-    {{ scan_meta.items_published }} published<span class="uc-scanmeta__sep">·</span>
     {{ scan_meta.arxiv_categories }} arXiv categories<span class="uc-scanmeta__sep">·</span>
-    {{ scan_meta.journals }} journals
+    {{ scan_meta.journals }} journals<span class="uc-scanmeta__sep">·</span>
+    {{ scan_meta.candidates_scanned }} candidates —
+    <strong class="uc-scanmeta__verdict">{{ scan_meta.items_published }} worth your time</strong>
     {%- if scan_meta.unreadable_count %}<span class="uc-scanmeta__sep">·</span>
     <span class="uc-scanmeta__unreadable">{{ scan_meta.unreadable_count }} without an open abstract</span>
     {%- endif %}
@@ -39,89 +41,80 @@
     </p>
   </section>
 
-{# The synthesis layer sits between the headline and the cards (phase 0i).
-   Every section is omitted when it has nothing to say — an empty section
-   heading is worse than no section, because it reads as a failure rather than
-   as a quiet day. Single-column block flow throughout: this has to survive an
-   email client, where floats and grids do not. #}
+{#- "Today, together" (phase 0j W3-2). Fact rows first, paragraph last: the
+    rows are measurements and the paragraph is a reading of them, so the reading
+    comes after the thing being read.
+
+    A row is present only when its measurement was possible. When it was
+    possible and found nothing, it says so — that is an instrument reading zero,
+    not prose about absence. Below a seven-day baseline the tag row is absent
+    rather than zero, and with no reference lists the canon and coupling rows
+    are absent rather than zero.
+
+    The paragraph is often missing and the box has to look deliberate without
+    it. That is why the label column and the rows carry the design and the
+    paragraph is a closing note rather than the header. -#}
   {% if synthesis and synthesis.has_content %}
   <section class="uc-synthesis">
+    <h2 class="uc-synthesis__title">Today, together</h2>
+
+    <dl class="uc-synthesis__facts">
+      {% for row in synthesis.rows %}
+      {% if row.measurable and (row.entries or row.empty_text) %}
+      <div class="uc-synthesis__row" data-row="{{ row.label }}">
+        <dt class="uc-synthesis__label">{{ row.label }}</dt>
+        <dd class="uc-synthesis__value">
+          {% if not row.entries %}<span class="uc-synthesis__zero">{{ row.empty_text }}</span>
+          {% elif row.label == "tag shift" %}
+            {% for d in row.entries %}{{ d.label }} on {{ d.today }} items, against a
+            {{ d.window_days }}-day average of {{ d.baseline }}{% if not loop.last %}; {% endif %}{% endfor %}
+          {% elif row.label == "canon" %}
+            {% for a in row.entries %}{{ a.count }} item{{ 's' if a.count != 1 }} cite
+            <span class="uc-synthesis__work">{{ a.title }}</span>{% if a.cite %} ({{ a.cite }}){% endif %}
+            {%- if a.note %}, {{ a.note }}{% endif %}{% if not loop.last %}; {% endif %}{% endfor %}
+          {% elif row.label == "coupling" %}
+            {% for c in row.entries %}
+            <span class="uc-synthesis__work">{{ c.titles[0] }}</span> shares
+            {{ c.shared }} references with <span class="uc-synthesis__work">{{ c.titles[1] }}</span>
+            {%- if c.partner_date %} ({{ c.partner_date }}){% endif %}
+            {%- if c.shared_titles %}
+            {#- <details> so the shared works fold away, and the summary carries
+                the count so a client that cannot open it still says something
+                true. Mail clients that ignore <details> render the contents
+                inline, which is the intended failure. -#}
+            <details class="uc-synthesis__shared">
+              <summary>{{ c.shared_titles|length }} of them</summary>
+              <ul>{% for t in c.shared_titles %}<li>{{ t }}</li>{% endfor %}</ul>
+            </details>
+            {%- endif %}{% if not loop.last %}; {% endif %}
+            {% endfor %}
+          {% elif row.label == "institutions" %}
+            {% for i in row.entries %}{{ i.name }} on {{ i.papers }}
+            {{- ' papers today' if i.scope == 'today' else ' papers in ' ~ synthesis.window_days ~ ' days' }}
+            {%- if not loop.last %}; {% endif %}{% endfor %}
+          {% else %}
+            {% for a in row.entries %}{{ a.name }} on {{ a.papers }} of today's papers
+            {%- if not loop.last %}; {% endif %}{% endfor %}
+          {% endif %}
+        </dd>
+      </div>
+      {% endif %}
+      {% endfor %}
+
+      {% if synthesis.first_internal_citation %}
+      <div class="uc-synthesis__row" data-row="first-internal">
+        <dt class="uc-synthesis__label">first</dt>
+        <dd class="uc-synthesis__value">
+          Today is the first time a paper in this digest cites another paper from it.
+        </dd>
+      </div>
+      {% endif %}
+    </dl>
+
     {% if synthesis.paragraph %}
     <p class="uc-synthesis__paragraph">{{ synthesis.paragraph }}</p>
     {% else %}
     <!-- paragraph omitted: {{ synthesis.omitted_reason }} -->
-    {% endif %}
-
-    {% if synthesis.deviations %}
-    <div class="uc-synthesis__block" data-section="deviations">
-      <h2 class="uc-synthesis__title">More than usual</h2>
-      <ul class="uc-synthesis__list">
-        {% for d in synthesis.deviations %}
-        <li>{{ d.label }} — {{ d.today }} today, {{ d.baseline }} a day over the
-          previous {{ d.window_days }} days</li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-
-    {% if synthesis.anchors %}
-    <div class="uc-synthesis__block" data-section="anchors">
-      <h2 class="uc-synthesis__title">What today builds on</h2>
-      <ul class="uc-synthesis__list">
-        {% for a in synthesis.anchors %}
-        <li>
-          <span class="uc-synthesis__work">{{ a.title }}</span>
-          {%- if a.cite %} <span class="uc-synthesis__cite">{{ a.cite }}</span>{% endif %}
-          — cited by {{ a.count }} paper{{ 's' if a.count != 1 }} today
-          {%- if a.note %}, {{ a.note }}{% endif %}
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-
-    {% if synthesis.clusters %}
-    <div class="uc-synthesis__block" data-section="clusters">
-      <h2 class="uc-synthesis__title">Read together</h2>
-      <ul class="uc-synthesis__list">
-        {% for c in synthesis.clusters %}
-        <li>
-          <span class="uc-synthesis__work">{{ c.titles[0] }}</span>
-          shares {{ c.shared }} references with
-          <span class="uc-synthesis__work">{{ c.titles[1] }}</span>
-          {%- if c.partner_date %} ({{ c.partner_date }}){% endif %}
-          {%- if c.shared_titles %}
-          <ul class="uc-synthesis__shared">
-            {% for t in c.shared_titles %}<li>{{ t }}</li>{% endfor %}
-          </ul>
-          {% endif %}
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-
-    {% if synthesis.institutions_today or synthesis.institutions_in_window or synthesis.repeat_authors %}
-    <div class="uc-synthesis__block" data-section="who">
-      <h2 class="uc-synthesis__title">Appearing more than once</h2>
-      <ul class="uc-synthesis__list">
-        {% for a in synthesis.repeat_authors %}
-        <li>{{ a.name }} — {{ a.papers }} papers today</li>
-        {% endfor %}
-        {% for i in synthesis.institutions_today %}
-        <li>{{ i.name }} — {{ i.papers }} papers today</li>
-        {% endfor %}
-        {% for i in synthesis.institutions_in_window %}
-        <li>{{ i.name }} — {{ i.papers }} papers in {{ synthesis.window_days }} days</li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-
-    {% if synthesis.first_internal_citation %}
-    <p class="uc-synthesis__first">
-      Today is the first time a paper in this digest cites another paper from it.
-    </p>
     {% endif %}
   </section>
   {% endif %}
@@ -131,10 +124,13 @@
   </div>
 
   {% if unreadable %}
-  {# `Also published today`. Facts only: no sentence here was generated, because
-     these items have no abstract to generate one from. The subtitle states the
-     situation and names no publisher — the per-publisher tally lives in
-     scan_meta for the monthly report, not in the reader's face every day. #}
+  {#- `Also published today`. Facts only: no sentence here was generated,
+      because these items have no abstract to generate one from.
+
+      Two lines, per the mockup — title, then everything else in faint ink. The
+      mockup drops the authors; they are kept, because the instruction that
+      created this section was "title, authors, whatever is available", and a
+      record with no abstract is exactly where a byline does the most work. -#}
   <section class="uc-also">
     <h2 class="uc-also__title">Also published today</h2>
     <p class="uc-also__note">
@@ -150,15 +146,10 @@
         </span>
         <span class="uc-also__byline">
           {{ row.authors }}
-          {%- if row.affiliation %}<span class="uc-also__sep">·</span>{{ row.affiliation }}{% endif %}
-          {%- if row.journal %}<span class="uc-also__sep">·</span>{{ row.journal }}{% endif %}
+          {%- if row.affiliation %}<span class="uc-also__sep"> · </span>{{ row.affiliation }}{% endif %}
+          {%- if row.journal %}<span class="uc-also__sep"> · </span>{{ row.journal }}{% endif %}
+          {%- for t in row.title_terms %}<span class="uc-also__sep"> · </span><span class="uc-tag uc-tag--from-title">{{ t }}</span>{% endfor %}
         </span>
-        {% if row.topics or row.title_terms %}
-        <span class="uc-also__tags">
-          {% for t in row.topics %}<span class="uc-tag uc-tag--topic">{{ t }}</span>{% endfor %}
-          {% for t in row.title_terms %}<span class="uc-tag uc-tag--from-title">{{ t }}</span>{% endfor %}
-        </span>
-        {% endif %}
       </li>
       {% endfor %}
     </ul>
@@ -177,7 +168,8 @@
   {% endif %}
 
   <footer class="uc-footer">
-    Generated by urban-currents {{ pipeline_version }} · run {{ issue.run_id }}
+    <p class="uc-footer__ilp">Institute for Latent Publics · free, no ads, no metrics</p>
+    <p class="uc-footer__build">Generated by urban-currents {{ pipeline_version }} · run {{ issue.run_id }}</p>
     {# arXiv's API terms of use and brand guidelines require this wording
        exactly, including the disclaimer. It must not be paraphrased, and
        nothing here may suggest arXiv endorses or reviewed this service. #}

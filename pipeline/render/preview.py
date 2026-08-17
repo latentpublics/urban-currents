@@ -202,16 +202,56 @@ def build_unreadable_row(item: Item) -> dict:
     }
 
 
-def build_synthesis(issue: Issue) -> dict | None:
+_REFERENCE_KEYS: Optional[set] = None
+
+
+def _items_with_references(items: Iterable[Item]) -> int:
+    """How many of a day's items have a reference list on file.
+
+    The measurability question, and it has to be asked before a zero is
+    printed. "No items share references today" is a measurement; "no items
+    share references today" said about a day where nothing had a bibliography
+    is a sentence about our coverage wearing the costume of a finding.
+    """
+    global _REFERENCE_KEYS
+    if _REFERENCE_KEYS is None:
+        from ..graph.citation import load_reference_base
+
+        _REFERENCE_KEYS = {
+            r["work_key"] for r in load_reference_base() if r.get("referenced_works")
+        }
+    return sum(1 for it in items if it.work_key in _REFERENCE_KEYS)
+
+
+def build_synthesis(issue: Issue, items: Iterable[Item] = ()) -> dict | None:
     """The synthesis layer, shaped for the template.
 
     Flattened into strings here rather than in Jinja: the template's job is
     markup, and a sentence assembled across three template lines is a sentence
     nobody can review.
+
+    **A row appears only when its measurement was possible, and then it may say
+    zero.** The distinction runs through the whole section. The synthesis
+    paragraph is forbidden from mentioning absence, and that rule stands — but
+    it governs an LLM writing prose. These rows are instrument readings, and an
+    instrument that reads zero is doing its job. The one thing neither may do is
+    report a zero it could not have measured, so:
+
+    - `tag shift` requires a 30-day baseline with at least seven days in it.
+      Below that the row is absent, not zero.
+    - `canon` and `coupling` require items that have reference lists at all.
+      With none, the rows are absent; with some and nothing found, they read
+      zero.
+    - `institutions` and `authors` are always measurable — every item has a
+      byline — so those rows may always read zero, and simply do not appear
+      when there is nothing above the repeat threshold.
     """
     syn = issue.synthesis
     if syn is None:
         return None
+
+    items = list(items)
+    with_refs = _items_with_references(items) if items else 0
 
     anchors = []
     for a in syn.anchors:
@@ -239,37 +279,81 @@ def build_synthesis(issue: Issue) -> dict | None:
             "partner_date": c.partner_date if c.scope == "archive" else None,
         })
 
+    deviations = [
+        {
+            "label": d.label,
+            "today": d.today,
+            "baseline": d.baseline_per_day,
+            "window_days": d.window_days,
+        }
+        for d in syn.deviations
+    ]
+    institutions = [
+        {"name": i.name, "papers": i.papers, "scope": "today"}
+        for i in syn.institutions_today
+    ]
+    in_window = [
+        {"name": i.name, "papers": i.papers, "scope": "window"}
+        for i in syn.institutions_in_window
+    ]
+    authors = [{"name": a.name, "papers": a.papers} for a in syn.repeat_authors]
+
+    # label -> (measurable, value-or-None). The template renders a row only for
+    # the measurable ones, and prints the zero sentence when the value is empty.
+    rows = [
+        {
+            "label": "tag shift",
+            "measurable": syn.deviation_status == "OK",
+            "entries": deviations,
+            "empty_text": "no tag ran above its 30-day average",
+        },
+        {
+            "label": "canon",
+            "measurable": with_refs > 0,
+            "entries": anchors,
+            "empty_text": "no foundational work is cited twice today",
+        },
+        {
+            "label": "coupling",
+            "measurable": with_refs >= 2,
+            "entries": clusters,
+            "empty_text": "no items share references today",
+        },
+        {
+            "label": "institutions",
+            "measurable": True,
+            "entries": institutions + in_window,
+            "empty_text": None,
+        },
+        {
+            "label": "authors",
+            "measurable": True,
+            "entries": authors,
+            "empty_text": None,
+        },
+    ]
+
     return {
         "composition": syn.composition,
-        "deviations": [
-            {
-                "label": d.label,
-                "today": d.today,
-                "baseline": d.baseline_per_day,
-                "window_days": d.window_days,
-            }
-            for d in syn.deviations
-        ],
+        "rows": rows,
+        "deviations": deviations,
         "deviation_note": syn.deviation_note,
         "anchors": anchors,
         "clusters": clusters,
-        "institutions_today": [{"name": i.name, "papers": i.papers} for i in syn.institutions_today],
-        "institutions_in_window": [
-            {"name": i.name, "papers": i.papers} for i in syn.institutions_in_window
-        ],
-        "repeat_authors": [{"name": a.name, "papers": a.papers} for a in syn.repeat_authors],
+        "institutions_today": institutions,
+        "institutions_in_window": in_window,
+        "repeat_authors": authors,
         "window_days": syn.window_days,
         "first_internal_citation": syn.first_internal_citation,
         "paragraph": syn.paragraph,
-        # Rendered as a comment in the HTML, never as reader-facing text: the
-        # reason a paragraph is absent is a fact about the pipeline, not about
-        # the field, and the reader should simply see a shorter issue.
+        "items_with_references": with_refs,
+        # Rendered as an HTML comment, never as reader-facing text: the reason a
+        # paragraph is absent is a fact about the pipeline, not about the field,
+        # and the reader should simply see a shorter issue.
         "omitted_reason": syn.paragraph_omitted_reason,
-        "has_content": bool(
-            syn.deviations or syn.anchors or syn.clusters
-            or syn.institutions_today or syn.institutions_in_window
-            or syn.repeat_authors or syn.paragraph
-        ),
+        "has_content": any(
+            r["measurable"] and (r["entries"] or r["empty_text"]) for r in rows
+        ) or bool(syn.paragraph) or syn.first_internal_citation,
     }
 
 
@@ -293,7 +377,7 @@ def render_issue(
         issue=issue,
         scan_meta=issue.scan_meta,
         cards=[build_card(it) for it in ordered],
-        synthesis=build_synthesis(issue),
+        synthesis=build_synthesis(issue, ordered),
         unreadable=[build_unreadable_row(it) for it in unreadable],
         status_changes=[
             {"work_key": c.work_key, "text": _status_change_text(c)}

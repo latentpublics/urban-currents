@@ -64,6 +64,7 @@ EXCLUDED = {"drop_not_urban": "relevance classifier's question, not this one"}
 # Scalar features only. Each one has to be justifiable on its own with a
 # two-figure label count; nothing here is a learned representation.
 SCALAR_FEATURES = (
+    "cites_canon",
     "canon_affinity_foundation",
     "canon_affinity_with_instruments",
     "canon_affinity_linear",
@@ -136,7 +137,7 @@ def load_labelled_item(row: dict):
 
 def affinity_features() -> dict[str, dict[str, float]]:
     """Canon affinity under every normalisation, for each work in the base."""
-    from journal_metrics import canon_affinity, canon_sets  # type: ignore
+    from journal_metrics import canon_affinity, canon_sets, cites_canon  # type: ignore
 
     foundation, instrument = canon_sets()
     both = {**instrument, **foundation}
@@ -145,6 +146,10 @@ def affinity_features() -> dict[str, dict[str, float]]:
         refs = record.get("referenced_works") or []
         hits = sum(1 for r in refs if r in foundation)
         out[record["work_key"]] = {
+            # The binary first: the probe found the zero line carries the
+            # `not_our_kind` signal (40% against 10%) and the grades above zero
+            # do not. A float here so it can enter a linear model unchanged.
+            "cites_canon": 1.0 if cites_canon(refs, foundation) else 0.0,
             "canon_affinity_foundation": canon_affinity(refs, foundation),
             "canon_affinity_with_instruments": canon_affinity(refs, both),
             "canon_affinity_linear": canon_affinity(refs, foundation, "linear"),
@@ -194,6 +199,7 @@ def build_design(embed_texts: bool = True) -> tuple[list[dict], dict]:
                     filter(None, [item.bibliography.title, item.bibliography.abstract])
                 ),
                 **{k: aff.get(k) for k in (
+                    "cites_canon",
                     "canon_affinity_foundation",
                     "canon_affinity_with_instruments",
                     "canon_affinity_linear",

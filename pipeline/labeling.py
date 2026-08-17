@@ -587,7 +587,7 @@ def affinity_pool(
     scripts_dir = str(paths.ROOT / "scripts")
     if scripts_dir not in sys.path:
         sys.path.insert(0, scripts_dir)
-    from journal_metrics import canon_affinity, canon_sets  # type: ignore
+    from journal_metrics import canon_affinity, canon_sets, cites_canon  # type: ignore
 
     foundation, _ = canon_sets()
     refs = {
@@ -612,6 +612,11 @@ def affinity_pool(
                 "item": item,
                 "date": str(d),
                 "canon_affinity": canon_affinity(item_refs, foundation),
+                # The binary the probe says carries the signal. Stored beside
+                # the continuous value rather than replacing it, because the
+                # probe's own bands were drawn on the continuous one and a row
+                # has to stay re-scorable against the sampling that produced it.
+                "cites_canon": cites_canon(item_refs, foundation),
                 "canon_hits": sum(1 for r in item_refs if r in foundation),
                 "refs_total": len(item_refs),
             }

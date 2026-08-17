@@ -47,6 +47,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import statistics
 import sys
 from collections import Counter, defaultdict
@@ -149,21 +150,61 @@ def canon_sets() -> tuple[dict[str, float], dict[str, float]]:
     return foundation, instrument
 
 
+def cites_canon(refs: list[str], canon: dict[str, float]) -> bool:
+    """Does this paper cite the field's foundation at all — the binary question.
+
+    The probe's finding is that this is where the information is. Across its 30
+    band-stratified labels, papers citing no foundational work were
+    `drop_not_our_kind` 40% of the time against 10% for those that cite at least
+    one; the keep rate barely moved (0.50 against 0.65). The grades *above* zero
+    did not separate the bands the way the zero line did.
+
+    **A zero measures two things, and only one of them is about the paper.** Our
+    canon is 90 days of one corpus and it leans towards transport, so a paper can
+    score zero by being outside the field or by being in a corner of the field
+    the canon does not reach. Five of the six zero-band keeps are the second
+    kind: inland waterway barges, staggered school start times, lane-change
+    prediction, immigration and crime rates, child stunting. All of them are our
+    kind and none of them cites our canon. Anything built on this flag inherits
+    that ambiguity, and widening the canon narrows it.
+
+    **n = 30 and Fisher's exact gives p = 0.14.** Direction and mechanism, not
+    significance.
+    """
+    return any(r in canon for r in refs)
+
+
 def canon_affinity(
-    refs: list[str], canon: dict[str, float], normalise: str = "sqrt"
+    refs: list[str], canon: dict[str, float], normalise: str = "none"
 ) -> float:
     """How much of this paper's bibliography is the field's foundation.
 
-    Normalisation is the whole question. Raw overlap rewards long bibliographies:
-    a review citing 120 works hits the canon more often than a letter citing 20,
-    without being more of our kind. Dividing by the reference count over-corrects
-    the other way — a 12-reference paper with 3 canon hits scores higher than a
-    60-reference paper with 12, which is not obviously right either.
+    Weighted by the canon entry's own weighted score throughout, so citing Ewing
+    and Cervero counts for more than citing a work our corpus touched twice.
 
-    `sqrt` splits the difference and is reported alongside both extremes so the
-    bias is visible rather than assumed. Weighted by the canon entry's own
-    weighted score, so citing Ewing and Cervero counts for more than citing a
-    work our corpus touched twice.
+    **The default was `sqrt` and the labels moved it to `none`.** The theory was
+    that raw overlap rewards long bibliographies, so the square root split the
+    difference against dividing by the reference count. In practice it inverted
+    the pair that matters: "Beyond the Western paradigm" (2 canon hits in 5
+    references) scored 89.4 and "Multilevel SEM of walkability" (7 in 63) scored
+    88.2, which says a paper citing seven foundational works is less embedded in
+    the field than one citing two. It is not.
+
+    Measured over 69 labelled items that have reference lists, AUC for keep
+    against `not_our_kind`:
+
+    | normalisation        | AUC   | the pair above |
+    |----------------------|-------|----------------|
+    | `none` (weighted sum)| 0.673 | 142.8 vs 64.5 — correct |
+    | `sqrt`               | 0.644 | 88.2 vs 89.4 — inverted |
+    | raw hit count        | 0.644 | 7 vs 2 — correct, ignores length |
+    | hits / log(refs)     | 0.642 | correct |
+    | `linear` (share)     | 0.632 | worst, punishes long lists |
+
+    The feared bias did not appear: a longer bibliography that reaches more
+    foundational works turns out to *be* more embedded, which is what the
+    unnormalised sum says. The other modes are kept because the comparison is
+    worth being able to re-run, not because any of them is a fallback.
     """
     if not refs:
         return 0.0
@@ -172,11 +213,13 @@ def canon_affinity(
         return 0.0
     total = sum(hits)
     n = len(refs)
-    if normalise == "none":
-        return round(total, 6)
     if normalise == "linear":
         return round(total / n, 6)
-    return round(total / (n ** 0.5), 6)
+    if normalise == "sqrt":
+        return round(total / (n ** 0.5), 6)
+    if normalise == "log":
+        return round(total / math.log(n + math.e), 6)
+    return round(total, 6)
 
 
 def main() -> None:

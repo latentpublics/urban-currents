@@ -256,3 +256,10 @@ deliver:
   # The plain-text body carries a reply-to-unsubscribe instruction meanwhile.
   unsubscribe_url: null
   unsubscribe_mailto: null
+
+site:
+  # No domain yet. Empty means every link is relative, so the built site
+  # opens from the filesystem and the feed carries relative hrefs. An
+  # absolute URL invented before the domain exists would be a link to
+  # nowhere printed in an email (phase 0k, X4).
+  base_url: ""

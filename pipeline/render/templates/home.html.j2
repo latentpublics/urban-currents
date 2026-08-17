@@ -52,6 +52,7 @@
         cutting it mid-clause to fit a mockup's short noun phrase would be
         rewriting the pipeline's output in the template. -#}
     <p class="uc-latest__lead">{{ lead_line }}</p>
+    <p class="uc-latest__more"><a href="issues/{{ latest.date }}.html">read the issue</a></p>
     <dl class="uc-latest__stats">
       <div><dt>published</dt><dd>{{ latest.scan_meta.items_published }}</dd></div>
       <div><dt>scanned</dt><dd>{{ latest.scan_meta.candidates_scanned }}</dd></div>
@@ -65,7 +66,7 @@
       <h2 class="uc-archive__title">Archive — last {{ rows|length }} days</h2>
       <a class="uc-archive__all" href="archive.html">all issues</a>
     </div>
-    {% include "_archive_rows.html.j2" %}
+    {% with issue_href = "issues/" %}{% include "_archive_rows.html.j2" %}{% endwith %}
   </section>
 
   <section class="uc-columns">

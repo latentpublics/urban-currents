@@ -32,7 +32,7 @@
   {% for month in months %}
   <section class="uc-month">
     <h2 class="uc-month__label">{{ month.label }}</h2>
-    {% with rows = month.rows %}{% include "_archive_rows.html.j2" %}{% endwith %}
+    {% with rows = month.rows, issue_href = "issues/" %}{% include "_archive_rows.html.j2" %}{% endwith %}
   </section>
   {% endfor %}
 

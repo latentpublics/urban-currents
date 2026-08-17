@@ -12,7 +12,10 @@
 <ul class="uc-rows">
   {% for row in rows %}
   <li class="uc-row{% if row.quiet %} uc-row--quiet{% endif %}{% if row.missing %} uc-row--missing{% endif %}" data-date="{{ row.date }}">
-    <span class="uc-row__date">{{ row.date }}</span>
+    <span class="uc-row__date">
+      {%- if row.missing %}{{ row.date }}
+      {%- else %}<a href="{{ issue_href }}{{ row.date }}.html">{{ row.date }}</a>{% endif %}
+    </span>
     <span class="uc-row__bar" aria-hidden="true">
       <span class="uc-row__fill" style="width: {{ (row.published / max_items * 100)|round|int }}%"></span>
     </span>

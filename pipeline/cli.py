@@ -292,12 +292,12 @@ def site(
     whose own description disagrees with its own data is doing the thing this
     one exists not to do.
     """
-    from .render.site import build_archive, build_design_review, build_home
+    from .render.site import build_design_review, build_site
 
-    typer.echo(f"[OK] home    — {build_home()}")
-    typer.echo(f"[OK] archive — {build_archive()}")
+    for key, value in build_site().items():
+        typer.echo(f"[OK] {key:<9} — {value}")
     if review:
-        typer.echo(f"[OK] review  — {build_design_review()}")
+        typer.echo(f"[OK] {'review':<9} — {build_design_review()}")
 
 
 @app.command("export-labeling-set")

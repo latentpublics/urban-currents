@@ -339,3 +339,170 @@ def build_design_review(out: Optional[Path] = None) -> Path:
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(html, encoding="utf-8", newline="\n")
     return target
+
+
+def issue_page_path(d: date) -> Path:
+    return paths.ROOT / "site" / "issues" / f"{d}.html"
+
+
+def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
+    """One page per issue, sharing the preview's DOM exactly.
+
+    Not a second renderer: `render_issue` produces the markup and this only adds
+    the site's navigation around it. Phase 1's Astro inherits one card
+    component, and a page built from a different template here would be a second
+    component to keep in step with it.
+    """
+    from .preview import render_issue
+
+    items = item_index()
+    target_dir = out_dir or (paths.ROOT / "site" / "issues")
+    target_dir.mkdir(parents=True, exist_ok=True)
+
+    written: list[Path] = []
+    issues = load_issues()
+    for i, issue in enumerate(issues):
+        day_items = [items[k] for k in issue.items if k in items]
+        unreadable = [items[k] for k in issue.unreadable if k in items]
+        html = render_issue(issue, day_items, unreadable)
+
+        previous = issues[i - 1] if i > 0 else None
+        following = issues[i + 1] if i + 1 < len(issues) else None
+        html = html.replace(
+            '<main class="uc-issue"',
+            _issue_nav(previous, following) + '\n<main class="uc-issue"',
+            1,
+        )
+        path = target_dir / f"{issue.date}.html"
+        path.write_text(html, encoding="utf-8", newline="\n")
+        written.append(path)
+    return written
+
+
+def _issue_nav(previous: Optional[Issue], following: Optional[Issue]) -> str:
+    """Site navigation, injected rather than templated into the issue.
+
+    The same markup is also written to `runs/` as a preview, where these links
+    would point nowhere — so the chrome belongs to the site build.
+    """
+    parts = [
+        '<nav class="uc-nav">',
+        '<span class="uc-nav__brand">Urban Currents</span>',
+        '<a href="../index.html">Today</a>',
+        '<a href="../archive.html">Archive</a>',
+    ]
+    if previous:
+        parts.append(
+            f'<a class="uc-nav__prev" href="{previous.date}.html">&larr; {previous.date}</a>'
+        )
+    if following:
+        parts.append(
+            f'<a class="uc-nav__next" href="{following.date}.html">{following.date} &rarr;</a>'
+        )
+    parts.append("</nav>")
+    return "\n".join(parts)
+
+
+def _base_url() -> str:
+    """`site.base_url` if set, otherwise empty so every link stays relative.
+
+    An absolute URL invented before a domain exists is a link to nowhere printed
+    in an email. Relative paths also mean the built site opens from the
+    filesystem, which is how it is reviewed today.
+    """
+    return (cfg("site.base_url", "") or "").rstrip("/")
+
+
+def build_feed(out: Optional[Path] = None) -> Path:
+    """Atom — the only way to read this without giving us an address.
+
+    It suits the service better than the mail does: no list, no unsubscribe,
+    and no way for us to learn who is reading.
+    """
+    from xml.sax.saxutils import escape
+
+    base = _base_url()
+    issues = list(reversed(load_issues()))
+    items = item_index()
+    updated = f"{issues[0].date}T00:00:00Z" if issues else "1970-01-01T00:00:00Z"
+
+    entries = []
+    for issue in issues[:50]:
+        link = f"{base}/issues/{issue.date}.html" if base else f"issues/{issue.date}.html"
+        summary = issue.headline.line or (
+            "A quiet day in urban data science." if issue.quiet_day else ""
+        )
+        lead = items.get(issue.headline.work_key or "")
+        if lead and not summary:
+            summary = lead.bibliography.title
+        entries.append(
+            "  <entry>\n"
+            f"    <title>Urban Currents {issue.date}</title>\n"
+            f'    <link href="{escape(link)}"/>\n'
+            f"    <id>urn:urban-currents:issue:{issue.date}</id>\n"
+            f"    <updated>{issue.date}T00:00:00Z</updated>\n"
+            f"    <summary>{escape(summary)}</summary>\n"
+            "  </entry>"
+        )
+
+    self_link = f'<link rel="self" href="{escape(base)}/feed.xml"/>' if base else ""
+    xml = (
+        '<?xml version="1.0" encoding="utf-8"?>\n'
+        '<feed xmlns="http://www.w3.org/2005/Atom">\n'
+        "  <title>Urban Currents</title>\n"
+        "  <subtitle>A daily scan of urban data science</subtitle>\n"
+        "  <id>urn:urban-currents:feed</id>\n"
+        f"  <updated>{updated}</updated>\n"
+        f"  {self_link}\n"
+        + "\n".join(entries)
+        + "\n</feed>\n"
+    )
+    target = out or (paths.ROOT / "site" / "feed.xml")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(xml, encoding="utf-8", newline="\n")
+    return target
+
+
+def build_sitemap(out: Optional[Path] = None) -> Path:
+    from xml.sax.saxutils import escape
+
+    base = _base_url()
+    urls = ["index.html", "archive.html"] + [
+        f"issues/{issue.date}.html" for issue in reversed(load_issues())
+    ]
+    body = "\n".join(
+        f"  <url><loc>{escape(f'{base}/{u}' if base else u)}</loc></url>" for u in urls
+    )
+    xml = (
+        '<?xml version="1.0" encoding="utf-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f"{body}\n</urlset>\n"
+    )
+    target = out or (paths.ROOT / "site" / "sitemap.xml")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(xml, encoding="utf-8", newline="\n")
+    return target
+
+
+def build_robots(out: Optional[Path] = None) -> Path:
+    base = _base_url()
+    lines = ["User-agent: *", "Allow: /"]
+    if base:
+        lines.append(f"Sitemap: {base}/sitemap.xml")
+    target = out or (paths.ROOT / "site" / "robots.txt")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
+    return target
+
+
+def build_site() -> dict[str, Any]:
+    """Everything, in the order the links need."""
+    return {
+        "home": str(build_home()),
+        "archive": str(build_archive()),
+        "issues": len(build_issue_pages()),
+        "feed": str(build_feed()),
+        "sitemap": str(build_sitemap()),
+        "robots": str(build_robots()),
+        "base_url": _base_url() or "(relative)",
+    }

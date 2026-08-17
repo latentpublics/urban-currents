@@ -13,6 +13,12 @@ Two modes:
 day, and self-reported times are always under-reported, so the clock starts and
 stops here and the result lands in ``metrics.timing.review_s``.
 
+**And it is written however the session ends.** Recording only on a completed
+walk of the day biases Q4 by exactly the sessions a busy person has — the
+interrupted ones — which is why the measurement stood at zero days for eight
+batches while a review had in fact been started. ``reviewed_n`` is recorded
+beside the seconds so a stopped session is not read as a fast one.
+
 This module is exercised by tests through the injected ``prompt`` / ``opener``
 callables; the interactive path is never driven by automation.
 """
@@ -73,6 +79,18 @@ class ReviewOutcome:
     skipped: int = 0
     seconds: float = 0.0
     edits: dict[str, list[str]] = field(default_factory=dict)
+    # How many items were actually judged, and whether the session ran out of
+    # items or was stopped. 90 seconds over 3 items and 14 minutes over 24 are
+    # the same number of minutes and not the same measurement.
+    reviewed_n: int = 0
+    total_n: int = 0
+    stopped_early: bool = False
+
+    @property
+    def seconds_per_item(self) -> Optional[float]:
+        if not self.reviewed_n:
+            return None
+        return round(self.seconds / self.reviewed_n, 1)
 
     def as_dict(self) -> dict:
         return {
@@ -81,6 +99,10 @@ class ReviewOutcome:
             "edited": self.edited,
             "skipped": self.skipped,
             "seconds": round(self.seconds, 1),
+            "reviewed_n": self.reviewed_n,
+            "total_n": self.total_n,
+            "seconds_per_item": self.seconds_per_item,
+            "stopped_early": self.stopped_early,
             "edits": self.edits,
         }
 
@@ -119,9 +141,61 @@ def run_review_session(
     else:
         print(f"(no preview at {preview}; run `uc preview --date {d}`)")
 
-    outcome = ReviewOutcome()
+    outcome = ReviewOutcome(total_n=len(issue.items))
     started = time.monotonic()
 
+    try:
+        _review_items(issue, outcome, d, prompt, editor)
+    except KeyboardInterrupt:
+        # Ctrl-C is how a real review ends more often than not. The elapsed time
+        # up to here is a measurement, and discarding it is what left Q4 with
+        # zero days after eight batches.
+        outcome.stopped_early = True
+        print("\n(interrupted — the time and judgements so far are saved)")
+    finally:
+        outcome.seconds = time.monotonic() - started
+        run.metrics.timing["review_s"] = round(
+            run.metrics.timing.get("review_s", 0.0) + outcome.seconds, 1
+        )
+        # Accumulated alongside the seconds, or the two stop describing the same
+        # session as soon as a day is reviewed in more than one sitting.
+        run.metrics.timing["reviewed_n"] = (
+            run.metrics.timing.get("reviewed_n", 0) + outcome.reviewed_n
+        )
+        run.metrics.stages["review"] = "OK"
+        setattr(run.metrics, "review", outcome.as_dict())
+        run.save()
+
+    per_item = outcome.seconds_per_item
+    print(
+        f"\nreviewed {outcome.reviewed_n} of {outcome.total_n} items in "
+        f"{outcome.seconds / 60:.1f} min "
+        f"({per_item if per_item is not None else '—'} s/item; "
+        f"approved {outcome.approved}, rejected {outcome.rejected}, "
+        f"edited {outcome.edited}, skipped {outcome.skipped})"
+    )
+    if outcome.reviewed_n < outcome.total_n:
+        print(
+            f"{outcome.total_n - outcome.reviewed_n} left for {d} — "
+            f"re-run the same command; the clock adds up"
+        )
+    return outcome
+
+
+def _review_items(
+    issue,
+    outcome: ReviewOutcome,
+    d: date,
+    prompt: Prompt,
+    editor: Callable[[Item], Optional[Item]],
+) -> None:
+    """The loop itself, so the caller's `finally` owns the clock.
+
+    Split out for one reason: whatever happens in here — a quit, a Ctrl-C, an
+    unhandled exception — the elapsed time has already been earned and must be
+    recorded. Keeping the timing in the caller makes that structural rather than
+    a thing every exit path has to remember.
+    """
     for work_key in issue.items:
         item = store.load_item(work_key)
         if item is None:
@@ -130,8 +204,13 @@ def run_review_session(
         if item.summary.en:
             print(f"  what: {item.summary.en.what}")
             print(f"  why:  {item.summary.en.why}")
-        answer = prompt("  [a]pprove / [r]eject / [e]dit / [s]kip: ")
+        answer = prompt("  [a]pprove / [r]eject / [e]dit / [s]kip / [q]uit: ")
 
+        if answer.startswith("q"):
+            outcome.stopped_early = True
+            return
+
+        outcome.reviewed_n += 1
         if answer.startswith("a"):
             item.review.status = "approved"
             outcome.approved += 1
@@ -157,21 +236,6 @@ def run_review_session(
             outcome.skipped += 1
 
         store.save_item(item, today=d)
-
-    outcome.seconds = time.monotonic() - started
-    run.metrics.timing["review_s"] = round(
-        run.metrics.timing.get("review_s", 0.0) + outcome.seconds, 1
-    )
-    run.metrics.stages["review"] = "OK"
-    setattr(run.metrics, "review", outcome.as_dict())
-    run.save()
-
-    print(
-        f"\nreviewed {len(issue.items)} items in {outcome.seconds / 60:.1f} min "
-        f"(approved {outcome.approved}, rejected {outcome.rejected}, "
-        f"edited {outcome.edited}, skipped {outcome.skipped})"
-    )
-    return outcome
 
 
 # --------------------------------------------------------------------------

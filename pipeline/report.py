@@ -244,13 +244,40 @@ def build_report(out_path: Optional[Path] = None) -> Path:
     rate = (calib or {}).get("headline_rate")
     q3_ok = None if rate is None else 0.30 <= rate <= 0.50
 
-    review_seconds = [
-        r.timing.get("review_s") for r in runs if r.timing.get("review_s")
-    ]
+    # Q4 has two populations and conflating them is how a partial review reads
+    # as a fast one. A day where three items were judged before the session was
+    # interrupted takes 90 seconds, which passes "median <= 15 min/day" while
+    # measuring nothing about a full day. So: full days give the headline, and
+    # seconds-per-item — which every partial day contributes to honestly — gives
+    # the projection when no full day exists yet.
+    review_days: list[dict] = []
+    for r in runs:
+        seconds = r.timing.get("review_s")
+        if not seconds:
+            continue
+        reviewed_n = int(r.timing.get("reviewed_n", 0) or 0)
+        review_days.append({
+            "date": str(r.date),
+            "seconds": float(seconds),
+            "reviewed_n": reviewed_n,
+            "published": int(r.counts.published or 0),
+            "complete": bool(reviewed_n and reviewed_n >= int(r.counts.published or 0)),
+        })
+
+    complete = [d for d in review_days if d["complete"]]
     review_median = None
-    if review_seconds:
-        s = sorted(review_seconds)
+    if complete:
+        s = sorted(d["seconds"] for d in complete)
         review_median = s[len(s) // 2] / 60
+
+    reviewed_total = sum(d["reviewed_n"] for d in review_days)
+    seconds_total = sum(d["seconds"] for d in review_days if d["reviewed_n"])
+    per_item = round(seconds_total / reviewed_total, 1) if reviewed_total else None
+    # Projection, clearly labelled as one: per-item pace at the median day's size.
+    projected = (
+        round(per_item * median_day / 60, 1)
+        if per_item is not None and median_day else None
+    )
     q4_ok = None if review_median is None else review_median <= 15
 
     L.extend(
@@ -275,8 +302,15 @@ def build_report(out_path: Optional[Path] = None) -> Path:
                  _fmt(rate, 3),
                  "PROVISIONAL" if (calib or {}).get("provisional") else _verdict(q3_ok)],
                 ["Q4", "Does review fit the budget?", "median <= 15 min/day",
-                 _fmt(review_median, 1) if review_median else PENDING_HUMAN,
-                 _verdict(q4_ok) if review_median else PENDING_HUMAN],
+                 _fmt(review_median, 1) if review_median
+                 else (
+                     f"{_fmt(projected, 1)} projected "
+                     f"({_fmt(per_item, 1)} s/item over {reviewed_total} items, "
+                     f"0 complete days)"
+                     if projected is not None else PENDING_HUMAN
+                 ),
+                 _verdict(q4_ok) if review_median
+                 else ("PROJECTED" if projected is not None else PENDING_HUMAN)],
             ],
         )
     )

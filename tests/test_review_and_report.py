@@ -116,6 +116,61 @@ def test_discarded_edit_leaves_the_item_alone(repo):
     assert outcome.edits == {}
 
 
+def test_an_interrupted_session_still_records_the_time_and_the_count(repo):
+    """The measurement Q4 lost for eight batches.
+
+    A real review is stopped, not finished. Recording only on a completed walk
+    biases the median by exactly the sessions a busy person has.
+    """
+    _seed_day(repo)
+
+    def prompt(_message):
+        raise KeyboardInterrupt
+
+    outcome = run_review_session(DAY, prompt=prompt, opener=lambda p: None)
+
+    run = Run.for_date(DAY)
+    assert outcome.stopped_early is True
+    assert "review_s" in run.metrics.timing
+    assert run.metrics.stages["review"] == "OK"
+    assert outcome.reviewed_n == 0
+    assert outcome.total_n == 3
+
+
+def test_quitting_records_what_was_judged_and_stops(repo):
+    _seed_day(repo)
+    outcome = run_review_session(DAY, prompt=_answers("a", "q"), opener=lambda p: None)
+
+    assert outcome.approved == 1
+    assert outcome.reviewed_n == 1  # the quit itself is not a judgement
+    assert outcome.total_n == 3
+    assert outcome.stopped_early is True
+    assert Run.for_date(DAY).metrics.timing["reviewed_n"] == 1
+
+
+def test_two_sittings_add_up(repo):
+    _seed_day(repo)
+    run_review_session(DAY, prompt=_answers("a", "q"), opener=lambda p: None)
+    first = Run.for_date(DAY).metrics.timing
+    run_review_session(DAY, prompt=_answers("a", "a", "q"), opener=lambda p: None)
+    second = Run.for_date(DAY).metrics.timing
+
+    # Both the clock and the count accumulate, or the two stop describing the
+    # same session the moment a day is reviewed over two sittings.
+    assert second["review_s"] >= first["review_s"]
+    assert second["reviewed_n"] == 3
+
+
+def test_a_partial_session_is_not_reported_as_a_fast_day(repo):
+    """90 seconds over 3 items and 14 minutes over 24 are not the same reading."""
+    _seed_day(repo)
+    outcome = run_review_session(DAY, prompt=_answers("a", "q"), opener=lambda p: None)
+    assert outcome.as_dict()["reviewed_n"] == 1
+    assert outcome.as_dict()["total_n"] == 3
+    assert outcome.as_dict()["seconds_per_item"] is not None
+    assert outcome.as_dict()["stopped_early"] is True
+
+
 def test_review_of_a_missing_issue_is_not_an_error(repo):
     outcome = run_review_session(
         date(2030, 1, 1), prompt=_answers(), opener=lambda p: None

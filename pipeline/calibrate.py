@@ -66,12 +66,10 @@ def _would_publish(day_items: list[Item], threshold: float) -> set[str]:
     """
     from .run_stages import fill_slots
 
-    journal_taken, arxiv_taken = fill_slots(
-        day_items,
-        threshold,
-        int(cfg("selection.slots.journal", 12)),
-        int(cfg("selection.slots.arxiv", 12)),
-    )
+    # No explicit slot counts: the calibration has to see the same policy the
+    # live stage applies, including the arXiv floor, or it calibrates the
+    # quiet-day line on a population the pipeline no longer publishes.
+    journal_taken, arxiv_taken = fill_slots(day_items, threshold)
     return {it.work_key for it in journal_taken + arxiv_taken}
 
 

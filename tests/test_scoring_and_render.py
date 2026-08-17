@@ -353,7 +353,9 @@ def test_only_published_items_age_the_archive(repo):
     published was never seen, so it is still novel when it reappears."""
     from pipeline.calibrate import score_days
 
-    # 30 candidates for 24 slots; ranked by relevance, so t24..t29 miss out.
+    # 30 arXiv candidates and no journal articles. The arXiv path publishes at
+    # most 12 (V1-1), so t12..t29 miss out — and the point of the test is that
+    # missing out is what keeps a tag novel.
     day_one = [
         _tagged(f"arxiv:2605.1{i:04d}", 1, [f"method:t{i}"], relevance=0.9 - i / 1000)
         for i in range(30)
@@ -366,7 +368,7 @@ def test_only_published_items_age_the_archive(repo):
         for r in score_days(day_one + [published_tag, dropped_tag], set(), 0.35)
     }
 
-    assert sum(1 for r in rows.values() if r["date"] == "2026-05-01" and r["published"]) == 24
+    assert sum(1 for r in rows.values() if r["date"] == "2026-05-01" and r["published"]) == 12
     assert rows["arxiv:2605.20000"]["components"]["novelty"] == 0.0
     assert rows["arxiv:2605.20001"]["components"]["novelty"] == 1.0
 

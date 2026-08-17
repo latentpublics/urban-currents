@@ -62,7 +62,34 @@ selection:
   # REVIEW: YJUN's call on the split.
   slots:
     journal: 12
+    # `arxiv` is no longer read by the selection stage — the arXiv path is
+    # governed by `arxiv.floor` and `arxiv.max` below (phase 0i, V1-1). Kept
+    # because the backfill and the calibration still pass explicit slot counts.
     arxiv: 12
+
+  # arXiv publishes by quality, not by quota. 90 relevance labels over 3 days:
+  # >=0.80 was 9 keeps out of 9, 0.70-0.80 was 4 out of 9, and below 0.70 was a
+  # third. Filling twelve slots meant reaching into the last of those every day.
+  #
+  # The 90-day backfill says a 0.80 floor yields a median of 3 arXiv candidates
+  # a day (p25 2, p75 5) against 6 at 0.70. Three good preprints is the correct
+  # output of a day with three good preprints; twelve was a number, not a
+  # finding. Nine of nine is not proof either — the 95% lower bound is near
+  # 0.67 — so this is "no observed failures in nine", and more labels can move it.
+  #
+  # THIS IS A PUBLICATION FLOOR, NOT `classifier.threshold`. The threshold still
+  # decides candidacy and the labelling sample is drawn from the candidate pool,
+  # so the 120 labels keep meaning what they meant.
+  arxiv:
+    floor: 0.80
+    max: 12
+
+  journal:
+    # What the journal path may expand to when arXiv is under its ceiling.
+    # 15 is the deepest rank the labels reach — precision by depth holds at
+    # 0.64-0.79 through rank 15 and there is no evidence past it. Publishing
+    # deeper than we have measured is the thing this cap exists to prevent.
+    max: 15
   # How the journal path ranks its candidates. The path has no ranking today —
   # every whitelist article scores relevance 1.0 by membership — and the rebuilt
   # whitelist would take candidates from about 51 a day to about 90 for the same

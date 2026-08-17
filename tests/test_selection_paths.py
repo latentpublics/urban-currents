@@ -106,7 +106,14 @@ def test_each_path_owns_its_slots(repo):
     assert run.metrics.counts.__pydantic_extra__["selected_arxiv"] == 12
 
 
-def test_a_path_lends_its_unused_slots_and_the_shortfall_is_recorded(repo):
+def test_arxiv_does_not_borrow_a_thin_journal_days_slots(repo):
+    """Lending runs one way now, and this is the reason it changed.
+
+    Under the old rule a day with two journal articles was patched by taking
+    twenty-two arXiv preprints — ten of them from below the point where the
+    labels put the keep rate at a third. Reaching down to keep the total at 24
+    was the bug, not the shortfall.
+    """
     wl = _whitelist_source_id()
     items = [journal_item(i, wl) for i in range(2)]
     items += [arxiv_item(i, 0.9) for i in range(30)]
@@ -114,8 +121,36 @@ def test_a_path_lends_its_unused_slots_and_the_shortfall_is_recorded(repo):
     run, selected = _run_select(repo, items, threshold=0.35)
 
     assert sum(1 for it in selected if not it.ids.arxiv) == 2
-    assert sum(1 for it in selected if it.ids.arxiv) == 22  # borrowed the spare 10
+    assert sum(1 for it in selected if it.ids.arxiv) == 12  # its ceiling, not 22
+    assert len(selected) == 14  # a short day is allowed to be short
     assert any("short day" in e for e in run.metrics.errors)
+
+
+def test_journal_expands_when_arxiv_is_under_its_ceiling(repo):
+    wl = _whitelist_source_id()
+    items = [journal_item(i, wl) for i in range(30)]
+    items += [arxiv_item(i, 0.9) for i in range(2)]
+
+    _, selected = _run_select(repo, items, threshold=0.35)
+
+    # Journal grows to its own cap of 15 — the deepest rank the labels reach —
+    # and stops there rather than absorbing all ten spare arXiv slots.
+    assert sum(1 for it in selected if not it.ids.arxiv) == 15
+    assert sum(1 for it in selected if it.ids.arxiv) == 2
+
+
+def test_an_arxiv_item_below_the_floor_is_a_candidate_but_not_published(repo):
+    """The floor governs publication; `classifier.threshold` still governs candidacy.
+
+    This separation is what keeps the 120 labels valid: they were drawn from the
+    candidate pool, and the candidate pool has not moved.
+    """
+    items = [arxiv_item(1, 0.99), arxiv_item(2, 0.55), arxiv_item(3, 0.42)]
+    run, selected = _run_select(repo, items, threshold=0.35)
+
+    assert [it.work_key for it in selected] == ["arxiv:2608.00001"]
+    # All three still counted as candidates — that is the labelling population.
+    assert run.metrics.counts.__pydantic_extra__["arxiv_candidates"] == 3
 
 
 def test_arxiv_path_is_ranked_by_probability(repo):

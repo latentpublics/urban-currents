@@ -10,6 +10,7 @@ key produces SKIPPED and the run continues — a partial issue beats no issue.
 from __future__ import annotations
 
 import traceback
+from dataclasses import dataclass
 from datetime import date
 from typing import Optional
 
@@ -335,8 +336,68 @@ def has_abstract(item: Item) -> bool:
     return bool((item.bibliography.abstract or "").strip())
 
 
+@dataclass(frozen=True)
+class SlotPolicy:
+    """How many items each path may publish, and how good an arXiv one must be.
+
+    **This is a publication policy, not a candidacy one.** `classifier.threshold`
+    still decides what enters the day's candidate pool, and the labelling sample
+    is drawn from that pool — so nothing here can move a precision@k figure. The
+    120 labels stand on the candidate ranking, and the candidate ranking is
+    untouched.
+
+    The measurement that produced these numbers (90 relevance labels, 3 days):
+
+    | arXiv floor | labelled precision | n  | median candidates/day (90-day backfill) |
+    |------------:|-------------------:|---:|----------------------------------------:|
+    | 0.35        | 0.489              | 45 | 18   |
+    | 0.50        | 0.556              | 36 | 11   |
+    | 0.70        | 0.722              | 18 | 6    |
+    | **0.80**    | **1.000**          | 9  | **3** |
+    | 0.90        | 1.000              | 6  | 1.5  |
+
+    The band between 0.70 and 0.80 is 4 keeps out of 9 — 0.44, barely better
+    than the 0.35-0.70 mass at 0.33, and it is the whole reason the 0.70 floor
+    measures 0.72. Above 0.80 every labelled item was a keep. Nine of nine is
+    not proof: the rule of three puts the 95% lower bound near 0.67, so the
+    honest claim is "no observed failures in nine", not "perfect".
+
+    So the arXiv path stops filling instead of reaching down. A day with three
+    arXiv items is the correct output of a day with three good arXiv preprints.
+    """
+
+    arxiv_floor: float
+    arxiv_max: int
+    journal_base: int
+    journal_max: int
+
+    @classmethod
+    def from_config(cls) -> "SlotPolicy":
+        return cls(
+            arxiv_floor=float(cfg("selection.arxiv.floor", 0.80)),
+            arxiv_max=int(cfg("selection.arxiv.max", 12)),
+            journal_base=int(cfg("selection.slots.journal", 12)),
+            journal_max=int(cfg("selection.journal.max", 15)),
+        )
+
+    @classmethod
+    def even_split(cls, top_n: int) -> "SlotPolicy":
+        """`--top N` splits evenly and keeps the floor — an override of size, not of standard."""
+        half = int(top_n) // 2
+        return cls(
+            arxiv_floor=float(cfg("selection.arxiv.floor", 0.80)),
+            arxiv_max=int(top_n) - half,
+            journal_base=half,
+            journal_max=half,
+        )
+
+
 def fill_slots(
-    items: list[Item], threshold: float, journal_slots: int, arxiv_slots: int
+    items: list[Item],
+    threshold: float,
+    journal_slots: Optional[int] = None,
+    arxiv_slots: Optional[int] = None,
+    policy: Optional[SlotPolicy] = None,
 ) -> tuple[list[Item], list[Item]]:
     """Which items fill a day's two sets of slots, ranked and lent.
 
@@ -349,32 +410,50 @@ def fill_slots(
     be a title and nothing else, and it publishes in `Also published today`
     instead. Enforced here rather than in `stage_select` so the backfill's idea
     of what would publish keeps matching what does.
+
+    **The lending is one-directional now.** It used to run both ways so the day
+    always totalled 24, which meant a thin arXiv day was patched by reaching
+    further down the arXiv ranking — into the 33%-keep region the labels found.
+    A short day is now allowed to be short: the journal path may expand to
+    `journal_max`, and beyond that the day simply publishes fewer items.
     """
+    if policy is None:
+        policy = SlotPolicy.from_config()
+    if journal_slots is not None or arxiv_slots is not None:
+        # Explicit slot counts still work — the backfill and the tests use them.
+        policy = SlotPolicy(
+            arxiv_floor=policy.arxiv_floor,
+            arxiv_max=arxiv_slots if arxiv_slots is not None else policy.arxiv_max,
+            journal_base=journal_slots if journal_slots is not None else policy.journal_base,
+            journal_max=max(
+                journal_slots if journal_slots is not None else policy.journal_base,
+                policy.journal_max,
+            ),
+        )
+
     journal_pool = sorted(
         (it for it in items if _is_whitelist_journal(it) and has_abstract(it)),
         key=lambda it: (-journal_rank_score(it), it.work_key),
     )
+    # Candidacy is `threshold`; publication is the floor. The floor is never
+    # below the threshold — a lower one would publish items the day never
+    # collected as candidates.
+    floor = max(float(threshold), policy.arxiv_floor)
     arxiv_pool = sorted(
         (
             it
             for it in items
-            if not _is_whitelist_journal(it) and it.scores.relevance >= threshold
+            if not _is_whitelist_journal(it) and it.scores.relevance >= floor
         ),
         key=lambda it: (-it.scores.relevance, it.work_key),
     )
 
-    journal_taken = journal_pool[:journal_slots]
-    arxiv_taken = arxiv_pool[:arxiv_slots]
-
-    # A path that cannot fill its slots lends them to the other. The caller
-    # records that it happened — a short day should be visible, not silently
-    # patched over.
-    spare = (journal_slots - len(journal_taken)) + (arxiv_slots - len(arxiv_taken))
-    if spare:
-        journal_taken = journal_pool[: len(journal_taken) + spare]
-        spare = journal_slots + arxiv_slots - len(journal_taken) - len(arxiv_taken)
-        if spare:
-            arxiv_taken = arxiv_pool[: len(arxiv_taken) + spare]
+    arxiv_taken = arxiv_pool[: policy.arxiv_max]
+    journal_slots_now = min(
+        policy.journal_max,
+        policy.journal_base + max(0, policy.arxiv_max - len(arxiv_taken)),
+    )
+    journal_taken = journal_pool[:journal_slots_now]
     return journal_taken, arxiv_taken
 
 
@@ -397,12 +476,7 @@ def stage_select(
     items = read_input(run, "select")
     thr = cfg("classifier.threshold", 0.35) if threshold is None else threshold
 
-    journal_slots = int(cfg("selection.slots.journal", 12))
-    arxiv_slots = int(cfg("selection.slots.arxiv", 12))
-    if top_n is not None:
-        # An explicit --top splits evenly between the two paths.
-        journal_slots = int(top_n) // 2
-        arxiv_slots = int(top_n) - journal_slots
+    policy = SlotPolicy.even_split(top_n) if top_n is not None else SlotPolicy.from_config()
 
     # An item no source could give an abstract for cannot be summarised, so its
     # card would carry a title and nothing else. Measured on the five prepared
@@ -435,7 +509,7 @@ def stage_select(
     for it in journal_pool:
         score_item(it, seen)
 
-    journal_taken, arxiv_taken = fill_slots(items, thr, journal_slots, arxiv_slots)
+    journal_taken, arxiv_taken = fill_slots(items, thr, policy=policy)
     selected = journal_taken + arxiv_taken
     selected.sort(key=lambda it: (-it.scores.headline, -it.scores.relevance, it.work_key))
 
@@ -443,10 +517,15 @@ def stage_select(
     setattr(run.metrics.counts, "arxiv_candidates", len(arxiv_pool))
     setattr(run.metrics.counts, "selected_journal", len(journal_taken))
     setattr(run.metrics.counts, "selected_arxiv", len(arxiv_taken))
-    if len(journal_taken) < journal_slots or len(arxiv_taken) < arxiv_slots:
+    # The arXiv path being under its ceiling is the policy working, not a
+    # shortage: above the floor is all there was. Recorded as a count, not an
+    # error, so the day's own log stops calling a correct outcome a problem.
+    setattr(run.metrics.counts, "arxiv_above_floor", len(arxiv_taken))
+    run.metrics.timing.setdefault("arxiv_floor", policy.arxiv_floor)
+    if len(journal_taken) < policy.journal_base:
         run.error(
-            f"select: short day — journal {len(journal_taken)}/{journal_slots}, "
-            f"arxiv {len(arxiv_taken)}/{arxiv_slots}"
+            f"select: short day — journal {len(journal_taken)}/{policy.journal_base}, "
+            f"arxiv {len(arxiv_taken)} above the {policy.arxiv_floor} floor"
         )
 
     run.count("selected", len(selected))

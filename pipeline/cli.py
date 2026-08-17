@@ -273,6 +273,36 @@ def site(
         typer.echo(f"[OK] review  — {build_design_review()}")
 
 
+@app.command("export-labeling-set")
+def export_labeling_set_cmd(
+    date_: Optional[str] = DateOpt,
+    days: int = typer.Option(1, help="Export this many days, ending at --date"),
+    out: Optional[str] = typer.Option(None, help="Output path (default runs/labeling-set.json)"),
+):
+    """Bundle everything a labelling session needs into one file.
+
+    Labelling happens wherever YJUN is; the state for a day is spread across
+    several stage files. Moving it was a hand-built tar once, which worked and
+    is not a procedure. `uc import-labeling-set` reads it back.
+    """
+    from .labeling import export_labeling_set
+
+    end = _date(date_)
+    dates = [end - timedelta(days=i) for i in range(days - 1, -1, -1)]
+    target = Path(out) if out else (paths.RUNS / "labeling-set.json")
+    typer.echo(json.dumps(export_labeling_set(dates, target), indent=2))
+
+
+@app.command("import-labeling-set")
+def import_labeling_set_cmd(
+    path: str = typer.Argument(..., help="The file written by export-labeling-set"),
+):
+    """Restore an exported labelling set into this machine's run directories."""
+    from .labeling import import_labeling_set
+
+    typer.echo(json.dumps(import_labeling_set(Path(path)), indent=2))
+
+
 @app.command("prepare-probe")
 def prepare_probe_cmd(
     date_: Optional[str] = DateOpt,

@@ -983,3 +983,95 @@ def _load_probe_pool() -> list[Item]:
         if line.strip():
             out.append(Item.model_validate_json(line))
     return out
+
+
+# --------------------------------------------------------------------------
+# Moving a labelling session between machines (phase 0j, W7)
+# --------------------------------------------------------------------------
+
+EXPORT_VERSION = "labeling-set@1"
+
+
+def export_labeling_set(dates: list[date], out: Path) -> dict[str, Any]:
+    """Everything needed to label a day, in one file.
+
+    Labelling happens wherever YJUN is, and the pipeline's state for a day is
+    spread across `runs/<id>/stages/*.jsonl`, the labelling pool, and the probe
+    pool. Last time that move was a hand-built 8.4MB tar, which worked once and
+    is not a procedure.
+
+    Only what labelling reads is exported — the classify pool, the labelling
+    pool, the summaries and the probe pool. Not the raw API responses, which are
+    the bulk of a run directory and which nothing in a labelling session touches.
+    """
+    from .metrics import Run
+    from .stages import read_stage
+
+    payload: dict[str, Any] = {
+        "version": EXPORT_VERSION,
+        "exported_at": utcnow().isoformat(),
+        "dates": [str(d) for d in dates],
+        "days": {},
+        "probe_pool": [it.model_dump(mode="json", by_alias=True) for it in _load_probe_pool()],
+    }
+    for d in dates:
+        run = Run.for_date(d)
+        day: dict[str, list] = {}
+        for stage in ("classify", LABELING_POOL_STAGE, "summarize"):
+            items = read_stage(run, stage) or []
+            if items:
+                day[stage] = [it.model_dump(mode="json", by_alias=True) for it in items]
+        if day:
+            payload["days"][str(d)] = day
+
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(
+        json.dumps(payload, ensure_ascii=False, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    return {
+        "path": str(out),
+        "bytes": out.stat().st_size,
+        "dates": payload["dates"],
+        "stages": {
+            d: {k: len(v) for k, v in day.items()} for d, day in payload["days"].items()
+        },
+        "probe_pool": len(payload["probe_pool"]),
+    }
+
+
+def import_labeling_set(path: Path) -> dict[str, Any]:
+    """Write an exported set back into this machine's run directories.
+
+    The round trip is the point: an export nobody has read back is a backup
+    nobody has restored.
+    """
+    from .metrics import Run
+    from .stages import write_stage
+
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if payload.get("version") != EXPORT_VERSION:
+        raise ValueError(
+            f"unknown export version {payload.get('version')!r}; expected {EXPORT_VERSION}"
+        )
+
+    restored: dict[str, dict[str, int]] = {}
+    for day, stages in (payload.get("days") or {}).items():
+        run = Run.for_date(date.fromisoformat(day))
+        restored[day] = {}
+        for stage, rows in stages.items():
+            items = [Item.model_validate(r) for r in rows]
+            write_stage(run, stage, items)
+            restored[day][stage] = len(items)
+
+    probe = [Item.model_validate(r) for r in (payload.get("probe_pool") or [])]
+    if probe:
+        probe_pool_path().write_text(
+            "\n".join(it.model_dump_json(by_alias=True) for it in sorted(
+                probe, key=lambda i: i.work_key
+            )) + "\n",
+            encoding="utf-8",
+            newline="\n",
+        )
+    return {"dates": sorted(restored), "stages": restored, "probe_pool": len(probe)}

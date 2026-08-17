@@ -13,12 +13,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import shutil
 import subprocess
 import sys
+import tempfile
 from dataclasses import dataclass, field
 from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
+from typing import Optional
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -72,11 +76,35 @@ class CardCounter(HTMLParser):
             self.unbalanced += 1
 
 
-def run(cmd: list[str]) -> tuple[int, str]:
+def run(cmd: list[str], content: Optional[Path] = None) -> tuple[int, str]:
+    """Run a command, optionally with the published archive redirected.
+
+    `content` points `UC_CONTENT` at a sandbox so a verification run cannot
+    write into the real archive. Phase 0h's run left a ghost issue behind —
+    `content/issues/2026-08-14.json`, a quiet day with no items, authored by a
+    test rather than by a day's work — and running verification daily would
+    accumulate those.
+    """
+    env = dict(os.environ)
+    if content is not None:
+        env["UC_CONTENT"] = str(content)
     proc = subprocess.run(
-        cmd, cwd=str(ROOT), capture_output=True, text=True, encoding="utf-8", errors="replace"
+        cmd, cwd=str(ROOT), capture_output=True, text=True, encoding="utf-8",
+        errors="replace", env=env,
     )
     return proc.returncode, (proc.stdout or "") + (proc.stderr or "")
+
+
+def sandbox_content() -> Path:
+    """A copy of the archive for the live run to write into.
+
+    Copied rather than empty: the immutability guard and the status-change path
+    only do anything when a day already exists, and a verification that never
+    exercises them is verifying a simpler pipeline than the real one.
+    """
+    target = Path(tempfile.mkdtemp(prefix="uc-verify-content-")) / "content"
+    shutil.copytree(paths.CONTENT, target)
+    return target
 
 
 # --------------------------------------------------------------------------
@@ -93,13 +121,13 @@ def check_pytest() -> Check:
     return c
 
 
-def check_e2e(d: date, skip: bool) -> Check:
+def check_e2e(d: date, skip: bool, content: Optional[Path] = None) -> Check:
     c = Check("2. real end-to-end run against live APIs")
     if skip:
         c.status = "SKIPPED"
         c.detail = "--skip-e2e"
         return c
-    code, out = run(["uv", "run", "uc", "run", "--date", str(d)])
+    code, out = run(["uv", "run", "uc", "run", "--date", str(d)], content=content)
     stages = [ln.strip() for ln in out.splitlines() if ln.strip().startswith("[")]
     failed = [s for s in stages if "FAILED" in s or "EMPTY" in s]
     skipped = [s for s in stages if "SKIPPED" in s]
@@ -116,17 +144,26 @@ def check_e2e(d: date, skip: bool) -> Check:
     return c
 
 
-def check_outputs(d: date) -> Check:
+def check_outputs(d: date, content: Optional[Path] = None) -> Check:
+    """What the live run produced — checked where the run was told to write it."""
     c = Check("2b. expected artefacts exist")
-    items = store.all_item_files()
-    issue = store.issue_path(d)
+    root = content or paths.CONTENT
+    items = sorted((root / "items").glob("*.json"))
+    issue = root / "issues" / f"{d}.json"
     preview = paths.RUNS / f"run_{d}" / "preview.html"
+    email = paths.RUNS / f"run_{d}" / "email.html"
+    where = "sandbox" if content else "content"
     c.evidence = [
-        f"content/items: {len(items)} files",
-        f"content/issues/{d}.json: {'yes' if issue.exists() else 'NO'}",
+        f"{where}/items: {len(items)} files",
+        f"{where}/issues/{d}.json: {'yes' if issue.exists() else 'NO'}",
         f"runs/run_{d}/preview.html: {'yes' if preview.exists() else 'NO'}",
+        f"runs/run_{d}/email.html: {'yes' if email.exists() else 'NO'}",
     ]
-    c.status = "PASS" if (items and issue.exists() and preview.exists()) else "FAIL"
+    c.status = (
+        "PASS"
+        if (items and issue.exists() and preview.exists() and email.exists())
+        else "FAIL"
+    )
     c.detail = "; ".join(c.evidence)
     return c
 
@@ -184,6 +221,14 @@ def check_preview(d: date) -> Check:
     return c
 
 
+def _snapshot(root: Path) -> dict[str, bytes]:
+    return {
+        str(p.relative_to(root)): p.read_bytes()
+        for p in sorted(root.rglob("*"))
+        if p.is_file()
+    }
+
+
 def _content_snapshot() -> dict[str, bytes]:
     return {
         p.relative_to(paths.ROOT).as_posix(): p.read_bytes()
@@ -192,15 +237,19 @@ def _content_snapshot() -> dict[str, bytes]:
     }
 
 
-def check_idempotency(d: date, skip: bool) -> Check:
+def check_idempotency(d: date, skip: bool, content: Optional[Path] = None) -> Check:
     c = Check("6. running the same date twice leaves content/ unchanged")
     if skip:
         c.status = "SKIPPED"
         c.detail = "--skip-e2e"
         return c
-    before = _content_snapshot()
-    code, _ = run(["uv", "run", "uc", "run", "--date", str(d)])
-    after = _content_snapshot()
+    # Measured inside the sandbox the e2e run wrote into: idempotency is a
+    # property of the pipeline, and asking it of an archive the run was
+    # forbidden to touch would pass for the wrong reason.
+    root = content or paths.CONTENT
+    before = _snapshot(root)
+    code, _ = run(["uv", "run", "uc", "run", "--date", str(d)], content=content)
+    after = _snapshot(root)
 
     added = sorted(set(after) - set(before))
     removed = sorted(set(before) - set(after))
@@ -268,14 +317,18 @@ def main() -> int:
     args = ap.parse_args()
     d = date.fromisoformat(args.date)
 
+    # The live run writes into a copy. Nothing this script does can add a day to
+    # the real archive, which is how phase 0h ended up with a ghost issue.
+    sandbox = None if args.skip_e2e else sandbox_content()
+
     checks = [
         check_pytest(),
-        check_e2e(d, args.skip_e2e),
-        check_outputs(d),
+        check_e2e(d, args.skip_e2e, content=sandbox),
+        check_outputs(d, content=sandbox),
         check_schema(),
         check_free_strings(),
         check_preview(d),
-        check_idempotency(d, args.skip_e2e),
+        check_idempotency(d, args.skip_e2e, content=sandbox),
         check_report(),
         check_costs(),
     ]

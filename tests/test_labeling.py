@@ -364,3 +364,77 @@ def test_zero_affinity_and_no_references_are_not_the_same_band():
     from pipeline.labeling import affinity_pool
 
     assert inspect.signature(affinity_pool).parameters["require_refs"].default is True
+
+
+# --------------------------------------------------------------------------
+# Moving a labelling session between machines (phase 0j, W7)
+# --------------------------------------------------------------------------
+
+
+def test_a_labelling_set_survives_the_round_trip(repo):
+    """An export nobody has read back is a backup nobody has restored."""
+    import json as _json
+    from pathlib import Path
+
+    from pipeline.labeling import export_labeling_set, import_labeling_set
+    from pipeline.metrics import Run
+    from pipeline.stages import read_stage
+
+    _seed_candidates(repo)
+    run = Run.for_date(DAY)
+    before = {
+        stage: [it.work_key for it in (read_stage(run, stage) or [])]
+        for stage in ("classify", "labeling_pool", "summarize")
+    }
+
+    out = Path(repo) / "export.json"
+    meta = export_labeling_set([DAY], out)
+    assert meta["bytes"] > 0
+    assert meta["dates"] == [str(DAY)]
+
+    # Wipe the stage files, then restore from the export alone.
+    for stage in before:
+        path = run.dir / "stages" / f"{stage}.jsonl"
+        if path.exists():
+            path.unlink()
+
+    restored = import_labeling_set(out)
+    assert restored["dates"] == [str(DAY)]
+
+    after = {
+        stage: [it.work_key for it in (read_stage(run, stage) or [])]
+        for stage in ("classify", "labeling_pool", "summarize")
+    }
+    assert after["classify"] == before["classify"]
+    assert after["classify"], "the export must actually carry the candidate pool"
+
+
+def test_an_export_from_a_future_version_is_refused(repo):
+    import json as _json
+    from pathlib import Path
+
+    from pipeline.labeling import import_labeling_set
+
+    path = Path(repo) / "bad.json"
+    path.write_text(_json.dumps({"version": "labeling-set@99", "days": {}}), encoding="utf-8")
+    try:
+        import_labeling_set(path)
+    except ValueError as e:
+        assert "labeling-set@99" in str(e)
+        return
+    raise AssertionError("expected a refusal")
+
+
+def test_the_export_leaves_out_the_raw_responses(repo):
+    """Only what a labelling session reads. Raw API responses are the bulk of a
+    run directory and nothing in labelling touches them."""
+    import json as _json
+    from pathlib import Path
+
+    from pipeline.labeling import export_labeling_set
+
+    _seed_candidates(repo)
+    out = Path(repo) / "export.json"
+    export_labeling_set([DAY], out)
+    payload = _json.loads(out.read_text(encoding="utf-8"))
+    assert set(payload["days"][str(DAY)]) <= {"classify", "labeling_pool", "summarize"}

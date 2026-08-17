@@ -91,20 +91,42 @@ jobs:
           UC_SMTP_PASSWORD: ${{ secrets.UC_SMTP_PASSWORD }}
           UC_PREVIEW_RECIPIENT: ${{ secrets.UC_PREVIEW_RECIPIENT }}
           UC_ALERT_RECIPIENT: ${{ secrets.UC_ALERT_RECIPIENT }}
+          # Inputs reach the shell as environment variables, never interpolated
+          # into the script text. `${{ }}` inside `run:` is textual substitution
+          # and turns any input into code — a bad habit to commit even where
+          # only someone with write access can dispatch the workflow.
+          INPUT_DATE: ${{ inputs.date }}
+          INPUT_DRY_RUN: ${{ inputs.dry_run }}
         run: |
-          set -o pipefail
-          args=""
-          if [ -n "${{ inputs.date }}" ]; then args="--date ${{ inputs.date }}"; fi
-          if [ "${{ inputs.dry_run }}" = "true" ]; then args="$args --dry-run"; fi
-          # `uc daily` exits 1 on not_published. That is a real outcome with a
-          # logged reason and an alert already sent, not a crash — so the run
-          # continues to the commit step, which will record the missed day.
-          uv run uc daily $args || echo "not_published=1" >> "$GITHUB_OUTPUT"
+          args=()
+          if [ -n "$INPUT_DATE" ]; then args+=(--date "$INPUT_DATE"); fi
+          if [ "$INPUT_DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+
+          # Three exits, three different facts, and they must not be merged:
+          #   0  published or quiet
+          #   1  not_published — a real outcome with a logged reason and an
+          #      alert already sent, not a crash. The job continues so the
+          #      commit step records the missed day.
+          #   75 another run holds the lock. Not a missed day at all; the day
+          #      is being worked on by someone else and this job has nothing
+          #      to add.
+          set +e
+          uv run uc daily "${args[@]}"
+          code=$?
+          set -e
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          case $code in
+            0)  ;;
+            1)  echo "not_published=1" >> "$GITHUB_OUTPUT" ;;
+            75) echo "locked=1" >> "$GITHUB_OUTPUT"
+                echo "::warning::another run holds the lock; nothing to do" ;;
+            *)  echo "::error::uc daily exited $code"; exit "$code" ;;
+          esac
 
       # Retry the days we could not see. Skipped on a dry run and on a manual
       # run for one specific date, where the operator asked for that date only.
       - name: Catch up on missed days
-        if: ${{ inputs.dry_run != true && inputs.date == '' }}
+        if: ${{ inputs.dry_run != true && inputs.date == '' && steps.run.outputs.locked != '1' }}
         env:
           OPENALEX_KEY: ${{ secrets.OPENALEX_KEY }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}

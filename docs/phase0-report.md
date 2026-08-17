@@ -1,13 +1,13 @@
 # Urban Currents — Phase 0 report
 
-Generated 2026-08-17T13:36:09+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
+Generated 2026-08-17T17:28:54+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
 
 ## The four questions (PRD §1)
 
 | Q | Question | Criterion | Measured | Verdict |
 |---|---|---|---|---|
 | Q1a | Is the filter usable? | holdout AUC >= 0.9 | 0.9938 | PASS |
-| Q1b | Is the filter usable? | precision@10 >= 0.7 (per source) | arxiv: 0.6, journal: 0.733 (3 of 5 days) | FAIL (PROVISIONAL) |
+| Q1b | Is the filter usable? | precision@10 >= 0.7 (per source) | arxiv: 0.6, journal: 0.66 | FAIL |
 | Q2 | Is there enough signal for a daily? | median >= 5 items/day | arxiv: 18, journal: 51 | PASS |
 | Q3 | Where does the quiet-day line go? | headline rate 30-50% | 0.367 | PROVISIONAL |
 | Q4 | Does review fit the budget? | median <= 15 min/day | PENDING-HUMAN | PENDING-HUMAN |
@@ -188,12 +188,12 @@ Current `config/scoring.yaml` threshold: 0.444 (source: backfill).
 | items published | 120 |
 | items summarised | 113 |
 | LLM (daily runs) | $0.9872 |
-| OpenAlex (daily runs) | $0.0237 |
+| OpenAlex (daily runs) | $0.0243 |
 | embeddings (local) | $0.0 |
-| total (daily runs) | $1.0109 |
-| per published item | $0.00842 |
-| monthly estimate | $4.332 |
-| tokens in / out (all tasks) | 1489407 / 208765 |
+| total (daily runs) | $1.0115 |
+| per published item | $0.00843 |
+| monthly estimate | $4.335 |
+| tokens in / out (all tasks) | 1561151 / 218677 |
 
 **Per task, cumulative** — every LLM call ever made from this repository, including calls outside a daily run (labelling preparation, re-runs against a cold cache). The daily-run figures above are a subset of this, which is why they are smaller:
 
@@ -210,19 +210,19 @@ Embeddings are local (`BAAI/bge-base-en-v1.5` on CPU), so their marginal cost is
 
 ## Q1b labels (roadmap §2.3)
 
-90 labels over 3 day(s). 100% of labelled items had a summary on screen.
+148 labels over 5 day(s). 100% of labelled items had a summary on screen.
 
 | source | labels | days | precision@10 | keep rate | drop: not urban | drop: not our kind | drop: weak |
 |---|---|---|---|---|---|---|---|
-| arxiv | 45 | 3 | 0.6 | 0.489 | 15 | 7 | 1 |
-| journal | 45 | 3 | 0.733 | 0.644 | 0 | 9 | 7 |
+| arxiv | 73 | 5 | 0.6 | 0.548 | 21 | 7 | 5 |
+| journal | 75 | 5 | 0.66 | 0.587 | 3 | 18 | 10 |
 
 **The two drop reasons point at different problems.** *not urban* is a classifier error. *not our kind* is a coverage question nothing in the pipeline answers yet — it is the training signal for the classifier that will replace the journal path's placeholder ranking.
 
 | path | daily slots | depth holding 0.7 | precision by depth |
 |---|---|---|---|
-| arxiv | 12 | 8 | @1: 1.0, @4: 0.9167, @8: 0.75, @12: 0.5556, @15: 0.4889 |
-| journal | 12 | 10 | @1: 1.0, @4: 0.6667, @8: 0.7917, @12: 0.6944, @15: 0.6444 |
+| arxiv | 12 | 8 | @1: 1.0, @4: 0.85, @8: 0.7, @12: 0.6, @15: 0.5333 |
+| journal | 12 | 8 | @1: 0.8, @4: 0.7, @8: 0.75, @12: 0.6167, @15: 0.5867 |
 
 Where the depth holding 0.7 is below the slot count, the path is being asked for more items than it has good ones — the fix is the slot split or a better ranker, not a higher threshold. Raising the arXiv threshold does not help: at 0.7 the 90-day backfill yields a median of 6 arXiv candidates a day and at 0.8 it yields 3, so the path could not fill 12 slots at any precision.
 

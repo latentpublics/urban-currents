@@ -234,3 +234,25 @@ daily:
   # missed day stays missed and stays in the log — chasing it forever would mean
   # re-collecting a window whose sources have moved on.
   catch_up_days: 7
+
+deliver:
+  # `file` writes an .eml and sends nothing. It is the default and it stays the
+  # default until YJUN picks a provider and fills in the credentials — a
+  # pipeline that can mail strangers by accident is not a pipeline anyone should
+  # leave running unattended.
+  #
+  # `smtp` needs UC_SMTP_USER and UC_SMTP_PASSWORD in .env plus a host here.
+  # If any of the three is missing the backend falls back to `file` and records
+  # the fallback, because a missing password should cost a send, not a day.
+  backend: file
+  sender: "Urban Currents <urban-currents@localhost>"
+  smtp:
+    host: null
+    port: 587
+
+  # RFC 8058 one-click needs an endpoint, and there is no domain yet. Left null
+  # so no header is emitted at all: a List-Unsubscribe pointing nowhere is worse
+  # than none, because the client shows the button and the reader presses it.
+  # The plain-text body carries a reply-to-unsubscribe instruction meanwhile.
+  unsubscribe_url: null
+  unsubscribe_mailto: null

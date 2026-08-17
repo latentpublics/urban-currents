@@ -251,11 +251,44 @@ def run_daily(
         outcome.published = len(issue.items)
         outcome.status = "quiet" if issue.quiet_day else "published"
         record(outcome)
+
+        delivery = _deliver_issue(run, issue)
         run.metrics.timing["daily_s"] = round(time.monotonic() - started, 1)
         run.save()
-        return _result(outcome, run, started, covers_from, covers_to, dry_run)
+        result = _result(outcome, run, started, covers_from, covers_to, dry_run)
+        result["delivery"] = delivery
+        return result
     finally:
         lock.release()
+
+
+def _deliver_issue(run: Run, issue) -> dict[str, Any]:
+    """Send the issue, and never let a send failure cost the issue.
+
+    The issue is already written and already on the site by this point. A
+    delivery that fails is a delivery to retry, not a reason to unwind a day's
+    work — so this catches, records, and lets the run finish reporting success
+    for the part that succeeded.
+    """
+    from .deliver import Message, DeliveryError, deliver, get_backend, recipients
+    from .render.plaintext import render_text
+    from .render.preview import email_subject, render_issue
+    from .render.inline import to_email
+
+    try:
+        items = [it for it in (store.load_item(k) for k in issue.items) if it]
+        unreadable = [it for it in (store.load_item(k) for k in issue.unreadable) if it]
+        message = Message(
+            subject=email_subject(issue),
+            html=to_email(render_issue(issue, items, unreadable)),
+            text=render_text(issue, items, unreadable),
+            issue_date=issue.date,
+            recipients=recipients(),
+        )
+        return deliver(issue.date, message, backend=get_backend())
+    except (DeliveryError, OSError) as e:
+        run.error(f"deliver: {type(e).__name__}: {e}")
+        return {"status": "failed", "error": f"{type(e).__name__}: {e}"}
 
 
 def _result(

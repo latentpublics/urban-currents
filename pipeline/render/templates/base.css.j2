@@ -1,27 +1,76 @@
 /* Inlined into preview.html. No external requests, no webfonts, no images.
    Phase 1's Astro components take these class names over verbatim, so renaming
-   anything here is a cross-phase change, not a cosmetic one. */
+   anything here is a cross-phase change, not a cosmetic one.
+
+   Phase 0j extended this rather than replacing it: the mockups were built on
+   these values, so #16181d, #555a63, #e3e5ea and #1f5fa8 were already here.
+
+   THE INK SCALE IS MEASURED, NOT PICKED. Every value below clears WCAG AA for
+   body text (4.5:1) against every background it is used on, in both modes. The
+   mockup's faintest ink (#9296a0) measures 2.91:1 on paper — below AA, and it
+   is the caveat colour, which is body-size text a reader has to be able to
+   read. It was darkened to #686d78 (5.10:1). The hierarchy the mockup asked
+   for — "three inks, three sizes; hierarchy is weight and colour, not boxes" —
+   survives, because the steps are 17.45 / 6.81 / 5.84 / 5.10 and each is
+   visibly lighter than the last. */
 
 :root {
   --uc-ink: #16181d;
   --uc-ink-soft: #555a63;
+  /* Meta rail, section labels. */
+  --uc-meta: #5f646d;
+  /* The faintest ink there is. Caveats, secondary rows. */
+  --uc-faint: #686d78;
   --uc-line: #e3e5ea;
-  --uc-bg: #ffffff;
-  --uc-bg-soft: #f7f8fa;
+  /* Row separators — lighter than --uc-line, structural only, never carries text. */
+  --uc-hairline: #eef0f2;
+  --uc-bg: #fdfdfc;
+  --uc-bg-soft: #f5f6f4;
   --uc-accent: #1f5fa8;
-  --uc-badge-bg: #eef1f6;
-  --uc-quiet: #7a7f88;
+  /* Blue badge: an artifact exists (code, data, published). */
+  --uc-badge-bg: #eef2f8;
+  /* Grey chip: a state (preprint, a quiet day). */
+  --uc-chip-bg: #f0f1f3;
+  --uc-quiet: #5f646d;
+
+  /* Font stacks only — no font is ever fetched, and the rule that forbids it
+     is checked by grepping the rendered HTML, so this comment deliberately
+     does not spell the at-rule out. A reader who has these sees them; everyone else
+     falls to Georgia, which is the mockup's own stated email fallback, and the
+     request cost is zero bytes either way. Korean faces are appended rather
+     than fronted: /ko/ is phase 1, but the stack is settled now so the two
+     languages cannot drift into two type systems.
+
+     Hangul carries almost no serif/sans distinction at screen sizes, so a
+     Korean reader will see headings and body in the same face. That is correct
+     rather than a degradation — the hierarchy is carried by size and weight,
+     which is what the mockup asked for in the first place. */
+  --uc-font-serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman",
+                   Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", serif;
+  --uc-font-sans: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                  Helvetica, Arial, Pretendard, "Apple SD Gothic Neo", "Malgun Gothic",
+                  "Noto Sans KR", sans-serif;
+  --uc-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
+  /* The mockups have no dark pass — it is in turn 7's "try next" list — so
+     these are chosen here and measured the same way. Same rule: every ink
+     clears 4.5:1 on every ground it appears on. The two new surfaces are lifted
+     off the page background by about the same amount as in light mode, which is
+     what keeps the synthesis box reading as a box without a border. */
   :root {
     --uc-ink: #e8eaee;
     --uc-ink-soft: #a3a9b4;
+    --uc-meta: #959ca8;
+    --uc-faint: #949ba7;
     --uc-line: #2c3038;
+    --uc-hairline: #23272e;
     --uc-bg: #14161a;
     --uc-bg-soft: #1b1e24;
     --uc-accent: #7fb0e8;
     --uc-badge-bg: #232830;
+    --uc-chip-bg: #262a31;
     --uc-quiet: #8b919c;
   }
 }
@@ -33,7 +82,7 @@ body {
   padding: 2rem 1rem 4rem;
   background: var(--uc-bg);
   color: var(--uc-ink);
-  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font: 16px/1.6 var(--uc-font-sans);
 }
 
 .uc-issue { max-width: 46rem; margin: 0 auto; }

@@ -54,6 +54,22 @@ class Institution(StrictModel):
     ror: Optional[str] = None
     name: Optional[str] = None
 
+    @field_validator("ror")
+    @classmethod
+    def _bare_ror(cls, v: Optional[str]) -> Optional[str]:
+        """`https://ror.org/02mhbdp94` -> `02mhbdp94`, wherever it comes from.
+
+        The collector already normalises this, and phase 0d migrated the
+        archive. Neither reaches a stage file written before the migration —
+        so re-running `uc issue` over an old day merged the URL form back into
+        published items, and the only thing that had been keeping the archive
+        clean was nobody re-running those days. Normalising here makes the rule
+        a property of the schema rather than of the order things ran in.
+        """
+        if not v:
+            return None
+        return v.strip().rstrip("/").rsplit("/", 1)[-1] or None
+
 
 class Author(StrictModel):
     name: str
@@ -165,6 +181,12 @@ class EntityRef(StrictModel):
             raise ValueError(
                 f"entity id {v!r} lacks a canonical prefix {CANONICAL_PREFIXES}"
             )
+        # `ror:https://ror.org/02mhbdp94` passes the prefix test and is still
+        # wrong: the prefix announces the scheme and the value repeats it. It
+        # comes back whenever a stage file written before the phase 0d
+        # migration is merged into a published item.
+        if v.startswith("ror:") and "ror.org/" in v:
+            return f"ror:{v.rstrip('/').rsplit('/', 1)[-1]}"
         return v
 
 

@@ -139,7 +139,21 @@ def save_item(item: Item, today: Optional[date] = None) -> bool:
             d.pop("updated", None)
             d.get("provenance", {}).pop("collected_at", None)
         if a == b:
-            return False  # genuinely unchanged: leave the file (and mtime) alone
+            # Equal *after parsing*, which is not the same as equal on disk. A
+            # field with a normalising validator — `Institution.ror` — reads
+            # back canonical from a file that stores the old form, so the
+            # comparison above can never see the difference and the stale text
+            # would survive every future run. Compare what we would write
+            # against what is there, carrying over the two fields that describe
+            # the run rather than the paper.
+            item.updated = existing.updated
+            item.provenance.collected_at = existing.provenance.collected_at
+            if item.first_published is None:
+                item.first_published = existing.first_published
+            expected = dumps(item)
+            if expected == p.read_text(encoding="utf-8"):
+                return False  # genuinely unchanged: leave the file (and mtime) alone
+            return write_text_atomic(p, expected)
         item.updated = today or item.updated or existing.updated
         if item.first_published is None:
             item.first_published = existing.first_published

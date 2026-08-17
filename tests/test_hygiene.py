@@ -109,17 +109,17 @@ def test_author_and_affiliation_edges_are_emitted():
     item = _item(
         bibliography=Bibliography(
             title="A Paper",
-            authors=[Author(name="Ada Lovelace", institutions=[Institution(ror="ror:x")])],
+            authors=[Author(name="Ada Lovelace", institutions=[Institution(ror="x")])],
         ),
     )
     item.entities.people = [EntityRef(id="orcid:0000-0001-0000-0000", label="Ada Lovelace")]
-    item.entities.orgs = [EntityRef(id="ror:https://ror.org/012345678", label="Test University")]
+    item.entities.orgs = [EntityRef(id="ror:012345678", label="Test University")]
     item.entities.topics = [TopicRef(id="openalex:T1", label="Urban Studies", score=0.9)]
 
     edges = {(e.type, e.dst) for e in edges_for_item(item)}
 
     assert ("authored_by", "orcid:0000-0001-0000-0000") in edges
-    assert ("affiliated_with", "ror:https://ror.org/012345678") in edges
+    assert ("affiliated_with", "ror:012345678") in edges
     assert ("has_topic", "openalex:T1") in edges
 
 

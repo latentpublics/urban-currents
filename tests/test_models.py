@@ -9,6 +9,7 @@ from pipeline.models import (
     Bibliography,
     Entity,
     EntityRef,
+    Institution,
     Issue,
     Item,
     TopicRef,
@@ -29,10 +30,24 @@ def test_entity_ref_rejects_free_strings():
 @pytest.mark.parametrize(
     "eid",
     ["method:gnn", "data:street-view", "github:gboeing/osmnx", "openalex:T10746",
-     "orcid:0000-0002-1825-0097", "ror:https://ror.org/02jx3x895", "wikidata:Q8684"],
+     "orcid:0000-0002-1825-0097", "ror:02jx3x895", "wikidata:Q8684"],
 )
 def test_entity_ref_accepts_canonical_prefixes(eid):
     assert EntityRef(id=eid, label="x").id == eid
+
+
+def test_a_ror_url_is_normalised_rather_than_accepted():
+    """`ror:https://ror.org/X` passes the prefix test and is still wrong.
+
+    The prefix announces the scheme and the value repeats it, and every other
+    canonical prefix in this schema carries a bare identifier. Phase 0d migrated
+    the archive; the form came back the moment a stage file written before that
+    migration was merged into a published item, so the rule now lives in the
+    schema instead of in a script that ran once.
+    """
+    assert EntityRef(id="ror:https://ror.org/02jx3x895", label="x").id == "ror:02jx3x895"
+    assert Institution(ror="https://ror.org/02jx3x895").ror == "02jx3x895"
+    assert Institution(ror="02jx3x895").ror == "02jx3x895"
 
 
 def test_work_key_shape_is_enforced():

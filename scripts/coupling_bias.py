@@ -7,11 +7,11 @@ paragraph stands on one paper:
     physical activity correlates in high-density Asian cities" — 7 references
     shared with an 2026-08-07 paper.
 
-**YJUN labelled that paper `drop_weak`**, at journal rank 7 of 15. So the
-synthesis layer built the day's best sentence on a paper an editor would not
-have run.
-
-The cause is structural rather than accidental. A review has a long
+**That paper was labelled `drop_weak` when this investigation started and YJUN
+revised it to `keep` while the batch was running.** The sharper version of the
+finding — the synthesis layer built the day's best sentence on a paper the
+editor would not have run — is therefore no longer true, and the report says so.
+What survives is the structural half, which never depended on that one label. A review has a long
 bibliography, and the raw count of shared references grows with bibliography
 length. V2 solved exactly this problem for `canon_affinity` by comparing five
 normalisations against the labels; coupling never got the same treatment. The
@@ -275,12 +275,14 @@ def main() -> None:
                 "evidence for the *bias* is the backfill. Those are different "
                 "strengths and should not be reported as one."
             ),
-            "the_finding_that_outranks_all_of_this": (
-                "All 3 cluster anchors over the 5 labelled days were labelled "
-                "non-keep: 2 drop_not_our_kind and 1 drop_weak. Under every "
-                "criterion. n=3 is nearly nothing, but nothing in it points the "
-                "other way, and it asks a larger question than normalisation — "
-                "whether coupling picks papers worth reading together at all."
+            "what_the_labels_say_about_the_anchors": (
+                "2 of the 3 cluster anchors over the 5 labelled days are "
+                "drop_not_our_kind; the third was drop_weak and YJUN revised it "
+                "to keep mid-batch. So the keep rate among anchors is 1 of 3 "
+                "under every criterion — all three pick the same 3 clusters at "
+                "this scale. n=3 decides nothing either way, and the earlier "
+                "reading of this line (that every anchor had been dropped) was "
+                "true of an older version of the label file and is not true now."
             ),
         },
     }

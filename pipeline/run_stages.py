@@ -322,11 +322,17 @@ def journal_rank_score(item: Item) -> float:
     **Replace once Q1b labels exist.** The `q` drop reason ("urban research but
     not our kind") in `uc review --label relevance` is being collected precisely
     to train the classifier that belongs here.
+
+    One part of that question is already answerable without a classifier: three
+    of the nine labelled `q` drops are book reviews, and a book review announces
+    itself in its title. Those sink to the bottom rather than being removed, so
+    a thin journal day still publishes what a tracked journal actually printed.
     """
+    from .filters.book_review import demotion
+
     c = item.scores.components
-    return round(
-        0.5 * c.artifact_completeness + 0.3 * c.novelty + 0.2 * c.source_multiplicity, 4
-    )
+    base = 0.5 * c.artifact_completeness + 0.3 * c.novelty + 0.2 * c.source_multiplicity
+    return round(base * demotion(item.bibliography.title), 4)
 
 
 UNREADABLE_STAGE = "unreadable"

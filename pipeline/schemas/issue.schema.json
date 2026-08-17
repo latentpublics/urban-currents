@@ -411,8 +411,34 @@
     }
   },
   "additionalProperties": false,
-  "description": "One daily edition. Immutable once published.",
+  "description": "One daily edition. Immutable once published.\n\n**`date` means the day we published, not the day the papers did** (phase 0k,\nX1). OpenAlex indexes a journal article a median of 1 day and a p90 of 2 days\nafter its publication date, and no arXiv item has ever been visible to us on\nits own publication day. An issue dated by publication would therefore have\nto wait for the slow tail or silently omit it, and \"today's papers\" would be\na claim we cannot keep.\n\nSo an issue covers the window it drew from, and `covers_from` / `covers_to`\nrecord it. Each card carries its own publication date.",
   "properties": {
+    "covers_from": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Covers From"
+    },
+    "covers_to": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Covers To"
+    },
     "date": {
       "format": "date",
       "title": "Date",

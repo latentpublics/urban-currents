@@ -312,6 +312,9 @@ def entry_to_item(entry: dict) -> Optional[Item]:
                 or f"https://arxiv.org/pdf/{arxiv_id}",
             ),
             abstract=entry.get("summary"),
+            # Parsed since phase 0 and discarded until phase 0k. This is where
+            # authors put "Code available at github.com/…".
+            comment=entry.get("comment"),
             categories=[c for c in entry.get("categories", []) if c],
         ),
         provenance=Provenance(collected_at=_utcnow(), collectors=["arxiv"]),

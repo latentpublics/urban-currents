@@ -73,6 +73,10 @@ def data_signal(item: Item) -> Signal:
     text = _text(item)
     if _NO_RELEASE.search(text):
         return Signal(value=False, confidence="high", basis="rule")
+    # A deposit outranks a phrase: a Zenodo or figshare location is the data,
+    # not a promise of it.
+    for url in item.bibliography.repository_urls:
+        return Signal(value=True, url=url, confidence="high", basis="rule")
     if _DATA_RELEASE.search(text) or _DATA_PHRASE.search(text):
         return Signal(value=True, confidence="medium", basis="rule")
     return Signal(value=False, confidence="low", basis="rule")

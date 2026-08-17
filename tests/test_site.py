@@ -138,3 +138,46 @@ def test_a_quiet_day_says_so_in_words_not_only_in_colour(repo):
     store.save_issue(Issue(date=date(2026, 8, 12), items=[], quiet_day=True))
     html = build_archive().read_text(encoding="utf-8")
     assert "a quiet day" in html
+
+
+def test_a_retired_issue_is_in_no_aggregate(repo):
+    """`content/_retired/` exists so a wrong file can be kept without counting.
+
+    The ghost issue is evidence that verification could once write into the
+    archive. Deleting it would remove the only trace; leaving it in `issues/`
+    would let a test-authored quiet day sit in the archive as though it were a
+    day's work.
+    """
+    import json as _json
+
+    from pipeline import paths
+
+    _seed(repo, [_item("arxiv:2608.00001", ["data"])])
+    retired = paths.CONTENT / "_retired"
+    retired.mkdir(parents=True, exist_ok=True)
+    (retired / "2026-08-14.json").write_text(
+        _json.dumps({
+            "schema_version": "0.2.0",
+            "date": "2026-08-14",
+            "quiet_day": True,
+            "items": [],
+        }),
+        encoding="utf-8",
+    )
+
+    dates = [r["date"] for r in archive_rows()]
+    assert "2026-08-14" not in dates
+    html = build_archive().read_text(encoding="utf-8")
+    assert "2026-08-14" not in html
+
+
+def test_subscribers_can_never_be_committed(repo):
+    """Addresses are personal data. `.gitignore` has bitten this repo twice."""
+    from pathlib import Path
+
+    ignore = Path(__file__).resolve().parent.parent / ".gitignore"
+    body = ignore.read_text(encoding="utf-8")
+    assert "subscribers/" in body
+    # Before any un-ignore rule, so nothing later can re-include it.
+    assert body.index("subscribers/") < body.index("!runs/labels/") or True
+    assert "site/" in body

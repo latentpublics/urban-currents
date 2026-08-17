@@ -828,9 +828,23 @@ def stage_issue(run: Run, d: date) -> Issue:
 
 
 def _journal_count() -> int:
+    """Journals we actually query — `include: true` only (phase 0k, X0-1).
+
+    This counted every entry in `journals.yaml`, which is 159 against the 96 we
+    collect from: the other 63 are kept with `include: false` so the review that
+    excluded them stays auditable. Every issue from phase 0 to 0j therefore said
+    159, overstating our scope by 65%.
+
+    **Issues already published keep 159.** They are immutable, and rewriting
+    them to correct a number would be a worse lie than the number. The archive
+    will hold both values, which is the honest state: the figure describes what
+    the pipeline did on the day it ran.
+    """
     from .config import journals_vocab
 
-    return len((journals_vocab().get("sources") or []))
+    return sum(
+        1 for s in (journals_vocab().get("sources") or []) if s.get("include", True)
+    )
 
 
 # --------------------------------------------------------------------------

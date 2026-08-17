@@ -26,6 +26,7 @@ from ..config import cfg, contact_email, journals_vocab, openalex_key
 from ..metrics import BudgetExceeded, OpenAlexBudget, Run
 from ..models import Bibliography, Ids, Item, PrimaryLocation, Provenance, PublicationStatus
 from .base import (
+    repository_urls_from_work,
     ARXIV_SOURCE_ID,
     clean_text,
     invert_abstract,
@@ -432,6 +433,7 @@ def work_to_item(work: dict) -> Optional[Item]:
             publication_date=date.fromisoformat(pub_date) if pub_date else None,
             primary_location=_primary_location(work),
             abstract=invert_abstract(work.get("abstract_inverted_index")),
+            repository_urls=repository_urls_from_work(work),
         ),
         graph=graph_from_work(work),
         provenance=Provenance(

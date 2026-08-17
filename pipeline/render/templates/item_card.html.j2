@@ -17,10 +17,6 @@
       {{ card.authors }}{% if card.authors and card.venue %}<br>{% endif %}{{ card.venue }}
       {%- if card.was_preprint %}<span class="uc-card__was"> · {{ card.was_preprint }}</span>{% endif %}
     </p>
-    {#- The lens is declared on the Item and no stage writes it, so this never
-        renders today. Kept because the field exists and the day something fills
-        it the card should show it — not because the mockup has one. -#}
-    {% if card.lens %}<p class="uc-card__lens">{{ card.lens }} lens</p>{% endif %}
     {% if card.facet_tags %}
     <p class="uc-card__facets">
       {% for tag in card.facet_tags %}<span class="uc-tag" data-entity-id="{{ tag.id }}">{{ tag.label }}</span>{% if not loop.last %}<span class="uc-tag__sep"> · </span>{% endif %}{% endfor %}

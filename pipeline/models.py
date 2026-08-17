@@ -99,6 +99,16 @@ class Bibliography(StrictModel):
     # field, not in PRD §3.2: the volume gate keys off category (§5.3) and the
     # per-category intake report needs it, so it has to survive to the Item.
     categories: list[str] = Field(default_factory=list)
+    # arXiv's free-text `comment` — "Accepted to COLM 2026. Code and data:
+    # https://github.com/…". The collector already parsed it and threw it away,
+    # which is why the archive has 0 code badges across 224 items: authors put
+    # the repository link here, not in the abstract. Measured over one raw
+    # response of 1,000 entries, 509 carry a comment and 76 of those name a
+    # repository (phase 0k, X0-3).
+    comment: Optional[str] = None
+    # Repository-ish hosts among OpenAlex `locations[]` — Zenodo, figshare,
+    # Dryad. A deposit is evidence of released data in a way a phrase is not.
+    repository_urls: list[str] = Field(default_factory=list)
 
 
 class Ids(StrictModel):
@@ -310,7 +320,12 @@ class Item(StrictModel):
         default_factory=list
     )
     entities: Entities = Field(default_factory=Entities)
-    lens: Optional[Literal["behavior", "system"]] = None
+    # `lens` was declared here and never written — 224 items, all null. It is
+    # removed rather than filled (phase 0k, X0-2). Filling it means asking the
+    # LLM to sort papers into "behavior" and "system", which is a judgement with
+    # no ground truth in this repo, no label supporting it, and no consumer
+    # asking for it; a field in the schema is a promise to a reader that the
+    # data exists, and this one could not be kept.
     scores: Scores = Field(default_factory=Scores)
     cluster: Cluster = Field(default_factory=Cluster)
     provenance: Provenance = Field(default_factory=Provenance)
@@ -438,10 +453,31 @@ class Synthesis(StrictModel):
 
 
 class Issue(StrictModel):
-    """One daily edition. Immutable once published."""
+    """One daily edition. Immutable once published.
+
+    **`date` means the day we published, not the day the papers did** (phase 0k,
+    X1). OpenAlex indexes a journal article a median of 1 day and a p90 of 2 days
+    after its publication date, and no arXiv item has ever been visible to us on
+    its own publication day. An issue dated by publication would therefore have
+    to wait for the slow tail or silently omit it, and "today's papers" would be
+    a claim we cannot keep.
+
+    So an issue covers the window it drew from, and `covers_from` / `covers_to`
+    record it. Each card carries its own publication date.
+    """
 
     schema_version: str = SCHEMA_VERSION
     date: date
+    # The publication-date window this issue drew from.
+    #
+    # **null means "this issue predates the change"** — that it was dated by
+    # publication date, one day per issue, under the phase 0 rule. It does not
+    # mean "unknown" and it does not mean "empty". The five issues written
+    # before phase 0k keep null and are not migrated: an issue is immutable
+    # once published, and back-filling a field would make them claim a window
+    # nobody chose for them.
+    covers_from: Optional[DateT] = None
+    covers_to: Optional[DateT] = None
     headline: Headline = Field(default_factory=Headline)
     quiet_day: bool = False
     scan_meta: ScanMeta = Field(default_factory=ScanMeta)

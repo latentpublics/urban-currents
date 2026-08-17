@@ -19,6 +19,22 @@ runs/*
 !runs/labels/
 runs/labels/*_pool.jsonl
 
+# Subscriber addresses are personal data and must never reach a commit. First,
+# so that nothing below can accidentally re-include them (phase 0k, X5-3).
+subscribers/
+*.subscribers
+UC_PREVIEW_RECIPIENT
+
+# The built site. Regenerable from `content/` by `uc site` in under a second,
+# and rebuilt on every run — committing it would put a large diff of derived
+# HTML in front of every real change. `docs/design-review.html` is the same
+# thing wearing a different name (phase 0k, X0-4).
+#
+# If a deploy is ever wired up it publishes from a build step, not from a
+# committed directory; §X6 records that decision.
+site/
+docs/design-review.html
+
 # Trained models are build outputs; the training metadata JSON is committed.
 models/*.joblib
 

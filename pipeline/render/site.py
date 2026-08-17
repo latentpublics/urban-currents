@@ -164,24 +164,10 @@ def archive_stats(rows: list[dict], items: dict[str, Item]) -> dict[str, Any]:
 
 
 def _journal_count() -> int:
-    """Journals we actually collect from — `include: true` only.
+    """Shared with the issue stage — one definition, one number (phase 0k X0-1)."""
+    from ..run_stages import _journal_count as count
 
-    `run_stages._journal_count`, which feeds `scan_meta.journals` on the issue
-    page, counts every entry in the file: 159 against the 96 we collect from,
-    because 63 are recorded with `include: false` so the review that excluded
-    them is auditable. The issue page has been saying 159 since phase 0.
-
-    Not fixed here. Changing it rewrites `scan_meta` on every issue, and this is
-    a render-and-measure batch that is supposed to leave `content/` alone. The
-    site pages use the honest number and the discrepancy is in the report with
-    a recommendation, which is the version of this that does not smuggle a data
-    change into a CSS batch.
-    """
-    from ..config import journals_vocab
-
-    return sum(
-        1 for s in (journals_vocab().get("sources") or []) if s.get("include", True)
-    )
+    return count()
 
 
 def build_home(out: Optional[Path] = None) -> Path:

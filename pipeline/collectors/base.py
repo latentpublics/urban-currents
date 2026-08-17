@@ -54,6 +54,27 @@ def normalize_openalex_id(value: Optional[str]) -> Optional[str]:
     return value.strip().rsplit("/", 1)[-1] or None
 
 
+# Hosts that mean "the artifact is deposited here", as opposed to a mirror of
+# the paper. A deposit is evidence in a way a sentence is not.
+REPOSITORY_HOSTS = (
+    "zenodo.org", "figshare.com", "datadryad.org", "dataverse",
+    "osf.io", "pangaea.de", "dataverse.harvard.edu",
+)
+
+
+def repository_urls_from_work(work: dict) -> list[str]:
+    """Repository deposits among a Work's locations (phase 0k, X0-3)."""
+    out: list[str] = []
+    for loc in work.get("locations") or []:
+        url = (loc.get("landing_page_url") or "") or ""
+        source = ((loc.get("source") or {}).get("display_name") or "").lower()
+        haystack = f"{url.lower()} {source}"
+        if any(host in haystack for host in REPOSITORY_HOSTS) and url:
+            if url not in out:
+                out.append(url)
+    return out
+
+
 def normalize_ror(value: Optional[str]) -> Optional[str]:
     """``https://ror.org/02mhbdp94`` → ``02mhbdp94``.
 

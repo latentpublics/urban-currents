@@ -75,6 +75,18 @@
           "title": "Categories",
           "type": "array"
         },
+        "comment": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Comment"
+        },
         "primary_location": {
           "$ref": "#/$defs/PrimaryLocation"
         },
@@ -90,6 +102,13 @@
           ],
           "default": null,
           "title": "Publication Date"
+        },
+        "repository_urls": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Repository Urls",
+          "type": "array"
         },
         "title": {
           "title": "Title",
@@ -1036,22 +1055,6 @@
     },
     "ids": {
       "$ref": "#/$defs/Ids"
-    },
-    "lens": {
-      "anyOf": [
-        {
-          "enum": [
-            "behavior",
-            "system"
-          ],
-          "type": "string"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "default": null,
-      "title": "Lens"
     },
     "provenance": {
       "$ref": "#/$defs/Provenance"

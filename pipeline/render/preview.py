@@ -145,9 +145,6 @@ def build_card(item: Item) -> dict:
         "why": (en.why if en else "") or "",
         "caveats": (en.caveats if en else None) or None,
         "badges": _badges(item),
-        # A text label, never an emoji: emoji render inconsistently in mail
-        # clients and a screen reader says "counterclockwise arrows button".
-        "lens": item.lens,
         "facet_tags": _facet_tags(item),
         "links": _links(item),
     }

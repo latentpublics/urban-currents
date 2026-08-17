@@ -1,6 +1,6 @@
 # Urban Currents — Phase 0 report
 
-Generated 2026-08-17T13:09:12+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
+Generated 2026-08-17T13:28:36+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
 
 ## The four questions (PRD §1)
 
@@ -185,15 +185,15 @@ Current `config/scoring.yaml` threshold: 0.444 (source: backfill).
 | item | value |
 |---|---|
 | days of runs | 7 |
-| items published | 114 |
+| items published | 120 |
 | items summarised | 113 |
 | LLM (daily runs) | $0.9872 |
-| OpenAlex (daily runs) | $0.0225 |
+| OpenAlex (daily runs) | $0.0231 |
 | embeddings (local) | $0.0 |
-| total (daily runs) | $1.0097 |
-| per published item | $0.00886 |
-| monthly estimate | $4.327 |
-| tokens in / out (all tasks) | 1381791 / 193897 |
+| total (daily runs) | $1.0103 |
+| per published item | $0.00842 |
+| monthly estimate | $4.33 |
+| tokens in / out (all tasks) | 1453535 / 203809 |
 
 **Per task, cumulative** — every LLM call ever made from this repository, including calls outside a daily run (labelling preparation, re-runs against a cold cache). The daily-run figures above are a subset of this, which is why they are smaller:
 
@@ -228,15 +228,15 @@ Where the depth holding 0.7 is below the slot count, the path is being asked for
 
 ## What actually gets published
 
-Across 6 issues, **114 items were `published`** — 54 from arXiv and 60 from whitelist journals.
+Across 6 issues, **120 items were `published`** — 63 from arXiv and 57 from whitelist journals.
 
-`content/items/` holds 224 files, 110 more than the issues reference. Those are items an earlier selection rule published and the current one does not; they are still part of the archive novelty is measured against, which is why the difference is counted rather than rounded away.
+`content/items/` holds 224 files, 104 more than the issues reference. Those are items an earlier selection rule published and the current one does not; they are still part of the archive novelty is measured against, which is why the difference is counted rather than rounded away.
 
 The split is structural, not a quota. Each entry path owns its slots — journal 12, arXiv 12 — and a path that cannot fill its own lends them to the other, which the run records. The earlier `classifier.arxiv_min_share` quota is gone (N4): it was treating a symptom, since a whitelist article scores ~0.99 nearly by construction and the classifier could not rank within that path at all. Measured on 2026-08-11 under the old single-classifier design: 23 of 24 slots went to journal articles.
 
 ## What we could not read
 
-**92 items across 6 issues had no abstract from any source** and published in `Also published today` instead of as cards — 92/206 of everything that reached an issue. Springer Nature withdrew its non-OA abstracts from OpenAlex in 2022 and Elsevier followed in 2024; Crossref and Springer's own API are asked for what they can still supply, and what none of them has cannot be summarised, because the abstract is the only evidence a summary is allowed to use.
+**92 items across 6 issues had no abstract from any source** and published in `Also published today` instead of as cards — 92/212 of everything that reached an issue. Springer Nature withdrew its non-OA abstracts from OpenAlex in 2022 and Elsevier followed in 2024; Crossref and Springer's own API are asked for what they can still supply, and what none of them has cannot be summarised, because the abstract is the only evidence a summary is allowed to use.
 
 | publisher | `unreadable` items |
 |---|---|
@@ -270,7 +270,7 @@ This is the one blind spot the pipeline can measure exactly, and the count is st
 | 2026-08-06 | 381 | 200 | 24 | 24 | 24 | enrich.springer |
 | 2026-08-07 | 384 | 210 | 24 | 24 | 24 | enrich.springer |
 | 2026-08-10 | 452 | 232 | 24 | 23 | 24 | enrich.springer |
-| 2026-08-11 | 410 | 212 | 18 | 18 | 18 | enrich.springer |
+| 2026-08-11 | 410 | 212 | 18 | 18 | 24 | enrich.springer |
 | 2026-08-13 | 0 | 0 | 0 | 0 | 0 | - |
 | 2026-08-14 | 0 | 0 | 0 | 0 | 0 | - |
 

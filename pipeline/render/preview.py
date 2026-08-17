@@ -29,18 +29,64 @@ def _env() -> Environment:
     )
 
 
-def _byline(item: Item) -> str:
+def _authors(item: Item) -> str:
     authors = item.bibliography.authors
     names = [a.name for a in authors[:3]]
     if len(authors) > 3:
         names.append("et al.")
-    parts = [", ".join(names)] if names else []
-    loc = item.bibliography.primary_location.source_name
-    if loc:
-        parts.append(loc)
-    if item.bibliography.publication_date:
-        parts.append(str(item.bibliography.publication_date))
-    return " · ".join(p for p in parts if p)
+    return ", ".join(names)
+
+
+def _venue(item: Item) -> str:
+    """Where it appeared, plus the arXiv category when it is an arXiv record."""
+    loc = item.bibliography.primary_location
+    name = loc.source_name or ""
+    cats = item.bibliography.categories
+    if name.lower() == "arxiv" and cats:
+        return f"arXiv {cats[0]}"
+    return name
+
+
+def _was_preprint(item: Item) -> Optional[str]:
+    """"was arXiv" — the line where Item/Issue separation first becomes visible.
+
+    An item that carries an arXiv identifier and is now published somewhere else
+    has a history, and this is the only place a reader sees it. Three such items
+    exist in the archive today, counted rather than assumed.
+
+    The category is not part of it. All three have an empty `categories` list —
+    the arXiv record was merged into the journal one and the category did not
+    survive the merge — so the line says "was arXiv" and stops. Writing "was
+    arXiv cs.AI" would mean inventing the category.
+    """
+    if item.publication_status.state != "published":
+        return None
+    if not item.ids.arxiv:
+        return None
+    cats = item.bibliography.categories
+    return f"was arXiv {cats[0]}" if cats else "was arXiv"
+
+
+def _badges(item: Item) -> list[dict]:
+    """Blue for an artifact that exists, grey for a state.
+
+    `published` carries the journal name because "published" alone tells the
+    reader nothing they cannot see from the byline, and where it landed is the
+    fact that changed.
+    """
+    out: list[dict] = []
+    for badge in item.badges:
+        if badge == "published":
+            journal = item.publication_status.journal or ""
+            out.append({
+                "kind": "artifact",
+                "label": f"published: {journal}" if journal else "published",
+            })
+        elif badge == "preprint":
+            out.append({"kind": "state", "label": "preprint"})
+        else:
+            out.append({"kind": "artifact", "label": badge})
+    return out
 
 
 def _links(item: Item) -> list[dict]:
@@ -59,21 +105,28 @@ def _links(item: Item) -> list[dict]:
     return links
 
 
-def _facets(item: Item) -> list[dict]:
+def _facet_tags(item: Item, limit: int = 6) -> list[dict]:
+    """Facet tags in `FACET_ORDER`, flattened, empty facets simply absent.
+
+    The mockup's own prose lists the facets in one order and its markup draws
+    them in another; neither matches the code. `FACET_ORDER` wins, for two
+    reasons: the first thing a reader asks is what a paper is *about*, which is
+    topics, and Places was explicitly taken off the signature list.
+    """
     e = item.entities
     buckets = {
-        "topics": [{"id": t.id, "label": t.label} for t in e.topics],
-        "methods": [{"id": t.id, "label": t.label} for t in e.methods],
-        "data": [{"id": t.id, "label": t.label} for t in e.data],
-        "tools": [{"id": t.id, "label": t.label} for t in e.tools],
-        "places": [{"id": t.id, "label": t.label} for t in e.places],
-        "orgs": [{"id": t.id, "label": t.label} for t in e.orgs],
+        "topics": e.topics,
+        "methods": e.methods,
+        "data": e.data,
+        "tools": e.tools,
+        "places": e.places,
+        "orgs": e.orgs,
     }
-    return [
-        {"name": name, "tags": buckets[name][:8]}
-        for name in FACET_ORDER
-        if buckets[name]
-    ]
+    out: list[dict] = []
+    for name in FACET_ORDER:
+        for tag in buckets.get(name) or []:
+            out.append({"id": tag.id, "label": tag.label, "facet": name})
+    return out[:limit]
 
 
 def build_card(item: Item) -> dict:
@@ -82,13 +135,18 @@ def build_card(item: Item) -> dict:
         "work_key": item.work_key,
         "anchor": item.work_key.replace(":", "-").replace("/", "-"),
         "title": item.bibliography.title,
-        "byline": _byline(item),
+        "authors": _authors(item),
+        "venue": _venue(item),
+        "was_preprint": _was_preprint(item),
         "landing_url": item.bibliography.primary_location.landing_page_url,
         "what": (en.what if en else "") or "",
         "why": (en.why if en else "") or "",
         "caveats": (en.caveats if en else None) or None,
-        "badges": list(item.badges),
-        "facets": _facets(item),
+        "badges": _badges(item),
+        # A text label, never an emoji: emoji render inconsistently in mail
+        # clients and a screen reader says "counterclockwise arrows button".
+        "lens": item.lens,
+        "facet_tags": _facet_tags(item),
         "links": _links(item),
     }
 

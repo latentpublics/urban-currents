@@ -1,38 +1,55 @@
-{#- One item card. Phase 1's Astro <ItemCard> component mirrors this DOM. -#}
+{#- One item card. Phase 1's Astro <ItemCard> component mirrors this DOM, so the
+    class names here are a cross-phase contract, not styling.
+
+    Two columns, and `display:flex` is the whole trick: a client that does not
+    understand flex — Outlook — drops both children to block and the card
+    stacks vertically, which is exactly the mobile layout. One template, two
+    outputs, no second file to keep in sync. Neither float nor table would do
+    that. -#}
 <article class="uc-card" id="{{ card.anchor }}" data-work-key="{{ card.work_key }}">
-  <h2 class="uc-card__title">
-    {%- if card.landing_url %}<a href="{{ card.landing_url }}">{{ card.title }}</a>
-    {%- else %}{{ card.title }}{% endif -%}
-  </h2>
-  <p class="uc-card__byline">{{ card.byline }}</p>
-
-  {% if card.what %}<p class="uc-card__what">{{ card.what }}</p>{% endif %}
-  {% if card.why %}<p class="uc-card__why">{{ card.why }}</p>{% endif %}
-  {% if card.caveats %}<p class="uc-card__caveats">{{ card.caveats }}</p>{% endif %}
-  {% if not card.what and not card.why %}
-  <p class="uc-card__pending">Summary pending review.</p>
-  {% endif %}
-
-  {% if card.badges %}
-  <ul class="uc-badges">
-    {% for badge in card.badges %}<li class="uc-badge uc-badge--{{ badge }}">{{ badge }}</li>{% endfor %}
-  </ul>
-  {% endif %}
-
-  {% if card.facets %}
-  <div class="uc-facets">
-    {% for facet in card.facets %}
-    <div class="uc-facet uc-facet--{{ facet.name }}">
-      <span class="uc-facet__name">{{ facet.name }}</span>
-      <ul class="uc-facet__tags">
-        {% for tag in facet.tags %}<li class="uc-tag" data-entity-id="{{ tag.id }}">{{ tag.label }}</li>{% endfor %}
-      </ul>
-    </div>
-    {% endfor %}
+  <div class="uc-card__meta">
+    {% if card.badges %}
+    <p class="uc-card__badges">
+      {% for badge in card.badges %}<span class="uc-badge uc-badge--{{ badge.kind }}">{{ badge.label }}</span>{% endfor %}
+    </p>
+    {% endif %}
+    <p class="uc-card__byline">
+      {{ card.authors }}{% if card.authors and card.venue %}<br>{% endif %}{{ card.venue }}
+      {%- if card.was_preprint %}<span class="uc-card__was"> · {{ card.was_preprint }}</span>{% endif %}
+    </p>
+    {#- The lens is declared on the Item and no stage writes it, so this never
+        renders today. Kept because the field exists and the day something fills
+        it the card should show it — not because the mockup has one. -#}
+    {% if card.lens %}<p class="uc-card__lens">{{ card.lens }} lens</p>{% endif %}
+    {% if card.facet_tags %}
+    <p class="uc-card__facets">
+      {% for tag in card.facet_tags %}<span class="uc-tag" data-entity-id="{{ tag.id }}">{{ tag.label }}</span>{% if not loop.last %}<span class="uc-tag__sep"> · </span>{% endif %}{% endfor %}
+    </p>
+    {% endif %}
   </div>
-  {% endif %}
 
-  <p class="uc-card__links">
-    {% for link in card.links %}<span></span><a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
-  </p>
+  <div class="uc-card__body">
+    <h2 class="uc-card__title">
+      {%- if card.landing_url %}<a href="{{ card.landing_url }}">{{ card.title }}</a>
+      {%- else %}{{ card.title }}{% endif -%}
+    </h2>
+    {% if card.what %}<p class="uc-card__what">{{ card.what }}</p>{% endif %}
+    {#- "Why it matters" and "Caveat" are the template's words. No summary in the
+        archive begins with either, checked over all 224 items, so nothing is
+        said twice. -#}
+    {% if card.why %}
+    <p class="uc-card__why"><em class="uc-card__why-lead">Why it matters</em> — {{ card.why }}</p>
+    {% endif %}
+    {% if card.caveats %}
+    <p class="uc-card__caveats"><em>Caveat: {{ card.caveats }}</em></p>
+    {% endif %}
+    {% if not card.what and not card.why %}
+    <p class="uc-card__pending">Summary pending review.</p>
+    {% endif %}
+    {% if card.links %}
+    <p class="uc-card__links">
+      {% for link in card.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% if not loop.last %}<span class="uc-card__link-sep"> · </span>{% endif %}{% endfor %}
+    </p>
+    {% endif %}
+  </div>
 </article>

@@ -256,7 +256,9 @@ def test_card_carries_the_two_layers_and_canonical_tag_ids(repo):
     card = build_card(item)
     assert card["what"] == "What happened."
     assert card["why"] == "Why it matters."
-    assert card["facets"][0]["tags"][0]["id"] == "method:gnn"
+    # Facets are flattened into one ordered list on the meta rail (phase 0j W2);
+    # the canonical id still travels with every tag, which is the contract.
+    assert card["facet_tags"][0]["id"] == "method:gnn"
 
     html = render_issue(_issue_with([item]), [item])
     p = _Collector()
@@ -307,8 +309,13 @@ def test_class_names_are_the_phase1_contract(repo):
     for expected in (
         "uc-issue", "uc-issue__masthead", "uc-scanmeta", "uc-headline",
         "uc-headline__line", "uc-cards", "uc-card", "uc-card__title",
-        "uc-card__byline", "uc-card__what", "uc-card__why", "uc-badges",
-        "uc-badge", "uc-facets", "uc-facet__tags", "uc-tag", "uc-card__links",
+        "uc-card__byline", "uc-card__what", "uc-card__why",
+        # Phase 0j: the card became two columns. `uc-badges` and `uc-facets`
+        # became `uc-card__badges` and `uc-card__facets` — both now live inside
+        # the meta rail and belong to the card's namespace, which is the rule
+        # the directive set for new classes. Astro's <ItemCard> inherits these.
+        "uc-card__meta", "uc-card__body", "uc-card__badges", "uc-badge",
+        "uc-card__facets", "uc-tag", "uc-card__links",
     ):
         assert expected in html, f"missing class {expected}"
 

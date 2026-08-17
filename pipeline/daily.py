@@ -235,9 +235,20 @@ def run_daily(
             if dry_run and outcome.status != NOT_PUBLISHED:
                 outcome.reasons.append("dry run: nothing written")
             record(outcome)
+            alert = None
+            if outcome.status == NOT_PUBLISHED and not dry_run:
+                # Recorded first, then announced: the log is the fact and the
+                # mail is only a copy of it. An alert that cannot be sent leaves
+                # the record intact (X7).
+                from .notify import notify_failure
+
+                alert = notify_failure(issue_date, outcome.reasons, run=run)
             run.metrics.timing["daily_s"] = round(time.monotonic() - started, 1)
             run.save()
-            return _result(outcome, run, started, covers_from, covers_to, dry_run)
+            result = _result(outcome, run, started, covers_from, covers_to, dry_run)
+            if alert is not None:
+                result["alert"] = alert
+            return result
 
         issue = stage_issue(run, issue_date)
         issue.covers_from = covers_from
@@ -260,6 +271,48 @@ def run_daily(
         return result
     finally:
         lock.release()
+
+
+def catch_up(today: Optional[date] = None, limit: Optional[int] = None) -> list[dict[str, Any]]:
+    """Retry the days we could not see, oldest first.
+
+    A scheduled run that only ever attempts today leaves every outage permanent:
+    the morning the API was down stays blank forever, and the archive's gap is
+    then a fact about our uptime rather than about the field. So each run also
+    reaches back over `daily.catch_up_days` and retries what is still missing.
+
+    Oldest first, because a retry of the 3rd that succeeds may satisfy the
+    coupling window used by the 4th. And bounded, because a day whose sources
+    have moved on cannot be recovered by asking again — past the horizon a
+    missed day stays missed, and stays in the log saying so.
+    """
+    from .outcome import unpublished_dates
+
+    today = today or date.today()
+    horizon = today - timedelta(days=int(cfg("daily.catch_up_days", 7)))
+
+    pending = [
+        row for row in unpublished_dates()
+        if horizon <= date.fromisoformat(row["date"]) < today
+    ]
+    pending.sort(key=lambda r: r["date"])
+    if limit:
+        pending = pending[:limit]
+
+    results = []
+    for row in pending:
+        d = date.fromisoformat(row["date"])
+        try:
+            results.append(run_daily(d=d, today=today))
+        except DailyLocked:
+            raise
+        except Exception as e:  # noqa: BLE001 - one bad day must not stop the rest
+            results.append({
+                "date": row["date"],
+                "status": "retry_failed",
+                "error": f"{type(e).__name__}: {e}",
+            })
+    return results
 
 
 def _deliver_issue(run: Run, issue) -> dict[str, Any]:

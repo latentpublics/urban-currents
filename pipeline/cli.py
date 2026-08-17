@@ -281,6 +281,70 @@ def daily(
         raise typer.Exit(code=1)
 
 
+@app.command("catch-up")
+def catch_up_cmd(
+    limit: Optional[int] = typer.Option(None, help="Retry at most this many days"),
+):
+    """Retry the days the pipeline could not see, oldest first.
+
+    Bounded by `daily.catch_up_days`. A day past that horizon stays missed and
+    stays in the log saying so — asking again cannot recover a window whose
+    sources have moved on.
+    """
+    from .daily import DailyLocked, catch_up
+
+    try:
+        results = catch_up(limit=limit)
+    except DailyLocked as e:
+        typer.echo(f"[LOCKED] {e}")
+        raise typer.Exit(code=75)
+
+    if not results:
+        typer.echo("[OK] nothing to catch up on")
+        return
+    for row in results:
+        typer.echo(f"[{row['status'].upper()}] {row['date']}")
+    typer.echo(json.dumps(results, indent=2))
+
+
+@app.command()
+def status():
+    """Where things stand. The first command to run after being away.
+
+    Answers "is anything wrong" before "what happened": the last successful run,
+    the dates with no issue, what has been spent, and the window the next run
+    will cover.
+    """
+    from .notify import status as read_status
+
+    state = read_status()
+    typer.echo(json.dumps(state, indent=2))
+
+    missing = state["unpublished_dates"]
+    if missing:
+        typer.echo(
+            f"\n[ATTENTION] {len(missing)} date(s) with no issue: "
+            f"{', '.join(missing[:5])}{' …' if len(missing) > 5 else ''}"
+        )
+        typer.echo("            uc catch-up  — retry the ones still in range")
+        raise typer.Exit(code=1)
+
+
+@app.command()
+def weekly(
+    send: bool = typer.Option(False, "--send", help="Mail it to UC_ALERT_RECIPIENT"),
+):
+    """Seven days of outcomes, spend and sends — printed, or mailed with --send."""
+    from .notify import notify_weekly, weekly_body, weekly_summary
+
+    if send:
+        result = notify_weekly()
+        typer.echo(weekly_body(result["summary"]))
+        typer.echo(f"[{result['status'].upper()}]")
+        return
+    typer.echo(weekly_body(weekly_summary()))
+
+
 @app.command()
 def site(
     review: bool = typer.Option(True, help="Also write docs/design-review.html"),

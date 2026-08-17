@@ -1,0 +1,49 @@
+{#- Archive. Same row grammar as the home strip, grouped by month. -#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Urban Currents — Archive</title>
+<style>
+{{ css }}
+</style>
+</head>
+<body>
+<main class="uc-page">
+  <nav class="uc-nav">
+    <span class="uc-nav__brand">Urban Currents</span>
+    <a href="index.html">Today</a>
+    <a href="archive.html">Archive</a>
+    <span class="uc-nav__lang">EN</span>
+  </nav>
+
+  <header class="uc-archive__masthead">
+    <h1 class="uc-archive__h1">Archive</h1>
+    <p class="uc-archive__summary">
+      {{ stats.days }} issues · {{ stats.total_published }} papers published ·
+      {{ stats.quiet_days }} quiet day{{ 's' if stats.quiet_days != 1 }}.
+      Quiet days are kept: each still reviews what appeared.
+    </p>
+  </header>
+
+  {% for month in months %}
+  <section class="uc-month">
+    <h2 class="uc-month__label">{{ month.label }}</h2>
+    {% with rows = month.rows %}{% include "_archive_rows.html.j2" %}{% endwith %}
+  </section>
+  {% endfor %}
+
+  <footer class="uc-footer">
+    <p class="uc-footer__ilp">Institute for Latent Publics · free, no ads, no metrics</p>
+    <p class="uc-footer__build">urban-currents {{ pipeline_version }}</p>
+    {# arXiv's terms require this wording exactly, including the disclaimer. #}
+    <p class="uc-attribution">
+      Thank you to arXiv for use of its open access interoperability. This
+      service was not reviewed or approved by, nor does it necessarily express
+      or reflect the policies or opinions of, arXiv.
+    </p>
+  </footer>
+</main>
+</body>
+</html>

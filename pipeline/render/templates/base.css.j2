@@ -371,3 +371,132 @@ body {
 
 .uc-footer__ilp { margin: 0 0 0.25rem; color: var(--uc-meta); }
 .uc-footer__build { margin: 0 0 0.5rem; }
+
+/* ---- Site chrome: home and archive (phase 0j W4) ---------------------- */
+
+.uc-page { max-width: 46rem; margin: 0 auto; }
+
+.uc-nav {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 0 0 0.75rem;
+  border-bottom: 1px solid var(--uc-line);
+  font-size: 0.82rem;
+}
+.uc-nav__brand { font-weight: 700; font-size: 0.95rem; }
+.uc-nav a { color: var(--uc-meta); text-decoration: none; }
+.uc-nav a:hover { color: var(--uc-ink); }
+.uc-nav__lang { margin-left: auto; color: var(--uc-meta); font-size: 0.75rem; }
+
+.uc-mission { padding: 1.75rem 0 2rem; }
+.uc-mission__title {
+  font-family: var(--uc-font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.uc-mission__lede { font-size: 0.95rem; color: var(--uc-ink-soft); margin: 0.75rem 0 0; line-height: 1.65; }
+
+.uc-latest { border-top: 2px solid var(--uc-ink); padding-top: 0.9rem; margin-bottom: 2rem; }
+.uc-latest__head, .uc-archive__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.uc-latest__title, .uc-archive__title {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--uc-meta);
+}
+.uc-latest__date, .uc-archive__all { font-size: 0.8rem; color: var(--uc-meta); text-decoration: none; }
+.uc-latest__lead {
+  font-family: var(--uc-font-serif);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 0 0 0.9rem;
+}
+.uc-latest__stats { display: flex; gap: 1.75rem; margin: 0; font-size: 0.8rem; }
+.uc-latest__stats dt { color: var(--uc-meta); }
+.uc-latest__stats dd { margin: 0.1rem 0 0; font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+
+.uc-archive { border-top: 2px solid var(--uc-ink); padding-top: 0.9rem; margin-bottom: 2.5rem; }
+.uc-archive__masthead { padding: 1.75rem 0 1.25rem; }
+.uc-archive__h1 { font-family: var(--uc-font-serif); font-size: 1.6rem; margin: 0; }
+.uc-archive__summary { font-size: 0.9rem; color: var(--uc-ink-soft); margin: 0.5rem 0 0; }
+.uc-month { margin-bottom: 1.75rem; }
+.uc-month__label {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--uc-meta);
+}
+
+.uc-rows { list-style: none; padding: 0; margin: 0; }
+.uc-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.4rem 0;
+  border-top: 1px solid var(--uc-hairline);
+  font-size: 0.85rem;
+}
+.uc-row:first-child { border-top: 0; }
+.uc-row__date { flex: 0 0 5.5rem; color: var(--uc-meta); font-variant-numeric: tabular-nums; }
+.uc-row__bar { flex: 0 0 3.5rem; height: 0.45rem; background: var(--uc-hairline); display: inline-block; }
+.uc-row__fill { display: block; height: 100%; background: var(--uc-accent); }
+/* A quiet day's bar is grey AND the row says "a quiet day" in words. Colour
+   never carries the meaning on its own. */
+.uc-row--quiet .uc-row__fill { background: var(--uc-quiet); }
+.uc-row__count { flex: 0 0 5.5rem; font-variant-numeric: tabular-nums; }
+.uc-row__lead {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--uc-ink);
+}
+.uc-row__artifacts { flex: 0 0 auto; color: var(--uc-faint); font-size: 0.78rem; }
+.uc-chip {
+  background: var(--uc-chip-bg);
+  color: var(--uc-meta);
+  border-radius: 2px;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.75rem;
+}
+
+/* The hover detail is CSS only and purely additive: the row is complete
+   without it, which is the condition for having it at all. Touch devices and
+   mail clients simply never see it. */
+.uc-row__lead:hover, .uc-row:focus-within .uc-row__lead {
+  white-space: normal;
+  overflow: visible;
+}
+
+.uc-columns { display: flex; gap: 1.75rem; border-top: 1px solid var(--uc-line); padding-top: 1.25rem; }
+.uc-column { flex: 1 1 0; }
+.uc-column h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--uc-meta);
+}
+.uc-column p { margin: 0; font-size: 0.85rem; line-height: 1.6; color: var(--uc-ink-soft); }
+
+@media (max-width: 640px) {
+  .uc-row { flex-wrap: wrap; gap: 0.25rem 0.6rem; }
+  .uc-row__lead { flex: 1 1 100%; white-space: normal; }
+  .uc-columns { flex-direction: column; gap: 1.25rem; }
+  .uc-latest__stats { gap: 1.25rem; }
+}

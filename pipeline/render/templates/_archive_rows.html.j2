@@ -1,0 +1,33 @@
+{#- One archive row grammar, shared by the home strip and the archive page, so
+    the two cannot drift.
+
+    A quiet day still has a row: it was still reviewed, and a gap in the list
+    would say nothing happened rather than nothing was worth publishing. The
+    grey bar carries a text label beside it — colour alone never carries the
+    meaning.
+
+    The bar is a <span> sized by an inline width percentage. That is the one
+    place an inline style is unavoidable: the width is data, not design, and it
+    differs per row. Everything else lives in the stylesheet. -#}
+<ul class="uc-rows">
+  {% for row in rows %}
+  <li class="uc-row{% if row.quiet %} uc-row--quiet{% endif %}" data-date="{{ row.date }}">
+    <span class="uc-row__date">{{ row.date }}</span>
+    <span class="uc-row__bar" aria-hidden="true">
+      <span class="uc-row__fill" style="width: {{ (row.published / max_items * 100)|round|int }}%"></span>
+    </span>
+    <span class="uc-row__count">
+      {% if row.quiet %}<span class="uc-chip">a quiet day</span>
+      {% else %}{{ row.published }} items{% endif %}
+    </span>
+    {#- Full title in the DOM; the ellipsis is CSS. A string cut in Python is
+        cut for a screen reader too. -#}
+    <span class="uc-row__lead" title="{{ row.lead_title }}">{{ row.lead_title }}</span>
+    <span class="uc-row__artifacts">
+      {%- if row.code %}{{ row.code }} code{% endif %}
+      {%- if row.code and row.data %}, {% endif %}
+      {%- if row.data %}{{ row.data }} data{% endif %}
+    </span>
+  </li>
+  {% endfor %}
+</ul>

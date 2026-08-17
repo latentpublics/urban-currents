@@ -254,6 +254,25 @@ def review(
         run_review_session(d)
 
 
+@app.command()
+def site(
+    review: bool = typer.Option(True, help="Also write docs/design-review.html"),
+):
+    """Build the home and archive pages from `content/`, plus the review file.
+
+    Static HTML only — no Astro, no deploy, no external request. Every number in
+    the chrome is measured from the archive at build time, because a service
+    whose own description disagrees with its own data is doing the thing this
+    one exists not to do.
+    """
+    from .render.site import build_archive, build_design_review, build_home
+
+    typer.echo(f"[OK] home    — {build_home()}")
+    typer.echo(f"[OK] archive — {build_archive()}")
+    if review:
+        typer.echo(f"[OK] review  — {build_design_review()}")
+
+
 @app.command("prepare-probe")
 def prepare_probe_cmd(
     date_: Optional[str] = DateOpt,

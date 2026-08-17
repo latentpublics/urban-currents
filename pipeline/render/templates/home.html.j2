@@ -1,0 +1,110 @@
+{#- Home. Built from `content/` alone; every number below is measured, none is
+    written into the template. The mockup's copy quotes "159 journals" and
+    "15-24 papers" and both are wrong now — that is exactly why the chrome reads
+    from the archive instead. -#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Urban Currents</title>
+<style>
+{{ css }}
+</style>
+</head>
+<body>
+<main class="uc-page">
+  <nav class="uc-nav">
+    <span class="uc-nav__brand">Urban Currents</span>
+    <a href="index.html">Today</a>
+    <a href="archive.html">Archive</a>
+    <span class="uc-nav__lang">EN</span>
+  </nav>
+
+  <header class="uc-mission">
+    <h1 class="uc-mission__title">
+      A daily scan of urban data science: what appeared, what it found, and why
+      it matters.
+    </h1>
+    <p class="uc-mission__lede">
+      {{ stats.arxiv_categories }} arXiv categories, {{ stats.journals }} journals —
+      {% if stats.range_low == stats.range_high %}
+      about {{ stats.range_low }} papers a day worth your time.
+      {% else %}
+      the {{ stats.range_low }}–{{ stats.range_high }} papers a day worth your time.
+      {% endif %}
+      When the signal is weak, we say so. Free, no ads, no engagement metrics.
+    </p>
+    {#- No subscription form. There is no domain, no sending infrastructure and
+        no list, and a form that does nothing is a lie told in HTML. Phase 1
+        fills this in when there is something behind it. -#}
+  </header>
+
+  {% if latest %}
+  <section class="uc-latest">
+    <div class="uc-latest__head">
+      <h2 class="uc-latest__title">Latest issue</h2>
+      <span class="uc-latest__date">{{ latest.date }}</span>
+    </div>
+    {#- The headline line whole. It is a full sentence and there is room for it;
+        cutting it mid-clause to fit a mockup's short noun phrase would be
+        rewriting the pipeline's output in the template. -#}
+    <p class="uc-latest__lead">{{ lead_line }}</p>
+    <dl class="uc-latest__stats">
+      <div><dt>published</dt><dd>{{ latest.scan_meta.items_published }}</dd></div>
+      <div><dt>scanned</dt><dd>{{ latest.scan_meta.candidates_scanned }}</dd></div>
+      <div><dt>no open abstract</dt><dd>{{ latest.scan_meta.unreadable_count }}</dd></div>
+    </dl>
+  </section>
+  {% endif %}
+
+  <section class="uc-archive">
+    <div class="uc-archive__head">
+      <h2 class="uc-archive__title">Archive — last {{ rows|length }} days</h2>
+      <a class="uc-archive__all" href="archive.html">all issues</a>
+    </div>
+    {% include "_archive_rows.html.j2" %}
+  </section>
+
+  <section class="uc-columns">
+    <div class="uc-column">
+      <h3>Method</h3>
+      <p>
+        Two entry paths. A journal article enters because a journal we track
+        published it; an arXiv preprint enters on a classifier's probability and
+        only above a floor set from labelled examples. Neither path is asked to
+        fill a quota.
+      </p>
+    </div>
+    <div class="uc-column">
+      <h3>Honesty</h3>
+      <p>
+        Bibliography, authors and links come from the sources, never from a
+        model. Where a measurement was not possible we leave the line out rather
+        than print a zero, and where it was possible and found nothing we say
+        so.
+      </p>
+    </div>
+    <div class="uc-column">
+      <h3>Tags</h3>
+      <p>
+        Every tag carries a canonical identifier — OpenAlex, ORCID, ROR — so a
+        method named twice is one thing, not two. Free strings are a test
+        failure rather than a warning.
+      </p>
+    </div>
+  </section>
+
+  <footer class="uc-footer">
+    <p class="uc-footer__ilp">Institute for Latent Publics · free, no ads, no metrics</p>
+    <p class="uc-footer__build">urban-currents {{ pipeline_version }}</p>
+    {# arXiv's terms require this wording exactly, including the disclaimer. #}
+    <p class="uc-attribution">
+      Thank you to arXiv for use of its open access interoperability. This
+      service was not reviewed or approved by, nor does it necessarily express
+      or reflect the policies or opinions of, arXiv.
+    </p>
+  </footer>
+</main>
+</body>
+</html>

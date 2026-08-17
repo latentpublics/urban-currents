@@ -1,0 +1,54 @@
+# The weekly summary — committed, and deliberately NOT enabled.
+#
+# Seven days of outcomes, spend and sends, in one mail. Same rule as daily.yml:
+# `workflow_dispatch` only until someone has read what it would have said.
+#
+# This one is cheap and stateless — it reads `content/runs_log/` and writes
+# nothing — so it needs neither the embedding model nor write permission.
+
+name: weekly
+
+on:
+  workflow_dispatch:
+
+  # 07:00 KST Monday = 22:00 UTC Sunday. After the daily run, so the week it
+  # summarises includes the morning it is sent.
+  #
+  # schedule:
+  #   - cron: "0 22 * * 0"
+
+permissions:
+  contents: read
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+
+      - run: uv python install 3.11
+
+      # No `--extra embed`: the summary reads log files. Installing torch to
+      # count seven JSON files would be four minutes for nothing.
+      - run: uv sync --frozen
+
+      # With `deliver.backend: file` — the default, and what is committed —
+      # this writes an .eml into the runner's filesystem and the runner is then
+      # destroyed. That is the correct behaviour for a workflow nobody has
+      # turned on yet, and it is why the checklist in OPERATIONS.md sets the
+      # backend last.
+      - name: Send the summary
+        env:
+          UC_SMTP_USER: ${{ secrets.UC_SMTP_USER }}
+          UC_SMTP_PASSWORD: ${{ secrets.UC_SMTP_PASSWORD }}
+          UC_ALERT_RECIPIENT: ${{ secrets.UC_ALERT_RECIPIENT }}
+        run: uv run uc weekly --send

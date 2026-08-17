@@ -219,9 +219,26 @@ daily:
   # appeared (phase 0k, X1). Journals reach 95% coverage at D+2 and no arXiv
   # item has ever been visible on its own publication day.
   #
-  # 3 days back, ending yesterday. The tail beyond that is caught on later runs:
-  # an item already published is skipped, never published twice.
-  lookback_days: 3
+  # 7 days back, ending yesterday, and the width is set by the slower of the two
+  # sources rather than by the faster one.
+  #
+  # This was 3, which was set from the journal measurement alone. The first real
+  # `uc daily --dry-run` then collected 2026-08-15..17 and fetched ZERO arXiv
+  # items while the journal side worked normally — with every stage reporting OK.
+  # scripts/arxiv_visibility.py asked arXiv day by day and found the boundary:
+  # D-1, D-2 and D-3 all return 0, D-4 through D-10 return 221 to 453. Weekends
+  # are populated (Sat 08-08: 221, Sun 08-09: 223), so the three empty days are
+  # arXiv's submittedDate index lagging, not a quiet weekend.
+  #
+  # A 3-day window therefore sat entirely inside arXiv's blind zone. A scheduled
+  # run would have published a journal-only issue every single morning and
+  # recorded collect.arxiv: OK while doing it — a whole source missing with
+  # nothing anywhere saying so.
+  #
+  # 7 gives three days of slack past the measured 3-day gap. Re-collecting days
+  # already seen costs a few requests and nothing else: an item already
+  # published is skipped, never published twice.
+  lookback_days: 7
   min_lag_days: 1
 
   # A day that costs more than this in LLM calls stops and publishes nothing.

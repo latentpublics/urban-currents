@@ -256,3 +256,109 @@ def test_a_lock_from_a_dead_process_is_reclaimed(repo):
     assert lock.reclaimed_from["pid"] == 999999
     lock.release()
     assert not lock_path().exists()
+
+
+# --------------------------------------------------------------------------
+# 6. the failure that reports success (X6)
+# --------------------------------------------------------------------------
+
+
+def test_a_source_that_returns_nothing_over_a_window_is_recorded(repo):
+    """Found by running it: a 3-day window fetched 0 arXiv items, every stage OK.
+
+    The window sat inside arXiv's indexing lag, so half our declared scope was
+    missing and nothing in the data said so.
+    """
+    run = _run(GOOD, arxiv_fetched=0, openalex_fetched=11, journal_candidates=4)
+    outcome = decide(run, DAY, published_count=4, window_days=3)
+
+    assert outcome.silent_sources == ["collect.arxiv"]
+    assert any("returned nothing" in e for e in run.metrics.errors)
+
+
+def test_a_silent_source_does_not_veto_the_issue(repo):
+    """The journal papers are real. Withholding them would trade partial for none."""
+    run = _run(GOOD, arxiv_fetched=0, openalex_fetched=11, journal_candidates=4)
+    outcome = decide(run, DAY, published_count=4, window_days=3)
+
+    assert outcome.status == PUBLISHED
+    assert outcome.writes_issue is True
+
+
+def test_zero_over_a_single_day_is_not_called_silence(repo):
+    """One empty day from one source is ordinary. A week of them is not."""
+    run = _run(GOOD, arxiv_fetched=0, openalex_fetched=11)
+    outcome = decide(run, DAY, published_count=4, window_days=1)
+
+    assert outcome.silent_sources == []
+
+
+def test_a_failed_source_is_counted_as_failed_not_as_silent(repo):
+    """Two different faults must not be reported as one."""
+    run = _run(
+        {"collect": "OK", "collect.arxiv": "FAILED", "collect.openalex": "OK"},
+        arxiv_fetched=0,
+        openalex_fetched=11,
+    )
+    outcome = decide(run, DAY, published_count=0, window_days=7)
+
+    assert outcome.status == NOT_PUBLISHED
+    assert outcome.silent_sources == []
+    assert any("collect.arxiv" in r for r in outcome.reasons)
+
+
+def test_the_silence_survives_into_the_log(repo):
+    run = _run(GOOD, arxiv_fetched=0, openalex_fetched=11)
+    record(decide(run, DAY, published_count=4, window_days=7))
+
+    assert load_log(DAY)["silent_sources"] == ["collect.arxiv"]
+
+
+# --------------------------------------------------------------------------
+# 7. a rehearsal does not enter the record (X6)
+# --------------------------------------------------------------------------
+
+
+def test_a_dry_run_leaves_no_row_in_the_run_log(repo, monkeypatch):
+    """`status: published` for a date with no issue would make `uc status` lie.
+
+    The run log answers "did this day get covered". A dry run's answer is no,
+    however much work it did, so it stays in `runs/` where rehearsals belong.
+    """
+    from pipeline import daily as daily_mod, run_stages
+    from pipeline.outcome import log_dir
+
+    def fake_collect(run, d, backfill_from=None, **kw):
+        run.metrics.stages.update(GOOD)
+        run.metrics.counts.arxiv_fetched = 300
+        run.metrics.counts.openalex_fetched = 40
+        return []
+
+    monkeypatch.setattr(run_stages, "stage_collect", fake_collect)
+    monkeypatch.setattr(daily_mod, "STAGES", ())
+    monkeypatch.setattr(run_stages, "read_stage", lambda run, name: [1, 2, 3])
+
+    result = daily_mod.run_daily(d=DAY, dry_run=True, use_llm=False)
+
+    assert result["dry_run"] is True
+    assert result["published"] == 3
+    assert load_log(DAY) is None
+    assert not log_dir().exists() or not list(log_dir().glob("*.json"))
+
+
+def test_a_dry_run_sends_no_alert_even_when_the_day_failed(repo, monkeypatch):
+    from pipeline import daily as daily_mod, run_stages
+
+    def broken_collect(run, d, backfill_from=None, **kw):
+        run.metrics.stages.update({"collect": "FAILED", "collect.arxiv": "FAILED"})
+        raise RuntimeError("arXiv is unreachable")
+
+    monkeypatch.setattr(run_stages, "stage_collect", broken_collect)
+    monkeypatch.setattr(daily_mod, "STAGES", ())
+    monkeypatch.setattr(run_stages, "read_stage", lambda run, name: [])
+    monkeypatch.setenv("UC_ALERT_RECIPIENT", "yjun@example.org")
+
+    result = daily_mod.run_daily(d=DAY, dry_run=True, use_llm=False)
+
+    assert result["status"] == NOT_PUBLISHED
+    assert "alert" not in result

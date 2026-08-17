@@ -60,6 +60,10 @@ NOT_PUBLISHED = "not_published"
 # that scope is a different claim.
 REQUIRED_SOURCES = ("collect.arxiv", "collect.openalex")
 
+# The count each source writes when it succeeds. Used to catch the failure that
+# reports success: a source that finishes OK and contributes nothing.
+SOURCE_COUNTS = {"collect.arxiv": "arxiv_fetched", "collect.openalex": "openalex_fetched"}
+
 
 @dataclass
 class Outcome:
@@ -73,6 +77,7 @@ class Outcome:
     published: int = 0
     attempts: int = 1
     spend_usd: float = 0.0
+    silent_sources: list[str] = field(default_factory=list)
 
     @property
     def writes_issue(self) -> bool:
@@ -92,6 +97,7 @@ class Outcome:
             "published": self.published,
             "attempts": self.attempts,
             "spend_usd": round(self.spend_usd, 6),
+            "silent_sources": self.silent_sources,
             "recorded_at": utcnow().isoformat(),
         }
 
@@ -133,12 +139,53 @@ def looked(run: Run, required: tuple[str, ...] = REQUIRED_SOURCES) -> tuple[bool
     return (not reasons), reasons
 
 
-def decide(run: Run, d: date, published_count: int, budget_exceeded: bool = False) -> Outcome:
+def silent_sources(run: Run, window_days: int = 1) -> list[str]:
+    """Sources that reported OK and returned nothing anyway.
+
+    The failure that reports success. A run covering a week fetched zero arXiv
+    items with every stage green, because the window sat inside arXiv's indexing
+    lag — a whole half of our declared scope missing, and nothing in the data
+    saying so. Over a single day zero is ordinary; over a window it is evidence
+    that the window is wrong, that the source is down, or that our query is.
+
+    This does **not** change the verdict. Journal items collected on a day arXiv
+    was unreachable are real papers, and withholding them would trade a partial
+    issue for none. But it is recorded on every run, so the next time a source
+    goes quiet it is a line in the log rather than a slow drift nobody notices.
+    """
+    if window_days < 2:
+        return []
+
+    out = []
+    for source in REQUIRED_SOURCES:
+        if run.metrics.stages.get(source) != "OK":
+            continue  # already counted as a failure, not as silence
+        field = SOURCE_COUNTS.get(source)
+        if field and not int(getattr(run.metrics.counts, field, 0) or 0):
+            out.append(source)
+    return out
+
+
+def decide(
+    run: Run,
+    d: date,
+    published_count: int,
+    budget_exceeded: bool = False,
+    window_days: int = 1,
+) -> Outcome:
     """The day's verdict. The only place `quiet` can be granted."""
     if budget_exceeded:
         setattr(run.metrics, "budget_exceeded", True)
 
     ok, reasons = looked(run)
+    silent = silent_sources(run, window_days)
+    if silent:
+        # Loud in the log, and loud in the run's own errors, but not a veto —
+        # see `silent_sources` for why the verdict is left alone.
+        run.error(
+            f"outcome: {', '.join(silent)} reported OK and returned nothing over "
+            f"a {window_days}-day window"
+        )
     counts = run.metrics.counts
     candidates = None
     if ok or run.metrics.stages.get("collect") in ("OK", "EMPTY"):
@@ -157,6 +204,7 @@ def decide(run: Run, d: date, published_count: int, budget_exceeded: bool = Fals
             candidates=candidates,
             published=0,
             spend_usd=float(run.metrics.cost.total_usd or 0.0),
+            silent_sources=silent,
         )
 
     status = PUBLISHED if published_count else QUIET
@@ -168,6 +216,7 @@ def decide(run: Run, d: date, published_count: int, budget_exceeded: bool = Fals
         candidates=candidates,
         published=published_count,
         spend_usd=float(run.metrics.cost.total_usd or 0.0),
+        silent_sources=silent,
     )
 
 

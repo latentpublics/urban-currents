@@ -268,6 +268,14 @@ def status() -> dict[str, Any]:
         "last_issue": issues[-1] if issues else None,
         "issues_published": len(issues),
         "unpublished_dates": [r["date"] for r in missing],
+        # A source that reports OK and returns nothing is the failure that does
+        # not look like one. It belongs next to the missed days, not buried in a
+        # run file nobody opens.
+        "silent_sources_last_run": (
+            sorted(logs, key=lambda r: r["date"])[-1].get("silent_sources") or []
+            if logs
+            else []
+        ),
         "consecutive_failures": consecutive_failures(date.today() - timedelta(days=1)),
         "next_window": {"from": str(covers_from), "to": str(covers_to)},
         "llm_cost_total_usd": round(usage.cost_usd, 6),

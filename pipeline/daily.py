@@ -7,7 +7,9 @@ pipeline with three properties it did not need while a person was watching:
 papers did (X1: journal indexing is p50 1 day, p90 2 days, and no arXiv item has
 ever been visible on its own publication day). So the window is
 `[today - lookback, today - 1]`, and anything already published is skipped by
-the existing published index rather than by date arithmetic.
+the existing published index rather than by date arithmetic. The lookback is set
+by the slower source — see `target_window`, and the measurement that caught a
+window sitting inside arXiv's indexing lag.
 
 **It cannot run twice at once.** A file lock with the holder's PID and start
 time, and a reclaim path for the case that has already bitten this repo twice —
@@ -142,10 +144,16 @@ def acquire_lock(stale_after_s: int = 6 * 3600) -> Lock:
 def target_window(today: Optional[date] = None) -> tuple[date, date]:
     """The publication-date window a run started today should collect.
 
-    From X1: journals reach 95% coverage at D+2 and arXiv is never visible on
-    D+0. The default lookback is 3 days, which covers the p99 for neither — it
-    covers the mass, and the tail is caught by re-collection on later days,
-    because an item already published is skipped rather than published twice.
+    Set by the **slower** of the two sources. Journals reach 95% coverage at D+2
+    (X1), but arXiv's `submittedDate` index is measurably three days behind:
+    asked on 2026-08-18, it returned 0 for D-1, D-2 and D-3 and 221–453 per day
+    from D-4 back, weekends included (`scripts/arxiv_visibility.py`).
+
+    The first version of this used 3 days, from the journal figure alone, and
+    that window sat entirely inside arXiv's blind zone — a scheduled run would
+    have published journal-only issues every morning with every stage green.
+    The default is now 7. Re-collecting days already seen costs a few requests:
+    an item already published is skipped rather than published twice.
     """
     today = today or date.today()
     lookback = int(cfg("daily.lookback_days", 3))
@@ -229,12 +237,25 @@ def run_daily(
 
         # The verdict comes before the issue, never after.
         selected = run_stages.read_stage(run, "score") or []
-        outcome = decide(run, issue_date, len(selected), budget_exceeded=budget_exceeded)
+        outcome = decide(
+            run,
+            issue_date,
+            len(selected),
+            budget_exceeded=budget_exceeded,
+            window_days=(covers_to - covers_from).days + 1,
+        )
 
         if outcome.status == NOT_PUBLISHED or dry_run:
             if dry_run and outcome.status != NOT_PUBLISHED:
                 outcome.reasons.append("dry run: nothing written")
-            record(outcome)
+            # A rehearsal does not enter the record. Writing `status: published`
+            # for a date where nothing was published would make `uc status`
+            # report a success that produced no issue — the run log exists to
+            # answer "did this day get covered", and a dry run's answer is no.
+            # The rehearsal is still on disk in `runs/{run_id}/metrics.json`,
+            # which is where runs that wrote nothing belong.
+            if not dry_run:
+                record(outcome)
             alert = None
             if outcome.status == NOT_PUBLISHED and not dry_run:
                 # Recorded first, then announced: the log is the fact and the

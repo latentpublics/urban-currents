@@ -1,8 +1,32 @@
 # Operations — Urban Currents Phase 0
 
 What a day costs a human, where a human is required, and what to do when a stage
-fails. Phase 0 has no scheduler, no bot, and no deploy: every run is started by
-hand.
+fails.
+
+**The pipeline can now run itself, and does not.** `uc daily` is one command
+that collects a window, decides an outcome, publishes, and sends; the workflow
+files that would call it every morning are committed with their `schedule:`
+blocks commented out. Turning them on is the checklist below.
+
+## The first command after being away
+
+```bash
+uv run uc status
+```
+
+Answers "is anything wrong" before "what happened": the last successful run, the
+dates with no issue, cumulative spend, and the window the next run will cover.
+Exits non-zero when there are unpublished dates, so it also works as a check.
+
+`last_success` and `last_issue` are different facts and both are reported. Every
+issue published before the outcome model existed has no run-log row, so a null
+`last_success` beside eight published issues means "the log starts later", not
+"nothing has ever worked".
+
+```bash
+uv run uc catch-up     # retry the missed dates still inside the horizon
+uv run uc weekly       # seven days of outcomes, spend and sends
+```
 
 ## Where a human is required
 
@@ -25,18 +49,53 @@ review times are always under-reported.
 
 ## Daily run
 
-**Run for the day before yesterday, not yesterday.** arXiv indexes submissions
-with a lag: a `submittedDate` query for yesterday can return `totalResults=0`
-while the same query returns hundreds a day later. Measured on 2026-08-13 —
-2026-08-12 returned 0 items, 2026-08-11 returned 311. A run that collects nothing
-records `collect: EMPTY` and says so in `errors`; that is not a quiet day, it
-means come back tomorrow.
-
 ```bash
-uv run uc run --date 2026-08-14          # every stage
+uv run uc daily                          # collect the window, decide, publish, send
+uv run uc daily --dry-run                # everything, writing and sending nothing
 uv run uc review --date 2026-08-14       # human checkpoint (opens the preview)
-uv run uc report                         # refresh docs/phase0-report.md
 ```
+
+`uc daily` picks its own window. The issue is dated by **when we first saw the
+papers**, not when they appeared: journal indexing runs p50 1 day and p90 2 days
+behind publication (measured over 4,674 stored responses —
+`scripts/indexing_lag.py`), and **arXiv's `submittedDate` index is three days
+behind** — asked on 2026-08-18 it returned 0 for each of the previous three days
+and 221–453 per day from D-4 back, weekends included
+(`scripts/arxiv_visibility.py`).
+
+So a run covers `[today-7, today-1]`, wide enough for the slower of the two.
+The tail beyond that is picked up by later runs, because an already-published
+item is skipped rather than published twice.
+
+It exits **1** when the day was `not_published`, **75** when another run holds
+the lock, and 0 otherwise.
+
+**`--dry-run` still summarises, and therefore still costs.** It runs every
+stage and writes nothing — measured at $0.14 and about 7 minutes for a full
+7-day window. A dry run that skipped the expensive stage would not be testing
+the thing most likely to break.
+
+A dry run also leaves **no row in `content/runs_log/`**. The log answers "did
+this day get covered", and a rehearsal's answer is no however much work it did;
+the record of it is in `runs/{run_id}/metrics.json`.
+
+### The three outcomes
+
+| outcome | meaning | issue file | email |
+|---|---|---|---|
+| `published` | we looked, and there was something | written | sent |
+| `quiet` | **we looked**, and there was almost nothing | written | sent |
+| `not_published` | **we did not look** | none | none, alert instead |
+
+**A failed day is not a quiet day.** `quiet` requires every required source to
+have finished OK, a candidate population actually counted (zero is a count), no
+failed stage, and the budget intact. Anything less writes no issue and logs why
+in `content/runs_log/YYYY-MM-DD.json`. See `pipeline/outcome.py`.
+
+### Stage by stage
+
+Still supported, and still the point of the design — re-running `summarize`
+never requires re-collecting:
 
 Or stage by stage, which is the point of the design — re-running `summarize`
 never requires re-collecting:
@@ -72,6 +131,53 @@ uv run uc calibrate --apply                             # → config/scoring.yam
 uv run uc gate-recall                                   # → runs/gate_recall.json
 ```
 
+## Turning the schedule on
+
+`.github/workflows/daily.yml` and `weekly.yml` are committed with
+`workflow_dispatch` only; their `schedule:` blocks are commented out. The
+comparison behind choosing GitHub Actions is in `docs/scheduler-options.md`.
+
+**The order matters.** It is arranged so that nothing can reach a stranger
+before a human has read what it would have said. Do not skip ahead to step 6.
+
+1. **Run it by hand, dry.** Actions → daily → Run workflow, `dry_run: true`.
+   Nothing is written, nothing is sent. Confirms the install, the model cache
+   and the keys.
+2. **Run it by hand, live, with the file backend.** `dry_run: false`. An issue
+   is written and committed; the mail is written to a `.eml` inside the runner
+   and thrown away with it. Check the commit and `uc status`.
+3. **Set `UC_ALERT_RECIPIENT`** in repository secrets. Failure alerts start
+   working. Nothing reaches readers yet — alerts are operational mail and go
+   only to that address.
+4. **Uncomment `schedule:` in `daily.yml`.** It now runs itself, publishes to
+   the archive, and mails nobody. Leave it here for a week and read the
+   archive each morning as a stranger would.
+5. **Uncomment `schedule:` in `weekly.yml`.** One summary mail a week to the
+   operator. Confirms the mail path end to end with an audience of one.
+6. **Only then**: pick a provider (`docs/email-delivery-options.md`), buy the
+   domain, set up SPF/DKIM/DMARC, fill in `UC_SMTP_*`, and change
+   `deliver.backend` to `smtp`. **This is the step that can reach someone who
+   did not ask.**
+
+Two things to know before step 4:
+
+- **GitHub disables scheduled workflows after 60 days without repository
+  activity.** Whether the workflow's own commits reset that clock is not
+  something the documentation makes clear, so treat a missing weekly summary as
+  a possible symptom of it. `uc status` shows a stale `last_success` either way.
+- **The scheduler is best-effort and runs late under load.** That costs nothing
+  here — the window is three days wide and `uc catch-up` retries for a week.
+
+### If the bot cannot push
+
+`content/` is committed by the workflow. When someone has pushed while the run
+was working, the job rebases and retries **once**; a second failure stops the
+job and alerts, because two conflicts in a row means a real one, and a conflict
+in published content is a thing a person must look at.
+
+**Never force push.** Discarding someone else's commit to make the bot's push
+succeed is the one failure mode here that running again cannot undo.
+
 ## Failure handling
 
 Every stage records `OK` / `SKIPPED` / `PARTIAL` / `FAILED` in
@@ -87,6 +193,11 @@ Every stage records `OK` / `SKIPPED` / `PARTIAL` / `FAILED` in
 | `enrich` finds nothing | OpenAlex has not indexed the preprint yet | normal. The retry queue in `runs/state/openalex_enrich_pending.json` tries again on later days |
 | `BudgetExceeded` in errors | 80% of the OpenAlex daily budget | stop for the day; the budget resets at midnight UTC |
 | An item shows "Summary pending review." | LLM output violated the schema twice | `review.status` is `pending`; fix by hand in review or re-run summarize after a prompt change |
+| `uc daily` exits 75 | another run holds the lock | wait. A lock whose owner is dead is reclaimed automatically; one held by a live process refuses on purpose |
+| `status: not_published` | **we could not see the day** | `reasons` in `content/runs_log/` names which of the four conditions failed. `uc catch-up` retries it |
+| an alert arrives with `alert_failed` in the run log | the mail could not go out | the run log is still correct — the alert is a copy of it, never the record |
+| `uc status` shows `last_success: null` with issues in the archive | those issues predate the outcome model | expected. `last_issue` is the other half of the answer |
+| `silent_sources: ["collect.arxiv"]` | a source finished **OK** and returned nothing across the whole window | **the failure that reports success.** Check `daily.lookback_days` against the source's indexing lag, then the source itself. It does not block publication — the other source's papers are real — so nothing else will tell you |
 
 ## Cost control
 
@@ -120,6 +231,9 @@ Every stage records `OK` / `SKIPPED` / `PARTIAL` / `FAILED` in
 |---|---|
 | `content/items/{work_key}.json` | one paper, permanent and mutable |
 | `content/issues/YYYY-MM-DD.json` | one edition, immutable once published |
+| `content/runs_log/YYYY-MM-DD.json` | **what the run concluded, including the days with no issue** |
+| `content/deliveries/YYYY-MM-DD.json` | what was sent, to how many, and the hash of the body |
+| `content/_retired/` | wrong-but-kept files. Validated, read by no aggregate |
 | `content/entities/{facet}/{id}.json` | tag nodes, derived from items |
 | `content/graph/edges.jsonl` | derived edges, `uc graph` |
 | `runs/{run_id}/raw/` | verbatim API responses |

@@ -392,6 +392,44 @@ def render_issue(
     )
 
 
+def email_subject(issue: Issue) -> str:
+    """The subject line rule. Nothing is sent — there is no domain and no list.
+
+    Date first because a daily arrives in a stack of its own back issues and the
+    date is what a reader scans for. Then the count, then the headline's own
+    opening clause, truncated at a word boundary — the only place in this
+    codebase where a string is shortened in Python rather than in CSS, because a
+    mail client truncates a subject at a byte count with no ellipsis and no
+    tooltip.
+    """
+    if issue.quiet_day or not issue.items:
+        return f"Urban Currents {issue.date} — a quiet day"
+    line = (issue.headline.line or "").strip()
+    head = line.split(". ")[0].rstrip(".")
+    if len(head) > 60:
+        head = head[:60].rsplit(" ", 1)[0] + "…"
+    n = len(issue.items)
+    return f"Urban Currents {issue.date} — {n} papers" + (f": {head}" if head else "")
+
+
+def write_email(
+    issue: Issue,
+    items: Iterable[Item],
+    out_path: Path,
+    unreadable: Iterable[Item] = (),
+) -> Path:
+    """The email edition, derived from the same render — never a second template."""
+    from .inline import to_email
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(
+        to_email(render_issue(issue, items, unreadable)),
+        encoding="utf-8",
+        newline="\n",
+    )
+    return out_path
+
+
 def write_preview(
     issue: Issue,
     items: Iterable[Item],

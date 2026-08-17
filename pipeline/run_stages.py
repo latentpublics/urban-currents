@@ -847,6 +847,14 @@ def stage_preview(run: Run, d: date):
         it for it in (store.load_item(k) for k in issue.unreadable) if it is not None
     ]
     out = write_preview(issue, items, run.dir / "preview.html", unreadable=unreadable)
+    # The email edition, from the same render. Written beside the preview so
+    # the two can never be produced from different inputs, and so a diff
+    # between them is always a formatting diff.
+    from .render.preview import email_subject, write_email
+
+    write_email(issue, items, run.dir / "email.html", unreadable=unreadable)
+    run.metrics.timing.setdefault("email_subject", 0.0)
+    setattr(run.metrics, "email_subject", email_subject(issue))
     run.stage("preview", "OK")
     run.save()
     return out

@@ -280,3 +280,33 @@ def test_the_journal_ranking_no_longer_special_cases_a_missing_abstract(repo):
     without = journal_item(2, wl)
     without.bibliography.abstract = None
     assert run_stages.journal_rank_score(without) >= 0.0
+
+
+def test_a_published_issue_keeps_the_papers_it_carried(repo):
+    """An issue is immutable once published, including under a policy change.
+
+    Re-running 2026-08-11 after V1-1 cut its list from 24 items to 18 and left
+    18 papers in `content/items/` that no issue referenced — published with
+    nowhere to have been published. Restoring the list rather than merging it
+    matters just as much: a union grows a past issue on every re-run, which is
+    the same violation from the other direction.
+    """
+    from pipeline import store
+    from pipeline.run_stages import stage_issue
+
+    wl = _whitelist_source_id()
+    items = [journal_item(i, wl) for i in range(20)]
+    for it in items:
+        it.scores.relevance = 1.0
+
+    run, _ = _run_select(repo, items, threshold=0.35)
+    first = stage_issue(run, DAY)
+    assert len(first.items) == 15  # journal cap
+
+    # A stricter policy on a later run must not unpublish anything, and a
+    # looser one must not add to a day that already went out.
+    from pipeline.stages import write_stage
+
+    write_stage(run, "issue", [store.load_item(k) for k in first.items][:5])
+    second = stage_issue(run, DAY)
+    assert second.items == first.items

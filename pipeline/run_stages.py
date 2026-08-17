@@ -726,6 +726,38 @@ def stage_issue(run: Run, d: date) -> Issue:
             continue
         publish.append(it)
 
+    # An issue is immutable once published (`Issue` docstring, PRD §5.2), and a
+    # selection-policy change does not reach back through it. Re-running
+    # 2026-08-11 after V1-1 cut its list from 24 to 18 and left 18 items in
+    # `content/items/` that no issue referenced — published papers with nowhere
+    # to have been published.
+    #
+    # The list is restored to what it was, not merged with what the new policy
+    # would pick: a union grows a past issue every time the day is re-run, which
+    # is the same violation from the other direction. The Items themselves are
+    # still refreshed — a status change or a recovered abstract updates the
+    # record — but which papers that day carried is settled.
+    #
+    # An unreadable item that has since gained an abstract is the one thing that
+    # may join, because that promotion is what `Also published today` exists to
+    # allow and it changes the item's presentation rather than the day's list.
+    prior_issue = store.load_issue(d)
+    if prior_issue:
+        restored: list[Item] = []
+        for work_key in prior_issue.items:
+            item = next((it for it in publish if it.work_key == work_key), None)
+            if item is None:
+                item = store.load_item(work_key)
+            if item is not None:
+                restored.append(item)
+        promoted = [
+            it for it in publish
+            if it.work_key in set(prior_issue.unreadable) and has_abstract(it)
+        ]
+        publish = restored + [
+            it for it in promoted if it.work_key not in {r.work_key for r in restored}
+        ]
+
     for it in publish:
         store.save_item(it, today=d)
 

@@ -1,13 +1,13 @@
 # Urban Currents — Phase 0 report
 
-Generated 2026-08-14T08:21:27+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
+Generated 2026-08-17T13:09:12+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
 
 ## The four questions (PRD §1)
 
 | Q | Question | Criterion | Measured | Verdict |
 |---|---|---|---|---|
 | Q1a | Is the filter usable? | holdout AUC >= 0.9 | 0.9938 | PASS |
-| Q1b | Is the filter usable? | precision@10 >= 0.7 (per source) | arxiv: 0.5, journal: 0.9 (1 of 5 days) | FAIL (PROVISIONAL) |
+| Q1b | Is the filter usable? | precision@10 >= 0.7 (per source) | arxiv: 0.6, journal: 0.733 (3 of 5 days) | FAIL (PROVISIONAL) |
 | Q2 | Is there enough signal for a daily? | median >= 5 items/day | arxiv: 18, journal: 51 | PASS |
 | Q3 | Where does the quiet-day line go? | headline rate 30-50% | 0.367 | PROVISIONAL |
 | Q4 | Does review fit the budget? | median <= 15 min/day | PENDING-HUMAN | PENDING-HUMAN |
@@ -185,61 +185,62 @@ Current `config/scoring.yaml` threshold: 0.444 (source: backfill).
 | item | value |
 |---|---|
 | days of runs | 7 |
-| items published | 120 |
-| items summarised | 119 |
-| LLM (daily runs) | $0.9816 |
-| OpenAlex (daily runs) | $0.0219 |
+| items published | 114 |
+| items summarised | 113 |
+| LLM (daily runs) | $0.9872 |
+| OpenAlex (daily runs) | $0.0225 |
 | embeddings (local) | $0.0 |
-| total (daily runs) | $1.0035 |
-| per published item | $0.00836 |
-| monthly estimate | $4.301 |
-| tokens in / out (all tasks) | 1310047 / 183985 |
+| total (daily runs) | $1.0097 |
+| per published item | $0.00886 |
+| monthly estimate | $4.327 |
+| tokens in / out (all tasks) | 1381791 / 193897 |
 
 **Per task, cumulative** — every LLM call ever made from this repository, including calls outside a daily run (labelling preparation, re-runs against a cold cache). The daily-run figures above are a subset of this, which is why they are smaller:
 
 | task | calls | cost |
 |---|---|---|
-| extract | 471 | $0.961475 |
-| summarize | 303 | $1.056525 |
-| **total** | 776 | **$2.025286** |
+| extract | 472 | $0.9636 |
+| summarize | 304 | $1.059969 |
+| synthesis | 6 | $0.014772 |
+| **total** | 784 | **$2.045627** |
 
-Tokens: 750532 in, 99942 out, 0 thinking. Summarize and extract run one call each per item (D8 was reverted in N1), so a per-item token figure divided by the published count describes neither task on its own.
+Tokens: 756599 in, 101191 out, 0 thinking. Summarize and extract run one call each per item (D8 was reverted in N1), so a per-item token figure divided by the published count describes neither task on its own.
 
 Embeddings are local (`BAAI/bge-base-en-v1.5` on CPU), so their marginal cost is zero — which is what makes backfills and retraining free.
 
 ## Q1b labels (roadmap §2.3)
 
-30 labels over 1 day(s). 100% of labelled items had a summary on screen.
+90 labels over 3 day(s). 100% of labelled items had a summary on screen.
 
 | source | labels | days | precision@10 | keep rate | drop: not urban | drop: not our kind | drop: weak |
 |---|---|---|---|---|---|---|---|
-| arxiv | 15 | 1 | 0.5 | 0.4 | 3 | 5 | 1 |
-| journal | 15 | 1 | 0.9 | 0.867 | 0 | 2 | 0 |
+| arxiv | 45 | 3 | 0.6 | 0.489 | 15 | 7 | 1 |
+| journal | 45 | 3 | 0.733 | 0.644 | 0 | 9 | 7 |
 
 **The two drop reasons point at different problems.** *not urban* is a classifier error. *not our kind* is a coverage question nothing in the pipeline answers yet — it is the training signal for the classifier that will replace the journal path's placeholder ranking.
 
 | path | daily slots | depth holding 0.7 | precision by depth |
 |---|---|---|---|
-| arxiv | 12 | 5 | @1: 1.0, @4: 1.0, @8: 0.625, @12: 0.5, @15: 0.4 |
-| journal | 12 | 15 | @1: 1.0, @4: 1.0, @8: 1.0, @12: 0.8333, @15: 0.8667 |
+| arxiv | 12 | 8 | @1: 1.0, @4: 0.9167, @8: 0.75, @12: 0.5556, @15: 0.4889 |
+| journal | 12 | 10 | @1: 1.0, @4: 0.6667, @8: 0.7917, @12: 0.6944, @15: 0.6444 |
 
 Where the depth holding 0.7 is below the slot count, the path is being asked for more items than it has good ones — the fix is the slot split or a better ranker, not a higher threshold. Raising the arXiv threshold does not help: at 0.7 the 90-day backfill yields a median of 6 arXiv candidates a day and at 0.8 it yields 3, so the path could not fill 12 slots at any precision.
 
 ## What actually gets published
 
-Across 6 issues, **120 items were `published`** — 63 from arXiv and 57 from whitelist journals.
+Across 6 issues, **114 items were `published`** — 54 from arXiv and 60 from whitelist journals.
 
-`content/items/` holds 222 files, 102 more than the issues reference. Those are items an earlier selection rule published and the current one does not; they are still part of the archive novelty is measured against, which is why the difference is counted rather than rounded away.
+`content/items/` holds 224 files, 110 more than the issues reference. Those are items an earlier selection rule published and the current one does not; they are still part of the archive novelty is measured against, which is why the difference is counted rather than rounded away.
 
 The split is structural, not a quota. Each entry path owns its slots — journal 12, arXiv 12 — and a path that cannot fill its own lends them to the other, which the run records. The earlier `classifier.arxiv_min_share` quota is gone (N4): it was treating a symptom, since a whitelist article scores ~0.99 nearly by construction and the classifier could not rank within that path at all. Measured on 2026-08-11 under the old single-classifier design: 23 of 24 slots went to journal articles.
 
 ## What we could not read
 
-**91 items across 6 issues had no abstract from any source** and published in `Also published today` instead of as cards — 91/211 of everything that reached an issue. Springer Nature withdrew its non-OA abstracts from OpenAlex in 2022 and Elsevier followed in 2024; Crossref and Springer's own API are asked for what they can still supply, and what none of them has cannot be summarised, because the abstract is the only evidence a summary is allowed to use.
+**92 items across 6 issues had no abstract from any source** and published in `Also published today` instead of as cards — 92/206 of everything that reached an issue. Springer Nature withdrew its non-OA abstracts from OpenAlex in 2022 and Elsevier followed in 2024; Crossref and Springer's own API are asked for what they can still supply, and what none of them has cannot be summarised, because the abstract is the only evidence a summary is allowed to use.
 
 | publisher | `unreadable` items |
 |---|---|
-| Elsevier | 58 |
+| Elsevier | 59 |
 | Springer | 9 |
 | Copernicus | 9 |
 | Taylor & Francis | 7 |
@@ -253,13 +254,13 @@ This is the one blind spot the pipeline can measure exactly, and the count is st
 
 | thing | count |
 |---|---|
-| items | 222 |
-| items with a summary | 128 |
+| items | 224 |
+| items with a summary | 129 |
 | issues | 6 |
 | quiet days | 1 |
-| items with an OpenAlex ID | 205 |
-| items with referenced_works | 136 |
-| published (journal) items | 158 |
+| items with an OpenAlex ID | 207 |
+| items with referenced_works | 138 |
+| published (journal) items | 160 |
 
 ## Runs
 
@@ -269,7 +270,7 @@ This is the one blind spot the pipeline can measure exactly, and the count is st
 | 2026-08-06 | 381 | 200 | 24 | 24 | 24 | enrich.springer |
 | 2026-08-07 | 384 | 210 | 24 | 24 | 24 | enrich.springer |
 | 2026-08-10 | 452 | 232 | 24 | 23 | 24 | enrich.springer |
-| 2026-08-11 | 405 | 210 | 24 | 24 | 24 | enrich.springer |
+| 2026-08-11 | 410 | 212 | 18 | 18 | 18 | enrich.springer |
 | 2026-08-13 | 0 | 0 | 0 | 0 | 0 | - |
 | 2026-08-14 | 0 | 0 | 0 | 0 | 0 | - |
 

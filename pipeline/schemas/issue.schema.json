@@ -120,6 +120,294 @@
       ],
       "title": "StatusChange",
       "type": "object"
+    },
+    "Synthesis": {
+      "additionalProperties": false,
+      "description": "How today connects to what came before (PRD \u00a75.7, phase 0i).\n\nEverything except `paragraph` is measured. `paragraph` is written by an LLM\nfrom those measurements and nothing else, and is absent on days with no\nmeasured link \u2014 which is a correct outcome, not a missing field.",
+      "properties": {
+        "anchors": {
+          "items": {
+            "$ref": "#/$defs/SynthesisAnchor"
+          },
+          "title": "Anchors",
+          "type": "array"
+        },
+        "clusters": {
+          "items": {
+            "$ref": "#/$defs/SynthesisCluster"
+          },
+          "title": "Clusters",
+          "type": "array"
+        },
+        "composition": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Composition",
+          "type": "object"
+        },
+        "deviation_note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Deviation Note"
+        },
+        "deviation_status": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Deviation Status"
+        },
+        "deviations": {
+          "items": {
+            "$ref": "#/$defs/SynthesisDeviation"
+          },
+          "title": "Deviations",
+          "type": "array"
+        },
+        "first_internal_citation": {
+          "default": false,
+          "title": "First Internal Citation",
+          "type": "boolean"
+        },
+        "institutions_in_window": {
+          "items": {
+            "$ref": "#/$defs/SynthesisName"
+          },
+          "title": "Institutions In Window",
+          "type": "array"
+        },
+        "institutions_today": {
+          "items": {
+            "$ref": "#/$defs/SynthesisName"
+          },
+          "title": "Institutions Today",
+          "type": "array"
+        },
+        "paragraph": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Paragraph"
+        },
+        "paragraph_omitted_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Paragraph Omitted Reason"
+        },
+        "repeat_authors": {
+          "items": {
+            "$ref": "#/$defs/SynthesisName"
+          },
+          "title": "Repeat Authors",
+          "type": "array"
+        },
+        "window_days": {
+          "default": 30,
+          "title": "Window Days",
+          "type": "integer"
+        }
+      },
+      "title": "Synthesis",
+      "type": "object"
+    },
+    "SynthesisAnchor": {
+      "additionalProperties": false,
+      "description": "A foundation-canon work today's papers stand on.",
+      "properties": {
+        "authors": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Authors",
+          "type": "array"
+        },
+        "citing_today": {
+          "default": 0,
+          "title": "Citing Today",
+          "type": "integer"
+        },
+        "citing_work_keys": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Citing Work Keys",
+          "type": "array"
+        },
+        "days_since_last_cited": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Days Since Last Cited"
+        },
+        "first_in_window": {
+          "default": false,
+          "title": "First In Window",
+          "type": "boolean"
+        },
+        "openalex_id": {
+          "title": "Openalex Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "year": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Year"
+        }
+      },
+      "required": [
+        "openalex_id",
+        "title"
+      ],
+      "title": "SynthesisAnchor",
+      "type": "object"
+    },
+    "SynthesisCluster": {
+      "additionalProperties": false,
+      "description": "Two papers sharing references, named by the references themselves.\n\n`shared_titles` is the point: a cluster described by its shared bibliography\nhas no room for an invented theme.",
+      "properties": {
+        "partner_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Partner Date"
+        },
+        "scope": {
+          "enum": [
+            "today",
+            "archive"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "shared": {
+          "default": 0,
+          "title": "Shared",
+          "type": "integer"
+        },
+        "shared_titles": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Shared Titles",
+          "type": "array"
+        },
+        "titles": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Titles",
+          "type": "array"
+        },
+        "work_keys": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Work Keys",
+          "type": "array"
+        }
+      },
+      "required": [
+        "scope"
+      ],
+      "title": "SynthesisCluster",
+      "type": "object"
+    },
+    "SynthesisDeviation": {
+      "additionalProperties": false,
+      "properties": {
+        "baseline_per_day": {
+          "title": "Baseline Per Day",
+          "type": "number"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "today": {
+          "title": "Today",
+          "type": "integer"
+        },
+        "window_days": {
+          "title": "Window Days",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "label",
+        "today",
+        "baseline_per_day",
+        "window_days"
+      ],
+      "title": "SynthesisDeviation",
+      "type": "object"
+    },
+    "SynthesisName": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "papers": {
+          "title": "Papers",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "name",
+        "papers"
+      ],
+      "title": "SynthesisName",
+      "type": "object"
     }
   },
   "additionalProperties": false,
@@ -171,6 +459,17 @@
       },
       "title": "Status Changes",
       "type": "array"
+    },
+    "synthesis": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Synthesis"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
     },
     "unreadable": {
       "items": {

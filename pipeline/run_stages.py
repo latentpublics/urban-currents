@@ -759,6 +759,18 @@ def stage_issue(run: Run, d: date) -> Issue:
         unreadable_count=len(unreadable),
         unreadable_by_publisher=dict(sorted(by_publisher.items())),
     )
+    # The synthesis layer. Built after the publish list is settled, because it
+    # is a statement about what this issue contains — and failing softly,
+    # because a day's issue must not be lost to a missing LLM key or a network
+    # blip in a section that is an addition to it.
+    synthesis = None
+    try:
+        from .synthesis import build as build_synthesis
+
+        synthesis = build_synthesis(d, publish, len(unreadable))
+    except Exception as e:  # noqa: BLE001
+        run.error(f"synthesis: {type(e).__name__}: {e}")
+
     issue = Issue(
         date=d,
         headline=Headline(
@@ -771,6 +783,7 @@ def stage_issue(run: Run, d: date) -> Issue:
         items=sorted(it.work_key for it in publish),
         unreadable=sorted(it.work_key for it in unreadable),
         status_changes=status_changes,
+        synthesis=synthesis,
         run_id=run.run_id,
     )
     store.save_issue(issue)

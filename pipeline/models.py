@@ -352,6 +352,69 @@ class StatusChange(StrictModel):
     model_config = ConfigDict(populate_by_name=True, extra="forbid")
 
 
+class SynthesisDeviation(StrictModel):
+    label: str
+    today: int
+    baseline_per_day: float
+    window_days: int
+
+
+class SynthesisAnchor(StrictModel):
+    """A foundation-canon work today's papers stand on."""
+
+    openalex_id: str
+    title: str
+    year: Optional[str] = None
+    authors: list[str] = Field(default_factory=list)
+    citing_today: int = 0
+    citing_work_keys: list[str] = Field(default_factory=list)
+    days_since_last_cited: Optional[int] = None
+    first_in_window: bool = False
+
+
+class SynthesisCluster(StrictModel):
+    """Two papers sharing references, named by the references themselves.
+
+    `shared_titles` is the point: a cluster described by its shared bibliography
+    has no room for an invented theme.
+    """
+
+    scope: Literal["today", "archive"]
+    work_keys: list[str] = Field(default_factory=list)
+    titles: list[str] = Field(default_factory=list)
+    shared: int = 0
+    shared_titles: list[str] = Field(default_factory=list)
+    partner_date: Optional[str] = None
+
+
+class SynthesisName(StrictModel):
+    name: str
+    papers: int
+
+
+class Synthesis(StrictModel):
+    """How today connects to what came before (PRD §5.7, phase 0i).
+
+    Everything except `paragraph` is measured. `paragraph` is written by an LLM
+    from those measurements and nothing else, and is absent on days with no
+    measured link — which is a correct outcome, not a missing field.
+    """
+
+    composition: dict[str, int] = Field(default_factory=dict)
+    deviations: list[SynthesisDeviation] = Field(default_factory=list)
+    deviation_status: Optional[str] = None
+    deviation_note: Optional[str] = None
+    anchors: list[SynthesisAnchor] = Field(default_factory=list)
+    clusters: list[SynthesisCluster] = Field(default_factory=list)
+    institutions_today: list[SynthesisName] = Field(default_factory=list)
+    institutions_in_window: list[SynthesisName] = Field(default_factory=list)
+    repeat_authors: list[SynthesisName] = Field(default_factory=list)
+    window_days: int = 30
+    first_internal_citation: bool = False
+    paragraph: Optional[str] = None
+    paragraph_omitted_reason: Optional[str] = None
+
+
 class Issue(StrictModel):
     """One daily edition. Immutable once published."""
 
@@ -368,6 +431,10 @@ class Issue(StrictModel):
     # abstract is promoted into `items` without changing its identity.
     unreadable: list[str] = Field(default_factory=list)
     status_changes: list[StatusChange] = Field(default_factory=list)
+    # The layer between the headline and the cards. Optional because an issue
+    # written before phase 0i has none, and because a day with no measured
+    # connection legitimately produces very little.
+    synthesis: Optional[Synthesis] = None
     run_id: Optional[str] = None
 
 

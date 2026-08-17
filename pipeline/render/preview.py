@@ -144,6 +144,77 @@ def build_unreadable_row(item: Item) -> dict:
     }
 
 
+def build_synthesis(issue: Issue) -> dict | None:
+    """The synthesis layer, shaped for the template.
+
+    Flattened into strings here rather than in Jinja: the template's job is
+    markup, and a sentence assembled across three template lines is a sentence
+    nobody can review.
+    """
+    syn = issue.synthesis
+    if syn is None:
+        return None
+
+    anchors = []
+    for a in syn.anchors:
+        who = ", ".join(a.authors)
+        cite = f"{who} ({a.year})" if who and a.year else (a.year or "")
+        if a.first_in_window:
+            note = "not cited by this archive before today"
+        elif a.days_since_last_cited is not None:
+            note = f"last cited {a.days_since_last_cited} days ago"
+        else:
+            note = None
+        anchors.append({
+            "title": a.title,
+            "cite": cite,
+            "count": a.citing_today,
+            "note": note,
+        })
+
+    clusters = []
+    for c in syn.clusters:
+        clusters.append({
+            "titles": c.titles,
+            "shared": c.shared,
+            "shared_titles": c.shared_titles,
+            "partner_date": c.partner_date if c.scope == "archive" else None,
+        })
+
+    return {
+        "composition": syn.composition,
+        "deviations": [
+            {
+                "label": d.label,
+                "today": d.today,
+                "baseline": d.baseline_per_day,
+                "window_days": d.window_days,
+            }
+            for d in syn.deviations
+        ],
+        "deviation_note": syn.deviation_note,
+        "anchors": anchors,
+        "clusters": clusters,
+        "institutions_today": [{"name": i.name, "papers": i.papers} for i in syn.institutions_today],
+        "institutions_in_window": [
+            {"name": i.name, "papers": i.papers} for i in syn.institutions_in_window
+        ],
+        "repeat_authors": [{"name": a.name, "papers": a.papers} for a in syn.repeat_authors],
+        "window_days": syn.window_days,
+        "first_internal_citation": syn.first_internal_citation,
+        "paragraph": syn.paragraph,
+        # Rendered as a comment in the HTML, never as reader-facing text: the
+        # reason a paragraph is absent is a fact about the pipeline, not about
+        # the field, and the reader should simply see a shorter issue.
+        "omitted_reason": syn.paragraph_omitted_reason,
+        "has_content": bool(
+            syn.deviations or syn.anchors or syn.clusters
+            or syn.institutions_today or syn.institutions_in_window
+            or syn.repeat_authors or syn.paragraph
+        ),
+    }
+
+
 def _status_change_text(change) -> str:
     journal = f" in {change.journal}" if change.journal else ""
     return f"{change.work_key}: {change.from_} → {change.to}{journal}"
@@ -164,6 +235,7 @@ def render_issue(
         issue=issue,
         scan_meta=issue.scan_meta,
         cards=[build_card(it) for it in ordered],
+        synthesis=build_synthesis(issue),
         unreadable=[build_unreadable_row(it) for it in unreadable],
         status_changes=[
             {"work_key": c.work_key, "text": _status_change_text(c)}

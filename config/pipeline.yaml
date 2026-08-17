@@ -145,6 +145,12 @@ llm:
   extract:
     prompt_version: "extract/overlay@0.1.0"
     max_tokens: 600
+  # One call per issue, and only on days with measured connections to write
+  # about. Short by design: the paragraph is three to five sentences and a
+  # bigger budget would only buy room to pad.
+  synthesis:
+    prompt_version: "synthesis/daily@0.2.0"
+    max_tokens: 400
 
 gate:
   # Low-volume, high-yield categories skip the keyword gate entirely (PRD §5.3).

@@ -39,6 +39,93 @@
     </p>
   </section>
 
+{# The synthesis layer sits between the headline and the cards (phase 0i).
+   Every section is omitted when it has nothing to say — an empty section
+   heading is worse than no section, because it reads as a failure rather than
+   as a quiet day. Single-column block flow throughout: this has to survive an
+   email client, where floats and grids do not. #}
+  {% if synthesis and synthesis.has_content %}
+  <section class="uc-synthesis">
+    {% if synthesis.paragraph %}
+    <p class="uc-synthesis__paragraph">{{ synthesis.paragraph }}</p>
+    {% else %}
+    <!-- paragraph omitted: {{ synthesis.omitted_reason }} -->
+    {% endif %}
+
+    {% if synthesis.deviations %}
+    <div class="uc-synthesis__block" data-section="deviations">
+      <h2 class="uc-synthesis__title">More than usual</h2>
+      <ul class="uc-synthesis__list">
+        {% for d in synthesis.deviations %}
+        <li>{{ d.label }} — {{ d.today }} today, {{ d.baseline }} a day over the
+          previous {{ d.window_days }} days</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if synthesis.anchors %}
+    <div class="uc-synthesis__block" data-section="anchors">
+      <h2 class="uc-synthesis__title">What today builds on</h2>
+      <ul class="uc-synthesis__list">
+        {% for a in synthesis.anchors %}
+        <li>
+          <span class="uc-synthesis__work">{{ a.title }}</span>
+          {%- if a.cite %} <span class="uc-synthesis__cite">{{ a.cite }}</span>{% endif %}
+          — cited by {{ a.count }} paper{{ 's' if a.count != 1 }} today
+          {%- if a.note %}, {{ a.note }}{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if synthesis.clusters %}
+    <div class="uc-synthesis__block" data-section="clusters">
+      <h2 class="uc-synthesis__title">Read together</h2>
+      <ul class="uc-synthesis__list">
+        {% for c in synthesis.clusters %}
+        <li>
+          <span class="uc-synthesis__work">{{ c.titles[0] }}</span>
+          shares {{ c.shared }} references with
+          <span class="uc-synthesis__work">{{ c.titles[1] }}</span>
+          {%- if c.partner_date %} ({{ c.partner_date }}){% endif %}
+          {%- if c.shared_titles %}
+          <ul class="uc-synthesis__shared">
+            {% for t in c.shared_titles %}<li>{{ t }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if synthesis.institutions_today or synthesis.institutions_in_window or synthesis.repeat_authors %}
+    <div class="uc-synthesis__block" data-section="who">
+      <h2 class="uc-synthesis__title">Appearing more than once</h2>
+      <ul class="uc-synthesis__list">
+        {% for a in synthesis.repeat_authors %}
+        <li>{{ a.name }} — {{ a.papers }} papers today</li>
+        {% endfor %}
+        {% for i in synthesis.institutions_today %}
+        <li>{{ i.name }} — {{ i.papers }} papers today</li>
+        {% endfor %}
+        {% for i in synthesis.institutions_in_window %}
+        <li>{{ i.name }} — {{ i.papers }} papers in {{ synthesis.window_days }} days</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if synthesis.first_internal_citation %}
+    <p class="uc-synthesis__first">
+      Today is the first time a paper in this digest cites another paper from it.
+    </p>
+    {% endif %}
+  </section>
+  {% endif %}
+
   <div class="uc-cards">
     {% for card in cards %}{% include "item_card.html.j2" %}{% endfor %}
   </div>

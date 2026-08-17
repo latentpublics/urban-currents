@@ -193,3 +193,37 @@ body {
   color: var(--uc-quiet);
   max-width: 46rem;
 }
+
+/* Synthesis layer (phase 0i). Block flow only — this has to hold together in
+   an email client, where floats, grids and flex are unreliable. No colour
+   carries meaning; the section is legible in plain text. */
+.uc-synthesis {
+  margin: 1.5rem 0 2rem;
+  padding: 1rem 0 0;
+  border-top: 1px solid #d9d9d9;
+}
+.uc-synthesis__paragraph {
+  margin: 0 0 1.25rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+.uc-synthesis__block { margin: 0 0 1rem; }
+.uc-synthesis__title {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #666;
+}
+.uc-synthesis__list { margin: 0; padding-left: 1.1rem; line-height: 1.5; }
+.uc-synthesis__list > li { margin-bottom: 0.3rem; }
+.uc-synthesis__work { font-style: italic; }
+.uc-synthesis__cite { color: #555; }
+.uc-synthesis__shared {
+  margin: 0.2rem 0 0.4rem;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+.uc-synthesis__first { margin: 0.75rem 0 0; font-weight: 600; }

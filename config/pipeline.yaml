@@ -212,3 +212,25 @@ render:
   # paper forward every morning as a pillar of the field. YJUN has not judged
   # the canon yet and this switch must not decide it.
   still_cited: false
+
+daily:
+  # `uc daily` runs against a *window* of publication dates, not a single day,
+  # because the issue is dated by when we saw the papers rather than when they
+  # appeared (phase 0k, X1). Journals reach 95% coverage at D+2 and no arXiv
+  # item has ever been visible on its own publication day.
+  #
+  # 3 days back, ending yesterday. The tail beyond that is caught on later runs:
+  # an item already published is skipped, never published twice.
+  lookback_days: 3
+  min_lag_days: 1
+
+  # A day that costs more than this in LLM calls stops and publishes nothing.
+  # A truncated issue claims a scope it did not cover, and the whole point of
+  # the outcome model is that we would rather say nothing than say that.
+  # Measured: a full day costs about $0.14 in summaries.
+  max_llm_usd: 1.0
+
+  # How far back a catch-up run will retry days it could not see. Beyond this a
+  # missed day stays missed and stays in the log — chasing it forever would mean
+  # re-collecting a window whose sources have moved on.
+  catch_up_days: 7

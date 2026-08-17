@@ -102,7 +102,15 @@ def _quantile(values: list[int], q: float) -> int:
 def archive_rows(
     issues: Optional[list[Issue]] = None, items: Optional[dict[str, Item]] = None
 ) -> list[dict]:
-    """One row per issue, newest first. Everything a row shows, and nothing else."""
+    """One row per issue **and per day we could not see**, newest first.
+
+    A day with no issue is not a gap in the list. A gap would read as "nothing
+    happened", which is exactly the claim we could not make — so it gets a row
+    saying the sources did not answer, drawn differently from a quiet day.
+    Same grey chip for both would undo the whole outcome model.
+    """
+    from ..outcome import NOT_PUBLISHED, all_logs
+
     issues = load_issues() if issues is None else issues
     items = item_index() if items is None else items
 
@@ -129,7 +137,30 @@ def archive_rows(
             "lead_key": lead.work_key if lead else None,
             "code": code,
             "data": data,
+            "missing": False,
+            "reason": None,
         })
+
+    published_dates = {r["date"] for r in rows}
+    for log in all_logs():
+        if log.get("status") != NOT_PUBLISHED or log["date"] in published_dates:
+            continue
+        reasons = log.get("reasons") or []
+        rows.append({
+            "date": log["date"],
+            "published": 0,
+            "quiet": False,
+            "missing": True,
+            # The reader is told what happened, not made to guess from a blank.
+            "reason": reasons[0] if reasons else "the sources did not answer",
+            "unreadable": 0,
+            "lead_title": "",
+            "lead_key": None,
+            "code": 0,
+            "data": 0,
+        })
+
+    rows.sort(key=lambda r: r["date"])
     return list(reversed(rows))
 
 
@@ -139,7 +170,13 @@ def archive_stats(rows: list[dict], items: dict[str, Item]) -> dict[str, Any]:
     The home page's own sentence about itself has to come from the archive, or
     the service is doing the thing it exists not to do.
     """
-    published = [r["published"] for r in rows if not r["quiet"]]
+    # A day we could not see is neither published nor quiet, and counting it as
+    # either would put it back into an aggregate the outcome model just took it
+    # out of. This caught itself in test: `published_days` read 1 for an archive
+    # whose only row was a failure.
+    published = [
+        r["published"] for r in rows if not r["quiet"] and not r.get("missing")
+    ]
     in_issues: set[str] = set()
     for issue in load_issues():
         in_issues |= set(issue.items) | set(issue.unreadable)
@@ -147,7 +184,8 @@ def archive_stats(rows: list[dict], items: dict[str, Item]) -> dict[str, Any]:
     return {
         "days": len(rows),
         "published_days": len(published),
-        "quiet_days": len(rows) - len(published),
+        "quiet_days": sum(1 for r in rows if r["quiet"]),
+        "missing_days": sum(1 for r in rows if r.get("missing")),
         "range_low": _quantile(published, RANGE_LOW),
         "range_high": _quantile(published, RANGE_HIGH),
         "range_rule": f"p{int(RANGE_LOW * 100)}-p{int(RANGE_HIGH * 100)} of days that published",

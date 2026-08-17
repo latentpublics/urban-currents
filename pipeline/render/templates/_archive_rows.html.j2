@@ -11,18 +11,22 @@
     differs per row. Everything else lives in the stylesheet. -#}
 <ul class="uc-rows">
   {% for row in rows %}
-  <li class="uc-row{% if row.quiet %} uc-row--quiet{% endif %}" data-date="{{ row.date }}">
+  <li class="uc-row{% if row.quiet %} uc-row--quiet{% endif %}{% if row.missing %} uc-row--missing{% endif %}" data-date="{{ row.date }}">
     <span class="uc-row__date">{{ row.date }}</span>
     <span class="uc-row__bar" aria-hidden="true">
       <span class="uc-row__fill" style="width: {{ (row.published / max_items * 100)|round|int }}%"></span>
     </span>
     <span class="uc-row__count">
-      {% if row.quiet %}<span class="uc-chip">a quiet day</span>
-      {% else %}{{ row.published }} items{% endif %}
+      {%- if row.missing %}<span class="uc-chip uc-chip--missing">no issue</span>
+      {%- elif row.quiet %}<span class="uc-chip">a quiet day</span>
+      {%- else %}{{ row.published }} items{% endif %}
     </span>
     {#- Full title in the DOM; the ellipsis is CSS. A string cut in Python is
         cut for a screen reader too. -#}
-    <span class="uc-row__lead" title="{{ row.lead_title }}">{{ row.lead_title }}</span>
+    <span class="uc-row__lead" title="{{ row.lead_title or row.reason }}">
+      {%- if row.missing %}<span class="uc-row__reason">{{ row.reason }}</span>
+      {%- else %}{{ row.lead_title }}{% endif %}
+    </span>
     <span class="uc-row__artifacts">
       {%- if row.code %}{{ row.code }} code{% endif %}
       {%- if row.code and row.data %}, {% endif %}

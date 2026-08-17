@@ -21,9 +21,11 @@
   <header class="uc-archive__masthead">
     <h1 class="uc-archive__h1">Archive</h1>
     <p class="uc-archive__summary">
-      {{ stats.days }} issues · {{ stats.total_published }} papers published ·
-      {{ stats.quiet_days }} quiet day{{ 's' if stats.quiet_days != 1 }}.
-      Quiet days are kept: each still reviews what appeared.
+      {{ stats.published_days }} issues · {{ stats.total_published }} papers published ·
+      {{ stats.quiet_days }} quiet day{{ 's' if stats.quiet_days != 1 }}
+      {%- if stats.missing_days %} · {{ stats.missing_days }} day{{ 's' if stats.missing_days != 1 }} we could not see{% endif %}.
+      Quiet days are kept: each still reviews what appeared. A day we could not
+      see is marked as that, and never as a quiet one.
     </p>
   </header>
 

@@ -514,3 +514,15 @@ body {
 .uc-canon__work { margin: 0; font-size: 0.95rem; }
 .uc-canon__name { font-style: italic; }
 .uc-canon__counts { margin: 0.2rem 0 0; font-size: 0.8rem; color: var(--uc-faint); }
+
+/* A day we could not see. Deliberately not the quiet day's grey: the two are
+   different claims and colour alone must not be what separates them, so the row
+   also says "no issue" and prints the reason where a title would be. */
+.uc-row--missing .uc-row__fill { background: transparent; }
+.uc-row--missing .uc-row__bar {
+  background: repeating-linear-gradient(
+    45deg, var(--uc-hairline), var(--uc-hairline) 2px, transparent 2px, transparent 4px
+  );
+}
+.uc-chip--missing { background: transparent; border: 1px solid var(--uc-line); color: var(--uc-faint); }
+.uc-row__reason { color: var(--uc-faint); font-style: italic; }

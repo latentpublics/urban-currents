@@ -255,6 +255,33 @@ def review(
 
 
 @app.command()
+def daily(
+    date_: Optional[str] = DateOpt,
+    dry_run: bool = typer.Option(False, "--dry-run", help="Run everything, write no issue"),
+    no_llm: bool = typer.Option(False, "--no-llm"),
+):
+    """Run one day end to end: collect, classify, summarise, publish, render.
+
+    The command a scheduler calls. It picks its own window, refuses to run
+    twice at once, resumes what a previous attempt finished, and — the part
+    that matters — writes no issue on a day it could not see.
+    """
+    from .daily import DailyLocked, run_daily
+
+    try:
+        result = run_daily(
+            d=_date(date_) if date_ else None, dry_run=dry_run, use_llm=not no_llm
+        )
+    except DailyLocked as e:
+        typer.echo(f"[LOCKED] {e}")
+        raise typer.Exit(code=75)  # EX_TEMPFAIL
+
+    typer.echo(json.dumps(result, indent=2))
+    if result["status"] == "not_published":
+        raise typer.Exit(code=1)
+
+
+@app.command()
 def site(
     review: bool = typer.Option(True, help="Also write docs/design-review.html"),
 ):

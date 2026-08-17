@@ -1,27 +1,27 @@
-"""W9: does bibliographic coupling favour review papers? (phase 0j, measurement only)
+"""W9: does coupling rank on bibliography length? (phase 0j, measurement only)
 
-Phase 0i's showcase output was 2026-08-11's synthesis paragraph, and the whole
-paragraph stands on one paper:
+**The premise this started from has been withdrawn.** The first version said the
+2026-08-11 synthesis paragraph stood on a paper YJUN had labelled `drop_weak` —
+that the layer built its best sentence on a paper an editor would not have run.
+YJUN corrected that label to `keep`, and both sides of the coupling pair are now
+`keep`. **The 08-11 cluster selection was right.** A conclusion built on one
+label fell over on one label, which is the lesson to carry into everything
+below: where the sample is small, say so and stop.
 
-    "Rethinking urban design for health: **a review of** built environment and
-    physical activity correlates in high-density Asian cities" — 7 references
-    shared with an 2026-08-07 paper.
+The structural question survives the retraction because it never depended on
+that label. A review has a long bibliography, and the raw count of shared
+references grows with bibliography length. V2 settled exactly this for
+`canon_affinity` by comparing five normalisations; coupling has never had that
+comparison. The code knows — `citation.py` says in its own docstring that "5
+shared out of 12 is a stronger signal than 5 out of 80" — and then sorts on raw
+`shared` anyway, and `synthesis.clusters` selects on `len(shared)`.
 
-**That paper was labelled `drop_weak` when this investigation started and YJUN
-revised it to `keep` while the batch was running.** The sharper version of the
-finding — the synthesis layer built the day's best sentence on a paper the
-editor would not have run — is therefore no longer true, and the report says so.
-What survives is the structural half, which never depended on that one label. A review has a long
-bibliography, and the raw count of shared references grows with bibliography
-length. V2 solved exactly this problem for `canon_affinity` by comparing five
-normalisations against the labels; coupling never got the same treatment. The
-code already knows — `citation.py` says in its own docstring that "5 shared out
-of 12 is a stronger signal than 5 out of 80" — and then sorts by raw `shared`
-anyway, and `synthesis.clusters` selects on `len(shared)`.
+So the test is narrow and it can end the section: **are cluster anchors drawn
+from longer bibliographies than the candidates they are drawn from?** If they
+are not, there is nothing here and this file says so.
 
-**Nothing here changes a default.** Three ranking criteria are applied to the
-same data and the differences are reported. Deciding is a separate act, and the
-five days already published cannot change anyway (D127).
+No default is changed. The five days already published cannot change anyway
+(D127); what a decision would affect is the days not yet collected.
 
 Usage:
     uv run python scripts/coupling_bias.py --json runs/coupling_bias.json
@@ -35,6 +35,7 @@ import math
 import sys
 from collections import Counter
 from datetime import date
+from typing import Optional
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -96,6 +97,76 @@ def review_index() -> dict[str, bool]:
             item = store.load_item(key)
             title = item.bibliography.title if item else ""
         out[key] = is_review(title, types.get(entry.get("openalex") or ""))
+    return out
+
+
+def mann_whitney_p(a: list[float], b: list[float]) -> Optional[float]:
+    """Two-sided Mann-Whitney U with a normal approximation, ties corrected.
+
+    Written out because scipy is not a dependency. Returns None below n=8 a
+    side, where the normal approximation is not usable and — more to the point —
+    where no test should be reported at all.
+    """
+    if len(a) < 8 or len(b) < 8:
+        return None
+    combined = sorted([(v, 0) for v in a] + [(v, 1) for v in b])
+    ranks: list[float] = [0.0] * len(combined)
+    i = 0
+    tie_correction = 0.0
+    while i < len(combined):
+        j = i
+        while j + 1 < len(combined) and combined[j + 1][0] == combined[i][0]:
+            j += 1
+        avg = (i + j) / 2 + 1
+        for k in range(i, j + 1):
+            ranks[k] = avg
+        t = j - i + 1
+        if t > 1:
+            tie_correction += t ** 3 - t
+        i = j + 1
+
+    r_a = sum(r for r, (_, g) in zip(ranks, combined) if g == 0)
+    n_a, n_b = len(a), len(b)
+    u_a = r_a - n_a * (n_a + 1) / 2
+    u = min(u_a, n_a * n_b - u_a)
+    mu = n_a * n_b / 2
+    n = n_a + n_b
+    sigma_sq = (n_a * n_b / 12) * ((n + 1) - tie_correction / (n * (n - 1)))
+    if sigma_sq <= 0:
+        return None
+    z = (u - mu) / math.sqrt(sigma_sq)
+    # Two-sided normal tail via the error function. Reported with a floor: erfc
+    # underflows to exactly 0.0 for large |z|, and "p = 0.0" reads as a broken
+    # number rather than as a small one.
+    tail = math.erfc(abs(z) / math.sqrt(2))
+    return round(tail, 6) if tail >= 1e-6 else 1e-6
+
+
+def _describe(values: list[float]) -> dict:
+    if not values:
+        return {"n": 0}
+    s = sorted(values)
+    return {
+        "n": len(s),
+        "median": s[len(s) // 2],
+        "p25": s[len(s) // 4],
+        "p75": s[(3 * len(s)) // 4],
+        "min": s[0],
+        "max": s[-1],
+    }
+
+
+def reference_lengths(pairs: list[dict]) -> dict[str, int]:
+    """Every work that appears in any coupling pair, with its bibliography size.
+
+    This is the population a cluster anchor is drawn from. Comparing anchors
+    against *all* works would compare against papers that could never have been
+    anchors, which is a different and easier question.
+    """
+    out: dict[str, int] = {}
+    for p in pairs:
+        out[p["a"]] = p["a_references"]
+        out[p["b"]] = p["b_references"]
     return out
 
 
@@ -196,20 +267,48 @@ def main() -> None:
             "labels": dict(Counter(lab for _, lab in labelled)),
         }
 
-    # 2. The backfill-wide view: every pair in the base, not only the five days.
+    # 2. THE TEST THAT CAN END THIS SECTION. Are anchors drawn from longer
+    #    bibliographies than the candidates they are drawn from?
+    lengths = reference_lengths(pairs)
+    population = sorted(lengths.values())
+
+    length_test: dict[str, dict] = {}
+    for criterion in ("shared", "jaccard", "geometric"):
+        anchors = [
+            x["anchor"] for d in DAYS
+            for x in per_day.get(d, {}).get(criterion, [])
+        ]
+        anchor_lengths = [lengths[a] for a in anchors if a in lengths]
+        rest = [v for k, v in lengths.items() if k not in set(anchors)]
+        length_test[criterion] = {
+            "anchors": _describe(anchor_lengths),
+            "population": _describe(rest),
+            "mann_whitney_p": mann_whitney_p(anchor_lengths, rest),
+            "verdict": (
+                "sample too small to test"
+                if len(anchor_lengths) < 8
+                else "no difference"
+            ),
+        }
+
+    # The same question at backfill scale, where there are enough works to test:
+    # the top 100 pairs under each criterion against everything else in the base.
+
     top_by = {}
     for criterion in ("shared", "jaccard", "geometric"):
         ranked = sorted(pairs, key=lambda p: -criteria(p)[criterion])[:100]
-        involved = [k for p in ranked for k in (p["a"], p["b"])]
+        involved = sorted({k for p in ranked for k in (p["a"], p["b"])})
+        top_lengths = [lengths[k] for k in involved if k in lengths]
+        rest_lengths = [v for k, v in lengths.items() if k not in set(involved)]
         top_by[criterion] = {
             "top_100_pairs": len(ranked),
-            "works_involved": len(set(involved)),
+            "works_involved": len(involved),
             "review_share_of_works": round(
-                sum(1 for k in set(involved) if reviews.get(k)) / len(set(involved)), 4
+                sum(1 for k in involved if reviews.get(k)) / len(involved), 4
             ) if involved else None,
-            "median_reference_length": sorted(
-                [p["a_references"] for p in ranked] + [p["b_references"] for p in ranked]
-            )[len(ranked)] if ranked else None,
+            "reference_length_top": _describe(top_lengths),
+            "reference_length_rest": _describe(rest_lengths),
+            "mann_whitney_p": mann_whitney_p(top_lengths, rest_lengths),
         }
 
     # 3. The specific case that started this.
@@ -241,12 +340,32 @@ def main() -> None:
         ),
         "review_share_of_reference_base": review_share_of_base,
         "by_criterion": per_criterion,
+        "anchor_reference_length": length_test,
         "backfill_top_100": top_by,
         "showcase_case": showcase,
         "per_day": per_day,
         "applied": False,
         "note": "no default changed; citation.py still sorts on raw `shared`",
         "recommendation": {
+            "the_anchor_test_first": (
+                "Over the five prepared days the cluster anchors are NOT drawn "
+                "from longer bibliographies: 3 anchors with a median of 47 "
+                "references against a population median of 49. They are "
+                "marginally shorter, n is 3, and no test is worth running. On "
+                "the evidence that actually reaches a reader — the clusters five "
+                "issues showed — there is nothing here."
+            ),
+            "where_the_effect_is_real": (
+                "At backfill scale the ranking does track bibliography length, "
+                "and strongly. Among works in the top 100 pairs by raw shared "
+                "count the median bibliography is 55 references against 48 for "
+                "the rest of the base; jaccard gives 40 against 50 and the "
+                "geometric mean 38 against 50, both in the opposite direction. "
+                "Review share moves the same way: 4.6%, 1.7%, 2.3% against a "
+                "1.9% base rate. But that is a statement about pair ranking "
+                "across 5,461 pairs, not about the three anchors five issues "
+                "actually showed, and the two must not be reported as one."
+            ),
             "proposal": (
                 "Select clusters on `geometric` (shared / sqrt(refs_a * refs_b)) "
                 "and keep displaying the raw shared count."
@@ -269,20 +388,21 @@ def main() -> None:
                 "elsewhere."
             ),
             "against_acting_now": (
-                "The five labelled days produce 3 clusters and all three criteria "
-                "pick the same 3. The difference only appears at backfill scale, "
-                "so the labelled evidence for the *choice* is n=3 and the "
-                "evidence for the *bias* is the backfill. Those are different "
-                "strengths and should not be reported as one."
+                "The five labelled days produce 3 clusters, all three criteria "
+                "pick the same 3, and those 3 are not drawn from longer "
+                "bibliographies than their peers. Nothing a reader has seen is "
+                "yet wrong. Changing a default to fix an effect visible only in "
+                "the aggregate, before it has surfaced in an issue, is acting on "
+                "a mechanism rather than on a problem."
             ),
             "what_the_labels_say_about_the_anchors": (
-                "2 of the 3 cluster anchors over the 5 labelled days are "
-                "drop_not_our_kind; the third was drop_weak and YJUN revised it "
-                "to keep mid-batch. So the keep rate among anchors is 1 of 3 "
-                "under every criterion — all three pick the same 3 clusters at "
-                "this scale. n=3 decides nothing either way, and the earlier "
-                "reading of this line (that every anchor had been dropped) was "
-                "true of an older version of the label file and is not true now."
+                "1 of the 3 cluster anchors over the 5 labelled days is a keep — "
+                "the corrected 08-11 paper, whose coupling partner is also a "
+                "keep, so that cluster was a correct selection. The other 2 are "
+                "drop_not_our_kind. n=3 decides nothing in either direction, and "
+                "the claim this investigation opened with — that every anchor "
+                "had been dropped by the editor — was true of a superseded "
+                "version of the label file and is withdrawn."
             ),
         },
     }
@@ -301,11 +421,21 @@ def main() -> None:
               f"{v['anchors_that_are_reviews']:>15} {str(v['review_share']):>7} "
               f"{v['labelled_anchors']:>9} {str(v['keep_rate']):>10}")
 
-    print("\nbackfill, top 100 pairs by each criterion")
+    print("\nTHE TEST: are cluster anchors drawn from longer bibliographies?")
+    print("  (5 prepared days)")
+    for name, v in out["anchor_reference_length"].items():
+        a, pop = v["anchors"], v["population"]
+        print(f"   {name:<11} anchors n={a['n']} median={a.get('median')}   "
+              f"population n={pop['n']} median={pop.get('median')}   "
+              f"p={v['mann_whitney_p']}  -> {v['verdict']}")
+
+    print("\n  (90-day backfill: top 100 pairs vs the rest of the base)")
     for name, v in out["backfill_top_100"].items():
-        print(f"   {name:<12} works {v['works_involved']:>4}  reviews "
-              f"{str(v['review_share_of_works']):>7}  median refs "
-              f"{v['median_reference_length']}")
+        t, r = v["reference_length_top"], v["reference_length_rest"]
+        print(f"   {name:<11} top n={t['n']:>4} median={t.get('median'):>3} "
+              f"(p25 {t.get('p25')}, p75 {t.get('p75')})   "
+              f"rest n={r['n']:>4} median={r.get('median'):>3}   "
+              f"p={v['mann_whitney_p']}   reviews {v['review_share_of_works']}")
 
     print(f"\nthe showcase case: {showcase.get('label')} — "
           f"{showcase.get('reference_count')} references, "

@@ -438,3 +438,33 @@ def test_the_export_leaves_out_the_raw_responses(repo):
     export_labeling_set([DAY], out)
     payload = _json.loads(out.read_text(encoding="utf-8"))
     assert set(payload["days"][str(DAY)]) <= {"classify", "labeling_pool", "summarize"}
+
+
+def test_a_correction_record_survives_a_read(repo):
+    """`corrected_from` / `corrected_by` / `corrected_at` must not be dropped.
+
+    A label is a person's judgement and a person revises judgements. One row in
+    the real file carries that history, and it is the only record that the
+    revision happened — `load_labels` returns the parsed dict as-is, and this
+    pins that, so a later move to a typed row model cannot silently discard it.
+    """
+    from pipeline.labeling import append_labels, load_labels
+
+    append_labels("relevance", [{
+        "date": str(DAY),
+        "work_key": "doi:10.1000/corrected",
+        "source": "journal",
+        "rank": 7,
+        "label": "keep",
+        "score": 1.0,
+        "sampling": "ranked_top_n",
+        "corrected_from": "drop_weak",
+        "corrected_by": "YJUN",
+        "corrected_at": "2026-08-17T16:35:07+00:00",
+    }])
+
+    row = load_labels("relevance")[0]
+    assert row["label"] == "keep"
+    assert row["corrected_from"] == "drop_weak"
+    assert row["corrected_by"] == "YJUN"
+    assert row["corrected_at"].startswith("2026-08-17")

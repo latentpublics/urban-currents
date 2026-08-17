@@ -76,6 +76,22 @@ class CardCounter(HTMLParser):
             self.unbalanced += 1
 
 
+def _last_json(out: str) -> Optional[dict]:
+    """The last JSON object printed on stdout, ignoring log lines around it."""
+    start = out.rfind("\n{")
+    if start == -1:
+        start = out.find("{")
+    if start == -1:
+        return None
+    end = out.rfind("}")
+    if end == -1 or end < start:
+        return None
+    try:
+        return json.loads(out[start : end + 1])
+    except json.JSONDecodeError:
+        return None
+
+
 def run(cmd: list[str], content: Optional[Path] = None) -> tuple[int, str]:
     """Run a command, optionally with the published archive redirected.
 
@@ -122,25 +138,49 @@ def check_pytest() -> Check:
 
 
 def check_e2e(d: date, skip: bool, content: Optional[Path] = None) -> Check:
-    c = Check("2. real end-to-end run against live APIs")
+    """`uc daily` against live APIs — the command a scheduler actually calls.
+
+    This used to run `uc run --date <today>`, a single publication date. That is
+    no longer how the pipeline works and the difference is not cosmetic: a single
+    recent date sits inside both sources' indexing lag, so the check began
+    failing with `collect: EMPTY` on a pipeline that was working correctly. A
+    verification that exercises a path production does not use can only be right
+    by accident (phase 0k, final verification).
+
+    The pass condition is the outcome, not the stage list: `published` or `quiet`
+    both mean we looked. `not_published` means we did not, and that is a failure
+    here however cleanly it was handled.
+    """
+    c = Check("2. real end-to-end run against live APIs (uc daily)")
     if skip:
         c.status = "SKIPPED"
         c.detail = "--skip-e2e"
         return c
-    code, out = run(["uv", "run", "uc", "run", "--date", str(d)], content=content)
-    stages = [ln.strip() for ln in out.splitlines() if ln.strip().startswith("[")]
-    failed = [s for s in stages if "FAILED" in s or "EMPTY" in s]
-    skipped = [s for s in stages if "SKIPPED" in s]
-    c.evidence = stages
-    if code != 0 or failed:
+    code, out = run(["uv", "run", "uc", "daily"], content=content)
+
+    result = _last_json(out)
+    status = (result or {}).get("status")
+    c.evidence = [
+        f"status: {status}",
+        f"covers: {(result or {}).get('covers_from')} → {(result or {}).get('covers_to')}",
+        f"candidates: {(result or {}).get('candidates')}",
+        f"published: {(result or {}).get('published')}",
+        f"reasons: {(result or {}).get('reasons')}",
+        f"seconds: {(result or {}).get('seconds')}",
+    ]
+    if result is None:
         c.status = "FAIL"
-        c.detail = f"{len(failed)} stage(s) failed: {failed}"
-    elif skipped:
+        c.detail = f"no result object; exit {code}"
+    elif status in ("published", "quiet"):
         c.status = "PASS"
-        c.detail = f"all stages ran; skipped: {[s.split(']')[1].strip() for s in skipped]}"
+        c.detail = (
+            f"{status}: {result.get('published')} items from "
+            f"{result.get('candidates')} candidates over "
+            f"{result.get('covers_from')}..{result.get('covers_to')}"
+        )
     else:
-        c.status = "PASS"
-        c.detail = "all stages OK"
+        c.status = "FAIL"
+        c.detail = f"{status}: {result.get('reasons')}"
     return c
 
 
@@ -193,13 +233,21 @@ def check_free_strings() -> Check:
     return c
 
 
-def check_preview(d: date) -> Check:
+def check_preview(d: date, content: Optional[Path] = None) -> Check:
     c = Check("5. preview parses and its card count matches items_published")
     preview = paths.RUNS / f"run_{d}" / "preview.html"
-    issue = store.load_issue(d)
+    # Read the issue from wherever the run was told to write it. This used to
+    # read the real archive unconditionally while the run wrote to the sandbox,
+    # so the check could only pass when a same-dated issue happened to exist in
+    # `content/` already — right answer, wrong reason (phase 0k).
+    issue = _load_issue_from(d, content)
     if not preview.exists() or issue is None:
         c.status = "FAIL"
-        c.detail = "preview or issue missing"
+        c.detail = (
+            f"preview {'ok' if preview.exists() else 'missing'}, "
+            f"issue {'ok' if issue else 'missing'} in "
+            f"{'sandbox' if content else 'content'}"
+        )
         return c
 
     parser = CardCounter()
@@ -221,6 +269,20 @@ def check_preview(d: date) -> Check:
     return c
 
 
+def _load_issue_from(d: date, content: Optional[Path]):
+    """One issue, from the sandbox when there is one and from the archive when not."""
+    from pipeline.models import Issue
+
+    root = content or paths.CONTENT
+    path = root / "issues" / f"{d}.json"
+    if not path.exists():
+        return None
+    try:
+        return Issue.model_validate_json(path.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001 - an unparseable issue is a failed check
+        return None
+
+
 def _snapshot(root: Path) -> dict[str, bytes]:
     return {
         str(p.relative_to(root)): p.read_bytes()
@@ -238,29 +300,63 @@ def _content_snapshot() -> dict[str, bytes]:
 
 
 def check_idempotency(d: date, skip: bool, content: Optional[Path] = None) -> Check:
-    c = Check("6. running the same date twice leaves content/ unchanged")
+    """The same day twice: identical archive, and nothing sent a second time.
+
+    Two exclusions, both deliberate. `runs_log/` records that a second attempt
+    happened — `attempts` and `recorded_at` change by design, and **a log that
+    did not change when you ran again would be a broken log**. `deliveries/` is
+    checked separately and more strictly: not "unchanged bytes" but "no extra
+    send", which is the property that matters to a reader.
+    """
+    c = Check("6. running the same date twice leaves content/ unchanged, and sends nothing")
     if skip:
         c.status = "SKIPPED"
         c.detail = "--skip-e2e"
         return c
+
     # Measured inside the sandbox the e2e run wrote into: idempotency is a
     # property of the pipeline, and asking it of an archive the run was
     # forbidden to touch would pass for the wrong reason.
     root = content or paths.CONTENT
-    before = _snapshot(root)
-    code, _ = run(["uv", "run", "uc", "run", "--date", str(d)], content=content)
-    after = _snapshot(root)
+    volatile = ("runs_log/", "deliveries/")
+
+    def archive() -> dict[str, bytes]:
+        return {
+            k: v
+            for k, v in _snapshot(root).items()
+            if not k.replace("\\", "/").startswith(volatile)
+        }
+
+    def sends() -> int:
+        total = 0
+        for path in sorted((root / "deliveries").glob("*.json")):
+            try:
+                total += len(json.loads(path.read_text(encoding="utf-8")).get("sends") or [])
+            except json.JSONDecodeError:
+                continue
+        return total
+
+    before, sends_before = archive(), sends()
+    code, out = run(["uv", "run", "uc", "daily"], content=content)
+    after, sends_after = archive(), sends()
 
     added = sorted(set(after) - set(before))
     removed = sorted(set(before) - set(after))
     changed = sorted(k for k in set(before) & set(after) if before[k] != after[k])
+    identical = not (added or removed or changed)
+    no_extra_send = sends_after == sends_before
 
-    c.status = "PASS" if not (added or removed or changed) and code == 0 else "FAIL"
+    c.status = "PASS" if identical and no_extra_send and code == 0 else "FAIL"
     c.detail = (
         f"{len(before)} files before, {len(after)} after; "
-        f"+{len(added)} -{len(removed)} ~{len(changed)}"
+        f"+{len(added)} -{len(removed)} ~{len(changed)}; "
+        f"sends {sends_before} → {sends_after}"
     )
-    c.evidence = (added + removed + changed)[:10]
+    c.evidence = [
+        f"second run: {(_last_json(out) or {}).get('status')}",
+        f"delivery: {((_last_json(out) or {}).get('delivery') or {}).get('status')}",
+        "runs_log/ and deliveries/ excluded from the byte comparison; sends counted instead",
+    ] + (added + removed + changed)[:8]
     return c
 
 
@@ -327,7 +423,7 @@ def main() -> int:
         check_outputs(d, content=sandbox),
         check_schema(),
         check_free_strings(),
-        check_preview(d),
+        check_preview(d, content=sandbox),
         check_idempotency(d, args.skip_e2e, content=sandbox),
         check_report(),
         check_costs(),

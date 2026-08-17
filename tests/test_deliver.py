@@ -145,10 +145,43 @@ def test_the_plain_text_is_written_not_stripped(repo):
     assert "<" not in text
     assert "URBAN CURRENTS" in text
     assert "Why it matters —" in text
-    # Wrapped to a readable measure rather than left as one long line.
-    assert max(len(line) for line in text.splitlines()) <= 78
+    # Wrapped to a readable measure — but a line may run past it when it is a
+    # single unbreakable token, because a URL split across two lines is a link
+    # the reader cannot use and that is worse than a long line.
+    for line in text.splitlines():
+        assert len(line) <= 78 or len(line.split()) == 1
     # And the links survive, because a text reader still needs to reach the paper.
     assert "https://arxiv.org/abs/2608.00000" in text
+
+
+def test_a_hyphenated_term_is_not_split_across_lines(repo):
+    """`physics-informed` broken over two lines is a string the HTML does not have.
+
+    Standard typesetting for prose, wrong for a digest whose compound terms are
+    the content. Found by checking a real issue: 7 of 216 strings failed to
+    appear in all three outputs, all of them hyphenated.
+    """
+    from pipeline.render.plaintext import _wrap
+
+    title = (
+        "A new framework for vehicle trajectory prediction based on "
+        "physics-informed mixed-granularity deep learning"
+    )
+    wrapped = _wrap(title, indent="    ", bullet="- ")
+
+    assert "physics-informed" in " ".join(wrapped.split())
+    assert not any(line.rstrip().endswith("-") for line in wrapped.splitlines())
+
+
+def test_a_long_url_is_never_broken(repo):
+    """A link a reader cannot copy is worse than a line past the margin."""
+    from pipeline.render.plaintext import _wrap
+
+    url = "https://www.tandfonline.com/doi/full/10.1080/02665433.2026.2688721?needAccess=true"
+    wrapped = _wrap(f"Read it at {url}", indent="  ")
+
+    assert url in wrapped
+    assert any(url in line for line in wrapped.splitlines())
 
 
 def test_a_wrapped_bullet_does_not_become_several_bullets(repo):

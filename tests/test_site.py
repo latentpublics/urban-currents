@@ -181,3 +181,27 @@ def test_subscribers_can_never_be_committed(repo):
     # Before any un-ignore rule, so nothing later can re-include it.
     assert body.index("subscribers/") < body.index("!runs/labels/") or True
     assert "site/" in body
+
+
+def test_a_retired_issue_still_has_to_parse(repo):
+    """A wrong file is not a malformed one.
+
+    `content/_retired/` keeps phase 0h's ghost issue as evidence. Evidence that
+    stops validating is evidence nobody can read, so the schema pass covers the
+    directory even though no aggregate does.
+    """
+    from pipeline import paths
+    from pipeline.validate import validate_content
+
+    retired = paths.CONTENT / "_retired"
+    retired.mkdir(parents=True, exist_ok=True)
+    (retired / "2026-08-14.json").write_text(
+        Issue(date=date(2026, 8, 14), quiet_day=True, scan_meta=ScanMeta()).model_dump_json(),
+        encoding="utf-8",
+    )
+    assert validate_content().ok
+
+    (retired / "2026-08-15.json").write_text('{"date": "not a date"}', encoding="utf-8")
+    result = validate_content()
+    assert not result.ok
+    assert any("_retired" in e for e in result.errors)

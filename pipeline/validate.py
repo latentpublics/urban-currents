@@ -119,6 +119,13 @@ def validate_content() -> ValidationResult:
     result = ValidationResult()
     items = _validate_dir(result, paths.ITEMS, Item, "items")
     issues = _validate_dir(result, paths.ISSUES, Issue, "issues")
+    # Retired issues are validated too, and not counted as published. The
+    # distinction is the point of the directory: `content/_retired/` holds a file
+    # that says something untrue — phase 0h's quiet day that had not looked — and
+    # **a wrong file is not a malformed one**. It has to keep parsing, or the
+    # evidence rots into a blob nobody can read. No aggregate reads it; this is
+    # the one pass that does.
+    _validate_dir(result, paths.CONTENT / "_retired", Issue, "_retired")
     for facet_dir in sorted(paths.ENTITIES.glob("*")) if paths.ENTITIES.exists() else []:
         if facet_dir.is_dir():
             _validate_dir(result, facet_dir, Entity, f"entities/{facet_dir.name}")

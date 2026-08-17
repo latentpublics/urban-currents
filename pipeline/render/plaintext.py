@@ -26,6 +26,20 @@ def _wrap(text: str, indent: str = "", bullet: str = "") -> str:
     `bullet` and `indent` are separate because passing a list marker as the
     indent repeats it on every continuation line, which turns one long title
     into three bullets that read as three references.
+
+    **Two of textwrap's defaults are wrong for this text and both were on.**
+
+    `break_on_hyphens` split "physics-informed" across two lines, so the plain
+    text carried a string the HTML did not. Standard typesetting for prose,
+    wrong for a digest whose compound terms *are* the content — and it was
+    caught by checking a real issue rather than the short synthetic titles the
+    first test used: 7 of 216 strings failed to appear in all three outputs.
+
+    `break_long_words` is the more serious one: it breaks a long DOI URL in the
+    middle, and **a link a reader cannot copy is worse than a line that runs
+    past the margin.** Turning it off means a long URL overflows the measure,
+    which is the right trade — the line is still one token, and the reader can
+    still click it.
     """
     first = f"{indent}{bullet}"
     rest = indent + " " * len(bullet)
@@ -34,6 +48,8 @@ def _wrap(text: str, indent: str = "", bullet: str = "") -> str:
         width=WIDTH,
         initial_indent=first,
         subsequent_indent=rest,
+        break_on_hyphens=False,
+        break_long_words=False,
     )
 
 

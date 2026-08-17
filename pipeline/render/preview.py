@@ -8,11 +8,13 @@ class names, so the card layout decision is made once, not twice.
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Iterable
+from typing import Iterable, Optional
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
 
+from .. import paths
+from ..config import cfg
 from ..models import PIPELINE_VERSION, Issue, Item
 
 TEMPLATE_DIR = Path(__file__).parent / "templates"
@@ -378,6 +380,7 @@ def render_issue(
         scan_meta=issue.scan_meta,
         cards=[build_card(it) for it in ordered],
         synthesis=build_synthesis(issue, ordered),
+        still_cited=build_still_cited(issue, ordered),
         unreadable=[build_unreadable_row(it) for it in unreadable],
         status_changes=[
             {"work_key": c.work_key, "text": _status_change_text(c)}
@@ -401,3 +404,60 @@ def write_preview(
     )
     return out_path
 
+
+
+def build_still_cited(issue: Issue, items: Iterable[Item] = ()) -> Optional[dict]:
+    """The canon card: one foundational work, what today does with it (W5).
+
+    **Off by default and the reason is a finding, not caution.** V4 compared our
+    canon against 48,753 externally ranked works and the 174 we are missing from
+    its top 200 are concentrated in physical activity and travel behaviour —
+    Environmental correlates of walking and cycling, Discrete Choice Analysis,
+    Urban transportation networks. A canon with a hole that shape, published
+    daily as "what this field stands on", would put a transport paper forward
+    every day as a pillar of urban data science. YJUN's judgement on the canon
+    has not been made, and this renderer must not pre-empt it by shipping.
+
+    So it is built, tested, and gated on `render.still_cited`, which is false.
+    """
+    if not bool(cfg("render.still_cited", False)):
+        return None
+
+    import json as _json
+
+    path = paths.CONTENT / "canon" / "candidates.json"
+    if not path.exists():
+        return None
+    doc = _json.loads(path.read_text(encoding="utf-8"))
+    foundation = [c for c in (doc.get("candidates") or []) if c.get("class") == "foundation"]
+    if not foundation:
+        return None
+
+    from ..graph.citation import load_reference_base
+
+    refs = {
+        r["work_key"]: set(r.get("referenced_works") or []) for r in load_reference_base()
+    }
+    today = [it.work_key for it in items]
+
+    # The day's own most-cited foundational work, not the archive's favourite.
+    # A card that shows the same paper every day is a banner, not a reading.
+    counts = {
+        c["openalex_id"]: sum(1 for k in today if c["openalex_id"] in refs.get(k, ()))
+        for c in foundation
+    }
+    best = max(foundation, key=lambda c: (counts.get(c["openalex_id"], 0),
+                                          c.get("archive_citations") or 0))
+    cited_today = counts.get(best["openalex_id"], 0)
+    if not cited_today:
+        return None
+
+    authors = (best.get("authors") or [])[:2]
+    year = (best.get("publication_date") or "")[:4]
+    return {
+        "citation": f"{', '.join(authors)} ({year})" if authors and year else (year or ""),
+        "title": best.get("title") or best["openalex_id"],
+        "cited_today": cited_today,
+        "archive_citations": best.get("archive_citations") or 0,
+        "archive_total": len(refs),
+    }

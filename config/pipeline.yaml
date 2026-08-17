@@ -203,3 +203,12 @@ canon:
   # alone a fifth of the day budget buys 50,000 ids, or 1,000 requests and the
   # better part of an hour. 40 requests is 2,000 ids a run.
   max_requests_per_run: 40
+
+render:
+  # The canon card ("Still cited"). OFF, and not out of caution: V4 measured
+  # our canon against 48,753 externally ranked works and found the top 200 is
+  # missing 174 of them, concentrated in physical activity and travel behaviour.
+  # A daily card built on a canon with a hole that shape would put a transport
+  # paper forward every morning as a pillar of the field. YJUN has not judged
+  # the canon yet and this switch must not decide it.
+  still_cited: false

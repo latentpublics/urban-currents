@@ -500,3 +500,18 @@ body {
   .uc-columns { flex-direction: column; gap: 1.25rem; }
   .uc-latest__stats { gap: 1.25rem; }
 }
+
+/* "Still cited" — off by default; styled so turning it on is a config change
+   and not also a design job. */
+.uc-canon { border-left: 3px solid var(--uc-accent); padding: 0.6rem 0 0.6rem 0.9rem; margin: 1.5rem 0; }
+.uc-canon__title {
+  margin: 0 0 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--uc-meta);
+}
+.uc-canon__work { margin: 0; font-size: 0.95rem; }
+.uc-canon__name { font-style: italic; }
+.uc-canon__counts { margin: 0.2rem 0 0; font-size: 0.8rem; color: var(--uc-faint); }

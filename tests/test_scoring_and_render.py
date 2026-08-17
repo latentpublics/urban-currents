@@ -663,3 +663,22 @@ def test_a_quiet_day_keeps_the_box_and_drops_only_the_paragraph(repo):
     assert '<section class="uc-synthesis">' in body
     assert '<p class="uc-synthesis__paragraph">' not in body
     assert "paragraph omitted: 0 measured links" in body
+
+
+def test_still_cited_is_off_and_renders_nothing(repo):
+    """W5: built, tested, and not shipped.
+
+    V4 found our canon missing 174 of an external top 200, concentrated in
+    physical activity and travel behaviour. A daily card built on a canon with
+    a hole that shape would put a transport paper forward every morning as a
+    pillar of the field, and YJUN has not judged the canon yet.
+    """
+    from pipeline.config import cfg
+    from pipeline.render.preview import build_still_cited, render_issue
+
+    assert cfg("render.still_cited", None) is False
+
+    item = _item()
+    issue = _issue_with([item])
+    assert build_still_cited(issue, [item]) is None
+    assert '<section class="uc-canon">' not in render_issue(issue, [item])

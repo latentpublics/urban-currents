@@ -119,6 +119,23 @@
   </section>
   {% endif %}
 
+  {#- The canon card. Absent unless `render.still_cited` is on, which it is
+      not — see `build_still_cited` for why that is a finding rather than
+      timidity. -#}
+  {% if still_cited %}
+  <section class="uc-canon">
+    <h2 class="uc-canon__title">Still cited</h2>
+    <p class="uc-canon__work">
+      {% if still_cited.citation %}{{ still_cited.citation }}, {% endif %}
+      <span class="uc-canon__name">{{ still_cited.title }}</span>
+    </p>
+    <p class="uc-canon__counts">
+      {{ still_cited.cited_today }} today ·
+      {{ still_cited.archive_citations }} of {{ still_cited.archive_total }} in the archive stand on it
+    </p>
+  </section>
+  {% endif %}
+
   <div class="uc-cards">
     {% for card in cards %}{% include "item_card.html.j2" %}{% endfor %}
   </div>

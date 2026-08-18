@@ -1,0 +1,303 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Methods such as multi-factor geographically weighted machine learning (MFGWML), geographically neural network weighted regression (GNNWR), and its enhanced version—geographically convolutional neural network weighted regression (GCNNWR)—have improved spatial non-stationarity modeling. However, they are over-reliant on spatial proximity weighting and underutilize spatial neighborhood information. Therefore, this study proposes a novel Geographically Conditioned Multiscale Convolutional Neural Network (GCMCNN) that downscales MODIS land surface temperature (LST) data to 100 m resolution by integrating two- and three-dimensional surface features. GCMCNN enhances the capture of spatial heterogeneity through a geographically aware (geo-aware) mechanism conditioned by location and attributes, while improving the characterization of spatial correlation by developing a multiscale convolutional neural network (CNN). GCMCNN model outperformed four benchmark models (random forest, MFGWML, GNNWR, and GCNNWR) in LST downscaling, reducing RMSE by 15.4–26.16% and MAE by 15.05–23.59%, and increasing R2 by 39.81–148.09%. GCMCNN improved the model performance of CNN through its geo-aware mechanism and multi-level spatial feature extraction and fusion, reducing RMSE and MAE by 6.6% and 8%, respectively, and increasing R2 by 7.5%. Furthermore, spatial block cross-validation better reflects the model’s true generalization ability than random cross-validation. This study highlights the importance of accurately modeling spatial heterogeneity and correlation in LST downscaling.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Nanjing University of Information Science and Technology",
+            "ror": "02y0rxk19"
+          },
+          {
+            "name": "Center For Remote Sensing (United States)",
+            "ror": "021wvg932"
+          }
+        ],
+        "name": "Y Q Ma",
+        "openalex": "A5133294244",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Nanjing University of Information Science and Technology",
+            "ror": "02y0rxk19"
+          },
+          {
+            "name": "Center For Remote Sensing (United States)",
+            "ror": "021wvg932"
+          },
+          {
+            "name": "Nanjing University",
+            "ror": "01rxvg760"
+          }
+        ],
+        "name": "Manchun Li",
+        "openalex": "A5101469341",
+        "orcid": "https://orcid.org/0000-0003-1088-309X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Nanjing University of Information Science and Technology",
+            "ror": "02y0rxk19"
+          },
+          {
+            "name": "Center For Remote Sensing (United States)",
+            "ror": "021wvg932"
+          }
+        ],
+        "name": "Chen Zhou",
+        "openalex": "A5073377159",
+        "orcid": "https://orcid.org/0000-0002-2707-2624"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/13658816.2026.2693888",
+      "pdf_url": null,
+      "source_id": "S4210181446",
+      "source_name": "International Journal of Geographical Information Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-25",
+    "repository_urls": [],
+    "title": "GCMCNN: a geographically conditioned multiscale convolutional neural network for downscaling land surface temperature"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-25_10.1080/13658816",
+    "members": [
+      "doi:10.1080/13658816.2026.2693888"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02y0rxk19",
+        "label": "Nanjing University of Information Science and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:021wvg932",
+        "label": "Center For Remote Sensing (United States)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01rxvg760",
+        "label": "Nanjing University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5133294244",
+        "label": "Y Q Ma"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1088-309X",
+        "label": "Manchun Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2707-2624",
+        "label": "Chen Zhou"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.5011,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11333",
+        "is_primary": false,
+        "label": "Climate change and permafrost",
+        "score": 0.1499,
+        "subfield": "1902"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11312",
+        "is_primary": false,
+        "label": "Soil Moisture and Remote Sensing",
+        "score": 0.1,
+        "subfield": "2305"
+      }
+    ]
+  },
+  "first_published": "2026-06-25",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1990330790",
+      "openalex:W2001564322",
+      "openalex:W2014630223",
+      "openalex:W2017917631",
+      "openalex:W2023104721",
+      "openalex:W2023306858",
+      "openalex:W2029660080",
+      "openalex:W2041570083",
+      "openalex:W2045066934",
+      "openalex:W2047120335",
+      "openalex:W2069281949",
+      "openalex:W2125884013",
+      "openalex:W2160815625",
+      "openalex:W2301692565",
+      "openalex:W2500249665",
+      "openalex:W2515301260",
+      "openalex:W2586896348",
+      "openalex:W2909372683",
+      "openalex:W2911220736",
+      "openalex:W2911964244",
+      "openalex:W2966171520",
+      "openalex:W2998570674",
+      "openalex:W3023751868",
+      "openalex:W3047800802",
+      "openalex:W3110472059",
+      "openalex:W3124539583",
+      "openalex:W3138394985",
+      "openalex:W3153948677",
+      "openalex:W3168997536",
+      "openalex:W3215375995",
+      "openalex:W4214816907",
+      "openalex:W4220824359",
+      "openalex:W4297372927",
+      "openalex:W4312203760",
+      "openalex:W4360864231",
+      "openalex:W4363652090",
+      "openalex:W4391820004",
+      "openalex:W4404628880",
+      "openalex:W4404688650",
+      "openalex:W4405180646",
+      "openalex:W4406506122",
+      "openalex:W4408685671",
+      "openalex:W4412153265"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/13658816.2026.2693888",
+    "openalex": "W7165848637",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:23:40Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006103,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2203,
+      "out": 311
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:23:40Z",
+    "doi": "10.1080/13658816.2026.2693888",
+    "journal": "International Journal of Geographical Information Systems",
+    "source_id": "S4210181446",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study introduces GCMCNN, a geographically conditioned multiscale convolutional neural network that downscales MODIS land surface temperature (LST) data to a 100 m resolution by combining two- and three-dimensional surface features. Evaluated against four benchmark models, the new model reduced RMSE by 15.4% to 26.16%, decreased MAE by 15.05% to 23.59%, and increased R2 by 39.81% to 148.09%. It integrates a location- and attribute-conditioned geo-aware mechanism with a multiscale CNN to capture both spatial heterogeneity and neighborhood correlations.",
+      "why": "It overcomes the limitations of existing spatial regression models that rely too heavily on simple proximity weighting, establishing a more accurate method for high-resolution thermal mapping in urban and environmental modeling."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-25",
+  "work_key": "doi:10.1080/13658816.2026.2693888"
+}

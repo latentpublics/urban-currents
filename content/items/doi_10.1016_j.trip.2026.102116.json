@@ -1,0 +1,295 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "A shared-use path is a route used by pedestrians, cyclists, and others with small non-motor vehicles. Across countries, different attitudes and preferences toward shared-use paths lead to varying challenges, with the main problem being limiting conflicts. In the Czech Republic, shared-use paths are increasingly used by e-bikes and scooters. Higher speeds and traffic volumes on shared-use paths have increased the number and severity of injuries. This research was set out to investigate the impact of measurable parameters on conflict prediction. Locations on 10 different shared-use paths were chosen, and 40 h of bird’s-eye video footage were recorded, analysed using the YOLO algorithm for detection of shared-use path users, and tracking their routes using the BoT-SORT algorithm. For all trajectories, lengths, average speeds, direction of motion, and time were calculated, along with mutual interactions. For every location, path width was measured, and conflicts and potential conflicts were evaluated. Volumes were processed into 15-minute intervals, and baseline characteristics were calculated. Machine Learning methods were used to analyse the dataset and visualise the results to better understand the conflict prediction model. The results confirm that higher traffic volumes increase the proportion of conflicts, while greater path width helps mitigate these risks. Conflicts are more likely with a higher proportion of cyclists and at lower speeds and higher volumes, suggesting congestion is a contributing factor. These findings underscore the importance of well-designed infrastructure, particularly wider paths, in enhancing safety and fostering harmonious coexistence among diverse user groups on shared-use facilities.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Transport Research Centre",
+            "ror": "03rqbe322"
+          }
+        ],
+        "name": "Eva Kvašňovská",
+        "openalex": "A5066091711",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Transport Research Centre",
+            "ror": "03rqbe322"
+          }
+        ],
+        "name": "Lucie Vyskočilová",
+        "openalex": "A5040727408",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Transport Research Centre",
+            "ror": "03rqbe322"
+          }
+        ],
+        "name": "Zbyněk Janoška",
+        "openalex": "A5046050018",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Transport Research Centre",
+            "ror": "03rqbe322"
+          }
+        ],
+        "name": "Jiří Ambros",
+        "openalex": "A5139498959",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Transport Research Centre",
+            "ror": "03rqbe322"
+          }
+        ],
+        "name": "Zbyněk Mikolajek",
+        "openalex": "A5014057283",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Transport Research Centre",
+            "ror": "03rqbe322"
+          }
+        ],
+        "name": "R Striegler",
+        "openalex": "A5055936581",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102116",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-27",
+    "repository_urls": [],
+    "title": "Pedestrian and cyclist safety in the context of micromobility on the shared-use paths"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-27_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102116"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03rqbe322",
+        "label": "Transport Research Centre"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5066091711",
+        "label": "Eva Kvašňovská"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5040727408",
+        "label": "Lucie Vyskočilová"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5046050018",
+        "label": "Zbyněk Janoška"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139498959",
+        "label": "Jiří Ambros"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5014057283",
+        "label": "Zbyněk Mikolajek"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5055936581",
+        "label": "R Striegler"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:ultralytics/ultralytics",
+        "label": "YOLO"
+      }
+    ],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": true,
+        "label": "Traffic and Road Safety",
+        "score": 0.7579,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.1532,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12644",
+        "is_primary": false,
+        "label": "Wildlife-Road Interactions and Conservation",
+        "score": 0.0206,
+        "subfield": "2303"
+      }
+    ]
+  },
+  "first_published": "2026-06-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2759949130",
+      "openalex:W2911370720",
+      "openalex:W2930624295",
+      "openalex:W3084683150",
+      "openalex:W3130498897",
+      "openalex:W3174843151",
+      "openalex:W4401130785"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102116",
+    "openalex": "W7166357641",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:33:07Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005689,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2149,
+      "out": 274
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:33:07Z",
+    "doi": "10.1016/j.trip.2026.102116",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The predictive model relies on video data collected from a relatively small sample of 10 specific locations within a single country.",
+      "what": "The study analyzed 40 hours of aerial video footage across 10 shared-use paths in the Czech Republic using the YOLO and BoT-SORT algorithms to track user trajectories, speeds, and interactions. Machine learning models were trained on 15-minute interval data to predict traffic conflicts based on path width, user volumes, and transport modes.",
+      "why": "It establishes a quantitative link between physical path design and user safety, demonstrating that wider paths directly mitigate conflict risks while congestion—characterized by high volumes, low speeds, and a high share of cyclists—increases them."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-27",
+  "work_key": "doi:10.1016/j.trip.2026.102116"
+}

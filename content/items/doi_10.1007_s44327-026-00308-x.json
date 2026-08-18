@@ -1,0 +1,292 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study presents an integrated approach combining a high-resolution Weather Research and Forecasting (WRF) simulation, a terrain- and land-cover-informed sensor placement algorithm, and a hybrid Random Forest–Gaussian Process model to map urban temperatures. Using a 250 m WRF-based Observing System Simulation Experiment (OSSE) environment, it assesses the impact of the spatial arrangement of sensor stations on the reconstruction of temperature fields across complex urban terrains. The results indicate that static surface characteristics such as elevation and land use explain most of the daytime thermal variation and a significant portion at night. However, strategically placed, non-uniform stations are essential for capturing the remaining fine-scale gradients. An optimised network of around 200 sensors achieved mapping accuracy comparable to that of a uniformly distributed network with more than 300 stations, showing that data-driven network optimisation can substantially reduce deployment costs. The benefits were most pronounced in topographically complex or thermally stable nocturnal conditions, where optimised layouts mitigated significant systematic errors. These outcomes emphasise that spatial intelligence in sensor placement can effectively substitute for dense measurements. However, a full representation of sub-grid processes still requires additional fine-scale meteorological inputs. The approach offers city planners a practical, open-source workflow for designing efficient temperature-monitoring networks that support resilient, data-informed, and climate-responsive urban development.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Sofia University \"St. Kliment Ohridski\"",
+            "ror": "02jv3k292"
+          }
+        ],
+        "name": "Lidia Lazarova Vitanova",
+        "openalex": "A5070735800",
+        "orcid": "https://orcid.org/0000-0003-1789-3901"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Sofia University \"St. Kliment Ohridski\"",
+            "ror": "02jv3k292"
+          }
+        ],
+        "name": "Radomir Peev",
+        "openalex": "A5123311358",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Sofia University \"St. Kliment Ohridski\"",
+            "ror": "02jv3k292"
+          }
+        ],
+        "name": "Dessislava Petrova‐Antonova",
+        "openalex": "A5044278053",
+        "orcid": "https://orcid.org/0000-0002-9920-8877"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Sofia University \"St. Kliment Ohridski\"",
+            "ror": "02jv3k292"
+          }
+        ],
+        "name": "Tereza К. Trendafilova",
+        "openalex": "A5139455234",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Bucharest University of Economic Studies",
+            "ror": "04yvncj21"
+          }
+        ],
+        "name": "Dumitru Roman",
+        "openalex": "A5016864296",
+        "orcid": "https://orcid.org/0000-0001-6397-3705"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s44327-026-00308-x",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44327-026-00308-x.pdf",
+      "source_id": "S5407042847",
+      "source_name": "Discover Cities",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-26",
+    "repository_urls": [],
+    "title": "Spatially optimised sensor networks for efficient urban temperature monitoring and prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-26_10.1007/s44327-0",
+    "members": [
+      "doi:10.1007/s44327-026-00308-x"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:land-use",
+        "label": "land use data"
+      }
+    ],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02jv3k292",
+        "label": "Sofia University \"St. Kliment Ohridski\""
+      },
+      {
+        "confidence": null,
+        "id": "ror:04yvncj21",
+        "label": "Bucharest University of Economic Studies"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1789-3901",
+        "label": "Lidia Lazarova Vitanova"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5123311358",
+        "label": "Radomir Peev"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9920-8877",
+        "label": "Dessislava Petrova‐Antonova"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139455234",
+        "label": "Tereza К. Trendafilova"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6397-3705",
+        "label": "Dumitru Roman"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.9121,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10466",
+        "is_primary": false,
+        "label": "Meteorological Phenomena and Simulations",
+        "score": 0.0081,
+        "subfield": "1902"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10266",
+        "is_primary": false,
+        "label": "Plant Water Relations and Carbon Dynamics",
+        "score": 0.0054,
+        "subfield": "2306"
+      }
+    ]
+  },
+  "first_published": "2026-06-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W98257089",
+      "openalex:W1976957569",
+      "openalex:W1979620871",
+      "openalex:W1989854549",
+      "openalex:W2033930794",
+      "openalex:W2083339292",
+      "openalex:W2144142679",
+      "openalex:W2159548196",
+      "openalex:W2160741281",
+      "openalex:W2179877245",
+      "openalex:W3146856589",
+      "openalex:W3164760838",
+      "openalex:W3199987356",
+      "openalex:W4322575476",
+      "openalex:W4383982415",
+      "openalex:W4391317291",
+      "openalex:W4407315974",
+      "openalex:W4412027043",
+      "openalex:W4415641410",
+      "openalex:W4416185280",
+      "openalex:W7125109168"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s44327-026-00308-x",
+    "openalex": "W7166166423",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:28:40Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005759,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2057,
+      "out": 297
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:28:40Z",
+    "doi": "10.1007/s44327-026-00308-x",
+    "journal": "Discover Cities",
+    "source_id": "S5407042847",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "200 sensors",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The temperature mapping still relies on additional fine-scale meteorological inputs to fully represent sub-grid atmospheric processes.",
+      "what": "This study developed an integrated workflow combining a 250 m resolution Weather Research and Forecasting simulation, a terrain- and land-cover-informed sensor placement algorithm, and a hybrid Random Forest-Gaussian Process model to map urban temperatures. Testing within an Observing System Simulation Experiment environment demonstrated that an optimized network of approximately 200 strategically placed, non-uniform sensors achieves the same mapping accuracy as a uniform network of over 300 stations.",
+      "why": "It proves that spatial intelligence in sensor placement can substitute for sheer measurement density, allowing cities to capture fine-scale thermal gradients and mitigate systematic errors in complex terrains or stable nocturnal conditions at a 33% lower deployment cost."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-26",
+  "work_key": "doi:10.1007/s44327-026-00308-x"
+}

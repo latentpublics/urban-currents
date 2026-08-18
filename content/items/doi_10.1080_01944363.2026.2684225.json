@@ -1,0 +1,202 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Overbuilt: The High Costs and Low Rewards of US Highway Construction is a timely and fresh look at how highway production has changed U.S. cities. The book is technical and in-depth in many places,...",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Colorado System",
+            "ror": "00jc20583"
+          }
+        ],
+        "name": "Manish Shirgaokar",
+        "openalex": "A5008488651",
+        "orcid": "https://orcid.org/0000-0001-6458-1885"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/01944363.2026.2684225",
+      "pdf_url": null,
+      "source_id": "S79990064",
+      "source_name": "Journal of the American Planning Association",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-26",
+    "repository_urls": [],
+    "title": "Overbuilt: The High Costs and Low Rewards of US Highway Construction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-26_10.1080/01944363",
+    "members": [
+      "doi:10.1080/01944363.2026.2684225"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00jc20583",
+        "label": "University of Colorado System"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6458-1885",
+        "label": "Manish Shirgaokar"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10395",
+        "is_primary": true,
+        "label": "Construction Project Management and Performance",
+        "score": 0.2528,
+        "subfield": "1803"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13808",
+        "is_primary": false,
+        "label": "Construction Engineering and Safety",
+        "score": 0.1923,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11606",
+        "is_primary": false,
+        "label": "Infrastructure Maintenance and Monitoring",
+        "score": 0.1183,
+        "subfield": "2205"
+      }
+    ]
+  },
+  "first_published": "2026-06-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/01944363.2026.2684225",
+    "openalex": "W7166093546",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:28:41Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.003677,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1599,
+      "out": 142
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:28:41Z",
+    "doi": "10.1080/01944363.2026.2684225",
+    "journal": "Journal of the American Planning Association",
+    "source_id": "S79990064",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This book analyzes how the construction and expansion of the United States highway system has transformed urban areas, focusing on the financial costs and economic outcomes of these infrastructure investments.",
+      "why": "It provides a detailed, technical evaluation of the historical trade-offs of highway production, challenging the assumption that continued highway expansion yields positive economic returns for American cities."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-26",
+  "work_key": "doi:10.1080/01944363.2026.2684225"
+}

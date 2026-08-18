@@ -1,0 +1,204 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Digital platforms increasingly shape how people experience and navigate cities, linking virtual information seeking with physical mobility. Despite this interdependence, online and offline activities are often studied separately in urban mobility research. This paper introduces the Feedback Network, a computational framework that captures interactions between cognitive activity in digital environments and behavior in physical space. Using Google Search and Location History data from the same individuals, collected through a data donation framework in Budapest, Hungary, between 2018 and 2022, we examine how online search patterns and offline visitation behavior co-evolve. We combine semantic and spatial analytical approaches. Radius of gyration is adapted to measure variation in geographic mobility and semantic exploration, enabling comparison between physical movement and online cognitive dispersion. A Feedback Network models transitions between search-related and location-related activity clusters and is evaluated using Concentration Entropy, which measures whether behavioral flows are concentrated around routine pathways or distributed across exploratory transitions. The results show that online exploration is more concentrated than offline mobility, suggesting narrower and more repetitive semantic interests, while physical movement remains relatively diverse. Persistent linkages between search and visitation activities related to retail and business services indicate stable cognitive-spatial behavioral loops. The COVID-19 pandemic disrupted spatial routines more strongly than cognitive exploration, widening the gap between digital engagement and realized movement. The findings demonstrate that urban mobility depends on the interaction between informational exposure and spatial encounter and provide a foundation for Hybrid Digital Twins of Society.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Rafiazka Hilman",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Julia Koltai",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.27513v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.27513v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-25",
+    "repository_urls": [],
+    "title": "Toward a Hybrid Digital Twin of Society: Quantifying Cognitive-Spatial Linkages Through Online-Offline Feedback Networks"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-25_2606.27513",
+    "members": [
+      "arxiv:2606.27513"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-analysis",
+        "label": "spatial analysis"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5015584241",
+        "label": "Rafiazka Hilman"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139580907",
+        "label": "Julia Koltai"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.6695,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0427,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": false,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.0355,
+        "subfield": "3305"
+      }
+    ]
+  },
+  "first_published": "2026-06-25",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.27513",
+    "doi": "10.48550/arxiv.2606.27513",
+    "openalex": "W7166540003",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:23:38Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.006106,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2097,
+      "out": 329
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9753,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3901,
+    "relevance": 0.9753
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2018 and 2022",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a self-selected sample of individuals who donated their personal Google data in a single European capital, which may limit generalizability to other demographic groups or urban contexts.",
+      "what": "The study introduces the Feedback Network, a computational framework that models the co-evolution of online search patterns and offline physical mobility. Using Google Search and Location History data donated by individuals in Budapest, Hungary, between 2018 and 2022, the researchers adapted the radius of gyration and applied Concentration Entropy to compare semantic exploration with geographic movement. The analysis revealed that online cognitive exploration is more concentrated and repetitive than physical movement, and that the COVID-19 pandemic disrupted physical routines much more severely than digital search behaviors.",
+      "why": "It establishes a method to quantify and model the continuous feedback loop between digital information seeking and physical urban navigation. This provides a empirical foundation for building hybrid digital twins that simulate how virtual exposure shapes physical encounters in cities."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-25",
+  "work_key": "arxiv:2606.27513"
+}

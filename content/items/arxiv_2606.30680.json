@@ -1,0 +1,240 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Truck-drone delivery is an emerging last-mile logistics mode combining the long-haul capacity of trucks with the flexible service capability of drones. In locker-based operations, smart lockers serve not only as temporary parcel storage facilities but also as automated drone docking and service nodes. These automated nodes support drone takeoff, landing, parcel handover, and battery replacement, thereby significantly extending the service range and operational flexibility of drone-assisted delivery networks. However, practical locker-based delivery systems face complex real-world challenges, requiring the integrated coordination of not only parcel delivery, return pickup, battery-constrained and load-dependent drone flights, but also necessary detours around restricted airspace. To address this practical and multifaceted challenge, this paper introduces a locker-based truck-drone routing problem with integrated considerations of pickups, deliveries, and no-fly zones (LTDRP-PDNF), with the objective of minimizing the total operational cost of a fleet of drone-equipped trucks. We formulate the route construction process as a Markov Decision Process and develop a two-stage deep reinforcement learning-based neural heuristic. The first stage utilizes an attention-based encoder and a Bidirectional Gated Recurrent Unit decoder to solve the truck-only routing problem, formulated as a capacitated vehicle routing problem. The second stage combines a policy-transfer strategy with a hybrid dispatch assignment heuristic to construct fully coordinated truck and drone routes for LTDRP-PDNF. Experiments on instances of different scales demonstrate that the proposed method outperforms metaheuristic and neural heuristic baselines in most cases while maintaining exceptionally short computation times, offering an effective, scalable solution framework under practical operational constraints.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Xuanyu Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hui Hu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jiao Zhao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ziliang Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zhengbing He",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.LG",
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.30680v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.30680v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-26",
+    "repository_urls": [],
+    "title": "Locker-based Truck-Drone Routing with Integrated Considerations of Pickups, Deliveries, and No-Fly Zones"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-26_2606.30680",
+    "members": [
+      "arxiv:2606.30680"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:reinforcement-learning",
+        "label": "reinforcement learning"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139788364",
+        "label": "Xuanyu Liu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139843901",
+        "label": "Hui Hu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139833393",
+        "label": "Jiao Zhao"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1581-8441",
+        "label": "Ziliang Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139716150",
+        "label": "Zhengbing He"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11133",
+        "is_primary": true,
+        "label": "UAV Applications and Optimization",
+        "score": 0.9282,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": false,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.0405,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.0152,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-06-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.30680",
+    "doi": "10.48550/arxiv.2606.30680",
+    "openalex": "W7166804027",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:28:36Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.006001,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2183,
+      "out": 303
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8659,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3464,
+    "relevance": 0.8659
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance and computational advantages of the proposed model were demonstrated on synthetic experimental instances rather than a deployed, real-world urban logistics network.",
+      "what": "The paper introduces a locker-based truck-drone routing problem that integrates parcel deliveries, return pickups, battery and load constraints, and detours around no-fly zones. To solve this, a two-stage deep reinforcement learning-based neural heuristic was developed, combining an attention-based encoder and a Bidirectional Gated Recurrent Unit decoder for truck routing with a policy-transfer strategy and hybrid dispatch assignment for coordinated drone routing. The method was evaluated on instances of varying scales, outperforming metaheuristic and neural heuristic baselines in operational cost and computation time.",
+      "why": "It provides a scalable routing framework for last-mile logistics that accounts for the dual role of smart lockers as storage and automated drone docking stations, while simultaneously handling real-world constraints like restricted airspace and two-way parcel flows."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-26",
+  "work_key": "arxiv:2606.30680"
+}

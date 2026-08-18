@@ -1,0 +1,225 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Accurate network traffic prediction is a critical element for efficient resource allocation in dynamic urban cellular networks. However, prediction remains challenging because network demand is influenced by complex mobility patterns, congestion dynamics, and heterogeneous user behavior. This paper introduces the Parameter-Efficient Hybrid Transformer (PEHT), a network traffic prediction framework that integrates urban mobility and congestion information into a Transformer-based architecture. PEHT separates primary network communication features from secondary urban mobility features and incorporates Low-Rank Adaptation (LoRA) into the Transformer encoder to reduce the number of trainable parameters while maintaining high predictive accuracy. A multimodal fusion strategy then injects external mobility and congestion features into the decoder to improve traffic forecasting. Experiments on the Telecom Italia Milan dataset and multiple synthetic congestion scenarios show that PEHT outperforms state-of-the-art baselines in terms of RMSE, MAE, and $R^2$. The implementation is available in the GitHub repository.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Abdolazim Rezaei",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mehdi Sookhak",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mahboobeh Haghparast",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.28274v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.28274v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-26",
+    "repository_urls": [],
+    "title": "Parameter Efficient Hybrid Transformer (PEHT) for Network Traffic Prediction via Dynamic Urban Congestion Integration"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-26_2606.28274",
+    "members": [
+      "arxiv:2606.28274"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:transformer",
+        "label": "transformer"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4181-3388",
+        "label": "Abdolazim Rezaei"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5822-3432",
+        "label": "Mehdi Sookhak"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2003-2814",
+        "label": "Mahboobeh Haghparast"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q490",
+        "label": "Milan",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.8606,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0441,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11478",
+        "is_primary": false,
+        "label": "Caching and Content Delivery",
+        "score": 0.0178,
+        "subfield": "1705"
+      }
+    ]
+  },
+  "first_published": "2026-06-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.28274",
+    "doi": "10.48550/arxiv.2606.28274",
+    "openalex": "W7166589220",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:28:36Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.00532,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1885,
+      "out": 277
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.8,
+      "novelty": 1.0,
+      "relevance": 0.9017,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.7207,
+    "relevance": 0.9017
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance under real-world, non-synthetic congestion dynamics remains untested beyond the simulated scenarios and the single Milan dataset.",
+      "what": "The Parameter-Efficient Hybrid Transformer (PEHT) is a network traffic prediction framework that integrates urban mobility and congestion data into a Transformer-based architecture. It isolates primary communication features from secondary mobility features, using Low-Rank Adaptation (LoRA) in the encoder to minimize trainable parameters, and fuses multimodal congestion data in the decoder. The model was evaluated using the Telecom Italia Milan dataset alongside synthetic congestion scenarios, outperforming baseline models in RMSE, MAE, and R-squared metrics.",
+      "why": "It demonstrates that cellular network traffic forecasting can be made highly parameter-efficient without sacrificing accuracy by decoupling core communication data from dynamic urban mobility context."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-26",
+  "work_key": "arxiv:2606.28274"
+}

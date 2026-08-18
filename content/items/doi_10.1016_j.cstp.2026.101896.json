@@ -1,0 +1,262 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "With the increase in air traffic and the resulting growth in the complexity of terminal operations, adopting optimal operational strategies has become a challenging task in airport management. To this end, numerous models have been developed to assess the quality of available services and the use of airport capacity. The objective of this study is to evaluate, through agent-based simulations, the impact of different traffic demand scenarios on the performance of an airport system, quantified by passenger waiting times and peak loads across various facilities. In particular, we have chosen as case study the regional airport of Comiso in Southern Italy. Our analysis tries to analyze passenger flow and explore the potential role of this airport as a complementary node capable of relieving the operational load of the international airport of Catania. The results show that changes in the number of open check-in counters and available security checkpoints significantly affect waiting times, queue lengths, and passenger density. Finally, both visual and quantitative representations of the scenarios are presented and compared.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Catania",
+            "ror": "03a64bh57"
+          }
+        ],
+        "name": "Giuseppe Inturri",
+        "openalex": "A5063354832",
+        "orcid": "https://orcid.org/0000-0002-4753-6465"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Catania",
+            "ror": "03a64bh57"
+          },
+          {
+            "name": "Istituto Nazionale di Fisica Nucleare, Sezione di Catania",
+            "ror": "02pq29p90"
+          },
+          {
+            "name": "Osservatorio Astrofisico di Catania",
+            "ror": "02my7ff12"
+          }
+        ],
+        "name": "Alessandro Pluchino",
+        "openalex": "A5032482559",
+        "orcid": "https://orcid.org/0000-0001-9368-5800"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Catania",
+            "ror": "03a64bh57"
+          }
+        ],
+        "name": "Carmelo Mirko Di Grande",
+        "openalex": "A5139491583",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.cstp.2026.101896",
+      "pdf_url": null,
+      "source_id": "S2764739077",
+      "source_name": "Case Studies on Transport Policy",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-27",
+    "repository_urls": [],
+    "title": "Capacity assessment of small airport passenger terminals using agent-based simulation: A case study of Comiso Airport"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-27_10.1016/j.cstp.2",
+    "members": [
+      "doi:10.1016/j.cstp.2026.101896"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03a64bh57",
+        "label": "University of Catania"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02pq29p90",
+        "label": "Istituto Nazionale di Fisica Nucleare, Sezione di Catania"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02my7ff12",
+        "label": "Osservatorio Astrofisico di Catania"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4753-6465",
+        "label": "Giuseppe Inturri"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9368-5800",
+        "label": "Alessandro Pluchino"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139491583",
+        "label": "Carmelo Mirko Di Grande"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11599",
+        "is_primary": true,
+        "label": "Aviation Industry Analysis and Trends",
+        "score": 0.9557,
+        "subfield": "2000"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11489",
+        "is_primary": false,
+        "label": "Air Traffic Management and Optimization",
+        "score": 0.0076,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11500",
+        "is_primary": false,
+        "label": "Evacuation and Crowd Dynamics",
+        "score": 0.0053,
+        "subfield": "2212"
+      }
+    ]
+  },
+  "first_published": "2026-06-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2061398391",
+      "openalex:W2128197834",
+      "openalex:W2159397301",
+      "openalex:W2168268134",
+      "openalex:W2528420461",
+      "openalex:W2792109390",
+      "openalex:W3091961138",
+      "openalex:W3157034034",
+      "openalex:W4220679606",
+      "openalex:W4220765564"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.cstp.2026.101896",
+    "openalex": "W7166343921",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:33:07Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005066,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1907,
+      "out": 245
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:33:07Z",
+    "doi": "10.1016/j.cstp.2026.101896",
+    "journal": "Case Studies on Transport Policy",
+    "source_id": "S2764739077",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The simulation and its findings are calibrated for and restricted to a single regional airport case study.",
+      "what": "This study evaluates the operational capacity of Comiso Airport in Southern Italy using an agent-based simulation model to analyze passenger flows, waiting times, queue lengths, and facility densities under different traffic demand scenarios. The simulation tests how variations in the number of open check-in counters and security checkpoints affect terminal performance and peak loads.",
+      "why": "The model demonstrates how a small regional airport can be optimized to serve as a relief node for a congested international hub, specifically Catania Airport, by identifying the exact operational thresholds that trigger terminal bottlenecks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-27",
+  "work_key": "doi:10.1016/j.cstp.2026.101896"
+}

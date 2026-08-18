@@ -1,0 +1,234 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Autonomous vehicles (AVs) are increasingly deployed in urban environments, yet their safety frameworks remain primarily designed around collision avoidance and minimal risk condition (MRC) behaviors such as slowing or stopping when uncertainty arises. Although effective in reducing immediate crash risk, real-world deployments indicate that stopping alone does not guarantee safe integration into human-governed roadway systems. Incidents reported by municipalities and public records show that AV fallback behaviors can obstruct traffic, interfere with emergency response operations, and create accessibility challenges for passengers and pedestrians. This paper presents an analysis of publicly documented incidents involving AV stopping behavior and human-AV interaction failures. We categorize these incidents according to limitations in perception, planning, and control within current AV architectures. Using this taxonomy, we identify key gaps in existing safety paradigms, particularly the lack of mechanisms for interpreting human authority, responding to multimodal instructions, and adapting to dynamic, socially regulated traffic conditions. We then review emerging research directions that support human-interactive perception, language-grounded and accessibility-aware planning, and assisted control through remote guidance and teleoperation. The analysis highlights the need to augment current AV safety frameworks with capabilities that enable cooperative interaction with human agents and infrastructure. These findings suggest that reliable urban deployment of AVs requires moving beyond passive fallback strategies toward human-interactive autonomy.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Yash Tandon",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Giovanni Tapia Lopez",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Marcus Blennemann",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mohan Trivedi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ross Greer",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV",
+      "cs.HC"
+    ],
+    "comment": "8 pages, 1 figure, Accepted to IEEE ITSC 2026",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.29115v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.29115v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-27",
+    "repository_urls": [],
+    "title": "When Stopping Fails: Rethinking Minimal Risk Conditions through Human-Interactive Autonomous Driving for Safe Transportation Systems"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-27_2606.29115",
+    "members": [
+      "arxiv:2606.29115"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139709887",
+        "label": "Yash Tandon"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5125540674",
+        "label": "Giovanni Tapia Lopez"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5107713422",
+        "label": "Marcus Blennemann"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139697956",
+        "label": "Mohan Trivedi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8595-0379",
+        "label": "Ross Greer"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10525",
+        "is_primary": true,
+        "label": "Human-Automation Interaction and Safety",
+        "score": 0.905,
+        "subfield": "3207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.0397,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10709",
+        "is_primary": false,
+        "label": "Social Robot Interaction and HRI",
+        "score": 0.0101,
+        "subfield": "3207"
+      }
+    ]
+  },
+  "first_published": "2026-06-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.29115",
+    "doi": "10.48550/arxiv.2606.29115",
+    "openalex": "W7166673761",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:33:06Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005125,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2037,
+      "out": 230
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8569,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3428,
+    "relevance": 0.8569
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The analysis relies on qualitative categorization of publicly reported incidents and municipal records rather than a quantitative risk or rate-of-occurrence model.",
+      "what": "This study analyzes publicly documented incidents of autonomous vehicle (AV) fallback behaviors, specifically focusing on cases where stopping or slowing down created secondary hazards. The researchers categorized these failures into limitations of perception, planning, and control, identifying systemic gaps in how AVs handle human authority, multimodal instructions, and socially regulated traffic environments.",
+      "why": "It demonstrates that standard minimal risk conditions, like stopping, can actively disrupt urban systems by blocking emergency responders and obstructing traffic, shifting the safety paradigm from passive collision avoidance to active, human-interactive autonomy."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-27",
+  "work_key": "arxiv:2606.29115"
+}

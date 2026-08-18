@@ -1,0 +1,308 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Max-pressure (MP) control has gained considerable attention in recent years, with numerous variations proposed. Existing MP studies primarily consider phase-based logic and are broadly classified into acyclic and cyclic approaches. Acyclic MP control often fails to ensure fairness in serving all movements, while cyclic MP control, with its fixed sequence of phases, restricts the prioritization of critical movements that require immediate attention. To the best of our knowledge, no MP control study has incorporated group-based control logic into the framework. Besides, most seminal and subsequent MP studies do not collectively address three practical challenges: (a) the growing number of vehicles in the candidate lane(s) of a movement, (b) reduced storage capacity in the downstream link, and (c) reduced storage capacity in the candidate lane(s). Some studies completely overlook capacity considerations, while others focus only on downstream spillover. A few incorporate storage capacities of both candidate lane(s) and downstream links into the pressure functions, but these fail to explicitly capture the growing demand in the candidate lane(s). Overall, no study holistically incorporates all these factors within the MP framework. To address these gaps, this study proposes a Pressure Adaptive Signal Control ALgorithm (PASCAL), which integrates group-based signal control logic with a novel pressure function that addresses the aforementioned challenges. To overcome the limitations of both acyclic and cyclic MP controls, PASCAL adopts a dynamic time slot-based critical movement prioritization, ensuring fairness in serving all movements without relying on a fixed phase sequence. Fairness is maintained through a critical movement selection pool, where active movements are removed before the next selection. The time slot depends on the green time considering the existing occupancy (queue length) of the critical movement or the available storage capacity in its downstream link, while being constrained by minimum and maximum green durations. The group-based policy is implemented by activating a set of critical complementary movements that achieve the highest total pressure among the predefined sets associated with the critical movement. PASCAL was benchmarked against four MP control models and a fixed-time control with SIDRA-optimized parameters under multiple demand and control scenarios. The MP models were: (a) the acyclic MP control by Varaiya (2013b), (b) the cyclic MP control by Le et al. (2015), (c) the MP with cyclical structure by Levin et al. (2020), and (d) the capacity-aware MP control by Gregoire et al. (2014). Results show that PASCAL consistently outperforms all benchmarking models, particularly under congestion, reducing mean delay, queue length, and network occupancy while maintaining higher speeds.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Queensland University of Technology",
+            "ror": "03pnv4752"
+          },
+          {
+            "name": "Indian Institute of Technology Madras",
+            "ror": "03v0r5n49"
+          }
+        ],
+        "name": "Tamojit Ghosh",
+        "openalex": "A5086440123",
+        "orcid": "https://orcid.org/0000-0003-4729-9487"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Indian Institute of Technology Madras",
+            "ror": "03v0r5n49"
+          }
+        ],
+        "name": "Lelitha Devi Vanajkshi",
+        "openalex": "A5107804865",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Md. Mazharul Haque",
+        "openalex": "A5010420853",
+        "orcid": "https://orcid.org/0000-0003-1016-110X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Queensland University of Technology",
+            "ror": "03pnv4752"
+          }
+        ],
+        "name": "Ashish Bhaskar",
+        "openalex": "A5039809980",
+        "orcid": "https://orcid.org/0000-0001-9679-5706"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105804",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-27",
+    "repository_urls": [],
+    "title": "PASCAL: Pressure Adaptive Signal Control ALgorithm"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-27_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105804"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03pnv4752",
+        "label": "Queensland University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03v0r5n49",
+        "label": "Indian Institute of Technology Madras"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4729-9487",
+        "label": "Tamojit Ghosh"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5107804865",
+        "label": "Lelitha Devi Vanajkshi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1016-110X",
+        "label": "Md. Mazharul Haque"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9679-5706",
+        "label": "Ashish Bhaskar"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12146",
+        "is_primary": true,
+        "label": "Power Line Communications and Noise",
+        "score": 0.9947,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10125",
+        "is_primary": false,
+        "label": "Advanced Wireless Communication Techniques",
+        "score": 0.9942,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11233",
+        "is_primary": false,
+        "label": "Advanced Adaptive Filtering Techniques",
+        "score": 0.9937,
+        "subfield": "2206"
+      }
+    ]
+  },
+  "first_published": "2026-06-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1496651389",
+      "openalex:W1516722406",
+      "openalex:W1923802435",
+      "openalex:W1989143246",
+      "openalex:W2007894170",
+      "openalex:W2057831030",
+      "openalex:W2065748588",
+      "openalex:W2072990104",
+      "openalex:W2105177639",
+      "openalex:W2122241715",
+      "openalex:W2130926522",
+      "openalex:W2291776898",
+      "openalex:W2313159919",
+      "openalex:W2565612488",
+      "openalex:W2761964598",
+      "openalex:W2790238917",
+      "openalex:W2804468226",
+      "openalex:W2886958893",
+      "openalex:W2899555245",
+      "openalex:W2940480291",
+      "openalex:W2964749398",
+      "openalex:W2971289541",
+      "openalex:W2989905807",
+      "openalex:W2993539758",
+      "openalex:W3014223101",
+      "openalex:W3023394361",
+      "openalex:W3037447858",
+      "openalex:W3092624864",
+      "openalex:W3150493802",
+      "openalex:W3186734389",
+      "openalex:W4220727680",
+      "openalex:W4221140529",
+      "openalex:W4281552978",
+      "openalex:W4281874014",
+      "openalex:W4288049570",
+      "openalex:W4289735775",
+      "openalex:W4293153321",
+      "openalex:W4307010315",
+      "openalex:W4308080224",
+      "openalex:W4315702835",
+      "openalex:W4318477659",
+      "openalex:W4320014038",
+      "openalex:W4327965778",
+      "openalex:W4367047459",
+      "openalex:W4399393166",
+      "openalex:W4400030219",
+      "openalex:W4400141976",
+      "openalex:W4401244787",
+      "openalex:W6809657262"
+    ],
+    "related_works": [
+      "openalex:W2291845389",
+      "openalex:W2356888604",
+      "openalex:W2380639163",
+      "openalex:W4388502705",
+      "openalex:W3007307084",
+      "openalex:W2103416677",
+      "openalex:W1765460115",
+      "openalex:W1575229193",
+      "openalex:W2105913963",
+      "openalex:W3187382317"
+    ]
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105804",
+    "openalex": "W4403176549",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:33:07Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006533,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2591,
+      "out": 294
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:33:07Z",
+    "doi": "10.1016/j.trc.2026.105804",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance benefits and comparison benchmarks are demonstrated through simulation scenarios rather than a physical, real-world deployment.",
+      "what": "The Pressure Adaptive Signal Control ALgorithm (PASCAL) is a group-based max-pressure traffic signal control method that dynamically prioritizes critical movements using a time-slot approach instead of fixed phase sequences. It calculates pressure by simultaneously accounting for growing queue lengths in candidate lanes, downstream link storage capacity, and candidate lane storage capacity. The algorithm was evaluated against four existing max-pressure models and a SIDRA-optimized fixed-time control across multiple simulated demand scenarios.",
+      "why": "It introduces a way to balance traffic movement prioritization with fairness, preventing the starvation of minor movements while actively mitigating downstream spillover and upstream lane overflows during periods of heavy congestion."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-27",
+  "work_key": "doi:10.1016/j.trc.2026.105804"
+}

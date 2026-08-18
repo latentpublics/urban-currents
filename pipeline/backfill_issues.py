@@ -229,6 +229,18 @@ def backfill(
         )
         result.attempted += 1
         status = (outcome or {}).get("status")
+
+        # A spent daily allowance is not this date's problem, it is today's.
+        # Grinding forty more dates into the same wall costs forty more run
+        # directories and tells us nothing we do not already know.
+        reasons = " ".join((outcome or {}).get("reasons") or [])
+        if "OpenAlexBudgetExhausted" in reasons or "Insufficient budget" in reasons:
+            result.stopped_on = (
+                f"OpenAlex daily allowance exhausted on {key}; it resets at "
+                f"midnight UTC. Resume then — the checkpoint holds."
+            )
+            done.add(key)
+            break
         if status == "published":
             result.published += 1
         elif status == "quiet":

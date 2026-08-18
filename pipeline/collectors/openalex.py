@@ -48,6 +48,113 @@ class OpenAlexUnavailable(StageSkipped):
     """
 
 
+class OpenAlexBudgetExhausted(RuntimeError):
+    """The daily OpenAlex allowance is spent. Waiting will not help today."""
+
+
+def _install_http_policy(pyalex_module) -> tuple[float, float]:
+    """A deadline on every request, and no twelve-hour naps.
+
+    **The stall that cost forty days of backfill was not a network hang.**
+    The evidence said it was — `collect.arxiv: OK`, an empty `raw/openalex/`,
+    nothing after — and a missing timeout was the obvious culprit, since pyalex
+    0.21 calls `session.get(url, auth=...)` with none and `requests` waits
+    forever by default. But with retries disabled the same request failed in
+    **2.8 seconds**, which a stalled socket cannot do.
+
+    Asking the API directly gave the real answer:
+
+        429  Retry-After: 43306
+        {"error": "Rate limit exceeded",
+         "message": "Insufficient budget. This request costs $0.0001 but you
+                     only have $0 remaining. Resets at midnight UTC."}
+
+    The daily allowance was spent, OpenAlex asked us to come back in twelve
+    hours, and **urllib3's Retry obeyed it** — the process was asleep, not
+    blocked. A socket timeout would never have fired, because there was no
+    socket waiting.
+
+    So two things are installed:
+
+    - **A timeout**, because the sibling collectors have had one for eight
+      batches (arXiv 60s, abstracts 30s) and this one never did. It was not the
+      cause here; it is still the missing third deadline.
+    - **`respect_retry_after_header=False` and 429 out of the retry list**, so a
+      rate-limit answer surfaces immediately as `OpenAlexBudgetExhausted`
+      instead of becoming a twelve-hour sleep no log will ever explain.
+
+    The stage then fails in seconds with a reason a person can act on, and the
+    backfill can stop for the day rather than grind forty more dates into the
+    same wall.
+    """
+    from pipeline.config import cfg as _cfg
+
+    connect = float(_cfg("openalex.connect_timeout_s", 15.0))
+    read = float(_cfg("openalex.read_timeout_s", 60.0))
+
+    api = pyalex_module.api
+    if getattr(api, "_uc_timeout_installed", False):
+        return connect, read
+
+    original_factory = api._get_requests_session
+
+    def factory():
+        session = original_factory()
+
+        # Rebuild the adapter so a Retry-After cannot put us to sleep for half a
+        # day, and so 429 is answered rather than retried.
+        import requests
+        from urllib3.util.retry import Retry
+
+        retries = Retry(
+            total=int(getattr(pyalex_module.config, "max_retries", 3)),
+            backoff_factor=float(
+                getattr(pyalex_module.config, "retry_backoff_factor", 0.5)
+            ),
+            status_forcelist=[
+                c for c in (500, 502, 503, 504) if c != 429
+            ],
+            allowed_methods={"GET", "POST"},
+            respect_retry_after_header=False,
+        )
+        session.mount("https://", requests.adapters.HTTPAdapter(max_retries=retries))
+
+        inner = session.request
+
+        def request(method, url, **kwargs):
+            kwargs.setdefault("timeout", (connect, read))
+            response = inner(method, url, **kwargs)
+            if response.status_code == 429:
+                raise OpenAlexBudgetExhausted(_rate_limit_message(response))
+            return response
+
+        session.request = request  # instance attribute shadows the method
+        return session
+
+    api._get_requests_session = factory
+    api._uc_timeout_installed = True
+    return connect, read
+
+
+def _rate_limit_message(response) -> str:
+    """Say what the API said, including when it will work again."""
+    detail = ""
+    try:
+        payload = response.json()
+        detail = str(payload.get("message") or payload.get("error") or "")[:200]
+    except Exception:  # noqa: BLE001
+        detail = (response.text or "")[:200]
+    after = response.headers.get("retry-after")
+    when = ""
+    if after:
+        try:
+            hours = int(after) / 3600
+            when = f" (retry-after {after}s, about {hours:.1f}h)"
+        except ValueError:
+            when = f" (retry-after {after})"
+    return f"OpenAlex refused the request: {detail}{when}"
+
+
 def configure_pyalex():
     key = openalex_key()
     if not key:
@@ -61,6 +168,7 @@ def configure_pyalex():
     pyalex.config.max_retries = 3
     pyalex.config.retry_backoff_factor = 0.5
     pyalex.config.user_agent = "urban-currents/0.2"
+    _install_http_policy(pyalex)
     return pyalex
 
 
@@ -72,6 +180,10 @@ class OpenAlexCollector:
             stop_fraction=float(cfg("openalex.budget_stop_fraction", 0.8)),
         )
         self.per_page = int(cfg("openalex.per_page", 100))
+        # `n_max=None` is unbounded. It was not the cause of the 07-02 hang —
+        # that stopped before page one — but an unbounded loop behind a network
+        # call is the next accident in the same place, so it gets a ceiling.
+        self.max_records = int(cfg("openalex.max_records_per_query", 5000))
         self._pyalex = None
 
     def _api(self):
@@ -127,7 +239,7 @@ class OpenAlexCollector:
             )
             try:
                 for page_no, page in enumerate(
-                    query.paginate(per_page=self.per_page, n_max=None)
+                    query.paginate(per_page=self.per_page, n_max=self.max_records)
                 ):
                     self._charge(getattr(page, "meta", None))
                     self.run.write_raw(

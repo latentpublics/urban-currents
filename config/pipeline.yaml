@@ -22,6 +22,21 @@ openalex:
   whitelist_subfields: ["3322", "3305", "3313"]
   whitelist_max_sources: 200
 
+  # ★ HTTP deadlines. pyalex 0.21 passes no `timeout` to requests, and requests
+  # waits forever by default — one stalled connection held the backfill for
+  # forty days' worth of dates (phase 0N, P0). The sibling collectors already
+  # had deadlines (arXiv 60s, abstracts 30s), which is why neither ever hung.
+  #
+  # Split because they fail differently: a refused connection is fast, and a
+  # stalled read is what actually happened.
+  connect_timeout_s: 15.0
+  read_timeout_s: 60.0
+
+  # `paginate(n_max=None)` is unbounded. Not the cause of the 07-02 hang, which
+  # stopped before the first page, but an unbounded loop behind a network call
+  # is the next accident in the same place.
+  max_records_per_query: 5000
+
 embedding:
   provider: local              # local | none. Swappable for a hosted API later.
   model: "BAAI/bge-base-en-v1.5"

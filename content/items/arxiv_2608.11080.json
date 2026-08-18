@@ -46,6 +46,7 @@
     "categories": [
       "cs.AI"
     ],
+    "comment": null,
     "primary_location": {
       "landing_page_url": "https://arxiv.org/abs/2608.11080v1",
       "pdf_url": "https://arxiv.org/pdf/2608.11080v1",
@@ -55,6 +56,7 @@
       "version": "submittedVersion"
     },
     "publication_date": "2026-08-11",
+    "repository_urls": [],
     "title": "RTSKG: Building a Rail Transit Station Knowledge Graph Dataset"
   },
   "cluster": {
@@ -237,11 +239,11 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "The researchers built the Rail Transit Station Knowledge Graph (RTSKG), a dataset that models spatial and semantic interactions between rail transit stations, road segments, and points of interest. The dataset uses a unified schema to integrate these heterogeneous urban entities and was evaluated using two downstream tasks: station-area store recommendation and knowledge-enhanced ridership prediction.",
-      "why": "It provides a structured, linked-data framework that explicitly connects physical transit infrastructure with surrounding urban features, enabling more accurate spatial analysis and predictive modeling than traditional, isolated datasets allow."
+      "what": "The researchers constructed the Rail Transit Station Knowledge Graph (RTSKG), a dataset that models spatial and semantic interactions between rail stations, road segments, and points of interest using a unified schema. The dataset's utility was evaluated through two downstream tasks: station-area store recommendation and knowledge-enhanced ridership prediction.",
+      "why": "It provides a structured, linked-data framework that integrates heterogeneous urban entities, allowing researchers to model complex spatial and semantic relationships around transit hubs rather than treating stations in isolation."
     }
   },
   "track": "papers",
-  "updated": "2026-08-11",
+  "updated": "2026-08-18",
   "work_key": "arxiv:2608.11080"
 }

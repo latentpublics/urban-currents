@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This paper presents a demand-driven framework for on-demand Urban Air Mobility (UAM) network design that links vertiport siting, fleet simulation, and door-to-door travel-time feasibility. Demand is estimated from commuter and passenger activity data, converted into spatial trip-end points, and clustered using K-means to generate candidate vertiport locations. Candidate networks are screened using range and minimum station-spacing constraints, then evaluated with a discrete-event simulation that models multi-vehicle dispatch, deadhead relocation, battery swaps, and service regularity. Flight time and energy consumption are computed using a point-mass eVTOL performance model. In a Greater Los Angeles case study, the preferred design expands from four stations and four eVTOLs at low demand to sixteen stations and twelve eVTOLs at the highest tested demand level. Results show that larger fleets improve completion time and vehicle-arrival regularity but do not eliminate deadhead flights, indicating that spatial demand imbalance remains an operational burden. The travel-time savings analysis further suggests that UAM is most defensible for longer or congestion-heavy trips where sufficient non-flight time remains after accounting for flight time.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Hossein Z. Saghazadeh",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yonas Ayalew",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Reza Ahmari",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Parham Kebria",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Abdollah Homaifar",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI",
+      "eess.SY"
+    ],
+    "comment": "Accepted for presentation at the 2026 IEEE International Conference on Systems, Man, and Cybernetics (SMC 2026)",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.14974v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.14974v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-15",
+    "repository_urls": [],
+    "title": "Demand-Driven Vertiport Siting and Discrete-Event Fleet Simulation for On-Demand Urban Air Mobility Network Design"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-17_2608.14974",
+    "members": [
+      "arxiv:2608.14974"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.14974",
+    "doi": "10.48550/arxiv.2608.14974",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T07:20:14Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005806,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2005,
+      "out": 311
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9836,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3934,
+    "relevance": 0.9836
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a simulated network in a single metropolitan area using a point-mass performance model, which may not capture the micro-scale weather or airspace constraints of actual operations.",
+      "what": "This paper develops a demand-driven framework for designing urban air mobility networks by combining K-means clustering for vertiport siting with a discrete-event simulation of eVTOL fleet operations. Tested on commuter and passenger activity data in the Greater Los Angeles area, the model simulates multi-vehicle dispatch, battery swaps, and deadhead relocation, scaling from a network of four stations and four vehicles up to sixteen stations and twelve vehicles under high demand.",
+      "why": "It demonstrates that while larger eVTOL fleets improve arrival regularity and completion times, they cannot eliminate deadhead flights caused by spatial demand imbalances, showing that urban air mobility is only time-competitive for long or highly congested trips where non-flight processing times do not dilute the speed advantage."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-15",
+  "work_key": "arxiv:2608.14974"
+}

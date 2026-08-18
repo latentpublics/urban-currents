@@ -1,0 +1,174 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Network-level maintenance planning requires repeated evaluations of equilibrium traffic flows under road capacity reductions. While equilibrium traffic assignment models are well established, their repeated solution quickly becomes computationally prohibitive and challenging to embed within maintenance scheduling problems. This paper investigates data-driven surrogate models that approximate equilibrium arc flows directly from origin-destination demand, using optimization-based equilibrium solutions as ground truth. A real-world case study based on traffic data from the Newark, New Jersey area demonstrates the effectiveness of the proposed approach as a scalable building block for future maintenance scheduling frameworks.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Charitha Nandepu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Lohitha Kalepu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Gabriele Ciavarella",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "SangWoo Park",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "eess.SY",
+      "cs.AI"
+    ],
+    "comment": "Case Study paper presented in IISE Annual Conference and Expo 2026",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.14491v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.14491v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-14",
+    "repository_urls": [],
+    "title": "Optimal Scheduling of Road Maintenance Jobs Considering Impact on Traffic Flows"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-17_2608.14491",
+    "members": [
+      "arxiv:2608.14491"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.14491",
+    "doi": "10.48550/arxiv.2608.14491",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T07:20:14Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.002989,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1721,
+      "out": 205
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9523,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3809,
+    "relevance": 0.9523
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The surrogate model's performance and scalability were demonstrated only on a single case study in the Newark area.",
+      "what": "This study develops data-driven surrogate models to approximate equilibrium arc flows directly from origin-destination demand, bypassing the computationally expensive repeated solutions of traditional traffic assignment models during road capacity reductions. The surrogate models use optimization-based equilibrium solutions as ground truth and were validated using a real-world case study of traffic data from the Newark, New Jersey area.",
+      "why": "It provides a computationally scalable alternative for evaluating traffic flows under capacity constraints, making it feasible to embed equilibrium traffic assignment directly into network-level road maintenance scheduling frameworks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-14",
+  "work_key": "arxiv:2608.14491"
+}

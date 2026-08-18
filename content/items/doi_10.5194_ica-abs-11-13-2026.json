@@ -1,0 +1,234 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Introduction: We present a new release (v2.0) of the open-source QGIS Technical Supplement to support instruction about cartographic design: https://github.com/uwcartlab/MappingSDGsTechnicalSupplement(Houtman, Baldrica-Franklin, and Roth 2025).Originally published in 2021 (Houtman & Roth 2021a, 2021b), the technical tutorials directly supplement the joint International Cartographic Association and United Nations publication Mapping for a Sustainable World (Kraak et al. 2020), which synthesizes cartographic principles and recommendations for mapping the United Nations Sustainable Development Goals (SDG) global indicator framework (United Nations 2015).Specifically, the technical supplement reconstructs the workflow conducted by the University of Wisconsin Cartography Lab for the creation of four SDG maps in the book, putting cartographic design recommendations from the book into practice.Here we describe background on the SDGs and the Mapping for a Sustainable World book, design and organization of the QGIS Technical Supplement, and our motivations for and execution of a revision to the tutorials in 2025.Background: In 2015, the United Nations Member States adopted 17 Sustainable Development Goals as part of the 2030 Agenda for Sustainable Development (United Nations 2015).Each goal is organized by a shifting number of targets that monitor progress towards the broader goal and indicators that provide data measures for each target (Kraak et al. 2018).The global completeness and quality of these indicator datasets are highly variable, and an ongoing effort by the United Nations is underway to compile these data and make them publicly available through the Global SDG Indicators Database.Maps of SDG indicator datasets are essential for monitoring progress towards these goals, focusing discussion and policymaking about the SDGs upon global inequalities, interdependencies, and alternatives, and supporting public awareness about our planet's most pressing challenges.Accordingly, mapping the SDGs is drawing increasing attention from the cartographic community (Kent et al. 2020;Pirani et al. 2020;Gorte & Degbelo 2022;Ricker & Fish 2025), including creation of an ICA Working Group on Cartography & Sustainable Development.2020 Book: The Mapping for a Sustainable World book project began as a partnership between the United Nations Geospatial Information Section and the International Cartographic Association to respond to the challenges of mapping the SDG indicator datasets (see Kraak et al. 2019 for the original design concept).Published in 2020, the book serves as both an overview of cartographic design principles and a guide for mapping the SDGs, and comprises four sections and 51 chapters on the topics of geospatial data, map design considerations, map and diagram techniques, and map use environments.The book itself was designed and produced by the University of Wisconsin Cartography Lab (Cart Lab), with UW faculty, staff, and students joining the editorial team and United Nations designers to create 227 unique maps and graphics (see Roth et al. 2025 for a description of the design process behind the book).The technical supplement we present here brings conceptual design principles from Mapping for a Sustainable World into practice, walking through the cartographic design workflow used by the Cart Lab to create three of the maps included in the book.2021 Tutorials: The objective of the QGIS Technical Supplement was to enhance the cartographic design thinking described in the book with the technical knowledge needed to create SDG maps.Accordingly, the QGIS Technical Supplement followed several design tenets to make it accessible across varied instructional.First, we designed the tutorials to pair with, but not replicate, information included in Mapping for a Sustainable World.Accordingly, when developing the tutorials we followed the recommended cartographic design process and design guidelines outlined in the book and included the open-source definitions and figures from the book within the tutorials to reinforce connections between the two.Second, we prepared and formatted the text of the technical supplements as simply as possible to empower students and other readers with no prior cartography or GIS experience.We used direct language and italicized commands to provide step-by-step technical guidance, allowing the tutorials to be repurposed for variable instructional settings.The simple language also improved in-browser translation for an international audience.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Pennsylvania State University",
+            "ror": "04p491231"
+          }
+        ],
+        "name": "Lily Houtman",
+        "openalex": "A5041809825",
+        "orcid": "https://orcid.org/0000-0002-5317-0578"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Wisconsin–Madison",
+            "ror": "01y2jtd41"
+          }
+        ],
+        "name": "Gareth Baldrica-Franklin",
+        "openalex": "A5053984451",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Wisconsin–Madison",
+            "ror": "01y2jtd41"
+          }
+        ],
+        "name": "Robert E. Roth",
+        "openalex": "A5137125504",
+        "orcid": "https://orcid.org/0000-0003-1241-318X"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.5194/ica-abs-11-13-2026",
+      "pdf_url": "https://ica-abs.copernicus.org/articles/11/13/2026/ica-abs-11-13-2026.pdf",
+      "source_id": "S4210215957",
+      "source_name": "Abstracts of the ICA",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-14",
+    "repository_urls": [],
+    "title": "Reintroducing a QGIS technical supplement for Mapping for a Sustainable World"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-17_10.5194/ica-abs-",
+    "members": [
+      "doi:10.5194/ica-abs-11-13-2026"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04p491231",
+        "label": "Pennsylvania State University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01y2jtd41",
+        "label": "University of Wisconsin–Madison"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5317-0578",
+        "label": "Lily Houtman"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5053984451",
+        "label": "Gareth Baldrica-Franklin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1241-318X",
+        "label": "Robert E. Roth"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": true,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.1126,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12227",
+        "is_primary": false,
+        "label": "Environmental and Social Impact Assessments",
+        "score": 0.0526,
+        "subfield": "2308"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.0504,
+        "subfield": "2306"
+      }
+    ]
+  },
+  "first_published": "2026-08-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.5194/ica-abs-11-13-2026",
+    "openalex": "W7203503675",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T07:20:24Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.003948,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 3311,
+      "out": 195
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T07:20:24Z",
+    "doi": "10.5194/ica-abs-11-13-2026",
+    "journal": "Abstracts of the ICA",
+    "source_id": "S4210215957",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/uwcartlab/MappingSDGsTechnicalSupplement",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This technical supplement (v2.0) provides step-by-step tutorials in the open-source QGIS software to reconstruct the cartographic workflows used to design three Sustainable Development Goal (SDG) maps from the United Nations and International Cartographic Association publication, Mapping for a Sustainable World.",
+      "why": "It translates theoretical cartographic design principles into practical, step-by-step instructions, allowing students and practitioners with no prior GIS experience to learn how to map complex global indicator datasets."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-14",
+  "work_key": "doi:10.5194/ica-abs-11-13-2026"
+}

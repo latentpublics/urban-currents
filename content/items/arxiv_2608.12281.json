@@ -1,0 +1,193 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban decarbonization often raises the cost of travel, yet which neighbourhoods can adapt remains largely invisible under normal conditions. We leverage the 2026 US-Iran oil shock as a natural experiment, applying a hierarchical panel regression discontinuity design to 1.7 trillion point-of-interest visits across 122,000 neighbourhoods in China and the United States. Mobility range declined in nearly three-quarters of neighbourhoods, but responses varied systematically with pre-shock urban conditions. Exposure to energy-intensive travel explained the largest share of modelled heterogeneity in both countries, while adaptive capacity and activity composition further shaped how travel was reorganized. Longer baseline travel intensified contraction, whereas greater car dependence constrained adjustment. Crucially, similar mobility outcomes arose from different processes: some neighbourhoods maintained travel by absorbing higher costs, whereas others appeared structurally locked into travel they could not reorganize. Fuel-price shocks, therefore, act as urban stress tests, revealing otherwise hidden inequalities in mobility adaptation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Zihao Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yuanbo Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xiaolei Ma",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yuan Liao",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP",
+      "econ.GN"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.12281v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.12281v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-12",
+    "repository_urls": [],
+    "title": "Oil price shocks reveal unequal capacities for mobility adaptation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-17_2608.12281",
+    "members": [
+      "arxiv:2608.12281"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:causal-inference",
+        "label": "causal inference"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.12281",
+    "doi": "10.48550/arxiv.2608.12281",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T07:20:20Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00514,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1891,
+      "out": 256
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.992,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3968,
+    "relevance": 0.992
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "Using the 2026 US-Iran oil shock as a natural experiment, this study analyzed 1.7 trillion point-of-interest visits across 122,000 neighborhoods in China and the United States using a hierarchical panel regression discontinuity design. The analysis found that mobility range contracted in nearly 75% of neighborhoods, with the magnitude of decline driven primarily by exposure to energy-intensive travel, baseline travel distance, and car dependence.",
+      "why": "The study demonstrates that fuel-price spikes function as urban stress tests, exposing structural inequalities in how different neighborhoods adapt to rising travel costs, where some communities absorb the financial burden while others are locked into rigid travel patterns they cannot reorganize."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-12",
+  "work_key": "arxiv:2608.12281"
+}

@@ -1,0 +1,185 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Air pollution is one of Bangladesh's most pressing environmental problems, yet few studies have examined it at a national scale over a long time span. To describe trends, seasonality, geographic patterns, and pollution regimes, this study examines 25 years of hourly air quality data (2000-2025), covering over 3.19 million records, eight pollutants, and 103 cities monitored from 2022 onward following expansion from a single Dhaka station. The composite AQI series showed no significant long-term trend, an artifact of this network expansion rather than a real flattening of pollution, since Dhaka's own AQI rose steadily before the network grew. Seasonality was strong and highly significant, as AQI peaked in January (162.26) and fell to its lowest in July (61.47), tracking the dry and monsoon seasons. Geographically, southeastern coastal cities, including Teknaf and Bandarban, consistently recorded the lowest AQI levels. Dhaka remained the most polluted city, and air quality improved progressively with distance from the capital. K-means clustering of city-level AQI trajectories identified four distinct pollution regimes, ranging from cleaner coastal regions to a rapidly deteriorating Dhaka-Narsingdi cluster with an average increase of 1.84 AQI per year. Correlation analysis showed that PM2.5 and PM10 were the dominant contributors to AQI variation, and so combustion-related emissions are the primary target for air quality management and policy intervention.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Md Rafid Islam",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rafsan Jany",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Md. Siyam Bhuiyan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rafid Bin Zaman",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mohammad Saifuddin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sabrina Sultana",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.11652v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.11652v2",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-12",
+    "repository_urls": [],
+    "title": "Twenty-Five Years of Air Quality in Bangladesh: Trends, Seasonality, and Spatial Pollution Regimes"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-17_2608.11652",
+    "members": [
+      "arxiv:2608.11652"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.11652",
+    "doi": "10.48550/arxiv.2608.11652",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T07:20:20Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006487,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2147,
+      "out": 363
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9872,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3949,
+    "relevance": 0.9872
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "3.19 million records",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2000-2025",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The apparent lack of a long-term trend in the composite national AQI is biased by the historical expansion of the monitoring network from one station to 103 stations over the study period.",
+      "what": "This study analyzed 25 years of hourly air quality data from 2000 to 2025, comprising over 3.19 million records across eight pollutants. The monitoring network expanded from a single station in Dhaka to cover 103 cities by 2022, revealing a highly seasonal AQI that peaks in January at 162.26 and drops to 61.47 in July. K-means clustering identified four distinct regional pollution regimes, highlighting a rapidly worsening Dhaka-Narsingdi cluster that increases by an average of 1.84 AQI annually, with PM2.5 and PM10 driving the overall variation.",
+      "why": "It establishes the first long-term, multi-city baseline of air quality dynamics across Bangladesh, demonstrating that a seemingly flat national pollution trend is actually an artifact of network expansion masking severe, localized degradation in the capital region."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-15",
+  "work_key": "arxiv:2608.11652"
+}

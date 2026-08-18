@@ -1,0 +1,259 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Understanding and modeling human mobility is central to challenges in transport planning, sustainable urban design, and public health. Despite decades of effort, simulating individual mobility remains challenging because of its complex, context-dependent, and exploratory nature. Here, building on the activity-based view of daily mobility, we propose MobilityGen, a diffusion-based generative framework for simulating multi-attribute activity-travel sequences over days to weeks at large spatial scales. By linking behavioral attributes with environmental context, MobilityGen reproduces key patterns such as scaling laws for location visits, activity time allocation, and the coupled evolution of travel mode and destination choices. It reflects spatio-temporal variability and generates diverse and plausible mobility patterns consistent with the built environment. Beyond standard validation, MobilityGen enables analyses that have been difficult with earlier models, including how access to urban space varies across travel modes and how co-presence dynamics shape social exposure and segregation. Together, these results support an integrated, data-driven basis for fine-grained studies of human mobility behavior and its societal implications.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Lund University",
+            "ror": "012a77v79"
+          },
+          {
+            "name": "GeoInformation (United Kingdom)",
+            "ror": "05t4zqc79"
+          }
+        ],
+        "name": "Hong Ye",
+        "openalex": "A5103160967",
+        "orcid": "https://orcid.org/0000-0001-5121-4082"
+      },
+      {
+        "institutions": [
+          {
+            "name": "ETH Zurich",
+            "ror": "05a28rw58"
+          },
+          {
+            "name": "University College London",
+            "ror": "02jx3x895"
+          }
+        ],
+        "name": "Yatao Zhang",
+        "openalex": "A5101641066",
+        "orcid": "https://orcid.org/0000-0001-5701-2836"
+      },
+      {
+        "institutions": [
+          {
+            "name": "American Society for Photogrammetry and Remote Sensing",
+            "ror": "041v7ky66"
+          }
+        ],
+        "name": "Konrad Schindler",
+        "openalex": "A5005404030",
+        "orcid": "https://orcid.org/0000-0002-3172-9246"
+      },
+      {
+        "institutions": [
+          {
+            "name": "ETH Zurich",
+            "ror": "05a28rw58"
+          },
+          {
+            "name": "GeoInformation (United Kingdom)",
+            "ror": "05t4zqc79"
+          }
+        ],
+        "name": "Martin Raubal",
+        "openalex": "A5004721499",
+        "orcid": "https://orcid.org/0000-0001-5951-6835"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105916",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-13",
+    "repository_urls": [],
+    "title": "Deep generative model for human mobility behavior"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-17_2510.06473",
+    "members": [
+      "arxiv:2510.06473"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:012a77v79",
+        "label": "Lund University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05t4zqc79",
+        "label": "GeoInformation (United Kingdom)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05a28rw58",
+        "label": "ETH Zurich"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02jx3x895",
+        "label": "University College London"
+      },
+      {
+        "confidence": null,
+        "id": "ror:041v7ky66",
+        "label": "American Society for Photogrammetry and Remote Sensing"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5121-4082",
+        "label": "Hong Ye"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5701-2836",
+        "label": "Yatao Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3172-9246",
+        "label": "Konrad Schindler"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5951-6835",
+        "label": "Martin Raubal"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.9972,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-08-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2510.06473",
+    "doi": "10.1016/j.trc.2026.105916",
+    "openalex": "W4415315174",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T07:20:24Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.0,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1911,
+      "out": 215
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T07:20:24Z",
+    "doi": "10.1016/j.trc.2026.105916",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed MobilityGen, a diffusion-based generative framework that simulates multi-attribute activity-travel sequences over days to weeks. The model links behavioral attributes with environmental context to reproduce scaling laws for location visits, activity time allocation, and the joint evolution of travel mode and destination choices.",
+      "why": "It provides a generative capability to simulate individual-level, context-dependent mobility patterns at large spatial scales, enabling fine-grained analyses of urban space access, co-presence dynamics, and social segregation."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-13",
+  "work_key": "arxiv:2510.06473"
+}

@@ -1,0 +1,198 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban mobility promises social integration, yet daily movement is systematically constrained by socioeconomic hierarchies. Introducing \"economic distance\"--the continuous income gap between origin and destination--as a unified lens, we analyze large-scale mobility records across 109 U.S. cities to reveal how urban flows are structured. We identify a universal structural boundary: flows concentrate intensely within a narrow economic distance of 0.25 quantiles, defining the effective \"economic radius\" of routine mobility. This boundary exhibits profound asymmetry; upward mobility faces a uniform structural ceiling across cities, whereas downward mobility drives cross-city heterogeneity. Mechanistically, the boundary is physically anchored by meso-scale residential clustering but is further tightened by an independent economic-distance friction, validated via gravity modeling. These interactions yield four distinct mobility regimes, with \"affluent-confined\" systems exhibiting the strongest stratification. These findings establish economic distance as a fundamental, asymmetric, and multi-scale filter shaping urban inequality, offering new theoretical grounds for interventions targeting structural barriers to cross-class interaction.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Wei-Peng Nie",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xiao-Yong Yan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Bin Jia",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Fang Zhou",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Er-Jian Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Tao Zhou",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zi-You Gao",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.12180v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.12180v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-12",
+    "repository_urls": [],
+    "title": "Economic Distance Structures Urban Mobility in 109 U.S. Cities"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-17_2608.12180",
+    "members": [
+      "arxiv:2608.12180"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.12180",
+    "doi": "10.48550/arxiv.2608.12180",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T07:20:20Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005245,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1931,
+      "out": 261
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9471,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3788,
+    "relevance": 0.9471
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings rely on mobile device records as a proxy for physical mobility, which may underrepresent populations without smartphones or those with different device usage patterns.",
+      "what": "Using large-scale mobility records across 109 U.S. cities, this study analyzes urban flows through the lens of economic distance, defined as the income gap between a trip's origin and destination. The analysis reveals a universal structural boundary where daily flows concentrate within a narrow economic distance of 0.25 quantiles. Gravity modeling demonstrates that this boundary is shaped both by physical residential clustering and an independent economic-distance friction, resulting in four distinct mobility regimes.",
+      "why": "The study establishes that urban mobility is constrained by a universal, asymmetric economic ceiling, proving that upward mobility into wealthier areas faces a uniform structural barrier across all studied cities while downward mobility varies by location."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-12",
+  "work_key": "arxiv:2608.12180"
+}

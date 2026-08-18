@@ -1,0 +1,168 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Decades of space-syntax research have established that the topology of the street network conditions movement, co-presence and urban activity. The standard vocabulary for this -- integration, choice and connectivity -- summarises each street's position as a scalar centrality, yet two streets with identical centrality can sit in radically different morphological fabric. We introduce a compact, comparable, machine-learning-ready encoding of that local fabric: the spectral fingerprint, a fixed-dimensional kernel-density representation of the graph-Laplacian eigenvalue distribution of each node's k-hop ego subgraph, computed on the COINS dual graph of the street network. From it we derive two interpretable scalar readouts: the Mesh Index (MI), a normalised spectral entropy, and the Connectivity Resilience Index (CRI), the algebraic connectivity (Fiedler value). Both are corrected for an ego-subgraph-size confound that dominates raw spectral statistics. Applied to the full street network of Poznan, Poland (1,908 continuity-based strokes), the descriptor is robust to its encoding hyperparameters (spectral resolution and kernel bandwidth; Spearman rho >= 0.98) while remaining scale-dependent in its neighbourhood radius. The size adjustment leaves the Mesh Index near-orthogonal to integration (r = 0.06), carrying information classical centrality does not. The fingerprint separates morphological tissue types without supervision, and the Mesh Index is associated with the functional diversity of street-adjacent activity at the neighbourhood scale (r ~ 0.19, on open OpenStreetMap data). We delineate the method's scope honestly: it characterises what kind of activity a street's position affords, not the price that activity commands. It offers an information-theoretic morphological descriptor that complements space syntax and is directly consumable by modern graph-learning pipelines.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Piotr C. Kaminski",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.SI"
+    ],
+    "comment": "18 pages, 7 figures. Under review at Journal of Complex Networks (Oxford University Press)",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.16758v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.16758v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-17",
+    "repository_urls": [],
+    "title": "Spectral Fingerprints of Street-Network Morphology: A Size-Adjusted Graph-Laplacian Descriptor of Urban Fabric"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-17_2608.16758",
+    "members": [
+      "arxiv:2608.16758"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:openstreetmap",
+        "label": "openstreetmap"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:network-analysis",
+        "label": "network analysis"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.16758",
+    "doi": "10.48550/arxiv.2608.16758",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T07:20:14Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00629,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2255,
+      "out": 323
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.5,
+      "relevance": 0.9437,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4775,
+    "relevance": 0.9437
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The descriptor is designed to characterize the types of activities a street's spatial position affords, rather than predicting economic values like property prices.",
+      "what": "The study introduces a size-adjusted graph-Laplacian descriptor to encode local street-network morphology into a compact, fixed-dimensional spectral fingerprint. Evaluated on the street network of Poznan, Poland using 1,908 continuity-based strokes, the method derives two size-corrected scalar metrics: the Mesh Index (which correlates with OpenStreetMap functional diversity at r ~ 0.19) and the Connectivity Resilience Index. The resulting Mesh Index is nearly orthogonal to classical space-syntax integration (r = 0.06), demonstrating that it captures distinct structural information.",
+      "why": "It provides a machine-learning-ready representation of urban fabric that distinguishes between different morphological tissue types without supervision, overcoming a major limitation where streets with identical centrality metrics are falsely assumed to have identical surrounding local structures."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-17",
+  "work_key": "arxiv:2608.16758"
+}

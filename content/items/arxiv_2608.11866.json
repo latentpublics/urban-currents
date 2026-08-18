@@ -1,0 +1,188 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Efficient urban logistics requires a comprehensive understanding of traffic dynamics, particularly as it pertains to kinetic parameters influencing energy consumption and trip duration estimations. While real-time traffic information is increasingly accessible, current high-precision forecasting services embedded in route planning often function as opaque 'black boxes' for users. These services, typically relying on AI-processed counting data, fall short in accommodating open design parameters essential for management studies, notably within Supply Chain Management. This work revisits the modelling of traffic conditions in the context of city logistics, emphasizing its significance from the user's point of view, with two focuses. Firstly, the focus is not on the vehicle flow but on the vehicles themselves and the impact of the traffic conditions on their driving behaviour. This means opening the range of studied indicators, beyond vehicle speed, to describe extensively the kinetic and dynamic aspects of the driving behaviour. To achieve this, we leverage the Art.Kinema parameters designed to characterizing driving cycles. Secondly, this study examines how the driving context (i.e., exogenous factors to the traffic flow) determine the mentioned driving behaviour. Specifically, we explore how accurately the kinetic behaviour of a vehicle can be predicted based on a limited set of exogenous factors, such as time, day, road type, orientation, slope, and weather conditions? To answer this question, statistical analysis was conducted on real-world driving data, which include high-frequency measurements of vehicle speed. A Factor Analysis and a Generalized Linear Model have been established to link kinetic parameters with independent categorical contextual variables. The results include an assessment of the adjustment quality and of the robustness of the models, as well as an overview of the models' outputs.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "CGS i3",
+            "ror": null
+          }
+        ],
+        "name": "Emilienne Lardy",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "CGS i3",
+            "ror": null
+          }
+        ],
+        "name": "Eric Ballot",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "CGS i3",
+            "ror": null
+          }
+        ],
+        "name": "Mariam Lafkihi",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.11866v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.11866v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-12",
+    "repository_urls": [],
+    "title": "Urban logistics dynamics: a user-centric approach to traffic modelling and kinetic parameter analysis"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-17_2608.11866",
+    "members": [
+      "arxiv:2608.11866"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:statistical-modeling",
+        "label": "statistical modeling"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.11866",
+    "doi": "10.48550/arxiv.2608.11866",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T07:20:20Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005381,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2183,
+      "out": 234
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9917,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3967,
+    "relevance": 0.9917
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study models urban logistics traffic dynamics from a vehicle-centric perspective by analyzing high-frequency speed data to characterize driving cycles. Using the Art.Kinema framework, the researchers applied Factor Analysis and Generalized Linear Models to predict vehicle kinetic parameters based on exogenous contextual factors including time, day, road type, orientation, slope, and weather conditions.",
+      "why": "It provides an open, transparent alternative to proprietary 'black box' routing APIs, allowing supply chain managers to estimate energy consumption and trip durations using accessible environmental and temporal variables."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-12",
+  "work_key": "arxiv:2608.11866"
+}

@@ -1,0 +1,221 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Residents' perception of the urban streetscape is an important factor in public health, active mobility, and social wellbeing. Street view imagery (SVI) has emerged as a widely used data source for assessing these perceptual qualities, yet its uneven coverage and irregular updating limit large-scale measurement. Here, we present CVLNet, a Cross-View Learning Network that predicts street-level perception from AlphaEarth embeddings and multi-source urban contextual data without requiring SVI at inference. CVLNet applies per-task adaptive gating to jointly model five perceptual dimensions, using labels from the pretrained SVI-Percept model as ground truth. The proposed method is evaluated across four Southeast Asian cities: Singapore, Kuala Lumpur, Jakarta, and Manila. CVLNet achieves a median road-segment-level Adjusted $R^{2}$ of 0.76 and consistently outperforms the baseline models, with gains ranging from 5.9--11.3% across the five perceptual dimensions. Ablation experiments show that AlphaEarth features and urban contextual features contribute complementary information. We further produce citywide road-level streetscape perception maps for five subjective perceptual dimensions across all four cities, extending perception estimation from the 13--31% of the road network directly covered by available SVI to the complete road network of each city. Integrating these maps with WorldPop gridded population data, we quantify exposure inequality across population-density, demographic, and land-use groups using the Deficit Palma Ratio. These results demonstrate that remote sensing can serve as a scalable alternative to SVI for citywide streetscape perception mapping, enabling a more comprehensive assessment of urban environmental inequality.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Peilin Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Pengfei Chen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jingyu Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zhifeng Yang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Tiansheng Chen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mengjie Gong",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xiao Cheng",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.16310v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.16310v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-17",
+    "repository_urls": [],
+    "title": "Cross-View Urban Sensing: Mapping Subjective Streetscape Perception via AlphaEarth Embeddings and Urban Context"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-17_2608.16310",
+    "members": [
+      "arxiv:2608.16310"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q334",
+        "label": "Singapore",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q3630",
+        "label": "Jakarta",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1461",
+        "label": "Manila",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.16310",
+    "doi": "10.48550/arxiv.2608.16310",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T07:20:14Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.007139,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2191,
+      "out": 428
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.932,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3728,
+    "relevance": 0.932
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model relies on labels generated by a pretrained SVI-Percept model as its ground truth, meaning its predictions are subject to any biases or errors inherent in the original street-view perception model.",
+      "what": "The researchers developed CVLNet, a cross-view learning network that predicts five dimensions of street-level human perception using AlphaEarth satellite embeddings and urban contextual data, eliminating the need for street-view imagery (SVI) during inference. Evaluated across Singapore, Kuala Lumpur, Jakarta, and Manila, the model achieved a median road-segment-level Adjusted R² of 0.76, outperforming baseline models by 5.9% to 11.3%. By applying this model, the study mapped streetscape perception across 100% of the road networks in these four cities, expanding coverage from the 13% to 31% of roads that actually have SVI available.",
+      "why": "It establishes that satellite remote sensing and contextual data can substitute for street-view imagery to map subjective human experiences of the built environment. This allows planners to assess environmental exposure inequalities across entire metropolitan road networks, even in regions where street-level photography is sparse or outdated."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-17",
+  "work_key": "arxiv:2608.16310"
+}

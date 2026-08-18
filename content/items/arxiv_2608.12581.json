@@ -1,0 +1,187 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Understanding when migration generates social integration or exclusion is a central challenge for urban communities. Existing research has mostly relied on surveys, administrative data, or aggregate indicators that fail to capture expressions of exclusion at fine spatiotemporal scales. Here, we analyze over 550,000 geolocated reports from SOSAFE (Chile's largest citizen reporting platform) to examine the relationship between migration and hate speech in Santiago. We fine-tune a Spanish hate speech classifier and validate it against human labels. Reports that mention migrants are more likely to contain hate speech than other reports. Hate speech concentrates in areas with recent demographic change (post-2010 arrivals) rather than in established migrant communities. The spatial analysis shows that hate speech hotspots coincide with neighborhoods where recent migrants comprise over a third of the population. Coldspots appear in high-education sectors with minimal recent migration. Reports with hate speech and reports that mention migrants receive more engagement, although their combination is not amplified further. These results show digital bordering on a citizen reporting platform: exclusionary discourse concentrates, and receives more engagement, in neighborhoods undergoing recent demographic change.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Eduardo Graells-Garrido",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Daniela Opitz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Francisco Rowe",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Carmen Cabrera",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.SI",
+      "cs.CY"
+    ],
+    "comment": "19 pages. Under review",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.12581v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.12581v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-12",
+    "repository_urls": [],
+    "title": "Hate speech toward migrants on a citizen reporting platform concentrates in neighborhoods undergoing demographic change"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-17_2608.12581",
+    "members": [
+      "arxiv:2608.12581"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-analysis",
+        "label": "spatial analysis"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q2887",
+        "label": "Santiago",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.12581",
+    "doi": "10.48550/arxiv.2608.12581",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T07:20:20Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00577,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1969,
+      "out": 313
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9316,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3726,
+    "relevance": 0.9316
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on data from a single citizen reporting application in Santiago, which may reflect the specific demographics and biases of that platform's user base.",
+      "what": "The study analyzed over 550,000 geolocated reports from Chile's largest citizen reporting platform, SOSAFE, to map hate speech against migrants in Santiago. Using a fine-tuned Spanish hate speech classifier validated against human labels, the researchers found that reports mentioning migrants have a higher probability of containing hate speech. This exclusionary discourse concentrates in neighborhoods undergoing rapid demographic change where post-2010 arrivals make up more than a third of the population, rather than in established migrant enclaves.",
+      "why": "It demonstrates that digital citizen reporting platforms act as sites of 'digital bordering' where exclusionary behavior is amplified, proving that anti-migrant sentiment is driven by rapid demographic transitions at a neighborhood scale rather than the mere presence of long-term migrant communities."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-12",
+  "work_key": "arxiv:2608.12581"
+}

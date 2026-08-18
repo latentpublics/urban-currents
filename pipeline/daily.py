@@ -297,12 +297,24 @@ def run_daily(
     use_llm: bool = True,
     today: Optional[date] = None,
     smoke: bool = False,
+    window: Optional[tuple[date, date]] = None,
+    backfilled: bool = False,
+    deadline: Optional["Deadline"] = None,
 ) -> dict[str, Any]:
     """One day, end to end, with the outcome decided rather than assumed.
 
     `smoke` narrows the window and caps summaries — the cheap path for step 1 of
     the turn-on checklist, which only needs to prove the install, the model and
     the keys work. See `smoke_window`.
+
+    `window` overrides the window entirely. The backfill passes a single day,
+    because a historical issue should say what appeared **that day** rather than
+    what a seven-day live window would have swept up around it. `backfilled`
+    marks the result so no aggregate silently mixes the two.
+
+    `deadline` lets a caller supply its own clock. The backfill does, because
+    the daily wall-clock budget is sized for one day and would kill a run that
+    is deliberately spending hours.
     """
     from .llm import UsageState
     from .run_stages import (
@@ -315,7 +327,12 @@ def run_daily(
     from . import run_stages
 
     issue_date = d or (today or date.today())
-    covers_from, covers_to = (smoke_window(today) if smoke else target_window(today))
+    if window is not None:
+        covers_from, covers_to = window
+    elif smoke:
+        covers_from, covers_to = smoke_window(today)
+    else:
+        covers_from, covers_to = target_window(today)
     summarize_limit = int(cfg("daily.smoke_summaries", 3)) if smoke else None
     budget_cap = float(cfg("daily.max_llm_usd", 1.0))
     baseline_spend = UsageState.load().cost_usd
@@ -330,7 +347,7 @@ def run_daily(
         )
 
     budget_exceeded = False
-    deadline = Deadline().install()
+    deadline = deadline or Deadline().install()
     stopped_early: Optional[str] = None
     try:
         # Collect the window. `backfill_from` already exists for exactly this.
@@ -405,6 +422,7 @@ def run_daily(
         issue = stage_issue(run, issue_date)
         issue.covers_from = covers_from
         issue.covers_to = covers_to
+        issue.backfilled = backfilled
         store.save_issue(issue)
         try:
             stage_preview(run, issue_date)

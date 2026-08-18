@@ -134,8 +134,16 @@ llm:
   # to grow the vocabulary, which 60 cannot finish. The wallet is still guarded
   # by max_spend_usd, and extraction is the cheap task (~$0.002 a call).
   max_calls_per_run: 400
-  max_calls_total: 600
-  max_spend_usd: 10.0
+  # Per task, cumulative. Raised for the 60-day backfill (phase 0L, N1), which
+  # needs roughly 1,440 summarize and 1,440 extract calls on top of the 361 and
+  # 529 already spent. These are runaway-loop guards, not the budget: the batch
+  # ceiling is `backfill.max_usd` and the wallet guard is `max_spend_usd`.
+  max_calls_total: 2500
+  # Cumulative spend across the project. $2.37 is already gone and the backfill
+  # is budgeted at $9.00, so 10.0 would have stopped it two thirds of the way
+  # through — and stopping mid-backfill leaves the archive with a hole exactly
+  # where the measurements need it continuous.
+  max_spend_usd: 14.0
 
   # Per-task overrides. Each task owns its prompt version, so editing one
   # prompt does not invalidate the other's cache (the reason D8 was reverted).
@@ -330,3 +338,19 @@ held:
   # R3: above the floor by less than the model's own calibration error is not
   # meaningfully above the floor.
   floor_margin: 0.03
+
+backfill:
+  # The archive is five days long and almost every second-order measurement in
+  # the last four batches ended in "too few". `uc backfill-issues` makes the
+  # missing issues from candidates already on disk (phase 0L, N1).
+  #
+  # Batch ceiling. Measured: $0.144 a day, so 60 days is about $8.64. The run
+  # stops here and reports how far it got rather than quietly going over.
+  max_usd: 9.00
+  # Committed in blocks. Sixty days in one commit is a revert that is all or
+  # nothing; a checkpoint is written after every single day regardless.
+  commit_every: 10
+  # Per day, and deliberately larger than `daily.max_minutes`. A backfill day
+  # that spends most of its time waiting for the free tier's rate limit is
+  # succeeding slowly, not hanging, and the daily budget would kill it for that.
+  max_minutes_per_day: 60

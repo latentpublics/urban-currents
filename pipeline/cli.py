@@ -328,6 +328,54 @@ def daily(
         raise typer.Exit(code=1)
 
 
+@app.command("backfill-issues")
+def backfill_issues_cmd(
+    days: int = typer.Option(60, help="How many past days to fill"),
+    budget: Optional[float] = typer.Option(None, help="Spend ceiling in USD"),
+    commit: bool = typer.Option(True, help="git commit every `backfill.commit_every` days"),
+):
+    """Make the missing issues for past days, oldest first.
+
+    The archive is five days long, which is why nearly every second-order
+    measurement in the last four batches ended in "too few". Candidates for
+    ninety days are already on disk; this turns them into issues.
+
+    One-day windows, `backfilled: true`, existing issues never rewritten, a
+    checkpoint after every day and a commit every ten. Stops at the spend
+    ceiling and says how far it got.
+    """
+    import subprocess
+
+    from .backfill_issues import backfill
+
+    def commit_block(attempted: int, state: dict) -> None:
+        if not commit:
+            return
+        subprocess.run(["git", "add", "content/"], cwd=str(paths.ROOT))
+        subprocess.run(
+            [
+                "git", "commit", "-q", "-m",
+                f"content: backfill {attempted} day(s), "
+                f"${state.get('spend_usd', 0):.4f} spent",
+            ],
+            cwd=str(paths.ROOT),
+        )
+        typer.echo(f"[COMMIT] {attempted} days, ${state.get('spend_usd', 0):.4f}")
+
+    result = backfill(days=days, budget_usd=budget, on_checkpoint=commit_block)
+    payload = result.as_dict()
+    out = paths.RUNS / "backfill_issues.json"
+    out.write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False) + chr(10),
+        encoding="utf-8",
+        newline=chr(10),
+    )
+    typer.echo(json.dumps({k: v for k, v in payload.items() if k != "days"}, indent=2))
+    typer.echo(f"-> {out}")
+    if result.stopped_on:
+        typer.echo(f"[STOPPED] {result.stopped_on}")
+
+
 @app.command("record-interrupted")
 def record_interrupted_cmd(
     date_: Optional[str] = DateOpt,

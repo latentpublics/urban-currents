@@ -478,6 +478,13 @@ class Issue(StrictModel):
     # nobody chose for them.
     covers_from: Optional[DateT] = None
     covers_to: Optional[DateT] = None
+    # Built by `uc backfill-issues` from an archive of candidates rather than by
+    # a live run (phase 0L, N1). A backfilled issue covers a **single** day,
+    # where a live one covers a seven-day window, so the two answer "what did we
+    # see" differently and an aggregate that mixes them without saying so is
+    # comparing two things. Never inferred from the window: a one-day window is
+    # also what `--smoke` produces.
+    backfilled: bool = False
     headline: Headline = Field(default_factory=Headline)
     quiet_day: bool = False
     scan_meta: ScanMeta = Field(default_factory=ScanMeta)

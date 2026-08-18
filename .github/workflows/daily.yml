@@ -89,8 +89,50 @@ jobs:
           key: hf-${{ runner.os }}-bge-base-en-v1.5
           restore-keys: hf-${{ runner.os }}-
 
+      # The cache H6 asked for: LLM responses, keyed by prompt version so an
+      # edited prompt misses rather than serving stale text. 2.2MB.
+      - name: Cache LLM responses
+        uses: actions/cache@v4
+        with:
+          path: runs/cache
+          key: llm-${{ hashFiles('config/pipeline.yaml') }}-${{ github.run_id }}
+          restore-keys: |
+            llm-${{ hashFiles('config/pipeline.yaml') }}-
+            llm-
+
+      # ★ The cache nobody had listed, and the largest single cost on a runner.
+      #
+      # `.cache/embeddings/` holds one vector per abstract, keyed by text hash,
+      # and it is gitignored — so CI embeds every candidate from scratch every
+      # time. Measured here: **263 ms/item uncached** against 5.7 ms warm. A
+      # normal day classifies ~870 items, which is 3.8 minutes on this laptop
+      # and an estimated 8–15 on a two-core runner. That is the biggest
+      # identified piece of the 44 minutes.
+      #
+      # Keyed on the embedding model, because vectors from one model are
+      # meaningless to another. `github.run_id` in the primary key with prefix
+      # restore-keys is the append-only pattern: every run restores the newest
+      # matching cache and saves a superset.
+      - name: Cache embedding vectors
+        uses: actions/cache@v4
+        with:
+          path: .cache/embeddings
+          key: emb-bge-base-en-v1.5-${{ github.run_id }}
+          restore-keys: emb-bge-base-en-v1.5-
+
       - name: Install
         run: uv sync --extra embed --frozen
+
+      # Downloaded in its own step so the 440MB shows up as its own line in the
+      # log instead of hiding inside `classify`, where it was billed to the
+      # pipeline's runtime and made the stage timings unreadable.
+      - name: Warm the embedding model
+        run: |
+          uv run python -c "
+          from pipeline.filters.embed import embed
+          embed(['warm the model'], use_cache=False)
+          print('embedding model ready')
+          " 
 
       - name: Run the day
         id: run

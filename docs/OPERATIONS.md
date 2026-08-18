@@ -206,7 +206,14 @@ before a human has read what it would have said. Do not skip ahead to step 6.
    `UC_ALERT_RECIPIENT` comes at step 3 and `UC_SMTP_*` at step 6, deliberately.
    GitHub masks a secret once saved — to change one, delete it and add it again.
 
-1. **Run it by hand, dry.** Actions → daily → Run workflow, `dry_run: true`.
+1. **Run it by hand, cheap.** Actions → daily → Run workflow, `dry_run: true`
+   **and `smoke: true`**. Expect **3–6 minutes**; the first run is slower
+   because the 440MB embedding model is not cached yet.
+
+   `smoke` narrows the window to two days and caps summaries at three. Without
+   it, step 1 collects a full seven-day window and summarises all of it — the
+   most expensive thing the pipeline does, with the result discarded. That is
+   the run that was killed at 45 minutes on the first attempt.
    Nothing is written, nothing is sent. Confirms the install, the model cache
    and the keys.
 2. **Run it by hand, live, with the file backend.** `dry_run: false`. An issue

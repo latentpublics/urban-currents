@@ -205,12 +205,17 @@ GitHub 웹에서:
 | 단계 | 무엇을 하나 | 끝나면 어떤 상태 | 누구에게 도달하나 |
 |---|---|---|---|
 | **0** | **Settings → Secrets → Actions에 `OPENALEX_KEY` · `GOOGLE_API_KEY` 등록** | 러너가 API를 부를 수 있음 | **아무도** |
-| **1** | GitHub → Actions → daily → Run workflow, `dry_run: true` | 설치·모델 캐시·API 키가 맞는지 확인 | **아무도** |
+| **1** | Actions → daily → Run workflow, `dry_run: true` **+ `smoke: true`** | 설치·모델 캐시·API 키 확인. **3~6분** (첫 실행은 모델 440MB 때문에 더 걸립니다) | **아무도** |
 | **2** | 같은 화면에서 `dry_run: false` | 이슈가 쓰이고 커밋됨. 메일은 러너 안 `.eml`로 만들어졌다 사라짐 | **아무도** |
 | **3** | 저장소 Secrets에 `UC_ALERT_RECIPIENT` 등록 | 실패 경보가 살아남 | **박사님 한 명** (운영 메일) |
 | **4** | `daily.yml`의 `schedule:` 주석 해제 | **스스로 매일 돌면서 아카이브에만 발행.** 메일은 아무에게도 안 감 | **아무도** |
 | **5** | `weekly.yml`의 `schedule:` 주석 해제 | 주 1회 운영 요약 메일 | **박사님 한 명** |
 | **6** | 제공자 선택 → 도메인 → SPF/DKIM/DMARC → `UC_SMTP_*` → `deliver.backend: smtp` | 독자에게 발송 시작 | **묻지 않은 사람들** |
+
+> **`smoke: true`를 켜십시오.** 창을 2일로 좁히고 요약을 3건만 합니다.
+> 켜지 않으면 1단계가 **7일 창 전체를 수집하고 전부 요약**합니다 —
+> 파이프라인에서 가장 비싼 일을 시켜 놓고 결과를 버리는 것이고,
+> **첫 시도에서 45분에 잘린 것이 바로 그 실행입니다.**
 
 ### 각 단계를 GitHub 어디에서 하는가
 

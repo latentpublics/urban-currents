@@ -36,8 +36,16 @@ from .base import (
 )
 
 
-class OpenAlexUnavailable(RuntimeError):
-    """No API key — the daily budget without one is $0."""
+from ..skips import StageSkipped  # noqa: E402
+
+
+class OpenAlexUnavailable(StageSkipped):
+    """No API key — the daily budget without one is $0.
+
+    A **skip**, not a failure: nobody set a key, which is a different problem
+    from OpenAlex being down and is fixed in a different place. The day is still
+    `not_published` either way (X3), but the reason now names the cause.
+    """
 
 
 def configure_pyalex():

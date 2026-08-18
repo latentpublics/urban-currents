@@ -25,11 +25,11 @@ from .models import Headline, Issue, Item, ScanMeta
 from .render.preview import write_preview
 from .score.headline import headline_line, pick_headline, score_all
 from .signals import apply_badges, apply_rule_signals
+# Defined in `pipeline/skips.py` so the collectors and the LLM client can
+# inherit it without importing this module (hotfix H2). Re-exported because
+# every stage already imports it from here.
+from .skips import StageSkipped  # noqa: F401
 from .stages import read_input, read_stage, write_stage
-
-
-class StageSkipped(RuntimeError):
-    """Raised when a stage cannot run (no key, no model) but the run should go on."""
 
 
 def _guard(run: Run, name: str, fn):
@@ -516,8 +516,41 @@ def stage_select(
         score_item(it, seen)
 
     journal_taken, arxiv_taken = fill_slots(items, thr, policy=policy)
+
+    # Nobody is checking before this goes out, so the doubtful ones are held
+    # rather than published (M2-2). Withholding leaves a hole in the day and
+    # that is the intended outcome — a slot filled with something we are unsure
+    # of is worth less than a shorter issue, and the reader cannot tell the two
+    # apart. Near-misses are collected here too; they cost the issue nothing and
+    # they are the labelling queue.
+    from . import held as held_queue
+
+    suspicions = []
+    for it in journal_taken:
+        s = held_queue.inspect(it, "journal", selected=True, floor=policy.arxiv_floor)
+        if s:
+            suspicions.append(s)
+    for it in arxiv_taken:
+        s = held_queue.inspect(it, "arxiv", selected=True, floor=policy.arxiv_floor)
+        if s:
+            suspicions.append(s)
+    for it in arxiv_pool:
+        if it in arxiv_taken:
+            continue
+        s = held_queue.inspect(it, "arxiv", selected=False, floor=policy.arxiv_floor)
+        if s:
+            suspicions.append(s)
+
+    withheld_keys = {s.work_key for s in suspicions if s.kind == held_queue.WITHHELD}
+    journal_taken = [it for it in journal_taken if it.work_key not in withheld_keys]
+    arxiv_taken = [it for it in arxiv_taken if it.work_key not in withheld_keys]
+
     selected = journal_taken + arxiv_taken
     selected.sort(key=lambda it: (-it.scores.headline, -it.scores.relevance, it.work_key))
+
+    held_queue.record(run.metrics.date, suspicions, published=len(selected))
+    run.count("held_withheld", len(withheld_keys))
+    run.count("held_near_miss", len(suspicions) - len(withheld_keys))
 
     setattr(run.metrics.counts, "journal_candidates", len(journal_pool))
     setattr(run.metrics.counts, "arxiv_candidates", len(arxiv_pool))

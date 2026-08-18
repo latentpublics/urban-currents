@@ -173,6 +173,35 @@ jobs:
         if: always()
         run: uv run uc status || true
 
+      # A dry run that publishes nothing does not fail the job — a quiet
+      # weekend is a legitimate `not_published` and failing on it would train
+      # everyone to ignore a red cross. **But it must not pass silently.**
+      #
+      # It did, and that is why YJUN's step 1 looked fine and step 2 did not
+      # (hotfix H3). The point of a rehearsal is to find out before turning it
+      # on, and this one found out and said nothing.
+      - name: Warn if the dry run published nothing
+        if: ${{ steps.run.outputs.not_published == '1' && inputs.dry_run == true }}
+        run: |
+          reasons=$(uv run uc status 2>/dev/null | tail -40 || true)
+          {
+            echo "### Dry run published nothing"
+            echo ""
+            echo "This can be legitimate — a quiet weekend reads the same way."
+            echo "It is **not** legitimate when the reasons mention SKIPPED or"
+            echo "FAILED: that is configuration missing, not a quiet day."
+            echo ""
+            echo '```'
+            echo "$reasons"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if uv run uc status 2>/dev/null | grep -qiE "SKIPPED|FAILED|silent_sources.*\[[^]]"; then
+            echo "::error::The dry run did not publish AND a stage was skipped or failed. This is setup, not a quiet day — check repository secrets (step 0 in docs/OPERATIONS.md)."
+          else
+            echo "::warning::The dry run published nothing. If today was genuinely quiet this is fine; check the summary."
+          fi
+
       # A workflow that fails silently is the same failure this whole phase is
       # about. The pipeline alerts by mail on `not_published`; this catches the
       # case the pipeline could not reach — the job itself dying, which mails

@@ -49,8 +49,15 @@ PRICE_PER_MTOK = {
 }
 
 
-class LLMUnavailable(RuntimeError):
-    """No API key, or the SDK is not installed."""
+from .skips import StageSkipped  # noqa: E402
+
+
+class LLMUnavailable(StageSkipped):
+    """No API key, or the SDK is not installed.
+
+    Same shape as OpenAlexUnavailable and the same reasoning: an unset
+    GOOGLE_API_KEY is a setup gap, not a broken model.
+    """
 
 
 class LLMBudgetExceeded(RuntimeError):

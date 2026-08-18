@@ -99,3 +99,64 @@ def test_the_config_does_not_point_at_untracked_vocabulary():
 def test_the_files_a_run_reads_are_tracked(path: str):
     """A run on a clean clone reads all of these. None may be a local artefact."""
     assert tracked(path), f"{path} is not tracked; a clean checkout cannot run"
+
+
+# --------------------------------------------------------------------------
+# H2 — a missing key is a skip, not a failure
+# --------------------------------------------------------------------------
+
+
+def test_a_missing_key_is_recorded_as_skipped(repo, monkeypatch):
+    """`docs/OPERATIONS.md` promised SKIPPED for eight batches; the code said FAILED.
+
+    The two get investigated in different places — one is "the source is down",
+    the other is "nobody put a key in the repository settings" — and YJUN's
+    first CI run reported the wrong one.
+    """
+    from pipeline.collectors.openalex import OpenAlexUnavailable, configure_pyalex
+    from pipeline.metrics import Run
+    from pipeline.run_stages import StageSkipped, _guard
+
+    monkeypatch.delenv("OPENALEX_KEY", raising=False)
+    assert issubclass(OpenAlexUnavailable, StageSkipped)
+
+    run = Run.for_date(__import__("datetime").date(2026, 8, 20))
+    _guard(run, "collect.openalex", configure_pyalex)
+
+    assert run.metrics.stages["collect.openalex"] == "SKIPPED"
+    assert any("OPENALEX_KEY" in e for e in run.metrics.errors)
+    assert not any("FAILED" in e for e in run.metrics.errors)
+
+
+def test_a_skipped_required_source_still_blocks_the_issue(repo, monkeypatch):
+    """The verdict does not move. Only the reason gets more accurate.
+
+    Half the declared scope missing is a different claim whether the source was
+    unconfigured or broken, so X3's rule stands either way.
+    """
+    from datetime import date
+
+    from pipeline.metrics import Run
+    from pipeline.outcome import NOT_PUBLISHED, decide
+
+    day = date(2026, 8, 20)
+    run = Run.for_date(day)
+    run.metrics.stages.update({
+        "collect": "OK",
+        "collect.arxiv": "OK",
+        "collect.openalex": "SKIPPED",
+    })
+
+    outcome = decide(run, day, published_count=8)
+
+    assert outcome.status == NOT_PUBLISHED
+    assert outcome.writes_issue is False
+    assert any("collect.openalex" in r and "SKIPPED" in r for r in outcome.reasons)
+
+
+def test_an_unavailable_llm_is_also_a_skip(repo):
+    """Same shape, swept for rather than fixed one at a time."""
+    from pipeline.llm import LLMUnavailable
+    from pipeline.skips import StageSkipped
+
+    assert issubclass(LLMUnavailable, StageSkipped)

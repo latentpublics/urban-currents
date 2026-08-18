@@ -24,9 +24,60 @@ issue published before the outcome model existed has no run-log row, so a null
 "nothing has ever worked".
 
 ```bash
-uv run uc catch-up     # retry the missed dates still inside the horizon
-uv run uc weekly       # seven days of outcomes, spend and sends
+uv run uc review --pending   # judge what was held while you were away
+uv run uc catch-up           # retry the missed dates still inside the horizon
+uv run uc weekly             # seven days of outcomes, spend and sends
 ```
+
+## Reviewing, now that nobody reviews daily
+
+The operating assumption changed in Phase 0L. Review used to be **daily, before
+publication, and over everything**; it is now **occasional, after publication,
+and over a sample**. Nothing waits for a human, so the selection policy carries
+the doubt the daily pass used to carry.
+
+| command | what it is for |
+|---|---|
+| `uc review --pending` | the held queue, oldest first, resumable. **The command for coming back** |
+| `uc review --sample --since D` | read a stratified sample of what already went out |
+| `uc review --date D` | the full review of one issue, when you want to look at a specific day |
+| `uc review --relabel weak` | split the pre-M1 `drop_weak` labels into method and results |
+
+**There is deliberately no `--latest`.** An argument-free "show me today" would
+be a standing invitation to check every morning, which is the habit this design
+exists to remove. `--pending` asks for no date on purpose: a week away leaves a
+week of held items, and remembering which dates those were is the friction being
+removed.
+
+### The held queue
+
+When the pipeline is not sure about an item it **holds** it rather than
+publishing it, and the day goes out with a hole. The hole is the intended
+outcome — a slot filled with something we are unsure of is worth less than a
+shorter issue, and a reader cannot tell the two apart.
+
+Held items are **not** carried into a later issue. They are waiting for a
+judgement, not owed to readers. Two kinds:
+
+- **withheld** — it was going to be published and a rule pulled it. Costs the
+  issue an item, and is offered first in `--pending`.
+- **near miss** — it was never going to be published but sits close enough to
+  the line that a judgement is worth having. Costs nothing.
+
+The rules live in `pipeline/held.py` and are tuned in `config/pipeline.yaml`
+under `held:`. **The queue is the labelling queue is the training set**: it puts
+scarce attention exactly where the pipeline is least sure, instead of at the top
+of a ranking it already gets right.
+
+```bash
+uv run python scripts/held_rate.py    # how much the rules would hold back
+```
+
+**If the withheld rate goes over 30%, the rules are too wide** — at that point
+they are not a filter, they are a different editorial policy adopted by
+accident. Measured 2026-08-18: **0.2917 over one day**, and 4 of the 7 withheld
+were plainly urban papers arriving through an environmental-science subfield.
+That is the first thing to look at.
 
 ## Where a human is required
 
@@ -34,18 +85,20 @@ uv run uc weekly       # seven days of outcomes, spend and sends
 |---|---|---|---|---|
 | 1 | Review the journal whitelist | once, then when re-generated | ~20 min | edit `vocab/sources/journals.yaml` |
 | 2 | Curate bootstrapped vocabulary candidates | once, then occasionally | ~30 min | edit `vocab/methods.yaml`, `vocab/data.yaml` |
-| 3 | Daily review of the issue | daily | **≤ 15 min (Q4)** | `uc review --date YYYY-MM-DD` |
+| 3 | Judge the held queue | **when you come back**, not daily | ~10 min a sitting | `uc review --pending` |
 | 4 | Relevance labelling for Q1 | 5 days × 30 items | ~15 min/day | `uc review --label relevance --date …` |
 | 5 | Drain `unmatched.jsonl` into the vocabulary | weekly | ~10 min | read `runs/*/unmatched.jsonl` |
 | 6 | Re-calibrate the quiet-day threshold | after a backfill | ~2 min | `uc calibrate --apply` |
 
 Tasks 1, 2 and 5 are the ones that decay if skipped: the whitelist drives the
-training set, and the vocabulary drives every overlay tag. Task 3 is the one the
-whole Phase 0 measurement rests on — see Q4.
+training set, and the vocabulary drives every overlay tag.
 
-**The 15-minute review budget is a measurement, not a promise.** `uc review`
-records elapsed time into `runs/{run_id}/metrics.json` because self-reported
-review times are always under-reported.
+**Task 3 is no longer daily.** Q4 was redefined in Phase 0L: it used to ask
+whether a day could be reviewed in fifteen minutes, and now asks whether the
+thing can run for a week unattended without publishing something the editor
+would retract. Nothing blocks on a human — the held queue absorbs the doubt
+instead, and gets judged whenever someone is back. See `docs/phase0-ledger.md`
+for what the old definition measured (nothing: zero days carried a `review_s`).
 
 ## Daily run
 
@@ -97,9 +150,6 @@ in `content/runs_log/YYYY-MM-DD.json`. See `pipeline/outcome.py`.
 Still supported, and still the point of the design — re-running `summarize`
 never requires re-collecting:
 
-Or stage by stage, which is the point of the design — re-running `summarize`
-never requires re-collecting:
-
 ```bash
 uv run uc collect   --date 2026-08-14
 uv run uc dedup     --date 2026-08-14
@@ -140,6 +190,22 @@ comparison behind choosing GitHub Actions is in `docs/scheduler-options.md`.
 **The order matters.** It is arranged so that nothing can reach a stranger
 before a human has read what it would have said. Do not skip ahead to step 6.
 
+0. **Put the keys in repository secrets.** *This step was missing and it is why
+   the first real attempt failed.* Step 1 used to claim it "confirms the keys"
+   while saying nowhere how they get there.
+
+   **Settings → Secrets and variables → Actions → New repository secret**
+
+   | secret | value | without it |
+   |---|---|---|
+   | `OPENALEX_KEY` | same as your local `.env` | **journal collection fails and no issue is published** |
+   | `GOOGLE_API_KEY` | same as your local `.env` | cards publish with no summary |
+   | `CONTACT_EMAIL` | a contact address | only used in the OpenAlex request header |
+   | `SPRINGER_API_KEY` | optional | ~12 journal abstracts a day go unrecovered |
+
+   `UC_ALERT_RECIPIENT` comes at step 3 and `UC_SMTP_*` at step 6, deliberately.
+   GitHub masks a secret once saved — to change one, delete it and add it again.
+
 1. **Run it by hand, dry.** Actions → daily → Run workflow, `dry_run: true`.
    Nothing is written, nothing is sent. Confirms the install, the model cache
    and the keys.
@@ -159,6 +225,18 @@ before a human has read what it would have said. Do not skip ahead to step 6.
    `deliver.backend` to `smtp`. **This is the step that can reach someone who
    did not ask.**
 
+### Where each step happens in GitHub
+
+| step | where |
+|---|---|
+| 0 · 3 · 6 (keys) | **Settings → Secrets and variables → Actions** |
+| 1 · 2 | **Actions → `daily` in the sidebar → `Run workflow`** |
+| 4 · 5 | edit `.github/workflows/daily.yml` (or `weekly.yml`) → delete the `#` on the two `schedule:` lines → commit |
+| 6 (config) | `deliver.backend` in `config/pipeline.yaml` |
+
+`Run workflow` opens a small panel with `date` (blank means today) and `dry_run`
+(defaults to `true`). **Step 2 is the same button with `dry_run` set to `false`.**
+
 Two things to know before step 4:
 
 - **GitHub disables scheduled workflows after 60 days without repository
@@ -166,7 +244,7 @@ Two things to know before step 4:
   something the documentation makes clear, so treat a missing weekly summary as
   a possible symptom of it. `uc status` shows a stale `last_success` either way.
 - **The scheduler is best-effort and runs late under load.** That costs nothing
-  here — the window is three days wide and `uc catch-up` retries for a week.
+  here — the window is seven days wide and `uc catch-up` retries for a week.
 
 ### If the bot cannot push
 
@@ -187,7 +265,7 @@ Every stage records `OK` / `SKIPPED` / `PARTIAL` / `FAILED` in
 | Symptom | Meaning | Action |
 |---|---|---|
 | `collect.openalex: SKIPPED` | `OPENALEX_KEY` missing | the arXiv side still runs; add the key and re-run `uc collect` |
-| `summarize: SKIPPED` | `ANTHROPIC_API_KEY` missing | cards publish without the two-layer summary; add the key and re-run `uc summarize` |
+| `summarize: SKIPPED` | `GOOGLE_API_KEY` missing | cards publish without the two-layer summary; add the key and re-run `uc summarize`. **The key depends on `llm.provider`** — Gemini is the default and wants `GOOGLE_API_KEY`; the Anthropic path wants `ANTHROPIC_API_KEY` |
 | `summarize: PARTIAL` | hit a call cap | raise `llm.max_summaries_per_run`, or accept it and re-run tomorrow |
 | `classify.model: heuristic-v0` | no trained model found | train one; until then relevance scores are keyword density, not probabilities |
 | `enrich` finds nothing | OpenAlex has not indexed the preprint yet | normal. The retry queue in `runs/state/openalex_enrich_pending.json` tries again on later days |

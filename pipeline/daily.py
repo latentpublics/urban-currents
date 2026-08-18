@@ -352,7 +352,7 @@ def run_daily(
     try:
         # Collect the window. `backfill_from` already exists for exactly this.
         _guard(run, "collect", lambda: stage_collect(
-            run, covers_to, backfill_from=covers_from
+            run, covers_to, backfill_from=covers_from, enrich_arxiv=not backfilled
         ))
 
         for name in STAGES:

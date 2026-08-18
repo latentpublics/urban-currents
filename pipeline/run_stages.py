@@ -68,6 +68,7 @@ def stage_collect(
     sources: str = "all",
     fixture: bool = False,
     backfill_from: Optional[date] = None,
+    enrich_arxiv: bool = True,
 ) -> list[Item]:
     """arXiv + OpenAlex collection. Raw responses are preserved verbatim."""
     items: list[Item] = []
@@ -110,7 +111,13 @@ def stage_collect(
             # Enrichment pass: fill ids.openalex / graph / topics on arXiv items.
             # Best-effort by design — arXiv indexing lags by days (PRD §5.1).
             arxiv_items = [it for it in items if it.ids.arxiv and not it.ids.openalex]
-            if arxiv_items:
+            # Skipped by the backfill. This is one OpenAlex lookup per unmatched
+            # preprint, and it hung for sixteen minutes on a single backfilled
+            # day - sixty days of that is ten hours for a pass the stage itself
+            # calls best-effort. The cost is that backfilled arXiv items may
+            # lack `referenced_works`; the journal path is unaffected, and that
+            # is what canon affinity and most coupling stand on.
+            if arxiv_items and enrich_arxiv:
 
                 def _enrich():
                     c = OpenAlexCollector(run)

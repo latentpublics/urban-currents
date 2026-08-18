@@ -9,6 +9,8 @@ from __future__ import annotations
 import json
 from datetime import date
 
+import pytest
+
 
 from pipeline.labeling import (
     DROP_LABELS,
@@ -507,3 +509,42 @@ def test_a_correction_record_survives_a_read(repo):
     assert row["corrected_from"] == "drop_weak"
     assert row["corrected_by"] == "YJUN"
     assert row["corrected_at"].startswith("2026-08-17")
+
+
+# --------------------------------------------------------------------------
+# Three sampling frames, three questions (phase 0L, N2)
+# --------------------------------------------------------------------------
+
+
+def test_the_three_label_files_cannot_be_pooled(repo):
+    """Any two concatenated give a number that looks fine and means nothing."""
+    from pipeline.labeling import (
+        LabelSetMisuse,
+        PROBE_FACETS,
+        RANKED_FACETS,
+        append_labels,
+        precision_at_k,
+        sampling_of,
+    )
+
+    assert sampling_of("relevance") == "ranked_top_n"
+    assert sampling_of("affinity_probe") == "band_stratified"
+    assert sampling_of("code_probe") == "code_stratified"
+    assert "code_probe" in PROBE_FACETS
+    assert "code_probe" not in RANKED_FACETS
+
+    # precision@k is undefined over a probe and says so by name.
+    with pytest.raises(LabelSetMisuse):
+        precision_at_k("code_probe")
+
+    # And a row from one frame cannot be written into another file.
+    with pytest.raises(LabelSetMisuse):
+        append_labels(
+            "code_probe",
+            [{"work_key": "arxiv:1", "label": "keep", "sampling": "ranked_top_n"}],
+        )
+    with pytest.raises(LabelSetMisuse):
+        append_labels(
+            "relevance",
+            [{"work_key": "arxiv:1", "label": "keep", "sampling": "code_stratified"}],
+        )

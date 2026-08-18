@@ -126,7 +126,24 @@ RANKED_FACETS = frozenset({"relevance"})
 # Label files sampled some other way. They may not be pooled with the ranked
 # ones, and `precision_at_k` refuses them outright rather than returning a
 # number that looks fine.
-PROBE_FACETS = frozenset({"affinity_probe"})
+#
+# Three frames now, and they answer three questions:
+#   relevance      ranked top-N per source  — what precision@k is defined over
+#   affinity_probe band-stratified over canon affinity
+#   code_probe     band-stratified over relevance, among code-bearing arXiv
+#
+# Any two of them concatenated give a figure that looks reasonable and means
+# nothing, which is why the guard refuses by name rather than hoping nobody
+# points a summariser at the wrong file (phase 0L, N2).
+PROBE_FACETS = frozenset({"affinity_probe", "code_probe"})
+
+# What each file's rows must declare. A row carries its own frame so a file that
+# was mixed by hand — `cat a.jsonl >> b.jsonl` — is still detectable afterwards.
+SAMPLING_OF_FACET = {
+    "relevance": "ranked_top_n",
+    "affinity_probe": "band_stratified",
+    "code_probe": "code_stratified",
+}
 
 
 class LabelSetMisuse(RuntimeError):
@@ -212,6 +229,8 @@ def labelled_keys(facet: str = "relevance") -> set[tuple[str, str]]:
 
 def sampling_of(facet: str) -> str:
     """How a label file was drawn. The one fact that decides what it can measure."""
+    if facet in SAMPLING_OF_FACET:
+        return SAMPLING_OF_FACET[facet]
     if facet in PROBE_FACETS:
         return "band_stratified"
     return "ranked_top_n"

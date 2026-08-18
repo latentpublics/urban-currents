@@ -267,7 +267,12 @@ def backfill(
         }
         save_checkpoint(state)
 
-        if on_checkpoint and result.attempted % commit_every == 0:
+        # Against the total, not this pass's attempts. A sixty-day run is
+        # driven in passes, and counting per pass means a pass that does seven
+        # days never triggers a commit — which is how thirteen days of archive
+        # ended up uncommitted while the checkpoint called them done. Content
+        # lost in that state is never rebuilt, because the day is marked done.
+        if on_checkpoint and len(done) % commit_every == 0:
             on_checkpoint(result.attempted, state)
 
     usage = UsageState.load()

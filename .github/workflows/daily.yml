@@ -52,6 +52,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
 
+    # Job level, not step level, so no step added later can forget it.
+    env:
+      # Python buffers stdout when it is not a TTY, so a cancelled job loses the
+      # whole buffer — which is why the 45-minute timeout produced 44 minutes of
+      # silence and left us guessing where the time went (hotfix 2, H5-3).
+      PYTHONUNBUFFERED: "1"
+
     steps:
       - uses: actions/checkout@v4
         with:

@@ -25,6 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
+    env:
+      # See daily.yml — a cancelled job loses an unflushed buffer entirely.
+      PYTHONUNBUFFERED: "1"
+
     steps:
       - uses: actions/checkout@v4
         with:

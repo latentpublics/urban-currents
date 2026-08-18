@@ -231,3 +231,63 @@ def test_status_reports_the_two_apart(repo):
     state = status()
     assert state["interrupted_dates"] == [str(DAY)]
     assert state["unpublished_dates"] == [str(DAY - timedelta(days=1))]
+
+
+# --------------------------------------------------------------------------
+# The window follows the date it was asked for (phase 0N, P1)
+# --------------------------------------------------------------------------
+
+
+def test_an_explicit_date_collects_that_dates_window(repo, wiring, monkeypatch):
+    """`uc daily --date X` must collect X's window, not today's.
+
+    It was collecting the current seven days and filing them under X, which is
+    what left `2026-08-11_2026-08-17` raw files inside `runs/run_2026-07-02/`.
+    The failure alert tells YJUN to run exactly this command to retry a date.
+    """
+    from pipeline.daily import target_window
+
+    seen: dict = {}
+
+    def collect(run, d, backfill_from=None, **kw):
+        seen["covers_to"] = d
+        seen["covers_from"] = backfill_from
+        run.metrics.stages.update(GOOD)
+        run.metrics.counts.arxiv_fetched = 10
+        run.metrics.counts.openalex_fetched = 10
+        return []
+
+    monkeypatch.setattr(run_stages, "stage_collect", collect)
+    asked = date(2026, 7, 2)
+    daily_mod.run_daily(d=asked, dry_run=True, use_llm=False)
+
+    expected_from, expected_to = target_window(asked)
+    assert (seen["covers_from"], seen["covers_to"]) == (expected_from, expected_to)
+    # And that window sits around the date asked for, not around today.
+    assert seen["covers_to"] < date(2026, 7, 3)
+
+
+def test_catch_up_retries_a_date_with_its_own_window(repo, monkeypatch):
+    """Catch-up runs every day once the schedule is on.
+
+    Passing the real `today` made every recovered date carry papers from the
+    current week, and nothing in the archive would have said so.
+    """
+    from pipeline import daily as dm
+
+    missed = date(2026, 8, 12)
+    record_interrupted(missed, "cancelled")
+    from pipeline.outcome import NOT_PUBLISHED, Outcome, record
+
+    record(Outcome(date=missed, status=NOT_PUBLISHED, reasons=["collect.arxiv did not run"]))
+
+    seen: list = []
+    monkeypatch.setattr(
+        dm, "run_daily",
+        lambda d=None, today=None, **kw: (seen.append((d, today)), {"status": "published"})[1],
+    )
+    dm.catch_up(today=date(2026, 8, 18))
+
+    assert seen, "nothing was retried"
+    for asked_date, as_of in seen:
+        assert as_of == asked_date, "the window must follow the date being retried"

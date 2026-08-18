@@ -327,12 +327,19 @@ def run_daily(
     from . import run_stages
 
     issue_date = d or (today or date.today())
+    # An explicit date implies that date's window. `target_window` derives the
+    # window from "today", so `uc daily --date 2026-07-02` was collecting the
+    # *current* seven days and filing them under July — which is what left
+    # `2026-08-11_2026-08-17` raw files inside `runs/run_2026-07-02/`. The
+    # failure alert tells YJUN to run exactly that command to retry a date, so
+    # the wrong reading was one keystroke away from the archive (phase 0N, P1).
+    as_of = today or d
     if window is not None:
         covers_from, covers_to = window
     elif smoke:
-        covers_from, covers_to = smoke_window(today)
+        covers_from, covers_to = smoke_window(as_of)
     else:
-        covers_from, covers_to = target_window(today)
+        covers_from, covers_to = target_window(as_of)
     summarize_limit = int(cfg("daily.smoke_summaries", 3)) if smoke else None
     budget_cap = float(cfg("daily.max_llm_usd", 1.0))
     baseline_spend = UsageState.load().cost_usd
@@ -503,7 +510,15 @@ def catch_up(today: Optional[date] = None, limit: Optional[int] = None) -> list[
     for row in pending:
         d = date.fromisoformat(row["date"])
         try:
-            results.append(run_daily(d=d, today=today))
+            # `today=d`, not the real today. `target_window` derives the window
+            # from "today", so passing the actual date made a catch-up collect
+            # the *current* seven days and file them under the missed date —
+            # `runs/run_2026-07-02/raw/arxiv/` held both `2026-07-02_...` and
+            # `2026-08-11_2026-08-17_...`. With the schedule on, catch-up runs
+            # every day, so every recovered date would have carried papers from
+            # the wrong week and the archive would not have said so (phase 0N,
+            # P1).
+            results.append(run_daily(d=d, today=d))
         except DailyLocked:
             raise
         except Exception as e:  # noqa: BLE001 - one bad day must not stop the rest

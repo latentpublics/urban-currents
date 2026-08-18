@@ -35,8 +35,20 @@ UC_PREVIEW_RECIPIENT
 site/
 docs/design-review.html
 
-# Trained models are build outputs; the training metadata JSON is committed.
-models/*.joblib
+# Trained models ARE committed (hotfix H1). They were ignored as "build outputs"
+# and that reasoning was wrong twice over:
+#
+#   - `classify` does not degrade without one. `latest_model_path()` raises
+#     FileNotFoundError when the pinned version is missing, on purpose, so a
+#     clean checkout fails the stage every time. CI failed on YJUN's very first
+#     run for exactly this.
+#   - They are 4KB each. Logistic regression over embeddings is weights and
+#     nothing else; all five together are 20KB. Calling that a build artefact
+#     cost more than storing it ever will.
+#
+# Reproducible and deployable are different properties. The training metadata in
+# models/*.json makes them reproducible; committing the joblib makes them
+# present. Being able to rebuild a thing is not a reason to ship without it.
 
 # Local embedding cache
 .cache/

@@ -45,6 +45,9 @@ PRICE_PER_MTOK = {
     "claude-haiku-4-5-20251001": {"in": 1.0, "out": 5.0},
     "gemini-3.5-flash": {"in": 1.50, "out": 9.00},
     "gemini-3.5-flash-lite": {"in": 0.30, "out": 2.50},
+    # Retired upstream: the API now answers 404 "no longer available" for this
+    # name. Kept only so an old cached response with this model recorded on it
+    # can still be priced; nothing should select it.
     "gemini-2.5-flash-lite": {"in": 0.10, "out": 0.40},
 }
 
@@ -243,6 +246,10 @@ class GeminiProvider:
             raise LLMUnavailable("google-genai is not installed; `uv add google-genai`") from e
         return genai.Client(api_key=key)
 
+    # Models that reject `thinking_budget`. Discovered at runtime rather than
+    # hard-coded from a name pattern, and remembered for the process.
+    _no_thinking_config: set = set()
+
     def complete(self, system: str, user: str, schema: Optional[dict] = None) -> LLMResponse:
         from google.genai import types
 
@@ -251,21 +258,42 @@ class GeminiProvider:
             "system_instruction": system,
             "max_output_tokens": self.max_tokens,
             "temperature": 0.2,
+        }
+        if self.model not in GeminiProvider._no_thinking_config:
             # thinking_budget=0 is the only setting that actually produces zero
             # thought tokens; thinking_level="minimal"/"low" still bills them.
-            "thinking_config": types.ThinkingConfig(
+            cfg_kwargs["thinking_config"] = types.ThinkingConfig(
                 thinking_budget=-1 if self.thinking else 0
-            ),
-        }
+            )
         if schema is not None:
             cfg_kwargs["response_mime_type"] = "application/json"
             cfg_kwargs["response_json_schema"] = schema
 
-        resp = client.models.generate_content(
-            model=self.model,
-            contents=user,
-            config=types.GenerateContentConfig(**cfg_kwargs),
-        )
+        def _send(kwargs: dict) -> Any:
+            return client.models.generate_content(
+                model=self.model,
+                contents=user,
+                config=types.GenerateContentConfig(**kwargs),
+            )
+
+        try:
+            resp = _send(cfg_kwargs)
+        except Exception as e:  # noqa: BLE001
+            # `gemini-3.5-flash-lite` returns 400 INVALID_ARGUMENT for
+            # thinking_budget=0 — the setting `gemini-3.5-flash` requires.
+            # Measured: lite bills **zero** thought tokens with no thinking
+            # config at all, so dropping it costs nothing and is not a silent
+            # downgrade. Retried once, then remembered.
+            if "INVALID_ARGUMENT" not in str(e) or "thinking_config" not in cfg_kwargs:
+                raise
+            GeminiProvider._no_thinking_config.add(self.model)
+            cfg_kwargs.pop("thinking_config")
+            print(
+                f"[llm] {self.model} rejects thinking_budget; retrying without it "
+                f"(it bills no thought tokens either way)",
+                flush=True,
+            )
+            resp = _send(cfg_kwargs)
         usage = resp.usage_metadata
         return LLMResponse(
             text=resp.text or "",

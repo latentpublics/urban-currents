@@ -1,0 +1,222 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "In this paper, we look at the relationships that economic variables have with adverse health outcomes in the western counties of Washington, Idaho, Oregon, California, and Nevada, with specific emphasis on how suicide rate relates to such economic variables. Data was first gathered from Census and County Health Rankings for the entire United States (for website use and usefulness for future research), cleaned and regression-imputed, and then various exploratory data analysis methods were used, such as PCA, clustering, correlation gathering, linear fittings, and LASSO. PCA and clustering suggested that counties may group according to broader state-level economic patterns, although political interpretations would require additional electoral data. Correlation Analysis, along with LASSO and linear fittings, showed us the destructive variables that connected the most with economic variables (in terms of $R^2$ and correlation values seen), the economic variables that are most and least important in predicting suicide rate, and the possible relationships that suicide rate has with these economic variables.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Noah Jackson",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sergey Lapin",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "24 pages, 6 figures, 3 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.00317v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.00317v2",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-01",
+    "repository_urls": [],
+    "title": "Economic Disparities and Their Relationship to Destructive Health Behaviors in Five Western U.S. States"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-01_2607.00317",
+    "members": [
+      "arxiv:2607.00317"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:dimensionality-reduction",
+        "label": "dimensionality reduction"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:clustering",
+        "label": "clustering"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139894383",
+        "label": "Noah Jackson"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6196-9814",
+        "label": "Sergey Lapin"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10376",
+        "is_primary": true,
+        "label": "Suicide and Self-Harm Studies",
+        "score": 0.3614,
+        "subfield": "3203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11959",
+        "is_primary": false,
+        "label": "Employment and Welfare Studies",
+        "score": 0.0455,
+        "subfield": "3600"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10235",
+        "is_primary": false,
+        "label": "Health disparities and outcomes",
+        "score": 0.0364,
+        "subfield": "3306"
+      }
+    ]
+  },
+  "first_published": "2026-07-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.00317",
+    "doi": "10.48550/arxiv.2607.00317",
+    "openalex": "W7167049876",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:48:29Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005671,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1915,
+      "out": 311
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8647,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3459,
+    "relevance": 0.8647
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on correlational methods and exploratory data analysis, meaning the identified relationships between economic variables and suicide rates cannot be interpreted as causal.",
+      "what": "This study analyzed the relationships between county-level economic variables and adverse health outcomes, specifically suicide rates, across counties in Washington, Idaho, Oregon, California, and Nevada. Using data from the US Census and County Health Rankings, the analysis employed principal component analysis, clustering, correlation analysis, linear fittings, and LASSO regression after performing regression imputation on missing values.",
+      "why": "The analysis demonstrates that county-level health and economic indicators tend to cluster along state-level boundaries, suggesting that state-level policy and economic environments play a significant role in local public health outcomes."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-03",
+  "work_key": "arxiv:2607.00317"
+}

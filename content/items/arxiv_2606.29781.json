@@ -1,0 +1,198 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban building change detection from bi-temporal aerial imagery is important for redevelopment monitoring, infrastructure management, and unauthorized-construction screening, but Korean urban scenes remain difficult because changed regions are often sparse, appearance varies strongly between acquisition dates, and useful outputs must follow building footprints rather than coarse blobs. This paper presents UrbanCDNet, a task specific Siamese CNN that combines appearance-robust multi-cue comparison, alignment-aware middle-scale differencing, lightweight context refinement, scene calibration, and auxiliary boundary supervision. Experiments use a corrected AIHub-based Korean benchmark with 3,998 training, 503 validation, and 499 test pairs, and report changed-class precision, recall, F1, and IoU. On the locked test split, UrbanCDNet achieves 0.7335 precision, 0.7696 recall, 0.7511 F1, and 0.6014 IoU, outperforming a strong Siamese U-Net baseline (0.7108 F1, 0.5514 IoU) and the strongest external competitor, ChangeFormer-MIT-B0 (0.7107 F1, 0.5512 IoU). Additional diagnostic slicing shows that the gain is concentrated in the operating regimes that motivated the design: on the sparse-change subset with less than 5% changed area, F1 improves from 0.4765 to 0.6175, and on the high photometric-gap subset it improves from 0.6349 to 0.7285. Boundary F1 at 3-pixel tolerance rises from 0.3445 to 0.4447, while object F1 at IoU 0.3 rises from 0.0690 to 0.2258. These results indicate that, on this Korean benchmark, task-shaped temporal comparison and boundary-aware supervision matter more than generic model scale alone",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Abdirashid Omar",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jonghyuk Park",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": "7 pages, 2 figures, 5 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.29781v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.29781v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-29",
+    "repository_urls": [],
+    "title": "UrbanCDNet: Appearance-Robust and Boundary-Aware Bitemporal Change Detection for Korean Urban Building Monitoring"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-29_2606.29781",
+    "members": [
+      "arxiv:2606.29781"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0003-3664-7818",
+        "label": "Abdirashid Omar"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4283-1155",
+        "label": "Jonghyuk Park"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10689",
+        "is_primary": true,
+        "label": "Remote-Sensing Image Classification",
+        "score": 0.8117,
+        "subfield": "2214"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11164",
+        "is_primary": false,
+        "label": "Remote Sensing and LiDAR Applications",
+        "score": 0.0613,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10036",
+        "is_primary": false,
+        "label": "Advanced Neural Network Applications",
+        "score": 0.0558,
+        "subfield": "1707"
+      }
+    ]
+  },
+  "first_published": "2026-06-29",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.29781",
+    "doi": "10.48550/arxiv.2606.29781",
+    "openalex": "W7166656087",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:38:35Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.006878,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2377,
+      "out": 368
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8838,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3535,
+    "relevance": 0.8838
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance was validated exclusively on a single Korean benchmark dataset, meaning its robustness to different international architectural styles and urban layouts remains untested.",
+      "what": "The researchers developed UrbanCDNet, a Siamese convolutional neural network designed for bitemporal building change detection in complex urban environments. Evaluated on a corrected Korean AIHub benchmark dataset of 5,000 image pairs, the model achieved an F1-score of 0.7511 and an IoU of 0.6014, outperforming the ChangeFormer-MIT-B0 baseline. The model's performance gains were most pronounced on challenging subsets, improving F1-score from 0.4765 to 0.6175 in sparse-change areas (under 5% change) and from 0.6349 to 0.7285 in scenes with high photometric differences.",
+      "why": "The model provides a highly precise method for detecting building changes that preserves sharp structural boundaries rather than producing coarse blobs, even when aerial images are captured under vastly different lighting conditions or when changes are highly sparse."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-29",
+  "work_key": "arxiv:2606.29781"
+}

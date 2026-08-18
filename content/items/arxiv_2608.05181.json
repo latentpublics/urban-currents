@@ -1,0 +1,167 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Building Information Modeling (BIM) has transformed workflows across the Architecture, Engineering, and Construction (AEC) industry, yet its relationship with employee job satisfaction remains insufficiently understood. This pilot study investigates whether BIM engagement or demographic characteristics better predict job satisfaction among AEC professionals. Survey responses from 104 participants were analyzed using Spearman rank correlations, logistic regression, and Classification and Regression Tree (CART) modeling. 27 items Job Satisfaction Index demonstrated excellent internal reliability. Across all analytical approaches, BIM engagement emerged as a stronger predictor of job satisfaction than demographic factors. Specifically, the proportion of project work completed using BIM was the only significant predictor of job satisfaction, whereas age, gender, education level, and professional experience showed no significant relationships. The CART analysis further identified BIM project involvement as the primary factor associated with higher job satisfaction. These findings suggest that the extent of BIM integration in professional practice may play a more important role in shaping employee satisfaction than individual demographic characteristics. The study contributes to the growing literature on human technology interactions in the AEC sector and provides preliminary evidence to support strategies that promote deeper BIM adoption.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Sharareh Mirzaei",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY",
+      "cs.HC"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.05181v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.05181v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-30",
+    "repository_urls": [],
+    "title": "Beyond Demographics: BIM Engagement and Job Satisfaction Among AEC Professionals, A Machine Learning Pilot Study"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-30_2608.05181",
+    "members": [
+      "arxiv:2608.05181"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:regression",
+        "label": "regression"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:survey",
+        "label": "survey"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-06-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.05181",
+    "doi": "10.48550/arxiv.2608.05181",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:43:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005534,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1961,
+      "out": 288
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.909,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3636,
+    "relevance": 0.909
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a small pilot study of 104 survey participants, which may limit the generalizability of the predictive models.",
+      "what": "This pilot study analyzed survey responses from 104 architecture, engineering, and construction (AEC) professionals using Spearman rank correlations, logistic regression, and Classification and Regression Tree (CART) modeling to evaluate predictors of job satisfaction. The analysis utilized a 27-item Job Satisfaction Index and found that the proportion of project work completed using Building Information Modeling (BIM) was the only significant predictor of job satisfaction. Demographic factors, including age, gender, education level, and professional experience, showed no significant relationship with satisfaction levels.",
+      "why": "The study demonstrates that technological engagement and the integration of BIM tools in daily workflows are more influential in shaping employee satisfaction than traditional demographic characteristics, offering a new lever for firms looking to improve retention and workplace well-being."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-30",
+  "work_key": "arxiv:2608.05181"
+}

@@ -1,0 +1,318 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study evaluates large language models (LLMs) for travel behavior prediction under different levels of labeled-data availability. We compare three LLM-based frameworks: zero-shot direct prompting, textual-gradient prompt optimization from a small labeled budget, and supervised prediction using LLM text embeddings. These methods are benchmarked against multinomial logit, random forests, neural networks, and TabPFN under a budget-matched protocol on Swissmetro mode choice, London mode choice, and NHTS trip-purpose prediction. The results show a clear data-availability pattern. In scarce-label settings, direct LLM prediction is competitive with, and sometimes significantly better than, supervised/tabular baselines. Textual-gradient optimization can learn prompts that match expert hand-crafted prompts without manually encoded numerical cues, although its gains are task-dependent. As labeled budgets grow, conventional supervised and tabular models become stronger. Diagnostic tests further suggest that LLM predictions respond to supplied travel-time and travel-cost structure rather than simply memorizing benchmark records, while generated explanations should be treated as auditable but imperfect rationales.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Tsinghua University",
+            "ror": "03cve4549"
+          }
+        ],
+        "name": "Baichuan Mo",
+        "openalex": "A5029281894",
+        "orcid": "https://orcid.org/0000-0003-0323-0066"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Massachusetts Institute of Technology",
+            "ror": "042nb2s44"
+          }
+        ],
+        "name": "Hanyong Xu",
+        "openalex": "A5104223675",
+        "orcid": "https://orcid.org/0009-0000-3403-7061"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Stanford University",
+            "ror": "00f54p054"
+          }
+        ],
+        "name": "Ruoyun Ma",
+        "openalex": "A5110649419",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Massachusetts Institute of Technology",
+            "ror": "042nb2s44"
+          }
+        ],
+        "name": "Jung-Hoon Cho",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Massachusetts Institute of Technology",
+            "ror": "042nb2s44"
+          }
+        ],
+        "name": "Dingyi Zhuang",
+        "openalex": "A5027933499",
+        "orcid": "https://orcid.org/0000-0003-3208-6016"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Massachusetts Institute of Technology",
+            "ror": "042nb2s44"
+          }
+        ],
+        "name": "Xiaotong Guo",
+        "openalex": "A5100779401",
+        "orcid": "https://orcid.org/0000-0003-0079-7665"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Massachusetts Institute of Technology",
+            "ror": "042nb2s44"
+          }
+        ],
+        "name": "Jinhua Zhao",
+        "openalex": "A5023905102",
+        "orcid": "https://orcid.org/0000-0002-1929-7583"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102124",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-01",
+    "repository_urls": [],
+    "title": "Large language models for travel behavior prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-01_2312.00819",
+    "members": [
+      "arxiv:2312.00819"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03cve4549",
+        "label": "Tsinghua University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:042nb2s44",
+        "label": "Massachusetts Institute of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00f54p054",
+        "label": "Stanford University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0323-0066",
+        "label": "Baichuan Mo"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0000-3403-7061",
+        "label": "Hanyong Xu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5110649419",
+        "label": "Ruoyun Ma"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3208-6016",
+        "label": "Dingyi Zhuang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0079-7665",
+        "label": "Xiaotong Guo"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1929-7583",
+        "label": "Jinhua Zhao"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.9968,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.9965,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.9931,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-07-01",
+  "graph": {
+    "cited_by_count": 6,
+    "referenced_works": [],
+    "related_works": [
+      "openalex:W2366107444",
+      "openalex:W4388145910",
+      "openalex:W2494119046",
+      "openalex:W2381570729",
+      "openalex:W1976205134",
+      "openalex:W4248336175",
+      "openalex:W2031260042",
+      "openalex:W2391445434",
+      "openalex:W1506113033",
+      "openalex:W1995825161"
+    ]
+  },
+  "ids": {
+    "arxiv": "2312.00819",
+    "doi": "10.1016/j.trip.2026.102124",
+    "openalex": "W4389362512",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:48:31Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006073,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1943,
+      "out": 351
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:48:31Z",
+    "doi": "10.1016/j.trip.2026.102124",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study notes that as the volume of labeled training data increases, conventional supervised and tabular models eventually outperform the LLM-based approaches.",
+      "what": "This study evaluates three large language model (LLM) frameworks—zero-shot direct prompting, textual-gradient prompt optimization, and supervised prediction using text embeddings—for predicting travel behavior. The frameworks were benchmarked against multinomial logit, random forests, neural networks, and TabPFN using Swissmetro mode choice, London mode choice, and NHTS trip-purpose datasets under varying labeled-data budgets. The results show that LLMs outperform or match traditional tabular baselines in data-scarce environments, and diagnostic tests confirm they respond to underlying travel-time and cost structures rather than relying on memorized benchmarks.",
+      "why": "It establishes that LLMs can serve as viable, competitive predictors for travel behavior when labeled data is highly scarce, bypassing the need for extensive manual feature engineering or expert-crafted prompts."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-01",
+  "work_key": "arxiv:2312.00819"
+}

@@ -1,0 +1,327 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Quantifying spatial landscape patterns along urban-rural gradients is crucial for understanding urbanization's impacts on ecosystem structure and function. This study presents an integrated framework assessing land use patterns and ecological quality in the Greater Isfahan region, Iran. A novel direction-specific Ecological Quality Index (EQI) for green cover is introduced to describe spatial patterns of urban expansion and associated ecological conditions. Methodologically, we classified Landsat 9 imagery into six land cover types using Support Vector Machine (SVM) and achieving 94% accuracy. Gradient analysis was conducted along eight geographical transects, partitioned into 3 × 3 km blocks. Five key metrics (NP, AREA_MN, ENN_MN, LPI, ED) quantified fragmentation, connectivity, and dominance. Kruskal-Wallis tests confirmed significant differences along transects (p < 0.001). Cluster analysis identified seven distinct classes, ranging from dense urban areas to rural landscapes. The EQI was derived through Principal Component Analysis (PCA) using green cover related metrics, utilizing factor loadings and eigenvalues from the first two components. Results reveal a clear divergence in landscape structure. The mean patch area of impervious surfaces shows a decreasing gradient, from over 28 ha in central blocks to less than 1 ha in peripheral zones. Conversely, agricultural mean patch size increases to 27 ha in northern transects. The EQI analysis highlights spatial inequities. The northeast-southwest transect exhibits higher ecological sustainability, with high-quality areas constituting 20% of the landscape, contrasting with less favorable conditions along the west-east transect. This study demonstrates that integrating gradient-based metrics with a direction-specific EQI provides a powerful, replicable tool for diagnosing urban ecological health. The findings offer actionable insights for targeted planning, emphasizing agricultural protection and green infrastructure connectivity to mitigate fragmented urbanization in arid-region cities.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Isfahan University of Technology",
+            "ror": "00af3sa43"
+          }
+        ],
+        "name": "Mahdieh Abolhasani",
+        "openalex": "A5140411460",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Isfahan University of Technology",
+            "ror": "00af3sa43"
+          }
+        ],
+        "name": "Ali Lotfi",
+        "openalex": "A5062862852",
+        "orcid": "https://orcid.org/0000-0001-9299-5567"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Isfahan University of Technology",
+            "ror": "00af3sa43"
+          }
+        ],
+        "name": "Alireza Soffianian",
+        "openalex": "A5049500977",
+        "orcid": "https://orcid.org/0000-0003-4416-3058"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Isfahan University of Technology",
+            "ror": "00af3sa43"
+          }
+        ],
+        "name": "Saeid Pourmanafi",
+        "openalex": "A5068640895",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "KTH Royal Institute of Technology",
+            "ror": "026vcq606"
+          }
+        ],
+        "name": "Jessica Page",
+        "openalex": "A5039265150",
+        "orcid": "https://orcid.org/0000-0002-5925-019X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "KTH Royal Institute of Technology",
+            "ror": "026vcq606"
+          }
+        ],
+        "name": "Zahra Kalantari",
+        "openalex": "A5140387659",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.jum.2026.100529",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2226585626001445/pdf",
+      "source_id": "S2898527796",
+      "source_name": "Journal of Urban Management",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-01",
+    "repository_urls": [],
+    "title": "Modeling spatial patterns of urban-rural landscape using landscape metrics and ecological quality index"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-01_10.1016/j.jum.20",
+    "members": [
+      "doi:10.1016/j.jum.2026.100529"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:dimensionality-reduction",
+        "label": "dimensionality reduction"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00af3sa43",
+        "label": "Isfahan University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:026vcq606",
+        "label": "KTH Royal Institute of Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5140411460",
+        "label": "Mahdieh Abolhasani"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9299-5567",
+        "label": "Ali Lotfi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4416-3058",
+        "label": "Alireza Soffianian"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5068640895",
+        "label": "Saeid Pourmanafi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5925-019X",
+        "label": "Jessica Page"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140387659",
+        "label": "Zahra Kalantari"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": true,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.7071,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0487,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0203,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-07-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1975082836",
+      "openalex:W1985163341",
+      "openalex:W1985734125",
+      "openalex:W1994888569",
+      "openalex:W2002427466",
+      "openalex:W2006526475",
+      "openalex:W2023018328",
+      "openalex:W2040511722",
+      "openalex:W2061176639",
+      "openalex:W2071509241",
+      "openalex:W2076656703",
+      "openalex:W2087683841",
+      "openalex:W2098829158",
+      "openalex:W2121633880",
+      "openalex:W2150962361",
+      "openalex:W2168294291",
+      "openalex:W2169528525",
+      "openalex:W2184818902",
+      "openalex:W2273755758",
+      "openalex:W2606120565",
+      "openalex:W2768335435",
+      "openalex:W2794556303",
+      "openalex:W2796823637",
+      "openalex:W2885107336",
+      "openalex:W2905196625",
+      "openalex:W2918284730",
+      "openalex:W3106693420",
+      "openalex:W3134288586",
+      "openalex:W3135133267",
+      "openalex:W3181371502",
+      "openalex:W4214749134",
+      "openalex:W4220997451",
+      "openalex:W4283728319",
+      "openalex:W4293546123",
+      "openalex:W4321090486",
+      "openalex:W4386273759",
+      "openalex:W4393246461",
+      "openalex:W4402883989",
+      "openalex:W4408747674",
+      "openalex:W4411853437"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.jum.2026.100529",
+    "openalex": "W7167930048",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:48:33Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006913,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2275,
+      "out": 389
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:48:33Z",
+    "doi": "10.1016/j.jum.2026.100529",
+    "journal": "Journal of Urban Management",
+    "source_id": "S2898527796",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical findings and the specific directional dynamics of the ecological index are demonstrated only for a single arid-region city, which may limit direct generalization to humid or monocentric urban forms.",
+      "what": "The study analyzed land use patterns and ecological quality in the Greater Isfahan region, Iran, by classifying Landsat 9 imagery into six land cover types using a Support Vector Machine with 94% accuracy. Landscape fragmentation and connectivity were measured across eight geographical transects divided into 3 by 3 km blocks using five landscape metrics, while a direction-specific Ecological Quality Index (EQI) was constructed using Principal Component Analysis. The analysis revealed that the mean patch size of impervious surfaces shrinks from over 28 ha in the center to under 1 ha at the periphery, and identified that high-quality ecological areas are concentrated along the northeast-southwest transect, where they make up 20% of the landscape.",
+      "why": "It introduces a direction-specific Ecological Quality Index that captures spatial inequities and ecological variations along specific geographic axes rather than assuming uniform radial urban decay. This provides planners in arid regions with a replicable method to pinpoint where agricultural fragmentation is most severe and where green infrastructure corridors are most needed."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-01",
+  "work_key": "doi:10.1016/j.jum.2026.100529"
+}

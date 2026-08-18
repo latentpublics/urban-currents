@@ -1,0 +1,281 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Dynamic airspace sectorization (DAS) is a key enabler of demand and capacity balancing (DCB) in air traffic management. However, existing DAS methods face significant limitations in computational efficiency and scalability when applied to real-world operations with complex traffic patterns and varying sector boundaries. This study addresses these limitations by formulating DAS as a Markov decision process and developing a novel reinforcement learning (RL) framework that generates optimized sectorization sequences through policy-driven sequential decision-making. Unlike previous DCB studies that focus primarily on traffic flow management, this work represents the first RL framework developed for the DAS problem. The proposed framework integrates three-dimensional tiled Voronoi partitioning with actor-critic RL to dynamically adjust sector boundaries in response to predicted traffic demand. A comprehensive workload model is developed that considers aircraft proximity at sector boundaries, sector crossing frequency, sectorization similarity, and workload imbalance across sectors. The framework is trained and validated using three weeks of historical ADS-B trajectory data from UK airspace, encompassing over 200,000 flights across different seasonal periods. Experiments demonstrate significant improvements over a state-of-the-art genetic algorithm (GA) benchmark: an average workload reduction of 50.59% and a decision-making time reduction of nearly 99.98% (from 82.22 minutes to 1.31 seconds per interval). These results highlight the potential of the proposed framework for real-time DCB and its broader applicability to intelligent air traffic management systems. The complete codebase is publicly available at: https://github.com/Haileywww/RL_DAS.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Imperial College London",
+            "ror": "041kmwe10"
+          }
+        ],
+        "name": "Wenxuan Wang",
+        "openalex": "A5100755181",
+        "orcid": "https://orcid.org/0000-0001-7172-8662"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Imperial College London",
+            "ror": "041kmwe10"
+          }
+        ],
+        "name": "Arnab Majumdar",
+        "openalex": "A5101732648",
+        "orcid": "https://orcid.org/0000-0002-6332-7858"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Imperial College London",
+            "ror": "041kmwe10"
+          }
+        ],
+        "name": "Washington Y. Ochieng",
+        "openalex": "A5031769699",
+        "orcid": "https://orcid.org/0000-0002-6762-8746"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Imperial College London",
+            "ror": "041kmwe10"
+          }
+        ],
+        "name": "Jose Javier Escribano Macias",
+        "openalex": "A5062279811",
+        "orcid": "https://orcid.org/0000-0002-8472-7498"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105824",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-29",
+    "repository_urls": [],
+    "title": "A scalable reinforcement learning-based approach to dynamic airspace sectorization"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-29_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105824"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:reinforcement-learning",
+        "label": "reinforcement learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:041kmwe10",
+        "label": "Imperial College London"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7172-8662",
+        "label": "Wenxuan Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6332-7858",
+        "label": "Arnab Majumdar"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6762-8746",
+        "label": "Washington Y. Ochieng"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8472-7498",
+        "label": "Jose Javier Escribano Macias"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11489",
+        "is_primary": true,
+        "label": "Air Traffic Management and Optimization",
+        "score": 0.9971,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0005,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0003,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-06-29",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W205284176",
+      "openalex:W1889377687",
+      "openalex:W1965343140",
+      "openalex:W1965830113",
+      "openalex:W1966633870",
+      "openalex:W1967006946",
+      "openalex:W2008046843",
+      "openalex:W2167396110",
+      "openalex:W2564112450",
+      "openalex:W2806018250",
+      "openalex:W2887879126",
+      "openalex:W3007516778",
+      "openalex:W3009467613",
+      "openalex:W3027406032",
+      "openalex:W3043239066",
+      "openalex:W3109470242",
+      "openalex:W3134528536",
+      "openalex:W3135108248",
+      "openalex:W3176165419",
+      "openalex:W3184846191",
+      "openalex:W4206638449",
+      "openalex:W4280624222",
+      "openalex:W4381616211",
+      "openalex:W4402944862",
+      "openalex:W4408987687",
+      "openalex:W4414823757",
+      "openalex:W4415053607",
+      "openalex:W4415227027",
+      "openalex:W7108442101"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105824",
+    "openalex": "W7166509163",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:38:37Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005872,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2163,
+      "out": 292
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:38:37Z",
+    "doi": "10.1016/j.trc.2026.105824",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/Haileywww/RL_DAS",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study develops a reinforcement learning framework for dynamic airspace sectorization by modeling the task as a Markov decision process and combining three-dimensional tiled Voronoi partitioning with an actor-critic algorithm. The framework was trained and validated using three weeks of historical ADS-B trajectory data from UK airspace, covering more than 200,000 flights. Compared to a genetic algorithm benchmark, the model reduced workload imbalance by an average of 50.59% and cut decision-making time by 99.98%, from over 82 minutes down to 1.31 seconds per interval.",
+      "why": "It introduces the first reinforcement learning framework for dynamic airspace sectorization, proving that sector boundaries can be optimized in near-real-time to balance controller workloads under fluctuating traffic demands."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-29",
+  "work_key": "doi:10.1016/j.trc.2026.105824"
+}

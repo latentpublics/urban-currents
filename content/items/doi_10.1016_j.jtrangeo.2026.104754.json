@@ -1,0 +1,357 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Street-level average traffic speeds provide essential information for routing, commuting time estimation, and many transport and environmental assessments. However, publicly available traffic speed data often covers only a small share of the urban road networks. One approach to increase traffic speed data availability is the use of models. Here, we tested a two-stage prediction-interpretation framework that combines a graph neural network (GraphSAGE) with a Geographical and Temporal Weighted Regression (GTWR) approach. While the graph neural network was used for the prediction of traffic speed for our case study region, Berlin, Germany, we used the GTWR approach to provide a post-hoc statistical interpretation of the prediction. We trained the GraphSAGE regression model with Uber Movement speeds as the response variable. OSM-based road attributes, population density, and street-view-derived activity indicators were used as predictors for roughly 72% of the road network without Uber Movement speed data. The model achieved a mean average error for the test data of 5.73 km/h and was capable of reproducing the general spatial pattern of traffic speed across Berlin. GTWR was then applied to estimate local coefficients for the same feature set. GTWR indicated road type and speed limit were positively associated with GraphSAGE-predicted speeds, whereas population density, street-view-derived pedestrian counts, and traffic signal counts were generally associated with lower predicted speeds. Clustering the coefficient vectors revealed four coherent GTWR behavior clusters across the city. These clusters summarize how the model redistributes feature importance across spatial contexts and could help transfer the GraphSAGE model to other cities.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Shiyu Tang",
+        "openalex": "A5139815591",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "King's College London",
+            "ror": "0220mzb33"
+          }
+        ],
+        "name": "Jin Rui",
+        "openalex": "A5035005968",
+        "orcid": "https://orcid.org/0000-0002-0926-0947"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Sven Lautenbach",
+        "openalex": "A5090228932",
+        "orcid": "https://orcid.org/0000-0003-1825-9996"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Christina Ludwig",
+        "openalex": "A5044186937",
+        "orcid": "https://orcid.org/0000-0003-4669-3298"
+      },
+      {
+        "institutions": [],
+        "name": "Sukanya Randhawa",
+        "openalex": "A5024003809",
+        "orcid": "https://orcid.org/0009-0005-5068-3246"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Steffen Knoblauch",
+        "openalex": "A5139821853",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Alexander Zipf",
+        "openalex": "A5091474205",
+        "orcid": "https://orcid.org/0000-0003-4916-9838"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.jtrangeo.2026.104754",
+      "pdf_url": null,
+      "source_id": "S80150607",
+      "source_name": "Journal of Transport Geography",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-01",
+    "repository_urls": [],
+    "title": "Unveiling spatiotemporal mechanisms of urban traffic: Multi-scale determinants and explainable street-level dynamics of a graph neural network in Berlin"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-01_10.1016/j.jtrang",
+    "members": [
+      "doi:10.1016/j.jtrangeo.2026.104754"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.9143,
+        "id": "data:traffic-sensor",
+        "label": "traffic sensor data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:gnn",
+        "label": "graph neural network"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:clustering",
+        "label": "clustering"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:038t36y30",
+        "label": "Heidelberg University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0220mzb33",
+        "label": "King's College London"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139815591",
+        "label": "Shiyu Tang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0926-0947",
+        "label": "Jin Rui"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1825-9996",
+        "label": "Sven Lautenbach"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4669-3298",
+        "label": "Christina Ludwig"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0005-5068-3246",
+        "label": "Sukanya Randhawa"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139821853",
+        "label": "Steffen Knoblauch"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4916-9838",
+        "label": "Alexander Zipf"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q64",
+        "label": "Berlin",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.4767,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.3327,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0275,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-07-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1031015364",
+      "openalex:W1829241487",
+      "openalex:W1973943669",
+      "openalex:W2013587512",
+      "openalex:W2025391890",
+      "openalex:W2052611179",
+      "openalex:W2110065044",
+      "openalex:W2118898434",
+      "openalex:W2163517193",
+      "openalex:W2579495707",
+      "openalex:W2588964674",
+      "openalex:W2782064812",
+      "openalex:W2901504064",
+      "openalex:W2910705748",
+      "openalex:W2939120428",
+      "openalex:W2945719065",
+      "openalex:W2949234369",
+      "openalex:W2971394685",
+      "openalex:W2996369207",
+      "openalex:W3011312272",
+      "openalex:W3025569532",
+      "openalex:W3092125438",
+      "openalex:W3107926067",
+      "openalex:W3119466994",
+      "openalex:W3123909522",
+      "openalex:W3195494505",
+      "openalex:W3200859431",
+      "openalex:W3210458411",
+      "openalex:W4309734258",
+      "openalex:W4367839124",
+      "openalex:W4384665479",
+      "openalex:W4388182913",
+      "openalex:W4399060721",
+      "openalex:W4403480217",
+      "openalex:W4404906917",
+      "openalex:W4406322164",
+      "openalex:W4408664595",
+      "openalex:W4409451418",
+      "openalex:W4413682528",
+      "openalex:W4415091623",
+      "openalex:W7115760952"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.jtrangeo.2026.104754",
+    "openalex": "W7166890411",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:48:31Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006832,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2185,
+      "out": 395
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:48:31Z",
+    "doi": "10.1016/j.jtrangeo.2026.104754",
+    "journal": "Journal of Transport Geography",
+    "source_id": "S80150607",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's interpretation and predictions rely on Uber Movement data as the ground truth, which may contain inherent sampling biases toward specific times or driver demographics.",
+      "what": "Researchers developed a two-stage framework combining a GraphSAGE neural network with Geographical and Temporal Weighted Regression (GTWR) to predict and interpret street-level traffic speeds across Berlin, Germany. Using Uber Movement speed data as the target variable alongside OpenStreetMap road attributes, population density, and street-view-derived activity indicators, the model predicted speeds for the 72% of the road network lacking empirical data with a mean absolute error of 5.73 km/h. The GTWR post-hoc analysis identified four spatial clusters of feature importance, showing that road type and speed limits increased predicted speeds while population density, pedestrian counts, and traffic signals decreased them.",
+      "why": "The framework provides a method to interpret the black-box predictions of graph neural networks in urban transport, mapping how the model shifts its reliance on different spatial features across different neighborhoods. This spatial clustering of model behavior offers a structured pathway for transferring traffic prediction models to other cities where empirical speed data is missing."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-01",
+  "work_key": "doi:10.1016/j.jtrangeo.2026.104754"
+}

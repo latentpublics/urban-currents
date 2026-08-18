@@ -1,0 +1,406 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study develops a data-driven analytical framework that integrates causal inference with hierarchical analysis to reveal the underlying mechanisms influencing ship fuel consumption (SFC). The framework combines multi-source data fusion, direct linear non-gaussian acyclic model-based causal discovery, and double machine learning with causal forests model to estimate Average Treatment Effects (ATEs), followed by interpretive structural modelling for hierarchical decomposition. Experimental results under the expanded DAG-derived adjustment specification indicate that Daily sailing hours has the strongest positive conditional effect on SFC (ATE = 2.058), followed by Main engine RPM with a positive but more uncertain effect estimate (ATE = 0.268). The hierarchical analysis further organises the directional-dependence network into interpretable structural levels, thereby illustrating possible multi-level transmission patterns among operational and environmental factors. This framework provides an exploratory and graph-informed analytical basis for interpreting directional dependencies and observed-covariate conditional effect patterns in SFC, offering cautious decision support for data-driven energy management. The source code is publicly available at: https://github.com/AdvMarTech/ship_fuel_consum_causalinfer.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Dalian Maritime University",
+            "ror": "002b7nr53"
+          },
+          {
+            "name": "Liverpool John Moores University",
+            "ror": "04zfme737"
+          }
+        ],
+        "name": "Wenjie Cao",
+        "openalex": "A5113397399",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Dalian Maritime University",
+            "ror": "002b7nr53"
+          },
+          {
+            "name": "Liverpool John Moores University",
+            "ror": "04zfme737"
+          }
+        ],
+        "name": "Xinjian Wang",
+        "openalex": "A5029860081",
+        "orcid": "https://orcid.org/0000-0002-7469-6237"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Tasmania",
+            "ror": "01nfmeh72"
+          },
+          {
+            "name": "Australian Maritime College",
+            "ror": "05fv9c840"
+          }
+        ],
+        "name": "Wei Zhang",
+        "openalex": "A5139560661",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Southampton",
+            "ror": "01ryk1543"
+          }
+        ],
+        "name": "Hui Li",
+        "openalex": "A5065859286",
+        "orcid": "https://orcid.org/0000-0001-9198-3951"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Jimei University",
+            "ror": "03hknyb50"
+          }
+        ],
+        "name": "Siming Fang",
+        "openalex": "A5051847720",
+        "orcid": "https://orcid.org/0000-0003-2340-0923"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Liverpool John Moores University",
+            "ror": "04zfme737"
+          }
+        ],
+        "name": "Zaili Yang",
+        "openalex": "A5139569111",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trd.2026.105491",
+      "pdf_url": null,
+      "source_id": "S45181156",
+      "source_name": "Transportation Research Part D Transport and Environment",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-29",
+    "repository_urls": [],
+    "title": "Data-driven investigation of ship fuel consumption integrating causal inference and hierarchical analysis"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-29_10.1016/j.trd.20",
+    "members": [
+      "doi:10.1016/j.trd.2026.105491"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:causal-inference",
+        "label": "causal inference"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:002b7nr53",
+        "label": "Dalian Maritime University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04zfme737",
+        "label": "Liverpool John Moores University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01nfmeh72",
+        "label": "University of Tasmania"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05fv9c840",
+        "label": "Australian Maritime College"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01ryk1543",
+        "label": "University of Southampton"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03hknyb50",
+        "label": "Jimei University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5113397399",
+        "label": "Wenjie Cao"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7469-6237",
+        "label": "Xinjian Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139560661",
+        "label": "Wei Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9198-3951",
+        "label": "Hui Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2340-0923",
+        "label": "Siming Fang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139569111",
+        "label": "Zaili Yang"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12126",
+        "is_primary": true,
+        "label": "Maritime Transport Emissions and Efficiency",
+        "score": 0.9378,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12095",
+        "is_primary": false,
+        "label": "Vehicle emissions and performance",
+        "score": 0.0098,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10117",
+        "is_primary": false,
+        "label": "Advanced Combustion Engine Technologies",
+        "score": 0.0048,
+        "subfield": "1507"
+      }
+    ]
+  },
+  "first_published": "2026-06-29",
+  "graph": {
+    "cited_by_count": 2,
+    "referenced_works": [
+      "openalex:W1972226854",
+      "openalex:W2019349448",
+      "openalex:W2073001651",
+      "openalex:W2127797390",
+      "openalex:W2151726542",
+      "openalex:W2208818643",
+      "openalex:W2332630645",
+      "openalex:W2563022518",
+      "openalex:W2731434693",
+      "openalex:W2895269858",
+      "openalex:W2902370431",
+      "openalex:W2906683991",
+      "openalex:W2937250455",
+      "openalex:W2964813512",
+      "openalex:W2972126868",
+      "openalex:W2985971213",
+      "openalex:W2987492713",
+      "openalex:W3003906255",
+      "openalex:W3022105707",
+      "openalex:W3026900034",
+      "openalex:W3028134870",
+      "openalex:W3034824810",
+      "openalex:W3041737753",
+      "openalex:W3085589881",
+      "openalex:W3131247740",
+      "openalex:W3177484331",
+      "openalex:W3203058705",
+      "openalex:W3216026256",
+      "openalex:W3216672311",
+      "openalex:W4200098390",
+      "openalex:W4221014948",
+      "openalex:W4229042540",
+      "openalex:W4280596225",
+      "openalex:W4295126411",
+      "openalex:W4296614209",
+      "openalex:W4306405256",
+      "openalex:W4307897553",
+      "openalex:W4309024797",
+      "openalex:W4313201372",
+      "openalex:W4316340129",
+      "openalex:W4319759456",
+      "openalex:W4321768339",
+      "openalex:W4362588581",
+      "openalex:W4378364371",
+      "openalex:W4379535794",
+      "openalex:W4380927984",
+      "openalex:W4387589990",
+      "openalex:W4388336521",
+      "openalex:W4389288560",
+      "openalex:W4392358071",
+      "openalex:W4394823737",
+      "openalex:W4396527647",
+      "openalex:W4397045116",
+      "openalex:W4400227757",
+      "openalex:W4401505114",
+      "openalex:W4401731842",
+      "openalex:W4401964645",
+      "openalex:W4402599623",
+      "openalex:W4402757279",
+      "openalex:W4402787831",
+      "openalex:W4402802377",
+      "openalex:W4404095917",
+      "openalex:W4404278815",
+      "openalex:W4404524888",
+      "openalex:W4405127630",
+      "openalex:W4405363835",
+      "openalex:W4405738542",
+      "openalex:W4405931134",
+      "openalex:W4406264652",
+      "openalex:W4406404907",
+      "openalex:W4406716241",
+      "openalex:W4406934396",
+      "openalex:W4407028625",
+      "openalex:W4407398418",
+      "openalex:W4407574615",
+      "openalex:W4408507470",
+      "openalex:W4409345473",
+      "openalex:W4409711908",
+      "openalex:W4409838823",
+      "openalex:W4413817050",
+      "openalex:W4413884165",
+      "openalex:W4417432597",
+      "openalex:W6903099419",
+      "openalex:W7146984946",
+      "openalex:W7155622095"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trd.2026.105491",
+    "openalex": "W7166583601",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:38:37Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005539,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1971,
+      "out": 287
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:38:37Z",
+    "doi": "10.1016/j.trd.2026.105491",
+    "journal": "Transportation Research Part D Transport and Environment",
+    "source_id": "S45181156",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/AdvMarTech/ship_fuel_consum_causalinfer",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study develops a data-driven framework combining multi-source data fusion, causal discovery via a direct linear non-gaussian acyclic model, and double machine learning with causal forests to analyze ship fuel consumption. Testing under an expanded directed acyclic graph specification revealed that daily sailing hours has the strongest positive conditional effect on fuel consumption with an Average Treatment Effect (ATE) of 2.058, followed by main engine RPM with an ATE of 0.268. Interpretive structural modelling was then used to decompose these directional dependencies into hierarchical transmission levels.",
+      "why": "It establishes a causal, graph-informed method to isolate and rank the direct and indirect drivers of maritime fuel consumption, moving beyond simple predictive correlations to support structured energy management decisions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-29",
+  "work_key": "doi:10.1016/j.trd.2026.105491"
+}

@@ -1,0 +1,198 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The study on shared micro-mobility is based on trip modeling and user data. User segmentation in shared micromobility systems is traditionally studied by aggregating trip-level observations into user-specific summary measures before applying clustering techniques. Such aggregation can obscure trip-level variability and lead to ecological fallacies if results are interpreted as applying to individual records. We propose a Bayesian finite mixture model for multivariate categorical count data that clusters users directly from repeated trip-level observations while preserving the full categorical structure of individual travel behavior. This approach focuses on identifying heterogeneous mobility users from high-dimensional categorical trip behavior while accounting for uncertainty in cluster assignments. Users are the fundamental unit of analysis for exploring latent cluster patterns. The model represents each user with a product-multinomial likelihood with latent cluster membership. The methodology is illustrated using a one-year trip record of shared bikes and e-bikes from the Municipality of Venice, Italy, comprising over 220,000 trips made by more than 11,000 recurrent users. The analysis identifies eight distinct latent mobility profiles corresponding to localized, commuter-oriented, tourist-oriented, central, and inter-zonal travel behaviors. The proposed framework provides a flexible and computationally scalable approach for clustering repeated categorical observations and is readily applicable to other large-scale behavioral and transportation datasets.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Vanshika Keshwani",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Stefano Mazzuco",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "24 pages, 10 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.00907v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.00907v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-01",
+    "repository_urls": [],
+    "title": "Beyond the Flow: A Bayesian Latent Clustering Framework for Shared Micro-mobility Users in Venice"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-01_2607.00907",
+    "members": [
+      "arxiv:2607.00907"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5120251371",
+        "label": "Vanshika Keshwani"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1686-5477",
+        "label": "Stefano Mazzuco"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.584,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.2182,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0729,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-07-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.00907",
+    "doi": "10.48550/arxiv.2607.00907",
+    "openalex": "W7167023589",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:48:29Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005812,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2051,
+      "out": 304
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9799,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.392,
+    "relevance": 0.9799
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "220,000 trips",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study introduces a Bayesian finite mixture model for multivariate categorical count data that clusters micro-mobility users directly from repeated trip-level observations, preserving individual travel behavior structure. The framework was tested using a one-year dataset of over 220,000 shared bike and e-bike trips made by more than 11,000 recurrent users in Venice, Italy. The model successfully identified eight distinct latent mobility profiles, including localized, commuter-oriented, tourist-oriented, central, and inter-zonal travel behaviors.",
+      "why": "By clustering users directly from individual trip records rather than aggregating data into user-specific summaries first, this method prevents ecological fallacies and preserves trip-level variability. This provides a scalable way to segment transportation users while accounting for uncertainty in cluster assignments."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-01",
+  "work_key": "arxiv:2607.00907"
+}

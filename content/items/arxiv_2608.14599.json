@@ -1,0 +1,191 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The placement of base station (BS) is a fundamental determinant of coverage and capacity of urban wireless networks. Yet large-scale BS deployment optimization remains challenging due to its dependency on site-specific radio propagation and user spatial distributions, both of which are unfortunately difficult to obtain prior to deployment. To overcome this barrier, we propose an intelligent BS deployment framework that integrates a geographic data-informed wireless network digital twin (DT) with deep reinforcement learning (DRL), enabling sample-free macro BS deployment optimization from solely open geographic data, without on-site measurements, real user trajectories, or exhaustive ray tracing. The proposed DT incorporates a sample-free radio map prediction model with hybrid input representation to achieve kilometer-scale signal strength estimation in milliseconds, complemented by a diffusion-based generative model for trajectory synthesis to collectively characterize channel and user distributions. Leveraging the DT as a virtual training environment, we formulate BS deployment as a multi-step Markov decision process (MDP) and solve it via a spatially structured DRL algorithm. A local search process and a Wasserstein distance-based deployment buffer are further incorporated to efficiently explore the large combinatorial solution space. Experimental results in real-world urban scenarios demonstrate that the geographic data-informed DT attains accuracy comparable to 100-sample-based prediction, and the intelligent BS deployment framework achieves up to 98.9% of the idealized benchmark performance while reducing optimization overhead by over 99%.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Zhenyu Tao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yuxuan Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Wei Xu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yongming Huang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xiaohu You",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.NI",
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.14599v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.14599v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-30",
+    "repository_urls": [],
+    "title": "Intelligent Base Station Deployment in Urban Wireless Networks: A Geographic Data-Informed Digital Twin Approach"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-30_2608.14599",
+    "members": [
+      "arxiv:2608.14599"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:reinforcement-learning",
+        "label": "reinforcement learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:digital-twin",
+        "label": "digital twin"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-06-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.14599",
+    "doi": "10.48550/arxiv.2608.14599",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:43:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005599,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2095,
+      "out": 273
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8983,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3593,
+    "relevance": 0.8983
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed an intelligent base station deployment framework that combines a geographic data-informed digital twin with deep reinforcement learning to optimize macro base station placement. The digital twin uses a sample-free radio map prediction model and a diffusion-based generative model for trajectory synthesis to estimate kilometer-scale signal strength in milliseconds. Tested in real-world urban scenarios, the framework achieved up to 98.9% of idealized benchmark performance while reducing optimization overhead by more than 99%.",
+      "why": "It enables network operators to optimize large-scale base station placement using only open geographic data, eliminating the need for expensive on-site measurements, real user trajectories, or computationally heavy ray-tracing simulations."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-30",
+  "work_key": "arxiv:2608.14599"
+}

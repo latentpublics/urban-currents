@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Older adults' independent mobility enables out-of-home participation, well-being and health, yet pedestrian navigation systems still optimize primarily for distance or time, often overlooking barriers, safety thresholds, and supportive infrastructure that shape late-life walking decisions. We present a senior-friendly pedestrian routing artefact developed through echeloned Design Science Re-search, translating lived mobility constraints into prescriptive design knowledge. Based on 11 semi-structured interviews, we derive initial Design Requirements (DRs) and Design Principles (DPs) for barrier-aware, amenity-sensitive routing and execution-relevant explanations. We instantiate these in an OpenStreetMap pedestrian network enriched with amenities (benches, toilets, and shelters) and height data, and implemented an A*-based routing engine with configurable costs and explanation payloads. In a field-based walking study, 14 older adults com-pared artefact-generated routes with baselines and provided ratings and qualitative feedback; the senior-friendly route was preferred overall. Thematic analysis further showed that infrastructure maintenance, seasonal conditions, traffic exposure, and social context shape route acceptance. We synthesize these insights into refined DRs and DPs emphasizing context-aware hazard modeling, multi-route transparency, landmark-grounded explanations, social-context sensitivity, and stage-appropriate information. Our contributions provide actionable guidance for practitioners developing senior-friendly pedestrian navigation systems.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Erdi Ünal",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Daniel Eisenhardt",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Christian Meske",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Seyed Nima Afzali",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Aysegül Dogangün",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI",
+      "cs.HC"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.24795v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.24795v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-30",
+    "repository_urls": [],
+    "title": "When Shortest Isn't Safest: A Design Science Approach to Senior-Friendly Pedestrian Routing"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-30_2607.24795",
+    "members": [
+      "arxiv:2607.24795"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.9804,
+        "id": "method:interview",
+        "label": "interview"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-06-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.24795",
+    "doi": "10.1007/978-3-032-28316-0_23",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:43:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005737,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2073,
+      "out": 292
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.971,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3884,
+    "relevance": 0.971
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The routing engine and design principles were evaluated with a small sample of 14 older adults in a single field-based study, which may not capture the full diversity of late-life mobility needs.",
+      "what": "The researchers developed a senior-friendly pedestrian routing engine using an A* algorithm on an OpenStreetMap network enriched with height data, benches, toilets, and shelters. The routing system was designed based on 11 semi-structured interviews and evaluated through a field-based walking study with 14 older adults who compared the custom routes against standard baselines.",
+      "why": "It demonstrates that optimizing pedestrian routing for age-friendly infrastructure and barrier avoidance, rather than just shortest distance or time, directly aligns with the actual preferences and mobility constraints of older walkers."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-30",
+  "work_key": "arxiv:2607.24795"
+}

@@ -1,0 +1,275 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study introduces a vision–language pipeline that detects risky driving behaviors and generates emotionally expressive responses to support driver awareness and comfort. Although vision–language models have advanced perception and reasoning in autonomous driving, existing systems rarely consider the emotional dimension or real-world user experience. Keep Yelling Assistant (KYA) detects high-risk driving maneuvers in real time, such as sudden cut-ins. It then produces emotional responses through a large language model tailored to driver preferences. The framework comprises two core modules. The vision module uses You Only Look Once (YOLO) v8 variants to detect nearby vehicles and identify risky behaviors such as sudden cut-ins. Key driving metrics, including relative distance, speed, and projected reach time, are extracted and normalized to produce a structured behavior log. The language module processes this log with user-defined emotional tone settings (e.g., neutral, humorous, analytical) and generates verbal reactions using state-of-the-art large language models (LLMs) (ChatGPT-4o, Claude 3, Gemini 2.5, and Copilot). We evaluated the proposed system using dashcam videos containing risky driving behaviors and a user study involving 108 participants. Participants selected preferred response styles, and LLMs were evaluated based on emotional alignment. All models received favorable ratings, though preferences varied across personas. Notably, the combination of YOLOv8s and ChatGPT-4o achieved the highest score, 4.29 out of 5.00. By integrating real-world perception with emotionally adaptive dialogue, KYA advances emotionally intelligent in-vehicle artificial intelligence. It highlights new opportunities to improve safety, trust, and driver comfort in conventional and autonomous vehicles.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Texas A&M University",
+            "ror": "01f5ytq51"
+          }
+        ],
+        "name": "Harine Choi",
+        "openalex": "A5139560306",
+        "orcid": "https://orcid.org/0009-0009-1865-0312"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Kyungil University",
+            "ror": "024kwvm84"
+          }
+        ],
+        "name": "Eun Hak Lee",
+        "openalex": "A5002842064",
+        "orcid": "https://orcid.org/0000-0001-5989-4895"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Texas A&M University",
+            "ror": "01f5ytq51"
+          }
+        ],
+        "name": "Zhengzhong Tu",
+        "openalex": "A5015173810",
+        "orcid": "https://orcid.org/0000-0002-7594-2292"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/03611981261451199",
+      "pdf_url": null,
+      "source_id": "S145575934",
+      "source_name": "Transportation Research Record Journal of the Transportation Research Board",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-29",
+    "repository_urls": [],
+    "title": "KYA: Vision–Language Assistant for Emotional Reactions to Risky Driving"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-29_2607.16181",
+    "members": [
+      "arxiv:2607.16181"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01f5ytq51",
+        "label": "Texas A&M University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:024kwvm84",
+        "label": "Kyungil University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-1865-0312",
+        "label": "Harine Choi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5989-4895",
+        "label": "Eun Hak Lee"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7594-2292",
+        "label": "Zhengzhong Tu"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:ultralytics/ultralytics",
+        "label": "YOLO"
+      }
+    ],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10525",
+        "is_primary": true,
+        "label": "Human-Automation Interaction and Safety",
+        "score": 0.3517,
+        "subfield": "3207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.2458,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11373",
+        "is_primary": false,
+        "label": "Sleep and Work-Related Fatigue",
+        "score": 0.0892,
+        "subfield": "3205"
+      }
+    ]
+  },
+  "first_published": "2026-06-29",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W3047843612",
+      "openalex:W3094918372",
+      "openalex:W3199463427",
+      "openalex:W4210598935",
+      "openalex:W4308658839",
+      "openalex:W4312727270",
+      "openalex:W4377700521",
+      "openalex:W4387587643",
+      "openalex:W4388823657",
+      "openalex:W4393148430",
+      "openalex:W4399202659",
+      "openalex:W4403842289",
+      "openalex:W4403843558",
+      "openalex:W4404353931",
+      "openalex:W4404820176",
+      "openalex:W4405785037",
+      "openalex:W4406379490",
+      "openalex:W4406469725",
+      "openalex:W4408346345",
+      "openalex:W4409366191",
+      "openalex:W4409413023",
+      "openalex:W4410841624",
+      "openalex:W4410939231",
+      "openalex:W4411545699",
+      "openalex:W4414199098",
+      "openalex:W4417209545",
+      "openalex:W7123363806",
+      "openalex:W7160066017",
+      "openalex:W7160088005",
+      "openalex:W7162339568"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.16181",
+    "doi": "10.1177/03611981261451199",
+    "openalex": "W7166552159",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:38:37Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00664,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2201,
+      "out": 371
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:38:37Z",
+    "doi": "10.1177/03611981261451199",
+    "journal": "Transportation Research Record Journal of the Transportation Research Board",
+    "source_id": "S145575934",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The system's performance and user acceptance were evaluated using pre-recorded dashcam videos rather than active, real-time deployment in physical vehicles.",
+      "what": "The Keep Yelling Assistant (KYA) is an in-vehicle vision-language pipeline that detects high-risk driving events, like sudden cut-ins, and generates emotionally tailored verbal responses. The system uses YOLOv8 variants to extract vehicle distance, speed, and time-to-collision metrics, which are then processed by large language models (including ChatGPT-4o, Claude 3, Gemini 2.5, and Copilot) to generate feedback in neutral, humorous, or analytical tones. An evaluation using dashcam footage and a user study with 108 participants found that the combination of YOLOv8s and ChatGPT-4o achieved the highest user preference rating of 4.29 out of 5.00.",
+      "why": "It introduces emotional intelligence and driver preference customization to in-vehicle AI assistants, moving beyond purely functional driving alerts to address driver comfort and psychological safety during stressful road events."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-29",
+  "work_key": "arxiv:2607.16181"
+}

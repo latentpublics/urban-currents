@@ -1,0 +1,284 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Traffic congestion is a growing challenge in many cities. As major corridors become congested, drivers may seek alternative routes through local roads. While this practice, commonly known as ‘rat-running’, reflects an adaptive use of the network to maintain travel efficiency, its concentration in residential areas negatively impacts local populations through reduced road safety, increased pollution, and community severance. Authorities face the complex task of managing these flows to balance overall network efficiency with neighbourhood liveability. However, efforts to assess through-traffic prevalence and target interventions are constrained by limited data, and no systematically established approach currently exists for screening residential networks at city scale. We propose a screening methodology to flag local streets susceptible to cut-through traffic using open data and network analysis. Applying the method to Bogotá, Colombia, we integrated OpenStreetMap road network data, observed speeds on major roads, and traffic offence reports as a proxy for traffic presence. By calculating changes in betweenness centrality (ΔBC) relative to uncongested baseline conditions throughout the day on a travel-time-weighted network graph, we quantified each link's susceptibility to receiving redistributed traffic during congestion. Finally, using a multilevel logistic model, we found that increased ΔBC on residential streets was positively and significantly associated with a higher probability of traffic violation reports. This relationship varied across city sectors, reflecting the influence of local network structure and traffic enforcement intensity. The methodology enables proactive screening independent of historical data. By identifying areas with a high propensity for through-traffic, it supports urban planners and authorities in targeting traffic management interventions, allocating enforcement resources, and informing transport model development.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Leeds",
+            "ror": "024mrxd33"
+          }
+        ],
+        "name": "Juan P. Fonseca-Zamora",
+        "openalex": "A5119443871",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Leeds",
+            "ror": "024mrxd33"
+          }
+        ],
+        "name": "Roger Beecham",
+        "openalex": "A5089220047",
+        "orcid": "https://orcid.org/0000-0001-8563-7251"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Leeds",
+            "ror": "024mrxd33"
+          }
+        ],
+        "name": "James Tate",
+        "openalex": "A5139796236",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Leeds",
+            "ror": "024mrxd33"
+          }
+        ],
+        "name": "Robin Lovelace",
+        "openalex": "A5000936064",
+        "orcid": "https://orcid.org/0000-0001-5679-6536"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.compenvurbsys.2026.102488",
+      "pdf_url": null,
+      "source_id": "S60115552",
+      "source_name": "Computers Environment and Urban Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-01",
+    "repository_urls": [],
+    "title": "Spotting rat-runs: A network-based method for identifying potential cut-through routes in Bogotá, Colombia"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-01_10.1016/j.compen",
+    "members": [
+      "doi:10.1016/j.compenvurbsys.2026.102488"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:network-analysis",
+        "label": "network analysis"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:024mrxd33",
+        "label": "University of Leeds"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5119443871",
+        "label": "Juan P. Fonseca-Zamora"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8563-7251",
+        "label": "Roger Beecham"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139796236",
+        "label": "James Tate"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5679-6536",
+        "label": "Robin Lovelace"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12644",
+        "is_primary": true,
+        "label": "Wildlife-Road Interactions and Conservation",
+        "score": 0.7238,
+        "subfield": "2303"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11913",
+        "is_primary": false,
+        "label": "Animal Ecology and Behavior Studies",
+        "score": 0.1191,
+        "subfield": "2303"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11780",
+        "is_primary": false,
+        "label": "Rabies epidemiology and control",
+        "score": 0.0197,
+        "subfield": "2406"
+      }
+    ]
+  },
+  "first_published": "2026-07-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1806650721",
+      "openalex:W1951724000",
+      "openalex:W1970990623",
+      "openalex:W1971421925",
+      "openalex:W1971937094",
+      "openalex:W1974761862",
+      "openalex:W1987797310",
+      "openalex:W2012262233",
+      "openalex:W2014348724",
+      "openalex:W2017097267",
+      "openalex:W2017170637",
+      "openalex:W2043943266",
+      "openalex:W2065888990",
+      "openalex:W2083664562",
+      "openalex:W2099970772",
+      "openalex:W2119202692",
+      "openalex:W2127387319",
+      "openalex:W2393753458",
+      "openalex:W2766383017",
+      "openalex:W2887457110",
+      "openalex:W2902511681",
+      "openalex:W2911311653",
+      "openalex:W2915256901",
+      "openalex:W2920885703",
+      "openalex:W2996243505",
+      "openalex:W3030990604",
+      "openalex:W3138479689",
+      "openalex:W3200859431",
+      "openalex:W3203666073",
+      "openalex:W4213415874",
+      "openalex:W4362662197",
+      "openalex:W4394617764",
+      "openalex:W4395447605",
+      "openalex:W4415540770"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.compenvurbsys.2026.102488",
+    "openalex": "W7166830094",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:48:31Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006086,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2161,
+      "out": 316
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:48:31Z",
+    "doi": "10.1016/j.compenvurbsys.2026.102488",
+    "journal": "Computers Environment and Urban Systems",
+    "source_id": "S60115552",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on traffic offense reports as a proxy for actual traffic presence, which may reflect local enforcement intensity rather than the true volume of cut-through vehicles.",
+      "what": "The researchers developed a network-based screening method to identify local streets vulnerable to cut-through traffic, or rat-running, during peak congestion. They applied the model to Bogotá, Colombia, using OpenStreetMap data, observed speeds on major corridors, and traffic offense reports to calculate changes in travel-time-weighted betweenness centrality (ΔBC) between free-flow and congested states. A multilevel logistic model confirmed that residential streets with higher ΔBC had a statistically significant increase in the probability of traffic violations.",
+      "why": "It provides a proactive, city-scale screening tool that relies on open data rather than expensive, hard-to-obtain historical traffic counts, allowing planners to target traffic-calming interventions and enforcement resources to vulnerable neighborhoods."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-01",
+  "work_key": "doi:10.1016/j.compenvurbsys.2026.102488"
+}

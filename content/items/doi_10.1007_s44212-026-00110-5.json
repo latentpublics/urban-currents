@@ -1,0 +1,280 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Urban heat islands are intensifying in rapidly urbanizing megacities, with major implications for public health, infrastructure, and environmental equity. Understanding surface urban heat island (SUHI) patterns is challenging because land surface temperature (LST) responds to nonlinear processes and spatially heterogeneous urban form. Here, we develop an explainable Geospatial Artificial Intelligence (GeoAI) framework to model summer (May–August 2020) LST across Dhaka, Bangladesh, using a 500 m grid and multi-source predictors describing urban morphology and land cover. An AutoML pipeline (FLAML) selected a LightGBM regressor, achieving strong predictive accuracy (R 2 = 0.725, RMSE = 1.18 °C, MAE = 0.83 °C). To interpret model behavior, we compare SHAP with GeoShapley, which decomposes predictions into non-spatial feature contributions, an intrinsic location effect, and location–feature interaction terms that capture spatially varying relationships. Results indicate that built-up intensity is the dominant predictor of higher LST, while vegetation and water are associated with lower LST, with substantial geographic variation in the magnitude and direction of these relationships. GeoShapley decomposition highlights localized cooling thresholds for green and blue infrastructure and identifies spatial clusters of intrinsic thermal drivers not explained by observed variables. Overall, the proposed framework provides spatially explicit, policy-relevant interpretation for targeting heat mitigation, and is transferable to other data-constrained cities.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Florida State University",
+            "ror": "05g3dte14"
+          }
+        ],
+        "name": "Maria Sultana",
+        "openalex": "A5139692508",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Idaho",
+            "ror": "03hbp5t65"
+          }
+        ],
+        "name": "Md Didarul Islam",
+        "openalex": "A5087608827",
+        "orcid": "https://orcid.org/0000-0003-1174-2336"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Florida State University",
+            "ror": "05g3dte14"
+          }
+        ],
+        "name": "Bradford Johnson",
+        "openalex": "A5139642302",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s44212-026-00110-5",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44212-026-00110-5.pdf",
+      "source_id": "S4387283136",
+      "source_name": "Urban Informatics",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-01",
+    "repository_urls": [],
+    "title": "Understanding urban heat patterns in Dhaka city using explainable GeoAI and satellite-derived LST"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-01_10.1007/s44212-0",
+    "members": [
+      "doi:10.1007/s44212-026-00110-5"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-clustering",
+        "label": "spatial clustering"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05g3dte14",
+        "label": "Florida State University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03hbp5t65",
+        "label": "University of Idaho"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139692508",
+        "label": "Maria Sultana"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1174-2336",
+        "label": "Md Didarul Islam"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139642302",
+        "label": "Bradford Johnson"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.9927,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0011,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.0009,
+        "subfield": "2306"
+      }
+    ]
+  },
+  "first_published": "2026-07-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1973749534",
+      "openalex:W2001564322",
+      "openalex:W2081688099",
+      "openalex:W2127437631",
+      "openalex:W2153763028",
+      "openalex:W2590978252",
+      "openalex:W2962862931",
+      "openalex:W3016088230",
+      "openalex:W3075670203",
+      "openalex:W3117621881",
+      "openalex:W3131920291",
+      "openalex:W3149506652",
+      "openalex:W3182553424",
+      "openalex:W3186770666",
+      "openalex:W3204146575",
+      "openalex:W3212993365",
+      "openalex:W3214962395",
+      "openalex:W4210727352",
+      "openalex:W4224296735",
+      "openalex:W4225949307",
+      "openalex:W4229447832",
+      "openalex:W4281619551",
+      "openalex:W4293764376",
+      "openalex:W4311040491",
+      "openalex:W4321003970",
+      "openalex:W4366420578",
+      "openalex:W4388448546",
+      "openalex:W4391654238",
+      "openalex:W4399436383",
+      "openalex:W4399850905",
+      "openalex:W4399855228",
+      "openalex:W4400107552",
+      "openalex:W4404649145",
+      "openalex:W4405617395",
+      "openalex:W4406085813",
+      "openalex:W4407021852",
+      "openalex:W4407882135",
+      "openalex:W4407923492",
+      "openalex:W4410458683",
+      "openalex:W4411430472",
+      "openalex:W4416185280"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s44212-026-00110-5",
+    "openalex": "W7166685782",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:48:34Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006701,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2127,
+      "out": 390
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:48:34Z",
+    "doi": "10.1007/s44212-026-00110-5",
+    "journal": "Urban Informatics",
+    "source_id": "S4387283136",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model relies on land surface temperature as a proxy for ambient urban heat, which may not fully capture the actual thermal comfort experienced by residents at ground level.",
+      "what": "The study developed an explainable Geospatial Artificial Intelligence (GeoAI) framework using a LightGBM regressor to model summer land surface temperatures (LST) across Dhaka, Bangladesh, during May–August 2020 at a 500 m grid resolution. The model achieved high predictive accuracy (R² = 0.725, RMSE = 1.18 °C) and utilized GeoShapley to decompose predictions into non-spatial feature contributions, intrinsic location effects, and location-feature interactions. The analysis identified built-up intensity as the primary driver of elevated LST, while mapping localized cooling thresholds for vegetation and water bodies.",
+      "why": "It introduces a method to isolate spatial context and localized interaction effects from raw physical features, allowing planners to identify specific geographic areas where green and blue infrastructure will yield the most effective cooling benefits."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-01",
+  "work_key": "doi:10.1007/s44212-026-00110-5"
+}

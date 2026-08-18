@@ -1,0 +1,243 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban-scale Visual Place Recognition (VPR) aims to identify the geographic location of a query image by matching it against a geo-tagged database. While recent methods achieve impressive performance, they overlook a serious long-tailed problem hidden in urban-scale datasets, which biases the model towards locations with abundant images and ignores less-visited areas, causing models to systematically favor frequently photographed locations while failing in sparsely covered areas. In this paper, we systematically characterize this imbalance challenge and propose Distribution-Aware Place Recognition (DAPR), a model-agnostic plug-in framework that rebalances gradient contributions across head and tail classes. Additionally, within classification-retrieval pipelines, DAPR applies a multi-scale distance search mechanism to compute per-class distributional compactness, providing complementary gains at the retrieval stage. On the large-scale SF-XL benchmark, our framework outperforms the previous classification-retrieval baseline by 18.3% on test set v1, and 6.7% on test set v2. As a plug-in module, it achieves consistent improvements across representative VPR methods on SF-XL, MSLS, and Pitts30k, demonstrating broad generalizability across different methods and benchmarks.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Zhiyao Shu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jiacheng Yang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yang Lu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Waishan Qiu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chuan Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Da Chen",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "comment": "Accepted to ECCV 2026, 28 pages including supplementary material",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.00090v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.00090v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-30",
+    "repository_urls": [],
+    "title": "Lost in the Tail: Addressing Geographic Imbalance in Urban Visual Place Recognition"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-30_2607.00090",
+    "members": [
+      "arxiv:2607.00090"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139906374",
+        "label": "Zhiyao Shu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139931348",
+        "label": "Jiacheng Yang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2376-4519",
+        "label": "Ye Lu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6461-7243",
+        "label": "Waishan Qiu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139932664",
+        "label": "Chuan Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139897301",
+        "label": "Da Chen"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10627",
+        "is_primary": true,
+        "label": "Advanced Image and Video Retrieval Techniques",
+        "score": 0.3291,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10331",
+        "is_primary": false,
+        "label": "Video Surveillance and Tracking Methods",
+        "score": 0.1291,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11714",
+        "is_primary": false,
+        "label": "Multimodal Machine Learning Applications",
+        "score": 0.1281,
+        "subfield": "1707"
+      }
+    ]
+  },
+  "first_published": "2026-06-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.00090",
+    "doi": "10.48550/arxiv.2607.00090",
+    "openalex": "W7167021948",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:43:27Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005473,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2005,
+      "out": 274
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8739,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3496,
+    "relevance": 0.8739
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed Distribution-Aware Place Recognition (DAPR), a plug-in framework that corrects geographic bias in visual place recognition models by rebalancing gradient contributions between frequently and rarely photographed locations. Evaluated on the large-scale SF-XL benchmark, the framework improved baseline classification-retrieval performance by 18.3% on test set v1 and 6.7% on test set v2, while demonstrating consistent accuracy gains when integrated into existing models tested on the MSLS and Pitts30k datasets.",
+      "why": "It mitigates a systemic bias where location-matching algorithms fail in sparsely photographed urban areas because they are trained on datasets heavily skewed toward popular landmarks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-30",
+  "work_key": "arxiv:2607.00090"
+}

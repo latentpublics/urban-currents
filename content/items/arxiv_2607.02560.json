@@ -1,0 +1,242 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Pedestrian-level wind prediction is essential for urban design and wind-comfort assessment, but high-fidelity simulations such as LES remain computationally expensive for rapid evaluation. This study develops a two-stage U-Net framework for efficient prediction of time-averaged pedestrian-level wind speed over realistic urban morphologies. The model is trained and evaluated using the UrbanTALES dataset, which contains realistic city configurations under different approaching wind directions. In the first stage, a baseline U-Net model (M1) predicts wind fields patch-by-patch from normalised building height and fetch information. This formulation allows application to urban domains of arbitrary size, but independent patch inference can introduce discontinuities at patch boundaries. To address this, a second U-Net model (M2) is introduced as an inpainting-based refinement model. M2 uses a larger contextual window containing the initial M1 prediction and local morphology to reduce discontinuities using neighbouring flow information. During full-field inference, M2 is applied iteratively using a Gauss-Seidel scheme until convergence. Results show that M1 captures the main spatial distribution of pedestrian-level wind speed and performs well in low- and moderate-velocity regions, although high-velocity peaks are less accurate. M2 substantially reduces patch-boundary artefacts and improves spatial coherence. Across unseen urban cases, the framework reproduces mean velocity and spatial variability reasonably well, while maximum velocities remain underestimated. Overall, the proposed framework provides an efficient and flexible surrogate model for high-resolution pedestrian-level wind prediction across realistic urban morphologies.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Jingzi Huang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Claire E. Heaney",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Tao Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xinzhe Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Graham O. Hughes",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Maarten van Reeuwijk",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.02560v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.02560v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-28",
+    "repository_urls": [],
+    "title": "Inpainting U-Net for seamless pedestrian-level wind prediction across urban morphologies"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-28_2607.02560",
+    "members": [
+      "arxiv:2607.02560"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1668-1034",
+        "label": "Jingzi Huang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6555-1423",
+        "label": "Claire E. Heaney"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140165375",
+        "label": "Tao Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140199223",
+        "label": "Xinzhe Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4925-8822",
+        "label": "Graham Hughes"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4840-5050",
+        "label": "Maarten van Reeuwijk"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11371",
+        "is_primary": true,
+        "label": "Wind and Air Flow Studies",
+        "score": 0.952,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0063,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10121",
+        "is_primary": false,
+        "label": "Building Energy and Comfort Optimization",
+        "score": 0.0049,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-06-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.02560",
+    "doi": "10.48550/arxiv.2607.02560",
+    "openalex": "W7167633714",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:35:45Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005996,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2125,
+      "out": 312
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9186,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3674,
+    "relevance": 0.9186
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model systematically underestimates peak wind velocities, which may limit its utility for safety assessments where maximum wind speeds are critical.",
+      "what": "This study develops a two-stage U-Net framework to predict time-averaged pedestrian-level wind speed across realistic urban morphologies. Trained and evaluated on the UrbanTALES dataset, the first-stage model predicts wind fields patch-by-patch using normalized building heights and fetch data, while the second-stage model uses an inpainting-based refinement with a Gauss-Seidel iterative scheme to eliminate boundary discontinuities. The combined framework successfully captures spatial wind distribution and reduces patch-boundary artifacts, though it underestimates maximum wind velocities.",
+      "why": "It provides a computationally efficient surrogate model capable of simulating high-resolution wind fields over urban domains of arbitrary size, bypassing the prohibitive computational costs of traditional Large Eddy Simulations during early-stage urban design."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-28",
+  "work_key": "arxiv:2607.02560"
+}

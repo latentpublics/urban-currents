@@ -1,0 +1,285 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The color of urban surfaces is a crucial physical factor that influences the urban microclimate. Dark-colored surfaces tend to absorb more solar radiation than light-colored ones, thereby intensifying the urban heat island (UHI) effect. In many cities today, the lack of color regulation in urban planning and the rapid pace of construction have led to the predominance of darker surfaces. Traditional methods for measuring urban albedo have often been limited by their high cost, time consumption, and small-scale applicability. This study introduces a Python program (version 3.10) to estimate urban surface albedo using street view imagery. The approach is based on identifying the dominant color of urban spaces, which serves as a proxy for surface reflectance. The estimated albedo values are derived by associating dominant colors with their corresponding reflectance properties. Applied to the Kowloon District in Hong Kong, a densely urbanized area with deep street canyons, the results show that the southern parts of Kowloon exhibit lower albedo values due to a higher concentration of dark-colored surfaces. This research highlights the potential of using color-based analysis as a scalable and cost-effective tool for assessing urban albedo, informing sustainable urban planning strategies aimed at mitigating UHI impacts.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Iran University of Science and Technology",
+            "ror": "01jw2p796"
+          }
+        ],
+        "name": "Zahra Gholami",
+        "openalex": "A5004212022",
+        "orcid": "https://orcid.org/0000-0003-1762-2626"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Iran University of Science and Technology",
+            "ror": "01jw2p796"
+          }
+        ],
+        "name": "Samaneh Jalilisadrabad",
+        "openalex": "A5091001738",
+        "orcid": "https://orcid.org/0000-0003-1816-7610"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jupddm.upeng-5626",
+      "pdf_url": null,
+      "source_id": "S4210205300",
+      "source_name": "Journal of Urban Planning and Development",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-30",
+    "repository_urls": [],
+    "title": "A Spatial Analysis of Urban Space Albedo According to Urban Surfaces Color"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-30_10.1061/jupddm.u",
+    "members": [
+      "doi:10.1061/jupddm.upeng-5626"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-analysis",
+        "label": "spatial analysis"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01jw2p796",
+        "label": "Iran University of Science and Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1762-2626",
+        "label": "Zahra Gholami"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1816-7610",
+        "label": "Samaneh Jalilisadrabad"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q8646",
+        "label": "Hong Kong",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.8762,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0478,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11963",
+        "is_primary": false,
+        "label": "Impact of Light on Environment and Health",
+        "score": 0.0167,
+        "subfield": "2306"
+      }
+    ]
+  },
+  "first_published": "2026-06-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1974082448",
+      "openalex:W1983294446",
+      "openalex:W1992349952",
+      "openalex:W1994572877",
+      "openalex:W1998599841",
+      "openalex:W2018645898",
+      "openalex:W2048741942",
+      "openalex:W2060207914",
+      "openalex:W2067075860",
+      "openalex:W2070114117",
+      "openalex:W2071068630",
+      "openalex:W2073000419",
+      "openalex:W2088344511",
+      "openalex:W2099428122",
+      "openalex:W2118057935",
+      "openalex:W2168110471",
+      "openalex:W2398812460",
+      "openalex:W2412782625",
+      "openalex:W2735994416",
+      "openalex:W2754070414",
+      "openalex:W2795344326",
+      "openalex:W2838686643",
+      "openalex:W2887542059",
+      "openalex:W2907634360",
+      "openalex:W2921510885",
+      "openalex:W2935930574",
+      "openalex:W2963881378",
+      "openalex:W2982679941",
+      "openalex:W3004629818",
+      "openalex:W3005786261",
+      "openalex:W3011194993",
+      "openalex:W3014343179",
+      "openalex:W3023044539",
+      "openalex:W3039588893",
+      "openalex:W3154561720",
+      "openalex:W3195494505",
+      "openalex:W3195869152",
+      "openalex:W4205248058",
+      "openalex:W4307187134",
+      "openalex:W4319308497",
+      "openalex:W4322769928",
+      "openalex:W4324053243",
+      "openalex:W4378909293",
+      "openalex:W4387417345",
+      "openalex:W4387822935",
+      "openalex:W4388603317",
+      "openalex:W4389166533",
+      "openalex:W4390943999",
+      "openalex:W4402455329",
+      "openalex:W4406018848",
+      "openalex:W4406780241",
+      "openalex:W4408597752",
+      "openalex:W4409871132",
+      "openalex:W4410108864"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jupddm.upeng-5626",
+    "openalex": "W7166717321",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:43:29Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005363,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1997,
+      "out": 263
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:43:29Z",
+    "doi": "10.1061/jupddm.upeng-5626",
+    "journal": "Journal of Urban Planning and Development",
+    "source_id": "S4210205300",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The method relies on dominant image colors as a proxy for actual material reflectance, which may introduce inaccuracies compared to direct physical measurements.",
+      "what": "The researchers developed a Python 3.10 program that estimates urban surface albedo by extracting dominant colors from street-view images and mapping them to reflectance values. Applying this tool to the densely built Kowloon District in Hong Kong, they mapped spatial variations in albedo and identified lower albedo values in the southern parts of the district due to a concentration of dark-colored surfaces.",
+      "why": "It provides a highly scalable, low-cost method for mapping urban albedo across complex street canyons using existing street-level imagery, replacing expensive and localized physical measurement campaigns."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-30",
+  "work_key": "doi:10.1061/jupddm.upeng-5626"
+}

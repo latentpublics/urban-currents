@@ -1,0 +1,286 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Urban public spaces are increasingly evaluated using social media data, yet comparative evidence on how public visual preferences vary across public space typologies and how these preferences cluster spatially remains limited. This study proposes a perception-driven deep learning framework to assess and map public visual perception across four urban public space typologies using geotagged Flickr data. Focusing on a high-density 2 km radius around Sydney's Darling Harbour, the framework integrates ResNet-50 image classification, Mask2Former panoptic segmentation, and GIS-based spatial analytics, with typologies validated against expert and MLLM consensus reaching a Cohen's κ of up to 0.92 and 0.81. Waterfront emerges as the dominant typology, drawing 52% of visual engagement, yet the highest positive perception does not concentrate in pure waterfront settings. Instead, it clusters in visual-hybrid nodes such as Darling Harbour, Tumbalong Park, and Darling Square, where blue, green, and built typologies co-occur. Tumblaong Park areas outperform every single type of environment across six perception dimensions, with Cohen's d reaching +0.48 for Beautiful and −0.81 for Depressing. After statistically controlling for visual composition, public space typology retains relatively independent explanatory power over perceived quality. Urban public space appeal is therefore contingent on integrated configurations rather than water frontage or greening alone, and the synergy of blue, green, and built elements drives positive experiences more than functional isolation. Beyond corroborating Sydney's Gehl-informed regeneration strategy, the framework provides a scalable, transferable workflow for translating unstructured visual data into evidence for human-centered urban design.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Tsinghua University",
+            "ror": "03cve4549"
+          }
+        ],
+        "name": "Chenghao Yang",
+        "openalex": "A5024705031",
+        "orcid": "https://orcid.org/0000-0003-4793-7864"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tsinghua University",
+            "ror": "03cve4549"
+          }
+        ],
+        "name": "Ye Zhang",
+        "openalex": "A5100449325",
+        "orcid": "https://orcid.org/0000-0002-6956-5013"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.apgeog.2026.104097",
+      "pdf_url": null,
+      "source_id": "S115443327",
+      "source_name": "Applied Geography",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-30",
+    "repository_urls": [],
+    "title": "Assessing and mapping public visual perception across urban public space typologies based on geotagged social media images"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-30_10.1016/j.apgeog",
+    "members": [
+      "doi:10.1016/j.apgeog.2026.104097"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:remote-sensing-classification",
+        "label": "remote sensing classification"
+      },
+      {
+        "confidence": 0.9091,
+        "id": "method:spatial-analysis",
+        "label": "spatial analysis"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03cve4549",
+        "label": "Tsinghua University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4793-7864",
+        "label": "Chenghao Yang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6956-5013",
+        "label": "Ye Zhang"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q3130",
+        "label": "Sydney",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": true,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.1953,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.1325,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.1266,
+        "subfield": "2307"
+      }
+    ]
+  },
+  "first_published": "2026-06-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2001690396",
+      "openalex:W2021504710",
+      "openalex:W2041282815",
+      "openalex:W2732026016",
+      "openalex:W2808372731",
+      "openalex:W2809561681",
+      "openalex:W2888403634",
+      "openalex:W2896463379",
+      "openalex:W2897612470",
+      "openalex:W2901558138",
+      "openalex:W2955075265",
+      "openalex:W2956917287",
+      "openalex:W2983285440",
+      "openalex:W3023350488",
+      "openalex:W3093060698",
+      "openalex:W3118405591",
+      "openalex:W3119672322",
+      "openalex:W3147538071",
+      "openalex:W3200484751",
+      "openalex:W3211330944",
+      "openalex:W4306391382",
+      "openalex:W4319072188",
+      "openalex:W4321487321",
+      "openalex:W4366765114",
+      "openalex:W4372313252",
+      "openalex:W4388498982",
+      "openalex:W4388862193",
+      "openalex:W4390671946",
+      "openalex:W4393250851",
+      "openalex:W4399116831",
+      "openalex:W4399880583",
+      "openalex:W4400733991",
+      "openalex:W4404099425",
+      "openalex:W4404105618",
+      "openalex:W4404826671",
+      "openalex:W4407630459",
+      "openalex:W4407682882",
+      "openalex:W4408490662",
+      "openalex:W4408597752",
+      "openalex:W4408962367",
+      "openalex:W4409081320",
+      "openalex:W4411133740",
+      "openalex:W4411472469",
+      "openalex:W4413637393",
+      "openalex:W4414006825",
+      "openalex:W4414938108",
+      "openalex:W4415407364",
+      "openalex:W4416868290",
+      "openalex:W4417317155",
+      "openalex:W7120023718",
+      "openalex:W7133327800"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.apgeog.2026.104097",
+    "openalex": "W7166705033",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:43:29Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.007076,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2197,
+      "out": 420
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:43:29Z",
+    "doi": "10.1016/j.apgeog.2026.104097",
+    "journal": "Applied Geography",
+    "source_id": "S115443327",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a single, highly developed 2 km study area around Sydney's Darling Harbour, which may limit generalizability to less dense or non-waterfront urban contexts.",
+      "what": "This study developed a deep learning framework using ResNet-50, Mask2Former, and GIS spatial analytics to analyze public visual preferences across four public space typologies using geotagged Flickr images. Focusing on a 2 km radius around Sydney's Darling Harbour, the model classified images with high expert consensus (Cohen's kappa up to 0.92) and found that while waterfronts attracted 52% of visual engagement, the highest positive perceptions clustered in hybrid nodes where blue, green, and built environments overlap. Tumbalong Park outperformed all single-typology environments across six perception dimensions, showing a Cohen's d of +0.48 for 'Beautiful' and -0.81 for 'Depressing'.",
+      "why": "It demonstrates that positive urban experiences are driven by the spatial synergy of integrated blue, green, and built elements rather than water frontage or greening alone, providing a scalable workflow to guide human-centered urban design."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-30",
+  "work_key": "doi:10.1016/j.apgeog.2026.104097"
+}

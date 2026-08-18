@@ -1,0 +1,314 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Urban land-use and land-cover dynamics in many fast-growing Indian cities often deviate from Master Plan trajectories and sustainability goals, including those set under SDG 11. Hyderabad exemplifies this challenge, where the urban landscape has undergone a profound transformation over five decades, outpacing planning blueprints. This study investigates long-term urban sprawl and densification patterns in the Hyderabad Metropolitan Region from 1975 to 2024 using multi-temporal satellite data (Landsat MSS/TM: 80 and 30 m; IRS/ResourceSat: 5.8 m) and object-based classification. The objectives are to map spatiotemporal changes across nine LULC classes, quantify expansion and densification using spatial metrics, and assess their implications for SDG 11.3 and urban green space equity. Results reveal a 188% increase in built-up area (from 183.05 km² to 527.23 km²), alongside an 84% loss of farmland and a 59% decrease in vegetation cover. Forest cover remained stable due to its protected status. Shannon’s entropy (0.90) confirms ongoing sprawl, while the compactness index (2.29) and population-weighted density (~ 19,000 persons/km²) reveal accelerating densification since 2008—processes that occur simultaneously as peripheral expansion continues alongside core vertical growth. Per capita green space averages 20.25 m², surpassing the WHO minimums but masking inequitable distribution: the Central (12.40 m²) and South (14.80 m²) zones lag behind the West (31.20 m²). The LULC classification achieved > 87% overall accuracy (kappa > 0.84), validated against Survey of India toposheets (1975–1989) and Google Earth imagery (1997–2024). By explicitly addressing multi-resolution data harmonization through OBIA and cross-verification, this study offers a reproducible framework suitable for data-limited contexts and provides planners with evidence-based benchmarks for SDG 11.3 monitoring and zone-specific interventions to reconcile densification with green space equity.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Osmania University",
+            "ror": "030sjb889"
+          }
+        ],
+        "name": "Ravali Bharadwaj",
+        "openalex": "A5071820425",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Osmania University",
+            "ror": "030sjb889"
+          }
+        ],
+        "name": "Harish Gupta",
+        "openalex": "A5065870179",
+        "orcid": "https://orcid.org/0000-0001-7516-0672"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Osmania University",
+            "ror": "030sjb889"
+          }
+        ],
+        "name": "Kumar Molugaram",
+        "openalex": "A5103207113",
+        "orcid": "https://orcid.org/0000-0002-7108-4710"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Texas A&M University System",
+            "ror": "0034eay46"
+          }
+        ],
+        "name": "Srinivasulu Ale",
+        "openalex": "A5005763595",
+        "orcid": "https://orcid.org/0000-0001-7563-2836"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Texas A&M University System",
+            "ror": "0034eay46"
+          }
+        ],
+        "name": "Fouad Jaber",
+        "openalex": "A5070490207",
+        "orcid": "https://orcid.org/0000-0001-8643-8668"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s44327-026-00309-w",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44327-026-00309-w.pdf",
+      "source_id": "S5407042847",
+      "source_name": "Discover Cities",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-29",
+    "repository_urls": [],
+    "title": "Spatiotemporal analysis of urban sprawl and densification in Hyderabad India across five decades"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-29_10.1007/s44327-0",
+    "members": [
+      "doi:10.1007/s44327-026-00309-w"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:030sjb889",
+        "label": "Osmania University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0034eay46",
+        "label": "Texas A&M University System"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5071820425",
+        "label": "Ravali Bharadwaj"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7516-0672",
+        "label": "Harish Gupta"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7108-4710",
+        "label": "Kumar Molugaram"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7563-2836",
+        "label": "Srinivasulu Ale"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8643-8668",
+        "label": "Fouad Jaber"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": true,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.8666,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0742,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10689",
+        "is_primary": false,
+        "label": "Remote-Sensing Image Classification",
+        "score": 0.01,
+        "subfield": "2214"
+      }
+    ]
+  },
+  "first_published": "2026-06-29",
+  "graph": {
+    "cited_by_count": 1,
+    "referenced_works": [
+      "openalex:W1536340909",
+      "openalex:W1971048054",
+      "openalex:W2004056710",
+      "openalex:W2029332336",
+      "openalex:W2036632898",
+      "openalex:W2061699609",
+      "openalex:W2061935177",
+      "openalex:W2070647518",
+      "openalex:W2092475366",
+      "openalex:W2107165817",
+      "openalex:W2112147547",
+      "openalex:W2123409059",
+      "openalex:W2141409967",
+      "openalex:W2141462799",
+      "openalex:W2170604970",
+      "openalex:W2319007132",
+      "openalex:W2467999252",
+      "openalex:W2523629183",
+      "openalex:W2607913090",
+      "openalex:W2800417984",
+      "openalex:W2808200710",
+      "openalex:W2888085961",
+      "openalex:W2895334654",
+      "openalex:W2993160144",
+      "openalex:W2995403003",
+      "openalex:W3003546079",
+      "openalex:W3007792777",
+      "openalex:W3016076757",
+      "openalex:W3039495143",
+      "openalex:W3043581667",
+      "openalex:W3089261054",
+      "openalex:W3152149719",
+      "openalex:W3160803333",
+      "openalex:W3183545154",
+      "openalex:W3201754621",
+      "openalex:W4210699701",
+      "openalex:W4210994343",
+      "openalex:W4211243518",
+      "openalex:W4322500521",
+      "openalex:W4323059253",
+      "openalex:W4389000753",
+      "openalex:W4392859783",
+      "openalex:W4393036696",
+      "openalex:W4403588986",
+      "openalex:W4404054799",
+      "openalex:W4410817220",
+      "openalex:W7117965743",
+      "openalex:W7125097033",
+      "openalex:W7125910874"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s44327-026-00309-w",
+    "openalex": "W7166541301",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:38:38Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.007477,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2459,
+      "out": 421
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:38:38Z",
+    "doi": "10.1007/s44327-026-00309-w",
+    "journal": "Discover Cities",
+    "source_id": "S5407042847",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "1975 to 2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study maps five decades of urban land-use and land-cover changes in the Hyderabad Metropolitan Region from 1975 to 2024 using multi-temporal satellite data at resolutions ranging from 5.8 m to 80 m. The object-based classification achieved over 87% accuracy, revealing a 188% expansion in built-up area from 183.05 km² to 527.23 km², an 84% loss of farmland, and a 59% reduction in vegetation. Spatial metrics show simultaneous peripheral sprawl and core densification, with population-weighted density reaching approximately 19,000 persons/km² and per capita green space varying widely from 12.40 m² in the Central zone to 31.20 m² in the West zone.",
+      "why": "It establishes a reproducible data-harmonization framework for tracking long-term urban growth in data-limited contexts, revealing that overall compliance with global green space standards can mask severe spatial inequities at the sub-city scale."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-29",
+  "work_key": "doi:10.1007/s44327-026-00309-w"
+}

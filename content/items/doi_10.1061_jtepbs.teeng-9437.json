@@ -1,0 +1,284 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Accurate speed estimation is crucial for legitimate enforcement and effective traffic management. However, in computer vision-based systems, perspective distortion often leads to significant estimation errors, particularly under heterogeneous traffic conditions prevailing in developing countries. Traditional methods, such as the uniform scale factor (USF) approach, fail to correct for these distortions adequately, frequently resulting in unjust penalties when used in enforcement cameras. The present study introduces a novel machine learning-driven dynamic scale factor (DSF) framework for correcting perspective errors in computer vision-based speed estimation. The proposed method computes the DSF by incorporating intrinsic camera parameters and geometric parameters based on camera orientation. An annotated database adaptable to heterogeneous traffic conditions in line with the vehicle categories specified in the Highway Capacity Manual has been developed. A dedicated machine learning algorithm is developed to estimate speeds using the DSF framework. The methodology is validated on a test stretch in Kerala State, India. Vehicle speeds were estimated using the proposed DSF approach and compared with estimates obtained using USF, segmented scale factor (SSF), and ground-truth data. The results demonstrate that the DSF method yields speed estimates that are significantly closer to the ground truth, compared to USF and SSF methods. Crucially, the DSF approach eliminates the need for multiple field-based reference lengths and does not require individual camera calibration, making it highly scalable. Additionally, the method ensures reliable speed data for advanced traffic management applications. The proposed framework is adaptable and enhances the accuracy and fairness of speed estimation across diverse operational scenarios.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "National Institute of Technology Calicut",
+            "ror": "03yyd7552"
+          }
+        ],
+        "name": "M.G. Karthika",
+        "openalex": "A5017465730",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "National Institute of Technology Calicut",
+            "ror": "03yyd7552"
+          }
+        ],
+        "name": "Munavar Fairooz Cheranchery",
+        "openalex": "A5009710015",
+        "orcid": "https://orcid.org/0000-0002-5273-0529"
+      },
+      {
+        "institutions": [
+          {
+            "name": "National Institute of Technology Calicut",
+            "ror": "03yyd7552"
+          }
+        ],
+        "name": "M. Harikrishna",
+        "openalex": "A5020860053",
+        "orcid": "https://orcid.org/0000-0002-5102-6898"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9437",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-28",
+    "repository_urls": [],
+    "title": "Novel Machine Learning Driven Framework for Dynamic Perspective Correction in Vision-Based Traffic Speed Estimation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-28_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-9437"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03yyd7552",
+        "label": "National Institute of Technology Calicut"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5017465730",
+        "label": "M.G. Karthika"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5273-0529",
+        "label": "Munavar Fairooz Cheranchery"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5102-6898",
+        "label": "M. Harikrishna"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": true,
+        "label": "Traffic control and management",
+        "score": 0.4276,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.1635,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.1621,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-06-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1973471649",
+      "openalex:W1980097476",
+      "openalex:W2004353783",
+      "openalex:W2033178020",
+      "openalex:W2033819227",
+      "openalex:W2045771789",
+      "openalex:W2050607735",
+      "openalex:W2056341306",
+      "openalex:W2100438253",
+      "openalex:W2111701062",
+      "openalex:W2120295320",
+      "openalex:W2122487083",
+      "openalex:W2128256241",
+      "openalex:W2134576786",
+      "openalex:W2138922551",
+      "openalex:W2156625956",
+      "openalex:W2161969291",
+      "openalex:W2167667767",
+      "openalex:W2331476253",
+      "openalex:W2438287239",
+      "openalex:W2534769545",
+      "openalex:W2590234360",
+      "openalex:W2790135849",
+      "openalex:W2890754543",
+      "openalex:W2900169211",
+      "openalex:W2900327972",
+      "openalex:W2909746114",
+      "openalex:W2918272093",
+      "openalex:W2963037989",
+      "openalex:W2964933785",
+      "openalex:W3008717402",
+      "openalex:W3009002845",
+      "openalex:W3135615711",
+      "openalex:W3160213163",
+      "openalex:W4211086593",
+      "openalex:W4308010797",
+      "openalex:W4366829593",
+      "openalex:W4385621218",
+      "openalex:W4389193746",
+      "openalex:W4391107955",
+      "openalex:W4391768715",
+      "openalex:W4399882301",
+      "openalex:W4401630190",
+      "openalex:W4401809091",
+      "openalex:W4403496496",
+      "openalex:W4406125645",
+      "openalex:W4408687550",
+      "openalex:W4409838662",
+      "openalex:W4411272859",
+      "openalex:W4412642874"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-9437",
+    "openalex": "W7166463861",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:35:48Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005482,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2113,
+      "out": 257
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:35:48Z",
+    "doi": "10.1061/jtepbs.teeng-9437",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The validation of the framework is limited to a single test road stretch in Kerala, India.",
+      "what": "The study introduces a dynamic scale factor (DSF) framework that uses intrinsic camera parameters and orientation geometry to correct perspective distortion in vision-based traffic speed estimation. The machine learning-driven method was trained on a custom annotated database categorized by Highway Capacity Manual vehicle classes and validated against ground-truth, uniform scale factor, and segmented scale factor methods on a test road stretch in Kerala, India.",
+      "why": "The framework eliminates the need for individual camera calibration and multiple physical field-based reference measurements, providing a highly scalable way to prevent unjust speeding penalties caused by perspective distortion in heterogeneous traffic."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-28",
+  "work_key": "doi:10.1061/jtepbs.teeng-9437"
+}

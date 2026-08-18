@@ -1,0 +1,216 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Evaluating operational crowd management at network scale requires simulations that can be run repeatedly while adapting interventions to changing conditions. Microscopic models can represent detailed individual movement, but their computational cost may limit their use in such repeated, network-scale evaluations. This paper presents PedNStream (Pedestrian Network Flow Simulation), an open-source, Python-native simulator for macroscopic pedestrian network simulation based on the Link Transmission Model (LTM). PedNStream extends LTM-based pedestrian models with stochastic link dynamics that represent local variation in pedestrian flow. It uses a utility-based route-choice model to capture how pedestrians adjust their route choices in response to congestion and control interventions as conditions change over time. The modular framework provides controller interfaces for gating, flow separation, and route guidance. We evaluate PedNStream in a staged manner. Synthetic scenarios verify key crowd-dynamics mechanisms, including queue formation, spillback, congestion dissipation, and adaptive rerouting. Real-network experiments assess large-scale behavior against observed pedestrian counts. A closed-loop case study demonstrates controller integration, and a runtime analysis quantifies scalability. These results position PedNStream as an efficient and practical testbed for large-scale pedestrian network simulation and crowd management research.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Weiming Mai",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dorine Duives",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Serge Hoogendoorn",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "comment": "14 pages, 14 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.01021v3",
+      "pdf_url": "https://arxiv.org/pdf/2607.01021v3",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-01",
+    "repository_urls": [],
+    "title": "PedNStream: Scalable Network Flow Simulation for Pedestrian Traffic Management"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-01_2607.01021",
+    "members": [
+      "arxiv:2607.01021"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.62,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1368-6630",
+        "label": "Weiming Mai"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138888578",
+        "label": "Dorine Duives"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5129930327",
+        "label": "Serge Hoogendoorn"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11500",
+        "is_primary": true,
+        "label": "Evacuation and Crowd Dynamics",
+        "score": 0.9721,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0146,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0012,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-07-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.01021",
+    "doi": "10.48550/arxiv.2607.01021",
+    "openalex": "W7167041438",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:48:29Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.003281,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1149,
+      "out": 173
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9199,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.448,
+    "relevance": 0.9199
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed PedNStream, an open-source, Python-native simulator that models macroscopic pedestrian network flows using the Link Transmission Model. The framework incorporates stochastic link dynamics to capture local flow variations, a utility-based route-choice model for adaptive rerouting under congestion, and controller interfaces for gating, flow separation, and route guidance. Its performance was validated through synthetic scenarios, real-network experiments comparing simulated flows to observed pedestrian counts, and a closed-loop control case study.",
+      "why": "It provides a computationally efficient, scalable alternative to microscopic pedestrian models, allowing planners to repeatedly simulate and test real-time crowd management interventions across large-scale urban networks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-22",
+  "work_key": "arxiv:2607.01021"
+}

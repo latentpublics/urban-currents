@@ -55,6 +55,20 @@ PUBLISHED = "published"
 QUIET = "quiet"
 NOT_PUBLISHED = "not_published"
 
+# A fourth state, and it is not a fourth verdict (hotfix 2, H5-2).
+#
+# `not_published` is a conclusion the pipeline reached: it looked, something was
+# wrong, it said so. `interrupted` means **no conclusion was reached at all** —
+# the process was killed before it could decide. CI hitting `timeout-minutes`
+# produced exactly this and recorded nothing, so the day was missing from
+# `runs_log` entirely and looked identical to a day the schedule never fired on.
+#
+# Kept apart from `not_published` because the remedy differs. A `not_published`
+# day is retried and usually succeeds. An `interrupted` day says the run does
+# not fit in the time it was given, and retrying it unchanged will do the same
+# thing again.
+INTERRUPTED = "interrupted"
+
 # Sources that must answer before a day can be called quiet. Both, because the
 # issue claims a scope — "what appeared in urban data science today" — and half
 # that scope is a different claim.
@@ -284,5 +298,38 @@ def all_logs() -> list[dict]:
 def unpublished_dates(limit: Optional[int] = None) -> list[dict]:
     """Days we could not see, newest first — the catch-up queue."""
     rows = [r for r in all_logs() if r.get("status") == NOT_PUBLISHED]
+    rows.sort(key=lambda r: r["date"], reverse=True)
+    return rows[:limit] if limit else rows
+
+
+def record_interrupted(d: date, reason: str) -> Path:
+    """Write the row a killed run could not write itself.
+
+    Called by the workflow's `always()` step when no row exists for the day.
+    Deliberately dumb — it takes no measurements and reaches no verdict, because
+    by definition nobody knows what happened. It asserts one fact: **something
+    started and never finished**, which is strictly more than the silence it
+    replaces.
+
+    Never overwrites. If the pipeline did manage to record a verdict, that
+    verdict is better than this one and stands.
+    """
+    existing = load_log(d)
+    if existing:
+        return log_path(d)
+
+    return record(
+        Outcome(
+            date=d,
+            status=INTERRUPTED,
+            reasons=[reason],
+            candidates=None,
+            published=0,
+        )
+    )
+
+
+def interrupted_dates(limit: Optional[int] = None) -> list[dict]:
+    rows = [r for r in all_logs() if r.get("status") == INTERRUPTED]
     rows.sort(key=lambda r: r["date"], reverse=True)
     return rows[:limit] if limit else rows

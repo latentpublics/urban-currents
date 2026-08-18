@@ -251,7 +251,7 @@ def status() -> dict[str, Any]:
     from .deliver import get_backend, ledger_dir, recipients
     from .held import counts as held_counts
     from .llm import UsageState
-    from .outcome import unpublished_dates
+    from .outcome import interrupted_dates, unpublished_dates
 
     logs = all_logs()
     successes = [r for r in logs if r.get("status") in (PUBLISHED, QUIET)]
@@ -287,6 +287,11 @@ def status() -> dict[str, Any]:
         "last_issue": issues[-1] if issues else None,
         "issues_published": len(issues),
         "unpublished_dates": [r["date"] for r in missing],
+        # Kept apart from `unpublished_dates` on purpose. `not_published` is a
+        # verdict the pipeline reached; `interrupted` means it never reached one
+        # because something killed it. Retrying the first usually works;
+        # retrying the second unchanged does the same thing again.
+        "interrupted_dates": [r["date"] for r in interrupted_dates()],
         "held": held_counts(),
         # A source that reports OK and returns nothing is the failure that does
         # not look like one. It belongs next to the missed days, not buried in a

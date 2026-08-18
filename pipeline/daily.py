@@ -52,6 +52,104 @@ class BudgetExceeded(RuntimeError):
     """The day's LLM allowance ran out mid-run."""
 
 
+class TimeBudgetExceeded(RuntimeError):
+    """The run took longer than `daily.max_minutes` and stopped itself."""
+
+
+class Interrupted(RuntimeError):
+    """SIGTERM arrived — the platform is about to kill us."""
+
+
+# --------------------------------------------------------------------------
+# Stopping before something else stops us (hotfix 2, H5)
+# --------------------------------------------------------------------------
+
+
+class Deadline:
+    """A wall clock the run checks between stages, plus a SIGTERM handler.
+
+    The failure this exists for: CI killed the job at `timeout-minutes: 45` and
+    **nothing was recorded**. No run-log row, no alert, no commit. To `uc status`
+    the day simply did not exist, which is indistinguishable from the schedule
+    never having fired — X3's whole problem, reappearing one level up, because
+    **a pipeline killed by the platform cannot record its own death.**
+
+    Two defences, and they cover different failures:
+
+    - The **deadline** is ours. Between stages we ask whether there is time for
+      another one, and if not we stop, write the run log, and exit. Stopping
+      yourself always beats being stopped.
+    - The **signal handler** is for when the deadline was too generous or a
+      single stage overran it. GitHub sends SIGTERM and waits before SIGKILL;
+      that gap is enough to write one JSON file.
+
+    `daily.max_minutes` must stay **comfortably under** the workflow's
+    `timeout-minutes`, or the platform wins the race again and we are back to
+    silence. The two numbers are commented in both places, because changing one
+    alone is exactly how this returns.
+    """
+
+    def __init__(self, minutes: Optional[float] = None):
+        self.limit_s = float(minutes if minutes is not None else cfg("daily.max_minutes", 30)) * 60
+        self.started = time.monotonic()
+        self.signalled = False
+        self._previous: dict[int, Any] = {}
+
+    @property
+    def elapsed(self) -> float:
+        return time.monotonic() - self.started
+
+    @property
+    def remaining(self) -> float:
+        return self.limit_s - self.elapsed
+
+    def install(self) -> "Deadline":
+        """Catch SIGTERM (and SIGINT) without swallowing them.
+
+        The handler only sets a flag. Doing real work inside a signal handler is
+        how you get a half-written JSON file, and a corrupt run log is worse
+        than none — it is the same lie with a timestamp on it.
+        """
+        import signal
+
+        def handler(signum, _frame):
+            self.signalled = True
+
+        for sig in (getattr(signal, "SIGTERM", None), getattr(signal, "SIGINT", None)):
+            if sig is None:
+                continue
+            try:
+                self._previous[sig] = signal.getsignal(sig)
+                signal.signal(sig, handler)
+            except (ValueError, OSError):
+                # Not the main thread, or the platform disagrees. The deadline
+                # still works; only the signal path is unavailable.
+                pass
+        return self
+
+    def restore(self) -> None:
+        import signal
+
+        for sig, previous in self._previous.items():
+            try:
+                signal.signal(sig, previous)
+            except (ValueError, OSError):
+                pass
+        self._previous.clear()
+
+    def check(self, stage: str) -> None:
+        """Raise if we are out of time or have been asked to stop."""
+        if self.signalled:
+            raise Interrupted(
+                f"SIGTERM received after {self.elapsed:.0f}s, before stage {stage!r}"
+            )
+        if self.remaining <= 0:
+            raise TimeBudgetExceeded(
+                f"time budget exceeded after {self.elapsed:.0f}s in stage {stage!r} "
+                f"(limit {self.limit_s / 60:.0f} min)"
+            )
+
+
 # --------------------------------------------------------------------------
 # Locking
 # --------------------------------------------------------------------------
@@ -161,6 +259,27 @@ def target_window(today: Optional[date] = None) -> tuple[date, date]:
     return end - timedelta(days=lookback - 1), end
 
 
+def smoke_window(today: Optional[date] = None) -> tuple[date, date]:
+    """A narrow window for the "does this install work at all" run (H7).
+
+    Step 1 of the turn-on checklist exists to confirm the install, the model
+    cache and the keys. It was collecting the full seven-day window and
+    summarising everything — **the most expensive thing the pipeline does, with
+    the result thrown away** — and it is what ran for 44 minutes and got killed.
+
+    Narrow, not shallow. The window ends past arXiv's three-day indexing lag so
+    both sources actually return something; a smoke test that collects nothing
+    proves nothing. Summaries are capped rather than skipped, because 0k was
+    right that a dry run which skips the expensive stage does not test the thing
+    most likely to break — but three summaries exercise the key, the schema and
+    the parsing exactly as well as thirty do.
+    """
+    today = today or date.today()
+    end = today - timedelta(days=int(cfg("daily.smoke_lag_days", 4)))
+    span = max(1, int(cfg("daily.smoke_days", 2)))
+    return end - timedelta(days=span - 1), end
+
+
 # --------------------------------------------------------------------------
 # The run
 # --------------------------------------------------------------------------
@@ -177,8 +296,14 @@ def run_daily(
     dry_run: bool = False,
     use_llm: bool = True,
     today: Optional[date] = None,
+    smoke: bool = False,
 ) -> dict[str, Any]:
-    """One day, end to end, with the outcome decided rather than assumed."""
+    """One day, end to end, with the outcome decided rather than assumed.
+
+    `smoke` narrows the window and caps summaries — the cheap path for step 1 of
+    the turn-on checklist, which only needs to prove the install, the model and
+    the keys work. See `smoke_window`.
+    """
     from .llm import UsageState
     from .run_stages import (
         StageSkipped,
@@ -190,7 +315,8 @@ def run_daily(
     from . import run_stages
 
     issue_date = d or (today or date.today())
-    covers_from, covers_to = target_window(today)
+    covers_from, covers_to = (smoke_window(today) if smoke else target_window(today))
+    summarize_limit = int(cfg("daily.smoke_summaries", 3)) if smoke else None
     budget_cap = float(cfg("daily.max_llm_usd", 1.0))
     baseline_spend = UsageState.load().cost_usd
 
@@ -204,6 +330,8 @@ def run_daily(
         )
 
     budget_exceeded = False
+    deadline = Deadline().install()
+    stopped_early: Optional[str] = None
     try:
         # Collect the window. `backfill_from` already exists for exactly this.
         _guard(run, "collect", lambda: stage_collect(
@@ -211,6 +339,9 @@ def run_daily(
         ))
 
         for name in STAGES:
+            # Between stages, not inside them: a stage is the smallest unit we
+            # can abandon without leaving half-written output behind.
+            deadline.check(name)
             if name == "summarize":
                 spent = _spend_since(baseline_spend)
                 if spent >= budget_cap:
@@ -222,7 +353,7 @@ def run_daily(
                     break
             fn = getattr(run_stages, f"stage_{name}")
             if name == "summarize":
-                _guard(run, name, lambda: fn(run, use_llm=use_llm))
+                _guard(run, name, lambda: fn(run, use_llm=use_llm, limit=summarize_limit))
             elif name in ("dedup",):
                 _guard(run, name, lambda: fn(run, covers_to))
             else:
@@ -290,7 +421,37 @@ def run_daily(
         result = _result(outcome, run, started, covers_from, covers_to, dry_run)
         result["delivery"] = delivery
         return result
+
+    except (TimeBudgetExceeded, Interrupted) as e:
+        # The point of the whole Deadline machinery: a run that is out of time,
+        # or being killed, still leaves a row saying so. A day with no record is
+        # indistinguishable from a day the scheduler never fired, and telling
+        # those apart is what `runs_log` is for.
+        stopped_early = type(e).__name__
+        run.error(f"daily: {stopped_early} — {e}")
+        outcome = Outcome(
+            date=issue_date,
+            status=NOT_PUBLISHED,
+            reasons=[str(e)],
+            failed_stages=sorted(
+                n for n, s in run.metrics.stages.items() if s == "FAILED"
+            ),
+            candidates=None,
+            published=0,
+            spend_usd=_spend_since(baseline_spend),
+        )
+        if not dry_run:
+            record(outcome)
+            from .notify import notify_failure
+
+            notify_failure(issue_date, outcome.reasons, run=run)
+        run.metrics.timing["daily_s"] = round(time.monotonic() - started, 1)
+        run.save()
+        result = _result(outcome, run, started, covers_from, covers_to, dry_run)
+        result["stopped_early"] = stopped_early
+        return result
     finally:
+        deadline.restore()
         lock.release()
 
 

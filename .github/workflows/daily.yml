@@ -25,11 +25,16 @@ on:
         required: false
         default: true
         type: boolean
+      smoke:
+        description: "Cheap check: narrow window, 3 summaries. Use for step 1."
+        required: false
+        default: false
+        type: boolean
 
   # DO NOT UNCOMMENT WITHOUT WORKING THROUGH docs/OPERATIONS.md FIRST.
   #
   # 06:00 KST = 21:00 UTC the previous day. GitHub's scheduler is best-effort
-  # and routinely runs late under load, which is fine: the window is three days
+  # and routinely runs late under load, which is fine: the window is seven days
   # wide and `uc catch-up` retries anything missed for a week. A cron that fires
   # an hour late costs nothing here; one that never fires is caught by the
   # missing run-log row, not by anybody noticing the mail did not arrive.
@@ -104,10 +109,12 @@ jobs:
           # only someone with write access can dispatch the workflow.
           INPUT_DATE: ${{ inputs.date }}
           INPUT_DRY_RUN: ${{ inputs.dry_run }}
+          INPUT_SMOKE: ${{ inputs.smoke }}
         run: |
           args=()
           if [ -n "$INPUT_DATE" ]; then args+=(--date "$INPUT_DATE"); fi
           if [ "$INPUT_DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          if [ "$INPUT_SMOKE" = "true" ]; then args+=(--smoke); fi
 
           # Three exits, three different facts, and they must not be merged:
           #   0  published or quiet
@@ -175,6 +182,42 @@ jobs:
             git pull --rebase --no-edit origin "${GITHUB_REF_NAME}"
             git push
           fi
+
+      # The last net (hotfix 2, H5-2). `uc daily` records its own death when it
+      # is given the chance — a deadline it checks between stages, and a SIGTERM
+      # handler for when a single stage overruns. This covers the case where
+      # Python never gets to say anything at all: SIGKILL, an OOM, a runner
+      # vanishing. Without it a killed job leaves no row, and a day with no row
+      # is indistinguishable from a day the schedule never fired.
+      # It commits and pushes on its own. On cancellation GitHub runs only the
+      # `always()` steps, so the ordinary commit step never happens — a row
+      # written here and left in the workspace would die with the runner, which
+      # is the same silence this is meant to end.
+      - name: Record an interrupted run
+        if: ${{ always() && inputs.dry_run != true }}
+        run: |
+          day=$(date -u +%Y-%m-%d)
+          if [ -f "content/runs_log/${day}.json" ]; then
+            echo "run log already written — the pipeline recorded its own verdict"
+            exit 0
+          fi
+
+          echo "::warning::No run-log row for ${day} — recording it as interrupted."
+          uv run uc record-interrupted \
+            --reason "the job ended without a verdict (cancelled, timed out, or the runner died)" || true
+
+          if [ ! -f "content/runs_log/${day}.json" ]; then
+            echo "::error::Could not write an interrupted row either."
+            exit 0
+          fi
+
+          git config user.name  "urban-currents[bot]"
+          git config user.email "urban-currents@users.noreply.github.com"
+          git add "content/runs_log/${day}.json"
+          git commit -m "content: ${day} interrupted" || exit 0
+          git push || {
+            git pull --rebase --no-edit origin "${GITHUB_REF_NAME}" && git push
+          } || echo "::error::Could not push the interrupted row."
 
       - name: Report
         if: always()

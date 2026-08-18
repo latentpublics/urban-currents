@@ -252,6 +252,34 @@ daily:
   # re-collecting a window whose sources have moved on.
   catch_up_days: 7
 
+  # ★ Wall-clock budget. The run checks this between stages and stops itself,
+  # recording `not_published` with the stage it ran out in.
+  #
+  # **This must stay comfortably under `timeout-minutes` in
+  # .github/workflows/daily.yml (currently 45).** When CI killed the job at 45
+  # the pipeline recorded nothing at all — no run-log row, no alert, no commit —
+  # and to `uc status` the day was indistinguishable from one the scheduler
+  # never fired on. Being stopped by the platform means losing the record;
+  # stopping yourself means keeping it.
+  #
+  # Changing one of the two numbers without the other is exactly how that
+  # silence comes back, which is why both carry this comment.
+  max_minutes: 30
+
+  # The cheap path for step 1 of the turn-on checklist (`uc daily --smoke`).
+  # Step 1 only has to prove the install, the model and the keys work, and it
+  # was collecting the full seven-day window and summarising everything — the
+  # most expensive thing the pipeline does, with the result discarded. That is
+  # the run CI killed at 44 minutes.
+  #
+  # The window ends past arXiv's 3-day indexing lag so both sources actually
+  # return something: a smoke test that collects nothing proves nothing.
+  smoke_days: 2
+  smoke_lag_days: 4
+  # Capped, not skipped. Three summaries exercise the key, the schema and the
+  # parsing exactly as well as thirty.
+  smoke_summaries: 3
+
 deliver:
   # `file` writes an .eml and sends nothing. It is the default and it stays the
   # default until YJUN picks a provider and fills in the credentials — a

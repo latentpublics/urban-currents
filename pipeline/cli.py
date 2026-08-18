@@ -300,6 +300,9 @@ def daily(
     date_: Optional[str] = DateOpt,
     dry_run: bool = typer.Option(False, "--dry-run", help="Run everything, write no issue"),
     no_llm: bool = typer.Option(False, "--no-llm"),
+    smoke: bool = typer.Option(
+        False, "--smoke", help="Narrow window, few summaries — checks the install, not the day"
+    ),
 ):
     """Run one day end to end: collect, classify, summarise, publish, render.
 
@@ -311,7 +314,10 @@ def daily(
 
     try:
         result = run_daily(
-            d=_date(date_) if date_ else None, dry_run=dry_run, use_llm=not no_llm
+            d=_date(date_) if date_ else None,
+            dry_run=dry_run,
+            use_llm=not no_llm,
+            smoke=smoke,
         )
     except DailyLocked as e:
         typer.echo(f"[LOCKED] {e}")
@@ -320,6 +326,35 @@ def daily(
     typer.echo(json.dumps(result, indent=2))
     if result["status"] == "not_published":
         raise typer.Exit(code=1)
+
+
+@app.command("record-interrupted")
+def record_interrupted_cmd(
+    date_: Optional[str] = DateOpt,
+    reason: str = typer.Option(
+        "the job ended without a verdict", help="What to record as the cause"
+    ),
+):
+    """Write a run-log row for a day whose run was killed before it concluded.
+
+    The last net. `uc daily` records its own verdict when it is given the chance
+    — it watches a wall-clock budget and handles SIGTERM — but a SIGKILL or a
+    vanished runner leaves nothing at all, and a day with no row looks exactly
+    like a day the schedule never fired on.
+
+    Refuses to overwrite a real verdict: if the pipeline managed to conclude
+    anything, that conclusion is better than this one.
+    """
+    from .outcome import load_log, record_interrupted
+
+    d = _date(date_)
+    existing = load_log(d)
+    if existing:
+        typer.echo(f"[OK] {d} already has a verdict: {existing.get('status')}")
+        return
+
+    path = record_interrupted(d, reason)
+    typer.echo(f"[RECORDED] {d} interrupted — {path}")
 
 
 @app.command("catch-up")
@@ -360,6 +395,18 @@ def status():
 
     state = read_status()
     typer.echo(json.dumps(state, indent=2))
+
+    stalled = state.get("interrupted_dates") or []
+    if stalled:
+        typer.echo(
+            f"\n[INTERRUPTED] {len(stalled)} day(s) were killed before reaching "
+            f"a verdict: {', '.join(stalled[:5])}"
+        )
+        typer.echo(
+            "              Not a failure — the run did not fit the time it was "
+            "given.\n"
+            "              Check daily.max_minutes against the workflow timeout."
+        )
 
     waiting = (state.get("held") or {}).get("waiting") or 0
     if waiting:

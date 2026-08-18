@@ -377,6 +377,11 @@ class LLMClient:
     caller: Optional[Callable[[str, str], LLMResponse]] = None
 
     calls_this_run: int = 0
+    # How often a provider throttled us this run, and how long we spent asleep
+    # because of it. Silent backoff is the leading suspect for CI being six
+    # times slower than the same run locally, and it was unmeasurable.
+    rate_limited: int = 0
+    backoff_s: float = 0.0
     _provider: Any = field(default=None, repr=False)
 
     def _task_cfg(self, key: str, default: Any) -> Any:
@@ -474,6 +479,19 @@ class LLMClient:
     def _call_with_backoff(
         self, system: str, user: str, schema: Optional[dict], retries: int
     ) -> LLMResponse:
+        """Retry with backoff, and **count what the waiting cost**.
+
+        This used to sleep up to 60 seconds per retry and record nothing. A run
+        throttled by a free-tier rate limit would spend minutes asleep and leave
+        no trace, so when CI took 44 minutes against a local 7 we had no way to
+        tell whether that was the reason — the sleeping is invisible in metrics,
+        in the logs, and in the cost tally, because a call that eventually
+        succeeds looks identical to one that never waited.
+
+        `rate_limited` and `backoff_s` are the answer to that question next
+        time. They are reported by `stage_summarize` and land in the run's
+        metrics.
+        """
         provider = self.provider()
         last: Optional[Exception] = None
         for attempt in range(retries + 1):
@@ -488,10 +506,20 @@ class LLMClient:
                         f"{provider.name} quota exhausted: {str(e)[:200]}"
                     ) from e
                 if _looks_rate_limited(e) and attempt < retries:
-                    time.sleep(min(60.0, 5.0 * (2**attempt)))
+                    delay = min(60.0, 5.0 * (2**attempt))
+                    self.rate_limited += 1
+                    self.backoff_s = round(self.backoff_s + delay, 1)
+                    print(
+                        f"[llm] rate limited by {provider.name}; sleeping {delay:.0f}s "
+                        f"(retry {attempt + 1}/{retries})",
+                        flush=True,
+                    )
+                    time.sleep(delay)
                     continue
                 if attempt < retries:
-                    time.sleep(2**attempt)
+                    delay = float(2**attempt)
+                    self.backoff_s = round(self.backoff_s + delay, 1)
+                    time.sleep(delay)
         raise LLMUnavailable(
             f"{self.provider_name} call failed after {retries + 1} attempts: {last}"
         )

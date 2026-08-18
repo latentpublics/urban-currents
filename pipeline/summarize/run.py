@@ -202,6 +202,18 @@ def summarize_items(
 
     run.metrics.stages["summarize.model"] = client.model or ""
     run.metrics.stages["summarize.provider"] = client.provider_name or ""
+    # How much of this stage was spent waiting to be allowed to ask. Recorded
+    # even when zero: "we were not throttled" is a fact worth having when the
+    # same run takes six times longer somewhere else.
+    run.metrics.timing["llm_backoff_s"] = round(
+        run.metrics.timing.get("llm_backoff_s", 0.0) + client.backoff_s, 1
+    )
+    run.count("llm_rate_limited", client.rate_limited)
+    if client.rate_limited:
+        run.error(
+            f"summarize: throttled {client.rate_limited} time(s), "
+            f"{client.backoff_s:.0f}s asleep — check the provider tier"
+        )
     # "PARTIAL" has to mean some work landed. A cap hit on the first call, or an
     # auth/credit failure, produced nothing at all and should read as SKIPPED.
     status = "OK"

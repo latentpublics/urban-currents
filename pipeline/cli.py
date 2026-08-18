@@ -227,22 +227,63 @@ def run(
 def review(
     date_: Optional[str] = DateOpt,
     label: Optional[str] = typer.Option(None, help="Fast labelling mode, e.g. --label relevance"),
+    pending: bool = typer.Option(
+        False, "--pending", help="Judge what the pipeline held while you were away"
+    ),
+    sample: bool = typer.Option(
+        False, "--sample", help="Read a sample of what was published (use with --since)"
+    ),
+    since: Optional[str] = typer.Option(
+        None, "--since", help="--sample: read issues published on or after this date"
+    ),
+    relabel: Optional[str] = typer.Option(
+        None, "--relabel", help="Re-judge existing labels, e.g. --relabel weak"
+    ),
     top: int = typer.Option(30, help="Items to label per day (split evenly by source)"),
     limit: int = typer.Option(30, help="--label affinity: probe size, split evenly by band"),
     days: int = typer.Option(7, help="--label affinity: days of candidates to draw from"),
 ):
-    """Review a day's issue, recording elapsed time and every edited field path.
+    """Review the issue, the held queue, or a sample of what already went out.
 
-    With ``--label relevance`` it runs the Q1b labelling pass instead: a
-    stratified sample of the day's candidates, resumable, with a reason on every
-    drop.
+    **There is deliberately no `--latest`.** An argument-free "show me today"
+    would be a standing invitation to check every morning, and the pipeline is
+    supposed to run without that. `--pending` is the command for coming back:
+    it asks for no date because a week away leaves a week of held items and
+    remembering which dates those were is the friction being removed.
 
-    With ``--label affinity`` it runs the affinity probe: equal draws from the
-    high / mid / zero `canon_affinity` bands, journal path only, written to a
-    **separate** file. The two are different experiments and their labels are
-    never pooled — see `pipeline.labeling.LabelSetMisuse`.
+    - ``--pending``            judge the held queue, oldest first, resumable
+    - ``--sample --since D``   read a stratified sample of published cards
+    - ``--label relevance``    the Q1b labelling pass on a day's candidates
+    - ``--label affinity``     the affinity probe, written to a **separate**
+      file; the two are different experiments and are never pooled
+    - ``--relabel weak``       split the pre-M1 ``drop_weak`` rows into method
+      and results, appending corrections rather than editing
+    - ``--date D``             the full review of one issue
     """
-    from .review import run_labeling_session, run_probe_session, run_review_session
+    from .review import (
+        run_labeling_session,
+        run_pending_session,
+        run_probe_session,
+        run_rejudge_session,
+        run_review_session,
+        run_sample_session,
+    )
+
+    if pending:
+        run_pending_session()
+        return
+    if sample:
+        if not since:
+            typer.echo("--sample needs --since YYYY-MM-DD")
+            raise typer.Exit(code=2)
+        run_sample_session(_date(since))
+        return
+    if relabel:
+        if relabel not in ("weak", "drop_weak"):
+            typer.echo(f"unknown --relabel {relabel!r}; the only mode is `weak`")
+            raise typer.Exit(code=2)
+        run_rejudge_session()
+        return
 
     d = _date(date_)
     if label in ("affinity", "affinity_probe"):
@@ -319,6 +360,12 @@ def status():
 
     state = read_status()
     typer.echo(json.dumps(state, indent=2))
+
+    waiting = (state.get("held") or {}).get("waiting") or 0
+    if waiting:
+        typer.echo(
+            f"\n[WAITING] {waiting} held item(s) need a judgement — uc review --pending"
+        )
 
     missing = state["unpublished_dates"]
     if missing:

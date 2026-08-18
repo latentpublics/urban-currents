@@ -41,28 +41,80 @@ from .config import cfg
 from .metrics import Run, utcnow
 from .models import Item
 
+# Five verdicts and a skip. `w` was one label doing two jobs (M1).
+#
+# The 0k report read the 15 `drop_weak` rows on a topic/method axis and YJUN
+# corrected it: **topic mismatch is not what `drop_weak` means** — a paper
+# outside the field gets `n`, and one inside the field but not our kind gets
+# `q`. `drop_weak` is for a paper squarely in scope whose *work* is thin, and
+# that thinness comes in two kinds:
+#
+#   `m`  the method is weak      — visible in the abstract's method sentences
+#   `r`  the results are weak    — largely invisible from an abstract
+#
+# Splitting them matters for what a classifier can be taught. Weak method is a
+# learnable signal; weak results mostly are not, because an abstract reports
+# that there were findings rather than whether they amounted to anything.
+# Leaving both under one label mixes a learnable signal with an unlearnable one,
+# and the journal gate in L3 would learn the mixture.
 LABEL_KEYS: dict[str, str] = {
     "k": "keep",
     "n": "drop_not_urban",
     "q": "drop_not_our_kind",
-    "w": "drop_weak",
+    "m": "drop_weak_method",
+    "r": "drop_weak_results",
     "s": "skip",
 }
-DROP_LABELS = ("drop_not_urban", "drop_not_our_kind", "drop_weak")
+
+# `w` is retained as an input alias only, and it is deliberately NOT in
+# LABEL_KEYS: a key that still produces the merged label would let the split be
+# undone by muscle memory. Typing it asks which kind rather than accepting it.
+LEGACY_WEAK_KEY = "w"
+
+# The historical merged label. Rows written before M1 keep it; nothing writes it
+# any more. It stays in DROP_LABELS so old files still aggregate correctly.
+LEGACY_WEAK_LABEL = "drop_weak"
+
+WEAK_LABELS = ("drop_weak_method", "drop_weak_results", LEGACY_WEAK_LABEL)
+
+DROP_LABELS = ("drop_not_urban", "drop_not_our_kind") + WEAK_LABELS
+
+
+def is_weak(label: str) -> bool:
+    """Any of the three weak labels.
+
+    Aggregates group them: precision@k is unchanged by the split, because all
+    three are still drops. **The split is diagnostic information, not a change
+    to the metric** — reporting a different precision after a relabelling would
+    mean the metric had been moved rather than measured.
+    """
+    return label in WEAK_LABELS
 
 # Classifier score bands for the precision table (P5). Narrow at the top because
 # that is where the selection threshold could plausibly move to, and where a
 # handful of labels changes the answer.
 SCORE_BANDS = ((0.95, 1.01), (0.90, 0.95), (0.70, 0.90), (0.35, 0.70))
 
-LABEL_PROMPT = "   [k]eep / [n]ot urban / not our kind [q] / [w]eak / [s]kip: "
+LABEL_PROMPT = (
+    "   [k]eep / [n]ot urban / not our kind [q] / weak [m]ethod / weak [r]esults"
+    " / [s]kip: "
+)
 LABEL_LEGEND = (
     "  k  keep — worth publishing as a card\n"
     "  n  not urban research at all            (classifier error)\n"
     "  q  urban research, not the kind we cover (qualitative case study,\n"
     "                                           theory, policy commentary)\n"
-    "  w  the right kind, but weak or minor\n"
+    "  m  our kind, but the METHOD is weak     (thin data, no baseline,\n"
+    "                                           n too small for the claim)\n"
+    "  r  our kind, but the RESULTS are weak   (it worked, and nothing\n"
+    "                                           followed from it)\n"
     "  s  skip — undecided, offer it again next time"
+)
+
+# Shown once when someone types the old key.
+LEGACY_WEAK_HINT = (
+    "   'w' is now two labels — [m] weak method, [r] weak results. "
+    "Which was it?"
 )
 
 
@@ -79,6 +131,45 @@ PROBE_FACETS = frozenset({"affinity_probe"})
 
 class LabelSetMisuse(RuntimeError):
     """Raised when a probe label set is used where a ranked one is required."""
+
+
+def _weak_total(reasons) -> int:
+    """The three weak labels counted as one.
+
+    Aggregates report `weak` as a single number so the split cannot move a
+    published metric: precision@k is defined over keep-vs-drop, and all three
+    are drops. The breakdown rides alongside as `weak_detail`.
+    """
+    return sum(reasons.get(name, 0) for name in WEAK_LABELS)
+
+
+def _weak_detail(reasons) -> dict:
+    return {
+        "method": reasons.get("drop_weak_method", 0),
+        "results": reasons.get("drop_weak_results", 0),
+        "unsplit": reasons.get(LEGACY_WEAK_LABEL, 0),
+    }
+
+
+def _ask_label(prompt, printer) -> Optional[str]:
+    """One keystroke, or None if the session was stopped.
+
+    The old `w` is caught rather than accepted: it was one key for two verdicts,
+    and silently mapping it to either would put a guess in the label file. It
+    re-asks instead, which costs one keystroke on the rows where the distinction
+    is the whole point.
+    """
+    while True:
+        answer = (prompt(LABEL_PROMPT) or "").strip().lower()
+        if answer in ("quit", "exit"):
+            return None
+        key = answer[:1]
+        if key in LABEL_KEYS:
+            return key
+        if key == LEGACY_WEAK_KEY:
+            printer(LEGACY_WEAK_HINT)
+            continue
+        return "s"
 
 
 def labels_path(facet: str = "relevance") -> Path:
@@ -293,11 +384,10 @@ def run_labeling_session(
 
     for i, (item, source, rank) in enumerate(todo, start=1):
         printer(_render(item, source, rank, f"{i}/{len(todo)}"))
-        answer = (prompt(LABEL_PROMPT) or "").strip().lower()
-        if answer in ("quit", "exit"):
+        key = _ask_label(prompt, printer)
+        if key is None:
             stopped = True
             break
-        key = answer[:1] if answer[:1] in LABEL_KEYS else "s"
         label = LABEL_KEYS[key]
         counts[label] += 1
         if label == "skip":
@@ -361,7 +451,11 @@ def precision_at_k(facet: str = "relevance", k: int = 10) -> dict:
             f"{facet!r} is not a known ranked label set "
             f"(expected one of {sorted(RANKED_FACETS)})"
         )
-    rows = load_labels(facet)
+    # Newest judgement per item. A re-judged row is appended rather than edited
+    # (M1), so without this the same paper would be counted twice — once under
+    # the old verdict and once under the new one — and n would drift upward
+    # every time someone corrected something.
+    rows = superseded(load_labels(facet))
     if not rows:
         return {
             "n_labels": 0,
@@ -429,8 +523,9 @@ def precision_at_k(facet: str = "relevance", k: int = 10) -> dict:
                     "drop_reasons": {
                         "not_urban": band_reasons.get("drop_not_urban", 0),
                         "not_our_kind": band_reasons.get("drop_not_our_kind", 0),
-                        "weak": band_reasons.get("drop_weak", 0),
+                        "weak": _weak_total(band_reasons),
                     },
+                    "weak_detail": _weak_detail(band_reasons),
                 })
 
         reasons = Counter(r["label"] for r in srows if r["label"] in DROP_LABELS)
@@ -458,12 +553,15 @@ def precision_at_k(facet: str = "relevance", k: int = 10) -> dict:
             "drop_reasons": {
                 "not_urban": reasons.get("drop_not_urban", 0),
                 "not_our_kind": reasons.get("drop_not_our_kind", 0),
-                "weak": reasons.get("drop_weak", 0),
+                "weak": _weak_total(reasons),
             },
+            "weak_detail": _weak_detail(reasons),
             "drop_reason_share": {
                 "not_urban": share("drop_not_urban"),
                 "not_our_kind": share("drop_not_our_kind"),
-                "weak": share("drop_weak"),
+                "weak": (
+                    round(_weak_total(reasons) / n_drops, 3) if n_drops else None
+                ),
             },
         }
 
@@ -730,7 +828,7 @@ def probe_summary(facet: str = "affinity_probe") -> dict[str, Any]:
         raise LabelSetMisuse(
             f"{facet!r} is a ranked sample; use `precision_at_k({facet!r})`"
         )
-    rows = load_labels(facet)
+    rows = superseded(load_labels(facet))
     if not rows:
         return {
             "n_labels": 0,
@@ -751,7 +849,7 @@ def probe_summary(facet: str = "affinity_probe") -> dict[str, Any]:
             "drop_reasons": {
                 "not_urban": reasons.get("drop_not_urban", 0),
                 "not_our_kind": reasons.get("drop_not_our_kind", 0),
-                "weak": reasons.get("drop_weak", 0),
+                "weak": _weak_total(reasons),
             },
             "median_affinity": round(
                 sorted(r.get("canon_affinity") or 0 for r in in_band)[len(in_band) // 2], 4
@@ -866,11 +964,10 @@ def run_probe_session(
     for i, (item, band, rank) in enumerate(todo, start=1):
         detail = spec["detail"][item.work_key]
         printer(_render_probe(item, band, detail, f"{i}/{len(todo)}"))
-        answer = (prompt(LABEL_PROMPT) or "").strip().lower()
-        if answer in ("quit", "exit"):
+        key = _ask_label(prompt, printer)
+        if key is None:
             stopped = True
             break
-        key = answer[:1] if answer[:1] in LABEL_KEYS else "s"
         if LABEL_KEYS[key] == "skip":
             counts["skip"] += 1
             continue
@@ -1075,3 +1172,130 @@ def import_labeling_set(path: Path) -> dict[str, Any]:
             newline="\n",
         )
     return {"dates": sorted(restored), "stages": restored, "probe_pool": len(probe)}
+
+
+# --------------------------------------------------------------------------
+# M1 — re-judging the rows that were labelled before the split
+# --------------------------------------------------------------------------
+
+
+def superseded(rows: list[dict]) -> list[dict]:
+    """Collapse each (date, work_key) to its most recent judgement.
+
+    The relabel session **appends** rather than edits: the standing rule is that
+    label files are not modified, and the 15 `drop_weak` rows are evidence of
+    what was judged before the split existed. So a re-judgement is a new row
+    carrying `corrected_from`, and this is what makes the newest one count.
+
+    Ordering is by `corrected_at` then `labelled_at`, both ISO strings, so a
+    corrected row always sorts after the original it corrects. Rows without
+    either keep file order, which is append order.
+    """
+    by_key: dict[tuple[str, str], dict] = {}
+    for i, row in enumerate(rows):
+        key = (row.get("date", ""), row.get("work_key", ""))
+        stamp = (row.get("corrected_at") or "", row.get("labelled_at") or "", i)
+        previous = by_key.get(key)
+        if previous is None or stamp >= previous["_stamp"]:
+            by_key[key] = {**row, "_stamp": stamp}
+    return [{k: v for k, v in r.items() if k != "_stamp"} for r in by_key.values()]
+
+
+def weak_rows_to_rejudge(facet: str = "relevance") -> list[dict]:
+    """The rows still carrying the unsplit label, newest judgement first.
+
+    Only `drop_weak`. A row already re-judged as method or results is done, and
+    a row YJUN moved to `keep` (the 08-11 correction) is not weak at all.
+    """
+    return [
+        r
+        for r in superseded(load_labels(facet))
+        if r.get("label") == LEGACY_WEAK_LABEL
+    ]
+
+
+def rejudge_row(original: dict, label: str, by: str = "YJUN") -> dict:
+    """A new row that supersedes `original`, in the shape YJUN's own correction used.
+
+    Everything from the original is carried over so the row remains a complete
+    training example on its own; only the verdict and the correction history
+    change. `sampling` comes along untouched, which keeps the write guard
+    meaningful — a re-judged ranked row is still a ranked row.
+    """
+    return {
+        **original,
+        "label": label,
+        "corrected_from": original.get("label"),
+        "corrected_by": by,
+        "corrected_at": utcnow().isoformat(),
+    }
+
+
+def run_rejudge_session(
+    facet: str = "relevance",
+    prompt=input,
+    printer=print,
+    by: str = "YJUN",
+) -> dict[str, Any]:
+    """Re-judge the unsplit `drop_weak` rows, one keystroke each.
+
+    Deliberately offers only the two weak kinds plus skip. This session exists to
+    split a verdict that was already made, not to reopen it — a row that should
+    have been `keep` or `not_urban` is a different correction, and mixing the two
+    would turn a five-minute pass into a re-labelling of the archive.
+    """
+    todo = weak_rows_to_rejudge(facet)
+    if not todo:
+        printer("nothing to re-judge — no rows carry the unsplit label")
+        return {"labelled": 0, "remaining": 0, "counts": {}, "stopped_early": False}
+
+    printer(
+        f"\n{len(todo)} row(s) labelled before `drop_weak` was split.\n"
+        "  m  the METHOD was weak    (thin data, no baseline, n too small)\n"
+        "  r  the RESULTS were weak  (it worked, and nothing followed from it)\n"
+        "  s  skip — leave it unsplit for now\n"
+        "  type `quit` to stop; re-run to continue where you left off\n"
+    )
+
+    started = time.monotonic()
+    counts: Counter = Counter()
+    rows: list[dict] = []
+    stopped = False
+
+    for i, original in enumerate(todo, start=1):
+        printer(
+            f"\n[{i}/{len(todo)}] {original.get('date')} "
+            f"{original.get('source', '?')} rank {original.get('rank', '?')}\n"
+            f"  {original.get('title', '')}"
+        )
+        answer = (prompt("   weak [m]ethod / weak [r]esults / [s]kip: ") or "").strip().lower()
+        if answer in ("quit", "exit"):
+            stopped = True
+            break
+        key = answer[:1]
+        if key not in ("m", "r"):
+            counts["skip"] += 1
+            continue
+        label = LABEL_KEYS[key]
+        counts[label] += 1
+        rows.append(rejudge_row(original, label, by=by))
+
+    n = append_labels(facet, rows)
+    elapsed = time.monotonic() - started
+    remaining = len(todo) - n
+    printer(
+        f"\nwrote {n} re-judgements to {labels_path(facet)} in "
+        f"{elapsed / 60:.1f} min ({dict(counts)})"
+    )
+    if remaining > 0:
+        printer(
+            f"{remaining} still unsplit — re-run the same command to continue"
+            + (" (stopped early)" if stopped else "")
+        )
+    return {
+        "labelled": n,
+        "remaining": max(0, remaining),
+        "counts": dict(counts),
+        "stopped_early": stopped,
+        "minutes": round(elapsed / 60, 2),
+    }

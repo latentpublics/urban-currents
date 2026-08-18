@@ -280,3 +280,25 @@ site:
   # absolute URL invented before the domain exists would be a link to
   # nowhere printed in an email (phase 0k, X4).
   base_url: ""
+
+held:
+  # The held queue (phase 0L, M2-2). Nobody reviews before publication any more,
+  # so the doubtful items are withheld rather than published, and the day goes
+  # out with a hole. A hole is the correct answer: a slot filled with something
+  # we are unsure of is worth less than a shorter issue, and a reader cannot
+  # tell the two apart.
+  #
+  # Held items are NOT carried into the next issue. They are waiting for a
+  # verdict, not owed to readers.
+  enabled: true
+
+  # R2: the band where the classifier is closest to a coin flip. These sit below
+  # the 0.80 publication floor and are not published either way — they are held
+  # because a judgement here buys more than a judgement at the top of a ranking
+  # the model already gets right.
+  uncertain_from: 0.50
+  uncertain_to: 0.80
+
+  # R3: above the floor by less than the model's own calibration error is not
+  # meaningfully above the floor.
+  floor_margin: 0.03

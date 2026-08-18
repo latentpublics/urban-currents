@@ -112,18 +112,54 @@ def test_arxiv_side_respects_the_threshold(repo):
 # --------------------------------------------------------------------------
 
 
-def test_label_vocabulary_separates_the_two_kinds_of_drop():
-    """`n` is a classifier error; `q` is a coverage-definition question. One
-    precision number mixes them, which is the reason this tool exists."""
+def test_label_vocabulary_separates_the_kinds_of_drop():
+    """Four reasons, not one number.
+
+    `n` is a classifier error, `q` is a coverage-definition question, and weak
+    splits again into method and results (M1) because one of those is learnable
+    from an abstract and the other is not.
+    """
     assert LABEL_KEYS["n"] == "drop_not_urban"
     assert LABEL_KEYS["q"] == "drop_not_our_kind"
-    assert LABEL_KEYS["w"] == "drop_weak"
-    assert set(DROP_LABELS) == {"drop_not_urban", "drop_not_our_kind", "drop_weak"}
+    assert LABEL_KEYS["m"] == "drop_weak_method"
+    assert LABEL_KEYS["r"] == "drop_weak_results"
+    assert set(DROP_LABELS) == {
+        "drop_not_urban",
+        "drop_not_our_kind",
+        "drop_weak_method",
+        "drop_weak_results",
+        "drop_weak",
+    }
+
+
+def test_the_old_weak_key_is_refused_rather_than_guessed():
+    """`w` meant two things. Mapping it to either would put a guess in the file."""
+    from pipeline.labeling import LABEL_KEYS as KEYS, LEGACY_WEAK_KEY, _ask_label
+
+    assert LEGACY_WEAK_KEY not in KEYS
+
+    asked = iter(["w", "m"])
+    said = []
+    key = _ask_label(lambda _p: next(asked), said.append)
+
+    assert key == "m"
+    assert any("two labels" in line for line in said)
+
+
+def test_precision_is_unchanged_by_the_split(repo):
+    """The split is diagnostic. Moving a metric by relabelling would be moving
+    the goalposts, so all three weak labels stay drops and stay grouped."""
+    from pipeline.labeling import is_weak
+
+    assert is_weak("drop_weak")
+    assert is_weak("drop_weak_method")
+    assert is_weak("drop_weak_results")
+    assert not is_weak("keep")
 
 
 def test_stored_row_carries_everything_needed_to_train_on_it(repo):
     _seed_candidates(repo)
-    run_labeling_session(DAY, top=4, prompt=_answers("k", "n", "q", "w"), printer=lambda *a: None)
+    run_labeling_session(DAY, top=4, prompt=_answers("k", "n", "q", "m"), printer=lambda *a: None)
 
     rows = load_labels()
     assert len(rows) == 4
@@ -134,7 +170,7 @@ def test_stored_row_carries_everything_needed_to_train_on_it(repo):
     for r in rows:
         assert required <= set(r), f"missing {required - set(r)}"
     assert {r["label"] for r in rows} == {
-        "keep", "drop_not_urban", "drop_not_our_kind", "drop_weak"
+        "keep", "drop_not_urban", "drop_not_our_kind", "drop_weak_method"
     }
 
 
@@ -231,13 +267,16 @@ def test_precision_is_reported_per_source_never_blended(repo):
 
 def test_drop_reasons_are_counted_separately(repo):
     _seed_candidates(repo)
-    answers = ["n", "n", "q", "w"] + ["k"] * 16
+    answers = ["n", "n", "q", "r"] + ["k"] * 16
     run_labeling_session(DAY, top=20, prompt=_answers(*answers), printer=lambda *a: None)
 
-    arxiv = precision_at_k()["by_source"]["arxiv"]["drop_reasons"]
+    source = precision_at_k()["by_source"]["arxiv"]
+    arxiv = source["drop_reasons"]
     assert arxiv["not_urban"] == 2
     assert arxiv["not_our_kind"] == 1
+    # Grouped in the headline count, broken out alongside it.
     assert arxiv["weak"] == 1
+    assert source["weak_detail"] == {"method": 0, "results": 1, "unsplit": 0}
 
 
 def test_precision_reports_absence_rather_than_zero(repo):

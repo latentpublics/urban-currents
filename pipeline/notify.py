@@ -155,6 +155,8 @@ def weekly_summary(end: Optional[date] = None, days: int = 7) -> dict[str, Any]:
             "sends": day_sends,
         })
 
+    from .held import counts as held_counts
+
     usage = UsageState.load()
     return {
         "from": str(start),
@@ -163,6 +165,11 @@ def weekly_summary(end: Optional[date] = None, days: int = 7) -> dict[str, Any]:
         "days_without_a_record": sum(1 for r in rows if r["status"] == "no record"),
         "items_published": published_items,
         "emails_sent": sends,
+        # The one line in this mail that asks for anything. Everything else is
+        # "here is what happened"; this is "here is what is waiting for you",
+        # and it is the only route by which YJUN learns there is work to do
+        # without opening a terminal (M2-4).
+        "held": held_counts(),
         "llm_cost_total_usd": round(usage.cost_usd, 6),
         "llm_calls_total": usage.calls,
         "days": rows,
@@ -184,6 +191,17 @@ def weekly_body(summary: dict[str, Any]) -> str:
         f"({summary['llm_calls_total']} calls, cumulative)",
         "",
     ]
+
+    held = summary.get("held") or {}
+    if held.get("waiting"):
+        lines += [
+            f"  {held['waiting']} item(s) held and waiting for a judgement"
+            + (f", oldest {held['oldest']}" if held.get("oldest") else ""),
+            f"    {held.get('withheld', 0)} were withheld from an issue, "
+            f"{held.get('near_miss', 0)} were near misses",
+            "    uc review --pending",
+            "",
+        ]
     for row in summary["days"]:
         detail = f" — {row['reasons'][0]}" if row["reasons"] and row["status"] == NOT_PUBLISHED else ""
         lines.append(f"  {row['date']}  {row['status']:<14} {row['published']:>3}{detail}")
@@ -231,6 +249,7 @@ def status() -> dict[str, Any]:
     """
     from .daily import lock_path, target_window
     from .deliver import get_backend, ledger_dir, recipients
+    from .held import counts as held_counts
     from .llm import UsageState
     from .outcome import unpublished_dates
 
@@ -268,6 +287,7 @@ def status() -> dict[str, Any]:
         "last_issue": issues[-1] if issues else None,
         "issues_published": len(issues),
         "unpublished_dates": [r["date"] for r in missing],
+        "held": held_counts(),
         # A source that reports OK and returns nothing is the failure that does
         # not look like one. It belongs next to the missed days, not buried in a
         # run file nobody opens.

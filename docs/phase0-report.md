@@ -1,6 +1,6 @@
 # Urban Currents — Phase 0 report
 
-Generated 2026-08-17T19:41:50+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
+Generated 2026-08-18T10:51:39+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
 
 ## The four questions (PRD §1)
 
@@ -147,7 +147,7 @@ The threshold is enumerated rather than estimated. The daily top scores take onl
 
 In steady state a whitelist journal article scores a flat 0.44 and only an arXiv item carrying code or data links can lift a day above it. Whether a term that saturates in two weeks belongs in the headline formula is PRD §5.6's question — recorded here, not decided here.
 
-**The live rate will not match this yet.** 5 of 5 published days currently carry a headline. The threshold was calibrated against an archive 1989 items deep; `content/` holds 36 behind those days, so almost every tag is still fresh — mean novelty 0.8534 live against 0.0 in the replay, worth 0.1707 on the headline score. The LLM tags the backfill lacks account for only 0.0351 of that. It decays on its own as days accumulate; it is the archive being young, not the threshold being wrong.
+**The live rate will not match this yet.** 19 of 26 published days currently carry a headline. The threshold was calibrated against an archive 1989 items deep; `content/` holds 36 behind those days, so almost every tag is still fresh — mean novelty 0.8534 live against 0.0 in the replay, worth 0.1707 on the headline score. The LLM tags the backfill lacks account for only 0.0351 of that. It decays on its own as days accumulate; it is the archive being young, not the threshold being wrong.
 
 Headline-score quantiles over the published backfill items:
 
@@ -184,27 +184,27 @@ Current `config/scoring.yaml` threshold: 0.444 (source: backfill).
 
 | item | value |
 |---|---|
-| days of runs | 8 |
-| items published | 141 |
-| items summarised | 137 |
-| LLM (daily runs) | $1.1284 |
-| OpenAlex (daily runs) | $0.027 |
+| days of runs | 31 |
+| items published | 470 |
+| items summarised | 463 |
+| LLM (daily runs) | $2.9985 |
+| OpenAlex (daily runs) | $0.0328 |
 | embeddings (local) | $0.0 |
-| total (daily runs) | $1.1554 |
-| per published item | $0.00819 |
-| monthly estimate | $4.333 |
-| tokens in / out (all tasks) | 1719407 / 239920 |
+| total (daily runs) | $3.0313 |
+| per published item | $0.00645 |
+| monthly estimate | $2.934 |
+| tokens in / out (all tasks) | 2314552 / 321411 |
 
 **Per task, cumulative** — every LLM call ever made from this repository, including calls outside a daily run (labelling preparation, re-runs against a cold cache). The daily-run figures above are a subset of this, which is why they are smaller:
 
 | task | calls | cost |
 |---|---|---|
-| extract | 497 | $1.015916 |
-| summarize | 329 | $1.14884 |
-| synthesis | 6 | $0.014772 |
-| **total** | 834 | **$2.186814** |
+| extract | 898 | $1.784309 |
+| summarize | 712 | $2.522751 |
+| synthesis | 23 | $0.071466 |
+| **total** | 1635 | **$4.385812** |
 
-Tokens: 808736 in, 108189 out, 0 thinking. Summarize and extract run one call each per item (D8 was reverted in N1), so a per-item token figure divided by the published count describes neither task on its own.
+Tokens: 1628948 in, 222138 out, 0 thinking. Summarize and extract run one call each per item (D8 was reverted in N1), so a per-item token figure divided by the published count describes neither task on its own.
 
 Embeddings are local (`BAAI/bge-base-en-v1.5` on CPU), so their marginal cost is zero — which is what makes backfills and retraining free.
 
@@ -228,25 +228,30 @@ Where the depth holding 0.7 is below the slot count, the path is being asked for
 
 ## What actually gets published
 
-Across 5 issues, **120 items were `published`** — 63 from arXiv and 57 from whitelist journals.
+Across 26 issues, **474 items were `published`** — 154 from arXiv and 320 from whitelist journals.
 
-`content/items/` holds 224 files, 104 more than the issues reference. Those are items an earlier selection rule published and the current one does not; they are still part of the archive novelty is measured against, which is why the difference is counted rather than rounded away.
+`content/items/` holds 1022 files, 548 more than the issues reference. Those are items an earlier selection rule published and the current one does not; they are still part of the archive novelty is measured against, which is why the difference is counted rather than rounded away.
 
 The split is structural, not a quota. Each entry path owns its slots — journal 12, arXiv 12 — and a path that cannot fill its own lends them to the other, which the run records. The earlier `classifier.arxiv_min_share` quota is gone (N4): it was treating a symptom, since a whitelist article scores ~0.99 nearly by construction and the classifier could not rank within that path at all. Measured on 2026-08-11 under the old single-classifier design: 23 of 24 slots went to journal articles.
 
 ## What we could not read
 
-**92 items across 5 issues had no abstract from any source** and published in `Also published today` instead of as cards — 92/212 of everything that reached an issue. Springer Nature withdrew its non-OA abstracts from OpenAlex in 2022 and Elsevier followed in 2024; Crossref and Springer's own API are asked for what they can still supply, and what none of them has cannot be summarised, because the abstract is the only evidence a summary is allowed to use.
+**510 items across 26 issues had no abstract from any source** and published in `Also published today` instead of as cards — 510/984 of everything that reached an issue. Springer Nature withdrew its non-OA abstracts from OpenAlex in 2022 and Elsevier followed in 2024; Crossref and Springer's own API are asked for what they can still supply, and what none of them has cannot be summarised, because the abstract is the only evidence a summary is allowed to use.
 
 | publisher | `unreadable` items |
 |---|---|
-| Elsevier | 59 |
-| Springer | 9 |
-| Copernicus | 9 |
-| Taylor & Francis | 7 |
-| Sage | 3 |
-| Springer Nature | 3 |
+| Elsevier | 417 |
+| Springer | 44 |
+| Springer Nature | 19 |
+| Copernicus | 18 |
+| Taylor & Francis | 14 |
+| Sage | 13 |
+| Wiley | 5 |
+| ASCE | 2 |
+| 10.1215 | 2 |
 | Taylor & Francis (Routledge) | 2 |
+| 10.11361 | 1 |
+| 10.12813 | 1 |
 
 This is the one blind spot the pipeline can measure exactly, and the count is stated rather than hidden. It names publishers here because this is the engineering report; the reader-facing section names none.
 
@@ -254,26 +259,49 @@ This is the one blind spot the pipeline can measure exactly, and the count is st
 
 | thing | count |
 |---|---|
-| items | 224 |
-| items with a summary | 129 |
-| issues | 5 |
-| quiet days | 0 |
-| items with an OpenAlex ID | 207 |
-| items with referenced_works | 138 |
-| published (journal) items | 160 |
+| items | 1022 |
+| items with a summary | 494 |
+| issues | 26 |
+| quiet days | 7 |
+| items with an OpenAlex ID | 989 |
+| items with referenced_works | 789 |
+| published (journal) items | 879 |
 
 ## Runs
 
 | date | fetched | after gate | selected | summarised | published | skipped / failed |
 |---|---|---|---|---|---|---|
+| 2026-06-12 | 368 | 183 | 18 | 18 | 18 | enrich.springer |
+| 2026-06-13 | 207 | 109 | 15 | 15 | 15 | enrich.springer |
+| 2026-06-14 | 241 | 127 | 16 | 16 | 16 | enrich.springer |
+| 2026-06-15 | 470 | 256 | 18 | 18 | 18 | enrich.springer |
+| 2026-06-16 | 435 | 215 | 19 | 19 | 19 | enrich.springer |
+| 2026-06-17 | 409 | 204 | 17 | 17 | 17 | enrich.springer |
+| 2026-06-18 | 440 | 209 | 21 | 21 | 21 | enrich.springer |
+| 2026-06-19 | 308 | 158 | 20 | 20 | 20 | enrich.springer |
+| 2026-06-20 | 174 | 87 | 9 | 9 | 9 | enrich.springer |
+| 2026-06-21 | 182 | 71 | 13 | 13 | 13 | enrich.springer |
+| 2026-06-22 | 471 | 240 | 19 | 19 | 19 | enrich.springer |
+| 2026-06-23 | 428 | 221 | 18 | 18 | 18 | enrich.springer |
+| 2026-06-24 | 379 | 215 | 20 | 20 | 20 | enrich.springer |
+| 2026-06-25 | 377 | 182 | 16 | 16 | 16 | enrich.springer |
+| 2026-06-26 | 341 | 187 | 18 | 18 | 18 | enrich.springer |
+| 2026-06-27 | 185 | 99 | 13 | 13 | 13 | enrich.springer |
+| 2026-06-28 | 233 | 102 | 11 | 11 | 11 | enrich.springer |
+| 2026-06-29 | 483 | 272 | 19 | 19 | 19 | enrich.springer |
+| 2026-06-30 | 485 | 284 | 20 | 20 | 20 | enrich.springer |
+| 2026-07-01 | 435 | 300 | 19 | 19 | 19 | enrich.springer |
+| 2026-07-02 | 0 | 0 | 0 | 0 | 0 | - |
 | 2026-08-05 | 406 | 224 | 24 | 24 | 24 | enrich.springer |
 | 2026-08-06 | 381 | 200 | 24 | 24 | 24 | enrich.springer |
 | 2026-08-07 | 384 | 210 | 24 | 24 | 24 | enrich.springer |
+| 2026-08-08 | 221 | 113 | 7 | 7 | 7 | enrich.springer |
+| 2026-08-09 | 228 | 164 | 4 | 4 | 4 | enrich.springer |
 | 2026-08-10 | 452 | 232 | 24 | 23 | 24 | enrich.springer |
 | 2026-08-11 | 410 | 212 | 18 | 18 | 24 | enrich.springer |
 | 2026-08-13 | 0 | 0 | 0 | 0 | 0 | - |
 | 2026-08-14 | 0 | 0 | 0 | 0 | 0 | - |
-| 2026-08-18 | 1373 | 780 | 24 | 24 | 21 | enrich.springer |
+| 2026-08-18 | 2176 | 1101 | 16 | 0 | 0 | enrich.springer, summarize |
 
 ## What this report does not know
 

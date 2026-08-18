@@ -1,0 +1,285 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study’s objective was to develop methods to estimate pedestrian volumes from pedestrian push-button data and to assess the transferability of those methods. First, videos were recorded in Summer 2022 at 64 signalized intersections in Oregon, and pedestrian counts were extracted. Next, pedestrian traffic signal data were assembled for the same locations and time periods. After counting 41,843 crosswalk users from 2,679 h of video, the final sample included 8,546 observations, each representing 1 h at one signalized crosswalk. Data analysis utilized a structured multistep process. Three dependent variables represented different interpretations of “pedestrians” or “crosswalk users.” Eight independent variables were tested, derived from pedestrian actuations or detections and adjusted to reflect signal operations and push-button press behaviors. Five functional forms (e.g., linear, quadratic, etc.) were compared, and 14 segmentation variables were considered, which captured signal operations, temporal factors, and built-environment characteristics. The final recommended model had a quadratic relationship between total crosswalk users and the number of push-button presses, filtered to remove multiple presses within 15 s of another. The model’s predictions were strongly correlated (0.86) with observed pedestrian volumes and had a low average error of ±2.4 pedestrians per hour. Furthermore, when comparing the Oregon and Utah models and data, the remarkable consistency of the two states’ quadratic fit lines—collected in different states 3 years apart—gives some expectation of transferability for the developed model. Such pedestrian volume estimates could improve pedestrian traffic monitoring, safety assessments, and equity and health analyses.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Utah State University",
+            "ror": "00h6set76"
+          }
+        ],
+        "name": "Mahyar Vahedi Saheli",
+        "openalex": "A5027280361",
+        "orcid": "https://orcid.org/0000-0002-8267-8354"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Portland State University",
+            "ror": "00yn2fy02"
+          }
+        ],
+        "name": "Elizabeth Yates",
+        "openalex": "A5112867554",
+        "orcid": "https://orcid.org/0000-0001-7331-4949"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Utah State University",
+            "ror": "00h6set76"
+          }
+        ],
+        "name": "Patrick A. Singleton",
+        "openalex": "A5017109928",
+        "orcid": "https://orcid.org/0000-0002-9319-2333"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Portland State University",
+            "ror": "00yn2fy02"
+          }
+        ],
+        "name": "Sirisha Kothuri",
+        "openalex": "A5053441787",
+        "orcid": "https://orcid.org/0000-0002-2952-169X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Portland State University",
+            "ror": "00yn2fy02"
+          }
+        ],
+        "name": "Joseph Broach",
+        "openalex": "A5033603263",
+        "orcid": "https://orcid.org/0000-0001-7753-501X"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9266",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-24",
+    "repository_urls": [],
+    "title": "Pedestrian Volumes from Push-Button Traffic Signal Data in Oregon: Estimating Models and Assessing Model Transferability"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-24_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-9266"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.9143,
+        "id": "data:traffic-sensor",
+        "label": "traffic sensor data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:regression",
+        "label": "regression"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00h6set76",
+        "label": "Utah State University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00yn2fy02",
+        "label": "Portland State University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8267-8354",
+        "label": "Mahyar Vahedi Saheli"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7331-4949",
+        "label": "Elizabeth Yates"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9319-2333",
+        "label": "Patrick A. Singleton"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2952-169X",
+        "label": "Sirisha Kothuri"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7753-501X",
+        "label": "Joseph Broach"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": true,
+        "label": "Traffic and Road Safety",
+        "score": 0.8922,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0229,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.02,
+        "subfield": "2207"
+      }
+    ]
+  },
+  "first_published": "2026-06-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W658402031",
+      "openalex:W1964476950",
+      "openalex:W2007178835",
+      "openalex:W2592174003",
+      "openalex:W2983144928",
+      "openalex:W3106626727",
+      "openalex:W3136494335",
+      "openalex:W3176441379"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-9266",
+    "openalex": "W7165750695",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:18:35Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006536,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2215,
+      "out": 357
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:18:35Z",
+    "doi": "10.1061/jtepbs.teeng-9266",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.5,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.54,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "8,546 observations",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's transferability and accuracy are demonstrated specifically for signalized intersections with push-button infrastructure, which may not represent pedestrian behavior in unsignalized or midblock environments.",
+      "what": "The researchers developed a method to estimate pedestrian volumes using push-button traffic signal data, validated against 2,679 hours of video recording 41,843 crosswalk users across 64 signalized intersections in Oregon during Summer 2022. The final model uses a quadratic relationship based on push-button presses filtered to exclude multiple presses within 15 seconds, achieving a 0.86 correlation with actual volumes and an average error of plus or minus 2.4 pedestrians per hour. The study also demonstrated model transferability by showing consistent quadratic fit lines when compared with historical data from Utah.",
+      "why": "It establishes that pedestrian push-button actuations can serve as a highly accurate, low-cost proxy for actual pedestrian volumes without requiring dedicated physical counting infrastructure. Furthermore, the consistency between Oregon and Utah datasets suggests these estimation models can be transferred across different states and time periods."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-24",
+  "work_key": "doi:10.1061/jtepbs.teeng-9266"
+}

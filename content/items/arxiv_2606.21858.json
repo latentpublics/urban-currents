@@ -1,0 +1,272 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Socioeconomic exposure segregation -- the lack of daily interaction between income groups -- erodes social capital and entrenches inequality, yet the specific physical features that drive these behavioral restrictions remain poorly understood. Prior research has quantified where segregation occurs using mobility data, but has not identified how the built environment facilitates or inhibits these interactions. Here we introduce VISAGE, a large multi-modal model-enabled framework that perceives exposure segregation directly from open satellite and street-level imagery across 10,030 communities in 31 U.S. cities. Moving beyond black-box correlations, we operationalize cross-disciplinary sociological theory into an interpretable visual codebook to detect physical regulators of social mixing. We find that the built environment encodes a legible grammar of segregation: \"defensible\" architectural forms (e.g., fences, gated enclosures) and monofunctional zoning systematically predict higher social isolation, whereas mixed-use infrastructure fosters interaction, explaining substantial variance in mobility-derived segregation patterns (Pearson $r=0.770$). Crucially, we show that inclusionary housing policies manifest in distinct visual signatures associated with higher mixing, suggesting that policy interventions successfully alter the physical landscape to encourage diversity. Our findings offer a scalable pathway to decipher the social production of space, providing a mechanism-based lens to understand how the built environment shapes social behavior.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Yunke Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ruolong Ma",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xin Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yu Shang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Fengli Xu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Tong Xia",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yong Li",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.CY"
+    ],
+    "comment": "34 pages, 15 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.21858v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.21858v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-20",
+    "repository_urls": [],
+    "title": "Perceiving exposure segregation with open urban imagery"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-20_2606.21858",
+    "members": [
+      "arxiv:2606.21858"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0187-6015",
+        "label": "Yunke Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5137686987",
+        "label": "Ruolong Ma"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139142402",
+        "label": "Xin Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139166678",
+        "label": "Yu Shang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139140192",
+        "label": "Fengli Xu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0001-8425-8433",
+        "label": "Tong Xia"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139147656",
+        "label": "Yong Li"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11645",
+        "is_primary": true,
+        "label": "Urban, Neighborhood, and Segregation Studies",
+        "score": 0.4647,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.3521,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10239",
+        "is_primary": false,
+        "label": "Urban Planning and Governance",
+        "score": 0.0487,
+        "subfield": "3322"
+      }
+    ]
+  },
+  "first_published": "2026-06-20",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.21858",
+    "doi": "10.48550/arxiv.2606.21858",
+    "openalex": "W7165619924",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:02:46Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005656,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2043,
+      "out": 288
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.92,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.368,
+    "relevance": 0.92
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed VISAGE, a multi-modal model framework that analyzes open satellite and street-level imagery to identify physical features of the built environment that drive socioeconomic exposure segregation. Testing across 10,030 communities in 31 U.S. cities, the model mapped physical features to mobility-derived segregation patterns with a Pearson correlation of 0.770. The analysis revealed that defensible architectural forms like fences and gated enclosures, alongside monofunctional zoning, predict higher social isolation, while mixed-use infrastructure and inclusionary housing policies correlate with higher social mixing.",
+      "why": "It establishes a direct, interpretable link between the visual, physical design of neighborhoods and actual behavioral segregation, proving that policy interventions like inclusionary housing leave legible physical signatures that foster social diversity."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-20",
+  "work_key": "arxiv:2606.21858"
+}

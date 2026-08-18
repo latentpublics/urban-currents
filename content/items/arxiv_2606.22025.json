@@ -1,0 +1,221 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Discovering the fundamental dynamical rules that generate the main statistical features of human mobility is essential for understanding the mechanisms underlying such processes. A prominent example is the exploration and preferential return model and its generalizations, which successfully reproduce several empirical findings. Here, we exploit another observation: the endpoint distances of a trip from the trajectory's starting point are strongly correlated. We consider a movement process in which each user performs a sequence of trips to satisfy a set of demands, given a spatial distribution of suppliers on a two-dimensional lattice. In each trip, destinations are chosen with a probability that depends on the ratio of the initial and final distances from the user's origin (home). We show that even a single agent with uniformly distributed demands and suppliers qualitatively reproduces key empirical statistics, such as the power-law distribution of traveled distances. The results are also robust to introducing interactions between agents via queues and incorporating more realistic demand and supplier distributions.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Mohsen Ghasemi Nezhadhaghighi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yahya Khalili",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Behafarid Hemmatpour",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Abolfazl Ramezanpour",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cond-mat.dis-nn"
+    ],
+    "comment": "18 pages, 7 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.22025v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.22025v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-20",
+    "repository_urls": [],
+    "title": "Distance from home matters: Investigation of a basic movement strategy"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-20_2606.22025",
+    "members": [
+      "arxiv:2606.22025"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139136172",
+        "label": "Mohsen Ghasemi Nezhadhaghighi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5059600382",
+        "label": "Yahya Khalili"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139153291",
+        "label": "Behafarid Hemmatpour"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3650-7722",
+        "label": "Abolfazl Ramezanpour"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10064",
+        "is_primary": true,
+        "label": "Complex Network Analysis Techniques",
+        "score": 0.5071,
+        "subfield": "3109"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.096,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12592",
+        "is_primary": false,
+        "label": "Opinion Dynamics and Social Influence",
+        "score": 0.0466,
+        "subfield": "3109"
+      }
+    ]
+  },
+  "first_published": "2026-06-20",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.22025",
+    "doi": "10.48550/arxiv.2606.22025",
+    "openalex": "W7165624974",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:02:46Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.00494,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1877,
+      "out": 236
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9256,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3702,
+    "relevance": 0.9256
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's findings are validated qualitatively against statistical features of human mobility rather than quantitatively against a specific real-world empirical dataset.",
+      "what": "The study models human mobility using a simulated agent on a two-dimensional lattice who selects trip destinations based on the ratio of the destination's distance from home to the current starting point's distance from home. This simple movement strategy, tested with both uniform and realistic distributions of demands and suppliers, qualitatively reproduces empirical mobility patterns such as the power-law distribution of traveled distances.",
+      "why": "It demonstrates that complex, heavy-tailed human travel patterns can emerge from a basic spatial decision rule centered on home distance, without needing to assume complex cognitive maps or memory-heavy exploration algorithms."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-20",
+  "work_key": "arxiv:2606.22025"
+}

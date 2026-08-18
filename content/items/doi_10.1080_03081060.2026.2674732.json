@@ -1,0 +1,317 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Smooth and efficient traffic flows are disrupted by bottlenecks, causing additional oscillations and delays. This paper proposes Dynamic Real-Time Trajectory Smoothing Algorithm (DRTSA), a generalizable trajectory optimization framework for traffic coordination under various bottleneck scenarios. DRTSA simultaneously optimizes efficiency by scheduling the spot-arrival time and speed of each vehicle to maximize throughput and improve sustainability simultaneously by minimizing speed variation to reduce oscillations. DRTSA generates piecewise optimal accelerations as advisory controls, while accommodating mixed traffic with human-driven vehicles under varying congestion levels. We evaluate DRTSA through simulations of two representative bottleneck types: a slow-moving vehicle creating a non-recurrent bottleneck scenario, and a signalized intersection (as a recurrent bottleneck scenario), in various traffic densities, CAV market penetrations, vehicle behaviors, and control ranges. Results show substantial improvements in flow rate, average speed, speed stability, and fuel efficiency, demonstrating that DRTSA can effectively enhance both mobility and sustainability in general bottleneck conditions.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Oak Ridge Associated Universities",
+            "ror": "0526p1y61"
+          },
+          {
+            "name": "Oak Ridge National Laboratory",
+            "ror": "01qz5mb56"
+          }
+        ],
+        "name": "Pengyuan Sun",
+        "openalex": "A5019357222",
+        "orcid": "https://orcid.org/0000-0002-6556-2114"
+      },
+      {
+        "institutions": [],
+        "name": "Dingtong Yang",
+        "openalex": "A5101770896",
+        "orcid": "https://orcid.org/0000-0001-7377-4531"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of California, Irvine",
+            "ror": "04gyf1771"
+          },
+          {
+            "name": "Irvine University",
+            "ror": "04ysmca02"
+          }
+        ],
+        "name": "R. Jayakrishnan",
+        "openalex": "A5085499435",
+        "orcid": "https://orcid.org/0000-0002-0155-3622"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/03081060.2026.2674732",
+      "pdf_url": null,
+      "source_id": "S68242086",
+      "source_name": "Transportation Planning and Technology",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-21",
+    "repository_urls": [],
+    "title": "A generalizable dynamic real-time trajectory smoothing algorithm for traffic bottlenecks"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-21_10.1080/03081060",
+    "members": [
+      "doi:10.1080/03081060.2026.2674732"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0526p1y61",
+        "label": "Oak Ridge Associated Universities"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01qz5mb56",
+        "label": "Oak Ridge National Laboratory"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04gyf1771",
+        "label": "University of California, Irvine"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04ysmca02",
+        "label": "Irvine University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6556-2114",
+        "label": "Pengyuan Sun"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7377-4531",
+        "label": "Dingtong Yang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0155-3622",
+        "label": "R. Jayakrishnan"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10138",
+        "is_primary": true,
+        "label": "Network Traffic and Congestion Control",
+        "score": 0.5126,
+        "subfield": "1705"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.1101,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10933",
+        "is_primary": false,
+        "label": "Real-Time Systems Scheduling",
+        "score": 0.0603,
+        "subfield": "1708"
+      }
+    ]
+  },
+  "first_published": "2026-06-21",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1972003241",
+      "openalex:W1979374731",
+      "openalex:W1993147024",
+      "openalex:W2001901081",
+      "openalex:W2002102776",
+      "openalex:W2011940863",
+      "openalex:W2014920300",
+      "openalex:W2016985433",
+      "openalex:W2037141248",
+      "openalex:W2039016954",
+      "openalex:W2054210802",
+      "openalex:W2081643473",
+      "openalex:W2088048372",
+      "openalex:W2089177739",
+      "openalex:W2091400818",
+      "openalex:W2094124585",
+      "openalex:W2095797625",
+      "openalex:W2105366992",
+      "openalex:W2262502171",
+      "openalex:W2328473443",
+      "openalex:W2462478264",
+      "openalex:W2567867736",
+      "openalex:W2624924877",
+      "openalex:W2792428116",
+      "openalex:W2796138865",
+      "openalex:W2901167076",
+      "openalex:W2901632364",
+      "openalex:W2903400114",
+      "openalex:W2916231201",
+      "openalex:W2923018100",
+      "openalex:W2945374197",
+      "openalex:W2976036462",
+      "openalex:W2997022479",
+      "openalex:W2998852889",
+      "openalex:W3083796330",
+      "openalex:W3092359561",
+      "openalex:W3093359182",
+      "openalex:W3093551387",
+      "openalex:W3130453376",
+      "openalex:W3157339907",
+      "openalex:W3183423921",
+      "openalex:W4206007985",
+      "openalex:W4213100704",
+      "openalex:W4220762006",
+      "openalex:W4220920561",
+      "openalex:W4242702549",
+      "openalex:W4293226006",
+      "openalex:W4296006434",
+      "openalex:W4296558699",
+      "openalex:W4306173581",
+      "openalex:W4308080089",
+      "openalex:W4319224635",
+      "openalex:W4378214840",
+      "openalex:W4379382465",
+      "openalex:W4382463422",
+      "openalex:W4387445042",
+      "openalex:W4391020970",
+      "openalex:W4391216197",
+      "openalex:W4396214407",
+      "openalex:W4398146875",
+      "openalex:W4402839057",
+      "openalex:W4406158116",
+      "openalex:W4407150239",
+      "openalex:W4410487565",
+      "openalex:W7133615975"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/03081060.2026.2674732",
+    "openalex": "W7165473943",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:05:16Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.003252,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1903,
+      "out": 227
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:05:16Z",
+    "doi": "10.1080/03081060.2026.2674732",
+    "journal": "Transportation Planning and Technology",
+    "source_id": "S68242086",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The algorithm's performance and safety benefits are demonstrated solely through simulated scenarios rather than real-world physical deployments.",
+      "what": "The Dynamic Real-Time Trajectory Smoothing Algorithm (DRTSA) was developed to optimize vehicle arrival times and speeds at traffic bottlenecks, generating piecewise optimal accelerations as advisory controls. The framework was evaluated via simulations of two bottleneck scenarios—a slow-moving vehicle and a signalized intersection—across varying traffic densities, connected automated vehicle (CAV) penetration rates, and control ranges.",
+      "why": "It provides a single, generalizable trajectory optimization framework capable of mitigating both recurrent and non-recurrent bottlenecks under mixed-autonomy traffic conditions, improving throughput and reducing speed oscillations simultaneously."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-21",
+  "work_key": "doi:10.1080/03081060.2026.2674732"
+}

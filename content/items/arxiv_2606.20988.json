@@ -1,0 +1,204 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Individual daily mobility exhibits a striking scaling law: the probability of returning home after a tour of $l$ locations decays as $P_{\\rm ret}(l)\\sim l^{-γ}$. While the tour-terminate-continue (TTC) model reproduces this behavior, it relies on this power law as an empirical input, leaving the microscopic origin of $γ$ unresolved. Here we show that this scaling emerges from a utility trade-off governed by cognitive constraints. By invoking the principle of least effort, we demonstrate that individual activity priorities follow Zipf's law, $p(r)\\sim r^{-ν}$, which directly dictates the sublinear accumulation of tour utility, $U_L(l)\\sim l^{1-ν}$. Luce's choice rule then yields $P_{\\rm ret}(l)\\sim l^{-(1-ν)}$, giving the exact exponent $γ= 1 - ν$. Agent-based simulations confirm this analytical relation. Our framework bridges the gap between individual cognitive constraints and the scaling law of tour behavior, providing a microscopic theoretical underpinning for human mobility.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Haoying Niu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xiao-Yong Yan",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": "3 pages,1 figure",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.20988v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.20988v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-18",
+    "repository_urls": [],
+    "title": "Mechanism underlying the scaling law of home-return probability in human mobility"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-18_2606.20988",
+    "members": [
+      "arxiv:2606.20988"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.9778,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5116589109",
+        "label": "Haoying Niu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2091-6967",
+        "label": "Xiao-Yong Yan"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.209,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11270",
+        "is_primary": false,
+        "label": "Complex Systems and Time Series Analysis",
+        "score": 0.1654,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.1087,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-06-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.20988",
+    "doi": "10.48550/arxiv.2606.20988",
+    "openalex": "W7165685917",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:52:57Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.004877,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1949,
+      "out": 217
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8758,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3503,
+    "relevance": 0.8758
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study establishes a theoretical mechanism for the scaling law of human home-return probability, where the likelihood of returning home after visiting a set number of locations decays as a power law. By combining the principle of least effort, Zipf's law for activity priorities, and Luce's choice rule, the researchers analytically derive the exact exponent of this decay and validate the relationship using agent-based simulations.",
+      "why": "It provides a microscopic, cognitive-based explanation for a widely observed empirical mobility pattern, replacing a previously assumed power-law input with a derived physical mechanism based on utility trade-offs."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-18",
+  "work_key": "arxiv:2606.20988"
+}

@@ -1,0 +1,267 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Understanding how individual metro usage evolves over multi-year horizons is essential for transit planning and passenger retention. However, existing approaches typically characterize mobility patterns as static clusters or short-term variability, leaving the lifecycle dynamics of transit participation underexplored. This study proposes a state-based lifecycle modeling framework that integrates Hidden Semi-Markov Models (HSMM) with discrete-time survival analysis to characterize the evolution of individual metro mobility. The HSMM infers latent mobility states with explicit duration distributions and a transition matrix governing regime changes, while the survival component models exit and re-entry events via state-dependent hazard functions conditioned on mobility-state trajectories and behavioral history. Applied to four years of smart card data from the Shanghai metro system (2021-2024), the framework enables the identification of interpretable mobility states, the characterization of transition dynamics, and the quantification of state-dependent exit and re-entry processes. The analysis reveals five robust mobility states with a directional transition hierarchy centered on an occasional-usage gateway state, and fundamentally different temporal mechanisms governing disengagement and return: exit hazard is state-dependent but duration-independent, whereas re-entry hazard decays sharply with inactivity length. These findings provide a methodological foundation for lifecycle-oriented mobility analysis and practical guidance for transit operators to identify at-risk users and time retention interventions.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Bingxun Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Valeria Maria Urbano",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shan He",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yang Chen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Wei Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zhibin Jiang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Piercesare Secchi",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP",
+      "stat.ML"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.17939v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.17939v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-16",
+    "repository_urls": [],
+    "title": "Understanding Long-Term Dynamics of Individual Metro Usage: A Hidden Semi-Markov State Framework with Survival Analysis"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-16_2606.17939",
+    "members": [
+      "arxiv:2606.17939"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:smart-card",
+        "label": "smart card data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5114128390",
+        "label": "Bingxun Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8090-6421",
+        "label": "Valeria Maria Urbano"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138829667",
+        "label": "Shan He"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138790425",
+        "label": "Yang Chen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138777943",
+        "label": "Wei Liu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9241-0212",
+        "label": "Zhibin Jiang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4048-9552",
+        "label": "Piercesare Secchi"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q8686",
+        "label": "Shanghai",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": true,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.3385,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.2742,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.1783,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-06-16",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.17939",
+    "doi": "10.48550/arxiv.2606.17939",
+    "openalex": "W7164992228",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:38:22Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005828,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2067,
+      "out": 303
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 1.0,
+      "relevance": 0.9814,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.5926,
+    "relevance": 0.9814
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2021-2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical findings and identified mobility states are based on a single metro system in Shanghai and may reflect local transit dynamics rather than universal passenger behaviors.",
+      "what": "The study developed a state-based lifecycle modeling framework combining Hidden Semi-Markov Models with discrete-time survival analysis to track how individual transit usage changes over time. Using four years of smart card data from the Shanghai metro system (2021-2024), the model identified five distinct mobility states and mapped how passengers transition between them, as well as their likelihood of stopping or resuming metro use.",
+      "why": "It reveals that passenger disengagement and return are governed by entirely different temporal rules: the risk of a user stopping transit use depends on their current mobility state rather than how long they have been in it, whereas their likelihood of returning decays sharply the longer they remain inactive. This allows transit operators to predict when users are at risk of churning and time their retention interventions more effectively."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-16",
+  "work_key": "arxiv:2606.17939"
+}

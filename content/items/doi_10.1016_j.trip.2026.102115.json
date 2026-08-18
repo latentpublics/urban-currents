@@ -1,0 +1,265 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This paper presents STFusioner, a novel traffic flow prediction model that leverages spatiotemporal feature decoupling encoding and a bidirectional cross-attention-based feature mixing mechanism (Bi-STCA). The model introduces an innovative spatiotemporal representation learning framework following a “decoupling-coupling” paradigm, designed to achieve highly accurate traffic flow predictions in large-scale road networks. Specifically, it first disentangles spatial and temporal features through parallel multi-head self-attention modules, followed by dynamic feature fusion via the proposed Bi-STCA module, which effectively captures complex spatiotemporal interactions inherent in traffic flow. This paradigm enables the implicit learning of empirical traffic dynamics, specifically the propagation of shockwaves, thus facilitating accurate prediction of the evolving dynamics of the traffic network. Extensive experiments on real-world datasets demonstrate that STFusioner achieves state-of-the-art performance in most cases, outperforming existing models with average relative improvements of 1.34% (MAE), 0.77% (RMSE), and 1.24% (MAPE). Ablation studies confirm the Bi-STCA module’s pivotal role in feature fusion and performance gains. Due to its generalizability, STFusioner can be easily adapted to practical traffic flow prediction tasks, positioning it as a versatile solution for real-world applications.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Shandong Institute of Business and Technology",
+            "ror": "03rrkrc24"
+          }
+        ],
+        "name": "Fuwen Deng",
+        "openalex": "A5077379145",
+        "orcid": "https://orcid.org/0000-0002-1150-682X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Shandong Institute of Business and Technology",
+            "ror": "03rrkrc24"
+          }
+        ],
+        "name": "Xiaobo Chen",
+        "openalex": "A5139222363",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Peking University",
+            "ror": "02v51f717"
+          }
+        ],
+        "name": "J G Jin",
+        "openalex": "A5125043156",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102115",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-24",
+    "repository_urls": [],
+    "title": "STFusioner: Bidirectional spatiotemporal fusion via dual-branch cross-attention transformers for traffic flow prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-24_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102115"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03rrkrc24",
+        "label": "Shandong Institute of Business and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02v51f717",
+        "label": "Peking University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1150-682X",
+        "label": "Fuwen Deng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139222363",
+        "label": "Xiaobo Chen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5125043156",
+        "label": "J G Jin"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.9679,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0192,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13918",
+        "is_primary": false,
+        "label": "Advanced Data and IoT Technologies",
+        "score": 0.0008,
+        "subfield": "2208"
+      }
+    ]
+  },
+  "first_published": "2026-06-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1970037526",
+      "openalex:W1977111038",
+      "openalex:W1992148642",
+      "openalex:W2004353783",
+      "openalex:W2064675550",
+      "openalex:W2593182953",
+      "openalex:W2604862142",
+      "openalex:W2756203131",
+      "openalex:W2903871660",
+      "openalex:W2907228515",
+      "openalex:W2921685418",
+      "openalex:W2937076142",
+      "openalex:W2945622688",
+      "openalex:W2965341826",
+      "openalex:W2996847713",
+      "openalex:W2997848713",
+      "openalex:W3015483809",
+      "openalex:W3034077089",
+      "openalex:W3040607188",
+      "openalex:W3123909522",
+      "openalex:W3126367810",
+      "openalex:W3136999308",
+      "openalex:W3170140111",
+      "openalex:W3174022889",
+      "openalex:W3193812480",
+      "openalex:W4241727697",
+      "openalex:W4296019794",
+      "openalex:W4312703862",
+      "openalex:W4382239616",
+      "openalex:W4387846860",
+      "openalex:W4408490733",
+      "openalex:W4414893112"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102115",
+    "openalex": "W7165793587",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:18:33Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005488,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2063,
+      "out": 266
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:18:33Z",
+    "doi": "10.1016/j.trip.2026.102115",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed STFusioner, a traffic flow prediction model that decouples spatial and temporal features using parallel multi-head self-attention before dynamically fusing them via a bidirectional cross-attention mechanism. Evaluated on real-world datasets, the model achieves state-of-the-art performance, yielding average relative improvements of 1.34% in Mean Absolute Error, 0.77% in Root Mean Squared Error, and 1.24% in Mean Absolute Percentage Error compared to existing baselines.",
+      "why": "The model introduces a decoupling-coupling paradigm that implicitly learns empirical traffic dynamics, such as shockwave propagation, allowing practitioners to more accurately predict evolving congestion patterns across large-scale road networks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-24",
+  "work_key": "doi:10.1016/j.trip.2026.102115"
+}

@@ -1,0 +1,204 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The relationship between crime, mental health service access, and socioeconomic deprivation in publicly-funded healthcare systems allowing impactful policy interventions offers an alternative lens to crime prevention that remains underexplored. We address this critical gap through an analysis of street-level crime data, mental health referral information, and socioeconomic metrics across Greater London, using both traditional statistical methods and machine learning techniques to identify relevant relationships and spatial patterns to reveal a persistent positive association between crime rates and mental health referrals as a proxy for service access. The prevailing prevention hypothesis is contrasted with a nuanced U-shaped relationship suggesting a contrast between preventive effects at lower service levels and demand-driven responses to crime exposure for higher referral rates. Subsequent analyses, focussing on explainable artificial intelligence, show distinct crime category patterns, with a cluster analysis identifying four borough typologies with distinct combinations of crime rates, mental health service access, and deprivation levels, requiring multifaceted approaches rather than universal solutions. This research provides one of the first comprehensive studies on this topic for the UK's publicly-funded healthcare system and introduces interpretation-oriented approaches to uncover the patterns essential to evidence-based policies.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Nadine Fässler",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ben Moews",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "29 pages, 6 figures, 4 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.26202v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.26202v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-24",
+    "repository_urls": [],
+    "title": "Crime reduction through public healthcare: Interpretable machine learning for mental health service impacts in Greater London"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-24_2606.26202",
+    "members": [
+      "arxiv:2606.26202"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139390557",
+        "label": "Nadine Fässler"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0897-040X",
+        "label": "Ben Moews"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10574",
+        "is_primary": true,
+        "label": "Crime Patterns and Interventions",
+        "score": 0.4881,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12265",
+        "is_primary": false,
+        "label": "Gun Ownership and Violence Research",
+        "score": 0.0472,
+        "subfield": "3306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10565",
+        "is_primary": false,
+        "label": "Psychopathy, Forensic Psychiatry, Sexual Offending",
+        "score": 0.0385,
+        "subfield": "3203"
+      }
+    ]
+  },
+  "first_published": "2026-06-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.26202",
+    "doi": "10.48550/arxiv.2606.26202",
+    "openalex": "W7166076999",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:18:31Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005807,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1969,
+      "out": 317
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9264,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3706,
+    "relevance": 0.9264
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on mental health referrals as a proxy for actual service access, which may not fully capture completed treatments or informal care.",
+      "what": "The study analyzed street-level crime data, mental health referral records, and socioeconomic metrics across Greater London using traditional statistics, machine learning, and explainable AI. It identified a persistent positive association between crime rates and mental health referrals, revealing a U-shaped relationship where preventive effects occur at lower service levels while demand-driven responses dominate at higher referral rates. A cluster analysis categorized London boroughs into four distinct typologies based on their unique combinations of crime, service access, and deprivation.",
+      "why": "It demonstrates that the relationship between mental health services and crime is non-linear, challenging the simple assumption that more service access always correlates with lower crime and showing that policy interventions must be tailored to specific borough typologies rather than applied as one-size-fits-all solutions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-24",
+  "work_key": "arxiv:2606.26202"
+}

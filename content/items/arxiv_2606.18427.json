@@ -1,0 +1,251 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "In China, a burgeoning underground market sells citizens subscription-based censorship circumvention proxies known as ''airports''. We present the first systematic study of this ecosystem, combining user surveys, social media analysis, and active network measurements. We find that airports are by far the most popular off-the-shelf censorship circumvention tool in China, used by over half of our 1,667~survey respondents, who cite their ease of use, performance, and access to geo-restricted services like ChatGPT and Netflix. By scanning the Internet and scraping Telegram announcement channels, we identify 3,431 active airports built on a handful of open-source toolkits. We subscribe to 35 airports and characterize their performance, which often surpasses direct connections through the Great Firewall due to a distinctive multi-hop architecture. However, airports also pose new challenges and security risks: they accept payment through commercial services like Alipay, suffer frequent government takedowns, and are difficult for clients to configure optimally. Many airports also deploy their own distinct censorship policies. Airports are far more widely used than other circumvention tools from the academic literature, but introduce new forms of fragility and control, offering both lessons and opportunities for future circumvention research.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Rumaisa Habib",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mingshi Wu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shiva Shahandeh",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Min Ni",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Eric Wustrow",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zakir Durumeric",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CR",
+      "cs.CY",
+      "cs.NI"
+    ],
+    "comment": "The first two authors contributed equally",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.18427v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.18427v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-16",
+    "repository_urls": [],
+    "title": "Understanding the \"Airport\" Censorship Circumvention Ecosystem in China"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-16_2606.18427",
+    "members": [
+      "arxiv:2606.18427"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5138832718",
+        "label": "Rumaisa Habib"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4825-9452",
+        "label": "Mixia Wu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138882372",
+        "label": "Shiva Shahandeh"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138841939",
+        "label": "Min Ni"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4679-8834",
+        "label": "Eric Wustrow"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9647-4192",
+        "label": "Zakir Durumeric"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10628",
+        "is_primary": true,
+        "label": "China's Socioeconomic Reforms and Governance",
+        "score": 0.0904,
+        "subfield": "3320"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11598",
+        "is_primary": false,
+        "label": "Internet Traffic Analysis and Secure E-voting",
+        "score": 0.064,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13718",
+        "is_primary": false,
+        "label": "Media Influence and Politics",
+        "score": 0.0333,
+        "subfield": "3312"
+      }
+    ]
+  },
+  "first_published": "2026-06-16",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.18427",
+    "doi": "10.48550/arxiv.2606.18427",
+    "openalex": "W7165181214",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:38:22Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005767,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2003,
+      "out": 307
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8436,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3374,
+    "relevance": 0.8436
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The survey sample of 1,667 respondents may not be fully representative of all internet users in China due to the self-reporting nature of circumvention tool usage.",
+      "what": "A systematic study of China's subscription-based censorship circumvention proxies, known as 'airports', using surveys from 1,667 respondents, social media analysis, and active network measurements. The researchers identified 3,431 active airports built on open-source toolkits, subscribed to 35 of them to evaluate performance, and analyzed their multi-hop architecture, payment methods, and vulnerability to government takedowns.",
+      "why": "It documents and measures the dominant, consumer-facing circumvention ecosystem in China, revealing that these commercial tools outperform academic alternatives but introduce new risks, including centralized payment tracking and airport-level censorship policies."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-16",
+  "work_key": "arxiv:2606.18427"
+}

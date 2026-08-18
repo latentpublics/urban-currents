@@ -1,0 +1,278 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Drone usage for transportation tasks has inspired a vast body of operations research literature. Due to the small payloads of current-generation drones, most predecessors treat drone-based transportation in a one-to-many distribution context where a single fulfillment center distributes lightweight, small-sized goods to many customer households. Recent technological progress, however, advocates a coupling of multiple smaller drones to collective drones, cooperating in the aerial transport of bulky and heavier loads over longer distances. Collective drones, thus, open up the application of drones for point-to-point transportation services. Against this backdrop, we consider the following scheduling problem: Given a set of jobs, each representing a point-to-point transport with a given origin, destination, flight time, and weight, as well as a heterogeneous fleet of drones with varying lifting capacity, we seek a schedule, where the sum of lifting capacities of the drones assigned to each job meets the weight requirement, drones have enough time to move between subsequent jobs, and the makespan is minimum. We formulate the resulting collective drone scheduling problem, provide an in-depth analysis of computational complexity, and introduce suitable solution methods based on decomposition. Our computational study explores the performance of these solution methods and investigates managerial issues such as the impact of different drone fleet compositions.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Carl Zeiss (Germany)",
+            "ror": "02mp31p96"
+          },
+          {
+            "name": "Friedrich Schiller University Jena",
+            "ror": "05qpz1x62"
+          }
+        ],
+        "name": "Stefan Schwerdfeger",
+        "openalex": "A5048723043",
+        "orcid": "https://orcid.org/0000-0001-5277-6511"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Carl Zeiss (Germany)",
+            "ror": "02mp31p96"
+          },
+          {
+            "name": "Friedrich Schiller University Jena",
+            "ror": "05qpz1x62"
+          }
+        ],
+        "name": "Nils Boysen",
+        "openalex": "A5019527801",
+        "orcid": "https://orcid.org/0000-0002-1681-4856"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Wuppertal",
+            "ror": "00613ak93"
+          }
+        ],
+        "name": "Dirk Briskorn",
+        "openalex": "A5030658981",
+        "orcid": "https://orcid.org/0000-0003-1829-8100"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trb.2026.103526",
+      "pdf_url": null,
+      "source_id": "S96305778",
+      "source_name": "Transportation Research Part B Methodological",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-17",
+    "repository_urls": [],
+    "title": "Come fly with me: Scheduling point-to-point transports with collective drones"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-17_10.1016/j.trb.20",
+    "members": [
+      "doi:10.1016/j.trb.2026.103526"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02mp31p96",
+        "label": "Carl Zeiss (Germany)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05qpz1x62",
+        "label": "Friedrich Schiller University Jena"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00613ak93",
+        "label": "University of Wuppertal"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5277-6511",
+        "label": "Stefan Schwerdfeger"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1681-4856",
+        "label": "Nils Boysen"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1829-8100",
+        "label": "Dirk Briskorn"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11133",
+        "is_primary": true,
+        "label": "UAV Applications and Optimization",
+        "score": 0.8654,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11489",
+        "is_primary": false,
+        "label": "Air Traffic Management and Optimization",
+        "score": 0.0267,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10249",
+        "is_primary": false,
+        "label": "Distributed Control Multi-Agent Systems",
+        "score": 0.0161,
+        "subfield": "1705"
+      }
+    ]
+  },
+  "first_published": "2026-06-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W655022694",
+      "openalex:W1972075556",
+      "openalex:W1977319619",
+      "openalex:W1997833031",
+      "openalex:W2010334716",
+      "openalex:W2011154880",
+      "openalex:W2013397896",
+      "openalex:W2050819731",
+      "openalex:W2051389556",
+      "openalex:W2056973373",
+      "openalex:W2067462952",
+      "openalex:W2140318223",
+      "openalex:W2140742285",
+      "openalex:W2735745260",
+      "openalex:W2792557859",
+      "openalex:W2796035444",
+      "openalex:W2897633320",
+      "openalex:W2915338839",
+      "openalex:W2978613931",
+      "openalex:W3024218591",
+      "openalex:W3032947628",
+      "openalex:W3041611419",
+      "openalex:W3084064394",
+      "openalex:W3107614543",
+      "openalex:W3137336600",
+      "openalex:W4200208591",
+      "openalex:W4213060883",
+      "openalex:W4280644038",
+      "openalex:W4316038725",
+      "openalex:W4387643390",
+      "openalex:W4390226701",
+      "openalex:W4401814604"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trb.2026.103526",
+    "openalex": "W7164915551",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:44:00Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.004997,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2023,
+      "out": 218
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:44:00Z",
+    "doi": "10.1016/j.trb.2026.103526",
+    "journal": "Transportation Research Part B Methodological",
+    "source_id": "S96305778",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance and scheduling outcomes are evaluated through simulated computational experiments rather than a real-world physical deployment.",
+      "what": "This study models and solves a scheduling problem for point-to-point aerial transport using collective drones, where multiple smaller drones cooperate to carry heavy, bulky loads. The authors formulate the scheduling problem to minimize makespan while ensuring drone capacities meet job weights and allow for transit times between tasks, evaluating their decomposition-based solution methods and fleet compositions through a computational study.",
+      "why": "It establishes a scheduling framework for a new logistics paradigm where drone fleets are dynamically coupled to transport heavy goods, moving beyond the traditional single-drone, lightweight delivery model."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-17",
+  "work_key": "doi:10.1016/j.trb.2026.103526"
+}

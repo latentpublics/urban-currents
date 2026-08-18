@@ -1,0 +1,205 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Mobile cellular load forecasting is native to network resource optimization and delivery of services with reliability, latency and quality guarantees. The mainstream of machine learning research in the area is focused primarily on developing powerful learning structures for improved prediction accuracy. The data used for forecasting traditionally belong to the cellular domain and at most contain exogenous information about the surroundings of the base stations. We approach the prediction task from the perspective of data as a vital component of any data learning process. We hypothesize that substantial improvements could be achieved when the data inform on the processes that create the cellular load. Specifically, we propose to characterize the population dynamics -- the potential number of cellular traffic sources and their mobility -- in addition to employing historical time series of mobile data traffic. We validate our hypothesis for the rarely examined highway scenario. Comprehensive experiments show forecasting improvements on the order of $60\\%$ due to the use of these data alone.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Natalia Vesselinova",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Pauliina Ilmonen",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.NI"
+    ],
+    "comment": "12 pages, 9 figures, 9 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.25709v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.25709v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-24",
+    "repository_urls": [],
+    "title": "Cellular Predictions on the Move: What about Data?"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-24_2606.25709",
+    "members": [
+      "arxiv:2606.25709"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5021239027",
+        "label": "Natalia Vesselinova"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8992-0553",
+        "label": "Pauliina Ilmonen"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.7382,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.1488,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13553",
+        "is_primary": false,
+        "label": "Age of Information Optimization",
+        "score": 0.0161,
+        "subfield": "1705"
+      }
+    ]
+  },
+  "first_published": "2026-06-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.25709",
+    "doi": "10.48550/arxiv.2606.25709",
+    "openalex": "W7165892231",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:18:31Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.004949,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1859,
+      "out": 240
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9169,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3668,
+    "relevance": 0.9169
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings and the 60% performance improvement are validated specifically for a highway scenario, which may not generalize to more complex urban environments with different mobility patterns.",
+      "what": "The study evaluates mobile cellular load forecasting on highways by incorporating population dynamics and mobility data alongside historical traffic time series. Using these additional data sources to represent the potential number and movement of traffic generators yields forecasting accuracy improvements of approximately 60%.",
+      "why": "It demonstrates that modeling the underlying human mobility processes driving network demand is far more effective for cellular load prediction than merely optimizing machine learning architectures on traditional, domain-isolated network data."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-24",
+  "work_key": "arxiv:2606.25709"
+}

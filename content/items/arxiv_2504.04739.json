@@ -1,0 +1,308 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Understanding how social, demographic, environmental, and spatial factors jointly shape urban outcomes is essential for sustainable urban development and evidence-based policy. Traditional statistical approaches often struggle to capture complex non-linear relationships, while many machine learning methods overlook the joint roles of spatial autocorrelation and network topology in urban systems. Recent advances in GeoAI have addressed these challenges only partially, often treating spatial effects, graph structure, evaluation, and interpretability separately. We present UST-GNN, a unified spatial–topological graph neural network framework that integrates neighbourhood connectivity, heterogeneous urban features, and positional/locational embeddings into a single representation. Using the MedSAT dataset, which contains over 150 environmental and socio-demographic variables and six prescription outcomes across 4835 neighbourhoods in Greater London, UST-GNN outperforms strong statistical, geographically enhanced, and graph Machine Learning baselines, improving out-of-sample R 2 by 8.4–13.2% under strict spatial cross-validation. We further introduce a lightweight principal-component module to interpret learned node embeddings geographically and relate them to policy-relevant covariates. The resulting analyses recover established patterns, offer new perspectives on debated associations, and reveal novel predictors warranting further causal investigation. Together, these findings demonstrate the value of graph-based spatial machine learning for urban health analytics, environmental inequality assessment, and evidence-based urban policy. Beyond predictive gains, UST-GNN provides a unified GeoAI analytical pipeline that can be embedded into urban digital twin workflows for scenario testing, monitoring, and data-informed decision-making for healthier, more sustainable cities.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University College London",
+            "ror": "02jx3x895"
+          }
+        ],
+        "name": "Minwei Zhao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Oxford",
+            "ror": "052gg0110"
+          },
+          {
+            "name": "Nokia (United Kingdom)",
+            "ror": "00zpf0626"
+          }
+        ],
+        "name": "Sanja Šćepanović",
+        "openalex": "A5038043083",
+        "orcid": "https://orcid.org/0000-0002-1534-8128"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University College London",
+            "ror": "02jx3x895"
+          }
+        ],
+        "name": "Stephen Law",
+        "openalex": "A5055537550",
+        "orcid": "https://orcid.org/0000-0003-3184-572X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Munich Center for Machine Learning",
+            "ror": "02nfy3535"
+          },
+          {
+            "name": "Technical University of Munich",
+            "ror": "02kkvpp62"
+          }
+        ],
+        "name": "Ivica Obadic",
+        "openalex": "A5120492346",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chih‐Cheng Wu",
+        "openalex": "A5076166012",
+        "orcid": "https://orcid.org/0000-0002-9690-6573"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Politecnico di Torino",
+            "ror": "00bgk9508"
+          },
+          {
+            "name": "Nokia (United Kingdom)",
+            "ror": "00zpf0626"
+          }
+        ],
+        "name": "Daniele Quercia",
+        "openalex": "A5081008532",
+        "orcid": "https://orcid.org/0000-0001-9461-5804"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.compenvurbsys.2026.102466",
+      "pdf_url": null,
+      "source_id": "S60115552",
+      "source_name": "Computers Environment and Urban Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-24",
+    "repository_urls": [],
+    "title": "UST-GNN: A unified spatial–topological graph neural network framework for urban analytics demonstrated through a case study on urban health prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-24_2504.04739",
+    "members": [
+      "arxiv:2504.04739"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:gnn",
+        "label": "graph neural network"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02jx3x895",
+        "label": "University College London"
+      },
+      {
+        "confidence": null,
+        "id": "ror:052gg0110",
+        "label": "University of Oxford"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00zpf0626",
+        "label": "Nokia (United Kingdom)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02nfy3535",
+        "label": "Munich Center for Machine Learning"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02kkvpp62",
+        "label": "Technical University of Munich"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00bgk9508",
+        "label": "Politecnico di Torino"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1534-8128",
+        "label": "Sanja Šćepanović"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3184-572X",
+        "label": "Stephen Law"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5120492346",
+        "label": "Ivica Obadic"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9690-6573",
+        "label": "Chih‐Cheng Wu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9461-5804",
+        "label": "Daniele Quercia"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": true,
+        "label": "Urban Green Space and Health",
+        "score": 0.5588,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14393",
+        "is_primary": false,
+        "label": "Health, Environment, Cognitive Aging",
+        "score": 0.1161,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11819",
+        "is_primary": false,
+        "label": "Data-Driven Disease Surveillance",
+        "score": 0.0359,
+        "subfield": "2713"
+      }
+    ]
+  },
+  "first_published": "2026-06-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2504.04739",
+    "doi": "10.1016/j.compenvurbsys.2026.102466",
+    "openalex": "W4416117526",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:18:33Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005992,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2189,
+      "out": 301
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:18:33Z",
+    "doi": "10.1016/j.compenvurbsys.2026.102466",
+    "journal": "Computers Environment and Urban Systems",
+    "source_id": "S60115552",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "While the framework identifies novel predictors of urban health outcomes, these associations are correlational and require further causal investigation.",
+      "what": "The researchers developed UST-GNN, a graph neural network framework that combines neighborhood connectivity, heterogeneous urban features, and positional embeddings. Evaluated on the MedSAT dataset across 4,835 neighborhoods in Greater London using over 150 environmental and socio-demographic variables, the model improved out-of-sample R-squared by 8.4% to 13.2% over baseline models when predicting six health prescription outcomes.",
+      "why": "It provides a unified GeoAI analytical pipeline that simultaneously accounts for spatial autocorrelation and network topology, allowing planners to interpret learned node embeddings geographically and integrate them into urban digital twin workflows for scenario testing."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-24",
+  "work_key": "arxiv:2504.04739"
+}

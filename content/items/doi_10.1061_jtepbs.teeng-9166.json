@@ -1,0 +1,381 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Car-hailing services have become an important data source for urban traffic studies. Extracting useful information from car-hailing trace data is essential for traffic management, whereas discrepancies between car-hailing vehicles and urban traffic should be considered. This paper proposes a generic framework for estimating and analyzing urban traffic patterns using car-hailing trace data. The framework consists of three layers: the data layer, the interactive software layer, and the processing method layer. By preprocessing car-hailing GPS trace data through operations such as data cutting, map matching, and trace correction, the framework generates matrices that estimate traffic patterns for car-hailing vehicle flow and average road speed. An analysis block, built on these matrices, examines the relationships and differences between car-hailing vehicles and urban traffic patterns, which have been overlooked previously. Experimental results demonstrate the effectiveness of the proposed framework in examining temporal-spatial patterns of car-hailing vehicles and urban traffic. For temporal analysis, urban road traffic displays a bimodal characteristic, whereas car-hailing flow exhibits a “multipeak” pattern, fluctuating significantly during holidays and thus creating a hierarchical structure. For spatial analysis, the heat maps generated from the matrices exhibit discrepancies; however, the spatial distribution of hotspots and vehicle aggregation areas remains similar.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Wisconsin–Madison",
+            "ror": "01y2jtd41"
+          },
+          {
+            "name": "East China Jiaotong University",
+            "ror": "05x2f1m38"
+          }
+        ],
+        "name": "Jiannan Mao",
+        "openalex": "A5129635991",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Southwest Jiaotong University",
+            "ror": "00hn7w693"
+          }
+        ],
+        "name": "Lan Liu",
+        "openalex": "A5100748125",
+        "orcid": "https://orcid.org/0000-0001-8034-5233"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Southwest Jiaotong University",
+            "ror": "00hn7w693"
+          }
+        ],
+        "name": "Hao Huang",
+        "openalex": "A5139303630",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Soochow University",
+            "ror": "05kvm7n82"
+          },
+          {
+            "name": "University Transportation Center for Alabama",
+            "ror": "05sp89c28"
+          }
+        ],
+        "name": "Weike Lu",
+        "openalex": "A5070894253",
+        "orcid": "https://orcid.org/0000-0003-0809-3590"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Southwest Jiaotong University",
+            "ror": "00hn7w693"
+          }
+        ],
+        "name": "Kaiyu Yang",
+        "openalex": "A5103883065",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Guangdong University of Technology",
+            "ror": "04azbjn80"
+          },
+          {
+            "name": "Southeast University",
+            "ror": "00cf0ab87"
+          }
+        ],
+        "name": "Tianli Tang",
+        "openalex": "A5082500453",
+        "orcid": "https://orcid.org/0000-0003-2182-6525"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          },
+          {
+            "name": "University of Wisconsin–Madison",
+            "ror": "01y2jtd41"
+          }
+        ],
+        "name": "Haotian Shi",
+        "openalex": "A5139255644",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9166",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-24",
+    "repository_urls": [],
+    "title": "Estimating Urban Traffic Patterns through GPS Trace Data from Car-Hailing Vehicles: A Temporal–Spatial Analysis"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-24_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-9166"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01y2jtd41",
+        "label": "University of Wisconsin–Madison"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05x2f1m38",
+        "label": "East China Jiaotong University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00hn7w693",
+        "label": "Southwest Jiaotong University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05kvm7n82",
+        "label": "Soochow University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05sp89c28",
+        "label": "University Transportation Center for Alabama"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04azbjn80",
+        "label": "Guangdong University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00cf0ab87",
+        "label": "Southeast University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03rc6as71",
+        "label": "Tongji University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5129635991",
+        "label": "Jiannan Mao"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8034-5233",
+        "label": "Lan Liu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139303630",
+        "label": "Hao Huang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0809-3590",
+        "label": "Weike Lu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5103883065",
+        "label": "Kaiyu Yang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2182-6525",
+        "label": "Tianli Tang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139255644",
+        "label": "Haotian Shi"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.8863,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0637,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0281,
+        "subfield": "2207"
+      }
+    ]
+  },
+  "first_published": "2026-06-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1985986451",
+      "openalex:W1988580225",
+      "openalex:W2057165483",
+      "openalex:W2078240650",
+      "openalex:W2133731173",
+      "openalex:W2141730410",
+      "openalex:W2503210624",
+      "openalex:W2561722812",
+      "openalex:W2778155454",
+      "openalex:W2793342280",
+      "openalex:W2803846789",
+      "openalex:W2902048196",
+      "openalex:W2908732295",
+      "openalex:W2941717673",
+      "openalex:W2956067742",
+      "openalex:W2965934118",
+      "openalex:W2972320057",
+      "openalex:W2980176521",
+      "openalex:W3005147439",
+      "openalex:W3034434244",
+      "openalex:W3134701916",
+      "openalex:W3138657285",
+      "openalex:W4210900103",
+      "openalex:W4290628373",
+      "openalex:W4296907790",
+      "openalex:W4307927161",
+      "openalex:W4319987652",
+      "openalex:W4385569640",
+      "openalex:W4386102052",
+      "openalex:W4388985671",
+      "openalex:W4391651902",
+      "openalex:W4396529178",
+      "openalex:W4400726108",
+      "openalex:W4401545292",
+      "openalex:W4401684014",
+      "openalex:W4402478831",
+      "openalex:W4405246787",
+      "openalex:W4409233648"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-9166",
+    "openalex": "W7165734590",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:18:35Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005644,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2041,
+      "out": 287
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:18:35Z",
+    "doi": "10.1061/jtepbs.teeng-9166",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and the generalizability of the observed traffic discrepancies were not validated against independent, ground-truth traffic sensor datasets in the abstract.",
+      "what": "The study introduces a three-layer framework comprising data, interactive software, and processing method layers to estimate urban traffic patterns from car-hailing GPS trace data. The system processes raw traces through data cutting, map matching, and trace correction to generate matrices of vehicle flow and average road speeds. Analysis using this framework revealed that urban road traffic follows a bimodal temporal pattern, whereas car-hailing flow displays a multipeak pattern with high holiday fluctuations, though both share similar spatial hotspot distributions.",
+      "why": "It establishes a systematic method to correct and map car-hailing GPS traces, revealing distinct temporal differences between ride-hailing flows and general urban traffic that planners must account for when using commercial fleet data as a proxy for overall traffic."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-24",
+  "work_key": "doi:10.1061/jtepbs.teeng-9166"
+}

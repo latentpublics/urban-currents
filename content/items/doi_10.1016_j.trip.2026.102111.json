@@ -1,0 +1,261 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The spatial dynamics of human mobility play a critical role in shaping disease transmission and containment policies, particularly in densely populated urban areas with significant tourism and transport activity. This study presents an Agent-Based Model to simulate the spread and containment of COVID-19 in Waikiki, Hawaii, a high-density resort district characterized by diverse transport modes and pedestrian interactions. The model simulates movements of pedestrians, motorists, and public transit users, using high‑resolution built-environment data to capture where and when contacts occur, and links interactions among infectious and susceptible individuals to infection risks under varying interventions. Intervention scenarios, including mask usage, testing/contact tracing, and vaccination, are simulated, and model outcomes are validated against observed case data (R2 = 0.864). Results demonstrate that enhanced contact tracing was the most effective intervention, reducing cumulative reported cases by 18.9 % and community transmission by 44 % compared to the realistic baseline. Higher vaccination coverage yielded a 4.5 % reduction in cases and a 15.8 % reduction in hospitalizations, highlighting the vaccine’s role in mitigating severe outcomes. Conversely, reducing contact tracing below baseline levels increased cumulative cases by 22.5 % and community cases by 53.2 %, while low mask use increased overall cases by 4.8 %, highlighting risks of relaxing interventions. Persistence of transmission, even with high vaccination rates, highlights the importance of policy measures, particularly rapid case identification and isolation in high‑mobility resort districts. These findings demonstrate the value of ABM as a decision‑support tool bridging transportation planning, urban epidemiology, and public health policy, an integration essential for resilient community management.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Farnaz Kaviari",
+        "openalex": "A5061274169",
+        "orcid": "https://orcid.org/0000-0002-8620-1983"
+      },
+      {
+        "institutions": [],
+        "name": "Karl Kim",
+        "openalex": "A5135494808",
+        "orcid": "https://orcid.org/0000-0003-0528-8747"
+      },
+      {
+        "institutions": [],
+        "name": "Eric Yamashita",
+        "openalex": "A5139188821",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102111",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-23",
+    "repository_urls": [],
+    "title": "Simulating the spatial spread and containment of a pandemic in a multimodal tourism district using agent-based modeling"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-23_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102111"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8620-1983",
+        "label": "Farnaz Kaviari"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0528-8747",
+        "label": "Karl Kim"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139188821",
+        "label": "Eric Yamashita"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10410",
+        "is_primary": true,
+        "label": "COVID-19 epidemiological studies",
+        "score": 0.9483,
+        "subfield": "2611"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0198,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11500",
+        "is_primary": false,
+        "label": "Evacuation and Crowd Dynamics",
+        "score": 0.0066,
+        "subfield": "2212"
+      }
+    ]
+  },
+  "first_published": "2026-06-23",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2120665631",
+      "openalex:W2136132429",
+      "openalex:W2148301044",
+      "openalex:W2767074870",
+      "openalex:W2905576123",
+      "openalex:W2955834848",
+      "openalex:W2964335872",
+      "openalex:W3009037937",
+      "openalex:W3009902394",
+      "openalex:W3026475761",
+      "openalex:W3036629380",
+      "openalex:W3037034904",
+      "openalex:W3039119913",
+      "openalex:W3042091277",
+      "openalex:W3043699273",
+      "openalex:W3084195676",
+      "openalex:W3097854666",
+      "openalex:W3127518355",
+      "openalex:W3130704515",
+      "openalex:W3137190985",
+      "openalex:W3138002411",
+      "openalex:W3141387925",
+      "openalex:W3181360113",
+      "openalex:W3186633320",
+      "openalex:W3191743264",
+      "openalex:W3193447245",
+      "openalex:W4200439871",
+      "openalex:W4205617283",
+      "openalex:W4210582543",
+      "openalex:W4213239627",
+      "openalex:W4220777055",
+      "openalex:W4221035851",
+      "openalex:W4221082445",
+      "openalex:W4223653778",
+      "openalex:W4280618355",
+      "openalex:W4285810268",
+      "openalex:W4318477335",
+      "openalex:W4366606629",
+      "openalex:W4388510483",
+      "openalex:W4389571875",
+      "openalex:W4394849339",
+      "openalex:W4399513388",
+      "openalex:W4399740778",
+      "openalex:W4399829827",
+      "openalex:W4405237542",
+      "openalex:W4405746283",
+      "openalex:W4412603750",
+      "openalex:W4414032537"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102111",
+    "openalex": "W7165618153",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:13:19Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005959,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2203,
+      "out": 295
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:13:19Z",
+    "doi": "10.1016/j.trip.2026.102111",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The simulation and its specific intervention outcomes are calibrated to and evaluated within a single, highly specialized resort district.",
+      "what": "An agent-based model was developed to simulate COVID-19 transmission and containment among pedestrians, motorists, and transit users in the high-density resort district of Waikiki, Hawaii. Using high-resolution built-environment data, the model evaluated several intervention scenarios and was validated against historical case data with an R2 of 0.864. The simulation revealed that enhanced contact tracing was the most effective strategy, cutting cumulative cases by 18.9% and community transmission by 44%, while a low-mask scenario increased overall cases by 4.8%.",
+      "why": "The model demonstrates that in high-mobility tourism districts, rapid case identification and isolation remain critical for containment, as even high vaccination rates alone do not fully halt transmission."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-23",
+  "work_key": "doi:10.1016/j.trip.2026.102111"
+}

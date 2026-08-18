@@ -1,0 +1,299 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Accurately estimating data in areas without sensors is crucial for understanding system dynamics, such as traffic state estimation and environmental monitoring. However, this task faces challenges due to sparse sensor deployment, insufficient mobile sensor coverage, and unreliable sensor data. To address these issues, this study frames the problem as a spatiotemporal kriging task and proposes a novel graph transformer model, Kriformer. This model accurately estimates data at locations lacking installed sensors by mining complex spatial and temporal correlations, even with limited sensor resources. Specifically, the Kriformer leverages transformer architecture to expand the model's perceptual range and solve edge information aggregation challenges, enabling the collection of spatiotemporal information from relevant locations. To capture the information embedded in the graph structure more accurately, we carefully constructed a positional encoding module that deeply embeds the spatiotemporal features of nodes. Moreover, to further enhance the estimation accuracy of the model, we designed a sophisticated spatiotemporal attention mechanism. In particular, the multi-head spatial interaction attention module introduced in this mechanism can keenly capture the subtle spatial relationships between observed and unobserved locations. During the training phase, a random masking strategy forces the model to learn and optimize with partial information loss. In this process, the spatiotemporal embedding mechanism and multi-head attention mechanism work in synergy, guiding the model to comprehensively capture the spatiotemporal correlations among different locations. Experimental results show that Kriformer excels in representation learning, particularly for unobserved locations, with extensive validation on two real-world traffic speed datasets demonstrating its effectiveness in spatiotemporal kriging tasks. This research provides a powerful tool for traffic managers to estimate traffic states and alleviate congestion, offering valuable insights for data estimation and prediction in other fields.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Jiangxi University of Finance and Economics",
+            "ror": "03efmyj29"
+          }
+        ],
+        "name": "Renbin Pan",
+        "openalex": "A5033647469",
+        "orcid": "https://orcid.org/0000-0002-8938-7808"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Sichuan University",
+            "ror": "011ashp19"
+          }
+        ],
+        "name": "Feng Xiao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Dongbei University of Finance and Economics",
+            "ror": "05db1pj03"
+          }
+        ],
+        "name": "Hegui Zhang",
+        "openalex": "A5038093132",
+        "orcid": "https://orcid.org/0000-0002-4751-0919"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Southwestern University of Finance and Economics",
+            "ror": "04ewct822"
+          }
+        ],
+        "name": "Minyu Shen",
+        "openalex": "A5027371382",
+        "orcid": "https://orcid.org/0000-0002-7357-2435"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Southwestern University of Finance and Economics",
+            "ror": "04ewct822"
+          }
+        ],
+        "name": "Dapeng Zhang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/23249935.2026.2689597",
+      "pdf_url": null,
+      "source_id": "S4210177949",
+      "source_name": "Transportmetrica A Transport Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-19",
+    "repository_urls": [],
+    "title": "Kriformer: a novel spatiotemporal kriging approach based on graph transformers"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-19_10.1080/23249935",
+    "members": [
+      "doi:10.1080/23249935.2026.2689597"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03efmyj29",
+        "label": "Jiangxi University of Finance and Economics"
+      },
+      {
+        "confidence": null,
+        "id": "ror:011ashp19",
+        "label": "Sichuan University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05db1pj03",
+        "label": "Dongbei University of Finance and Economics"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04ewct822",
+        "label": "Southwestern University of Finance and Economics"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8938-7808",
+        "label": "Renbin Pan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4751-0919",
+        "label": "Hegui Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7357-2435",
+        "label": "Minyu Shen"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11106",
+        "is_primary": true,
+        "label": "Data Management and Algorithms",
+        "score": 0.9771,
+        "subfield": "1711"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13058",
+        "is_primary": false,
+        "label": "Soil and Land Suitability Analysis",
+        "score": 0.9392,
+        "subfield": "2308"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": false,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.9356,
+        "subfield": "3305"
+      }
+    ]
+  },
+  "first_published": "2026-06-19",
+  "graph": {
+    "cited_by_count": 2,
+    "referenced_works": [
+      "openalex:W55912154",
+      "openalex:W2019126302",
+      "openalex:W2789819752",
+      "openalex:W2810919783",
+      "openalex:W2944102862",
+      "openalex:W3126367810",
+      "openalex:W3138657285",
+      "openalex:W4225982748",
+      "openalex:W4226135409",
+      "openalex:W4319335604",
+      "openalex:W4363676665",
+      "openalex:W4376638541",
+      "openalex:W4378975792",
+      "openalex:W4379623896",
+      "openalex:W4386997414",
+      "openalex:W4389339573",
+      "openalex:W4390547377",
+      "openalex:W4392883897",
+      "openalex:W4396978893",
+      "openalex:W4401541730",
+      "openalex:W4405363266",
+      "openalex:W4409640651",
+      "openalex:W4415002713"
+    ],
+    "related_works": [
+      "openalex:W4391375266",
+      "openalex:W2748952813",
+      "openalex:W1968523686",
+      "openalex:W298893735",
+      "openalex:W2199291344",
+      "openalex:W2211316729",
+      "openalex:W2167342507",
+      "openalex:W4221140712",
+      "openalex:W4247222564",
+      "openalex:W3123323883"
+    ]
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/23249935.2026.2689597",
+    "openalex": "W4401305588",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:58:24Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005303,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2203,
+      "out": 222
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:58:24Z",
+    "doi": "10.1080/23249935.2026.2689597",
+    "journal": "Transportmetrica A Transport Science",
+    "source_id": "S4210177949",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance was only demonstrated on traffic speed datasets, meaning its effectiveness in other environmental monitoring domains remains unproven.",
+      "what": "The Kriformer model is a novel graph transformer designed for spatiotemporal kriging to estimate data at unobserved locations. It incorporates a custom positional encoding module for node features, a multi-head spatial interaction attention mechanism to capture relationships between observed and unobserved sites, and a random masking training strategy. The model's performance was validated using two real-world traffic speed datasets.",
+      "why": "It provides a more accurate method for estimating traffic states and environmental metrics in areas with sparse, unreliable, or missing sensor coverage by expanding the model's perceptual range and improving edge information aggregation."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-19",
+  "work_key": "doi:10.1080/23249935.2026.2689597"
+}

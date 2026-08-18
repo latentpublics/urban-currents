@@ -1,0 +1,285 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "With rapid urbanization, estimating network-wide traffic statistics in urban areas without historical observations has become increasingly important for ensuring efficient transportation systems and improving urban quality of life. Traditionally, trip-based and activity-based travel demand models have been employed to address this problem. While recent advances in machine learning have facilitated network-wide traffic analysis for existing urban regions, data-driven approaches capable of traffic estimation in previously unobserved areas during the planning stage remain limited. To address this gap, we first define two traffic estimation tasks: transductive traffic estimation, where models have partial observations within the same network, and inductive traffic estimation, where models estimate traffic statistics for entirely unseen networks. We then propose Generalizable Traffic Estimation with Graph Contrastive Objective (GTE-GC), a data-driven framework that estimates network-wide traffic speeds using only transportation network topology and land-use characteristics. The model integrates a spatial feed-forward neural network, temporal self-attention, and graph contrastive learning to support both transductive and inductive estimation. Extensive experiments across ten European cities demonstrate that GTE-GC achieves competitive performance in transductive settings and superior generalization in inductive scenarios with the selection of appropriate source domains. Additional data ablation analyses highlight the role of each data source. The proposed framework offers a scalable and efficient tool to complement traditional simulation-based approaches, providing practical support for early-stage transportation planning in emerging urban contexts.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "New York University Abu Dhabi",
+            "ror": "00e5k0821"
+          }
+        ],
+        "name": "Yuyol Shin",
+        "openalex": "A5113880263",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          }
+        ],
+        "name": "Wei Ma",
+        "openalex": "A5108048720",
+        "orcid": "https://orcid.org/0000-0001-8945-5877"
+      },
+      {
+        "institutions": [
+          {
+            "name": "New York University Abu Dhabi",
+            "ror": "00e5k0821"
+          }
+        ],
+        "name": "Mónica Menéndez",
+        "openalex": "A5027558488",
+        "orcid": "https://orcid.org/0000-0001-5701-0523"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105816",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-22",
+    "repository_urls": [],
+    "title": "A data-driven end-to-end framework for traffic estimation with cross-network generalization"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-22_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105816"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00e5k0821",
+        "label": "New York University Abu Dhabi"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0030zas98",
+        "label": "Hong Kong Polytechnic University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5113880263",
+        "label": "Yuyol Shin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8945-5877",
+        "label": "Wei Ma"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5701-0523",
+        "label": "Mónica Menéndez"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.968,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0139,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.004,
+        "subfield": "2212"
+      }
+    ]
+  },
+  "first_published": "2026-06-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1972011292",
+      "openalex:W1990593228",
+      "openalex:W1992852093",
+      "openalex:W1993383633",
+      "openalex:W2004353783",
+      "openalex:W2009465018",
+      "openalex:W2032481652",
+      "openalex:W2042493333",
+      "openalex:W2045634204",
+      "openalex:W2053432735",
+      "openalex:W2058309190",
+      "openalex:W2068852650",
+      "openalex:W2087079643",
+      "openalex:W2088722350",
+      "openalex:W2113687967",
+      "openalex:W2129284678",
+      "openalex:W2473927594",
+      "openalex:W2581780373",
+      "openalex:W2795053767",
+      "openalex:W2885416856",
+      "openalex:W2889960786",
+      "openalex:W2905155303",
+      "openalex:W2906257585",
+      "openalex:W2915288435",
+      "openalex:W2916259693",
+      "openalex:W2956844423",
+      "openalex:W2962790412",
+      "openalex:W2963240573",
+      "openalex:W2972145106",
+      "openalex:W2972752351",
+      "openalex:W2978273467",
+      "openalex:W2997848713",
+      "openalex:W2998008488",
+      "openalex:W3006958671",
+      "openalex:W3026400623",
+      "openalex:W3131859778",
+      "openalex:W3158644168",
+      "openalex:W3193383128",
+      "openalex:W4200480806",
+      "openalex:W4206788904",
+      "openalex:W4213445996",
+      "openalex:W4226198606",
+      "openalex:W4226250547",
+      "openalex:W4287332260",
+      "openalex:W4306692343",
+      "openalex:W4353093955",
+      "openalex:W4384450936",
+      "openalex:W4385213387",
+      "openalex:W4390905463",
+      "openalex:W4403123483",
+      "openalex:W4405933953",
+      "openalex:W4409364394"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105816",
+    "openalex": "W4416221156",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:08:10Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005659,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2087,
+      "out": 281
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:08:10Z",
+    "doi": "10.1016/j.trc.2026.105816",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's inductive performance on unseen networks depends heavily on the selection of appropriate source domains for training.",
+      "what": "The GTE-GC framework estimates network-wide traffic speeds using only network topology and land-use characteristics, bypassing the need for historical traffic observations. The model combines a spatial feed-forward neural network, temporal self-attention, and graph contrastive learning to perform both transductive estimation on partially observed networks and inductive estimation on entirely unseen networks. Performance was validated through experiments across ten European cities, demonstrating superior generalization in inductive scenarios when paired with appropriate source domains.",
+      "why": "It provides a scalable, data-driven alternative to traditional, computationally heavy simulation models, allowing planners to estimate traffic conditions in entirely unobserved or newly planned urban areas using only static spatial and land-use data."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-22",
+  "work_key": "doi:10.1016/j.trc.2026.105816"
+}

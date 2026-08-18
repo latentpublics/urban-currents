@@ -1,0 +1,274 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "New York City implemented the nation's first cordon-based congestion pricing program in January 2025, providing an opportunity to evaluate how system-wide urban mobility responds to large-scale pricing interventions. Because such policies generate spillovers across modes and locations, credible control groups are difficult to construct. We address this challenge using time series foundation models to generate probabilistic counterfactual demand forecasts with calibrated uncertainty. Applying this framework to bus, subway, and aggregate trip volume data, we find that post-policy bus and subway ridership increased significantly relative to expected no-policy demand, while overall travel demand decreased modestly. The effects are spatially heterogeneous: while reductions in overall travel demand are concentrated within the Congestion Relief Zone, transit gains extend beyond Manhattan's core. Socio-demographic analyses further reveal uneven adaptation across neighborhoods, highlighting spatial equity implications. Our framework provides a scalable approach for the uncertainty-aware evaluation of system-wide urban interventions when clean control groups are unavailable.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Donghang Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dingyi Zhuang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yunlin Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chenan Shen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Nina Cao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yunhan Zheng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shenhao Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jinhua Zhao",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.LG",
+      "econ.GN",
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.17530v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.17530v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-16",
+    "repository_urls": [],
+    "title": "Public transit gains and spatially uneven travel demand changes after NYC congestion pricing"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-16_2606.17530",
+    "members": [
+      "arxiv:2606.17530"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5058546960",
+        "label": "Donghang Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3208-6016",
+        "label": "Dingyi Zhuang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-7120-3183",
+        "label": "Yunlin Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5123605983",
+        "label": "ChenAn Shen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5070739061",
+        "label": "N. Cao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138778707",
+        "label": "Yunhan Zheng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138783204",
+        "label": "Shenhao Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138777716",
+        "label": "Jinhua Zhao"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q60",
+        "label": "New York City",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": true,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.3888,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.2203,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.1313,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-06-16",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.17530",
+    "doi": "10.48550/arxiv.2606.17530",
+    "openalex": "W7165011853",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:38:22Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005321,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1903,
+      "out": 274
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.974,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3896,
+    "relevance": 0.974
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "Using time series foundation models to generate probabilistic counterfactual forecasts, this study evaluated the mobility impacts of New York City's January 2025 congestion pricing program. The analysis of bus, subway, and aggregate trip volume data revealed a significant increase in post-policy transit ridership alongside a modest decrease in overall travel demand. These effects varied spatially, with overall demand reductions concentrated inside the Congestion Relief Zone, while public transit gains extended well beyond Manhattan's core.",
+      "why": "It demonstrates a scalable, uncertainty-aware evaluation framework for large-scale urban interventions where traditional, clean control groups cannot be constructed due to system-wide spillovers."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-16",
+  "work_key": "arxiv:2606.17530"
+}

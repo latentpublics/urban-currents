@@ -1,0 +1,200 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The Virginia Tech Transportation Safety Index (VTTSI) is a real-time, cloud-native framework for quantifying intersection safety using multimodal connected-vehicle telemetry and multi-year VDOT crash history. Traditional crash-based methods rely on lagged, aggregated data and cannot reflect rapidly changing operational conditions. VTTSI addresses this gap through a hybrid modeling approach that fuses Empirical Bayes (EB) crash stabilization, uplift factors derived from speed and conflict behavior, and a CRITIC-weighted multi-criteria decision-making (MCDM) module combining SAW, EDAS, and CODAS. The system produces interpretable, exposure-adjusted safety scores on a 0--100 scale every 15 minutes. A cloud-deployed architecture built on FastAPI, PostgreSQL, PostGIS, and Streamlit supports interactive visualization of traffic volumes, VRU exposure, speed variance, and real-time incident activity. Validation across intersections demonstrates coherent diurnal patterns, consistency among MCDM methods, and sensitivity to observable operational turbulence. Sensitivity analysis further shows that the RT--SI is robust to parameter perturbations, with deviations typically remaining below one point on the 0--100 scale. By integrating long-term crash risk with short-term behavioral dynamics, VTTSI provides a transparent, adaptive, and proactive safety-monitoring framework suitable for transportation agencies, traffic management centers, fleet operators, and autonomous vehicle systems.%~\\cite{persaud2007, montella2020systemic, schultz2025_surrogate, Amraji2025CombinedSafetyIndex}.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Jason Cusati",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Cheng-Shun Chuang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY",
+      "eess.SY",
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.21154v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.21154v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-19",
+    "repository_urls": [],
+    "title": "Virginia Tech Transportation Safety Index (VTTSI)"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-19_2606.21154",
+    "members": [
+      "arxiv:2606.21154"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5107580407",
+        "label": "Jason Cusati"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139178879",
+        "label": "Cheng-Shun Chuang"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": true,
+        "label": "Traffic and Road Safety",
+        "score": 0.5751,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.1368,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.0722,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-06-19",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.21154",
+    "doi": "10.48550/arxiv.2606.21154",
+    "openalex": "W7165663052",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:58:21Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.00646,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2147,
+      "out": 360
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8719,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3488,
+    "relevance": 0.8719
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The system's validation is based on demonstrating coherent diurnal patterns and sensitivity to observed traffic turbulence, rather than direct predictive performance against independent, real-time crash events.",
+      "what": "The Virginia Tech Transportation Safety Index (VTTSI) is a real-time, cloud-native framework that calculates intersection safety scores on a 0 to 100 scale every 15 minutes. It fuses multi-year crash history from the Virginia Department of Transportation using Empirical Bayes stabilization with real-time connected-vehicle telemetry, including speed variance and vulnerable road user exposure. The system integrates these inputs using a CRITIC-weighted multi-criteria decision-making module and visualizes the results via an interactive Streamlit dashboard.",
+      "why": "It replaces traditional, lagged crash-based safety assessments with a dynamic, exposure-adjusted monitoring system that captures rapid operational changes and behavioral turbulence as they happen."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-19",
+  "work_key": "arxiv:2606.21154"
+}

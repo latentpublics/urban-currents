@@ -1,0 +1,280 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Urban growth (UG) prediction is essential for risk assessment and urban planning. This paper proposes a probabilistic hexagonal cellular automata model integrating land-cover and socio-economic indicators to predict UG over five-year intervals. Indicators are defined on a regional scale using a hexagonal grid, with time-varying values derived from satellite imagery and publicly available databases. Cells are classified by urbanization level. The model is calibrated using predictor values from 2001, 2006, and 2011, with growth predicted in 2006, 2011, and 2016; performance is validated on a held-out test set of 200 cells from 2006, 2011, and 2016. Applied to the Houston urban area, the model achieves 81% average accuracy. Results indicate that both land-cover and socio-economic indicators significantly influence UG, with relevance shifting across urbanization levels. Distinct growth mechanisms are revealed, including greater neighborhood influence in low-density areas and the dominant role of employment and income in highly urbanized zones.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Fuzhou University",
+            "ror": "011xvna82"
+          }
+        ],
+        "name": "Alessandro Contento",
+        "openalex": "A5003661106",
+        "orcid": "https://orcid.org/0000-0003-3811-8074"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Massachusetts Amherst",
+            "ror": "0072zz521"
+          }
+        ],
+        "name": "Jessica Boakye",
+        "openalex": "A5061009132",
+        "orcid": "https://orcid.org/0000-0003-2505-7268"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of L'Aquila",
+            "ror": "01j9p1r26"
+          }
+        ],
+        "name": "Lorena Fiorini",
+        "openalex": "A5043941874",
+        "orcid": "https://orcid.org/0000-0002-3071-9644"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of L'Aquila",
+            "ror": "01j9p1r26"
+          }
+        ],
+        "name": "Alessandro Marucci",
+        "openalex": "A5087188701",
+        "orcid": "https://orcid.org/0000-0002-5832-9322"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Illinois Urbana-Champaign",
+            "ror": "047426m28"
+          }
+        ],
+        "name": "Paolo Gardoni",
+        "openalex": "A5041170074",
+        "orcid": "https://orcid.org/0009-0009-5806-3024"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1038/s42949-026-00416-y",
+      "pdf_url": "https://www.nature.com/articles/s42949-026-00416-y_reference.pdf",
+      "source_id": "S4210223291",
+      "source_name": "npj Urban Sustainability",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-18",
+    "repository_urls": [],
+    "title": "The importance of socio-economic indicators in predicting urban growth"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-18_10.1038/s42949-0",
+    "members": [
+      "doi:10.1038/s42949-026-00416-y"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:011xvna82",
+        "label": "Fuzhou University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0072zz521",
+        "label": "University of Massachusetts Amherst"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01j9p1r26",
+        "label": "University of L'Aquila"
+      },
+      {
+        "confidence": null,
+        "id": "ror:047426m28",
+        "label": "University of Illinois Urbana-Champaign"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3811-8074",
+        "label": "Alessandro Contento"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2505-7268",
+        "label": "Jessica Boakye"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3071-9644",
+        "label": "Lorena Fiorini"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5832-9322",
+        "label": "Alessandro Marucci"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-5806-3024",
+        "label": "Paolo Gardoni"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": true,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.6461,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0406,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.039,
+        "subfield": "2307"
+      }
+    ]
+  },
+  "first_published": "2026-06-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1038/s42949-026-00416-y",
+    "openalex": "W7165189929",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:53:02Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005498,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1967,
+      "out": 283
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:53:02Z",
+    "doi": "10.1038/s42949-026-00416-y",
+    "journal": "npj Urban Sustainability",
+    "source_id": "S4210223291",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "from 2001",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's predictive performance and the identified relationships between socio-economic indicators and urban growth were validated only within a single metropolitan area.",
+      "what": "A probabilistic hexagonal cellular automata model was developed to predict urban growth in five-year intervals, integrating satellite-derived land-cover data with regional socio-economic indicators. Calibrated and tested on the Houston urban area using data from 2001, 2006, 2011, and 2016, the model achieved an average prediction accuracy of 81% across a validation set of 200 cells.",
+      "why": "The model demonstrates that the drivers of urban expansion shift based on existing density, revealing that neighborhood proximity dominates growth in low-density areas while employment and income levels are the primary drivers in highly urbanized zones."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-18",
+  "work_key": "doi:10.1038/s42949-026-00416-y"
+}

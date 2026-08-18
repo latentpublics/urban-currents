@@ -1,0 +1,276 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Passenger pickup and dropoff facilities have long been important to facilitate transportation to and from schools, sports facilities, and intermodal terminals such as airports and train stations. The recent increased use of on-demand transportation provided by transportation network companies, and the anticipated continuation of this increasing trend with the introduction of self-driving vehicles, imply that pickup and dropoff facilities will become more widespread and more important. The current practice of mostly using curbsides for pickup and dropoff operations will not be sustainable as demand increases. We consider the problem of computing the throughput capacities of pickup and dropoff facilities, taking into account delays caused by conflicting vehicle movements. We propose a number of stochastic models that can be used to compute throughput capacities. Renewal-reward process calculations can be used for single lane facilities often encountered at schools and taxi ranks. For more general facility layouts, a continuoustime Markov chain can be used to compute throughput capacities under given operational policies. We also propose a continuous-time Markov decision process to optimize operational policies for such facilities, and to evaluate the performance of specific policies. A microscopic trajectory-based discrete-event simulation is developed to validate the results obtained with the Markov chain models. Findings and insights obtained with the models are presented, including a comparison of the throughput capacities of different layouts and operational policies, and the effect of congestion in systems of varying sizes.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Georgia Institute of Technology",
+            "ror": "01zkghx44"
+          }
+        ],
+        "name": "Anton J. Kleywegt",
+        "openalex": "A5027493354",
+        "orcid": "https://orcid.org/0000-0002-1849-7276"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Georgia Institute of Technology",
+            "ror": "01zkghx44"
+          }
+        ],
+        "name": "Xinyu Liu",
+        "openalex": "A5100446429",
+        "orcid": "https://orcid.org/0000-0002-2797-2083"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trb.2026.103528",
+      "pdf_url": null,
+      "source_id": "S96305778",
+      "source_name": "Transportation Research Part B Methodological",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-23",
+    "repository_urls": [],
+    "title": "Passenger pickup and drop-off facilities: Throughput capacity evaluation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-23_10.1016/j.trb.20",
+    "members": [
+      "doi:10.1016/j.trb.2026.103528"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01zkghx44",
+        "label": "Georgia Institute of Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1849-7276",
+        "label": "Anton J. Kleywegt"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2797-2083",
+        "label": "Xinyu Liu"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11814",
+        "is_primary": true,
+        "label": "Advanced Manufacturing and Logistics Optimization",
+        "score": 0.9496,
+        "subfield": "2209"
+      }
+    ]
+  },
+  "first_published": "2026-06-23",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W799865015",
+      "openalex:W1523896245",
+      "openalex:W1965870337",
+      "openalex:W1966963739",
+      "openalex:W1969973572",
+      "openalex:W1977982518",
+      "openalex:W1980229007",
+      "openalex:W1992594519",
+      "openalex:W2007949375",
+      "openalex:W2017065758",
+      "openalex:W2027230364",
+      "openalex:W2037141248",
+      "openalex:W2042909921",
+      "openalex:W2046588123",
+      "openalex:W2048282166",
+      "openalex:W2048418452",
+      "openalex:W2052363809",
+      "openalex:W2059461162",
+      "openalex:W2060139323",
+      "openalex:W2060456706",
+      "openalex:W2068829733",
+      "openalex:W2072227289",
+      "openalex:W2078137733",
+      "openalex:W2092853919",
+      "openalex:W2093921901",
+      "openalex:W2102395453",
+      "openalex:W2107993205",
+      "openalex:W2109837903",
+      "openalex:W2120137060",
+      "openalex:W2122046168",
+      "openalex:W2127111558",
+      "openalex:W2137668347",
+      "openalex:W2139903549",
+      "openalex:W2139950021",
+      "openalex:W2162241973",
+      "openalex:W2166021224",
+      "openalex:W2337728748",
+      "openalex:W2508666833",
+      "openalex:W2556948900",
+      "openalex:W2578600954",
+      "openalex:W2583284627",
+      "openalex:W2586534696",
+      "openalex:W2604197911",
+      "openalex:W2613964231",
+      "openalex:W2619252798",
+      "openalex:W2883049166",
+      "openalex:W2884696206",
+      "openalex:W2895826433",
+      "openalex:W2944830461",
+      "openalex:W2950158735",
+      "openalex:W2998462092",
+      "openalex:W3015586497",
+      "openalex:W3170258770",
+      "openalex:W3198306832",
+      "openalex:W3209272218",
+      "openalex:W4206374009",
+      "openalex:W4239205831",
+      "openalex:W4244124749",
+      "openalex:W4253503454",
+      "openalex:W4310928758",
+      "openalex:W4362640674",
+      "openalex:W4390274272",
+      "openalex:W4390283723",
+      "openalex:W4400455735",
+      "openalex:W4408916617",
+      "openalex:W4410974061",
+      "openalex:W4412060187",
+      "openalex:W4414396718",
+      "openalex:W7128824050"
+    ],
+    "related_works": [
+      "openalex:W2899084033",
+      "openalex:W2748952813",
+      "openalex:W2185313546",
+      "openalex:W2185850456",
+      "openalex:W2994962043",
+      "openalex:W2351571732",
+      "openalex:W1496169957",
+      "openalex:W2324305961",
+      "openalex:W2075333697",
+      "openalex:W1971021931"
+    ]
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trb.2026.103528",
+    "openalex": "W4213323335",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:13:19Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005398,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2051,
+      "out": 258
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:13:19Z",
+    "doi": "10.1016/j.trb.2026.103528",
+    "journal": "Transportation Research Part B Methodological",
+    "source_id": "S96305778",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The models are validated against a microscopic simulation rather than empirical, real-world traffic data from active pickup and drop-off facilities.",
+      "what": "This study develops stochastic models, including renewal-reward processes and continuous-time Markov chains, to calculate the throughput capacities of passenger pickup and drop-off facilities while accounting for delays from conflicting vehicle movements. It also introduces a continuous-time Markov decision process to optimize operational policies and validates these analytical models using a microscopic trajectory-based discrete-event simulation.",
+      "why": "It provides a mathematical framework to evaluate and compare different facility layouts and operational policies, offering a systematic way to design high-capacity alternatives to traditional curbside operations as demand from ride-hailing and autonomous vehicles grows."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-23",
+  "work_key": "doi:10.1016/j.trb.2026.103528"
+}

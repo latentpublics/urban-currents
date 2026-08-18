@@ -1,0 +1,333 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Background While prehospital traffic fatalities remain a critical challenge, current eCall systems transmit limited injury-relevant data, and existing prediction models often fail to support targeted prehospital triage. This study developed and validated a manufacturer-independent, data-driven framework to predict tactically relevant, region-specific injury patterns to enhance early rescue chain activation. Methods Logistic regression models were developed using GIDAS data for front-row occupants, stratified by impact direction. Clinically relevant injury categories were defined based on prehospital tactical criteria. Predictors included crash severity (Energy Equivalent Speed, EES), restraint use, and vehicle characteristics. Performance was assessed via cross-validation and external validation on a recent GIDAS subset, utilizing metrics robust to class imbalance. Results Across all injury groups, the models demonstrated high discrimination (AROC > 0.85 for most groups), robust calibration, and biomechanically plausible associations. Energy-equivalent speed (EES) consistently emerged as the strongest and most reliable predictor of injury severity. Optimized classification thresholds supported the prediction of both global and region-specific trauma. External validation confirmed reproducibility for thorax, head, and overall severe injuries, maintaining high sensitivity and specificity under optimized thresholds. Conclusion Ultimately, this study provides a scientifically robust framework for predicting region-specific injury patterns, with results that can be translated into next-generation eCall systems to inform prehospital triage and decision-support. Clinically, this predictive framework translates crash data into triage intelligence, enabling emergency dispatchers to allocate specialized trauma resources more precisely. While the models demonstrate strong predictive performance on the GIDAS dataset, prospective multicenter validation is ongoing to assess their real-world operational utility.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University Hospital Leipzig",
+            "ror": "028hv5492"
+          }
+        ],
+        "name": "Michael Hetz",
+        "openalex": "A5062768726",
+        "orcid": "https://orcid.org/0009-0003-0678-3800"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technische Universität Dresden",
+            "ror": "042aqky30"
+          }
+        ],
+        "name": "Angela Schubert",
+        "openalex": "A5000831390",
+        "orcid": "https://orcid.org/0009-0001-9639-3149"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technische Universität Dresden",
+            "ror": "042aqky30"
+          }
+        ],
+        "name": "Thomas Unger",
+        "openalex": "A5138823049",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technische Universität Dresden",
+            "ror": "042aqky30"
+          }
+        ],
+        "name": "Henrik Liers",
+        "openalex": "A5030048635",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University Hospital Carl Gustav Carus",
+            "ror": "04za5zm41"
+          },
+          {
+            "name": "Technische Universität Dresden",
+            "ror": "042aqky30"
+          }
+        ],
+        "name": "Klaus‐Dieter Schaser",
+        "openalex": "A5062745842",
+        "orcid": "https://orcid.org/0000-0002-8492-5646"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University Hospital Leipzig",
+            "ror": "028hv5492"
+          }
+        ],
+        "name": "Christian Kleber",
+        "openalex": "A5029604633",
+        "orcid": "https://orcid.org/0000-0002-0231-5116"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102109",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-17",
+    "repository_urls": [],
+    "title": "Predicting specific injury patterns from crash data: a GIDAS-based and manufacturer-independent logistic regression approach for next generation eCall"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-17_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102109"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:regression",
+        "label": "regression"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:028hv5492",
+        "label": "University Hospital Leipzig"
+      },
+      {
+        "confidence": null,
+        "id": "ror:042aqky30",
+        "label": "Technische Universität Dresden"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04za5zm41",
+        "label": "University Hospital Carl Gustav Carus"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0003-0678-3800",
+        "label": "Michael Hetz"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0001-9639-3149",
+        "label": "Angela Schubert"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138823049",
+        "label": "Thomas Unger"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5030048635",
+        "label": "Henrik Liers"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8492-5646",
+        "label": "Klaus‐Dieter Schaser"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0231-5116",
+        "label": "Christian Kleber"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": true,
+        "label": "Traffic and Road Safety",
+        "score": 0.1614,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10809",
+        "is_primary": false,
+        "label": "Occupational Health and Safety Research",
+        "score": 0.1205,
+        "subfield": "3614"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11487",
+        "is_primary": false,
+        "label": "Automotive and Human Injury Biomechanics",
+        "score": 0.075,
+        "subfield": "2740"
+      }
+    ]
+  },
+  "first_published": "2026-06-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1520321635",
+      "openalex:W1574110076",
+      "openalex:W1966716734",
+      "openalex:W2003740803",
+      "openalex:W2019694480",
+      "openalex:W2042782666",
+      "openalex:W2056381265",
+      "openalex:W2063763346",
+      "openalex:W2078565194",
+      "openalex:W2106912040",
+      "openalex:W2117820989",
+      "openalex:W2124620163",
+      "openalex:W2158698691",
+      "openalex:W2161575570",
+      "openalex:W2163223903",
+      "openalex:W2267879309",
+      "openalex:W2346681206",
+      "openalex:W2534256124",
+      "openalex:W2579536747",
+      "openalex:W2583989601",
+      "openalex:W2755197779",
+      "openalex:W2794549354",
+      "openalex:W2906710702",
+      "openalex:W2913997948",
+      "openalex:W2945976633",
+      "openalex:W2962209248",
+      "openalex:W2963222900",
+      "openalex:W2999309192",
+      "openalex:W3191095220",
+      "openalex:W4213161955",
+      "openalex:W4223930060",
+      "openalex:W4311425178",
+      "openalex:W4380536952",
+      "openalex:W4391478033",
+      "openalex:W4394785822",
+      "openalex:W4399106082",
+      "openalex:W4401922978"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102109",
+    "openalex": "W7165046622",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:44:00Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006025,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2211,
+      "out": 301
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:44:00Z",
+    "doi": "10.1016/j.trip.2026.102109",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The models were developed and validated using historical GIDAS datasets, and their real-world operational utility is still undergoing prospective multicenter validation.",
+      "what": "This study developed and validated logistic regression models to predict specific, clinically relevant injury patterns for front-row vehicle occupants using German In-Depth Accident Study (GIDAS) data. The models utilize crash severity (Energy Equivalent Speed), restraint use, and vehicle characteristics as predictors, achieving high discrimination with an area under the receiver operating characteristic curve (AROC) above 0.85 for most injury groups. External validation on a recent GIDAS subset confirmed the reproducibility of predictions for head, thorax, and overall severe injuries.",
+      "why": "It establishes a manufacturer-independent framework that can translate raw crash telemetry into immediate, region-specific injury predictions. This capability allows next-generation eCall systems to provide emergency dispatchers with precise triage intelligence for allocating specialized trauma resources before responders arrive."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-17",
+  "work_key": "doi:10.1016/j.trip.2026.102109"
+}

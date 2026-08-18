@@ -1,0 +1,217 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "As urban areas expand, automatic monitoring of parking lots becomes essential for efficient and sustainable cities. This work proposes a self-supervised approach for parking spot occupancy recognition that requires no labeled samples from the target parking lot. Building upon a self-supervised transfer learning fine-tuning protocol, the proposed training strategy consists of two self-supervised stages: first on unlabeled generic data and then on unlabeled target-specific data, followed by supervised fine-tuning using only generic parking lot labels. We adopt SimCLR with a ResNet-50 encoder and evaluate the method under a leave-one-out cross-environment protocol on three public datasets: PKLot, CNRPark-EXT, and PLds. We also introduce a two-stage deployment strategy in which a Strong General Model is initially deployed, followed by a Specialized Model that incorporates unlabeled images collected during the first N days of deployment in a self-supervised manner. Experimental results show that the Strong General Model alone outperforms supervised and self-supervised baselines, achieving an average accuracy of 97.2%, which further improves to 97.8% with the proposed two-stage strategy. These results demonstrate that self-supervised learning enables a scalable and labelefficient solution for real-world parking occupancy monitoring. Our trained models and source code are publicly available at https://github.com/LoanMaikon/Parking-Spot-Occupancy-Recognition.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Luan Marko Kujavski",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rayson Laroca",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Paulo Lisboa de Almeida",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": "Accepted for presentation at the 2026 IEEE International Conference on Systems, Man, and Cybernetics (SMC 2026)",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.20886v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.20886v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-18",
+    "repository_urls": [],
+    "title": "Toward Parking Spot Occupancy Recognition: A Self-Supervised Approach"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-18_2606.20886",
+    "members": [
+      "arxiv:2606.20886"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:self-supervised",
+        "label": "self-supervised learning"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5107662768",
+        "label": "Luan Marko Kujavski"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1943-2711",
+        "label": "Rayson Laroca"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5107662769",
+        "label": "Paulo Lisboa de Almeida"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12546",
+        "is_primary": true,
+        "label": "Smart Parking Systems Research",
+        "score": 0.9905,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11606",
+        "is_primary": false,
+        "label": "Infrastructure Maintenance and Monitoring",
+        "score": 0.0011,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10331",
+        "is_primary": false,
+        "label": "Video Surveillance and Tracking Methods",
+        "score": 0.0009,
+        "subfield": "1707"
+      }
+    ]
+  },
+  "first_published": "2026-06-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.20886",
+    "doi": "10.48550/arxiv.2606.20886",
+    "openalex": "W7165685166",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:52:57Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005851,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2077,
+      "out": 304
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.8,
+      "novelty": 1.0,
+      "relevance": 0.8644,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.7058,
+    "relevance": 0.8644
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/LoanMaikon/Parking-Spot-Occupancy-Recognition",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed a self-supervised transfer learning method for parking spot occupancy recognition using a SimCLR framework with a ResNet-50 encoder. The model was evaluated using a leave-one-out cross-environment protocol across three public datasets (PKLot, CNRPark-EXT, and PLds), achieving an average accuracy of 97.2% with a general model and 97.8% when incorporating unlabeled target-site images from the first N days of deployment.",
+      "why": "It establishes a highly accurate parking monitoring system that can be deployed in new, unseen parking lots without requiring any manual labeling of images from the target site."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-18",
+  "work_key": "arxiv:2606.20886"
+}

@@ -1,0 +1,199 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban traffic congestion remains a persistent challenge in car-dependent cities, imposing significant economic and societal costs. Traffic signal systems are increasingly deployed as networked cyber-physical components within smart-city infrastructures, where distributed sensing and edge intelligence enable adaptive traffic management. This paper investigates reinforcement learning (RL) as an edge-intelligent approach for adaptive traffic signal operation at a signalized urban intersection in Kuwait. A Proximal Policy Optimization (PPO)-based controller is developed to dynamically allocate green-phase durations using locally observed traffic states, without relying on future demand information or centralized coordination. The controller is evaluated in a realistic simulation environment informed by real-world hourly traffic volume data from Kuwait, and is compared against both conventional fixed-time control and a vehicle-actuated controller representing the current state of practice, using average vehicle delay, queue length, and emissions as performance metrics. Under nominal conditions, the proposed controller reduces average vehicle delay by 46% relative to fixed-time control and 34% relative to actuated control, while also lowering per-vehicle CO2 emissions by approximately 23%. These performance gains persist under demand perturbations of +/-15%, generalize from weekday to weekend traffic patterns, and are corroborated by a reward function ablation; low variance across five random seeds confirms their statistical reliability. These findings demonstrate the practicality of learning-based edge traffic signal control as a building block for IoT-enabled smart-city transportation systems, and as a deployable precursor toward fully connected, Internet of Vehicles (IoV)-based urban mobility.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Yousef AlSaqabi",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "eess.SY",
+      "cs.LG"
+    ],
+    "comment": "15 pages, 7 figures, submitted to IEEE Open Journal of Intelligent Transportation Systems",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.22108v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.22108v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-20",
+    "repository_urls": [],
+    "title": "Reinforcement Learning-Based Traffic Signal Control for IoT-Enabled Intersections"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-20_2606.22108",
+    "members": [
+      "arxiv:2606.22108"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:reinforcement-learning",
+        "label": "reinforcement learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5592-2884",
+        "label": "Yousef AlSaqabi"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": true,
+        "label": "Traffic control and management",
+        "score": 0.947,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0197,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10761",
+        "is_primary": false,
+        "label": "Vehicular Ad Hoc Networks (VANETs)",
+        "score": 0.012,
+        "subfield": "2208"
+      }
+    ]
+  },
+  "first_published": "2026-06-20",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.22108",
+    "doi": "10.48550/arxiv.2606.22108",
+    "openalex": "W7165632671",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:02:46Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005783,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2127,
+      "out": 288
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9573,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3829,
+    "relevance": 0.9573
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The controller's performance was evaluated within a simulation environment of a single intersection rather than a real-world physical deployment.",
+      "what": "The researchers developed a Proximal Policy Optimization (PPO) reinforcement learning controller for adaptive traffic signal control at a single intersection in Kuwait. Evaluated in a simulation environment calibrated with real-world hourly traffic volume data, the controller reduced average vehicle delays by 46% compared to fixed-time control and by 34% compared to vehicle-actuated control. It also decreased per-vehicle CO2 emissions by approximately 23%, maintaining these performance improvements under demand fluctuations of up to 15% across both weekday and weekend patterns.",
+      "why": "It demonstrates that localized, edge-intelligent reinforcement learning can significantly optimize traffic flow and reduce emissions at individual intersections using only local observations, without requiring centralized coordination or future demand forecasts."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-20",
+  "work_key": "arxiv:2606.22108"
+}

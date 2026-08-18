@@ -1,0 +1,279 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Urban airflow field modeling can provide cities with monitoring solutions to enhance pedestrian/cyclists comfort, improve air quality, and enhance urban wind energy generation yield. In addition, it could support a safe and efficient deployment of urban air mobility (UAM) supporting the next generation of faster and more sustainable means of urban transport reducing the congestion and traffic. However, real-time wind monitoring across urban areas remains a significant challenge due to spatial and temporal variations and uncertainties. This study presents an integrated framework that serves as a surrogate model for the real-time reconstruction and prediction of wind velocity fields around a simplified urban building configuration. The approach relies exclusively on online sensor measurements and employs reduced-order modeling techniques for dimensionality reduction, thereby improving computational efficiency. The offline development of the model integrates three principal components: (1) a bidirectional long short-term memory (BILSTM) network trained on airflow sensor data to capture temporal dynamics, (2) a sparsity-promoting dynamic mode decomposition (SP-DMD) for extracting dominant spatial modes of airflow, and (3) a multi-task learning (MTL) network to map sensor signals. The proposed framework was assessed against high-fidelity CFD simulations of wind flow around a high-rise urban building. The results indicate that the proposed three-stage method reliably reconstructs accurate urban airflow fields in real time under varying levels of sensor noise, and demonstrate its feasibility for sparse-sensor reconstruction under the tested sensor-placement configurations. Moreover, these findings demonstrate that the proposed approach can significantly reduce operational/computational costs and shows strong potential as a surrogate tool for next-generation of urban airflow monitoring.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Concordia University",
+            "ror": "0420zvk78"
+          }
+        ],
+        "name": "Arash Kamaliha",
+        "openalex": "A5138931335",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Concordia University",
+            "ror": "0420zvk78"
+          }
+        ],
+        "name": "Fuzhan Nasiri",
+        "openalex": "A5075519601",
+        "orcid": "https://orcid.org/0000-0002-7423-0621"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.scs.2026.107609",
+      "pdf_url": null,
+      "source_id": "S163634330",
+      "source_name": "Sustainable Cities and Society",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-18",
+    "repository_urls": [],
+    "title": "Urban airflow field prediction using sparse sensors: A hybrid data-driven approach with reduced-order modeling"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-18_10.1016/j.scs.20",
+    "members": [
+      "doi:10.1016/j.scs.2026.107609"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0420zvk78",
+        "label": "Concordia University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5138931335",
+        "label": "Arash Kamaliha"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7423-0621",
+        "label": "Fuzhan Nasiri"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11371",
+        "is_primary": true,
+        "label": "Wind and Air Flow Studies",
+        "score": 0.832,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12081",
+        "is_primary": false,
+        "label": "Aerodynamics and Fluid Dynamics Research",
+        "score": 0.0239,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10466",
+        "is_primary": false,
+        "label": "Meteorological Phenomena and Simulations",
+        "score": 0.0227,
+        "subfield": "1902"
+      }
+    ]
+  },
+  "first_published": "2026-06-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1591018827",
+      "openalex:W1992879407",
+      "openalex:W1997126009",
+      "openalex:W1998074398",
+      "openalex:W2014356541",
+      "openalex:W2016381138",
+      "openalex:W2040690030",
+      "openalex:W2064675550",
+      "openalex:W2080914886",
+      "openalex:W2088826371",
+      "openalex:W2089112942",
+      "openalex:W2092928868",
+      "openalex:W2107866891",
+      "openalex:W2147414751",
+      "openalex:W2471046514",
+      "openalex:W2606057709",
+      "openalex:W2613314665",
+      "openalex:W2626693943",
+      "openalex:W2753709519",
+      "openalex:W2773571561",
+      "openalex:W2808010223",
+      "openalex:W2884612912",
+      "openalex:W2886351569",
+      "openalex:W2895639068",
+      "openalex:W2899283552",
+      "openalex:W2902480423",
+      "openalex:W2908176554",
+      "openalex:W2962813311",
+      "openalex:W3025042661",
+      "openalex:W3030748996",
+      "openalex:W3039561619",
+      "openalex:W3044325154",
+      "openalex:W3094605842",
+      "openalex:W3137611682",
+      "openalex:W3203032511",
+      "openalex:W3210321831",
+      "openalex:W3214725302",
+      "openalex:W4210994196",
+      "openalex:W4220715685",
+      "openalex:W4225308049",
+      "openalex:W4229336057",
+      "openalex:W4281611088",
+      "openalex:W4293700596",
+      "openalex:W4297826095",
+      "openalex:W4304806873",
+      "openalex:W4304959146",
+      "openalex:W4310061330",
+      "openalex:W4313443611",
+      "openalex:W4318757178",
+      "openalex:W4320879662",
+      "openalex:W4324363434",
+      "openalex:W4360860566",
+      "openalex:W4375862865",
+      "openalex:W4376115609",
+      "openalex:W4378839706",
+      "openalex:W4385247398",
+      "openalex:W4385389368",
+      "openalex:W4386577775",
+      "openalex:W4387967410",
+      "openalex:W4390540819",
+      "openalex:W4393227429",
+      "openalex:W4400487935",
+      "openalex:W4403045518",
+      "openalex:W4404332617",
+      "openalex:W4405580298",
+      "openalex:W4409880683",
+      "openalex:W4413451248"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.scs.2026.107609",
+    "openalex": "W7165198745",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:53:00Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006094,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2173,
+      "out": 315
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:53:00Z",
+    "doi": "10.1016/j.scs.2026.107609",
+    "journal": "Sustainable Cities and Society",
+    "source_id": "S163634330",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework was evaluated only on a simplified, single high-rise urban building configuration rather than a complex, real-world city neighborhood.",
+      "what": "The study develops a three-stage surrogate modeling framework that reconstructs and predicts real-time urban wind velocity fields around a high-rise building configuration using sparse online sensor data. The method integrates a bidirectional long short-term memory (BILSTM) network for temporal dynamics, sparsity-promoting dynamic mode decomposition (SP-DMD) for spatial mode extraction, and a multi-task learning (MTL) network to map sensor signals. The framework's performance was validated against high-fidelity computational fluid dynamics (CFD) simulations under varying levels of sensor noise.",
+      "why": "It provides a computationally efficient, real-time method to reconstruct complex urban airflow fields from minimal physical sensors, bypassing the prohibitive computational costs of traditional CFD simulations for applications like drone routing and pedestrian comfort."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-18",
+  "work_key": "doi:10.1016/j.scs.2026.107609"
+}

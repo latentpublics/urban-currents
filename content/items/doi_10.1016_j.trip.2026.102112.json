@@ -1,0 +1,259 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The growing demand for rail transportation has intensified the need for designing an optimal and sustainable network to facilitate freight movement with minimal cost, time, and environmental impact. A key challenge in this domain is wagon failures and the resulting delays, underscoring the critical importance of timely and preventive maintenance. In this study, major stations are considered as hubs where defective wagons are consolidated and repaired. To address the multifaceted requirements of rail transport systems, a robust multi-objective mathematical model has been developed, incorporating economic and environmental objectives alongside social responsibility components, specifically, enhancing customer satisfaction (by reducing transit time) and improving employment opportunities as primary decision-making criteria. For solving the model, an enhanced epsilon-constraint method is employed for small-scale instances, while a combination of the weighted-sum approach and the Benders decomposition algorithm is applied to large-scale problems. Subsequently, a sensitivity analysis is conducted to evaluate the stability of solutions against variations in key parameters. Sensitivity analysis shows that wagon capacity is the most influential parameter, as increasing it significantly reduces infrastructure, transportation, inspection, and reward costs. Demand is another highly sensitive factor, directly affecting the number of hubs, locomotives, and the overall network size. Within the tested ranges, the model remained stable and no infeasibility was observed. Numerical results demonstrate that the proposed model not only exhibits high efficacy in managing rail transport networks but also simultaneously fulfills sustainability, economic, and social objectives.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ali Heidari",
+        "openalex": "A5090225196",
+        "orcid": "https://orcid.org/0000-0001-8714-125X"
+      },
+      {
+        "institutions": [],
+        "name": "Mohammad Khalilzadeh",
+        "openalex": "A5040196905",
+        "orcid": "https://orcid.org/0000-0002-2373-8505"
+      },
+      {
+        "institutions": [],
+        "name": "Fariborz Jolai",
+        "openalex": "A5019047127",
+        "orcid": "https://orcid.org/0000-0003-0824-8513"
+      },
+      {
+        "institutions": [],
+        "name": "Matineh Ziari",
+        "openalex": "A5030814493",
+        "orcid": "https://orcid.org/0000-0002-3206-2842"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102112",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-19",
+    "repository_urls": [],
+    "title": "A multi-objective mathematical model for hub location-allocation with inspection under uncertainty: a benders decomposition approach"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-19_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102112"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8714-125X",
+        "label": "Ali Heidari"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2373-8505",
+        "label": "Mohammad Khalilzadeh"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0824-8513",
+        "label": "Fariborz Jolai"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3206-2842",
+        "label": "Matineh Ziari"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10780",
+        "is_primary": true,
+        "label": "Reliability and Maintenance Optimization",
+        "score": 0.127,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12086",
+        "is_primary": false,
+        "label": "Structural Integrity and Reliability Analysis",
+        "score": 0.0676,
+        "subfield": "2210"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12169",
+        "is_primary": false,
+        "label": "Non-Destructive Testing Techniques",
+        "score": 0.065,
+        "subfield": "2210"
+      }
+    ]
+  },
+  "first_published": "2026-06-19",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1973592498",
+      "openalex:W1988193614",
+      "openalex:W1992790175",
+      "openalex:W1996972833",
+      "openalex:W2015791176",
+      "openalex:W2041867487",
+      "openalex:W2047104410",
+      "openalex:W2075942607",
+      "openalex:W2080219882",
+      "openalex:W2085716795",
+      "openalex:W2116660011",
+      "openalex:W2560324934",
+      "openalex:W2562680129",
+      "openalex:W2564801785",
+      "openalex:W2578951948",
+      "openalex:W2590477908",
+      "openalex:W2599993212",
+      "openalex:W2730805154",
+      "openalex:W2759381347",
+      "openalex:W2767736150",
+      "openalex:W2802087735",
+      "openalex:W2888121537",
+      "openalex:W2900621362",
+      "openalex:W2905494498",
+      "openalex:W2921360665",
+      "openalex:W2996441440",
+      "openalex:W3013906842",
+      "openalex:W3015170659",
+      "openalex:W3092569116",
+      "openalex:W3113112487",
+      "openalex:W3115020944",
+      "openalex:W3116049211",
+      "openalex:W3118383471",
+      "openalex:W3133657817",
+      "openalex:W3183938377",
+      "openalex:W3193412539",
+      "openalex:W3195993588",
+      "openalex:W4221127028",
+      "openalex:W4284899099",
+      "openalex:W4295855137",
+      "openalex:W4405438837"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102112",
+    "openalex": "W7165384215",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:58:23Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005524,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2093,
+      "out": 265
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:58:23Z",
+    "doi": "10.1016/j.trip.2026.102112",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance and stability were evaluated using sensitivity analyses on parameter ranges rather than a real-world case study or empirical rail network dataset.",
+      "what": "The study presents a robust multi-objective mathematical model for locating rail hubs and allocating defective wagons for preventive maintenance. The model balances economic costs, environmental impacts, and social factors like transit time reduction and job creation under parameter uncertainty. Small-scale scenarios are solved using an enhanced epsilon-constraint method, while large-scale instances are addressed using a hybrid weighted-sum and Benders decomposition algorithm.",
+      "why": "It provides a mathematical framework that integrates maintenance logistics directly into rail network design, demonstrating that increasing wagon capacity is the most effective lever for reducing overall infrastructure, transport, and inspection costs."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-19",
+  "work_key": "doi:10.1016/j.trip.2026.102112"
+}

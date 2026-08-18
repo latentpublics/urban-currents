@@ -1,0 +1,446 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract The Integrated Transport and Health Impact Modelling Tool for Global Cities (ITHIM-Global) was developed as an open-source tool to assess the impacts of transport mode shifts on public health and the environment in low- and middle-income countries (LMICs) where the need for such assessment is urgent and rising. The model simulates the impacts on all-cause and cause-specific mortality and years of life lost outcomes through a multi-pathway framework, specifically including physical activity, air pollution exposure, and road traffic fatalities. In addition, the model estimates changes in carbon dioxide emissions resulting from these mode shifts. ITHIM-Global employs a quasi-microsimulation approach that enables individualized exposure estimates by age, sex, and activity levels and utilises up- to-date exposure and dose-response functions that account for the non-linear relationship between physical activity levels and health. To demonstrate its functionality, document its strengths and weaknesses, and aid users, the model was applied to Bogota, Colombia, using three hypothetical scenarios, each shifting 5% of trips to one of bus, car, or cycling. Results indicate that increasing public or active transport modes enhances public health, primarily driven by gains in physical activity and to a lesser extent by reductions in traffic-related emissions. Conversely, a shift to car usage worsens health outcomes due to decreased physical activity and increased pollution exposure. ITHIM-Global serves as a flexible, detailed Health Impact Assessment (HIA) tool adaptable to urban areas across LMICs and this article delves into underlying assumptions and their influence to advance generalisable lessons on risk assessment and model development. The modular structure of ITHIM-Global, its covering of individual and population-level analyses, and extensive documentation provide an accessible, evidence-based approach for city planners and practitioners to optimize transport policies that support public health and mitigate environmental harm. Graphical Abstract Highlights We describe the Integrated Transport and Health Impact Modelling Tool for Global cities (ITHIM- Global), designed for low- and middle-income country (LMIC) cities. We apply ITHIM-Global to Bogotá, simulating impacts from three mode shift scenarios with a 5- percentage point increase in car, cycling, and bus shares. We simulate the impacts on physical activity, air pollution, road traffic fatalities, and attributable mortalities and years of life lost. We describe in detail the model’s elements to aid future uptake, development, and extension to other cities. We discuss strengths, weaknesses, and underlying assumptions to advance generalisable lessons on risk assessment and model development.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Texas A&M University System",
+            "ror": "0034eay46"
+          },
+          {
+            "name": "University of Cambridge",
+            "ror": "013meh722"
+          },
+          {
+            "name": "MRC Epidemiology Unit",
+            "ror": "052578691"
+          }
+        ],
+        "name": "Haneen Khreis",
+        "openalex": "A5006914725",
+        "orcid": "https://orcid.org/0000-0001-9086-4774"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Cambridge",
+            "ror": "013meh722"
+          },
+          {
+            "name": "MRC Epidemiology Unit",
+            "ror": "052578691"
+          }
+        ],
+        "name": "Ali Abbas",
+        "openalex": "A5101879640",
+        "orcid": "https://orcid.org/0000-0002-6889-7577"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Cambridge",
+            "ror": "013meh722"
+          },
+          {
+            "name": "MRC Epidemiology Unit",
+            "ror": "052578691"
+          },
+          {
+            "name": "World Bank Group",
+            "ror": "02md09461"
+          }
+        ],
+        "name": "Daniel Gil-Sanchez",
+        "openalex": "A5115438756",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Cambridge",
+            "ror": "013meh722"
+          },
+          {
+            "name": "MRC Epidemiology Unit",
+            "ror": "052578691"
+          }
+        ],
+        "name": "Lambed Tatah",
+        "openalex": "A5041594673",
+        "orcid": "https://orcid.org/0000-0002-8967-6917"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Cambridge",
+            "ror": "013meh722"
+          },
+          {
+            "name": "MRC Epidemiology Unit",
+            "ror": "052578691"
+          }
+        ],
+        "name": "Anna Schroeder",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Cambridge",
+            "ror": "013meh722"
+          },
+          {
+            "name": "MRC Epidemiology Unit",
+            "ror": "052578691"
+          },
+          {
+            "name": "Indian Institute of Technology Delhi",
+            "ror": "049tgcd06"
+          }
+        ],
+        "name": "Rahul Goel",
+        "openalex": "A5015807976",
+        "orcid": "https://orcid.org/0000-0002-4189-021X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "UK Energy Research Centre",
+            "ror": "04yfnda77"
+          },
+          {
+            "name": "University of Oxford",
+            "ror": "052gg0110"
+          }
+        ],
+        "name": "Christian Brand",
+        "openalex": "A5056494771",
+        "orcid": "https://orcid.org/0000-0002-1535-5328"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Imperial College London",
+            "ror": "041kmwe10"
+          }
+        ],
+        "name": "Rob Johnson",
+        "openalex": "A5033504108",
+        "orcid": "https://orcid.org/0000-0001-7126-2954"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Cambridge",
+            "ror": "013meh722"
+          },
+          {
+            "name": "MRC Epidemiology Unit",
+            "ror": "052578691"
+          }
+        ],
+        "name": "James Woodcock",
+        "openalex": "A5036593639",
+        "orcid": "https://orcid.org/0000-0003-4769-5375"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.jth.2026.102361",
+      "pdf_url": null,
+      "source_id": "S2764685396",
+      "source_name": "Journal of Transport & Health",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-19",
+    "repository_urls": [],
+    "title": "Description, development and application of the integrated transport and health impact modelling tool for global cities (ITHIM-global)"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-19_10.1016/j.jth.20",
+    "members": [
+      "doi:10.1016/j.jth.2026.102361"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0034eay46",
+        "label": "Texas A&M University System"
+      },
+      {
+        "confidence": null,
+        "id": "ror:013meh722",
+        "label": "University of Cambridge"
+      },
+      {
+        "confidence": null,
+        "id": "ror:052578691",
+        "label": "MRC Epidemiology Unit"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02md09461",
+        "label": "World Bank Group"
+      },
+      {
+        "confidence": null,
+        "id": "ror:049tgcd06",
+        "label": "Indian Institute of Technology Delhi"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04yfnda77",
+        "label": "UK Energy Research Centre"
+      },
+      {
+        "confidence": null,
+        "id": "ror:052gg0110",
+        "label": "University of Oxford"
+      },
+      {
+        "confidence": null,
+        "id": "ror:041kmwe10",
+        "label": "Imperial College London"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9086-4774",
+        "label": "Haneen Khreis"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6889-7577",
+        "label": "Ali Abbas"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5115438756",
+        "label": "Daniel Gil-Sanchez"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8967-6917",
+        "label": "Lambed Tatah"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4189-021X",
+        "label": "Rahul Goel"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1535-5328",
+        "label": "Christian Brand"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7126-2954",
+        "label": "Rob Johnson"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4769-5375",
+        "label": "James Woodcock"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q2841",
+        "label": "Bogotá",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.9989,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10190",
+        "is_primary": false,
+        "label": "Air Quality and Health Impacts",
+        "score": 0.9987,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.9957,
+        "subfield": "2213"
+      }
+    ]
+  },
+  "first_published": "2026-06-19",
+  "graph": {
+    "cited_by_count": 2,
+    "referenced_works": [
+      "openalex:W1250478016",
+      "openalex:W1979816913",
+      "openalex:W2057861935",
+      "openalex:W2074276081",
+      "openalex:W2115098571",
+      "openalex:W2161850932",
+      "openalex:W2300465017",
+      "openalex:W2396233551",
+      "openalex:W2517130603",
+      "openalex:W2521633493",
+      "openalex:W2531081995",
+      "openalex:W2561211797",
+      "openalex:W2741305781",
+      "openalex:W2767631445",
+      "openalex:W2799420421",
+      "openalex:W2890892407",
+      "openalex:W2947699736",
+      "openalex:W2968525560",
+      "openalex:W3031281418",
+      "openalex:W3043264105",
+      "openalex:W3156908587",
+      "openalex:W3157291368",
+      "openalex:W3175943967",
+      "openalex:W3200420654",
+      "openalex:W3216031860",
+      "openalex:W4205484434",
+      "openalex:W4319441361",
+      "openalex:W4322621958",
+      "openalex:W4386885782",
+      "openalex:W4387940739"
+    ],
+    "related_works": [
+      "openalex:W2125848125",
+      "openalex:W3186541905",
+      "openalex:W578582232",
+      "openalex:W2909997620",
+      "openalex:W1970640290",
+      "openalex:W3065124018",
+      "openalex:W2908685584",
+      "openalex:W2922415454",
+      "openalex:W4317178281",
+      "openalex:W2786888921"
+    ]
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.jth.2026.102361",
+    "openalex": "W4405385145",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:58:23Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006974,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2555,
+      "out": 349
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:58:23Z",
+    "doi": "10.1016/j.jth.2026.102361",
+    "journal": "Journal of Transport & Health",
+    "source_id": "S2764685396",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's demonstration relies on hypothetical 5% mode shift scenarios rather than observed policy interventions.",
+      "what": "The open-source Integrated Transport and Health Impact Modelling Tool for Global Cities (ITHIM-Global) was developed to simulate how shifts in transport modes affect carbon dioxide emissions, road traffic fatalities, air pollution exposure, and physical activity. Using a quasi-microsimulation approach, the model estimates age- and sex-specific mortality and years of life lost using non-linear dose-response functions. Its application was demonstrated in Bogotá, Colombia, by modeling 5% trip shifts to buses, cars, or cycling, showing that public and active transit shifts yield health benefits primarily through increased physical activity.",
+      "why": "It provides a flexible, open-source health impact assessment tool specifically designed for low- and middle-income countries, where rapid urbanization demands accessible tools to quantify the health and environmental trade-offs of transport planning decisions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-19",
+  "work_key": "doi:10.1016/j.jth.2026.102361"
+}

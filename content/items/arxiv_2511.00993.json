@@ -1,0 +1,280 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Effective modeling of how human travelers learn and adjust their travel behavior from interacting with transportation systems is critical for system assessment and planning. However, this task is also difficult due to the complex cognition and decision-making involved in such behavior. Recent research has begun to leverage Large Language Model (LLM) agents for this task. Building on this, we introduce a novel dual-agent framework that enables continuous learning and alignment between LLM agents and human travelers in learning and adaptation behavior from online data streams. Our approach involves a set of LLM traveler agents, equipped with a memory system and a learnable persona, which serve as simulators for human travelers. To ensure behavioral alignment, we introduce an LLM calibration agent that leverages the reasoning and analytical capabilities of LLMs to train the personas of these traveler agents. Working together, this dual-agent system is designed to track and align the underlying decision-making mechanisms of travelers and produce realistic, adaptive simulations. Using a real-world dataset from a day-to-day route choice experiment, we show our approach significantly outperforms existing methods in individual behavior alignment and LLM-based methods in aggregate flow prediction performance. Furthermore, we demonstrate that our method moves beyond simple behavioral mimicry to capture the evolution of underlying learning processes, which contributes to robust generalization. Overall, our framework provides a new approach for creating adaptive and behaviorally realistic agents to simulate travelers’ learning and adaptation that can benefit transportation simulation and policy analysis.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Michigan",
+            "ror": "00jmfr291"
+          }
+        ],
+        "name": "Tianming Liu",
+        "openalex": "A5049483498",
+        "orcid": "https://orcid.org/0000-0001-7789-5170"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Michigan",
+            "ror": "00jmfr291"
+          }
+        ],
+        "name": "Jirong Yang",
+        "openalex": "A5112092879",
+        "orcid": "https://orcid.org/0009-0004-2775-2760"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Michigan",
+            "ror": "00jmfr291"
+          }
+        ],
+        "name": "Yafeng Yin",
+        "openalex": "A5087888694",
+        "orcid": "https://orcid.org/0000-0002-9497-6244"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Michigan",
+            "ror": "00jmfr291"
+          }
+        ],
+        "name": "M. H. Li",
+        "openalex": "A5084886637",
+        "orcid": "https://orcid.org/0009-0003-8530-140X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
+        "name": "Linghao Wang",
+        "openalex": "A5102272785",
+        "orcid": "https://orcid.org/0009-0009-5796-0655"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
+        "name": "Zheng Zhu",
+        "openalex": "A5028572318",
+        "orcid": "https://orcid.org/0000-0002-9318-1861"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105818",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-24",
+    "repository_urls": [],
+    "title": "Aligning LLM agents with human learning and adjustment behavior: A dual agent approach"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-24_2511.00993",
+    "members": [
+      "arxiv:2511.00993"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00jmfr291",
+        "label": "University of Michigan"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00a2xv884",
+        "label": "Zhejiang University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7789-5170",
+        "label": "Tianming Liu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0004-2775-2760",
+        "label": "Jirong Yang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9497-6244",
+        "label": "Yafeng Yin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0003-8530-140X",
+        "label": "M. H. Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-5796-0655",
+        "label": "Linghao Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9318-1861",
+        "label": "Zheng Zhu"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": true,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.3033,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.083,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11714",
+        "is_primary": false,
+        "label": "Multimodal Machine Learning Applications",
+        "score": 0.0679,
+        "subfield": "1707"
+      }
+    ]
+  },
+  "first_published": "2026-06-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2511.00993",
+    "doi": "10.1016/j.trc.2026.105818",
+    "openalex": "W4416434619",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:18:33Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005638,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2097,
+      "out": 277
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:18:33Z",
+    "doi": "10.1016/j.trc.2026.105818",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and generalization capabilities were evaluated using data from a controlled day-to-day route choice experiment rather than observed, open-world urban travel behavior.",
+      "what": "A dual-agent framework was developed to simulate how travelers learn and adapt their route choices over time. The system pairs LLM traveler agents, which feature a memory system and a learnable persona, with an LLM calibration agent that continuously trains these personas using online data streams. Tested on a real-world dataset from a day-to-day route choice experiment, the framework outperformed existing baselines in individual behavioral alignment and aggregate flow prediction.",
+      "why": "It establishes a method for simulating human travel behavior that captures the evolution of underlying cognitive learning processes rather than just mimicking static decisions, enabling more robust generalizations for transportation planning and policy analysis."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-24",
+  "work_key": "arxiv:2511.00993"
+}

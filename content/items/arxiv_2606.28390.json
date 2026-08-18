@@ -1,0 +1,252 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Geospatial vector data quality is a foundational research topic in GIS, yet classic rule-based quality assessment algorithms often struggle with diverse urban morphologies and massive data volumes. Recently, Geospatial Artificial Intelligence (GeoAI) shows promising potential for automating geospatial analysis, while its application to native vector data remains largely underexplored. To fill this research gap, we proposed Topo4Vec, an automated GeoAI framework, designed for scalable vector data quality assessment via advanced Spatial Representation Learning (SRL). Specifically, Topo4Vec relax the labor-intensive manual annotation process via topological error simulation, such as overlapping polygons and street network connectivity errors e.g., overshoots and undershoots. Then, it leverages state-of-the-art SRL approaches to encode complex, native vector geometries (e.g., polylines and polygons) into a latent space where topological errors are isolated from valid ones. A systematic performance evaluation across three study areas (Los Angeles, Munich, and Singapore) demonstrates the effectiveness and robustness of Topo4Vec, achieving a peak accuracy of 0.99 for detecting overlapping building footprints and 0.60 for overshoots and undershoots in street networks. Moreover, lessons learned from Topo4Vec shed a promising light into a scalable and autonomous GeoAI approach for large-scale vector data consistency and quality monitoring within the fast-growing geospatial data ecosystems. The code and data used in the paper are made openly available in https://figshare.com/s/612148eeb4bccadbd715.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Hao Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chen Chu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Filip Biljecki",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Cyrus Shahabi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Wenwen Li",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.28390v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.28390v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-23",
+    "repository_urls": [],
+    "title": "Automated Quality Assessment of Geospatial Vector Data: A GeoAI Approach using Spatial Representation Learning"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-23_2606.28390",
+    "members": [
+      "arxiv:2606.28390"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:building-footprint",
+        "label": "building footprints"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139712162",
+        "label": "Hao Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5129707090",
+        "label": "Chen Chu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139670072",
+        "label": "Filip Biljecki"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139668735",
+        "label": "Cyrus Shahabi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139662157",
+        "label": "Wenwen Li"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q65",
+        "label": "Los Angeles",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q334",
+        "label": "Singapore",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": true,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.2363,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.1986,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.1605,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-06-23",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.28390",
+    "doi": "10.48550/arxiv.2606.28390",
+    "openalex": "W7166744285",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:13:17Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005969,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2167,
+      "out": 302
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.8494,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4198,
+    "relevance": 0.8494
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "While highly accurate at detecting overlapping building polygons, the framework's performance is notably lower when identifying street network connectivity errors like overshoots and undershoots.",
+      "what": "The researchers developed Topo4Vec, a GeoAI framework that automates geospatial vector data quality assessment using spatial representation learning. The model bypasses manual annotation by simulating topological errors, such as overlapping polygons and street network overshoots or undershoots, and was evaluated across Los Angeles, Munich, and Singapore. It achieved a peak detection accuracy of 0.99 for overlapping building footprints and 0.60 for street network connectivity errors.",
+      "why": "It replaces labor-intensive, rule-based quality checks with an automated system capable of isolating complex topological errors in native vector geometries across diverse urban morphologies."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-23",
+  "work_key": "arxiv:2606.28390"
+}

@@ -1,0 +1,209 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Understanding urban mobility patterns is crucial for designing efficient and sustainable transportation systems. Motivated by an application to the municipality of Padova and its surroundings, we propose a novel statistical framework for the analysis and clustering of mobility trajectories derived from telephonic data. We introduce a compositional representation of individual movements that integrates the uncertain device location with information on the surrounding road network, encoding at each time point the proportions of different road types compatible with the observed position. This formulation naturally accounts for measurement uncertainty and yields trajectories evolving in the simplex. To model these data, we develop a state-space framework for compositional time series that captures both the telephonic measurement error and the temporal dynamics of the latent mobility process. Building on this representation, we propose a model-based clustering approach based on mixtures of state-space models to identify groups of trajectories with similar evolution. This allows us to aggregate individual movements into interpretable mobility patterns at the population level. The results of the case study demonstrate the ability of the approach to uncover meaningful mobility behaviors, providing insights that are potentially relevant to policy makers.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Andrea Panarotto",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Manuela Cattelan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ruggero Bellio",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "36 pages (26 for the main text, 10 in the supplementary), 13 figures (6 in the main text, 7 in the supplementary)",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.18044v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.18044v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-16",
+    "repository_urls": [],
+    "title": "Model-based clustering of compositional trajectories for the analysis of mobility data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-16_2606.18044",
+    "members": [
+      "arxiv:2606.18044"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5103306965",
+        "label": "Andrea Panarotto"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5631-5293",
+        "label": "Manuela Cattelan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7633-087X",
+        "label": "Ruggero Bellio"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11106",
+        "is_primary": true,
+        "label": "Data Management and Algorithms",
+        "score": 0.287,
+        "subfield": "1711"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.1267,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10637",
+        "is_primary": false,
+        "label": "Advanced Clustering Algorithms Research",
+        "score": 0.0544,
+        "subfield": "1702"
+      }
+    ]
+  },
+  "first_published": "2026-06-16",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.18044",
+    "doi": "10.48550/arxiv.2606.18044",
+    "openalex": "W7165000365",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:38:22Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005257,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1933,
+      "out": 262
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9606,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3842,
+    "relevance": 0.9606
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's empirical utility is demonstrated only on a single geographic case study in and around Padova.",
+      "what": "The study introduces a state-space statistical framework to model and cluster individual mobility trajectories derived from mobile phone data. By representing uncertain device locations as compositional data in a simplex, the model integrates spatial measurement error with the proportions of surrounding road types. The method was applied to aggregate individual movements into distinct population-level mobility patterns using a dataset from the municipality of Padova, Italy, and its surrounding areas.",
+      "why": "It provides a way to analyze noisy mobile phone tracking data by explicitly accounting for spatial uncertainty and matching raw location signals to the underlying road network structure simultaneously."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-16",
+  "work_key": "arxiv:2606.18044"
+}

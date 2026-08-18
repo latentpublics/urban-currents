@@ -83,11 +83,72 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5143759213",
+        "label": "Lara Vartziotis"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-5300-2572",
+        "label": "Tina Vartziotis"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143807818",
+        "label": "Valentin Keckeisen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5134863183",
+        "label": "Frank Beutenmueller"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5071413263",
+        "label": "Martin Obstbaum"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5134826144",
+        "label": "Sotirios Kotsopoulos"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8900-5948",
+        "label": "K. Moraitis"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11211",
+        "is_primary": true,
+        "label": "3D Surveying and Cultural Heritage",
+        "score": 0.3684,
+        "subfield": "1907"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11104",
+        "is_primary": false,
+        "label": "Memory, Trauma, and Commemoration",
+        "score": 0.0858,
+        "subfield": "3207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10888",
+        "is_primary": false,
+        "label": "Augmented Reality Applications",
+        "score": 0.064,
+        "subfield": "1707"
+      }
+    ]
   },
   "first_published": "2026-06-15",
   "graph": {
@@ -98,7 +159,7 @@
   "ids": {
     "arxiv": "2607.22613",
     "doi": "10.48550/arxiv.2607.22613",
-    "openalex": null,
+    "openalex": "W7171507893",
     "pmid": null
   },
   "provenance": {
@@ -106,7 +167,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-18T08:33:08Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005491,
     "llm": {

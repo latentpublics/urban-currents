@@ -1,0 +1,315 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Estimating queue lengths at signalized intersections is a long-standing challenge in traffic management. Partial observability of vehicle flows complicates this task despite the availability of two privacy-preserving data sources: (i) aggregated vehicle counts from loop detectors near stop lines, and (ii) aggregated floating car data (aFCD) that provide segment-wise average speed measurements. However, how to integrate these sources with differing spatial and temporal resolutions for queue length estimation is rather unclear. Addressing this question, we present Q-Net: a queue estimation framework built upon a state-space formulation. This design addresses key challenges in queue modeling, such as violations of traffic conservation assumptions. Q-Net follows the Kalman predict-update structure and maintains physical interpretability in both the state evolution and measurement models. Q-Net uses an AI-augmented Kalman filter to learn time-varying gain dynamics from data. The framework supports real-time implementation and improves spatial transferability by grouping aFCD measurements into fixed-size local groups, making the number of learnable parameters independent of section length. Evaluations on urban main roads in Rotterdam, the Netherlands, show that Q-Net outperforms baseline methods, tracks queue formation and dissipation accurately, and mitigates aFCD-induced delays. By combining data efficiency, interpretability, real-time applicability, and spatial transferability, Q-Net makes accurate queue length estimation possible without costly sensing infrastructure like cameras or radar.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Ting Gao",
+        "openalex": "A5041557913",
+        "orcid": "https://orcid.org/0000-0002-6290-7885"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Elvin Isufi",
+        "openalex": "A5060836778",
+        "orcid": "https://orcid.org/0000-0002-1919-260X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Winnie Daamen",
+        "openalex": "A5018605480",
+        "orcid": "https://orcid.org/0000-0003-4518-4184"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Dura Vermeer (Netherlands)",
+            "ror": "0139cja35"
+          }
+        ],
+        "name": "Erik‐Sander Smits",
+        "openalex": "A5111969064",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Serge Hoogendoorn",
+        "openalex": "A5077352940",
+        "orcid": "https://orcid.org/0000-0002-1579-1939"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105809",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-17",
+    "repository_urls": [],
+    "title": "Q-Net: Queue length estimation via Kalman-based neural networks"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-17_2509.24725",
+    "members": [
+      "arxiv:2509.24725",
+      "doi:10.1016/j.trc.2026.105809"
+    ],
+    "merge_basis": "doi_match"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02e2c7k09",
+        "label": "Delft University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0139cja35",
+        "label": "Dura Vermeer (Netherlands)"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6290-7885",
+        "label": "Ting Gao"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1919-260X",
+        "label": "Elvin Isufi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4518-4184",
+        "label": "Winnie Daamen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5111969064",
+        "label": "Erik‐Sander Smits"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1579-1939",
+        "label": "Serge Hoogendoorn"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q34370",
+        "label": "Rotterdam",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q55",
+        "label": "Netherlands",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10138",
+        "is_primary": true,
+        "label": "Network Traffic and Congestion Control",
+        "score": 0.981,
+        "subfield": "1705"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10974",
+        "is_primary": false,
+        "label": "Advanced Queuing Theory Analysis",
+        "score": 0.9029,
+        "subfield": "1404"
+      }
+    ]
+  },
+  "first_published": "2026-06-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W4384306266",
+      "openalex:W4413057199",
+      "openalex:W3047875188",
+      "openalex:W2597528435",
+      "openalex:W2892811213",
+      "openalex:W4390120110",
+      "openalex:W2098207833",
+      "openalex:W3195246606",
+      "openalex:W1992477951",
+      "openalex:W2024564885",
+      "openalex:W2026972557",
+      "openalex:W4375929147",
+      "openalex:W2113966568",
+      "openalex:W4406033953",
+      "openalex:W2128114480",
+      "openalex:W1985986451",
+      "openalex:W3103019731",
+      "openalex:W2064675550",
+      "openalex:W2296971995",
+      "openalex:W4285251603",
+      "openalex:W3210781260",
+      "openalex:W4405488300",
+      "openalex:W2982974789",
+      "openalex:W3037447858",
+      "openalex:W2156271471",
+      "openalex:W2059441668",
+      "openalex:W2897134608",
+      "openalex:W2051146554",
+      "openalex:W2168957171",
+      "openalex:W4388757121",
+      "openalex:W3183282730",
+      "openalex:W2031767866",
+      "openalex:W4403997784",
+      "openalex:W2042388588",
+      "openalex:W2013002270",
+      "openalex:W2135014417",
+      "openalex:W3206041734",
+      "openalex:W2013009562",
+      "openalex:W3162406573",
+      "openalex:W2543995857",
+      "openalex:W2803710405",
+      "openalex:W2787889095",
+      "openalex:W3153786604",
+      "openalex:W2897859929"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2509.24725",
+    "doi": "10.1016/j.trc.2026.105809",
+    "openalex": "W4415337201",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:44:00Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005609,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2083,
+      "out": 276
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:44:00Z",
+    "doi": "10.1016/j.trc.2026.105809",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.5
+    },
+    "headline": 0.54,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and transferability were evaluated using data from a single city, Rotterdam.",
+      "what": "The researchers developed Q-Net, a state-space queue estimation framework that integrates aggregated vehicle counts from loop detectors with segment-wise average speed measurements from floating car data. Tested on urban main roads in Rotterdam, Netherlands, the model uses an AI-augmented Kalman filter to learn time-varying gain dynamics and groups speed measurements into fixed-size local groups to keep parameters independent of road section length.",
+      "why": "It enables accurate, real-time queue length estimation on signalized intersections using existing, privacy-preserving data sources, eliminating the need for expensive physical sensing infrastructure like cameras or radar."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-17",
+  "work_key": "arxiv:2509.24725"
+}

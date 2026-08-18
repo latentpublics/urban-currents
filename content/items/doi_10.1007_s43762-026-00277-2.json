@@ -1,0 +1,338 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Agent-based modelling enables the simulation of household energy consumption at the individual level, considering heterogeneity, interactions and dynamics. However, existing agent-based domestic energy consumption models fail to capture the influence of associated urban subsystems (e.g., population and land use). To fill this gap, we develop an empirically based electricity consumption model and integrate it into an urban microsimulation platform, SelfSim. The resulting SelfSim-Energy model simulates the energy consumption of each household in the context of urban evolution, explicitly representing interlinked energy use and urban dynamics. We apply SelfSim-Energy to Beijing, simulating its urban system evolution from 2021 to 2030, with a focus on domestic energy consumption. We find total electricity consumption increases from 29.1 to 32.3 billion kWh mainly due to population growth. Homeownership declines from 82.1% to 56.8%, leading to a reduction in energy-efficient technology adoption in homes from 78.2% to 69.1% for the example of low-energy lighting. These within-household trends help explain the observed increase in domestic energy consumption. We use scenario analysis to show how changes in population structure, land use development, and socio-economic trends interact to influence domestic energy consumption. This emphasizes the importance of incorporating urban dynamics to better represent and estimate future energy demand in the built environment.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          }
+        ],
+        "name": "Junbe Liu",
+        "openalex": "A5139057079",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "International Institute for Applied Systems Analysis",
+            "ror": "02wfhk785"
+          },
+          {
+            "name": "University of Oxford",
+            "ror": "052gg0110"
+          }
+        ],
+        "name": "Charlie Wilson",
+        "openalex": "A5062508476",
+        "orcid": "https://orcid.org/0000-0001-8164-3566"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          }
+        ],
+        "name": "Ying Zhang",
+        "openalex": "A5139039872",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          },
+          {
+            "name": "Shenzhen Polytechnic University",
+            "ror": "00d2w9g53"
+          }
+        ],
+        "name": "Chengxiang Zhuge",
+        "openalex": "A5012147276",
+        "orcid": "https://orcid.org/0000-0002-9942-3462"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s43762-026-00277-2",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s43762-026-00277-2.pdf",
+      "source_id": "S4210175573",
+      "source_name": "Computational Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-22",
+    "repository_urls": [],
+    "title": "Dynamic micro-simulation of domestic electricity consumption: a case of Beijing"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-22_10.1007/s43762-0",
+    "members": [
+      "doi:10.1007/s43762-026-00277-2"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:land-use",
+        "label": "land use data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 0.9756,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0030zas98",
+        "label": "Hong Kong Polytechnic University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02wfhk785",
+        "label": "International Institute for Applied Systems Analysis"
+      },
+      {
+        "confidence": null,
+        "id": "ror:052gg0110",
+        "label": "University of Oxford"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00d2w9g53",
+        "label": "Shenzhen Polytechnic University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139057079",
+        "label": "Junbe Liu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8164-3566",
+        "label": "Charlie Wilson"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139039872",
+        "label": "Ying Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9942-3462",
+        "label": "Chengxiang Zhuge"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q956",
+        "label": "Beijing",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11185",
+        "is_primary": true,
+        "label": "Integrated Energy Systems Optimization",
+        "score": 0.1051,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10121",
+        "is_primary": false,
+        "label": "Building Energy and Comfort Optimization",
+        "score": 0.0779,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10603",
+        "is_primary": false,
+        "label": "Smart Grid Energy Management",
+        "score": 0.0709,
+        "subfield": "2208"
+      }
+    ]
+  },
+  "first_published": "2026-06-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1512003903",
+      "openalex:W1544180268",
+      "openalex:W1600563940",
+      "openalex:W1964981132",
+      "openalex:W1969095625",
+      "openalex:W1981806743",
+      "openalex:W1990785420",
+      "openalex:W1999398380",
+      "openalex:W2004708041",
+      "openalex:W2009977792",
+      "openalex:W2013486252",
+      "openalex:W2018751408",
+      "openalex:W2032850697",
+      "openalex:W2040585915",
+      "openalex:W2048421212",
+      "openalex:W2050493545",
+      "openalex:W2054193611",
+      "openalex:W2070993393",
+      "openalex:W2088593023",
+      "openalex:W2100194699",
+      "openalex:W2108152153",
+      "openalex:W2130799305",
+      "openalex:W2223723247",
+      "openalex:W2282008613",
+      "openalex:W2302216138",
+      "openalex:W2564351694",
+      "openalex:W2740924709",
+      "openalex:W2792950080",
+      "openalex:W2803990683",
+      "openalex:W2806115194",
+      "openalex:W2891298109",
+      "openalex:W2900311724",
+      "openalex:W2902168738",
+      "openalex:W2911964244",
+      "openalex:W2935896766",
+      "openalex:W2936111876",
+      "openalex:W2944284918",
+      "openalex:W2947893148",
+      "openalex:W2972466184",
+      "openalex:W3034596982",
+      "openalex:W3095247589",
+      "openalex:W3197302882",
+      "openalex:W4205945437",
+      "openalex:W4235577065",
+      "openalex:W4308528730",
+      "openalex:W4376872009",
+      "openalex:W4386170415",
+      "openalex:W4387311644",
+      "openalex:W4404487871",
+      "openalex:W4411437440",
+      "openalex:W4416168428",
+      "openalex:W7080015140"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s43762-026-00277-2",
+    "openalex": "W7165477179",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:08:12Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006098,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2085,
+      "out": 330
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:08:12Z",
+    "doi": "10.1007/s43762-026-00277-2",
+    "journal": "Computational Urban Science",
+    "source_id": "S4210175573",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2021 to 2030",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings and behavioral relationships are simulated specifically for the institutional and demographic context of Beijing, which may not generalize to other urban governance systems.",
+      "what": "The researchers developed SelfSim-Energy, an agent-based domestic electricity consumption model integrated into an urban microsimulation platform, and simulated Beijing's urban evolution from 2021 to 2030. The simulation projects that Beijing's total domestic electricity consumption will rise from 29.1 to 32.3 billion kWh, driven by population growth and a projected decline in homeownership from 82.1% to 56.8%, which subsequently reduces the adoption of energy-efficient lighting from 78.2% to 69.1%.",
+      "why": "It connects household energy demand directly to broader urban dynamics like land use, population shifts, and housing tenure, demonstrating that declining homeownership rates can actively suppress the adoption of energy-saving technologies."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-22",
+  "work_key": "doi:10.1007/s43762-026-00277-2"
+}

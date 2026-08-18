@@ -1,0 +1,233 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Existing approaches to e-scooter mobility hub planning lack city-type-specific causal evidence. Demand models are typically correlational, built on proprietary trip data, and do not distinguish how driver profiles vary across urban typologies. This paper presents a three-phase agentic AI framework that constructs a Causal Template Library from public GBFS data across 29 German cities, encoding which environmental features causally drive hotspot demand for each combination of city type (large, university, industrial, hilly) and cluster type (core, peripheral). A large language model (LLM) orchestrated causal discovery pipeline adapts algorithm selection to local data conditions across 57 city-cluster units. The library reveals systematic variation. Core demand is driven by activity access and transit proximity, while peripheral demand responds to built form, with city-type-specific patterns supporting transferable siting templates. A planning tool built on the library scores candidate sites, calibrates infrastructure recommendations to local demographics, and generates practitioner-ready reports. In Heilbronn, Germany, two hub sites informed by the framework's causal evidence are currently under construction, illustrating how the outputs can support real-world siting decisions.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Meng Jin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Melanie Handrich",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Simone Martinenz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Nicholas Hoeser",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ziyue Li",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY",
+      "econ.GN",
+      "stat.AP"
+    ],
+    "comment": "32 Pages, Submitted to Transportation Research Part D: Transport and Environment. Under review",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.25484v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.25484v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-24",
+    "repository_urls": [],
+    "title": "From Causal Discovery to Implementation: An Agentic AI Framework for E-Scooter Mobility Hub Planning Across 29 German Cities"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-24_2606.25484",
+    "members": [
+      "arxiv:2606.25484"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139312891",
+        "label": "Meng Jin"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5137627759",
+        "label": "Melanie Handrich"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5137620203",
+        "label": "Simone Martinenz"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5137668405",
+        "label": "Nicholas Hoeser"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139336112",
+        "label": "Ziyue Li"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.8355,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.1069,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12306",
+        "is_primary": false,
+        "label": "Urban and Freight Transport Logistics",
+        "score": 0.0186,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-06-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.25484",
+    "doi": "10.48550/arxiv.2606.25484",
+    "openalex": "W7165960645",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:18:31Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005516,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2003,
+      "out": 279
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9625,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.385,
+    "relevance": 0.9625
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "An agentic AI framework was developed to construct a Causal Template Library using public General Bikeshare Feed Specification (GBFS) data across 29 German cities. The system uses a large language model to orchestrate causal discovery algorithms across 57 city-cluster units, identifying how environmental features drive e-scooter hotspot demand across four city types and two cluster types. The framework was deployed to score candidate sites, recommend infrastructure, and guide the construction of two real-world mobility hubs in Heilbronn, Germany.",
+      "why": "It shifts e-scooter planning from proprietary, correlational demand models to open-data causal models that adapt to specific urban typologies. This allows planners to transfer siting templates between similar city types without requiring local proprietary trip data."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-24",
+  "work_key": "arxiv:2606.25484"
+}

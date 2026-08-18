@@ -1,0 +1,227 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Malaria remains a major public health concern in many urban regions of India, where timely prediction of malaria incidence is essential for effective surveillance and resource allocation. This study examines count data approaches for understanding and predicting malaria incidence in the Mumbai region. The analysis used monthly $\\textit{Plasmodium vivax}$ surveillance data from the Health Management Information System (HMIS) collected between 2012 and 2019, together with meteorological variables. Initial Poisson regression models suggested strong associations between malaria incidence and environmental factors; however, diagnostic assessment revealed substantial overdispersion, indicating that the Poisson model did not adequately capture the data's variability. Negative binomial regression provided a better representation of the data and indicated that seasonal effects were more strongly associated with malaria incidence than individual climatic covariates. Residual analyses further identified significant serial dependence not captured by baseline regression models. To address this limitation, a Generalized Linear Autoregressive Moving Average (GLARMA) framework was implemented to model temporal correlation explicitly. Forecasts were generated using simulation-based methods and evaluated through rolling time series cross-validation. The GLARMA Negative binomial model consistently demonstrated superior predictive performance and greater predictive stability than competing regression and time series approaches. These findings highlight the importance of jointly accounting for overdispersion and serial dependence in malaria surveillance data and demonstrate the value of count time series models for supporting early warning systems in urban settings.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Adithya B. Somaraj",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Praveen D. Chougale",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Usha Ananthakumar",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Karthika M. Satyanarayanan",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "16 pages",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.25902v2",
+      "pdf_url": "https://arxiv.org/pdf/2606.25902v2",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-24",
+    "repository_urls": [],
+    "title": "Count data modeling and forecasting of malaria incidence using generalized time series regression"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-24_2606.25902",
+    "members": [
+      "arxiv:2606.25902"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0007-7948-777X",
+        "label": "Adithya B. Somaraj"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5262-4726",
+        "label": "Praveen D. Chougale"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1983-2168",
+        "label": "Usha Ananthakumar"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139363351",
+        "label": "Karthika M. Satyanarayanan"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1156",
+        "label": "Mumbai",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11819",
+        "is_primary": true,
+        "label": "Data-Driven Disease Surveillance",
+        "score": 0.624,
+        "subfield": "2713"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10091",
+        "is_primary": false,
+        "label": "Malaria Research and Control",
+        "score": 0.1107,
+        "subfield": "2739"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10410",
+        "is_primary": false,
+        "label": "COVID-19 epidemiological studies",
+        "score": 0.0931,
+        "subfield": "2611"
+      }
+    ]
+  },
+  "first_published": "2026-06-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.25902",
+    "doi": "10.48550/arxiv.2606.25902",
+    "openalex": "W7165849863",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:18:31Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005785,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2063,
+      "out": 299
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8632,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3453,
+    "relevance": 0.8632
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2012 and 2019",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings and model performance are demonstrated using data from a single urban region, which may limit direct generalizability to areas with different climatic or epidemiological profiles.",
+      "what": "The study modeled monthly Plasmodium vivax malaria incidence in Mumbai, India, using surveillance data from 2012 to 2019 alongside meteorological variables. It compared Poisson, negative binomial, and Generalized Linear Autoregressive Moving Average (GLARMA) models, evaluating forecasts through rolling time series cross-validation. The GLARMA negative binomial model outperformed other approaches by successfully accounting for both overdispersion and serial dependence in the count data.",
+      "why": "It demonstrates that seasonal patterns are more strongly associated with malaria incidence than individual climatic variables, and provides a more stable, accurate forecasting framework for urban disease surveillance and early warning systems."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-30",
+  "work_key": "arxiv:2606.25902"
+}

@@ -1,0 +1,324 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Large language models (LLMs) are beginning to appear across a wide range of intelligent transportation system (ITS) applications, from traffic monitoring and prediction to signal control, planning, and human–machine interaction. Unlike conventional learning-based components that are designed for narrowly defined tasks, LLMs are increasingly used to organize information, interpret rules and intentions, and support decision-making across multiple parts of a traffic system. This paper reviews recent work on LLM-enabled ITS and uses these studies to develop a system-level perspective, referred to as TrafficMind, in which language models function as a shared semantic and reasoning layer. By examining how LLMs are currently applied in perception, forecasting, control, planning, and coordination, we find a consistent pattern: their main contribution is not numerical optimization or real-time actuation, but the ability to connect heterogeneous data, regulatory constraints, and human inputs in a coherent and interpretable way. In safety-critical settings, including traffic signal control and urban air mobility (UAM), existing evidence also suggests that LLMs are most reliable when they are kept outside closed-loop control and instead used to support coordination, explanation, and high-level decision processes. We further review emerging system designs that combine LLMs with reinforcement learning (RL), knowledge graphs, and digital-twin platforms, allowing traffic decisions to be both data-driven and grounded in physical and regulatory structure. Beyond technical performance, we explore how these developments raise new questions for governance, certification, and the ethical deployment of models, particularly in systems where model outputs can impact real-world traffic outcomes. Overall, the TrafficMind perspective offers a way to interpret current progress and to frame how LLMs can be integrated into future ITS in a manner that is transparent, accountable, and compatible with real operational practice.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Tsinghua University",
+            "ror": "03cve4549"
+          }
+        ],
+        "name": "Cong Zhang",
+        "openalex": "A5138767591",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tsinghua University",
+            "ror": "03cve4549"
+          }
+        ],
+        "name": "Bangyang Wei",
+        "openalex": "A5024081943",
+        "orcid": "https://orcid.org/0000-0002-1337-471X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tsinghua University",
+            "ror": "03cve4549"
+          }
+        ],
+        "name": "Liu Yang",
+        "openalex": "A5016487823",
+        "orcid": "https://orcid.org/0000-0003-3048-3392"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9794",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-17",
+    "repository_urls": [],
+    "title": "TrafficMind: A System-Oriented Review of Large Language Models for Intelligent Transportation Systems"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-17_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-9794"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03cve4549",
+        "label": "Tsinghua University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5138767591",
+        "label": "Cong Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1337-471X",
+        "label": "Bangyang Wei"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3048-3392",
+        "label": "Liu Yang"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.2664,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.2009,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11689",
+        "is_primary": false,
+        "label": "Adversarial Robustness in Machine Learning",
+        "score": 0.0994,
+        "subfield": "1702"
+      }
+    ]
+  },
+  "first_published": "2026-06-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1984178584",
+      "openalex:W2009801038",
+      "openalex:W2037141248",
+      "openalex:W2077699563",
+      "openalex:W2095797625",
+      "openalex:W2108196201",
+      "openalex:W2424778531",
+      "openalex:W2593182953",
+      "openalex:W2685595144",
+      "openalex:W2765693755",
+      "openalex:W2786931351",
+      "openalex:W2789788750",
+      "openalex:W2800510943",
+      "openalex:W2943847575",
+      "openalex:W2964199920",
+      "openalex:W2967324759",
+      "openalex:W2969574430",
+      "openalex:W2980547801",
+      "openalex:W2999007502",
+      "openalex:W3014834477",
+      "openalex:W3035461736",
+      "openalex:W3035721219",
+      "openalex:W3042411963",
+      "openalex:W3096632704",
+      "openalex:W3109074851",
+      "openalex:W3125675327",
+      "openalex:W3134691581",
+      "openalex:W3159736609",
+      "openalex:W3203057282",
+      "openalex:W3210065386",
+      "openalex:W4220736642",
+      "openalex:W4226191730",
+      "openalex:W4248111217",
+      "openalex:W4281709050",
+      "openalex:W4293167677",
+      "openalex:W4297538652",
+      "openalex:W4313527145",
+      "openalex:W4317384366",
+      "openalex:W4360603550",
+      "openalex:W4365420629",
+      "openalex:W4377943492",
+      "openalex:W4378420798",
+      "openalex:W4385483925",
+      "openalex:W4388723259",
+      "openalex:W4389143344",
+      "openalex:W4389519620",
+      "openalex:W4390722831",
+      "openalex:W4390969535",
+      "openalex:W4391094998",
+      "openalex:W4391262697",
+      "openalex:W4391583869",
+      "openalex:W4391828195",
+      "openalex:W4392001696",
+      "openalex:W4392173003",
+      "openalex:W4393405223",
+      "openalex:W4394862732",
+      "openalex:W4395075311",
+      "openalex:W4396941492",
+      "openalex:W4400314685",
+      "openalex:W4400727150",
+      "openalex:W4401345510",
+      "openalex:W4401863415",
+      "openalex:W4402721914",
+      "openalex:W4402781286",
+      "openalex:W4403210826",
+      "openalex:W4403407892",
+      "openalex:W4403791574",
+      "openalex:W4404035203",
+      "openalex:W4404113537",
+      "openalex:W4404410447",
+      "openalex:W4404739549",
+      "openalex:W4406754736",
+      "openalex:W4406865568",
+      "openalex:W4408468144",
+      "openalex:W4408789181",
+      "openalex:W4409130655",
+      "openalex:W4409158145",
+      "openalex:W4409909195",
+      "openalex:W4409986421",
+      "openalex:W4410393983",
+      "openalex:W4411337658",
+      "openalex:W4411388260",
+      "openalex:W4411866407",
+      "openalex:W4413875997",
+      "openalex:W4413961237",
+      "openalex:W4414338174",
+      "openalex:W4415682167",
+      "openalex:W4415973893",
+      "openalex:W7084031025",
+      "openalex:W7131095985",
+      "openalex:W7131225939",
+      "openalex:W7131306174",
+      "openalex:W7131665205",
+      "openalex:W7133224126",
+      "openalex:W7133231679",
+      "openalex:W7133232401"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-9794",
+    "openalex": "W7165026736",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:44:01Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005677,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2237,
+      "out": 258
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:44:01Z",
+    "doi": "10.1061/jtepbs.teeng-9794",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This review synthesizes recent research on large language models (LLMs) in intelligent transportation systems, proposing a system-level framework called TrafficMind where LLMs act as a shared semantic and reasoning layer. The analysis spans applications in perception, forecasting, control, planning, and coordination, examining how LLMs integrate with reinforcement learning, knowledge graphs, and digital twins.",
+      "why": "It establishes that the primary value of LLMs in transportation is not numerical optimization or real-time actuation, but their capacity to unify heterogeneous data, regulations, and human inputs. It also provides a safety-oriented design principle, showing that LLMs are currently most reliable when kept outside of closed-loop control in safety-critical settings like traffic signals and urban air mobility."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-17",
+  "work_key": "doi:10.1061/jtepbs.teeng-9794"
+}

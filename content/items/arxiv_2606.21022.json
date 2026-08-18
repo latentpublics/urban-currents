@@ -1,0 +1,206 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Origin-Destination (OD) demand prediction is fundamental to intelligent transportation systems, yet real-world OD flows are often dynamically sparse, long-tailed, and characterized by heterogeneous zero-flow patterns. These properties make it difficult to distinguish whether an OD connection is active from how much demand it generates once activated. Many existing methods primarily treat OD prediction as a single flow regression task, which limits their ability to model low-frequency, intermittent, and long-tailed OD interactions. To address these challenges, we propose SAGMTL, a Structure-Aware Graph Multi-Task Learning framework for dynamic sparse OD demand prediction. SAGMTL decomposes OD prediction into structural state modeling and flow intensity estimation, jointly learning regional activity states, OD connection activity, and edge-level flow intensity within a unified framework. Specifically, a node-edge collaborative representation module captures regional semantics, temporal dynamics, and spatial priors through interactive node-edge updates, producing structure-aware representations for dynamic OD interactions. Based on these representations, SAGMTL estimates OD flows by jointly modeling stable demand patterns and short-term fluctuations. A multi-constraint objective further improves sparsity awareness and structural consistency. Experiments on three real-world urban mobility datasets from Beijing, Chengdu, and Nanjing show that SAGMTL achieves superior overall performance compared with state-of-the-art baselines. Further analysis demonstrates that explicitly modeling regional activity, connection states, and flow intensity improves the robustness of dynamic sparse OD demand prediction.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ming Xu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jiawei Cao",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.21022v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.21022v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-19",
+    "repository_urls": [],
+    "title": "Structure-Aware Graph Multi-Task Learning for Dynamic Sparse OD Demand Prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-19_2606.21022",
+    "members": [
+      "arxiv:2606.21022"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139174351",
+        "label": "Ming Xu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1710-0644",
+        "label": "Jiawei Cao"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q956",
+        "label": "Beijing",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.9062,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0308,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0231,
+        "subfield": "2207"
+      }
+    ]
+  },
+  "first_published": "2026-06-19",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.21022",
+    "doi": "10.48550/arxiv.2606.21022",
+    "openalex": "W7165690670",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:58:21Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005485,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2097,
+      "out": 260
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8782,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3513,
+    "relevance": 0.8782
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The SAGMTL framework decomposes origin-destination (OD) demand prediction into three joint tasks: regional activity states, OD connection activity, and edge-level flow intensity. It uses a node-edge collaborative representation module to capture spatial priors and temporal dynamics, and was evaluated using three real-world urban mobility datasets from Beijing, Chengdu, and Nanjing.",
+      "why": "By separating the binary state of whether an OD connection is active from the continuous estimation of its flow volume, the model improves the accuracy and robustness of predictions for highly sparse, intermittent, and long-tailed urban travel patterns."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-19",
+  "work_key": "arxiv:2606.21022"
+}

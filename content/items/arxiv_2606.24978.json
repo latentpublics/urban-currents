@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Accurate particulate matter (PM) prediction is crucial for mitigating air pollution. Graph Neural Networks (GNNs) effectively model spatiotemporal dependencies, but predefined graphs limit adaptability, and some datasets complicate learning. This study introduces a graph construction method based on a confusion matrix from a supervised learning process to dynamically capture inter-class relationships. Additionally, a hybrid loss function that combines energy distance and Huber loss is applied to address the vanishing gradient problem and improve learning stability. The approach is evaluated using air pollution data from the University of Utah AirU Pollution Monitoring Network in Salt Lake City, UT, with five GNN models: Graph Convolutional Networks (GCNs), Simple Graph Convolutional Networks (SGConv), Graph Isomorphism Networks (GINs), Graph Attention Networks (GATs), and GraphSage. The experimental results of single- and multistep predictions confirm that GraphSage achieves the highest accuracy in predicting the concentrations of PM${1}$, PM${10}$, and PM$_{2.5}$ over different time horizons. Furthermore, {\\color{black} GNNExplainer (Graph Neural Network Explainer) and PGExplainer (Probabilistic Graph Explainer)} are applied to interpret feature importance and graph structure, ensuring model transparency. Results show improved prediction accuracy, with GNN models outperforming traditional machine learning \\textcolor{black}{and deep learning models (i.e., Prophet, Long short-term memory, Gated recurrent units} in air pollution forecasting.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Abdelkader Dairi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Fouzi Harrou",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ying Sun",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": "22 pages, 12 figures, 6 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.24978v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.24978v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-23",
+    "repository_urls": [],
+    "title": "Auto-Configured Explainable Graph Neural Networks for Multi-Site Pollution Prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-23_2606.24978",
+    "members": [
+      "arxiv:2606.24978"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:gnn",
+        "label": "graph neural network"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-06-23",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.24978",
+    "doi": "10.1016/j.asoc.2025.113496",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:13:17Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006053,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2109,
+      "out": 321
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8786,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3514,
+    "relevance": 0.8786
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The evaluation and model performance are demonstrated using sensor data from only a single urban monitoring network in Salt Lake City.",
+      "what": "This study develops a dynamic graph construction method using a supervised learning confusion matrix to capture spatial relationships, paired with a hybrid loss function combining energy distance and Huber loss. The framework was evaluated on PM1, PM2.5, and PM10 sensor data from the AirU Pollution Monitoring Network in Salt Lake City, Utah, comparing five Graph Neural Network architectures (GCN, SGConv, GIN, GAT, and GraphSage) alongside GNNExplainer and PGExplainer for model interpretability.",
+      "why": "It demonstrates that GraphSage outperforms traditional machine learning and deep learning baselines like Prophet, LSTM, and GRU for multi-step air quality forecasting, while providing a self-configuring graph structure that removes the need for manually predefined spatial relationships."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-23",
+  "work_key": "arxiv:2606.24978"
+}

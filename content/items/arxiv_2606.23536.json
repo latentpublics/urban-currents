@@ -1,0 +1,198 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "We propose a method for estimating time-varying traffic flow patterns from sparse aggregated vehicle counts. The method partitions the study area into spatial regions, constructs a set of feasible region-to-region routes, and solves a weighted least-squares optimization problem to determine the number of vehicles to allocate on each route. A weighted contribution matrix encodes sensor coverage, steering the optimizer toward flow configurations that are directly observable by sensors. Edge-level trajectories are then derived by scoring candidate routes against the temporal and volumetric profiles of aggregated regional sensor counts. The method is evaluated on the Brussels road network using real and synthetic traffic data. Results show that the proposed approach reproduces the daily traffic profile in the input data and outperforms the baseline methods at a fraction of the computational cost.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Davide Guastella",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Gianluca Bontempi",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.23536v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.23536v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-22",
+    "repository_urls": [],
+    "title": "Simulation-Free Estimation of Traffic Flows from Sparse Count Data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-22_2606.23536",
+    "members": [
+      "arxiv:2606.23536"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139136763",
+        "label": "Davide Guastella"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8621-316X",
+        "label": "Gianluca Bontempi"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.6172,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.3422,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0082,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-06-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.23536",
+    "doi": "10.48550/arxiv.2606.23536",
+    "openalex": "W7165670268",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:08:07Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.00521,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1805,
+      "out": 278
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9495,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3798,
+    "relevance": 0.9495
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The method's performance was evaluated using data from a single city network, and its accuracy depends on the spatial distribution and coverage of the existing physical sensors.",
+      "what": "The researchers developed a simulation-free method to estimate time-varying traffic flows by partitioning a study area into regions, generating feasible region-to-region routes, and solving a weighted least-squares optimization problem. The model uses a weighted contribution matrix to align route allocations with sensor coverage, deriving edge-level trajectories from sparse, aggregated vehicle counts. The approach was validated on the Brussels road network using both real and synthetic traffic data, successfully reproducing daily traffic profiles.",
+      "why": "It provides a computationally efficient alternative to traditional traffic simulation models, allowing planners to estimate detailed edge-level traffic flows from sparse sensor data at a fraction of the usual processing cost."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-22",
+  "work_key": "arxiv:2606.23536"
+}

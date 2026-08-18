@@ -1,0 +1,249 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The p -median problem is a classical, NP-hard model in location science, and decades of research have produced exact, heuristic, and meta-heuristic algorithms to solve it. In parallel, large language models (LLMs) have begun to assist in optimization by interpreting problem descriptions and generating solver code; however, their intrinsic ability to reason about spatial structure in facility-location problems remains underexplored. We introduce an LLM-as-proposer framework for the discrete p-median problem that embeds an LLM within a classical local search with external evaluation. The LLM's contribution as a spatially informed proposer is evaluated within a controlled search structure and compared fairly with established heuristics. We benchmark the proposed framework with three frontier LLMs on six TSPLIB point sets commonly used in location analysis across multiple p facilities, comparing against (i) exact mixed-integer problem references and (ii) five classical heuristics and meta-heuristics baselines. Across all settings, LLM-guided search consistently outperforms greedy baselines, frequently attains near-optimal solutions on small-to-medium instances, and evaluates orders of magnitude fewer objectives than tabu search, although inference remains the dominant runtime cost. Prompt ablation further shows that some spatial summaries materially improve robustness on larger instances, whereas some local diagnostic cues can be counterproductive. Taken together, these results show that contemporary LLMs exhibit meaningful spatial reasoning as proposers in p-Median local search, while also clarifying the current gap to mature meta-heuristics in solution quality and computational efficiency, motivating continued exploration of hybrid designs as LLMs become more capable.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Oklahoma",
+            "ror": "02aqsxs83"
+          }
+        ],
+        "name": "Xin Feng",
+        "openalex": "A5101199716",
+        "orcid": "https://orcid.org/0000-0001-7253-3154"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Machine Science",
+            "ror": "02hrr9v50"
+          }
+        ],
+        "name": "Yuanpei Cao",
+        "openalex": "A5025076321",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.compenvurbsys.2026.102467",
+      "pdf_url": null,
+      "source_id": "S60115552",
+      "source_name": "Computers Environment and Urban Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-23",
+    "repository_urls": [],
+    "title": "A benchmark of large language models for spatially informed proposal generation in local search for the p-median problem"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-23_10.1016/j.compen",
+    "members": [
+      "doi:10.1016/j.compenvurbsys.2026.102467"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02aqsxs83",
+        "label": "University of Oklahoma"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02hrr9v50",
+        "label": "Machine Science"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7253-3154",
+        "label": "Xin Feng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5025076321",
+        "label": "Yuanpei Cao"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11596",
+        "is_primary": true,
+        "label": "Constraint Satisfaction and Optimization",
+        "score": 0.2212,
+        "subfield": "1705"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11502",
+        "is_primary": false,
+        "label": "Facility Location and Emergency Management",
+        "score": 0.1868,
+        "subfield": "1407"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11704",
+        "is_primary": false,
+        "label": "Mobile Crowdsensing and Crowdsourcing",
+        "score": 0.065,
+        "subfield": "1706"
+      }
+    ]
+  },
+  "first_published": "2026-06-23",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W12382059",
+      "openalex:W1988423736",
+      "openalex:W1998000647",
+      "openalex:W1999590614",
+      "openalex:W2013634794",
+      "openalex:W2014310280",
+      "openalex:W2024060531",
+      "openalex:W2030994722",
+      "openalex:W2040729418",
+      "openalex:W2050684977",
+      "openalex:W2092127286",
+      "openalex:W2101240310",
+      "openalex:W2102750402",
+      "openalex:W2104670598",
+      "openalex:W2109691905",
+      "openalex:W2122448542",
+      "openalex:W2127859636",
+      "openalex:W2139298417",
+      "openalex:W2153171506",
+      "openalex:W2163428398",
+      "openalex:W2524000704",
+      "openalex:W2791070868",
+      "openalex:W3170317158",
+      "openalex:W4239852074",
+      "openalex:W4246598646",
+      "openalex:W4250828313",
+      "openalex:W4389727268",
+      "openalex:W4394013752",
+      "openalex:W4402847106",
+      "openalex:W4403501740",
+      "openalex:W4415344803",
+      "openalex:W7123359483"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.compenvurbsys.2026.102467",
+    "openalex": "W7165523879",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:13:19Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006016,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2169,
+      "out": 307
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:13:19Z",
+    "doi": "10.1016/j.compenvurbsys.2026.102467",
+    "journal": "Computers Environment and Urban Systems",
+    "source_id": "S60115552",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "While highly sample-efficient in the number of objective evaluations, the LLM-guided framework is constrained by high inference latency and still falls short of mature meta-heuristics in overall solution quality on larger problem instances.",
+      "what": "This study evaluates the spatial reasoning of three frontier large language models (LLMs) by embedding them as proposal generators within a local search framework for the discrete p-median problem. Tested on six standard TSPLIB point sets across varying facility counts, the LLM-guided search was benchmarked against exact mixed-integer programming and five classical heuristics. The LLM-based approach consistently outperformed greedy baselines and achieved near-optimal solutions on small-to-medium instances while requiring orders of magnitude fewer objective evaluations than tabu search.",
+      "why": "It demonstrates that contemporary LLMs possess intrinsic spatial reasoning capabilities that can be harnessed for facility-location optimization, establishing a baseline for hybrid optimization workflows that combine neural spatial intuition with exact external evaluation."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-23",
+  "work_key": "doi:10.1016/j.compenvurbsys.2026.102467"
+}

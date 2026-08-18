@@ -1,0 +1,255 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Anonymised GPS-based mobile phone data are increasingly used to estimate population distribution and human mobility, supporting applications across disaster response, public health, urban planning and migration research. Yet whether these data fairly represent the populations they describe, particularly outside high-income countries, remains poorly understood. We quantify coverage bias for 2,478 municipalities in Mexico by comparing population estimates from a single-platform source (Facebook) and a multi-app aggregator (Veraset) against the 2020 Mexican Population Census. We find that the magnitude and spatial distribution of coverage bias differ substantially across sources. Facebook provides higher and more evenly distributed coverage, whereas the multi-app data concentrate users in larger, wealthier and more digitally connected places. Coverage bias is also spatially structured, with neighbouring municipalities showing similar levels of over- or under-coverage. Using explainable machine learning, we show that digital access and material resources are the dominant drivers of bias for the multi-app data, while demographic and population structure dominate for Facebook. Explicitly modelling spatial dependence improves the performance of statistical models for explaining bias and reveals that an appreciable share of spatial variation remains unexplained by observed covariates. These findings show that coverage bias is source-specific and spatially dependent, and provide a foundation for adjustments that improve the representativeness of mobile phone data in unequal, data-scarce settings.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Carmen Cabrera",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Francisco Rowe",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Miguel González-Leonardo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Juan Ignacio Vilchis-García",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Elisa Omodei",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Maribel Hernández-Rosales",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.23616v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.23616v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-22",
+    "repository_urls": [],
+    "title": "One country, multiple portraits: representativeness in GPS-based mobility data is source-specific and spatially dependent"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-22_2606.23616",
+    "members": [
+      "arxiv:2606.23616"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 0.9714,
+        "id": "method:statistical-modeling",
+        "label": "statistical modeling"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5113632058",
+        "label": "Carmelo Cabrera"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4137-0246",
+        "label": "Francisco Rowe"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5130194936",
+        "label": "Miguel González-Leonardo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139200740",
+        "label": "Juan Ignacio Vilchis-García"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6748-5124",
+        "label": "Elisa Omodei"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1878-1223",
+        "label": "Maribel Hernández-Rosales"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.9102,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11819",
+        "is_primary": false,
+        "label": "Data-Driven Disease Surveillance",
+        "score": 0.0645,
+        "subfield": "2713"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11963",
+        "is_primary": false,
+        "label": "Impact of Light on Environment and Health",
+        "score": 0.0063,
+        "subfield": "2306"
+      }
+    ]
+  },
+  "first_published": "2026-06-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.23616",
+    "doi": "10.48550/arxiv.2606.23616",
+    "openalex": "W7165626585",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:08:07Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.006239,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2071,
+      "out": 348
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9683,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3873,
+    "relevance": 0.9683
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on two specific commercial data providers in a single country, meaning the exact bias profiles and drivers may differ for other platforms or national contexts.",
+      "what": "The study quantifies coverage bias in mobile phone location data across 2,478 municipalities in Mexico by comparing population estimates from Facebook and the multi-app aggregator Veraset against the 2020 Mexican Population Census. The analysis reveals that Facebook's data has higher and more evenly distributed coverage, whereas Veraset's data concentrates users in larger, wealthier, and more digitally connected municipalities. Explainable machine learning models show that digital access and material resources drive bias in the multi-app data, while demographic and population structures drive bias in the Facebook data.",
+      "why": "It demonstrates that demographic bias in GPS-based mobility data is not uniform but highly source-specific and spatially clustered. This provides a framework for researchers and planners to statistically adjust and correct for representation bias when using mobile data in highly unequal, data-scarce settings."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-22",
+  "work_key": "arxiv:2606.23616"
+}

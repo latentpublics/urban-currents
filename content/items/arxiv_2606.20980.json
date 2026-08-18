@@ -1,0 +1,252 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "As Self-Driving Cars continue to expand internationally and use multi-modal systems such as VLMs as a cognitive backbone for their Action models; how well will these systems generalize in new settings, in particular out-of-distribution (OOD) edge-case scenarios in new geographies? In this paper, we study this open question by providing a full factorial analysis with human drivers of Lima, human drivers from New York City, and VLMs and showing them dashcam footage collected from Lima and New York City -- prompting them with a variety of questions under a Visual Question Answering (VQA) paradigm. In particular, we pick these two cities as they are highly challenging driving locations where no Self-Driving Car company currently operates in, and ask questions that span 4 categories: Factual, Ratings, Counterfactual and Reasoning. We find that Humans and VLMs diverge in their responses -- though this is modulated by the type of questions asked, and that Humans answer similarly independent of where they are from (Lima/NYC). To our surprise, we did not find a strong difference in terms of answers (Humans or VLMs) that was modulated by geography, likely due to their high out-of-distribution nature. Our dataset is available at: https://huggingface.co/datasets/Artificio/robusto-2",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Adrian Cespedes",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Marcelo Chincha",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dunant Cusipuma",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Victor Flores-Benites",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "David Ortega",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Arturo Deza",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.RO"
+    ],
+    "comment": "11 pages main body. 42 pages total. Data publicly available online",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.20980v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.20980v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-18",
+    "repository_urls": [],
+    "title": "Robusto-2: Benchmarking Humans & VLMs for Autonomous Driving in Lima & New York City"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-18_2606.20980",
+    "members": [
+      "arxiv:2606.20980"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139169891",
+        "label": "Adrian Cespedes"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139168066",
+        "label": "Marcelo Chincha"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5119641984",
+        "label": "Dunant Cusipuma"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139192477",
+        "label": "Victor Flores-Benites"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139185379",
+        "label": "David Ortega"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0199-9023",
+        "label": "Arturo Deza"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q60",
+        "label": "New York City",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11714",
+        "is_primary": true,
+        "label": "Multimodal Machine Learning Applications",
+        "score": 0.9407,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11704",
+        "is_primary": false,
+        "label": "Mobile Crowdsensing and Crowdsourcing",
+        "score": 0.0055,
+        "subfield": "1706"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10709",
+        "is_primary": false,
+        "label": "Social Robot Interaction and HRI",
+        "score": 0.0043,
+        "subfield": "3207"
+      }
+    ]
+  },
+  "first_published": "2026-06-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.20980",
+    "doi": "10.48550/arxiv.2606.20980",
+    "openalex": "W7165653831",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:52:57Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.00554,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2061,
+      "out": 272
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.8861,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4344,
+    "relevance": 0.8861
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study presents Robusto-2, a benchmark dataset comparing how human drivers from Lima and New York City, alongside Vision-Language Models (VLMs), answer visual question-answering prompts based on dashcam footage from both cities. The evaluation covers four question categories—factual, ratings, counterfactual, and reasoning—to test responses to out-of-distribution, edge-case driving scenarios in highly challenging urban environments.",
+      "why": "It demonstrates that while human and VLM responses diverge depending on the question type, human drivers answer similarly regardless of their home city, and geography does not strongly modulate performance for either group in highly novel driving scenarios."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-18",
+  "work_key": "arxiv:2606.20980"
+}

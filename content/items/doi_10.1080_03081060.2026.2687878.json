@@ -1,0 +1,357 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Mass Rapid Transit is a globally efficient transport mode, yet its stations host large-scale pedestrian activity, leaving them vulnerable to hazards that can trigger evacuations. This study develops a pedestrian evacuation microsimulation framework capturing behavior across varying panic levels during metro station evacuations. Latin Hypercube Sampling and Random Forest modeling generate pedestrian behavior parameter combinations for calibrating the model and simulating panic conditions. Calibration uses a Genetic Algorithm, with validation via Geoffrey E. Havers statistics from CCTV data. Results show average speed fluctuates under low panic but remains stable under medium and high panic. Under low panic, most pedestrians evacuate in the later half; medium panic spreads evacuations evenly; high panic peaks in the first and last thirds. At peak hour (540 people), clearance times were 5.25–6.47 min, 5.12–5.25 min, and 4.90–5.07 min for low, medium, and high panic, respectively. These findings support countermeasures for safe, efficient MRT evacuations.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Bangladesh University of Engineering and Technology",
+            "ror": "05a1qpv97"
+          }
+        ],
+        "name": "Ifratul Hoque",
+        "openalex": "A5092593267",
+        "orcid": "https://orcid.org/0009-0009-5861-2679"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Bangladesh University of Engineering and Technology",
+            "ror": "05a1qpv97"
+          }
+        ],
+        "name": "Sadia Tahsin Quadir",
+        "openalex": "A5118617915",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Dalhousie University",
+            "ror": "01e6qks80"
+          }
+        ],
+        "name": "MD Jahedul Alam",
+        "openalex": "A5064052669",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Bangladesh University of Engineering and Technology",
+            "ror": "05a1qpv97"
+          }
+        ],
+        "name": "Madeha Sattar Khan",
+        "openalex": "A5138831516",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Bangladesh University of Engineering and Technology",
+            "ror": "05a1qpv97"
+          }
+        ],
+        "name": "Maria Mehrin",
+        "openalex": "A5094240274",
+        "orcid": "https://orcid.org/0009-0005-8119-1148"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Bangladesh University of Engineering and Technology",
+            "ror": "05a1qpv97"
+          }
+        ],
+        "name": "Mushirah Tasnim",
+        "openalex": "A5086539127",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Bangladesh University of Engineering and Technology",
+            "ror": "05a1qpv97"
+          }
+        ],
+        "name": "Zeba Fariha",
+        "openalex": "A5118617913",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Bangladesh University of Engineering and Technology",
+            "ror": "05a1qpv97"
+          }
+        ],
+        "name": "Afm Saiful Amin",
+        "openalex": "A5138949979",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/03081060.2026.2687878",
+      "pdf_url": null,
+      "source_id": "S68242086",
+      "source_name": "Transportation Planning and Technology",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-18",
+    "repository_urls": [],
+    "title": "A hybrid machine learning and microsimulation framework for simulating metro station evacuation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-18_10.1080/03081060",
+    "members": [
+      "doi:10.1080/03081060.2026.2687878"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05a1qpv97",
+        "label": "Bangladesh University of Engineering and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01e6qks80",
+        "label": "Dalhousie University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-5861-2679",
+        "label": "Ifratul Hoque"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5118617915",
+        "label": "Sadia Tahsin Quadir"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5064052669",
+        "label": "MD Jahedul Alam"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138831516",
+        "label": "Madeha Sattar Khan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0005-8119-1148",
+        "label": "Maria Mehrin"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5086539127",
+        "label": "Mushirah Tasnim"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5118617913",
+        "label": "Zeba Fariha"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138949979",
+        "label": "Afm Saiful Amin"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11500",
+        "is_primary": true,
+        "label": "Evacuation and Crowd Dynamics",
+        "score": 0.9966,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0005,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14011",
+        "is_primary": false,
+        "label": "Elevator Systems and Control",
+        "score": 0.0003,
+        "subfield": "2207"
+      }
+    ]
+  },
+  "first_published": "2026-06-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1888172398",
+      "openalex:W1973213151",
+      "openalex:W2012772655",
+      "openalex:W2013392669",
+      "openalex:W2014767144",
+      "openalex:W2018206788",
+      "openalex:W2020276315",
+      "openalex:W2070977968",
+      "openalex:W2147338209",
+      "openalex:W2167052694",
+      "openalex:W2313077167",
+      "openalex:W2317615359",
+      "openalex:W2517866598",
+      "openalex:W2547948715",
+      "openalex:W2559888775",
+      "openalex:W2606959685",
+      "openalex:W2611743072",
+      "openalex:W2766402408",
+      "openalex:W2788057900",
+      "openalex:W2804307570",
+      "openalex:W2809524280",
+      "openalex:W2913821756",
+      "openalex:W2930509876",
+      "openalex:W2965715266",
+      "openalex:W2981870364",
+      "openalex:W3007790934",
+      "openalex:W3013462370",
+      "openalex:W3042378853",
+      "openalex:W3082032036",
+      "openalex:W3209946682",
+      "openalex:W3211323786",
+      "openalex:W3214950481",
+      "openalex:W4206105038",
+      "openalex:W4226133701",
+      "openalex:W4249517230",
+      "openalex:W4280627078",
+      "openalex:W4303954677",
+      "openalex:W4307757479",
+      "openalex:W4317555482",
+      "openalex:W4382053000",
+      "openalex:W4384825876",
+      "openalex:W4385249991",
+      "openalex:W4388841465",
+      "openalex:W4389685033"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/03081060.2026.2687878",
+    "openalex": "W7165116486",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:53:00Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006046,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1937,
+      "out": 349
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:53:00Z",
+    "doi": "10.1080/03081060.2026.2687878",
+    "journal": "Transportation Planning and Technology",
+    "source_id": "S68242086",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's behavioral parameters and validation are derived from a single metro station's CCTV data, which may limit its direct applicability to stations with different layouts or architectural constraints.",
+      "what": "This study develops a hybrid pedestrian evacuation microsimulation framework that models evacuation behaviors across low, medium, and high panic levels. The model was calibrated using Latin Hypercube Sampling, Random Forest modeling, and a Genetic Algorithm, and validated using Geoffrey E. Havers statistics against CCTV footage from a metro station. Under peak-hour conditions with 540 people, simulated clearance times ranged from 5.25–6.47 minutes under low panic, 5.12–5.25 minutes under medium panic, and 4.90–5.07 minutes under high panic.",
+      "why": "It demonstrates that higher panic levels, while chaotic, can lead to faster overall station clearance times due to different temporal distributions of evacuees, providing transit operators with specific temporal evacuation profiles to design better emergency management strategies."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-18",
+  "work_key": "doi:10.1080/03081060.2026.2687878"
+}

@@ -64,7 +64,23 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139142535",
+        "label": "Maulik Srivastava"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139152872",
+        "label": "Esha Saha"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139149763",
+        "label": "Hao Wang"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [
@@ -74,7 +90,32 @@
         "label": "geemap"
       }
     ],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10555",
+        "is_primary": true,
+        "label": "Fire effects on ecosystems",
+        "score": 0.9714,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12597",
+        "is_primary": false,
+        "label": "Fire Detection and Safety Systems",
+        "score": 0.0133,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10535",
+        "is_primary": false,
+        "label": "Landslides and related hazards",
+        "score": 0.0016,
+        "subfield": "2308"
+      }
+    ]
   },
   "first_published": "2026-06-15",
   "graph": {
@@ -85,7 +126,7 @@
   "ids": {
     "arxiv": "2606.20693",
     "doi": "10.48550/arxiv.2606.20693",
-    "openalex": null,
+    "openalex": "W7165630631",
     "pmid": null
   },
   "provenance": {
@@ -93,7 +134,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-18T08:33:08Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00514,
     "llm": {

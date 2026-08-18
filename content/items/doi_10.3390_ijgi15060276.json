@@ -1,0 +1,236 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Reducing carbon emissions from daily travel has become an important goal of 15-minute living-circle planning, yet it remains unclear which facility configurations are most supportive of green travel. Using 634 living circles and 20 million mobile-phone travel records and point-of-interest (POI) data, this study examines how facility layout within a 15-minute cycling circle influences residents’ walking and cycling travel behavior. Extreme Gradient Boosting (XGBoost) models and Shapley Additive Explanations (SHAP) suggest that low accessibility is generally associated with lower green travel shares, while moderate facility density promotes green travel, yet for some facility types, high density may show diminishing marginal benefits. Vegetable markets and primary schools emerge as key facilities, with education facilities driven mainly by accessibility, entertainment facilities by density, and commercial and healthcare facilities by both. K-means clustering identifies three types of low-green-travel-performing living circles—characterized by low density and poor accessibility—concentrated in peripheral and newly developed areas. The methodology is transferable, and the derived numerical ranges and living-circle typologies offer context-specific implications for Tangshan, and identified differences in facility importance and diminishing marginal benefits enrich 15-minute city theory.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Politecnico di Torino",
+            "ror": "00bgk9508"
+          },
+          {
+            "name": "Tsinghua University",
+            "ror": "03cve4549"
+          }
+        ],
+        "name": "Yixin Zhang",
+        "openalex": "A5022776413",
+        "orcid": "https://orcid.org/0000-0001-9281-923X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tsinghua University",
+            "ror": "03cve4549"
+          }
+        ],
+        "name": "Jian Liu",
+        "openalex": "A5019285251",
+        "orcid": "https://orcid.org/0000-0001-9210-6766"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Politecnico di Torino",
+            "ror": "00bgk9508"
+          }
+        ],
+        "name": "Michele Bonino",
+        "openalex": "A5005770036",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.3390/ijgi15060276",
+      "pdf_url": "https://www.mdpi.com/2220-9964/15/6/276/pdf?version=1782273631",
+      "source_id": "S2764431341",
+      "source_name": "ISPRS International Journal of Geo-Information",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-21",
+    "repository_urls": [],
+    "title": "What Facilities and Layout Create a 15-Minute Living Circle for Green Travel"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-21_10.3390/ijgi1506",
+    "members": [
+      "doi:10.3390/ijgi15060276"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00bgk9508",
+        "label": "Politecnico di Torino"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03cve4549",
+        "label": "Tsinghua University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9281-923X",
+        "label": "Yixin Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9210-6766",
+        "label": "Jian Liu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5005770036",
+        "label": "Michele Bonino"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.8941,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0348,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0215,
+        "subfield": "2307"
+      }
+    ]
+  },
+  "first_published": "2026-06-21",
+  "graph": {
+    "cited_by_count": 1,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.3390/ijgi15060276",
+    "openalex": "W7165679786",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:05:16Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005845,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2025,
+      "out": 312
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:05:16Z",
+    "doi": "10.3390/ijgi15060276",
+    "journal": "ISPRS International Journal of Geo-Information",
+    "source_id": "S2764431341",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical findings and specific facility thresholds are derived from a single Chinese city, which may limit their direct applicability to different national or cultural urban contexts.",
+      "what": "This study analyzed 634 living circles in Tangshan, China, using 20 million mobile phone travel records and point-of-interest data to model how facility layouts affect walking and cycling. Using Extreme Gradient Boosting and Shapley Additive Explanations, the research identified that vegetable markets and primary schools are the most critical facilities for promoting green travel, while also revealing diminishing marginal benefits for high densities of certain facility types. K-means clustering categorized three distinct types of low-performing living circles, which are predominantly located in peripheral and newly developed urban areas.",
+      "why": "It quantifies the specific density thresholds and accessibility levels of different facility types required to support active travel, moving beyond general planning concepts to provide concrete numerical ranges for 15-minute city designs."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-21",
+  "work_key": "doi:10.3390/ijgi15060276"
+}

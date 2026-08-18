@@ -1,0 +1,315 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Urban wind simulation plays an important role in pedestrian comfort assessment, wind safety evaluation, air quality analysis, and broader urban environmental planning. Conventional computational fluid dynamics (CFD) approaches, although physically grounded, remain computationally demanding and highly reliant on mesh quality, which makes them impractical for large-scale or iterative urban design workflows. This study reviews recent developments in data-driven, physics-informed, and hybrid machine learning methods for urban wind prediction, with attention to their modeling assumptions, validation strategies, and generalization behavior. The literature is organized along the urban wind simulation pipeline to provide a structured overview of current surrogate modeling approaches and their practical limitations. The review highlights open challenges related to robustness, benchmarking, and uncertainty quantification, and discusses directions for improving the reliability and scalability of ML-based urban wind modeling.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Sakarya University",
+            "ror": "04ttnw109"
+          },
+          {
+            "name": "Georgia Institute of Technology",
+            "ror": "01zkghx44"
+          }
+        ],
+        "name": "İlker Karadağ",
+        "openalex": "A5038352515",
+        "orcid": "https://orcid.org/0000-0001-7534-2839"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Georgia Institute of Technology",
+            "ror": "01zkghx44"
+          }
+        ],
+        "name": "Danny Smyl",
+        "openalex": "A5025036979",
+        "orcid": "https://orcid.org/0000-0002-6730-5277"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Georgia Institute of Technology",
+            "ror": "01zkghx44"
+          }
+        ],
+        "name": "Patrick Kastner",
+        "openalex": "A5000286211",
+        "orcid": "https://orcid.org/0000-0003-4940-341X"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.scs.2026.107614",
+      "pdf_url": null,
+      "source_id": "S163634330",
+      "source_name": "Sustainable Cities and Society",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-22",
+    "repository_urls": [],
+    "title": "Machine learning for urban wind simulation: A comprehensive review"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-22_10.1016/j.scs.20",
+    "members": [
+      "doi:10.1016/j.scs.2026.107614"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04ttnw109",
+        "label": "Sakarya University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01zkghx44",
+        "label": "Georgia Institute of Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7534-2839",
+        "label": "İlker Karadağ"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6730-5277",
+        "label": "Danny Smyl"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4940-341X",
+        "label": "Patrick Kastner"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11371",
+        "is_primary": true,
+        "label": "Wind and Air Flow Studies",
+        "score": 0.5421,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11052",
+        "is_primary": false,
+        "label": "Energy Load and Power Forecasting",
+        "score": 0.0922,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10121",
+        "is_primary": false,
+        "label": "Building Energy and Comfort Optimization",
+        "score": 0.026,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-06-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1221900727",
+      "openalex:W1986907593",
+      "openalex:W2027862337",
+      "openalex:W2067429398",
+      "openalex:W2068370192",
+      "openalex:W2110951064",
+      "openalex:W2134066908",
+      "openalex:W2585298970",
+      "openalex:W2623713843",
+      "openalex:W2766298346",
+      "openalex:W2770167649",
+      "openalex:W2790676437",
+      "openalex:W2795982117",
+      "openalex:W2946556626",
+      "openalex:W2973119841",
+      "openalex:W2979786244",
+      "openalex:W2981383253",
+      "openalex:W3124024140",
+      "openalex:W3163993681",
+      "openalex:W3200982616",
+      "openalex:W4224089288",
+      "openalex:W4225102333",
+      "openalex:W4294946213",
+      "openalex:W4297901634",
+      "openalex:W4318757178",
+      "openalex:W4318978575",
+      "openalex:W4380051925",
+      "openalex:W4380052196",
+      "openalex:W4380758531",
+      "openalex:W4386366778",
+      "openalex:W4386708029",
+      "openalex:W4386884969",
+      "openalex:W4388509183",
+      "openalex:W4389003515",
+      "openalex:W4389396239",
+      "openalex:W4390540819",
+      "openalex:W4390590042",
+      "openalex:W4390590761",
+      "openalex:W4392628468",
+      "openalex:W4393119731",
+      "openalex:W4394578532",
+      "openalex:W4394713409",
+      "openalex:W4395674510",
+      "openalex:W4396896565",
+      "openalex:W4399149943",
+      "openalex:W4399696965",
+      "openalex:W4400066393",
+      "openalex:W4400985427",
+      "openalex:W4401528422",
+      "openalex:W4402945121",
+      "openalex:W4404160848",
+      "openalex:W4405041021",
+      "openalex:W4407405972",
+      "openalex:W4407407378",
+      "openalex:W4407597773",
+      "openalex:W4408515899",
+      "openalex:W4408710662",
+      "openalex:W4410483840",
+      "openalex:W4412694694",
+      "openalex:W4412978664",
+      "openalex:W4412981587",
+      "openalex:W4414708683",
+      "openalex:W4415672955",
+      "openalex:W4416212407",
+      "openalex:W4416417443",
+      "openalex:W4416528721",
+      "openalex:W4416768301",
+      "openalex:W4416841716",
+      "openalex:W4417333423",
+      "openalex:W7117714571",
+      "openalex:W7118096988",
+      "openalex:W7128536758"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.scs.2026.107614",
+    "openalex": "W7165598252",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:08:10Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.004706,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1823,
+      "out": 219
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:08:10Z",
+    "doi": "10.1016/j.scs.2026.107614",
+    "journal": "Sustainable Cities and Society",
+    "source_id": "S163634330",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This review synthesizes recent developments in data-driven, physics-informed, and hybrid machine learning methods used as surrogate models for urban wind simulation. It categorizes the literature along the standard simulation pipeline, evaluating how these models handle modeling assumptions, validation strategies, and generalization behavior compared to traditional computational fluid dynamics.",
+      "why": "It establishes a structured framework for understanding how machine learning can bypass the high computational costs and mesh-quality dependencies of conventional fluid dynamics, identifying critical gaps in robustness, benchmarking, and uncertainty quantification that must be resolved before these fast surrogates can be reliably deployed in iterative urban design."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-22",
+  "work_key": "doi:10.1016/j.scs.2026.107614"
+}

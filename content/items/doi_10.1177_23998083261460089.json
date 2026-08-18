@@ -1,0 +1,262 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Cadastral vector data has become particularly important in urban studies due to its ability to accurately represent different urban realities, such as vulnerability assessment, densification processes and the development of simulation models. This paper proposes a framework for analysing changes in cadastral parcels in Spanish cities, identifying transformation process involving geometric and land use changes. Land use maps were obtained for two dates, one in 2022 and another in 2024, covering 48 Spanish cities and consisting of six categories: single-family residential, multi-family residential, industrial, commercial and office, others and undeveloped. The framework combines thematic and spatial analyses, intersection operations, graph construction, and geometric characterisation of changes through different spatial metrics of parcels. The results revealed three main processes affecting cadastral parcels: Aggregating, Subdividing and Non-impactful. These processes mainly affected on undeveloped land with varying geometric characteristics. Large parcels with complex shapes were transformed into simple and elongated parcels through Subdividing processes, while average-sized parcels with simple shapes were transformed into compact, more complex parcels through Aggregating processes. These results provide insights into how urban spaces are evolving not only in terms of land use change, but also through transformations in parcel geometry. This opens several future research lines grounded on the monitoring of cadastral data, such as urban densification studies, policy impact assessment and urban growth simulation models coupled with parcel transformation algorithms.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Universidad de Alcalá",
+            "ror": "04pmn0e78"
+          }
+        ],
+        "name": "Nikolai Shurupov",
+        "openalex": "A5015223968",
+        "orcid": "https://orcid.org/0000-0001-8005-9763"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universidad de Alcalá",
+            "ror": "04pmn0e78"
+          }
+        ],
+        "name": "Francisco Aguilera Benavente",
+        "openalex": "A5056140848",
+        "orcid": "https://orcid.org/0000-0001-5710-2057"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/23998083261460089",
+      "pdf_url": null,
+      "source_id": "S4210191690",
+      "source_name": "Environment and Planning B Urban Analytics and City Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-16",
+    "repository_urls": [],
+    "title": "Identifying and characterising urban land use transformation processes using cadastral parcel geometries: A case study of Spanish cities"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-16_10.1177/23998083",
+    "members": [
+      "doi:10.1177/23998083261460089"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.96,
+        "id": "data:land-use",
+        "label": "land use data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-analysis",
+        "label": "spatial analysis"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04pmn0e78",
+        "label": "Universidad de Alcalá"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8005-9763",
+        "label": "Nikolai Shurupov"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5710-2057",
+        "label": "Francisco Aguilera Benavente"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": true,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.9298,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0086,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12502",
+        "is_primary": false,
+        "label": "Urbanization and City Planning",
+        "score": 0.0057,
+        "subfield": "3322"
+      }
+    ]
+  },
+  "first_published": "2026-06-16",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W922993608",
+      "openalex:W1964731352",
+      "openalex:W1989046955",
+      "openalex:W2042741439",
+      "openalex:W2055560755",
+      "openalex:W2062227890",
+      "openalex:W2121783226",
+      "openalex:W2134205213",
+      "openalex:W2140889880",
+      "openalex:W2159773298",
+      "openalex:W2168920903",
+      "openalex:W2588236947",
+      "openalex:W2615783079",
+      "openalex:W2740555258",
+      "openalex:W2920593539",
+      "openalex:W3110598922",
+      "openalex:W3133473762",
+      "openalex:W3179767683",
+      "openalex:W4205949591",
+      "openalex:W4280490441",
+      "openalex:W4289731418",
+      "openalex:W4297186089",
+      "openalex:W4307224088",
+      "openalex:W4308623387",
+      "openalex:W4308736555",
+      "openalex:W4309102529",
+      "openalex:W4382137911",
+      "openalex:W4384701585",
+      "openalex:W4385795871",
+      "openalex:W4386194105",
+      "openalex:W4387059140",
+      "openalex:W4389069581",
+      "openalex:W4391722524",
+      "openalex:W4400367835",
+      "openalex:W4400701284",
+      "openalex:W4404667556",
+      "openalex:W4404939341",
+      "openalex:W7130515551"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1177/23998083261460089",
+    "openalex": "W7164935320",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:38:25Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00386,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2101,
+      "out": 317
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:38:25Z",
+    "doi": "10.1177/23998083261460089",
+    "journal": "Environment and Planning B Urban Analytics and City Science",
+    "source_id": "S4210191690",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The analysis is limited to a short two-year observation window between 2022 and 2024, which may capture immediate development actions but not long-term structural trends.",
+      "what": "The study presents a framework that tracks geometric and land use changes in cadastral parcels across 48 Spanish cities between 2022 and 2024. Using spatial metrics, intersection operations, and graph construction, the method categorizes parcel transformations across six land use classes into three primary processes: aggregating, subdividing, and non-impactful. The analysis reveals that subdividing typically converts large, complex undeveloped parcels into simpler, elongated shapes, whereas aggregating merges average-sized, simple parcels into more compact and complex forms.",
+      "why": "It establishes a method to measure the physical restructuring of urban land at the parcel level, moving beyond simple land-use classification to quantify how the actual geometry and boundaries of urban properties evolve over time."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-16",
+  "work_key": "doi:10.1177/23998083261460089"
+}

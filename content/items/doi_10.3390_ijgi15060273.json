@@ -1,0 +1,297 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Urban healthcare systems are fundamentally constrained by the mismatch between static resource configurations and dynamically evolving patient demand. Under the tiered healthcare system, traditional static planning methods struggle to capture the complexity and randomness of patient flows. While recent reinforcement learning (RL) approaches enable adaptive decision-making, they suffer from dimensionality explosion and unstable convergence due to massive action spaces and delayed spatiotemporal credit assignment in city-scale environments. To address this gap, we propose Twin–Game: a digital twin-driven hierarchical reinforcement learning (HRL) framework that formulates adaptive healthcare resource optimization as a “Twin Game” between a simulation-based game environment (Strategic Sandbox) and a hierarchical decision policy. First, we construct the “first twin”—an offline digital twin that serves as the Strategic Sandbox parameterized with Wuhan’s observed facility, population, and transportation data, while patient arrivals and disease profiles are generated synthetically under documented assumptions because individual-level clinical flow data are not publicly available. This environment integrates a dynamic gravity model with a two-way referral mechanism to represent the nonlinear coupling between hospital attractiveness, crowding levels, and patient choice behaviors. Second, we build the “second twin”—an Option-based HRL policy. The Manager (Macro-level Strategic Layer) uses a Deep Q-Network (DQN) for discrete spatial attention allocation; the Worker (Micro-level Execution Layer) uses Proximal Policy Optimization (PPO) for continuous, fine-grained controls such as bed expansion ratios and personnel scheduling. The two twins interact in a closed-loop game, performing strategy search and game evolution under complex constraints to optimize allocation. Experimental results from the Wuhan case indicate that the Twin–Game framework outperforms static baselines and single-layer RL in reducing average travel times, enhancing resource utilization, and improving tiered diagnosis and treatment within the simulation setting. The results should be interpreted as simulation-based decision-support evidence rather than direct clinical validation. This study provides a data-driven, game-theoretic decision support tool for building resilient urban healthcare systems.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Wuhan University",
+            "ror": "033vjfk17"
+          }
+        ],
+        "name": "Yuxuan Hu",
+        "openalex": "A5128533900",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chinese Academy of Sciences",
+            "ror": "034t30j35"
+          },
+          {
+            "name": "Aerospace Information Research Institute",
+            "ror": "0419fj215"
+          },
+          {
+            "name": "State Key Laboratory of Remote Sensing Science",
+            "ror": "05wzjqa24"
+          }
+        ],
+        "name": "Shaohua Wang",
+        "openalex": "A5100456654",
+        "orcid": "https://orcid.org/0000-0001-8651-9505"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chinese Academy of Sciences",
+            "ror": "034t30j35"
+          },
+          {
+            "name": "Aerospace Information Research Institute",
+            "ror": "0419fj215"
+          },
+          {
+            "name": "State Key Laboratory of Remote Sensing Science",
+            "ror": "05wzjqa24"
+          }
+        ],
+        "name": "Haojian Liang",
+        "openalex": "A5045035223",
+        "orcid": "https://orcid.org/0000-0003-4077-1187"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.3390/ijgi15060273",
+      "pdf_url": null,
+      "source_id": "S2764431341",
+      "source_name": "ISPRS International Journal of Geo-Information",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-16",
+    "repository_urls": [],
+    "title": "Mastering the Twin–Game: Hierarchical Reinforcement Learning in a Digital Twin Sandbox for Adaptive Urban Healthcare Optimization—A Case Study of Wuhan"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-16_10.3390/ijgi1506",
+    "members": [
+      "doi:10.3390/ijgi15060273"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:033vjfk17",
+        "label": "Wuhan University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:034t30j35",
+        "label": "Chinese Academy of Sciences"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0419fj215",
+        "label": "Aerospace Information Research Institute"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05wzjqa24",
+        "label": "State Key Laboratory of Remote Sensing Science"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5128533900",
+        "label": "Yuxuan Hu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8651-9505",
+        "label": "Shaohua Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4077-1187",
+        "label": "Haojian Liang"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11773",
+        "is_primary": true,
+        "label": "Healthcare Operations and Scheduling Optimization",
+        "score": 0.2516,
+        "subfield": "3604"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10462",
+        "is_primary": false,
+        "label": "Reinforcement Learning in Robotics",
+        "score": 0.0973,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14413",
+        "is_primary": false,
+        "label": "Advanced Technologies in Various Fields",
+        "score": 0.0861,
+        "subfield": "1702"
+      }
+    ]
+  },
+  "first_published": "2026-06-16",
+  "graph": {
+    "cited_by_count": 1,
+    "referenced_works": [
+      "openalex:W13250241",
+      "openalex:W1979416562",
+      "openalex:W2002329437",
+      "openalex:W2006207965",
+      "openalex:W2007354362",
+      "openalex:W2042685939",
+      "openalex:W2050000782",
+      "openalex:W2056371669",
+      "openalex:W2062994874",
+      "openalex:W2089615703",
+      "openalex:W2103613143",
+      "openalex:W2109910161",
+      "openalex:W2115569288",
+      "openalex:W2121517924",
+      "openalex:W2145339207",
+      "openalex:W2161987701",
+      "openalex:W2166605782",
+      "openalex:W2309839112",
+      "openalex:W2518003110",
+      "openalex:W2786689981",
+      "openalex:W2900292137",
+      "openalex:W2964227312",
+      "openalex:W2999368019",
+      "openalex:W3005121704",
+      "openalex:W3009517831",
+      "openalex:W3012041784",
+      "openalex:W3015307185",
+      "openalex:W3085246603",
+      "openalex:W3096632704",
+      "openalex:W3185612106",
+      "openalex:W3212600507",
+      "openalex:W4224213880",
+      "openalex:W4297848564",
+      "openalex:W4322766375",
+      "openalex:W4390397349",
+      "openalex:W4405294899",
+      "openalex:W7123592655",
+      "openalex:W7131365077"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.3390/ijgi15060273",
+    "openalex": "W7164928092",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:38:25Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006409,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2353,
+      "out": 320
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:38:25Z",
+    "doi": "10.3390/ijgi15060273",
+    "journal": "ISPRS International Journal of Geo-Information",
+    "source_id": "S2764431341",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's patient arrivals and disease profiles are synthetically generated due to the unavailability of public individual-level clinical flow data, meaning the findings serve as simulation-based decision support rather than clinically validated outcomes.",
+      "what": "The researchers developed Twin-Game, a hierarchical reinforcement learning framework that optimizes urban healthcare resources using a digital twin sandbox of Wuhan, China. The system combines a macro-level Deep Q-Network for spatial attention allocation with a micro-level Proximal Policy Optimization model for continuous controls like bed expansion and staff scheduling. The simulation integrates a dynamic gravity model and a two-way referral mechanism, parameterizing Wuhan's facilities, population, and transport networks alongside synthetic patient flows.",
+      "why": "It provides a method to optimize complex, city-scale healthcare systems without the dimensionality explosion and unstable convergence that typically plague single-layer reinforcement learning models in massive action spaces."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-16",
+  "work_key": "doi:10.3390/ijgi15060273"
+}

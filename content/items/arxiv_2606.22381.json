@@ -1,0 +1,200 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Road traffic accidents remain a critical global crisis, consistently serving as a primary driver of preventable mortality and severe injury. These incidents are frequently precipitated by human error, including overspeeding, driving under the influence of alcohol, and cognitive fatigue. To address this urgent public safety challenge, this paper presents an intelligent, Internet of Things (IoT)-based Accident Prevention and Detection System (APDS) designed to systematically mitigate driver risk and optimize post-collision emergency responses. The proposed framework features a multi-tiered architecture capable of executing continuous real-time telemetry monitoring, proactive local alarm triggering, and automated situational intervention. Furthermore, the system integrates automated emergency communication protocols that aggregate immediate spatial coordinates via GPS and dispatch targeted alerts to medical facilities in close proximity, thereby optimizing response times and reducing accident-related fatalities.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Prabhu Pugalenthi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Pramod Krishnaa Dhanbalan",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.ET",
+      "cs.CV",
+      "eess.SY"
+    ],
+    "comment": "4 pages, 4 figures, 1 table",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.22381v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.22381v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-21",
+    "repository_urls": [],
+    "title": "Enhancing Road Safety: An IoT-Based Accident Detection and Prevention Mechanism"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-21_2606.22381",
+    "members": [
+      "arxiv:2606.22381"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139139324",
+        "label": "Prabhu Pugalenthi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139185495",
+        "label": "Pramod Krishnaa Dhanbalan"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12406",
+        "is_primary": true,
+        "label": "IoT and GPS-based Vehicle Safety Systems",
+        "score": 0.7499,
+        "subfield": "2210"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.0514,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0211,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-06-21",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.22381",
+    "doi": "10.48550/arxiv.2606.22381",
+    "openalex": "W7165622923",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:05:15Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.004828,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1827,
+      "out": 232
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8832,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3533,
+    "relevance": 0.8832
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The system's performance, reliability, and response times are described conceptually without empirical testing metrics, hardware specifications, or deployment results in a physical test environment.",
+      "what": "The researchers designed an Internet of Things (IoT)-based Accident Prevention and Detection System (APDS) that monitors driver telemetry in real time to prevent collisions and accelerate emergency responses. The multi-tiered architecture triggers local alarms, executes automated vehicle interventions, and uses GPS coordinates to automatically dispatch location alerts to nearby medical facilities.",
+      "why": "The system establishes a continuous, automated link between real-time driver risk detection and immediate emergency dispatch, reducing the critical delay between a collision and the arrival of medical services."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-21",
+  "work_key": "arxiv:2606.22381"
+}

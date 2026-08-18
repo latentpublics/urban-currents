@@ -1,0 +1,373 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Road pavement distress significantly affects traffic safety, vehicle durability, and environmental sustainability, making timely maintenance essential. Traditional inspection methods are labor-intensive, intrusive, and costly, while many data-driven approaches rely on expensive sensors or cloud computing, limiting scalability. This study presents a low-cost, non-intrusive monitoring system deployable on ordinary vehicles that performs automated pavement distress detection directly on-board using artificial intelligence. A dedicated image dataset was built by combining public resources with custom acquisitions, and pre-trained deep-learning models were adapted to this task. Three representative architectures were evaluated, including a lightweight real-time detector (YOLOv8n), a transformer-based detector (RT-DETR), and a two-stage detector (Faster R-CNN with a ResNet50 backbone). The recognition system was implemented on an embedded platform: NVIDIA Jetson Orin Nano. YOLOv8n achieved the best balance between accuracy and speed, processing 41 frames per second and achieving an average F1 score of 0.54 across all pavement distress classes. By linking edge artificial intelligence, pavement monitoring, safety, sustainability, and maintenance planning, the proposed framework supports an interdisciplinary approach to road infrastructure management. The results support the feasibility of affordable on-board artificial intelligence for road pavement assessment and its potential to prioritise targeted inspections and maintenance actions.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Istituto di Scienza e Tecnologie dell'Informazione \"Alessandro Faedo\"",
+            "ror": "05kacka20"
+          }
+        ],
+        "name": "Federica Petrongolo",
+        "openalex": "A5121309389",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Innovation Engineering (Italy)",
+            "ror": "00sxjp357"
+          }
+        ],
+        "name": "Domenico Profumo",
+        "openalex": "A5121356161",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Istituto di Scienza e Tecnologie dell'Informazione \"Alessandro Faedo\"",
+            "ror": "05kacka20"
+          }
+        ],
+        "name": "Laura Fiorella",
+        "openalex": "A5121363129",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Pisa",
+            "ror": "03ad39j10"
+          }
+        ],
+        "name": "Francesco Artuso",
+        "openalex": "A5021920460",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Pisa",
+            "ror": "03ad39j10"
+          }
+        ],
+        "name": "Simon Kanka",
+        "openalex": "A5072485950",
+        "orcid": "https://orcid.org/0000-0002-9243-5428"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Innovation Engineering (Italy)",
+            "ror": "00sxjp357"
+          }
+        ],
+        "name": "Francesco D’Alessandro",
+        "openalex": "A5075149527",
+        "orcid": "https://orcid.org/0000-0002-9867-7540"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Istituto di Scienza e Tecnologie dell'Informazione \"Alessandro Faedo\"",
+            "ror": "05kacka20"
+          }
+        ],
+        "name": "E Ascari",
+        "openalex": "A5016561659",
+        "orcid": "https://orcid.org/0000-0002-7542-0849"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Istituto di Scienza e Tecnologie dell'Informazione \"Alessandro Faedo\"",
+            "ror": "05kacka20"
+          }
+        ],
+        "name": "Luca Fredianelli",
+        "openalex": "A5003659688",
+        "orcid": "https://orcid.org/0000-0001-6575-9040"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Agenzia Regionale per la Protezione Ambientale del Piemonte",
+            "ror": "00qrc8a81"
+          },
+          {
+            "name": "Istituto di Scienza e Tecnologie dell'Informazione \"Alessandro Faedo\"",
+            "ror": "05kacka20"
+          }
+        ],
+        "name": "Gaetano Licitra",
+        "openalex": "A5138950370",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102086",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-18",
+    "repository_urls": [],
+    "title": "On-edge artificial intelligence technique for road pavement distress detection"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-18_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102086"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05kacka20",
+        "label": "Istituto di Scienza e Tecnologie dell'Informazione \"Alessandro Faedo\""
+      },
+      {
+        "confidence": null,
+        "id": "ror:00sxjp357",
+        "label": "Innovation Engineering (Italy)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03ad39j10",
+        "label": "University of Pisa"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00qrc8a81",
+        "label": "Agenzia Regionale per la Protezione Ambientale del Piemonte"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5121309389",
+        "label": "Federica Petrongolo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5121356161",
+        "label": "Domenico Profumo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5121363129",
+        "label": "Laura Fiorella"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5021920460",
+        "label": "Francesco Artuso"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9243-5428",
+        "label": "Simon Kanka"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9867-7540",
+        "label": "Francesco D’Alessandro"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7542-0849",
+        "label": "E Ascari"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6575-9040",
+        "label": "Luca Fredianelli"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138950370",
+        "label": "Gaetano Licitra"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [
+      {
+        "confidence": 0.9231,
+        "id": "github:ultralytics/ultralytics",
+        "label": "YOLO"
+      }
+    ],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11606",
+        "is_primary": true,
+        "label": "Infrastructure Maintenance and Monitoring",
+        "score": 0.9771,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10036",
+        "is_primary": false,
+        "label": "Advanced Neural Network Applications",
+        "score": 0.0066,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10264",
+        "is_primary": false,
+        "label": "Asphalt Pavement Performance Evaluation",
+        "score": 0.003,
+        "subfield": "2205"
+      }
+    ]
+  },
+  "first_published": "2026-06-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2005546834",
+      "openalex:W2024877079",
+      "openalex:W2090023686",
+      "openalex:W2165698076",
+      "openalex:W2795532644",
+      "openalex:W2982007115",
+      "openalex:W3041133507",
+      "openalex:W3127743092",
+      "openalex:W4224236022",
+      "openalex:W4392544261",
+      "openalex:W4394779311",
+      "openalex:W4399054064",
+      "openalex:W4405094051",
+      "openalex:W4406458849",
+      "openalex:W4409796263",
+      "openalex:W4410866568",
+      "openalex:W4411802597",
+      "openalex:W7117323431"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102086",
+    "openalex": "W7165163455",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:53:00Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006406,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2057,
+      "out": 369
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:53:00Z",
+    "doi": "10.1016/j.trip.2026.102086",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The system's detection accuracy is relatively modest, as indicated by an average F1 score of 0.54 across the distress categories.",
+      "what": "The study developed a low-cost, non-intrusive road pavement distress detection system that runs on-board ordinary vehicles using an NVIDIA Jetson Orin Nano embedded platform. Researchers trained and compared three deep-learning architectures—YOLOv8n, RT-DETR, and Faster R-CNN with a ResNet50 backbone—on a custom dataset combining public and newly acquired images. The lightweight YOLOv8n model performed best for real-time deployment, processing 41 frames per second with an average F1 score of 0.54 across all distress classes.",
+      "why": "It demonstrates that automated, real-time road damage assessment can be performed directly on edge devices inside standard vehicles, removing the dependency on expensive specialized sensors or continuous cloud connectivity for scalable infrastructure monitoring."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-18",
+  "work_key": "doi:10.1016/j.trip.2026.102086"
+}

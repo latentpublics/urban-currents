@@ -1,0 +1,243 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Map generalization remains one of the fundamental tasks in cartography, especially for the simplification and aggregation of complex building footprints. This study presents the first exploratory application of graph-based deep learning to both tasks, reformulating simplification as node movement prediction and aggregation as link prediction within a unified graph learning framework. We evaluate representative graph neural network architectures (GCN, GAT, and GraphSAGE) on multi-scale building datasets, showing that GraphSAGE demonstrates relative strengths in link prediction accuracy, while also revealing persistent challenges in precise node movement prediction. Beyond quantitative performance, the results highlight that aggregation poses greater complexity and challenges than simplification, underscoring the difficulty of capturing higher-level spatial relationships in map generalization with current deep learning approaches. Although limitations such as data imbalance and the need for post-processing remain, the study provides valuable insights and methodological directions for advancing automated map generalization with deep learning approaches.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Yanning Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zhiyong Zhou",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zhouyu Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mengni Yu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yu Feng",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": "15 pages, 20 figures, 10 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.19956v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.19956v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-18",
+    "repository_urls": [],
+    "title": "Towards Graph-Based Deep Learning for Map Generalization: Insights from Building Footprints Simplification and Aggregation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-18_2606.19956",
+    "members": [
+      "arxiv:2606.19956"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:building-footprint",
+        "label": "building footprints"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:gnn",
+        "label": "graph neural network"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5138997479",
+        "label": "Yanning Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138999481",
+        "label": "Zhiyong Zhou"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5085416141",
+        "label": "Zhouyu Liu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138984771",
+        "label": "Mengni Yu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139018121",
+        "label": "Yu Feng"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": true,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.4006,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.1189,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.1051,
+        "subfield": "2212"
+      }
+    ]
+  },
+  "first_published": "2026-06-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.19956",
+    "doi": "10.48550/arxiv.2606.19956",
+    "openalex": "W7165380584",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:52:57Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005242,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1887,
+      "out": 268
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8938,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3575,
+    "relevance": 0.8938
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The models currently suffer from data imbalance and require manual or algorithmic post-processing to produce final cartographic outputs.",
+      "what": "This study reformulates map generalization tasks by applying graph-based deep learning to building footprints, modeling simplification as node movement prediction and aggregation as link prediction. The researchers evaluated GraphSAGE, GCN, and GAT architectures on multi-scale building datasets, finding that GraphSAGE performed best at link prediction, though precise node movement prediction remained difficult across all models.",
+      "why": "It establishes the first unified graph learning framework for both simplification and aggregation, demonstrating that deep learning can capture complex spatial relationships for cartographic automation while identifying that aggregation is significantly more difficult to model than simplification."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-18",
+  "work_key": "arxiv:2606.19956"
+}

@@ -1,0 +1,198 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Understanding the complex topology and hierarchy of urban power grid is crucial for energy prognosis, power flow management, and system resilience analysis. However, detailed grid information remains largely proprietary. This creates significant barriers for research and innovation, especially when analyzing the last-mile distribution networks connecting individual buildings. This paper addresses this challenge by developing an open-data-driven framework for the complete identification of urban power grid topology, from high-voltage transmission down to individual building connections. Particularly, we fuse public infrastructure data (power-lines, substations, transformers, poles) to map the high and medium-voltage skeleton using graph-based algorithms. We then leverage geospatial machine learning on OpenStreetMap building data to group power demand clusters, and infer the physical topology of the final distribution lines linking the clustered buildings. We apply the developed framework to the district of Alna in Oslo, Norway, and we reconstruct the complete grid topology that connects 7,330 buildings and all major electricity infrastructure assets. With the research in this work, we provide a critical tool that facilitates power system analysis, e.g., power flow optimization, cascading failure simulation, and grid resilience against the penetration of distributed renewable generation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Shiliang Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sabita Maharjan",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.21352v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.21352v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-19",
+    "repository_urls": [],
+    "title": "Urban Power Grid Topology and Hierarchy Identification from Open Data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-19_2606.21352",
+    "members": [
+      "arxiv:2606.21352"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139204138",
+        "label": "Shiliang Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139199380",
+        "label": "Sabita Maharjan"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10454",
+        "is_primary": true,
+        "label": "Optimal Power Flow Distribution",
+        "score": 0.2609,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10917",
+        "is_primary": false,
+        "label": "Smart Grid Security and Resilience",
+        "score": 0.1218,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10305",
+        "is_primary": false,
+        "label": "Power System Optimization and Stability",
+        "score": 0.0986,
+        "subfield": "2208"
+      }
+    ]
+  },
+  "first_published": "2026-06-19",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.21352",
+    "doi": "10.48550/arxiv.2606.21352",
+    "openalex": "W7165642148",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:58:21Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.00575,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1979,
+      "out": 309
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8954,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3582,
+    "relevance": 0.8954
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "7,330 buildings",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's reconstruction accuracy was demonstrated in only a single district in Oslo, and its performance may vary in regions with less complete OpenStreetMap data.",
+      "what": "The researchers developed an open-data-driven framework that reconstructs complete urban power grid topologies from high-voltage transmission lines down to individual building connections. The method fuses public infrastructure data using graph-based algorithms for high- and medium-voltage lines, then applies geospatial machine learning to OpenStreetMap building data to cluster power demand and infer low-voltage distribution lines. The framework was validated by mapping the entire grid network connecting 7,330 buildings and major electricity assets in the Alna district of Oslo, Norway.",
+      "why": "It provides a method to bypass the proprietary restrictions on utility network data, enabling researchers to model last-mile power distribution, simulate cascading failures, and analyze grid resilience for renewable energy integration using entirely public data."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-19",
+  "work_key": "arxiv:2606.21352"
+}

@@ -1,0 +1,168 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Sorting a huge stream of waste accurately within a short period can be done with the support of digitalization, particularly Artificial Intelligence, instead of traditional methods. The overlap of Artificial Intelligence and Circular Economy can flourish many services in the environmental technology domain, in particular smart ewaste recycling, resulting in enabling circular smart cities. We analyse the growing need for automated ewaste recycling as an essential requirement to cope with the fast growing ewaste stream and we shed the light on the impact of Artificial Intelligence in supporting the recycling process through smart classification of devices, where the smartphone is our case study. Our study applies transfer learning as a special technique of Artificial Intelligence by finetuning the output layers of AlexNet as a pretrained model and perform the implementation on a small size dataset that contains 12 classes from 6 smartphone brands. We evaluate the performance of our model by tuning the learning rate, choosing the best optimizer, and augmenting the original dataset to avoid overfitting. We found that the optimizer of Stochastic Gradient Descent with Momentum and 3e-4 as a learning rate brings almost 98% model accuracy with generalization. Our study supports automated ewaste recycling in decreasing the error rate of ewaste sorting and investigates the advantages of applying transfer learning as the best scenario to overcome the rising challenges.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Nermeen Abou Baker",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Paul Szabo-Müller",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Uwe Handmann",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "comment": "Published by the EAI Endorsed Transactions on Smart Cities, 2021 journal",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.23286v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.23286v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-22",
+    "repository_urls": [],
+    "title": "Transfer learning-based method for automated ewaste recycling in smart cities"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-22_2606.23286",
+    "members": [
+      "arxiv:2606.23286"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-06-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.23286",
+    "doi": "10.4108/eai.16-4-2021.169337",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:08:07Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.0036,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1158,
+      "out": 207
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9239,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3696,
+    "relevance": 0.9239
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's high accuracy was validated only on a small dataset of 12 smartphone classes, which may not represent the diverse and degraded state of real-world e-waste streams.",
+      "what": "The study developed an automated e-waste classification model by fine-tuning the output layers of the pre-trained AlexNet architecture using transfer learning. The model was trained and evaluated on a small dataset consisting of 12 smartphone classes across 6 different brands, utilizing data augmentation to prevent overfitting. The optimized configuration, using a Stochastic Gradient Descent with Momentum optimizer and a learning rate of 3e-4, achieved a classification accuracy of approximately 98%.",
+      "why": "It demonstrates that high-accuracy smartphone classification for circular economy recycling can be achieved with limited training data, reducing the need for massive, custom-labeled e-waste datasets."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-22",
+  "work_key": "arxiv:2606.23286"
+}

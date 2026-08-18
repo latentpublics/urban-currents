@@ -1,0 +1,227 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Agentic systems are changing how complex operational tasks are coordinated, introducing a new paradigm for connecting heterogeneous data sources and automating processes. Electric bus fleets provide a relevant test case. Their operation requires continuous coordination between service reliability, battery state-of-charge, charger availability, electricity prices, route-energy uncertainty, and vehicle-to-grid (V2G) opportunities. This paper proposes an agentic aggregator framework that streamlines this decision environment by coupling an optimization-based electric bus scheduling model with supervisory agents for disturbance detection, tariff adaptation, and schedule evaluation. The optimization core enforces physical feasibility across routes, chargers, batteries, and V2G exchanges, while the agentic layer interprets changing operating conditions, triggers real-time re-optimization when needed, and defines how flexibility value is allocated between the aggregator and the public transport operator (PTO). A realistic depot case study evaluates day-ahead and real-time operations under profit-based and operation-based coordination modes, considering service delays, route-energy deviations, electricity price shocks, and combined disturbances. The results show that agentic aggregation can support adaptive fleet-grid coordination by maintaining feasible schedules, activating re-optimization selectively, and improving the use of charging and V2G flexibility. However, they also reveal a critical trade-off: the same agentic capability that reduces operational complexity can extract value from the PTO when configured around profit-oriented pricing. These findings suggest that agentic aggregators can become useful for managing electric bus V2G operations, but their deployment in public-fleet contexts requires transparent coordination modes, auditable tariff-setting, and explicit value-sharing rules.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Jônatas Augusto Manzolli",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ali Eslami",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Luis Miranda-Moreno",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jiangbo Yu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI",
+      "eess.SY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.26400v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.26400v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-24",
+    "repository_urls": [],
+    "title": "When Agents Meet Electric Bus Fleet Operations: Pricing Behavior, Trade-offs, and Policy Implications in an Aggregator Framework"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-24_2606.26400",
+    "members": [
+      "arxiv:2606.26400"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.8889,
+        "id": "method:optimization",
+        "label": "optimization"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139451353",
+        "label": "Jônatas Augusto Manzolli"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0875-9156",
+        "label": "Ali Eslami"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5130626161",
+        "label": "Luis Miranda-Moreno"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5107877612",
+        "label": "J. Yu"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10768",
+        "is_primary": true,
+        "label": "Electric Vehicles and Infrastructure",
+        "score": 0.9177,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.0411,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": false,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.0124,
+        "subfield": "2209"
+      }
+    ]
+  },
+  "first_published": "2026-06-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.26400",
+    "doi": "10.48550/arxiv.2606.26400",
+    "openalex": "W7166019020",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T09:18:31Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.006112,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2185,
+      "out": 315
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8667,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3467,
+    "relevance": 0.8667
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and financial trade-offs were evaluated using a single simulated depot case study rather than a deployed, multi-depot transit network.",
+      "what": "This paper introduces an agentic aggregator framework that couples an optimization-based electric bus scheduling model with supervisory agents to manage real-time disturbances, tariff adaptation, and schedule evaluation. The system enforces physical constraints across routes, chargers, batteries, and vehicle-to-grid (V2G) exchanges, and was evaluated using a realistic depot case study under profit-based and operation-based coordination modes facing service delays, energy deviations, and price shocks.",
+      "why": "It demonstrates that while agentic systems can successfully automate complex fleet-grid coordination and maintain feasible schedules under stress, profit-oriented configurations can extract financial value away from public transport operators, highlighting the need for auditable tariff-setting and explicit value-sharing rules in public-fleet deployments."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-24",
+  "work_key": "arxiv:2606.26400"
+}

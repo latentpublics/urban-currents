@@ -1,0 +1,286 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Urban design often underrepresents how pedestrians perceive and visually engage with their surroundings. This exploratory study introduces a computational, evidence-based framework that integrates real-world eye-tracking data with AI-powered semantic segmentation to assess visual attention across urban streetscapes. Gaze behavior was recorded using wearable eye-trackers along pedestrian routes in a mid-density American city and categorized into seven Area of Interest (AOI) classes representing key urban elements such as sidewalks and roads, vegetation, built structures, vehicles, humans, objects and sky. Gaze-based metrics, including fixation duration, visit frequency and pupil diameter were aggregated and normalized to compute a composite Urban Attention Index (UAI), quantifying perceptual engagement per AOI class. Additional sensitivity analysis and normalization comparison were included to examine the influence of weighting and scaling choices on the UAI results. A deep learning based semantic segmentation model was trained and validated using pixel-level performance metrics to automatically label urban images, enabling the generation of attention-weighted heatmaps that spatially visualize gaze salience. The resulting AI-driven tool enables users to upload street-level imagery and receive intuitive, data-informed insights into how urban elements may attract visual attention. Results from the exploratory sample show that sidewalks, vegetation, and built structures consistently attracted higher attention, whereas sky and signage were perceived peripherally. The findings demonstrate a methodological workflow for linking gaze behavior, semantic segmentation, and spatial visualization in urban perception analysis. The proposed framework offers a reproducible basis for future larger-scale studies and supports evidence-informed evaluation of pedestrian visual experience in public spaces.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "North Carolina Agricultural and Technical State University",
+            "ror": "02aze4h65"
+          }
+        ],
+        "name": "Mahzerin Sultana",
+        "openalex": "A5109797503",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "North Carolina Agricultural and Technical State University",
+            "ror": "02aze4h65"
+          }
+        ],
+        "name": "Shuva Chowdhury",
+        "openalex": "A5004332483",
+        "orcid": "https://orcid.org/0000-0001-8261-4468"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Lamar University",
+            "ror": "008ms5s18"
+          }
+        ],
+        "name": "Md Fahim Shahriar",
+        "openalex": "A5138971816",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102113",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-20",
+    "repository_urls": [],
+    "title": "Visual attention as a design variable: AI-integrated eye-tracking and semantic segmentation in urban perception analysis"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-20_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102113"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:remote-sensing-classification",
+        "label": "remote sensing classification"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02aze4h65",
+        "label": "North Carolina Agricultural and Technical State University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:008ms5s18",
+        "label": "Lamar University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5109797503",
+        "label": "Mahzerin Sultana"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8261-4468",
+        "label": "Shuva Chowdhury"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138971816",
+        "label": "Md Fahim Shahriar"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11707",
+        "is_primary": true,
+        "label": "Gaze Tracking and Assistive Technology",
+        "score": 0.4095,
+        "subfield": "1709"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11605",
+        "is_primary": false,
+        "label": "Visual Attention and Saliency Detection",
+        "score": 0.2352,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0524,
+        "subfield": "2307"
+      }
+    ]
+  },
+  "first_published": "2026-06-20",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W9931112",
+      "openalex:W2128114415",
+      "openalex:W2564975129",
+      "openalex:W2893009554",
+      "openalex:W2964695364",
+      "openalex:W3020914917",
+      "openalex:W3086255133",
+      "openalex:W3095016512",
+      "openalex:W3154076935",
+      "openalex:W3168363549",
+      "openalex:W3206064710",
+      "openalex:W3210629698",
+      "openalex:W3217703173",
+      "openalex:W4206488150",
+      "openalex:W4206745018",
+      "openalex:W4213174910",
+      "openalex:W4286493363",
+      "openalex:W4295851883",
+      "openalex:W4306678309",
+      "openalex:W4318825825",
+      "openalex:W4321766499",
+      "openalex:W4382240293",
+      "openalex:W4384103767",
+      "openalex:W4385699604",
+      "openalex:W4388411841",
+      "openalex:W4390502166",
+      "openalex:W4402520632",
+      "openalex:W4404074489",
+      "openalex:W4404804534",
+      "openalex:W4405199698",
+      "openalex:W4405494605",
+      "openalex:W4405855236",
+      "openalex:W4407389201",
+      "openalex:W4407669969",
+      "openalex:W4408597752",
+      "openalex:W4413046272"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102113",
+    "openalex": "W7165371881",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:02:48Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.0037,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2153,
+      "out": 288
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:02:48Z",
+    "doi": "10.1016/j.trip.2026.102113",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's initial findings and attention-weighted heatmaps are based on an exploratory sample of pedestrian routes within a single mid-density American city.",
+      "what": "This study develops a computational framework that combines wearable eye-tracking data from pedestrian routes in a mid-density American city with AI-driven semantic segmentation. The system categorizes gaze behavior into seven urban element classes to calculate a composite Urban Attention Index (UAI) based on fixation duration, visit frequency, and pupil diameter, while generating attention-weighted heatmaps from street-level imagery. Exploratory testing revealed that sidewalks, vegetation, and buildings consistently draw the highest visual engagement, while sky and signage remain peripheral.",
+      "why": "It provides a reproducible, automated workflow that translates raw physiological gaze data into spatial design insights, allowing planners to test how specific streetscape configurations attract or deflect pedestrian attention."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-20",
+  "work_key": "doi:10.1016/j.trip.2026.102113"
+}

@@ -1,0 +1,324 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Urban heat island (UHI) effects have become a critical challenge constraining urban sustainability, as accelerating global urbanization has intensified thermal stress in cities worldwide. However, existing studies predominantly rely on correlation analysis and linear regression to explore relationships between urban spatial features and land surface temperature (LST). While recent machine learning studies have improved predictive accuracy, they lack interpretable quantitative methods to systematically identify the marginal benefit boundaries of key driving factors for urban heat environment regulation, thereby hindering the translation of model outputs into actionable, data-driven planning frameworks.Taking Shijiazhuang, a typical high-density city in northern China, as the study area, this study integrates multi-source heterogeneous data including remote sensing imagery, street-view-derived sky view factor (SVF), traffic flow and points of interest, to construct a random forest model combined with explainable AI (XAI) techniques. An XAI-driven “data—model—threshold—decision” framework is developed to characterise nonlinear predictive relationships between urban elements and summer LST via three core quantitative indicators.Results demonstrate that SVF is the most temporally stable LST predictor; key predictive thresholds of 0.270 for building density and 2,800 vehicles/hour for traffic flow are identified; enhanced vegetation index and building morphology exhibit diurnal complementary patterns, with socioeconomic variables showing pronounced nonlinear co-variation with the thermal environment. These findings provide quantitative references for evidence-based, climate-adaptive urban planning.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Macau",
+            "ror": "01r4q9n85"
+          }
+        ],
+        "name": "Qiuning Ding",
+        "openalex": "A5068209018",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Macau",
+            "ror": "01r4q9n85"
+          }
+        ],
+        "name": "Weizheng Ye",
+        "openalex": "A5012762253",
+        "orcid": "https://orcid.org/0000-0001-6141-5160"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Macau",
+            "ror": "01r4q9n85"
+          }
+        ],
+        "name": "Zichun Shao",
+        "openalex": "A5139097977",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tianjin Chengjian University",
+            "ror": "01d0bkz51"
+          }
+        ],
+        "name": "Haitao Wang",
+        "openalex": "A5139099993",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s43762-026-00275-4",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s43762-026-00275-4.pdf",
+      "source_id": "S4210175573",
+      "source_name": "Computational Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-22",
+    "repository_urls": [],
+    "title": "Identifying predictive thresholds and marginal benefit boundaries of urban heat environments via explainable AI"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-22_10.1007/s43762-0",
+    "members": [
+      "doi:10.1007/s43762-026-00275-4"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:poi",
+        "label": "points of interest"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01r4q9n85",
+        "label": "University of Macau"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01d0bkz51",
+        "label": "Tianjin Chengjian University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5068209018",
+        "label": "Qiuning Ding"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6141-5160",
+        "label": "Weizheng Ye"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139097977",
+        "label": "Zichun Shao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139099993",
+        "label": "Haitao Wang"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.9918,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.0018,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0008,
+        "subfield": "2307"
+      }
+    ]
+  },
+  "first_published": "2026-06-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1988400133",
+      "openalex:W2048231652",
+      "openalex:W2143481518",
+      "openalex:W2165700458",
+      "openalex:W2560136348",
+      "openalex:W2941529264",
+      "openalex:W3014952174",
+      "openalex:W3111589744",
+      "openalex:W3136893307",
+      "openalex:W3198183881",
+      "openalex:W4200351456",
+      "openalex:W4280609344",
+      "openalex:W4318464648",
+      "openalex:W4361292570",
+      "openalex:W4362718393",
+      "openalex:W4384936964",
+      "openalex:W4385713176",
+      "openalex:W4386759332",
+      "openalex:W4388405251",
+      "openalex:W4388464821",
+      "openalex:W4390815327",
+      "openalex:W4391258524",
+      "openalex:W4391507974",
+      "openalex:W4392610956",
+      "openalex:W4394742417",
+      "openalex:W4396577873",
+      "openalex:W4401500926",
+      "openalex:W4402397718",
+      "openalex:W4403193783",
+      "openalex:W4404241025",
+      "openalex:W4404972764",
+      "openalex:W4406489245",
+      "openalex:W4407145176",
+      "openalex:W4410314510",
+      "openalex:W4410928419",
+      "openalex:W4411441200",
+      "openalex:W4412827770",
+      "openalex:W4413718843",
+      "openalex:W4413917801",
+      "openalex:W4414511955",
+      "openalex:W4415641410",
+      "openalex:W4416409056",
+      "openalex:W4417245484",
+      "openalex:W4417443790",
+      "openalex:W7106032529",
+      "openalex:W7118007934"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s43762-026-00275-4",
+    "openalex": "W7165585540",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:08:12Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006269,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2103,
+      "out": 346
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:08:12Z",
+    "doi": "10.1007/s43762-026-00275-4",
+    "journal": "Computational Urban Science",
+    "source_id": "S4210175573",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical thresholds and predictive relationships are derived from a single high-density city in northern China, which may limit their direct applicability to cities with different climates or urban morphologies.",
+      "what": "This study developed a random forest model combined with explainable AI techniques to analyze the nonlinear relationships between urban spatial features and summer land surface temperatures in Shijiazhuang, China. Using multi-source data including remote sensing imagery, street-view-derived sky view factor (SVF), traffic flow, and points of interest, the model identified key predictive thresholds such as a building density limit of 0.270 and a traffic flow threshold of 2,800 vehicles per hour. The analysis also revealed that SVF is the most temporally stable predictor, while vegetation index and building morphology show complementary diurnal patterns.",
+      "why": "It establishes a quantitative framework that translates complex machine learning outputs into specific, actionable planning thresholds for urban heat mitigation, moving beyond simple linear correlations to identify precise marginal benefit boundaries."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-22",
+  "work_key": "doi:10.1007/s43762-026-00275-4"
+}

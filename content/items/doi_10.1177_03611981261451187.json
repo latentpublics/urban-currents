@@ -1,0 +1,257 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Freight transportation is an essential component of urban systems, as it supports economic activity and provides consumer services. However, current urban freight models are often disconnected from passenger transport simulations. This separation limits their ability to support integrated policy analysis, especially in the context of shared infrastructure and rising e-commerce demand. This study conducts a comprehensive review of agent-based urban freight modeling literature, focusing on behavioral realism, integration with passenger models, and representation of logistics processes. Key limitations are identified, including the absence of consistent agent structures, decision hierarchies, and insufficient alignment with land-use and emission models. Existing frameworks often treat freight activity in isolation, lack temporal depth, and fail to represent cross-sector interactions such as those driven by online shopping. To address these limitations, this study presents an integrated conceptual framework that embeds urban freight modeling within an existing agent-based urban system simulation platform. The extended framework introduces logistics actors such as shippers, carriers, receivers, and consumers. It incorporates them across long-term, medium-term, and short-term decision modules. Freight decisions, including firm transitions, fleet strategies, logistics planning, and delivery scheduling, are modeled in alignment with passenger systems. The integration occurs within a shared simulation environment, where freight and passenger activities interact through a common traffic flow simulator and virtual activity schedules. This framework enables behaviorally consistent and policy-sensitive simulation of urban mobility systems, particularly in the context of e-commerce-driven freight demand. Results of this study provide a foundation for future development of integrated models capable of supporting strategic planning, emission reduction, and multimodal transport policies.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Dalhousie University",
+            "ror": "01e6qks80"
+          }
+        ],
+        "name": "Niaz Mahmud",
+        "openalex": "A5102509486",
+        "orcid": "https://orcid.org/0000-0002-2538-5045"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Dalhousie University",
+            "ror": "01e6qks80"
+          }
+        ],
+        "name": "Muhammad Ahsanul Habib",
+        "openalex": "A5029502782",
+        "orcid": "https://orcid.org/0000-0003-1461-9552"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/03611981261451187",
+      "pdf_url": null,
+      "source_id": "S145575934",
+      "source_name": "Transportation Research Record Journal of the Transportation Research Board",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-19",
+    "repository_urls": [],
+    "title": "Agent-Based Urban Freight Modeling: Lessons Learned from the Literature and a Framework for Passenger–Freight Integration"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-19_10.1177/03611981",
+    "members": [
+      "doi:10.1177/03611981261451187"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01e6qks80",
+        "label": "Dalhousie University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2538-5045",
+        "label": "Niaz Mahmud"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1461-9552",
+        "label": "Muhammad Ahsanul Habib"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12306",
+        "is_primary": true,
+        "label": "Urban and Freight Transport Logistics",
+        "score": 0.9966,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11223",
+        "is_primary": false,
+        "label": "Maritime Ports and Logistics",
+        "score": 0.0018,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.0002,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-06-19",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1995342186",
+      "openalex:W2031929624",
+      "openalex:W2046076807",
+      "openalex:W2095586526",
+      "openalex:W2099622829",
+      "openalex:W2140075902",
+      "openalex:W2151437712",
+      "openalex:W2171923952",
+      "openalex:W2604612420",
+      "openalex:W2768849837",
+      "openalex:W2890758904",
+      "openalex:W2962887031",
+      "openalex:W2981244628",
+      "openalex:W2996377732",
+      "openalex:W3007783696",
+      "openalex:W3016666728",
+      "openalex:W3020000364",
+      "openalex:W3025294448",
+      "openalex:W3039274539",
+      "openalex:W3081574797",
+      "openalex:W3162728682",
+      "openalex:W3202368864",
+      "openalex:W3215829828",
+      "openalex:W4206456858",
+      "openalex:W4214647915",
+      "openalex:W4243498442",
+      "openalex:W4280640784",
+      "openalex:W4281730724",
+      "openalex:W4293149278",
+      "openalex:W4312052114",
+      "openalex:W4320339931",
+      "openalex:W4380789184",
+      "openalex:W4387924981",
+      "openalex:W4391065578",
+      "openalex:W4399897400",
+      "openalex:W4403564103",
+      "openalex:W4410299660",
+      "openalex:W4410363618",
+      "openalex:W4411616840"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1177/03611981261451187",
+    "openalex": "W7165154420",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:58:23Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005263,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2159,
+      "out": 225
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:58:23Z",
+    "doi": "10.1177/03611981261451187",
+    "journal": "Transportation Research Record Journal of the Transportation Research Board",
+    "source_id": "S145575934",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The presented framework is conceptual, meaning its practical computational performance and calibration challenges in a real-world deployment are not yet evaluated.",
+      "what": "This study reviews the agent-based urban freight modeling literature to identify key limitations, such as isolated freight representations and a lack of temporal depth. It introduces a new conceptual framework that integrates logistics actors—including shippers, carriers, receivers, and consumers—with passenger transport systems across long-, medium-, and short-term decision modules within a shared traffic flow simulator.",
+      "why": "By linking freight and passenger activities through virtual schedules and shared infrastructure, the framework enables planners to simulate cross-sector interactions, such as e-commerce demand, which were previously modeled in isolation."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-19",
+  "work_key": "doi:10.1177/03611981261451187"
+}

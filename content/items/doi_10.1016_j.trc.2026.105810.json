@@ -1,0 +1,244 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Natural disasters, including earthquakes, floods, hurricanes, and landslides, have profound impacts on transportation service networks, particularly disrupting rail and road transportation. Such events often damage critical infrastructure, such as terminals and their connecting bridges, tunnels, and railways, leading to prolonged service interruptions. To address these challenges, this paper introduces an innovative extension of the classical Scheduled Service Network Design (SSND) problem, termed the Scheduled Service Network Redesign (SSNR) problem. The SSNR is formulated as a mixed-integer programming (MIP) model that seeks to maximize total profit by balancing the revenue from selected demands against the costs of serving them under disrupted network conditions. The SSNR focuses on reconfiguring the post-disaster network by optimizing demand selection and assigning demands to available services under disruption conditions. A key distinction between SSND and SSNR is that they operate on two different physical network states for the definition of demands and services versus the execution of planning decisions. Although both demands and services are originally defined on the pre-disaster physical network, all subsequent decisions, including demand selection, service activation, and the construction of demand itineraries, must be carried out on the modified network after disruptions occur. This significantly increases the problem complexity, as some demands may become infeasible due to damaged terminals, rail links, or roads, while others may require rerouting through alternative itineraries that can lead to substantially higher transportation costs. To tackle these complexities, this paper proposes a Benders Decomposition (BD) reformulation to divide the SSNR into two subproblems. The efficiency of the BD reformulation is evaluated against an exact solver to demonstrate its performance. In addition, sensitivity analyses are conducted to assess the robustness of the SSNR model. The results provide actionable managerial insights for strengthening the resilience of transportation service networks in the face of natural disasters. These findings serve as a foundation for developing decision support systems, highlighting the effectiveness of the BD reformulation, and offering practical guidelines for improving scheduled service networks and ensuring continuity under disruptive events.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Laurentian University",
+            "ror": "03rcwtr18"
+          }
+        ],
+        "name": "Amir M. Fathollahi‐Fard",
+        "openalex": "A5003355747",
+        "orcid": "https://orcid.org/0000-0002-5939-9795"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105810",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-19",
+    "repository_urls": [],
+    "title": "Scheduled service network redesign in freight transportation: Joint demand and service selection under disruption"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-19_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105810"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03rcwtr18",
+        "label": "Laurentian University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5939-9795",
+        "label": "Amir M. Fathollahi‐Fard"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11807",
+        "is_primary": true,
+        "label": "Infrastructure Resilience and Vulnerability Analysis",
+        "score": 0.4916,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11502",
+        "is_primary": false,
+        "label": "Facility Location and Emergency Management",
+        "score": 0.2438,
+        "subfield": "1407"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": false,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.0828,
+        "subfield": "2209"
+      }
+    ]
+  },
+  "first_published": "2026-06-19",
+  "graph": {
+    "cited_by_count": 1,
+    "referenced_works": [
+      "openalex:W619076712",
+      "openalex:W1112549928",
+      "openalex:W2004347548",
+      "openalex:W2015661661",
+      "openalex:W2025456699",
+      "openalex:W2026383541",
+      "openalex:W2037770845",
+      "openalex:W2044121814",
+      "openalex:W2061495609",
+      "openalex:W2061824110",
+      "openalex:W2070423620",
+      "openalex:W2076484073",
+      "openalex:W2083931873",
+      "openalex:W2127847814",
+      "openalex:W2142169698",
+      "openalex:W2560324934",
+      "openalex:W2773971719",
+      "openalex:W2774900228",
+      "openalex:W2796939236",
+      "openalex:W2900838769",
+      "openalex:W2929114297",
+      "openalex:W2969571535",
+      "openalex:W2981098636",
+      "openalex:W3128540120",
+      "openalex:W3152042512",
+      "openalex:W3173083369",
+      "openalex:W3181335423",
+      "openalex:W4213012548",
+      "openalex:W4224305133",
+      "openalex:W4226242859",
+      "openalex:W4229335456",
+      "openalex:W4283767823",
+      "openalex:W4318816250",
+      "openalex:W4367675087",
+      "openalex:W4377030783",
+      "openalex:W4382403366",
+      "openalex:W4385226489",
+      "openalex:W4386397712",
+      "openalex:W4386630085",
+      "openalex:W4387653813",
+      "openalex:W4388461631",
+      "openalex:W4390851917",
+      "openalex:W4390911859",
+      "openalex:W4406217581",
+      "openalex:W4407772761",
+      "openalex:W4408560063",
+      "openalex:W4409885303",
+      "openalex:W7126174536"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105810",
+    "openalex": "W7165372544",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:58:23Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005644,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2311,
+      "out": 242
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:58:23Z",
+    "doi": "10.1016/j.trc.2026.105810",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance and managerial insights are demonstrated through sensitivity analyses and solver comparisons rather than a real-world case study or empirical validation on a specific regional transport network.",
+      "what": "This study introduces the Scheduled Service Network Redesign (SSNR) problem, formulated as a mixed-integer programming model to optimize demand selection and service routing after natural disasters. Because pre-disaster demands and services must be executed on a damaged physical network with severed links and terminals, the paper develops a Benders Decomposition reformulation to solve the complex optimization problem and evaluates its performance against an exact solver.",
+      "why": "It provides a mathematical framework for freight operators to maximize post-disaster profits by systematically deciding which customer demands to accept and how to reroute them when physical infrastructure is partially destroyed."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-19",
+  "work_key": "doi:10.1016/j.trc.2026.105810"
+}

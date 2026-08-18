@@ -1,0 +1,259 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The traffic assignment problem is essential for traffic flow analysis, traditionally solved using mathematical programs under the Equilibrium principle. These methods become computationally prohibitive for large-scale networks due to non-linear growth in complexity with the number of OD pairs. This study introduces a novel data-driven approach using deep neural networks, specifically leveraging the Transformer architecture, to predict equilibrium path flows directly. By focusing on path-level traffic distribution, the proposed model captures intricate correlations between OD pairs, offering a more detailed and flexible analysis compared to traditional link-level approaches. The Transformer-based model drastically reduces computation time, while adapting to changes in demand and network structure without the need for recalculation. Numerical experiments conducted on the Manhattan-like synthetic network, the Sioux Falls network, the Eastern-Massachusetts network, and the Anaheim network demonstrate that the proposed model is orders of magnitude faster than conventional optimization. It efficiently estimates path-level traffic flows in multi-class networks, reducing computational costs and improving prediction accuracy by capturing detailed trip and flow information. The model also adapts flexibly to varying demand and network topology conditions, supporting traffic management and enabling rapid ‘what-if’ analyses for enhanced transportation planning and policy-making.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Université Gustave Eiffel",
+            "ror": "03x42jk29"
+          },
+          {
+            "name": "University of California, Berkeley",
+            "ror": "01an7q238"
+          }
+        ],
+        "name": "Mostafa Ameli",
+        "openalex": "A5056796193",
+        "orcid": "https://orcid.org/0000-0002-2470-6812"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Université Gustave Eiffel",
+            "ror": "03x42jk29"
+          }
+        ],
+        "name": "Sulthana Shams",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Université Gustave Eiffel",
+            "ror": "03x42jk29"
+          }
+        ],
+        "name": "Van Anh Le",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of California, Berkeley",
+            "ror": "01an7q238"
+          }
+        ],
+        "name": "Alexander Skabardonis",
+        "openalex": "A5068448322",
+        "orcid": "https://orcid.org/0000-0002-7064-5993"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105808",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-16",
+    "repository_urls": [],
+    "title": "From optimization to prediction: Transformer-based path-flow estimation to the traffic assignment problem"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-16_2510.19889",
+    "members": [
+      "arxiv:2510.19889"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-network",
+        "label": "street network data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 0.9744,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:traffic-assignment",
+        "label": "traffic assignment"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03x42jk29",
+        "label": "Université Gustave Eiffel"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01an7q238",
+        "label": "University of California, Berkeley"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2470-6812",
+        "label": "Mostafa Ameli"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7064-5993",
+        "label": "Alexander Skabardonis"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": true,
+        "label": "Traffic control and management",
+        "score": 0.5714,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.2602,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.1144,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-06-16",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2510.19889",
+    "doi": "10.1016/j.trc.2026.105808",
+    "openalex": "W4416617081",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:38:25Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005462,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1991,
+      "out": 275
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:38:25Z",
+    "doi": "10.1016/j.trc.2026.105808",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.3333,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.5067,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance and speedups were demonstrated on standard synthetic and regional benchmark networks rather than a deployed, real-time metropolitan traffic system.",
+      "what": "The study introduces a Transformer-based deep learning model to predict equilibrium path flows directly, bypassing traditional mathematical optimization. Evaluated on four networks including Sioux Falls, Anaheim, Eastern Massachusetts, and a synthetic Manhattan-like grid, the model estimates path-level traffic flows in multi-class networks and adapts to changing demand and network topologies without recalculation.",
+      "why": "It shifts traffic assignment from computationally expensive iterative optimization to near-instantaneous prediction, enabling rapid 'what-if' scenario testing and real-time traffic management on large-scale urban networks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-16",
+  "work_key": "arxiv:2510.19889"
+}

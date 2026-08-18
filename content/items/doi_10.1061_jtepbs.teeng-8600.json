@@ -1,0 +1,256 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The emergence of automated traffic signal performance measures (ATSPMs), aided by recent technological advancements, allows for continuous traffic performance monitoring, and supports traffic agencies in taking proactive measures. High-resolution trajectory data from connected vehicles (CVs) has surfaced as a cost-effective method for assessing ATSPMs. Although various metrics have been developed to measure traffic signal performance, none have been specifically designed to estimate the benefits of signal retiming. This study devises a novel methodology to estimate the potential reduction in overall intersection delay resulting from signal retiming using only CV data. This methodology results in a new metric, the traffic signal suboptimality index, that uniquely estimates the potential avoidable delay rather than simply the observed signal delay. This new metric could enable traffic agencies to predict the benefits of potential signal retiming without the need for conducting costly traffic surveys and help these agencies prioritize locations and times of day for signal retiming. This study employs the VISSIM microsimulation software to implement and evaluate the methodology under various traffic scenarios and CV market penetration rates. In our experiments, the proposed methodology successfully detected signal retiming needs in situations involving an imbalanced degree of saturation, traffic demand fluctuations on competing movements, and changes in traffic direction, even with CV penetration rates as low as 10%. Furthermore, the sensitivity analysis reveals that the temporal aggregation period can be increased to further compensate for low CV penetration rates.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Waterloo",
+            "ror": "01aff2v68"
+          }
+        ],
+        "name": "P. Bagheri Ghaleh",
+        "openalex": "A5010352331",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Waterloo",
+            "ror": "01aff2v68"
+          }
+        ],
+        "name": "Chris Bachmann",
+        "openalex": "A5051538870",
+        "orcid": "https://orcid.org/0000-0003-4715-531X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Waterloo",
+            "ror": "01aff2v68"
+          }
+        ],
+        "name": "Liping Fu",
+        "openalex": "A5107560145",
+        "orcid": "https://orcid.org/0000-0003-2666-2873"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-8600",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-21",
+    "repository_urls": [],
+    "title": "Evaluating the Need for Traffic Signal Retiming Using Connected Vehicle Data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-21_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-8600"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01aff2v68",
+        "label": "University of Waterloo"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5010352331",
+        "label": "P. Bagheri Ghaleh"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4715-531X",
+        "label": "Chris Bachmann"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2666-2873",
+        "label": "Liping Fu"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.9985,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.9971,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.9933,
+        "subfield": "2207"
+      }
+    ]
+  },
+  "first_published": "2026-06-21",
+  "graph": {
+    "cited_by_count": 1,
+    "referenced_works": [
+      "openalex:W32731340",
+      "openalex:W1520019850",
+      "openalex:W2607080081",
+      "openalex:W2942624096",
+      "openalex:W2945504854",
+      "openalex:W2946281080",
+      "openalex:W2962917186",
+      "openalex:W3020092894",
+      "openalex:W3031656496",
+      "openalex:W3081142762",
+      "openalex:W3112787368",
+      "openalex:W3150116606",
+      "openalex:W3185694443",
+      "openalex:W4368364395",
+      "openalex:W4381929178",
+      "openalex:W4385623558",
+      "openalex:W4391960377"
+    ],
+    "related_works": [
+      "openalex:W648024147",
+      "openalex:W3145815016",
+      "openalex:W2117759111",
+      "openalex:W1989991863",
+      "openalex:W590593173",
+      "openalex:W1600978758",
+      "openalex:W2064762150",
+      "openalex:W831857694",
+      "openalex:W2181736363",
+      "openalex:W1595391294"
+    ]
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-8600",
+    "openalex": "W4391054335",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T09:05:17Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005384,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2071,
+      "out": 253
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T09:05:17Z",
+    "doi": "10.1061/jtepbs.teeng-8600",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The methodology and its sensitivity to penetration rates were evaluated using microsimulation software rather than real-world empirical traffic data.",
+      "what": "This study developed a new metric called the traffic signal suboptimality index to estimate avoidable intersection delay using only connected vehicle trajectory data. The methodology was tested using VISSIM microsimulation software across various traffic scenarios, demonstrating that it can successfully identify signal retiming needs under fluctuating demand and imbalanced saturation levels with connected vehicle penetration rates as low as 10%.",
+      "why": "It provides traffic agencies with a way to quantify and predict the specific delay reductions achievable through signal retiming, allowing them to prioritize interventions without conducting expensive physical traffic surveys."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-21",
+  "work_key": "doi:10.1061/jtepbs.teeng-8600"
+}

@@ -9,6 +9,7 @@ key produces SKIPPED and the run continues — a partial issue beats no issue.
 
 from __future__ import annotations
 
+import time
 import traceback
 from dataclasses import dataclass
 from datetime import date
@@ -37,8 +38,16 @@ def _guard(run: Run, name: str, fn):
 
     A stage that reports its own status (SKIPPED, PARTIAL) keeps it; ``_guard``
     only fills in OK when the stage said nothing.
+
+    It also prints a line as each stage starts and finishes. Without that, a run
+    that stops making progress is indistinguishable from a run that is working:
+    a backfilled day sat in one stage for sixteen minutes and the only way to
+    tell which stage was to read the metrics file and infer it from what was
+    missing. With PYTHONUNBUFFERED set in CI, these lines arrive as they happen.
     """
     before = run.metrics.stages.get(name)
+    started = time.monotonic()
+    print(f"[stage] {name} ...", flush=True)
     try:
         result = fn()
         if run.metrics.stages.get(name) == before:
@@ -54,6 +63,13 @@ def _guard(run: Run, name: str, fn):
         run.metrics.errors.append(traceback.format_exc(limit=3))
         return None
     finally:
+        elapsed = time.monotonic() - started
+        n = len(result) if isinstance(result, (list, tuple)) else ""
+        print(
+            f"[stage] {name} {run.metrics.stages.get(name, '?')} "
+            f"{elapsed:.1f}s {n}".rstrip(),
+            flush=True,
+        )
         run.save()
 
 

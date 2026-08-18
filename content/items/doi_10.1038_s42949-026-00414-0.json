@@ -1,0 +1,234 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Network science metrics such as centrality play a crucial role in solving facility placement problems, which in turn have important applications in guiding decision processes for municipalities or regions. Decision makers and planners are increasingly interested in addressing situations where demographics and socioeconomic status are distributed in a non-uniform way over a region. In those cases, optimizing centrality alone may result in disparate access. In this paper, as an illustrative case study, we use cluster analysis and publicly available demographic data to characterize census tracts in Spokane County, WA, USA across many socioeconomic variables. We then compare placement of existing facilities in Spokane using a novel fairness metric and network centrality, first separately and then in combination, to determine optimal facility placement. Our analysis found that undesirable facilities are not fairly placed, but some key desirable facilities such as hospitals and parks are ideally located based on both fairness and centrality. Our approach can easily be applied to any region where similar geographic and demographic data are available, and analyses are performed to inform facility siting, upgrades, or relocation.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Washington State University",
+            "ror": "05dk0ce17"
+          }
+        ],
+        "name": "James Crabb",
+        "openalex": "A5138630015",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Washington State University",
+            "ror": "05dk0ce17"
+          }
+        ],
+        "name": "Stephanie L. Kane",
+        "openalex": "A5029112703",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Washington State University",
+            "ror": "05dk0ce17"
+          }
+        ],
+        "name": "Assefaw H. Gebremedhin",
+        "openalex": "A5138679794",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1038/s42949-026-00414-0",
+      "pdf_url": "https://www.nature.com/articles/s42949-026-00414-0_reference.pdf",
+      "source_id": "S4210223291",
+      "source_name": "npj Urban Sustainability",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-15",
+    "repository_urls": [],
+    "title": "Holistic fairness considerations in facility placement decisions"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-15_10.1038/s42949-0",
+    "members": [
+      "doi:10.1038/s42949-026-00414-0"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:network-analysis",
+        "label": "network analysis"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05dk0ce17",
+        "label": "Washington State University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5138630015",
+        "label": "James Crabb"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5029112703",
+        "label": "Stephanie L. Kane"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138679794",
+        "label": "Assefaw H. Gebremedhin"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11502",
+        "is_primary": true,
+        "label": "Facility Location and Emergency Management",
+        "score": 0.6784,
+        "subfield": "1407"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0485,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0208,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-06-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1038/s42949-026-00414-0",
+    "openalex": "W7164852727",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:33:14Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005218,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1901,
+      "out": 263
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:33:14Z",
+    "doi": "10.1038/s42949-026-00414-0",
+    "journal": "npj Urban Sustainability",
+    "source_id": "S4210223291",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical findings and facility classifications are demonstrated using a single case study of Spokane County.",
+      "what": "The study introduces a novel fairness metric combined with network centrality to evaluate facility placement, applying it to census tracts in Spokane County, Washington. Using cluster analysis on public demographic and socioeconomic data, the researchers assessed the distribution of existing facilities. The analysis revealed that while undesirable facilities are inequitably distributed, key desirable facilities like hospitals and parks are optimally located for both fairness and centrality.",
+      "why": "It provides a replicable framework for planners to balance spatial efficiency with demographic equity, moving beyond pure centrality optimization which often exacerbates disparate access to services."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-15",
+  "work_key": "doi:10.1038/s42949-026-00414-0"
+}

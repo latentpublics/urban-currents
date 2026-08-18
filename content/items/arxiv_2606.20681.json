@@ -1,0 +1,221 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Slope hazards constitute a major safety threat to expressway infrastructure, and their evolution is typically manifested as slow surface deformation. Conventional manual inspection suffers from low efficiency and inadequate operational safety, especially on severely deteriorated slopes. Accordingly, there is an urgent need for an automated, high-precision solution capable of large-area slope observation and analysis. This study aims to develop a highly automated workflow for slope hazard detection using Unmanned Aerial Vehicle (UAV)-borne Light Detection and Ranging (LiDAR). The proposed workflow consists of a shared data-acquisition and ground-surface extraction stage, a single-observation hazard-screening branch based on RandLA-Net, and a multi-epoch deformation-monitoring branch based on grid-wise elevation differencing. To validate the effectiveness of the proposed system, we conducted multiple UAV-borne LiDAR data-acquisition flights in real expressway slope environments. The results show that the workflow can extract usable ground-surface point clouds under vegetation cover, identify potential hazard zones from single-observation point clouds, and quantify centimeter-level elevation changes using multi-epoch grid differencing. This study establishes an end-to-end UAV-borne LiDAR-based workflow for slope inspection and demonstrates its feasibility through controlled experiments, field tests, and simulation-based validation, thereby providing an implementable solution for automated slope-hazard monitoring and intelligent early warning.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Jingfeng Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yi Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xianchong Liang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Huan Yang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "comment": "29 pages, 14 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.20681v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.20681v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-13",
+    "repository_urls": [],
+    "title": "A UAV-Based Multi-Modal Vision System for Automated Sideslope Deformation Monitoring and Hazard Detection"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-13_2606.20681",
+    "members": [
+      "arxiv:2606.20681"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139212157",
+        "label": "Jingfeng Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139126802",
+        "label": "Yi Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139182757",
+        "label": "Xianchong Liang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139152747",
+        "label": "Huan Yang"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10535",
+        "is_primary": true,
+        "label": "Landslides and related hazards",
+        "score": 0.371,
+        "subfield": "2308"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11606",
+        "is_primary": false,
+        "label": "Infrastructure Maintenance and Monitoring",
+        "score": 0.1886,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11211",
+        "is_primary": false,
+        "label": "3D Surveying and Cultural Heritage",
+        "score": 0.156,
+        "subfield": "1907"
+      }
+    ]
+  },
+  "first_published": "2026-06-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.20681",
+    "doi": "10.48550/arxiv.2606.20681",
+    "openalex": "W7165654973",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:24:16Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005353,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2063,
+      "out": 251
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8678,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3471,
+    "relevance": 0.8678
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study develops an automated workflow for monitoring expressway sideslope hazards using UAV-borne LiDAR. The system integrates a ground-surface extraction stage, a single-observation hazard-screening branch powered by RandLA-Net, and a multi-epoch deformation-monitoring branch that calculates grid-wise elevation differences. Field tests and controlled experiments demonstrate that the workflow successfully extracts ground-surface point clouds beneath vegetation cover and detects centimeter-level elevation changes.",
+      "why": "It replaces manual, high-risk physical inspections of deteriorated slopes with an automated, aerial monitoring system capable of detecting subtle, centimeter-scale structural shifts over large areas."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-13",
+  "work_key": "arxiv:2606.20681"
+}

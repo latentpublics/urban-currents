@@ -1,0 +1,285 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Escalators play a critical role in vertical transportation in urban transit systems such as metro and subway stations, yet their efficiency is often constrained by informal usage norms such as the “walk left, stand right” rule. This study presents a new framework to characterize passenger boarding behaviors and evaluate the resulting delays on escalators. In particular, we focus on the average passenger queueing delay before boarding the escalator and define it as our performance metric designated as Average Delay Before Escalator (ADBE). Two distinct arrival processes, Poisson and Single Batch, are considered to estimate lower and upper bounds for the ADBE. A probabilistic output process is used to simulate boarding decisions under varying traffic and behavior scenarios. We analyze three boarding policies: (1) all-standing, (2) walk-left-stand-right with two variants, and (3) a hybrid strategy reflecting real-world behavior. Four passenger types are defined to emulate behavioral diversity, reflecting differing urgency and space preferences. Simulation results reveal that the all-standing policy significantly reduces the ADBE and increases throughput, especially under congestion. Our model offers actionable insights for transit planners and metro system operators, providing a quantitative basis for optimizing escalator usage policies and enhancing both throughput and safety.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "City University of Hong Kong",
+            "ror": "03q8dnn23"
+          }
+        ],
+        "name": "Fahan Chen",
+        "openalex": "A5109774374",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Metropolitan University",
+            "ror": "04hdrrs71"
+          },
+          {
+            "name": "University of Hong Kong",
+            "ror": "02zhqgq86"
+          }
+        ],
+        "name": "Xinyu Wang",
+        "openalex": "A5100352777",
+        "orcid": "https://orcid.org/0000-0001-9716-5300"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Metropolitan University",
+            "ror": "04hdrrs71"
+          },
+          {
+            "name": "University of Hong Kong",
+            "ror": "02zhqgq86"
+          }
+        ],
+        "name": "Chao Guo",
+        "openalex": "A5138622777",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "City University of Hong Kong",
+            "ror": "03q8dnn23"
+          }
+        ],
+        "name": "Moshe Zukerman",
+        "openalex": "A5032227505",
+        "orcid": "https://orcid.org/0000-0001-6190-5020"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102073",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-14",
+    "repository_urls": [],
+    "title": "From queueing performance evaluation to policy guidance: A new modeling framework for escalator systems"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-14_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102073"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03q8dnn23",
+        "label": "City University of Hong Kong"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04hdrrs71",
+        "label": "Metropolitan University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02zhqgq86",
+        "label": "University of Hong Kong"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5109774374",
+        "label": "Fahan Chen"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9716-5300",
+        "label": "Xinyu Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138622777",
+        "label": "Chao Guo"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6190-5020",
+        "label": "Moshe Zukerman"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T14011",
+        "is_primary": true,
+        "label": "Elevator Systems and Control",
+        "score": 0.996,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11500",
+        "is_primary": false,
+        "label": "Evacuation and Crowd Dynamics",
+        "score": 0.0013,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0011,
+        "subfield": "2207"
+      }
+    ]
+  },
+  "first_published": "2026-06-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W565186344",
+      "openalex:W1975302127",
+      "openalex:W2055074125",
+      "openalex:W2056481531",
+      "openalex:W2201602738",
+      "openalex:W2607437099",
+      "openalex:W2736050357",
+      "openalex:W2765819130",
+      "openalex:W3119538864",
+      "openalex:W3119593271",
+      "openalex:W3208096862",
+      "openalex:W4384519086",
+      "openalex:W4387500898",
+      "openalex:W4389847847",
+      "openalex:W4399529703",
+      "openalex:W4404298684",
+      "openalex:W4406848392"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102073",
+    "openalex": "W7164736244",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:27:21Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005242,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2007,
+      "out": 248
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:27:21Z",
+    "doi": "10.1016/j.trip.2026.102073",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on simulated arrival and boarding processes rather than empirical validation with real-world passenger tracking data.",
+      "what": "This study introduces a queueing and simulation framework to evaluate passenger boarding delays on transit escalators under different behavioral rules, using a metric called Average Delay Before Escalator (ADBE). The model tests Poisson and Single Batch arrival processes alongside three boarding policies: all-standing, walk-left-stand-right, and a hybrid real-world strategy, while accounting for four distinct passenger profiles based on urgency and spacing preferences. Simulation results show that the all-standing policy significantly reduces ADBE and increases passenger throughput during congested periods.",
+      "why": "It provides transit operators with a quantitative, behavior-sensitive tool to evaluate escalator capacity, proving that informal 'walk left, stand right' norms actively degrade system efficiency during peak hours."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-14",
+  "work_key": "doi:10.1016/j.trip.2026.102073"
+}

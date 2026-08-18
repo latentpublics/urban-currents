@@ -1,0 +1,358 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "In the context of rapid urbanization, the mutual amplification between the urban heat island (UHI) effect and air pollution has emerged as a severe composite environmental challenge. Most existing studies focus on the linear driving mechanisms of individual environmental issues, leaving a systematic understanding of their nonlinear interactions, seasonal dynamics, and causal pathways largely unexplored. To address this gap, this study focuses on the Yangtze River Delta urban agglomeration in China as a case study. It bridges interpretable machine learning (XGBoost-SHAP) with structural causal modeling (SCM) to systematically quantify the nonlinear impacts and causal mechanisms of blue-green space (BGS) patterns and meteorological factors on land surface temperature (LST) and PM 2.5 concentrations. The results indicate that: (1) LST drivers exhibit a pronounced seasonal shift-BGS coverage dominates in summer, whereas meteorological factors prevail in winter-whereas PM 2.5 is consistently governed by wind speed across seasons; (2) key drivers exhibit threshold effects (e.g., in this study, 40-42% vegetation coverage for LST, 79-80% water aggregation for PM 2.5), beyond which they act as “effect-switching thresholds” that reverse the influence of other factors and form a nonlinear interaction network; and (3) SCM reveals the dual causal pathways through which BGS patterns influence the environment-via direct cooling and indirect modulation of wind fields-and quantitatively verifies the stable positive causal effect of PM 2.5 on LST, clarifying the pathway of “pollution exacerbating warming”. In summary, this study uncovers the nonlinear, threshold-dependent characteristics of the UHI-pollution complex system and elucidates their synergistic intensification from a causal perspective, providing a quantitative basis for seasonally adaptive strategies to synergistically mitigate urban heat and pollution.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Landscape Institute",
+            "ror": "00gg9m594"
+          }
+        ],
+        "name": "Yiqi YU",
+        "openalex": "A5138594322",
+        "orcid": "https://orcid.org/0009-0002-8841-5536"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Landscape Institute",
+            "ror": "00gg9m594"
+          }
+        ],
+        "name": "Jie XU",
+        "openalex": "A5138590333",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Landscape Institute",
+            "ror": "00gg9m594"
+          }
+        ],
+        "name": "Shuting CHEN",
+        "openalex": "A5138599072",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Landscape Institute",
+            "ror": "00gg9m594"
+          }
+        ],
+        "name": "Sidong HUANG",
+        "openalex": "A5138601698",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Landscape Institute",
+            "ror": "00gg9m594"
+          }
+        ],
+        "name": "Lichen FENG",
+        "openalex": "A5138600977",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Landscape Institute",
+            "ror": "00gg9m594"
+          }
+        ],
+        "name": "Wei Cao",
+        "openalex": "A5065755950",
+        "orcid": "https://orcid.org/0000-0002-4559-184X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Landscape Institute",
+            "ror": "00gg9m594"
+          }
+        ],
+        "name": "Wen Zhou",
+        "openalex": "A5108199222",
+        "orcid": "https://orcid.org/0000-0001-9531-8553"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.scs.2026.107599",
+      "pdf_url": null,
+      "source_id": "S163634330",
+      "source_name": "Sustainable Cities and Society",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-14",
+    "repository_urls": [],
+    "title": "Causal machine learning uncovers thresholds and seasonal reversal in landscape-meteorology-driven urban Heat-PM₂.₅ coupling"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-14_10.1016/j.scs.20",
+    "members": [
+      "doi:10.1016/j.scs.2026.107599"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00gg9m594",
+        "label": "Landscape Institute"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-8841-5536",
+        "label": "Yiqi YU"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138590333",
+        "label": "Jie XU"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138599072",
+        "label": "Shuting CHEN"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138601698",
+        "label": "Sidong HUANG"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138600977",
+        "label": "Lichen FENG"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4559-184X",
+        "label": "Wei Cao"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9531-8553",
+        "label": "Wen Zhou"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.9927,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.0013,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0006,
+        "subfield": "2307"
+      }
+    ]
+  },
+  "first_published": "2026-06-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1956908576",
+      "openalex:W1964130780",
+      "openalex:W1968163062",
+      "openalex:W1978587500",
+      "openalex:W2002202971",
+      "openalex:W2004479151",
+      "openalex:W2025799929",
+      "openalex:W2034446988",
+      "openalex:W2050296954",
+      "openalex:W2077065917",
+      "openalex:W2083441060",
+      "openalex:W2083927649",
+      "openalex:W2087406086",
+      "openalex:W2118154752",
+      "openalex:W2130042267",
+      "openalex:W2143891888",
+      "openalex:W2166841284",
+      "openalex:W2172150264",
+      "openalex:W2217007742",
+      "openalex:W2251271095",
+      "openalex:W2295598076",
+      "openalex:W2328756884",
+      "openalex:W2345635958",
+      "openalex:W2398245671",
+      "openalex:W2471641792",
+      "openalex:W2512410850",
+      "openalex:W2529394429",
+      "openalex:W2553794864",
+      "openalex:W2564015495",
+      "openalex:W2584823719",
+      "openalex:W2609560042",
+      "openalex:W2612864158",
+      "openalex:W2735804811",
+      "openalex:W2739534291",
+      "openalex:W2745393078",
+      "openalex:W2789674139",
+      "openalex:W2789682319",
+      "openalex:W2800124012",
+      "openalex:W2888856388",
+      "openalex:W2943200429",
+      "openalex:W2960744860",
+      "openalex:W2978948021",
+      "openalex:W2983028672",
+      "openalex:W3015976670",
+      "openalex:W3113484207",
+      "openalex:W3123902981",
+      "openalex:W3157138082",
+      "openalex:W3174756112",
+      "openalex:W4231929957",
+      "openalex:W4305082768",
+      "openalex:W4312094430",
+      "openalex:W4323670360",
+      "openalex:W4388318479",
+      "openalex:W4389395533",
+      "openalex:W4397049842",
+      "openalex:W4402509938",
+      "openalex:W4404625289",
+      "openalex:W4407855238",
+      "openalex:W4415210377"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.scs.2026.107599",
+    "openalex": "W7164740484",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:27:21Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006262,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2279,
+      "out": 316
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:27:21Z",
+    "doi": "10.1016/j.scs.2026.107599",
+    "journal": "Sustainable Cities and Society",
+    "source_id": "S163634330",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical thresholds and seasonal dynamics are derived specifically from the Yangtze River Delta and may vary in different climatic zones.",
+      "what": "This study combines XGBoost-SHAP machine learning with structural causal modeling to analyze how blue-green space patterns and meteorological factors nonlinearly influence land surface temperature and PM2.5 concentrations. Using the Yangtze River Delta urban agglomeration as a case study, the analysis identifies specific threshold effects, such as a 40-42% vegetation coverage threshold for land surface temperature and a 79-80% water aggregation threshold for PM2.5, while confirming a stable positive causal pathway where PM2.5 pollution exacerbates urban warming.",
+      "why": "It establishes the specific physical thresholds at which urban landscape interventions reverse their influence on other environmental factors, moving beyond linear assumptions to prove that pollution directly intensifies urban heat."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-14",
+  "work_key": "doi:10.1016/j.scs.2026.107599"
+}

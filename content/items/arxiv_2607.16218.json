@@ -1,0 +1,199 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban crime prevention is a persistent socio-technical challenge for municipalities, law enforcement agencies, and citizens. Traditional reporting and response processes often rely on delayed incident reports and reactive resource allocation, while community-level signals and ambiguous early-warning indicators may remain underused. This paper reframes an Urban Computing seminar project into a fuzzy logic-based framework for community-aware urban crime hotspot detection and real-time notification. The proposed platform combines citizen reports, historical crime data, contextual urban indicators, and configurable fuzzy rules to estimate localized risk levels and support targeted awareness notifications. Unlike binary classification approaches, fuzzy logic can represent partial risk, uncertainty, and incomplete information, making it suitable for urban environments where risk is gradual and context-dependent. The paper presents the system architecture, fuzzy risk model, notification workflow, privacy safeguards, and exploratory validation with 25 participants. The evaluation focuses on perceived usefulness, notification relevance, usability, trust, privacy concerns, multilingual accessibility, and acceptance of community reporting. The findings suggest that such a platform may improve situational awareness, support reporting and planning discussions, and help address weak points in existing urban safety workflows, while not yet constituting evidence of deployed crime reduction or real-world predictive accuracy. The contribution is a responsible, human-centered framework for future research on fuzzy logic, urban computing, and community-aware crime prevention systems.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ariton Verush",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Vaibhav Motwani",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY",
+      "cs.HC"
+    ],
+    "comment": "12 pages, 6 tables, 1 figure. Framework paper with Python prototype and exploratory validation with 25 participants",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.16218v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.16218v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-12",
+    "repository_urls": [],
+    "title": "A Fuzzy Logic Framework for Community-Aware Crime Hotspot Detection: Prototype Application Architecture and Exploratory Validation for an Urban Computing Platform"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-12_2607.16218",
+    "members": [
+      "arxiv:2607.16218"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5141267121",
+        "label": "Ariton Verush"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141288921",
+        "label": "Vaibhav Motwani"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10574",
+        "is_primary": true,
+        "label": "Crime Patterns and Interventions",
+        "score": 0.7773,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12519",
+        "is_primary": false,
+        "label": "Cybercrime and Law Enforcement Studies",
+        "score": 0.0334,
+        "subfield": "1710"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12034",
+        "is_primary": false,
+        "label": "Digital and Cyber Forensics",
+        "score": 0.0159,
+        "subfield": "1710"
+      }
+    ]
+  },
+  "first_published": "2026-06-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.16218",
+    "doi": "10.48550/arxiv.2607.16218",
+    "openalex": "W7169860852",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:18:24Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005488,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2075,
+      "out": 264
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.936,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3744,
+    "relevance": 0.936
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The system's evaluation is limited to user perceptions of usability and trust among a small group of 25 participants, and does not provide evidence of actual crime reduction or real-world predictive accuracy.",
+      "what": "This study presents a fuzzy logic-based framework and system architecture for real-time urban crime hotspot detection and notification. The platform integrates citizen reports, historical crime data, and contextual urban indicators to model partial risk and uncertainty rather than binary classifications. An exploratory validation of the system was conducted with 25 participants to evaluate usability, trust, privacy concerns, and perceived usefulness.",
+      "why": "It demonstrates how fuzzy logic can represent gradual, context-dependent urban risks and incomplete information, offering a community-aware alternative to traditional, reactive law enforcement reporting systems."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-12",
+  "work_key": "arxiv:2607.16218"
+}

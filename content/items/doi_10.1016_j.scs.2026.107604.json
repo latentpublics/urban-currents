@@ -1,0 +1,285 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The rapid expansion of high-speed rail (HSR) is closely associated with urban spatial restructuring. However, HSR station areas show substantial differentiation in land-use structure and functional positioning, and their functional patterns and associated characteristics remain insufficiently understood at the national scale. Taking 1570 HSR station areas in China as the research objects, this study constructs an integrated framework of comparative advantage, SOM clustering, and XGBoost-SHAP to identify land-use functional patterns in HSR station areas and analyze their associated factors. The results show that HSR station areas can be classified into four typical patterns: Public facility-dominated pattern (PFDP), Balanced multifunctional pattern (BMP), Industry-dominated pattern (IDP), and Commercial service-dominated pattern (CSDP). Their spatial distribution is closely related to regional industrial bases, city hierarchy, and the structure of the HSR network. The XGBoost-SHAP analysis further indicates that land-use diversity, bus accessibility, road network length, industrial structure, and distance to the city center are key variables closely associated with functional differentiation in station areas, and they show significant nonlinear responses and interaction-related characteristics in the model predictions for different functional patterns.This study contributes to a deeper understanding of functional differentiation in HSR station areas and provides theoretical support and planning guidance for HSR new town development, land use optimization, and urban functional restructuring.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Southwest Jiaotong University",
+            "ror": "00hn7w693"
+          }
+        ],
+        "name": "Yangguang Hao",
+        "openalex": "A5111330539",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Southwest Jiaotong University",
+            "ror": "00hn7w693"
+          }
+        ],
+        "name": "Zhongwei Shen",
+        "openalex": "A5065781968",
+        "orcid": "https://orcid.org/0000-0003-2387-7342"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.scs.2026.107604",
+      "pdf_url": null,
+      "source_id": "S163634330",
+      "source_name": "Sustainable Cities and Society",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-15",
+    "repository_urls": [],
+    "title": "Revealing land-use functional patterns and associated factors in China’s high-speed rail station areas: Based on self-organizing maps and explainable machine learning algorithms"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-15_10.1016/j.scs.20",
+    "members": [
+      "doi:10.1016/j.scs.2026.107604"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:land-use",
+        "label": "land use data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:clustering",
+        "label": "clustering"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:gradient-boosting",
+        "label": "gradient boosting"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00hn7w693",
+        "label": "Southwest Jiaotong University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5111330539",
+        "label": "Yangguang Hao"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2387-7342",
+        "label": "Zhongwei Shen"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11599",
+        "is_primary": true,
+        "label": "Aviation Industry Analysis and Trends",
+        "score": 0.9463,
+        "subfield": "2000"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12483",
+        "is_primary": false,
+        "label": "Global Urban Networks and Dynamics",
+        "score": 0.0098,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.0067,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-06-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1984743590",
+      "openalex:W2011091315",
+      "openalex:W2019581996",
+      "openalex:W2046673146",
+      "openalex:W2124334006",
+      "openalex:W2147046382",
+      "openalex:W2565029396",
+      "openalex:W2591970216",
+      "openalex:W2751011178",
+      "openalex:W2791964169",
+      "openalex:W2793119321",
+      "openalex:W2893130718",
+      "openalex:W2904854262",
+      "openalex:W2919267701",
+      "openalex:W2922774838",
+      "openalex:W2960971294",
+      "openalex:W2995684151",
+      "openalex:W3032862896",
+      "openalex:W3091808936",
+      "openalex:W3121519629",
+      "openalex:W3144074138",
+      "openalex:W3163398752",
+      "openalex:W3168525722",
+      "openalex:W4210436467",
+      "openalex:W4281711329",
+      "openalex:W4312127227",
+      "openalex:W4377023561",
+      "openalex:W4386236478",
+      "openalex:W4387204839",
+      "openalex:W4388741120",
+      "openalex:W4389454244",
+      "openalex:W4389914801",
+      "openalex:W4393971124",
+      "openalex:W4402221993",
+      "openalex:W4403548540",
+      "openalex:W4405994854",
+      "openalex:W4406340267",
+      "openalex:W4406641630",
+      "openalex:W4406690303",
+      "openalex:W4407855238",
+      "openalex:W4408011437",
+      "openalex:W4408445452",
+      "openalex:W4408741116",
+      "openalex:W4408755353",
+      "openalex:W4408918746",
+      "openalex:W4411369781",
+      "openalex:W4412059398",
+      "openalex:W4412430098",
+      "openalex:W4413020800"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.scs.2026.107604",
+    "openalex": "W7164859153",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:33:12Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005834,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2113,
+      "out": 296
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:33:12Z",
+    "doi": "10.1016/j.scs.2026.107604",
+    "journal": "Sustainable Cities and Society",
+    "source_id": "S163634330",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study identifies associations and nonlinear relationships between spatial variables and station patterns, but does not establish direct causal links.",
+      "what": "This study analyzed 1,570 high-speed rail station areas across China using self-organizing maps and XGBoost-SHAP models to classify their land-use structures. The areas were categorized into four distinct functional patterns: public facility-dominated, balanced multifunctional, industry-dominated, and commercial service-dominated. The analysis identified land-use diversity, bus accessibility, road network length, industrial structure, and distance to the city center as the primary variables driving these functional differences.",
+      "why": "It establishes a national-scale taxonomy of high-speed rail station areas, moving beyond single-city case studies to demonstrate how regional industrial bases and network structures shape local land-use patterns."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-15",
+  "work_key": "doi:10.1016/j.scs.2026.107604"
+}

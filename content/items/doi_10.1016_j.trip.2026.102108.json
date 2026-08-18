@@ -1,0 +1,272 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "A reliable forecast of future low-altitude air traffic distributions is essential for the prediction of aircraft noise and pollutant emissions in airport areas. This work proposes a novel methodology for generating aircraft movements around airports based on historical flight tracking data. These data are exploited to derive representative flight paths via unsupervised machine learning and typical airport operations via statistical analysis. These outcomes feed a custom-made algorithm that generates future traffic distributions, requiring only traffic intensity and forecast timeframe as inputs. The methodology, tested at Stockholm Arlanda Airport, uses 2022 tracking data to predict the traffic distribution in 2024 and is validated comparing simulated and actual 2024 day-evening-night noise levels L DEN. An accurate prediction is achieved, as moderate L DEN differences involve regions under 45 dB(A) while L DEN ≥ 45 dB(A) contour areas are overestimated by less than 6 %. Errors come mostly from changes in airport operations, to be addressed in future developments.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Udine",
+            "ror": "05ht0mh31"
+          }
+        ],
+        "name": "Lorenzo Dorbolò",
+        "openalex": "A5029538759",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Udine",
+            "ror": "05ht0mh31"
+          }
+        ],
+        "name": "Marco Pretto",
+        "openalex": "A5059790262",
+        "orcid": "https://orcid.org/0000-0003-1194-0658"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Udine",
+            "ror": "05ht0mh31"
+          }
+        ],
+        "name": "Pietro Giannattasio",
+        "openalex": "A5045701224",
+        "orcid": "https://orcid.org/0000-0001-7853-6145"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102108",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-15",
+    "repository_urls": [],
+    "title": "A general data-driven methodology for predicting future air traffic distributions around airports"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-15_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102108"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:statistical-modeling",
+        "label": "statistical modeling"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05ht0mh31",
+        "label": "University of Udine"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5029538759",
+        "label": "Lorenzo Dorbolò"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1194-0658",
+        "label": "Marco Pretto"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7853-6145",
+        "label": "Pietro Giannattasio"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11489",
+        "is_primary": true,
+        "label": "Air Traffic Management and Optimization",
+        "score": 0.9724,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11599",
+        "is_primary": false,
+        "label": "Aviation Industry Analysis and Trends",
+        "score": 0.0078,
+        "subfield": "2000"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0028,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-06-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W151377110",
+      "openalex:W1489950266",
+      "openalex:W1792801946",
+      "openalex:W1987971958",
+      "openalex:W1994882049",
+      "openalex:W2325546267",
+      "openalex:W2419213189",
+      "openalex:W2513981722",
+      "openalex:W2901546958",
+      "openalex:W2915193506",
+      "openalex:W2954871897",
+      "openalex:W3005908611",
+      "openalex:W3127318658",
+      "openalex:W3199463048",
+      "openalex:W3208637933",
+      "openalex:W3215258785",
+      "openalex:W4206153319",
+      "openalex:W4226326560",
+      "openalex:W4243683928",
+      "openalex:W4281745555",
+      "openalex:W4320734240",
+      "openalex:W4367850869",
+      "openalex:W4382877508",
+      "openalex:W4386591351",
+      "openalex:W4391831058",
+      "openalex:W4394951268",
+      "openalex:W4401840567",
+      "openalex:W4401872639",
+      "openalex:W4402283304",
+      "openalex:W4406155443",
+      "openalex:W4409254650",
+      "openalex:W4412537424",
+      "openalex:W4414905270"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102108",
+    "openalex": "W7164807607",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:33:12Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005449,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1911,
+      "out": 287
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:33:12Z",
+    "doi": "10.1016/j.trip.2026.102108",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's predictive accuracy is sensitive to unexpected shifts in airport operations between the baseline and forecast years.",
+      "what": "This study presents a data-driven methodology that uses unsupervised machine learning and statistical analysis on historical flight tracking data to generate future low-altitude aircraft movements. Tested at Stockholm Arlanda Airport using 2022 tracking data to forecast 2024 traffic, the model requires only traffic intensity and a timeframe as inputs. The resulting simulated day-evening-night noise levels (L_DEN) matched actual 2024 measurements closely, overestimating the contour areas of 45 dB(A) or higher by less than 6%.",
+      "why": "It provides a simplified forecasting capability for airport noise and emissions that requires minimal input parameters, bypassing the need for complex operational scheduling models by extracting patterns directly from historical tracking data."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-15",
+  "work_key": "doi:10.1016/j.trip.2026.102108"
+}

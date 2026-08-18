@@ -1,0 +1,256 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "City landscapes viewed through home windows influence quality of life, yet perceptions of actual window views at the urban scale remain understudied. This study presents an approach for large-scale mapping of perceptions using 12,334 window view images (WVIs) collected from actual residential properties listed on real estate platforms in Wuhan, China, representing a rarely explored form of urban view imagery that offers advantages over the rendered or simulated window views commonly examined in previous studies. Through a non-immersive virtual reality platform, we collected 27,477 pairwise comparisons across six perceptual dimensions (e.g. preference) from 304 participants based on 499 WVIs. A hybrid neural network model was trained to predict human perceptions of all crowdsourced WVIs and map their spatial distribution. Results reveal significant spatial autocorrelation with distinct hot and cold spots across the whole city. Floor level strongly influences human perceptions: while higher floors offer more preferred and extensive window views, lower-floor windows provide residents with quiet and vivid views. An inference model further shows that window view composition matters considerably: high ratios of sky, trees, and low-rise buildings enhance people's preferences and perceptions of vividness, whereas high ratios of high-rise buildings increase perceptions of monotony and oppression. Importantly, these effects are non-linear: the excessive presence of certain elements can alter their impact on human perception. This work advances urban-scale understanding of residents' visual experiences and offers a transferable, human-centric method to inform urban planning and design aimed at improving the visual quality of window views.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Chucai Peng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sijie Yang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ang Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yang Xiang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zhixiang Zhou",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Filip Biljecki",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.HC"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.15198v2",
+      "pdf_url": "https://arxiv.org/pdf/2606.15198v2",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-13",
+    "repository_urls": [],
+    "title": "City landscape in sight: A crowdsourced framework for unlocking urban-scale window view perceptions from real estate imagery"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-13_2606.15198",
+    "members": [
+      "arxiv:2606.15198"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-clustering",
+        "label": "spatial clustering"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5021464340",
+        "label": "Chucai Peng"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0001-4890-2922",
+        "label": "Sijie Yang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138751973",
+        "label": "Ang Liu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9423-4865",
+        "label": "Y. Xiang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138713134",
+        "label": "Zhixiang Zhou"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138727072",
+        "label": "Filip Biljecki"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": true,
+        "label": "Urban Green Space and Health",
+        "score": 0.882,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0271,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": false,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.0116,
+        "subfield": "2305"
+      }
+    ]
+  },
+  "first_published": "2026-06-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.15198",
+    "doi": "10.1016/j.landurbplan.2026.105734",
+    "openalex": "W7164920814",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:24:16Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.006292,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2161,
+      "out": 339
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 1.0,
+      "relevance": 0.9643,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.5857,
+    "relevance": 0.9643
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings and predictive model are based on a single city, and the image dataset is limited to properties actively listed on real estate platforms, which may bias the sample toward newer or higher-value housing stock.",
+      "what": "The study developed a framework to map urban-scale window view perceptions using 12,334 real estate images from residential listings in Wuhan, China. Researchers collected 27,477 pairwise comparisons across six perceptual dimensions from 304 participants viewing 499 images, using these data to train a hybrid neural network that predicted perceptions across the entire dataset. The model revealed that higher floors correlate with preferred and extensive views, lower floors correlate with quietness and vividness, and high ratios of sky, trees, and low-rise buildings non-linearly enhance view preferences.",
+      "why": "It establishes a scalable method to measure actual, rather than simulated, residential window views across an entire metropolitan area, proving that real estate listings can serve as a viable data source for urban visual quality assessments."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-06",
+  "work_key": "arxiv:2606.15198"
+}

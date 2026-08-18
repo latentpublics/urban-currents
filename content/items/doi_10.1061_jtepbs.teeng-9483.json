@@ -1,0 +1,340 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "First and last mile connections play a critical role in urban transportation systems. To address this challenge, various short-distance travel modes have emerged. Among them, e-scooters have gained increasing popularity as a key form of shared micromobility (SMM), offering advantages such as environmental friendliness, flexibility, and energy efficiency. As a result, effectively integrating e-scooters into existing urban transit networks has become a pressing priority. Thus, this research develops a synergistic transit-SMM framework establishing multimodal travel chains that enhance holistic transportation system performance. A bilevel optimization framework captures the intrinsic interaction between upper-level resource allocation and lower-level commuter demand: from the perspective of managers, the upper-level model minimizes operational costs—through optimized bus/e-scooter deployment, battery allocation, and charging infrastructure—subject to comprehensive travel demand fulfillment; from the perspective of commuters, the lower-level model simulates traveler behavior via integer programming under predetermined multimodal deployments to minimize combined travel and congestion costs. Considering computational complexity, a simulated annealing (SA) algorithm is employed to solve the bilevel model, with performance benchmarked against Gurobi. The model’s effectiveness and algorithmic efficiency are evaluated through experiments across various scales in Skövde, Sweden. The computational analysis reveals that the SA algorithm achieves a 60%–70% reduction in solution time compared to Gurobi-based optimization, while maintaining solution quality within 1% of the optimal objective values obtained by the solver. Furthermore, demand scenario analysis indicates a significant rise in the e-scooter mode selection rate, escalating from 0.18% to 29.14% throughout the investigated demand range, underscoring its strategic importance in enhancing urban mobility systems. Finally, we provide practical insights for optimizing urban mobility and promoting sustainable transport systems.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          }
+        ],
+        "name": "Ying Liu",
+        "openalex": "A5100644814",
+        "orcid": "https://orcid.org/0000-0002-8951-2648"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          }
+        ],
+        "name": "Yidan Shangguan",
+        "openalex": "A5039487533",
+        "orcid": "https://orcid.org/0009-0002-4085-9533"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chalmers University of Technology",
+            "ror": "040wg7k59"
+          }
+        ],
+        "name": "Kun Gao",
+        "openalex": "A5041748565",
+        "orcid": "https://orcid.org/0000-0002-4175-850X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
+        "name": "Sheng Jin",
+        "openalex": "A5101960327",
+        "orcid": "https://orcid.org/0000-0001-6110-0783"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          }
+        ],
+        "name": "Wen Yi",
+        "openalex": "A5138679517",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          }
+        ],
+        "name": "Shuaian Wang",
+        "openalex": "A5070050188",
+        "orcid": "https://orcid.org/0000-0001-9247-4403"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9483",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-15",
+    "repository_urls": [],
+    "title": "Joint Optimization of E-Scooter and Public Transit Operations"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-15_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-9483"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:optimization",
+        "label": "optimization"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0030zas98",
+        "label": "Hong Kong Polytechnic University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:040wg7k59",
+        "label": "Chalmers University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00a2xv884",
+        "label": "Zhejiang University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8951-2648",
+        "label": "Ying Liu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-4085-9533",
+        "label": "Yidan Shangguan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4175-850X",
+        "label": "Kun Gao"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6110-0783",
+        "label": "Sheng Jin"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138679517",
+        "label": "Wen Yi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9247-4403",
+        "label": "Shuaian Wang"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.629,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.2631,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0454,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-06-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W51702033",
+      "openalex:W1192376439",
+      "openalex:W1967927260",
+      "openalex:W2416108505",
+      "openalex:W2560531672",
+      "openalex:W2606402959",
+      "openalex:W2795119452",
+      "openalex:W2943174860",
+      "openalex:W2964360976",
+      "openalex:W2983644131",
+      "openalex:W3101056993",
+      "openalex:W3115223556",
+      "openalex:W3133386052",
+      "openalex:W3139217881",
+      "openalex:W3168094969",
+      "openalex:W3177480759",
+      "openalex:W3179118849",
+      "openalex:W3194274753",
+      "openalex:W3197535054",
+      "openalex:W3200278279",
+      "openalex:W3200987586",
+      "openalex:W3201769299",
+      "openalex:W4205095043",
+      "openalex:W4214547163",
+      "openalex:W4223905980",
+      "openalex:W4226081438",
+      "openalex:W4226254635",
+      "openalex:W4293439293",
+      "openalex:W4296004350",
+      "openalex:W4297143881",
+      "openalex:W4319873413",
+      "openalex:W4319878691",
+      "openalex:W4323923747",
+      "openalex:W4378908023",
+      "openalex:W4387747759",
+      "openalex:W4389333949",
+      "openalex:W4389750048",
+      "openalex:W4391418493",
+      "openalex:W4391677077",
+      "openalex:W4391798151",
+      "openalex:W4392436363",
+      "openalex:W4398774486",
+      "openalex:W4399728209",
+      "openalex:W4403691598",
+      "openalex:W4407133937",
+      "openalex:W4408063182",
+      "openalex:W4410857487",
+      "openalex:W4411504824"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-9483",
+    "openalex": "W7164805662",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:33:13Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006493,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2247,
+      "out": 347
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:33:13Z",
+    "doi": "10.1061/jtepbs.teeng-9483",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 1.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.64,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and demand dynamics were evaluated using a single mid-sized Swedish city, which may not reflect the complexity or transit dynamics of larger metropolitan areas.",
+      "what": "The study develops a bilevel optimization framework to jointly allocate resources for public transit and e-scooters, minimizing operational costs at the upper level while simulating commuter mode choice and congestion costs at the lower level. Tested on various scales in Skövde, Sweden, the model uses a simulated annealing algorithm that reduces computation time by 60% to 70% compared to Gurobi while remaining within 1% of the optimal solution. Scenario analysis shows that as demand increases, the e-scooter mode share rises from 0.18% to 29.14% within the multimodal network.",
+      "why": "It provides a computationally efficient method for transit agencies to co-optimize bus schedules, e-scooter fleet sizes, battery allocation, and charging infrastructure, rather than planning micromobility and mass transit in isolation."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-15",
+  "work_key": "doi:10.1061/jtepbs.teeng-9483"
+}

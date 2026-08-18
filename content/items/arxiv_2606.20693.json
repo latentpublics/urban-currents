@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Background: Wildfires in Canada present increasing threats to ecosystems, communities, and infrastructure, demanding accurate forecasting tools to aid mitigation efforts. Existing models often lack scalability or fail to capture temporal dynamics effectively. Aims: This study aims to develop a deep learning framework tailored to Canadian wildfire spread prediction that captures spatio-temporal patterns in environmental data. Methods: We propose a U-Net architecture integrating a Video Swin Transformer encoder with a convolutional decoder to model three-day sequences of meteorological and environmental variables. Data are exclusively sourced from public repositories via Google Earth Engine, ensuring transparency and scalability. The model is trained and tested on a curated dataset of major Canadian wildfire events from 2014 to 2023. Key results: Our approach achieves strong predictive performance by effectively leveraging spatio-temporal attention to forecast next-day fire incidence maps. Conclusions: The model successfully captures complex wildfire dynamics unique to Canada's landscape and temporal variability. Implications: This framework paves the way for advanced spatio-temporal wildfire forecasting research and operational applications using publicly accessible datasets.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Maulik Srivastava",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Esha Saha",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hao Wang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "comment": "15 pages, 4 figures. Preprint submitted to the International Journal of Wildland Fire",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.20693v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.20693v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-15",
+    "repository_urls": [],
+    "title": "Spatio-Temporal Wildfire Spread Prediction in Canada using a Video Swin-Hybrid-U-Net and Satellite Imagery"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-15_2606.20693",
+    "members": [
+      "arxiv:2606.20693"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:giswqs/geemap",
+        "label": "geemap"
+      }
+    ],
+    "topics": []
+  },
+  "first_published": "2026-06-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.20693",
+    "doi": "10.48550/arxiv.2606.20693",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:33:08Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00514,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1963,
+      "out": 244
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.3333,
+      "relevance": 0.8763,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4172,
+    "relevance": 0.8763
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2014 to 2023",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "A deep learning framework combining a Video Swin Transformer encoder with a convolutional U-Net decoder was developed to predict next-day wildfire incidence maps. The model processes three-day sequences of meteorological and environmental variables using a curated dataset of major Canadian wildfire events spanning 2014 to 2023.",
+      "why": "It establishes a scalable, spatio-temporal forecasting capability for Canadian landscapes using exclusively public data from Google Earth Engine, bypassing the scalability limits of previous models."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-15",
+  "work_key": "arxiv:2606.20693"
+}

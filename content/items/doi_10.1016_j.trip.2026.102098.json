@@ -1,0 +1,222 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study presents the first vessel-level quantitative analysis of the crude-oil shadow fleet, applying binary GLM, ordered logistic, and ridge-penalised regression to 654 tankers classified by S&P Global Market Intelligence. Grounded in institutional theory and regulatory arbitrage, the analysis tests whether governance attributes outperform physical characteristics as determinants of sanctions-risk banding. Results confirm that flag state and ultimate beneficial owner jurisdiction are the primary risk predictors, whilst deadweight tonnage loses explanatory power once governance controls are included. Mid-aged vessels (built 2000–2015) exhibit elevated risk profiles consistent with a documented post-2022 acquisition wave. The binary GLM achieves an AUC of 0.965 and a McFadden R 2 of 0.670; the ridge logistic model yields a cross-validated AUC of 0.937. Marginal effects from the ordered logit provide directly usable probabilistic risk differentials for each governance attribute. Findings support governance-based screening frameworks over traditional size-anchored instruments for maritime sanctions compliance.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Piraeus",
+            "ror": "02qs84g94"
+          }
+        ],
+        "name": "Dionysios Polemis",
+        "openalex": "A5138491700",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Piraeus",
+            "ror": "02qs84g94"
+          }
+        ],
+        "name": "Konstantinos Likas",
+        "openalex": "A5132580719",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102098",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-12",
+    "repository_urls": [],
+    "title": "Characteristics of the shadow fleet phenomenon in crude oil shipping: A quantitative analysis of vessel characteristics, governance attributes, and sanctions-risk classification"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-12_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102098"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02qs84g94",
+        "label": "University of Piraeus"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5138491700",
+        "label": "Dionysios Polemis"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5132580719",
+        "label": "Konstantinos Likas"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T13007",
+        "is_primary": true,
+        "label": "Economic Sanctions and International Relations",
+        "score": 0.326,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11622",
+        "is_primary": false,
+        "label": "Maritime Navigation and Safety",
+        "score": 0.2783,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12985",
+        "is_primary": false,
+        "label": "Maritime Security and History",
+        "score": 0.0522,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-06-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1970502168",
+      "openalex:W2013416277",
+      "openalex:W2078129874",
+      "openalex:W2752617332",
+      "openalex:W3123282572",
+      "openalex:W4378978080",
+      "openalex:W4387340532",
+      "openalex:W4389947365",
+      "openalex:W7124528552",
+      "openalex:W7164385225"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102098",
+    "openalex": "W7164551651",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:18:27Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005881,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1977,
+      "out": 324
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:18:27Z",
+    "doi": "10.1016/j.trip.2026.102098",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2000–2015",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The analysis relies on a specific classification of 654 tankers by a single commercial provider, S&P Global Market Intelligence, which may not capture the entirety of the global shadow fleet.",
+      "what": "This study analyzes 654 crude-oil tankers classified by S&P Global Market Intelligence using binary GLM, ordered logistic, and ridge-penalised regression to identify the determinants of sanctions-risk banding. The models, which achieved a binary GLM AUC of 0.965 and a ridge logistic cross-validated AUC of 0.937, reveal that flag state and ultimate beneficial owner jurisdiction are the primary predictors of risk, while physical vessel size loses explanatory power when these governance controls are added.",
+      "why": "It demonstrates that maritime sanctions compliance should pivot from traditional size-anchored screening instruments to governance-based frameworks, proving that regulatory and ownership attributes are far more predictive of shadow fleet participation than physical ship characteristics."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-12",
+  "work_key": "doi:10.1016/j.trip.2026.102098"
+}

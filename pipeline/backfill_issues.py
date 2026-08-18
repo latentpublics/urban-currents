@@ -171,8 +171,24 @@ def backfill(
     skipped = set(state.get("skipped") or [])
     existing = existing_issue_dates()
 
-    baseline = UsageState.load()
-    start_spend, start_calls = baseline.cost_usd, baseline.calls
+    # The budget is for the whole backfill, not for one pass of it.
+    #
+    # A sixty-day run outlives a single process, so it is driven in passes that
+    # each resume from the checkpoint. Measuring spend from "cumulative cost
+    # when this pass started" gives every pass a fresh ceiling — fifteen passes,
+    # fifteen budgets. Caught when the checkpoint reported *less* spend after a
+    # day was added than before it.
+    #
+    # So the baseline is written once, on the first pass, and every later pass
+    # measures against the same number.
+    usage_now = UsageState.load()
+    baseline_key = "baseline_cost_usd"
+    if baseline_key not in state:
+        state[baseline_key] = usage_now.cost_usd
+        state.setdefault("baseline_calls", usage_now.calls)
+        save_checkpoint(state)
+    start_spend = float(state[baseline_key])
+    start_calls = int(state.get("baseline_calls", usage_now.calls))
 
     result = BackfillResult()
     started = time.monotonic()
@@ -241,6 +257,8 @@ def backfill(
 
         usage = UsageState.load()
         state = {
+            baseline_key: start_spend,
+            "baseline_calls": start_calls,
             "done": sorted(done),
             "skipped": sorted(skipped),
             "spend_usd": round(usage.cost_usd - start_spend, 6),
@@ -257,6 +275,8 @@ def backfill(
     result.calls = usage.calls - start_calls
     result.seconds = time.monotonic() - started
     state = {
+        baseline_key: start_spend,
+        "baseline_calls": start_calls,
         "done": sorted(done),
         "skipped": sorted(skipped),
         "spend_usd": round(result.spend_usd, 6),

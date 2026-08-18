@@ -1,0 +1,188 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Cities deliver basic services through mixed public-private facility networks, including schools, clinics, transit providers, and subsidized service points. In these systems, planners often observe where households go, but not the latent cost function through which they trade off factors such as distance, price, and institutional access. We study this urban problem through school choice in the Philippines, where the country's largest national education subsidy is intended to redirect learners from congested public schools to participating private schools. Treating school-to-school enrollment flows as an entropic optimal transport plan, we recover latent choice costs using two complementary inverse optimal transport models: an interpretable distance-banded model with a subsidy term, and a neural cost model trained through a differentiable Sinkhorn forward pass. Applied to 283{,}016 learner trips across 23{,}820 observed flows in the most populated region, the framework estimates a subsidy-equivalent distance, $λ^{(k)}$, interpreted as the kilometers of perceived travel cost offset by the subsidy. The case demonstrates how administrative origin-destination data can be transformed into interpretable planning metrics for accessibility-aware subsidy design, facility siting, and urban service allocation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Paula Joy B. Martinez",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "comment": "Oral Presentation. 2026 International Conference on Urban AI",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.14157v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.14157v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-12",
+    "repository_urls": [],
+    "title": "Learning Urban Access Costs from Origin-Destination Flows via Inverse Optimal Transport"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-12_2606.14157",
+    "members": [
+      "arxiv:2606.14157"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5126618160",
+        "label": "Paula Joy B. Martinez"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.6196,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.2389,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12546",
+        "is_primary": false,
+        "label": "Smart Parking Systems Research",
+        "score": 0.0247,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-06-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.14157",
+    "doi": "10.48550/arxiv.2606.14157",
+    "openalex": "W7164831835",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:18:24Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005872,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1983,
+      "out": 322
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.951,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3804,
+    "relevance": 0.951
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical application is limited to a single sector and region, focusing specifically on school enrollment flows within the most populated region of the Philippines.",
+      "what": "The study introduces an inverse optimal transport framework to estimate latent urban access costs from origin-destination data, applying it to school choice in the Philippines. Using two models—an interpretable distance-banded model with a subsidy term and a neural cost model trained via a differentiable Sinkhorn pass—the researchers analyzed 283,016 learner trips across 23,820 observed flows in the country's most populated region. The framework successfully quantifies a subsidy-equivalent distance, measuring the exact kilometers of perceived travel cost offset by the national private school subsidy.",
+      "why": "It provides a method to convert standard administrative origin-destination flows into interpretable planning metrics, allowing planners to measure how households trade off distance against financial subsidies when accessing public-private service networks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-12",
+  "work_key": "arxiv:2606.14157"
+}

@@ -1,0 +1,299 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Current public transit planning often optimizes services based on realized ridership, which can systematically miss suppressed or unmet travel needs and thereby reinforce transportation inequity. This demand–supply misalignment often manifests as directional asymmetries, such as underserved reverse commutes, that traditional place-based metrics fail to capture. To address this gap, this study proposes a directional Latent Demand Index, a novel metric derived from large-scale, anonymized mobility traces using a pooled Poisson regression framework. The index quantifies observed-to-expected flow ratios by defining a monthly independence baseline while robustly handling temporal sparsity and heterogeneity in mobility data. We integrate this demand index with a schedule-based Transit Service Index derived from GTFS data using a generalized transit cost representation and network path-based travel-time computation to identify directional service gaps. Applying this framework to Pittsburgh, Pennsylvania, we find that latent demand exhibits strong spatial structures not explained by distance alone. Notably, the analysis reveals a systemic mismatch: 43.7% of high-demand directed edges receive below-median transit service. Moreover, service mismatches are spatially concentrated in specific, asymmetric corridors rather than being randomly distributed. These findings provide a scalable, link-level diagnostic that can support equity-centered corridor prioritization beyond what ridership-only planning reveals.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Pennsylvania State University",
+            "ror": "04p491231"
+          },
+          {
+            "name": "GeoInformation (United Kingdom)",
+            "ror": "05t4zqc79"
+          }
+        ],
+        "name": "Sooyoung Lim",
+        "openalex": "A5068632006",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Pennsylvania State University",
+            "ror": "04p491231"
+          },
+          {
+            "name": "GeoInformation (United Kingdom)",
+            "ror": "05t4zqc79"
+          }
+        ],
+        "name": "Zhenlong Li",
+        "openalex": "A5073915674",
+        "orcid": "https://orcid.org/0000-0002-8938-5466"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Pennsylvania State University",
+            "ror": "04p491231"
+          },
+          {
+            "name": "GeoInformation (United Kingdom)",
+            "ror": "05t4zqc79"
+          }
+        ],
+        "name": "Ruixiang Liu",
+        "openalex": "A5136197951",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s43762-026-00276-3",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s43762-026-00276-3.pdf",
+      "source_id": "S4210175573",
+      "source_name": "Computational Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-15",
+    "repository_urls": [],
+    "title": "A directional latent demand index for city links: from mobility traces to service gaps"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-15_10.1007/s43762-0",
+    "members": [
+      "doi:10.1007/s43762-026-00276-3"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04p491231",
+        "label": "Pennsylvania State University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05t4zqc79",
+        "label": "GeoInformation (United Kingdom)"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5068632006",
+        "label": "Sooyoung Lim"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8938-5466",
+        "label": "Zhenlong Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5136197951",
+        "label": "Ruixiang Liu"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": true,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.4497,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.2035,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.1652,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-06-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1977334572",
+      "openalex:W1982300822",
+      "openalex:W1993723510",
+      "openalex:W1994413315",
+      "openalex:W2003233804",
+      "openalex:W2012476464",
+      "openalex:W2015480405",
+      "openalex:W2017833210",
+      "openalex:W2028299185",
+      "openalex:W2039518099",
+      "openalex:W2042214669",
+      "openalex:W2048284513",
+      "openalex:W2063877484",
+      "openalex:W2083276001",
+      "openalex:W2085463425",
+      "openalex:W2090363055",
+      "openalex:W2090978188",
+      "openalex:W2100963312",
+      "openalex:W2110065044",
+      "openalex:W2111199917",
+      "openalex:W2136163743",
+      "openalex:W2139037955",
+      "openalex:W2157648429",
+      "openalex:W2315225792",
+      "openalex:W2334591607",
+      "openalex:W2555509407",
+      "openalex:W2558727167",
+      "openalex:W2589050601",
+      "openalex:W2625539197",
+      "openalex:W2736921522",
+      "openalex:W2760942449",
+      "openalex:W2898706107",
+      "openalex:W2905644046",
+      "openalex:W2922354465",
+      "openalex:W2950101163",
+      "openalex:W3081191273",
+      "openalex:W3099011804",
+      "openalex:W3184676642",
+      "openalex:W3200352411",
+      "openalex:W3202807406",
+      "openalex:W4240874934",
+      "openalex:W4242550401",
+      "openalex:W4254228575",
+      "openalex:W4282928691",
+      "openalex:W4312203900",
+      "openalex:W4381611062",
+      "openalex:W4386698227",
+      "openalex:W4394582145",
+      "openalex:W4400574004",
+      "openalex:W4406195799",
+      "openalex:W4407405510",
+      "openalex:W4409163975",
+      "openalex:W4410586476",
+      "openalex:W6940544562"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s43762-026-00276-3",
+    "openalex": "W7164845162",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:33:14Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005579,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2027,
+      "out": 282
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:33:14Z",
+    "doi": "10.1007/s43762-026-00276-3",
+    "journal": "Computational Urban Science",
+    "source_id": "S4210175573",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical findings and identified service gaps are demonstrated using data from a single city, Pittsburgh.",
+      "what": "This study introduces a directional Latent Demand Index that uses a pooled Poisson regression framework on large-scale, anonymized mobility traces to identify unmet travel needs. By combining this index with a schedule-based Transit Service Index derived from GTFS data, the framework maps directional service gaps at the link level. Applying the method to Pittsburgh, Pennsylvania, revealed that 43.7% of high-demand directed edges receive below-median transit service, with these mismatches concentrated in specific, asymmetric corridors.",
+      "why": "It provides a scalable, link-level diagnostic tool that captures directional asymmetries like underserved reverse commutes, which traditional place-based metrics and realized ridership data systematically overlook."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-15",
+  "work_key": "doi:10.1007/s43762-026-00276-3"
+}

@@ -1,0 +1,215 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Personalized public transit routing in public transit systems remains challenging due to the difficulty of capturing and integrating diverse user preferences into routing algorithms. This paper presents ChatPlanner, a novel framework that leverages Large Language Models (LLMs) to enable preference aware public transit routing. Our approach employs fine-tuned LLMs with Retrieval-Augmented Generation (RAG) to extract routing parameters and interpret nuanced user preferences from natural language queries, subsequently integrating these preferences into the objective function of a public transit routing algorithm. This study designs preference aware datasets incorporating eight personas and five contexts to establish scoring standards for both fine-tuning and RAG. This work conducted three experiments to validate the solutions' feasibility, extraction of routing information and preferences, and solution set quality and completeness. Results demonstrate that ChatPlanner generates feasible solutions reliably. Fine-tuning enforces the required output structure and learns general preference patterns, while RAG provides query-specific context to resolve imprecise or conversational expressions and calibrate continuous scores. The combination of both achieves the highest accuracy in routing information extraction and user preference interpretation. Results based on selected case studies show that by capturing user preferences, ChatPlanner identifies valuable solutions across different dimensions that existing route planners overlook, generating more valuable route alternatives. This research establishes a new paradigm for integrating natural language understanding into transportation optimization.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Tingting Yang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chenhao Xue",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jun Chen",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "comment": "Under Review at Transportation Research Part C",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2606.15315v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.15315v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-06-13",
+    "repository_urls": [],
+    "title": "ChatPlanner: A Large Language Model Framework for Personalized Public Transit Routing"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-13_2606.15315",
+    "members": [
+      "arxiv:2606.15315"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5138704671",
+        "label": "Tingting Yang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138753999",
+        "label": "Chenhao Xue"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138699222",
+        "label": "Jun Chen"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": true,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.1964,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14074",
+        "is_primary": false,
+        "label": "Persona Design and Applications",
+        "score": 0.1575,
+        "subfield": "1709"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.054,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-06-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2606.15315",
+    "doi": "10.48550/arxiv.2606.15315",
+    "openalex": "W7164916364",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:24:16Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005551,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2027,
+      "out": 279
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9411,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3764,
+    "relevance": 0.9411
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and routing quality were validated using selected case studies rather than a large-scale, real-world deployment with diverse transit networks.",
+      "what": "The ChatPlanner framework integrates Large Language Models with Retrieval-Augmented Generation to extract routing parameters and user preferences from natural language queries, embedding them directly into a public transit routing algorithm's objective function. The system was trained and evaluated using custom preference-aware datasets featuring eight distinct personas and five contexts to calibrate routing scores. Testing across three experiments demonstrated that combining fine-tuning with retrieval-augmented generation successfully enforces structured outputs and resolves ambiguous conversational expressions.",
+      "why": "It establishes a method for translating unstructured, subjective passenger preferences into quantitative routing constraints, allowing transit engines to generate personalized route alternatives that standard shortest-path planners overlook."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-13",
+  "work_key": "arxiv:2606.15315"
+}

@@ -1,0 +1,363 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Emerging electric bike-sharing (EBS) systems, by enabling higher speeds and longer travel distances, offer an effective solution to the first- and last-mile challenges of metro systems. However, existing studies have predominantly focused on the integration of conventional bike-sharing with metro systems, leaving the role of EBS in enhancing metro connectivity insufficiently understood. Moreover, most existing studies adopt a station-centric perspective, implicitly assuming that first- and last-mile travel is shaped only by the built environment within station catchment areas. This perspective may be less applicable to EBS, whose longer travel range often extends beyond such catchment areas. To address these limitations, this study adopts an origin–destination (OD) perspective to examine how built environment characteristics at station areas and non-station trip ends, measured respectively at the station and grid levels, together with travel distance, jointly shape metro-integrated EBS usage. Using EBS trip data from Hefei, China, this study employs eXtreme Gradient Boosting (XGBoost) combined with SHapley Additive exPlanations (SHAP) to examine the nonlinear and interaction effects of these factors. The results show that metro-integrated EBS usage exhibits a clear commute-oriented pattern, with pronounced peaks during the morning and evening rush hours. Spatially, residential-related feeder trips, including morning access and evening egress, are concentrated in the northeastern part of the city, whereas workplace-related feeder trips, including morning egress and evening access, are more concentrated in the western and southern areas. Travel distance emerges as the most influential determinant across all feeder contexts. Station-level attributes are more important in residential-related contexts, whereas grid-level attributes are more important in workplace-related contexts. With respect to nonlinear effects, station-level built environment attributes exhibit broadly similar patterns across feeder contexts, whereas grid-level built environment effects show pronounced context-dependent variation between residential-related and workplace-related contexts. In addition, interaction analysis reveals a clear distance-attenuation pattern, with station-level built environment effects weakening as travel distance increases. These findings provide valuable insights for optimizing EBS operations and designing context-sensitive built environment interventions to strengthen EBS–metro integration.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          },
+          {
+            "name": "Ghent University",
+            "ror": "00cv9y106"
+          }
+        ],
+        "name": "Ziqi Yang",
+        "openalex": "A5101953289",
+        "orcid": "https://orcid.org/0000-0003-4211-4009"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Yisong Zhu",
+        "openalex": "A5054490926",
+        "orcid": "https://orcid.org/0000-0002-7474-1077"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Cheng Cheng",
+        "openalex": "A5138596374",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Yuntao Guo",
+        "openalex": "A5087114749",
+        "orcid": "https://orcid.org/0000-0001-9649-5121"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Xinghua Li",
+        "openalex": "A5120985129",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jonas De Vos",
+        "openalex": "A5067337069",
+        "orcid": "https://orcid.org/0000-0003-4919-2157"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Ghent University",
+            "ror": "00cv9y106"
+          },
+          {
+            "name": "University of Tartu",
+            "ror": "03z77qz90"
+          }
+        ],
+        "name": "Frank Witlox",
+        "openalex": "A5138590493",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.jtrangeo.2026.104740",
+      "pdf_url": null,
+      "source_id": "S80150607",
+      "source_name": "Journal of Transport Geography",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-14",
+    "repository_urls": [],
+    "title": "Beyond station: Rethinking built environment effects on metro-integrated electric bike-sharing from an origin–destination perspective"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-14_10.1016/j.jtrang",
+    "members": [
+      "doi:10.1016/j.jtrangeo.2026.104740"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03rc6as71",
+        "label": "Tongji University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00cv9y106",
+        "label": "Ghent University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03z77qz90",
+        "label": "University of Tartu"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4211-4009",
+        "label": "Ziqi Yang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7474-1077",
+        "label": "Yisong Zhu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138596374",
+        "label": "Cheng Cheng"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9649-5121",
+        "label": "Yuntao Guo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5120985129",
+        "label": "Xinghua Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4919-2157",
+        "label": "Jonas De Vos"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138590493",
+        "label": "Frank Witlox"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.8538,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.0688,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10768",
+        "is_primary": false,
+        "label": "Electric Vehicles and Infrastructure",
+        "score": 0.0101,
+        "subfield": "2208"
+      }
+    ]
+  },
+  "first_published": "2026-06-14",
+  "graph": {
+    "cited_by_count": 1,
+    "referenced_works": [
+      "openalex:W2116788013",
+      "openalex:W2144512297",
+      "openalex:W2146950091",
+      "openalex:W2152354563",
+      "openalex:W2600250648",
+      "openalex:W2901191183",
+      "openalex:W2915520134",
+      "openalex:W3016193691",
+      "openalex:W3039771278",
+      "openalex:W3042483072",
+      "openalex:W3046794428",
+      "openalex:W3080419695",
+      "openalex:W3096198001",
+      "openalex:W3098092737",
+      "openalex:W3124024106",
+      "openalex:W3151119715",
+      "openalex:W3167071588",
+      "openalex:W3184365493",
+      "openalex:W3196655385",
+      "openalex:W3208798588",
+      "openalex:W3208852891",
+      "openalex:W4200599077",
+      "openalex:W4225290386",
+      "openalex:W4281717189",
+      "openalex:W4283773827",
+      "openalex:W4290719372",
+      "openalex:W4290990270",
+      "openalex:W4311255551",
+      "openalex:W4319597946",
+      "openalex:W4364379043",
+      "openalex:W4380988334",
+      "openalex:W4385513455",
+      "openalex:W4385595255",
+      "openalex:W4386248202",
+      "openalex:W4386485662",
+      "openalex:W4390892016",
+      "openalex:W4392698127",
+      "openalex:W4393177434",
+      "openalex:W4399724096",
+      "openalex:W4400846537",
+      "openalex:W4400986259",
+      "openalex:W4403122882",
+      "openalex:W4404441447",
+      "openalex:W4405556947",
+      "openalex:W4406229294",
+      "openalex:W4406291808",
+      "openalex:W4407350461",
+      "openalex:W4413275425",
+      "openalex:W4414573183",
+      "openalex:W7124949027",
+      "openalex:W7129533415"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.jtrangeo.2026.104740",
+    "openalex": "W7164753625",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:27:21Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00629,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2405,
+      "out": 298
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:27:21Z",
+    "doi": "10.1016/j.jtrangeo.2026.104740",
+    "journal": "Journal of Transport Geography",
+    "source_id": "S80150607",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a single case study of Hefei, China, which may limit their generalizability to cities with different urban densities, transit networks, or micromobility regulations.",
+      "what": "This study analyzes how built environment characteristics at both metro stations and non-station trip ends, alongside travel distance, influence metro-integrated electric bike-sharing (EBS) usage. Using EBS trip data from Hefei, China, the researchers applied an eXtreme Gradient Boosting (XGBoost) model combined with SHapley Additive exPlanations (SHAP) to capture nonlinear and interaction effects. The analysis reveals that travel distance is the primary determinant of usage, with station-level attributes dominating residential-related trips and grid-level attributes dominating workplace-related trips.",
+      "why": "It shifts the analytical framework of first- and last-mile transit research from a station-centric catchment area perspective to an origin-destination perspective. This new approach captures how the built environment at farther, non-station trip ends influences electric bike-sharing, which operates over longer distances than conventional bikes."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-14",
+  "work_key": "doi:10.1016/j.jtrangeo.2026.104740"
+}

@@ -1,0 +1,293 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Advances in natural language processing models have opened a nearly unlimited opportunity to analyze human-written and generate humanlike texts. Researchers in various disciplines have utilized these models to perform different tasks. However, few studies have applied natural language processing algorithms in highway safety and transportation in general. In this research, we applied natural language processing models to crash narratives written by law enforcement officers to classify and extract relevant textual phrases to facilitate the detection of wrong-way driving crashes in a database. The proposed natural language processing model was implemented using a deep learning algorithm where various tokenization approaches or sequences of adjoining n words (n-grams) in sentences were assessed. The proposed algorithm showed promising results in classifying wrong-way driving and can identify the most important keywords that produce high discriminating accuracy. The prediction accuracy of the classifiers ranged between 84% and 92%, with unigrams and bigrams having relatively higher accuracy than trigrams and tetragrams. Moreover, unigrams and bigrams revealed generic keywords, which are usually less useful in wrong-way driving identification. However, trigrams and tetragrams provided clear explanations of the critical phrases for classifying wrong-way driving crashes compared with unigrams and bigrams. The findings are consistent with prior knowledge, and the fitted model can suitably be used for inference. Furthermore, the trigrams and tetragrams can be powerful tools for identifying critical phrases associated with wrong-way driving crashes for traffic safety analysis.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Cleveland State University",
+            "ror": "002tx1f22"
+          }
+        ],
+        "name": "Emmanuel Kidando",
+        "openalex": "A5003692223",
+        "orcid": "https://orcid.org/0000-0001-6882-5023"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Texas Department of Transportation",
+            "ror": "02ky21x08"
+          }
+        ],
+        "name": "Boniphace Kutela",
+        "openalex": "A5024488533",
+        "orcid": "https://orcid.org/0000-0002-5450-1623"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Cleveland State University",
+            "ror": "002tx1f22"
+          }
+        ],
+        "name": "Meshack Mihayo",
+        "openalex": "A5092628369",
+        "orcid": "https://orcid.org/0009-0007-4803-5244"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Washington Tacoma",
+            "ror": "05n8t2628"
+          }
+        ],
+        "name": "Angela E. Kitali",
+        "openalex": "A5084795404",
+        "orcid": "https://orcid.org/0000-0002-1962-162X"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-8044",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-13",
+    "repository_urls": [],
+    "title": "Applying Natural Language Processing to Identify Critical Textual Phrases for Classification of Wrong-Way Driving Crashes"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-13_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-8044"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:text-analysis",
+        "label": "text analysis"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:002tx1f22",
+        "label": "Cleveland State University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02ky21x08",
+        "label": "Texas Department of Transportation"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05n8t2628",
+        "label": "University of Washington Tacoma"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6882-5023",
+        "label": "Emmanuel Kidando"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5450-1623",
+        "label": "Boniphace Kutela"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0007-4803-5244",
+        "label": "Meshack Mihayo"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1962-162X",
+        "label": "Angela E. Kitali"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T14056",
+        "is_primary": true,
+        "label": "Safety Warnings and Signage",
+        "score": 0.2887,
+        "subfield": "3207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.1958,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10525",
+        "is_primary": false,
+        "label": "Human-Automation Interaction and Safety",
+        "score": 0.0445,
+        "subfield": "3207"
+      }
+    ]
+  },
+  "first_published": "2026-06-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W579931403",
+      "openalex:W2052336411",
+      "openalex:W2081078302",
+      "openalex:W2306706380",
+      "openalex:W2417832492",
+      "openalex:W2578065476",
+      "openalex:W2733835040",
+      "openalex:W2769884739",
+      "openalex:W2800826322",
+      "openalex:W2810676110",
+      "openalex:W2929475730",
+      "openalex:W2931789502",
+      "openalex:W2949271011",
+      "openalex:W3011825629",
+      "openalex:W3037324494",
+      "openalex:W3088719258",
+      "openalex:W3094739916",
+      "openalex:W3101353331",
+      "openalex:W3115116771",
+      "openalex:W3145606387",
+      "openalex:W3171501718",
+      "openalex:W3200408589",
+      "openalex:W4200082634",
+      "openalex:W4283320546",
+      "openalex:W4289529464",
+      "openalex:W4313543240",
+      "openalex:W4393974724",
+      "openalex:W4402040534"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-8044",
+    "openalex": "W7164666955",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:24:18Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005344,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2099,
+      "out": 244
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:24:18Z",
+    "doi": "10.1061/jtepbs.teeng-8044",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance of the classification model is dependent on the specific phrasing and reporting quality of law enforcement officers' written narratives.",
+      "what": "The study applied deep learning-based natural language processing models to classify wrong-way driving crashes from police-written crash narratives. Testing various n-gram tokenization approaches, the classifiers achieved prediction accuracies between 84% and 92%, with unigrams and bigrams yielding higher accuracy but more generic keywords, while trigrams and tetragrams identified more descriptive, critical phrases.",
+      "why": "It demonstrates that automated text classification can reliably identify wrong-way driving incidents within large crash databases, offering traffic safety analysts a way to extract specific crash types from unstructured narratives without manual review."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-13",
+  "work_key": "doi:10.1061/jtepbs.teeng-8044"
+}

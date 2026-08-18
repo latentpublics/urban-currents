@@ -1,0 +1,222 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Arctic shipping growth along the Northern Sea Route raises pressing environmental concerns, particularly regarding black carbon (BC), a short-lived climate forcer rarely modeled as a distinct routing objective. This paper develops a two-stage stochastic multi-objective optimization model that simultaneously minimizes expected cost, CO 2, and BC emissions under sea ice uncertainty, with strategic deployment fixed before uncertainty realization and operational decisions adjusted afterward. A Criterion-Space Benders Decomposition (CSBD) algorithm reuses optimality cuts across Pareto frontier regions and solves bounded scalarized subproblems to proven optimality within prescribed MIP tolerances. Experiments on 16 synthetic and three AIS-informed instances confirm that CO 2 alone is an inadequate proxy for BC: bi-objective models produce 20 to 128% more BC at matched cost or CO 2 levels. Between 56.5% and 84.6% of BC can be reduced through operating plan selection without route redesign, though near-complete elimination requires cost premiums up to 500%, highlighting the practical value of explicit BC-cost trade-off analysis for Arctic emission governance.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "National Tsing Hua University",
+            "ror": "00zdnkx70"
+          }
+        ],
+        "name": "Dung‐Ying Lin",
+        "openalex": "A5021497637",
+        "orcid": "https://orcid.org/0000-0001-9863-5044"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trd.2026.105471",
+      "pdf_url": null,
+      "source_id": "S45181156",
+      "source_name": "Transportation Research Part D Transport and Environment",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-15",
+    "repository_urls": [],
+    "title": "Arctic shipping route design with CO2-black carbon trade-offs"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-15_10.1016/j.trd.20",
+    "members": [
+      "doi:10.1016/j.trd.2026.105471"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00zdnkx70",
+        "label": "National Tsing Hua University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9863-5044",
+        "label": "Dung‐Ying Lin"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12432",
+        "is_primary": true,
+        "label": "Arctic and Russian Policy Studies",
+        "score": 0.2468,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12126",
+        "is_primary": false,
+        "label": "Maritime Transport Emissions and Efficiency",
+        "score": 0.2337,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11459",
+        "is_primary": false,
+        "label": "Arctic and Antarctic ice dynamics",
+        "score": 0.0358,
+        "subfield": "1902"
+      }
+    ]
+  },
+  "first_published": "2026-06-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1944424356",
+      "openalex:W1974080590",
+      "openalex:W1975633600",
+      "openalex:W2011867040",
+      "openalex:W2045538227",
+      "openalex:W2047273991",
+      "openalex:W2056196785",
+      "openalex:W2067698419",
+      "openalex:W2098907614",
+      "openalex:W2100387313",
+      "openalex:W2103164730",
+      "openalex:W2106676828",
+      "openalex:W2109214382",
+      "openalex:W2118341476",
+      "openalex:W2126105956",
+      "openalex:W2194405083",
+      "openalex:W2270554616",
+      "openalex:W2775999337",
+      "openalex:W2801852417",
+      "openalex:W4293004921",
+      "openalex:W4385071479",
+      "openalex:W4386435059",
+      "openalex:W4402838997",
+      "openalex:W4411403556",
+      "openalex:W4411981094",
+      "openalex:W4414614509"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trd.2026.105471",
+    "openalex": "W7164806472",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:33:12Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005765,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1959,
+      "out": 314
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:33:12Z",
+    "doi": "10.1016/j.trd.2026.105471",
+    "journal": "Transportation Research Part D Transport and Environment",
+    "source_id": "S45181156",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "A two-stage stochastic multi-objective optimization model was developed to minimize expected costs, CO2, and black carbon (BC) emissions under sea ice uncertainty, solved using a Criterion-Space Benders Decomposition algorithm. Testing on 16 synthetic and three AIS-informed instances revealed that optimizing for CO2 alone is an inadequate proxy for BC, as bi-objective models produced 20% to 128% more BC at matched cost or CO2 levels. The model demonstrates that 56.5% to 84.6% of BC can be mitigated through operational adjustments alone, while near-complete elimination requires cost premiums up to 500%.",
+      "why": "It proves that greenhouse gas reduction strategies do not automatically minimize short-lived climate pollutants like black carbon in Arctic shipping, establishing a quantitative framework to negotiate the steep economic trade-offs of polar emission governance."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-15",
+  "work_key": "doi:10.1016/j.trd.2026.105471"
+}

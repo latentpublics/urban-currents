@@ -1,0 +1,246 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "In the context of a circular economy, the built environment can be regarded as a reservoir of future recoverable resources. Early identification of buildings at risk of demolition enables targeted reuse and recycling strategies, contributing to global warming mitigation and waste avoidance. Most existing studies rely on spatially explicit analyses and lifetime distribution functions for demolition forecasting, yet do not comprehensively account for the multiple interacting drivers influencing demolition at the building level. This study proposes a spatiotemporal machine learning framework for modelling building demolition risk across large geographic areas. A consolidated dataset is constructed by integrating Geographical Information System (GIS)-based spatial data with building characteristics, surrounding built environment attributes, local demolition dynamics, and statistical socioeconomic indicators. Using this dataset, several machine learning models are employed and evaluated for predicting demolition events and estimating building-level risk scores across Switzerland over different time horizons. Extreme class imbalance is identified as a major challenge, and several strategies are evaluated to address this issue. Model performance is evaluated based on ranking capability and effectiveness in identifying high-risk buildings. The results demonstrate strong performance despite the low base rate of demolition events, with the models effectively prioritising buildings at elevated risk. To enhance interpretability, this study applies Shapley Additive Explanations (SHAP) to quantify the contribution of different features to model predictions. The findings provide insights into the key drivers of demolition, supporting data-driven decision-making for urban planners and policymakers. This study advances the development of data-driven tools for sustainable urban planning and establishes a benchmark for building-level demolition prediction.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "École Polytechnique Fédérale de Lausanne",
+            "ror": "02s376052"
+          }
+        ],
+        "name": "Han Gao",
+        "openalex": "A5138661482",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "École Polytechnique Fédérale de Lausanne",
+            "ror": "02s376052"
+          }
+        ],
+        "name": "Corentin Fivet",
+        "openalex": "A5090276386",
+        "orcid": "https://orcid.org/0000-0003-4558-9835"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.compenvurbsys.2026.102481",
+      "pdf_url": null,
+      "source_id": "S60115552",
+      "source_name": "Computers Environment and Urban Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-15",
+    "repository_urls": [],
+    "title": "Spatiotemporal machine learning for building demolition risk modelling"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-15_10.1016/j.compen",
+    "members": [
+      "doi:10.1016/j.compenvurbsys.2026.102481"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02s376052",
+        "label": "École Polytechnique Fédérale de Lausanne"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5138661482",
+        "label": "Han Gao"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4558-9835",
+        "label": "Corentin Fivet"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11606",
+        "is_primary": true,
+        "label": "Infrastructure Maintenance and Monitoring",
+        "score": 0.3285,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11006",
+        "is_primary": false,
+        "label": "BIM and Construction Integration",
+        "score": 0.1246,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11211",
+        "is_primary": false,
+        "label": "3D Surveying and Cultural Heritage",
+        "score": 0.0628,
+        "subfield": "1907"
+      }
+    ]
+  },
+  "first_published": "2026-06-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1487248284",
+      "openalex:W1971026303",
+      "openalex:W1976469145",
+      "openalex:W2053173125",
+      "openalex:W2330461921",
+      "openalex:W2441295105",
+      "openalex:W2589321737",
+      "openalex:W2786408303",
+      "openalex:W2936503027",
+      "openalex:W2959195404",
+      "openalex:W2980634678",
+      "openalex:W3034143844",
+      "openalex:W3112876270",
+      "openalex:W3119504547",
+      "openalex:W3124786256",
+      "openalex:W3180319347",
+      "openalex:W3189035319",
+      "openalex:W4221132083",
+      "openalex:W4243150065",
+      "openalex:W4296403404",
+      "openalex:W4313421210",
+      "openalex:W4313478007",
+      "openalex:W4313647263",
+      "openalex:W4385143571",
+      "openalex:W4391152254",
+      "openalex:W4391361573",
+      "openalex:W4397289781",
+      "openalex:W4399212077",
+      "openalex:W4401019864",
+      "openalex:W4402647011",
+      "openalex:W4402932539",
+      "openalex:W4408310218",
+      "openalex:W4411992592",
+      "openalex:W4417357972"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.compenvurbsys.2026.102481",
+    "openalex": "W7164810443",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:33:12Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005653,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2113,
+      "out": 276
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:33:12Z",
+    "doi": "10.1016/j.compenvurbsys.2026.102481",
+    "journal": "Computers Environment and Urban Systems",
+    "source_id": "S60115552",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The predictive models had to be adjusted to handle an extreme class imbalance due to the very low base rate of actual demolition events across the study area.",
+      "what": "This study develops a spatiotemporal machine learning framework to predict building-level demolition risk across Switzerland. The models integrate GIS-based spatial data, building characteristics, surrounding built environment attributes, local demolition dynamics, and socioeconomic indicators, using Shapley Additive Explanations (SHAP) to interpret the key drivers of demolition.",
+      "why": "It establishes a predictive benchmark that moves beyond aggregate lifetime distribution functions, allowing urban planners to identify specific, high-risk buildings for targeted material reuse and recycling before they are demolished."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-15",
+  "work_key": "doi:10.1016/j.compenvurbsys.2026.102481"
+}

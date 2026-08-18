@@ -202,3 +202,50 @@ def test_outcomes_are_counted_apart(repo):
     )
 
     assert (result.published, result.quiet, result.not_published) == (1, 1, 1)
+
+
+def test_the_budget_spans_passes_rather_than_resetting(repo):
+    """A sixty-day run outlives one process, so it is driven in passes.
+
+    Measuring spend from "cumulative cost when this pass started" gives every
+    pass a fresh ceiling — fifteen passes, fifteen budgets. The symptom was a
+    checkpoint reporting *less* spend after a day had been added than before it.
+    """
+    from pipeline.llm import UsageState
+
+    first: list = []
+    backfill(
+        days=6,
+        budget_usd=0.25,
+        today=TODAY,
+        runner=_fake_runner(first, cost_each=0.10),
+        on_checkpoint=None,
+    )
+    assert len(first) == 3
+    spent_after_first = load_checkpoint()["spend_usd"]
+    assert spent_after_first == pytest.approx(0.30, abs=1e-6)
+
+    # A second pass under the same ceiling must have nothing left to spend.
+    second: list = []
+    result = backfill(
+        days=6,
+        budget_usd=0.25,
+        today=TODAY,
+        runner=_fake_runner(second, cost_each=0.10),
+        on_checkpoint=None,
+    )
+
+    assert second == []
+    assert result.attempted == 0
+    assert result.stopped_on is not None
+    # And the reported total never goes backwards.
+    assert load_checkpoint()["spend_usd"] >= spent_after_first
+
+
+def test_the_baseline_survives_a_checkpoint_rewrite(repo):
+    calls: list = []
+    backfill(days=2, today=TODAY, runner=_fake_runner(calls, cost_each=0.01), on_checkpoint=None)
+    state = load_checkpoint()
+
+    assert "baseline_cost_usd" in state
+    assert state["spend_usd"] == pytest.approx(0.02, abs=1e-6)

@@ -1,0 +1,262 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Inventory capacity constraints represent real-world space scarcity in warehouses. When only full truckloads are permitted, these constraints are typically enforced by blocking deliveries that would violate the capacity. However, when the inventory is simultaneously too high to allow a delivery while also too low to serve all demand, this method leads to unmet demand. This study therefore introduces inventory-driven delays, where vehicles are held at the destination until enough inventory capacity is available, as a method to enforce capacity constraints. To capture these delays, the dispatch problem is formulated as a discrete-time Markov Decision Process (MDP) with inventory-dependent service times. The problem is solved using Approximate Dynamic Programming (ADP), which accounts for opportunity costs associated with waiting vehicles, allowing the policy to handle the state-dependent costs introduced by inventory-driven delays. A case study is developed based on data from an Ethiopian brewery. The proposed method is compared against multiple heuristics across four different replenishment strategies. Results show that one full truckload of unmet demand is recovered per ten cumulative days of inventory-driven delays, suggesting that allowing such delays can serve as a strategic buffer in inventory-capacitated, full-truckload systems. Future work may address dynamic order generation, parameter uncertainty, and extensions toward the general Inventory Routing Problem (IRP).",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Ministry of Infrastructure and Water Management",
+            "ror": "056a6x975"
+          }
+        ],
+        "name": "Lucas Verhofstad",
+        "openalex": "A5138596005",
+        "orcid": "https://orcid.org/0009-0008-9910-346X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Mahnam Saeednia",
+        "openalex": "A5054600586",
+        "orcid": "https://orcid.org/0000-0001-9915-4963"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Bilge Atasoy",
+        "openalex": "A5084404968",
+        "orcid": "https://orcid.org/0000-0002-1606-9841"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.cstp.2026.101877",
+      "pdf_url": null,
+      "source_id": "S2764739077",
+      "source_name": "Case Studies on Transport Policy",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-06-14",
+    "repository_urls": [],
+    "title": "Dispatch optimization under inventory-driven delays: A case study using Approximate Dynamic Programming"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-06-14_10.1016/j.cstp.2",
+    "members": [
+      "doi:10.1016/j.cstp.2026.101877"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:056a6x975",
+        "label": "Ministry of Infrastructure and Water Management"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02e2c7k09",
+        "label": "Delft University of Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0008-9910-346X",
+        "label": "Lucas Verhofstad"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9915-4963",
+        "label": "Mahnam Saeednia"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1606-9841",
+        "label": "Bilge Atasoy"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12794",
+        "is_primary": true,
+        "label": "Adaptive Dynamic Programming Control",
+        "score": 0.4422,
+        "subfield": "1703"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10424",
+        "is_primary": false,
+        "label": "Electric Power System Optimization",
+        "score": 0.1357,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10603",
+        "is_primary": false,
+        "label": "Smart Grid Energy Management",
+        "score": 0.0774,
+        "subfield": "2208"
+      }
+    ]
+  },
+  "first_published": "2026-06-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1975386621",
+      "openalex:W2031236641",
+      "openalex:W2233419640",
+      "openalex:W2559748088",
+      "openalex:W2725654634",
+      "openalex:W2898596225",
+      "openalex:W2950452023",
+      "openalex:W2979470511",
+      "openalex:W2991124233",
+      "openalex:W3039823371",
+      "openalex:W3039852076",
+      "openalex:W3200652106",
+      "openalex:W3210162234",
+      "openalex:W4205206417",
+      "openalex:W4205766554",
+      "openalex:W4206830651",
+      "openalex:W4244310446",
+      "openalex:W4311166819",
+      "openalex:W4312994607",
+      "openalex:W4313361562",
+      "openalex:W4322775628",
+      "openalex:W4390061930",
+      "openalex:W4390266851",
+      "openalex:W4391770260",
+      "openalex:W4392121271",
+      "openalex:W4396758497",
+      "openalex:W4399534518",
+      "openalex:W4404202501",
+      "openalex:W4406590561"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.cstp.2026.101877",
+    "openalex": "W7164744226",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:27:21Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.003325,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2025,
+      "out": 251
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:27:21Z",
+    "doi": "10.1016/j.cstp.2026.101877",
+    "journal": "Case Studies on Transport Policy",
+    "source_id": "S2764739077",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model is evaluated using a single case study of an Ethiopian brewery and assumes static order generation and parameter certainty.",
+      "what": "This study models dispatch optimization under warehouse space constraints by introducing inventory-driven delays, where delivery vehicles wait at their destination until storage space clears. Formulated as a discrete-time Markov Decision Process with inventory-dependent service times, the model is solved using Approximate Dynamic Programming and tested on operational data from an Ethiopian brewery across four replenishment strategies.",
+      "why": "It demonstrates that allowing vehicles to wait at constrained destinations can recover one full truckload of unmet demand for every ten cumulative days of delay, proving that deliberate delivery delays can act as a strategic buffer in capacity-constrained logistics systems."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-06-14",
+  "work_key": "doi:10.1016/j.cstp.2026.101877"
+}

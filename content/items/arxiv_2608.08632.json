@@ -1,0 +1,242 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Airport landside traffic centers connect terminal arrivals with taxis, ride-hailing vehicles, private cars, buses, metro services, parking facilities, and terminal-area roadways. Peak arrivals can create coupled congestion across passenger queues, vehicle queues, pickup berths, storage areas, and access roads. This study proposes a QUBO-inspired computational framework for bottleneck diagnosis and dynamic dispatch in this setting. Shanghai Pudong International Airport and Hangzhou Xiaoshan International Airport serve as case airports. A five-minute state model links passenger arrivals, vehicle supply, pickup berth service, vehicle storage, and road capacity. Bottleneck diagnosis uses service intensity, road demand saturation, bottleneck frequency, queue severity, shadow-price leverage, and a composite congestion severity index. Two dispatch schemes are tested under consistent demand inputs: finite-action model predictive control and quadratic-unconstrained-binary-optimization-inspired simulated annealing. In the strong-peak baseline scenario, the QUBO-inspired method reduces the final passenger queue from 3445 to 2477 passengers at Shanghai Pudong and from 2053 to 1482 passengers at Hangzhou Xiaoshan. Case results indicate different dominant bottlenecks. Shanghai Pudong is more affected by road saturation, whereas Hangzhou Xiaoshan is more affected by pickup berth service. Robustness tests under demand, supply, service, road-capacity, modal-share, and random-noise perturbations show retained queue-reduction benefits under the tested uncertainty levels.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Wuming Lei",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xiaobin Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mingyan Sun",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jianing Long",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yulin Tong",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yanbin Gao",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.08632v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.08632v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-09",
+    "repository_urls": [],
+    "title": "A QUBO-Inspired Computational Framework for Airport Landside Bottleneck Diagnosis and Dynamic Dispatch Optimization"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-09_2608.08632",
+    "members": [
+      "arxiv:2608.08632"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5143805069",
+        "label": "Wuming Lei"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0008-3386-1436",
+        "label": "Xiaobin Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146447676",
+        "label": "Mingyan Sun"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146498831",
+        "label": "Jianing Long"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146477884",
+        "label": "Yulin Tong"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8297-0358",
+        "label": "Yanbin Gao"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": true,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.3809,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.178,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.1106,
+        "subfield": "2207"
+      }
+    ]
+  },
+  "first_published": "2026-08-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.08632",
+    "doi": "10.48550/arxiv.2608.08632",
+    "openalex": "W7202158664",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:06:21Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.00628,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2117,
+      "out": 345
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9473,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3789,
+    "relevance": 0.9473
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "from 2053",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance of the dispatch optimization is demonstrated through simulation modeling under perturbed scenarios rather than real-world deployment.",
+      "what": "This study develops a Quadratic Unconstrained Binary Optimization (QUBO)-inspired simulated annealing framework and a finite-action model predictive control scheme to diagnose bottlenecks and optimize vehicle dispatching at airport landsides. Using a five-minute state model, the framework was tested on peak-demand scenarios at Shanghai Pudong and Hangzhou Xiaoshan International Airports. The QUBO-inspired method reduced final passenger queues from 3,445 to 2,477 at Shanghai Pudong and from 2,053 to 1,482 at Hangzhou Xiaoshan, maintaining these queue-reduction benefits across various demand, supply, and capacity perturbations.",
+      "why": "It provides a scalable optimization method capable of resolving coupled congestion across passenger queues, vehicle storage, and access roads simultaneously, while identifying whether road saturation or pickup berth capacity is the primary local bottleneck."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-09",
+  "work_key": "arxiv:2608.08632"
+}

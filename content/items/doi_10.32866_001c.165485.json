@@ -1,0 +1,216 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Evidence on bus transport accessibility remains limited for rapidly urbanising Asian cities. This study measures bus access to nine essential opportunity types in Hanoi, Vietnam, using open-source datasets. The results show that accessibility was low, highly corridor-based and strongly unequal. At the 60-minute threshold, citywide coverage ranged from only 14.8% of hexagons for sports facilities to 29.1% for retail and grocery, while rural coverage peaked at 23.9%. Population-weighted Gini coefficients remained high, ranging from 0.603 to 0.654 across opportunity types.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Glasgow",
+            "ror": "00vtgdb53"
+          }
+        ],
+        "name": "Thi Phuong Linh Le",
+        "openalex": "A5113917401",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.32866/001c.165485",
+      "pdf_url": "https://findingspress.org/article/165485.pdf",
+      "source_id": "S4210241126",
+      "source_name": "Findings",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-08",
+    "repository_urls": [],
+    "title": "Uneven Bus-based Accessibility to Essential Opportunities in Hanoi, Vietnam"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-08_10.32866/001c.16",
+    "members": [
+      "doi:10.32866/001c.165485"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.913,
+        "id": "method:accessibility-analysis",
+        "label": "accessibility analysis"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00vtgdb53",
+        "label": "University of Glasgow"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5113917401",
+        "label": "Thi Phuong Linh Le"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.9808,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.0037,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.003,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-08-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1973573843",
+      "openalex:W2063877484",
+      "openalex:W2907893689",
+      "openalex:W2909547231",
+      "openalex:W2938525973",
+      "openalex:W2981007641",
+      "openalex:W3135734842",
+      "openalex:W3196464902",
+      "openalex:W4220908767",
+      "openalex:W4372214986",
+      "openalex:W4399581756",
+      "openalex:W4400734798",
+      "openalex:W4404624627",
+      "openalex:W4413981687"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.32866/001c.165485",
+    "openalex": "W7201957516",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-18T08:02:58Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005089,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1767,
+      "out": 271
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-18T08:02:58Z",
+    "doi": "10.32866/001c.165485",
+    "journal": "Findings",
+    "source_id": "S4210241126",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 1.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.64,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study measured bus-based transit access to nine types of essential opportunities in Hanoi, Vietnam, using open-source datasets. At a 60-minute travel threshold, citywide spatial coverage was low, ranging from 14.8% of hexagons for sports facilities to 29.1% for retail and grocery stores, with rural coverage peaking at 23.9%. The distribution of access was highly unequal and concentrated along transit corridors, yielding high population-weighted Gini coefficients between 0.603 and 0.654.",
+      "why": "It provides empirical evidence of severe transit-based spatial inequality in a rapidly urbanizing Southeast Asian capital, quantifying a stark urban-rural divide and corridor-centric access patterns that were previously unmeasured."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-08",
+  "work_key": "doi:10.32866/001c.165485"
+}

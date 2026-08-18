@@ -58,20 +58,40 @@ def _item(key: str, subfield: str | None = "3305", score: float = 0.9) -> Item:
 # --------------------------------------------------------------------------
 
 
-def test_a_paper_outside_the_whitelist_subfields_is_withheld(repo):
-    """The journal path has no gate: membership is the whole test.
+def test_a_paper_outside_the_whitelist_subfields_is_filed_not_withheld(repo):
+    """R1 records and does not remove, because it was measured and it fails.
 
-    08-11's top fifteen carried car insurance, asphalt ageing and nano-TiO2 pore
-    structure — all of them identified by the paper's own subfield, which we had
-    been collecting since phase 0 and never read.
+    Gating on the paper's own subfield loses 27 of 44 keeps in the labels — 61%
+    — and took 59% and 79% of two backfilled days. `whitelist_subfields` was
+    built to pick journals, and OpenAlex scatters individual urban articles
+    across a dozen other subfields, so it is the wrong instrument for judging an
+    article (phase 0L, N3).
     """
     materials = _item("doi:10.1/materials", subfield="2500")
     suspicion = inspect(materials, "journal", selected=True)
 
     assert suspicion is not None
     assert suspicion.rule == RULE_OFF_SUBFIELD
-    assert suspicion.kind == WITHHELD
+    assert suspicion.kind == NEAR_MISS      # filed for judgement, not removed
     assert "2500" in suspicion.detail
+
+
+def test_r1_can_be_made_to_withhold_again_by_config(repo, monkeypatch):
+    """One line turns enforcement back on, once the subfield list is re-derived."""
+    import pipeline.held as held_mod
+
+    monkeypatch.setattr(held_mod, "_off_subfield_withholds", lambda: True)
+    suspicion = inspect(_item("doi:10.1/materials", subfield="2500"), "journal", selected=True)
+
+    assert suspicion.kind == WITHHELD
+
+
+def test_the_whole_queue_can_be_switched_off(repo, monkeypatch):
+    """`held.enabled` was declared in config and read by nothing."""
+    import pipeline.held as held_mod
+
+    monkeypatch.setattr(held_mod, "enabled", lambda: False)
+    assert inspect(_item("arxiv:2608.1", score=0.81), "arxiv", selected=True, floor=0.80) is None
 
 
 def test_a_paper_inside_the_whitelist_subfields_publishes(repo):
@@ -276,7 +296,7 @@ def test_only_unsplit_rows_are_offered(repo):
     assert again["labelled"] == 0
 
 
-def test_a_held_item_does_not_block_the_issue(repo, monkeypatch):
+def test_a_filed_item_does_not_block_the_issue(repo, monkeypatch):
     """The verification the addendum names: the day publishes, minus the hole.
 
     Runs the real select stage over a pool containing one off-subfield journal
@@ -301,14 +321,11 @@ def test_a_held_item_does_not_block_the_issue(repo, monkeypatch):
     selected = run_stages.stage_select(run)
     keys = {it.work_key for it in selected}
 
-    # The day published, and it published without the doubtful one.
-    assert keys == {it.work_key for it in good}
-    assert "doi:10.1/materials" not in keys
-
-    # And the held item is on the record, not lost.
+    # R1 files rather than removes, so the day keeps everything...
+    assert "doi:10.1/materials" in keys
+    # ...and the doubt is still on the record for someone to judge.
     doc = held.load(DAY)
-    assert doc["withheld"] == 1
-    assert doc["items"][0]["work_key"] == "doi:10.1/materials"
+    assert doc["near_miss"] == 1
     assert doc["items"][0]["rule"] == RULE_OFF_SUBFIELD
 
 

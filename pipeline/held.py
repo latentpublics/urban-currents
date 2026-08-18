@@ -62,6 +62,25 @@ from .models import Item
 # to evaluate.
 RULE_OFF_SUBFIELD = "off_subfield"
 
+# ...and it is **recorded, not enforced**, because it was measured and it fails.
+#
+# Against the 75 labelled journal items, gating on the paper's own subfield
+# loses **27 of 44 keeps (61.4%)** and leaves no day with enough labelled items
+# in its top ten to compute a precision at all. Against two backfilled days it
+# withheld 59% and 79% of the day. The papers it takes are the subject matter:
+# GIS accessibility analysis, park climate adaptation, food deserts, urban heat
+# risk, hurricane recovery of points of interest.
+#
+# The cause is not the rule's logic but its premise. `whitelist_subfields`
+# (3305, 3313, 3322) was built to choose *journals*; OpenAlex scatters
+# individual urban papers across 2215, 2307, 2214, 1110, 2213 and a long tail.
+# A journal-selection list is the wrong instrument for judging an article, which
+# is the same mistake the canon scope rule made in phase 0e with `journals.yaml`.
+#
+# So the rule still runs and still files what it finds — that is the labelling
+# queue, and the queue is the point — but it no longer removes anything from an
+# issue. One config line turns enforcement back on.
+
 # R2. The classifier is closest to a coin flip here.
 #
 # Not a publication rule — items in this band are already below the 0.80 arXiv
@@ -97,6 +116,21 @@ def _uncertain_band() -> tuple[float, float]:
 
 def _floor_margin() -> float:
     return float(cfg("held.floor_margin", 0.03))
+
+
+def _off_subfield_withholds() -> bool:
+    """Whether R1 removes an item or merely files it. Default: files it.
+
+    See RULE_OFF_SUBFIELD. Set `held.off_subfield_withholds: true` to enforce,
+    once `whitelist_subfields` has been re-derived from articles rather than
+    from journals — that is the fix, and it is YJUN's call (§N3).
+    """
+    return bool(cfg("held.off_subfield_withholds", False))
+
+
+def enabled() -> bool:
+    """`held.enabled` was declared in config and read by nothing."""
+    return bool(cfg("held.enabled", True))
 
 
 def whitelist_subfield_ids() -> set[str]:
@@ -153,6 +187,8 @@ def inspect(
     item: Item, source: str, selected: bool, floor: Optional[float] = None
 ) -> Optional[Suspicion]:
     """Whether this item is doubtful, and why. None means publish it as normal."""
+    if not enabled():
+        return None
     score = float(getattr(item.scores, "relevance", 0.0) or 0.0)
     floor = float(cfg("selection.arxiv_floor", 0.80)) if floor is None else floor
     title = item.bibliography.title or ""
@@ -164,7 +200,7 @@ def inspect(
             return Suspicion(
                 work_key=item.work_key,
                 rule=RULE_OFF_SUBFIELD,
-                kind=WITHHELD,
+                kind=WITHHELD if _off_subfield_withholds() else NEAR_MISS,
                 detail=f"the paper's own subfield {own} is outside {sorted(wanted)}",
                 score=score,
                 source=source,

@@ -1,0 +1,199 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Trajectory-User Linking (TUL) aims to identify the owner of an anonymous trajectory from a set of candidate users, providing a basis for user mobility analysis and personalized location-aware services. Existing methods often learn Point of Interest (POI), temporal, and semantic features independently, make limited use of structural knowledge shared across trajectories, and compress structural and sequential information before classification. To address these issues, we propose Multi-Relational Knowledge Graph Enhanced Embedding for Trajectory-User Linking (MakeTUL), which, to the best of our knowledge, is the first attempt to introduce knowledge graph representation learning into TUL. MakeTUL organizes visit-time, POI-category, and transfer-speed information as typed relations in a multi-relational mobility knowledge graph, allowing heterogeneous mobility semantics to jointly constrain the learned embeddings. The resulting POI representations are further enriched with high-order co-occurrence patterns extracted from the trajectory collection, providing structural prior knowledge for sparse and overlapping trajectories. By integrating these prior-enhanced representations with temporal, category, and transfer information, the trajectory sequence learning module captures ordered mobility patterns, while a dual-branch classification layer preserves and combines global structural evidence and sequential evidence at the decision level.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Zhifeng Chu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Bin Wang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.08646v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.08646v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-09",
+    "repository_urls": [],
+    "title": "Multi-Relational Knowledge Graph Enhanced Embedding for Trajectory-User Linking"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-09_2608.08646",
+    "members": [
+      "arxiv:2608.08646"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5108220822",
+        "label": "Zhifeng Chu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146521036",
+        "label": "Bin Wang"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.7693,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11106",
+        "is_primary": false,
+        "label": "Data Management and Algorithms",
+        "score": 0.0732,
+        "subfield": "1711"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11896",
+        "is_primary": false,
+        "label": "Opportunistic and Delay-Tolerant Networks",
+        "score": 0.0406,
+        "subfield": "1705"
+      }
+    ]
+  },
+  "first_published": "2026-08-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.08646",
+    "doi": "10.48550/arxiv.2608.08646",
+    "openalex": "W7202208532",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-18T08:06:21Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.004981,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2001,
+      "out": 220
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8456,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3382,
+    "relevance": 0.8456
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed MakeTUL, a trajectory-user linking framework that represents visit times, POI categories, and transfer speeds as typed relations within a multi-relational mobility knowledge graph. The model enriches POI representations with high-order co-occurrence patterns from trajectory data and uses a dual-branch classification layer to combine global structural and sequential mobility patterns.",
+      "why": "It introduces knowledge graph representation learning to trajectory-user linking for the first time, allowing heterogeneous mobility semantics to jointly constrain embeddings and improving identification accuracy for sparse or overlapping trajectories."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-09",
+  "work_key": "arxiv:2608.08646"
+}

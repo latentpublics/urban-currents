@@ -328,6 +328,21 @@ held:
   # verdict, not owed to readers.
   enabled: true
 
+  # ★ R1 records, it does not remove. Measured (phase 0L, N3): gating on the
+  # paper's own subfield loses 27 of 44 keeps in the labels — 61% — and takes
+  # 59% and 79% of two backfilled days. The papers it withheld were urban heat
+  # risk, GIS accessibility, park climate adaptation, food deserts.
+  #
+  # `whitelist_subfields` was built to choose journals, and OpenAlex scatters
+  # individual urban articles across a dozen other subfields. Using a
+  # journal-selection list to judge an article is the mistake phase 0e already
+  # made once with `journals.yaml`.
+  #
+  # Set true to enforce, once the subfield list has been re-derived from
+  # articles. Until then the rule still fills the labelling queue, which is
+  # what it is actually good for.
+  off_subfield_withholds: false
+
   # R2: the band where the classifier is closest to a coin flip. These sit below
   # the 0.80 publication floor and are not published either way — they are held
   # because a judgement here buys more than a judgement at the top of a ranking

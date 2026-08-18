@@ -47,6 +47,9 @@ def _guard(run: Run, name: str, fn):
     """
     before = run.metrics.stages.get(name)
     started = time.monotonic()
+    # Bound before the try: the `finally` reports it, and a stage that raises
+    # would otherwise turn its own exception into a NameError in the handler.
+    result = None
     print(f"[stage] {name} ...", flush=True)
     try:
         result = fn()

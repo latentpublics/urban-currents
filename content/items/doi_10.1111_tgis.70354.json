@@ -1,0 +1,266 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "ABSTRACT Street View Images (SVIs) have become a valuable source of geotagged visual data, increasingly used in tasks such as assessing socioeconomic conditions, mapping accessibility, monitoring infrastructure, and supporting navigation and perception studies. However, while the spatial coverage and utility of SVIs are well recognized, their temporal variation and its impact on the generalisability and robustness of geospatial AI models remain underexplored. To address this gap, we examine how temporal bias in SVIs affects the performance of cross‐view geolocalization models. We construct a temporally diverse dataset of historical SVIs, spatially aligned with the CVUSA validation set, enabling controlled evaluation of temporal effects. We evaluate two state‐of‐the‐art deep learning models, TransGeo and SAFA, on this temporally diverse dataset, assessing retrieval accuracy under temporal shifts. To further explore how specific visual changes impact outcomes, we apply semantic segmentation to categorize scene types and use SHAP analysis to interpret how feature variations contribute to retrieval success. Our study establishes the importance of explicitly accounting for temporal diversity on semantic feature composition in the development and evaluation of geospatial AI methods. The results reveal a substantial decline in retrieval accuracies for both models when evaluated on the temporally diverse dataset. Semantic analysis further indicates that temporal shifts in visual features, particularly those related to urban infrastructure and natural landscape, can systematically influence model performance.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Glasgow",
+            "ror": "00vtgdb53"
+          }
+        ],
+        "name": "Yu Wang",
+        "openalex": "A5100445118",
+        "orcid": "https://orcid.org/0000-0001-8873-4778"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Glasgow",
+            "ror": "00vtgdb53"
+          }
+        ],
+        "name": "Ana Basiri",
+        "openalex": "A5041854263",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1111/tgis.70354",
+      "pdf_url": null,
+      "source_id": "S859791518",
+      "source_name": "Transactions in GIS",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-26",
+    "repository_urls": [],
+    "title": "From Static to Dynamic: Evaluating the Impact of Temporal Bias in Historical Street View Images for Cross‐View Geolocalization"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-26_10.1111/tgis.703",
+    "members": [
+      "doi:10.1111/tgis.70354"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:remote-sensing-classification",
+        "label": "remote sensing classification"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00vtgdb53",
+        "label": "University of Glasgow"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8873-4778",
+        "label": "Yu Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5041854263",
+        "label": "Ana Basiri"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": true,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.1794,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10689",
+        "is_primary": false,
+        "label": "Remote-Sensing Image Classification",
+        "score": 0.162,
+        "subfield": "2214"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": false,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.1366,
+        "subfield": "3305"
+      }
+    ]
+  },
+  "first_published": "2026-07-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1946093182",
+      "openalex:W1979728958",
+      "openalex:W2115395090",
+      "openalex:W2138621090",
+      "openalex:W2199890863",
+      "openalex:W2295598076",
+      "openalex:W2340897893",
+      "openalex:W2478090196",
+      "openalex:W2572697301",
+      "openalex:W2781228439",
+      "openalex:W2799087793",
+      "openalex:W2963474852",
+      "openalex:W2965143341",
+      "openalex:W2967496926",
+      "openalex:W3046751713",
+      "openalex:W3142749060",
+      "openalex:W3179267034",
+      "openalex:W3195494505",
+      "openalex:W3195997474",
+      "openalex:W3202455488",
+      "openalex:W4221167437",
+      "openalex:W4290085958",
+      "openalex:W4312703192",
+      "openalex:W4319721310",
+      "openalex:W4372260385",
+      "openalex:W4376870471",
+      "openalex:W4388498982",
+      "openalex:W4389412320",
+      "openalex:W4390329555",
+      "openalex:W4390827373",
+      "openalex:W4394625510",
+      "openalex:W4394719564",
+      "openalex:W4402262570",
+      "openalex:W4404787846",
+      "openalex:W4410235164",
+      "openalex:W4410994640",
+      "openalex:W4415011768"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1111/tgis.70354",
+    "openalex": "W7171309231",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:22:21Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005609,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2071,
+      "out": 278
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:22:21Z",
+    "doi": "10.1111/tgis.70354",
+    "journal": "Transactions in GIS",
+    "source_id": "S859791518",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The evaluation is limited to the geographic and structural footprint of the CVUSA dataset.",
+      "what": "The study evaluates how temporal variations in Street View Images (SVIs) affect the performance of two deep learning cross-view geolocalization models, TransGeo and SAFA. Researchers constructed a temporally diverse dataset of historical SVIs spatially aligned with the CVUSA validation set, using semantic segmentation and SHAP analysis to measure how visual changes in urban infrastructure and natural landscapes impact retrieval accuracy.",
+      "why": "It demonstrates that temporal shifts in imagery cause a substantial decline in retrieval accuracy for state-of-the-art geolocalization models, proving that geospatial AI models trained on static imagery are highly vulnerable to real-world temporal bias."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-26",
+  "work_key": "doi:10.1111/tgis.70354"
+}

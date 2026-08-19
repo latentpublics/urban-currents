@@ -1,0 +1,179 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "In this paper, we propose the Rule-based Visiting Circulation (RVC) model in tackling the challenge in the IEEE Big Data Cup 2022: Trip Destination Prediction. Given trips containing travel information, personal attributes, origin zones, and their features in the training metropolitan areas, the task is to predict the destination of every trip in a targeted metropolitan area whose destinations are not given at all at the training stage. We highlight the challenges in this destination prediction task -- having no knowledge of the destinations in the targeted metropolitan area. We provide insights from the datasets, in which revisiting behaviors and the relationships between origins and destinations play a crucial role in individuals' trips. Hence, we design a simple but comprehensive method, rule-based visiting circulation, which directly utilizes the origin information and individuals' trip behaviors to determine the destinations in the targeted metropolitan area, i.e., requiring no learning from the four training areas. Experimental results on both offline evaluation and leaderboard submission consistently exhibit the proposed RVC can significantly outperform supervised learning methods and other heuristics. The RVC method eventually brings us to second place in the competition leaderboard.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Eng-Shen Tu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yong-Han Chen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "En-Chao Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hao-Yun Keng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Cheng-Te Li",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": "8 pages",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.25751v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.25751v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-28",
+    "repository_urls": [],
+    "title": "An Embarrassingly Simple Rule-based Visiting Circulation Approach to Trip Destination Prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-28_2607.25751",
+    "members": [
+      "arxiv:2607.25751"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.25751",
+    "doi": "10.1109/bigdata55660.2022.10020650",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:25:25Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005132,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1963,
+      "out": 243
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9646,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3858,
+    "relevance": 0.9646
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance was evaluated within the specific constraints and dataset structure of a single data science competition.",
+      "what": "The Rule-based Visiting Circulation (RVC) model predicts trip destinations in a target metropolitan area without using any destination training data from that area. It relies on rule-based heuristics derived from individual revisiting behaviors and origin-destination relationships, bypassing supervised learning entirely. The model achieved second place in the IEEE Big Data Cup 2022 competition, outperforming supervised learning baselines in offline and leaderboard evaluations.",
+      "why": "It demonstrates that simple, rule-based heuristics leveraging behavioral patterns can outperform complex supervised learning models in zero-shot spatial transfer tasks where destination labels are completely missing."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-28",
+  "work_key": "arxiv:2607.25751"
+}

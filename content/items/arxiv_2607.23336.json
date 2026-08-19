@@ -1,0 +1,155 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The built environment is on the cusp of populating itself with autonomous artificial agents. AI systems that advise, control and coordinate are being deployed across retrofit, operation and mobility faster than their collective behaviour is studied. The dominant framing treats each agent as a tool operating on a passive building, governance reduced to single-agent safety, which is inadequate. A building, a street, or a city is more accurately modelled as a society of negotiating agents: occupants, owners, operators, regulators, and the artificial agents increasingly acting on their behalf. Their interactions are strategic, their information asymmetric, and the outcomes that matter are properties of the whole. The paper proposes a research agenda for constitutional multi-agent governance of the built environment, organised around three problems: mechanism design for retrofit under deep uncertainty, treating public subsidy as a mechanism component; physics-informed verification of agents in building operations; and antifragile coordination for urban infrastructure under shocks. Drawing on three decades of multi-agent systems research, the paper sets out conceptual foundations, works one governance event through in detail, identifies twelve open problems, and outlines what the agenda requires in data, computation, disciplinary integration and governance.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ali Ghoroghi",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": "23 pages, 2 figures. Supplementary material is included in the same PDF",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.23336v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.23336v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-25",
+    "repository_urls": [],
+    "title": "Constitutional governance for societies of AI agents in the built environment: a research agenda"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-25_2607.23336",
+    "members": [
+      "arxiv:2607.23336"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-25",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.23336",
+    "doi": "10.48550/arxiv.2607.23336",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:21:05Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00523,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1981,
+      "out": 251
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8927,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3571,
+    "relevance": 0.8927
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This paper establishes a research agenda for the constitutional governance of multi-agent AI systems operating within buildings and urban infrastructure. It structures this agenda around three core challenges: designing mechanisms for building retrofits under deep uncertainty using public subsidies, verifying agent behavior in building operations using physics-informed models, and coordinating urban infrastructure to remain resilient during shocks. The framework draws on three decades of multi-agent systems research to define conceptual foundations, analyze a specific governance event, and identify twelve open research problems.",
+      "why": "It shifts the paradigm of urban AI governance from treating individual AI systems as isolated tools to managing them as a complex, negotiating society of strategic agents with asymmetric information. This provides a structured pathway to prevent systemic failures and coordinate collective AI behaviors in physical urban systems before widespread, uncoordinated deployment occurs."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-25",
+  "work_key": "arxiv:2607.23336"
+}

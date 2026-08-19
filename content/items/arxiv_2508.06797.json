@@ -1,0 +1,235 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "We develop a risk-aware Model Predictive Control (MPC) framework for large-scale vehicular evacuations. Traffic dynamics are captured by the Generalized Bathtub Model, which describes the network-wide trip completion rate by tracking the time evolution of the distribution of remaining trip distances. We model evacuation inflow as a stochastic inflow process, and employ origin gating as the control policy, implemented through staged departure orders or adaptive ramp metering. A convex objective integrates total evacuation delay with a generic hazard-exposure term which can embed any spatial risk field (e.g., flood depth, fire intensity). We prove that if the residual-distance distribution exhibits non-decreasing hazard rate, then the optimal origin-gating profile is necessarily monotone decreasing and, under an inflow cap, bang-bang (single switch). This result supplies a closed-form seed for numerical optimizations and clarifies why early heavy release followed by throttling is optimal. Furthermore, we demonstrate that the assumption of a non-decreasing hazard rate is always satisfied when the origins of evacuation movements are uniformly distributed over a convexly bounded evacuation zone-a property that is fulfilled in the vast majority of real evacuation scenarios, at least approximately. The framework is demonstrated through a flood evacuation scenario on Amager Island, a densely populated area of Copenhagen that faces significant flood risk due to its low elevation and coastal exposure. The Generalized Bathtub evacuation model is coupled with a lightweight shallow-water model parameterized using real bathymetric and topographic data from Amager Island. Across 10,000 stochastic demand scenarios, the MPC policy reduces the expected area-under-queue by an average of 27% compared to a no-control scenario.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Alexander Hammerl",
+        "openalex": "A5113473533",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Wen‐Long Jin",
+        "openalex": "A5041976995",
+        "orcid": "https://orcid.org/0000-0002-5413-8377"
+      },
+      {
+        "institutions": [],
+        "name": "Ravi Seshadri",
+        "openalex": "A5039264010",
+        "orcid": "https://orcid.org/0000-0002-9327-9455"
+      },
+      {
+        "institutions": [],
+        "name": "Thomas Kjær Rasmusssen",
+        "openalex": "A5120495557",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Otoo Anker Nielsen",
+        "openalex": "A5120495558",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trb.2026.103561",
+      "pdf_url": null,
+      "source_id": "S96305778",
+      "source_name": "Transportation Research Part B Methodological",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-22",
+    "repository_urls": [],
+    "title": "Optimal evacuation control in large urban networks with stochastic demand"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-22_2508.06797",
+    "members": [
+      "arxiv:2508.06797"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5113473533",
+        "label": "Alexander Hammerl"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5413-8377",
+        "label": "Wen‐Long Jin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9327-9455",
+        "label": "Ravi Seshadri"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5120495557",
+        "label": "Thomas Kjær Rasmusssen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5120495558",
+        "label": "Otoo Anker Nielsen"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1748",
+        "label": "Copenhagen",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11500",
+        "is_primary": true,
+        "label": "Evacuation and Crowd Dynamics",
+        "score": 0.9614,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0144,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0111,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-07-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2508.06797",
+    "doi": "10.1016/j.trb.2026.103561",
+    "openalex": "W4416177200",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:16:32Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006482,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2173,
+      "out": 358
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:16:32Z",
+    "doi": "10.1016/j.trb.2026.103561",
+    "journal": "Transportation Research Part B Methodological",
+    "source_id": "S96305778",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's optimal control proof relies on the assumption of a non-decreasing hazard rate in the residual-distance distribution, which may not hold in highly irregular or non-convex evacuation zones.",
+      "what": "The study develops a risk-aware Model Predictive Control framework for large-scale vehicular evacuations using the Generalized Bathtub Model to track network-wide trip completion rates. The control policy uses origin gating, such as staged departures or adaptive ramp metering, to minimize a convex objective combining evacuation delay and spatial hazard exposure. Tested on a simulated flood evacuation of Amager Island in Copenhagen using a coupled shallow-water model, the policy reduced the expected area-under-queue by an average of 27% across 10,000 stochastic demand scenarios.",
+      "why": "It provides a mathematical proof that the optimal origin-gating profile is monotone decreasing and follows a single-switch bang-bang structure under uniform spatial demand, explaining why early heavy release followed by throttling is mathematically optimal. This theoretical result offers a closed-form seed that significantly simplifies and speeds up numerical optimization for real-time emergency management."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-22",
+  "work_key": "arxiv:2508.06797"
+}

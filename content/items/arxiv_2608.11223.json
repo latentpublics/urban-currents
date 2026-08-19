@@ -1,0 +1,176 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Entry-only automatic fare collection systems record boardings but not alightings, preventing direct construction of origin-destination (OD) matrices. This study develops a Hierarchical Bayesian Latent-Destination (HBLD) model that combines station-hour boarding and inferred alighting demand with passenger card histories. Trip-chain destinations are treated as noisy evidence with a reliability parameter, allowing destination uncertainty to propagate into OD flows. The model was applied to 838,305 bus tap-ins collected in Changzhou in May 2025 and linked to stop-network and hourly weather data. It estimates destination distributions over feasible downstream and reverse-direction through-terminal stops using network, time-of-day, weather, and smoothed historical demand effects. A Bayesian personalization layer uses prior card trips and reverts to the shared trip-level distribution when history is unavailable. Fitted by stochastic variational inference and evaluated on the final week, HBLD outperformed the strongest baseline. Observed boarding patterns consistently improved prediction, especially without card history, while inferred alighting patterns helped only when trip-chain evidence was strongly trusted. The model captured travel consistent with through-terminal riding and bus-assisted road crossing and estimated destinations for trips unresolved by deterministic chaining. Because true alightings were unavailable, scores measure agreement with trip-chain outputs rather than actual destination accuracy. HBLD provides uncertainty-aware destination predictions and OD matrices for service management, planning, scheduling, and resource allocation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Gefei Zhao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jiahe Ling",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yuelong Su",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP",
+      "cs.LG",
+      "eess.SY",
+      "stat.ML"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.11223v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.11223v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-23",
+    "repository_urls": [],
+    "title": "Transit Destination Inference from Tap-In-Only Bus Smart-Card Data: A Hierarchical Bayesian Approach"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-23_2608.11223",
+    "members": [
+      "arxiv:2608.11223"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:smart-card",
+        "label": "smart card data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-23",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.11223",
+    "doi": "10.48550/arxiv.2608.11223",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:18:03Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005971,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2115,
+      "out": 311
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9624,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.385,
+    "relevance": 0.9624
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Because actual alighting data was unavailable, the model's performance was evaluated based on its agreement with reconstructed trip-chain outputs rather than direct ground-truth destinations.",
+      "what": "The researchers developed a Hierarchical Bayesian Latent-Destination model to infer bus passenger alightings from tap-in-only smart card data. The model was tested on 838,305 bus tap-ins from Changzhou in May 2025, incorporating stop networks, hourly weather, and passenger card histories to estimate destination distributions. Fitted using stochastic variational inference, the model successfully resolved destinations for trips that deterministic trip-chaining methods could not resolve.",
+      "why": "It provides a probabilistic framework that propagates destination uncertainty directly into origin-destination matrices, allowing transit agencies with entry-only fare systems to generate reliable planning data even for passengers without historical card records."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-23",
+  "work_key": "arxiv:2608.11223"
+}

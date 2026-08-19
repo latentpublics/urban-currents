@@ -1,0 +1,375 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Spatial analysis depends upon accessible, flexible tools. As a leading language for data science, Python requires reliable packages to handle complex geospatial tasks effectively. This article presents GeoPandas, a package providing a high-level, user-friendly API that extends standard pandas data structures to support vector geometries, simplifying spatial data handling for a broad scientific audience. The package is built around three core data structures (GeometryArray, GeoSeries, and GeoDataFrame) that unify geometric operations and tabular data management. It achieves performance and scalability by wrapping fast, compiled libraries—handling geometry operations, coordinate transformations, and file reading and writing—behind a Pythonic interface. Over its ten-year history, GeoPandas has evolved from a single package to a cornerstone of geospatial analysis in Python, anchoring a broader ecosystem of tools. Thousands of downstream projects rely upon GeoPandas, spanning scientific fields from Earth observation and climate modelling to urban analytics and epidemiology. This article provides an overview of the package's history, design, social and technical infrastructure, and future plans. By making spatial analysis more accessible with a standard open-source toolset, GeoPandas democratises access to spatial analysis, facilitates reproducibility, and accelerates scientific discovery.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Charles University",
+            "ror": "024d6js02"
+          }
+        ],
+        "name": "Martin Fleischmann",
+        "openalex": "A5001103578",
+        "orcid": "https://orcid.org/0000-0003-3319-3366"
+      },
+      {
+        "institutions": [],
+        "name": "Joris Van den Bossche",
+        "openalex": "A5121037727",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Planet Biotechnology (United States)",
+            "ror": "022weqt39"
+          }
+        ],
+        "name": "Kelsey Jordahl",
+        "openalex": "A5143568381",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "FIT Consulting (Italy)",
+            "ror": "001m7ja14"
+          }
+        ],
+        "name": "Matthew John Richards",
+        "openalex": "A5143542348",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Ceres",
+            "ror": "003sbhj60"
+          },
+          {
+            "name": "Ceres Nanosciences",
+            "ror": "02tg35219"
+          }
+        ],
+        "name": "James McBride",
+        "openalex": "A5143554430",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jacob Wasserman",
+        "openalex": "A5143584043",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Advanced Systems Technology (United States)",
+            "ror": "036hc2148"
+          }
+        ],
+        "name": "Brendan Ward",
+        "openalex": "A5143584929",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Bristol",
+            "ror": "0524sp257"
+          }
+        ],
+        "name": "Levi John Wolf",
+        "openalex": "A5056778419",
+        "orcid": "https://orcid.org/0000-0003-0274-599X"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.compenvurbsys.2026.102495",
+      "pdf_url": null,
+      "source_id": "S60115552",
+      "source_name": "Computers Environment and Urban Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-24",
+    "repository_urls": [],
+    "title": "GeoPandas: Fundamental data structures for vector spatial data in Python"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-24_10.1016/j.compen",
+    "members": [
+      "doi:10.1016/j.compenvurbsys.2026.102495"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:024d6js02",
+        "label": "Charles University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:022weqt39",
+        "label": "Planet Biotechnology (United States)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:001m7ja14",
+        "label": "FIT Consulting (Italy)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:003sbhj60",
+        "label": "Ceres"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02tg35219",
+        "label": "Ceres Nanosciences"
+      },
+      {
+        "confidence": null,
+        "id": "ror:036hc2148",
+        "label": "Advanced Systems Technology (United States)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0524sp257",
+        "label": "University of Bristol"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3319-3366",
+        "label": "Martin Fleischmann"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5121037727",
+        "label": "Joris Van den Bossche"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143568381",
+        "label": "Kelsey Jordahl"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143542348",
+        "label": "Matthew John Richards"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143554430",
+        "label": "James McBride"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143584043",
+        "label": "Jacob Wasserman"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143584929",
+        "label": "Brendan Ward"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0274-599X",
+        "label": "Levi John Wolf"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:geopandas/geopandas",
+        "label": "GeoPandas"
+      }
+    ],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T14509",
+        "is_primary": true,
+        "label": "demographic modeling and climate adaptation",
+        "score": 0.1617,
+        "subfield": "1803"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": false,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.0855,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13650",
+        "is_primary": false,
+        "label": "Computational Physics and Python Applications",
+        "score": 0.0784,
+        "subfield": "1702"
+      }
+    ]
+  },
+  "first_published": "2026-07-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1989962567",
+      "openalex:W2011301426",
+      "openalex:W2047927510",
+      "openalex:W2076271421",
+      "openalex:W2141108110",
+      "openalex:W2147330627",
+      "openalex:W2549766072",
+      "openalex:W2604239613",
+      "openalex:W2741941028",
+      "openalex:W2804233742",
+      "openalex:W2897711619",
+      "openalex:W2913807482",
+      "openalex:W2949885549",
+      "openalex:W2990662198",
+      "openalex:W3035965352",
+      "openalex:W3082919689",
+      "openalex:W3171405804",
+      "openalex:W3174223840",
+      "openalex:W3184786530",
+      "openalex:W4214880808",
+      "openalex:W4242888132",
+      "openalex:W4310702753",
+      "openalex:W4319336084",
+      "openalex:W4362717754",
+      "openalex:W4362737480",
+      "openalex:W4365144421",
+      "openalex:W4386356700",
+      "openalex:W4386639506",
+      "openalex:W4387130494",
+      "openalex:W4393004135",
+      "openalex:W4393177067",
+      "openalex:W4396978203",
+      "openalex:W4402098128",
+      "openalex:W4407605323",
+      "openalex:W4409724531",
+      "openalex:W4410059844",
+      "openalex:W7133213766"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.compenvurbsys.2026.102495",
+    "openalex": "W7170949681",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:19:24Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.004888,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1993,
+      "out": 211
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:19:24Z",
+    "doi": "10.1016/j.compenvurbsys.2026.102495",
+    "journal": "Computers Environment and Urban Systems",
+    "source_id": "S60115552",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 1.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.64,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This paper documents GeoPandas, an open-source Python package that extends pandas data structures to support vector geometries through three core structures: GeometryArray, GeoSeries, and GeoDataFrame. The library wraps compiled C/C++ libraries to execute geometry operations, coordinate transformations, and file input/output behind a high-level, user-friendly API.",
+      "why": "It establishes a standardized, Pythonic interface that unifies geometric operations with tabular data management, serving as a foundational infrastructure that democratizes spatial analysis and enables reproducibility across diverse fields like urban analytics and climate modeling."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-24",
+  "work_key": "doi:10.1016/j.compenvurbsys.2026.102495"
+}

@@ -1,0 +1,167 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Transportation network partitioning is essential for applications such as traffic analysis, simulation, and mobility pattern identification. However, transportation networks combine structural information with heterogeneous operational attributes, ranging from scalar indicators to temporal profiles. Existing approaches generally rely on predefined formulations to integrate these sources of information, limiting the ability to control their relative influence. This paper proposes a flexible framework for partitioning heterogeneous transportation networks represented as attributed graphs. The proposed methodology relies on a distance-based graph representation and an optimal transport formulation based on the semi-relaxed Fused Gromov-Wasserstein discrepancy, enabling joint consideration of network structure and attributes with explicit control over their trade-off. The proposed methodology is evaluated on two transportation systems with distinct characteristics: an urban road network for traffic-oriented partitioning and a bicycle-sharing system for identifying usage-based communities. Results demonstrate the ability of the framework to adapt the resulting partitions according to different structural and attribute preferences.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ketsia Guichard-Sustowski",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Loïc Le Marrec",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Véronique Thelen",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "35 pages, 14 figures and 3 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.24506v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.24506v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-27",
+    "repository_urls": [],
+    "title": "Integrating Structure and Attributes for Transportation Network Partitioning via Optimal Transport"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-27_2607.24506",
+    "members": [
+      "arxiv:2607.24506"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.24506",
+    "doi": "10.48550/arxiv.2607.24506",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:23:37Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005102,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1871,
+      "out": 255
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9851,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.394,
+    "relevance": 0.9851
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study introduces a flexible framework for partitioning heterogeneous transportation networks by representing them as attributed graphs and applying an optimal transport formulation based on the semi-relaxed Fused Gromov-Wasserstein discrepancy. This approach allows researchers to explicitly control the trade-off between network structure and diverse operational attributes, such as scalar indicators or temporal profiles. The methodology was validated on two distinct systems: an urban road network for traffic-oriented partitioning and a bicycle-sharing system for identifying usage-based communities.",
+      "why": "It replaces rigid, predefined integration formulas with a tunable framework, allowing planners to customize network partitions based on whether they want to prioritize physical connectivity or operational behavior."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-27",
+  "work_key": "arxiv:2607.24506"
+}

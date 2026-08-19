@@ -1,0 +1,172 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This study investigates the predictive capacity of models based on Economic Complexity and Complex Network Theory when applied to Brazil's Municipal Human Development Index (IDHM). For this purpose, the Economic Complexity Index was adapted to the Brazilian context. The main objective is to assess the extent to which different approaches to regional development analysis, such as local productive sophistication and structural integration into the national transportation network, determine socioeconomic development. The methodology compares linear regression models (Ridge, LASSO, and Elastic Net) and nonlinear models (Decision Trees and the Explainable Boosting Machine), evaluated through 5-fold cross-validation with grid search. The analyses were conducted at two levels of spatial aggregation: municipalities and Immediate Geographic Regions. The results show that regionally aggregated models exhibit less statistical noise and greater stability, achieving substantially higher coefficients of determination and greater explanatory power for ICE relative to the other variables. Notably, at the Immediate Region level, ICE alone emerges as the main structural determinant of IDHM, suggesting that regional productive sophistication by itself explains a large share of the variation in human development at this territorial scale. In addition, the inclusion of topological metrics from the road infrastructure network generally improved performance. The Explainable Boosting Machine achieved the best predictive performance, reaching R^2 = 0.8196 at the Immediate Region level when network metrics were included.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Eduardo Moura Zampirolli",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ruben Interian",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": "28 pages, English and Portuguese versions (English first)",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.25081v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.25081v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-27",
+    "repository_urls": [],
+    "title": "Economic Complexity as a Determinant of Regional Human Development in Brazil: Evidence across Aggregation Scales"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-27_2607.25081",
+    "members": [
+      "arxiv:2607.25081"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:regression",
+        "label": "regression"
+      },
+      {
+        "confidence": 0.963,
+        "id": "method:random-forest",
+        "label": "random forest"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.25081",
+    "doi": "10.48550/arxiv.2607.25081",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:23:37Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005893,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2051,
+      "out": 313
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9659,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3864,
+    "relevance": 0.9659
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The predictive performance and the relative importance of economic complexity depend heavily on the spatial scale of analysis, with municipal-level models exhibiting higher statistical noise and lower stability than regionally aggregated ones.",
+      "what": "This study adapted the Economic Complexity Index to Brazil and evaluated how local productive sophistication and road network topology predict the Municipal Human Development Index (IDHM). Using linear models (Ridge, LASSO, Elastic Net) and nonlinear models (Decision Trees, Explainable Boosting Machine) across two spatial scales, the researchers found that regional aggregation reduces statistical noise. The Explainable Boosting Machine achieved its highest predictive performance of R^2 = 0.8196 at the Immediate Geographic Region level when incorporating road network metrics.",
+      "why": "It demonstrates that regional productive sophistication is a dominant structural driver of human development in Brazil, and that integrating physical infrastructure connectivity into economic complexity models significantly improves their predictive power."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-27",
+  "work_key": "arxiv:2607.25081"
+}

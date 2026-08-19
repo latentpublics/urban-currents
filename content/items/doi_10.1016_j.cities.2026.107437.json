@@ -1,0 +1,318 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Accurately estimating de facto population in dynamic urban environments is essential for predictive planning, service provision, and Smart City resilience, particularly in areas with strong seasonal fluctuations. Census-based approaches lack temporal resolution and overlook transient populations, while alternative methods often rely on restricted data, high computational demands, or indirect proxies. This study presents a scalable computational framework for estimating de facto urban population at monthly resolution by integrating high-resolution smart-meter water consumption records with census data, climatic normalization, and tourism indicators. The approach integrates IoT-based remote-reading records, supply-contract databases, census information, and official accommodation registers within an end-to-end ETL pipeline to infer monthly population variations in Alicante (Spain) between 2022 and 2024. A thermal-correction model isolates temperature-driven changes in water demand, improving estimation accuracy. K-means clustering with Dynamic Time Warping identifies neighborhood-level seasonal patterns, distinguishing stable residential areas, high-tourism zones, and districts with marked summer vacancy. Results reveal a robust methodology for population estimation, rigorously verified through out-of-sample validation for 2024, yielding a Mean Absolute Percentage Error (MAPE) of 6.34% and an R 2 = 0.9874. Between January and July 2024, Alicante experienced an estimated 8.78% population increase (+32,749 people). Coastal tourist neighborhoods showed summer rises above 50%, whereas central medium-to-high-income areas exhibited declines up to −22.2% due to seasonal displacement to second residences. Consolidated residential areas remained stable year-round, with deviations below 5%. The methodology offers a low-cost, high-resolution, and privacy-preserving tool for strategic decision-making in Smart Cities and is fully replicable in urban contexts equipped with domestic smart-metering infrastructure to capture resident and floating population dynamics.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Alicante",
+            "ror": "05t8bcz72"
+          }
+        ],
+        "name": "Manuel Alamán-Escolano",
+        "openalex": "A5143720601",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Alicante",
+            "ror": "05t8bcz72"
+          }
+        ],
+        "name": "Mireia Sempere-Tortosa",
+        "openalex": "A5143706795",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Alicante",
+            "ror": "05t8bcz72"
+          }
+        ],
+        "name": "Ignacio Toledo",
+        "openalex": "A5075950006",
+        "orcid": "https://orcid.org/0000-0001-5134-1428"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Alicante",
+            "ror": "05t8bcz72"
+          }
+        ],
+        "name": "Diego Marcos-Jorquera",
+        "openalex": "A5143741155",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Alicante",
+            "ror": "05t8bcz72"
+          }
+        ],
+        "name": "Virgilio Gilart-Iglesias",
+        "openalex": "A5143697521",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Alicante",
+            "ror": "05t8bcz72"
+          }
+        ],
+        "name": "L. Aragonés",
+        "openalex": "A5089904671",
+        "orcid": "https://orcid.org/0000-0002-8999-064X"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.cities.2026.107437",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0264275126006694/pdf",
+      "source_id": "S137445289",
+      "source_name": "Cities",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-28",
+    "repository_urls": [],
+    "title": "Data-driven urban planning: Real population estimation using water consumption records and tourism data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-28_10.1016/j.cities",
+    "members": [
+      "doi:10.1016/j.cities.2026.107437"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05t8bcz72",
+        "label": "University of Alicante"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5143720601",
+        "label": "Manuel Alamán-Escolano"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143706795",
+        "label": "Mireia Sempere-Tortosa"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5134-1428",
+        "label": "Ignacio Toledo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143741155",
+        "label": "Diego Marcos-Jorquera"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143697521",
+        "label": "Virgilio Gilart-Iglesias"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8999-064X",
+        "label": "L. Aragonés"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10969",
+        "is_primary": true,
+        "label": "Water resources management and optimization",
+        "score": 0.1634,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10930",
+        "is_primary": false,
+        "label": "Flood Risk Assessment and Management",
+        "score": 0.0804,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.0757,
+        "subfield": "2306"
+      }
+    ]
+  },
+  "first_published": "2026-07-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1966809796",
+      "openalex:W1968262932",
+      "openalex:W1974853958",
+      "openalex:W1991145689",
+      "openalex:W2052075815",
+      "openalex:W2055992762",
+      "openalex:W2128160875",
+      "openalex:W2135890205",
+      "openalex:W2400524008",
+      "openalex:W2462180963",
+      "openalex:W2607563079",
+      "openalex:W2773484054",
+      "openalex:W2790440883",
+      "openalex:W2794647785",
+      "openalex:W2896720195",
+      "openalex:W2905112456",
+      "openalex:W2905333671",
+      "openalex:W2908761671",
+      "openalex:W2997410340",
+      "openalex:W3159004443",
+      "openalex:W3159861942",
+      "openalex:W3196114738",
+      "openalex:W3202262101",
+      "openalex:W4226113598",
+      "openalex:W4296800684",
+      "openalex:W4298109320",
+      "openalex:W4311702598",
+      "openalex:W4317632583",
+      "openalex:W4321377603",
+      "openalex:W4386565770",
+      "openalex:W4391362858",
+      "openalex:W4391681596",
+      "openalex:W4400645223",
+      "openalex:W4401636582",
+      "openalex:W4403271717",
+      "openalex:W4408992749"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.cities.2026.107437",
+    "openalex": "W7171384523",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:25:27Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006979,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2307,
+      "out": 391
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:25:27Z",
+    "doi": "10.1016/j.cities.2026.107437",
+    "journal": "Cities",
+    "source_id": "S137445289",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2022 and 2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The methodology is dependent on the presence of domestic smart-metering infrastructure, limiting its immediate application to cities already equipped with this technology.",
+      "what": "The study developed a computational framework to estimate monthly de facto urban populations by combining smart-meter water consumption records, census data, climate normalization, and tourism registers. Applied to Alicante, Spain, between 2022 and 2024, the model uses a thermal-correction algorithm to isolate temperature-driven water demand and K-means clustering with Dynamic Time Warping to classify neighborhood seasonal patterns. Out-of-sample validation for 2024 achieved a Mean Absolute Percentage Error of 6.34% and an R-squared of 0.9874, capturing a summer population surge of 8.78% (+32,749 people) citywide, with coastal tourist zones growing by over 50% and wealthier central districts shrinking by up to 22.2%.",
+      "why": "It provides a low-cost, privacy-preserving method to measure highly dynamic, seasonal population shifts at a neighborhood scale without relying on restrictive mobile phone data or static census records."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-28",
+  "work_key": "doi:10.1016/j.cities.2026.107437"
+}

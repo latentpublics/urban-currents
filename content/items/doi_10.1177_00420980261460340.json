@@ -1,0 +1,360 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Public transport is widely regarded as a means of mitigating the consequences of residential socioeconomic segregation by improving connectivity and creating opportunities for cross-group exposure, yet its dualistic role remains underexplored. Previous studies relying on transit card data capture only origin-destination patterns and overlook the demographic composition of riders along transit corridors. We leverage mobile phone data from 8.3 million users in Beijing, China to reconstruct segment-by-segment travel trajectories and introduce entropy-based metrics measuring neighborhood-based socioeconomic diversity at dual scales: destination-based diversity and in-transit ridership composition. This corridor-level approach captures how ridership composition evolves along each route, revealing variation that aggregate origin-destination analyses obscure. Our analysis reveals two distinct paradoxes. A spatial accessibility–diversity paradox shows that public transport correlates with reduced isolation from wider urban opportunities for peripheral neighborhoods, but moderate accessibility improvements correspond to lower diversity, potentially through preference-based sorting. A temporal peak-hour paradox shows that buses exhibit lower diversity during peak commutes due to homogeneous residential origins, whereas subways consistently show higher diversity across all hours due to hub-based structures and higher capacity. Regression analysis shows urban design characteristics correlate with diversity patterns. These findings offer insights for planning that considers network structure, service timing, and catchment demographics alongside accessibility provision.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Loughborough University",
+            "ror": "04vg4w365"
+          }
+        ],
+        "name": "Yitao Yang",
+        "openalex": "A5080275283",
+        "orcid": "https://orcid.org/0000-0002-9650-9981"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Beijing Jiaotong University",
+            "ror": "01yj56c84"
+          }
+        ],
+        "name": "Erjian Liu",
+        "openalex": "A5093360442",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chinese Academy of Sciences",
+            "ror": "034t30j35"
+          }
+        ],
+        "name": "Shifen Cheng",
+        "openalex": "A5036257989",
+        "orcid": "https://orcid.org/0000-0002-9553-8318"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          },
+          {
+            "name": "Beijing Jiaotong University",
+            "ror": "01yj56c84"
+          }
+        ],
+        "name": "Hui Wang",
+        "openalex": "A5100340012",
+        "orcid": "https://orcid.org/0000-0003-4342-4594"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Beijing Jiaotong University",
+            "ror": "01yj56c84"
+          }
+        ],
+        "name": "Junxi Chen",
+        "openalex": "A5061080624",
+        "orcid": "https://orcid.org/0009-0009-4420-0729"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/00420980261460340",
+      "pdf_url": "https://journals.sagepub.com/doi/pdf/10.1177/00420980261460340?download=true",
+      "source_id": "S50366009",
+      "source_name": "Urban Studies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-26",
+    "repository_urls": [],
+    "title": "Public transport and the paradox of socioeconomic segregation and diversity"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-26_10.1177/00420980",
+    "members": [
+      "doi:10.1177/00420980261460340"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:mobile-phone",
+        "label": "mobile phone data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:regression",
+        "label": "regression"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04vg4w365",
+        "label": "Loughborough University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01yj56c84",
+        "label": "Beijing Jiaotong University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:034t30j35",
+        "label": "Chinese Academy of Sciences"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0030zas98",
+        "label": "Hong Kong Polytechnic University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9650-9981",
+        "label": "Yitao Yang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5093360442",
+        "label": "Erjian Liu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9553-8318",
+        "label": "Shifen Cheng"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4342-4594",
+        "label": "Hui Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-4420-0729",
+        "label": "Junxi Chen"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q956",
+        "label": "Beijing",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.9086,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0477,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0126,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-07-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1977334572",
+      "openalex:W1977578104",
+      "openalex:W1982473893",
+      "openalex:W1986691043",
+      "openalex:W2000248513",
+      "openalex:W2010824882",
+      "openalex:W2010903698",
+      "openalex:W2029461738",
+      "openalex:W2044985623",
+      "openalex:W2062916736",
+      "openalex:W2102236934",
+      "openalex:W2108151577",
+      "openalex:W2112427443",
+      "openalex:W2114512636",
+      "openalex:W2140251882",
+      "openalex:W2144512297",
+      "openalex:W2190100671",
+      "openalex:W2322650856",
+      "openalex:W2393536425",
+      "openalex:W2529159814",
+      "openalex:W2555509407",
+      "openalex:W2591327471",
+      "openalex:W2740079187",
+      "openalex:W2757718837",
+      "openalex:W2975230318",
+      "openalex:W3020237352",
+      "openalex:W3026461411",
+      "openalex:W3084260291",
+      "openalex:W3127737080",
+      "openalex:W3128811877",
+      "openalex:W3139244749",
+      "openalex:W3175544244",
+      "openalex:W3186027345",
+      "openalex:W4237581886",
+      "openalex:W4281481730",
+      "openalex:W4289222991",
+      "openalex:W4294660296",
+      "openalex:W4306161188",
+      "openalex:W4309441429",
+      "openalex:W4317470278",
+      "openalex:W4382806874",
+      "openalex:W4385540503",
+      "openalex:W4386173909",
+      "openalex:W4386175231",
+      "openalex:W4388488490",
+      "openalex:W4389132373",
+      "openalex:W4391503683",
+      "openalex:W4391533232",
+      "openalex:W4392388546",
+      "openalex:W4401327824",
+      "openalex:W4403850636",
+      "openalex:W4404413142",
+      "openalex:W4405699969",
+      "openalex:W4406641001",
+      "openalex:W4406704163",
+      "openalex:W4415657685"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1177/00420980261460340",
+    "openalex": "W7171470533",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:22:21Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005323,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2025,
+      "out": 254
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:22:21Z",
+    "doi": "10.1177/00420980261460340",
+    "journal": "Urban Studies",
+    "source_id": "S50366009",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "8.3 million users",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a single case study of Beijing and rely on mobile phone location data as a proxy for rider demographics and trajectories.",
+      "what": "Using mobile phone data from 8.3 million users in Beijing, China, this study reconstructs segment-by-segment transit trajectories to measure socioeconomic diversity at both destinations and along transit corridors. The analysis reveals that moderate improvements in spatial accessibility correlate with lower ridership diversity, and that buses experience a drop in diversity during peak hours while subways maintain high diversity throughout the day.",
+      "why": "It demonstrates that expanding transit access does not automatically foster social mixing, revealing instead how network structure and transit mode create distinct spatial and temporal patterns of socioeconomic sorting."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-26",
+  "work_key": "doi:10.1177/00420980261460340"
+}

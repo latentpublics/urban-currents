@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Geo-spatial rasters of building footprint area are useful for a variety of tasks, such as monitoring urbanization, improving energy efficiency, and tracking greenhouse gas emissions. There are now multiple global building raster datasets, however there lacks an independent, comprehensive, and fair assessment of their accuracy. In this work, we evaluate the accuracy of four major global building products: Global Human Settlement Layer (GHSL), Microsoft's TEMPO (TEMPO), The Global Building Atlas (GBA), and Overture. As ground truth for assessing their accuracy, we use ORBITaL-Net, a globally diverse dataset of manually labeled building footprints. To ensure fairness, we evaluate products on grids of multiple spatial resolutions, and several conventional performance metrics. Our results indicate that either GBA or TEMPO generally achieves the highest overall accuracy, depending upon the particular evaluation criteria. We also stratify the accuracy of each product by several factors: geographic location, population density, and income groups. The results reveal that product accuracy can sometimes vary significantly with respect to these factors. Notably, all products are significantly less accurate in Africa and Asia. Most products also suffer significant accuracy reduction in high-density urban areas.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Saad Lahrichi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Doa'a Allabadi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kyle Bradbury",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jordan Malof",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": "29 pages, 4 figures, 7 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.19766v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.19766v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-22",
+    "repository_urls": [],
+    "title": "Global Building Area Estimation Products: How Accurate Are They?"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-22_2607.19766",
+    "members": [
+      "arxiv:2607.19766"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.19766",
+    "doi": "10.48550/arxiv.2607.19766",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:16:30Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005938,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1979,
+      "out": 330
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9602,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3841,
+    "relevance": 0.9602
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The evaluation is constrained to the geographic distribution and representation present within the ORBITaL-Net validation dataset.",
+      "what": "This study evaluates the accuracy of four major global building footprint raster datasets—GHSL, Microsoft's TEMPO, the Global Building Atlas (GBA), and Overture—against a manually labeled ground-truth dataset called ORBITaL-Net. The evaluation measures performance across multiple spatial resolutions, geographic locations, population densities, and income levels. The analysis reveals that GBA and TEMPO achieve the highest overall accuracy, but all four products show a significant drop in accuracy within high-density urban areas and across Africa and Asia.",
+      "why": "It establishes the first independent, comparative benchmark for global building area datasets, revealing systematic geographic and density-based biases that users must account for when mapping urbanization or emissions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-22",
+  "work_key": "arxiv:2607.19766"
+}

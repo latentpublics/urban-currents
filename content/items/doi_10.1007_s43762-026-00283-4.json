@@ -1,0 +1,261 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study presents a computer vision-based approach that characterises landscapes associated with frequent illegal dumping sites using street-level images. We collected street-level images from frequent illegal dumping monitoring locations in Seoul, South Korea, and classified them through feature extraction, dimensionality reduction, and unsupervised clustering. Gradient-weighted Class Activation Mapping (Grad-CAM) was then applied as a post-hoc interpretability tool to examine visual regions associated with each cluster. To provide an external assessment of the clustering results, we conducted a manual annotation-based validation experiment using 200 randomly sampled images. The results showed a moderate but meaningful correspondence between the unsupervised typologies and human annotations, particularly when noise images were excluded. We identified three recurrent landscape patterns among the clustered images: low-rise mixed-use landscapes with commercial signs, dense aged low-rise residential landscapes, and vegetation-dominated, poorly managed landscapes. These findings suggest that the proposed approach can serve as a scalable screening tool that complements field-based audits by helping prioritise locations for further inspection.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Kyung Hee University",
+            "ror": "01zqcg218"
+          }
+        ],
+        "name": "Yeorim Kim",
+        "openalex": "A5143656882",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Kyung Hee University",
+            "ror": "01zqcg218"
+          }
+        ],
+        "name": "Seong‐Yun Hong",
+        "openalex": "A5091506676",
+        "orcid": "https://orcid.org/0000-0001-5049-8810"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s43762-026-00283-4",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s43762-026-00283-4.pdf",
+      "source_id": "S4210175573",
+      "source_name": "Computational Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-27",
+    "repository_urls": [],
+    "title": "Exploring street-level landscape patterns around illegal dumping monitoring locations using unsupervised computer vision"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-27_10.1007/s43762-0",
+    "members": [
+      "doi:10.1007/s43762-026-00283-4"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:dimensionality-reduction",
+        "label": "dimensionality reduction"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01zqcg218",
+        "label": "Kyung Hee University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5143656882",
+        "label": "Yeorim Kim"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5049-8810",
+        "label": "Seong‐Yun Hong"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q8684",
+        "label": "Seoul",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11606",
+        "is_primary": true,
+        "label": "Infrastructure Maintenance and Monitoring",
+        "score": 0.1667,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.1325,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10689",
+        "is_primary": false,
+        "label": "Remote-Sensing Image Classification",
+        "score": 0.1216,
+        "subfield": "2214"
+      }
+    ]
+  },
+  "first_published": "2026-07-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W151377110",
+      "openalex:W1552011879",
+      "openalex:W1972582809",
+      "openalex:W1974686221",
+      "openalex:W1975879668",
+      "openalex:W1976955320",
+      "openalex:W1981579042",
+      "openalex:W1996465461",
+      "openalex:W2018102915",
+      "openalex:W2040095368",
+      "openalex:W2497052739",
+      "openalex:W2889326414",
+      "openalex:W2891797567",
+      "openalex:W2897655729",
+      "openalex:W2949214535",
+      "openalex:W2962858109",
+      "openalex:W2963446712",
+      "openalex:W2976651693",
+      "openalex:W2983285440",
+      "openalex:W3007866801",
+      "openalex:W3040831677",
+      "openalex:W4200140947",
+      "openalex:W4220909866",
+      "openalex:W4286637531",
+      "openalex:W4291916418",
+      "openalex:W4309118611",
+      "openalex:W4310999218",
+      "openalex:W4311431203",
+      "openalex:W4361220716",
+      "openalex:W4408887896"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s43762-026-00283-4",
+    "openalex": "W7171301135",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:23:42Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005836,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1929,
+      "out": 327
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:23:42Z",
+    "doi": "10.1007/s43762-026-00283-4",
+    "journal": "Computational Urban Science",
+    "source_id": "S4210175573",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The classification performance and identified typologies are validated only on a sample of 200 images from a single city, and the correspondence with human annotations is moderate rather than strong.",
+      "what": "The study developed an unsupervised computer vision pipeline to classify street-level landscapes around frequent illegal dumping sites in Seoul, South Korea. Using feature extraction, dimensionality reduction, and clustering on street-level images, followed by Grad-CAM for visual interpretation, the method identified three distinct landscape typologies: low-rise mixed-use areas with commercial signs, dense aged low-rise residential zones, and poorly managed, vegetation-dominated spaces. A manual validation experiment using 200 randomly sampled images confirmed a moderate correspondence between the unsupervised clusters and human annotations.",
+      "why": "It establishes a scalable, automated screening method that can complement or replace resource-intensive field audits, allowing municipal authorities to proactively identify and prioritize potential illegal dumping hotspots based on visual environmental cues."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-27",
+  "work_key": "doi:10.1007/s43762-026-00283-4"
+}

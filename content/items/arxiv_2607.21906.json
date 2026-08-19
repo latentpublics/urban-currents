@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Understanding urban healthcare mobility is essential for healthcare resource allocation, hospital capacity planning, and resilient urban governance. Existing healthcare origin-destination (OD) prediction methods primarily rely on supervised deep learning, requiring expensive model training while providing limited interpretability into the behavioral mechanisms of hospital choice. This paper presents a training-free urban healthcare OD prediction framework based on knowledge-grounded behavioral reasoning, replacing gradient-based neural network learning with collaborative LLM reasoning over structured urban knowledge. The framework organizes heterogeneous urban information, including healthcare resources, population characteristics, transportation accessibility, weather conditions, and historical mobility, into a unified knowledge graph, enabling evidence retrieval, urban context understanding, behavioral reasoning, preference ranking, and Bayesian verification through a multi-agent reasoning pipeline. Experiments on a real-world Shenzhen dataset containing 137 hospitals and 6,341 prediction tasks demonstrate that the proposed framework achieves CPC = 0.5449, Top-1 = 66.19%, Top-5 = 68.03%, and Top-10 = 74.03%, consistently outperforming conventional deep learning baselines on all Top-K metrics (e.g., Top-5 improves by 22.1% over MLP). Compared with Direct LLM using the same backbone without structured reasoning, the proposed framework improves CPC by 87.5% and Top-1 accuracy by 141%, demonstrating that knowledge-grounded behavioral reasoning, rather than raw LLM capability, is the key to accurate, interpretable, and training-free healthcare OD prediction. These findings highlight the potential of urban intelligence to move healthcare mobility modeling beyond data fitting toward knowledge-driven behavioral reasoning.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Linzhen Yang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xueliang Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chengbo Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Meng Meng",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": "16 pages, 9 figures. Submitted to the 4th International Conference on Urban Science and Intelligence",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.21906v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21906v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-24",
+    "repository_urls": [],
+    "title": "A Knowledge-Grounded Behavioral Reasoning Framework for Training-Free Urban Healthcare OD Prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-24_2607.21906",
+    "members": [
+      "arxiv:2607.21906"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q15174",
+        "label": "Shenzhen",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.21906",
+    "doi": "10.48550/arxiv.2607.21906",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:19:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006445,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2209,
+      "out": 348
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9141,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3656,
+    "relevance": 0.9141
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance was evaluated using a dataset from a single city, Shenzhen, which may limit immediate generalizability to other urban contexts with different healthcare systems and mobility patterns.",
+      "what": "This paper introduces a training-free urban healthcare origin-destination (OD) prediction framework that replaces deep learning models with collaborative Large Language Model (LLM) reasoning over a structured urban knowledge graph. Tested on a real-world dataset from Shenzhen, China, covering 137 hospitals and 6,341 prediction tasks, the framework achieved a Common Part of Commuters (CPC) score of 0.5449 and a Top-1 accuracy of 66.19%, outperforming conventional Multi-Layer Perceptron baselines by 22.1% on Top-5 accuracy.",
+      "why": "It demonstrates that structured, knowledge-grounded behavioral reasoning can outperform traditional supervised deep learning models for spatial interaction modeling without requiring expensive model training or sacrificing interpretability."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-24",
+  "work_key": "arxiv:2607.21906"
+}

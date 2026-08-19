@@ -1,0 +1,361 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Street view imagery (SVI) is now widely used to assess urban living environments, yet cross-platform differences in sensors, viewing geometry, and image quality continue to limit data integration. Using paired Baidu Street View (BSV) and Google Street View (GSV) images from Hong Kong, we propose a dual-scale framework to test whether physical streetscape structure and model-derived perception remain comparable across platforms. The framework combines stacking ensemble learning, SHAP-based interpretation, and Mantel correlation analysis at both sampling-point and pixel scales. At the sampling-point scale, vegetation, buildings, and sky show strong BSV-GSV agreement, with correlations of 0.753, 0.756, and 0.720, respectively. Perceptual dimensions also show moderate-to-high consistency, ranging from 0.591 for “Depressing” to 0.672 for “Safe.” At the pixel scale, simulated vegetation distributions are highly consistent, with an average correlation of 0.84 and more than 98% of the study area significant at p < 0.001; “Beauty” also maintains a positive correlation of 0.645. Further structural and causal analyses suggest that natural elements tend to enhance perceived beauty, whereas artificial and traffic-related features are generally linked to negative perceptual effects. Robustness tests using SegFormer and DeepLabv3+ under ADE20K and Cityscapes, together with perception-backbone tests using ResNet50 and CLIP, indicate that the main structural consistency findings are stable across segmentation pipelines, while perceptual consistency remains more sensitive to the selected backbone. Overall, this study offers a robust methodological foundation for urban design and sustainable city assessment by improving spatial prediction accuracy and interpretability.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Yangzhou University",
+            "ror": "03tqb8s11"
+          }
+        ],
+        "name": "Tingting Bai",
+        "openalex": "A5143619511",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "National University of Singapore",
+            "ror": "01tgyzw49"
+          },
+          {
+            "name": "Sanya University",
+            "ror": "04fa2qd52"
+          }
+        ],
+        "name": "Dong Xu",
+        "openalex": "A5143607292",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Guangzhou Urban Planning Survey & Design Institute",
+            "ror": "02crg7060"
+          }
+        ],
+        "name": "Feng Gao",
+        "openalex": "A5122153736",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Technology Sydney",
+            "ror": "03f0f6041"
+          }
+        ],
+        "name": "J Liu",
+        "openalex": "A5035754818",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Curtin University",
+            "ror": "02n415q13"
+          }
+        ],
+        "name": "Yongze Song",
+        "openalex": "A5065865699",
+        "orcid": "https://orcid.org/0000-0003-3420-9622"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.compenvurbsys.2026.102493",
+      "pdf_url": null,
+      "source_id": "S60115552",
+      "source_name": "Computers Environment and Urban Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-25",
+    "repository_urls": [],
+    "title": "Deep learning reveals cross-platform consistency in street view imagery for urban perception mapping"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-25_10.1016/j.compen",
+    "members": [
+      "doi:10.1016/j.compenvurbsys.2026.102493"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:remote-sensing-classification",
+        "label": "remote sensing classification"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03tqb8s11",
+        "label": "Yangzhou University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01tgyzw49",
+        "label": "National University of Singapore"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04fa2qd52",
+        "label": "Sanya University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02crg7060",
+        "label": "Guangzhou Urban Planning Survey & Design Institute"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03f0f6041",
+        "label": "University of Technology Sydney"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02n415q13",
+        "label": "Curtin University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5143619511",
+        "label": "Tingting Bai"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143607292",
+        "label": "Dong Xu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5122153736",
+        "label": "Feng Gao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5035754818",
+        "label": "J Liu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3420-9622",
+        "label": "Yongze Song"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q8646",
+        "label": "Hong Kong",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:openai/CLIP",
+        "label": "CLIP"
+      }
+    ],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": true,
+        "label": "Urban Green Space and Health",
+        "score": 0.5595,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.0624,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11164",
+        "is_primary": false,
+        "label": "Remote Sensing and LiDAR Applications",
+        "score": 0.0504,
+        "subfield": "2305"
+      }
+    ]
+  },
+  "first_published": "2026-07-25",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1979754191",
+      "openalex:W1989750313",
+      "openalex:W2025743471",
+      "openalex:W2063483028",
+      "openalex:W2072462334",
+      "openalex:W2171466305",
+      "openalex:W2261059368",
+      "openalex:W2507296351",
+      "openalex:W2610605913",
+      "openalex:W2725897987",
+      "openalex:W2753409831",
+      "openalex:W2762186317",
+      "openalex:W2793780140",
+      "openalex:W2799471775",
+      "openalex:W2810591140",
+      "openalex:W2893256830",
+      "openalex:W2893280452",
+      "openalex:W2904633726",
+      "openalex:W2947698013",
+      "openalex:W2962764844",
+      "openalex:W2967372292",
+      "openalex:W2970930856",
+      "openalex:W2985778816",
+      "openalex:W2986507446",
+      "openalex:W3011312272",
+      "openalex:W3023058341",
+      "openalex:W3034880358",
+      "openalex:W3046751713",
+      "openalex:W3130942710",
+      "openalex:W3139236016",
+      "openalex:W3157547930",
+      "openalex:W3163789200",
+      "openalex:W3168997536",
+      "openalex:W3195295599",
+      "openalex:W3195494505",
+      "openalex:W3196553050",
+      "openalex:W3200656364",
+      "openalex:W3203827467",
+      "openalex:W4295592723",
+      "openalex:W4308739591",
+      "openalex:W4313411083",
+      "openalex:W4382138521",
+      "openalex:W4386605487",
+      "openalex:W4391108926",
+      "openalex:W4399354886",
+      "openalex:W4399880583",
+      "openalex:W4414037622"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.compenvurbsys.2026.102493",
+    "openalex": "W7171135867",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:21:07Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006778,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2257,
+      "out": 377
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:21:07Z",
+    "doi": "10.1016/j.compenvurbsys.2026.102493",
+    "journal": "Computers Environment and Urban Systems",
+    "source_id": "S60115552",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings and cross-platform comparison are based on a single city, Hong Kong, which may limit generalizability to cities with different urban densities or street layouts.",
+      "what": "The study evaluates the consistency of physical streetscape elements and human perceptual scores between Baidu Street View and Google Street View using paired images from Hong Kong. At the sampling-point scale, vegetation, buildings, and sky show strong cross-platform correlations of 0.753, 0.756, and 0.720, while perceptual dimensions like safety and depressiveness correlate between 0.591 and 0.672. Robustness tests using SegFormer, DeepLabv3+, ResNet50, and CLIP reveal that physical structural consistency remains stable across segmentation pipelines, whereas perceptual consistency is highly sensitive to the chosen model backbone.",
+      "why": "It establishes that physical streetscape metrics can be reliably integrated across different street-view platforms, though researchers must account for model backbone sensitivity when mapping subjective human perceptions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-25",
+  "work_key": "doi:10.1016/j.compenvurbsys.2026.102493"
+}

@@ -1,0 +1,279 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study investigates the use of Large Language Models to enhance the policymaking process. We first analyze planning-related job postings to revisit the evolving roles of planners in the era of AI. We then present the Retrieval-Augmented Policy Analysis Framework (RAPAF), implemented using LangChain-native Retrieval-Augmented Generation pipelines with ChatGPT. The framework performs semantic analysis and extracts policy, strategy, and action items related to common themes in climate equity/justice or action plans. Based on these extracted elements and their evaluated presence, we develop a content-based recommendation system to support cross-city policy comparison. The results indicate that, despite growing attention to AI, planning jobs largely retain their traditional domain emphases in transportation, environmental planning, housing, and land use. Communicative responsibilities remain central to planning practice. Climate equity/justice or action plans commonly address transportation, environmental, and energy-related measures aimed at reducing greenhouse gas emissions and predominantly employ affirmative language. The implementation of our content-based recommendation system demonstrates how planners can efficiently identify cities with similar policy themes, highlighting patterns of cross-jurisdictional semantic similarity. The study concludes by envisioning localized and personalized AI-assisted systems designed to support professional planning judgment within urban governance contexts.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Incheon National University",
+            "ror": "02xf7p935"
+          }
+        ],
+        "name": "Seung Jun Choi",
+        "openalex": "A5069369819",
+        "orcid": "https://orcid.org/0000-0001-5993-4105"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Incheon National University",
+            "ror": "02xf7p935"
+          }
+        ],
+        "name": "Sang-Yup Lee",
+        "openalex": "A5101510030",
+        "orcid": "https://orcid.org/0000-0001-7905-9838"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s43762-026-00279-0",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s43762-026-00279-0.pdf",
+      "source_id": "S4210175573",
+      "source_name": "Computational Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-28",
+    "repository_urls": [],
+    "title": "Mapping and comparing climate equity policy practices using RAG LLM-based semantic analysis and recommendation systems"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-28_2601.06703",
+    "members": [
+      "arxiv:2601.06703"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02xf7p935",
+        "label": "Incheon National University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5993-4105",
+        "label": "Seung Jun Choi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7905-9838",
+        "label": "Sang-Yup Lee"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11479",
+        "is_primary": true,
+        "label": "Smart Cities and Technologies",
+        "score": 0.3673,
+        "subfield": "2214"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13910",
+        "is_primary": false,
+        "label": "Computational and Text Analysis Methods",
+        "score": 0.0722,
+        "subfield": "3300"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.063,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-07-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W585033414",
+      "openalex:W1890590802",
+      "openalex:W1937322315",
+      "openalex:W1969095625",
+      "openalex:W1972234661",
+      "openalex:W1983981789",
+      "openalex:W2007234416",
+      "openalex:W2040367556",
+      "openalex:W2059771842",
+      "openalex:W2144875651",
+      "openalex:W2145808843",
+      "openalex:W2152213527",
+      "openalex:W2163071927",
+      "openalex:W2180489247",
+      "openalex:W2606893747",
+      "openalex:W2808834101",
+      "openalex:W2957030607",
+      "openalex:W2982915530",
+      "openalex:W3030338287",
+      "openalex:W3094693564",
+      "openalex:W3138773240",
+      "openalex:W4212806067",
+      "openalex:W4224308588",
+      "openalex:W4225154606",
+      "openalex:W4229011615",
+      "openalex:W4238552893",
+      "openalex:W4247391149",
+      "openalex:W4313490372",
+      "openalex:W4384154918",
+      "openalex:W4386730038",
+      "openalex:W4387862974",
+      "openalex:W4390823596",
+      "openalex:W4390962868",
+      "openalex:W4391092890",
+      "openalex:W4393002303",
+      "openalex:W4393221319",
+      "openalex:W4395450962",
+      "openalex:W4396832024",
+      "openalex:W4399992361",
+      "openalex:W4400949832",
+      "openalex:W4403371192",
+      "openalex:W4404534210",
+      "openalex:W4404891019",
+      "openalex:W4405102336",
+      "openalex:W4405519155",
+      "openalex:W4406842332",
+      "openalex:W4407780143",
+      "openalex:W4409158145",
+      "openalex:W4409365132",
+      "openalex:W4409736067",
+      "openalex:W4410030527",
+      "openalex:W4411408637",
+      "openalex:W4414065237",
+      "openalex:W4414464859",
+      "openalex:W4415335482",
+      "openalex:W4416102871",
+      "openalex:W4416286160",
+      "openalex:W4416774171",
+      "openalex:W7116694257",
+      "openalex:W7117883335",
+      "openalex:W7119037531",
+      "openalex:W7125500968",
+      "openalex:W7126028817",
+      "openalex:W7127040211",
+      "openalex:W7127416973",
+      "openalex:W7128802424",
+      "openalex:W7136372212"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2601.06703",
+    "doi": "10.1007/s43762-026-00279-0",
+    "openalex": "W7171494086",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:25:30Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005278,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2019,
+      "out": 250
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:25:30Z",
+    "doi": "10.1007/s43762-026-00279-0",
+    "journal": "Computational Urban Science",
+    "source_id": "S4210175573",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study introduces the Retrieval-Augmented Policy Analysis Framework (RAPAF), a system built with LangChain and ChatGPT to extract and analyze policy, strategy, and action items from climate equity and action plans. It also evaluates planning-related job postings to assess the demand for AI skills versus traditional planning roles, and implements a content-based recommendation system to identify semantic similarities in climate policies across different cities.",
+      "why": "It demonstrates how large language models can automate the comparison of complex, unstructured policy documents across jurisdictions, allowing planners to quickly find cities with similar policy themes and strategies without manual coding."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-28",
+  "work_key": "arxiv:2601.06703"
+}

@@ -1,0 +1,304 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Cycling is a sustainable mode of transport that helps address urban challenges such as traffic congestion and high carbon dioxide emissions. However, to encourage citizens accustomed to using private motorized vehicles or public transportation to adopt cycling, it is essential to provide suitable infrastructure that meets expectations regarding factors such as travel distance, safety, and comfort. This paper proposes an optimization strategy for designing the most suitable bicycle network for the city of Parma, Italy, based on a set of possible interventions (e.g., building new bicycle lanes or improving the quality of existing lanes) that can be implemented by the municipality under a limited budget. Given cyclists’ preferences for road characteristics including length, safety, and practicability, the optimization strategy determines both the interventions to implement and the routes to recommend for a set of origin–destination pairs, aiming to minimize the perceived costs of travel according to these weighted preferences. For this purpose, we develop a Mixed-Integer Linear Programming (MILP) formulation and propose three solution methods: a branch-and-bound algorithm and two heuristic procedures based on knapsack problems, solved using dynamic programming. Computational experiments are conducted using both real-world data from Parma and randomly generated instances to evaluate performance and to provide useful insights for infrastructure planners.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Parma",
+            "ror": "02k7wn190"
+          }
+        ],
+        "name": "Rafael Praxedes",
+        "openalex": "A5103239847",
+        "orcid": "https://orcid.org/0000-0003-0123-0337"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universidade Federal da Paraíba",
+            "ror": "00p9vpz11"
+          }
+        ],
+        "name": "Anand Subramanian",
+        "openalex": "A5086775917",
+        "orcid": "https://orcid.org/0000-0002-9244-9969"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Parma",
+            "ror": "02k7wn190"
+          }
+        ],
+        "name": "Stefano Ardizzoni",
+        "openalex": "A5073881613",
+        "orcid": "https://orcid.org/0000-0003-1426-0834"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Parma",
+            "ror": "02k7wn190"
+          }
+        ],
+        "name": "Luca Consolini",
+        "openalex": "A5048869539",
+        "orcid": "https://orcid.org/0000-0002-3577-9398"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Parma",
+            "ror": "02k7wn190"
+          }
+        ],
+        "name": "Mattia Laurini",
+        "openalex": "A5025409316",
+        "orcid": "https://orcid.org/0000-0001-9965-8803"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Parma",
+            "ror": "02k7wn190"
+          }
+        ],
+        "name": "Marco Locatelli",
+        "openalex": "A5050902529",
+        "orcid": "https://orcid.org/0000-0001-7138-8653"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.tra.2026.105176",
+      "pdf_url": null,
+      "source_id": "S159637997",
+      "source_name": "Transportation Research Part A Policy and Practice",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-28",
+    "repository_urls": [],
+    "title": "Optimizing cycling network design in the city of Parma"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-28_10.1016/j.tra.20",
+    "members": [
+      "doi:10.1016/j.tra.2026.105176"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02k7wn190",
+        "label": "University of Parma"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00p9vpz11",
+        "label": "Universidade Federal da Paraíba"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0123-0337",
+        "label": "Rafael Praxedes"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9244-9969",
+        "label": "Anand Subramanian"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1426-0834",
+        "label": "Stefano Ardizzoni"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3577-9398",
+        "label": "Luca Consolini"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9965-8803",
+        "label": "Mattia Laurini"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7138-8653",
+        "label": "Marco Locatelli"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T13920",
+        "is_primary": true,
+        "label": "Urban Planning and Valuation",
+        "score": 0.1363,
+        "subfield": "2308"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0643,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0565,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-07-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2035105628",
+      "openalex:W2057169578",
+      "openalex:W2064285693",
+      "openalex:W2169528473",
+      "openalex:W2310662114",
+      "openalex:W2809088308",
+      "openalex:W2809152504",
+      "openalex:W3017297186",
+      "openalex:W3138188871",
+      "openalex:W3210120538",
+      "openalex:W4221036393",
+      "openalex:W4240374930",
+      "openalex:W4311957685",
+      "openalex:W4381433998",
+      "openalex:W4386715242",
+      "openalex:W4398214325",
+      "openalex:W4403482896",
+      "openalex:W4408715357",
+      "openalex:W4409326606",
+      "openalex:W4410020688",
+      "openalex:W4411165299",
+      "openalex:W4413293473",
+      "openalex:W7160716641"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.tra.2026.105176",
+    "openalex": "W7171512872",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:25:27Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005738,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1995,
+      "out": 305
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:25:27Z",
+    "doi": "10.1016/j.tra.2026.105176",
+    "journal": "Transportation Research Part A Policy and Practice",
+    "source_id": "S159637997",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The optimization model's real-world performance is demonstrated only on the network of a single mid-sized Italian city.",
+      "what": "The study develops a Mixed-Integer Linear Programming (MILP) formulation to optimize bicycle network design under a constrained municipal budget, testing it on real-world data from Parma, Italy. The optimization strategy determines which infrastructure interventions to implement—such as building new lanes or upgrading existing ones—and recommends routes for specific origin-destination pairs by minimizing perceived travel costs based on cyclist preferences for safety, length, and practicability. To solve the model, the researchers introduce a branch-and-bound algorithm alongside two dynamic programming heuristic procedures based on knapsack problems.",
+      "why": "It provides municipal planners with a mathematical framework to maximize the utility of limited infrastructure budgets by directly linking physical network investments to the subjective route preferences of cyclists."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-28",
+  "work_key": "doi:10.1016/j.tra.2026.105176"
+}

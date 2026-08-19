@@ -1,7 +1,9 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Urban transportation network design is typically approached through top-down planning grounded in engineering and economics. Yet cities are complex systems characterized by feedback loops between infrastructure and mobility demand: network structure shapes origin-destination (OD) flows, while OD flows adapt and in turn affect network development. Despite this interdependence, computational tools to benchmark real-world networks against alternative generative principles remain limited. Here, we introduce a data-driven framework to compare three types of metro networks: a self-organized (desire-path) network derived from local rules, a system-optimal network derived from global optimization, and the empirical real-world network. We quantify similarities and discrepancies using geometric comparisons and optimal transport theory. Applying the framework to Singapore's Mass Rapid Transit system, we find that the empirical metro network is substantially closer to the self-organized benchmark than to the system-optimal benchmark, with remaining discrepancies largely explained by geographic constraints. These findings highlight that system-wide optimality alone may be inadequate for guiding practical interventions, motivating planning approaches that explicitly incorporate local service needs. The framework is transferable across regions and can diagnose design-use misalignments to support adaptive infrastructure planning.",
     "authors": [
       {
         "institutions": [],
@@ -22,7 +24,9 @@
         "orcid": "https://orcid.org/0000-0001-6393-7501"
       }
     ],
-    "categories": [],
+    "categories": [
+      "physics.soc-ph"
+    ],
     "comment": null,
     "primary_location": {
       "landing_page_url": "https://doi.org/10.1016/j.compenvurbsys.2026.102479",
@@ -64,8 +68,15 @@
         "label": "Markus Schläpfer"
       }
     ],
-    "places": [],
-    "places_status": "not_attempted",
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q334",
+        "label": "Singapore",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
     "tools": [],
     "topics": [
       {
@@ -153,14 +164,18 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-18T09:13:19Z",
     "collectors": [
+      "arxiv",
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -184,24 +199,64 @@
     "components": {
       "artifact_completeness": 0.0,
       "novelty": 0.0,
-      "relevance": 1.0,
+      "relevance": 0.9826,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
-    "relevance": 1.0
+    "headline": 0.393,
+    "relevance": 0.9826
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The empirical findings and validation of the framework are demonstrated using only a single transit system, Singapore's Mass Rapid Transit.",
+      "what": "This study introduces a data-driven framework using optimal transport theory and geometric comparisons to evaluate metro networks against three benchmarks: a self-organized network based on local rules, a system-optimal network based on global optimization, and the actual empirical network. Applying this framework to Singapore's Mass Rapid Transit system, the analysis reveals that the real-world network aligns much more closely with the self-organized benchmark than the system-optimal one, with the remaining differences primarily driven by geographic constraints.",
+      "why": "It demonstrates that real-world transit networks evolve closer to local, self-organized demand patterns than to theoretical global optimums, suggesting that planners should design infrastructure around local service needs rather than relying solely on top-down, system-wide optimization."
+    }
   },
   "track": "papers",
-  "updated": "2026-06-23",
+  "updated": "2026-07-27",
   "work_key": "arxiv:2607.25003"
 }

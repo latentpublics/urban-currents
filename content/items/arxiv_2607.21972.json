@@ -1,0 +1,181 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Sexual contact networks are fundamental to understanding the spread of sexually transmitted infections (STIs), yet their large-scale structure remains difficult to observe because of technical, ethical, and privacy constraints. Here, we analyze a large bipartite commercial-sex contact network comprising 1,436,738 client-sex worker links, constructed from reviews posted between 1999 and 2024 on The Erotic Review (TER), a review platform covering sex workers listed across 97 countries and territories. We examine the network's cross-country structure, focusing on how clients, sex workers, locations, and time periods are connected. The network formed a giant connected component containing most clients and sex workers and exhibited small-world-like properties, including short average path lengths, high bipartite clustering, and disassortative degree correlations. Although most reviews were associated with the United States, a small fraction of clients reviewed sex workers in multiple countries or territories, creating spatial bridges between otherwise distant regions. Long-term users created temporal bridges, making the aggregated network more compact than networks built from shorter time windows. Contacts involving transgender female sex workers were structurally concentrated: clients who reviewed both cisgender and transgender female sex workers represented a small minority but accounted for a large share of transgender-related reviews and showed higher cross-country activity. These findings show how a small number of highly connected clients with cross-country review activity can shape the large-scale connectivity of commercial-sex contact networks. More broadly, our results demonstrate the value and limitations of digital trace data for studying cross-country contact structures relevant to STI transmission.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Hiromu Ito",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Keiko Shigeta",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Toshiaki R. Asakura",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Satoru Morita",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.SI",
+      "physics.soc-ph"
+    ],
+    "comment": "32 page, 6 figures, 2 tables. Supplementary material included (20 pages)",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.21972v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.21972v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-24",
+    "repository_urls": [],
+    "title": "Cross-country structure of a sexual contact network derived from a commercial-sex review platform"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-24_2607.21972",
+    "members": [
+      "arxiv:2607.21972"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.21972",
+    "doi": "10.48550/arxiv.2607.21972",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:19:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006085,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2173,
+      "out": 314
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8359,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3344,
+    "relevance": 0.8359
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "1999 and 2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The network structure is derived from self-reported digital traces on a commercial review platform, which may introduce reporting biases and overrepresent clients who actively post reviews.",
+      "what": "The study analyzed a bipartite commercial-sex contact network of 1,436,738 client-sex worker links spanning 1999 to 2024, extracted from reviews on The Erotic Review across 97 countries and territories. The network formed a giant connected component characterized by short average path lengths, high bipartite clustering, and disassortative degree correlations. A small fraction of clients who reviewed sex workers in multiple countries acted as spatial bridges, while long-term users created temporal bridges that compacted the network over time.",
+      "why": "It reveals the specific structural roles that highly active, mobile clients play in linking geographically and demographically distinct sexual networks, providing empirical parameters for modeling global STI transmission pathways."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-24",
+  "work_key": "arxiv:2607.21972"
+}

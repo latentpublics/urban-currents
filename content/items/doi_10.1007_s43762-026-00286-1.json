@@ -1,0 +1,291 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Campus pedestrian environments play a critical role in alleviating student stress through environmental factors. According to Stress Recovery Theory (SRT), visual exposure to natural elements may trigger restorative psychological responses. However, previous studies have rarely compared multiple campuses or comprehensively examined the combined influence of diverse pedestrian-space characteristics. Meanwhile, traditional questionnaire-based assessments are difficult to implement systematically in highly stimulating environments. To address these gaps, we propose a scalable approach combining street-view imagery (SVI) and machine learning to evaluate the restorative quality of campus pedestrian environments. Across four Nanning campuses, we quantified visual features from 1060 street-view images, then paired these with on-site Restoration Outcome Scale (ROS) scores. Finally, multiple regression and random forest models were used to assess linear and nonlinear links to perceived restorativeness, achieving high accuracy (RMSE = 0.078; MSE = 0.049; R 2 = 0.602). Key findings are threefold. First, campus restorative quality is systematically tied to a distinctive visual signature, with pronounced heterogeneity across universities. Second, while linear regression confirmed the positive influence of natural elements, the more robust machine-learning model identified vegetation cover and sky visibility as the two most important predictors. Third, partial-dependence analysis uncovered a nonlinear pattern: sky visibility consistently enhanced restorative quality, whereas vegetation’s effect became negative beyond a threshold. This challenges the conventional “more-is-better” assumption for campus greening and indicates that spatial configuration and perceived quality of environmental features, rather than sheer quantity, are more decisive for stress recovery. This provides a scalable, empirical method to optimize campus greenspace for student well-being.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Guangxi University",
+            "ror": "02c9qn167"
+          }
+        ],
+        "name": "Shuyuan Mai",
+        "openalex": "A5109685499",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chinese University of Hong Kong",
+            "ror": "00t33hh48"
+          }
+        ],
+        "name": "Haoran Ma",
+        "openalex": "A5028198406",
+        "orcid": "https://orcid.org/0000-0002-5550-4076"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s43762-026-00286-1",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s43762-026-00286-1.pdf",
+      "source_id": "S4210175573",
+      "source_name": "Computational Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-28",
+    "repository_urls": [],
+    "title": "More trees, more restorativeness? Exploring the influence of campus pedestrian space on stress recovery using street view imagery"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-28_10.1007/s43762-0",
+    "members": [
+      "doi:10.1007/s43762-026-00286-1"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02c9qn167",
+        "label": "Guangxi University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00t33hh48",
+        "label": "Chinese University of Hong Kong"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5109685499",
+        "label": "Shuyuan Mai"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5550-4076",
+        "label": "Haoran Ma"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": true,
+        "label": "Urban Green Space and Health",
+        "score": 0.9765,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": false,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.0133,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12143",
+        "is_primary": false,
+        "label": "Place Attachment and Urban Studies",
+        "score": 0.0023,
+        "subfield": "3312"
+      }
+    ]
+  },
+  "first_published": "2026-07-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1530723506",
+      "openalex:W1966253622",
+      "openalex:W1978338723",
+      "openalex:W1987552279",
+      "openalex:W1992111297",
+      "openalex:W2008573654",
+      "openalex:W2017532019",
+      "openalex:W2021833436",
+      "openalex:W2025875590",
+      "openalex:W2043746588",
+      "openalex:W2045312759",
+      "openalex:W2052467933",
+      "openalex:W2066418208",
+      "openalex:W2076085071",
+      "openalex:W2084584993",
+      "openalex:W2096398889",
+      "openalex:W2115005123",
+      "openalex:W2150088890",
+      "openalex:W2169368100",
+      "openalex:W2252264846",
+      "openalex:W2345909219",
+      "openalex:W2567621558",
+      "openalex:W2596418207",
+      "openalex:W2727275208",
+      "openalex:W2737258237",
+      "openalex:W2783893305",
+      "openalex:W2791280249",
+      "openalex:W2794407085",
+      "openalex:W2803955122",
+      "openalex:W2805655750",
+      "openalex:W2884390563",
+      "openalex:W2890231632",
+      "openalex:W2914841729",
+      "openalex:W2915953456",
+      "openalex:W2944954104",
+      "openalex:W2951700155",
+      "openalex:W2993330193",
+      "openalex:W3086470909",
+      "openalex:W3089158769",
+      "openalex:W3113061821",
+      "openalex:W3159296386",
+      "openalex:W3159589264",
+      "openalex:W3195494505",
+      "openalex:W3195869152",
+      "openalex:W4309422402",
+      "openalex:W4323567826",
+      "openalex:W4361268854",
+      "openalex:W4380269253",
+      "openalex:W4385651739",
+      "openalex:W4386826241",
+      "openalex:W4387059423",
+      "openalex:W4387806877",
+      "openalex:W4388145704",
+      "openalex:W4390874575",
+      "openalex:W4391614877",
+      "openalex:W4404149191",
+      "openalex:W4409171747"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s43762-026-00286-1",
+    "openalex": "W7171556054",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:25:30Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005944,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2211,
+      "out": 292
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:25:30Z",
+    "doi": "10.1007/s43762-026-00286-1",
+    "journal": "Computational Urban Science",
+    "source_id": "S4210175573",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The predictive models and threshold findings are based on data from only four university campuses in a single city, which may limit their generalizability to other urban or regional contexts.",
+      "what": "The study combined 1,060 street-view images across four university campuses in Nanning with on-site Restoration Outcome Scale (ROS) scores to model perceived stress recovery. Using multiple regression and random forest models, the researchers achieved an R-squared of 0.602 (RMSE = 0.078) in predicting restorativeness, identifying vegetation cover and sky visibility as the most critical visual predictors.",
+      "why": "It demonstrates that the relationship between campus greening and stress recovery is nonlinear, showing that vegetation cover actually reduces restorative quality after exceeding a certain threshold. This challenges the common planning assumption that maximizing green volume always yields better mental health outcomes."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-28",
+  "work_key": "doi:10.1007/s43762-026-00286-1"
+}

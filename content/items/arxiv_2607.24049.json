@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Short-term disturbances at major passenger railway stations alter train arrival and departure times as well as the release sequence of station resources. Effective recovery therefore requires coordinated adjustment of arrival-departure track allocation, station resource occupation, and train retiming. This study represents the station resources involved in train arrival, track occupancy, and departure operations as zone-level resource-occupation intervals. An arrival-departure track allocation adjustment model is formulated. Resource compatibility is imposed as the feasibility condition, while train delays and resource reassignment costs are jointly considered. A quantum-inspired evolutionary algorithm combined with neighborhood search (QEA-NS) is proposed to solve the model. Perturbation instances are constructed using GTFS timetable data from Frankfurt Hauptbahnhof, Germany. QEA-NS is compared with CP-SAT under the same candidate resource set and feasibility criteria. Both methods generate solutions satisfying the modeled resource compatibility constraints. QEA-NS yields a total delay of 388 min, compared with 519 min for CP-SAT, representing a reduction of 25.2\\%. The mean delay of delayed trains decreases from 4.99 to 3.73 min, although QEA-NS requires a longer solution time. Across 10 random perturbation instances, QEA-NS achieves lower total delay in every case. Its mean total delay and standard deviation are 390.5 min and 35.945 min, respectively, compared with 673.8 min and 105.739 min for CP-SAT. The results indicate that, under the adopted resource representation and constraints, QEA-NS improves the delay performance of recovery plans. Its computational efficiency, however, requires further improvement.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Xiaobin Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Wuming Lei",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yanbin Gao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Weiguang Wang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.24049v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.24049v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-27",
+    "repository_urls": [],
+    "title": "Quantum-Inspired Evolutionary Neighborhood Search for Arrival-Departure Track Utilization Adjustment under Short-Term Disturbances"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-27_2607.24049",
+    "members": [
+      "arxiv:2607.24049"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.24049",
+    "doi": "10.48550/arxiv.2607.24049",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:23:37Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006302,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2227,
+      "out": 329
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8808,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3523,
+    "relevance": 0.8808
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The proposed algorithm requires longer solution times than the baseline CP-SAT solver, which may limit its immediate deployment for real-time dispatching until computational efficiency is improved.",
+      "what": "The study develops a quantum-inspired evolutionary algorithm combined with neighborhood search (QEA-NS) to adjust arrival-departure track allocation and train timing during short-term station disturbances. Using GTFS timetable data from Frankfurt Hauptbahnhof, Germany, to construct 10 random perturbation instances, the model represents station operations as zone-level resource-occupation intervals. Compared to the CP-SAT solver, the QEA-NS method reduced total train delay by 25.2% from 519 to 388 minutes, and lowered the mean delay of affected trains from 4.99 to 3.73 minutes.",
+      "why": "It demonstrates a scheduling approach that consistently achieves lower total delays and higher stability under random perturbations than standard constraint programming solvers, though at the cost of longer computation times."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-27",
+  "work_key": "arxiv:2607.24049"
+}

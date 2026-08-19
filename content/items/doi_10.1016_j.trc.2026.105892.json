@@ -1,0 +1,268 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Modeling traffic flow for road design optimization under uncertainty remains challenging, largely due to the substantial computational cost of repeatedly evaluating stochastic models within the optimization loop. This paper presents an efficient computational framework that integrates the multi-element probabilistic collocation method (ME-PCM) with an implicit gradient computation technique to solve a robust optimization problem governed by the Lighthill-Whitham-Richards model with random inputs. The key innovation lies in exploiting the functional representation of the stochastic solution provided by the ME-PCM: a weighted sum of orthogonal polynomial basis functions, which enables efficient evaluation and analytical discrete gradient computation with respect to design parameters. The road geometry parameters are treated as decision variables, and a robust objective based on a Gaussian approximation to the 97.5th percentile of total travel time is formulated. Numerical experiments demonstrate that the ME-PCM-based framework achieves approximately second-order convergence in uncertainty quantification and delivers accurate discrete gradients. When coupled with gradient-based optimizers, the method converges to optimal geometry designs with significantly fewer iterations and lower computational time than Monte Carlo or gradient-free alternatives. This work establishes a theoretically grounded and computationally efficient pathway for stochastic traffic flow optimization, with potential extensions to real-time control and network design under uncertainty.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Hefei University of Technology",
+            "ror": "02czkny70"
+          }
+        ],
+        "name": "Zepeng Liu",
+        "openalex": "A5084419986",
+        "orcid": "https://orcid.org/0000-0003-4533-252X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Anhui University",
+            "ror": "05th6yx34"
+          }
+        ],
+        "name": "L. Yang",
+        "openalex": "A5103041915",
+        "orcid": "https://orcid.org/0000-0003-2604-0206"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Hong Kong",
+            "ror": "02zhqgq86"
+          }
+        ],
+        "name": "S.C. Wong",
+        "openalex": "A5029977089",
+        "orcid": "https://orcid.org/0000-0003-1169-7045"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105892",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0968090X26003785/pdf",
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-24",
+    "repository_urls": [],
+    "title": "Sensitivity analysis of multi-element probabilistic collocation methods in stochastic Lighthill-Whitham-Richards traffic flow modeling"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-24_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105892"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02czkny70",
+        "label": "Hefei University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05th6yx34",
+        "label": "Anhui University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02zhqgq86",
+        "label": "University of Hong Kong"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4533-252X",
+        "label": "Zepeng Liu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2604-0206",
+        "label": "L. Yang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1169-7045",
+        "label": "S.C. Wong"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": true,
+        "label": "Traffic control and management",
+        "score": 0.4143,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10928",
+        "is_primary": false,
+        "label": "Probabilistic and Robust Engineering Design",
+        "score": 0.1143,
+        "subfield": "1804"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11195",
+        "is_primary": false,
+        "label": "Simulation Techniques and Applications",
+        "score": 0.0324,
+        "subfield": "1803"
+      }
+    ]
+  },
+  "first_published": "2026-07-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1577450096",
+      "openalex:W1631643809",
+      "openalex:W1978744409",
+      "openalex:W2000941866",
+      "openalex:W2014945091",
+      "openalex:W2018159038",
+      "openalex:W2021108066",
+      "openalex:W2031138038",
+      "openalex:W2039150507",
+      "openalex:W2039558673",
+      "openalex:W2045355467",
+      "openalex:W2052078237",
+      "openalex:W2068701589",
+      "openalex:W2086247485",
+      "openalex:W2087611860",
+      "openalex:W2103452908",
+      "openalex:W2117048469",
+      "openalex:W2139798157",
+      "openalex:W2151084831",
+      "openalex:W2151154135",
+      "openalex:W2156462466",
+      "openalex:W2186537723",
+      "openalex:W2314198595",
+      "openalex:W2321957512",
+      "openalex:W2761780879",
+      "openalex:W3010292040",
+      "openalex:W3124747161",
+      "openalex:W4221073966",
+      "openalex:W4309756415",
+      "openalex:W4408625528"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105892",
+    "openalex": "W7170184527",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:19:24Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005573,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2029,
+      "out": 281
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:19:24Z",
+    "doi": "10.1016/j.trc.2026.105892",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance and convergence of the framework are demonstrated through numerical experiments rather than real-world deployment or empirical traffic datasets.",
+      "what": "This paper introduces a computational framework that combines the multi-element probabilistic collocation method (ME-PCM) with an implicit gradient computation technique to optimize road design under uncertainty. Using the Lighthill-Whitham-Richards traffic flow model with random inputs, the framework treats road geometry parameters as decision variables to minimize a robust objective based on the 97.5th percentile of total travel time. Numerical experiments show the method achieves approximately second-order convergence in uncertainty quantification and produces accurate discrete gradients.",
+      "why": "It provides a computationally efficient pathway for stochastic traffic flow optimization, allowing gradient-based optimizers to converge to optimal road geometry designs in fewer iterations and less time than Monte Carlo or gradient-free methods."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-24",
+  "work_key": "doi:10.1016/j.trc.2026.105892"
+}

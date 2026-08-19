@@ -1,0 +1,360 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Urban analysis often relies on separate geospatial mapping, street-level image analysis, point-cloud analysis and 3D urban modeling workflows, which can lead to semantic and spatial inconsistencies when structural, visual and volumetric results are interpreted together. This paper develops an SPC-guided Smart 3D Gaussian Splatting (S3DGS) analytical framework to address this fragmentation. Using the Aula–library block in Delft as a case study, we construct a CityGML-inspired Smart Point Cloud from laser-scanning data, generate street-level and aerial 3DGS components from multi-view imagery, align and fuse them into a common coordinate frame, and propagate SPC-derived semantics to Gaussian primitives. The resulting S3DGS base supports projection-based semantic composition, observer-centered visual exposure, volumetric spatial-presence aggregation and layered scene typing within the same reference. Cross-layer interpretation links volumetric and visual-exposure types in the same spatial units, revealing conditions such as physically present but visually recessive building mass. This layered reading allows surface composition, visual experience and three-dimensional spatial presence to be traced within the same urban unit. Evaluation results indicate a stable workflow, with an alignment RMSE of 0.0439 m and a kNN label consistency of 92.24%. By turning Gaussian scenes into semantically traceable and spatially co-referenced analytical bases, S3DGS offers a practical pathway from isolated urban measurements toward integrated, viewpoint-aware and three-dimensional interpretation of the built environment.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Yingwen Yu",
+        "openalex": "A5132757073",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Zhuoyue Wang",
+        "openalex": "A5132769680",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Nanjing Tech University",
+            "ror": "03sd35x91"
+          }
+        ],
+        "name": "Guanting Zhang",
+        "openalex": "A5064705176",
+        "orcid": "https://orcid.org/0000-0003-3484-6226"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Peter van Oosterom",
+        "openalex": "A5026898422",
+        "orcid": "https://orcid.org/0000-0003-3874-4737"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "E. Verbree",
+        "openalex": "A5031875443",
+        "orcid": "https://orcid.org/0000-0002-6892-6702"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Steffen Nijhuis",
+        "openalex": "A5143673409",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Yuyang Peng",
+        "openalex": "A5102577166",
+        "orcid": "https://orcid.org/0009-0001-7665-9456"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.scs.2026.107753",
+      "pdf_url": null,
+      "source_id": "S163634330",
+      "source_name": "Sustainable Cities and Society",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-27",
+    "repository_urls": [],
+    "title": "Smart point cloud–guided 3D gaussian splatting for urban modeling and data-driven analysis"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-27_10.1016/j.scs.20",
+    "members": [
+      "doi:10.1016/j.scs.2026.107753"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02e2c7k09",
+        "label": "Delft University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03sd35x91",
+        "label": "Nanjing Tech University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5132757073",
+        "label": "Yingwen Yu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5132769680",
+        "label": "Zhuoyue Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3484-6226",
+        "label": "Guanting Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3874-4737",
+        "label": "Peter van Oosterom"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6892-6702",
+        "label": "E. Verbree"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143673409",
+        "label": "Steffen Nijhuis"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0001-7665-9456",
+        "label": "Yuyang Peng"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11164",
+        "is_primary": true,
+        "label": "Remote Sensing and LiDAR Applications",
+        "score": 0.5353,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11211",
+        "is_primary": false,
+        "label": "3D Surveying and Cultural Heritage",
+        "score": 0.135,
+        "subfield": "1907"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10719",
+        "is_primary": false,
+        "label": "3D Shape Modeling and Analysis",
+        "score": 0.0939,
+        "subfield": "2206"
+      }
+    ]
+  },
+  "first_published": "2026-07-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2027808287",
+      "openalex:W2035184119",
+      "openalex:W2044904134",
+      "openalex:W2120090232",
+      "openalex:W2121626621",
+      "openalex:W2122111042",
+      "openalex:W2124788642",
+      "openalex:W2149041888",
+      "openalex:W2215173806",
+      "openalex:W2312126347",
+      "openalex:W2322378501",
+      "openalex:W2595143140",
+      "openalex:W2807039058",
+      "openalex:W2811180360",
+      "openalex:W2896769147",
+      "openalex:W2916506845",
+      "openalex:W2917763923",
+      "openalex:W2947466881",
+      "openalex:W2989447048",
+      "openalex:W2995538778",
+      "openalex:W3001208788",
+      "openalex:W3006391673",
+      "openalex:W3007908608",
+      "openalex:W3011950450",
+      "openalex:W3093028790",
+      "openalex:W3115320937",
+      "openalex:W3134005290",
+      "openalex:W3142332301",
+      "openalex:W3195494505",
+      "openalex:W3196343189",
+      "openalex:W3197284130",
+      "openalex:W4283068318",
+      "openalex:W4283780190",
+      "openalex:W4289201879",
+      "openalex:W4308568299",
+      "openalex:W4308814165",
+      "openalex:W4309198791",
+      "openalex:W4313491088",
+      "openalex:W4385318467",
+      "openalex:W4385602906",
+      "openalex:W4385989283",
+      "openalex:W4388498982",
+      "openalex:W4389152007",
+      "openalex:W4391656397",
+      "openalex:W4391800855",
+      "openalex:W4393004558",
+      "openalex:W4396847465",
+      "openalex:W4399880583",
+      "openalex:W4400066891",
+      "openalex:W4402564612",
+      "openalex:W4402864351",
+      "openalex:W4406780241",
+      "openalex:W4408723157",
+      "openalex:W4411150488",
+      "openalex:W4411201649",
+      "openalex:W4414089751",
+      "openalex:W4415281428",
+      "openalex:W4416764600",
+      "openalex:W7113904492",
+      "openalex:W7117738609",
+      "openalex:W7129526412",
+      "openalex:W7148314304",
+      "openalex:W7153790155"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.scs.2026.107753",
+    "openalex": "W7171413116",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:23:39Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00641,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2137,
+      "out": 356
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:23:39Z",
+    "doi": "10.1016/j.scs.2026.107753",
+    "journal": "Sustainable Cities and Society",
+    "source_id": "S163634330",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and alignment stability were evaluated on only a single urban block in Delft.",
+      "what": "The researchers developed Smart 3D Gaussian Splatting (S3DGS), a framework that fuses laser-scanning point clouds with multi-view aerial and street-level imagery into a single coordinate system. Tested on the Aula-library block in Delft, the workflow propagates semantic labels from a CityGML-inspired point cloud to Gaussian primitives, achieving an alignment root mean square error of 0.0439 meters and a k-nearest neighbors label consistency of 92.24%. This co-referenced model enables simultaneous analysis of volumetric spatial presence, visual exposure, and surface composition within the same urban unit.",
+      "why": "It bridges the gap between separate 3D modeling, geospatial mapping, and street-level image workflows, allowing planners to detect complex spatial conditions like building masses that are physically present but visually hidden from pedestrian viewpoints."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-27",
+  "work_key": "doi:10.1016/j.scs.2026.107753"
+}

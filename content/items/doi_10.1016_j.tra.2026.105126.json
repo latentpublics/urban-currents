@@ -1,0 +1,301 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Declining response rates make it increasingly critical for survey designers across disciplines to utilize mechanisms that facilitate timesaving and reduce the burden on the part of respondents. In practice, this often means that questionnaires are shortened, yielding increased response rates but reduced information/ variables available for modeling purposes. Here, this challenge is addressed by using machine learning and regression algorithms, alongside passive data augmentation, to develop and apply a predictive transfer learning-based framework for enriching surveys with information from other datasets. We demonstrate the framework by applying it to supplement and enrich the U.S. National Household Travel Survey (NHTS) with psychometric data (e.g., attitudes), which have been shown in the literature to have the ability to explain and predict behavior, but which are often not captured on household travel surveys. It is, to our knowledge, among the first times such an approach has been applied: (1) in a framework-based systematic approach in transportation; and (2) to transferring attitudinal variables across survey datasets. The application shown here explains up to 25% of the variance in observed attitudes, yielding correlations of up to 0.5 between observed and predicted attitudinal variables. Future applications of the framework presented in this paper have the potential to improve travel demand forecasting and behavioral predictions; and, even more broadly, may be used to enrich other large-scale behavior-based surveys with external variables, thereby providing more diverse and robust data streams for use in an array of modeling efforts.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Michigan",
+            "ror": "00jmfr291"
+          }
+        ],
+        "name": "F. Atiyya Shaw",
+        "openalex": "A5006658239",
+        "orcid": "https://orcid.org/0000-0001-8717-5118"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Massachusetts Institute of Technology",
+            "ror": "042nb2s44"
+          }
+        ],
+        "name": "Xinyi Wang",
+        "openalex": "A5078269240",
+        "orcid": "https://orcid.org/0000-0002-3564-9147"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Georgia Institute of Technology",
+            "ror": "01zkghx44"
+          }
+        ],
+        "name": "Patricia L. Mokhtarian",
+        "openalex": "A5019060426",
+        "orcid": "https://orcid.org/0000-0001-7104-499X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of California, Davis",
+            "ror": "05rrcem69"
+          }
+        ],
+        "name": "Kari Watkins",
+        "openalex": "A5027759391",
+        "orcid": "https://orcid.org/0000-0002-3824-2027"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.tra.2026.105126",
+      "pdf_url": null,
+      "source_id": "S159637997",
+      "source_name": "Transportation Research Part A Policy and Practice",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-28",
+    "repository_urls": [],
+    "title": "A framework for enriching survey datasets using passive data and machine learning, with an application to transferring attitudinal variables across transport surveys"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-28_10.1016/j.tra.20",
+    "members": [
+      "doi:10.1016/j.tra.2026.105126"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00jmfr291",
+        "label": "University of Michigan"
+      },
+      {
+        "confidence": null,
+        "id": "ror:042nb2s44",
+        "label": "Massachusetts Institute of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01zkghx44",
+        "label": "Georgia Institute of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05rrcem69",
+        "label": "University of California, Davis"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8717-5118",
+        "label": "F. Atiyya Shaw"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3564-9147",
+        "label": "Xinyi Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7104-499X",
+        "label": "Patricia L. Mokhtarian"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3824-2027",
+        "label": "Kari Watkins"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.5145,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.2363,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.033,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-07-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W74252774",
+      "openalex:W1565691373",
+      "openalex:W1892382968",
+      "openalex:W1970450302",
+      "openalex:W1981651168",
+      "openalex:W2001135624",
+      "openalex:W2012023007",
+      "openalex:W2013594835",
+      "openalex:W2023389663",
+      "openalex:W2024948400",
+      "openalex:W2052390074",
+      "openalex:W2055058802",
+      "openalex:W2135730135",
+      "openalex:W2165698076",
+      "openalex:W2612253474",
+      "openalex:W2803116794",
+      "openalex:W2899354710",
+      "openalex:W2899377977",
+      "openalex:W2907773908",
+      "openalex:W2923774091",
+      "openalex:W2939088842",
+      "openalex:W2954969686",
+      "openalex:W2965640442",
+      "openalex:W2980540179",
+      "openalex:W3094891431",
+      "openalex:W3121345659",
+      "openalex:W3165729641",
+      "openalex:W4309048101",
+      "openalex:W4414927395"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.tra.2026.105126",
+    "openalex": "W7171557576",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:25:27Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005795,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2129,
+      "out": 289
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:25:27Z",
+    "doi": "10.1016/j.tra.2026.105126",
+    "journal": "Transportation Research Part A Policy and Practice",
+    "source_id": "S159637997",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's predictive performance is moderate, capturing at most a quarter of the variance in the transferred attitudinal variables.",
+      "what": "This study develops and tests a predictive transfer learning framework that uses machine learning, regression algorithms, and passive data augmentation to enrich shortened survey datasets with variables from external sources. The framework was validated by transferring psychometric attitudinal variables to the U.S. National Household Travel Survey (NHTS), explaining up to 25% of the variance in observed attitudes and achieving correlations of up to 0.5 between predicted and actual values.",
+      "why": "It establishes a systematic method to recover missing behavioral and psychological dimensions in large-scale surveys, allowing researchers to maintain high response rates through shorter questionnaires without sacrificing the explanatory power of attitudinal variables."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-28",
+  "work_key": "doi:10.1016/j.tra.2026.105126"
+}

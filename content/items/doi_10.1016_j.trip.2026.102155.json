@@ -1,0 +1,317 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The Pavement Quality Index (PQI) serves as a core metric for characterizing road performance and guiding maintenance decisions. Its predictive models must accommodate the complex data, dynamic operational conditions, and rigorous decision-making requirements inherent in road engineering. While the Genetic Algorithm-optimized Backpropagation Neural Network (GA-BPNN) can capture the nonlinear relationships between PQI and influencing factors such as traffic load, environmental erosion, and pavement structure parameters, it exhibits inherent limitations in uncertainty quantification, adaptability to dynamic conditions, generalization under small-sample scenarios, and decision support. Bayesian methods, with their probabilistic framework, enable end-to-end optimization through uncertainty modeling, dynamic updating, prior integration, and interpretable inference, thereby effectively addressing the shortcomings of the GA-BPNN model. This study utilizes pavement performance data collected from five major highways in Beijing (G4, G6, G7, S15, G106) between 2008 and 2021 via the multi-functional road condition assessment system (CiCS). A BPNN model was first employed to characterize the nonlinear relationship between PQI and key performance indicators, which was subsequently refined using a genetic algorithm. Bayesian inference was then applied to dynamically update the GA-BPNN model with 2022 inspection data, establishing a self-learning mechanism for PQI prediction under limited data conditions. Leveraging the incremental learning capability of Bayesian methods, the GA-BP-based PQI prediction model can continuously adapt to the latest pavement data, maintaining high predictive accuracy over time and providing more reliable support for pavement maintenance decision-making.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Beijing University of Technology",
+            "ror": "037b1pp87"
+          }
+        ],
+        "name": "Hansong Wu",
+        "openalex": "A5019609907",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Beijing University of Technology",
+            "ror": "037b1pp87"
+          }
+        ],
+        "name": "Jinxi Zhang",
+        "openalex": "A5143612312",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Korea Testing Certification",
+            "ror": "01zs00411"
+          }
+        ],
+        "name": "Yaping Cui",
+        "openalex": "A5031886715",
+        "orcid": "https://orcid.org/0000-0003-2276-8881"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Beijing University of Technology",
+            "ror": "037b1pp87"
+          }
+        ],
+        "name": "Jiani Guo",
+        "openalex": "A5143619400",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Beijing University of Technology",
+            "ror": "037b1pp87"
+          }
+        ],
+        "name": "Wanting Li",
+        "openalex": "A5143633664",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102155",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-25",
+    "repository_urls": [],
+    "title": "Application of a GA-BPNN model with Bayesian updating mechanism for pavement quality index (PQI) prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-25_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102155"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:bayesian",
+        "label": "bayesian inference"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:037b1pp87",
+        "label": "Beijing University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01zs00411",
+        "label": "Korea Testing Certification"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5019609907",
+        "label": "Hansong Wu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143612312",
+        "label": "Jinxi Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2276-8881",
+        "label": "Yaping Cui"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143619400",
+        "label": "Jiani Guo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143633664",
+        "label": "Wanting Li"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q956",
+        "label": "Beijing",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11606",
+        "is_primary": true,
+        "label": "Infrastructure Maintenance and Monitoring",
+        "score": 0.9828,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10264",
+        "is_primary": false,
+        "label": "Asphalt Pavement Performance Evaluation",
+        "score": 0.0131,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11850",
+        "is_primary": false,
+        "label": "Concrete Corrosion and Durability",
+        "score": 0.0003,
+        "subfield": "2205"
+      }
+    ]
+  },
+  "first_published": "2026-07-25",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1992269109",
+      "openalex:W2092709759",
+      "openalex:W2907362029",
+      "openalex:W3038211845",
+      "openalex:W3141500568",
+      "openalex:W3162425656",
+      "openalex:W4214805781",
+      "openalex:W4221032692",
+      "openalex:W4225149737",
+      "openalex:W4282927686",
+      "openalex:W4295530411",
+      "openalex:W4324056478",
+      "openalex:W4375952471",
+      "openalex:W4385128763",
+      "openalex:W4391242152",
+      "openalex:W4398196586",
+      "openalex:W4399046100",
+      "openalex:W4402306487",
+      "openalex:W4403739232",
+      "openalex:W4405751229",
+      "openalex:W4406550482",
+      "openalex:W4406772249",
+      "openalex:W4407778470",
+      "openalex:W4408823290",
+      "openalex:W4410137740",
+      "openalex:W4410274447",
+      "openalex:W4410578053",
+      "openalex:W4410942578",
+      "openalex:W4411299593",
+      "openalex:W4411360392",
+      "openalex:W4412106173",
+      "openalex:W4412776078",
+      "openalex:W4413407776",
+      "openalex:W4413722817",
+      "openalex:W4413973598",
+      "openalex:W4414089671",
+      "openalex:W4414154096",
+      "openalex:W4414805431",
+      "openalex:W7082986660"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102155",
+    "openalex": "W7171254289",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:21:07Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006062,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2175,
+      "out": 311
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:21:07Z",
+    "doi": "10.1016/j.trip.2026.102155",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 1.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.64,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2008 and 2021",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance and updating mechanism were validated using data from only five specific highway corridors within a single metropolitan region.",
+      "what": "The study developed a hybrid model combining a Genetic Algorithm-optimized Backpropagation Neural Network (GA-BPNN) with Bayesian updating to predict the Pavement Quality Index (PQI). The model was trained on pavement performance data collected via a multi-functional road condition assessment system across five major Beijing highways (G4, G6, G7, S15, G106) from 2008 to 2021, and dynamically updated using 2022 inspection data.",
+      "why": "By integrating Bayesian inference, the model introduces a self-learning mechanism that can continuously update its predictions with new, small-sample inspection data, overcoming the static limitations and poor uncertainty quantification of traditional neural networks in infrastructure maintenance."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-25",
+  "work_key": "doi:10.1016/j.trip.2026.102155"
+}

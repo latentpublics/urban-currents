@@ -1,0 +1,268 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract The study addresses two major gaps in the current understanding of congestion—lack of a nationally comparable metric that captures within-metro heterogeneity and lack of a unified predictive model that combines established congestion determinants with explicit urbanization and suburbanization dynamics. The congestion propensity index (CPI) overcomes these limitations as a predictive measure that allows for a ranked comparison of expected congestion development in cities across the United States. By transforming widely available data into more robust measures at the county level, heterogeneity within urbanized areas can be considered jointly with national trends. The model incorporates established relationships between variables such as population density, active modes of transportation, and spatial distribution of opportunities on congestion as well as unique measures of suburbanization and urbanization dynamics. These relationships can aid in policy decision-making by recognizing that policies should vary both across and within cities.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "United States Department of Transportation",
+            "ror": "02xfw2e90"
+          }
+        ],
+        "name": "Meredith Raymer",
+        "openalex": "A5093810402",
+        "orcid": "https://orcid.org/0000-0003-2138-0842"
+      },
+      {
+        "institutions": [
+          {
+            "name": "United States Department of Transportation",
+            "ror": "02xfw2e90"
+          }
+        ],
+        "name": "Hani Mahmassani",
+        "openalex": "A5060052177",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Ferrovial (United Kingdom)",
+            "ror": "03jqpht28"
+          }
+        ],
+        "name": "Jennifer Duthie",
+        "openalex": "A5071088583",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9370",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-26",
+    "repository_urls": [],
+    "title": "Categorizing Congestion: A Framework for Congestion Analysis across Urban Area Counties"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-26_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-9370"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02xfw2e90",
+        "label": "United States Department of Transportation"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03jqpht28",
+        "label": "Ferrovial (United Kingdom)"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2138-0842",
+        "label": "Meredith Raymer"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5060052177",
+        "label": "Hani Mahmassani"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5071088583",
+        "label": "Jennifer Duthie"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": true,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.3222,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.2986,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0744,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-07-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1584127072",
+      "openalex:W1978280757",
+      "openalex:W1984434324",
+      "openalex:W1995829770",
+      "openalex:W2012140917",
+      "openalex:W2015390938",
+      "openalex:W2016271958",
+      "openalex:W2027268636",
+      "openalex:W2096808278",
+      "openalex:W2107074433",
+      "openalex:W2108372084",
+      "openalex:W2110186096",
+      "openalex:W2144512297",
+      "openalex:W2734690006",
+      "openalex:W2746442176",
+      "openalex:W2766977575",
+      "openalex:W2803817109",
+      "openalex:W2958449190",
+      "openalex:W3122177782",
+      "openalex:W3124755901",
+      "openalex:W3131379668",
+      "openalex:W4311393969"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-9370",
+    "openalex": "W7171297904",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:22:22Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.004655,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1837,
+      "out": 211
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:22:22Z",
+    "doi": "10.1061/jtepbs.teeng-9370",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study introduces the Congestion Propensity Index (CPI), a predictive metric calculated at the county level to evaluate expected congestion development across the United States. The index integrates traditional congestion drivers like population density, active transit modes, and spatial opportunity distribution with specific indicators of urbanization and suburbanization dynamics.",
+      "why": "It provides a nationally comparable metric that captures variation within metropolitan areas rather than treating entire cities as homogeneous units, allowing planners to tailor transportation policies to specific suburban and urban contexts."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-26",
+  "work_key": "doi:10.1061/jtepbs.teeng-9370"
+}

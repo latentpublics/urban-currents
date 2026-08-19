@@ -1,0 +1,317 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The value of travel time savings (VTTS) is a central parameter in transport-project appraisal. When estimated from a multinomial logit (MNL) model of mode choice, the VTTS can become imprecise under two structural conditions of the data: strong collinearity between travel time and travel cost, common in revealed-preference samples where cost is imputed at a fixed rate per kilometer; and low absolute price-elasticity of demand, which makes the estimated cost coefficient close to zero and inflates the variance of the VTTS estimator, formed as a ratio with that coefficient in the denominator. Both conditions share a common cause: the cost coefficient is not well identified by the data. This paper diagnoses both conditions analytically and through simulation, and proposes an elasticity-constrained estimator that addresses this common cause by tying the cost coefficient to a value consistent with external price-elasticity evidence. The estimator is compared through simulations to maximum likelihood and ridge estimation. The results show that under adverse collinearity and demand elasticity conditions, maximum likelihood estimates exhibit high variance and errors, even with large samples, while ridge estimates display less variance and improved stability but also significant levels of bias. By contrast, the proposed method, although it introduces bias if the actual demand elasticity is distant from that of the applied restriction, achieves lower values for mean squared error. The three methods are also compared in an application to the Swissmetro mode choice dataset. The results in this case show that although multinomial logit can, in theory, be consistent, the elasticity-constrained method again obtains the lowest mean squared error by reducing the variance of the VTTS estimates. The ridge estimator, meanwhile, proved to be less competitive. Complementing these comparative findings are the results of the Hausman test. The proposed estimator is recommended for VTTS estimation in revealed-preference contexts where strong collinearity and inelastic demand jointly compromise identification, and we provide guidance on the contexts in which it is most useful and on its relationship with alternatives such as willingness-to-pay-space estimation.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Universidad Diego Portales",
+            "ror": "03gtdcg60"
+          }
+        ],
+        "name": "Louis de Grange",
+        "openalex": "A5034645481",
+        "orcid": "https://orcid.org/0000-0003-1671-4895"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universidad Diego Portales",
+            "ror": "03gtdcg60"
+          }
+        ],
+        "name": "Matthieu Maréchal Imbert",
+        "openalex": "A5033489621",
+        "orcid": "https://orcid.org/0000-0002-0611-301X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universidad Diego Portales",
+            "ror": "03gtdcg60"
+          }
+        ],
+        "name": "Raúl Pezoa",
+        "openalex": "A5078061308",
+        "orcid": "https://orcid.org/0000-0003-3344-791X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universidad Diego Portales",
+            "ror": "03gtdcg60"
+          }
+        ],
+        "name": "Felipe González",
+        "openalex": "A5143740452",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universidad del Desarrollo",
+            "ror": "05y33vv83"
+          }
+        ],
+        "name": "Rodrigo Troncoso",
+        "openalex": "A5070038697",
+        "orcid": "https://orcid.org/0000-0002-9449-5678"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.tra.2026.105169",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0965856426003101/pdf",
+      "source_id": "S159637997",
+      "source_name": "Transportation Research Part A Policy and Practice",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-27",
+    "repository_urls": [],
+    "title": "A New Approach to collinearity and elasticity problems in value of travel time savings estimation with multinomial logit models"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-27_10.1016/j.tra.20",
+    "members": [
+      "doi:10.1016/j.tra.2026.105169"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03gtdcg60",
+        "label": "Universidad Diego Portales"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05y33vv83",
+        "label": "Universidad del Desarrollo"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1671-4895",
+        "label": "Louis de Grange"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0611-301X",
+        "label": "Matthieu Maréchal Imbert"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3344-791X",
+        "label": "Raúl Pezoa"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143740452",
+        "label": "Felipe González"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9449-5678",
+        "label": "Rodrigo Troncoso"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10841",
+        "is_primary": true,
+        "label": "Economic and Environmental Valuation",
+        "score": 0.4494,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.4238,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.015,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-07-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1479995002",
+      "openalex:W1510589918",
+      "openalex:W1844943753",
+      "openalex:W1966709680",
+      "openalex:W1968097274",
+      "openalex:W1969825658",
+      "openalex:W1977696754",
+      "openalex:W1980476061",
+      "openalex:W1981347126",
+      "openalex:W1990281230",
+      "openalex:W2018953326",
+      "openalex:W2026993165",
+      "openalex:W2035069184",
+      "openalex:W2035175933",
+      "openalex:W2039810561",
+      "openalex:W2041819305",
+      "openalex:W2058163377",
+      "openalex:W2063581101",
+      "openalex:W2064556516",
+      "openalex:W2067440883",
+      "openalex:W2077014675",
+      "openalex:W2077193898",
+      "openalex:W2078137209",
+      "openalex:W2083240876",
+      "openalex:W2105064452",
+      "openalex:W2129284678",
+      "openalex:W2143313161",
+      "openalex:W2147065425",
+      "openalex:W2147780192",
+      "openalex:W2153610672",
+      "openalex:W2257503052",
+      "openalex:W2561363634",
+      "openalex:W2596093771",
+      "openalex:W2894403170",
+      "openalex:W2921193068",
+      "openalex:W3098137914",
+      "openalex:W3115437821",
+      "openalex:W3122101239",
+      "openalex:W3157007363",
+      "openalex:W4206485828",
+      "openalex:W4221025242",
+      "openalex:W4310346519",
+      "openalex:W4396530849",
+      "openalex:W4399028662",
+      "openalex:W4400031852",
+      "openalex:W4406431821"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.tra.2026.105169",
+    "openalex": "W7171427555",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:23:39Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005362,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2339,
+      "out": 206
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:23:39Z",
+    "doi": "10.1016/j.tra.2026.105169",
+    "journal": "Transportation Research Part A Policy and Practice",
+    "source_id": "S159637997",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The proposed estimator introduces bias if the actual demand elasticity differs significantly from the external restriction applied.",
+      "what": "The study introduces an elasticity-constrained estimator for multinomial logit models to address imprecise Value of Travel Time Savings (VTTS) calculations caused by collinearity and low price-elasticity. The estimator was evaluated using simulated datasets and the Swissmetro mode choice dataset, comparing its performance against maximum likelihood and ridge estimation.",
+      "why": "It provides a method to stabilize VTTS estimation in revealed-preference datasets where travel time and cost are highly collinear, reducing mean squared error and estimator variance by anchoring the cost coefficient to external elasticity evidence."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-27",
+  "work_key": "doi:10.1016/j.tra.2026.105169"
+}

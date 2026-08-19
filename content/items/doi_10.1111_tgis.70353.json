@@ -1,0 +1,308 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "ABSTRACT With the advancement of Earth observation technologies, open scientific datasets for the Earth surface system have experienced exponential growth. However, traditional retrieval methods face the challenge of low recall due to the significant vocabulary mismatch between users' natural language queries and dataset metadata. Recently, generative query expansion methods based on large language models (LLMs) have demonstrated promising application prospects. Nevertheless, in the highly specialized geoscience domain, the lack of knowledge constraints makes LLMs highly susceptible to generating “hallucinations” and introducing semantic noise, thereby degrading retrieval quality. To address these issues, this paper proposes a domain knowledge‐enhanced theme expansion method for Earth surface system science dataset recommendation. First, a hybrid construction strategy is employed to establish a domain knowledge base featuring a three‐tier “domain‐theme‐instance” structure, providing a controlled semantic space for the LLM's query expansion. Second, a controlled query expansion mechanism is proposed, transforming the LLM from a “free text generator” into a “constrained semantic selector.” When processing a user query, the LLM navigates research intents within the knowledge base and selects instance‐level thematic keywords that genuinely exist in the metadata for expansion, thereby effectively suppressing semantic noise. Experimental results on a self‐constructed geoscience evaluation dataset (GeoFinder) and an open‐source machine learning benchmark dataset (DataFinder) demonstrate that the proposed method achieves significant improvements in both recall and ranking quality (NDCG, MRR) under sparse and dense retrieval architectures, exhibiting excellent cross‐domain generalization capability and robustness.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "China University of Geosciences",
+            "ror": "04gcegc37"
+          }
+        ],
+        "name": "Liufeng Tao",
+        "openalex": "A5143653151",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "China University of Geosciences",
+            "ror": "04gcegc37"
+          }
+        ],
+        "name": "Rongkuan Cui",
+        "openalex": "A5143654675",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "China University of Geosciences",
+            "ror": "04gcegc37"
+          }
+        ],
+        "name": "Shunxin Zhou",
+        "openalex": "A5143670452",
+        "orcid": "https://orcid.org/0009-0004-9298-1500"
+      },
+      {
+        "institutions": [
+          {
+            "name": "China University of Geosciences",
+            "ror": "04gcegc37"
+          },
+          {
+            "name": "Chengdu University of Technology",
+            "ror": "05pejbw21"
+          }
+        ],
+        "name": "Qinjun Qiu",
+        "openalex": "A5067328912",
+        "orcid": "https://orcid.org/0000-0001-6224-5183"
+      },
+      {
+        "institutions": [
+          {
+            "name": "China University of Geosciences",
+            "ror": "04gcegc37"
+          }
+        ],
+        "name": "Zhong Xie",
+        "openalex": "A5143663169",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1111/tgis.70353",
+      "pdf_url": null,
+      "source_id": "S859791518",
+      "source_name": "Transactions in GIS",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-26",
+    "repository_urls": [],
+    "title": "A Domain Knowledge–Enhanced Theme Expansion Method for Earth Surface System Science Dataset Recommendation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-26_10.1111/tgis.703",
+    "members": [
+      "doi:10.1111/tgis.70353"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04gcegc37",
+        "label": "China University of Geosciences"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05pejbw21",
+        "label": "Chengdu University of Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5143653151",
+        "label": "Liufeng Tao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143654675",
+        "label": "Rongkuan Cui"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0004-9298-1500",
+        "label": "Shunxin Zhou"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6224-5183",
+        "label": "Qinjun Qiu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143663169",
+        "label": "Zhong Xie"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": true,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.4135,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11273",
+        "is_primary": false,
+        "label": "Advanced Graph Neural Networks",
+        "score": 0.1184,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14427",
+        "is_primary": false,
+        "label": "Environmental Monitoring and Data Management",
+        "score": 0.0351,
+        "subfield": "1907"
+      }
+    ]
+  },
+  "first_published": "2026-07-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1966093341",
+      "openalex:W1984565341",
+      "openalex:W1993692165",
+      "openalex:W2003012803",
+      "openalex:W2007582554",
+      "openalex:W2064930103",
+      "openalex:W2093055703",
+      "openalex:W2129667801",
+      "openalex:W2290202140",
+      "openalex:W2401246392",
+      "openalex:W2951091155",
+      "openalex:W2970641574",
+      "openalex:W3090590318",
+      "openalex:W3099700870",
+      "openalex:W3132519602",
+      "openalex:W3134468011",
+      "openalex:W3210163485",
+      "openalex:W4200635123",
+      "openalex:W4236329806",
+      "openalex:W4246858749",
+      "openalex:W4252076394",
+      "openalex:W4385565351",
+      "openalex:W4385571873",
+      "openalex:W4389520758",
+      "openalex:W4390458896",
+      "openalex:W4390692489",
+      "openalex:W4396792601",
+      "openalex:W4399760152",
+      "openalex:W4402673792",
+      "openalex:W4403918927",
+      "openalex:W4404665787",
+      "openalex:W4404970089",
+      "openalex:W4407781591",
+      "openalex:W4408328520",
+      "openalex:W4408386838",
+      "openalex:W4410741869",
+      "openalex:W4412377958",
+      "openalex:W4416035296",
+      "openalex:W7162305659"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1111/tgis.70353",
+    "openalex": "W7171322809",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:22:21Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005549,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2127,
+      "out": 262
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:22:21Z",
+    "doi": "10.1111/tgis.70353",
+    "journal": "Transactions in GIS",
+    "source_id": "S859791518",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed a domain knowledge-enhanced theme expansion method that constrains large language models to act as semantic selectors rather than free-text generators during dataset retrieval. The system uses a three-tier 'domain-theme-instance' knowledge base to map user queries to actual metadata keywords, and was evaluated using a self-constructed geoscience dataset (GeoFinder) and an open-source benchmark (DataFinder) across both sparse and dense retrieval architectures.",
+      "why": "It prevents large language models from generating hallucinations and semantic noise when retrieving highly specialized Earth science datasets, significantly improving search recall and ranking quality without requiring manual query reformulation."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-26",
+  "work_key": "doi:10.1111/tgis.70353"
+}

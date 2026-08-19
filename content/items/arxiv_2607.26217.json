@@ -1,0 +1,191 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Human mobility plays a central role in shaping contact patterns that drive infectious disease transmission, yet mobility is often simplified in agent-based models (ABMs) due to data and computational constraints. The effects of these simplifications on model outputs are poorly understood. In this study, we systematically examined how alternative mobility assumptions influence emergent contact networks and epidemic dynamics within a large-scale ABM. Using a synthetic population of one million agents representing an urban environment, we implemented five mobility models varying along two dimensions: activity patterns (empirically derived vs. randomized) and destination choice mechanisms (empirical popularity, distance-based, or random). Holding disease parameters constant, we found that mobility assumptions alone produced substantially different contact network structures and epidemic trajectories, including differences in peak incidence and shifts in outbreak timing. Importantly, these differences could not be attributed to agents simply moving more or less overall since aggregate movement volumes were broadly comparable across models. Instead, the contrasting dynamics arose from how mobility generates contact opportunities: specifically, who meets whom, where, and how often. These results suggest that in models where mobility has not been carefully calibrated, simulated epidemic outcomes and evaluations of interventions may reflect mobility assumptions as much as underlying disease parameters. Our findings underscore the importance of mobility model calibration and validation, particularly in policy-facing applications.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Kuldip Singh Atwal",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Emma Von Hoene",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hossein Amiri",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dieter Pfoser",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Andreas Zufle",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Taylor Anderson",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.26217v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.26217v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-28",
+    "repository_urls": [],
+    "title": "Mobility and Contact Networks Shape Epidemic Outcomes: A Large-Scale Agent-Based Modeling Study"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-28_2607.26217",
+    "members": [
+      "arxiv:2607.26217"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.26217",
+    "doi": "10.48550/arxiv.2607.26217",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:25:25Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005365,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2041,
+      "out": 256
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9346,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3738,
+    "relevance": 0.9346
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a synthetic urban population and simulated mobility models rather than observed real-world epidemic outcomes.",
+      "what": "Using a synthetic population of one million agents representing an urban environment, this study evaluated how five different mobility models alter contact networks and epidemic trajectories. The models varied across activity patterns (empirical versus randomized) and destination choices (empirical popularity, distance-based, or random) while keeping disease parameters constant. The simulations revealed that mobility assumptions alone generate vastly different peak incidences and outbreak timings, driven by the spatial and social structure of contact opportunities rather than overall movement volume.",
+      "why": "It demonstrates that epidemic simulations and policy interventions modeled in agent-based frameworks can be highly sensitive to uncalibrated mobility assumptions, meaning model outputs may reflect arbitrary movement rules rather than actual disease dynamics."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-28",
+  "work_key": "arxiv:2607.26217"
+}

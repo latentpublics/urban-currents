@@ -39,9 +39,9 @@ on:
   # an hour late costs nothing here; one that never fires is caught by the
   # missing run-log row, not by anybody noticing the mail did not arrive.
   #
-  # schedule:
-  #   - cron: "0 21 * * *"
-
+  schedule:
+    - cron: "0 21 * * *"
+    
 # One run at a time, and a queued run waits rather than cancels: the pipeline
 # holds its own file lock, and a cancelled job would leave that lock behind for
 # the stale-reclaim path to clean up later. Belt and braces, cheaply.

@@ -506,9 +506,24 @@ def build_design_review(out: Optional[Path] = None) -> Path:
     parts.append(("Home", body_of(home.read_text(encoding="utf-8"))))
     parts.append(("Archive", body_of(archive_pages[0].read_text(encoding="utf-8"))))
 
+    # The bodies were rendered for pages that sit in `site/`, so their relative
+    # links point at `issues/…` and `archive.html` — from `docs/` those are 34
+    # dead links. This is the file YJUN actually opens to compare against the
+    # mockup, and a card whose title does not click is a worse review surface
+    # than one whose title does.
+    #
+    # Rewritten rather than left, and only for links that are already relative:
+    # an absolute URL is somebody else's and is not ours to repoint.
+    def repoint(body: str) -> str:
+        return re.sub(
+            r'href="(?!https?:|mailto:|#)([^"]+)"',
+            lambda m: f'href="../site/{m.group(1)}"',
+            body,
+        )
+
     screens = "\n".join(
         f'<section class="uc-review__screen">\n'
-        f'<p class="uc-review__label">{label}</p>\n{body}\n</section>'
+        f'<p class="uc-review__label">{label}</p>\n{repoint(body)}\n</section>'
         for label, body in parts
     )
     html = (

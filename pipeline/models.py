@@ -371,6 +371,14 @@ class Headline(StrictModel):
     present: bool = False
     work_key: Optional[str] = None
     line: Optional[str] = None
+    # How the line was produced: `llm`, or `fallback:<reason>` (0R, T4).
+    # Additive, and optional so the 62 issues written before it stay valid.
+    #
+    # Recorded for the same reason the label files record what a judge could
+    # see: a headline written as a title and one quoted from a summary read
+    # differently, and which of the two you are looking at should not require
+    # guessing from the prose.
+    basis: Optional[str] = None
 
 
 class ScanMeta(StrictModel):

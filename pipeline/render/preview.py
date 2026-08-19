@@ -131,6 +131,23 @@ def _facet_tags(item: Item, limit: int = 6) -> list[dict]:
     return out[:limit]
 
 
+def _affiliation(item: Item) -> str:
+    """The first author's first institution, or "".
+
+    Same source `build_unreadable_row` already reads, so the two rows of the
+    issue cannot disagree about where a paper came from.
+
+    **Returns "" rather than a placeholder when there is none.** An empty line
+    in the meta rail reads as a missing value — as though we knew the
+    affiliation and lost it — when the truth is that OpenAlex did not give one.
+    The template omits the line entirely instead.
+    """
+    authors = item.bibliography.authors or []
+    if authors and authors[0].institutions:
+        return authors[0].institutions[0].name or ""
+    return ""
+
+
 def build_card(item: Item) -> dict:
     en = item.summary.en
     return {
@@ -145,6 +162,7 @@ def build_card(item: Item) -> dict:
         "why": (en.why if en else "") or "",
         "caveats": (en.caveats if en else None) or None,
         "badges": _badges(item),
+        "affiliation": _affiliation(item),
         "facet_tags": _facet_tags(item),
         "links": _links(item),
     }
@@ -361,15 +379,36 @@ def _status_change_text(change) -> str:
     return f"{change.work_key}: {change.from_} → {change.to}{journal}"
 
 
+def card_order(item: Item, headline_key: Optional[str]) -> tuple:
+    """Headline, then published articles, then preprints — each by score.
+
+    **This is a render decision, not an editorial one.** The issue published
+    exactly what it published; only the order it is read in changes, so nothing
+    in `content/` is rewritten and no issue's item list moves.
+
+    The published/preprint split reads from `item.publication_status`,
+    the primary fact, and **not from `badges`**. A badge is a display
+    convenience derived from that fact, and sorting on the derived value would
+    make the order depend on the rendering of the thing being rendered.
+
+    Within each group the existing headline score still decides, so "most
+    important first" is unchanged — it is now applied inside two groups instead
+    of across one.
+    """
+    return (
+        item.work_key != (headline_key or ""),
+        0 if item.publication_status.state == "published" else 1,
+        -item.scores.headline,
+        item.work_key,
+    )
+
+
 def render_issue(
     issue: Issue, items: Iterable[Item], unreadable: Iterable[Item] = ()
 ) -> str:
     by_key = {it.work_key: it for it in items}
     ordered = [by_key[k] for k in issue.items if k in by_key]
-    # Headline first, then descending headline score.
-    ordered.sort(
-        key=lambda it: (it.work_key != (issue.headline.work_key or ""), -it.scores.headline)
-    )
+    ordered.sort(key=lambda it: card_order(it, issue.headline.work_key))
     env = _env()
     css = (TEMPLATE_DIR / "base.css.j2").read_text(encoding="utf-8")
     return env.get_template("preview.html.j2").render(

@@ -146,7 +146,13 @@ body {
   color: var(--uc-meta);
 }
 .uc-card__badges { margin: 0 0 0.5rem; display: flex; flex-wrap: wrap; gap: 0.3rem; }
-.uc-card__byline { margin: 0 0 0.5rem; color: var(--uc-meta); }
+.uc-card__byline { margin: 0 0 0.35rem; color: var(--uc-meta); }
+/* New in 0R (T6): the first author's institution, on its own line. */
+.uc-card__affiliation { margin: 0 0 0.35rem; color: var(--uc-meta); }
+/* Keywords italic and faint, per mockup 6a. The mockup's own #9296a0 measures
+   2.91:1 and fails AA, so this uses --uc-faint (#686d78, 5.10:1) — the same
+   substitution 0j made everywhere else. **The italic is the mockup's.** */
+.uc-card__facets { font-style: italic; color: var(--uc-faint); }
 .uc-card__was { color: var(--uc-faint); }
 .uc-card__facets { margin: 0; color: var(--uc-faint); }
 .uc-card__facets .uc-tag { color: var(--uc-meta); }
@@ -571,6 +577,10 @@ body {
 .uc-column p { margin: 0; font-size: 0.85rem; line-height: 1.6; color: var(--uc-ink-soft); }
 
 @media (max-width: 640px) {
+  /* 7a: the meta rail stops being a column and becomes one wrapped line above
+     the body, so its separate rows join up rather than stacking five deep. */
+  .uc-card__meta { display: flex; flex-wrap: wrap; gap: 0.15rem 0.5rem; align-items: baseline; }
+  .uc-card__meta > p { margin: 0; }
   .uc-row { flex-wrap: wrap; gap: 0.25rem 0.6rem; }
   .uc-row__lead { flex: 1 1 100%; white-space: normal; }
   .uc-columns { flex-direction: column; gap: 1.25rem; }

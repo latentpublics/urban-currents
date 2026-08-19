@@ -136,6 +136,26 @@ llm:
 
   cache_enabled: true
 
+  # ★ The headline is its own task, with its own prompt version and its own
+  # cache namespace (phase 0R, T4).
+  #
+  # Not part of `summarize`, and that is the whole reason it exists separately:
+  # bumping the summarize prompt invalidates the cache for **2,224 items** and
+  # re-summarises the entire archive. This needs **one call per issue** — the
+  # selected headline item only — so 62 issues is 62 calls.
+  #
+  # A failure here is never fatal. `write_headline` falls back to the extractive
+  # first sentence on a missing key, an exhausted budget, a rule the answer
+  # broke, or an empty reply. **An issue must not fail to publish because a
+  # headline could not be written.**
+  headline:
+    prompt_version: "headline@0.1.0"
+    # Short output. The line is capped at twelve words and the check rejects
+    # anything longer rather than trimming it — a truncated claim is a
+    # different claim.
+    max_tokens: 60
+
+
   # Hard stops so a development loop cannot burn the budget quietly.
   #
   # `max_calls_total` is per task and counts calls, not money — it is a
@@ -234,7 +254,21 @@ render:
   # A daily card built on a canon with a hole that shape would put a transport
   # paper forward every morning as a pillar of the field. YJUN has not judged
   # the canon yet and this switch must not decide it.
-  still_cited: false
+  # ★ Enabled in 0R (T7) at YJUN's instruction.
+  #
+  # 0j built it and left it off, and the reason was a finding rather than
+  # caution: V4 found the canon's gap concentrated in walking, cycling and
+  # travel behaviour, so a daily "what this field stands on" card risked
+  # presenting a transport paper as a pillar every day. 0Q then **rejected**
+  # merging an external canon (75.4% of it is transport), so the canon is
+  # `candidates.json` exactly as it stands.
+  #
+  # What makes it safe to turn on is the mechanism, not a fix to the canon: the
+  # card shows **the day's own most-cited foundational work**, and renders
+  # nothing at all when today cites none. Measured over the 62-day archive in
+  # 0R — see the report for which works appear and how often. If one work ever
+  # dominates, that is the evidence for turning it off again.
+  still_cited: true
 
 daily:
   # `uc daily` runs against a *window* of publication dates, not a single day,
@@ -414,3 +448,23 @@ backfill:
   # that spends most of its time waiting for the free tier's rate limit is
   # succeeding slowly, not hanging, and the daily budget would kill it for that.
   max_minutes_per_day: 60
+
+labeling:
+  # ★ The labelling standard changed here (phase 0R, T8).
+  #
+  # YJUN: "제가 논문 라벨링에서 keep으로 분류하는 논문이 조금 많은 듯 합니다.
+  # 더 엄격하게 선별해보겠습니다." — announced 2026-08-19, so judgements made
+  # from this timestamp on are made under a stricter bar.
+  #
+  # **This breaks the continuity of every keep-rate figure.** Averaging labels
+  # from both sides gives the keep rate of a mixture of two standards — the
+  # same defect the sampling-frame registry exists to prevent, except here the
+  # two populations share one file and can only be separated by `labelled_at`.
+  #
+  # The boundary lives in config rather than on the rows because **existing
+  # labels must not be edited**: a label written under the old bar is a true
+  # record of the old bar, and rewriting it would destroy the evidence the
+  # split exists for. Every row already carries `labelled_at`.
+  standard_changed_at: "2026-08-19T00:00:00+00:00"
+  standard_before: "generation 1 — the original bar"
+  standard_after: "generation 2 — stricter, announced 2026-08-19"

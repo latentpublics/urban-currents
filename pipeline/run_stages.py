@@ -746,7 +746,7 @@ def _restore_run_outputs(merged: Item, fresh: Item) -> None:
     merged.provenance.abstract_source = fresh.provenance.abstract_source
 
 
-def stage_issue(run: Run, d: date) -> Issue:
+def stage_issue(run: Run, d: date, use_llm: bool = True) -> Issue:
     """Publish Items and the Issue.
 
     An Item that already appeared in an issue on an *earlier* date is not a new
@@ -869,12 +869,25 @@ def stage_issue(run: Run, d: date) -> Issue:
     except Exception as e:  # noqa: BLE001
         run.error(f"synthesis: {type(e).__name__}: {e}")
 
+    # One call, for the selected item only, and never fatal — see
+    # `pipeline/summarize/headline.py` for why this is the most carefully
+    # fenced LLM call in the pipeline.
+    headline_text, headline_basis = (None, None)
+    if headline_item is not None:
+        from .summarize.headline import write_headline
+
+        headline_text, headline_basis = write_headline(headline_item, use_llm=use_llm)
+        run.count(f"headline_{headline_basis.split(':')[0]}", 1)
+        if headline_basis != "llm":
+            run.error(f"headline: {headline_basis}")
+
     issue = Issue(
         date=d,
         headline=Headline(
             present=headline_item is not None,
             work_key=headline_item.work_key if headline_item else None,
-            line=headline_line(headline_item) if headline_item else None,
+            line=headline_text,
+            basis=headline_basis,
         ),
         quiet_day=headline_item is None,
         scan_meta=scan,
@@ -967,7 +980,7 @@ def run_all(
     _guard(run, "link", lambda: stage_link(run, use_llm=use_llm))
     _guard(run, "summarize", lambda: stage_summarize(run, use_llm=use_llm, limit=summarize_limit))
     _guard(run, "score", lambda: stage_score(run))
-    _guard(run, "issue", lambda: stage_issue(run, d))
+    _guard(run, "issue", lambda: stage_issue(run, d, use_llm=use_llm))
     _guard(run, "preview", lambda: stage_preview(run, d))
     run.save()
     return run

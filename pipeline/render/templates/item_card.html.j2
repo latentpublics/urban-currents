@@ -13,10 +13,22 @@
       {% for badge in card.badges %}<span class="uc-badge uc-badge--{{ badge.kind }}">{{ badge.label }}</span>{% endfor %}
     </p>
     {% endif %}
+    {#- The rail is one fact per line: badges, authors, venue, affiliation,
+        keywords. Authors and venue were already broken apart; affiliation and
+        keywords were not, so the rail ran three facts together on one line.
+
+        **The affiliation line is omitted, not blanked, when there is none.** An
+        empty line reads as data we lost rather than data OpenAlex never gave.
+
+        Facet order is `FACET_ORDER` in the code and is not touched here (0j,
+        W0-5). -#}
     <p class="uc-card__byline">
       {{ card.authors }}{% if card.authors and card.venue %}<br>{% endif %}{{ card.venue }}
       {%- if card.was_preprint %}<span class="uc-card__was"> · {{ card.was_preprint }}</span>{% endif %}
     </p>
+    {% if card.affiliation %}
+    <p class="uc-card__affiliation">{{ card.affiliation }}</p>
+    {% endif %}
     {% if card.facet_tags %}
     <p class="uc-card__facets">
       {% for tag in card.facet_tags %}<span class="uc-tag" data-entity-id="{{ tag.id }}">{{ tag.label }}</span>{% if not loop.last %}<span class="uc-tag__sep"> · </span>{% endif %}{% endfor %}

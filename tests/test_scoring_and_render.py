@@ -665,19 +665,27 @@ def test_a_quiet_day_keeps_the_box_and_drops_only_the_paragraph(repo):
     assert "paragraph omitted: 0 measured links" in body
 
 
-def test_still_cited_is_off_and_renders_nothing(repo):
-    """W5: built, tested, and not shipped.
+def test_still_cited_renders_nothing_when_today_cites_nothing(repo):
+    """W5 built this and left it off; **0R (T7) turned it on** at YJUN's
+    instruction, and the canon it reads is unchanged — 0Q rejected merging an
+    external one because 75.4% of that was transport.
 
-    V4 found our canon missing 174 of an external top 200, concentrated in
-    physical activity and travel behaviour. A daily card built on a canon with
-    a hole that shape would put a transport paper forward every morning as a
-    pillar of the field, and YJUN has not judged the canon yet.
+    What makes it safe is not a fixed canon but the mechanism: the card shows
+    **the day's own most-cited foundational work** and renders nothing at all
+    when today cites none. That second half is what this test holds.
+
+    Measured over the 62-day archive in 0R: 60 days produce a block, across
+    **32 distinct works**, and the most frequent appears on 10 of 60 (16.7%).
+    No single work dominates. If one ever does, that is the evidence for
+    turning it off again.
     """
     from pipeline.config import cfg
     from pipeline.render.preview import build_still_cited, render_issue
 
-    assert cfg("render.still_cited", None) is False
+    assert cfg("render.still_cited", None) is True
 
+    # This item cites no foundational work, so the section is absent — not
+    # empty, and not filled with the archive's favourite paper.
     item = _item()
     issue = _issue_with([item])
     assert build_still_cited(issue, [item]) is None

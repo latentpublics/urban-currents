@@ -641,7 +641,14 @@ def labels(
     number that looks like precision and is not one.
     """
     from .calibrate import arxiv_candidates_by_floor
-    from .labeling import PROBE_FACETS, probe_summary
+    from .labeling import PROBE_FACETS, keep_rate_by_standard, probe_summary
+
+    # The labelling bar changed on 2026-08-19 (T8). Shown first and shown split,
+    # because a keep rate averaged across that line is the keep rate of a
+    # mixture of two standards.
+    split = keep_rate_by_standard(facet) if facet not in PROBE_FACETS else None
+    if split:
+        typer.echo(json.dumps({"labelling_standards": split}, indent=2))
 
     if facet in PROBE_FACETS:
         typer.echo(json.dumps(probe_summary(facet), indent=2))

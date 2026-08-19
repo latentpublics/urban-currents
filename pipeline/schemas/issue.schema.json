@@ -3,6 +3,18 @@
     "Headline": {
       "additionalProperties": false,
       "properties": {
+        "basis": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Basis"
+        },
         "line": {
           "anyOf": [
             {

@@ -653,6 +653,74 @@ def run_labeling_session(
 # --------------------------------------------------------------------------
 
 
+def standard_boundary() -> Optional[str]:
+    """When the labelling bar changed, as an ISO timestamp, or None."""
+    value = cfg("labeling.standard_changed_at", None)
+    return str(value) if value else None
+
+
+def split_by_standard(rows: list[dict]) -> dict[str, list[dict]]:
+    """Rows either side of the labelling-standard boundary.
+
+    YJUN announced a stricter bar on 2026-08-19. **A keep rate averaged across
+    that line is the keep rate of a mixture**, and reporting it as one number is
+    the same mistake the sampling-frame registry refuses for label files —
+    except here the two populations live in one file and can only be told apart
+    by `labelled_at`.
+
+    Rows with no timestamp go in `before`: everything written before the
+    boundary is what the field is missing from, and guessing them into the new
+    standard would flatter it.
+    """
+    boundary = standard_boundary()
+    if not boundary:
+        return {"before": list(rows), "after": []}
+    before, after = [], []
+    for row in rows:
+        # **`labelled_at`, never `corrected_at`.** A correction is not a new
+        # judgement — D204 renamed a category and stamped 15 rows with
+        # 2026-08-19, and keying on that put every one of them on the far side
+        # of the boundary as "0 keeps under the new standard". They were judged
+        # under the old bar and they belong to it.
+        stamp = row.get("labelled_at") or ""
+        (after if stamp and stamp >= boundary else before).append(row)
+    return {"before": before, "after": after}
+
+
+def keep_rate_by_standard(facet: str = "relevance") -> dict[str, Any]:
+    """Keep rate on each side of the boundary, **never added together**.
+
+    `pooled` is deliberately absent. A caller that wants one number across both
+    standards has to say so and take responsibility for what it means.
+    """
+    groups = split_by_standard(superseded(load_labels(facet)))
+    out: dict[str, Any] = {
+        "boundary": standard_boundary(),
+        "note": (
+            "Two labelling standards. The keep rates below are not comparable "
+            "with each other and must not be averaged."
+        ),
+    }
+    for side, rows in groups.items():
+        keeps = sum(1 for r in rows if r["label"] == "keep")
+        out[side] = {
+            "n": len(rows),
+            "keeps": keeps,
+            "keep_rate": round(keeps / len(rows), 4) if rows else None,
+            "standard": cfg(f"labeling.standard_{side}", side),
+        }
+    after = out["after"]
+    # 30 is the count YJUN set as the point at which the new bar is worth
+    # reading. Below it the figure is reported and explicitly not compared.
+    out["after_is_readable"] = after["n"] >= 30
+    if not out["after_is_readable"]:
+        out["after"]["caveat"] = (
+            f"{after['n']} label(s) under the new standard — fewer than 30, so "
+            f"whether the keep rate actually fell is not yet measurable."
+        )
+    return out
+
+
 def precision_at_k(facet: str = "relevance", k: int = 10) -> dict:
     """Q1b, reported per source with the drop reasons kept apart.
 

@@ -1,0 +1,271 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Cities are rapidly expanding their cycling networks to promote sustainable mobility, yet robust longitudinal data needed to evaluate change are scarce. OpenStreetMap (OSM) provides a global, time-stamped record of urban infrastructure, but its reliability for detecting change remains uncertain. This study quantified the temporal accuracy of OSM for identifying cycling-infrastructure additions and removals, using Barcelona (2015–2023) as a case study within a reproducible open-source workflow with manual validation using street-level imagery. We reconstructed baseline and follow-up cycling-infrastructure networks from dated OSM snapshots and applied geometric differencing to detect change. A stratified sampling design based on population density and centrality was used to validate detected changes against historical Google Street View (GSV) imagery, allowing estimation of precision, recall, and F1 scores. OSM-derived estimates indicate an 80.3% increase in cycling-infrastructure length, from 130.7 km to 235.7 km. For additions, validation shows high recall (0.96) and strong precision (0.82), indicating that OSM captures most network expansions. For removals, recall is high (1.00) but precision is low (0.20; n = 5), with wide uncertainty given the small sample. Apparent losses may reflect mapping edits rather than real infrastructure change. By quantifying detection accuracy, this study provides a framework for calibrating OSM-derived measures of cycling infrastructure change. OSM snapshot differencing can serve as a scalable screening approach for identifying infrastructure additions, while apparent removals require cautious interpretation and independent verification to avoid mapping artefacts being mistaken for physical infrastructure loss. This framework supports more robust longitudinal use of OSM histories in planning and research.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Universitat Autònoma de Barcelona",
+            "ror": "052g8jq94"
+          }
+        ],
+        "name": "Eugeni Vidal Tortosa",
+        "openalex": "A5065238157",
+        "orcid": "https://orcid.org/0000-0001-5199-4103"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universitat Autònoma de Barcelona",
+            "ror": "052g8jq94"
+          }
+        ],
+        "name": "Víctor González-Parrà",
+        "openalex": "A5141311210",
+        "orcid": "https://orcid.org/0009-0006-6361-954X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universitat Autònoma de Barcelona",
+            "ror": "052g8jq94"
+          },
+          {
+            "name": "Institut de Ciència de Materials de Barcelona",
+            "ror": "03hasqf61"
+          }
+        ],
+        "name": "Oriol Marquet",
+        "openalex": "A5028647537",
+        "orcid": "https://orcid.org/0000-0002-7346-5664"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.jtrangeo.2026.104775",
+      "pdf_url": null,
+      "source_id": "S80150607",
+      "source_name": "Journal of Transport Geography",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-21",
+    "repository_urls": [],
+    "title": "Quantifying the accuracy of OpenStreetMap for longitudinal cycling-infrastructure change: A reproducible validation framework using Google Street View"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-21_10.1016/j.jtrang",
+    "members": [
+      "doi:10.1016/j.jtrangeo.2026.104775"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:052g8jq94",
+        "label": "Universitat Autònoma de Barcelona"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03hasqf61",
+        "label": "Institut de Ciència de Materials de Barcelona"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5199-4103",
+        "label": "Eugeni Vidal Tortosa"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0006-6361-954X",
+        "label": "Víctor González-Parrà"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7346-5664",
+        "label": "Oriol Marquet"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1492",
+        "label": "Barcelona",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.4868,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.2406,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0697,
+        "subfield": "2307"
+      }
+    ]
+  },
+  "first_published": "2026-07-21",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1567900972",
+      "openalex:W1580122046",
+      "openalex:W1581541037",
+      "openalex:W2027808287",
+      "openalex:W2063935068",
+      "openalex:W2148794846",
+      "openalex:W2412667021",
+      "openalex:W2549412929",
+      "openalex:W2788719482",
+      "openalex:W2884390563",
+      "openalex:W2887191865",
+      "openalex:W2915730880",
+      "openalex:W2916706735",
+      "openalex:W2972443651",
+      "openalex:W3180489676",
+      "openalex:W4383345515",
+      "openalex:W4394012814",
+      "openalex:W4394719564",
+      "openalex:W4409535628",
+      "openalex:W4411178915",
+      "openalex:W4417247647"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.jtrangeo.2026.104775",
+    "openalex": "W7169865556",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:15:15Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006325,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2231,
+      "out": 331
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:15:15Z",
+    "doi": "10.1016/j.jtrangeo.2026.104775",
+    "journal": "Journal of Transport Geography",
+    "source_id": "S80150607",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "n = 5",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2015–2023",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The low precision and high uncertainty for infrastructure removals are based on a very small sample size of five detected cases.",
+      "what": "The study presents an open-source workflow to validate temporal changes in cycling infrastructure using OpenStreetMap (OSM) snapshots and historical Google Street View imagery, using Barcelona (2015-2023) as a case study. Geometric differencing of OSM networks revealed an 80.3% increase in cycleway length from 130.7 km to 235.7 km. Validation of these changes showed high recall (0.96) and precision (0.82) for infrastructure additions, but very low precision (0.20) for infrastructure removals.",
+      "why": "It establishes that while OSM history is highly reliable for tracking network expansions, apparent infrastructure removals are frequently mapping artifacts rather than physical losses, providing a calibration framework that prevents researchers from misinterpreting database edits as real-world changes."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-21",
+  "work_key": "doi:10.1016/j.jtrangeo.2026.104775"
+}

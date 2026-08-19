@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Understanding cyclist preferences for the characteristics of the built environment is important in promoting sustainable urban transportation and active mobility. Despite previous studies on cyclists' route choices, the influence of visual and non-visual factors on these choices for different trip purposes remains unclear; thus, this paper fills this gap through a data-driven case study in Montreal, Canada. Non-visual factors include socioeconomic factors and two-dimensional environments, while visual factors involve visual perception during cycling and are computed using street view images. The study consists of two parts: one part analyzes spatiotemporal information to explore the non-visual factors between the start and end points of cycling trips, and the other part investigates the discrepancies in distributions of these factors between the shortest path and the actual one. The findings reveal the spatiotemporal characteristics that influence active riding choices, such as increased greenery and lower levels of motorization. These insights can inform the planning of street networks and the development of infrastructure to improve the use of active transportation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Heyang Hua",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Koichi Ito",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Filip Biljecki",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.15808v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.15808v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-17",
+    "repository_urls": [],
+    "title": "Examining the Associations between Visual and Non-Visual Elements and Cyclists' Route Choices for Various Trip Purposes"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-17_2607.15808",
+    "members": [
+      "arxiv:2607.15808"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.15808",
+    "doi": "10.48550/arxiv.2607.15808",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:10:10Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005254,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1919,
+      "out": 264
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9991,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3996,
+    "relevance": 0.9991
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a single-city case study in Montreal, which may limit generalizability to cities with different cycling infrastructures or topographies.",
+      "what": "This study analyzes cycling trips in Montreal, Canada, to compare the actual routes chosen by cyclists against the shortest possible paths. It combines non-visual data, such as socioeconomic factors and two-dimensional spatial environments, with visual perception metrics derived from street-view images. The analysis reveals that cyclists deviate from the shortest path to prioritize routes with higher levels of greenery and lower levels of motorization.",
+      "why": "It demonstrates how subjective visual experiences captured through street-level imagery, rather than just traditional two-dimensional network distance, actively shape route choices for different trip purposes."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-17",
+  "work_key": "arxiv:2607.15808"
+}

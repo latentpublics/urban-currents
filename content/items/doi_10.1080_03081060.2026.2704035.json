@@ -1,0 +1,236 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Rural logistics continues to struggle with persistent challenges, including high infrastructure costs, frequent road accidents, toll fees, and inefficient routing practices. Classical single-period inventory routing models fail to adapt routing attributes (transportation costs, risks, route-access tolls, and distances) and inventory management over time. Integrating pickup and delivery, in which transport vehicles pick up goods on return trips after deliveries, remains critical to reducing miles. This study presents a novel mathematical model for the multi-period inventory pickup and delivery problem in rural logistics, considering multi-attribute alternative routes. The model includes routes between locations, each characterized by cost, risk, and toll attributes. It is applied to a mixed urban–rural system where an urban distribution center serves dispersed customers. The model minimizes cost and accident risk using data. A North Florida case study demonstrates effectiveness, with a tailored non-dominated sorting genetic algorithm II (NSGA-II) achieving 7%–14% reductions in cost and risk.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Florida Atlantic University",
+            "ror": "05p8w6387"
+          }
+        ],
+        "name": "Soheila Saeidi",
+        "openalex": "A5039367647",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Florida Atlantic University",
+            "ror": "05p8w6387"
+          }
+        ],
+        "name": "Evangelos Kaisar",
+        "openalex": "A5080461843",
+        "orcid": "https://orcid.org/0000-0001-5809-1695"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/03081060.2026.2704035",
+      "pdf_url": null,
+      "source_id": "S68242086",
+      "source_name": "Transportation Planning and Technology",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-19",
+    "repository_urls": [],
+    "title": "Rural multi-period inventory pickup and delivery problem with multi-attribute alternative routes: a case study"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-19_10.1080/03081060",
+    "members": [
+      "doi:10.1080/03081060.2026.2704035"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05p8w6387",
+        "label": "Florida Atlantic University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5039367647",
+        "label": "Soheila Saeidi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5809-1695",
+        "label": "Evangelos Kaisar"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": true,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.903,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12306",
+        "is_primary": false,
+        "label": "Urban and Freight Transport Logistics",
+        "score": 0.0508,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10539",
+        "is_primary": false,
+        "label": "Sustainable Supply Chain Management",
+        "score": 0.007,
+        "subfield": "1408"
+      }
+    ]
+  },
+  "first_published": "2026-07-19",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1967772830",
+      "openalex:W2066938616",
+      "openalex:W2090342795",
+      "openalex:W2121266360",
+      "openalex:W2126105956",
+      "openalex:W2767831630",
+      "openalex:W2795937231",
+      "openalex:W2893163390",
+      "openalex:W2963269302",
+      "openalex:W2963481903",
+      "openalex:W2991536592",
+      "openalex:W3148921802",
+      "openalex:W3198947273",
+      "openalex:W3201872496",
+      "openalex:W4283324115",
+      "openalex:W4381468577",
+      "openalex:W4386773677",
+      "openalex:W4390492561",
+      "openalex:W4390943028",
+      "openalex:W4399209914",
+      "openalex:W4399619631",
+      "openalex:W4402217235",
+      "openalex:W4407819802",
+      "openalex:W4411196355"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/03081060.2026.2704035",
+    "openalex": "W7169758763",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:13:01Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00551,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1915,
+      "out": 293
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:13:01Z",
+    "doi": "10.1080/03081060.2026.2704035",
+    "journal": "Transportation Planning and Technology",
+    "source_id": "S68242086",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance and the reported 7% to 14% efficiency gains are demonstrated solely on a single case study in North Florida.",
+      "what": "The study develops a mathematical model for the multi-period inventory pickup and delivery problem in rural logistics, incorporating alternative routes characterized by varying costs, accident risks, and toll fees. The model was tested using a tailored non-dominated sorting genetic algorithm II (NSGA-II) on a mixed urban-rural distribution network in North Florida, achieving a 7% to 14% reduction in both transportation costs and accident risks.",
+      "why": "It introduces a routing optimization approach that simultaneously manages inventory over multiple periods and integrates return-trip pickups, allowing logistics planners to systematically trade off financial costs against safety risks on rural road networks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-19",
+  "work_key": "doi:10.1080/03081060.2026.2704035"
+}

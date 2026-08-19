@@ -1,0 +1,353 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "A well-designed tourist map can help tourists enjoy a more organized and informative journey. However, existing digital map service platforms lack the ability to automatically generate customized route maps that accommodate diverse tourist demands. To address this, we proposed a two-stage hybrid-computing framework. First, a tourism-specific large language model (LLM) was developed via parameter-efficient fine-tuning on two datasets (i.e. attraction description and route planning Q&A datasets) to generate structured travel recommendations. Then, Voronoi-diagram-based attraction distribution optimization and grid-based path optimization algorithms were implemented to generate metro-style tourist route maps based on the LLM’s recommendations. An experimental evaluation was conducted using objective quantitative metrics (e.g. BLEU-4) and subjective surveys with over 300 participants. Experimental results demonstrated that the fine-tuned LLM outperformed baseline LLMs in recommending attractions and routes, and the generated four-direction metro-style tourist route maps surpassed traditional tourist maps in legibility, recognition of attractions and routes, esthetics, and satisfaction. These findings indicate that the proposed framework can effectively generate customized metro-style tourist route maps with high usability. This study provides a hybrid framework from demand input to schematic map output, advancing the role of cartography in tourism services.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Southwest Jiaotong University",
+            "ror": "00hn7w693"
+          }
+        ],
+        "name": "Zhiwei Wu",
+        "openalex": "A5140800289",
+        "orcid": "https://orcid.org/0000-0001-8645-756X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Southwest Jiaotong University",
+            "ror": "00hn7w693"
+          }
+        ],
+        "name": "Donglin Cheng",
+        "openalex": "A5140934875",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Southwest Jiaotong University",
+            "ror": "00hn7w693"
+          }
+        ],
+        "name": "Chenzhen Sun",
+        "openalex": "A5140771712",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Geospatial Research (United Kingdom)",
+            "ror": "02qq5pa23"
+          },
+          {
+            "name": "Southwest Jiaotong University",
+            "ror": "00hn7w693"
+          }
+        ],
+        "name": "Zhilin Li",
+        "openalex": "A5140937842",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Geospatial Research (United Kingdom)",
+            "ror": "02qq5pa23"
+          },
+          {
+            "name": "National Administration of Surveying, Mapping and Geoinformation of China",
+            "ror": "04z3map19"
+          }
+        ],
+        "name": "Jun Chen",
+        "openalex": "A5140791643",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Southwest Jiaotong University",
+            "ror": "00hn7w693"
+          }
+        ],
+        "name": "Tian Lan",
+        "openalex": "A5140818074",
+        "orcid": "https://orcid.org/0000-0002-8907-2603"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/13658816.2026.2699203",
+      "pdf_url": null,
+      "source_id": "S4210181446",
+      "source_name": "International Journal of Geographical Information Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-15",
+    "repository_urls": [],
+    "title": "A two-stage hybrid-computing framework for generating metro-style tourist maps: integrating a fine-tuned LLM with geospatial optimization"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-15_10.1080/13658816",
+    "members": [
+      "doi:10.1080/13658816.2026.2699203"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00hn7w693",
+        "label": "Southwest Jiaotong University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02qq5pa23",
+        "label": "Geospatial Research (United Kingdom)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04z3map19",
+        "label": "National Administration of Surveying, Mapping and Geoinformation of China"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8645-756X",
+        "label": "Zhiwei Wu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140934875",
+        "label": "Donglin Cheng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140771712",
+        "label": "Chenzhen Sun"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140937842",
+        "label": "Zhilin Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140791643",
+        "label": "Jun Chen"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8907-2603",
+        "label": "Tian Lan"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": true,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.2317,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11904",
+        "is_primary": false,
+        "label": "Spatial Cognition and Navigation",
+        "score": 0.2016,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0875,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-07-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W951699233",
+      "openalex:W1979633152",
+      "openalex:W1985035591",
+      "openalex:W1987687621",
+      "openalex:W2020239183",
+      "openalex:W2042302914",
+      "openalex:W2049580971",
+      "openalex:W2078790659",
+      "openalex:W2091324757",
+      "openalex:W2124504009",
+      "openalex:W2143430250",
+      "openalex:W2147400155",
+      "openalex:W2152094019",
+      "openalex:W2155836455",
+      "openalex:W2533934648",
+      "openalex:W2896539117",
+      "openalex:W2948496365",
+      "openalex:W2964786680",
+      "openalex:W4287958464",
+      "openalex:W4308449578",
+      "openalex:W4379514142",
+      "openalex:W4382246105",
+      "openalex:W4384525653",
+      "openalex:W4385423435",
+      "openalex:W4388616070",
+      "openalex:W4394762705",
+      "openalex:W4395680584",
+      "openalex:W4399200535",
+      "openalex:W4399730268",
+      "openalex:W4399914797",
+      "openalex:W4400247595",
+      "openalex:W4402777266",
+      "openalex:W4403010755",
+      "openalex:W4403104551",
+      "openalex:W4404534210",
+      "openalex:W4405338180",
+      "openalex:W4405688882",
+      "openalex:W4406537084",
+      "openalex:W4406917155",
+      "openalex:W4407284831",
+      "openalex:W4409155489",
+      "openalex:W4409517555",
+      "openalex:W4409823790",
+      "openalex:W4409881395",
+      "openalex:W4410742653",
+      "openalex:W4411919646",
+      "openalex:W4417165972",
+      "openalex:W4417433487",
+      "openalex:W6959714290",
+      "openalex:W7110967384",
+      "openalex:W7127937919",
+      "openalex:W7128431507",
+      "openalex:W7128727480"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/13658816.2026.2699203",
+    "openalex": "W7168420803",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:07:24Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005513,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2067,
+      "out": 268
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:07:24Z",
+    "doi": "10.1080/13658816.2026.2699203",
+    "journal": "International Journal of Geographical Information Systems",
+    "source_id": "S4210181446",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "A two-stage hybrid-computing framework was developed to generate customized, metro-style tourist route maps. The system first uses a tourism-specific large language model, fine-tuned on attraction descriptions and route planning Q&A datasets, to output structured travel recommendations, and then applies Voronoi-diagram-based and grid-based optimization algorithms to render the schematic maps. The framework's performance was validated using BLEU-4 metrics and subjective surveys completed by over 300 participants.",
+      "why": "It automates the creation of highly legible, schematic tourist maps tailored to individual user demands, a capability missing from current digital mapping platforms that rely on standard geographic layouts."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-15",
+  "work_key": "doi:10.1080/13658816.2026.2699203"
+}

@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Human mobility data have become fundamental to research across transportation, public health, urban science, and disaster resilience. However, existing mobility datasets typically capture only isolated aspects of travel behavior and rarely provide linked multimodal journeys together with network-level route representations and population-level inference. Here we present Complete Trip, a mobility dataset that reconstructs linked multimodal travel behavior from passively collected smartphone location-based services (LBS) data. The first released implementation covers six counties in Utah throughout 2020 and represents journeys across car, bus, rail, and active transportation through a four-stage workflow consisting of trip identification, mode imputation, route reconstruction, and trip linking. Complete Trip preserves journey-level relationships by linking sequential travel segments where multiple segments belong to the same travel episode, provides network-based route representations on digital transportation networks, and supports population-level analyses through statistically calibrated expansion weights. By providing a representation of linked multimodal human mobility, Complete Trip enables reproducible research across transportation, public health, urban science, disaster resilience, and related fields.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ruohan Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Weiyu Luo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xin Wu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chenfeng Xiong",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": "16 pages, 9 figures, 5 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.15436v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.15436v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-16",
+    "repository_urls": [],
+    "title": "Complete Trip: A Linked Multimodal Human Mobility Dataset"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-16_2607.15436",
+    "members": [
+      "arxiv:2607.15436"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.9818,
+        "id": "data:mobile-phone",
+        "label": "mobile phone data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-16",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.15436",
+    "doi": "10.48550/arxiv.2607.15436",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:08:49Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00515,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1921,
+      "out": 252
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9911,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4764,
+    "relevance": 0.9911
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed Complete Trip, a dataset that reconstructs linked multimodal travel behavior from passive smartphone location-based services data. The initial release covers six counties in Utah during 2020, capturing journeys across car, bus, rail, and active transportation using a workflow of trip identification, mode imputation, route reconstruction, and trip linking. It provides network-based route representations and statistically calibrated expansion weights to support population-level inference.",
+      "why": "It provides a continuous, journey-level representation of travel behavior that links sequential segments of a single trip together, overcoming the limitations of traditional datasets that only capture isolated travel segments."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-16",
+  "work_key": "arxiv:2607.15436"
+}

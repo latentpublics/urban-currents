@@ -1,0 +1,278 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The construction of the Archaeological Site Prediction Model (ASPM) and quantitative research on the driving mechanisms of influencing factors are key to better understanding the multidimensional interactions between ancient humans and the environment. They also constitute an essential technical approach for guiding field archaeological survey and excavation. This study aims to develop a highly stable, accurate, and interpretable predictive model for archaeological sites in the Chongqing Three Gorges region (CQTGR). BP neural network prediction (BPNN) has been applied in various fields, but its random initial weights and thresholds often lead to suboptimal accuracy and weak interpretability. To address these issues, this study constructs BPNN optimized with a Bayesian algorithm to enhance its accuracy. Additionally, it integrates the SHAP model to quantitatively identify nonlinear interactions and threshold effects of influencing factors, thereby improving its interpretability. The results indicate that: (1) The BPNN-based prediction model outperforms other conventional models. After hyperparameter optimization using the Bayesian algorithm, the AUC (area under the ROC curve) on the test set increases by 0.0812, reaching a final value of 0.8815. This indicates that the optimization model is effective and that the model exhibits strong predictive capability. (2) Archaeological sites exhibit a tiered and linear corridor distribution pattern along the Yangtze River and its major tributaries. This pattern can be divided into five concentric tiers radiating outward from the core of the main river systems. High-probability zones are particularly clustered in the low-lying and flat river valleys. (3) The distribution of archaeological sites is comprehensively influenced by both the natural environment and human activities. Elevation and river systems are key driving factors, with NDVI and land use also exerting significant influence. The major factors demonstrate notable threshold and interaction effects. Areas where the interaction between factors exhibits positive enhancement are often the core areas of archaeological site distribution. This research not only provides a precise scientific basis for the preventive protection and monitoring of potential distribution areas of archaeological sites but also offers decision support for the spatial conservation planning of these sites.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Chongqing Normal University",
+            "ror": "01dcw5w74"
+          },
+          {
+            "name": "Chongqing University",
+            "ror": "023rhb549"
+          }
+        ],
+        "name": "Xiaoli Wang",
+        "openalex": "A5100456924",
+        "orcid": "https://orcid.org/0000-0003-2553-2516"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chongqing Normal University",
+            "ror": "01dcw5w74"
+          }
+        ],
+        "name": "Houxi Zou",
+        "openalex": "A5090064579",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chongqing Normal University",
+            "ror": "01dcw5w74"
+          }
+        ],
+        "name": "Hao Chen",
+        "openalex": "A5141199163",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chongqing Normal University",
+            "ror": "01dcw5w74"
+          }
+        ],
+        "name": "Yani CAO",
+        "openalex": "A5135219061",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.3390/ijgi15070329",
+      "pdf_url": null,
+      "source_id": "S2764431341",
+      "source_name": "ISPRS International Journal of Geo-Information",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-18",
+    "repository_urls": [],
+    "title": "Application of an Interpretable Machine Learning Model to Archaeological Site Prediction: A Case Study of the Three Gorges Region in Chongqing"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-18_10.3390/ijgi1507",
+    "members": [
+      "doi:10.3390/ijgi15070329"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.9032,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01dcw5w74",
+        "label": "Chongqing Normal University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:023rhb549",
+        "label": "Chongqing University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2553-2516",
+        "label": "Xiaoli Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5090064579",
+        "label": "Houxi Zou"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141199163",
+        "label": "Hao Chen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5135219061",
+        "label": "Yani CAO"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12364",
+        "is_primary": true,
+        "label": "Archaeological Research and Protection",
+        "score": 0.4189,
+        "subfield": "1912"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14339",
+        "is_primary": false,
+        "label": "Image Processing and 3D Reconstruction",
+        "score": 0.1105,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10087",
+        "is_primary": false,
+        "label": "Archaeology and ancient environmental studies",
+        "score": 0.0899,
+        "subfield": "1911"
+      }
+    ]
+  },
+  "first_published": "2026-07-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1971447458",
+      "openalex:W2024081693",
+      "openalex:W2313383114",
+      "openalex:W2321561007",
+      "openalex:W2793032158",
+      "openalex:W2969502539",
+      "openalex:W2981877475",
+      "openalex:W3090779497",
+      "openalex:W3133033260",
+      "openalex:W4283077289",
+      "openalex:W4380047188",
+      "openalex:W4395004471",
+      "openalex:W4402439561",
+      "openalex:W4404759499",
+      "openalex:W4407368990",
+      "openalex:W4410477967",
+      "openalex:W4411992592",
+      "openalex:W7117752612",
+      "openalex:W7155047885"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.3390/ijgi15070329",
+    "openalex": "W7169815984",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:11:38Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.003945,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2347,
+      "out": 329
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:11:38Z",
+    "doi": "10.3390/ijgi15070329",
+    "journal": "ISPRS International Journal of Geo-Information",
+    "source_id": "S2764431341",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's predictive rules and environmental thresholds are highly specific to the unique river valley geography of the Chongqing Three Gorges region and may not generalize to different topographic landscapes.",
+      "what": "The study developed an optimized BP neural network model combined with SHAP interpretability to predict archaeological site locations in the Chongqing Three Gorges region. Using Bayesian hyperparameter optimization, the model achieved an AUC of 0.8815 on the test set, representing an improvement of 0.0812 over the baseline. The analysis revealed that sites are distributed in five concentric tiers radiating from the Yangtze River and its tributaries, with elevation, river proximity, NDVI, and land use acting as the primary driving factors.",
+      "why": "It provides a highly accurate and interpretable predictive tool that moves beyond black-box machine learning, allowing archaeologists to quantitatively understand the threshold effects and environmental interactions that guided ancient human settlement patterns."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-18",
+  "work_key": "doi:10.3390/ijgi15070329"
+}

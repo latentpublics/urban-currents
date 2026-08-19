@@ -1,0 +1,326 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The adaptive smoothing method (ASM) is a widely used approach for traffic state reconstruction. This article presents a Python implementation of ASM, featuring end-to-end calibration using real-world ground truth data. The calibration is formulated as a parameterized kernel optimization problem. The model is calibrated using data from a full-state observation testbed, with input from a sparse radar sensor network. The implementation is developed in PyTorch, enabling integration with various deep learning methods. We evaluate the results in terms of speed distribution, spatio-temporal error distribution, and spatial error to provide benchmark metrics for the traffic reconstruction problem. We further demonstrate the usability of the calibrated method across multiple freeways. This article is reproducible and can serve as a benchmark for various freeway operation tasks.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Vanderbilt University",
+            "ror": "02vm5rt34"
+          },
+          {
+            "name": "Integrated Software (United States)",
+            "ror": "05dp7m259"
+          }
+        ],
+        "name": "Junyi Ji",
+        "openalex": "A5101656410",
+        "orcid": "https://orcid.org/0000-0003-1085-1573"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Integrated Software (United States)",
+            "ror": "05dp7m259"
+          }
+        ],
+        "name": "Derek Gloudemans",
+        "openalex": "A5141008135",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Integrated Software (United States)",
+            "ror": "05dp7m259"
+          }
+        ],
+        "name": "Gergely Zachár",
+        "openalex": "A5141006645",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Virginia Tech",
+            "ror": "02smfhw86"
+          }
+        ],
+        "name": "Matthew W. Nice",
+        "openalex": "A5140978654",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Integrated Software (United States)",
+            "ror": "05dp7m259"
+          }
+        ],
+        "name": "William Barbour",
+        "openalex": "A5136547416",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Vanderbilt University",
+            "ror": "02vm5rt34"
+          },
+          {
+            "name": "Integrated Software (United States)",
+            "ror": "05dp7m259"
+          }
+        ],
+        "name": "Daniel B. Work",
+        "openalex": "A5140994643",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1186/s12544-026-00818-0",
+      "pdf_url": null,
+      "source_id": "S106956883",
+      "source_name": "European Transport Research Review",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-16",
+    "repository_urls": [],
+    "title": "Calibrating adaptive smoothing methods for freeway traffic reconstruction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-16_2602.02072",
+    "members": [
+      "arxiv:2602.02072"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02vm5rt34",
+        "label": "Vanderbilt University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05dp7m259",
+        "label": "Integrated Software (United States)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02smfhw86",
+        "label": "Virginia Tech"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1085-1573",
+        "label": "Junyi Ji"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141008135",
+        "label": "Derek Gloudemans"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141006645",
+        "label": "Gergely Zachár"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140978654",
+        "label": "Matthew W. Nice"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5136547416",
+        "label": "William Barbour"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140994643",
+        "label": "Daniel B. Work"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.6602,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.2601,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11489",
+        "is_primary": false,
+        "label": "Air Traffic Management and Optimization",
+        "score": 0.0074,
+        "subfield": "2202"
+      }
+    ]
+  },
+  "first_published": "2026-07-16",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1513927654",
+      "openalex:W1551631268",
+      "openalex:W1585689953",
+      "openalex:W1965455100",
+      "openalex:W2052582536",
+      "openalex:W2105200734",
+      "openalex:W2164580039",
+      "openalex:W2487175822",
+      "openalex:W2848293466",
+      "openalex:W3006180391",
+      "openalex:W3142354703",
+      "openalex:W3164311210",
+      "openalex:W3164376315",
+      "openalex:W4220769388",
+      "openalex:W4223626157",
+      "openalex:W4233762729",
+      "openalex:W4281680748",
+      "openalex:W4384436101",
+      "openalex:W4386435201",
+      "openalex:W4392214053",
+      "openalex:W4393973452",
+      "openalex:W4396650154",
+      "openalex:W4400525194",
+      "openalex:W4402393859",
+      "openalex:W4402574380",
+      "openalex:W4408008487",
+      "openalex:W4413468859",
+      "openalex:W4414446734",
+      "openalex:W4415798542",
+      "openalex:W4416408616",
+      "openalex:W7133206787"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2602.02072",
+    "doi": "10.1186/s12544-026-00818-0",
+    "openalex": "W7169043991",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:08:52Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.004774,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1809,
+      "out": 229
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:08:52Z",
+    "doi": "10.1186/s12544-026-00818-0",
+    "journal": "European Transport Research Review",
+    "source_id": "S106956883",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study presents a Python implementation of the Adaptive Smoothing Method (ASM) for freeway traffic reconstruction, featuring end-to-end calibration formulated as a parameterized kernel optimization problem. Built in PyTorch to allow integration with deep learning workflows, the model was calibrated and evaluated using sparse radar sensor network data against ground truth from a full-state observation testbed.",
+      "why": "It provides an open-source, reproducible benchmark for freeway traffic reconstruction that can be calibrated directly from real-world data and easily integrated into modern deep learning pipelines."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-16",
+  "work_key": "arxiv:2602.02072"
+}

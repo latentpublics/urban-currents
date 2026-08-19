@@ -1,0 +1,161 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "A common strategy to calm traffic in an unsignalized, bidirectional street consists in narrowing the street to a single lane at one or more locations. These locations become bottlenecks. Two policies are commonly used there: first-in-first-out (FIFO), and directional priority (DP), which means one of the directions has priority. This paper examines the performance of these two policies on streets with one or more bottlenecks. Two measures of performance are considered: the expected delay (evaluated for typical situations with low demand) and the system capacity. The latter is defined as the pair of flows (d1, d2) that depart the street in the two opposite directions when the system is oversaturated with queues. For a street with a single bottleneck, the capacity under both FIFO and DP is not unique: capacity in one direction decreases with a higher flow in the other direction. As expected, we find that arrival flow pairs (a1, a2) below this boundary can get through the system without generating queues. Those above cannot. For a single bottleneck shows that FIFO yields lower expected delay than DP under low demand. For high demand, DP's capacity exceeds FIFO's when the flows are balanced, not lower otherwise. For multiple bottlenecks we consider low-demand delay, and capacity. In low demand, the expected total delay on the street is that of a single bottleneck multiplied by the number of bottlenecks. The multi-bottleneck street capacity under FIFO turns out to be the same as for a single bottleneck. For DP, traffic near capacity is complex and capacity points are numerous and disjointed. Formulas are derived for their values. Higher capacities are typically obtained for longer streets. Curiously, these capacity points are often above the capacity boundary of a street with a single FIFO or DP bottleneck, indicating that an extra bottleneck can increase capacity.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Victor L. Knoop",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Carlos F. Daganzo",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.13650v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.13650v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-15",
+    "repository_urls": [],
+    "title": "Calming traffic in unsignalized bidirectional streets by introducing one-lane bottlenecks"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-15_2607.13650",
+    "members": [
+      "arxiv:2607.13650"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.13650",
+    "doi": "10.48550/arxiv.2607.13650",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:07:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005608,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2251,
+      "out": 248
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.976,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3904,
+    "relevance": 0.976
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on theoretical mathematical modeling of traffic flows rather than empirical field observations or microsimulations.",
+      "what": "This study models the performance of first-in-first-out (FIFO) and directional priority (DP) traffic policies at single and multiple one-lane bottlenecks on unsignalized, bidirectional streets. It evaluates expected delay under low demand and system capacity under oversaturated conditions, deriving mathematical formulas for capacity boundaries. The analysis reveals that while FIFO causes less delay than DP under low demand, DP can achieve higher capacity under balanced high demand, and adding extra bottlenecks can unexpectedly increase capacity for longer streets under DP.",
+      "why": "It provides analytical formulas that allow traffic planners to mathematically compare the capacity and delay trade-offs of different bottleneck priority rules, revealing counterintuitive capacity dynamics when multiple bottlenecks are chained together."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-15",
+  "work_key": "arxiv:2607.13650"
+}

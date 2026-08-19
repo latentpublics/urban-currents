@@ -1,0 +1,314 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The conventional trial-and-error method used in concrete mix design results in considerable inefficiencies, material waste, and cost overruns in construction. Construction and demolition debris, which includes concrete, accounts for 35%–65% of landfill volume, with concrete making up 60%–70% of that total. This inefficiency highlights the urgent need for improved methodologies to produce high-performance concrete (HPC) that is economically viable and environmentally sustainable. To automate this process, this study introduces a novel approach that reverses the conventional prediction task by predicting optimal mix compositions directly from target strength and age, rather than estimating strength from mix proportions. This innovative framework employs a multi-tower multilayer perceptron architecture that integrates various feature groups to align computational design with performance objectives. By eliminating the need for costly empirical iterations, this method places sustainability at the forefront of material optimization. The proposed deep learning model was rigorously tested against four established regression methods: (1) support vector machines; (2) random forest; (3) eXtreme Gradient Boosting; and (4) multioutput regression. The deep learning architecture outperformed these methods, achieving a mean coefficient of determination of 0.739 and an average mean absolute error of 16.712 kg/m 3. Additional error and statistical analyses confirmed the model’s robustness and reliability across diverse performance scenarios. In contrast, SHapley Additive exPlanations analysis revealed that the model’s predictions align with concrete material science: strength dominates cement and admixture predictions, with age governing supplementary cementitious materials. These findings illustrate that machine learning can effectively generate mix proportions based on performance objectives, paving the pathway toward sustainable, cost-effective, automated, and performance-based HPC design.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Cleveland State University",
+            "ror": "002tx1f22"
+          }
+        ],
+        "name": "Stephen Asare",
+        "openalex": "A5111079980",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Cleveland State University",
+            "ror": "002tx1f22"
+          }
+        ],
+        "name": "Enock Tongyem",
+        "openalex": "A5098765668",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Cleveland State University",
+            "ror": "002tx1f22"
+          }
+        ],
+        "name": "Josiah Owusu-Danquah",
+        "openalex": "A5135617615",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Kwame Nkrumah University of Science and Technology",
+            "ror": "00cb23x68"
+          }
+        ],
+        "name": "Jones Owusu Twumasi",
+        "openalex": "A5000464466",
+        "orcid": "https://orcid.org/0000-0001-7687-3383"
+      },
+      {
+        "institutions": [
+          {
+            "name": "North Dakota State University",
+            "ror": "05h1bnb22"
+          }
+        ],
+        "name": "Armstrong Aboah",
+        "openalex": "A5005333881",
+        "orcid": "https://orcid.org/0000-0002-1605-1545"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/03611981261454277",
+      "pdf_url": null,
+      "source_id": "S145575934",
+      "source_name": "Transportation Research Record Journal of the Transportation Research Board",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-18",
+    "repository_urls": [],
+    "title": "Automating High-Performance Concrete Mix Design: Deep Learning Framework for Inverse Prediction of Composition from Target Strength and Age"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-18_10.1177/03611981",
+    "members": [
+      "doi:10.1177/03611981261454277"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:002tx1f22",
+        "label": "Cleveland State University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00cb23x68",
+        "label": "Kwame Nkrumah University of Science and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05h1bnb22",
+        "label": "North Dakota State University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5111079980",
+        "label": "Stephen Asare"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5098765668",
+        "label": "Enock Tongyem"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5135617615",
+        "label": "Josiah Owusu-Danquah"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7687-3383",
+        "label": "Jones Owusu Twumasi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1605-1545",
+        "label": "Armstrong Aboah"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10687",
+        "is_primary": true,
+        "label": "Innovative concrete reinforcement materials",
+        "score": 0.5568,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10033",
+        "is_primary": false,
+        "label": "Concrete and Cement Materials Research",
+        "score": 0.1477,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11847",
+        "is_primary": false,
+        "label": "Recycled Aggregate Concrete Performance",
+        "score": 0.0634,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-07-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1963974315",
+      "openalex:W1997257652",
+      "openalex:W2051431958",
+      "openalex:W2061933243",
+      "openalex:W2074628949",
+      "openalex:W2080171167",
+      "openalex:W2122347864",
+      "openalex:W2214210022",
+      "openalex:W2353989927",
+      "openalex:W2534837836",
+      "openalex:W2799921980",
+      "openalex:W2803299390",
+      "openalex:W2891278269",
+      "openalex:W2948013316",
+      "openalex:W2969642948",
+      "openalex:W2970393605",
+      "openalex:W2974980133",
+      "openalex:W2990217975",
+      "openalex:W3129274233",
+      "openalex:W3153764057",
+      "openalex:W3159952738",
+      "openalex:W4225287601",
+      "openalex:W4249970585",
+      "openalex:W4290729126",
+      "openalex:W4295122555",
+      "openalex:W4303648677",
+      "openalex:W4306152259",
+      "openalex:W4377103322",
+      "openalex:W4382280237",
+      "openalex:W4386689924",
+      "openalex:W4390703171",
+      "openalex:W4402131179",
+      "openalex:W4402577201",
+      "openalex:W4411690921",
+      "openalex:W4413628910",
+      "openalex:W4416508765",
+      "openalex:W7124684693",
+      "openalex:W7125368325"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1177/03611981261454277",
+    "openalex": "W7169677818",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:11:38Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005533,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2237,
+      "out": 242
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:11:38Z",
+    "doi": "10.1177/03611981261454277",
+    "journal": "Transportation Research Record Journal of the Transportation Research Board",
+    "source_id": "S145575934",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study developed a multi-tower multilayer perceptron deep learning model to automate high-performance concrete mix design by reversing the traditional prediction task, directly outputting optimal material compositions from target strength and age. Tested against four regression baselines, the model achieved a mean coefficient of determination of 0.739 and an average mean absolute error of 16.712 kg/m3. SHapley Additive exPlanations analysis confirmed the model's predictions align with concrete material science, showing strength dominates cement and admixture predictions while age governs supplementary cementitious materials.",
+      "why": "It replaces the conventional, wasteful trial-and-error empirical iterations in concrete design with an automated inverse prediction framework, establishing a capability to design sustainable, high-performance concrete directly from performance objectives."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-18",
+  "work_key": "doi:10.1177/03611981261454277"
+}

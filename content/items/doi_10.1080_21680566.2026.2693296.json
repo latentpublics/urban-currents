@@ -1,0 +1,291 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study proposes a multi-objective adaptive signal controller for pedestrian crossings using a constraints‑decoupled reinforcement learning framework. Unlike direct optimization of signal timings based on predefined phases, the approach decouples phases into vehicle and pedestrian movements via an option‑action structure. A linear scalarization mechanism enables collaborative optimization of pedestrian and vehicle efficiency under different weight preferences. Additionally, a value function approximation method based on phase Q‑value decomposition is developed. It learns movement‑level Q‑values and aggregates them into phase‑level estimates using a conflict matrix and combination rules, reducing repetitive learning and improving generalization. Simulation results show that the proposed controller converges faster than phase‑based adaptive controllers, reduces delays for both pedestrians and vehicles under varying demands, and maintains stability under high demand. Through multi‑objective optimization, it achieves an adjustable balance between pedestrian and vehicle flows, offering an effective solution for adaptive traffic signal control involving multiple traffic participants.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Chang'an University",
+            "ror": "05mxya461"
+          }
+        ],
+        "name": "Yubing Yang",
+        "openalex": "A5076945518",
+        "orcid": "https://orcid.org/0000-0002-8401-8421"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chang'an University",
+            "ror": "05mxya461"
+          }
+        ],
+        "name": "Ying Li",
+        "openalex": "A5074006803",
+        "orcid": "https://orcid.org/0000-0003-0028-2119"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          },
+          {
+            "name": "Ministry of Education and Child Care",
+            "ror": "05hv77153"
+          }
+        ],
+        "name": "Zicheng Su",
+        "openalex": "A5065697046",
+        "orcid": "https://orcid.org/0000-0001-5149-570X"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/21680566.2026.2693296",
+      "pdf_url": null,
+      "source_id": "S2498450034",
+      "source_name": "Transportmetrica B Transport Dynamics",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-19",
+    "repository_urls": [],
+    "title": "Multi-objective traffic signal control considering pedestrian crossings via constraints-decoupled reinforcement learning"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-19_10.1080/21680566",
+    "members": [
+      "doi:10.1080/21680566.2026.2693296"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05mxya461",
+        "label": "Chang'an University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03rc6as71",
+        "label": "Tongji University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05hv77153",
+        "label": "Ministry of Education and Child Care"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8401-8421",
+        "label": "Yubing Yang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0028-2119",
+        "label": "Ying Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5149-570X",
+        "label": "Zicheng Su"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": true,
+        "label": "Traffic control and management",
+        "score": 0.9426,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11500",
+        "is_primary": false,
+        "label": "Evacuation and Crowd Dynamics",
+        "score": 0.0195,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.0063,
+        "subfield": "2213"
+      }
+    ]
+  },
+  "first_published": "2026-07-19",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1556824961",
+      "openalex:W1985134130",
+      "openalex:W2088595989",
+      "openalex:W2145339207",
+      "openalex:W2569735851",
+      "openalex:W2746553466",
+      "openalex:W2789923481",
+      "openalex:W2903709398",
+      "openalex:W2964247745",
+      "openalex:W2964749398",
+      "openalex:W2988973041",
+      "openalex:W2998187693",
+      "openalex:W3027290303",
+      "openalex:W3123082711",
+      "openalex:W3133741656",
+      "openalex:W3164375084",
+      "openalex:W3174666066",
+      "openalex:W4226127697",
+      "openalex:W4226518300",
+      "openalex:W4256347267",
+      "openalex:W4283813407",
+      "openalex:W4307941322",
+      "openalex:W4308782093",
+      "openalex:W4312156712",
+      "openalex:W4322729600",
+      "openalex:W4377233201",
+      "openalex:W4391679478",
+      "openalex:W4396904427",
+      "openalex:W4400807825",
+      "openalex:W4408691953",
+      "openalex:W4408970984",
+      "openalex:W4409362120",
+      "openalex:W4412081691",
+      "openalex:W4412478716",
+      "openalex:W4413780626",
+      "openalex:W4417428334",
+      "openalex:W7127914779",
+      "openalex:W7131643152",
+      "openalex:W7139118635",
+      "openalex:W7148373381",
+      "openalex:W7161688532",
+      "openalex:W7162529661",
+      "openalex:W7164491195"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/21680566.2026.2693296",
+    "openalex": "W7169782949",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:13:02Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.004945,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1881,
+      "out": 236
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:13:02Z",
+    "doi": "10.1080/21680566.2026.2693296",
+    "journal": "Transportmetrica B Transport Dynamics",
+    "source_id": "S2498450034",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance and convergence advantages of the controller were evaluated exclusively within a simulation environment rather than through real-world deployment.",
+      "what": "The study develops a multi-objective adaptive traffic signal controller that decouples vehicle and pedestrian movements using an option-action reinforcement learning framework. It implements a linear scalarization mechanism to balance pedestrian and vehicle efficiency under varying weight preferences, alongside a value function approximation method that aggregates movement-level Q-values into phase-level estimates using a conflict matrix.",
+      "why": "The controller speeds up convergence compared to traditional phase-based adaptive controllers and reduces delays for both pedestrians and vehicles under fluctuating demand, providing a customizable balance between different road users."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-19",
+  "work_key": "doi:10.1080/21680566.2026.2693296"
+}

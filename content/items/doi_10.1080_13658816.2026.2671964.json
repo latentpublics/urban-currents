@@ -1,0 +1,297 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This paper describes an approach to multiscale space-time varying coefficient modelling using Generalized Additive Models (GAMs). This builds on GAMs that have been previously used to generate spatially varying coefficients, but now extended to the temporal domain. However, for this space-time extension, a key consideration concerns model specification - i.e. how best to specify space and time in the GAM smooths. This depends on the nature of the space-time dependencies in the predictor-to-response variable relationships for a given dataset, where a key issue is how to relax assumptions about the presence of space-time dependencies that are found. For this study, multiple competing GAMs are created, with their space-time interactions specified in different ways for each predictor variable. A final GAM is found by the lowest AIC. The proposed approach is applied to simulated data and an empirical case study, where in both cases the best fitting GAM was found to out-perform Multiscale Geographically and Temporally Weighted Regression, a popular alternative. Model specification/selection for GAMs undertaken in this way provides insights into the nature of the space-time dependencies present in the data’s relationships, including the scale of these dependencies. The overall approach is novel and several areas of further work are identified.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Leeds",
+            "ror": "024mrxd33"
+          }
+        ],
+        "name": "Alexis Comber",
+        "openalex": "A5012361423",
+        "orcid": "https://orcid.org/0000-0002-3652-7846"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Rothamsted Research",
+            "ror": "0347fy350"
+          }
+        ],
+        "name": "Paul Harris",
+        "openalex": "A5055094180",
+        "orcid": "https://orcid.org/0000-0003-0259-4079"
+      },
+      {
+        "institutions": [
+          {
+            "name": "National University of Ireland, Maynooth",
+            "ror": "048nfjm95"
+          }
+        ],
+        "name": "Chris Brunsdon",
+        "openalex": "A5082892178",
+        "orcid": "https://orcid.org/0000-0003-4254-1780"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/13658816.2026.2671964",
+      "pdf_url": "https://www.tandfonline.com/doi/pdf/10.1080/13658816.2026.2671964?needAccess=true",
+      "source_id": "S4210181446",
+      "source_name": "International Journal of Geographical Information Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-21",
+    "repository_urls": [],
+    "title": "Multiscale space-time varying coefficient modeling using generalized additive models: determining model form"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-21_10.1080/13658816",
+    "members": [
+      "doi:10.1080/13658816.2026.2671964"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:024mrxd33",
+        "label": "University of Leeds"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0347fy350",
+        "label": "Rothamsted Research"
+      },
+      {
+        "confidence": null,
+        "id": "ror:048nfjm95",
+        "label": "National University of Ireland, Maynooth"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3652-7846",
+        "label": "Alexis Comber"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0259-4079",
+        "label": "Paul Harris"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4254-1780",
+        "label": "Chris Brunsdon"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10136",
+        "is_primary": true,
+        "label": "Statistical Methods and Inference",
+        "score": 0.2394,
+        "subfield": "2613"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10243",
+        "is_primary": false,
+        "label": "Statistical Methods and Bayesian Inference",
+        "score": 0.091,
+        "subfield": "2613"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11236",
+        "is_primary": false,
+        "label": "Control Systems and Identification",
+        "score": 0.0702,
+        "subfield": "2207"
+      }
+    ]
+  },
+  "first_published": "2026-07-21",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W142817872",
+      "openalex:W1678356000",
+      "openalex:W1829241487",
+      "openalex:W1967247922",
+      "openalex:W1971794754",
+      "openalex:W1984892485",
+      "openalex:W1993971295",
+      "openalex:W1996772792",
+      "openalex:W2003378737",
+      "openalex:W2029029049",
+      "openalex:W2033199053",
+      "openalex:W2047120335",
+      "openalex:W2058801639",
+      "openalex:W2059594294",
+      "openalex:W2076118331",
+      "openalex:W2083336903",
+      "openalex:W2085210969",
+      "openalex:W2087238274",
+      "openalex:W2098212684",
+      "openalex:W2118049491",
+      "openalex:W2119256498",
+      "openalex:W2121627922",
+      "openalex:W2154065358",
+      "openalex:W2168922980",
+      "openalex:W2509991828",
+      "openalex:W2559688945",
+      "openalex:W2580294918",
+      "openalex:W2593046461",
+      "openalex:W2605147858",
+      "openalex:W2747207142",
+      "openalex:W2787894218",
+      "openalex:W2902003317",
+      "openalex:W2957192340",
+      "openalex:W2963022999",
+      "openalex:W3002349758",
+      "openalex:W3016301822",
+      "openalex:W3048290715",
+      "openalex:W3112717819",
+      "openalex:W3118568032",
+      "openalex:W3122836240",
+      "openalex:W3122912982",
+      "openalex:W3124889194",
+      "openalex:W3126401530",
+      "openalex:W3161120817",
+      "openalex:W3163541942",
+      "openalex:W3182828618",
+      "openalex:W3216454795",
+      "openalex:W4220673162",
+      "openalex:W4224216167",
+      "openalex:W4238293282",
+      "openalex:W4241468802",
+      "openalex:W4251007063",
+      "openalex:W4387021255",
+      "openalex:W4387972838",
+      "openalex:W4392293785",
+      "openalex:W4400013985",
+      "openalex:W4405481466",
+      "openalex:W4405572883",
+      "openalex:W7126223455"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/13658816.2026.2671964",
+    "openalex": "W7169912451",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:15:15Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.003291,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2027,
+      "out": 254
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:15:15Z",
+    "doi": "10.1080/13658816.2026.2671964",
+    "journal": "International Journal of Geographical Information Systems",
+    "source_id": "S4210181446",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study introduces a method for multiscale space-time varying coefficient modeling by extending Generalized Additive Models (GAMs) into the temporal domain. The approach generates multiple competing GAMs with different space-time interaction specifications for each predictor, selecting the optimal model using the Akaike Information Criterion (AIC). When tested on simulated data and an empirical case study, the selected GAM outperformed Multiscale Geographically and Temporally Weighted Regression (MGTWR) in model fit.",
+      "why": "It provides a systematic way to determine the exact nature and scale of space-time dependencies in predictor-to-response relationships, relaxing rigid assumptions about how spatial and temporal variations interact."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-21",
+  "work_key": "doi:10.1080/13658816.2026.2671964"
+}

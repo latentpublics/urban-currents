@@ -1,0 +1,374 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "ABSTRACT Economic analysis of public sectors shows that regional heterogeneity, particularly in population density, significantly influences the provision of cost‐effective services. To balance service supply costs and spatial accessibility, different service standards are typically recommended for urban and rural areas. This paper proposes a novel location and size optimization model for planning emergency medical service (EMS) stations in urban and rural areas. The model incorporates distinct EMS planning parameters for both urban and rural regions. Using multi‐source big data, including population mobility and time‐dependent traffic, and dividing a day into multiple time periods, the model was validated through a case study in Zhengzhou, a megacity in China. The case study demonstrated that the proposed approach significantly enhanced the EMS system by optimizing the number of EMS stations, ambulances, and crews, while reducing the average emergency response times and improving service coverage, especially in rural areas. Furthermore, the proposed model outperformed existing planning approaches in urban–rural regions. The simulation results of EMS operations indicate that, compared to the existing EMS system, the optimized locations and sizes of EMS stations reduce facility and personnel costs while delivering faster response times and higher service coverage. Importantly, the model, algorithm, case study, and EMS operations simulation presented in this paper provide an effective solution for planning emergency stations in urban–rural regions, demonstrating strong practical value.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Geographical Institute",
+            "ror": "02j8vpa07"
+          },
+          {
+            "name": "Xuchang University",
+            "ror": "03k174p87"
+          }
+        ],
+        "name": "Guangli Zhang",
+        "openalex": "A5141210951",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Zhengzhou University",
+            "ror": "04ypx8c21"
+          },
+          {
+            "name": "Geographical Institute",
+            "ror": "02j8vpa07"
+          }
+        ],
+        "name": "Yunfeng Kong",
+        "openalex": "A5060409332",
+        "orcid": "https://orcid.org/0000-0002-0777-3116"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Zhengzhou Normal University",
+            "ror": "00cbts945"
+          }
+        ],
+        "name": "Rui Ma",
+        "openalex": "A5022546634",
+        "orcid": "https://orcid.org/0000-0003-0512-8751"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Geographical Institute",
+            "ror": "02j8vpa07"
+          }
+        ],
+        "name": "Z.L. Zhang",
+        "openalex": "A5063637566",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Geographical Institute",
+            "ror": "02j8vpa07"
+          }
+        ],
+        "name": "Chenchen Lian",
+        "openalex": "A5111100335",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Zhengzhou University",
+            "ror": "04ypx8c21"
+          },
+          {
+            "name": "Geographical Institute",
+            "ror": "02j8vpa07"
+          }
+        ],
+        "name": "Shiyan Zhai",
+        "openalex": "A5081335102",
+        "orcid": "https://orcid.org/0000-0002-1255-3513"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1111/tgis.70357",
+      "pdf_url": null,
+      "source_id": "S859791518",
+      "source_name": "Transactions in GIS",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-19",
+    "repository_urls": [],
+    "title": "Optimizing the Location and Size of Emergency Medical Service Stations in Urban–Rural Regions: A Case Study of Zhengzhou, China"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-19_10.1111/tgis.703",
+    "members": [
+      "doi:10.1111/tgis.70357"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02j8vpa07",
+        "label": "Geographical Institute"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03k174p87",
+        "label": "Xuchang University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04ypx8c21",
+        "label": "Zhengzhou University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00cbts945",
+        "label": "Zhengzhou Normal University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5141210951",
+        "label": "Guangli Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0777-3116",
+        "label": "Yunfeng Kong"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0512-8751",
+        "label": "Rui Ma"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5063637566",
+        "label": "Z.L. Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5111100335",
+        "label": "Chenchen Lian"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1255-3513",
+        "label": "Shiyan Zhai"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11502",
+        "is_primary": true,
+        "label": "Facility Location and Emergency Management",
+        "score": 0.9744,
+        "subfield": "1407"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0057,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11467",
+        "is_primary": false,
+        "label": "Trauma and Emergency Care Studies",
+        "score": 0.0037,
+        "subfield": "2711"
+      }
+    ]
+  },
+  "first_published": "2026-07-19",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1979677633",
+      "openalex:W1980782529",
+      "openalex:W2005736068",
+      "openalex:W2014346251",
+      "openalex:W2018146615",
+      "openalex:W2024862545",
+      "openalex:W2032074274",
+      "openalex:W2036652644",
+      "openalex:W2038933051",
+      "openalex:W2044596392",
+      "openalex:W2046767444",
+      "openalex:W2048292882",
+      "openalex:W2051682090",
+      "openalex:W2053490076",
+      "openalex:W2073268144",
+      "openalex:W2076338854",
+      "openalex:W2076424969",
+      "openalex:W2078138654",
+      "openalex:W2083698763",
+      "openalex:W2086477955",
+      "openalex:W2092413476",
+      "openalex:W2107990673",
+      "openalex:W2109962606",
+      "openalex:W2116669408",
+      "openalex:W2129060502",
+      "openalex:W2133613508",
+      "openalex:W2133676848",
+      "openalex:W2134771798",
+      "openalex:W2149303595",
+      "openalex:W2290068432",
+      "openalex:W2465463989",
+      "openalex:W2517204165",
+      "openalex:W2520481871",
+      "openalex:W2535533318",
+      "openalex:W2562963622",
+      "openalex:W2736516966",
+      "openalex:W2791726865",
+      "openalex:W2793538957",
+      "openalex:W2809172977",
+      "openalex:W2891930069",
+      "openalex:W2900453388",
+      "openalex:W2937610527",
+      "openalex:W3001739235",
+      "openalex:W3134250833",
+      "openalex:W3172874936",
+      "openalex:W3183813062",
+      "openalex:W3215386578",
+      "openalex:W4213258807",
+      "openalex:W4291900982",
+      "openalex:W4296180161",
+      "openalex:W4297478389",
+      "openalex:W4318044544",
+      "openalex:W4366251466",
+      "openalex:W4389524737",
+      "openalex:W4390731026",
+      "openalex:W4390886356",
+      "openalex:W4402771718",
+      "openalex:W4403987483"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1111/tgis.70357",
+    "openalex": "W7169777233",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:13:01Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005287,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2061,
+      "out": 244
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:13:01Z",
+    "doi": "10.1111/tgis.70357",
+    "journal": "Transactions in GIS",
+    "source_id": "S859791518",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance and cost-reduction claims are based on operational simulations rather than a real-world deployment.",
+      "what": "The study develops a location and size optimization model for emergency medical service (EMS) stations that applies distinct planning parameters to urban and rural areas. The model was validated in Zhengzhou, China, using multi-source big data including population mobility and time-dependent traffic across multiple daily time periods to optimize the distribution of stations, ambulances, and crews.",
+      "why": "It provides a planning framework that simultaneously reduces facility and personnel costs while improving emergency response times and service coverage, particularly addressing the spatial accessibility disparities in underserved rural areas."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-19",
+  "work_key": "doi:10.1111/tgis.70357"
+}

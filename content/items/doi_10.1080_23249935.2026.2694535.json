@@ -1,0 +1,273 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "A Neural-Network-embedded Generalised Ordered Response Probit (NNGORP) model captures nonlinear effects on latent propensity for ordered activity frequency outcomes. Jointly learning latent propensity and thresholds, it embeds neural representations into a probabilistic latent-index structure for counts, preserving a coherent discrete distribution over non-negative integers while capturing complex nonlinearities. Simulations verify accurate parameter and marginal effect recovery from a benchmark GORP. It models discretionary activity frequency using 60,309 tours from the 2019 Shanghai Household Travel Survey including sociodemographic, household, and built-environment variables. Results reveal nonlinearities and threshold responses for age, household employment, young children, bicycle ownership, and neighbourhood density. Structurally derived from the latent-index mechanism, partial dependence patterns reflect genuine behavioural processes rather than post-hoc approximations. Behavioural interpretation confirms structurally derived patterns provide more coherent, generalisable insights than SHAP from conventional ML. These findings deepen understanding of discretionary activity generation in high-density urban settings, informing travel demand management and planning.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Zhenghui Zhang",
+        "openalex": "A5140948342",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xin Ye",
+        "openalex": "A5140783712",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kun Huang",
+        "openalex": "A5140907486",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/23249935.2026.2694535",
+      "pdf_url": null,
+      "source_id": "S4210177949",
+      "source_name": "Transportmetrica A Transport Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-15",
+    "repository_urls": [],
+    "title": "Nonlinear determinants of discretionary activity episodes in non-mandatory tours"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-15_10.1080/23249935",
+    "members": [
+      "doi:10.1080/23249935.2026.2694535"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:travel-survey",
+        "label": "travel survey"
+      }
+    ],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03rc6as71",
+        "label": "Tongji University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5140948342",
+        "label": "Zhenghui Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140783712",
+        "label": "Xin Ye"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140907486",
+        "label": "Kun Huang"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q8686",
+        "label": "Shanghai",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.568,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.176,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0904,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-07-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1678356000",
+      "openalex:W1967444754",
+      "openalex:W2024208934",
+      "openalex:W2049390752",
+      "openalex:W2103496339",
+      "openalex:W2137983211",
+      "openalex:W2166116275",
+      "openalex:W2179490176",
+      "openalex:W2295598076",
+      "openalex:W2514865387",
+      "openalex:W2518496153",
+      "openalex:W2884638797",
+      "openalex:W2897555398",
+      "openalex:W2911964244",
+      "openalex:W3005148123",
+      "openalex:W3010264421",
+      "openalex:W3083430313",
+      "openalex:W3137266700",
+      "openalex:W3175630327",
+      "openalex:W3175648361",
+      "openalex:W3202889375",
+      "openalex:W3207571777",
+      "openalex:W3213567333",
+      "openalex:W4205676248",
+      "openalex:W4285585572",
+      "openalex:W4289518799",
+      "openalex:W4297539111",
+      "openalex:W4310986905",
+      "openalex:W4364322186",
+      "openalex:W4366975842",
+      "openalex:W4376465204",
+      "openalex:W4387401347",
+      "openalex:W4389284528",
+      "openalex:W4389833585",
+      "openalex:W4390473834",
+      "openalex:W4393343704",
+      "openalex:W4393388062",
+      "openalex:W4402301354",
+      "openalex:W4402771965",
+      "openalex:W4403035460",
+      "openalex:W4405753889",
+      "openalex:W4410868613"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/23249935.2026.2694535",
+    "openalex": "W7168403928",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:07:25Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005623,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1931,
+      "out": 303
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:07:25Z",
+    "doi": "10.1080/23249935.2026.2694535",
+    "journal": "Transportmetrica A Transport Science",
+    "source_id": "S4210177949",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical application and validation of the model are limited to a single high-density urban context using data from Shanghai.",
+      "what": "The study introduces a Neural-Network-embedded Generalised Ordered Response Probit (NNGORP) model to capture nonlinear effects on discrete activity counts. Using 60,309 tours from the 2019 Shanghai Household Travel Survey, the model analyzes how sociodemographic, household, and built-environment factors influence discretionary activity frequency, revealing threshold responses for variables like age, bicycle ownership, and neighborhood density.",
+      "why": "It provides a method to model complex, nonlinear travel behaviors within a coherent probabilistic framework, yielding structurally derived partial dependence patterns that are more behaviorally consistent and generalizable than post-hoc machine learning explanations like SHAP."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-15",
+  "work_key": "doi:10.1080/23249935.2026.2694535"
+}

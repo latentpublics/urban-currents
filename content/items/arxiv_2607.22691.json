@@ -1,0 +1,167 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban traffic congestion significantly increases fuel consumption, greenhouse gas emissions, and commuter delays, resulting in substantial economic losses and environmental harm in modern cities. Traditional traffic signal control strategies such as fixed-time scheduling, actuated control, and reinforcement learning (RL)-based methods, offer different degrees of adaptability; however, RL-based methods can require extensive retraining, careful reward design, and substantial simulation data when transferred across networks or demand regimes. To address these challenges, we propose HiLLTS, an LLM-guided traffic signal control framework that employs a hierarchical three-layer architecture consisting of a central coordination agent, a district layer and multiple cluster-level intersection agents. Experimental results demonstrate consistent improvements in both congestion and environmental performance. Compared with the strongest non-LLM baseline in each scenario, HiLLTS reduces average waiting time by 36.73% under the low-congestion scenario and 14.71% under the high-congestion scenario, while reducing average CO2 emissions by 7.87% and 8.57%, respectively. Larger gains are observed against weaker baselines: under low congestion, HiLLTS achieves reductions of up to 18.00% in emissions and 62.07% in waiting time relative to Fixed-Time control; under high congestion, reductions of up to 28.89% in emissions and 40.36% in waiting time are observed relative to Max Pressure. The ablation study further validates the contribution of LLM-guided coordination over rule-based control",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Yue Ding",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Tendai Mukande",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mingming Liu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.22691v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.22691v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-17",
+    "repository_urls": [],
+    "title": "HiLLTS: Zero-Shot Hierarchical LLM-Guided Traffic Signal Control for Sustainable Transportation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-17_2607.22691",
+    "members": [
+      "arxiv:2607.22691"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.22691",
+    "doi": "10.48550/arxiv.2607.22691",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:10:10Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005743,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2155,
+      "out": 279
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8387,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3355,
+    "relevance": 0.8387
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance gains and environmental metrics are evaluated within simulation environments rather than real-world physical deployments.",
+      "what": "The researchers developed HiLLTS, a hierarchical, three-layer Large Language Model framework for traffic signal control that coordinates vehicles across central, district, and cluster-level intersection agents. Tested under varying traffic demands, the zero-shot system reduced average commuter waiting times by 36.73% in low-congestion and 14.71% in high-congestion scenarios compared to the strongest non-LLM baselines, while simultaneously cutting CO2 emissions by 7.87% and 8.57% respectively.",
+      "why": "It demonstrates that LLM-guided coordination can manage complex urban traffic networks in a zero-shot manner, bypassing the extensive retraining, simulation data, and complex reward engineering required by traditional reinforcement learning approaches."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-17",
+  "work_key": "arxiv:2607.22691"
+}

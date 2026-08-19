@@ -1,0 +1,272 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Recent data-driven advances have improved traffic pattern prediction and management. Koopman mode decomposition (KMD) offers an interpretable, computationally efficient alternative to purely machine learning methods. Prior studies show that KMD performs well in long- and short-term single-variable prediction. Its ability to capture multivariate traffic interactions remains limited, especially flow–density relationships under varying discharge rates and missing or noisy data. Directly estimating flow from KMD-predicted speed and density may also violate traffic equilibrium principles. To address these gaps, this study integrates KMD with the cell transmission model (CTM), forming a hybrid KMD-CTM physical framework for missing data estimation and upstream–downstream traffic consistency. The framework models congested discharge dynamics using speed-dependent headway distributions and predicts density through CTM to capture nonlinear flow–density relationships. Compared with deep learning methods, KMD-CTM requires less offline training and hyperparameter tuning, captures hysteresis and capacity drop, and remains robust to missing or noisy data.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Shanghai for Science and Technology",
+            "ror": "00ay9v204"
+          }
+        ],
+        "name": "Jiawen Wang",
+        "openalex": "A5140952144",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Rensselaer Polytechnic Institute",
+            "ror": "01rtyzb94"
+          }
+        ],
+        "name": "Linzhi Zou",
+        "openalex": "A5140934852",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Rensselaer Polytechnic Institute",
+            "ror": "01rtyzb94"
+          }
+        ],
+        "name": "Xiaozheng He",
+        "openalex": "A5140764002",
+        "orcid": "https://orcid.org/0000-0002-1633-4748"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/21680566.2026.2701759",
+      "pdf_url": null,
+      "source_id": "S2498450034",
+      "source_name": "Transportmetrica B Transport Dynamics",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-15",
+    "repository_urls": [],
+    "title": "Koopman-enhanced spaciotemporal traffic prediction model for high-order phenomena"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-15_10.1080/21680566",
+    "members": [
+      "doi:10.1080/21680566.2026.2701759"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00ay9v204",
+        "label": "University of Shanghai for Science and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01rtyzb94",
+        "label": "Rensselaer Polytechnic Institute"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5140952144",
+        "label": "Jiawen Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140934852",
+        "label": "Linzhi Zou"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1633-4748",
+        "label": "Xiaozheng He"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.4543,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.4451,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10138",
+        "is_primary": false,
+        "label": "Network Traffic and Congestion Control",
+        "score": 0.0101,
+        "subfield": "1705"
+      }
+    ]
+  },
+  "first_published": "2026-07-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2032549372",
+      "openalex:W2037141248",
+      "openalex:W2078873956",
+      "openalex:W2093921901",
+      "openalex:W2095797625",
+      "openalex:W2151221872",
+      "openalex:W2510030309",
+      "openalex:W2607883279",
+      "openalex:W2802202720",
+      "openalex:W2804772865",
+      "openalex:W2850015038",
+      "openalex:W2891280833",
+      "openalex:W2991844785",
+      "openalex:W3012438303",
+      "openalex:W3023505194",
+      "openalex:W3093456443",
+      "openalex:W3096866065",
+      "openalex:W3107856286",
+      "openalex:W3129637124",
+      "openalex:W3164376315",
+      "openalex:W3214476434",
+      "openalex:W4285237553",
+      "openalex:W4285254487",
+      "openalex:W4285275791",
+      "openalex:W4313894521",
+      "openalex:W4319663623",
+      "openalex:W4323338523",
+      "openalex:W4353078146",
+      "openalex:W4377197269",
+      "openalex:W4378469070",
+      "openalex:W4379530777",
+      "openalex:W4385656670",
+      "openalex:W4385923102",
+      "openalex:W4391089832",
+      "openalex:W4393059239",
+      "openalex:W4399453110",
+      "openalex:W4401452483",
+      "openalex:W4403862296",
+      "openalex:W4409981542"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/21680566.2026.2701759",
+    "openalex": "W7168357466",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:07:25Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.004894,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1919,
+      "out": 224
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:07:25Z",
+    "doi": "10.1080/21680566.2026.2701759",
+    "journal": "Transportmetrica B Transport Dynamics",
+    "source_id": "S2498450034",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study develops KMD-CTM, a hybrid physical framework that integrates Koopman mode decomposition with the cell transmission model to predict traffic density and flow. The model incorporates speed-dependent headway distributions to capture congested discharge dynamics, hysteresis, and capacity drops while maintaining physical consistency between upstream and downstream traffic.",
+      "why": "It provides a computationally efficient traffic prediction method that requires less offline training and hyperparameter tuning than deep learning models, while remaining robust to noisy or missing data and adhering to traffic equilibrium principles."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-15",
+  "work_key": "doi:10.1080/21680566.2026.2701759"
+}

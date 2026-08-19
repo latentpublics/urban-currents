@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Monitoring poverty and food security indicators is imperative for addressing socioeconomic challenges in developing nations. A limitation is mismatches in scale between data sources: census data provide geographic coverage, while socioeconomic indicators are derived from infrequently conducted surveys at coarse resolutions, posing a methodological challenge. This study introduces a deep learning framework, JuGAAD, using Indian census and survey data from 2001 and 2011 as a case study. We employ a three-step process: census and geospatial data are averaged into intermediate village-cluster-scale tessellations to reduce noise and regularize administrative boundary changes; an autoencoder compresses high-dimensional National Sample Survey Office (NSSO) data into a low-dimensional latent representation; and a regression model maps upscaled census and geospatial data to this representation. This function is applied to fine-grained census data to generate high-resolution predictions, validated against ground-truth district-level NSSO indicators. Results confirm the methodology predicts socioeconomic indicators at fine scales with strong accuracy.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Aditya Dutt",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Paul Gader",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Aditya Singh",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.20559v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.20559v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-17",
+    "repository_urls": [],
+    "title": "Joint Utilization of Geospatial and census proxies for Autoencoder-Assisted Downscaling (JUGAAD) of socioeconomic indicators in India"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-17_2607.20559",
+    "members": [
+      "arxiv:2607.20559"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.20559",
+    "doi": "10.48550/arxiv.2607.20559",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:10:10Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005656,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1941,
+      "out": 305
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9153,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3661,
+    "relevance": 0.9153
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2001 and 2011",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's predictions are validated against ground-truth indicators aggregated at the district level rather than direct village-level observations.",
+      "what": "The researchers developed JuGAAD, a deep learning framework that downscales coarse socioeconomic indicators to fine-grained village-cluster scales. Using Indian census and National Sample Survey Office (NSSO) data from 2001 and 2011, the method averages geospatial and census data into intermediate tessellations, compresses high-dimensional survey data using an autoencoder, and maps the physical and demographic data to this latent representation to predict local poverty and food security indicators.",
+      "why": "It provides a method to bridge the scale gap between high-resolution census data and coarse, infrequent socioeconomic surveys, allowing planners to estimate local poverty metrics at a fine administrative scale without waiting for new, expensive field surveys."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-17",
+  "work_key": "arxiv:2607.20559"
+}

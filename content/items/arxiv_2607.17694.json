@@ -1,0 +1,167 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban transportation systems generate heterogeneous data, yet these data do not automatically become actionable management intelligence. This chapter adopts a behavior-centered perspective on artificial intelligence (AI), treating mobility records and passenger-generated text as behavioral evidence rather than behavioral truth. It examines four directions: bus arrival prediction for service reliability, taxi mobility pattern discovery for demand analysis and planning, abnormal behavior detection for accountable regulatory support, and passenger-perceived risk mining for service improvement. These directions are integrated through a closed-loop framework linking data input, behavior representation, AI inference, decision support, public value, and governance feedback. The chapter identifies data quality, privacy, fairness, interpretability, uncertainty, transferability, and human accountability as essential conditions for deployment. It thereby establishes a unified pathway from behavioral evidence to operational, planning, regulatory, and passenger-service decisions.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Junbiao Pang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Muhammad Ayub Sabir",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Fatima Ashraf",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.17694v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.17694v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-20",
+    "repository_urls": [],
+    "title": "Artificial Intelligence for Understanding and Managing Transportation Behavior in Sustainable Smart Cities"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-20_2607.17694",
+    "members": [
+      "arxiv:2607.17694"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-20",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.17694",
+    "doi": "10.48550/arxiv.2607.17694",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:13:59Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005161,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1845,
+      "out": 266
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9882,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3953,
+    "relevance": 0.9882
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework is conceptual and synthesis-based, rather than presenting a new empirical dataset or a specific algorithmic deployment.",
+      "what": "This book chapter presents a behavior-centered framework that treats mobility records and passenger-generated text as behavioral evidence rather than absolute truth. It synthesizes four application areas: predicting bus arrivals, analyzing taxi mobility patterns, detecting abnormal behaviors for regulatory oversight, and mining passenger-perceived risks from text. These areas are structured into a closed-loop system connecting data input, AI inference, decision support, and governance feedback.",
+      "why": "It establishes a unified conceptual pathway to translate raw, heterogeneous urban transit data into actionable operational, planning, and regulatory decisions while explicitly accounting for deployment challenges like data quality, privacy, and human accountability."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-20",
+  "work_key": "arxiv:2607.17694"
+}

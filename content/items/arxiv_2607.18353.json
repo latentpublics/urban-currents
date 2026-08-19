@@ -1,0 +1,188 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "In traffic accident risk prediction, most studies overlook the extra noise that could be incorporated when fusing temporal features into spatial features, and some models struggle to capture global correlations among spatial regions. To address these challenges, we propose a novel traffic accident risk prediction framework named MambaLSTM. First, we develop a squeeze-and-excitation temporal feature fusion module to integrate temporal information without compromising spatio-temporal integrity. Second, we introduce a new patch embedding module for effectively capturing semantic relationships among spatially adjacent regions. Additionally, we introduce a Mamba block based on state-space models to model global spatial semantics in urban regions. Finally, we propose a MambaLSTM unit to efficiently capture long- and short-term temporal dependencies for identifying dynamic risk patterns. Extensive experiments on real-world datasets demonstrate the proposed model's superiority over state-of-the-art methods. The code is released at https://github.com/Zhenzovo/MambaLSTM.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Zhen Yu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yachao Yuan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zixiang Peng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Muting Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Thar Baker",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.18353v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.18353v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-20",
+    "repository_urls": [],
+    "title": "MambaLSTM: A Spatio-Temporal Framework for Enhanced Traffic Accident Risk Prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-20_2607.18353",
+    "members": [
+      "arxiv:2607.18353"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:rnn",
+        "label": "recurrent neural network"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-20",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.18353",
+    "doi": "10.48550/arxiv.2607.18353",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:13:59Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004898,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1903,
+      "out": 227
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.8,
+      "novelty": 0.0,
+      "relevance": 0.8381,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4952,
+    "relevance": 0.8381
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/Zhenzovo/MambaLSTM",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The MambaLSTM framework predicts traffic accident risk by combining a squeeze-and-excitation temporal feature fusion module, a patch embedding module for adjacent spatial semantics, and a state-space Mamba block to capture global spatial correlations. The model also incorporates a specialized MambaLSTM unit to track both long- and short-term temporal dependencies across urban regions.",
+      "why": "It prevents the introduction of noise during the fusion of spatial and temporal features while capturing global spatial relationships that traditional local-convolution models miss."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-20",
+  "work_key": "arxiv:2607.18353"
+}

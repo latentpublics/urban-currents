@@ -1,0 +1,762 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Uncertainty fundamentally shapes human perception and decision-making, a factor that is becoming increasingly critical as autonomous vehicles (AVs) begin to share physical and social spaces with humans. This perspective paper synthesizes insights from neuroscience, robotics, and behavioral science represent uncertainty and act under it. We identify a significant disconnect between low-level mathematical concepts of uncertainty and risk, the uncertainty-aware prediction and planning methods used in robotics, and the high-level psychological uncertainty experienced by humans. Here, we conceptualize an integration pathway for mixed-mode mobility: we show that all three treat control under partial information as the same two-stage problem – probabilistic inference of the current and future state, followed by a risk -weighted choice of action – and we make this shared structure explicit. We thus argue that AVs should quantify and calibrate their own uncertainty, select risk metrics that reflect both individual and collective safety, model how their actions shape human uncertainty and behavior, and communicate intent and confidence in ways that support predictable interaction. This synthesis positions psychological uncertainty as a behaviorally relevant variable for AV design and outlines a research agenda for safer, more understandable transport systems.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Radboud University Nijmegen",
+            "ror": "016xsfp80"
+          }
+        ],
+        "name": "J.R.E. Cooke",
+        "openalex": "A5141110563",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Netherlands Aerospace Centre",
+            "ror": "022sw4578"
+          },
+          {
+            "name": "Eindhoven University of Technology",
+            "ror": "02c2kyt77"
+          }
+        ],
+        "name": "S.N. Lingam",
+        "openalex": "A5141089911",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Amsterdam",
+            "ror": "04dkp9463"
+          }
+        ],
+        "name": "P. Alavian",
+        "openalex": "A5141060422",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Van Lodenstein College",
+            "ror": "02dnd4c36"
+          }
+        ],
+        "name": "C. Collast",
+        "openalex": "A5141099337",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "G.C.H.E. de Croon",
+        "openalex": "A5141079790",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Eindhoven University of Technology",
+            "ror": "02c2kyt77"
+          }
+        ],
+        "name": "M. Franssen",
+        "openalex": "A5141086933",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "J. Hagenaars",
+        "openalex": "A5071902255",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "J. Kober",
+        "openalex": "A5141102666",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "P. Morsink",
+        "openalex": "A5086901292",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Radboud University Nijmegen",
+            "ror": "016xsfp80"
+          }
+        ],
+        "name": "K. Liu",
+        "openalex": "A5061992371",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Holst Centre (Netherlands)",
+            "ror": "04abpa862"
+          }
+        ],
+        "name": "Y-H. Liu",
+        "openalex": "A5141080817",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "E. Matthews",
+        "openalex": "A5141052158",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Amsterdam",
+            "ror": "04dkp9463"
+          }
+        ],
+        "name": "J. Mejias",
+        "openalex": "A5141080471",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "A. Palffy",
+        "openalex": "A5141093929",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Amsterdam",
+            "ror": "04dkp9463"
+          }
+        ],
+        "name": "C.M.A. Pennartz",
+        "openalex": "A5141111098",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "NXP (Netherlands)",
+            "ror": "059be4e97"
+          }
+        ],
+        "name": "W. Sanberg",
+        "openalex": "A5141082173",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Radboud University Nijmegen",
+            "ror": "016xsfp80"
+          }
+        ],
+        "name": "L. Selen",
+        "openalex": "A5141067671",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Centrum Wiskunde & Informatica",
+            "ror": "00x7ekv49"
+          },
+          {
+            "name": "Maastricht University",
+            "ror": "02jz4aj89"
+          }
+        ],
+        "name": "T. Sun",
+        "openalex": "A5141073706",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Gemeente Den Haag",
+            "ror": "03w387231"
+          },
+          {
+            "name": "Stichting Wetenschappelijk Onderzoek Verkeersveiligheid",
+            "ror": "053tsx367"
+          }
+        ],
+        "name": "N. Nes",
+        "openalex": "A5129324484",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Eindhoven University of Technology",
+            "ror": "02c2kyt77"
+          }
+        ],
+        "name": "R. Verstegen",
+        "openalex": "A5141092111",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Netherlands Organisation for Applied Scientific Research",
+            "ror": "01bnjb948"
+          },
+          {
+            "name": "Eindhoven University of Technology",
+            "ror": "02c2kyt77"
+          }
+        ],
+        "name": "M. Martens",
+        "openalex": "A5141096643",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "J. Alsono-Mora",
+        "openalex": "A5141079821",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Radboud University Nijmegen",
+            "ror": "016xsfp80"
+          }
+        ],
+        "name": "W.P. Medendorp",
+        "openalex": "A5141105622",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Centrum Wiskunde & Informatica",
+            "ror": "00x7ekv49"
+          },
+          {
+            "name": "University of Amsterdam",
+            "ror": "04dkp9463"
+          }
+        ],
+        "name": "Sander M. Bohté",
+        "openalex": "A5005914878",
+        "orcid": "https://orcid.org/0000-0002-7866-278X"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102141",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-17",
+    "repository_urls": [],
+    "title": "Navigating uncertainty: Safety solutions for autonomous vehicle integration into mixed-mode mobility"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-17_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102141"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:016xsfp80",
+        "label": "Radboud University Nijmegen"
+      },
+      {
+        "confidence": null,
+        "id": "ror:022sw4578",
+        "label": "Netherlands Aerospace Centre"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02c2kyt77",
+        "label": "Eindhoven University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04dkp9463",
+        "label": "University of Amsterdam"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02dnd4c36",
+        "label": "Van Lodenstein College"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02e2c7k09",
+        "label": "Delft University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04abpa862",
+        "label": "Holst Centre (Netherlands)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:059be4e97",
+        "label": "NXP (Netherlands)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00x7ekv49",
+        "label": "Centrum Wiskunde & Informatica"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02jz4aj89",
+        "label": "Maastricht University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03w387231",
+        "label": "Gemeente Den Haag"
+      },
+      {
+        "confidence": null,
+        "id": "ror:053tsx367",
+        "label": "Stichting Wetenschappelijk Onderzoek Verkeersveiligheid"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01bnjb948",
+        "label": "Netherlands Organisation for Applied Scientific Research"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5141110563",
+        "label": "J.R.E. Cooke"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141089911",
+        "label": "S.N. Lingam"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141060422",
+        "label": "P. Alavian"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141099337",
+        "label": "C. Collast"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141079790",
+        "label": "G.C.H.E. de Croon"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141086933",
+        "label": "M. Franssen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5071902255",
+        "label": "J. Hagenaars"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141102666",
+        "label": "J. Kober"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5086901292",
+        "label": "P. Morsink"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5061992371",
+        "label": "K. Liu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141080817",
+        "label": "Y-H. Liu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141052158",
+        "label": "E. Matthews"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141080471",
+        "label": "J. Mejias"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141093929",
+        "label": "A. Palffy"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141111098",
+        "label": "C.M.A. Pennartz"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141082173",
+        "label": "W. Sanberg"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141067671",
+        "label": "L. Selen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141073706",
+        "label": "T. Sun"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5129324484",
+        "label": "N. Nes"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141092111",
+        "label": "R. Verstegen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141096643",
+        "label": "M. Martens"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141079821",
+        "label": "J. Alsono-Mora"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141105622",
+        "label": "W.P. Medendorp"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7866-278X",
+        "label": "Sander M. Bohté"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": true,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.701,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13295",
+        "is_primary": false,
+        "label": "Safety Systems Engineering in Autonomy",
+        "score": 0.0746,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10805",
+        "is_primary": false,
+        "label": "Vehicle Dynamics and Control Systems",
+        "score": 0.0586,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-07-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1956636948",
+      "openalex:W1961585049",
+      "openalex:W1969090956",
+      "openalex:W1977028556",
+      "openalex:W1980440818",
+      "openalex:W1981578159",
+      "openalex:W1982921646",
+      "openalex:W1986201898",
+      "openalex:W1991512494",
+      "openalex:W1995872345",
+      "openalex:W2001498147",
+      "openalex:W2004873925",
+      "openalex:W2016464464",
+      "openalex:W2027591506",
+      "openalex:W2027600769",
+      "openalex:W2047125104",
+      "openalex:W2054430476",
+      "openalex:W2055473086",
+      "openalex:W2059916607",
+      "openalex:W2064617097",
+      "openalex:W2066213880",
+      "openalex:W2068485163",
+      "openalex:W2071419362",
+      "openalex:W2073302652",
+      "openalex:W2080415654",
+      "openalex:W2094342172",
+      "openalex:W2101576232",
+      "openalex:W2109203825",
+      "openalex:W2119885245",
+      "openalex:W2120741941",
+      "openalex:W2123179704",
+      "openalex:W2125663122",
+      "openalex:W2126517582",
+      "openalex:W2127543179",
+      "openalex:W2127958135",
+      "openalex:W2131215403",
+      "openalex:W2132003317",
+      "openalex:W2133355507",
+      "openalex:W2133877521",
+      "openalex:W2143074722",
+      "openalex:W2148962857",
+      "openalex:W2154409534",
+      "openalex:W2167362547",
+      "openalex:W2168359464",
+      "openalex:W2174109782",
+      "openalex:W2198792286",
+      "openalex:W2236244207",
+      "openalex:W2259909269",
+      "openalex:W2262446438",
+      "openalex:W2280725856",
+      "openalex:W2285644164",
+      "openalex:W2286247980",
+      "openalex:W2313791856",
+      "openalex:W2332079078",
+      "openalex:W2538677090",
+      "openalex:W2561313130",
+      "openalex:W2625531224",
+      "openalex:W2765438554",
+      "openalex:W2787984105",
+      "openalex:W2795496197",
+      "openalex:W2795815943",
+      "openalex:W2851355811",
+      "openalex:W2886212664",
+      "openalex:W2891503421",
+      "openalex:W2906628916",
+      "openalex:W2921602285",
+      "openalex:W2922532683",
+      "openalex:W2949885588",
+      "openalex:W2963001155",
+      "openalex:W2963054961",
+      "openalex:W2963697717",
+      "openalex:W2963732412",
+      "openalex:W2971804450",
+      "openalex:W2980994530",
+      "openalex:W2984193447",
+      "openalex:W2990116160",
+      "openalex:W2995825260",
+      "openalex:W2999042988",
+      "openalex:W3011630888",
+      "openalex:W3042855730",
+      "openalex:W3047911290",
+      "openalex:W3104747504",
+      "openalex:W3112927097",
+      "openalex:W3120608372",
+      "openalex:W3127454018",
+      "openalex:W3134972302",
+      "openalex:W3140646774",
+      "openalex:W3155745143",
+      "openalex:W3158690355",
+      "openalex:W3159022532",
+      "openalex:W3163930758",
+      "openalex:W3170672542",
+      "openalex:W3200913209",
+      "openalex:W3206297794",
+      "openalex:W3211098576",
+      "openalex:W4200396728",
+      "openalex:W4200432657",
+      "openalex:W4205457214",
+      "openalex:W4210457203",
+      "openalex:W4210479552",
+      "openalex:W4220997361",
+      "openalex:W4236874811",
+      "openalex:W4243342770",
+      "openalex:W4248588746",
+      "openalex:W4318570105",
+      "openalex:W4318982572",
+      "openalex:W4383112515",
+      "openalex:W4386026219",
+      "openalex:W4388100051",
+      "openalex:W4388469941",
+      "openalex:W4388579802",
+      "openalex:W4390967736",
+      "openalex:W4402528203",
+      "openalex:W4402917142",
+      "openalex:W4402943382",
+      "openalex:W4403310779",
+      "openalex:W4404565513",
+      "openalex:W4405993769",
+      "openalex:W4409442831",
+      "openalex:W4410907146",
+      "openalex:W4413108012",
+      "openalex:W4415033393",
+      "openalex:W4416179381",
+      "openalex:W7124254759",
+      "openalex:W7133213690",
+      "openalex:W7133226698",
+      "openalex:W7133488112",
+      "openalex:W7165054186"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102141",
+    "openalex": "W7169615272",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:10:12Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.004912,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1973,
+      "out": 217
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:10:12Z",
+    "doi": "10.1016/j.trip.2026.102141",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This perspective paper synthesizes research across neuroscience, robotics, and behavioral science to map how autonomous vehicles (AVs) and humans represent and act under uncertainty. It establishes a shared two-stage framework of control under partial information—probabilistic inference followed by risk-weighted action selection—to bridge the gap between mathematical risk models, robotic planning, and human psychological uncertainty.",
+      "why": "It establishes human psychological uncertainty as a concrete, behaviorally relevant variable for AV engineering, providing a conceptual pathway to design self-driving systems that actively model and reduce the uncertainty of the humans sharing the road with them."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-17",
+  "work_key": "doi:10.1016/j.trip.2026.102141"
+}

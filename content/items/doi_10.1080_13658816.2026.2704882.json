@@ -1,0 +1,282 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Existing methods for digital elevation model (DEM) super-resolution cannot stably generate high-resolution DEMs, especially when transferred to target (test) regions with significant terrain spatial heterogeneity compared to the source (training) region. To address this problem, we propose a geographical knowledge-guided transfer learning framework (GKTLF) for cross-regional DEM super-resolution. Specifically, a cross-regional transfer strategy was designed to preserve terrain features in the source region and extract terrain features from the target region. Additionally, a geographical feature guidance strategy was introduced to integrate geographical knowledge, including masked terrain skeleton lines and slope features. Finally, a terrain similarity measurement method was developed to quantify terrain spatial heterogeneity. The experimental results showed that the proposed GKTLF achieved superior performance over the baseline networks across four test regions in China. Compared to enhanced super-resolution generative adversarial networks (ESRGANs), the GKTLF-enhanced ESRGAN achieved improvements in accuracy of 35.8, 25.2, 19.7, and 4.6% with full-sample pre-training and 31.2, 26.5, 20.4, and 2.5% when only 40% of samples were pretrained across the four test regions. This study can help mitigate significant cross-regional terrain spatial heterogeneity and provide a valuable reference for related research.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Nanjing University of Information Science and Technology",
+            "ror": "02y0rxk19"
+          }
+        ],
+        "name": "XiaoYi Han",
+        "openalex": "A5140449824",
+        "orcid": "https://orcid.org/0009-0002-7504-4414"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Nanjing University of Information Science and Technology",
+            "ror": "02y0rxk19"
+          }
+        ],
+        "name": "Manchun Li",
+        "openalex": "A5101469341",
+        "orcid": "https://orcid.org/0000-0003-1088-309X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Nanjing University of Information Science and Technology",
+            "ror": "02y0rxk19"
+          }
+        ],
+        "name": "Zhenjie Chen",
+        "openalex": "A5086116798",
+        "orcid": "https://orcid.org/0000-0002-3033-8470"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Nanjing University of Information Science and Technology",
+            "ror": "02y0rxk19"
+          }
+        ],
+        "name": "Chen Zhou",
+        "openalex": "A5073377159",
+        "orcid": "https://orcid.org/0000-0002-2707-2624"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/13658816.2026.2704882",
+      "pdf_url": null,
+      "source_id": "S4210181446",
+      "source_name": "International Journal of Geographical Information Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-21",
+    "repository_urls": [],
+    "title": "GKTLF: a geographical knowledge-guided transfer learning framework for cross-regional DEM super-resolution"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-21_10.1080/13658816",
+    "members": [
+      "doi:10.1080/13658816.2026.2704882"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02y0rxk19",
+        "label": "Nanjing University of Information Science and Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-7504-4414",
+        "label": "XiaoYi Han"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1088-309X",
+        "label": "Manchun Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3033-8470",
+        "label": "Zhenjie Chen"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2707-2624",
+        "label": "Chen Zhou"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11105",
+        "is_primary": true,
+        "label": "Advanced Image Processing Techniques",
+        "score": 0.3924,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11659",
+        "is_primary": false,
+        "label": "Advanced Image Fusion Techniques",
+        "score": 0.2422,
+        "subfield": "2214"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11307",
+        "is_primary": false,
+        "label": "Domain Adaptation and Few-Shot Learning",
+        "score": 0.1,
+        "subfield": "1702"
+      }
+    ]
+  },
+  "first_published": "2026-07-21",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1885185971",
+      "openalex:W1971414292",
+      "openalex:W2032075694",
+      "openalex:W2133665775",
+      "openalex:W2137089646",
+      "openalex:W2415472909",
+      "openalex:W2588000623",
+      "openalex:W2913148696",
+      "openalex:W2936185297",
+      "openalex:W2963026768",
+      "openalex:W3124269386",
+      "openalex:W3163720395",
+      "openalex:W3180225402",
+      "openalex:W3198113718",
+      "openalex:W3215646032",
+      "openalex:W4205693143",
+      "openalex:W4280654353",
+      "openalex:W4313576642",
+      "openalex:W4362699254",
+      "openalex:W4376506438",
+      "openalex:W4381804323",
+      "openalex:W4388591959",
+      "openalex:W4391547653",
+      "openalex:W4394567131",
+      "openalex:W4399449433",
+      "openalex:W4403027303",
+      "openalex:W4403082086",
+      "openalex:W4406313924",
+      "openalex:W4407803762",
+      "openalex:W4408927622",
+      "openalex:W7128426876"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/13658816.2026.2704882",
+    "openalex": "W7169827815",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:15:15Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006151,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2091,
+      "out": 335
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:15:15Z",
+    "doi": "10.1080/13658816.2026.2704882",
+    "journal": "International Journal of Geographical Information Systems",
+    "source_id": "S4210181446",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance gains varied widely across the four test regions, with accuracy improvements ranging from a high of 35.8% down to just 4.6% under full pre-training.",
+      "what": "The researchers developed the Geographical Knowledge-guided Transfer Learning Framework (GKTLF) to improve cross-regional digital elevation model (DEM) super-resolution. The framework incorporates terrain skeleton lines and slope features, and uses a terrain similarity metric to handle spatial heterogeneity across regions. Tested across four regions in China, the GKTLF-enhanced ESRGAN model improved accuracy by up to 35.8% under full-sample pre-training and up to 31.2% when using only 40% of pre-training samples compared to standard ESRGAN baselines.",
+      "why": "It provides a method to generate high-resolution elevation models in target regions that have highly different terrain characteristics from the training regions, reducing the performance drop typically caused by spatial heterogeneity."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-21",
+  "work_key": "doi:10.1080/13658816.2026.2704882"
+}

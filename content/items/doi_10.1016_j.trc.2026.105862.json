@@ -1,0 +1,385 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Mobility trajectories are essential for understanding urban dynamics and enhancing urban planning, yet access to such data is frequently hindered by privacy concerns. This research introduces a transformative framework for generating large-scale urban mobility trajectories, employing a novel application of a transformer-based model pre-trained and fine-tuned through a two-phase process. Initially, trajectory generation is conceptualized as an offline reinforcement learning (RL) problem, with a significant reduction in vocabulary space achieved during tokenization. The integration of Inverse Reinforcement Learning (IRL) allows for the capture of trajectory-wise reward signals, leveraging historical data to infer individual mobility preferences. Subsequently, the pre-trained model is fine-tuned using the constructed reward model, effectively addressing the challenges inherent in traditional RL-based autoregressive methods, such as long-term credit assignment and handling of sparse reward environments. Comprehensive evaluations on multiple datasets illustrate that our framework markedly surpasses existing models in terms of reliability and diversity. Our findings not only advance the field of urban mobility modeling but also provide a robust methodology for simulating urban data, with significant implications for traffic management and urban development planning. The implementation is publicly available at https://github.com/Wangjw6/TrajGPT_R.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Tokyo Hospital",
+            "ror": "022cvpj02"
+          },
+          {
+            "name": "The University of Tokyo",
+            "ror": "057zh3y96"
+          }
+        ],
+        "name": "Jiawei Wang",
+        "openalex": "A5140889529",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Tokyo Hospital",
+            "ror": "022cvpj02"
+          },
+          {
+            "name": "The University of Tokyo",
+            "ror": "057zh3y96"
+          }
+        ],
+        "name": "Chuang Yang",
+        "openalex": "A5140923067",
+        "orcid": "https://orcid.org/0000-0002-8504-0057"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Toyota Motor Corporation (Japan)",
+            "ror": "02zqm6r10"
+          }
+        ],
+        "name": "Jiawei Yong",
+        "openalex": "A5140766663",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Tokyo Hospital",
+            "ror": "022cvpj02"
+          },
+          {
+            "name": "The University of Tokyo",
+            "ror": "057zh3y96"
+          }
+        ],
+        "name": "Xiaohang Xu",
+        "openalex": "A5140864280",
+        "orcid": "https://orcid.org/0000-0003-1266-9943"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Tokyo Hospital",
+            "ror": "022cvpj02"
+          },
+          {
+            "name": "The University of Tokyo",
+            "ror": "057zh3y96"
+          }
+        ],
+        "name": "Hongjun Wang",
+        "openalex": "A5140914893",
+        "orcid": "https://orcid.org/0000-0002-5396-7659"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Tokyo Hospital",
+            "ror": "022cvpj02"
+          },
+          {
+            "name": "The University of Tokyo",
+            "ror": "057zh3y96"
+          }
+        ],
+        "name": "Noboru Koshizuka",
+        "openalex": "A5140848860",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Toyota Motor Corporation (Japan)",
+            "ror": "02zqm6r10"
+          }
+        ],
+        "name": "Shintaro Fukushima",
+        "openalex": "A5140812044",
+        "orcid": "https://orcid.org/0000-0002-8788-5555"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Tokyo Hospital",
+            "ror": "022cvpj02"
+          },
+          {
+            "name": "The University of Tokyo",
+            "ror": "057zh3y96"
+          }
+        ],
+        "name": "Ryosuke Shibasaki",
+        "openalex": "A5140898675",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Tokyo Hospital",
+            "ror": "022cvpj02"
+          },
+          {
+            "name": "The University of Tokyo",
+            "ror": "057zh3y96"
+          }
+        ],
+        "name": "Renhe Jiang",
+        "openalex": "A5140920472",
+        "orcid": "https://orcid.org/0000-0003-2593-4638"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105862",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-15",
+    "repository_urls": [],
+    "title": "TrajGPT-R: Generating urban mobility trajectory with reinforcement Learning-Enhanced generative Pre-trained transformer"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-15_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105862"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:022cvpj02",
+        "label": "University of Tokyo Hospital"
+      },
+      {
+        "confidence": null,
+        "id": "ror:057zh3y96",
+        "label": "The University of Tokyo"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02zqm6r10",
+        "label": "Toyota Motor Corporation (Japan)"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5140889529",
+        "label": "Jiawei Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8504-0057",
+        "label": "Chuang Yang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140766663",
+        "label": "Jiawei Yong"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1266-9943",
+        "label": "Xiaohang Xu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5396-7659",
+        "label": "Hongjun Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140848860",
+        "label": "Noboru Koshizuka"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8788-5555",
+        "label": "Shintaro Fukushima"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140898675",
+        "label": "Ryosuke Shibasaki"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2593-4638",
+        "label": "Renhe Jiang"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.3431,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.1821,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0787,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-07-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1982300822",
+      "openalex:W1988580225",
+      "openalex:W2071785075",
+      "openalex:W2753027776",
+      "openalex:W2982076623",
+      "openalex:W2988217457",
+      "openalex:W3048236912",
+      "openalex:W3096831136",
+      "openalex:W3098208509",
+      "openalex:W3155596533",
+      "openalex:W3157716083",
+      "openalex:W4205711760",
+      "openalex:W4385657669",
+      "openalex:W4392672602",
+      "openalex:W4393373198",
+      "openalex:W4402475013",
+      "openalex:W4410394432",
+      "openalex:W7093077068",
+      "openalex:W7133211372",
+      "openalex:W7133216054",
+      "openalex:W7133238010"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105862",
+    "openalex": "W7168422906",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:07:24Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005246,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2015,
+      "out": 247
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:07:24Z",
+    "doi": "10.1016/j.trc.2026.105862",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/Wangjw6/TrajGPT_R",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed TrajGPT-R, a transformer-based framework that generates urban mobility trajectories by framing the task as an offline reinforcement learning problem. The model reduces vocabulary space during tokenization and uses Inverse Reinforcement Learning to capture trajectory-wise reward signals from historical data, which are then used to fine-tune the pre-trained model. Evaluations across multiple datasets demonstrate that this approach outperforms existing generative models in trajectory reliability and diversity.",
+      "why": "It provides a robust methodology for simulating realistic, privacy-preserving urban mobility data, overcoming traditional reinforcement learning limitations like sparse rewards and long-term credit assignment in autoregressive generation."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-15",
+  "work_key": "doi:10.1016/j.trc.2026.105862"
+}

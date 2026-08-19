@@ -1,0 +1,342 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Accurate real-time train motion modeling is important for advanced railway control to increase line capacity and reduce energy use. However, key dynamic parameters in train motion modeling, including train mass and running resistance, are typically unavailable in real time, particularly for freight trains, where variability in customer needs and operational conditions results in significant uncertainty. In this paper, we propose a hybrid framework which jointly estimates these parameters from timestamped position records on coasting intervals without requiring additional dedicated onboard equipment for direct mass measurement. The framework consists of a Mass-Adaptive Unscented Kalman Filter module (MAUKF), together with a long short-term memory module (LSTM): the former reformulates the Davis equation to separate mass from running resistance and employs parameter-specific covariance adaptation for multi-scale parameters, while the latter refines the estimated parameters by learning structured residual patterns under a training loss that combines physics-based speed-rollout consistency, mass supervision, and MAUKF-based improvement terms. The proposed method is evaluated in a case study based on freight train data from the UK mainline network, measured on two major lines: Peterborough–Doncaster and Rugby–Crewe. Experimental results indicate that the proposed MAUKF–LSTM framework achieves typical final relative mass errors around 2% on the calibration route and below 1% on the unseen route in various conditions, while maintaining practicality for implementation in real time. These outcomes imply accurate mass estimation and physically plausible effective running-resistance estimation, which in turn supports increased line capacity and reduced energy consumption.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Transport for London",
+            "ror": "03vnshb93"
+          },
+          {
+            "name": "Department for Transport",
+            "ror": "010mf0m52"
+          },
+          {
+            "name": "University College London",
+            "ror": "02jx3x895"
+          }
+        ],
+        "name": "Xuwen Jia",
+        "openalex": "A5114074600",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Beijing University of Technology",
+            "ror": "037b1pp87"
+          }
+        ],
+        "name": "Jingxuan Peng",
+        "openalex": "A5062551223",
+        "orcid": "https://orcid.org/0000-0001-6903-1380"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Transport for London",
+            "ror": "03vnshb93"
+          },
+          {
+            "name": "Department for Transport",
+            "ror": "010mf0m52"
+          },
+          {
+            "name": "University College London",
+            "ror": "02jx3x895"
+          }
+        ],
+        "name": "Benjamin Heydecker",
+        "openalex": "A5073285008",
+        "orcid": "https://orcid.org/0000-0001-6391-2267"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Beijing Academy of Artificial Intelligence",
+            "ror": "016a74861"
+          }
+        ],
+        "name": "Shaofan Wang",
+        "openalex": "A5083450478",
+        "orcid": "https://orcid.org/0000-0002-3045-624X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Transport for London",
+            "ror": "03vnshb93"
+          },
+          {
+            "name": "Department for Transport",
+            "ror": "010mf0m52"
+          },
+          {
+            "name": "University College London",
+            "ror": "02jx3x895"
+          }
+        ],
+        "name": "Fujiyama Taku",
+        "openalex": "A5098578036",
+        "orcid": "https://orcid.org/0000-0002-5986-5346"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105859",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-16",
+    "repository_urls": [],
+    "title": "Bridging physics and data: A mass-adaptive UKF-LSTM framework for real-time joint estimation of freight train mass and running resistance"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-16_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105859"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:rnn",
+        "label": "recurrent neural network"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03vnshb93",
+        "label": "Transport for London"
+      },
+      {
+        "confidence": null,
+        "id": "ror:010mf0m52",
+        "label": "Department for Transport"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02jx3x895",
+        "label": "University College London"
+      },
+      {
+        "confidence": null,
+        "id": "ror:037b1pp87",
+        "label": "Beijing University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:016a74861",
+        "label": "Beijing Academy of Artificial Intelligence"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5114074600",
+        "label": "Xuwen Jia"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6903-1380",
+        "label": "Jingxuan Peng"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6391-2267",
+        "label": "Benjamin Heydecker"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3045-624X",
+        "label": "Shaofan Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5986-5346",
+        "label": "Fujiyama Taku"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11568",
+        "is_primary": true,
+        "label": "Railway Systems and Energy Efficiency",
+        "score": 0.6582,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10842",
+        "is_primary": false,
+        "label": "Railway Engineering and Dynamics",
+        "score": 0.3095,
+        "subfield": "2210"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11325",
+        "is_primary": false,
+        "label": "Inertial Sensor and Navigation",
+        "score": 0.0025,
+        "subfield": "2202"
+      }
+    ]
+  },
+  "first_published": "2026-07-16",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1981107613",
+      "openalex:W1995477154",
+      "openalex:W2020742666",
+      "openalex:W2046033161",
+      "openalex:W2096536313",
+      "openalex:W2574076121",
+      "openalex:W2738447290",
+      "openalex:W2767112027",
+      "openalex:W2952338182",
+      "openalex:W3000993892",
+      "openalex:W3042316884",
+      "openalex:W3157516153",
+      "openalex:W3190276322",
+      "openalex:W4223961339",
+      "openalex:W4229007983",
+      "openalex:W4287305550",
+      "openalex:W4293731262",
+      "openalex:W4298204516",
+      "openalex:W4319996382",
+      "openalex:W4385657669",
+      "openalex:W4387232549",
+      "openalex:W4390905496",
+      "openalex:W4393193324",
+      "openalex:W4394907713",
+      "openalex:W4400850190",
+      "openalex:W4402474647",
+      "openalex:W4406755004",
+      "openalex:W4407247031",
+      "openalex:W4407399917",
+      "openalex:W4409731780",
+      "openalex:W4413448896",
+      "openalex:W4415821158"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105859",
+    "openalex": "W7168777985",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:08:51Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006293,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2155,
+      "out": 340
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:08:51Z",
+    "doi": "10.1016/j.trc.2026.105859",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's evaluation is limited to coasting intervals on two specific UK mainline rail corridors.",
+      "what": "The study introduces a hybrid MAUKF-LSTM framework that combines a Mass-Adaptive Unscented Kalman Filter with a Long Short-Term Memory network to estimate freight train mass and running resistance in real time. Using timestamped position records from coasting intervals on two major UK mainline routes (Peterborough–Doncaster and Rugby–Crewe), the model separates mass from resistance by reformulating the Davis equation and training on a physics-informed loss function. The framework achieves relative mass errors of approximately 2% on the calibration route and under 1% on an unseen route.",
+      "why": "It enables accurate, real-time estimation of critical dynamic train parameters using standard position data, eliminating the need for expensive, dedicated onboard mass-measurement hardware."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-16",
+  "work_key": "doi:10.1016/j.trc.2026.105859"
+}

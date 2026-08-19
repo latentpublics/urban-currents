@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Digital twins are used across many industries to enable better decision making. However, while policy makers at all levels (including city, national and supranational scales) have expressed a desire to integrate digital twins into their workflows, this adoption has been slow to materialise. In this paper, we discuss the key issues associated with policy digital twins, and the ways in which they differ from, and are similar to, their counterparts in other areas. We describe how multi-level agent based modelling can be used within policy digital twins to include the effects of human behaviours on outcomes; an aspect that is often largely overlooked. We also describe how digital twins can be designed for policy use cases, and present as a case study the design of a policy digital twin incorporating multi-level agent based modelling to aid a UK city council (local authority) in delivering energy transition policy. After describing both the design method used and the resultant digital twin, we discuss the effectiveness of both, as well as how the ways in which different contexts might shape the future architecture of the digital twin.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Matt Tipuric",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alejandro Beltran",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Nick Malleson",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dani Arribas-Bel",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "David Wagg",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "eess.SY",
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.13766v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.13766v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-15",
+    "repository_urls": [],
+    "title": "Design of policy digital twins incorporating multi-level agent based modelling"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-15_2607.13766",
+    "members": [
+      "arxiv:2607.13766"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.96,
+        "id": "method:digital-twin",
+        "label": "digital twin"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.13766",
+    "doi": "10.48550/arxiv.2607.13766",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:07:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004924,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1933,
+      "out": 225
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8745,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3498,
+    "relevance": 0.8745
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The paper presents the design method and architecture of the digital twin rather than empirical performance metrics or deployment evaluations of the system in active policy-making.",
+      "what": "This paper presents a design framework for policy digital twins that integrates multi-level agent-based modelling to capture human behaviors and their impacts on policy outcomes. The framework is demonstrated through a case study of a digital twin designed for a UK city council to assist in planning and delivering its energy transition policy.",
+      "why": "It addresses the slow adoption of digital twins in public policy by providing a structured design method that explicitly incorporates multi-level human decision-making, a critical factor often omitted in traditional engineering-focused digital twins."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-15",
+  "work_key": "arxiv:2607.13766"
+}

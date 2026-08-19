@@ -1,0 +1,269 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Autonomous lane changing in real-world driving is challenging because sensor noise and practical sensing constraints often limit the availability of reliable full-state measurements. Although many model-based and learning-based control approaches assume access to full-state information, such assumptions may not hold in realistic autonomous driving environments. This paper presents an experimental study comparing control strategies that use a learning-enabled estimator-based output-feedback approach for autonomous lane change maneuvers under realistic state measurement conditions. A small-scale remotely controlled (RC) car platform is used as a scaled experimental testbed to evaluate a model-based model predictive control (MPC) controller, a learning-based state feedback controller, and an estimator-based output-feedback learning controller using real sensor data. The estimator-based controller learns an optimal steering policy online without direct access to full system states. Experimental results show that the estimator-based output feedback demonstrates improved robustness to sensor inaccuracies and external disturbances, smoother lane transitions, and more reliable adaptation in safety-critical scenarios when state measurements are limited or noisy. These results provide experimental evidence that learning-enabled estimator-based output feedback can reduce reliance on expensive sensing configurations while maintaining reliable control performance, supporting its potential practical relevance for autonomous driving systems operating under limited measurement conditions.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "New York University",
+            "ror": "0190ak572"
+          }
+        ],
+        "name": "Won Yong Ha",
+        "openalex": "A5046983309",
+        "orcid": "https://orcid.org/0009-0006-3754-7933"
+      },
+      {
+        "institutions": [
+          {
+            "name": "New York University",
+            "ror": "0190ak572"
+          }
+        ],
+        "name": "Sayan Chakraborty",
+        "openalex": "A5141305604",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "New York University",
+            "ror": "0190ak572"
+          }
+        ],
+        "name": "Zhong‐Ping Jiang",
+        "openalex": "A5067046312",
+        "orcid": "https://orcid.org/0000-0002-4868-9359"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9554",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-21",
+    "repository_urls": [],
+    "title": "Learning-Enabled Output–Feedback Design for Lane Change Control: A Comparative Study"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-21_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-9554"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0190ak572",
+        "label": "New York University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0006-3754-7933",
+        "label": "Won Yong Ha"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5141305604",
+        "label": "Sayan Chakraborty"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4868-9359",
+        "label": "Zhong‐Ping Jiang"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10791",
+        "is_primary": true,
+        "label": "Advanced Control Systems Optimization",
+        "score": 0.2844,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10805",
+        "is_primary": false,
+        "label": "Vehicle Dynamics and Control Systems",
+        "score": 0.2627,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.2019,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-07-21",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1607136342",
+      "openalex:W2011866373",
+      "openalex:W2050838777",
+      "openalex:W2151966330",
+      "openalex:W2525884872",
+      "openalex:W2910895308",
+      "openalex:W2969506550",
+      "openalex:W2986426097",
+      "openalex:W2992140709",
+      "openalex:W3012481664",
+      "openalex:W3016600231",
+      "openalex:W3115110478",
+      "openalex:W3127561923",
+      "openalex:W3135991645",
+      "openalex:W3161377939",
+      "openalex:W3181484951",
+      "openalex:W4205917002",
+      "openalex:W4206513913",
+      "openalex:W4210387723",
+      "openalex:W4226275207",
+      "openalex:W4226433412",
+      "openalex:W4296913591",
+      "openalex:W4308081001",
+      "openalex:W4313646483",
+      "openalex:W4322577901",
+      "openalex:W4366668298",
+      "openalex:W4379662081",
+      "openalex:W4380903904",
+      "openalex:W4387376303",
+      "openalex:W4391243935",
+      "openalex:W4391527896",
+      "openalex:W4391676922",
+      "openalex:W4391769765",
+      "openalex:W4401227528",
+      "openalex:W4403158367",
+      "openalex:W4405305278",
+      "openalex:W4406302481",
+      "openalex:W4407639884",
+      "openalex:W4408712626",
+      "openalex:W4410377456",
+      "openalex:W4413017846"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-9554",
+    "openalex": "W7169834374",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:15:17Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005255,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2015,
+      "out": 248
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:15:17Z",
+    "doi": "10.1061/jtepbs.teeng-9554",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The control strategies were tested on a scaled, small-scale RC car platform rather than a full-sized vehicle in real-world traffic.",
+      "what": "This study evaluates an estimator-based output-feedback learning controller for autonomous lane changes using a small-scale remotely controlled car platform. The controller, which learns an optimal steering policy online without direct access to full system states, was experimentally compared against a model-based model predictive control (MPC) and a learning-based state feedback controller under noisy and limited sensor conditions.",
+      "why": "It demonstrates that learning-enabled output-feedback control can maintain robust and smooth lane-changing performance under realistic sensor constraints, reducing the necessity for expensive, high-precision sensing hardware in autonomous vehicles."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-21",
+  "work_key": "doi:10.1061/jtepbs.teeng-9554"
+}

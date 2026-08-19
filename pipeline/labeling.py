@@ -49,20 +49,32 @@ from .models import Item
 # `q`. `drop_weak` is for a paper squarely in scope whose *work* is thin, and
 # that thinness comes in two kinds:
 #
-#   `m`  the method is weak      — visible in the abstract's method sentences
-#   `r`  the results are weak    — largely invisible from an abstract
+#   `m`  the method is weak     — how the work was done
+#   `r`  the argument is weak   — what the work claims
 #
-# Splitting them matters for what a classifier can be taught. Weak method is a
-# learnable signal; weak results mostly are not, because an abstract reports
-# that there were findings rather than whether they amounted to anything.
-# Leaving both under one label mixes a learnable signal with an unlearnable one,
-# and the journal gate in L3 would learn the mixture.
+# **`r` was called `drop_weak_results` until 0Q, and the name was wrong.** The
+# labeller who made all fifteen judgements corrected it: what was meant is that
+# the *claim the paper wants to make* is too narrow, or too thin for what was
+# measured — and that **is** visible in an abstract, "초록으로 판단하기엔
+# 부족하지만, 그래도 판단해볼 수 있는" — imperfectly, but visibly.
+#
+# That correction matters more than a rename. The old name carried a claim that
+# this axis is **unlearnable from an abstract**, and 0P §5 acted on it by
+# dropping these rows from a gate evaluation, which lifted journal precision@10
+# from 0.660 to 0.700. The premise has been withdrawn by the person who
+# supplied it, so the rows stay in and **Q1b is 0.600 / 0.660** (D204).
+#
+# Both are abstract-visible. They are two different axes, not a visible one and
+# an invisible one: `m` is how the work was done, `r` is what it claims.
 LABEL_KEYS: dict[str, str] = {
     "k": "keep",
     "n": "drop_not_urban",
     "q": "drop_not_our_kind",
     "m": "drop_weak_method",
-    "r": "drop_weak_results",
+    # The key stays `r` — it reads as the r of "argument" as easily as of
+    # "results", and changing a keystroke people have in their fingers to record
+    # a rename would cost a mislabel to save nothing.
+    "r": "drop_weak_arguments",
     "s": "skip",
 }
 
@@ -75,7 +87,19 @@ LEGACY_WEAK_KEY = "w"
 # any more. It stays in DROP_LABELS so old files still aggregate correctly.
 LEGACY_WEAK_LABEL = "drop_weak"
 
-WEAK_LABELS = ("drop_weak_method", "drop_weak_results", LEGACY_WEAK_LABEL)
+# `drop_weak_results` was renamed to `drop_weak_arguments` in 0Q (R1). The
+# migration moved every row this repo holds, but the old string stays readable
+# for the same reason `drop_weak` does: an export taken before the rename, or a
+# file restored from a backup, must still aggregate rather than silently drop
+# out of `weak`. **Nothing writes it.**
+LEGACY_RESULTS_LABEL = "drop_weak_results"
+
+WEAK_LABELS = (
+    "drop_weak_method",
+    "drop_weak_arguments",
+    LEGACY_RESULTS_LABEL,
+    LEGACY_WEAK_LABEL,
+)
 
 DROP_LABELS = ("drop_not_urban", "drop_not_our_kind") + WEAK_LABELS
 
@@ -83,10 +107,15 @@ DROP_LABELS = ("drop_not_urban", "drop_not_our_kind") + WEAK_LABELS
 def is_weak(label: str) -> bool:
     """Any of the three weak labels.
 
-    Aggregates group them: precision@k is unchanged by the split, because all
-    three are still drops. **The split is diagnostic information, not a change
-    to the metric** — reporting a different precision after a relabelling would
-    mean the metric had been moved rather than measured.
+    Aggregates group them: precision@k is unchanged by the split, because they
+    are all still drops. **The split is diagnostic information, not a change to
+    the metric** — reporting a different precision after a relabelling would mean
+    the metric had been moved rather than measured.
+
+    That cuts both ways, and 0P got it wrong in the other direction: it removed
+    the `results` rows from a gate evaluation on the grounds that they were
+    unlearnable, and reported the higher number that followed. Neither the split
+    nor the rename moves Q1b. It is **0.600 arXiv / 0.660 journal**.
     """
     return label in WEAK_LABELS
 
@@ -107,18 +136,26 @@ SCORE_BANDS = ((0.95, 1.01), (0.90, 0.95), (0.70, 0.90), (0.35, 0.70))
 MIN_TOP_K_COVERAGE = 8
 
 LABEL_PROMPT = (
-    "   [k]eep / [n]ot urban / not our kind [q] / weak [m]ethod / weak [r]esults"
+    "   [k]eep / [n]ot urban / not our kind [q] / weak [m]ethod / weak a[r]gument"
     " / [s]kip: "
 )
+# `m` and `r` are both about a paper squarely in scope, so the boundary between
+# them has to be readable on screen or the distinction is only in this file.
+# **`m` is how the work was done; `r` is what it claims.** The wording of both
+# was rewritten together in 0Q, because sharpening one without the other just
+# moves the ambiguity.
 LABEL_LEGEND = (
     "  k  keep — worth publishing as a card\n"
     "  n  not urban research at all            (classifier error)\n"
     "  q  urban research, not the kind we cover (qualitative case study,\n"
     "                                           theory, policy commentary)\n"
-    "  m  our kind, but the METHOD is weak     (thin data, no baseline,\n"
-    "                                           n too small for the claim)\n"
-    "  r  our kind, but the RESULTS are weak   (it worked, and nothing\n"
-    "                                           followed from it)\n"
+    "  m  our kind, but the METHOD is weak     — HOW it was done: thin data,\n"
+    "                                           no baseline, n too small to\n"
+    "                                           support what is claimed\n"
+    "  r  our kind, but the ARGUMENT is weak   — WHAT it claims: the claim it\n"
+    "                                           wants to make is too narrow,\n"
+    "                                           or too thin for what was\n"
+    "                                           measured\n"
     "  s  skip — undecided, offer it again next time"
 )
 
@@ -191,9 +228,18 @@ def _weak_total(reasons) -> int:
 
 
 def _weak_detail(reasons) -> dict:
+    """The breakdown under `weak`.
+
+    `arguments` counts the old `drop_weak_results` string too, so a file written
+    before the 0Q rename reports under the name the category actually has rather
+    than vanishing from the breakdown while still counting in the total.
+    """
     return {
         "method": reasons.get("drop_weak_method", 0),
-        "results": reasons.get("drop_weak_results", 0),
+        "arguments": (
+            reasons.get("drop_weak_arguments", 0)
+            + reasons.get(LEGACY_RESULTS_LABEL, 0)
+        ),
         "unsplit": reasons.get(LEGACY_WEAK_LABEL, 0),
     }
 

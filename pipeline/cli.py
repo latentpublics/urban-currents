@@ -474,11 +474,29 @@ def status():
             "              Check daily.max_minutes against the workflow timeout."
         )
 
-    waiting = (state.get("held") or {}).get("waiting") or 0
+    held = state.get("held") or {}
+    waiting = held.get("waiting") or 0
     if waiting:
         typer.echo(
             f"\n[WAITING] {waiting} held item(s) need a judgement — uc review --pending"
         )
+        # Which rule is doing the holding, not just how much is held. As of 0Q
+        # the subfield deny-list is empty, so one rule can quietly own the whole
+        # withheld queue — and a rule that is the only thing withholding
+        # anything deserves to be looked at, not averaged into a total.
+        inert = set(held.get("inert_rules") or [])
+        for rule, bucket in (held.get("by_rule") or {}).items():
+            typer.echo(
+                f"            {rule:<16} withheld {bucket['withheld']:>4}   "
+                f"near miss {bucket['near_miss']:>4}"
+                + ("   (inert — cannot hold anything new)" if rule in inert else "")
+            )
+        alone = held.get("withheld_by_one_rule")
+        if alone:
+            typer.echo(
+                f"\n[ONE RULE] every withheld item comes from {alone!r}. "
+                f"The withheld queue is that rule, and nothing else."
+            )
 
     missing = state["unpublished_dates"]
     if missing:

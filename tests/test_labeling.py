@@ -118,20 +118,53 @@ def test_label_vocabulary_separates_the_kinds_of_drop():
     """Four reasons, not one number.
 
     `n` is a classifier error, `q` is a coverage-definition question, and weak
-    splits again into method and results (M1) because one of those is learnable
-    from an abstract and the other is not.
+    splits again into method and arguments (M1, renamed in 0Q R1) because they
+    are two different axes: **`m` is how the work was done, `r` is what it
+    claims.** The original split was justified as learnable-vs-unlearnable, and
+    the labeller has since withdrawn that — both are visible in an abstract.
     """
     assert LABEL_KEYS["n"] == "drop_not_urban"
     assert LABEL_KEYS["q"] == "drop_not_our_kind"
     assert LABEL_KEYS["m"] == "drop_weak_method"
-    assert LABEL_KEYS["r"] == "drop_weak_results"
+    # The keystroke did not move with the name.
+    assert LABEL_KEYS["r"] == "drop_weak_arguments"
+    assert "drop_weak_results" not in LABEL_KEYS.values(), "nothing writes the old name"
     assert set(DROP_LABELS) == {
         "drop_not_urban",
         "drop_not_our_kind",
         "drop_weak_method",
+        "drop_weak_arguments",
+        # Both retired names stay readable so an old export still aggregates.
         "drop_weak_results",
         "drop_weak",
     }
+
+
+def test_the_retired_names_still_aggregate(repo):
+    """A file written before either rename must not silently fall out of `weak`."""
+    from collections import Counter
+
+    from pipeline.labeling import _weak_detail, _weak_total, is_weak
+
+    assert is_weak("drop_weak_results"), "the pre-0Q name"
+    assert is_weak("drop_weak"), "the pre-M1 name"
+
+    old = Counter({"drop_weak_results": 2, "drop_weak_method": 1, "drop_weak": 3})
+    assert _weak_total(old) == 6
+    # And they report under the name the category actually has now.
+    assert _weak_detail(old) == {"method": 1, "arguments": 2, "unsplit": 3}
+
+
+def test_the_screen_says_which_axis_is_which(repo):
+    """The boundary between `m` and `r` has to be readable by the person typing
+    the key, or the distinction lives only in the source."""
+    from pipeline.labeling import LABEL_LEGEND, LABEL_PROMPT
+
+    assert "METHOD" in LABEL_LEGEND and "ARGUMENT" in LABEL_LEGEND
+    assert "HOW it was done" in LABEL_LEGEND
+    assert "WHAT it claims" in LABEL_LEGEND
+    assert "RESULTS" not in LABEL_LEGEND
+    assert "a[r]gument" in LABEL_PROMPT
 
 
 def test_the_old_weak_key_is_refused_rather_than_guessed():
@@ -155,7 +188,8 @@ def test_precision_is_unchanged_by_the_split(repo):
 
     assert is_weak("drop_weak")
     assert is_weak("drop_weak_method")
-    assert is_weak("drop_weak_results")
+    assert is_weak("drop_weak_arguments")
+    assert is_weak("drop_weak_results"), "the retired name still counts"
     assert not is_weak("keep")
 
 
@@ -278,7 +312,7 @@ def test_drop_reasons_are_counted_separately(repo):
     assert arxiv["not_our_kind"] == 1
     # Grouped in the headline count, broken out alongside it.
     assert arxiv["weak"] == 1
-    assert source["weak_detail"] == {"method": 0, "results": 1, "unsplit": 0}
+    assert source["weak_detail"] == {"method": 0, "arguments": 1, "unsplit": 0}
 
 
 def test_precision_reports_absence_rather_than_zero(repo):

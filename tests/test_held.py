@@ -282,7 +282,7 @@ def test_rejudging_does_not_move_precision(repo):
 
     assert after["precision_at_10"] == before["precision_at_10"]
     assert after["drop_reasons"]["weak"] == before["drop_reasons"]["weak"] == 3
-    assert after["weak_detail"] == {"method": 2, "results": 1, "unsplit": 0}
+    assert after["weak_detail"] == {"method": 2, "arguments": 1, "unsplit": 0}
 
 
 def test_only_unsplit_rows_are_offered(repo):

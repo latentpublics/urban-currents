@@ -403,13 +403,56 @@ def pending(since: Optional[date] = None) -> list[dict]:
     return rows
 
 
+def _rule_can_fire(rule: str) -> bool:
+    """Could this rule withhold something on the next run?
+
+    Only `off_subfield` can go inert, and only by having nothing to deny. The
+    other two are thresholds on a score and are always live.
+    """
+    if rule == RULE_OFF_SUBFIELD:
+        return bool(rejected_subfield_ids()) and _off_subfield_withholds()
+    return True
+
+
 def counts() -> dict[str, Any]:
-    """What the weekly summary reports: how much is waiting."""
+    """What the weekly summary reports: how much is waiting, and **from which
+    rule**.
+
+    The per-rule breakdown is here because of what 0Q made true: the
+    `off_subfield` deny-list is empty, so every future withholding comes from
+    `at_the_floor` alone. **One rule now produces the entire withheld queue**,
+    and its margin rests on a calibration figure measured over a window that
+    contains no relevance labels at all (D196).
+
+    A single total hides that completely. Three rules sharing a queue and one
+    rule owning it look identical in a number called `withheld`, and they are
+    not remotely the same situation.
+    """
     waiting = pending()
+    by_rule: dict[str, dict[str, int]] = {}
+    for row in waiting:
+        bucket = by_rule.setdefault(row["rule"], {"withheld": 0, "near_miss": 0})
+        bucket["withheld" if row["kind"] == WITHHELD else "near_miss"] += 1
+
+    withheld = sum(1 for r in waiting if r["kind"] == WITHHELD)
+    withheld_rules = sorted(
+        (rule for rule, b in by_rule.items() if b["withheld"]),
+        key=lambda rule: -by_rule[rule]["withheld"],
+    )
     return {
         "days_with_held_items": len(all_held()),
         "waiting": len(waiting),
-        "withheld": sum(1 for r in waiting if r["kind"] == WITHHELD),
+        "withheld": withheld,
         "near_miss": sum(1 for r in waiting if r["kind"] == NEAR_MISS),
         "oldest": min((r["date"] for r in waiting), default=None),
+        "by_rule": dict(sorted(by_rule.items())),
+        # A rule can hold items in the queue and be unable to produce another
+        # one. `off_subfield` is exactly that as of 0Q: the deny-list is empty,
+        # so its 81 withholdings are history rather than standing policy. Left
+        # unmarked they read as an active rule that withholds twice as much as
+        # the one that actually does.
+        "inert_rules": sorted(r for r in by_rule if not _rule_can_fire(r)),
+        # Named rather than left to be worked out from `by_rule`: this is the
+        # fact that has to be noticeable without reading a table.
+        "withheld_by_one_rule": withheld_rules[0] if len(withheld_rules) == 1 else None,
     }

@@ -187,7 +187,7 @@ def test_splitting_drop_weak_leaves_precision_alone(repo):
     was = precision_at_k("relevance", k=10)["by_source"]["arxiv"]["precision_at_10"]
 
     after = before + [
-        _row(f"arxiv:{i}", i, "drop_weak_method" if i % 2 else "drop_weak_results",
+        _row(f"arxiv:{i}", i, "drop_weak_method" if i % 2 else "drop_weak_arguments",
              date="2026-08-05", corrected_from="drop_weak",
              corrected_at="2026-08-17T16:35:07+00:00")
         for i in range(7, 11)
@@ -197,4 +197,4 @@ def test_splitting_drop_weak_leaves_precision_alone(repo):
 
     assert now["precision_at_10"] == was
     assert now["n_labels"] == 10
-    assert now["weak_detail"] == {"method": 2, "results": 2, "unsplit": 0}
+    assert now["weak_detail"] == {"method": 2, "arguments": 2, "unsplit": 0}

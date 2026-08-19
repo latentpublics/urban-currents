@@ -41,6 +41,7 @@ Usage:
 from __future__ import annotations
 
 import json
+import math
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -54,8 +55,37 @@ from pipeline.held import paper_subfield  # noqa: E402
 from pipeline.labeling import load_labels, superseded  # noqa: E402
 from pipeline.models import Item  # noqa: E402
 
-MIN_OBSERVED = 3
+# ★ Raised from 3 in 0Q (R2). Three observations was the bar that excluded four
+# subfields, and five targeted judgements per subfield overturned every one of
+# them (0P Q3). YJUN, having labelled them: "서브필드에서 몇 편 되지 않더라도
+# 내용상 urban에 가까우면 검토대상으로 두어야 할 것 같습니다."
+#
+# **Fewer than this many observations means the subfield passes. Always.**
+# That is stated as its own condition rather than left to fall out of the
+# arithmetic, because it is the part of the rule that keeps being violated.
+MIN_OBSERVED = 10
+
+# The keep rate a subfield has to clear to be included, unchanged: the keep rate
+# of a coin flip.
 MIN_KEEP_RATE = 0.50
+
+# But the point estimate is not what excludes any more. **The upper bound of the
+# 95% Wilson interval** on the keep rate has to be below `MIN_KEEP_RATE` — that
+# is what "clearly low" means, and it is what the old rule was missing.
+#
+# Worked on the four that were wrongly excluded, all of which the old rule
+# removed on a point estimate below 0.50:
+#
+#   subfield  observed   point   Wilson upper   old rule   new rule
+#   1408      1 of 3     0.333   0.792          EXCLUDE    include
+#   2208      2 of 5     0.400   0.769          EXCLUDE    include
+#   2306      1 of 4     0.250   0.700          EXCLUDE    include
+#   3312      1 of 6     0.167   0.564          EXCLUDE    include
+#
+# **Every one of them, without knowing the outcome.** A subfield seen three
+# times and kept once is not a subfield we know anything about, and the interval
+# says so where the point estimate did not.
+CONFIDENCE_Z = 1.96
 
 MAX_KEEP_LOSS = 0.10
 MAX_WITHHELD_RATE = 0.30
@@ -100,8 +130,35 @@ def labelled_rows() -> list[dict]:
     return rows
 
 
+def wilson_upper(keeps: int, n: int, z: float = CONFIDENCE_Z) -> float:
+    """Upper bound of the Wilson score interval on the keep rate.
+
+    Chosen over the textbook normal interval because that one is useless at the
+    sizes this rule actually sees — with 1 keep in 3 it produces a bound above
+    1.0, and with 0 keeps in 4 it produces zero width, which would have made
+    "never kept, four times" look like certainty. Wilson stays inside [0, 1] and
+    stays wide when n is small, which is the entire property being bought here.
+    """
+    if n == 0:
+        return 1.0
+    phat = keeps / n
+    denom = 1 + z * z / n
+    centre = phat + z * z / (2 * n)
+    margin = z * math.sqrt(phat * (1 - phat) / n + z * z / (4 * n * n))
+    return min(1.0, (centre + margin) / denom)
+
+
 def derive(rows: list[dict]) -> tuple[set[str], list[dict]]:
-    """Apply the pre-registered inclusion rule."""
+    """Apply the inclusion rule. A subfield is EXCLUDED only if **both** hold:
+
+    1. it has been observed at least `MIN_OBSERVED` times, and
+    2. the **upper** bound of the 95% interval on its keep rate is below
+       `MIN_KEEP_RATE`.
+
+    Everything else is included. Both conditions exist to stop the same mistake
+    from two directions: (1) refuses to judge a subfield we have barely seen,
+    and (2) refuses to treat a low point estimate as a low rate.
+    """
     by_sub: dict[str, list[dict]] = defaultdict(list)
     for r in rows:
         by_sub[r["subfield"] or "unclassified"].append(r)
@@ -110,10 +167,12 @@ def derive(rows: list[dict]) -> tuple[set[str], list[dict]]:
     for sub, items in sorted(by_sub.items(), key=lambda kv: -len(kv[1])):
         keeps = sum(1 for r in items if r["keep"])
         rate = keeps / len(items)
+        upper = wilson_upper(keeps, len(items))
         thin = len(items) < MIN_OBSERVED
         # Thin evidence is included: absence of evidence is not evidence of
         # absence, and excluding on it is the mistake this project keeps making.
-        keep_it = thin or rate >= MIN_KEEP_RATE
+        confidently_low = upper < MIN_KEEP_RATE
+        keep_it = thin or not confidently_low
         if keep_it and sub != "unclassified":
             included.add(sub)
         table.append({
@@ -121,7 +180,9 @@ def derive(rows: list[dict]) -> tuple[set[str], list[dict]]:
             "n": len(items),
             "keeps": keeps,
             "keep_rate": round(rate, 4),
+            "keep_rate_upper_95": round(upper, 4),
             "thin": thin,
+            "confidently_below_half": confidently_low,
             "included": keep_it,
         })
     return included, table
@@ -205,11 +266,14 @@ def main() -> None:
 
     print(f"labelled papers with a subfield: {len(rows)}")
     print(f"journal-selection list (untouched): {journal_list}")
-    print(f"\nrule: include if n < {MIN_OBSERVED} (thin) or keep rate >= {MIN_KEEP_RATE}\n")
-    print(f"{'subfield':14} {'n':>3} {'keep':>5} {'rate':>6}  {'thin':>5}  in")
+    print(f"\nrule: EXCLUDE only if n >= {MIN_OBSERVED} AND the 95% upper bound on "
+          f"the keep rate is < {MIN_KEEP_RATE}\n")
+    print(f"{'subfield':14} {'n':>3} {'keep':>5} {'rate':>6} {'upper95':>8}  "
+          f"{'thin':>5}  in")
     for t in table:
         print(
-            f"{t['subfield']:14} {t['n']:>3} {t['keeps']:>5} {t['keep_rate']:>6}  "
+            f"{t['subfield']:14} {t['n']:>3} {t['keeps']:>5} {t['keep_rate']:>6} "
+            f"{t['keep_rate_upper_95']:>8}  "
             f"{'yes' if t['thin'] else '-':>5}  {'yes' if t['included'] else 'NO'}"
         )
 
@@ -238,8 +302,15 @@ def main() -> None:
 
     out = {
         "rule": {
+            "statement": (
+                "exclude only if n >= min_observed AND the upper bound of the "
+                "95% Wilson interval on the keep rate is below min_keep_rate; "
+                "a subfield with fewer than min_observed labelled papers always "
+                "passes"
+            ),
             "min_observed": MIN_OBSERVED,
             "min_keep_rate": MIN_KEEP_RATE,
+            "confidence_z": CONFIDENCE_Z,
             "max_keep_loss": MAX_KEEP_LOSS,
             "max_withheld_rate": MAX_WITHHELD_RATE,
         },

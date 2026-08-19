@@ -217,6 +217,31 @@ class LabelSetMisuse(RuntimeError):
     """Raised when a probe label set is used where a ranked one is required."""
 
 
+def can_record(row: dict) -> bool:
+    """Could a judgement on this row be written?
+
+    **The invariant this hotfix installs: anything shown to a person must be
+    recordable.** Three times a labelling session has asked for judgements it
+    could not store, and every time the write path required something the
+    display path did not — so the screen looked fine while the answers went
+    nowhere.
+
+    Checking it is cheap and it belongs *before* the first question, so a row
+    that cannot be recorded is never shown rather than shown and dropped.
+    """
+    return bool(row.get("work_key")) and bool(row.get("date"))
+
+
+class LabelWriteFailed(RuntimeError):
+    """A person answered and the answer did not reach disk.
+
+    Deliberately loud. Three times now a labelling session has dropped
+    judgements without a word on screen, and each time the person who answered
+    found out only when the file was missing. **A session that cannot record an
+    answer must stop**, so the next twenty answers are not given to a hole.
+    """
+
+
 def _weak_total(reasons) -> int:
     """The three weak labels counted as one.
 
@@ -494,7 +519,7 @@ def label_row(
 
 
 def held_review_row(
-    item: Item, row: dict, label: str, source: str
+    row: dict, label: str, item: Optional[Item] = None
 ) -> dict[str, Any]:
     """One judgement on a held item, carrying **why it was held**.
 
@@ -504,27 +529,49 @@ def held_review_row(
     opinion about a paper and answers nothing about the queue.
 
     There is no `rank`, because the queue has no ranking — an item is here
-    because a rule flagged it. The old code passed `rank=0` into a ranked row,
-    which sorted it above rank 1 in every precision window it touched.
+    because a rule flagged it.
+
+    ## The held row is the source, and the item is enrichment (0Q hotfix, G2)
+
+    This used to take `item` first and require it. **A withheld item was never
+    published, so by definition it has no file in `content/items/`** — 116 of
+    the 118 withheld rows have none — and the caller skipped every row where the
+    lookup came back empty. Twenty-five judgements were asked for and thrown
+    away.
+
+    The held row already carries `work_key`, `date`, `rule`, `kind`, `detail`,
+    `title` and `source`. **Everything a label needs is in it.** The item adds a
+    relevance score and a summary flag when it happens to exist, and adds
+    nothing that the row cannot do without.
+
+    `shown` records which of the two the labeller actually had, for the same
+    reason `subfield_check` records whether there was a summary: **a judgement
+    made on less must not be indistinguishable from one made on more.**
     """
-    return {
+    out: dict[str, Any] = {
         "date": row["date"],
-        "work_key": item.work_key,
-        "source": source,
+        "work_key": row["work_key"],
+        "source": row.get("source") or "journal",
         "label": label,
-        "score": round(item.scores.relevance, 4),
-        "title": item.bibliography.title,
+        "title": row.get("title", ""),
         "rule": row.get("rule"),
         "kind": row.get("kind"),
         "why_held": row.get("detail"),
-        "has_summary": bool(item.summary.en and item.summary.en.what),
-        "classifier_version": item.provenance.classifier_version,
+        "score": row.get("score"),
+        "shown": "held_row",
         "model_version": cfg("classifier.model_version"),
         "sampling": "held_review",
         "labelled_at": utcnow().isoformat(),
         # Drawn by rule, never by rank. No precision@k is defined over it.
         "not_for_precision_at_k": True,
     }
+    if item is not None:
+        out["shown"] = "held_row+item"
+        out["title"] = item.bibliography.title or out["title"]
+        out["score"] = round(item.scores.relevance, 4)
+        out["has_summary"] = bool(item.summary.en and item.summary.en.what)
+        out["classifier_version"] = item.provenance.classifier_version
+    return out
 
 
 def run_labeling_session(

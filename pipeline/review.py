@@ -196,6 +196,16 @@ def _review_items(
     recorded. Keeping the timing in the caller makes that structural rather than
     a thing every exit path has to remember.
     """
+    missing = [k for k in issue.items if store.load_item(k) is None]
+    if missing:
+        # Skipped before anything is shown, which is correct — but said out
+        # loud, which it was not. A review that silently covers 20 of 24 cards
+        # reads exactly like one that covered all 24.
+        print(
+            f"\n[SKIPPED] {len(missing)} of {len(issue.items)} item(s) have no "
+            f"file on disk and are not being shown: {', '.join(missing[:3])}"
+            f"{' …' if len(missing) > 3 else ''}"
+        )
     for work_key in issue.items:
         item = store.load_item(work_key)
         if item is None:
@@ -338,16 +348,33 @@ def run_pending_session(
     from . import held as held_queue
     from .labeling import (
         LABEL_KEYS,
+        LabelWriteFailed,
         _ask_label,
         append_one,
         assert_writable,
+        can_record,
         held_review_row,
+        labels_path,
     )
 
     # Before the first item is shown, not after the last (F2).
     assert_writable("held_review", "held_review")
 
     everything = held_queue.pending()
+    # Anything that cannot be recorded is dropped **here**, before a person
+    # looks at it, and the count is said out loud. Silently showing a row whose
+    # judgement has nowhere to go is the entire fault this session is being
+    # fixed for; showing nothing and saying so is the correct alternative.
+    everything, unrecordable = (
+        [r for r in everything if can_record(r)],
+        [r for r in everything if not can_record(r)],
+    )
+    if unrecordable:
+        printer(
+            f"\n[SKIPPED] {len(unrecordable)} held row(s) cannot carry a "
+            f"judgement (no work_key or no date) and are not being shown. "
+            f"They are still in content/held/."
+        )
     waiting = everything[:limit] if limit else everything
     if not waiting:
         printer("nothing held — the pipeline was sure about everything it saw")
@@ -371,35 +398,70 @@ def run_pending_session(
     n = 0
     stopped = False
 
+    answered = 0
     for i, row in enumerate(waiting, start=1):
+        # Enrichment, never a requirement. A withheld item was never published,
+        # so it has no file here — that is the normal case, not a problem.
         item = store.load_item(row["work_key"])
+        venue = ""
+        if item and item.bibliography.primary_location:
+            venue = item.bibliography.primary_location.source_name or ""
+
         printer(
             f"\n[{i}/{len(waiting)}] {row['date']}  {row['kind']}  "
-            f"({row['rule']})\n"
-            f"  {row.get('title') or (item.bibliography.title if item else '')}\n"
-            f"  why held: {row['detail']}"
+            f"({row['rule']})"
         )
+        printer(f"  {row.get('title') or (item.bibliography.title if item else '')}")
+        if venue:
+            printer(f"  venue: {venue}")
+        # `at_the_floor` is the only rule that can withhold anything now, so its
+        # score is the thing being judged and belongs on screen.
+        score = row.get("score")
+        if score is not None:
+            printer(f"  score: {float(score):.4f}")
+        printer(f"  why held: {row['detail']}")
+        if item and item.summary.en and item.summary.en.what:
+            printer(f"  summary: {item.summary.en.what}")
+
         key = _ask_label(prompt, printer)
         if key is None:
             stopped = True
             break
         label = LABEL_KEYS[key]
         counts[label] = counts.get(label, 0) + 1
-        if label == "skip" or item is None:
+        if label == "skip":
+            # The one legitimate non-write: the labeller declined to answer.
             continue
-        # Written before the next question is asked. This session batched its
-        # rows and wrote them once at the end — the same fault that lost thirty
-        # code-probe judgements (F1), still here because the hotfix only
-        # reached the sessions that had already gone wrong.
-        n += append_one(
-            "held_review",
-            held_review_row(item, row, label, row.get("source") or "journal"),
-        )
+        answered += 1
+        # **No `continue` between a person answering and the answer being
+        # written.** The previous version skipped when the item file was
+        # missing, which is every withheld row, and lost twenty-five judgements
+        # without a word on screen. If a write cannot happen it is an exception,
+        # not a shrug.
+        written = append_one("held_review", held_review_row(row, label, item))
+        if written != 1:
+            raise LabelWriteFailed(
+                f"judgement on {row['work_key']!r} was answered and not written. "
+                f"{n} judgement(s) before it are on disk at "
+                f"{labels_path('held_review')}."
+            )
+        n += written
 
     elapsed = _time.monotonic() - started
     remaining = len(everything) - n
     write_progress(last_pending_judged=n, last_pending_remaining=remaining)
-    printer(f"\njudged {n} in {elapsed / 60:.1f} min ({counts})")
+    # Answered against written, every time. A session that quietly writes fewer
+    # than it asked is the failure this whole hotfix exists for, and the only
+    # way to be sure it is not happening is to say the two numbers out loud.
+    printer(
+        f"\nanswered {answered}, wrote {n} to {labels_path('held_review')} "
+        f"in {elapsed / 60:.1f} min ({counts})"
+    )
+    if n != answered:
+        raise LabelWriteFailed(
+            f"answered {answered} but wrote {n}. {answered - n} judgement(s) "
+            f"were lost. Nothing about this session should be trusted."
+        )
     if remaining > 0:
         printer(
             f"{remaining} still waiting — re-run `uc review --pending` "
@@ -487,6 +549,12 @@ def run_sample_session(
         f"This is a sanity check on what went out, not a gate — nothing here "
         f"changes a published issue.\n"
     )
+    absent = [key for _d, key in picks if store.load_item(key) is None]
+    if absent:
+        printer(
+            f"\n[SKIPPED] {len(absent)} of {len(picks)} sampled card(s) have no "
+            f"item file and are not being shown."
+        )
     read = 0
     for i, (d, key) in enumerate(picks, start=1):
         item = store.load_item(key)

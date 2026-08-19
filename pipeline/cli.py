@@ -261,6 +261,7 @@ def review(
     - ``--date D``             the full review of one issue
     """
     from .review import (
+        run_code_probe_session,
         run_labeling_session,
         run_pending_session,
         run_probe_session,
@@ -289,8 +290,21 @@ def review(
     if label in ("affinity", "affinity_probe"):
         dates = [d - timedelta(days=i) for i in range(days - 1, -1, -1)]
         run_probe_session(dates, per_band=max(1, limit // 3))
-    elif label:
+    elif label in ("code_probe", "code"):
+        run_code_probe_session()
+    elif label in ("relevance",):
         run_labeling_session(d, facet=label, top=top)
+    elif label:
+        # No fall-through. `--label code_probe` used to land in the relevance
+        # session, which built `ranked_top_n` rows that the write guard then
+        # refused — after all thirty questions had been asked. An unknown label
+        # is refused here, before anything is shown, and the message says what
+        # the known ones are.
+        typer.echo(f"unknown --label {label!r}. Known label sets:")
+        typer.echo("  relevance   the Q1b ranked sample")
+        typer.echo("  affinity    the canon-affinity probe")
+        typer.echo("  code_probe  code-bearing arXiv papers")
+        raise typer.Exit(code=2)
     else:
         run_review_session(d)
 

@@ -249,10 +249,14 @@ def _review_items(
 # --------------------------------------------------------------------------
 
 from .labeling import (  # noqa: E402,F401
+    append_one,
+    assert_writable,
+    code_probe_pool,
     labels_path,
     load_labels,
     precision_at_k,
     probe_summary,
+    run_code_probe_session,
     run_labeling_session,
     run_probe_session,
     run_rejudge_session,

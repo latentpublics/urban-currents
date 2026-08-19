@@ -266,6 +266,54 @@ def append_labels(facet: str, rows: Iterable[dict]) -> int:
     return n
 
 
+def append_one(facet: str, row: dict) -> int:
+    """Write one judgement, now.
+
+    **A session used to collect its rows in a list and write them once at the
+    end.** One exception, one Ctrl-C, one guard raised on the last item, and the
+    whole sitting was gone — which is what happened to a completed
+    `code_probe` pass: thirty judgements made, thirty judgements lost, and the
+    prompt had told the labeller "everything answered so far is saved".
+
+    This is the same shape as the review timer in 0i, which only recorded
+    sessions that ran to completion and so dropped precisely the sessions of
+    people who were busy. That was moved into a `finally`. **Labels need more
+    than that: a timing can be measured again and a person's judgement cannot.**
+
+    JSONL is append-only and there is no reason to batch. One line per verdict,
+    flushed before the next question is asked.
+    """
+    return append_labels(facet, [row])
+
+
+def assert_writable(facet: str, sampling: str) -> None:
+    """Check the sampling frame **before** the first item is shown.
+
+    The guard did its job and refused rows from the wrong frame — after asking
+    all thirty questions. The same fact was knowable before the first one, and
+    finding out at the end costs a session; finding out at the start costs
+    nothing.
+    """
+    expected = sampling_of(facet)
+    if sampling == expected:
+        return
+    raise LabelSetMisuse(
+        f"this session writes {sampling!r} rows but {facet!r} is a {expected!r} "
+        f"label set — nothing was asked and nothing was written. "
+        f"{_suggest_session(facet)}"
+    )
+
+
+def _suggest_session(facet: str) -> str:
+    """Say what to run instead, rather than only what went wrong."""
+    return {
+        "relevance": "Use `uc review --label relevance`.",
+        "affinity_probe": "Use `uc review --label affinity`.",
+        "code_probe": "Use `uc review --label code_probe`.",
+    }.get(facet, f"No session writes {facet!r}; the known ones are relevance, "
+                 f"affinity and code_probe.")
+
+
 def item_source(item: Item) -> str:
     from .run_stages import _is_whitelist_journal
 
@@ -396,8 +444,10 @@ def run_labeling_session(
     printer(LABEL_LEGEND)
     printer("  type 'quit' to stop — everything answered so far is saved")
 
+    assert_writable(facet, sampling_of(facet))
+
     started = time.monotonic()
-    rows: list[dict] = []
+    n = 0
     counts: Counter = Counter()
     stopped = False
 
@@ -411,9 +461,9 @@ def run_labeling_session(
         counts[label] += 1
         if label == "skip":
             continue
-        rows.append(label_row(item, source, rank, label, d, thr))
+        # Written before the next question is asked, not collected for the end.
+        n += append_one(facet, label_row(item, source, rank, label, d, thr))
 
-    n = append_labels(facet, rows)
     elapsed = time.monotonic() - started
     run = Run.for_date(d)
     run.metrics.timing["label_s"] = round(
@@ -975,8 +1025,10 @@ def run_probe_session(
     printer("  type 'quit' to stop — everything answered so far is saved")
 
     priors = venue_prior_map()
+    assert_writable(facet, sampling_of(facet))
+
     started = time.monotonic()
-    rows: list[dict] = []
+    n = 0
     counts: Counter = Counter()
     stopped = False
 
@@ -992,11 +1044,11 @@ def run_probe_session(
             continue
         counts[LABEL_KEYS[key]] += 1
         source_id = item.bibliography.primary_location.source_id
-        rows.append(
-            probe_row(item, band, rank, key, detail, priors.get(source_id))
+        n += append_one(
+            facet, probe_row(item, band, rank, key, detail, priors.get(source_id))
         )
 
-    n = append_labels(facet, rows)
+    
     elapsed = time.monotonic() - started
     printer(
         f"\nwrote {n} probe labels to {labels_path(facet)} in {elapsed / 60:.1f} min "
@@ -1276,9 +1328,11 @@ def run_rejudge_session(
         "  type `quit` to stop; re-run to continue where you left off\n"
     )
 
+    assert_writable(facet, sampling_of(facet))
+
     started = time.monotonic()
     counts: Counter = Counter()
-    rows: list[dict] = []
+    n = 0
     stopped = False
 
     for i, original in enumerate(todo, start=1):
@@ -1297,9 +1351,9 @@ def run_rejudge_session(
             continue
         label = LABEL_KEYS[key]
         counts[label] += 1
-        rows.append(rejudge_row(original, label, by=by))
+        n += append_one(facet, rejudge_row(original, label, by=by))
 
-    n = append_labels(facet, rows)
+    
     elapsed = time.monotonic() - started
     remaining = len(todo) - n
     printer(
@@ -1309,6 +1363,145 @@ def run_rejudge_session(
     if remaining > 0:
         printer(
             f"{remaining} still unsplit — re-run the same command to continue"
+            + (" (stopped early)" if stopped else "")
+        )
+    return {
+        "labelled": n,
+        "remaining": max(0, remaining),
+        "counts": dict(counts),
+        "stopped_early": stopped,
+        "minutes": round(elapsed / 60, 2),
+    }
+
+
+# --------------------------------------------------------------------------
+# The code probe (hotfix, F3)
+# --------------------------------------------------------------------------
+
+CODE_PROBE_POOL = "code_probe_pool.jsonl"
+
+
+def code_probe_pool() -> list[dict]:
+    """The prepared pool, minus anything already judged.
+
+    A separate reader rather than a generalised `run_probe_session`. That one is
+    built around `canon_affinity` bands — it computes affinity, loads venue
+    priors, and writes `band_stratified` rows — and bending it to also mean
+    "relevance bands over code-bearing arXiv items" would leave one function
+    serving two sampling frames. **Two frames in one function is how a row ends
+    up in the wrong file**, which is the failure this hotfix exists for. The
+    pool is a JSONL of prepared rows, so reading it is a dozen lines.
+    """
+    path = paths.LABELS / CODE_PROBE_POOL
+    if not path.exists():
+        return []
+    done = {r.get("work_key") for r in load_labels("code_probe")}
+    rows = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        try:
+            row = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if row.get("work_key") in done:
+            continue
+        rows.append(row)
+    return rows
+
+
+def code_probe_row(pool_row: dict, label: str) -> dict[str, Any]:
+    """One judgement, carrying why the item was in the pool at all.
+
+    `score`, the band and the **origin of the code signal** travel with the
+    verdict so this file alone can answer "does the classifier rank
+    code-releasing papers low, and does that track what a person thinks" without
+    rebuilding a pool that will have moved.
+    """
+    return {
+        "work_key": pool_row["work_key"],
+        "title": pool_row.get("title", ""),
+        "date": pool_row.get("date"),
+        "label": LABEL_KEYS.get(label, label),
+        "band": pool_row.get("band"),
+        "rank_in_band": pool_row.get("rank_in_band"),
+        "score": pool_row.get("score"),
+        "code_basis": pool_row.get("code_basis"),
+        "source": pool_row.get("source", "arxiv"),
+        "sampling": "code_stratified",
+        "labelled_at": utcnow().isoformat(),
+        # Stated on every row: stratified over relevance among code-bearing
+        # candidates, so no precision@k may be computed from it.
+        "not_for_precision_at_k": True,
+    }
+
+
+def run_code_probe_session(
+    facet: str = "code_probe", prompt=input, printer=print
+) -> dict[str, Any]:
+    """Judge the code-bearing arXiv papers the classifier ranks low.
+
+    Every verdict is written before the next question is asked, so stopping
+    part-way keeps everything answered so far and re-running resumes.
+    """
+    assert_writable(facet, "code_stratified")
+
+    todo = code_probe_pool()
+    if not todo:
+        path = paths.LABELS / CODE_PROBE_POOL
+        if not path.exists():
+            printer(
+                f"no pool at {path} — build it with "
+                f"`uv run python scripts/code_probe.py`"
+            )
+        else:
+            printer("every item in the code probe pool has been judged")
+        return {"labelled": 0, "remaining": 0, "counts": {}, "stopped_early": False}
+
+    by_band: Counter = Counter(r.get("band") for r in todo)
+    printer("")
+    printer(
+        f"{len(todo)} code-bearing arXiv paper(s) to judge "
+        f"({dict(by_band)} by relevance band)."
+    )
+    printer("These are papers that release code and that the classifier ranks low.")
+    printer("The question is whether it is right to.")
+    printer("")
+    printer(LABEL_LEGEND)
+    printer("  type 'quit' to stop — every answer is written as you give it")
+
+    started = time.monotonic()
+    n = 0
+    counts: Counter = Counter()
+    stopped = False
+
+    for i, row in enumerate(todo, start=1):
+        printer("")
+        printer(
+            f"[{i}/{len(todo)}] {row.get('date')}  band {row.get('band')}  "
+            f"score {row.get('score')}  code from {row.get('code_basis')}"
+        )
+        printer(f"  {row.get('title', '')}")
+        key = _ask_label(prompt, printer)
+        if key is None:
+            stopped = True
+            break
+        label = LABEL_KEYS[key]
+        counts[label] += 1
+        if label == "skip":
+            continue
+        n += append_one(facet, code_probe_row(row, key))
+
+    elapsed = time.monotonic() - started
+    remaining = len(todo) - n - counts.get("skip", 0)
+    printer("")
+    printer(
+        f"wrote {n} judgement(s) to {labels_path(facet)} in "
+        f"{elapsed / 60:.1f} min ({dict(counts)})"
+    )
+    if remaining > 0:
+        printer(
+            f"{remaining} left — re-run `uc review --label code_probe` to continue"
             + (" (stopped early)" if stopped else "")
         )
     return {

@@ -216,3 +216,20 @@ def test_the_subfield_session_already_held_the_invariant(repo):
 
     assert body == ""
     assert "not on disk" in basis
+
+
+def test_both_legends_describe_the_same_keys(repo):
+    """The held queue has its own legend, and after 0Q it still said RESULTS
+    while the main one said ARGUMENT. One key described two ways is how a label
+    file ends up meaning two things."""
+    from pipeline.labeling import LABEL_KEYS, LABEL_LEGEND
+    from pipeline.review import LABEL_LEGEND_FOR_HELD
+
+    for legend in (LABEL_LEGEND, LABEL_LEGEND_FOR_HELD):
+        assert "ARGUMENT" in legend
+        assert "RESULTS" not in legend
+    assert LABEL_KEYS["r"] == "drop_weak_arguments"
+    # Every key offered on one screen is offered on the other.
+    for key in LABEL_KEYS:
+        assert f"  {key}  " in LABEL_LEGEND_FOR_HELD
+        assert f"  {key}  " in LABEL_LEGEND

@@ -476,12 +476,17 @@ def run_pending_session(
     }
 
 
+# The held queue has its own legend because `k` means something different
+# here — "the rule was wrong" rather than "worth publishing". The other five
+# must still match `LABEL_KEYS`, and `r` did not: it still said RESULTS after
+# 0Q renamed the label to `drop_weak_arguments`. **One key described two ways
+# on two screens is how a label file ends up meaning two things.**
 LABEL_LEGEND_FOR_HELD = (
     "  k  keep — the rule was wrong, this should have been published\n"
     "  n  not urban research at all\n"
     "  q  urban research, not the kind we cover\n"
-    "  m  our kind, but the METHOD is weak\n"
-    "  r  our kind, but the RESULTS are weak\n"
+    "  m  our kind, but the METHOD is weak    — HOW it was done\n"
+    "  r  our kind, but the ARGUMENT is weak  — WHAT it claims\n"
     "  s  skip — offer it again next time"
 )
 

@@ -1,6 +1,6 @@
 # Urban Currents — Phase 0 report
 
-Generated 2026-08-19T12:06:51+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
+Generated 2026-08-19T12:26:18+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
 
 ## The four questions (PRD §1)
 
@@ -185,15 +185,15 @@ Current `config/scoring.yaml` threshold: 0.444 (source: backfill).
 | item | value |
 |---|---|
 | days of runs | 65 |
-| items published | 1020 |
-| items summarised | 1027 |
+| items published | 1022 |
+| items summarised | 1029 |
 | LLM (daily runs) | $5.9913 |
-| OpenAlex (daily runs) | $0.046 |
+| OpenAlex (daily runs) | $0.0468 |
 | embeddings (local) | $0.0 |
-| total (daily runs) | $6.0373 |
-| per published item | $0.00592 |
-| monthly estimate | $2.786 |
-| tokens in / out (all tasks) | 3741207 / 514806 |
+| total (daily runs) | $6.0381 |
+| per published item | $0.00591 |
+| monthly estimate | $2.787 |
+| tokens in / out (all tasks) | 3843339 / 528568 |
 
 **Per task, cumulative** — every LLM call ever made from this repository, including calls outside a daily run (labelling preparation, re-runs against a cold cache). The daily-run figures above are a subset of this, which is why they are smaller:
 
@@ -335,7 +335,7 @@ This is the one blind spot the pipeline can measure exactly, and the count is st
 | 2026-08-13 | 0 | 0 | 0 | 0 | 0 | - |
 | 2026-08-14 | 0 | 0 | 0 | 0 | 0 | - |
 | 2026-08-18 | 2176 | 1101 | 16 | 0 | 0 | enrich.springer, summarize |
-| 2026-08-19 | 2098 | 1094 | 22 | 22 | 8 | enrich.springer |
+| 2026-08-19 | 2098 | 1094 | 24 | 24 | 10 | enrich.springer |
 
 ## What this report does not know
 

@@ -1,6 +1,6 @@
 # Urban Currents — Phase 0 report
 
-Generated 2026-08-19T14:36:31+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
+Generated 2026-08-19T17:28:06+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
 
 ## The four questions (PRD §1)
 
@@ -184,27 +184,28 @@ Current `config/scoring.yaml` threshold: 0.444 (source: backfill).
 
 | item | value |
 |---|---|
-| days of runs | 65 |
-| items published | 1022 |
-| items summarised | 1029 |
-| LLM (daily runs) | $5.9913 |
-| OpenAlex (daily runs) | $0.0492 |
+| days of runs | 66 |
+| items published | 1037 |
+| items summarised | 1053 |
+| LLM (daily runs) | $6.0209 |
+| OpenAlex (daily runs) | $0.0502 |
 | embeddings (local) | $0.0 |
-| total (daily runs) | $6.0405 |
-| per published item | $0.00591 |
-| monthly estimate | $2.788 |
-| tokens in / out (all tasks) | 4149735 / 569854 |
+| total (daily runs) | $6.0711 |
+| per published item | $0.00585 |
+| monthly estimate | $2.76 |
+| tokens in / out (all tasks) | 4251195 / 583538 |
 
 **Per task, cumulative** — every LLM call ever made from this repository, including calls outside a daily run (labelling preparation, re-runs against a cold cache). The daily-run figures above are a subset of this, which is why they are smaller:
 
 | task | calls | cost |
 |---|---|---|
-| extract | 1446 | $2.842363 |
-| summarize | 1262 | $4.489925 |
+| extract | 1451 | $2.853387 |
+| headline | 46 | $0.073279 |
+| summarize | 1267 | $4.508542 |
 | synthesis | 58 | $0.209871 |
-| **total** | 2768 | **$7.549445** |
+| **total** | 2824 | **$7.652365** |
 
-Tokens: 2793372 in, 385849 out, 0 thinking. Summarize and extract run one call each per item (D8 was reverted in N1), so a per-item token figure divided by the published count describes neither task on its own.
+Tokens: 2848726 in, 388059 out, 0 thinking. Summarize and extract run one call each per item (D8 was reverted in N1), so a per-item token figure divided by the published count describes neither task on its own.
 
 Embeddings are local (`BAAI/bge-base-en-v1.5` on CPU), so their marginal cost is zero — which is what makes backfills and retraining free.
 
@@ -336,6 +337,7 @@ This is the one blind spot the pipeline can measure exactly, and the count is st
 | 2026-08-14 | 0 | 0 | 0 | 0 | 0 | - |
 | 2026-08-18 | 2176 | 1101 | 16 | 0 | 0 | enrich.springer, summarize |
 | 2026-08-19 | 2098 | 1094 | 24 | 24 | 10 | enrich.springer |
+| 2026-08-20 | 1731 | 974 | 24 | 24 | 15 | enrich.springer |
 
 ## What this report does not know
 

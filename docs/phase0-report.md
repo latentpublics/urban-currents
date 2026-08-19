@@ -1,6 +1,6 @@
 # Urban Currents — Phase 0 report
 
-Generated 2026-08-19T12:26:18+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
+Generated 2026-08-19T13:39:33+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
 
 ## The four questions (PRD §1)
 
@@ -188,12 +188,12 @@ Current `config/scoring.yaml` threshold: 0.444 (source: backfill).
 | items published | 1022 |
 | items summarised | 1029 |
 | LLM (daily runs) | $5.9913 |
-| OpenAlex (daily runs) | $0.0468 |
+| OpenAlex (daily runs) | $0.0476 |
 | embeddings (local) | $0.0 |
-| total (daily runs) | $6.0381 |
+| total (daily runs) | $6.0389 |
 | per published item | $0.00591 |
 | monthly estimate | $2.787 |
-| tokens in / out (all tasks) | 3843339 / 528568 |
+| tokens in / out (all tasks) | 3945471 / 542330 |
 
 **Per task, cumulative** — every LLM call ever made from this repository, including calls outside a daily run (labelling preparation, re-runs against a cold cache). The daily-run figures above are a subset of this, which is why they are smaller:
 

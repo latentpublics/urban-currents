@@ -647,8 +647,16 @@ def precision_at_k(facet: str = "relevance", k: int = 10) -> dict:
         }
 
     by_source: dict[str, dict] = {}
-    for source in sorted({r.get("source", "unknown") for r in rows}):
-        srows = [r for r in rows if r.get("source") == source]
+    # The same default on both sides. They disagreed: the group set used
+    # `r.get("source", "unknown")` and the filter used `r.get("source")`, so a
+    # row with no `source` created an "unknown" group that then matched nothing
+    # and divided by zero. A malformed row should land in a named group and be
+    # visible, not take the metric down.
+    def _source_of(row: dict) -> str:
+        return row.get("source") or "unknown"
+
+    for source in sorted({_source_of(r) for r in rows}):
+        srows = [r for r in rows if _source_of(r) == source]
         by_day: dict[str, list[dict]] = {}
         for r in srows:
             by_day.setdefault(r.get("date", ""), []).append(r)

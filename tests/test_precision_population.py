@@ -198,3 +198,19 @@ def test_splitting_drop_weak_leaves_precision_alone(repo):
     assert now["precision_at_10"] == was
     assert now["n_labels"] == 10
     assert now["weak_detail"] == {"method": 2, "arguments": 2, "unsplit": 0}
+
+
+def test_a_row_with_no_source_does_not_break_the_metric(repo):
+    """The group set defaulted a missing `source` to "unknown" and the filter
+    compared against the raw value, so the group matched nothing and divided by
+    zero. Found by writing exactly such a row into the real file by accident."""
+    rows = [_row(f"arxiv:{i}", i, "keep", date="2026-08-05") for i in range(1, 11)]
+    rows.append({"work_key": "x", "date": "2026-08-05", "rank": 1,
+                 "label": "keep", "sampling": "ranked_top_n"})
+    _write(repo, rows)
+
+    result = precision_at_k("relevance", k=10)
+
+    assert result["by_source"]["arxiv"]["precision_at_10"] == 1.0
+    assert "unknown" in result["by_source"], "the odd row is visible, not fatal"
+    assert result["by_source"]["unknown"]["n_labels"] == 1

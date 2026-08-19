@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "A routing algorithm for Señoritas Courier, a bicycle delivery cooperative in São Paulo, Brazil, composed exclusively of cis women and trans people, is presented in this paper. Unlike conventional logistics optimization, which typically focuses on cost or distance minimization, this cooperative operates under principles of solidarity, care, and equitable income distribution. The algorithm was developed through a participatory process involving cooperative members as co-designers. The classical Vehicle Routing Problem proved inadequate for this context, as it disregards individual constraints and fairness. We formulate a new variant, the Señoritas Routing Problem, which incorporates biker-specific constraints on weight, volume, and maximum distance, alongside a solidarity objective that balances route lengths. A genetic algorithm is employed as the solution method. Three fitness formulations are compared: a baseline distance-minimization operator, a constrained version, and a progressive formulation that penalizes workload imbalance. Results show that the progressive constrained formulation eliminates constraint violations and reduces the standard deviation of route lengths from 7.92 km to 0.81 km, at the cost of a moderate increase in total distance. This case demonstrates that operations research can be reoriented toward solidarity values, and that participatory methodologies are essential for aligning technical solutions with the needs of worker cooperatives.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Gustavo N. Gonçalves",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Cristiano C. Cruz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Romis Attux",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.03607v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03607v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-03",
+    "repository_urls": [],
+    "title": "Development of a Bio-Inspired Routing Algorithm According to Values of Solidarity and a Freirean Perspective of Engineering"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-03_2607.03607",
+    "members": [
+      "arxiv:2607.03607"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:optimization",
+        "label": "optimization"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q174",
+        "label": "São Paulo",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.03607",
+    "doi": "10.48550/arxiv.2607.03607",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:50:29Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00578,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2023,
+      "out": 305
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9713,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3885,
+    "relevance": 0.9713
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The algorithm was co-designed for and tested on the specific operational constraints of a single small-scale cooperative, which may limit its immediate generalizability to other logistics models.",
+      "what": "A new variant of the Vehicle Routing Problem, termed the Señoritas Routing Problem, was developed to support a bicycle delivery cooperative of cis women and trans people in São Paulo, Brazil. The algorithm incorporates individual rider constraints on weight, volume, and distance, alongside a solidarity objective solved via a genetic algorithm. Testing three fitness formulations showed that a progressive constrained formulation eliminated all constraint violations and reduced the standard deviation of route lengths among riders from 7.92 km to 0.81 km, with only a moderate increase in total distance.",
+      "why": "It demonstrates that operations research and routing algorithms can be successfully reoriented to prioritize workload equity and worker solidarity over pure cost or distance minimization."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-03",
+  "work_key": "arxiv:2607.03607"
+}

@@ -1,0 +1,265 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "To address the limitation that existing Visual Simultaneous Localization and Mapping (VSLAM) methods fail under complex and variable illumination conditions due to the inability to extract sufficient feature points, this paper proposes a robust V SLAM localization method based on multi-level adaptive image enhancement. First, the method employs dynamic brightness compensation to preprocess the original image, initially improving the global brightness distribution. Second, through RGB-to-HSV color space conversion, the brightness V-channel is separated to eliminate the interference of color information in the enhancement process. On this basis, to overcome the limitation of the existing CLAHE algorithm that relies on a fixed clipping threshold and cannot adapt to the local brightness distribution and texture complexity of different image regions, we propose an improved adaptive-threshold CLAHE algorithm based on local statistical characteristics, providing a stable image foundation for feature extraction. Meanwhile, to handle the interference of moving objects in dynamic environments, we incorporate a YOLOv5 object detection thread into the ORB-SLAM3 framework to remove feature points on dynamic objects. This detection module works in synergy with the multi-level image enhancement module, further improving localization robustness in dynamic scenarios. Extensive experiments on the public EuRoC and TUM datasets demonstrate that our method reduces the root mean square error of absolute trajectory error by 29.60% compared to ORB-SLAM3, with a reduction of up to 97.85% on high-dynamic sequences. Our method achieves better localization accuracy and robustness under complex illumination conditions, offering a new solution for visual localization in challenging illumination scenarios.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Henan Polytechnic University",
+            "ror": "05vr1c885"
+          }
+        ],
+        "name": "Dai QiaoBin",
+        "openalex": "A5071597826",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Henan Polytechnic University",
+            "ror": "05vr1c885"
+          }
+        ],
+        "name": "Zhe Yue",
+        "openalex": "A5083776483",
+        "orcid": "https://orcid.org/0000-0002-1626-5228"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Henan Polytechnic University",
+            "ror": "05vr1c885"
+          }
+        ],
+        "name": "Wangyang Yu",
+        "openalex": "A5101298009",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Henan Polytechnic University",
+            "ror": "05vr1c885"
+          }
+        ],
+        "name": "Xuerong Zhang",
+        "openalex": "A5132758753",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Henan Polytechnic University",
+            "ror": "05vr1c885"
+          }
+        ],
+        "name": "Zengzeng Lian",
+        "openalex": "A5025180949",
+        "orcid": "https://orcid.org/0009-0007-6213-5436"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.3390/ijgi15070315",
+      "pdf_url": "https://www.mdpi.com/2220-9964/15/7/315/pdf?version=1783777516",
+      "source_id": "S2764431341",
+      "source_name": "ISPRS International Journal of Geo-Information",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-11",
+    "repository_urls": [],
+    "title": "Robust Visual SLAM with Multi-Level Adaptive Image Enhancement"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-11_10.3390/ijgi1507",
+    "members": [
+      "doi:10.3390/ijgi15070315"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05vr1c885",
+        "label": "Henan Polytechnic University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5071597826",
+        "label": "Dai QiaoBin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1626-5228",
+        "label": "Zhe Yue"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5101298009",
+        "label": "Wangyang Yu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5132758753",
+        "label": "Xuerong Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0007-6213-5436",
+        "label": "Zengzeng Lian"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:ultralytics/ultralytics",
+        "label": "YOLO"
+      }
+    ],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10191",
+        "is_primary": true,
+        "label": "Robotics and Sensor-Based Localization",
+        "score": 0.9195,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10627",
+        "is_primary": false,
+        "label": "Advanced Image and Video Retrieval Techniques",
+        "score": 0.0238,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10036",
+        "is_primary": false,
+        "label": "Advanced Neural Network Applications",
+        "score": 0.0111,
+        "subfield": "1707"
+      }
+    ]
+  },
+  "first_published": "2026-07-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.3390/ijgi15070315",
+    "openalex": "W7168155054",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:02:21Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006004,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2131,
+      "out": 312
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:02:21Z",
+    "doi": "10.3390/ijgi15070315",
+    "journal": "ISPRS International Journal of Geo-Information",
+    "source_id": "S2764431341",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance improvements are demonstrated on standard public datasets rather than in real-world, real-time deployment scenarios.",
+      "what": "This paper introduces a visual simultaneous localization and mapping (VSLAM) method that combines dynamic brightness compensation, an adaptive-threshold CLAHE algorithm based on local statistical characteristics, and a YOLOv5 object detection thread integrated into the ORB-SLAM3 framework. Tested on the public EuRoC and TUM datasets, the system reduces the root mean square error of absolute trajectory error by an average of 29.60% compared to standard ORB-SLAM3, and by up to 97.85% on highly dynamic sequences.",
+      "why": "It provides a reliable visual localization method for autonomous systems operating in environments with highly variable lighting and moving obstacles, overcoming the failure modes of traditional VSLAM algorithms that rely on static lighting and fixed thresholding."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-11",
+  "work_key": "doi:10.3390/ijgi15070315"
+}

@@ -1,0 +1,185 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Understanding how households consume electricity in response to socioeconomic and climatic drivers is important for decision-makers designing energy policies in a changing climate and under geopolitical tensions. Consumers respond differently to thermal stress depending on income, consumption habits and the surrounding built environment, a nonlinear behaviour that most approaches oversimplify. In this study, households are treated as agents interacting with complex environments, and Inverse Reinforcement Learning is used to represent their consumption behaviour as model implied reward functions. Specifically, we observe how these reward functions change when households undergo socioeconomic and climatic shocks. The framework is tested on different clusters of electricity consumption profiles in Italy. Clusters' reward functions are retrieved and used to understand how cooling behaviour changes from summer 2021 to summer 2022 and 2023, before, during and after the energy crisis and a heatwave. We find that these shocks reshaped cooling behaviour heterogeneously across consumer groups, in directions conditioned by their prior habits and built environment. Across the 2021 to 2023 summers, we identify a spectrum of responses: transient adjustments that receded as the shocks eased, durable shifts persisting into 2023, and consumers exhibiting negligible change. At the intradaily scale, groups comparable in socioeconomic and environmental context but differing in their daily timing of consumption responded distinctly, identifying time of use as a separate dimension of behavioural heterogeneity. Energy policies and demand-response schemes should therefore account not only for who consumers are and where they live, but for when they consume and whether their response to a shock persists.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Enrico Cofler",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Carlos Rodriguez-Pardo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Matteo Giuliani",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Andrea Castelletti",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Massimo Tavoni",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.03176v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03176v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-03",
+    "repository_urls": [],
+    "title": "Understanding electricity consumption behaviour through Inverse Reinforcement Learning"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-03_2607.03176",
+    "members": [
+      "arxiv:2607.03176"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:clustering",
+        "label": "clustering"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.03176",
+    "doi": "10.48550/arxiv.2607.03176",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:50:29Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005509,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2131,
+      "out": 257
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8462,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3385,
+    "relevance": 0.8462
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2022 and 2023",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are derived from clustered consumption profiles rather than individual household-level tracking, which may smooth over some localized behavioral variations.",
+      "what": "This study models household electricity consumption in Italy as an agent-based decision process using Inverse Reinforcement Learning to extract reward functions across different consumer clusters. By analyzing household responses to the energy crisis and heatwaves from summer 2021 to summer 2023, the model tracks how cooling behaviors shifted across different socioeconomic groups, built environments, and daily consumption profiles.",
+      "why": "It demonstrates that household responses to climatic and economic shocks are highly heterogeneous and durable, proving that the timing of daily electricity use is a distinct dimension of behavioral adaptation that operates independently of a household's socioeconomic status."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-03",
+  "work_key": "arxiv:2607.03176"
+}

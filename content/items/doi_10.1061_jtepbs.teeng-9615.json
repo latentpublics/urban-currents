@@ -1,0 +1,274 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Accurate traffic congestion classification requires models that jointly capture roadway scene context and nonstationary traffic motion, yet most prior work treats these requirements in isolation. Vision-based methods often depend on appearance cues with standard temporal pooling, which can bias predictions toward static infrastructure, whereas signal-based approaches characterize temporal dynamics but lack the spatial context needed for scene-level localization. These complementary limitations motivate a unified framework that links motion evidence to spatial feature selection while preserving data-adaptive temporal characterization. This study therefore proposes flow-guided empirical mode decomposition (FLO-EMD), a hybrid approach that couples motion-guided attention with empirical, data-driven temporal decomposition. Dense optical flow guides channel and spatial attention so that RGB features are refined toward motion-relevant regions. In parallel, aggregated flow statistics form compact motion traces that are decomposed using empirical mode decomposition (EMD) to extract intrinsic temporal components. The resulting EMD embedding is fused with learned spatiotemporal representations to classify light, medium, and heavy congestion. Experiments on 1,050 5-s clips from four surveillance networks show that FLO-EMD achieves 97.5% overall test accuracy (weighted F1=0.9742), outperforming established baselines and remaining robust across diverse environmental conditions; ablation and sensitivity analyses further quantify the contributions of EMD, the number of intrinsic mode functions, and the selected motion descriptors.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Dakota State University",
+            "ror": "016yv6y68"
+          }
+        ],
+        "name": "Eugene Denteh",
+        "openalex": "A5106678330",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Dakota State University",
+            "ror": "016yv6y68"
+          }
+        ],
+        "name": "Blessing Agyei Kyem",
+        "openalex": "A5106678329",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Dakota State University",
+            "ror": "016yv6y68"
+          }
+        ],
+        "name": "Joshua Kofi Asamoah",
+        "openalex": "A5106678331",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Dakota State University",
+            "ror": "016yv6y68"
+          }
+        ],
+        "name": "Armstrong Aboah",
+        "openalex": "A5005333881",
+        "orcid": "https://orcid.org/0000-0002-1605-1545"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9615",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-03",
+    "repository_urls": [],
+    "title": "Hybrid Congestion Classification Framework Using Flow-Guided Attention and Empirical Mode Decomposition"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-03_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-9615"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:016yv6y68",
+        "label": "Dakota State University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5106678330",
+        "label": "Eugene Denteh"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5106678329",
+        "label": "Blessing Agyei Kyem"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5106678331",
+        "label": "Joshua Kofi Asamoah"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1605-1545",
+        "label": "Armstrong Aboah"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0938,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11052",
+        "is_primary": false,
+        "label": "Energy Load and Power Forecasting",
+        "score": 0.0772,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11206",
+        "is_primary": false,
+        "label": "Model Reduction and Neural Networks",
+        "score": 0.0653,
+        "subfield": "3109"
+      }
+    ]
+  },
+  "first_published": "2026-07-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2007221293",
+      "openalex:W2120390927",
+      "openalex:W2125056386",
+      "openalex:W2142172505",
+      "openalex:W2990152177",
+      "openalex:W3034572008",
+      "openalex:W3035303837",
+      "openalex:W3123191313",
+      "openalex:W3174112294",
+      "openalex:W3209551248",
+      "openalex:W3209643259",
+      "openalex:W3215023725",
+      "openalex:W4214612132",
+      "openalex:W4214727094",
+      "openalex:W4312560592",
+      "openalex:W4312769131",
+      "openalex:W4324351614",
+      "openalex:W4387849412",
+      "openalex:W4390874471",
+      "openalex:W4392908735",
+      "openalex:W4399102196",
+      "openalex:W4400381628",
+      "openalex:W4401391093",
+      "openalex:W4404093978",
+      "openalex:W4408249830",
+      "openalex:W4408696653",
+      "openalex:W4412520766",
+      "openalex:W4415819965",
+      "openalex:W4416850874",
+      "openalex:W7108441194"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-9615",
+    "openalex": "W7167279438",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T07:50:33Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005546,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2077,
+      "out": 270
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T07:50:33Z",
+    "doi": "10.1061/jtepbs.teeng-9615",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study introduces FLO-EMD, a hybrid traffic congestion classification framework that combines dense optical flow-guided spatial attention with empirical mode decomposition of motion traces. The model refines RGB features toward motion-relevant regions and fuses them with decomposed temporal components to classify light, medium, and heavy congestion. Tested on 1,050 five-second video clips from four surveillance networks, the framework achieved a 97.5% overall test accuracy and a weighted F1-score of 0.9742.",
+      "why": "It overcomes the limitations of vision-only models that bias toward static infrastructure and signal-only models that lack spatial context, providing a highly accurate method to jointly capture roadway scene context and nonstationary traffic motion."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-03",
+  "work_key": "doi:10.1061/jtepbs.teeng-9615"
+}

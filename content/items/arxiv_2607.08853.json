@@ -1,0 +1,192 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Mobility systems of people and goods are inherently multi-scale, spanning levels of organization from individual cities to regions and nations. Understanding whether mobility networks exhibit similar patterns across these scales is important. Such similarity would point to common organizing principles, enabling insights gained at one scale to inform planning and management at others. Despite growing efforts to analyze mobility at multiple scales, such cross-scale similarity remains poorly understood, and renormalization provides a natural framework for addressing this question. Here, we propose a Neighbor-Limited Box Covering method to renormalize undirected weighted mobility networks. This method iteratively selects box centers in descending order of node strength, merges each center with a fixed number of its highest-weight neighbors to form a renormalized node, and aggregates edge weights between renormalized nodes to generate the network at the next scale. We apply this technique to uncover multi-scale structures of real-world inter-city human mobility and freight trip networks in China and find that the topological structures, weighted structural features, and dynamic processes all exhibit self-similarity across these multi-scale mobility networks. Moreover, we find that the constituent nodes in most renormalized nodes show a strong spatial cohesion, and the boundaries of them closely follow existing political and socio-economic borders, even though the method does not explicitly incorporate any spatial information. Our study not only reveals the consistency of multi-scale inter-city mobility patterns, but also provides important insights into their spatial organization. Furthermore, our method is applicable to mobility networks of different sizes and has potential as a powerful tool for the multi-scale analysis of various other real-world complex systems.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ying-Yue Lyu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xiao-Yong Yan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Bin Jia",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jobst Heitzig",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ziyou Gao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jürgen Kurths",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": "29 pages, 15 figures, including supplementary material",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.08853v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08853v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-09",
+    "repository_urls": [],
+    "title": "Self-similarity of mobility networks"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-09_2607.08853",
+    "members": [
+      "arxiv:2607.08853"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.08853",
+    "doi": "10.48550/arxiv.2607.08853",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:59:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005228,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2129,
+      "out": 226
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9809,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3924,
+    "relevance": 0.9809
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study introduces a Neighbor-Limited Box Covering method to renormalize undirected weighted mobility networks by iteratively merging high-strength nodes with their strongest neighbors. This method was applied to analyze inter-city human mobility and freight trip networks in China, evaluating how topological structures, weighted features, and dynamic processes behave across scales.",
+      "why": "It demonstrates that both human and freight mobility networks exhibit self-similarity across scales, and reveals that the resulting renormalized nodes naturally align with political and socio-economic boundaries without using any explicit spatial data during the clustering process."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-09",
+  "work_key": "arxiv:2607.08853"
+}

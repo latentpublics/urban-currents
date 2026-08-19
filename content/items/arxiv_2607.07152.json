@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Computationally efficient models for multimodal traffic flows with inter-modal interactions are foundational for coordinated traffic management. However, such models are lacking in the current literature. This study introduces a multimodal link transmission model (M-LTM) accommodating both continuous road traffic and discrete tramway traffic at the network level. M-LTM builds on a link model that captures the inter-modal interactions through the moving bottleneck theory. We further develop node models describing the flow transfer, tram operations, and mode interactions at tram stops and intersections. Specifically, the tram dwell process and dwell-induced congestion of road traffic are simulated at the stop node, and the intersection node model can reproduce queue spillback and tram priority. Case studies are conducted on two synthetic one-node networks, a synthetic arterial network, and the real network of Dresden to demonstrate the predictive power and the applicability of the proposed model in network traffic analysis and management. The GEH statistics of road traffic are below 4, and the average tram arrival time absolute errors are less than 10 seconds.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ning Xie",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Lei Wei",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Nikola Bešinović",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Meng Wang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "math.OC",
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.07152v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.07152v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-08",
+    "repository_urls": [],
+    "title": "Link-Based Multimodal Traffic Dynamics Model in Continuous-Time Framework"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-08_2607.07152",
+    "members": [
+      "arxiv:2607.07152"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.07152",
+    "doi": "10.48550/arxiv.2607.07152",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:57:44Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005242,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1929,
+      "out": 261
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9315,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3726,
+    "relevance": 0.9315
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study develops a multimodal link transmission model (M-LTM) that simulates continuous road traffic and discrete tramway traffic in a continuous-time framework. The model incorporates moving bottleneck theory to capture inter-modal interactions, alongside node models that simulate tram dwell times, queue spillbacks, and tram priority at intersections. Validation on synthetic networks and the real-world network of Dresden, Germany, demonstrated road traffic GEH statistics below 4 and average tram arrival time absolute errors under 10 seconds.",
+      "why": "It provides a computationally efficient network-level simulation tool capable of capturing the mutual congestion impacts between public transit and private vehicles, which was previously difficult to model dynamically at scale."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-08",
+  "work_key": "arxiv:2607.07152"
+}

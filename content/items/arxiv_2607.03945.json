@@ -1,0 +1,187 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Remote sensing imagery plays a crucial role in evaluating regional transportation capacity. However, existing segmentation datasets often lack diversity in object categories and scenes, limiting the ability of models to comprehensively evaluate trans portation capacity in real-world scenes. To alleviate this gap, we construct a large-scale and diverse dataset for transportation object segmentation, named as NWPU-Traffic. This dataset encompass four traffic object categories (car, airplane, ship, and train) and a wide range of scenes from 49 cities across 7 countries, with instance-level annotations to ensure precise segmentation of individual objects, which bridges critical shortcomings in resolution and scene diversity in existing datasets. Leveraging this dataset, we establish a benchmark with several popular segmentation networks. Furthermore, we propose a novel segmentation method that leverages spatial-channel preserving feature interaction and an adaptive feature decoder, enabling robust segmentation across varying scales and complex environments. Extensive experiments and ablation studies validate the effectiveness of our approach. The dataset and code are publicly available at https://github.com/CVer-Yang/NWPU-Traffic.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Zhigang Yang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Huiguang Yao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Linmao Tian",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Qiang Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Qi Wang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.03945v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03945v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-04",
+    "repository_urls": [],
+    "title": "A Large-Scale Dataset and a New Method for RemoteSensing Traffic Object Segmentation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-04_2607.03945",
+    "members": [
+      "arxiv:2607.03945"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.03945",
+    "doi": "10.48550/arxiv.2607.03945",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:52:23Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005116,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1941,
+      "out": 245
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.8,
+      "novelty": 0.0,
+      "relevance": 0.8839,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.5136,
+    "relevance": 0.8839
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/CVer-Yang/NWPU-Traffic",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "49 cities",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers created NWPU-Traffic, a large-scale remote sensing dataset featuring instance-level annotations for four vehicle categories (cars, airplanes, ships, and trains) across 49 cities in 7 countries. They established a benchmark using popular segmentation networks and introduced a new segmentation method that utilizes spatial-channel preserving feature interaction alongside an adaptive feature decoder to handle varying object scales.",
+      "why": "It provides a highly diverse, multi-country dataset and a specialized model that improves the accuracy of segmenting transport objects across complex, real-world environments, overcoming the category and scene limitations of previous datasets."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-04",
+  "work_key": "arxiv:2607.03945"
+}

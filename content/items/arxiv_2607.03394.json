@@ -1,0 +1,187 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Real time location data derived from mobile applications is a powerful tool for addressing various urban challenges, including tourism planning, parking management, bus route optimization, and resource allocation. Besides, it offers invaluable insights for shaping strategic decisions in commercial domains such as location based services, market share analysis, and behavioral profiling. In this expansive study, we aim to address all of the aforementioned challenges by investigating the behaviors and patterns of smartphone users within urban environments, particularly in the domains of tourism, transportation, and retail. Our approach encompasses the development of a sophisticated data platform from inception to implementation, which includes the formulation of use cases, architectural design, and implementation of modules. We employ state of the art techniques and technologies, including data anonymization, ETL pipelines, and utilizing Google BigQuery and Vertex AI for data processing and machine learning model development. A modular architecture based on reusable analytical building blocks was developed to generate data products that support multiple stakeholder driven use cases. Additionally, we apply interactive data visualization techniques via Power BI to facilitate the effective interpretation of analytical findings by stakeholders. The developed models address a wide range of mobility analytics tasks, including mobility profiling, frequent trajectory mining, area of influence analysis, traffic anomaly detection, and origin destination pattern analysis. The results demonstrate the framework's ability to capture user mobility dynamics at fine spatial and temporal resolutions, providing actionable insights for urban planning and strategic business decision making.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Thiago Andrade",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shazia Tabassum",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Miguel E. P. Silva",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ricardo Dinis",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Joao Gama",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI",
+      "cs.CY",
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.03394v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03394v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-03",
+    "repository_urls": [],
+    "title": "From Mobile Data to Business Insights: An End-to-End Analytics Framework for Large-Scale Urban Mobility Analysis and Decision Support"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-03_2607.03394",
+    "members": [
+      "arxiv:2607.03394"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.03394",
+    "doi": "10.48550/arxiv.2607.03394",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:50:29Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005852,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2089,
+      "out": 302
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9959,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3984,
+    "relevance": 0.9959
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The abstract does not disclose the specific sample size, temporal duration, or geographic location of the mobile dataset used to validate the platform.",
+      "what": "The researchers built an end-to-end data platform and modular analytics framework using Google BigQuery and Vertex AI to process anonymized mobile application location data. The system executes ETL pipelines to generate data products for mobility profiling, frequent trajectory mining, area of influence analysis, traffic anomaly detection, and origin-destination pattern analysis. The processed insights are delivered to stakeholders through interactive Power BI dashboards.",
+      "why": "It provides a reusable, modular architecture that translates raw, large-scale smartphone location data into standardized analytical building blocks, allowing urban planners and commercial decision-makers to run diverse spatial-temporal analyses without building custom pipelines from scratch."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-03",
+  "work_key": "arxiv:2607.03394"
+}

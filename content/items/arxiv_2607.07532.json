@@ -1,0 +1,175 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Accurate mapping of informal settlements remains a major challenge in Sub-Saharan African (SSA) cities because optical imagery often fails to distinguish Informal Settlements (defined here as LCZ 7) from spectrally similar formal Compact Low-Rise areas (LCZ 3). This study presents a context-aware, reproducible Optical-SAR framework that improves informal settlement delineation using Sentinel-2 spectral features and Sentinel-1 structural information within an adapted Local Climate Zone (LCZ) taxonomy. We implement a three-tier SAR integration strategy: calibrated backscatter, GLCM textures, and a physics-guided feature engineered to capture the high structural disorder and weak radar return characteristic of SSA informal settlements. Using reference data across Nairobi and Eldoret (Kenya), we evaluate performance via a stratified hold-out protocol and a season-aware ablation study. Results show that SAR textures provide the dominant performance gain for LCZ 7 detection. The Optical-SAR model achieves overall accuracy of 0.816 (dry) and 0.807 (wet), significantly outperforming the WUDAPT baseline (OA 0.704) and reducing the critical LCZ 3 - LCZ 7 confusion to 7%. Seasonal analysis indicates that while optical-only separability varies with phenology, SAR-derived textures stabilize informal settlement mapping across seasons. These findings demonstrate that the incorporation of SAR-derived features yields consistent improvements for urban morphology mapping in data-scarce environments across seasons and across the evaluated source cities, while cross-city transfer remains limited without local adaptation strategies.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Peterson Chepkilot",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Babak Memar",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Paolo Gamba",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "eess.IV"
+    ],
+    "comment": "Submitted to IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (JSTARS) for possible publication",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.07532v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.07532v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-08",
+    "repository_urls": [],
+    "title": "Context-Aware Slum Mapping in Sub-Saharan Africa Using Sentinel-1 Texture and Local Climate Zones"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-08_2607.07532",
+    "members": [
+      "arxiv:2607.07532"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q3870",
+        "label": "Nairobi",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.07532",
+    "doi": "10.48550/arxiv.2607.07532",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:57:44Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006908,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2157,
+      "out": 408
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8366,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3346,
+    "relevance": 0.8366
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance in cross-city transfer is limited without local adaptation strategies.",
+      "what": "This study developed an Optical-SAR framework that combines Sentinel-2 spectral data with Sentinel-1 structural information to map informal settlements (LCZ 7) and distinguish them from compact low-rise areas (LCZ 3). Tested in Nairobi and Eldoret, Kenya, the model incorporates calibrated backscatter, GLCM textures, and a custom physics-guided feature to capture structural disorder. The framework achieved overall accuracies of 0.816 in the dry season and 0.807 in the wet season, reducing the misclassification between LCZ 3 and LCZ 7 to 7% compared to a 0.704 overall accuracy for the WUDAPT baseline.",
+      "why": "The approach overcomes the seasonal vulnerability of optical-only mapping by using SAR-derived textures to stabilize informal settlement detection across wet and dry seasons. This provides a reliable, reproducible method for mapping complex urban morphologies in data-scarce Sub-Saharan African environments."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-08",
+  "work_key": "arxiv:2607.07532"
+}

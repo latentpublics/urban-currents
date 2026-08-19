@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Rising temperatures create new challenges for local heat adaptation. Yet, it remains unclear how urban activity changes during hot periods and which urban environments people concentrate in as temperatures rise. Here, we perform a hyperlocal spatiotemporal analysis of urban activity across 10 German cities over a two-month period in 2024 with different levels of heat exposure. To monitor urban activity, we use fine-grained telecommunication data to map locations of people with high spatio-temporal resolution (i.e., hourly at 100m x 155m grid cells), yielding more than 100 million data points. We then link activity counts with hourly weather records and point-of-interest data. We find that sustained periods of hot weather, defined as at least three consecutive days with daily maximum temperatures $\\geq 25$°C, are characterized by below-expected city-wide presence, with activity counts that are 1.5 percentage points below regular urban activity. During hot periods, urban activity concentrates more strongly around leisure- and culture-oriented amenities (e.g., cafés or swimming pools), with an increase of up to around 10 percentage points relative to cooler days, while public-service environments (e.g., educational and health facilities) show weaker or negative shifts. Our study provides policy-makers with fine-grained monitoring of which urban areas attract citizens during heat exposure, which can enable evidence-based, spatially-targeted urban heat adaptation plans.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Dominique Geissler",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Felix Creutzig",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ramit Debnath",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Stefan Feuerriegel",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.07417v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.07417v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-08",
+    "repository_urls": [],
+    "title": "Hyperlocal monitoring of urban activity reveals responses to heat exposure"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-08_2607.07417",
+    "members": [
+      "arxiv:2607.07417"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.07417",
+    "doi": "10.48550/arxiv.2607.07417",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:57:44Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006104,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2113,
+      "out": 326
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9844,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3938,
+    "relevance": 0.9844
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a relatively short observation window of two months during a single year.",
+      "what": "The study analyzed urban activity patterns across 10 German cities over a two-month period in 2024 using hourly telecommunication data at a spatial resolution of 100m by 155m, totaling over 100 million data points. By linking these location counts with hourly weather records and point-of-interest data, it found that sustained hot periods of three or more days above 25°C reduce overall city-wide presence by 1.5 percentage points. During these hot spells, activity shifts toward leisure and cultural amenities like swimming pools and cafés by up to 10 percentage points, while presence at public services like schools and healthcare facilities declines.",
+      "why": "It provides empirical, high-resolution evidence of how populations dynamically redistribute themselves across specific urban amenities during heatwaves, moving beyond static vulnerability indexes to show where heat adaptation interventions are most urgently needed."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-08",
+  "work_key": "arxiv:2607.07417"
+}

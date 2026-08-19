@@ -1,0 +1,322 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This paper focuses on passenger-oriented real-time train rescheduling, considering flexible train composition and rolling stock circulation, by integrating learning-based and optimization-based approaches. A learning-based model predictive control (MPC) approach is developed for real-time train rescheduling with flexible train composition and rolling stock circulation to address time-varying passenger demands. In the proposed approach, the values of the integer variables are obtained by pre-trained long short-term memory (LSTM) networks, while the continuous variables are determined through nonlinear constrained optimization. The learning-based MPC approach enables us to jointly consider efficiency and constraint satisfaction by combining learning-based and optimization-based approaches. In order to reduce the number of integer variables, four presolve techniques are developed to prune a subset of integer decision variables. Numerical simulations based on real-life data from the Beijing urban rail transit system are conducted to illustrate the effectiveness of the developed learning-based MPC approach.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Shandong University",
+            "ror": "0207yh398"
+          },
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Xiaoyu Liu",
+        "openalex": "A5057961560",
+        "orcid": "https://orcid.org/0000-0002-8174-9181"
+      },
+      {
+        "institutions": [],
+        "name": "Caio Fabio Oliveira da Silva",
+        "openalex": "A5084608423",
+        "orcid": "https://orcid.org/0009-0008-2977-7151"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Azita Dabiri",
+        "openalex": "A5022595935",
+        "orcid": "https://orcid.org/0000-0002-1296-7580"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Beijing Jiaotong University",
+            "ror": "01yj56c84"
+          }
+        ],
+        "name": "Yihui Wang",
+        "openalex": "A5139968314",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Bart De Schutter",
+        "openalex": "A5026547410",
+        "orcid": "https://orcid.org/0000-0001-9867-6196"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105841",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0968090X26003293/pdf",
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-03",
+    "repository_urls": [],
+    "title": "Learning-based model predictive control for passenger-oriented train rescheduling with flexible train composition"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-03_2502.15544",
+    "members": [
+      "arxiv:2502.15544"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:rnn",
+        "label": "recurrent neural network"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0207yh398",
+        "label": "Shandong University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02e2c7k09",
+        "label": "Delft University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01yj56c84",
+        "label": "Beijing Jiaotong University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8174-9181",
+        "label": "Xiaoyu Liu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0008-2977-7151",
+        "label": "Caio Fabio Oliveira da Silva"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1296-7580",
+        "label": "Azita Dabiri"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139968314",
+        "label": "Yihui Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9867-6196",
+        "label": "Bart De Schutter"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q956",
+        "label": "Beijing",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11568",
+        "is_primary": true,
+        "label": "Railway Systems and Energy Efficiency",
+        "score": 0.9448,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10808",
+        "is_primary": false,
+        "label": "Electric and Hybrid Vehicle Technologies",
+        "score": 0.0051,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13644",
+        "is_primary": false,
+        "label": "Control Systems in Engineering",
+        "score": 0.0031,
+        "subfield": "2210"
+      }
+    ]
+  },
+  "first_published": "2026-07-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1977985274",
+      "openalex:W1978956894",
+      "openalex:W2034996255",
+      "openalex:W2054349595",
+      "openalex:W2063735682",
+      "openalex:W2064675550",
+      "openalex:W2113261936",
+      "openalex:W2134673975",
+      "openalex:W2173875532",
+      "openalex:W2337617318",
+      "openalex:W2339551559",
+      "openalex:W2414364427",
+      "openalex:W2490110638",
+      "openalex:W2800510013",
+      "openalex:W2898623474",
+      "openalex:W2938894022",
+      "openalex:W3013449633",
+      "openalex:W3017281153",
+      "openalex:W3028455791",
+      "openalex:W3092539173",
+      "openalex:W3113112404",
+      "openalex:W3136740735",
+      "openalex:W3175480934",
+      "openalex:W3175666263",
+      "openalex:W3184699104",
+      "openalex:W4214721613",
+      "openalex:W4214812802",
+      "openalex:W4229007983",
+      "openalex:W4281559831",
+      "openalex:W4312810024",
+      "openalex:W4317354994",
+      "openalex:W4319344156",
+      "openalex:W4380451012",
+      "openalex:W4387004905",
+      "openalex:W4388484460",
+      "openalex:W4388676544",
+      "openalex:W4394594013",
+      "openalex:W4402231481",
+      "openalex:W4406137973",
+      "openalex:W4412949794"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2502.15544",
+    "doi": "10.1016/j.trc.2026.105841",
+    "openalex": "W7167252848",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T07:50:32Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005338,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1891,
+      "out": 278
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T07:50:32Z",
+    "doi": "10.1016/j.trc.2026.105841",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance and computational efficiency of the model are demonstrated through simulations rather than a live physical deployment.",
+      "what": "The study develops a learning-based model predictive control (MPC) framework for real-time, passenger-oriented train rescheduling that incorporates flexible train composition and rolling stock circulation. The model combines pre-trained Long Short-Term Memory (LSTM) networks to predict integer decision variables with nonlinear constrained optimization to solve for continuous variables, using four presolve pruning techniques to reduce computational complexity. The approach was validated through numerical simulations using real-life operational data from the Beijing urban rail transit system.",
+      "why": "It establishes a method to dynamically adjust train lengths and schedules in response to fluctuating passenger demand, resolving the computational bottleneck of mixed-integer nonlinear programming in real-time transit operations."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-03",
+  "work_key": "arxiv:2502.15544"
+}

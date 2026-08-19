@@ -1,0 +1,302 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract This study analyzes seasonal land surface temperature (LST) patterns in the historic urban heritage area of São João del-Rei, Brazil, using satellite remote sensing and machine-learning-based spatial downscaling. Landsat 8/9 thermal imagery and Sentinel-2-derived spectral indices were processed for January (wet summer) and July (dry winter) over the 2019–2025 period. Landsat-derived LST composites at 30 m were spatially refined to 10 m using a CatBoost Regressor trained with Sentinel-2 spectral predictors, including NDVI, NDWI, NDBI, albedo, and dSAVI. The resulting maps should be interpreted as model-derived downscaled LST surfaces, not as direct street-scale thermal observations. The results indicate clear seasonal differences in the spectral controls associated with LST variability. In January, vegetation- and moisture-related indices showed greater relative importance, suggesting a greater role of vegetation- and moisture-related surface conditions under wet-summer conditions. In July, the built-up index (NDBI) showed greater relevance in the predictor-removal analysis, indicating that impervious and built surfaces became more important for explaining winter LST contrasts within the adopted model. Spatial patterns in the model-derived downscaled LST maps suggest lower estimated surface temperatures near vegetated areas, water bodies, and some compact street segments, while more open and impervious spaces showed higher estimated surface temperatures. These patterns are interpreted in relation to the known morphology and material characteristics of the protected historic fabric, but they do not constitute direct evidence of thermal inertia, urban canyon effects, or pedestrian thermal comfort. The study provides an exploratory and reproducible framework for assessing seasonal surface thermal patterns in historic urban centers and discusses their potential relevance for heritage-sensitive climate adaptation planning.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Universidade de São Paulo",
+            "ror": "036rp1748"
+          },
+          {
+            "name": "Hospital Universitário da Universidade de São Paulo",
+            "ror": "0406jsq08"
+          }
+        ],
+        "name": "João Batista Ferreira Neto",
+        "openalex": "A5054648204",
+        "orcid": "https://orcid.org/0000-0002-7144-2901"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Federal University of São João del-Rei",
+            "ror": null
+          }
+        ],
+        "name": "Heloisa Silva Leão",
+        "openalex": "A5117822341",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universidade de São Paulo",
+            "ror": "036rp1748"
+          },
+          {
+            "name": "Hospital Universitário da Universidade de São Paulo",
+            "ror": "0406jsq08"
+          }
+        ],
+        "name": "Mariana Santos Freitas",
+        "openalex": "A5089032615",
+        "orcid": "https://orcid.org/0009-0006-9748-2510"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Federal University of São João del-Rei",
+            "ror": null
+          }
+        ],
+        "name": "Gabriel Pereira",
+        "openalex": "A5042115181",
+        "orcid": "https://orcid.org/0000-0002-2093-9942"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s44327-026-00318-9",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44327-026-00318-9.pdf",
+      "source_id": "S5407042847",
+      "source_name": "Discover Cities",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-07",
+    "repository_urls": [],
+    "title": "Machine learning downscaling of satellite derived land surface temperature in the historic urban heritage area of São João del-Rei Brazil"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-07_10.1007/s44327-0",
+    "members": [
+      "doi:10.1007/s44327-026-00318-9"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:036rp1748",
+        "label": "Universidade de São Paulo"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0406jsq08",
+        "label": "Hospital Universitário da Universidade de São Paulo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:I4210130985",
+        "label": "Federal University of São João del-Rei"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7144-2901",
+        "label": "João Batista Ferreira Neto"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5117822341",
+        "label": "Heloisa Silva Leão"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0006-9748-2510",
+        "label": "Mariana Santos Freitas"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2093-9942",
+        "label": "Gabriel Pereira"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.9963,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12981",
+        "is_primary": false,
+        "label": "Conservation Techniques and Studies",
+        "score": 0.0004,
+        "subfield": "1206"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11333",
+        "is_primary": false,
+        "label": "Climate change and permafrost",
+        "score": 0.0003,
+        "subfield": "1902"
+      }
+    ]
+  },
+  "first_published": "2026-07-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1678356000",
+      "openalex:W1964217023",
+      "openalex:W2006273284",
+      "openalex:W2023306858",
+      "openalex:W2030737358",
+      "openalex:W2039240409",
+      "openalex:W2044609898",
+      "openalex:W2053579689",
+      "openalex:W2067075860",
+      "openalex:W2074398030",
+      "openalex:W2077509829",
+      "openalex:W2087170476",
+      "openalex:W2102148524",
+      "openalex:W2124306732",
+      "openalex:W2130615363",
+      "openalex:W2153763028",
+      "openalex:W2161241309",
+      "openalex:W2301692565",
+      "openalex:W2809000771",
+      "openalex:W2911964244",
+      "openalex:W2982272892",
+      "openalex:W3020463946",
+      "openalex:W3182706339",
+      "openalex:W3194185890",
+      "openalex:W3200825310",
+      "openalex:W3202407153",
+      "openalex:W4206524767",
+      "openalex:W4319083447",
+      "openalex:W4362518912",
+      "openalex:W4385387233",
+      "openalex:W4407626459",
+      "openalex:W4408123309",
+      "openalex:W4410226348",
+      "openalex:W4411216797",
+      "openalex:W4411831255",
+      "openalex:W4413934847",
+      "openalex:W4415817223",
+      "openalex:W4417336375",
+      "openalex:W7083809923",
+      "openalex:W7119494599"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s44327-026-00318-9",
+    "openalex": "W7167644431",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T07:56:20Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00679,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2271,
+      "out": 376
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T07:56:20Z",
+    "doi": "10.1007/s44327-026-00318-9",
+    "journal": "Discover Cities",
+    "source_id": "S5407042847",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2019–2025",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The downscaled maps represent model-derived estimates rather than direct street-scale thermal observations, and they do not provide direct evidence of thermal inertia, urban canyon effects, or pedestrian comfort.",
+      "what": "The study downscaled Landsat 8/9 thermal imagery from 30 m to 10 m resolution for the historic center of S\u0000ao Jo\u0000ao del-Rei, Brazil, covering wet summers (January) and dry winters (July) between 2019 and 2025. A CatBoost Regressor was trained on Sentinel-2 spectral indices, revealing that vegetation and moisture indices dominate land surface temperature variability in summer, while the built-up index becomes the primary predictor in winter. The downscaled maps showed lower estimated temperatures near vegetated areas, water bodies, and compact street segments compared to open, impervious spaces.",
+      "why": "It provides a reproducible, high-resolution spatial downscaling framework that allows planners to identify micro-scale thermal variations within historic urban fabrics using freely available satellite data."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-07",
+  "work_key": "doi:10.1007/s44327-026-00318-9"
+}

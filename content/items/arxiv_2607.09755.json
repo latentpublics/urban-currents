@@ -1,0 +1,155 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban rail fare systems may be non-additive: the fare of a single paid journey from an origin to a destination can differ from the sum of fares over multiple legally separated journey legs. This paper presents LegalFarePlan, a fare-transparent route-planning framework that models legal exit-and-reentry operations as explicit, auditable constraints. Given a transit network, fare function, transfer rules, station-level exit/re-entry costs, an extra-time budget, and a split limit, the planner computes explainable route plans over paid journey segments. The artifact implements Dijkstra shortest-time and direct route-planner baselines, a greedy split heuristic, bounded exact label-setting, and Pareto-frontier search. Evaluation uses controlled synthetic data and a 57-station semi-synthetic benchmark with 360 OD pairs. On the semi-synthetic benchmark, bounded exact search identifies positive modeled fare reductions for 71.11% of OD pairs, with mean reduction 3.78 and maximum reduction 9.0 synthetic fare units under a 45-minute extra-time budget. These results demonstrate method behavior and reproducibility; they are not empirical conclusions about MTR or any transit operator.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Tanghui Li",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "comment": "6 pages, 4 tables; author preprint version, not the conference camera-ready version",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.09755v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.09755v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-05",
+    "repository_urls": [],
+    "title": "LegalFarePlan: A Label-Setting Framework for Fare-Transparent Urban Rail Route Planning under Non-Additive Fare Rules"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-05_2607.09755",
+    "members": [
+      "arxiv:2607.09755"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.09755",
+    "doi": "10.48550/arxiv.2607.09755",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:53:35Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005882,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2025,
+      "out": 316
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8498,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3399,
+    "relevance": 0.8498
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance and fare-saving metrics are demonstrated on synthetic and semi-synthetic benchmarks rather than empirical data from an active transit operator.",
+      "what": "The LegalFarePlan framework models urban rail route planning under non-additive fare rules by treating legal exit-and-reentry actions as explicit constraints. It implements Dijkstra baselines, a greedy split heuristic, bounded exact label-setting, and Pareto-frontier search, which were evaluated on a 57-station semi-synthetic benchmark with 360 origin-destination pairs. Under a 45-minute extra-time budget, the bounded exact search identified fare reductions for 71.11% of the pairs, yielding a mean reduction of 3.78 and a maximum of 9.0 synthetic fare units.",
+      "why": "It provides a systematic method to identify and exploit legal fare-saving opportunities through strategic mid-journey exits and re-entries, a capability previously unaddressed by standard shortest-path transit routers."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-05",
+  "work_key": "arxiv:2607.09755"
+}

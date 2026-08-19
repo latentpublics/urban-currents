@@ -1,0 +1,288 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Travel surveys serve as vital resources for gaining insight into daily mobility patterns. Trip chains are one of the key features in such data sets, as they capture integrated travel patterns, including details of activity participation. Mapping the spatial distribution of intermediate activities, such as stops made during a standard commute, enhances understanding of travel behavior, particularly mode choice dynamics. However, such data are often incomplete or missing, which reduces the depth of the analysis. Addressing this concern, this study presents a Point of Interest (POI)-based time-geography methodology to approximate intermediate stop locations for activities in trip chains in travel surveys, with the potential to considerably improve computational efficiency compared to the traditional time-geographic density estimation (TGDE) technique. We apply the method to travel survey data from Eskilstuna, Sweden, combined with OpenStreetMap network data, achieving promising trip chain reconstruction results. However, although the proposed approach showed great potential, limitations in data availability prevented rigorous validation. Future studies should therefore test it using data with complete trip chains. Nevertheless, this study contributes to addressing the problem of missing data in travel surveys, which is relevant to researchers and policymakers in urban transport.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "KTH Royal Institute of Technology",
+            "ror": "026vcq606"
+          }
+        ],
+        "name": "Peiling Wu",
+        "openalex": "A5140057885",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "KTH Royal Institute of Technology",
+            "ror": "026vcq606"
+          }
+        ],
+        "name": "Fariya Sharmeen",
+        "openalex": "A5019983968",
+        "orcid": "https://orcid.org/0000-0002-6177-1795"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Institute for Futures Studies",
+            "ror": "00x2kxt49"
+          },
+          {
+            "name": "KTH Royal Institute of Technology",
+            "ror": "026vcq606"
+          }
+        ],
+        "name": "Emma Engström",
+        "openalex": "A5089862940",
+        "orcid": "https://orcid.org/0000-0002-5290-5704"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.compenvurbsys.2026.102484",
+      "pdf_url": null,
+      "source_id": "S60115552",
+      "source_name": "Computers Environment and Urban Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-04",
+    "repository_urls": [],
+    "title": "Addressing the missing activity location problem in trip chais: A POI-based probabilistic method using open data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-04_10.1016/j.compen",
+    "members": [
+      "doi:10.1016/j.compenvurbsys.2026.102484"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:026vcq606",
+        "label": "KTH Royal Institute of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00x2kxt49",
+        "label": "Institute for Futures Studies"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5140057885",
+        "label": "Peiling Wu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6177-1795",
+        "label": "Fariya Sharmeen"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5290-5704",
+        "label": "Emma Engström"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.3039,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.1396,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11106",
+        "is_primary": false,
+        "label": "Data Management and Algorithms",
+        "score": 0.1379,
+        "subfield": "1711"
+      }
+    ]
+  },
+  "first_published": "2026-07-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1502789746",
+      "openalex:W1972400450",
+      "openalex:W1974964264",
+      "openalex:W1978293581",
+      "openalex:W1982473893",
+      "openalex:W1992704918",
+      "openalex:W1996504240",
+      "openalex:W2001071253",
+      "openalex:W2003320652",
+      "openalex:W2005516796",
+      "openalex:W2010612397",
+      "openalex:W2012551394",
+      "openalex:W2019349101",
+      "openalex:W2019859915",
+      "openalex:W2026472395",
+      "openalex:W2030654788",
+      "openalex:W2042583062",
+      "openalex:W2045595650",
+      "openalex:W2072482669",
+      "openalex:W2100249345",
+      "openalex:W2108684565",
+      "openalex:W2110593924",
+      "openalex:W2111021565",
+      "openalex:W2133739088",
+      "openalex:W2140530992",
+      "openalex:W2143875035",
+      "openalex:W2150262112",
+      "openalex:W2315372439",
+      "openalex:W2326218119",
+      "openalex:W2620993678",
+      "openalex:W2743808405",
+      "openalex:W2758602187",
+      "openalex:W2767061048",
+      "openalex:W2775874419",
+      "openalex:W2787415930",
+      "openalex:W2811380067",
+      "openalex:W2850576248",
+      "openalex:W2888074460",
+      "openalex:W2892774417",
+      "openalex:W2898934219",
+      "openalex:W3003680423",
+      "openalex:W3041994516",
+      "openalex:W3130022687",
+      "openalex:W4221028868",
+      "openalex:W4237581886",
+      "openalex:W4283745665",
+      "openalex:W4287958303",
+      "openalex:W4296558822",
+      "openalex:W4311715259",
+      "openalex:W4361793196",
+      "openalex:W4390663048"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.compenvurbsys.2026.102484",
+    "openalex": "W7167354615",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T07:52:25Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005383,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1987,
+      "out": 267
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T07:52:25Z",
+    "doi": "10.1016/j.compenvurbsys.2026.102484",
+    "journal": "Computers Environment and Urban Systems",
+    "source_id": "S60115552",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The method could not be rigorously validated due to data availability constraints, meaning its accuracy remains untested against complete, ground-truth trip chains.",
+      "what": "The study develops a Point of Interest (POI)-based time-geography method to estimate the locations of missing intermediate stops within trip chains. The approach combines travel survey data from Eskilstuna, Sweden, with OpenStreetMap network data to reconstruct travel patterns with higher computational efficiency than traditional time-geographic density estimation.",
+      "why": "It provides a computationally efficient way to reconstruct incomplete travel surveys, allowing planners to better analyze intermediate activity patterns and mode choices even when spatial data is missing."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-04",
+  "work_key": "doi:10.1016/j.compenvurbsys.2026.102484"
+}

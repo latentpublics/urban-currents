@@ -1,0 +1,209 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Sri Lanka has experienced a decade of progressive forest degradation and rising atmospheric pollution, yet district-level respiratory admissions have paradoxically declined, pointing to the confounding role of healthcare access. This study addresses that gap by constructing an 11-year (2014-2024) panel dataset across all 25 administrative districts, integrating satellite-derived vegetation indices, fire radiative power, pollutant concentrations (particulate matter (PM2.5), nitrogen dioxide (NO2), sulfur dioxide (SO2)), carbon flux metrics and population-normalized respiratory admission rates. Two temporally validated XGBoost models were created for annual district-level respiratory rate (R^2 = 0.937) and monthly PM2.5 concentration (R^2 = 0.976) with generalization validated in 21 out of 25 districts (Mean Absolute Percentage Error (MAPE) <= 20%). Shapley Additive Explanations (SHAP) analysis established that cumulative air quality burden is the overwhelming driver of respiratory rate variance (80.1%), ahead of forest degradation (15.6%) and fire activity (4.3%). The Forest-Air-Health (FAH) Risk Index used these SHAP-derived weights to find the districts with the highest risk: Colombo (FAH = 0.802), Gampaha (0.708), and Kalutara (0.682). These findings present the inaugural evidence-based, district-level framework correlating environmental degradation with respiratory health in Sri Lanka, establishing a quantitative basis for focused public health and environmental policy.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Rahim Iqbal",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Asfi Ahamed",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Izzath Nisfer",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shazan Shaheed",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Muhammadu Ilham",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Nathali Athukorala",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Madara Mendis",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Nisansa de Silva",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sandareka Wickramanayake",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": "6 pages, 8 figures, 4 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.04416v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.04416v2",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-05",
+    "repository_urls": [],
+    "title": "Environmental Drivers of Respiratory Disease: A District Level Analysis"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-05_2607.04416",
+    "members": [
+      "arxiv:2607.04416"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:gradient-boosting",
+        "label": "gradient boosting"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.04416",
+    "doi": "10.48550/arxiv.2607.04416",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:53:35Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006245,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2171,
+      "out": 332
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9427,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3771,
+    "relevance": 0.9427
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2014-2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The predictive models generalized well for most of the country but exceeded a 20% Mean Absolute Percentage Error in 4 out of the 25 districts.",
+      "what": "Using an 11-year panel dataset (2014-2024) across all 25 administrative districts in Sri Lanka, this study built two temporally validated XGBoost models to predict annual district-level respiratory admission rates (R^2 = 0.937) and monthly PM2.5 concentrations (R^2 = 0.976). SHAP analysis revealed that cumulative air quality burden accounts for 80.1% of the variance in respiratory rates, followed by forest degradation at 15.6% and fire activity at 4.3%. A newly developed Forest-Air-Health Risk Index identified Colombo, Gampaha, and Kalutara as the highest-risk districts.",
+      "why": "It provides the first district-level quantitative framework in Sri Lanka that links environmental degradation to respiratory health, resolving a historical paradox where declining hospital admissions masked rising pollution due to uneven healthcare access."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-07",
+  "work_key": "arxiv:2607.04416"
+}

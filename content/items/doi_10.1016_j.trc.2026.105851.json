@@ -1,0 +1,261 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Bicycle traffic, as a sustainable mode of transport, helps reduce urban emissions and promote livable cities. Accurate short-term prediction of bicycle traffic flow can support real-time and near-real-time traffic management decisions in urban cycling systems. However, this task is challenging due to limited high-quality bicycle data, sparse sensor coverage, and high sensitivity to external factors. In this work, we propose a Bicycle Spatial-Temporal Large Language Model (BiSTLLM) for bicycle traffic prediction, inspired by the strong time series modeling capabilities of large language models (LLMs). In BiSTLLM, we define the historical traffic sequence at each location as tokens, allowing the model to learn complex spatial-temporal patterns. Specifically, we first introduce a weather lagging processor using causal temporal convolution to capture the delayed effects of weather on bicycle traffic. We also incorporate semantic embeddings of Point-of-Interest (POIs) and bicycle lane accessibility to represent land use and infrastructure, enhancing the model’s ability to learn both localized activity patterns and broader spatial-temporal dynamics. We then further introduce a fine-tuning strategy to better tailor the general knowledge of a pre-trained LLM to the specific characteristics of bicycle traffic. Experiments on real-world bicycle traffic flow datasets demonstrate that BiSTLLM outperforms existing state-of-the-art models. Notably, BiSTLLM exhibits strong performance even in few-shot settings, highlighting its potential for accurate bicycle traffic prediction in data-sparse environments.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Xiamei Wen",
+        "openalex": "A5113117956",
+        "orcid": "https://orcid.org/0000-0001-8709-8079"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Dorine Duives",
+        "openalex": "A5138888578",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Serge Hoogendoorn",
+        "openalex": "A5140095653",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105851",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-06",
+    "repository_urls": [],
+    "title": "A bicycle traffic prediction framework using pretrained large language models"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-06_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105851"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02e2c7k09",
+        "label": "Delft University of Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8709-8079",
+        "label": "Xiamei Wen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138888578",
+        "label": "Dorine Duives"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140095653",
+        "label": "Serge Hoogendoorn"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.7379,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10761",
+        "is_primary": false,
+        "label": "Vehicular Ad Hoc Networks (VANETs)",
+        "score": 0.0163,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12127",
+        "is_primary": false,
+        "label": "Software System Performance and Reliability",
+        "score": 0.0124,
+        "subfield": "1705"
+      }
+    ]
+  },
+  "first_published": "2026-07-06",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1990732575",
+      "openalex:W2101491865",
+      "openalex:W2138086936",
+      "openalex:W2157331557",
+      "openalex:W2270330859",
+      "openalex:W2510117607",
+      "openalex:W2756203131",
+      "openalex:W2888498194",
+      "openalex:W2907492528",
+      "openalex:W2911964244",
+      "openalex:W3015712039",
+      "openalex:W3092125438",
+      "openalex:W3123191313",
+      "openalex:W3126367810",
+      "openalex:W3153990350",
+      "openalex:W3204365986",
+      "openalex:W4246587917",
+      "openalex:W4309347764",
+      "openalex:W4383551049",
+      "openalex:W4400688400",
+      "openalex:W4403687389",
+      "openalex:W4404076213",
+      "openalex:W4406865568",
+      "openalex:W4410108861",
+      "openalex:W4411336810",
+      "openalex:W4416707163",
+      "openalex:W7133215398"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105851",
+    "openalex": "W7167474771",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T07:54:53Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005822,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2105,
+      "out": 296
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T07:54:53Z",
+    "doi": "10.1016/j.trc.2026.105851",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The abstract does not disclose the specific cities, dataset sizes, or baseline models used to validate the framework's performance.",
+      "what": "The researchers developed BiSTLLM, a spatial-temporal prediction framework that adapts pre-trained large language models to forecast short-term bicycle traffic. The model represents historical traffic sequences as tokens, integrates a causal temporal convolution processor to capture delayed weather impacts, and incorporates semantic embeddings of local POIs and bike lane accessibility. Evaluated on real-world bicycle flow datasets, the framework outperformed existing state-of-the-art models, maintaining high accuracy even in few-shot scenarios with limited data.",
+      "why": "It demonstrates that general-purpose language models can be successfully fine-tuned for specialized urban mobility tasks, offering a viable forecasting method for cities with sparse sensor networks or limited historical cycling data."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-06",
+  "work_key": "doi:10.1016/j.trc.2026.105851"
+}

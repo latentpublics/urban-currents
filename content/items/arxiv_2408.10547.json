@@ -1,0 +1,297 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Shared Autonomous Vehicles (SAVs) enable transit agencies to provide more agile and responsive services. This study investigates the implementation of semi-on-demand (SoD) hybrid-route services using SAVs on existing transit lines at off-peak hours, leveraging the additional capacity brought by lower operating costs of SAVs. SoD services combine the cost efficiency of fixed-route buses with the flexibility of on-demand services. SAVs first serve all scheduled fixed-route stops, then drop off and pick up passengers in the pre-determined flexible-route portion, and return to the fixed route. This study addresses three key questions: optimal fleet and vehicle sizes for peak-hour fixed-route services with SAVs, optimal off-peak SoD service planning, and service feasibility during a gradual transition from drivers to autonomous vehicles. The methodology combines analytical modeling for service planning with agent-based simulation for operational analysis. We examine ten bus routes in Munich, Germany and demonstrate that the lower operating costs of SAVs improve service quality through increased frequency and smaller vehicles, even in transition scenarios. At off-peak hours, SoD service satisfies up to 80% more requests and reduces generalized costs by up to 50% compared to traditional fixed routes. However, during transition, maintaining a mixed fleet heavily limits headway improvements, thereby limiting the benefits to short flexible-route lengths.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Northwestern University",
+            "ror": "000e0be47"
+          }
+        ],
+        "name": "Max T. M. Ng",
+        "openalex": "A5101709772",
+        "orcid": "https://orcid.org/0000-0002-1252-320X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technical University of Munich",
+            "ror": "02kkvpp62"
+          }
+        ],
+        "name": "Roman Engelhardt",
+        "openalex": "A5041455663",
+        "orcid": "https://orcid.org/0000-0002-0052-2584"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technical University of Munich",
+            "ror": "02kkvpp62"
+          }
+        ],
+        "name": "Florian Dandl",
+        "openalex": "A5001631066",
+        "orcid": "https://orcid.org/0000-0003-3706-9725"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Northwestern University",
+            "ror": "000e0be47"
+          }
+        ],
+        "name": "Vasileios Volakakis",
+        "openalex": "A5107672035",
+        "orcid": "https://orcid.org/0009-0006-2263-6773"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Northwestern University",
+            "ror": "000e0be47"
+          }
+        ],
+        "name": "Hani S. Mahmassani",
+        "openalex": "A5026147899",
+        "orcid": "https://orcid.org/0000-0002-8443-8928"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technical University of Munich",
+            "ror": "02kkvpp62"
+          }
+        ],
+        "name": "Klaus Bogenberger",
+        "openalex": "A5066761905",
+        "orcid": "https://orcid.org/0000-0003-3868-9571"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105852",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-10",
+    "repository_urls": [],
+    "title": "Semi-on-demand off-peak transit services with shared autonomous vehicles — service planning, simulation, and analysis in Munich, Germany"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-10_2408.10547",
+    "members": [
+      "arxiv:2408.10547"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:000e0be47",
+        "label": "Northwestern University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02kkvpp62",
+        "label": "Technical University of Munich"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1252-320X",
+        "label": "Max T. M. Ng"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0052-2584",
+        "label": "Roman Engelhardt"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3706-9725",
+        "label": "Florian Dandl"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0006-2263-6773",
+        "label": "Vasileios Volakakis"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8443-8928",
+        "label": "Hani S. Mahmassani"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3868-9571",
+        "label": "Klaus Bogenberger"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": true,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.9996,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.9913,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.956,
+        "subfield": "2207"
+      }
+    ]
+  },
+  "first_published": "2026-07-10",
+  "graph": {
+    "cited_by_count": 3,
+    "referenced_works": [],
+    "related_works": [
+      "openalex:W1580193255",
+      "openalex:W2024922736",
+      "openalex:W857597006",
+      "openalex:W2588038031",
+      "openalex:W2266281878",
+      "openalex:W3017792581",
+      "openalex:W654272262",
+      "openalex:W603905442",
+      "openalex:W332282905",
+      "openalex:W2247480929"
+    ]
+  },
+  "ids": {
+    "arxiv": "2408.10547",
+    "doi": "10.1016/j.trc.2026.105852",
+    "openalex": "W4403007104",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:01:05Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005824,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2089,
+      "out": 299
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:01:05Z",
+    "doi": "10.1016/j.trc.2026.105852",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The operational benefits, particularly headway improvements, are severely constrained during the transition phase when agencies must operate a mixed fleet of human-driven and autonomous vehicles.",
+      "what": "This study models and simulates semi-on-demand hybrid-route transit services using Shared Autonomous Vehicles (SAVs) across ten bus routes in Munich, Germany during off-peak hours. The proposed service model requires SAVs to visit all scheduled fixed-route stops before deviating to pick up and drop off passengers in designated flexible-route zones. Using a combination of analytical modeling and agent-based simulation, the research evaluates optimal fleet sizes, vehicle capacities, and operational performance during a gradual transition from human drivers to autonomous fleets.",
+      "why": "It demonstrates that SAVs can satisfy up to 80% more passenger requests and cut generalized travel costs by up to 50% compared to traditional fixed-route services, proving that autonomous operations can make hybrid-route transit economically viable."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-10",
+  "work_key": "arxiv:2408.10547"
+}

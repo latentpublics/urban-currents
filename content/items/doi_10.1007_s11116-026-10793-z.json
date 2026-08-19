@@ -1,0 +1,402 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Perceived traffic safety influences cycling behavior, yet its value relative to travel time and other route attributes remains unquantified. Building on the stated choice experiment and street-level image dataset of Terra et al. (2025), we extract safety perception scores from cycling-perspective images using a computer vision model and estimate mixed logit models to test whether perceived safety affects route choice after controlling for visual street-level features. Cyclists are willing to accept 64 additional seconds of travel time for a one-unit increase in perceived safety (scale: $$-2$$ very unsafe to $$+2$$ very safe). Safety preferences vary across demographic groups: older cyclists, recreational cyclists, and those with positive cycling attitudes place more weight on safety, while commuters prioritize speed. These willingness-to-pay estimates enable planners to quantify perceived safety improvements for cost-benefit analyses and to score existing cycling networks for targeted infrastructure upgrades. (Replication code: https://github.com/koito19960406/cycling_safety_perception).",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "National University of Singapore",
+            "ror": "01tgyzw49"
+          },
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Koichi Ito",
+        "openalex": "A5140227108",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Roos Terra",
+        "openalex": "A5140226522",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Danish Academy of Technical Sciences",
+            "ror": "03px3wr77"
+          },
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Miguel Costa",
+        "openalex": "A5065751284",
+        "orcid": "https://orcid.org/0000-0003-0860-7002"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Danish Academy of Technical Sciences",
+            "ror": "03px3wr77"
+          },
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Felix Wilhelm Siebert",
+        "openalex": "A5018658409",
+        "orcid": "https://orcid.org/0000-0002-5082-1419"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Francisco Garrido-Valenzuela",
+        "openalex": "A5034610975",
+        "orcid": "https://orcid.org/0000-0003-0172-8266"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Danish Academy of Technical Sciences",
+            "ror": "03px3wr77"
+          },
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Carlos Lima Azevedo",
+        "openalex": "A5140263918",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "National University of Singapore",
+            "ror": "01tgyzw49"
+          }
+        ],
+        "name": "Filip Biljecki",
+        "openalex": "A5010235735",
+        "orcid": "https://orcid.org/0000-0002-6229-7749"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Sander van Cranenburgh",
+        "openalex": "A5049825776",
+        "orcid": "https://orcid.org/0000-0002-0976-3923"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s11116-026-10793-z",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11116-026-10793-z.pdf",
+      "source_id": "S62009534",
+      "source_name": "Transportation",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-08",
+    "repository_urls": [],
+    "title": "Perceived traffic safety’s impact on cycling route choice with street-level images"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-08_10.1007/s11116-0",
+    "members": [
+      "doi:10.1007/s11116-026-10793-z"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01tgyzw49",
+        "label": "National University of Singapore"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02e2c7k09",
+        "label": "Delft University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03px3wr77",
+        "label": "Danish Academy of Technical Sciences"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04qtj9h94",
+        "label": "Technical University of Denmark"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5140227108",
+        "label": "Koichi Ito"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140226522",
+        "label": "Roos Terra"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0860-7002",
+        "label": "Miguel Costa"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5082-1419",
+        "label": "Felix Wilhelm Siebert"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0172-8266",
+        "label": "Francisco Garrido-Valenzuela"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140263918",
+        "label": "Carlos Lima Azevedo"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6229-7749",
+        "label": "Filip Biljecki"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0976-3923",
+        "label": "Sander van Cranenburgh"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.4224,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.327,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10841",
+        "is_primary": false,
+        "label": "Economic and Environmental Valuation",
+        "score": 0.1475,
+        "subfield": "2002"
+      }
+    ]
+  },
+  "first_published": "2026-07-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1968147892",
+      "openalex:W2022000647",
+      "openalex:W2056166917",
+      "openalex:W2086823447",
+      "openalex:W2136382363",
+      "openalex:W2141536349",
+      "openalex:W2159172367",
+      "openalex:W2164133872",
+      "openalex:W2164690523",
+      "openalex:W2470727793",
+      "openalex:W2478090196",
+      "openalex:W2771765052",
+      "openalex:W2795311708",
+      "openalex:W2805459986",
+      "openalex:W2918788732",
+      "openalex:W2920205933",
+      "openalex:W2952641640",
+      "openalex:W3019608303",
+      "openalex:W3035338890",
+      "openalex:W3107926067",
+      "openalex:W3135500412",
+      "openalex:W3139414877",
+      "openalex:W3174601600",
+      "openalex:W3195494505",
+      "openalex:W3202786944",
+      "openalex:W3202861541",
+      "openalex:W3208791322",
+      "openalex:W4211170267",
+      "openalex:W4224882014",
+      "openalex:W4312815172",
+      "openalex:W4361190752",
+      "openalex:W4367188703",
+      "openalex:W4378471807",
+      "openalex:W4387209264",
+      "openalex:W4389412320",
+      "openalex:W4390827373",
+      "openalex:W4393125117",
+      "openalex:W4393250851",
+      "openalex:W4398214325",
+      "openalex:W4399163843",
+      "openalex:W4399880583",
+      "openalex:W4400019494",
+      "openalex:W4401919356",
+      "openalex:W4403842383",
+      "openalex:W4405433075",
+      "openalex:W4406780241",
+      "openalex:W4408597752",
+      "openalex:W4410386498",
+      "openalex:W4410583020",
+      "openalex:W4412962984",
+      "openalex:W4413505884",
+      "openalex:W4414155174",
+      "openalex:W4415407364",
+      "openalex:W4416929436",
+      "openalex:W7154027489"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s11116-026-10793-z",
+    "openalex": "W7167675565",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T07:57:47Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005384,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1945,
+      "out": 274
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T07:57:47Z",
+    "doi": "10.1007/s11116-026-10793-z",
+    "journal": "Transportation",
+    "source_id": "S62009534",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/koito19960406/cycling_safety_perception",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a stated choice experiment using street-level images rather than observed GPS tracks of actual route choices.",
+      "what": "Using a stated choice experiment and a street-level image dataset, this study extracted safety perception scores from cycling-perspective images using a computer vision model. Mixed logit models revealed that cyclists are willing to accept 64 additional seconds of travel time for a one-unit increase in perceived safety on a scale from -2 to +2. The analysis shows that older cyclists, recreational riders, and those with positive cycling attitudes prioritize safety, whereas commuters prioritize speed.",
+      "why": "It quantifies the trade-off between travel time and perceived safety in monetary or time-equivalent terms, allowing planners to incorporate subjective safety improvements directly into cost-benefit analyses and targeted infrastructure upgrades."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-08",
+  "work_key": "doi:10.1007/s11116-026-10793-z"
+}

@@ -1,0 +1,248 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study explores the use of machine learning models to predict traffic conditions in mixed car–bicycle traffic environments. A synthetic dataset was developed from numerical evaluations of traffic flow theory, capturing a wide range of multimodal traffic scenarios. Random forest (RF), multi-layer perceptron (MLP), and linear regression models were trained to estimate key traffic metrics, including output flow, delay, and density. The analysis focuses on model performance under different data splits, especially when sorting by variables such as initial car flow and bicycle flow. Results show that, while RF performs well for previously observed traffic conditions, MLP offers stronger generalization to unseen traffic conditions, particularly in high-flow and high-density regimes. However, prediction performance varies depending on the input variable used for sorting and the distribution of training data. These findings underscore the importance of balanced, diverse datasets and support the use of data-driven models for traffic state estimation in multimodal urban networks.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Pennsylvania State University",
+            "ror": "04p491231"
+          }
+        ],
+        "name": "Faeze Fathijam",
+        "openalex": "A5130629780",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Pennsylvania State University",
+            "ror": "04p491231"
+          }
+        ],
+        "name": "S. Ilgin Guler",
+        "openalex": "A5062725161",
+        "orcid": "https://orcid.org/0000-0001-6255-3135"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/03611981261459433",
+      "pdf_url": null,
+      "source_id": "S145575934",
+      "source_name": "Transportation Research Record Journal of the Transportation Research Board",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-05",
+    "repository_urls": [],
+    "title": "Machine-Learning-Based Traffic State Prediction in Car–Bicycle Mixed Traffic Using Synthetic Data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-05_10.1177/03611981",
+    "members": [
+      "doi:10.1177/03611981261459433"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:regression",
+        "label": "regression"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04p491231",
+        "label": "Pennsylvania State University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5130629780",
+        "label": "Faeze Fathijam"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6255-3135",
+        "label": "S. Ilgin Guler"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.5308,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.4444,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0035,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-07-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1969706161",
+      "openalex:W2037141248",
+      "openalex:W2095797625",
+      "openalex:W2099432311",
+      "openalex:W2111838834",
+      "openalex:W2135266148",
+      "openalex:W2149464093",
+      "openalex:W2605264395",
+      "openalex:W2738124916",
+      "openalex:W2793820729",
+      "openalex:W2891886573",
+      "openalex:W2945010612",
+      "openalex:W2952679328",
+      "openalex:W3023505194",
+      "openalex:W3156100223",
+      "openalex:W3195569008",
+      "openalex:W4287332260",
+      "openalex:W4385989285",
+      "openalex:W4387047341",
+      "openalex:W7140284733"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1177/03611981261459433",
+    "openalex": "W7167485947",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T07:53:36Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005339,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1891,
+      "out": 278
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T07:53:36Z",
+    "doi": "10.1177/03611981261459433",
+    "journal": "Transportation Research Record Journal of the Transportation Research Board",
+    "source_id": "S145575934",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The models were trained and evaluated entirely on synthetic data generated from theoretical traffic flow equations rather than real-world empirical traffic observations.",
+      "what": "This study evaluated random forest, multi-layer perceptron, and linear regression models to predict traffic output flow, delay, and density in mixed car-bicycle environments. The models were trained and tested on a synthetic dataset generated from numerical evaluations of traffic flow theory. The analysis compared model performance across different data splits, revealing that while random forest excels on previously observed conditions, the multi-layer perceptron generalizes better to unseen, high-flow, and high-density scenarios.",
+      "why": "It demonstrates that synthetic datasets derived from traffic theory can train machine learning models for multimodal traffic estimation, while establishing that neural networks generalize better than tree-based models when encountering novel traffic volumes."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-05",
+  "work_key": "doi:10.1177/03611981261459433"
+}

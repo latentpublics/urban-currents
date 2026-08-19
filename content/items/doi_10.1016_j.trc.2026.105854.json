@@ -1,0 +1,263 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Traffic forecasting is a challenging spatio-temporal modeling task and a critical component of urban transportation management. Current studies mainly focus on deterministic predictions, with limited consideration of the uncertainty and stochasticity in traffic dynamics. Therefore, this paper proposes an elegant yet universal approach that transforms existing models into probabilistic predictors by replacing only the final output layer with a Gaussian Mixture Model (GMM) layer, a network module inspired by the Mixture Density Network (MDN). The modified model requires no changes to data preparation, optimizer or hyperparameters, and can be trained using only the Negative Log-Likelihood (NLL) loss, without any auxiliary or regularization terms. Experiments on multiple traffic datasets show that our approach generalizes from classic to modern model architectures. We propose a systematic evaluation procedure and demonstrate that our approach consistently improves CRPS over unimodal and deterministic baselines, and generates more informative and better-calibrated predictive intervals for a wide range of scenarios. Meanwhile, GMM adaptation often improves L2 error with trade-offs in L1 error metrics. Finally, a more detailed study on a real-world dense urban traffic network is presented to examine the impact of data quality on uncertainty quantification and to show the robustness of our approach under imperfect data conditions. Code available at https://github.com/Weijiang-Xiong/OpenSkyTraffic",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "École Polytechnique Fédérale de Lausanne",
+            "ror": "02s376052"
+          }
+        ],
+        "name": "Weijiang Xiong",
+        "openalex": "A5134024453",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "École Polytechnique Fédérale de Lausanne",
+            "ror": "02s376052"
+          }
+        ],
+        "name": "Róbert Fónod",
+        "openalex": "A5072807533",
+        "orcid": "https://orcid.org/0000-0002-9434-3156"
+      },
+      {
+        "institutions": [
+          {
+            "name": "École Polytechnique Fédérale de Lausanne",
+            "ror": "02s376052"
+          }
+        ],
+        "name": "Nikolas Geroliminis",
+        "openalex": "A5075389676",
+        "orcid": "https://orcid.org/0000-0001-6940-3607"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105854",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0968090X26003426/pdf",
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-08",
+    "repository_urls": [],
+    "title": "Unveiling stochasticity: Universal multi-modal probabilistic modeling for traffic forecasting"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-08_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105854"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02s376052",
+        "label": "École Polytechnique Fédérale de Lausanne"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5134024453",
+        "label": "Weijiang Xiong"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9434-3156",
+        "label": "Róbert Fónod"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6940-3607",
+        "label": "Nikolas Geroliminis"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.5908,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0688,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11303",
+        "is_primary": false,
+        "label": "Bayesian Modeling and Causal Inference",
+        "score": 0.0571,
+        "subfield": "1702"
+      }
+    ]
+  },
+  "first_published": "2026-07-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1594839485",
+      "openalex:W2025720061",
+      "openalex:W2035411179",
+      "openalex:W2040297119",
+      "openalex:W2064675550",
+      "openalex:W2115868680",
+      "openalex:W2789788750",
+      "openalex:W2965341826",
+      "openalex:W2974087501",
+      "openalex:W2975127965",
+      "openalex:W2981565417",
+      "openalex:W3022643593",
+      "openalex:W3092657637",
+      "openalex:W3123909522",
+      "openalex:W3125675327",
+      "openalex:W3164376315",
+      "openalex:W3195533574",
+      "openalex:W4241996101",
+      "openalex:W4312529005",
+      "openalex:W4313397459",
+      "openalex:W4313887285",
+      "openalex:W4315630780",
+      "openalex:W4367047459",
+      "openalex:W4386473007",
+      "openalex:W4392397330",
+      "openalex:W4394779260",
+      "openalex:W4404826731",
+      "openalex:W4407574873",
+      "openalex:W4411925060",
+      "openalex:W4414348278",
+      "openalex:W4414348466",
+      "openalex:W4416239244",
+      "openalex:W7154099775"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105854",
+    "openalex": "W7167668785",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T07:57:47Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005393,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2047,
+      "out": 258
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T07:57:47Z",
+    "doi": "10.1016/j.trc.2026.105854",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/Weijiang-Xiong/OpenSkyTraffic",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "While the GMM adaptation improves L2 error metrics, it introduces trade-offs that can degrade L1 error performance.",
+      "what": "This study introduces a method to convert deterministic traffic forecasting models into probabilistic ones by replacing the final output layer with a Gaussian Mixture Model (GMM) layer. Evaluated across multiple traffic datasets and architectures, the modified models are trained using only Negative Log-Likelihood loss and consistently improve the Continuous Ranked Probability Score (CRPS) and predictive interval calibration compared to unimodal baselines.",
+      "why": "It provides a universal, plug-and-play adaptation that equips existing spatio-temporal traffic models with uncertainty quantification capabilities without requiring changes to data preparation, optimizers, or hyperparameters."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-08",
+  "work_key": "doi:10.1016/j.trc.2026.105854"
+}

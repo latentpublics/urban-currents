@@ -1,0 +1,257 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study demonstrates the use of connected vehicle data to conduct high-resolution speeding behavior analyses across a statewide highway network. Using over 3.5TB of Wejo trajectory data, we extract the maximum observed speeds for individual vehicles on defined road segments and aggregate them hourly to analyze temporal patterns. To assess excessive speeding, vehicle speeds are compared with posted speed limits across 13 thresholds, ranging from 35 to 90 mph, and sample sizes within each threshold are calculated. Based on this data, the paper presents a speeding index for identifying segments with potentially unlawful or unsafe speeding behavior. The analysis covers more than 120,000 road segments and considers differences by road type, day of the week, season, and holiday. Results reveal spatial and temporal variations in speeding intensity, including elevated rates during off-peak hours and certain holiday periods. When the Wejo sample size is sufficiently large, there is a good agreement with INRIX speed data. A web-based tool has been developed that enables users to dynamically explore excessive speeding patterns and download customized data sets. Findings highlight the value of connected car data as a supplement to traditional traffic data sets and offer insights for transportation agencies seeking to enhance safety and performance monitoring using emerging data sources.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Old Dominion University",
+            "ror": "04zjtrb98"
+          }
+        ],
+        "name": "Mecit Cetin",
+        "openalex": "A5064291992",
+        "orcid": "https://orcid.org/0000-0003-2003-9343"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Old Dominion University",
+            "ror": "04zjtrb98"
+          }
+        ],
+        "name": "Kun Xie",
+        "openalex": "A5051933409",
+        "orcid": "https://orcid.org/0000-0002-8191-2786"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Old Dominion University",
+            "ror": "04zjtrb98"
+          }
+        ],
+        "name": "Hong Yang",
+        "openalex": "A5039644141",
+        "orcid": "https://orcid.org/0000-0003-2808-8852"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/03611981261461501",
+      "pdf_url": null,
+      "source_id": "S145575934",
+      "source_name": "Transportation Research Record Journal of the Transportation Research Board",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-05",
+    "repository_urls": [],
+    "title": "Using Connected Vehicle Data to Quantify Speeding Behavior on Large Networks"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-05_10.1177/03611981",
+    "members": [
+      "doi:10.1177/03611981261461501"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-analysis",
+        "label": "spatial analysis"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04zjtrb98",
+        "label": "Old Dominion University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2003-9343",
+        "label": "Mecit Cetin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8191-2786",
+        "label": "Kun Xie"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2808-8852",
+        "label": "Hong Yang"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.7967,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0876,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.0433,
+        "subfield": "2213"
+      }
+    ]
+  },
+  "first_published": "2026-07-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W627926563",
+      "openalex:W1976303937",
+      "openalex:W2507488395",
+      "openalex:W2768147499",
+      "openalex:W2896589412",
+      "openalex:W3069855189",
+      "openalex:W3122799560",
+      "openalex:W3135991645",
+      "openalex:W3145000055",
+      "openalex:W3199178901",
+      "openalex:W4213242830",
+      "openalex:W4224210950",
+      "openalex:W4226198606",
+      "openalex:W4281611016",
+      "openalex:W4293879840",
+      "openalex:W4309436710",
+      "openalex:W4315781029",
+      "openalex:W4317745901",
+      "openalex:W4386092921",
+      "openalex:W4389633742",
+      "openalex:W4392573676",
+      "openalex:W4408408347"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1177/03611981261461501",
+    "openalex": "W7167509735",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T07:53:36Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005713,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2015,
+      "out": 299
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T07:53:36Z",
+    "doi": "10.1177/03611981261461501",
+    "journal": "Transportation Research Record Journal of the Transportation Research Board",
+    "source_id": "S145575934",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The accuracy of the speeding index and its alignment with benchmark data depends on having a sufficiently large sample size of connected vehicles on any given segment.",
+      "what": "This study analyzed speeding behavior across more than 120,000 highway segments in a statewide network using 3.5TB of Wejo connected vehicle trajectory data. The researchers extracted maximum hourly speeds, compared them against 13 speed limit thresholds from 35 to 90 mph, and developed a speeding index to pinpoint unsafe road segments. The analysis also evaluated temporal variations across seasons, holidays, and off-peak hours, validating the results against INRIX speed data.",
+      "why": "It demonstrates how high-resolution connected vehicle data can replace or supplement traditional, localized traffic monitoring to identify speeding hotspots dynamically across an entire state's road network."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-05",
+  "work_key": "doi:10.1177/03611981261461501"
+}

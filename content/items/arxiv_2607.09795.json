@@ -1,0 +1,192 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Recently, large language models (LLMs) have been successfully adopted in various fields, including wireless communications, robotics, and autonomous vehicles, owing to their outstanding adaptability and reasoning abilities. Despite their huge potential, the application of LLMs for mobility management is relatively scarce since it requires not only analyzing wireless measurements but also predicting dynamic user trajectories and making real-time handover decisions across densely deployed small base stations (SBSs). In this paper, we propose an environment-aware mobility management scheme based on large multimodal models (LMMs), which extend capabilities of LLMs to process multimodal sensing data. By leveraging LMMs, the proposed scheme extracts contextual information on the surrounding environments from RGB-D images to capture user equipment (UE) mobility patterns and identify signal reflections and blockages caused by static reflectors and dynamic obstacles. Using the extracted environmental information, the proposed scheme learns the intrinsic mapping from UE and SBS positions to channel capacity, referred to as channel capacity map (CCM), from which future channel capacities along UE trajectories are predicted. Based on the predicted channel capacities, we determine proactive handover decisions maximizing the cumulative channel capacities. Simulation results demonstrate that the proposed scheme achieves substantial channel capacity improvements over conventional deep learning (DL)-based approaches.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Seokhyun Jeong",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sangmok Shin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Seungnyun Kim",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jiao Wu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Byonghyo Shim",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.IT",
+      "cs.AI",
+      "eess.SP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.09795v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.09795v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-09",
+    "repository_urls": [],
+    "title": "Large Multimodal Model-Based Environment-Aware Mobility Management"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-09_2607.09795",
+    "members": [
+      "arxiv:2607.09795"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.09795",
+    "doi": "10.48550/arxiv.2607.09795",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:59:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005572,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1999,
+      "out": 286
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8624,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.345,
+    "relevance": 0.8624
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance improvements and model feasibility are demonstrated exclusively through simulations rather than real-world physical deployments.",
+      "what": "This paper introduces a mobility management scheme for wireless networks that uses Large Multimodal Models (LMMs) to process RGB-D camera images of the surrounding environment. The model extracts contextual information about static reflectors and dynamic obstacles to map user equipment and small base station positions to channel capacity, predicting future capacities along user trajectories to make proactive handover decisions. Simulation results show that this environment-aware approach improves cumulative channel capacity compared to traditional deep learning methods.",
+      "why": "By integrating visual sensing data directly into wireless handover decisions, the system can anticipate signal blockages and reflections before they affect connection quality, a capability missing from conventional mobility management that relies solely on radio frequency measurements."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-09",
+  "work_key": "arxiv:2607.09795"
+}

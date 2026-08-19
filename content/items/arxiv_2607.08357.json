@@ -1,0 +1,204 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Human mobility data are essential for transportation optimization, urban planning, and resource allocation, yet real-world mobility data are costly to collect and difficult to share due to privacy concerns. Recent diffusion-based methods have shown promise in synthesizing realistic mobility patterns, but they typically rely on continuous or latent spatio-temporal traces, limiting their ability to natively model discrete semantic events with explicit region, activity, time, and interval structures. To address this issue, we introduce MobiDiff, an end-to-end discrete diffusion framework that efficiently generates mobility data by directly denoising multi-channel semantic skeletons, avoiding the costly interpolation, latent trace construction, and coarse-to-fine realization pipelines widely used in existing diffusion-based methods. Specifically, MobiDiff decomposes each human check-in event into spatial, activity, and temporal channels, and employs structured event-, group-, and channel-level masking to jointly capture trajectory-level mobility patterns and within-event dependencies. We evaluate generation fidelity, privacy-preserving, and efficiency on three large-scale real-world datasets from Atlanta, Boston, and Seattle. Results show that MobiDiff effectively preserves trajectory length and temporal interval distributions while remaining competitive across broader mobility statistics; it is also much faster than state-of-the-art methods, e.g., 5.3$\\times$ faster than GeoGen on average during inference. These findings suggest that discrete diffusion offers an interpretable and efficient framework for synthetic mobility data generation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Rongchao Xu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Lin Jiang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dahai Yu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ximiao Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Taichi Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Desheng Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yuan Tian",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Guang Wang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.08357v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08357v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-09",
+    "repository_urls": [],
+    "title": "MobiDiff: Semantic-Aware Multi-Channel Discrete Diffusion for Human Mobility Data Generation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-09_2607.08357",
+    "members": [
+      "arxiv:2607.08357"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q100",
+        "label": "Boston",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.08357",
+    "doi": "10.48550/arxiv.2607.08357",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:59:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005507,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2105,
+      "out": 261
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9154,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3662,
+    "relevance": 0.9154
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed MobiDiff, an end-to-end discrete diffusion framework that generates synthetic human mobility data by directly denoising multi-channel semantic skeletons across spatial, activity, and temporal channels. Evaluated on three large-scale datasets from Atlanta, Boston, and Seattle, the model preserves trajectory length and temporal interval distributions while running 5.3 times faster during inference than the state-of-the-art GeoGen model.",
+      "why": "It provides a highly efficient and interpretable method for generating privacy-preserving synthetic mobility data, bypassing the computationally expensive interpolation and latent trace construction steps required by continuous diffusion models."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-09",
+  "work_key": "arxiv:2607.08357"
+}

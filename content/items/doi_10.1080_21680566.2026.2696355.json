@@ -1,0 +1,320 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Accurate forecasting of metro passenger flows at multiple granularities, such as station-level inflow/outflow (IO) and inter-station Origin-Destination (OD) and Destination-Origin (DO) flows, is vital for efficient metro system management. However, the heterogeneous temporal patterns, asynchronous dependencies, and complex inter-task relationships make unified modeling highly challenging. To address these issues, we propose MG-MMoE, a unified multi-granularity forecasting framework that combines a multi-gate Mixture-of-Experts (MMoE) architecture with hierarchical multi-source data fusion. Specifically, MG-MMoE incorporates MMoE modules into each encoder and decoder layer to facilitate dynamic knowledge sharing across IO, OD, and DO tasks, allowing each to adaptively leverage shared and task-specific information. Meanwhile, a hierarchical fusion strategy integrates spatial (POI similarity), temporal (time-of-day, holiday), and static (station attributes) features into separate layers, enhancing the semantic richness of the learned representations. Extensive experiments on two real-world metro datasets show that MG-MMoE achieves superior performance over the state-of-the-art baselines across multiple prediction horizons and tasks, demonstrating the effectiveness of cross-task interaction and structured data fusion in multi-granular passenger flow forecasting.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Zhejiang Industry Polytechnic College",
+            "ror": "0192j7z55"
+          },
+          {
+            "name": "Hangzhou Dianzi University",
+            "ror": "0576gt767"
+          }
+        ],
+        "name": "Qiong Yang",
+        "openalex": "A5139961264",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hangzhou Dianzi University",
+            "ror": "0576gt767"
+          }
+        ],
+        "name": "Xianghua Xu",
+        "openalex": "A5026554755",
+        "orcid": "https://orcid.org/0000-0001-9832-5804"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Zhejiang Normal University",
+            "ror": "01vevwk45"
+          }
+        ],
+        "name": "Juan Yu",
+        "openalex": "A5139975074",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Zhejiang Industry Polytechnic College",
+            "ror": "0192j7z55"
+          }
+        ],
+        "name": "Qifeng Gao",
+        "openalex": "A5135677418",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Zhejiang Industry Polytechnic College",
+            "ror": "0192j7z55"
+          }
+        ],
+        "name": "Yi Chen",
+        "openalex": "A5139984939",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/21680566.2026.2696355",
+      "pdf_url": null,
+      "source_id": "S2498450034",
+      "source_name": "Transportmetrica B Transport Dynamics",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-03",
+    "repository_urls": [],
+    "title": "Multi-granular metro passenger flow forecasting via MMoE and hierarchical multi-source data fusion"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-03_10.1080/21680566",
+    "members": [
+      "doi:10.1080/21680566.2026.2696355"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0192j7z55",
+        "label": "Zhejiang Industry Polytechnic College"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0576gt767",
+        "label": "Hangzhou Dianzi University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01vevwk45",
+        "label": "Zhejiang Normal University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5139961264",
+        "label": "Qiong Yang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9832-5804",
+        "label": "Xianghua Xu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139975074",
+        "label": "Juan Yu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5135677418",
+        "label": "Qifeng Gao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139984939",
+        "label": "Yi Chen"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.5041,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.2016,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12120",
+        "is_primary": false,
+        "label": "Air Quality Monitoring and Forecasting",
+        "score": 0.0236,
+        "subfield": "2305"
+      }
+    ]
+  },
+  "first_published": "2026-07-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1582774210",
+      "openalex:W1973943669",
+      "openalex:W2004353783",
+      "openalex:W2131739422",
+      "openalex:W2296073425",
+      "openalex:W2566236551",
+      "openalex:W2792803029",
+      "openalex:W2901295635",
+      "openalex:W2958321630",
+      "openalex:W2965341826",
+      "openalex:W2998652672",
+      "openalex:W3007230624",
+      "openalex:W3087813748",
+      "openalex:W3109146615",
+      "openalex:W3136115914",
+      "openalex:W3136244472",
+      "openalex:W3157298386",
+      "openalex:W3177318507",
+      "openalex:W3186458388",
+      "openalex:W4200547309",
+      "openalex:W4205731521",
+      "openalex:W4210830758",
+      "openalex:W4285295189",
+      "openalex:W4303857359",
+      "openalex:W4307169709",
+      "openalex:W4308709475",
+      "openalex:W4312262053",
+      "openalex:W4312551069",
+      "openalex:W4319998098",
+      "openalex:W4367016821",
+      "openalex:W4367360668",
+      "openalex:W4382239890",
+      "openalex:W4387476873",
+      "openalex:W4387846860",
+      "openalex:W4388936714",
+      "openalex:W4392931210",
+      "openalex:W4396529138",
+      "openalex:W4398223791",
+      "openalex:W4402642177",
+      "openalex:W4403182296",
+      "openalex:W4403613370",
+      "openalex:W4409358074",
+      "openalex:W4411918445",
+      "openalex:W4413644898",
+      "openalex:W4416242184",
+      "openalex:W7133237023"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/21680566.2026.2696355",
+    "openalex": "W7167254737",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T07:50:33Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005456,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2047,
+      "out": 265
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T07:50:33Z",
+    "doi": "10.1080/21680566.2026.2696355",
+    "journal": "Transportmetrica B Transport Dynamics",
+    "source_id": "S2498450034",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed MG-MMoE, a unified forecasting framework that predicts metro passenger flows across multiple granularities, including station-level inflow/outflow and inter-station origin-destination/destination-origin flows. The model integrates a multi-gate Mixture-of-Experts architecture to share knowledge dynamically across tasks, alongside a hierarchical fusion strategy that incorporates POI similarity, temporal features, and station attributes. The framework was validated using two real-world metro datasets, outperforming existing baseline models across several prediction horizons.",
+      "why": "It replaces separate, isolated models for different flow types with a single, unified system that captures the complex, asynchronous dependencies between station-level and network-level passenger movements."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-03",
+  "work_key": "doi:10.1080/21680566.2026.2696355"
+}

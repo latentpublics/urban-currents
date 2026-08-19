@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Autonomous vehicles often rely on high-definition (HD) maps for navigation; however, these maps are not frequently updated and often lack semi-static information, such as temporary roadwork zones, which can significantly alter the road network. This limitation underscores the urgent need for an accurate global position of roadwork zones. However, the absence of publicly available datasets for evaluating roadwork zone detection and geo-localization models has hindered the development of reliable autonomous driving systems. To address this challenge, we propose the Roadwork Zone Detection and Geo-localization (RZDG) dataset, which includes both simulated and real-world data, providing multimodal sensor inputs along with comprehensive annotations. The dataset supports multiple perception tasks, including image semantic segmentation, 3D object detection, and object geo-localization. In addition, we introduce a tracker-based roadwork zone detection and geo-localization (RZDG) pipeline, an extension of AB3DMOT, for accurate object geo-localization in roadwork zones. We benchmark our approach on the RZDG dataset, demonstrating its effectiveness in detecting roadwork zones and transforming object positions from the local coordinate system to the global coordinate system. A prediction is considered a true positive (TP) if its estimated position falls within one meter of the ground truth. Our experimental results show that our approach achieves high accuracy on both real and simulated data. Specifically, we report: Precision: 0.565 (real) / 0.615 (simulated) Recall: 0.898 (real) / 0.809 (simulated) F1-score: 0.597 (real) / 0.665 (simulated).",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Zhiran Yan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yutong Xin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "S Shyam Shenoi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rui Song",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Gordon Elger",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": "Accepted to IEEE IV25. The RZDG dataset and code can be found at: https://github.com/chrisyan/RZDG",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.04330v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.04330v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-05",
+    "repository_urls": [],
+    "title": "Framework and Multi-modal Dataset for Roadwork Zone Detection and Geo-localization"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-05_2607.04330",
+    "members": [
+      "arxiv:2607.04330"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.04330",
+    "doi": "10.48550/arxiv.2607.04330",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:53:35Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006371,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2207,
+      "out": 340
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.8832,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4333,
+    "relevance": 0.8832
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study introduces the Roadwork Zone Detection and Geo-localization (RZDG) dataset, a multimodal sensor dataset containing both simulated and real-world data annotated for semantic segmentation, 3D object detection, and geo-localization. The researchers also developed a tracker-based pipeline, extending the AB3DMOT model, to detect roadwork zones and map their local coordinates to global positions. Evaluated on a one-meter tolerance threshold for true positives, the pipeline achieved an F1-score of 0.597 on real-world data (0.565 precision, 0.898 recall) and 0.665 on simulated data (0.615 precision, 0.809 recall).",
+      "why": "It provides the first publicly available benchmark dataset and localization pipeline specifically designed to map temporary, semi-static roadwork zones, enabling autonomous vehicle navigation systems to update high-definition maps with precise global coordinates."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-05",
+  "work_key": "arxiv:2607.04330"
+}

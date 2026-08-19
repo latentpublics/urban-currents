@@ -1,0 +1,169 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Vehicle intention prediction is a pivotal aspect in the agility and safety of autonomous vehicles in all driving scenarios; if genuine enhancement of autonomous vehicles are required, we need to make them adopt human interpretation of driver's intention especially in cases that require a lot of human interaction as well as complex driving behaviors like the ones at intersections, roundabouts and emergency cases such as sudden stops where vehicle intention prediction helps in taking the correct evasive action within a real time period where every second of action makes an impact and can prevent a catastrophe from taking place. In the worst case, it helps minimize the damage and make safety a priority. Intention prediction can also be used to enhance trajectory prediction (intention conditioned trajectory prediction). In this study, The INTENT framework is proposed using LSTM model to predict the vehicle's intention at intersections 2 seconds ahead of the event occurrence to predict whether the cars in intersections are going straight, turning left, or turning right. Various model experiments and ablation study are thoroughly tested on InD dataset achieving 99.71% accuracy.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Logine M. Zaki",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Catherine M. Elias",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI",
+      "cs.LG",
+      "cs.RO"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.08316v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.08316v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-09",
+    "repository_urls": [],
+    "title": "INTENT: An LSTM Framework for Vehicle Intention Prediction in Intersection Scenarios with Comprehensive Ablation Analysis"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-09_2607.08316",
+    "members": [
+      "arxiv:2607.08316"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:rnn",
+        "label": "recurrent neural network"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.08316",
+    "doi": "10.48550/arxiv.2607.08316",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:59:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005179,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1947,
+      "out": 251
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8727,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3491,
+    "relevance": 0.8727
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's high accuracy was evaluated on a single specialized dataset of German intersections, which may not reflect the driving behaviors, intersection geometries, or sensor noise profiles of other regions.",
+      "what": "The INTENT framework uses a Long Short-Term Memory (LSTM) model to predict whether a vehicle at an intersection will go straight, turn left, or turn right. Evaluated on the inD dataset of German intersection traffic, the model predicts these maneuvers 2 seconds before they occur with an accuracy of 99.71%.",
+      "why": "It demonstrates that vehicle intent can be classified with near-perfect accuracy well ahead of the maneuver, providing a reliable input that can be used to improve real-time trajectory prediction and collision avoidance systems in autonomous vehicles."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-09",
+  "work_key": "arxiv:2607.08316"
+}

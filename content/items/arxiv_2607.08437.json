@@ -1,0 +1,174 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Authorities increasingly rely on social media to advance sustainability transitions, infrastructure investment, and service reform. Yet how citizens respond to these digital communications remains poorly understood. Existing approaches rely on aggregate engagement metrics (e.g., likes), providing limited insight into discourse structure and quality. We developed a data-driven, multidimensional framework to analyse how social media communication shapes the content of discourse, focusing on sustainability-related engagement in Dutch public housing. We analysed 792 posts and 3,197 tenant comments from the Facebook pages of 92 housing providers (2018-2023). A machine-learning pipeline classified comments into recurring discourse configurations across three dimensions - communicative intent, sentiment, and semantic relatedness. Multinomial logistic regression estimated the effects of post-design and organisational characteristics on discourse. Tenant comments were significantly more semantically aligned with their corresponding posts than with randomly paired content, indicating that organisational communication structures responses to topics. Six discourse types emerged, with critical and inquiry-driven engagement increasing over time. Post-level features did not significantly explain variation; organisational characteristics dominated. Larger housing associations attracted more substantive responses, while lower-rent organisations received fewer evaluative comments. While applied to housing associations, our methodology provides a scalable approach to analyse online discourse dynamics, quality, and content across organisations and contexts.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Shray Juneja",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Suzan Verberne",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ioulia V. Ossokina",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.08437v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.08437v2",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-09",
+    "repository_urls": [],
+    "title": "Does online sustainability communication shape public discourse? Insights from six years of tenant-housing provider interactions"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-09_2607.08437",
+    "members": [
+      "arxiv:2607.08437"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q55",
+        "label": "Netherlands",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.08437",
+    "doi": "10.48550/arxiv.2607.08437",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:59:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006002,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2057,
+      "out": 324
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9059,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3624,
+    "relevance": 0.9059
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "792 posts",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2018-2023",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on Facebook interactions within the specific context of Dutch public housing providers, which may not fully represent discourse dynamics on other social platforms or in different public service sectors.",
+      "what": "The study analyzed 792 Facebook posts and 3,197 tenant comments from 92 Dutch public housing providers between 2018 and 2023 using a machine-learning pipeline and multinomial logistic regression. It classified tenant responses across three dimensions—communicative intent, sentiment, and semantic relatedness—to identify six distinct discourse types. The analysis revealed that tenant comments are semantically aligned with the original posts, and that organizational traits, such as larger size and higher rent levels, are the primary drivers of substantive and evaluative engagement rather than specific post-design features.",
+      "why": "It demonstrates that public social media interactions are structured and responsive to organizational context rather than being merely random or superficial, providing a scalable framework to measure the actual quality and alignment of civic discourse beyond simple engagement metrics like likes."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-31",
+  "work_key": "arxiv:2607.08437"
+}

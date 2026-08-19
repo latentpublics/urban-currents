@@ -1,0 +1,367 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Route planning in dynamic traffic environments requires decisions that anticipate future traffic evolution rather than rely on time-invariant costs. This study proposes a predictive–prescriptive analytics framework for time-dependent route planning that integrates short-term traffic speed forecasting with optimization on a first-in–first-out–consistent discrete time–space network. The predictive module employs a spatiotemporal graph convolutional network integrated with gated recurrent units (ST-GCN-GRU) to forecast multihorizon link speeds from historical observations, while the prescriptive module embeds these forecasts into a discrete time–space representation that transforms the time-dependent shortest-path problem into a polynomially solvable form. The framework is evaluated in two complementary ways. First, a real-world end-to-end experiment on an OpenStreetMap-derived Nanjing subnetwork tests whether prediction-informed routing improves downstream decisions under a unified replay protocol. Second, controlled experiments on the Sioux Falls benchmark are used for mechanism exploration, examining when the value of future-aware routing becomes more pronounced. Results show that the proposed framework improves traffic forecasting accuracy, supports near-oracle routing performance in realistic settings, and clarifies how trip length and temporal variability influence routing gains.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Detection Limit (United States)",
+            "ror": "03mcj3013"
+          }
+        ],
+        "name": "Wei Huang",
+        "openalex": "A5140455847",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Shandong Transportation Research Institute",
+            "ror": "01wcts620"
+          }
+        ],
+        "name": "Xiao Zhang",
+        "openalex": "A5100320906",
+        "orcid": "https://orcid.org/0000-0002-8612-6856"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Nanjing Foreign Language School",
+            "ror": "03wvwbe92"
+          },
+          {
+            "name": "Nanjing University",
+            "ror": "01rxvg760"
+          }
+        ],
+        "name": "Hua Tong",
+        "openalex": "A5126571312",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Southeast University",
+            "ror": "04ct4d772"
+          }
+        ],
+        "name": "Wenxie Lin",
+        "openalex": "A5103476650",
+        "orcid": "https://orcid.org/0009-0003-6962-1577"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Shandong Transportation Research Institute",
+            "ror": "01wcts620"
+          }
+        ],
+        "name": "Congwei Bi",
+        "openalex": "A5112985234",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Southeast University",
+            "ror": "04ct4d772"
+          }
+        ],
+        "name": "J Zhang",
+        "openalex": "A5019494223",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chalmers University of Technology",
+            "ror": "040wg7k59"
+          }
+        ],
+        "name": "Yuehua Chen",
+        "openalex": "A5101508336",
+        "orcid": "https://orcid.org/0000-0002-4646-4017"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9529",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-11",
+    "repository_urls": [],
+    "title": "A Predictive–Prescriptive Analytics Framework forRoute Planning via Discrete Time–SpaceGraph and ST-GCN-GRU Model"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-11_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-9529"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03mcj3013",
+        "label": "Detection Limit (United States)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01wcts620",
+        "label": "Shandong Transportation Research Institute"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03wvwbe92",
+        "label": "Nanjing Foreign Language School"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01rxvg760",
+        "label": "Nanjing University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04ct4d772",
+        "label": "Southeast University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:040wg7k59",
+        "label": "Chalmers University of Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5140455847",
+        "label": "Wei Huang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8612-6856",
+        "label": "Xiao Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5126571312",
+        "label": "Hua Tong"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0003-6962-1577",
+        "label": "Wenxie Lin"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5112985234",
+        "label": "Congwei Bi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5019494223",
+        "label": "J Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4646-4017",
+        "label": "Yuehua Chen"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.7495,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.081,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0239,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-07-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1489358540",
+      "openalex:W1973943669",
+      "openalex:W2064675550",
+      "openalex:W2078896366",
+      "openalex:W2088769880",
+      "openalex:W2095003951",
+      "openalex:W2233419640",
+      "openalex:W2461721897",
+      "openalex:W2601825172",
+      "openalex:W2766237626",
+      "openalex:W2901504064",
+      "openalex:W2909215621",
+      "openalex:W3109074851",
+      "openalex:W3122122318",
+      "openalex:W3133663379",
+      "openalex:W3179429918",
+      "openalex:W3196509035",
+      "openalex:W3217288993",
+      "openalex:W4281252459",
+      "openalex:W4297498948",
+      "openalex:W4322760879",
+      "openalex:W4388712092",
+      "openalex:W4390905463",
+      "openalex:W4396604645",
+      "openalex:W4398223791",
+      "openalex:W4399669397",
+      "openalex:W4400314685",
+      "openalex:W4400766720",
+      "openalex:W4401023122",
+      "openalex:W4404113537",
+      "openalex:W4405310974",
+      "openalex:W4405931316",
+      "openalex:W4409345323",
+      "openalex:W4409710908",
+      "openalex:W4409909195",
+      "openalex:W4410737989",
+      "openalex:W4410851885",
+      "openalex:W4411865844",
+      "openalex:W4411874457",
+      "openalex:W4412106191",
+      "openalex:W4413293117",
+      "openalex:W4413961237",
+      "openalex:W4415932898",
+      "openalex:W4416222440",
+      "openalex:W4416349847",
+      "openalex:W7115683591"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-9529",
+    "openalex": "W7168023741",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:02:23Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005675,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2007,
+      "out": 296
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:02:23Z",
+    "doi": "10.1061/jtepbs.teeng-9529",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical validation is limited to a subnetwork of a single city and a standard synthetic benchmark.",
+      "what": "This study develops a predictive-prescriptive routing framework that combines a spatiotemporal graph convolutional network with gated recurrent units (ST-GCN-GRU) for multihorizon link speed forecasting, embedding these predictions into a discrete time-space network. The framework was validated using a real-world OpenStreetMap subnetwork of Nanjing to test routing decisions under a unified replay protocol, alongside controlled experiments on the Sioux Falls benchmark network.",
+      "why": "It establishes a computationally efficient, polynomially solvable method for time-dependent shortest-path routing that accounts for dynamic traffic evolution rather than static costs, demonstrating near-oracle routing performance in realistic settings."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-11",
+  "work_key": "doi:10.1061/jtepbs.teeng-9529"
+}

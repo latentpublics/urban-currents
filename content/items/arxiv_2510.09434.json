@@ -1,0 +1,292 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Traffic safety agencies worldwide collect detailed crash narratives to understand the circumstances and contributing factors of road crashes. This information is critical for informing policy decisions and designing safer infrastructure. Unlike structured crash data fields (e.g., injury severity, vehicle type, weather), these free-text narratives capture sequences of events, driver behaviors, and environmental context that are hard to represent as structured codes. However, this also renders them difficult to analyze at scale. Manual coding by trained analysts is time-consuming and has limited throughput, creating a bottleneck in the processing of crash reports. Recent advances in pretrained language models (PLMs) and large language models (LLMs) offer new opportunities for extracting information from such narratives. However, two challenges limit their practical application: 1) limited performance on tasks needing both explicit and implicit reasoning that require domain knowledge; and 2) privacy and data governance concerns when processing sensitive crash reports through closed commercial APIs. To address these challenges, we investigate whether open-source PLMs can achieve expert-level performance in information retrieval from crash narratives through fine-tuning with Low-Rank Adaptation (LoRA). We evaluate our approach on two tasks using the CISS dataset: 1) identifying the Manner of Collision, and 2) extracting Crash Type for involved vehicles. Our method achieves 96.1% accuracy on Manner of Collision (+4.3% over the strongest baseline) and exceeds the strongest baseline by 16.9–28.7% on the more complex Crash Type task. Beyond these improvements, we provide a practical, privacy-preserving pipeline deployable locally without external API dependence, and demonstrate that our approach can actively assist human annotators by identifying potential labeling inconsistencies, offering a dual benefit of automation and quality assurance for crash database curation. Our code and data are publicly available 1 https://github.com/hiXixi66/PLMs-Crash-Narrative-Analysis.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Chalmers University of Technology",
+            "ror": "040wg7k59"
+          }
+        ],
+        "name": "Xixi Wang",
+        "openalex": "A5100777130",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chalmers University of Technology",
+            "ror": "040wg7k59"
+          }
+        ],
+        "name": "Jordanka Kovaceva",
+        "openalex": "A5084467916",
+        "orcid": "https://orcid.org/0000-0002-7445-3489"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Danish Academy of Technical Sciences",
+            "ror": "03px3wr77"
+          },
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Miguel Costa",
+        "openalex": "A5055058678",
+        "orcid": "https://orcid.org/0000-0002-0362-1713"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chalmers University of Technology",
+            "ror": "040wg7k59"
+          }
+        ],
+        "name": "Shuai Wang",
+        "openalex": "A5032752150",
+        "orcid": "https://orcid.org/0000-0002-2326-3458"
+      },
+      {
+        "institutions": [],
+        "name": "Francisco Camara Pereira",
+        "openalex": null,
+        "orcid": "https://orcid.org/0000-0001-5457-9909"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chalmers University of Technology",
+            "ror": "040wg7k59"
+          }
+        ],
+        "name": "Robert Thomson",
+        "openalex": "A5019140019",
+        "orcid": "https://orcid.org/0000-0001-9298-2870"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105863",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-10",
+    "repository_urls": [],
+    "title": "Domain-adapted pre-trained language models for implicit information extraction in crash narratives"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-10_2510.09434",
+    "members": [
+      "arxiv:2510.09434"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:040wg7k59",
+        "label": "Chalmers University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03px3wr77",
+        "label": "Danish Academy of Technical Sciences"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04qtj9h94",
+        "label": "Technical University of Denmark"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5100777130",
+        "label": "Xixi Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7445-3489",
+        "label": "Jordanka Kovaceva"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0362-1713",
+        "label": "Miguel Costa"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2326-3458",
+        "label": "Shuai Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5457-9909",
+        "label": "Francisco Camara Pereira"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9298-2870",
+        "label": "Robert Thomson"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10028",
+        "is_primary": true,
+        "label": "Topic Modeling",
+        "score": 0.1685,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.0763,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10664",
+        "is_primary": false,
+        "label": "Sentiment Analysis and Opinion Mining",
+        "score": 0.0616,
+        "subfield": "1702"
+      }
+    ]
+  },
+  "first_published": "2026-07-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2510.09434",
+    "doi": "10.1016/j.trc.2026.105863",
+    "openalex": "W4417129618",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:01:05Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005786,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2291,
+      "out": 261
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:01:05Z",
+    "doi": "10.1016/j.trc.2026.105863",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/hiXixi66/PLMs-Crash-Narrative-Analysis",
+      "value": true
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "Researchers fine-tuned open-source pre-trained language models using Low-Rank Adaptation (LoRA) to extract structured information from free-text crash narratives in the Crash Investigation Sampling System (CISS) dataset. The method achieved 96.1% accuracy in identifying the Manner of Collision and outperformed the strongest baseline by 16.9% to 28.7% on the more complex task of extracting Crash Type.",
+      "why": "It provides a highly accurate, privacy-preserving pipeline that can be deployed locally on sensitive crash data without relying on external commercial APIs, while also serving as a quality assurance tool to detect human labeling inconsistencies."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-10",
+  "work_key": "arxiv:2510.09434"
+}

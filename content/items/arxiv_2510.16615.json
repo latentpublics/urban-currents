@@ -1,0 +1,249 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Bike-sharing systems (BSS) are key components of urban mobility, promoting active travel and complementing public transport. This paper presents a flexible, data-driven framework for optimizing BSS station placement. Existing methods usually focus on a single planning objective, such as maximizing demand, or on a fixed set of two or three objectives, such as combining demand and social equity. This restricts their adaptability to evolving priorities and diverse contexts. Moreover, they often aggregate candidate sites into coarse spatial units and neglect features such as topography or directed cycling networks. The framework addresses these limitations through four components: (i) a multi-criteria decision-making model that evaluates candidate sites using configurable spatial factors and adjustable weights, thereby enabling planners to represent any combination of planning objectives rather than being limited to a fixed set; (ii) network-level metrics that explicitly balance station proximity and system-wide accessibility on directed bicycle networks; (iii) slope-adjusted distances that account for uphill effort and downhill facilitation; and (iv) a genetic algorithm that generates feasible station sets while respecting minimum-distance constraints. A case study in Barcelona demonstrates its application using open data for scenarios focused on demand, multimodal integration, and social equity. Results show that network-level metrics reshape the spatial arrangement of stations while keeping the same planning objectives, slope-adjusted distances improve station availability in hilly districts, and an expansion scenario in l’Eixample district produces coherent layouts complementing existing stations. By integrating spatial factors and network representation, the framework provides a versatile decision-support tool for BSS planning in complex urban environments.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Centre Tecnologic de Telecomunicacions de Catalunya",
+            "ror": "001cwea56"
+          },
+          {
+            "name": "Universitat Politècnica de Catalunya",
+            "ror": "03mb6wj31"
+          }
+        ],
+        "name": "Jordi Grau-Escolano",
+        "openalex": "A5095941672",
+        "orcid": "https://orcid.org/0000-0002-9755-3095"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technical University of Munich",
+            "ror": "02kkvpp62"
+          }
+        ],
+        "name": "David Durán-Rodas",
+        "openalex": "A5029304299",
+        "orcid": "https://orcid.org/0000-0003-4299-8844"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Centre Tecnologic de Telecomunicacions de Catalunya",
+            "ror": "001cwea56"
+          }
+        ],
+        "name": "Julián Vicens",
+        "openalex": "A5006145611",
+        "orcid": "https://orcid.org/0000-0003-0643-0469"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.urbmob.2026.100250",
+      "pdf_url": null,
+      "source_id": "S4210216941",
+      "source_name": "Journal of Urban Mobility",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-08",
+    "repository_urls": [],
+    "title": "FlexBSS: A flexible multi-objective framework for bike-sharing station optimization"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-08_2510.16615",
+    "members": [
+      "arxiv:2510.16615"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:001cwea56",
+        "label": "Centre Tecnologic de Telecomunicacions de Catalunya"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03mb6wj31",
+        "label": "Universitat Politècnica de Catalunya"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02kkvpp62",
+        "label": "Technical University of Munich"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9755-3095",
+        "label": "Jordi Grau-Escolano"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4299-8844",
+        "label": "David Durán-Rodas"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0643-0469",
+        "label": "Julián Vicens"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1492",
+        "label": "Barcelona",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.9959,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11824",
+        "is_primary": false,
+        "label": "Injury Epidemiology and Prevention",
+        "score": 0.0006,
+        "subfield": "2739"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0003,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-07-08",
+  "graph": {
+    "cited_by_count": 1,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2510.16615",
+    "doi": "10.1016/j.urbmob.2026.100250",
+    "openalex": "W4415955406",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T07:57:47Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005675,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2145,
+      "out": 273
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T07:57:47Z",
+    "doi": "10.1016/j.urbmob.2026.100250",
+    "journal": "Journal of Urban Mobility",
+    "source_id": "S4210216941",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed FlexBSS, a multi-objective optimization framework for bike-sharing station placement that integrates configurable spatial factors, network-level accessibility metrics on directed cycling networks, and slope-adjusted distances. The framework uses a genetic algorithm to generate station layouts under minimum-distance constraints, and was tested in Barcelona using open data across scenarios targeting demand, multimodal integration, and social equity, including an expansion scenario in the l'Eixample district.",
+      "why": "It replaces rigid, single-objective planning models with a flexible system where planners can weight and combine any number of custom objectives, while accounting for physical topography and network directionality that directly affect cycling effort and station accessibility."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-08",
+  "work_key": "arxiv:2510.16615"
+}

@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The COVID-19 pandemic disrupted socio-economic and healthcare systems in the Philippines, significantly affecting barangays. This study analyzes the cascading effects of the COVID-19 pandemic on key aspects of a barangay, namely mobility, accessibility of public services, economic and financial health, food security, educational engagement, and physical health. It focuses on data from 2,122 Filipino households collected during May to June 2021 as part of the World Bank COVID-19 Households Survey. A Bayesian network model was constructed to programmatically map the conditional dependencies among these variables, utilizing Python libraries. Survey responses were grouped into common variables based on shared characteristics and standardized through z-score normalization to serve as nodes in the Bayesian network. By extending the Bayesian network into an influence diagram, the results will help identify interventions to guide local government units (LGUs) and policymakers in crafting tailored recovery programs and strategies that address impacts on physical health, economic and financial health, food security, public service access, mobility, and educational engagement. These efforts ultimately aim to enhance barangay resilience and preparedness for future public health crises. The results indicate that interventions aimed at boosting food production, stabilizing market prices, and expanding income opportunities are the most effective in improving community outcomes. This highlights the vital role of targeted economic and food security measures in mitigating the socio-economic impacts of the pandemic and offers valuable insights for shaping future response and recovery efforts.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Naomi Ashley Amparo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "John Frederick Muji",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Paul James Montecillo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jaymar Soriano",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Vena Pearl Bongolan",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "econ.GN",
+      "cs.SI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.07768v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.07768v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-08",
+    "repository_urls": [],
+    "title": "Cascading Effects of the COVID-19 Pandemic on Barangays in the Philippines"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-08_2607.07768",
+    "members": [
+      "arxiv:2607.07768"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.07768",
+    "doi": "10.48550/arxiv.2607.07768",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:57:44Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005903,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2093,
+      "out": 307
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8757,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3503,
+    "relevance": 0.8757
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "19 Households",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The analysis relies on self-reported household survey data collected during a specific two-month window in 2021, which may not capture long-term structural changes or post-pandemic recovery dynamics.",
+      "what": "This study analyzed the cascading socio-economic impacts of the COVID-19 pandemic on Philippine barangays using survey data from 2,122 households collected between May and June 2021. The researchers constructed a Bayesian network model and an influence diagram to map the conditional dependencies among mobility, public service access, financial health, food security, education, and physical health. The model identified that interventions targeting food production, market price stabilization, and income generation yielded the highest improvements in overall community outcomes.",
+      "why": "It provides local government units and policymakers with a quantified, systemic map of how household vulnerabilities interact, demonstrating that economic and food security interventions are more effective at driving systemic recovery than isolated health or mobility policies."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-08",
+  "work_key": "arxiv:2607.07768"
+}

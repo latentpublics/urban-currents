@@ -1,0 +1,297 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Efficient arrival management in congested Terminal Maneuvering Areas (TMAs) requires coordinated decisions on sequencing and descent-mode selection. Existing studies typically address these problems separately, overlooking their coupled effects on minimum separation requirements and system-wide fuel efficiency. This paper develops an integrated arrival management framework based on a Predict-then-Optimize (PO) approach that combines high-accuracy Estimated Time of Arrival (ETA) prediction with a mixed-integer linear programming (MILP) formulation for the joint optimization of arrival sequencing and descent-mode assignment. In the prediction stage, a Kolmogorov-Arnold Network (KAN) estimates boundary ETAs from real-time operational features, capturing stochastic variations induced by weather, traffic density, and other disturbances. The subsequent optimization stage minimizes total fuel consumption while ensuring separation and operational constraints. The core innovation lies in the MILP formulation, which, unlike conventional scheduling models that define minimum separation times (MSTs) solely by wake-turbulence categories, incorporates the combined effects of aircraft type and descent-mode pairings on separation requirements. The framework is validated using real-world data from Hong Kong International Airport (HKIA), demonstrating substantial reductions in fuel consumption and emissions. With the objective of minimizing total fuel consumption, the proposed approach achieves a 4.4% reduction compared to actual operational baselines. Crucially, findings challenge the assumption that maximizing Continuous Descent Operations (CDOs) is universally beneficial. Under high-density traffic, the rigidity of mandating CDOs (PO-C) strategy induces excessive delays, increasing fuel burn and emissions (CO 2, SO 2, NO x), which are penalties that escalate with rising traffic density.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          }
+        ],
+        "name": "Xinyi Li",
+        "openalex": "A5140150650",
+        "orcid": "https://orcid.org/0009-0007-0908-6137"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          }
+        ],
+        "name": "Xiao Chu",
+        "openalex": "A5018698747",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          },
+          {
+            "name": "Shenzhen Polytechnic University",
+            "ror": "00d2w9g53"
+          }
+        ],
+        "name": "Lingxiao Wu",
+        "openalex": "A5046513779",
+        "orcid": "https://orcid.org/0000-0002-5123-7556"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Sichuan University",
+            "ror": "011ashp19"
+          }
+        ],
+        "name": "Suwan Yin",
+        "openalex": "A5006457654",
+        "orcid": "https://orcid.org/0009-0002-4241-0238"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Beijing Jiaotong University",
+            "ror": "01yj56c84"
+          }
+        ],
+        "name": "X G H Miley Yang",
+        "openalex": "A5108963166",
+        "orcid": "https://orcid.org/0000-0003-3428-3806"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trb.2026.103535",
+      "pdf_url": null,
+      "source_id": "S96305778",
+      "source_name": "Transportation Research Part B Methodological",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-06",
+    "repository_urls": [],
+    "title": "Data-Driven Predict-then-Optimize framework for landing scheduling with hybrid descent modes"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-06_10.1016/j.trb.20",
+    "members": [
+      "doi:10.1016/j.trb.2026.103535"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0030zas98",
+        "label": "Hong Kong Polytechnic University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00d2w9g53",
+        "label": "Shenzhen Polytechnic University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:011ashp19",
+        "label": "Sichuan University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01yj56c84",
+        "label": "Beijing Jiaotong University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0007-0908-6137",
+        "label": "Xinyi Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5018698747",
+        "label": "Xiao Chu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5123-7556",
+        "label": "Lingxiao Wu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-4241-0238",
+        "label": "Suwan Yin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3428-3806",
+        "label": "X G H Miley Yang"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11489",
+        "is_primary": true,
+        "label": "Air Traffic Management and Optimization",
+        "score": 0.9845,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11524",
+        "is_primary": false,
+        "label": "Advanced Aircraft Design and Technologies",
+        "score": 0.0053,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11599",
+        "is_primary": false,
+        "label": "Aviation Industry Analysis and Trends",
+        "score": 0.0016,
+        "subfield": "2000"
+      }
+    ]
+  },
+  "first_published": "2026-07-06",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1974122576",
+      "openalex:W1977845574",
+      "openalex:W2106614985",
+      "openalex:W2120528024",
+      "openalex:W2144812030",
+      "openalex:W2508224394",
+      "openalex:W2509690574",
+      "openalex:W2618334490",
+      "openalex:W2758097695",
+      "openalex:W3081879483",
+      "openalex:W3127318658",
+      "openalex:W3130406179",
+      "openalex:W3136027957",
+      "openalex:W3139496481",
+      "openalex:W4223925481",
+      "openalex:W4389469347",
+      "openalex:W4406684136",
+      "openalex:W4409662579"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trb.2026.103535",
+    "openalex": "W7167496395",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T07:54:53Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.003648,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2179,
+      "out": 293
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T07:54:53Z",
+    "doi": "10.1016/j.trb.2026.103535",
+    "journal": "Transportation Research Part B Methodological",
+    "source_id": "S96305778",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and fuel-saving benefits are demonstrated using data from a single major aviation hub, Hong Kong International Airport.",
+      "what": "This paper develops an integrated arrival management framework that combines a Kolmogorov-Arnold Network for predicting boundary estimated times of arrival with a mixed-integer linear programming model to jointly optimize arrival sequencing and descent-mode assignment. Validated using real-world operational data from Hong Kong International Airport, the framework incorporates the combined effects of aircraft types and descent-mode pairings directly into minimum separation constraints. The approach reduces total fuel consumption by 4.4% compared to actual operational baselines.",
+      "why": "It demonstrates that universally maximizing Continuous Descent Operations is counterproductive under high-density traffic, as the resulting scheduling rigidity induces excessive delays that outweigh the fuel-saving benefits of the descent profile."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-06",
+  "work_key": "doi:10.1016/j.trb.2026.103535"
+}

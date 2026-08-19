@@ -1,0 +1,167 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Visitation entropy, the Shannon entropy of an individual's distribution of visits across locations, is a widely used metric in the human mobility literature. Yet, its widespread use rests on assumptions that are rarely made explicit: entropy is defined over a fixed set of states, and estimating it empirically requires abundant, well-sampled observations. The limitations that arise when entropy is used outside this setting have been documented and explored in fields such as statistical physics, ecology, and cryptography. The implications for mobility studies, however, remain unclear. Here, we leverage synthetic and empirical trajectories to systematically examine the strengths and weaknesses of visitation entropy as a measure for characterizing human mobility. We show that, for a sequence of locations visited by an individual, the visitation entropy primarily reflects the number of unique locations visited and sequence length, which together explain 90.7% of its variance in empirical data. We also show that shorter sequences systematically lead to an underestimation of entropy, showing finite-sample bias to be a key limitation. As a result, comparisons of groups based on visitation entropy should be treated with caution. We find that apparent entropy gaps between genders, commuters and non-commuters, and urban and rural residents are reduced, or reversed, once sequence length and the number of unique locations are taken into account. Finally, we show that these issues can be addressed by controlling for sequence length and the number of unique locations, and by complementing entropy with structural network measures, which provide more nuanced insight into how mobility is organized beyond the aspects that entropy alone captures.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Sílvia de Sojo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sune Lehmann",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Laura Alessandretti",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.03443v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03443v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-03",
+    "repository_urls": [],
+    "title": "The limits of visitation entropy as a summary of mobility patterns"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-03_2607.03443",
+    "members": [
+      "arxiv:2607.03443"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.03443",
+    "doi": "10.48550/arxiv.2607.03443",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:50:29Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005342,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2121,
+      "out": 240
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9526,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.381,
+    "relevance": 0.9526
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study identifies the limitations of the metric but relies on the assumption that controlling for sequence length and incorporating structural network measures can sufficiently correct these biases.",
+      "what": "This study systematically evaluates visitation entropy using synthetic and empirical human mobility trajectories, revealing that sequence length and the number of unique locations visited explain 90.7% of its variance. The analysis demonstrates that shorter sequences systematically underestimate entropy due to finite-sample bias, which distorts comparisons between demographic groups.",
+      "why": "It exposes a fundamental measurement flaw in a widely used mobility metric, showing that apparent entropy differences between genders, commuters, and urban-rural residents are largely artifacts of sequence length and location counts rather than actual behavioral differences."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-03",
+  "work_key": "arxiv:2607.03443"
+}

@@ -53,6 +53,16 @@ def anthropic_key() -> Optional[str]:
     return secret("ANTHROPIC_API_KEY")
 
 
+def github_token() -> Optional[str]:
+    """Optional. Raises GitHub's search limit from 60/hour to 5,000.
+
+    Absent is a supported state, not a degraded one: the backlink probe runs
+    unauthenticated and simply does less per hour. Nothing in this repo creates
+    a token.
+    """
+    return secret("GITHUB_TOKEN")
+
+
 def google_key() -> Optional[str]:
     return secret("GOOGLE_API_KEY")
 

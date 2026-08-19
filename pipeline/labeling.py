@@ -36,7 +36,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any, Iterable, Optional
 
-from . import paths
+from . import paths, store
 from .config import cfg
 from .metrics import Run, utcnow
 from .models import Item
@@ -131,11 +131,12 @@ RANKED_FACETS = frozenset({"relevance"})
 #   relevance      ranked top-N per source  — what precision@k is defined over
 #   affinity_probe band-stratified over canon affinity
 #   code_probe     band-stratified over relevance, among code-bearing arXiv
+#   subfield_check five per subfield, over the four the scope gate excludes
 #
 # Any two of them concatenated give a figure that looks reasonable and means
 # nothing, which is why the guard refuses by name rather than hoping nobody
 # points a summariser at the wrong file (phase 0L, N2).
-PROBE_FACETS = frozenset({"affinity_probe", "code_probe"})
+PROBE_FACETS = frozenset({"affinity_probe", "code_probe", "subfield_check"})
 
 # What each file's rows must declare. A row carries its own frame so a file that
 # was mixed by hand — `cat a.jsonl >> b.jsonl` — is still detectable afterwards.
@@ -143,6 +144,10 @@ SAMPLING_OF_FACET = {
     "relevance": "ranked_top_n",
     "affinity_probe": "band_stratified",
     "code_probe": "code_stratified",
+    # Drawn by subfield, five from each of the four the scope gate excludes.
+    # Not a ranking, not a band — a fourth question with a fourth frame, and
+    # pooling it with any of the others would average two different populations.
+    "subfield_check": "subfield_check",
 }
 
 
@@ -310,6 +315,7 @@ def _suggest_session(facet: str) -> str:
         "relevance": "Use `uc review --label relevance`.",
         "affinity_probe": "Use `uc review --label affinity`.",
         "code_probe": "Use `uc review --label code_probe`.",
+        "subfield_check": "Use `uc review --label subfield_check`.",
     }.get(facet, f"No session writes {facet!r}; the known ones are relevance, "
                  f"affinity and code_probe.")
 
@@ -1502,6 +1508,214 @@ def run_code_probe_session(
     if remaining > 0:
         printer(
             f"{remaining} left — re-run `uc review --label code_probe` to continue"
+            + (" (stopped early)" if stopped else "")
+        )
+    return {
+        "labelled": n,
+        "remaining": max(0, remaining),
+        "counts": dict(counts),
+        "stopped_early": stopped,
+        "minutes": round(elapsed / 60, 2),
+    }
+
+
+# --------------------------------------------------------------------------
+# The subfield check
+# --------------------------------------------------------------------------
+
+SUBFIELD_CHECK_POOL = "subfield_check_pool.jsonl"
+
+# How much of an abstract to show when there is no summary. Enough to tell what
+# was done to what; not so much that twenty of them become a reading session.
+ABSTRACT_CHARS = 320
+
+
+def subfield_check_pool() -> list[dict]:
+    """The prepared pool, minus anything already judged.
+
+    Its own reader for the same reason the code probe has one: a session that
+    serves two sampling frames is how a row ends up in the wrong file.
+    """
+    path = paths.LABELS / SUBFIELD_CHECK_POOL
+    if not path.exists():
+        return []
+    done = {r.get("work_key") for r in load_labels("subfield_check")}
+    rows = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        try:
+            row = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if row.get("work_key") in done:
+            continue
+        rows.append(row)
+    return rows
+
+
+def _first_sentences(text: str, limit: int = ABSTRACT_CHARS) -> str:
+    """The opening of an abstract, cut at a sentence boundary where possible."""
+    text = " ".join((text or "").split())
+    if len(text) <= limit:
+        return text
+    cut = text[:limit]
+    stop = max(cut.rfind(". "), cut.rfind("? "), cut.rfind("! "))
+    return (cut[: stop + 1] if stop > limit // 2 else cut.rstrip() + "…")
+
+
+def subfield_check_body(item: Optional[Item]) -> tuple[str, str]:
+    """(what to show, where it came from).
+
+    **The title alone is not enough to judge scope**, which is the whole reason
+    this pool needed a session rather than a spreadsheet. "Technology transfer
+    and innovation performance in digital industries: intracity and intercity
+    linkages in China" could sit on either side of the line; the venue and a
+    sentence of what was actually done decide it.
+
+    The pool rows carry only a title, so the item is loaded for the rest. Best
+    available, in order: the written summary, then the opening of the abstract,
+    then nothing — and when it is nothing that is **said out loud**, because a
+    judgement made on a title alone should be visibly weaker than one made on a
+    summary, not silently identical to it.
+    """
+    if item is None:
+        return "", "item not on disk"
+    summary = item.summary.en if item.summary else None
+    if summary and summary.what:
+        return summary.what, "summary"
+    if item.bibliography.abstract:
+        return _first_sentences(item.bibliography.abstract), "abstract"
+    return "", "no abstract — judging on title and venue alone"
+
+
+def subfield_topic_label(item: Optional[Item]) -> str:
+    """The paper's own primary topic, in words.
+
+    A bare `2208` is opaque, and the judgement being asked for is precisely
+    about that code. OpenAlex's topic name is the finest-grained label we hold
+    and it comes from the paper itself, so it is shown beside the number on
+    every item — including the seven with no abstract, where it is most of what
+    there is to go on.
+    """
+    if item is None or not item.entities.topics:
+        return ""
+    topics = list(item.entities.topics)
+    primary = next((t for t in topics if getattr(t, "is_primary", False)), topics[0])
+    return primary.label or ""
+
+
+def subfield_check_row(pool_row: dict, label: str, basis: str) -> dict[str, Any]:
+    """One judgement, carrying the subfield it was about.
+
+    `subfield` is the point of the file: these labels exist to confirm or
+    overturn the four exclusions the `off_subfield` gate now enforces, and each
+    of those rests on three or four observations. `shown` records what the
+    labeller actually had in front of them, so a verdict reached on a title
+    alone can be told apart later from one reached on a summary.
+    """
+    return {
+        "work_key": pool_row["work_key"],
+        "title": pool_row.get("title", ""),
+        "date": pool_row.get("date"),
+        "label": LABEL_KEYS.get(label, label),
+        "subfield": pool_row.get("subfield"),
+        "source": pool_row.get("source", "journal"),
+        "shown": basis,
+        "sampling": "subfield_check",
+        "labelled_at": utcnow().isoformat(),
+        # Drawn by subfield, not by rank and not by band. Its own frame, and no
+        # precision@k may be computed from it.
+        "not_for_precision_at_k": True,
+    }
+
+
+def run_subfield_check_session(
+    facet: str = "subfield_check", prompt=input, printer=print
+) -> dict[str, Any]:
+    """Judge papers in the four subfields the scope gate now excludes.
+
+    Every verdict is written before the next question is asked, so stopping
+    part-way keeps what was answered and re-running resumes.
+    """
+    assert_writable(facet, "subfield_check")
+
+    todo = subfield_check_pool()
+    if not todo:
+        path = paths.LABELS / SUBFIELD_CHECK_POOL
+        if not path.exists():
+            printer(f"no pool at {path}")
+        else:
+            printer("every item in the subfield check pool has been judged")
+        return {"labelled": 0, "remaining": 0, "counts": {}, "stopped_early": False}
+
+    by_sub: Counter = Counter(r.get("subfield") for r in todo)
+    printer("")
+    printer(f"{len(todo)} paper(s) to judge, {dict(by_sub)} by subfield.")
+    printer(
+        "These sit in the four subfields the scope gate now excludes. Each of "
+        "those exclusions rests on three or four observations, so these "
+        "judgements are what the whole rule stands on."
+    )
+    printer("A `keep` here is evidence the gate is too wide.")
+    printer("")
+    printer(LABEL_LEGEND)
+    printer("  type 'quit' to stop — every answer is written as you give it")
+
+    started = time.monotonic()
+    n = 0
+    counts: Counter = Counter()
+    stopped = False
+
+    for i, row in enumerate(todo, start=1):
+        item = store.load_item(row["work_key"])
+        body, basis = subfield_check_body(item)
+        venue = ""
+        if item and item.bibliography.primary_location:
+            venue = item.bibliography.primary_location.source_name or ""
+
+        topic = subfield_topic_label(item)
+        printer("")
+        # The subfield leads every item: it is the thing being judged, and the
+        # topic name is there because a bare four-digit code is not a question
+        # anyone can answer.
+        printer(
+            f"[{i}/{len(todo)}]  subfield {row.get('subfield')}"
+            + (f" — {topic}" if topic else "")
+            + f"   {row.get('date')}"
+        )
+        printer(f"  venue: {venue}")
+        printer(f"  {row.get('title', '')}")
+        if body:
+            printer(f"  {basis}: {body}")
+        else:
+            tags = []
+            if item:
+                tags = [e.label for e in (item.entities.methods + item.entities.data)][:6]
+            printer(f"  ({basis})")
+            if tags:
+                printer(f"  extracted tags: {', '.join(tags)}")
+
+        key = _ask_label(prompt, printer)
+        if key is None:
+            stopped = True
+            break
+        label = LABEL_KEYS[key]
+        counts[label] += 1
+        if label == "skip":
+            continue
+        n += append_one(facet, subfield_check_row(row, key, basis))
+
+    elapsed = time.monotonic() - started
+    remaining = len(todo) - n - counts.get("skip", 0)
+    printer("")
+    printer(
+        f"wrote {n} judgement(s) to {labels_path(facet)} in "
+        f"{elapsed / 60:.1f} min ({dict(counts)})"
+    )
+    if remaining > 0:
+        printer(
+            f"{remaining} left — re-run `uc review --label subfield_check` to continue"
             + (" (stopped early)" if stopped else "")
         )
     return {

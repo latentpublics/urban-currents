@@ -268,6 +268,7 @@ def review(
         run_rejudge_session,
         run_review_session,
         run_sample_session,
+        run_subfield_check_session,
     )
 
     if pending:
@@ -292,6 +293,8 @@ def review(
         run_probe_session(dates, per_band=max(1, limit // 3))
     elif label in ("code_probe", "code"):
         run_code_probe_session()
+    elif label in ("subfield_check", "subfield"):
+        run_subfield_check_session()
     elif label in ("relevance",):
         run_labeling_session(d, facet=label, top=top)
     elif label:
@@ -304,6 +307,7 @@ def review(
         typer.echo("  relevance   the Q1b ranked sample")
         typer.echo("  affinity    the canon-affinity probe")
         typer.echo("  code_probe  code-bearing arXiv papers")
+        typer.echo("  subfield_check  the four subfields the scope gate excludes")
         raise typer.Exit(code=2)
     else:
         run_review_session(d)

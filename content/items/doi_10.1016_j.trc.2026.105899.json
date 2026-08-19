@@ -1,0 +1,288 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Reliable short-term demand forecasting is essential for managing shared micro-mobility services and ensuring responsive, user-centered operations. This study introduces T-STAR (Two-stage Spatial and Temporal Adaptive contextual Representation), a novel transformer-based probabilistic framework designed to forecast station-level bike-sharing demand at a 15-minute resolution. T-STAR addresses key challenges in high-resolution forecasting by disentangling consistent demand patterns from short-term fluctuations through a hierarchical two-stage structure. The first stage captures coarse-grained hourly demand patterns, while the second stage improves prediction accuracy by incorporating high-frequency, localized inputs, including recent fluctuations and real-time demand variations in connected metro services, to account for temporal shifts in short-term demand. Time series transformer models are employed in both stages to generate probabilistic predictions. Extensive experiments using Washington D.C.’s Capital Bikeshare data demonstrate that T-STAR outperforms existing methods in both deterministic and probabilistic accuracy. The model exhibits strong spatial and temporal robustness across stations and time periods. A zero-shot forecasting experiment further highlights T-STAR’s ability to transfer to previously unseen service areas without retraining. These results underscore the framework’s potential to deliver granular, reliable, and uncertainty-aware short-term demand forecasts, which enable seamless integration to support multimodal trip planning for travelers and enhance real-time operations in shared micro-mobility services.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Jingyi Cheng",
+        "openalex": "A5144049239",
+        "orcid": "https://orcid.org/0000-0002-3814-6238"
+      },
+      {
+        "institutions": [],
+        "name": "Gonçalo Homem de Almeida Correia",
+        "openalex": "A5059964334",
+        "orcid": "https://orcid.org/0000-0002-9785-3135"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Oded Cats",
+        "openalex": "A5058766860",
+        "orcid": "https://orcid.org/0000-0002-4506-0459"
+      },
+      {
+        "institutions": [],
+        "name": "Shadi Sharif Azadeh",
+        "openalex": "A5046979930",
+        "orcid": "https://orcid.org/0000-0003-4181-2083"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105899",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-30",
+    "repository_urls": [],
+    "title": "T-STAR: A context-aware transformer framework for short-term probabilistic demand forecasting in dock-based shared micro-mobility"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-30_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105899"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02e2c7k09",
+        "label": "Delft University of Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3814-6238",
+        "label": "Jingyi Cheng"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9785-3135",
+        "label": "Gonçalo Homem de Almeida Correia"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4506-0459",
+        "label": "Oded Cats"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4181-2083",
+        "label": "Shadi Sharif Azadeh"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": true,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.1912,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.1653,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10761",
+        "is_primary": false,
+        "label": "Vehicular Ad Hoc Networks (VANETs)",
+        "score": 0.1045,
+        "subfield": "2208"
+      }
+    ]
+  },
+  "first_published": "2026-07-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1990621008",
+      "openalex:W2025720061",
+      "openalex:W2043179846",
+      "openalex:W2060118425",
+      "openalex:W2087854787",
+      "openalex:W2099639456",
+      "openalex:W2736970259",
+      "openalex:W2756203131",
+      "openalex:W2772724270",
+      "openalex:W2802430251",
+      "openalex:W2807866189",
+      "openalex:W2883073525",
+      "openalex:W2887775309",
+      "openalex:W2890330768",
+      "openalex:W2940914091",
+      "openalex:W2956910609",
+      "openalex:W2980806123",
+      "openalex:W2980994438",
+      "openalex:W3005021926",
+      "openalex:W3021861102",
+      "openalex:W3042322701",
+      "openalex:W3107310901",
+      "openalex:W3109254449",
+      "openalex:W3115178782",
+      "openalex:W3115740094",
+      "openalex:W3151146231",
+      "openalex:W3155269565",
+      "openalex:W3171884590",
+      "openalex:W3181205891",
+      "openalex:W3190844324",
+      "openalex:W3208909450",
+      "openalex:W3213422146",
+      "openalex:W4207043127",
+      "openalex:W4310372331",
+      "openalex:W4311261900",
+      "openalex:W4313199525",
+      "openalex:W4315926508",
+      "openalex:W4382775317",
+      "openalex:W4386473007",
+      "openalex:W4386537395",
+      "openalex:W4387717615",
+      "openalex:W4387846860",
+      "openalex:W4388994754",
+      "openalex:W4390520556",
+      "openalex:W4392523490",
+      "openalex:W4393152073",
+      "openalex:W4399485298",
+      "openalex:W4403608874",
+      "openalex:W4404732031",
+      "openalex:W4412053342",
+      "openalex:W4415959716",
+      "openalex:W7092213728",
+      "openalex:W7133185618",
+      "openalex:W7133194541"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105899",
+    "openalex": "W7171847910",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:28:23Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005759,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2093,
+      "out": 291
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:28:23Z",
+    "doi": "10.1016/j.trc.2026.105899",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance and transferability were validated using data from a single micro-mobility system in Washington D.C.",
+      "what": "The researchers developed T-STAR, a two-stage transformer-based framework that forecasts station-level bike-sharing demand at a 15-minute resolution. Tested on Washington D.C.’s Capital Bikeshare system, the model separates coarse hourly patterns from high-frequency fluctuations by integrating real-time metro demand variations and localized inputs to generate probabilistic predictions.",
+      "why": "The framework improves both deterministic and probabilistic forecasting accuracy over existing baselines and demonstrates zero-shot transferability, allowing operators to predict demand in entirely new service areas without retraining the model."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-30",
+  "work_key": "doi:10.1016/j.trc.2026.105899"
+}

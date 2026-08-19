@@ -1,0 +1,218 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Poverty mapping is increasingly important for monitoring Sustainable Development Goal 1 (SDG 1) of the United Nations 2030 Agenda, which aims to end poverty in all its forms everywhere. Yet timely and fine-resolution poverty estimation remains difficult because conventional census- and survey-based approaches are costly, infrequent, and often sparse precisely where deprivation is most severe. As poverty emerges from complex socioeconomic systems shaped by human mobility, social interactions, infrastructure, and economic activities, emerging computational methods and nontraditional data sources have created new opportunities for poverty estimation and mapping. At the intersection of statistical physics, complex systems science, and data science, these approaches enable poverty estimation at finer spatial and temporal resolutions. This review summarizes the main concepts of poverty and the principal frameworks used to measure it, and examines recent advances on poverty estimation and mapping using satellite imagery, mobile phone data, social media data, and multisource data fusion. The review also discusses persistent challenges related to representativeness, transferability across regions, interpretability, and uncertainty quantification. Finally, the review clarifies both the analytical promise and the practical limits of contemporary poverty mapping.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Suoyi Tan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mengning Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yixiu Kong",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Huimin Bai",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jianguo Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dirk Brockmann",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yicheng Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xin Lu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.29457v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.29457v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-31",
+    "repository_urls": [],
+    "title": "Poverty Mapping: Data, Models and Applications"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-31_2607.29457",
+    "members": [
+      "arxiv:2607.29457"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:mobile-phone",
+        "label": "mobile phone data"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:social-media",
+        "label": "social media data"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-31",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.29457",
+    "doi": "10.48550/arxiv.2607.29457",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:29:53Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005168,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1957,
+      "out": 248
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9261,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3704,
+    "relevance": 0.9261
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This review synthesizes recent methodological advances in poverty mapping that utilize nontraditional data sources, including satellite imagery, mobile phone records, social media activity, and multisource data fusion. It outlines the core concepts and measurement frameworks of poverty, while evaluating how computational methods from statistical physics, complex systems science, and data science enable finer spatial and temporal resolutions than traditional census surveys.",
+      "why": "It establishes a comprehensive framework for understanding the analytical capabilities and practical boundaries of emerging digital data sources, shifting the field from ad-hoc case studies toward a systematic evaluation of model transferability, data representativeness, and uncertainty quantification."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-31",
+  "work_key": "arxiv:2607.29457"
+}

@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Automated visual monitoring of urban environments is a growing Computer Vision research area, but municipal solid waste detection remains under-represented in dedicated benchmark resources. Existing waste-related datasets predominantly address individual litter detection, aerial imagery, or image-level classification, and none simultaneously provide street-level imagery, instance-level localization, and categorization of domestic waste streams within a structured municipal collection context. This paper introduces the Maltese Domestic Waste Dataset (MDWD), a street-level benchmark comprising 3,697 high-resolution images and 11,461 manually annotated instances across five domestic waste categories representative of Malta's municipal collection system. The dataset captures substantial variation in location, illumination, object scale, occlusion, and urban context. To establish reproducible baselines, a cross-architecture benchmark is conducted across multiple generations of the YOLO family and a transformer-based detector. On the test set, RF-DETR-M achieves the strongest overall performance with an mAP50 of 94.49% and an F1-score of 93.56%, whilst smaller-capacity variants maintain competitive accuracy at substantially reduced parameter counts. These results indicate that MDWD supports effective training across both compact real-time detectors and transformer-based models, establishing a benchmark for future research in vision-based municipal waste monitoring.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Andrea Filiberto Lucas",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mark Bugeja",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Carl James Debono",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dylan Seychell",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": "Accepted for publication at the 14th IEEE European Conference on Visual Information Processing (EUVIP 2026). 6 pages, 2 figures, 4 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.00257v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.00257v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-31",
+    "repository_urls": [],
+    "title": "MDWD: A Street-Level Dataset for Municipal Solid Waste Detection in Dense Urban Environments"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-31_2608.00257",
+    "members": [
+      "arxiv:2608.00257"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:ultralytics/ultralytics",
+        "label": "YOLO"
+      }
+    ],
+    "topics": []
+  },
+  "first_published": "2026-07-31",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.00257",
+    "doi": "10.48550/arxiv.2608.00257",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:29:53Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006047,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2057,
+      "out": 329
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.8373,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4149,
+    "relevance": 0.8373
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The dataset is tailored to the specific municipal collection system and urban context of Malta, which may limit direct generalization to cities with different waste disposal practices.",
+      "what": "The Maltese Domestic Waste Dataset (MDWD) is a new street-level benchmark containing 3,697 high-resolution images and 11,461 manually annotated instances of domestic waste across five categories. Evaluation of multiple object detection models on the dataset shows that the RF-DETR-M transformer-based detector achieves the highest performance with an mAP50 of 94.49% and an F1-score of 93.56%, while smaller YOLO variants remain highly competitive.",
+      "why": "It provides the first street-level, instance-level dataset specifically categorized around domestic waste streams in a structured municipal collection context, enabling the development of automated visual monitoring systems for dense urban environments."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-31",
+  "work_key": "arxiv:2608.00257"
+}

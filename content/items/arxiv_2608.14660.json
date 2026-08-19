@@ -1,0 +1,182 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This study proposes a ring-based SpatialTransformer to learn how building uses at different distances from a railway station interact to generate pedestrian flow. Concentric ring buffers at 100-meter intervals up to 800 meters were defined around 100 randomly selected stations in Tokyo, treating each ring as a spatial token. Self-Attention was applied to learn inter-zone interactions directly from data, without prior structural assumptions. GPS-derived walking trip counts served as the target variable and Geographically Weighted Regression as the baseline. Across 30 independent trials, the SpatialTransformer consistently outperformed GWR in predictive accuracy. SHAP analysis revealed that mid-to-outer distance zone features dominate pedestrian flow prediction, while features from the 0-100m zone contributed little. The attention matrix showed that each distance zone attends most strongly to spatially distant zones, demonstrating that pedestrian flow is regulated by structural interactions across the entire catchment area rather than by any single zone in isolation. These findings challenge the compact city assumption that station-proximate development maximizes pedestrian flow, and suggest that land use distribution across the full walkable catchment area deserves greater consideration in urban planning practice.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Shun Nakayama",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Takahiro Kanamori",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Wanglin Yan",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.14660v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.14660v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-31",
+    "repository_urls": [],
+    "title": "Ring-based Spatial Transformer: Learning Non-linear Spatial Interactions between Building Distribution and Pedestrian Flow"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-31_2608.14660",
+    "members": [
+      "arxiv:2608.14660"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-econometrics",
+        "label": "spatial econometrics"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1490",
+        "label": "Tokyo",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-31",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.14660",
+    "doi": "10.48550/arxiv.2608.14660",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:29:53Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005884,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1991,
+      "out": 322
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9694,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3878,
+    "relevance": 0.9694
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's findings are based on a sample of 100 stations within a single, highly transit-oriented metropolitan area, which may limit generalizability to cities with different urban forms or transit habits.",
+      "what": "The study developed a ring-based Spatial Transformer model to analyze how building uses across concentric 100-meter ring buffers, up to an 800-meter radius, influence pedestrian flow around 100 randomly selected railway stations in Tokyo. Using GPS-derived walking trip counts as the target variable, the model outperformed Geographically Weighted Regression across 30 independent trials. SHAP and attention matrix analyses revealed that mid-to-outer distance zones (beyond 100 meters) dominate pedestrian flow predictions and interact strongly with other distant zones.",
+      "why": "The findings challenge the conventional compact city planning assumption that concentrating development immediately adjacent to transit stations maximizes pedestrian activity, demonstrating instead that pedestrian flow is driven by land-use interactions across the entire walkable catchment area."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-31",
+  "work_key": "arxiv:2608.14660"
+}

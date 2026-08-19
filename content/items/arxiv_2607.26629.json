@@ -1,0 +1,156 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This paper addresses the definition and modeling of hazards in the context of physical systems, particularly infrastructures, that are affected by climate change. The paper highlights that hazards are system-dependent, meaning what constitutes a hazard for one system (e.g., humans) may not be the same for another (e.g., infrastructures). The paper also highlights that extreme intensity distribution may evolve in a region without necessarily constituting a hazard for a specific system. These distinctions are crucial for risk assessment and adaptation strategies in a changing climate. The paper implements a simple threshold-based hazard model -Boolean Hazard Model with Probability -to focus exclusively on system-specific hazard definition in climatechange context. Use cases illustrate how this approach adapts to different systems and hazard types. The model produces time-evolving hazard maps, delivering hazard data tailored to both hazard type and infrastructure characteristics. The model provides hazard data tailored to specific hazard types and physical systems, with a focus on infrastructure. The use cases demonstrate their practical value and potential for broader application in multi-infrastructure and multi-hazard exposure modeling.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Matthieu Dutel",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.26629v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.26629v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-29",
+    "repository_urls": [],
+    "title": "Structure of System-Specific Hazard Modeling for Physical Infrastructures in a Climate Change Context"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-29_2607.26629",
+    "members": [
+      "arxiv:2607.26629"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-29",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.26629",
+    "doi": "10.48550/arxiv.2607.26629",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:26:56Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005134,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1941,
+      "out": 247
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8778,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3511,
+    "relevance": 0.8778
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework is demonstrated using a simplified threshold-based model, which may not capture complex, cascading, or non-linear physical interactions between climate stressors and infrastructure systems.",
+      "what": "The paper introduces the Boolean Hazard Model with Probability, a threshold-based framework designed to model climate hazards based on the specific vulnerabilities of physical infrastructure rather than generic environmental extremes. The model's utility is demonstrated through use cases that generate time-evolving hazard maps tailored to distinct infrastructure characteristics and hazard types.",
+      "why": "It shifts hazard modeling away from generic regional climate extremes to system-specific thresholds, preventing planners from misallocating adaptation resources to climate shifts that do not actually threaten the physical integrity of specific infrastructure assets."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-29",
+  "work_key": "arxiv:2607.26629"
+}

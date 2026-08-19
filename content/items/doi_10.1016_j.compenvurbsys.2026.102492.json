@@ -1,0 +1,345 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "City2Graph is an open-source Python library that streamlines workflows for heterogeneous Graph Neural Networks (GNNs) in urban systems. Cities are complex systems of diverse spatial relations long modelled as graphs in network science, and recent advances in GNNs have further enabled the identification of non-linear patterns of urban complexity. Unlike homogeneous graphs with a single node and edge type, heterogeneous graphs with multiple types are receiving growing attention to accommodate richer information in GNNs. However, their diffusion remains constrained by fragmented graph construction processes across different data domains, and by the lack of a unified framework for converting constructed graphs into GNN-ready tensors. City2Graph standardises graph construction across domains of morphology, transportation, mobility, and proximity. The library supports conversions between spatial geometries, network topologies, and tensors for spatial analysis with visualisation, network analysis, and GNN training, respectively. City2Graph also supports metapath construction, capturing higher-order connections across node and edge types (e.g., areas linked via multimodal transit). The library’s efficacy was demonstrated through a case study on clustering urban functions in Liverpool, UK, using Graph Autoencoder models with three relation types: spatial contiguity, walk-based accessibility, and multimodal accessibility between census units. Compared with the homogeneous model, heterogeneous models identified spatially coherent clusters that aligned more closely with defined accessibility patterns. City2Graph enables reproducible workflows for heterogeneous GNNs and model interpretation, fostering comprehensive understanding of urban systems across disciplines. The library is released under the BSD 3-Clause License on GitHub.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Liverpool",
+            "ror": "04xs57h96"
+          }
+        ],
+        "name": "Y. Sato",
+        "openalex": "A5101890887",
+        "orcid": "https://orcid.org/0009-0004-7052-7163"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Liverpool",
+            "ror": "04xs57h96"
+          }
+        ],
+        "name": "Elisabetta Pietrostefani",
+        "openalex": "A5064262302",
+        "orcid": "https://orcid.org/0000-0002-8115-1868"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Liverpool",
+            "ror": "04xs57h96"
+          }
+        ],
+        "name": "Ron Mahabir",
+        "openalex": "A5058029787",
+        "orcid": "https://orcid.org/0000-0002-5553-5366"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Liverpool",
+            "ror": "04xs57h96"
+          }
+        ],
+        "name": "Daniel Arribas‐Bel",
+        "openalex": "A5070895919",
+        "orcid": "https://orcid.org/0000-0002-6274-1619"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.compenvurbsys.2026.102492",
+      "pdf_url": null,
+      "source_id": "S60115552",
+      "source_name": "Computers Environment and Urban Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-31",
+    "repository_urls": [],
+    "title": "City2Graph: A Python library for Heterogeneous Graph Neural Networks and spatial analysis in urban systems"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-31_10.1016/j.compen",
+    "members": [
+      "doi:10.1016/j.compenvurbsys.2026.102492"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.8824,
+        "id": "data:street-network",
+        "label": "street network data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:network-analysis",
+        "label": "network analysis"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:clustering",
+        "label": "clustering"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04xs57h96",
+        "label": "University of Liverpool"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0004-7052-7163",
+        "label": "Y. Sato"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8115-1868",
+        "label": "Elisabetta Pietrostefani"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5553-5366",
+        "label": "Ron Mahabir"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6274-1619",
+        "label": "Daniel Arribas‐Bel"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.4681,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0978,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0638,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-07-31",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1536680647",
+      "openalex:W1601495635",
+      "openalex:W1606375300",
+      "openalex:W1970754929",
+      "openalex:W1973872989",
+      "openalex:W1974395471",
+      "openalex:W1976455030",
+      "openalex:W1977304233",
+      "openalex:W1987971958",
+      "openalex:W2002827932",
+      "openalex:W2008620264",
+      "openalex:W2011780983",
+      "openalex:W2014219430",
+      "openalex:W2016515219",
+      "openalex:W2051224630",
+      "openalex:W2057785198",
+      "openalex:W2064782140",
+      "openalex:W2071366711",
+      "openalex:W2075010670",
+      "openalex:W2085487226",
+      "openalex:W2112090702",
+      "openalex:W2132022337",
+      "openalex:W2136368195",
+      "openalex:W2139737877",
+      "openalex:W2151936673",
+      "openalex:W2172061885",
+      "openalex:W2265536722",
+      "openalex:W2294525046",
+      "openalex:W2319636426",
+      "openalex:W2345272158",
+      "openalex:W2465501549",
+      "openalex:W2549766072",
+      "openalex:W2591277815",
+      "openalex:W2747101047",
+      "openalex:W2750705100",
+      "openalex:W2756275892",
+      "openalex:W2762214439",
+      "openalex:W2804841028",
+      "openalex:W2808878465",
+      "openalex:W2884219265",
+      "openalex:W2893507394",
+      "openalex:W2901799000",
+      "openalex:W2904703694",
+      "openalex:W2911689021",
+      "openalex:W2982441053",
+      "openalex:W3037085755",
+      "openalex:W3037826211",
+      "openalex:W3099011804",
+      "openalex:W3114303065",
+      "openalex:W3118689035",
+      "openalex:W3119196674",
+      "openalex:W3120694366",
+      "openalex:W3122799961",
+      "openalex:W3152893301",
+      "openalex:W3170341715",
+      "openalex:W3171405804",
+      "openalex:W3189726140",
+      "openalex:W3210361503",
+      "openalex:W3214340375",
+      "openalex:W4200583214",
+      "openalex:W4205873986",
+      "openalex:W4224069464",
+      "openalex:W4224303501",
+      "openalex:W4288079517",
+      "openalex:W4292198479",
+      "openalex:W4296200495",
+      "openalex:W4303980603",
+      "openalex:W4308168732",
+      "openalex:W4385235853",
+      "openalex:W4386028223",
+      "openalex:W4387310447",
+      "openalex:W4390906246",
+      "openalex:W4391913514",
+      "openalex:W4394690126",
+      "openalex:W4400315608",
+      "openalex:W4400894703",
+      "openalex:W4405764821",
+      "openalex:W4407261705",
+      "openalex:W4407266342",
+      "openalex:W4408251595",
+      "openalex:W4410059844",
+      "openalex:W4411086500",
+      "openalex:W7102596516"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.compenvurbsys.2026.102492",
+    "openalex": "W7171997646",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:29:54Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006128,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2147,
+      "out": 323
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:29:54Z",
+    "doi": "10.1016/j.compenvurbsys.2026.102492",
+    "journal": "Computers Environment and Urban Systems",
+    "source_id": "S60115552",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The library's performance advantages were demonstrated on a single case study of urban function clustering in Liverpool, meaning its comparative benefits may vary for other spatial prediction or classification tasks.",
+      "what": "The researchers developed City2Graph, an open-source Python library that standardises the construction of heterogeneous Graph Neural Networks (GNNs) across urban morphology, transportation, mobility, and proximity domains. The library converts spatial geometries and network topologies into GNN-ready tensors and supports metapath construction to capture higher-order connections. Its utility was demonstrated in Liverpool, UK, where a heterogeneous Graph Autoencoder model using spatial contiguity, walking accessibility, and multimodal transit relations clustered urban functions more coherently than a homogeneous baseline.",
+      "why": "It bridges the gap between spatial data science and deep graph learning by providing a unified, reproducible pipeline to build and train heterogeneous GNNs, which previously suffered from fragmented workflows across different data domains."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-31",
+  "work_key": "doi:10.1016/j.compenvurbsys.2026.102492"
+}

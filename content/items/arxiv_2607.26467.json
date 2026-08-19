@@ -1,0 +1,190 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Traffic prediction is a core task in intelligent transportation systems, supporting applications such as adaptive signal control, route guidance, and ride-hailing dispatch. Deep learning models, including graph convolutional networks, recurrent networks, and Transformers, achieve strong results on standard benchmarks, but their architectures are designed by hand, requiring significant expert effort and producing models that often generalize poorly across cities and datasets. Neural Architecture Search (NAS) offers a systematic alternative to manual design. It automates the search over candidate architectures of deep learning models, finding designs that match the spatial-temporal structure of traffic data without manual trial and error. This survey reviews NAS methods applied to traffic prediction, organized by search strategy: gradient-based methods, evolutionary methods, and one-shot weight-sharing methods. For each category, we analyze how the search space is designed to cover spatial and temporal traffic operators, and how the search strategy balances cost against architecture quality. We also discuss open challenges, computational scalability to large road networks, manual search space design, cross-city generalization, dynamic graph structure, and the open question of NAS for spatial-temporal foundation models, and identify directions for future research.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Truong Giang Vu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Li Yang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Richard W. Pazzi",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.NE"
+    ],
+    "comment": "8 pages, 3 tables. Accepted at UrbCom 2026, the 8th International Workshop on Urban Computing, co-located with IEEE DCOSS-IoT 2026",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.26467v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.26467v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-29",
+    "repository_urls": [],
+    "title": "Neural Architecture Search for Traffic Prediction: A Survey of Methods, Challenges, and Future Directions"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-29_2607.26467",
+    "members": [
+      "arxiv:2607.26467"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.96,
+        "id": "data:street-network",
+        "label": "street network data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      },
+      {
+        "confidence": 0.9818,
+        "id": "method:gnn",
+        "label": "graph neural network"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:transformer",
+        "label": "transformer"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-29",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.26467",
+    "doi": "10.48550/arxiv.2607.26467",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:26:56Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004913,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1979,
+      "out": 216
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9589,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3836,
+    "relevance": 0.9589
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This survey reviews the application of Neural Architecture Search (NAS) to traffic prediction, categorizing existing approaches into gradient-based, evolutionary, and one-shot weight-sharing methods. It evaluates how these automated techniques design search spaces to capture spatial-temporal traffic patterns and balances computational costs against model quality.",
+      "why": "It systematizes the transition from manually designed deep learning models, which require extensive expert labor and generalize poorly, to automated search strategies capable of discovering optimal architectures for diverse urban road networks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-29",
+  "work_key": "arxiv:2607.26467"
+}

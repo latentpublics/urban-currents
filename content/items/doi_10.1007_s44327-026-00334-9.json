@@ -1,0 +1,358 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Bangladesh is a developing country experiencing rapid population growth, necessitating improved urban transportation. Buses could be a viable solution, but a trend towards personal vehicles persists. To understand this shift, the quality of current bus services needs to be evaluated. Improving bus service quality promotes sustainable urban mobility by reducing congestion and car reliance in rapidly developing urban centres. Therefore, this study assesses the service quality of urban buses in Bangladesh and identifies key dimensions that should be prioritized to enhance overall bus quality. A SERVQUAL analysis was conducted using data collected from a questionnaire survey on five key bus routes in Dhaka city. A total of 500 respondents were interviewed to assess their perceptions and expectations of current services. Ordinal Logistic Regression (OLR) was applied, along with machine learning models such as Extreme Gradient Boosting (XGBoost) and Random Forest (RF). The RF performed better in the satisfaction model with an accuracy of 0.71, F-1 Score of 0.73 and AUROC (Macro) of 0.82. In contrast, the XGBoost performed better in the dissatisfaction model with an accuracy of 0.70, F1-Score of 0.69 and AUROC of 0.79. OLR showed a pseudo R 2 of 0.199 for satisfaction and 0.182 for dissatisfaction model. After analyzing the gap scores between perception and expectation, the Level of Service (LoS) was categorized as Category 3. SHAP plots using Shapley values identified key SERVQUAL dimensions. Major service gaps include bus schedules, maintenance, ticketing, safety, and professionalism. Dissatisfaction mainly stems from a lack of assurance and empathy, such as safety concerns, indifference, and unprofessionalism. Improving assurance, reliability and responsiveness such as professionalism, safety, prompt help and maintenance, can boost customer satisfaction.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Bangladesh University of Engineering and Technology",
+            "ror": "05a1qpv97"
+          }
+        ],
+        "name": "Joydeep Banik",
+        "openalex": "A5136450655",
+        "orcid": "https://orcid.org/0009-0008-8459-7014"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Bangladesh University of Engineering and Technology",
+            "ror": "05a1qpv97"
+          }
+        ],
+        "name": "Arman Hossain",
+        "openalex": "A5143951470",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Southwest Jiaotong University",
+            "ror": "00hn7w693"
+          }
+        ],
+        "name": "Md Sifat Bin Siraj",
+        "openalex": "A5082259366",
+        "orcid": "https://orcid.org/0000-0002-7734-6590"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Auburn University",
+            "ror": "02v80fc35"
+          }
+        ],
+        "name": "Md Jubayadul Islam",
+        "openalex": "A5143930436",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Asia Pacific",
+            "ror": "03dk4hf38"
+          }
+        ],
+        "name": "Zahirul Haque Molla",
+        "openalex": "A5143889290",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Lambton College",
+            "ror": "045zy3z54"
+          }
+        ],
+        "name": "Mehedi Hasan",
+        "openalex": "A5143908420",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Bangladesh University of Engineering and Technology",
+            "ror": "05a1qpv97"
+          }
+        ],
+        "name": "Armana Sabiha Huq",
+        "openalex": "A5078161549",
+        "orcid": "https://orcid.org/0000-0002-1719-8194"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s44327-026-00334-9",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44327-026-00334-9.pdf",
+      "source_id": "S5407042847",
+      "source_name": "Discover Cities",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-29",
+    "repository_urls": [],
+    "title": "Ordinal regression and explainable machine learning reveal key determinants of urban bus service quality in Dhaka"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-29_10.1007/s44327-0",
+    "members": [
+      "doi:10.1007/s44327-026-00334-9"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05a1qpv97",
+        "label": "Bangladesh University of Engineering and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00hn7w693",
+        "label": "Southwest Jiaotong University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02v80fc35",
+        "label": "Auburn University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03dk4hf38",
+        "label": "University of Asia Pacific"
+      },
+      {
+        "confidence": null,
+        "id": "ror:045zy3z54",
+        "label": "Lambton College"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0008-8459-7014",
+        "label": "Joydeep Banik"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143951470",
+        "label": "Arman Hossain"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7734-6590",
+        "label": "Md Sifat Bin Siraj"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143930436",
+        "label": "Md Jubayadul Islam"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143889290",
+        "label": "Zahirul Haque Molla"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143908420",
+        "label": "Mehedi Hasan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1719-8194",
+        "label": "Armana Sabiha Huq"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": true,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.4531,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0825,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.0808,
+        "subfield": "2213"
+      }
+    ]
+  },
+  "first_published": "2026-07-29",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1983902843",
+      "openalex:W1994415176",
+      "openalex:W1994691549",
+      "openalex:W2005793120",
+      "openalex:W2014939815",
+      "openalex:W2018591888",
+      "openalex:W2026333301",
+      "openalex:W2053641961",
+      "openalex:W2183404361",
+      "openalex:W2295598076",
+      "openalex:W2330219538",
+      "openalex:W2470608735",
+      "openalex:W2605790934",
+      "openalex:W2778635041",
+      "openalex:W2789597239",
+      "openalex:W2911318922",
+      "openalex:W2911964244",
+      "openalex:W2962862931",
+      "openalex:W3002568562",
+      "openalex:W3035965352",
+      "openalex:W3107977896",
+      "openalex:W3128170221",
+      "openalex:W3150635270",
+      "openalex:W3209631175",
+      "openalex:W4200061155",
+      "openalex:W4226343503",
+      "openalex:W4226413095",
+      "openalex:W4235006600",
+      "openalex:W4249275121",
+      "openalex:W4283753589",
+      "openalex:W4286512885",
+      "openalex:W4321254528",
+      "openalex:W4367323057",
+      "openalex:W4372203319",
+      "openalex:W4391836938",
+      "openalex:W4396608763",
+      "openalex:W4400116820",
+      "openalex:W4402881336",
+      "openalex:W4408515074",
+      "openalex:W4412046799"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s44327-026-00334-9",
+    "openalex": "W7171682195",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:26:59Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006241,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2277,
+      "out": 314
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:26:59Z",
+    "doi": "10.1007/s44327-026-00334-9",
+    "journal": "Discover Cities",
+    "source_id": "S5407042847",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "500 respondents",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a relatively small sample of 500 respondents restricted to five specific routes in a single city, which may not fully represent the diverse transit experiences across the entire metropolitan area or other developing urban centers.",
+      "what": "This study evaluated urban bus service quality in Dhaka using a SERVQUAL questionnaire survey administered to 500 passengers across five major bus routes. Researchers modeled passenger satisfaction and dissatisfaction using Ordinal Logistic Regression alongside Random Forest and Extreme Gradient Boosting classifiers, achieving classification accuracies of 0.71 and 0.70 respectively. SHAP analysis identified that the largest service gaps and drivers of dissatisfaction relate to safety concerns, unprofessional staff behavior, scheduling, and poor vehicle maintenance.",
+      "why": "It identifies the specific psychological and operational dimensions—specifically assurance and empathy—that drive passenger dissatisfaction, moving beyond general service ratings to show transit operators exactly which soft and hard service elements must be corrected to halt the shift toward private vehicles."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-29",
+  "work_key": "doi:10.1007/s44327-026-00334-9"
+}

@@ -1,0 +1,184 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Understanding the spatiotemporal patterns of human movement is important across diverse applications including urban design, disease control, social and cognitive science, and emergency response planning. Recently, multilayer mobility networks were used to study how movements between spatial units (e.g., census tracts) can significantly vary when they are stratified according to different industry sectors-e.g., movements to grocery stores, to schools, or to hospitals. Here, we study the predictability of movements across different industry sectors using statistical and machine learning models trained on demographic, socioeconomic, and infrastructure information. We compare ten predictive models and identify advantages for nonlinear models (with random forest regression being a consistent top performer). We identify the most important features enabling prediction (population size for outward movements from regions and industry-related infrastructure for movements into regions). Of the two, prediction for inward movements (i.e., in-degrees) is generally more difficult; however, the difference is small for movements associated with food services. We also compare the prediction of weekly and time-averaged movements, finding that with the addition of time-encoding input features, weekly movements are easier to predict than time-averaged values (at least for the nonlinear predictive models). These findings provide a practical step toward using machine learning for human movement modeling and the many downstream applications.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Maisha Islam Sejunti",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Melissa Butler",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yingjie Hu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dane Taylor",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": "16 pages, 9 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.28494v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.28494v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-30",
+    "repository_urls": [],
+    "title": "Predictability of Human Movements across Industry Sectors using Multilayer Networks"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-30_2607.28494",
+    "members": [
+      "arxiv:2607.28494"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.9714,
+        "id": "method:statistical-modeling",
+        "label": "statistical modeling"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.28494",
+    "doi": "10.48550/arxiv.2607.28494",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:28:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005264,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2027,
+      "out": 247
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.985,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.394,
+    "relevance": 0.985
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study evaluates ten statistical and machine learning models to predict human movement flows across different industry sectors, such as grocery stores, schools, and hospitals, using demographic, socioeconomic, and infrastructure data. Random forest regression consistently outperformed other models, revealing that population size is the key predictor for outward flows, while industry-specific infrastructure is crucial for inward flows. Additionally, incorporating time-encoding features allowed nonlinear models to predict weekly movements more accurately than time-averaged flows.",
+      "why": "It demonstrates that human mobility is highly sector-dependent and that temporal dynamics can be predicted more accurately than static, time-averaged patterns when using nonlinear machine learning models."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-30",
+  "work_key": "arxiv:2607.28494"
+}

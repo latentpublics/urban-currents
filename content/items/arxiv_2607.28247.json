@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Accurate and scalable parcel-level agricultural monitoring remains challenging because satellite Earth Observation alone provides only an overhead perspective of agricultural parcels, while optical observations are further affected by cloud-induced temporal gaps. This paper presents Space2Ground 2.0, a multi-source framework integrating Sentinel-1 SAR and Sentinel-2 multispectral time series with geo-tagged street-level imagery acquired using vehicle-mounted cameras and shared through the Mapillary platform. A largely automated processing pipeline performs semantic filtering, image quality assessment, viewpoint-based parcel association, and dataset refinement, transforming large volumes of crowdsourced imagery into parcel-linked, analysis-ready data. Applied over Cyprus during the 2022 growing season, the pipeline produced a curated dataset of 46,050 annotated street-level images, selected from an initial collection exceeding 900,000 images and linked with satellite information for 8,581 agricultural parcels. The practical value of the dataset was assessed through parcel-level crop classification experiments using both single- and multi-source observations. The results demonstrate that street-level imagery provides complementary fine-scale visual information that enhances classification when integrated with satellite time series. Overall, Space2Ground 2.0 provides an openly available benchmark dataset and a reproducible methodology for multimodal agricultural monitoring, with potential applications in visual verification, reduced reliance on costly field inspections, and data-driven agricultural policy implementation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Iason Tsardanidis",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alkiviadis Koukos",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "George Choumos",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Vasileios Sitokonstantinou",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Charalampos Kontoes",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": "This paper has been accepted for presentation at the 45th EARSeL Symposium, Athens, Greece. The Space2Ground 2.0 dataset, is publicly available through Zenodo at: https://doi.org/10.5281/zenodo.21219542",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.28247v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.28247v2",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-30",
+    "repository_urls": [],
+    "title": "Space2Ground 2.0: A Multi-Source Dataset and Framework for Agricultural Monitoring through Fusion of Street-Level and Satellite Imagery"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-30_2607.28247",
+    "members": [
+      "arxiv:2607.28247"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.28247",
+    "doi": "10.48550/arxiv.2607.28247",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:28:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006215,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2115,
+      "out": 338
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.8886,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4354,
+    "relevance": 0.8886
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "900,000 images",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The pipeline and dataset were evaluated using data from a single island nation, Cyprus, during a single growing season.",
+      "what": "The Space2Ground 2.0 framework integrates Sentinel-1 SAR and Sentinel-2 multispectral satellite time series with crowdsourced, geo-tagged street-level imagery from Mapillary. An automated pipeline filtered over 900,000 raw images down to a curated dataset of 46,050 annotated street-level images linked to 8,581 agricultural parcels in Cyprus during the 2022 growing season. Crop classification experiments using this fused dataset demonstrated that ground-level visual data improves classification accuracy when combined with overhead satellite observations.",
+      "why": "It establishes a reproducible method and open benchmark dataset that overcomes the limitations of cloud cover and overhead-only perspectives in satellite monitoring, reducing the need for expensive physical field inspections."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-06",
+  "work_key": "arxiv:2607.28247"
+}

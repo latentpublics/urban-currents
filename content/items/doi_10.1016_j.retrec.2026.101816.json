@@ -1,0 +1,207 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This paper bridges law and economics by providing the first empirical assessment of Japan's taxi fare regulation through a landmark 2025 Supreme Court decision that reversed a lower court ruling, with a dissent arguing that low-fare, reservation-based operators do not distort market competition. Using long-term data from Tokyo Special Wards and Musashino Area, we estimate taxi demand price elasticity through three methods—direct demand regression, revenue-based proxy, and unit-demand analysis—yielding a conservative estimate of -0.27, indicating inelastic demand. While taxi elasticity proves statistically significant, hire car services show insignificant results, reflecting market segmentation. Robustness checks using monthly data, lag specifications, and instrumental variables confirm these findings. Counterfactual analysis under three theoretical frameworks reveals that cross-price elasticity magnitude determines competitive effects, with realistic parameters suggesting only modest market-share shifts from price-freeze strategies. Our results indicate that low-price strategies need not induce excessive competition, emphasizing the importance of analyzing market structure and demand substitutability in evaluating regulatory rationality. The study contributes to the literature on taxi fare regulation, provides evidence-based input for legal and policy deliberations, and demonstrates how econometric analysis can inform judicial reasoning.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Kyoritsu Women's University",
+            "ror": "00vmdr162"
+          }
+        ],
+        "name": "Koki Arai",
+        "openalex": "A5041417919",
+        "orcid": "https://orcid.org/0000-0002-6907-4046"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.retrec.2026.101816",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0739885926001137/pdf",
+      "source_id": "S39263009",
+      "source_name": "Research in Transportation Economics",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-30",
+    "repository_urls": [],
+    "title": "Price regulation, market dynamics, and judicial reasoning: Assessing the dissenting opinion in the Supreme Court's taxi fare decision"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-30_10.1016/j.retrec",
+    "members": [
+      "doi:10.1016/j.retrec.2026.101816"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.9767,
+        "id": "method:causal-inference",
+        "label": "causal inference"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00vmdr162",
+        "label": "Kyoritsu Women's University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6907-4046",
+        "label": "Koki Arai"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T13138",
+        "is_primary": true,
+        "label": "Legal and Constitutional Studies",
+        "score": 0.987,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11762",
+        "is_primary": false,
+        "label": "Law, Economics, and Judicial Systems",
+        "score": 0.9869,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13075",
+        "is_primary": false,
+        "label": "Legal Systems and Judicial Processes",
+        "score": 0.964,
+        "subfield": "3320"
+      }
+    ]
+  },
+  "first_published": "2026-07-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2100934845",
+      "openalex:W3122559771",
+      "openalex:W3204932649",
+      "openalex:W4378529872",
+      "openalex:W4390474489"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.retrec.2026.101816",
+    "openalex": "W4415258203",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:28:23Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005872,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2019,
+      "out": 316
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:28:23Z",
+    "doi": "10.1016/j.retrec.2026.101816",
+    "journal": "Research in Transportation Economics",
+    "source_id": "S39263009",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical findings are based on market data from a single metropolitan region in Japan, which may limit generalizability to areas with different transit structures or regulatory frameworks.",
+      "what": "This study evaluates Japan's taxi fare regulation using long-term market data from the Tokyo Special Wards and Musashino Area to estimate taxi demand price elasticity. Using direct demand regression, revenue-based proxies, and unit-demand analysis, the study finds a conservative price elasticity of -0.27, indicating inelastic demand, while hire car services show statistically insignificant elasticity. Counterfactual modeling reveals that realistic cross-price elasticity parameters result in only modest market-share shifts under low-price strategies.",
+      "why": "It provides empirical evidence supporting a dissenting Supreme Court opinion, demonstrating that low-fare, reservation-based operators do not necessarily trigger destructive market competition or destabilize the transit sector."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-30",
+  "work_key": "doi:10.1016/j.retrec.2026.101816"
+}

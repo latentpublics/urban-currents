@@ -1,0 +1,162 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "At the July 2026 Johor state election, Barisan Nasional (BN) swept the state and nearly doubled its vote relative to 2022. We exploit geographic variation in the ethnic composition of polling stations and administration-induced variation in the age composition of polling streams to estimate turnout and coalition support by ethnicity and age for the three elections involving Johor since 2022, with five key findings. (1) Turnout is a first-order driver of outcomes, moving by up to 26 points within an ethnic group across elections and following a life-cycle profile. (2) BN's surge was a near one-for-one Perikatan Nasional (PN) collapse among Malay voters, robust to PN's stand-down in 23 of 56 seats. (3) The largest reversal towards BN was among young Malays, who had previously carried the `green wave' of 2022. (4) Two-thirds of Pakatan Harapan's (PH) decline among the Chinese electorate came through lower Chinese turnout; any crossover to BN was comparatively small. (5) The apparent youth gradient in BN's 2026 support is largely ethnic composition rather than within-group behaviour: by 2026, Malay support for every coalition was close to flat in age. More broadly, we provide what we believe are the first open and fully reproducible ecological estimates of voting behaviour for any Malaysian election, accompanied by estimand-specific validation errors measured against held-out behaviour.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Thevesh Thevananthan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ong Kian Ming",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "39 pages, 11 figures, 7 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.27864v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.27864v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-30",
+    "repository_urls": [],
+    "title": "Who Moved? Ecological Estimates of Turnout & Coalition Support by Ethnicity and Age in Johor, Malaysia, 2022-2026"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-30_2607.27864",
+    "members": [
+      "arxiv:2607.27864"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.27864",
+    "doi": "10.48550/arxiv.2607.27864",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:28:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006166,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2179,
+      "out": 322
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9656,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4662,
+    "relevance": 0.9656
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "26 points",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2022-2026",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings rely on ecological inference from polling-station and polling-stream aggregates rather than individual-level survey or ballot data.",
+      "what": "The study uses ecological inference to estimate voter turnout and coalition support by ethnicity and age across three elections in Johor, Malaysia, from 2022 to 2026. Leveraging geographic variation in polling station ethnic makeup and administrative age sorting in polling streams, the analysis reveals that a 26-percentage-point swing in ethnic turnout drove outcomes, Perikatan Nasional's Malay support collapsed directly to Barisan Nasional (BN), and Pakatan Harapan's decline among Chinese voters was primarily driven by lower turnout rather than crossover voting.",
+      "why": "It provides the first open, fully reproducible ecological estimates of voting behavior for a Malaysian election, complete with validation errors against held-out data, correcting misinterpretations about youth voting gradients by showing that age-based support was actually flat once ethnic composition was controlled for."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-30",
+  "work_key": "arxiv:2607.27864"
+}

@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Currently, autonomous driving object detection models face significant data scarcity and generalization challenges when navigating complex Chinese rural traffic scenarios. To address these limitations, we propose a novel real-synthetic mixed object detection dataset tailored specifically for Chinese rural roads and systematically evaluate the performance of 13 mainstream detectors under different real-to-synthetic data ratios, thereby providing empirical evidence for model selection and data strategy design in rural autonomous driving scenarios. Our dataset combines real-world images captured in Weishi County, Henan Province, with parameterized virtual scenes generated via Unreal Engine. To accurately reflect the unique realities of rural traffic, we define a comprehensive 14-category object system encompassing region-specific elements such as electric tricycles, low-speed vehicles (LSVs), and roadside stalls. Under a unified training protocol, we systematically evaluate 13 mainstream detectors -- spanning the YOLOv5, YOLOv8, YOLO11, and YOLO26 series, as well as RT-DETR-L -- across three data configurations: an all-real baseline, a 1:0.5 real-to-virtual mix, and a 1:1 mix. Experimental results demonstrate that a moderate injection of synthetic data (1:0.5 ratio) effectively enhances detection performance, with YOLO11m achieving the highest mAP@0.5 of 0.758. However, a higher proportion of synthetic data (1:1) introduces domain shifts that offset the benefits of data scaling. While most models reliably identify distinct local vehicles, significant perceptual bottlenecks remain for long-tail, non-standard objects like stalls and railings. This research provides crucial empirical evidence and novel insights for model selection and synthetic data strategies, facilitating the practical deployment of autonomous driving perception systems in rural areas.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Danning Zhu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ziyan Lin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jing Wu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.27058v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.27058v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-29",
+    "repository_urls": [],
+    "title": "Object Detection for Autonomous Driving in Chinese Rural Scenes: An Experimental Study on Real-Synthetic Data Mixing and Model Evaluation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-29_2607.27058",
+    "members": [
+      "arxiv:2607.27058"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:ultralytics/ultralytics",
+        "label": "YOLO"
+      }
+    ],
+    "topics": []
+  },
+  "first_published": "2026-07-29",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.27058",
+    "doi": "10.48550/arxiv.2607.27058",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:26:56Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.007096,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2241,
+      "out": 415
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8382,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3353,
+    "relevance": 0.8382
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The real-world baseline data is sourced from a single county in Henan Province, which may not capture the full diversity of rural road environments across other regions of China.",
+      "what": "The study evaluates 13 mainstream object detection models, including YOLOv5, YOLOv8, YOLO11, YOLO26, and RT-DETR-L, using a custom dataset of real-world images from Weishi County, Henan Province, mixed with synthetic images from Unreal Engine. The dataset features a 14-category classification system tailored to Chinese rural roads, capturing local elements like electric tricycles and low-speed vehicles. Testing across different real-to-synthetic ratios revealed that a 1:0.5 mix optimized performance, with YOLO11m achieving the highest mAP@0.5 of 0.758, whereas a 1:1 ratio degraded performance due to domain shift.",
+      "why": "It establishes a benchmark and data-mixing strategy for rural autonomous driving, demonstrating that moderate synthetic data integration improves detection while identifying persistent failure modes in recognizing non-standard, long-tail objects like roadside stalls."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-29",
+  "work_key": "arxiv:2607.27058"
+}

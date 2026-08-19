@@ -1,0 +1,312 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The changes in the Land Use Land Cover (LULC), particularly the industrialization and urbanization, significantly impact the Land Surface Temperature (LST). Therefore, this study investigates the impact of urban expansion on LST in an industrial zone of Gazipur, Bangladesh, and analyzes the relationship between LULC changes and land surface emissivity over the period of 1995 to 2024, utilizing the satellite imageries and Machine Learning (ML)-based remote sensing techniques in Google Earth Engine (GEE). The study’s results revealed significant urbanization, accompanied by a sharp increase in land surface temperature. The built-up area increased more than fourfold (4.4-fold), expanding from 60.46 km² (3.33%) in 1995 to 266.36 km² (14.66%) in 2024, while overall accuracy (OA) ranged from 0.92 to 0.98, and the kappa Coefficient ranged from 0.88 to 0.97. Changes in LULC patterns, particularly the expansion of urban areas, have estimated a mean LST rise of about 1.64 °C in summer and 2.85 °C in winter over the 30 years (1995–2024), with the highest values associated with industrialized zones, particularly in Gazipur Sadar, which has faced significant challenges in sustainable urbanization. Although the estimated LST was validated using available ground-based and MODIS-derived temperature data, uncertainty may remain due to emissivity estimation and sensor calibration. The findings from this study highlight the need for sustainable urban planning and land management practices to minimize the effects of increased LST in industrialized regions and similar areas elsewhere. In addition, this study showcases the potentiality of GEE-based semi-automatic LST monitoring techniques at a large scale.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Jahangirnagar University",
+            "ror": "04ywb0864"
+          }
+        ],
+        "name": "Koushik Ghosh Tripta",
+        "openalex": "A5144010599",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Clinical Research Organization",
+            "ror": "01kebx220"
+          }
+        ],
+        "name": "B Faisal",
+        "openalex": "A5032850906",
+        "orcid": "https://orcid.org/0000-0003-4325-2163"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Jahangirnagar University",
+            "ror": "04ywb0864"
+          }
+        ],
+        "name": "Syed Hafizur Rahman",
+        "openalex": "A5017690388",
+        "orcid": "https://orcid.org/0000-0003-0112-9124"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s44327-026-00339-4",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44327-026-00339-4.pdf",
+      "source_id": "S5407042847",
+      "source_name": "Discover Cities",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-30",
+    "repository_urls": [],
+    "title": "Assessing the influence of urban expansion on land surface temperature in the Gazipur industrial zone of Bangladesh"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-30_10.1007/s44327-0",
+    "members": [
+      "doi:10.1007/s44327-026-00339-4"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04ywb0864",
+        "label": "Jahangirnagar University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01kebx220",
+        "label": "Clinical Research Organization"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5144010599",
+        "label": "Koushik Ghosh Tripta"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4325-2163",
+        "label": "B Faisal"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0112-9124",
+        "label": "Syed Hafizur Rahman"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:giswqs/geemap",
+        "label": "geemap"
+      }
+    ],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.6106,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.1079,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12147",
+        "is_primary": false,
+        "label": "Urban and Rural Development Challenges",
+        "score": 0.0111,
+        "subfield": "3322"
+      }
+    ]
+  },
+  "first_published": "2026-07-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1481246467",
+      "openalex:W1785026303",
+      "openalex:W1984811700",
+      "openalex:W2006149637",
+      "openalex:W2043935896",
+      "openalex:W2051798177",
+      "openalex:W2087729435",
+      "openalex:W2114828048",
+      "openalex:W2124306732",
+      "openalex:W2164777277",
+      "openalex:W2168705867",
+      "openalex:W2183186441",
+      "openalex:W2285545780",
+      "openalex:W2386541464",
+      "openalex:W2883689404",
+      "openalex:W2886432030",
+      "openalex:W2954191537",
+      "openalex:W2980944152",
+      "openalex:W3000671084",
+      "openalex:W3006866732",
+      "openalex:W3009799203",
+      "openalex:W3012074367",
+      "openalex:W3013721724",
+      "openalex:W3014372673",
+      "openalex:W3020943541",
+      "openalex:W3045585619",
+      "openalex:W3081283754",
+      "openalex:W3138457171",
+      "openalex:W3157412621",
+      "openalex:W3173110063",
+      "openalex:W3173679036",
+      "openalex:W3174050889",
+      "openalex:W3182553424",
+      "openalex:W3185258171",
+      "openalex:W3196878686",
+      "openalex:W3203168401",
+      "openalex:W3207419257",
+      "openalex:W4200221593",
+      "openalex:W4205338744",
+      "openalex:W4205922079",
+      "openalex:W4224271852",
+      "openalex:W4283464007",
+      "openalex:W4286586597",
+      "openalex:W4308035140",
+      "openalex:W4318065355",
+      "openalex:W4388290594",
+      "openalex:W4388948999",
+      "openalex:W4396599064",
+      "openalex:W4401583993",
+      "openalex:W4402397718",
+      "openalex:W4403866169",
+      "openalex:W4406497692",
+      "openalex:W4406669388",
+      "openalex:W4408335454",
+      "openalex:W4410194171",
+      "openalex:W4410291566",
+      "openalex:W4410975795",
+      "openalex:W4412717619",
+      "openalex:W4413783159",
+      "openalex:W4415629979",
+      "openalex:W7122374752"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s44327-026-00339-4",
+    "openalex": "W7171791078",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:28:24Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006937,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2321,
+      "out": 384
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:28:24Z",
+    "doi": "10.1007/s44327-026-00339-4",
+    "journal": "Discover Cities",
+    "source_id": "S5407042847",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "1995 to 2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The temperature estimates may contain uncertainties stemming from sensor calibration and the estimation of land surface emissivity.",
+      "what": "This study analyzed the impact of urban expansion on land surface temperature (LST) in the Gazipur industrial zone of Bangladesh from 1995 to 2024 using satellite imagery and machine learning in Google Earth Engine. The built-up area expanded 4.4-fold from 60.46 square kilometers (3.33%) to 266.36 square kilometers (14.66%), which was associated with a mean LST increase of 1.64 °C in summer and 2.85 °C in winter. The land use classification achieved an overall accuracy between 0.92 and 0.98, with the highest temperature increases concentrated in industrialized zones like Gazipur Sadar.",
+      "why": "It quantifies the direct thermal consequences of rapid, unregulated industrialization in a major South Asian manufacturing hub over a 30-year period, demonstrating a semi-automated monitoring workflow that can be scaled to other rapidly developing regions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-30",
+  "work_key": "doi:10.1007/s44327-026-00339-4"
+}

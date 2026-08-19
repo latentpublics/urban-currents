@@ -320,7 +320,11 @@ def record(d: date, suspicions: Iterable[Suspicion], published: int) -> Optional
     withheld = [r for r in rows if r["kind"] == WITHHELD]
     doc = {
         "date": str(d),
-        "recorded_at": utcnow().isoformat(),
+        # No timestamp. The held queue states what was doubtful *about a day*,
+        # and re-running that day must produce the same file — `content/` being
+        # byte-identical on a re-run is a PRD guarantee, and check 6 caught this
+        # one moving. `runs_log` is different and keeps its timestamps because
+        # it records *runs*, where a second attempt is a new fact.
         "published": published,
         "withheld": len(withheld),
         "near_miss": len(rows) - len(withheld),

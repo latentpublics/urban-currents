@@ -422,3 +422,17 @@ def test_a_paper_our_labels_keep_is_no_longer_withheld(repo):
     """2305 was taken by the old rule and our labels keep 4 of 4."""
     kept = _item("doi:10.1/heat", subfield="2305")
     assert inspect(kept, "journal", selected=True) is None
+
+
+def test_the_held_record_is_byte_identical_on_a_re_run(repo):
+    """`content/` unchanged on a second run of the same date is a PRD guarantee.
+
+    The held file carried a `recorded_at` and so moved every time, which the
+    idempotency check caught. It states what was doubtful about a *day*; the
+    run log is the place where a second attempt is a new fact.
+    """
+    held.record(DAY, _suspicions(), published=9)
+    first = held.held_path(DAY).read_bytes()
+
+    held.record(DAY, _suspicions(), published=9)
+    assert held.held_path(DAY).read_bytes() == first

@@ -1,0 +1,200 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Empirical cost overruns in large infrastructure projects are systematically right-skewed, yet the field lacks a theoretical explanation. This paper shows that when project costs are driven by multiplicative and compounding proportional shocks, the cost ratio $R = C_a / C_e$ follows a lognormal distribution under weak regularity conditions. What is commonly termed \"optimism bias\" is thus here, in part, shown to be due to a statistical misinterpretation. In other words, when risks compound multiplicatively, the peak of the distribution systematically underestimates the expected value due to the distribution's right skew. Planning at the peak of the distribution neglects the probability-weighted tail of extreme scenarios, making \"overruns\" not anomalies but a mathematical consequence. The lognormal framework unifies observed empirical regularities, non-negativity, the peak–median–mean hierarchy, and the existence of budget overrun, and provides a foundation for cost forecasting under uncertainty. Empirical evidence from two international datasets supports the theory, revealing systematic variation in lognormal parameters across project types and planning stages. The findings support estimation in log-space, quantile-based analysis, and ways to make transparent risk communication.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Jeppe Rich",
+        "openalex": "A5040764857",
+        "orcid": "https://orcid.org/0000-0001-5706-3836"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.tra.2026.105189",
+      "pdf_url": null,
+      "source_id": "S159637997",
+      "source_name": "Transportation Research Part A Policy and Practice",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-08",
+    "repository_urls": [],
+    "title": "On the theoretical distribution of cost overruns: A lognormal baseline"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-08_10.1016/j.tra.20",
+    "members": [
+      "doi:10.1016/j.tra.2026.105189"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:statistical-modeling",
+        "label": "statistical modeling"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04qtj9h94",
+        "label": "Technical University of Denmark"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5706-3836",
+        "label": "Jeppe Rich"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11496",
+        "is_primary": true,
+        "label": "Credit Risk and Financial Regulations",
+        "score": 0.2178,
+        "subfield": "2003"
+      }
+    ]
+  },
+  "first_published": "2026-08-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1574089532",
+      "openalex:W1843996619",
+      "openalex:W1993803315",
+      "openalex:W2060013843",
+      "openalex:W2063901804",
+      "openalex:W2548802031",
+      "openalex:W2906171182",
+      "openalex:W3102663523",
+      "openalex:W3123521572",
+      "openalex:W3124698530",
+      "openalex:W3125240424",
+      "openalex:W3209586552",
+      "openalex:W4293312681",
+      "openalex:W4405356054"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.tra.2026.105189",
+    "openalex": "W4415222420",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:37:37Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.004907,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1981,
+      "out": 215
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:37:37Z",
+    "doi": "10.1016/j.tra.2026.105189",
+    "journal": "Transportation Research Part A Policy and Practice",
+    "source_id": "S159637997",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study establishes a theoretical foundation for infrastructure cost overruns by proving that when project risks compound multiplicatively, the cost ratio of actual to estimated costs follows a lognormal distribution. The model was validated using two international datasets, demonstrating that lognormal parameters vary systematically across different project types and planning phases.",
+      "why": "It demonstrates that cost overruns are a mathematical consequence of planning at the peak of a right-skewed distribution rather than simple psychological optimism bias, providing a rigorous theoretical basis for forecasting and risk communication in log-space."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-08",
+  "work_key": "doi:10.1016/j.tra.2026.105189"
+}

@@ -1,0 +1,328 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Intermodal freight is promoted as a pathway to lower emissions, but trucking dominates in practice due to accessibility limits, transfer costs, and infrastructure gaps. Existing models reinforce this imbalance by prioritizing transport costs and underrepresenting emissions, time, and facility design. To address these gaps, we introduce the Intermodal Freight Optimization and Routing Model (INFORM), a mixed-integer quadratic program that jointly minimizes cost, time, and emissions while incorporating fuel technologies, candidate facility siting, directional waterway speeds, and up to two intermodal transfers per shipment. Applied to the St. Louis–Louisiana corridor, INFORM identifies trucking as optimal under nominal conditions, minimizing the combined economic measure of costs, emissions, and transit time. Break-even analysis shows that rail and barge would only compete at line-haul distances far beyond those available, as access, egress, and transfer penalties outweigh their per-mile efficiency advantages. Under facility disruptions, flows remain truck-exclusive, with rerouting along highways preferred over modal shifts. Forcing new facilities reduces delivery times but raises costs and emissions, underscoring the importance of placement and demand density. Sensitivity analysis finds diesel truck operating costs dominate system performance under the tested parameter perturbations, while transfer frictions remain important in the break-even conditions governing marginal modal switching. Intermodal investments remain valuable, but only when paired with measures that directly address trucking’s structural advantage.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Vanderbilt University",
+            "ror": "02vm5rt34"
+          }
+        ],
+        "name": "Jafar Mandouri",
+        "openalex": "A5093015594",
+        "orcid": "https://orcid.org/0000-0002-5964-1588"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Vanderbilt University",
+            "ror": "02vm5rt34"
+          }
+        ],
+        "name": "Ahmad F. Taha",
+        "openalex": "A5027125753",
+        "orcid": "https://orcid.org/0000-0003-0486-2794"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Vanderbilt University",
+            "ror": "02vm5rt34"
+          }
+        ],
+        "name": "Hiba Baroud",
+        "openalex": "A5035102363",
+        "orcid": "https://orcid.org/0000-0003-3641-6449"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Vanderbilt University",
+            "ror": "02vm5rt34"
+          }
+        ],
+        "name": "Craig Philip",
+        "openalex": "A5000265072",
+        "orcid": "https://orcid.org/0000-0001-9564-6418"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Vanderbilt University",
+            "ror": "02vm5rt34"
+          }
+        ],
+        "name": "Paul Johnson",
+        "openalex": "A5019690727",
+        "orcid": "https://orcid.org/0000-0002-6585-3034"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Vanderbilt University",
+            "ror": "02vm5rt34"
+          }
+        ],
+        "name": "Hani Mahmassani",
+        "openalex": "A5060052177",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Vanderbilt University",
+            "ror": "02vm5rt34"
+          }
+        ],
+        "name": "Pablo Durango-Cohen",
+        "openalex": "A5146089244",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105907",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0968090X26003931/pdf",
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-08",
+    "repository_urls": [],
+    "title": "An intermodal freight optimization and routing model: Balancing cost, emissions, and time in multimodal network design"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-08_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105907"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02vm5rt34",
+        "label": "Vanderbilt University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5964-1588",
+        "label": "Jafar Mandouri"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0486-2794",
+        "label": "Ahmad F. Taha"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3641-6449",
+        "label": "Hiba Baroud"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9564-6418",
+        "label": "Craig Philip"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6585-3034",
+        "label": "Paul Johnson"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5060052177",
+        "label": "Hani Mahmassani"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146089244",
+        "label": "Pablo Durango-Cohen"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11223",
+        "is_primary": true,
+        "label": "Maritime Ports and Logistics",
+        "score": 0.7351,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": false,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.0883,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12095",
+        "is_primary": false,
+        "label": "Vehicle emissions and performance",
+        "score": 0.0504,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-08-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1631136618",
+      "openalex:W1968225898",
+      "openalex:W2007276467",
+      "openalex:W2061924278",
+      "openalex:W2114251562",
+      "openalex:W2157873880",
+      "openalex:W2259671635",
+      "openalex:W2917208409",
+      "openalex:W2922487434",
+      "openalex:W2947837049",
+      "openalex:W3015866372",
+      "openalex:W3046882466",
+      "openalex:W3048925698",
+      "openalex:W3094568139",
+      "openalex:W3129548939",
+      "openalex:W3207697620",
+      "openalex:W4206423651",
+      "openalex:W4210588056",
+      "openalex:W4210588426",
+      "openalex:W4225678524",
+      "openalex:W4283390221",
+      "openalex:W4285013799",
+      "openalex:W4296283968",
+      "openalex:W4376617368",
+      "openalex:W4378189257",
+      "openalex:W4379930981",
+      "openalex:W4380029299",
+      "openalex:W4385216377",
+      "openalex:W4385373001",
+      "openalex:W4385383407",
+      "openalex:W4385394934",
+      "openalex:W4387397214",
+      "openalex:W4399578113",
+      "openalex:W4399922389",
+      "openalex:W4408102369",
+      "openalex:W4416552747"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105907",
+    "openalex": "W7201995595",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:37:37Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00613,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2071,
+      "out": 336
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:37:37Z",
+    "doi": "10.1016/j.trc.2026.105907",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings and break-even analyses are based on a single geographic corridor between St. Louis and Louisiana, which may not represent corridors with different infrastructure densities or geography.",
+      "what": "The Intermodal Freight Optimization and Routing Model (INFORM), a mixed-integer quadratic program, was developed to jointly minimize cost, transit time, and emissions while accounting for fuel technologies, facility siting, and up to two transfers per shipment. When applied to the St. Louis–Louisiana corridor, the model demonstrated that trucking remains the optimal choice under nominal conditions, and that rail and barge only become competitive at line-haul distances far exceeding those in the study corridor due to high access, egress, and transfer penalties.",
+      "why": "The model demonstrates that the per-mile efficiency advantages of rail and barge are consistently negated by transfer frictions and access penalties, proving that intermodal infrastructure investments will fail to shift freight away from highways unless they directly target the structural cost and time advantages of trucking."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-08",
+  "work_key": "doi:10.1016/j.trc.2026.105907"
+}

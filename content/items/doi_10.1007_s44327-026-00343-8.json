@@ -1,0 +1,254 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Extreme heat in dryland cities represents one of the most undercharacterized risks in urban climate science, yet spatially explicit heat risk frameworks for pre-Saharan environments remain largely absent from the literature. This study addresses this gap by developing and applying an integrated Heat Risk Index (HRI) for Errachidia, Morocco, a rapidly urbanizing oasis city in the pre-Saharan zone during the record-breaking summer of July 2023. A multi-sensor remote sensing approach combining Landsat-8 thermal data and Sentinel-2 multispectral imagery was employed alongside a deep learning U-Net architecture (ResNet34 backbone) for land use/land cover (LULC) classification, achieving an overall accuracy of 94.0% (Kappa = 0.925). Land surface temperature (LST) ranged from 33.8 °C to 50.1 °C, with bare soil surfaces recording the highest mean LST (47.2 °C), representing a 9.4 °C thermal contrast with water bodies. The HRI derived from normalized LST, NDBI, and inverse SAVI ranged from 0.153 to 0.844 (mean = 0.653), classifying the majority of the urban area as high-to-very-high risk. Cooling distance analysis quantified a rapid thermal decay of 5.39 °C within 25 m of dense vegetation, diminishing to below 1 °C beyond 150 m, suggesting an approximate distance threshold for green infrastructure placement under the analyzed conditions. A marginal negative daytime Surface Urban Heat Island Intensity (SUHII = − 1.08 °C) indicated that suburban bare soil surfaces recorded slightly higher daytime land surface temperatures than the urban core; however, mean urban LST remained at 45.3 °C, underscoring that absolute heat stress in the urban area is extreme regardless of this differential. These findings provide the first quantitative heat risk framework for a pre-Saharan oasis city, offering spatially explicit, indicative insights to inform climate-adaptive urban planning aligned with SDG 11 and SDG 13.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Université Ibn-Tofail",
+            "ror": "02wj89n04"
+          }
+        ],
+        "name": "Rachid Ouachoua",
+        "openalex": "A5114485693",
+        "orcid": "https://orcid.org/0000-0002-3194-7585"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Université Ibn-Tofail",
+            "ror": "02wj89n04"
+          }
+        ],
+        "name": "Hamid Benssi",
+        "openalex": "A5146121521",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s44327-026-00343-8",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44327-026-00343-8.pdf",
+      "source_id": "S5407042847",
+      "source_name": "Discover Cities",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-08",
+    "repository_urls": [],
+    "title": "Multi-index remote sensing assessment of Urban heat risk and vegetation cooling effects for sustainable planning in Errachidia a Pre-Saharan City in Southeastern Morocco"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-08_10.1007/s44327-0",
+    "members": [
+      "doi:10.1007/s44327-026-00343-8"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02wj89n04",
+        "label": "Université Ibn-Tofail"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3194-7585",
+        "label": "Rachid Ouachoua"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146121521",
+        "label": "Hamid Benssi"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.991,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.0012,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11225",
+        "is_primary": false,
+        "label": "Geothermal Energy Systems and Applications",
+        "score": 0.001,
+        "subfield": "2105"
+      }
+    ]
+  },
+  "first_published": "2026-08-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1901129140",
+      "openalex:W1964217023",
+      "openalex:W1968230733",
+      "openalex:W1979867685",
+      "openalex:W2001564322",
+      "openalex:W2004776481",
+      "openalex:W2006273284",
+      "openalex:W2008668438",
+      "openalex:W2026337749",
+      "openalex:W2033600080",
+      "openalex:W2044609898",
+      "openalex:W2056435747",
+      "openalex:W2074398030",
+      "openalex:W2149185296",
+      "openalex:W2194775991",
+      "openalex:W2358602937",
+      "openalex:W2528767151",
+      "openalex:W2597944323",
+      "openalex:W2604086375",
+      "openalex:W2810004461",
+      "openalex:W3025949386",
+      "openalex:W4308875245",
+      "openalex:W4322007308",
+      "openalex:W4385118605",
+      "openalex:W4389225957",
+      "openalex:W4389279412",
+      "openalex:W4394611958",
+      "openalex:W4406804320",
+      "openalex:W4408509717",
+      "openalex:W4409462889",
+      "openalex:W4412085987",
+      "openalex:W4412346345",
+      "openalex:W4413092682",
+      "openalex:W4413181962",
+      "openalex:W4414931238",
+      "openalex:W6963654720"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s44327-026-00343-8",
+    "openalex": "W7201993389",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:37:38Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.007271,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2435,
+      "out": 402
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:37:38Z",
+    "doi": "10.1007/s44327-026-00343-8",
+    "journal": "Discover Cities",
+    "source_id": "S5407042847",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The cooling thresholds and temperature dynamics are based on a single, record-breaking summer month (July 2023) in a single oasis city, which may limit direct generalization to other dryland regions or seasons.",
+      "what": "This study developed a Heat Risk Index (HRI) for the pre-Saharan oasis city of Errachidia, Morocco, during the record-breaking heat of July 2023. Using Landsat-8 thermal data, Sentinel-2 imagery, and a ResNet34-backed U-Net deep learning model for land cover classification (94.0% accuracy), the researchers mapped land surface temperatures (LST) ranging from 33.8 °C to 50.1 °C. The analysis revealed a marginal negative daytime Surface Urban Heat Island Intensity of -1.08 °C, but identified a rapid thermal decay of 5.39 °C within 25 m of dense vegetation, which diminished to less than 1 °C beyond 150 m.",
+      "why": "It establishes the first quantitative heat risk framework and vegetation cooling threshold specifically for a pre-Saharan oasis city, proving that absolute urban heat stress remains extreme (averaging 45.3 °C) despite a negative urban-suburban temperature differential."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-08",
+  "work_key": "doi:10.1007/s44327-026-00343-8"
+}

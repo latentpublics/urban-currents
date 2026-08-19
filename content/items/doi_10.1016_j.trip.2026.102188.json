@@ -1,0 +1,266 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Urban construction logistics injects time-critical deliveries into congested corridors precisely when work-zones suppress capacity and raise travel-time variability. We formulate a logistics-oriented, game-theoretic bilevel framework that coordinates work-zone capacity, delivery time windows, and fleet sizing under explicit service-level reliability. The lower level is a variable-demand dynamic traffic assignment with chance constraints on path times Pr [T ≤ τ] ≥ ρ; we prove an equivalence that embeds reliability as a risk-adjusted generalized cost, preserving the structure needed for large-scale Frank–Wolfe–type solvers within a best-response dynamic. The upper level co-optimizes work-zone staging and priced delivery slots to minimize total logistics cost (project NPV, fleet costs, penalties) plus system travel delay, aligning incentives between the construction operator and general traffic. On a 1,240-link metropolitan testbed of a six-week paving program with perishable service windows (ready-mix ≤ 90 min, hot-mix ≤ 75 min), the reliability-aware equilibrium raises on-time delivery from 78% to 90% and cuts late-arrival penalties by 31%. Adding slot pricing and staged closures further lifts on-time performance to 93%, reduces required ready-mix trucks by 14% at constant pour rates, shortens project duration by 8%, and lowers project NPV by 11%, while holding peak-period background delays to +2.3%. The framework redefines work zone planning as a problem of logistics capacity control, explicitly defining service levels, and provides transferable lessons for other time-sensitive urban freight applications where reliability and scheduling, as well as the interactions between the logistics and the network, all play a role in shaping performance.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Yarmouk University",
+            "ror": "004mbaj56"
+          }
+        ],
+        "name": "Mus’ab Abuaddous",
+        "openalex": "A5129182864",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Yarmouk University",
+            "ror": "004mbaj56"
+          }
+        ],
+        "name": "Ali Shehadeh",
+        "openalex": "A5046651476",
+        "orcid": "https://orcid.org/0000-0002-6875-4824"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Yarmouk University",
+            "ror": "004mbaj56"
+          }
+        ],
+        "name": "Hamsa Nimer",
+        "openalex": "A5099111084",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102188",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-09",
+    "repository_urls": [],
+    "title": "Reliability-constrained dynamic assignment and slot pricing for urban construction logistics: a game-theoretic bilevel model"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-09_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102188"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:004mbaj56",
+        "label": "Yarmouk University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5129182864",
+        "label": "Mus’ab Abuaddous"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6875-4824",
+        "label": "Ali Shehadeh"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5099111084",
+        "label": "Hamsa Nimer"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12306",
+        "is_primary": true,
+        "label": "Urban and Freight Transport Logistics",
+        "score": 0.4972,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": false,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.2955,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11223",
+        "is_primary": false,
+        "label": "Maritime Ports and Logistics",
+        "score": 0.0575,
+        "subfield": "2209"
+      }
+    ]
+  },
+  "first_published": "2026-08-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2043210121",
+      "openalex:W3177441386",
+      "openalex:W4328099356",
+      "openalex:W4328137152",
+      "openalex:W4366280983",
+      "openalex:W4389701485",
+      "openalex:W4389722406",
+      "openalex:W4390122231",
+      "openalex:W4390819315",
+      "openalex:W4391326815",
+      "openalex:W4391425995",
+      "openalex:W4391896150",
+      "openalex:W4392611712",
+      "openalex:W4393010527",
+      "openalex:W4393304971",
+      "openalex:W4393992546",
+      "openalex:W4399699148",
+      "openalex:W4399732407",
+      "openalex:W4399797252",
+      "openalex:W4399925838",
+      "openalex:W4400228983",
+      "openalex:W4400989143",
+      "openalex:W4401718397",
+      "openalex:W4401880138",
+      "openalex:W4404998770",
+      "openalex:W4405675884",
+      "openalex:W4405741035",
+      "openalex:W4406703058",
+      "openalex:W4407424909",
+      "openalex:W4407900183",
+      "openalex:W4408258310",
+      "openalex:W4409284218",
+      "openalex:W4409473734",
+      "openalex:W4409648247",
+      "openalex:W4409999235",
+      "openalex:W4410613992",
+      "openalex:W4412985106",
+      "openalex:W4417201059"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102188",
+    "openalex": "W7202031665",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:38:34Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006398,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2249,
+      "out": 336
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:38:34Z",
+    "doi": "10.1016/j.trip.2026.102188",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance gains were evaluated on a simulated metropolitan testbed rather than a real-world deployment.",
+      "what": "This study develops a game-theoretic bilevel framework that co-optimizes work-zone staging, priced delivery slots, and fleet sizing under travel-time reliability constraints. Tested on a 1,240-link metropolitan network during a six-week paving program with strict delivery windows for perishable materials, the model embeds reliability as a risk-adjusted generalized cost within a dynamic traffic assignment. The reliability-aware equilibrium increased on-time deliveries from 78% to 90% and cut late-arrival penalties by 31%, while adding slot pricing and staged closures further raised on-time performance to 93% and reduced the required ready-mix truck fleet by 14%.",
+      "why": "It shifts work-zone planning from a passive traffic mitigation problem to an active logistics capacity control strategy, demonstrating that coordinating construction schedules with network pricing can simultaneously protect general traffic flow and lower project costs."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-09",
+  "work_key": "doi:10.1016/j.trip.2026.102188"
+}

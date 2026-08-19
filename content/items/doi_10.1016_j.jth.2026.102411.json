@@ -1,0 +1,271 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Introduction: Providing dedicated route planning for sensitive groups, such as people with asthma, pregnant women, and older persons, requires intelligent systems capable of guiding them toward healthier mobility choices (minimizing pollution exposure) in urban environments. At present, no applications fully account for the needs of these groups. Methods: The proposed Healthy Route Planner (HRP) assists citizens in planning walking and cycling trips based on Air Quality (AQ) criteria and can also incorporate additional parameters such as allergens (e.g., pollen) and comfort-related factors. We present insights from the theoretical and implementation aspects, in particular the definition of an ad-hoc Personalized Complex Metric (PCM) used in the routing algorithm according to the user’s preferences. This metric is defined as a weighted average of normalized and adjusted critical pollutants. The HRP is built on an open, scalable, cloud-native Microservices Architecture (MSA). It enables efficient, real-time geospatial processing of large volumes of Air Quality Monitoring Station (AQMS) data, estimating pollutant concentrations to produce high-resolution AQ maps. Results: The HRP is validated in Valencia, Spain, using both real and synthetic scenarios. Results show up to an 11.60% reduction in pollution exposure under heavily polluted conditions, with a corresponding travel-distance increase of 23.07% for the asthmatic profile (worst case). The system efficiently handles concurrent user loads with response times below 1 s. Conclusion: These results endorse the HRP’s usefulness as a decision-support tool for sensitive groups, integrating real-time AQ-aware routing and health-profile-driven PCM in smart-city environments, with an 11.60% reduction in pollution exposure.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Universitat de València",
+            "ror": "043nxc105"
+          }
+        ],
+        "name": "Eric Meneses-Albala",
+        "openalex": "A5114295931",
+        "orcid": "https://orcid.org/0009-0004-9946-3116"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universitat de València",
+            "ror": "043nxc105"
+          }
+        ],
+        "name": "Santiago Felici-Castell",
+        "openalex": "A5091392650",
+        "orcid": "https://orcid.org/0000-0002-8703-8575"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universitat de València",
+            "ror": "043nxc105"
+          }
+        ],
+        "name": "Juan J. Pérez-Solano",
+        "openalex": "A5088825895",
+        "orcid": "https://orcid.org/0000-0002-8584-248X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of the West of Scotland",
+            "ror": "04w3d2v20"
+          }
+        ],
+        "name": "Pablo Salvá-García",
+        "openalex": "A5064603087",
+        "orcid": "https://orcid.org/0000-0002-2804-7404"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.jth.2026.102411",
+      "pdf_url": null,
+      "source_id": "S2764685396",
+      "source_name": "Journal of Transport & Health",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-08",
+    "repository_urls": [],
+    "title": "The personalized Healthy Route Planner for sensitive groups"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-08_10.1016/j.jth.20",
+    "members": [
+      "doi:10.1016/j.jth.2026.102411"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:043nxc105",
+        "label": "Universitat de València"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04w3d2v20",
+        "label": "University of the West of Scotland"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0004-9946-3116",
+        "label": "Eric Meneses-Albala"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8703-8575",
+        "label": "Santiago Felici-Castell"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8584-248X",
+        "label": "Juan J. Pérez-Solano"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2804-7404",
+        "label": "Pablo Salvá-García"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11904",
+        "is_primary": true,
+        "label": "Spatial Cognition and Navigation",
+        "score": 0.0795,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12644",
+        "is_primary": false,
+        "label": "Wildlife-Road Interactions and Conservation",
+        "score": 0.075,
+        "subfield": "2303"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0441,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-08-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1466919451",
+      "openalex:W1997280412",
+      "openalex:W2057829983",
+      "openalex:W2089055951",
+      "openalex:W2109945923",
+      "openalex:W2151647462",
+      "openalex:W2601300492",
+      "openalex:W2769332237",
+      "openalex:W2802565197",
+      "openalex:W2961015539",
+      "openalex:W3010044360",
+      "openalex:W3094662328",
+      "openalex:W3163003459",
+      "openalex:W3199357056",
+      "openalex:W4200046456",
+      "openalex:W4205421209",
+      "openalex:W4210858645",
+      "openalex:W4293547660",
+      "openalex:W4385655519",
+      "openalex:W4387622747",
+      "openalex:W4400014215",
+      "openalex:W7125708457"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.jth.2026.102411",
+    "openalex": "W7201952513",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:37:37Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006082,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2201,
+      "out": 309
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:37:37Z",
+    "doi": "10.1016/j.jth.2026.102411",
+    "journal": "Journal of Transport & Health",
+    "source_id": "S2764685396",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The system's performance and exposure reductions were validated using a combination of real and synthetic scenarios in a single city.",
+      "what": "The Healthy Route Planner (HRP) is a routing system built on a cloud-native microservices architecture that calculates walking and cycling paths based on air quality, allergens, and comfort factors. It uses a Personalized Complex Metric to weight and adjust critical pollutants according to specific health profiles, such as asthma. Tested in Valencia, Spain, using real-time monitoring station data, the system generated routes that reduced pollution exposure by up to 11.60% under heavily polluted conditions, with a maximum travel distance increase of 23.07% for asthmatic profiles, while maintaining response times under 1 second.",
+      "why": "It introduces a scalable routing capability that dynamically balances travel distance against personalized pollution exposure, allowing vulnerable populations to actively minimize health risks during active travel."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-08",
+  "work_key": "doi:10.1016/j.jth.2026.102411"
+}

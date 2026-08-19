@@ -1,0 +1,228 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Map conflation has been an unfastidious yet important step in conflating both spatial and numerical roadway attributes. Oftentimes, a dataset that is pertinent to a roadway Network A is contrasted with another Network B. The process of spatially matching this pair of A and B poses certain logical and computational challenges. This paper illustrates these challenges and presents an algorithm that conflates proprietary third-party datasets (Network B) with the South Carolina Department of Transportation’s linear referencing system-based roadway network (Network A). This paper investigates the distortion of data caused by the map conflation and discusses its applicability in the context of several mobility-based performance measures. The study tested conflation pairs between the 73,899 Network A and 74,706 Network B segments, spanning 30,787 directional miles. Paired segments result in 99.23% spatial accuracy at a precision of 0.001 miles. The calculated statewide delay for the calendar year 2022 was 75,966.4 and 75,967.11 vehicle-hours for Networks A and B, respectively, which is a close match. In addition, the conflated maximum level of travel time reliability between the Network A and B segments showed high resemblance, with only about 0.5% mismatches. Eliminating semantic attribute considerations from the conflation process presented in this study created a method that is efficient, highly accurate, agnostic of input networks, and is applicable to any network with a clearly defined relationship between the segment topology and direction of travel.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "United States Department of Transportation",
+            "ror": "02xfw2e90"
+          }
+        ],
+        "name": "Kimberly Green",
+        "openalex": "A5142795135",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Transportation Learning Center",
+            "ror": "04xpwnc20"
+          }
+        ],
+        "name": "Chowdhury Siddiqui",
+        "openalex": "A5146162422",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/03611981261467312",
+      "pdf_url": null,
+      "source_id": "S145575934",
+      "source_name": "Transportation Research Record Journal of the Transportation Research Board",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-09",
+    "repository_urls": [],
+    "title": "A Framework for Map Agnostic Conflation: Challenges, Application, and Suitability in the Context of Mobility-Based Performance Measures"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-09_10.1177/03611981",
+    "members": [
+      "doi:10.1177/03611981261467312"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02xfw2e90",
+        "label": "United States Department of Transportation"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04xpwnc20",
+        "label": "Transportation Learning Center"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5142795135",
+        "label": "Kimberly Green"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5146162422",
+        "label": "Chowdhury Siddiqui"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.8372,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.0465,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.0281,
+        "subfield": "2213"
+      }
+    ]
+  },
+  "first_published": "2026-08-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1969536374",
+      "openalex:W2016539223",
+      "openalex:W2098307433",
+      "openalex:W2888238547",
+      "openalex:W2894452846",
+      "openalex:W2931938696",
+      "openalex:W2972344601",
+      "openalex:W3008276223",
+      "openalex:W3035985370",
+      "openalex:W3135857098",
+      "openalex:W4401857722"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1177/03611981261467312",
+    "openalex": "W7202048160",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:38:34Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006082,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2195,
+      "out": 310
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:38:34Z",
+    "doi": "10.1177/03611981261467312",
+    "journal": "Transportation Research Record Journal of the Transportation Research Board",
+    "source_id": "S145575934",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The algorithm's performance was demonstrated on a single state-level network pair, and its applicability depends on networks having a clearly defined relationship between segment topology and travel direction.",
+      "what": "The study presents a map-agnostic conflation algorithm that matches proprietary third-party roadway datasets with the South Carolina Department of Transportation's linear referencing system. Testing across 73,899 and 74,706 segments spanning 30,787 directional miles achieved a 99.23% spatial accuracy at a precision of 0.001 miles. The method yielded highly consistent mobility metrics for the year 2022, with statewide delay differing by less than one vehicle-hour and travel time reliability mismatches limited to 0.5%.",
+      "why": "By removing semantic attributes from the conflation process, this approach provides a highly accurate and computationally efficient way to merge disparate roadway networks using only segment topology and travel direction."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-09",
+  "work_key": "doi:10.1177/03611981261467312"
+}

@@ -1,0 +1,274 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The complexity of real-world scenes poses significant challenges to lane detection. Existing methods often sacrifice inference speed and model simplicity by relying on excessive anchors or complex associations. To tackle these issues, we propose SDLane, a highly efficient, accurate, and concise lane detection model. First, we establish sparse labels, named SparseLabel, by selecting representative directional points. Then, we design a sparse lane anchor generation module. Based on the sparse direction map and confidence map predicted by this module, the number of anchors required for detection can be reduced from hundreds or thousands to a quantity comparable to the number of lane instances. These high-quality line anchors enable SDLane to operate without relying on computationally intensive feature extraction or fusion methods such as FPN or attention mechanisms, thereby boosting operational speed. Furthermore, the designed dynamic kernel fusion module enhances the fusion of sampled features for lane anchors while achieving a lightweight and efficient design through low-rank decomposition. In addition, we construct a dedicated lane detection dataset RainyLane for testing in heavy rain environments. Experiments on four datasets, encompassing challenging environments such as curved roads, blizzards, rainstorms, occlusions, and nighttime, demonstrate that SDLane achieves high operational speed and F1-score while using significantly fewer line anchors than comparable methods. For instance, on the CULane test set, SDLane achieves an F1-score of 79.76% and a speed of 486 FPS using only five anchors. The code is available at: https://github.com/happy-q123/SDLane.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Chongqing Vocational Institute of Engineering",
+            "ror": "0279ehd23"
+          }
+        ],
+        "name": "Zhiyong Yang",
+        "openalex": "A5147122067",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chongqing Normal University",
+            "ror": "01dcw5w74"
+          }
+        ],
+        "name": "Ziqiang Zhang",
+        "openalex": "A5147065203",
+        "orcid": "https://orcid.org/0009-0000-7841-4121"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chongqing Vocational Institute of Engineering",
+            "ror": "0279ehd23"
+          }
+        ],
+        "name": "Zhou Yu",
+        "openalex": "A5101889746",
+        "orcid": "https://orcid.org/0000-0003-3247-0843"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chongqing Vocational Institute of Engineering",
+            "ror": "0279ehd23"
+          }
+        ],
+        "name": "Haiyang Wang",
+        "openalex": "A5147115080",
+        "orcid": "https://orcid.org/0009-0007-3351-0081"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/03611981261468759",
+      "pdf_url": null,
+      "source_id": "S145575934",
+      "source_name": "Transportation Research Record Journal of the Transportation Research Board",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-13",
+    "repository_urls": [],
+    "title": "SDLane: Efficient Lane Detection via Sparse Anchors and Dynamic Fusion"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-18_10.1177/03611981",
+    "members": [
+      "doi:10.1177/03611981261468759"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0279ehd23",
+        "label": "Chongqing Vocational Institute of Engineering"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01dcw5w74",
+        "label": "Chongqing Normal University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5147122067",
+        "label": "Zhiyong Yang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0000-7841-4121",
+        "label": "Ziqiang Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3247-0843",
+        "label": "Zhou Yu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0007-3351-0081",
+        "label": "Haiyang Wang"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": true,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.9626,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10036",
+        "is_primary": false,
+        "label": "Advanced Neural Network Applications",
+        "score": 0.0137,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.0044,
+        "subfield": "2212"
+      }
+    ]
+  },
+  "first_published": "2026-08-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1536680647",
+      "openalex:W2015255902",
+      "openalex:W2106976646",
+      "openalex:W2780740184",
+      "openalex:W2884561390",
+      "openalex:W3173721678",
+      "openalex:W3173771298",
+      "openalex:W3176566042",
+      "openalex:W3203848864",
+      "openalex:W4221143432",
+      "openalex:W4282921501",
+      "openalex:W4312839759",
+      "openalex:W4313134857",
+      "openalex:W4390871906",
+      "openalex:W4393149919",
+      "openalex:W4393159682",
+      "openalex:W4394597770",
+      "openalex:W4402727920",
+      "openalex:W4406754278",
+      "openalex:W4408564932",
+      "openalex:W4409225564",
+      "openalex:W4410226585",
+      "openalex:W7136869736"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1177/03611981261468759",
+    "openalex": "W7202380589",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T21:33:45Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005419,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2143,
+      "out": 245
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T21:33:45Z",
+    "doi": "10.1177/03611981261468759",
+    "journal": "Transportation Research Record Journal of the Transportation Research Board",
+    "source_id": "S145575934",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/happy-q123/SDLane",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed SDLane, a lane detection model that reduces the required number of line anchors to a count matching the actual lane instances. Tested on four datasets, including a newly created heavy rain dataset named RainyLane, the model achieves an F1-score of 79.76% at a processing speed of 486 frames per second on the CULane test set using only five anchors.",
+      "why": "It eliminates the need for computationally heavy feature extraction and fusion components like Feature Pyramid Networks or attention mechanisms, enabling high-speed, accurate lane detection on resource-constrained hardware during extreme weather and night conditions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-13",
+  "work_key": "doi:10.1177/03611981261468759"
+}

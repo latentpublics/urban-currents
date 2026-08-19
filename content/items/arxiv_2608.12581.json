@@ -64,7 +64,28 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0722-5969",
+        "label": "Eduardo Graells-Garrido"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4960-1248",
+        "label": "Daniela Opitz"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4137-0246",
+        "label": "Francisco Rowe"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147222165",
+        "label": "Carmen Cabrera"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -75,7 +96,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12262",
+        "is_primary": true,
+        "label": "Hate Speech and Cyberbullying Detection",
+        "score": 0.9199,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10216",
+        "is_primary": false,
+        "label": "Migration, Refugees, and Integration",
+        "score": 0.0117,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11397",
+        "is_primary": false,
+        "label": "Populism, Right-Wing Movements",
+        "score": 0.0087,
+        "subfield": "3320"
+      }
+    ]
   },
   "first_published": "2026-08-12",
   "graph": {
@@ -86,7 +132,7 @@
   "ids": {
     "arxiv": "2608.12581",
     "doi": "10.48550/arxiv.2608.12581",
-    "openalex": null,
+    "openalex": "W7203471836",
     "pmid": null
   },
   "provenance": {
@@ -94,7 +140,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-18T07:20:20Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00577,
     "llm": {
@@ -182,6 +229,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-12",
+  "updated": "2026-08-19",
   "work_key": "arxiv:2608.12581"
 }

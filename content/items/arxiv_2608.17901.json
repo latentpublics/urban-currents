@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban rail transit reliability is a critical measure of system performance, yet its causal determinants remain poorly quantified due to high-dimensional and interdependent influencing factors. This study investigates reliability patterns across 46 international metro operators between 1994 and 2024 using the CoMET benchmarking database, incorporating more than 90 candidate variables spanning technical, operational, financial, environmental, and macroeconomic conditions. Based on domain knowledge, literature synthesis, and variable construction, four operational determinants are designed to capture three mechanisms: demand pressure, service supply, and demand-supply imbalance, while the remaining variables are screened and incorporated as confounders where theoretically appropriate. Double/Debiased Machine Learning (DML) adapted for panel data is introduced to urban rail reliability analysis to quantify the net causal effects of these determinants under complex and nonlinear relationships. The framework combines flexible machine learning with panel fixed or random effects within-operator temporal variation, reducing bias from high-dimensional confounding, model misspecification, and unobserved operator heterogeneity. The results identify three distinct operational mechanisms. Higher passenger demand intensity increases incident rates by 0.38% (p<0.001). On the supply side, greater fleet supply adequacy and car-based operational intensity reduce incident rates by 0.52% (p<0.05) and 0.80% (p<0.01), respectively. Capacity utilization, which reflects the imbalance between demand and available supply, increases incident rates by 0.49% (p<0.001). These findings show that metro reliability depends not only on the level of demand or supply alone, but also on whether service provision keeps pace with passenger demand.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ying Yao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Nan Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Daniel J. Graham",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.17901v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.17901v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-18",
+    "repository_urls": [],
+    "title": "Quantifying the Causal Operational Determinants of Service Reliability in Urban Rail Transit: Evidence from Panel Double/Debiased Machine Learning"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-18_2608.17901",
+    "members": [
+      "arxiv:2608.17901"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:regression",
+        "label": "regression"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.17901",
+    "doi": "10.48550/arxiv.2608.17901",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T21:33:33Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006289,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2231,
+      "out": 327
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9617,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3847,
+    "relevance": 0.9617
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "1994 and 2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study analyzed 30 years of panel data from 1994 to 2024 across 46 international metro operators in the CoMET benchmarking database to quantify how operational factors causally affect transit reliability. Using a Double/Debiased Machine Learning (DML) framework adapted for panel data, the researchers controlled for over 90 confounding variables across technical, financial, and macroeconomic domains. The model revealed that a 1% increase in passenger demand intensity increases incident rates by 0.38%, while higher capacity utilization increases incidents by 0.49%; conversely, greater fleet supply adequacy and car-based operational intensity reduce incident rates by 0.52% and 0.80% respectively.",
+      "why": "It establishes a causal link between service reliability and the balance of supply and demand, moving beyond simple correlations to prove that service disruptions are driven by how well service provision scales alongside passenger volumes."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-18",
+  "work_key": "arxiv:2608.17901"
+}

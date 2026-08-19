@@ -71,12 +71,43 @@
         "label": "statistical modeling"
       }
     ],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03knfbb08",
+        "label": "IQ Samhällsbyggnad"
+      }
+    ],
     "people": [],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12306",
+        "is_primary": true,
+        "label": "Urban and Freight Transport Logistics",
+        "score": 0.8217,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11223",
+        "is_primary": false,
+        "label": "Maritime Ports and Logistics",
+        "score": 0.0216,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0214,
+        "subfield": "2207"
+      }
+    ]
   },
   "first_published": "2026-08-12",
   "graph": {
@@ -87,7 +118,7 @@
   "ids": {
     "arxiv": "2608.11866",
     "doi": "10.48550/arxiv.2608.11866",
-    "openalex": null,
+    "openalex": "W7015777492",
     "pmid": null
   },
   "provenance": {
@@ -95,7 +126,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-18T07:20:20Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005381,
     "llm": {
@@ -183,6 +215,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-12",
+  "updated": "2026-08-19",
   "work_key": "arxiv:2608.11866"
 }

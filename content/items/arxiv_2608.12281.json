@@ -64,7 +64,28 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5147136942",
+        "label": "Zihao Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147076275",
+        "label": "Yuanbo Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147125429",
+        "label": "Xiaolei Ma"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5132639816",
+        "label": "Yuan Liao"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -81,7 +102,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12639",
+        "is_primary": true,
+        "label": "Global Energy and Sustainability Research",
+        "score": 0.3297,
+        "subfield": "2105"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11588",
+        "is_primary": false,
+        "label": "Atmospheric and Environmental Gas Dynamics",
+        "score": 0.2181,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.1144,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-08-12",
   "graph": {
@@ -92,7 +138,7 @@
   "ids": {
     "arxiv": "2608.12281",
     "doi": "10.48550/arxiv.2608.12281",
-    "openalex": null,
+    "openalex": "W7202398754",
     "pmid": null
   },
   "provenance": {
@@ -100,7 +146,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-18T07:20:20Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00514,
     "llm": {
@@ -188,6 +235,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-12",
+  "updated": "2026-08-19",
   "work_key": "arxiv:2608.12281"
 }

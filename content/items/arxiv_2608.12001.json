@@ -71,7 +71,28 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-4560-8821",
+        "label": "Muhammad Masud Tarek"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147079664",
+        "label": "Md. Alamgir Hossain"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2511-3557",
+        "label": "MD Samiul Islam"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5094353695",
+        "label": "Muntasir Hasan Kanchan"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [
@@ -81,7 +102,32 @@
         "label": "geemap"
       }
     ],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": true,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.7743,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10111",
+        "is_primary": false,
+        "label": "Remote Sensing in Agriculture",
+        "score": 0.0539,
+        "subfield": "2303"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10689",
+        "is_primary": false,
+        "label": "Remote-Sensing Image Classification",
+        "score": 0.031,
+        "subfield": "2214"
+      }
+    ]
   },
   "first_published": "2026-08-12",
   "graph": {
@@ -92,7 +138,7 @@
   "ids": {
     "arxiv": "2608.12001",
     "doi": "10.48550/arxiv.2608.12001",
-    "openalex": null,
+    "openalex": "W7202361516",
     "pmid": null
   },
   "provenance": {
@@ -100,7 +146,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-18T07:20:20Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006326,
     "llm": {
@@ -129,11 +176,11 @@
   "scores": {
     "components": {
       "artifact_completeness": 0.0,
-      "novelty": 0.3333,
+      "novelty": 0.0,
       "relevance": 0.9942,
       "source_multiplicity": 0.0
     },
-    "headline": 0.4643,
+    "headline": 0.3977,
     "relevance": 0.9942
   },
   "signals": {
@@ -188,6 +235,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-12",
+  "updated": "2026-08-19",
   "work_key": "arxiv:2608.12001"
 }

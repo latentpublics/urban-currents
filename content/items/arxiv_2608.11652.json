@@ -69,11 +69,67 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5052276098",
+        "label": "Md Rafid Islam"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8346-6938",
+        "label": "Rafsan Jany"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147133406",
+        "label": "Md. Siyam Bhuiyan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8054-3117",
+        "label": "Rafid Bin Zaman"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147073578",
+        "label": "Mohammad Saifuddin"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5112839334",
+        "label": "Sabrina Sultana"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10075",
+        "is_primary": true,
+        "label": "Atmospheric chemistry and aerosols",
+        "score": 0.8302,
+        "subfield": "1902"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10190",
+        "is_primary": false,
+        "label": "Air Quality and Health Impacts",
+        "score": 0.1014,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12916",
+        "is_primary": false,
+        "label": "COVID-19 impact on air quality",
+        "score": 0.0389,
+        "subfield": "2306"
+      }
+    ]
   },
   "first_published": "2026-08-12",
   "graph": {
@@ -84,7 +140,7 @@
   "ids": {
     "arxiv": "2608.11652",
     "doi": "10.48550/arxiv.2608.11652",
-    "openalex": null,
+    "openalex": "W7202342565",
     "pmid": null
   },
   "provenance": {
@@ -92,7 +148,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-18T07:20:20Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006487,
     "llm": {
@@ -180,6 +237,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-15",
+  "updated": "2026-08-19",
   "work_key": "arxiv:2608.11652"
 }

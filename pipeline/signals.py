@@ -58,6 +58,26 @@ def _text(item: Item) -> str:
 
 
 def code_signal(item: Item) -> Signal:
+    """Did the authors release code?
+
+    The abstract answers first. When it does not, arXiv's free-text `comment`
+    is read — that is where "Accepted to COLM 2026. Code:
+    https://github.com/…" actually lives. The collector has stored that field
+    since 0k and **nothing read it**, which is its own kind of measured zero:
+    the path reported no yield because it was never connected.
+
+    Connected and measured in 0P (Q0). Over the 35,472 raw arXiv entries the
+    pipeline has kept, 17,994 carry a comment and 1,474 of those name a
+    repository — but among the 246 entries that passed the urban gate and became
+    items, exactly **one** names a repository the abstract does not already
+    give. General cs.* preprints release code far more often than urban ones.
+    One badge in 62 days is a small return, and it is the whole return; it is
+    kept because the field is already collected and read costs nothing, not
+    because it was expected to be larger.
+
+    `detail` records when the comment was the source, so a badge earned this way
+    stays auditable against one earned from the abstract.
+    """
     text = _text(item)
     if _NO_RELEASE.search(text):
         return Signal(value=False, confidence="high", basis="rule")
@@ -66,6 +86,18 @@ def code_signal(item: Item) -> Signal:
         return Signal(value=True, url=m.group(0).rstrip(".,);"), confidence="high", basis="rule")
     if _CODE_PHRASE.search(text):
         return Signal(value=True, confidence="medium", basis="rule")
+
+    comment = item.bibliography.comment or ""
+    if comment:
+        m = _CODE_URL.search(comment)
+        if m:
+            return Signal(
+                value=True,
+                url=m.group(0).rstrip(".,);"),
+                detail="from the arXiv comment",
+                confidence="high",
+                basis="rule",
+            )
     return Signal(value=False, confidence="medium", basis="rule")
 
 

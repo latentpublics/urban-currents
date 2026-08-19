@@ -377,6 +377,26 @@ held:
 
   # R3: above the floor by less than the model's own calibration error is not
   # meaningfully above the floor.
+  #
+  # ★ That calibration error was an assumption when this was written. Measured
+  # in 0P (Q1) over the 73 arXiv relevance labels: expected calibration error
+  # **0.1397**, largest single-band gap 0.2117 — both far larger than 0.03.
+  # Pre-registered condition was "smaller than 0.03, shrink the margin to it;
+  # larger, keep it and write the number down". It is larger, so the margin
+  # stays and the justification is now a measurement.
+  #
+  # Two things the same measurement says that this rule does NOT act on, and
+  # must not be quietly tuned to:
+  #  - The error at the top is **under**-confidence, not noise: in [0.80,0.90)
+  #    the mean score is 0.861 and the observed keep rate is 1.00 (n=5). If that
+  #    holds, items just above the floor are better than their score says, and
+  #    withholding is the wrong response to it.
+  #  - **Zero** relevance labels fall in the withheld window [0.80,0.83), so the
+  #    window itself is unmeasured. The only judgements touching it are 2 rows
+  #    from `code_probe`, a different sampling frame that cannot be pooled with
+  #    relevance; within their own frame both are `keep`.
+  # 35 items in 57 held days were withheld by this margin. Deciding it on 2
+  # borrowed rows would be tuning a rule to the cases we happen to have seen.
   floor_margin: 0.03
 
 backfill:

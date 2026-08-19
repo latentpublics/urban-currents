@@ -100,11 +100,19 @@ class Bibliography(StrictModel):
     # per-category intake report needs it, so it has to survive to the Item.
     categories: list[str] = Field(default_factory=list)
     # arXiv's free-text `comment` — "Accepted to COLM 2026. Code and data:
-    # https://github.com/…". The collector already parsed it and threw it away,
-    # which is why the archive has 0 code badges across 224 items: authors put
-    # the repository link here, not in the abstract. Measured over one raw
-    # response of 1,000 entries, 509 carry a comment and 76 of those name a
-    # repository (phase 0k, X0-3).
+    # https://github.com/…". The collector already parsed it and threw it away.
+    # Measured over one raw response of 1,000 entries, 509 carry a comment and
+    # 76 of those name a repository (phase 0k, X0-3).
+    #
+    # Corrected in 0P §Q0. The clause that used to sit here — "which is why the
+    # archive has 0 code badges across 224 items" — was wrong twice over. The
+    # archive now has **15** code badges across 2,224 items, so there was no
+    # structural zero to explain; and the comment field is not the explanation
+    # either. Re-measured over all 35,472 raw entries the pipeline has kept,
+    # 17,994 carry a comment and 1,474 of those name a repository — but among
+    # the 246 entries that survived the urban gate and became items, exactly
+    # **one** carries a repository link the abstract does not already give.
+    # General cs.* preprints release code far more often than urban ones do.
     comment: Optional[str] = None
     # Repository-ish hosts among OpenAlex `locations[]` — Zenodo, figshare,
     # Dryad. A deposit is evidence of released data in a way a phrase is not.

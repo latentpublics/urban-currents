@@ -95,6 +95,17 @@ def is_weak(label: str) -> bool:
 # handful of labels changes the answer.
 SCORE_BANDS = ((0.95, 1.01), (0.90, 0.95), (0.70, 0.90), (0.35, 0.70))
 
+# A day whose top-k is only partly labelled cannot produce a precision figure,
+# only a guess with the same shape as one. `scripts/journal_gate.py` has drawn
+# that line at 8 of 10 since N4; `precision_at_k` did not, and averaged a
+# three-label day into the mean with the same weight as a full one — so a thin
+# day moved the headline number while looking like evidence.
+#
+# Days below the bar are counted and named in `unmeasured_days` rather than
+# dropped silently. **A day we could not measure is not a day that scored
+# badly**, and the two have to stay tellable apart.
+MIN_TOP_K_COVERAGE = 8
+
 LABEL_PROMPT = (
     "   [k]eep / [n]ot urban / not our kind [q] / weak [m]ethod / weak [r]esults"
     " / [s]kip: "
@@ -548,9 +559,17 @@ def precision_at_k(facet: str = "relevance", k: int = 10) -> dict:
             by_day.setdefault(r.get("date", ""), []).append(r)
 
         per_day = []
+        unmeasured: list[dict] = []
         for _day, day_rows in sorted(by_day.items()):
             day_rows.sort(key=lambda r: r.get("rank", 0))
             topk = day_rows[:k]
+            # Coverage is how much of the top-k window carries a judgement, not
+            # how many rows the day has: a day labelled only below rank 10 tells
+            # us nothing about the top 10.
+            covered = sum(1 for r in day_rows if (r.get("rank") or 0) and r["rank"] <= k)
+            if covered < min(MIN_TOP_K_COVERAGE, k):
+                unmeasured.append({"date": _day, "labelled_in_top_k": covered})
+                continue
             if topk:
                 per_day.append(sum(1 for r in topk if r["label"] == "keep") / len(topk))
 
@@ -612,6 +631,8 @@ def precision_at_k(facet: str = "relevance", k: int = 10) -> dict:
         by_source[source] = {
             "n_labels": len(srows),
             "days": len(per_day),
+            "days_unmeasured": len(unmeasured),
+            "unmeasured_days": unmeasured,
             f"precision_at_{k}": (
                 round(sum(per_day) / len(per_day), 4) if per_day else None
             ),

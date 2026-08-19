@@ -1,0 +1,277 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Green infrastructure (GI) is often expected to raise nearby property values, a benefit that can displace lower-income residents through green gentrification. This study asks whether that expectation holds once nonlinear, machine-learning-based methods replace the linear specifications in conventional hedonic and difference-in-differences (DID) models, especially in weak-demand legacy cities. Comparing traditional OLS-DID against Double Machine Learning (DML) across four GI projects in Cleveland, a shrinking, post-industrial city, this study finds that where OLS-DID is significant, DML typically agrees in sign but at a smaller magnitude. For one project, however, the two estimators diverge sharply in direction, showing that functional form can change a capitalization estimate's substantive conclusion, not just its size. Results differ sharply by project. Lake Link Trail shows the study's one significant, positive pooled effect, approximately 25 percent, though a pre-existing trend and an unresolved income-specific pattern warrant caution. The Lakefront Nature Preserve shows no significant effect in either direction, the weakest evidence of the four. Mill Creek Falls Park is near-null overall but reveals a significant, localized decline, approximately 12 percent, for low-income households. Acacia Reservation supplies the study's central finding, a sign flip from a small positive OLS-DID estimate, approximately 4 percent, to a significant negative DML estimate, approximately 18 percent, in this stable, middle- to upper-income suburban setting. GI does not uniformly generate green gentrification. Effects vary in direction and magnitude across space and socioeconomic context, underscoring the need to monitor each project's distributional consequences rather than assume them from the broader literature.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Texas A&M University System",
+            "ror": "0034eay46"
+          },
+          {
+            "name": "Texas College",
+            "ror": "04fsb1973"
+          },
+          {
+            "name": "Texas A&M University",
+            "ror": "01f5ytq51"
+          }
+        ],
+        "name": "Youngre Noh",
+        "openalex": "A5050763210",
+        "orcid": "https://orcid.org/0000-0002-5971-4644"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Texas A&M University",
+            "ror": "01f5ytq51"
+          }
+        ],
+        "name": "Chan Young Park",
+        "openalex": "A5137086142",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.ufug.2026.129637",
+      "pdf_url": null,
+      "source_id": "S99909709",
+      "source_name": "Urban forestry & urban greening",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-01",
+    "repository_urls": [],
+    "title": "Green Infrastructure and Housing Prices: Heterogeneous Effects and Sensitivity to Modeling Choices"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-01_10.1016/j.ufug.2",
+    "members": [
+      "doi:10.1016/j.ufug.2026.129637"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:housing-transaction",
+        "label": "housing transactions"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:causal-inference",
+        "label": "causal inference"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0034eay46",
+        "label": "Texas A&M University System"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04fsb1973",
+        "label": "Texas College"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01f5ytq51",
+        "label": "Texas A&M University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5971-4644",
+        "label": "Youngre Noh"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5137086142",
+        "label": "Chan Young Park"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10632",
+        "is_primary": true,
+        "label": "Housing Market and Economics",
+        "score": 0.7368,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11988",
+        "is_primary": false,
+        "label": "Sustainable Building Design and Assessment",
+        "score": 0.0483,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10239",
+        "is_primary": false,
+        "label": "Urban Planning and Governance",
+        "score": 0.0421,
+        "subfield": "3322"
+      }
+    ]
+  },
+  "first_published": "2026-08-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1998653759",
+      "openalex:W2034284099",
+      "openalex:W2051688880",
+      "openalex:W2054054553",
+      "openalex:W2059181242",
+      "openalex:W2066735350",
+      "openalex:W2067031805",
+      "openalex:W2086145830",
+      "openalex:W2134160380",
+      "openalex:W2155163959",
+      "openalex:W2159805452",
+      "openalex:W2193608085",
+      "openalex:W2208550830",
+      "openalex:W2328689554",
+      "openalex:W2625518584",
+      "openalex:W2742284044",
+      "openalex:W2906036628",
+      "openalex:W2984489777",
+      "openalex:W3048646821",
+      "openalex:W3121385028",
+      "openalex:W3123974754",
+      "openalex:W3133468636",
+      "openalex:W3186027345",
+      "openalex:W4223516529",
+      "openalex:W4234712938",
+      "openalex:W4283165544",
+      "openalex:W4385633781",
+      "openalex:W4392698422",
+      "openalex:W4405667054",
+      "openalex:W4406291841",
+      "openalex:W4408013037",
+      "openalex:W4408348938",
+      "openalex:W4411991185",
+      "openalex:W4415909199",
+      "openalex:W7162524265"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.ufug.2026.129637",
+    "openalex": "W7202257665",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:31:45Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006005,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2209,
+      "out": 299
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:31:45Z",
+    "doi": "10.1016/j.ufug.2026.129637",
+    "journal": "Urban forestry & urban greening",
+    "source_id": "S99909709",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.5,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.54,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a single shrinking, post-industrial legacy city, which may limit generalizability to high-demand housing markets.",
+      "what": "This study compares traditional OLS difference-in-differences (DID) models with Double Machine Learning (DML) to evaluate the property value impacts of four green infrastructure projects in Cleveland. The analysis reveals highly divergent outcomes across the sites: one trail showed a 25 percent price increase, a nature preserve showed no effect, a park near low-income households led to a localized 12 percent decline, and a suburban reservation saw a sign flip from a positive 4 percent OLS estimate to a negative 18 percent DML estimate.",
+      "why": "It demonstrates that the capitalization effects of green infrastructure are highly sensitive to statistical modeling choices and are not universally positive, challenging the common assumption that green infrastructure inevitably triggers green gentrification."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-01",
+  "work_key": "doi:10.1016/j.ufug.2026.129637"
+}

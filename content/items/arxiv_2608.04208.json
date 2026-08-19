@@ -1,0 +1,169 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Objectives: While causal analysis of travel behavior is an emerging field, estimating heterogeneity in mode choice through causal modeling remains unexplored. This study demonstrates the application of a novel causal method, causal forest, to quantify the heterogeneity in travel mode choice shifts caused by the COVID-19 pandemic. Methods: We applied causal forests, a non-parametric causal machine learning method, to 802,935 trip records from the 2017 and 2022 waves of the National Household Travel Survey. The 2017 wave serves as the pre-pandemic control group, while the 2022 wave represents the treatment condition. Within the potential outcomes framework, we estimate average treatment effects (ATE), heterogeneous treatment effects (HTE), and conditional average treatment effects (CATE) across diverse socio-demographic groups and trip characteristics. Findings: Our results reveal an estimated ATE of a 1.86 percentage point (pp) increase in car-mode share, contrasted with decreases of 0.38 pp and 1.57 pp in public transit and walking, respectively. The largest increases in car use appeared for short-distance trips (one mile or less), households with annual incomes exceeding USD 200,000, and female travelers. Novelty: This is one of the first applications of causal forests to travel mode choice, and the first to use causal machine learning to estimate the pandemic's causal effect on mode choice analysis. Practical Applications: This study discusses methodological advantages, inherent assumptions, and limitations of causal forests within the context of transportation planning. This methodology is applied to COVID-19 travel data to illustrate how causal heterogeneity analysis can offer a deeper understanding of changes in mode choice. These insights are valuable for planners and policymakers in making policies related to mode shifts under an intervention.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Rishabh Singh Chauhan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mahdi Ghadimi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Lishun Liu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP",
+      "econ.EM",
+      "stat.ME"
+    ],
+    "comment": "Submitted to the Transportation Research Board 2027 Annual Meeting for presentation. TRB paper number TRBAM-27-04345",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.04208v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.04208v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-04",
+    "repository_urls": [],
+    "title": "Estimating Heterogeneity in Travel Mode Choice Shifts with Causal Forests"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-04_2608.04208",
+    "members": [
+      "arxiv:2608.04208"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.04208",
+    "doi": "10.48550/arxiv.2608.04208",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:36:04Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006349,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2259,
+      "out": 329
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9768,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3907,
+    "relevance": 0.9768
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2017 and 2022",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on comparing distinct survey waves from 2017 and 2022 as control and treatment groups to proxy the pandemic's causal impact, which may conflate the pandemic with other temporal changes.",
+      "what": "This study applies a non-parametric causal forest machine learning model to 802,935 trip records from the 2017 and 2022 waves of the US National Household Travel Survey to measure pandemic-induced shifts in travel mode choice. The model estimates an overall 1.86 percentage point increase in car-mode share, alongside declines of 0.38 percentage points for public transit and 1.57 percentage points for walking. The shift toward driving was most pronounced for trips under one mile, female travelers, and households earning over USD 200,000 annually.",
+      "why": "It introduces causal machine learning to travel mode choice analysis, demonstrating how planners can isolate and quantify highly specific, unequal behavioral shifts across diverse demographic groups rather than relying on uniform average effects."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-04",
+  "work_key": "arxiv:2608.04208"
+}

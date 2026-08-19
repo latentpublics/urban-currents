@@ -1,0 +1,179 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Traffic congestion prediction is essential for congestion mitigation, but the COVID-19 pandemic and related control measures altered travel behavior and increased prediction complexity. This study predicts congestion in Alameda County, California, during pre-lockdown, lockdown, and post-lockdown periods. Weather, seasonality, and COVID-19 variables are incorporated, and Recursive Feature Elimination with Cross-Validation is used to select important features and reduce overfitting. Support vector regression, multiple linear regression, recurrent neural networks, and long short-term memory networks are trained and optimized. Because LSTM is more sensitive to hyperparameter settings, an adaptive parameter selection approach is used, while SVR and RNN are manually tuned. Performance is evaluated using Normalized Root Mean Square Error. Bidirectional LSTM consistently performs best across all periods because it captures temporal dependence in both directions. Integrated Gradients is used to interpret Bi-LSTM predictions, and SHapley Additive exPlanations is applied to SVR. New COVID-19 cases have a mainly negative effect on congestion during lockdown and post-lockdown, likely due to greater risk awareness, voluntary travel reduction, and compliance with mobility restrictions. In the post-pandemic period, higher hospitalization reduces travel and congestion, while higher fuel prices do not prevent a shift toward private vehicles and therefore increase congestion.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Dan Zhu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chi Sin Ng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Litian Xie",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yang Liu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.01180v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.01180v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-02",
+    "repository_urls": [],
+    "title": "Interpretable Machine Learning for Traffic Congestion Prediction: Unveiling the Impact of Different COVID-19 Periods"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-02_2608.01180",
+    "members": [
+      "arxiv:2608.01180"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.9796,
+        "id": "method:rnn",
+        "label": "recurrent neural network"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-02",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.01180",
+    "doi": "10.48550/arxiv.2608.01180",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:33:19Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006322,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2049,
+      "out": 361
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9637,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3855,
+    "relevance": 0.9637
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings and model performance are based on a single county in California, which may limit generalizability to regions with different transit infrastructures or pandemic policies.",
+      "what": "This study models traffic congestion in Alameda County, California, across pre-lockdown, lockdown, and post-lockdown periods using support vector regression, multiple linear regression, recurrent neural networks, and long short-term memory (LSTM) networks. Incorporating weather, seasonality, and pandemic-specific variables, a Bidirectional LSTM optimized with an adaptive parameter selection approach achieved the lowest Normalized Root Mean Square Error. Model interpretations via Integrated Gradients and SHAP revealed that while rising COVID-19 hospitalizations reduced congestion, higher fuel prices in the post-pandemic era did not deter private vehicle use, ultimately increasing congestion.",
+      "why": "It demonstrates how the predictive power of specific external factors shifted across different phases of a public health crisis, proving that post-pandemic fuel price hikes failed to suppress private vehicle travel as commuters prioritized infection avoidance over transit."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-02",
+  "work_key": "arxiv:2608.01180"
+}

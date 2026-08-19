@@ -1,0 +1,264 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The decarbonisation of the transport sector necessitates a paradigm shift from car-centric planning to sustainable, multimodal mobility systems. However, effective monitoring of these dynamic networks remains challenging due to the limited spatial coverage of traditional static sensors and the dense, high-quality labelled data typically required by emerging deep learning approaches. This study introduces a robust, data-driven framework that leverages sparse, large-scale mobile phone application data to bridge the gap between individual behaviour analysis and system-level flow monitoring. We propose a hierarchical travel mode detection algorithm integrating Support Vector Machines (SVM) with GIS-based map matching, specifically optimised to handle the irregular sampling rates and positioning noise inherent in passive crowdsourced data. Beyond identifying individual modes with 89.56% accuracy, this research advances a bottom-up aggregation methodology to construct high-frequency, street-level multimodal traffic flows. Validated against ground-truth multimodal traffic sensors in London, our approach demonstrates robust spatial consistency and strong correlations (r > 0.70) across daily and hourly temporal resolutions. These findings establish that passive mobile phone data can serve as a cost-effective, scalable proxy for continuous transport system monitoring, enabling granular analysis of daily traffic dynamics and network-wide performance that traditional models fail to capture.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Liverpool",
+            "ror": "04xs57h96"
+          },
+          {
+            "name": "University College London",
+            "ror": "02jx3x895"
+          }
+        ],
+        "name": "Xianghui Zhang",
+        "openalex": "A5079868209",
+        "orcid": "https://orcid.org/0000-0002-4173-9990"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University College London",
+            "ror": "02jx3x895"
+          }
+        ],
+        "name": "Tao Cheng",
+        "openalex": "A5075660642",
+        "orcid": "https://orcid.org/0000-0002-5503-9813"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.jtrangeo.2026.104788",
+      "pdf_url": null,
+      "source_id": "S80150607",
+      "source_name": "Journal of Transport Geography",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-02",
+    "repository_urls": [],
+    "title": "From individual trajectories to system flows: A multimodal mobility analysis framework using mobile phone application data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-02_10.1016/j.jtrang",
+    "members": [
+      "doi:10.1016/j.jtrangeo.2026.104788"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04xs57h96",
+        "label": "University of Liverpool"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02jx3x895",
+        "label": "University College London"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4173-9990",
+        "label": "Xianghui Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5503-9813",
+        "label": "Tao Cheng"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q84",
+        "label": "London",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.7722,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11896",
+        "is_primary": false,
+        "label": "Opportunistic and Delay-Tolerant Networks",
+        "score": 0.0732,
+        "subfield": "1705"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11106",
+        "is_primary": false,
+        "label": "Data Management and Algorithms",
+        "score": 0.0175,
+        "subfield": "1711"
+      }
+    ]
+  },
+  "first_published": "2026-08-02",
+  "graph": {
+    "cited_by_count": 1,
+    "referenced_works": [
+      "openalex:W1578991198",
+      "openalex:W1969693647",
+      "openalex:W1986324410",
+      "openalex:W2007851664",
+      "openalex:W2056495296",
+      "openalex:W2062353446",
+      "openalex:W2129284678",
+      "openalex:W2157231424",
+      "openalex:W2345172924",
+      "openalex:W2535078255",
+      "openalex:W2586085483",
+      "openalex:W2597533437",
+      "openalex:W2788798981",
+      "openalex:W2916528253",
+      "openalex:W2918040195",
+      "openalex:W2946274190",
+      "openalex:W2946281080",
+      "openalex:W3003881212",
+      "openalex:W3005564857",
+      "openalex:W3006840888",
+      "openalex:W3014008659",
+      "openalex:W3019298229",
+      "openalex:W3020042513",
+      "openalex:W3046640293",
+      "openalex:W3102183165",
+      "openalex:W3171195076",
+      "openalex:W3207571777",
+      "openalex:W4221095962",
+      "openalex:W4324144530",
+      "openalex:W4399204294",
+      "openalex:W4407392539",
+      "openalex:W4408941297",
+      "openalex:W4409361418",
+      "openalex:W4409473970",
+      "openalex:W4412446980",
+      "openalex:W4416530915"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.jtrangeo.2026.104788",
+    "openalex": "W7172209010",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:33:22Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005915,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2023,
+      "out": 320
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:33:22Z",
+    "doi": "10.1016/j.jtrangeo.2026.104788",
+    "journal": "Journal of Transport Geography",
+    "source_id": "S80150607",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's validation and performance metrics are based on a single case study in London, which may limit immediate generalizability to cities with different urban layouts or mobile data penetration rates.",
+      "what": "This study develops a data-driven framework that processes passive, crowdsourced mobile phone application data to reconstruct street-level multimodal traffic flows. The system uses a hierarchical travel mode detection algorithm combining Support Vector Machines and GIS map matching to classify individual trips with 89.56% accuracy despite irregular sampling and positioning noise. When aggregated and validated against physical traffic sensors in London, the resulting hourly and daily flow estimates show strong spatial and temporal correlations (r > 0.70).",
+      "why": "It demonstrates that sparse, passive mobile phone data can serve as a highly scalable and cost-effective proxy for continuous, network-wide traffic monitoring, bypassing the need for dense physical sensor networks or highly labeled deep learning datasets."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-02",
+  "work_key": "doi:10.1016/j.jtrangeo.2026.104788"
+}

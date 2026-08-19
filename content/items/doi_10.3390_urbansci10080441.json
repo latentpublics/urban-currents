@@ -1,0 +1,264 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The management of municipal solid waste (MSW) in a region driven by tourism is a challenge. The dynamics of the waste produced can fluctuate significantly. Islands are particularly vulnerable due to geographic constraints and limited infrastructure. Using data to forecast and evaluate MSW management strategies would help make policy decisions. This research introduces a data-driven framework that integrates tourism dynamics with a predictive baseline for MSW generation and facilitates ongoing evaluation of system performance. The framework comprises four operational zones, namely data acquisition, baseline modelling, deviation analysis, and dashboard-based communication. It also follows the waste stream from upstream waste generation, through midstream collection and transfer, to downstream treatment and disposal. Phuket Island, Thailand, was chosen as a case study. The island has strong tourism-driven waste variability, limited waste management infrastructure, and a clear upstream–midstream–downstream waste-management chain. Tourism was explicitly integrated as an exogenous factor to capture transient demand effects. The amount of MSW was modelled using monthly tourism data. Support Vector Regression was selected to establish the expected waste baseline owing to its high predictive accuracy (MAE = 1143 t, RMSE = 1352 t and MAPE = 3.3%) outperforming other tested models (i.e., SARIMAX, Mean Baseline, Seasonal Naive, Random Forest and Histogram-Based Gradient Boost). Then, it was used to establish the baseline under normal conditions. The residual was then calculated as the difference between the observed values, and the performance of the maintenance system can be further assessed using the deviation analysis. A normal range defined within 3σ of the residual percentages from a baseline; values outside this range are flagged as anomalies. The results were integrated into a prototype dashboard to support operational monitoring, policy evaluation, and stakeholder-orientated interpretation. The proposed framework provides a practical basis for an evidence-based adaptive policy in tourism-dependent regions. Future work should incorporate waste composition and spatially explicit data to further improve the MSW management protocol. Considering that tourism demand exhibits seasonal patterns influenced by external factors, the results of this research offer an invaluable tool for waste management.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Prince of Songkla University",
+            "ror": "0575ycz84"
+          }
+        ],
+        "name": "Pawita Boonrat",
+        "openalex": "A5019657479",
+        "orcid": "https://orcid.org/0000-0002-8789-2157"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Prince of Songkla University",
+            "ror": "0575ycz84"
+          }
+        ],
+        "name": "Voravika Wattanasoontorn",
+        "openalex": "A5045247688",
+        "orcid": "https://orcid.org/0000-0001-7242-9365"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.3390/urbansci10080441",
+      "pdf_url": null,
+      "source_id": "S4210174142",
+      "source_name": "Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-02",
+    "repository_urls": [],
+    "title": "Baseline Estimation and System Performance Assessment of Municipal Solid Waste in Tourism Areas: A Case Study of Phuket, Thailand"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-02_10.3390/urbansci",
+    "members": [
+      "doi:10.3390/urbansci10080441"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0575ycz84",
+        "label": "Prince of Songkla University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8789-2157",
+        "label": "Pawita Boonrat"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7242-9365",
+        "label": "Voravika Wattanasoontorn"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11108",
+        "is_primary": true,
+        "label": "Municipal Solid Waste Management",
+        "score": 0.9961,
+        "subfield": "2311"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12583",
+        "is_primary": false,
+        "label": "Food Waste Reduction and Sustainability",
+        "score": 0.0005,
+        "subfield": "1106"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12920",
+        "is_primary": false,
+        "label": "Healthcare and Environmental Waste Management",
+        "score": 0.0005,
+        "subfield": "2739"
+      }
+    ]
+  },
+  "first_published": "2026-08-02",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1985722546",
+      "openalex:W2017918351",
+      "openalex:W2039403590",
+      "openalex:W2069308073",
+      "openalex:W2148672145",
+      "openalex:W2182449241",
+      "openalex:W2182833538",
+      "openalex:W2461697370",
+      "openalex:W2770391349",
+      "openalex:W2911964244",
+      "openalex:W2931901624",
+      "openalex:W2990177966",
+      "openalex:W2998784116",
+      "openalex:W3010975660",
+      "openalex:W3111604113",
+      "openalex:W3133504069",
+      "openalex:W3163829566",
+      "openalex:W4224277554",
+      "openalex:W4367846588",
+      "openalex:W4372295607",
+      "openalex:W4388450521",
+      "openalex:W4391288370",
+      "openalex:W4396902084",
+      "openalex:W4399970829",
+      "openalex:W4400146288",
+      "openalex:W4400391108",
+      "openalex:W4400620621",
+      "openalex:W4405737505",
+      "openalex:W4406361993",
+      "openalex:W4407150733",
+      "openalex:W4407812275",
+      "openalex:W4408773839",
+      "openalex:W4410314635",
+      "openalex:W4410325057",
+      "openalex:W4411060701",
+      "openalex:W4412046931",
+      "openalex:W4414531422",
+      "openalex:W4415147788",
+      "openalex:W4415468645",
+      "openalex:W4416754471",
+      "openalex:W4417537400",
+      "openalex:W7108082492",
+      "openalex:W7119535110",
+      "openalex:W7123849000",
+      "openalex:W7128478624",
+      "openalex:W7131084745"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.3390/urbansci10080441",
+    "openalex": "W7172282995",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:33:22Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.003765,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2383,
+      "out": 290
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:33:22Z",
+    "doi": "10.3390/urbansci10080441",
+    "journal": "Urban Science",
+    "source_id": "S4210174142",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The predictive framework currently relies on aggregate monthly data and lacks spatially explicit information or waste composition details to guide localized collection strategies.",
+      "what": "This study developed a data-driven framework to forecast municipal solid waste generation and detect system anomalies on Phuket Island, Thailand, using monthly tourism data as an exogenous factor. A Support Vector Regression model established the waste baseline with a Mean Absolute Percentage Error of 3.3%, outperforming five other models including SARIMAX and Random Forest. System performance and operational anomalies are identified using a deviation analysis that flags observed waste levels falling outside three standard deviations of the baseline residuals.",
+      "why": "It provides island and tourism-dependent municipalities with a method to distinguish normal, tourism-driven fluctuations in waste from actual operational failures or systemic anomalies across the entire waste management chain."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-02",
+  "work_key": "doi:10.3390/urbansci10080441"
+}

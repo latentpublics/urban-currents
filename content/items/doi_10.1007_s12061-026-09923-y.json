@@ -1,0 +1,247 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract This study examines the temporal dynamics of environmental sustainability in G7 countries and evaluates how dominant temporal transformation regimes are associated with different environmental sustainability indicators. Existing studies on environmental sustainability in advanced economies have largely focused on individual indicators, particularly CO₂ emissions, or on average relationships estimated through conventional empirical models. However, sustainability transformation is multidimensional and may differ across production-based emissions, consumption-based ecological pressure, and ecosystem carrying capacity. To address this gap, this study analyzes annual data for G7 countries over the 1997–2021 period using three complementary indicators: CO₂ emissions, Ecological Footprint, and Load Capacity Factor. The study develops an integrated decision-support framework that combines MiniROCKET-based temporal feature extraction, Principal Component Analysis, and Double Machine Learning. First, macroeconomic, demographic, technological, energy-related, and environmental variables are transformed into high-dimensional temporal features using MiniROCKET. Second, PCA is used to reduce these features into dominant temporal components. Third, DML is applied to estimate the average and country-specific heterogeneous associations between the dominant temporal regime and the three environmental indicators. In the main specification, PC1 is used as the treatment variable, while PC2–PC5 are included as control components. Robustness checks include an alternative PC1–PC2 treatment definition, alternative nuisance learners, bootstrap confidence intervals, and placebo treatment tests. The PCA results show that the first five components explain approximately 89.92% of the total MiniROCKET-based temporal feature variance, indicating that G7 sustainability dynamics can be summarized by a limited number of dominant temporal structures. The main DML results indicate negative directional associations between the dominant temporal regime and all three environmental indicators. The strongest association is observed for CO₂ emissions, followed by Ecological Footprint and Load Capacity Factor. However, bootstrap confidence intervals include zero; therefore, the findings should be interpreted as indicative and decision-support-oriented evidence rather than definitive causal proof. Country-specific CATE results reveal substantial heterogeneity across G7 countries. Italy displays the strongest negative CATE values for both CO₂ emissions and Ecological Footprint, while the United Kingdom shows positive CATE values for these indicators. LCF effects remain close to zero across countries. These findings suggest that G7 sustainability policies should be country-specific and indicator-sensitive, integrating emission reduction, responsible consumption, circular economy practices, supply-chain transparency, and ecosystem-capacity-enhancing measures.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Ahi Evran University",
+            "ror": "05rrfpt58"
+          }
+        ],
+        "name": "Fatih Keskinkılıç",
+        "openalex": "A5139323801",
+        "orcid": "https://orcid.org/0000-0003-4885-717X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Ahi Evran University",
+            "ror": "05rrfpt58"
+          }
+        ],
+        "name": "Mücahit Ülger",
+        "openalex": "A5011220948",
+        "orcid": "https://orcid.org/0000-0003-0300-099X"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s12061-026-09923-y",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s12061-026-09923-y.pdf",
+      "source_id": "S53719608",
+      "source_name": "Applied Spatial Analysis and Policy",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-04",
+    "repository_urls": [],
+    "title": "Temporal Regimes of Environmental Sustainability in G7 Countries: A Causal Decision Support Framework Based on MiniROCKET"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-04_10.1007/s12061-0",
+    "members": [
+      "doi:10.1007/s12061-026-09923-y"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:dimensionality-reduction",
+        "label": "dimensionality reduction"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05rrfpt58",
+        "label": "Ahi Evran University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4885-717X",
+        "label": "Fatih Keskinkılıç"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0300-099X",
+        "label": "Mücahit Ülger"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q145",
+        "label": "United Kingdom",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10438",
+        "is_primary": true,
+        "label": "Energy, Environment, Economic Growth",
+        "score": 0.631,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10435",
+        "is_primary": false,
+        "label": "Environmental Impact and Sustainability",
+        "score": 0.2493,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10119",
+        "is_primary": false,
+        "label": "Sustainability and Climate Change Governance",
+        "score": 0.0111,
+        "subfield": "2306"
+      }
+    ]
+  },
+  "first_published": "2026-08-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2024828896",
+      "openalex:W2557126631",
+      "openalex:W2808664059",
+      "openalex:W3158586645",
+      "openalex:W3200717681",
+      "openalex:W4281381289",
+      "openalex:W4298004850",
+      "openalex:W4323318330",
+      "openalex:W4385401000",
+      "openalex:W4390460627",
+      "openalex:W4390604385",
+      "openalex:W4398154910",
+      "openalex:W4399393848",
+      "openalex:W4399627256",
+      "openalex:W4402809868",
+      "openalex:W4404413208",
+      "openalex:W4408805808",
+      "openalex:W4413993550",
+      "openalex:W4414489308",
+      "openalex:W4415711121",
+      "openalex:W7118835963",
+      "openalex:W7140486108"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s12061-026-09923-y",
+    "openalex": "W7172440891",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:36:07Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.007106,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2523,
+      "out": 369
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:36:07Z",
+    "doi": "10.1007/s12061-026-09923-y",
+    "journal": "Applied Spatial Analysis and Policy",
+    "source_id": "S53719608",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "1997–2021",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The bootstrap confidence intervals for the main DML specifications include zero, meaning the identified relationships should be treated as indicative decision-support evidence rather than definitive causal proof.",
+      "what": "This study analyzes annual environmental and macroeconomic data for G7 countries from 1997 to 2021 using a decision-support framework that combines MiniROCKET temporal feature extraction, Principal Component Analysis (PCA), and Double Machine Learning (DML). The framework evaluates how dominant temporal regimes associate with three distinct sustainability indicators: CO2 emissions, Ecological Footprint, and Load Capacity Factor. The first five principal components explained 89.92% of the temporal feature variance, revealing negative directional associations with all three indicators, with the strongest negative effects found in Italy and positive effects in the United Kingdom.",
+      "why": "It provides a multidimensional evaluation framework that moves beyond single-indicator CO2 studies to capture consumption-based ecological pressures and ecosystem carrying capacity simultaneously, revealing that sustainability dynamics are highly heterogeneous across advanced economies and cannot be addressed with one-size-fits-all policies."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-04",
+  "work_key": "doi:10.1007/s12061-026-09923-y"
+}

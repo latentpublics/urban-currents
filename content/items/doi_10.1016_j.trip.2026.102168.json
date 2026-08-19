@@ -1,0 +1,286 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Traffic crashes on residential roads in Japan have declined only marginally in recent years, indicating a stagnation in safety improvements. A key challenge is the early identification of high‑risk intersections, yet existing image‑based prediction studies have not statistically validated whether specific image‑capture conditions influence model performance. This study addresses this gap by developing a convolutional neural network (CNN) model trained on on‑site photographs collected in Fukuoka City, which serves as the empirical case study. The model’s performance is evaluated using the mean crash risk score, and the effects of three image‑capture factors such as resolution, sky editing, and camera distance, are statistically examined using multiway analysis of variance (ANOVA). Results show that the model achieved a mean crash risk score of 0.776 under the tested image conditions, indicating that the Artificial Intelligence (AI) system classified high‑risk intersections with an average confidence of 77.6%. Statistical testing revealed that sky editing and camera distance significantly affected prediction reliability, with the most favorable conditions within this dataset observed at 1,280 × 960‑pixel resolution, unedited sky color, and a 10‑m camera distance. These findings provide empirical evidence that specific image‑capture settings materially influence AI‑based intersection risk prediction. Rather than proposing a superior model architecture, this study contributes a statistically validated framework for assessing how image‑capture conditions affect model outputs and offers practical guidance for standardizing image collection in transportation planning and road‑safety diagnostics.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Kumamoto University",
+            "ror": "02cgss904"
+          }
+        ],
+        "name": "Koki Yoshimoto",
+        "openalex": "A5144283102",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Kumamoto University",
+            "ror": "02cgss904"
+          }
+        ],
+        "name": "Syuji Yoshiki",
+        "openalex": "A5050712114",
+        "orcid": "https://orcid.org/0009-0003-9825-4593"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Kumamoto University",
+            "ror": "02cgss904"
+          }
+        ],
+        "name": "Shin Tamaoki",
+        "openalex": "A5144251161",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Fukuoka University",
+            "ror": "04nt8b154"
+          }
+        ],
+        "name": "Hiroshi Tatsumi",
+        "openalex": "A5100974980",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Fukuoka University",
+            "ror": "04nt8b154"
+          }
+        ],
+        "name": "Yuya Tabei",
+        "openalex": "A5119598845",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102168",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2590198226003337/pdf",
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-03",
+    "repository_urls": [],
+    "title": "Examination of image conditions using multiway analysis of variance for predicting high-crash-risk intersections with image recognition AI"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-03_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102168"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:cnn",
+        "label": "convolutional neural network"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02cgss904",
+        "label": "Kumamoto University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04nt8b154",
+        "label": "Fukuoka University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5144283102",
+        "label": "Koki Yoshimoto"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0003-9825-4593",
+        "label": "Syuji Yoshiki"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5144251161",
+        "label": "Shin Tamaoki"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5100974980",
+        "label": "Hiroshi Tatsumi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5119598845",
+        "label": "Yuya Tabei"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": true,
+        "label": "Traffic and Road Safety",
+        "score": 0.9436,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.0129,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11606",
+        "is_primary": false,
+        "label": "Infrastructure Maintenance and Monitoring",
+        "score": 0.0075,
+        "subfield": "2205"
+      }
+    ]
+  },
+  "first_published": "2026-08-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2015265907",
+      "openalex:W2080403838",
+      "openalex:W2083336035",
+      "openalex:W2884924725",
+      "openalex:W3091494954",
+      "openalex:W3128202105",
+      "openalex:W3146804865",
+      "openalex:W3204937971",
+      "openalex:W4200212136",
+      "openalex:W4294347834",
+      "openalex:W4308522217",
+      "openalex:W4386026028",
+      "openalex:W4387796007",
+      "openalex:W4407098870",
+      "openalex:W4407219023"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102168",
+    "openalex": "W7172251266",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:34:30Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006035,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2133,
+      "out": 315
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:34:30Z",
+    "doi": "10.1016/j.trip.2026.102168",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical findings and optimal image parameters are derived from a single model trained on a dataset from a single city.",
+      "what": "The study trained a convolutional neural network on on-site photographs from Fukuoka City, Japan, to predict high-crash-risk intersections, achieving a mean crash risk score of 0.776. It then used a multiway analysis of variance (ANOVA) to statistically evaluate how three image-capture factors—resolution, sky editing, and camera distance—affected the model's predictions. The analysis revealed that unedited skies and a 10-meter camera distance significantly improved prediction reliability, with the optimal configuration occurring at a 1,280 x 960-pixel resolution.",
+      "why": "It establishes a statistically validated framework showing that physical image-capture conditions directly alter AI-based road safety predictions, moving beyond model architecture to offer concrete guidelines for standardizing image collection in transport planning."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-03",
+  "work_key": "doi:10.1016/j.trip.2026.102168"
+}

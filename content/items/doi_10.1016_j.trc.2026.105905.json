@@ -1,0 +1,252 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Accurate short-term prediction of onboard passenger loading is essential for enhancing public transport efficiency, passenger comfort, and operational resilience. However, existing models are mainly restricted to station-based passenger flow prediction, and they often struggle with the spatiotemporal complexity of multi-line systems and the “incomplete data” problem caused by sensor failures or canceled services. This study proposes the Dynamic Relational Graph Convolutional Recurrent Neural Network (DRGCRNN) framework designed for edge-level, fine-grained passenger load forecasting. The framework explicitly models hierarchical dependencies through three relational graphs: a static physical layout, a probabilistic operational information graph, and a dynamic loading graph. To address data incompleteness, a Positive-Unlabeled learning module is integrated to infer reliability-adjusted service-execution probabilities. Furthermore, the network is projected into an adjoint “line graph” to capture inter-line and edge-to-edge dependencies. Validated using real-time vehicle location and passenger counting data from the Helsinki commuter rail network, the DRGCRNN achieves competitive overall performance and shows clear advantages during peak periods, where passenger volumes and cross-line interactions are more pronounced. The results demonstrate that the model effectively captures and predicts the loading patterns of high-frequency transit, providing a scalable template for service-specific real-time crowding monitoring and operational decision support. Our code is publicly available.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Aalto University",
+            "ror": "020hwjq30"
+          }
+        ],
+        "name": "Heqi Wang",
+        "openalex": "A5054236056",
+        "orcid": "https://orcid.org/0000-0002-5571-3505"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Transport & Mobility Leuven (Belgium)",
+            "ror": "00pp54p18"
+          },
+          {
+            "name": "Aalto University",
+            "ror": "020hwjq30"
+          }
+        ],
+        "name": "Claudio Roncoli",
+        "openalex": "A5043731672",
+        "orcid": "https://orcid.org/0000-0002-9381-3021"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105905",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-03",
+    "repository_urls": [],
+    "title": "Network-wide fine-grained passenger loading prediction via dynamic relational spatiotemporal deep graph neural networks"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-03_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105905"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:020hwjq30",
+        "label": "Aalto University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00pp54p18",
+        "label": "Transport & Mobility Leuven (Belgium)"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5571-3505",
+        "label": "Heqi Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9381-3021",
+        "label": "Claudio Roncoli"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.7797,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.1108,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0333,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-08-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1798398164",
+      "openalex:W1973943669",
+      "openalex:W1995687640",
+      "openalex:W2040297119",
+      "openalex:W2058586158",
+      "openalex:W2079662306",
+      "openalex:W2090192376",
+      "openalex:W2144462757",
+      "openalex:W2558748708",
+      "openalex:W2889617671",
+      "openalex:W2898623474",
+      "openalex:W2974087501",
+      "openalex:W3004515714",
+      "openalex:W3037669510",
+      "openalex:W3092527624",
+      "openalex:W3179413366",
+      "openalex:W3186458388",
+      "openalex:W3196492259",
+      "openalex:W4220870779",
+      "openalex:W4310778543",
+      "openalex:W4323022336",
+      "openalex:W4387907634",
+      "openalex:W4388519972",
+      "openalex:W4388994754",
+      "openalex:W4389076321",
+      "openalex:W4396529138",
+      "openalex:W4400772567",
+      "openalex:W4416178973",
+      "openalex:W7133520292"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105905",
+    "openalex": "W7172256392",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:34:30Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005843,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2071,
+      "out": 304
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:34:30Z",
+    "doi": "10.1016/j.trc.2026.105905",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance was validated exclusively on the Helsinki commuter rail network, which may not fully represent the complexity or operational patterns of larger, more diverse transit systems.",
+      "what": "The researchers developed the Dynamic Relational Graph Convolutional Recurrent Neural Network (DRGCRNN) to predict fine-grained, edge-level passenger loads across transit networks. The model integrates three relational graphs representing physical layout, operational information, and dynamic loading, alongside a Positive-Unlabeled learning module to handle missing sensor data. It was validated using real-time vehicle location and passenger count data from the Helsinki commuter rail network, demonstrating high accuracy during peak travel periods.",
+      "why": "It shifts transit forecasting from coarse station-level predictions to precise, vehicle-specific load monitoring across multi-line networks, even when faced with incomplete data from sensor failures or canceled services."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-03",
+  "work_key": "doi:10.1016/j.trc.2026.105905"
+}

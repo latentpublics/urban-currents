@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Disordered traffic flow is characterized by weak or non-existent lane discipline in the presence of strong vehicle heterogeneity and continuous lateral interactions, challenging traditional lane-based modeling assumptions. This study presents an empirical study of macroscopic and microscopic aspects of disordered traffic using high-resolution UAV trajectory data collected on an urban arterial. A two-dimensional extension of Edie's framework is applied to quantify aggregate traffic variables and produce a two-dimensional fundamental diagram, revealing that traffic states cannot be adequately represented using one-dimensional formulations and highlighting the persistent role of lateral redistribution. The propagation of congestion is estimated directly from the spatiotemporal speed fields, demonstrating the emergence of coherent stop-and-go waves and showing a similar dynamics as conventional lane-based flow, in spite of the heterogeneous vehicle interactions. At the microscopic level, steady-state follower-leader identification is used to examine desired time gaps and minimum lateral spacing, vehicle dimension distributions, and kinematic characteristics, revealing pronounced inter-class heterogeneity that explains disordered traffic behavior. The study provides an empirical framework linking vehicle-level interactions and aggregate traffic dynamics and establishes a data-driven basis for the calibration and validation of traffic models for disordered mixed traffic systems.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Shrey Agrawal",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Gowri Asaithambi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Venkatesan Kanagaraj",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Martin Treiber",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ostap Okhrin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Harish Babu Kumara",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.LG"
+    ],
+    "comment": "33 pages; submitted to Transp. Research Part B",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.00602v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.00602v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-01",
+    "repository_urls": [],
+    "title": "Beyond Lanes: Traffic Flow Dynamics in Disordered Conditions Based on High-Resolution Trajectory Data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-01_2608.00602",
+    "members": [
+      "arxiv:2608.00602"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.00602",
+    "doi": "10.48550/arxiv.2608.00602",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:31:41Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005599,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1993,
+      "out": 290
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8793,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3517,
+    "relevance": 0.8793
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical findings and framework are derived from a single urban arterial corridor, which may limit immediate generalization to other disordered traffic environments.",
+      "what": "This study analyzes disordered traffic flow lacking lane discipline using high-resolution UAV trajectory data collected from an urban arterial. By applying a two-dimensional extension of Edie's framework, the research quantifies aggregate traffic variables to construct a 2D fundamental diagram and tracks congestion propagation through spatiotemporal speed fields. At the microscopic level, it identifies steady-state follower-leader pairs to measure desired time gaps, minimum lateral spacing, and vehicle dimension distributions across heterogeneous vehicle classes.",
+      "why": "It demonstrates that disordered traffic states cannot be accurately represented by traditional one-dimensional, lane-based formulations due to continuous lateral redistribution, yet shows that macroscopic stop-and-go waves propagate similarly to conventional lane-based systems despite highly heterogeneous vehicle interactions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-01",
+  "work_key": "arxiv:2608.00602"
+}

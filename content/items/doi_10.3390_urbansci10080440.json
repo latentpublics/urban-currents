@@ -1,0 +1,266 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Machine learning (ML) models like XGBoost have gained traction in housing valuation as they outperform classical hedonic models in predictive accuracy. However, their black box nature has limited their interpretability, until recent advances like SHAP values enabled deeper insights into variable contributions. This study explores whether XGBoost not only predicts housing prices more accurately but can also help identify latent submarket structures, without imposing predefined spatial or socioeconomic boundaries. Using a raw dataset of 7092 housing listings from Barcelona (reduced to 6527 unique listings and finally to 6112 observations after outlier removal), we employ a sequential methodological framework: first, OLS and Spatial Durbin Models identify statistically significant predictors while accounting for spatial dependence; second, an XGBoost model is trained with these validated variables to extract SHAP values quantifying each attribute’s model-attributed contribution to individual predicted prices; third, clustering these SHAP values reveals three distinct submarkets with systematic differences in model-attributed valuation patterns. We validate the resulting segments through five complementary procedures: out-of-sample cluster assignment verifying segment generalizability; nested OLS interaction models that formally test differences in model-attributed valuation patterns across clusters; spatial block bootstrap resampling that assesses cluster stability under geographic subsampling; non-parametric tests against the 2017 cadastral value—an independent administrative proxy for spatial value stratification; and spatial autocorrelation statistics confirming non-random geographic structure. Together, this multi-pronged validation provides convergent evidence that the identified segments capture stable and externally coherent patterns in the model’s learned valuation structure. Unlike prior studies focused solely on prediction, our approach bridges ML’s technical rigor with econometric interpretability. We argue that this capability may stem from XGBoost’s tree-based architecture, which naturally partitions the feature space to accommodate heterogeneous valuation patterns. Future research could extend this framework to more recent tree-based models, further advancing interpretable ML for housing market analysis.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Universitat Politècnica de Catalunya",
+            "ror": "03mb6wj31"
+          }
+        ],
+        "name": "José Carlos Rojas Quiroz",
+        "openalex": "A5043165138",
+        "orcid": "https://orcid.org/0000-0001-6179-8229"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universitat Politècnica de Catalunya",
+            "ror": "03mb6wj31"
+          }
+        ],
+        "name": "Carlos Ramiro Marmolejo Duarte",
+        "openalex": "A5022683728",
+        "orcid": "https://orcid.org/0000-0001-7051-7337"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.3390/urbansci10080440",
+      "pdf_url": "https://www.mdpi.com/2413-8851/10/8/440/pdf?version=1785637806",
+      "source_id": "S4210174142",
+      "source_name": "Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-02",
+    "repository_urls": [],
+    "title": "More than Black Boxes: Machine Learning Models’ Capacity to Capture Housing Submarket Patterns"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-02_10.3390/urbansci",
+    "members": [
+      "doi:10.3390/urbansci10080440"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:gradient-boosting",
+        "label": "gradient boosting"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:clustering",
+        "label": "clustering"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03mb6wj31",
+        "label": "Universitat Politècnica de Catalunya"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6179-8229",
+        "label": "José Carlos Rojas Quiroz"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7051-7337",
+        "label": "Carlos Ramiro Marmolejo Duarte"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1492",
+        "label": "Barcelona",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10632",
+        "is_primary": true,
+        "label": "Housing Market and Economics",
+        "score": 0.9405,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12698",
+        "is_primary": false,
+        "label": "3D Modeling in Geospatial Applications",
+        "score": 0.0043,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13920",
+        "is_primary": false,
+        "label": "Urban Planning and Valuation",
+        "score": 0.0036,
+        "subfield": "2308"
+      }
+    ]
+  },
+  "first_published": "2026-08-02",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1975509631",
+      "openalex:W2003358461",
+      "openalex:W2027594229",
+      "openalex:W2038525990",
+      "openalex:W2051688880",
+      "openalex:W2051976719",
+      "openalex:W2075651857",
+      "openalex:W2124784867",
+      "openalex:W2127275073",
+      "openalex:W2141043353",
+      "openalex:W2295598076",
+      "openalex:W2888947475",
+      "openalex:W2909096282",
+      "openalex:W2949676527",
+      "openalex:W2999615587",
+      "openalex:W3004756438",
+      "openalex:W3013314195",
+      "openalex:W3118899449",
+      "openalex:W3124228313",
+      "openalex:W3125919348",
+      "openalex:W3129171031",
+      "openalex:W3209434414",
+      "openalex:W4283077289",
+      "openalex:W4285087234",
+      "openalex:W4310266306",
+      "openalex:W4320006168",
+      "openalex:W4377226909",
+      "openalex:W4390508451",
+      "openalex:W4402650311",
+      "openalex:W4408828127",
+      "openalex:W7118212265"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.3390/urbansci10080440",
+    "openalex": "W7172316589",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:33:22Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006073,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2297,
+      "out": 292
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:33:22Z",
+    "doi": "10.3390/urbansci10080440",
+    "journal": "Urban Science",
+    "source_id": "S4210174142",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "6112 observations",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The methodology was developed and validated using a relatively small dataset of housing listings within a single city.",
+      "what": "The study developed a sequential framework using OLS, Spatial Durbin Models, and an XGBoost model trained on 6,112 housing listings in Barcelona to extract SHAP values for individual properties. Clustering these SHAP values identified three distinct, latent housing submarkets characterized by systematic differences in valuation patterns. The stability and generalizability of these submarkets were validated using five methods, including spatial block bootstrap resampling and comparison against 2017 cadastral values.",
+      "why": "It demonstrates that tree-based machine learning models can be used to discover latent, spatially coherent housing submarkets without relying on predefined administrative or socioeconomic boundaries, bridging the gap between predictive machine learning and econometric interpretability."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-02",
+  "work_key": "doi:10.3390/urbansci10080440"
+}

@@ -1,0 +1,289 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "A major limitation of ridepooling systems is travel-time unreliability: users may receive updated arrival times when vehicle itineraries are modified to accommodate additional passengers. This paper introduces a passenger-specific predictive model to estimate this unreliability. The model uses shareability shadows and expected demand rates to compute a Shareability Score, which captures the expected shareable demand along each passenger’s trip and indicates their likelihood of experiencing an increase in the initially estimated arrival time. Using this prediction, we apply targeted operational rules for each passenger, and we guarantee no travel-time updates for low-score passengers. As a benchmark, we consider a system-wide policy that manages unreliability uniformly across all passengers. Simulation results using data from Manhattan and Utrecht show that the proposed approach improves both reliability and efficiency compared with the benchmark. Furthermore, at the same rejection rate of 29% between the proposed and benchmark methods, the approach reduces the percentage of passengers experiencing updates to travel time by up to 47.8% and guarantees a fully reliable trip for 83.9% of passengers at the time of assignment. The model performs consistently across different fleet sizes, vehicle capacities, user tolerance levels, and networks, highlighting the value of managing ridepooling unreliability at the individual passenger level.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "The University of Sydney",
+            "ror": "0384j8v12"
+          }
+        ],
+        "name": "Amir Elmi",
+        "openalex": "A5111330359",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "The University of Sydney",
+            "ror": "0384j8v12"
+          }
+        ],
+        "name": "Emily Moylan",
+        "openalex": "A5042133755",
+        "orcid": "https://orcid.org/0000-0003-1680-6407"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Javier Alonso–Mora",
+        "openalex": "A5013297671",
+        "orcid": "https://orcid.org/0000-0003-0058-570X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "The University of Sydney",
+            "ror": "0384j8v12"
+          }
+        ],
+        "name": "Andrés Fielbaum",
+        "openalex": "A5000920709",
+        "orcid": "https://orcid.org/0000-0003-0411-3064"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105897",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-04",
+    "repository_urls": [],
+    "title": "Improving ridepooling reliability using shareability shadows"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-04_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105897"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0384j8v12",
+        "label": "The University of Sydney"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02e2c7k09",
+        "label": "Delft University of Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5111330359",
+        "label": "Amir Elmi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1680-6407",
+        "label": "Emily Moylan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0058-570X",
+        "label": "Javier Alonso–Mora"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0411-3064",
+        "label": "Andrés Fielbaum"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": true,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.9974,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0006,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10761",
+        "is_primary": false,
+        "label": "Vehicular Ad Hoc Networks (VANETs)",
+        "score": 0.0006,
+        "subfield": "2208"
+      }
+    ]
+  },
+  "first_published": "2026-08-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1965655605",
+      "openalex:W2565919573",
+      "openalex:W2597251875",
+      "openalex:W2913531264",
+      "openalex:W2916868346",
+      "openalex:W2917342162",
+      "openalex:W2941854170",
+      "openalex:W2963775138",
+      "openalex:W3013696656",
+      "openalex:W3037675691",
+      "openalex:W3082949603",
+      "openalex:W3094597175",
+      "openalex:W3137649607",
+      "openalex:W3139102621",
+      "openalex:W3198970621",
+      "openalex:W3199528119",
+      "openalex:W3211348755",
+      "openalex:W3213343423",
+      "openalex:W4214952566",
+      "openalex:W4224244639",
+      "openalex:W4297383375",
+      "openalex:W4310663972",
+      "openalex:W4320474852",
+      "openalex:W4384163489",
+      "openalex:W4393255036",
+      "openalex:W4402826227",
+      "openalex:W4403487090",
+      "openalex:W4409164029",
+      "openalex:W4411651936"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105897",
+    "openalex": "W7172446703",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:36:06Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005735,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2011,
+      "out": 302
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:36:06Z",
+    "doi": "10.1016/j.trc.2026.105897",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance and reliability improvements are demonstrated through simulations rather than a real-world pilot deployment.",
+      "what": "The study introduces a passenger-specific predictive model that calculates a Shareability Score using shareability shadows and expected demand rates to estimate travel-time unreliability in ridepooling systems. This score is used to apply targeted operational rules, guaranteeing zero travel-time updates for low-score passengers. Simulations using ridepooling data from Manhattan and Utrecht demonstrate that, at a 29% passenger rejection rate, this approach reduces the share of passengers experiencing travel-time updates by up to 47.8% and guarantees a fully reliable trip for 83.9% of passengers at assignment.",
+      "why": "It shifts ridepooling reliability management from uniform, system-wide policies to targeted, passenger-level interventions. This allows operators to guarantee travel-time reliability for a large majority of riders without sacrificing overall system efficiency across different fleet sizes and network structures."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-04",
+  "work_key": "doi:10.1016/j.trc.2026.105897"
+}

@@ -1,0 +1,309 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Path flow estimation provides a detailed characterization of travel demand distribution in road networks and serves as a fundamental basis for transportation planning and management. Existing studies mainly rely on mobile sensor data, which are often sparse and limited by modeling assumptions, resulting in low estimation accuracy. To address this issue, this study proposes a path flow estimation method using license plate recognition (LPR) data as the sole input. The method is developed within a generalized least-squares framework by minimizing the weighted errors of path flows and turning flows. LPR data from 22 intersections in Kunming (248,798 records) during peak periods are used for validation. First, missing vehicle trajectories are reconstructed using particle filtering. Then, turning flows and their priors are estimated via tensor decomposition. A path–turning flow association matrix is constructed based on network topology to derive path flow priors, and an improved least-squares path flow estimation (ILS-PFE) model is solved using the conjugate gradient method. Results show that estimation errors remain stable when the sampling rate exceeds approximately 60%, but increase rapidly below this level. Thus, 60% is identified as an empirical reference threshold for LPR deployment. The proposed method demonstrates strong effectiveness and supports traffic state assessment, origin–destination (OD) inference, and signal control optimization.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Kunming University of Science and Technology",
+            "ror": "00xyeez13"
+          }
+        ],
+        "name": "Bing Li",
+        "openalex": "A5100451274",
+        "orcid": "https://orcid.org/0000-0002-6022-8854"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Kunming University of Science and Technology",
+            "ror": "00xyeez13"
+          }
+        ],
+        "name": "Hong Li",
+        "openalex": "A5144357837",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Kunming University of Science and Technology",
+            "ror": "00xyeez13"
+          }
+        ],
+        "name": "Juyuan Yin",
+        "openalex": "A5030861987",
+        "orcid": "https://orcid.org/0009-0003-6242-356X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Kunming University of Science and Technology",
+            "ror": "00xyeez13"
+          }
+        ],
+        "name": "Xiaomin Huang",
+        "openalex": "A5102965540",
+        "orcid": "https://orcid.org/0009-0008-8196-6128"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Police Department",
+            "ror": "01pd36221"
+          },
+          {
+            "name": "Shanghai Public Security Bureau",
+            "ror": "03cfv5b91"
+          }
+        ],
+        "name": "Ling Zhang",
+        "openalex": "A5007234348",
+        "orcid": "https://orcid.org/0000-0002-3864-2602"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Kunming University of Science and Technology",
+            "ror": "00xyeez13"
+          }
+        ],
+        "name": "Wenqiang Bai",
+        "openalex": "A5144364074",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9800",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-04",
+    "repository_urls": [],
+    "title": "Research on Road Traffic State Reconstruction Using License Plate Recognition Data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-04_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-9800"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00xyeez13",
+        "label": "Kunming University of Science and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01pd36221",
+        "label": "Police Department"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03cfv5b91",
+        "label": "Shanghai Public Security Bureau"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6022-8854",
+        "label": "Bing Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5144357837",
+        "label": "Hong Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0003-6242-356X",
+        "label": "Juyuan Yin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0008-8196-6128",
+        "label": "Xiaomin Huang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3864-2602",
+        "label": "Ling Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5144364074",
+        "label": "Wenqiang Bai"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.777,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.1649,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.0209,
+        "subfield": "2212"
+      }
+    ]
+  },
+  "first_published": "2026-08-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1023764048",
+      "openalex:W2021250916",
+      "openalex:W2023142851",
+      "openalex:W2163563615",
+      "openalex:W2794242176",
+      "openalex:W2883955855",
+      "openalex:W3102610851",
+      "openalex:W3139273811",
+      "openalex:W3162662473",
+      "openalex:W3176061695",
+      "openalex:W4233503150",
+      "openalex:W4236826060",
+      "openalex:W4302763479",
+      "openalex:W4386351984",
+      "openalex:W4393373198",
+      "openalex:W4401975300",
+      "openalex:W4404624309",
+      "openalex:W4406096991",
+      "openalex:W4406160139"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-9800",
+    "openalex": "W7172415175",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:36:07Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005704,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2039,
+      "out": 294
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:36:07Z",
+    "doi": "10.1061/jtepbs.teeng-9800",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "248,798 records",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical performance threshold was determined using data from a single city during peak hours, which may limit its immediate applicability to off-peak periods or different network topologies.",
+      "what": "The study develops an improved least-squares path flow estimation model that relies solely on license plate recognition data, reconstructing missing vehicle trajectories via particle filtering and estimating turning flows through tensor decomposition. The method was validated using 248,798 license plate records from 22 intersections in Kunming, China, during peak traffic periods. The model's estimation errors remained stable at sampling rates above 60%, but degraded rapidly below this threshold.",
+      "why": "It establishes a concrete empirical threshold of 60% sensor coverage for deploying license plate recognition systems, allowing traffic planners to estimate path flows and origin-destination patterns without relying on sparse mobile sensor data or complex modeling assumptions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-04",
+  "work_key": "doi:10.1061/jtepbs.teeng-9800"
+}

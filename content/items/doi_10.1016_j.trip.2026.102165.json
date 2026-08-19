@@ -1,0 +1,386 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Reinforcement learning (RL) has been increasingly applied to railway decision problems, particularly those that are sequential, dynamic, and difficult to optimise online. This paper presents a systematic scoping review of RL applications in railway systems published from 2006 to March 2025. A total of 162 studies were identified, screened, and analysed through a structured coding framework. The retained literature was organised into six application domains, namely Traffic Planning and Management, Automated Driving and Control, Maintenance and Inspection, Railway Communications, Passenger, and Safety. For each domain, the review examined how railway problems were formulated in RL terms, including state representation, action design, reward construction, learning environment, and validation setting. The results show that current research is concentrated in Traffic Planning and Management and Automated Driving and Control, while Passenger, Safety, and parts of Railway Communications have received less attention. RL applications are typically built through highly engineered task formulations rather than shared modelling standards, and the evidence base remains strongly dependent on simulation-based evaluation. The review further identifies persistent limitations in benchmark comparability, generalisation evidence, explainability, and deployment readiness. Overall, RL is now an established research direction in railway decision problems, but the field shows much greater diversity in problem formulation than convergence in validation practice or railway-grade deployment. Further progress will require more comparable evaluation, learning architectures that are easier to audit, stronger evidence on cross-context transfer, and closer alignment with real railway operating conditions.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Birmingham City University",
+            "ror": "00t67pt25"
+          }
+        ],
+        "name": "Hao Ni",
+        "openalex": "A5144386807",
+        "orcid": "https://orcid.org/0000-0003-1025-9043"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Birmingham City University",
+            "ror": "00t67pt25"
+          }
+        ],
+        "name": "Qian Fu",
+        "openalex": "A5144325433",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Birmingham City University",
+            "ror": "00t67pt25"
+          }
+        ],
+        "name": "John Easton",
+        "openalex": "A5144342255",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Birmingham City University",
+            "ror": "00t67pt25"
+          }
+        ],
+        "name": "Ning Zhao",
+        "openalex": "A5144367007",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Birmingham",
+            "ror": "03angcq70"
+          }
+        ],
+        "name": "Theodoros N. Arvanitis",
+        "openalex": "A5144325993",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102165",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2590198226003301/pdf",
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-04",
+    "repository_urls": [],
+    "title": "Reinforcement learning in railway research and applications: A review"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-04_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102165"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:reinforcement-learning",
+        "label": "reinforcement learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00t67pt25",
+        "label": "Birmingham City University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03angcq70",
+        "label": "University of Birmingham"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1025-9043",
+        "label": "Hao Ni"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5144325433",
+        "label": "Qian Fu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5144342255",
+        "label": "John Easton"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5144367007",
+        "label": "Ning Zhao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5144325993",
+        "label": "Theodoros N. Arvanitis"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11568",
+        "is_primary": true,
+        "label": "Railway Systems and Energy Efficiency",
+        "score": 0.564,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10842",
+        "is_primary": false,
+        "label": "Railway Engineering and Dynamics",
+        "score": 0.0621,
+        "subfield": "2210"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13439",
+        "is_primary": false,
+        "label": "Transport and Economic Policies",
+        "score": 0.02,
+        "subfield": "1408"
+      }
+    ]
+  },
+  "first_published": "2026-08-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2009975158",
+      "openalex:W2084154288",
+      "openalex:W2105979811",
+      "openalex:W2300894575",
+      "openalex:W2317389958",
+      "openalex:W2337617318",
+      "openalex:W2518318884",
+      "openalex:W2582437105",
+      "openalex:W2734506266",
+      "openalex:W2790697085",
+      "openalex:W2800510013",
+      "openalex:W2805268279",
+      "openalex:W2891378911",
+      "openalex:W2903898573",
+      "openalex:W2913786173",
+      "openalex:W2925501946",
+      "openalex:W2942285221",
+      "openalex:W2971819557",
+      "openalex:W2989091336",
+      "openalex:W2998622473",
+      "openalex:W3000701615",
+      "openalex:W3005324492",
+      "openalex:W3045372678",
+      "openalex:W3084058509",
+      "openalex:W3088946859",
+      "openalex:W3092419658",
+      "openalex:W3106553992",
+      "openalex:W3136740735",
+      "openalex:W3160897118",
+      "openalex:W3162452620",
+      "openalex:W3168280632",
+      "openalex:W3173493645",
+      "openalex:W3184913445",
+      "openalex:W3194050945",
+      "openalex:W3197374474",
+      "openalex:W3216409334",
+      "openalex:W3217777466",
+      "openalex:W4205359845",
+      "openalex:W4205570856",
+      "openalex:W4212941799",
+      "openalex:W4225160827",
+      "openalex:W4229007983",
+      "openalex:W4248179643",
+      "openalex:W4281710540",
+      "openalex:W4289222458",
+      "openalex:W4295036211",
+      "openalex:W4295298153",
+      "openalex:W4312714128",
+      "openalex:W4312753513",
+      "openalex:W4312880298",
+      "openalex:W4313334360",
+      "openalex:W4313397464",
+      "openalex:W4315778439",
+      "openalex:W4319066528",
+      "openalex:W4319942579",
+      "openalex:W4321609120",
+      "openalex:W4323572274",
+      "openalex:W4328113559",
+      "openalex:W4353108848",
+      "openalex:W4360995390",
+      "openalex:W4368617440",
+      "openalex:W4376631480",
+      "openalex:W4383032182",
+      "openalex:W4383901382",
+      "openalex:W4384161783",
+      "openalex:W4384525886",
+      "openalex:W4385704781",
+      "openalex:W4386025720",
+      "openalex:W4386083221",
+      "openalex:W4386121767",
+      "openalex:W4386746306",
+      "openalex:W4387219463",
+      "openalex:W4387398576",
+      "openalex:W4387695363",
+      "openalex:W4388461005",
+      "openalex:W4388814209",
+      "openalex:W4388918699",
+      "openalex:W4389495199",
+      "openalex:W4389662513",
+      "openalex:W4389722877",
+      "openalex:W4391093051",
+      "openalex:W4391925116",
+      "openalex:W4393466063",
+      "openalex:W4394966837",
+      "openalex:W4395069644",
+      "openalex:W4396785669",
+      "openalex:W4396941569",
+      "openalex:W4398234529",
+      "openalex:W4399039230",
+      "openalex:W4399156793",
+      "openalex:W4399207800",
+      "openalex:W4399451321",
+      "openalex:W4399557470",
+      "openalex:W4400400896",
+      "openalex:W4400647427",
+      "openalex:W4401330625",
+      "openalex:W4401746948",
+      "openalex:W4401817169",
+      "openalex:W4401943657",
+      "openalex:W4402053405",
+      "openalex:W4402231481",
+      "openalex:W4402234654",
+      "openalex:W4402829950",
+      "openalex:W4402834758",
+      "openalex:W4403423963",
+      "openalex:W4404060873",
+      "openalex:W4404239104",
+      "openalex:W4405241618",
+      "openalex:W4405400521",
+      "openalex:W4405641737",
+      "openalex:W4405743069",
+      "openalex:W4406849820",
+      "openalex:W4407203186",
+      "openalex:W4407598229",
+      "openalex:W4408771357"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102165",
+    "openalex": "W7172442045",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:36:06Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005183,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2099,
+      "out": 226
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:36:06Z",
+    "doi": "10.1016/j.trip.2026.102165",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "from 2006",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are limited by a lack of comparable benchmarks, generalizability evidence, and explainability across the reviewed studies.",
+      "what": "This systematic scoping review analyzed 162 studies published between 2006 and March 2025 that apply reinforcement learning (RL) to railway systems. The analysis categorized the literature into six domains, including traffic planning, automated driving, and maintenance, evaluating how researchers formulated states, actions, rewards, and validation environments.",
+      "why": "It establishes that while RL is a growing research area for sequential railway decisions, the field suffers from highly fragmented task formulations, a lack of shared modeling standards, and an over-reliance on simulation-based testing without real-world deployment evidence."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-04",
+  "work_key": "doi:10.1016/j.trip.2026.102165"
+}

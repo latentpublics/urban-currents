@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "In Intelligent Transportation System (ITS), unmanned aerial vehicle (UAV)-based surveillance offers an innovative solution to traffic surveillance with wide coverage and real-time data collection capabilities. In comparison to fixed ground-based infrastructure, UAVs are able to respond to dynamic traffic but present challenges such as vehicle detection at varying altitudes, compensation for motion-induced image variations and efficient processing of high-resolution images. Deep learning has been largely beneficial on improving the detection accuracy; however, for practical deployment, a critical assessment of the accuracy, latency, and harmonization with current transportation systems needs to be carefully considered. This survey reviews recent advancements in the UAV-based traffic monitoring, with a primary focus being deep neural network models for traffic analytics in various urban settings. Three main challenges identified in the literature are ensuring compatibility with traffic control systems, achieving real-time processing to optimize traffic flow, and maintaining robust detection in different environmental conditions. Existing solutions often lack comprehensive frameworks for utilizing UAV captured data to respond to incidents and manage traffic effectively. Future research should focus on optimal detection models, edge processing, and adaptive control integration to improve the responsiveness of urban traffic management.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Jianlin Ye",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Christos Kyrkou",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.07571v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.07571v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-04",
+    "repository_urls": [],
+    "title": "A Review of Vision-Based Vehicle Detection for UAV-Based Traffic Monitoring: Experimental Insights and Future Directions"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-04_2608.07571",
+    "members": [
+      "arxiv:2608.07571"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.9333,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.07571",
+    "doi": "10.1109/tits.2026.3696046",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:36:04Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005021,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1979,
+      "out": 228
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9563,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3825,
+    "relevance": 0.9563
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This review synthesizes recent advancements in deep neural network models for vision-based vehicle detection using unmanned aerial vehicles (UAVs). It evaluates how these models handle varying flight altitudes, motion-induced image variations, and high-resolution data processing, while identifying critical gaps in real-time processing, environmental robustness, and integration with existing traffic control systems.",
+      "why": "It establishes a clear set of technical requirements—specifically around edge processing and adaptive control integration—needed to transition UAV-based traffic monitoring from isolated computer vision benchmarks into active, responsive urban traffic management systems."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-04",
+  "work_key": "arxiv:2608.07571"
+}

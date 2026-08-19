@@ -1,0 +1,192 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Addressing urban blight has seen increased focus in the past 15 years. Assessing urban blight is essential for guiding urban planning, targeting rehabilitation, and safeguarding public health, yet traditional residential blight surveys are difficult to maintain at scale due to the labor-intensive cost and long-term cycle. This study introduced a scalable framework for estimating residential blight using open-source large vision-language models on multiple views. Structured prompts guided models to evaluate housing attributes, including roof integrity, wall damage, and broken or boarded openings, producing both binary assessments and probabilistic estimates of disrepair. To evaluate the performance of these visual assessments, we compared professional human annotations of these features across several models, including an ensemble stacking approach based on XGBoost and a weighted scoring system. Results showed that (i) multiple street views can contribute to the improvement of accuracy, (ii) large vision-language models have different strengths of inference, (iii) the ensemble learner outperforms individual base models, enhancing robustness across all residential conditions and blight assessment. The practical application of the method allows low-cost tracking and management of housing stock conditions, providing a regularly updatable complement to traditional blight surveys.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Xiaohao Yang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Aohua Tian",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Derek Van Berkel",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xu Qiang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mark Lindquist",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "comment": "19 pages, 11 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.01753v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.01753v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-03",
+    "repository_urls": [],
+    "title": "Can Urban Blight Be Accessed with Vision-language Models: A Case Study in Detroit"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-03_2608.01753",
+    "members": [
+      "arxiv:2608.01753"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:gradient-boosting",
+        "label": "gradient boosting"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.01753",
+    "doi": "10.48550/arxiv.2608.01753",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:34:28Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005267,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1981,
+      "out": 255
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8879,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3552,
+    "relevance": 0.8879
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and validation are demonstrated using a case study restricted to a single city.",
+      "what": "This study developed a framework using open-source large vision-language models to assess residential blight by evaluating housing attributes like roof integrity, wall damage, and boarded openings from multiple street-view angles. The models generate binary and probabilistic disrepair estimates, which were validated against professional human annotations in Detroit using an XGBoost ensemble stacking approach and a weighted scoring system.",
+      "why": "It establishes a low-cost, scalable method for tracking housing stock conditions over time, providing municipalities with a automated alternative to labor-intensive and infrequent manual blight surveys."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-03",
+  "work_key": "arxiv:2608.01753"
+}

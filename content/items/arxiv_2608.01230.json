@@ -1,0 +1,198 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Indonesia's relocation of its political and administrative capital from Jakarta to Ibu Kota Nusantara (IKN) has been framed around a Forest City vision, yet rapid construction within the Core Government Area (KIPP) raises concerns over land conversion, vegetation loss, and carbon stock decline. This study applies remote sensing techniques to systematically assess land use and vegetation cover change in KIPP from 2021 to 2026 using PlanetScope SuperDove satellite imagery. Cloud-free mosaics were prepared and analysed through spectral indices, including the Normalised Difference Vegetation Index (NDVI), Normalised Difference Red Edge (NDRE), and Normalised Difference Water Index (NDWI), alongside supervised land use and land cover (LULC) classification using a Support Vector Machine algorithm. Results show substantial environmental transformation, with mean NDVI declined by 17.1%, total carbon stock decreased by 0.28%, developed land expanded by 672%, and total vegetation declined by 18.1%. Vegetation loss was most extensive between 2023 and 2024, although a temporary recovery in NDVI and carbon stock occurred from 2024 to 2025 as active clearing slowed and development shifted towards already-cleared land. Overall, the findings demonstrate that remote sensing provides an effective approach for monitoring the environmental impacts of large-scale urban development, while highlighting the need for higher-resolution, hyperspectral, and SAR-based methods to improve detection of construction stages and plantation-related land cover changes.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Clarissa Rui Min Ong",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Elizabeth Tee Inn Loo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kenneth Woon Hao Soh",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "William Rachmadi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Qiming Zheng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hao Li",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.01230v2",
+      "pdf_url": "https://arxiv.org/pdf/2608.01230v2",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-02",
+    "repository_urls": [],
+    "title": "From Forest to Future Capital: Tracking Land Cover Change in Ibu Kota Nusantara (IKN) from 2021 to 2026 with PlanetScope Imagery"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-02_2608.01230",
+    "members": [
+      "arxiv:2608.01230"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q3630",
+        "label": "Jakarta",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-02",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.01230",
+    "doi": "10.48550/arxiv.2608.01230",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:33:19Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006389,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2177,
+      "out": 347
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9901,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.396,
+    "relevance": 0.9901
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2021 to 2026",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study area is restricted to the Core Government Area of the new capital, and the optical imagery used faced limitations in distinguishing specific construction phases and plantation-related land cover types.",
+      "what": "This study tracked land use and vegetation cover changes in the Core Government Area of Indonesia's new capital, Ibu Kota Nusantara, from 2021 to 2026 using high-resolution PlanetScope SuperDove satellite imagery. Using spectral indices and a Support Vector Machine classifier, the analysis revealed a 672% expansion of developed land, an 18.1% decline in total vegetation, a 17.1% drop in mean NDVI, and a 0.28% decrease in total carbon stock, with the most intense vegetation loss occurring between 2023 and 2024.",
+      "why": "It provides empirical, high-resolution measurements of the environmental trade-offs occurring during the construction of Indonesia's new capital, establishing a baseline that challenges the project's 'Forest City' branding with documented vegetation and carbon losses."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-04",
+  "work_key": "arxiv:2608.01230"
+}

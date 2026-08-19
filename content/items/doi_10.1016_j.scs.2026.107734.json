@@ -1,0 +1,325 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Semantic enrichment extends 3D city models, which already encode object-level semantics such as building parts and surfaces, with thematic attributes that make them suitable for a broad range of urban analyses, and building energy and microclimate studies. This article addresses a frequently missing but vital attribute in such models, namely roof material, by combining high resolution RGB image classification with footprint guided background suppression. Building footprints from OpenStreetMap (OSM) are rasterised into masks that remove non-roof pixels, allowing the classifier to focus on material cues rather than surrounding urban context. An image classification network is then trained to distinguish five roof material classes. Predicted materials are written back into a semantically and geometrically rich City Geography Markup Language (CityGML) dataset as per-building attributes and used to drive a streamlined urban heat island screening workflow. This enables estimation of baseline roof temperatures as well as scenario-based changes under cool-roof and green-roof substitutions. A citywide greening simulation of suitable roof candidates across Hamburg (Germany), Paris (France), and Madrid (Spain) indicates an overall cooling on roofs of approximately 0.83 K across Hamburg, 0.16 K across Paris, and 0.6 K across Madrid in the most favorable scenarios. The proposed pipeline is data-efficient, reproducible, and deployable at city scale. To the best of the authors’ knowledge, this is the first pipeline to explicitly combine footprint-guided roof material classification with city-scale urban heat island screening on CityGML data in a single end-to-end workflow. The full pipeline code is available at: Github.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "HafenCity University Hamburg",
+            "ror": "01fzsd381"
+          }
+        ],
+        "name": "elmehdi kanna",
+        "openalex": "A5123773440",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "HafenCity University Hamburg",
+            "ror": "01fzsd381"
+          }
+        ],
+        "name": "Jannik Matijevic",
+        "openalex": "A5121452987",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "HafenCity University Hamburg",
+            "ror": "01fzsd381"
+          }
+        ],
+        "name": "Lukas Arzoumanidis",
+        "openalex": "A5092212170",
+        "orcid": "https://orcid.org/0000-0001-6668-1695"
+      },
+      {
+        "institutions": [
+          {
+            "name": "HafenCity University Hamburg",
+            "ror": "01fzsd381"
+          }
+        ],
+        "name": "Son H. Nguyen",
+        "openalex": "A5082730351",
+        "orcid": "https://orcid.org/0000-0001-8711-1587"
+      },
+      {
+        "institutions": [
+          {
+            "name": "HafenCity University Hamburg",
+            "ror": "01fzsd381"
+          }
+        ],
+        "name": "Youness Dehbi",
+        "openalex": "A5023864581",
+        "orcid": "https://orcid.org/0000-0003-0133-4099"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.scs.2026.107734",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2210670726006177/pdf",
+      "source_id": "S163634330",
+      "source_name": "Sustainable Cities and Society",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-04",
+    "repository_urls": [],
+    "title": "Semantic enrichment of 3D city models via roof material classification for urban greening and heat island mitigation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-04_10.1016/j.scs.20",
+    "members": [
+      "doi:10.1016/j.scs.2026.107734"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:building-footprint",
+        "label": "building footprints"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:remote-sensing-classification",
+        "label": "remote sensing classification"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01fzsd381",
+        "label": "HafenCity University Hamburg"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5123773440",
+        "label": "elmehdi kanna"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5121452987",
+        "label": "Jannik Matijevic"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6668-1695",
+        "label": "Lukas Arzoumanidis"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8711-1587",
+        "label": "Son H. Nguyen"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0133-4099",
+        "label": "Youness Dehbi"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q90",
+        "label": "Paris",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q2807",
+        "label": "Madrid",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.6347,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11164",
+        "is_primary": false,
+        "label": "Remote Sensing and LiDAR Applications",
+        "score": 0.115,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12698",
+        "is_primary": false,
+        "label": "3D Modeling in Geospatial Applications",
+        "score": 0.0453,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-08-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2039530979",
+      "openalex:W2059406855",
+      "openalex:W2124475118",
+      "openalex:W2130615363",
+      "openalex:W2215173806",
+      "openalex:W2788261116",
+      "openalex:W2947182972",
+      "openalex:W2947698013",
+      "openalex:W3004183582",
+      "openalex:W3004490749",
+      "openalex:W3008295186",
+      "openalex:W3022279047",
+      "openalex:W3042712367",
+      "openalex:W3092414147",
+      "openalex:W3173989036",
+      "openalex:W3177478558",
+      "openalex:W3180772881",
+      "openalex:W3195494505",
+      "openalex:W3204434820",
+      "openalex:W4220794960",
+      "openalex:W4308868784",
+      "openalex:W4311189576",
+      "openalex:W4385989283",
+      "openalex:W4386574369",
+      "openalex:W4390579625",
+      "openalex:W4390605949",
+      "openalex:W4391167823",
+      "openalex:W4391867452",
+      "openalex:W4393098803",
+      "openalex:W4400848149",
+      "openalex:W4404201914",
+      "openalex:W4407087827",
+      "openalex:W4409902353",
+      "openalex:W4410856704",
+      "openalex:W4411264229",
+      "openalex:W4411344591",
+      "openalex:W4412452351",
+      "openalex:W4415931580"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.scs.2026.107734",
+    "openalex": "W7172412037",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:36:06Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006152,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2175,
+      "out": 321
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:36:06Z",
+    "doi": "10.1016/j.scs.2026.107734",
+    "journal": "Sustainable Cities and Society",
+    "source_id": "S163634330",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed an end-to-end pipeline that classifies roof materials into five categories using high-resolution RGB imagery masked by OpenStreetMap building footprints, and writes these attributes back into CityGML datasets. This classified data was integrated into an urban heat island screening workflow to simulate cool-roof and green-roof retrofits across Hamburg, Paris, and Madrid, finding potential average roof temperature reductions of 0.83 K, 0.16 K, and 0.6 K respectively under the most favorable scenarios.",
+      "why": "It establishes a reproducible, data-efficient method to automatically enrich 3D city models with roof material attributes, enabling city-scale microclimate simulations and greening scenario planning without manual material surveys."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-04",
+  "work_key": "doi:10.1016/j.scs.2026.107734"
+}

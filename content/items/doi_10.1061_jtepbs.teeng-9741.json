@@ -1,0 +1,280 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Roadside systems with multiple light detection and ranging (LiDAR) units offer promising capabilities for comprehensive traffic monitoring in intelligent transportation systems. However, they introduce unique challenges due to varying point cloud densities, different measurement qualities, and the need to maintain consistent object detection across overlapping sensor regions. This paper presents multi-objective optimization based 3D object detection for multiple roadside LiDARs (MulDet3D), a novel unsupervised two-stage clustering framework specifically designed for roadside multi-LiDAR object detection. Our approach uniquely combines reliability-weighted background modeling, multi-LiDAR registration, and adaptive density-based clustering with physically constrained hierarchical merging to effectively handle the complexities of multisensor point cloud data. We further introduce a multiobjective particle swarm optimization framework that automatically tunes clustering parameters to achieve optimal performance under different deployment scenarios. Extensive experiments on two real-world multi-LiDAR data sets with different sensor configurations demonstrate that our method significantly outperforms traditional clustering approaches and modern self-supervised methods in challenging scenarios. The results show that our parameter optimization framework substantially improves detection precision, with our method achieving 76.71% AP@0.1 for pedestrians, 70.23% AP@0.3 for small vehicles, and 72.62% AP@0.5 for large vehicles, significantly outperforming baseline methods. These findings highlight the effectiveness of our sensor-aware adaptive approach for roadside traffic monitoring and its potential for practical deployment in intelligent transportation systems without requiring extensive training data. The current study is scoped to dual-LiDAR roadside deployments under normal weather conditions; generalization to larger sensor arrays, adverse weather, and more complex intersection geometries represents important directions for future research.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Massachusetts Amherst",
+            "ror": "0072zz521"
+          }
+        ],
+        "name": "Siyuan Meng",
+        "openalex": "A5073062538",
+        "orcid": "https://orcid.org/0000-0003-3302-6111"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Massachusetts Amherst",
+            "ror": "0072zz521"
+          }
+        ],
+        "name": "Yanan Zhang",
+        "openalex": "A5144246189",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Genalyte (United States)",
+            "ror": "01k8bzw08"
+          }
+        ],
+        "name": "David Raucci",
+        "openalex": "A5093436473",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Massachusetts Amherst",
+            "ror": "0072zz521"
+          }
+        ],
+        "name": "Chengbo Ai",
+        "openalex": "A5008489158",
+        "orcid": "https://orcid.org/0000-0002-3536-9348"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9741",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-03",
+    "repository_urls": [],
+    "title": "MulDet3D: Multiobjective Optimization-Based Unsupervised Object Detection for Multiple Roadside LiDARs"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-03_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-9741"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0072zz521",
+        "label": "University of Massachusetts Amherst"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01k8bzw08",
+        "label": "Genalyte (United States)"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3302-6111",
+        "label": "Siyuan Meng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5144246189",
+        "label": "Yanan Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5093436473",
+        "label": "David Raucci"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3536-9348",
+        "label": "Chengbo Ai"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10036",
+        "is_primary": true,
+        "label": "Advanced Neural Network Applications",
+        "score": 0.7732,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.0528,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12153",
+        "is_primary": false,
+        "label": "Advanced Optical Sensing Technologies",
+        "score": 0.03,
+        "subfield": "3105"
+      }
+    ]
+  },
+  "first_published": "2026-08-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W151377110",
+      "openalex:W2140882991",
+      "openalex:W2908286182",
+      "openalex:W2909746114",
+      "openalex:W2968296999",
+      "openalex:W3034314779",
+      "openalex:W3035172746",
+      "openalex:W3035574168",
+      "openalex:W3160534675",
+      "openalex:W3167095230",
+      "openalex:W3176287975",
+      "openalex:W3193192644",
+      "openalex:W3193782963",
+      "openalex:W3200068634",
+      "openalex:W3213318810",
+      "openalex:W4205694850",
+      "openalex:W4210777927",
+      "openalex:W4247105055",
+      "openalex:W4284892716",
+      "openalex:W4312253363",
+      "openalex:W4316496267",
+      "openalex:W4385312729",
+      "openalex:W4386065252",
+      "openalex:W4388415567",
+      "openalex:W4390663385",
+      "openalex:W4392878736",
+      "openalex:W4402243001",
+      "openalex:W4402271713",
+      "openalex:W4402753702",
+      "openalex:W4409249376",
+      "openalex:W4413155871"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-9741",
+    "openalex": "W7172254598",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:34:31Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006148,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2209,
+      "out": 315
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:34:31Z",
+    "doi": "10.1061/jtepbs.teeng-9741",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework was only tested on dual-LiDAR setups under normal weather conditions, and its performance in larger sensor arrays, adverse weather, or complex intersections remains unverified.",
+      "what": "The researchers developed MulDet3D, an unsupervised two-stage clustering framework for 3D object detection using multiple roadside LiDAR sensors. The system integrates reliability-weighted background modeling, multi-LiDAR registration, and adaptive density-based clustering with a multiobjective particle swarm optimization algorithm to automatically tune parameters. Evaluated on two real-world dual-LiDAR datasets, the method achieved average precision scores of 76.71% for pedestrians, 70.23% for small vehicles, and 72.62% for large vehicles.",
+      "why": "It enables high-accuracy traffic monitoring and object detection across overlapping roadside sensors without requiring the labor-intensive manual labeling of training data."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-03",
+  "work_key": "doi:10.1061/jtepbs.teeng-9741"
+}

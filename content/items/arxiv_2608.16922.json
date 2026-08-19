@@ -1,0 +1,168 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "While mainstream recommender systems (RS) rely on diverse heuristics to rank alternatives, they generally lack a principled account of user welfare (i.e., whether accepting the recommendation will leave the user better off than other alternatives). The problem is particularly acute in activity-based travel behavior, where users incur costs they cannot recoup (i.e., energy, time) regardless of eventual satisfaction. As a result, existing systems may recommend options based on popularity or collaborative filtering, but may still leave users worse off than nearby or self-selected alternatives. We address this gap by introducing a welfare-oriented framework for activity recommendation that evaluates suggestions in terms of net utility, defined as experienced benefit minus travel costs. Specifically, we formalize two operational decision criteria: Positive Utility Probability (PUP) recommends only when the probability of non-negative net utility exceeds a threshold, while Regret Minimization (RM) recommends only when expected regret relative to the user's best organic alternative falls below a tolerance level. To evaluate these criteria, we develop an agent-based simulation in which heterogeneous synthetic travelers interact with multiple RS over time in a spatial environment with realistic travel costs, congestion, and behavioral feedback loops. This framework enables controlled counterfactual evaluations, and offers a practical foundation for designing RS that treat user welfare as a primary objective rather than an incidental byproduct.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ekin Ugurel",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Takahiro Yabe",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.IR",
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.16922v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.16922v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-03",
+    "repository_urls": [],
+    "title": "Towards welfare-oriented recommendations in activity-travel behavior"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-03_2608.16922",
+    "members": [
+      "arxiv:2608.16922"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.16922",
+    "doi": "10.1145/3773078.3831788",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:34:28Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005518,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2041,
+      "out": 273
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9181,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3672,
+    "relevance": 0.9181
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and behavioral feedback loops are evaluated entirely within a synthetic agent-based simulation rather than with real-world user deployment data.",
+      "what": "The study introduces a welfare-oriented framework for activity-travel recommender systems that evaluates suggestions based on net utility, defined as experienced benefit minus travel costs. It formalizes two decision criteria: Positive Utility Probability, which filters recommendations by the likelihood of non-negative net utility, and Regret Minimization, which limits expected regret compared to a user's self-selected alternative. These criteria were evaluated using an agent-based simulation of heterogeneous synthetic travelers navigating a spatial environment with realistic travel costs, congestion, and feedback loops.",
+      "why": "It provides a theoretical and operational foundation for recommender systems that prioritize user welfare over simple popularity or collaborative filtering, preventing systems from suggesting activities where unrecoupable travel costs outweigh the benefits."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-03",
+  "work_key": "arxiv:2608.16922"
+}

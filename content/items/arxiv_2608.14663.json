@@ -1,0 +1,209 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "As global populations age, enhancing neighborhood walkability through inclusive urban design is important for mitigating built environment (BE) barriers that discourage physical activity and social participation among older adults. This study investigates the utility of in-context learning (ICL), using the transformer-based foundation model TabPFN, to determine how BE features influence perceived walkability, as measured by the Neighborhood Environment Walkability Scale (NEWS-A) survey. Using a small-scale dataset (N = 257) comprising a unique demographic of older adults with knee osteoarthritis or a history of falls, TabPFN achieved a macro F1 score of 54.89% for walkability perceptions categorized as Low, Neutral, and High using equal-width binning. This result outperformed optimized, grid-searched baseline models, including Random Forest (45.85%) and XGBoost (50.56%). To interpret these results, we employed Shapley Interaction Quantification (SHAP-IQ) to identify the hierarchical importance of feature interactions. Preliminary results revealed that the model's predictive logic was primarily driven by higher-order interactions. For example, the interaction between average street circuity and the ratio of drivable roads emerged as the primary discriminator of perceived walkability. Neighborhood greenery was found to have substantial predictive importance only when combined with an individual's fear of falling or perception of age-friendliness. Overall, ICL using TabPFN demonstrates superior performance on small-scale datasets, enhancing the fidelity of the resulting interpretive insights. Furthermore, SHAP-IQ provides a synergistic perspective on how higher-order feature interactions drive the model's predictions.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Houhao Liang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kresimir Friganovic",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Joanne Kua",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Noor Hafizah Ismail",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Su Su",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Bryan Yijia Tan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Navrag B. Singh",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Panos Mavros",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "stat.AP"
+    ],
+    "comment": "8 pages, 2 tables, 1 figure",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.14663v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.14663v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-01",
+    "repository_urls": [],
+    "title": "In-Context Learning to Assess Built Environment Impacts on Perceived Neighborhood Walkability Among Mobility-impaired Older Adults"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-01_2608.14663",
+    "members": [
+      "arxiv:2608.14663"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:gradient-boosting",
+        "label": "gradient boosting"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.14663",
+    "doi": "10.48550/arxiv.2608.14663",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:31:41Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006442,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2195,
+      "out": 350
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9765,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3906,
+    "relevance": 0.9765
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "N = 257",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a small, highly specific demographic sample of 257 older adults with mobility impairments, which may limit generalizability to the broader aging population.",
+      "what": "This study applied the TabPFN foundation model using in-context learning to predict perceived neighborhood walkability among 257 older adults with knee osteoarthritis or fall histories. Using survey data from the NEWS-A instrument, the model achieved a macro F1 score of 54.89% in classifying walkability perceptions into three categories, outperforming XGBoost and Random Forest baselines. Shapley Interaction Quantification revealed that higher-order feature interactions, such as street circuity combined with drivable road ratios, drove the model's predictions.",
+      "why": "It demonstrates that transformer-based in-context learning can outperform traditional machine learning baselines on small-scale, highly specialized urban health datasets. Additionally, it reveals that environmental features like neighborhood greenery do not influence walkability perceptions in isolation, but rather in combination with individual psychological factors like a fear of falling."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-01",
+  "work_key": "arxiv:2608.14663"
+}

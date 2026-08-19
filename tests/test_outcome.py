@@ -153,7 +153,9 @@ def test_the_archive_distinguishes_a_quiet_day_from_a_blind_one(repo):
         reasons=["collect.openalex finished FAILED"],
     ))
 
-    html = build_archive().read_text(encoding="utf-8")
+    # `build_archive` returns every page it wrote (one per month, 0R T3);
+    # the landing page is first.
+    html = build_archive()[0].read_text(encoding="utf-8")
     assert "a quiet day" in html
     assert "no issue" in html
     assert 'uc-row--missing' in html

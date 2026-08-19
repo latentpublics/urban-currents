@@ -190,6 +190,9 @@ def archive_stats(rows: list[dict], items: dict[str, Item]) -> dict[str, Any]:
         "range_high": _quantile(published, RANGE_HIGH),
         "range_rule": f"p{int(RANGE_LOW * 100)}-p{int(RANGE_HIGH * 100)} of days that published",
         "total_published": sum(published),
+        # The masthead says "since <month>", and it has to be the archive's own
+        # first month rather than a date written into the template.
+        "first_month": _month_label(min(r["date"] for r in rows)[:7]) if rows else "",
         "journals": _journal_count(),
         "arxiv_categories": len(cfg("arxiv.categories", []) or []),
         "code_total": sum(r["code"] for r in rows),
@@ -208,6 +211,110 @@ def _journal_count() -> int:
     return count()
 
 
+ASSET_DIR = Path(__file__).resolve().parent / "assets"
+
+
+def copy_assets(target_root: Optional[Path] = None) -> list[Path]:
+    """Copy the vendored fonts into the built site.
+
+    They live in the package rather than in `site/`, because `site/` is build
+    output and a clean rebuild would take them with it. Copying on every build
+    means a checkout plus `uc site` produces a complete tree — and means the
+    "every local url() resolves" check is testing the real thing rather than
+    whatever happens to be lying in the working directory.
+    """
+    import shutil
+
+    root = target_root or (paths.ROOT / "site")
+    written: list[Path] = []
+    for src in sorted((ASSET_DIR / "fonts").glob("*")):
+        dst = root / "assets" / "fonts" / src.name
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(src, dst)
+        written.append(dst)
+    return written
+
+
+def site_font_css(prefix: str) -> str:
+    """The `@font-face` block, for **site artefacts only**.
+
+    Takes the relative prefix rather than assuming one, because the pages sit at
+    three depths — `site/index.html`, `site/issues/*.html` and
+    `docs/design-review.html` — and a single hard-coded path would silently 404
+    for two of them while the CSS still parsed. A missing font does not throw;
+    it just quietly gives you Georgia again, which is the bug being fixed.
+
+    Not added to `runs/*/preview.html` or to `email.html`. See the template.
+    """
+    env = _env()
+    return env.get_template("site_fonts.css.j2").render(font_prefix=prefix)
+
+
+def with_fonts(css: str, prefix: str) -> str:
+    """`@font-face` first, then the stylesheet that uses the families."""
+    return f"{site_font_css(prefix)}\n{css}"
+
+
+def spark_bars(rows: list[dict], today: Optional[str] = None) -> list[dict]:
+    """Mockup 5a's fourteen bars, oldest on the left.
+
+    Height is the day's published count against the tallest day in the window,
+    with a floor so a quiet day is still a visible mark rather than nothing —
+    **a bar of zero height would say "no day here", and there was a day here.**
+
+    Three kinds, and they are not three shades of the same claim:
+
+      `published`  an issue went out
+      `quiet`      we looked and there was little to publish
+      `missing`    we could not see the day at all
+
+    `missing` is drawn like `quiet` in the mockup, which has no such day in it.
+    It gets its own class here so the two can never be read as one; a day nobody
+    could see is not a day with nothing in it, and the whole outcome model rests
+    on that distinction.
+    """
+    window = list(reversed(rows))  # oldest first, the way a time axis reads
+    tallest = max([r["published"] for r in window] or [1]) or 1
+    bars = []
+    for r in window:
+        if r.get("missing"):
+            kind, note = "missing", f"not seen — {r.get('reason') or 'the sources did not answer'}"
+        elif r["quiet"] or not r["published"]:
+            kind, note = "quiet", "a quiet day"
+        else:
+            kind, note = "published", f"{r['published']} items"
+        if today and r["date"] == today:
+            kind = "today"
+        height = max(8, round(100 * r["published"] / tallest)) if r["published"] else 12
+        bars.append({
+            "date": r["date"],
+            "kind": kind,
+            "height": height,
+            "label": f"{r['date']}: {note}",
+        })
+    return bars
+
+
+def _tag_shift_label(synthesis) -> str:
+    """What the stat rail says about tag drift — in three states, not two.
+
+    `NO_BASELINE` means the archive behind this day was too thin to compare
+    against. Printing `0` there would claim we looked and found nothing, and
+    this project has now corrected that same mistake four times.
+    """
+    if synthesis is None or not getattr(synthesis, "deviation_status", None):
+        return "not measured"
+    status = synthesis.deviation_status
+    if status != "OK":
+        return "not measured"
+    deviations = list(getattr(synthesis, "deviations", None) or [])
+    if not deviations:
+        return "none"
+    first = deviations[0]
+    tag = getattr(first, "tag", None) or getattr(first, "label", None) or "shift"
+    return f"{tag} {len(deviations)}"
+
+
 def build_home(out: Optional[Path] = None) -> Path:
     issues = load_issues()
     items = item_index()
@@ -217,8 +324,14 @@ def build_home(out: Optional[Path] = None) -> Path:
     latest = next((i for i in reversed(issues) if i.items), None)
     lead_item = items.get(latest.headline.work_key or "") if latest else None
 
+    window = rows[:HOME_ARCHIVE_DAYS]
+    latest_row = next((r for r in window if latest and r["date"] == str(latest.date)), None)
+    bars = spark_bars(window, today=str(latest.date) if latest else None)
+
     env = _env()
-    css = (TEMPLATE_DIR / "base.css.j2").read_text(encoding="utf-8")
+    css = with_fonts(
+        (TEMPLATE_DIR / "base.css.j2").read_text(encoding="utf-8"), "assets/fonts/"
+    )
     html = env.get_template("home.html.j2").render(
         stats=stats,
         rows=rows[:HOME_ARCHIVE_DAYS],
@@ -228,6 +341,12 @@ def build_home(out: Optional[Path] = None) -> Path:
         lead_line=latest.headline.line if latest else None,
         lead_title=lead_item.bibliography.title if lead_item else None,
         synthesis=latest.synthesis if latest else None,
+        latest_code=latest_row["code"] if latest_row else 0,
+        latest_data=latest_row["data"] if latest_row else 0,
+        tag_shift=_tag_shift_label(latest.synthesis if latest else None),
+        spark=bars,
+        spark_from=bars[0]["date"] if bars else "",
+        spark_to=bars[-1]["date"] if bars else "",
         css=Markup(css),
         pipeline_version=PIPELINE_VERSION,
     )
@@ -237,38 +356,99 @@ def build_home(out: Optional[Path] = None) -> Path:
     return target
 
 
-def build_archive(out: Optional[Path] = None) -> Path:
+def _month_buckets(rows: list[dict]) -> list[dict]:
+    """Rows grouped by month, newest month first, each with its own tally."""
+    by_month: dict[str, list[dict]] = {}
+    for row in rows:
+        by_month.setdefault(row["date"][:7], []).append(row)
+    months = []
+    for key, group in sorted(by_month.items(), reverse=True):
+        months.append({
+            "key": key,
+            "label": _month_label(key),
+            "short": _month_short(key),
+            "rows": group,
+            # Counted per month rather than derived in the template, because
+            # "10 issues · 3 quiet" is a claim and the template is not where a
+            # claim should be assembled.
+            "published": sum(1 for r in group if not r["quiet"] and not r["missing"]),
+            "quiet": sum(1 for r in group if r["quiet"]),
+            "missing": sum(1 for r in group if r["missing"]),
+        })
+    return months
+
+
+def _month_tabs(months: list[dict], current: str, root: str) -> list[dict]:
+    """One tab per month. The current one is not a link to itself."""
+    return [
+        {
+            "key": m["key"],
+            "short": m["short"],
+            "current": m["key"] == current,
+            # The newest month lives at `archive.html`, so its tab points there
+            # rather than at a duplicate page nothing else links to.
+            "href": (
+                f"{root}archive.html" if m["key"] == months[0]["key"]
+                else f"{root}archive/{m['key']}.html"
+            ),
+        }
+        for m in months
+    ]
+
+
+def build_archive(out: Optional[Path] = None) -> list[Path]:
+    """The landing page plus one page per month.
+
+    Returns every path written. Mockup 6b's tabs are real navigation: each is an
+    `<a href>` to a page that exists, so the archive works with JavaScript off,
+    in a feed reader, and for a crawler.
+    """
     issues = load_issues()
     items = item_index()
     rows = archive_rows(issues, items)
     stats = archive_stats(rows, items)
-
-    by_month: dict[str, list[dict]] = {}
-    for row in rows:
-        by_month.setdefault(row["date"][:7], []).append(row)
+    months = _month_buckets(rows)
 
     env = _env()
-    css = (TEMPLATE_DIR / "base.css.j2").read_text(encoding="utf-8")
-    html = env.get_template("archive.html.j2").render(
-        stats=stats,
-        months=[
-            {"key": k, "label": _month_label(k), "rows": v}
-            for k, v in sorted(by_month.items(), reverse=True)
-        ],
-        max_items=max([r["published"] for r in rows] or [1]),
-        css=Markup(css),
-        pipeline_version=PIPELINE_VERSION,
-    )
-    target = out or (paths.ROOT / "site" / "archive.html")
-    target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(html, encoding="utf-8", newline="\n")
-    return target
+    raw_css = (TEMPLATE_DIR / "base.css.j2").read_text(encoding="utf-8")
+    written: list[Path] = []
+
+    for i, month in enumerate(months):
+        newest = i == 0
+        # `archive.html` sits beside `assets/`; `archive/2026-07.html` is a
+        # directory deeper, and a font path that is right for one is a 404 for
+        # the other.
+        root = "" if newest else "../"
+        target = (
+            (out or (paths.ROOT / "site" / "archive.html")) if newest
+            else (paths.ROOT / "site" / "archive" / f"{month['key']}.html")
+        )
+        html = env.get_template("archive.html.j2").render(
+            stats=stats,
+            month=month,
+            tabs=_month_tabs(months, month["key"], root),
+            root=root,
+            max_items=max([r["published"] for r in rows] or [1]),
+            css=Markup(with_fonts(raw_css, f"{root}assets/fonts/")),
+            pipeline_version=PIPELINE_VERSION,
+        )
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(html, encoding="utf-8", newline="\n")
+        written.append(target)
+
+    return written
 
 
 _MONTHS = (
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December",
 )
+
+
+def _month_short(key: str) -> str:
+    """`Aug 2026` for the newest year, `Jul` within it — mockup 6b's tab row."""
+    year, month = key.split("-")
+    return f"{_MONTHS[int(month) - 1][:3]} {year}"
 
 
 def _month_label(key: str) -> str:
@@ -297,7 +477,14 @@ def build_design_review(out: Optional[Path] = None) -> Path:
     from ..metrics import Run
     from ..render.preview import render_issue
 
-    css = (TEMPLATE_DIR / "base.css.j2").read_text(encoding="utf-8")
+    # `docs/design-review.html` is what the fonts are actually compared in, so
+    # it gets them too — from its own relative path out of `docs/` and into
+    # `site/assets/`. Without this the one page built for comparing against the
+    # mockup would be the one page still rendering in Georgia.
+    css = with_fonts(
+        (TEMPLATE_DIR / "base.css.j2").read_text(encoding="utf-8"),
+        "../site/assets/fonts/",
+    )
     items = item_index()
 
     def body_of(html: str) -> str:
@@ -313,10 +500,11 @@ def build_design_review(out: Optional[Path] = None) -> Path:
         unreadable = [items[k] for k in issue.unreadable if k in items]
         parts.append((f"Issue {day} — {note}", body_of(render_issue(issue, day_items, unreadable))))
 
+    copy_assets()
     home = build_home(out=paths.ROOT / "site" / "index.html")
-    archive = build_archive(out=paths.ROOT / "site" / "archive.html")
+    archive_pages = build_archive(out=paths.ROOT / "site" / "archive.html")
     parts.append(("Home", body_of(home.read_text(encoding="utf-8"))))
-    parts.append(("Archive", body_of(archive.read_text(encoding="utf-8"))))
+    parts.append(("Archive", body_of(archive_pages[0].read_text(encoding="utf-8"))))
 
     screens = "\n".join(
         f'<section class="uc-review__screen">\n'
@@ -372,6 +560,13 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
             '<main class="uc-issue"',
             _issue_nav(previous, following) + '\n<main class="uc-issue"',
             1,
+        )
+        # The site copy gets the webfonts; `runs/*/preview.html` does not. Same
+        # DOM, same CSS, one extra at-rule block — the preview's whole point is
+        # that it is a single self-contained file, and the site's is that it
+        # looks like the mockup.
+        html = html.replace(
+            "<style>", "<style>\n" + site_font_css("../assets/fonts/"), 1
         )
         path = target_dir / f"{issue.date}.html"
         path.write_text(html, encoding="utf-8", newline="\n")
@@ -498,8 +693,11 @@ def build_robots(out: Optional[Path] = None) -> Path:
 def build_site() -> dict[str, Any]:
     """Everything, in the order the links need."""
     return {
+        # Assets first: the pages reference them, and a build that wrote the
+        # HTML and not the fonts would look finished and render in Georgia.
+        "assets": len(copy_assets()),
         "home": str(build_home()),
-        "archive": str(build_archive()),
+        "archive": [str(p) for p in build_archive()],
         "issues": len(build_issue_pages()),
         "feed": str(build_feed()),
         "sitemap": str(build_sitemap()),

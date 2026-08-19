@@ -1,10 +1,24 @@
-{#- Archive. Same row grammar as the home strip, grouped by month. -#}
+{#- Archive. Same row grammar as the home strip, one page per month.
+
+    Mockup 6b draws month tabs. **Built as real pages rather than tabs over one
+    long list**, for three reasons:
+
+      * No JavaScript, which was the requirement. Anchors would also satisfy
+        that, but they would put all 62 issues — soon several hundred — in one
+        document, which is the opposite of what a tab is for.
+      * A month is a URL. `archive/2026-08.html` can be linked, bookmarked and
+        fed to a crawler; `archive.html#2026-08` is one page pretending.
+      * The row grammar is shared with the home strip through the same include,
+        so the two cannot drift.
+
+    `archive.html` is the landing page and shows the newest month. Every tab is
+    an `<a>` that actually goes somewhere. -#}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Urban Currents — Archive</title>
+<title>Urban Currents — Archive{% if month %} — {{ month.label }}{% endif %}</title>
 <style>
 {{ css }}
 </style>
@@ -13,15 +27,16 @@
 <main class="uc-page">
   <nav class="uc-nav">
     <span class="uc-nav__brand">Urban Currents</span>
-    <a href="index.html">Today</a>
-    <a href="archive.html">Archive</a>
+    <a href="{{ root }}index.html">Today</a>
+    <a href="{{ root }}archive.html">Archive</a>
     <span class="uc-nav__lang">EN</span>
   </nav>
 
   <header class="uc-archive__masthead">
     <h1 class="uc-archive__h1">Archive</h1>
     <p class="uc-archive__summary">
-      {{ stats.published_days }} issues · {{ stats.total_published }} papers published ·
+      {{ stats.published_days }} issues since {{ stats.first_month }} ·
+      {{ stats.total_published }} papers published ·
       {{ stats.quiet_days }} quiet day{{ 's' if stats.quiet_days != 1 }}
       {%- if stats.missing_days %} · {{ stats.missing_days }} day{{ 's' if stats.missing_days != 1 }} we could not see{% endif %}.
       Quiet days are kept: each still reviews what appeared. A day we could not
@@ -29,12 +44,28 @@
     </p>
   </header>
 
-  {% for month in months %}
+  {#- The tabs. The current month is a `span`, not a link to itself — a tab that
+      navigates to the page you are on is a dead control that looks live. -#}
+  <nav class="uc-tabs" aria-label="Archive by month">
+    {% for tab in tabs %}
+    {% if tab.current %}
+    <span class="uc-tabs__tab uc-tabs__tab--current" aria-current="page">{{ tab.short }}</span>
+    {% else %}
+    <a class="uc-tabs__tab" href="{{ tab.href }}">{{ tab.short }}</a>
+    {% endif %}
+    {% endfor %}
+  </nav>
+
+  {% if month %}
   <section class="uc-month">
-    <h2 class="uc-month__label">{{ month.label }}</h2>
-    {% with rows = month.rows, issue_href = "issues/" %}{% include "_archive_rows.html.j2" %}{% endwith %}
+    <h2 class="uc-month__label">
+      {{ month.label }} — {{ month.published }} issue{{ 's' if month.published != 1 }}
+      {%- if month.quiet %} · {{ month.quiet }} quiet{% endif %}
+      {%- if month.missing %} · {{ month.missing }} not seen{% endif %}
+    </h2>
+    {% with rows = month.rows, issue_href = root + "issues/" %}{% include "_archive_rows.html.j2" %}{% endwith %}
   </section>
-  {% endfor %}
+  {% endif %}
 
   <footer class="uc-footer">
     <p class="uc-footer__ilp">Institute for Latent Publics · free, no ads, no metrics</p>

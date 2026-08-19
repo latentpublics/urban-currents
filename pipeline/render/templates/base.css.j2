@@ -50,7 +50,11 @@
   --uc-font-sans: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
                   Helvetica, Arial, Pretendard, "Apple SD Gothic Neo", "Malgun Gothic",
                   "Noto Sans KR", sans-serif;
-  --uc-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  /* IBM Plex Mono was named in the mockup and missing from this stack, so
+     every figure fell to the system mono. It is vendored for the site
+     (T1) and still degrades to the system faces everywhere else. */
+  --uc-font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo,
+                  Consolas, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -421,14 +425,87 @@ body {
   line-height: 1.5;
   margin: 0 0 0.9rem;
 }
-.uc-latest__stats { display: flex; gap: 1.75rem; margin: 0; font-size: 0.8rem; }
+/* Mockup 5a: lead on the left, a 210px stat rail on the right, a hairline
+   between. Flex rather than grid because the only thing 7b changes is the
+   direction, and `flex-direction: column` is the whole mobile story. */
+.uc-latest__cols { display: flex; gap: 2rem; margin: 1rem 0 0; }
+.uc-latest__lede { flex: 1; min-width: 0; }
+.uc-latest__note { font-size: 0.85rem; color: var(--uc-ink-soft); margin: 0.65rem 0 0; line-height: 1.6; }
+.uc-latest__read { font-size: 0.8rem; color: var(--uc-accent); text-decoration: none; }
+.uc-latest__stats {
+  flex: 0 0 210px;
+  border-left: 1px solid var(--uc-line);
+  padding-left: 1.5rem;
+  margin: 0;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+.uc-latest__stats div { display: flex; justify-content: space-between; gap: 0.75rem; line-height: 2; }
 .uc-latest__stats dt { color: var(--uc-meta); }
-.uc-latest__stats dd { margin: 0.1rem 0 0; font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+.uc-latest__stats dd { margin: 0; font-weight: 600; }
+.uc-latest__accent { color: var(--uc-accent); }
+.uc-latest__quiet { color: var(--uc-faint); font-weight: 400; }
+
+/* The 14-day strip. `align-items: flex-end` so bars grow from the baseline,
+   and each slot is a full-height flex column so a short bar still occupies its
+   share of the width — 14 slots, always, including the days we could not see. */
+.uc-spark { display: flex; gap: 6px; align-items: flex-end; height: 56px; margin: 0 0 0.4rem; }
+.uc-spark__slot { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+.uc-spark__bar--published { background: var(--uc-accent); }
+.uc-spark__bar--today { background: var(--uc-ink); }
+.uc-spark__bar--quiet { background: var(--uc-line); }
+/* A day nobody could see is not a quiet day. Same weight on the page, a
+   different mark: hatched rather than solid, so the two are distinguishable
+   without colour and without reading the label. */
+.uc-spark__bar--missing {
+  background: repeating-linear-gradient(
+    45deg, var(--uc-line), var(--uc-line) 2px, transparent 2px, transparent 4px);
+  border: 1px solid var(--uc-line);
+}
+.uc-spark__caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.7rem;
+  color: var(--uc-faint);
+  margin: 0 0 1.25rem;
+  font-variant-numeric: tabular-nums;
+}
+/* Available to a screen reader, absent from the visual layer. The bars carry
+   their meaning in colour and height; this is the same meaning in words. */
+.uc-visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
 
 .uc-archive { border-top: 2px solid var(--uc-ink); padding-top: 0.9rem; margin-bottom: 2.5rem; }
 .uc-archive__masthead { padding: 1.75rem 0 1.25rem; }
 .uc-archive__h1 { font-family: var(--uc-font-serif); font-size: 1.6rem; margin: 0; }
 .uc-archive__summary { font-size: 0.9rem; color: var(--uc-ink-soft); margin: 0.5rem 0 0; }
+/* Mockup 6b's month tabs. Underline rather than a filled pill: the archive is
+   a list of dates, and a row of buttons would give it more furniture than the
+   thing it navigates. The current tab is a span, so it has no hover and no
+   pointer — it is a label, not a dead control. */
+.uc-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  border-bottom: 1px solid var(--uc-line);
+  margin: 0 0 1.25rem;
+  padding: 0 0 0.5rem;
+  font-size: 0.82rem;
+}
+.uc-tabs__tab { color: var(--uc-meta); text-decoration: none; padding-bottom: 0.45rem; }
+.uc-tabs__tab:hover { color: var(--uc-ink); }
+.uc-tabs__tab--current {
+  color: var(--uc-ink);
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 0 var(--uc-ink);
+}
 .uc-month { margin-bottom: 1.75rem; }
 .uc-month__label {
   margin: 0 0 0.4rem;
@@ -497,6 +574,19 @@ body {
   .uc-row { flex-wrap: wrap; gap: 0.25rem 0.6rem; }
   .uc-row__lead { flex: 1 1 100%; white-space: normal; }
   .uc-columns { flex-direction: column; gap: 1.25rem; }
+  /* 7b: the rail stops being a rail. It drops below the lead and becomes a
+     row of figures, so the left border would be a line across the top of
+     nothing — it goes, and a rule above takes its place. */
+  .uc-latest__cols { flex-direction: column; gap: 1.1rem; }
+  .uc-latest__stats {
+    flex: 1 1 auto;
+    border-left: 0;
+    border-top: 1px solid var(--uc-line);
+    padding-left: 0;
+    padding-top: 0.75rem;
+  }
+  .uc-spark { height: 40px; gap: 3px; }
+  .uc-spark__caption span:nth-child(2) { display: none; }
   .uc-latest__stats { gap: 1.25rem; }
 }
 

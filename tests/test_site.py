@@ -124,19 +124,24 @@ def test_no_number_in_the_chrome_is_written_into_the_template(repo):
 
 def test_the_pages_make_no_external_request(repo):
     _seed(repo, [_item("arxiv:2608.00001", ["data"])])
-    for path in (build_home(), build_archive()):
+    for path in (build_home(), *build_archive()):
         html = path.read_text(encoding="utf-8")
         assert "<link" not in html
         assert "<script" not in html
         assert "url(http" not in html
-        assert "@font-face" not in html
+        # `@font-face` is present and self-hosted since 0R; what must not
+        # appear is a URL to another origin, which `url(http` above
+        # already covers. Every local reference is checked in
+        # `tests/test_site_links.py`.
+        assert "fonts.googleapis" not in html
+        assert "fonts.gstatic" not in html
         assert html.count("<h1") == 1
 
 
 def test_a_quiet_day_says_so_in_words_not_only_in_colour(repo):
     _seed(repo, [_item("arxiv:2608.00001", [])])
     store.save_issue(Issue(date=date(2026, 8, 12), items=[], quiet_day=True))
-    html = build_archive().read_text(encoding="utf-8")
+    html = build_archive()[0].read_text(encoding="utf-8")
     assert "a quiet day" in html
 
 
@@ -167,7 +172,7 @@ def test_a_retired_issue_is_in_no_aggregate(repo):
 
     dates = [r["date"] for r in archive_rows()]
     assert "2026-08-14" not in dates
-    html = build_archive().read_text(encoding="utf-8")
+    html = build_archive()[0].read_text(encoding="utf-8")
     assert "2026-08-14" not in html
 
 

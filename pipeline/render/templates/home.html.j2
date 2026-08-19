@@ -43,21 +43,38 @@
   </header>
 
   {% if latest %}
+  {#- Two columns, per mockup 5a: the lead on the left and a 210px stat rail on
+      the right with a rule between them. It was one column, which is most of
+      why the page did not look like the mockup. Flex rather than grid so 7b's
+      mobile behaviour — the rail dropping below the lead as a row — is one
+      `flex-direction` change. -#}
   <section class="uc-latest">
     <div class="uc-latest__head">
-      <h2 class="uc-latest__title">Latest issue</h2>
-      <span class="uc-latest__date">{{ latest.date }}</span>
+      <h2 class="uc-latest__title">Latest issue — {{ latest.date }}</h2>
+      <a class="uc-latest__read" href="issues/{{ latest.date }}.html">Read →</a>
     </div>
-    {#- The headline line whole. It is a full sentence and there is room for it;
-        cutting it mid-clause to fit a mockup's short noun phrase would be
-        rewriting the pipeline's output in the template. -#}
-    <p class="uc-latest__lead">{{ lead_line }}</p>
-    <p class="uc-latest__more"><a href="issues/{{ latest.date }}.html">read the issue</a></p>
-    <dl class="uc-latest__stats">
-      <div><dt>published</dt><dd>{{ latest.scan_meta.items_published }}</dd></div>
-      <div><dt>scanned</dt><dd>{{ latest.scan_meta.candidates_scanned }}</dd></div>
-      <div><dt>no open abstract</dt><dd>{{ latest.scan_meta.unreadable_count }}</dd></div>
-    </dl>
+    <div class="uc-latest__cols">
+      <div class="uc-latest__lede">
+        {#- The headline line whole. It is a full sentence and there is room for
+            it; cutting it mid-clause in the template would be rewriting the
+            pipeline's output at render time. -#}
+        <p class="uc-latest__lead">{{ lead_line }}</p>
+        {% if synthesis and synthesis.paragraph %}
+        <p class="uc-latest__note">{{ synthesis.paragraph }}</p>
+        {% endif %}
+      </div>
+      <dl class="uc-latest__stats">
+        <div><dt>items</dt><dd>{{ latest.scan_meta.items_published }}</dd></div>
+        <div><dt>candidates scanned</dt><dd>{{ latest.scan_meta.candidates_scanned }}</dd></div>
+        <div><dt>with code / data</dt><dd class="uc-latest__accent">{{ latest_code }} / {{ latest_data }}</dd></div>
+        <div><dt>no open abstract</dt><dd class="uc-latest__quiet">{{ latest.scan_meta.unreadable_count }}</dd></div>
+        {#- Three states, not two. A day with no shift and a day whose baseline
+            was too thin to compare against are different facts, and printing
+            `0` for the second is the mistake this project keeps auditing out
+            of itself. -#}
+        <div><dt>tag shift</dt><dd>{{ tag_shift }}</dd></div>
+      </dl>
+    </div>
   </section>
   {% endif %}
 
@@ -66,6 +83,30 @@
       <h2 class="uc-archive__title">Archive — last {{ rows|length }} days</h2>
       <a class="uc-archive__all" href="archive.html">all issues</a>
     </div>
+    {#- Mockup 5a's 14-bar histogram. Height is proportional to what was
+        published; the colour says which kind of day it was.
+
+        **The colour is never the only carrier.** Every bar has a `title` and an
+        `aria-label` naming the day, its count and its kind, so a reader who
+        cannot see the accent — or is reading with a screen reader — gets the
+        same three facts. That is 0j's verification 7, and it is why the caption
+        under the strip spells out what grey means in words. -#}
+    <div class="uc-spark" role="img"
+         aria-label="Published items per day over the last {{ rows|length }} days.">
+      {% for bar in spark %}
+      <div class="uc-spark__slot">
+        <div class="uc-spark__bar uc-spark__bar--{{ bar.kind }}"
+             style="height: {{ bar.height }}%"
+             title="{{ bar.label }}"></div>
+        <span class="uc-visually-hidden">{{ bar.label }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="uc-spark__caption">
+      <span>{{ spark_from }}</span>
+      <span>quiet days in grey — each still reviews what appeared</span>
+      <span>{{ spark_to }}</span>
+    </p>
     {% with issue_href = "issues/" %}{% include "_archive_rows.html.j2" %}{% endwith %}
   </section>
 

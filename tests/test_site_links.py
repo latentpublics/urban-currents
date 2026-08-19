@@ -98,8 +98,23 @@ def test_the_whole_site_fetches_nothing(repo):
     ]
     for page in pages:
         html = page.read_text(encoding="utf-8")
-        for pattern in (r"<link\b", r"<script\b", r"<img\b", r"@font-face", r"@import"):
+        # The property is **"fetches nothing from anywhere else"**, and the
+        # original list checked for `@font-face` as a proxy for it. Since 0R
+        # the site self-hosts three OFL faces out of `site/assets/fonts/`,
+        # which is same-origin and makes no request off the box — so the
+        # check now looks for what it always meant: a URL pointing
+        # somewhere else. `preview.html` and `email.html` are covered by
+        # their own test below and still carry no `@font-face` at all.
+        for pattern in (r"<link\b", r"<script\b", r"<img\b", r"@import",
+                        r"url\(\s*['\"]?https?:", r"fonts\.googleapis",
+                        r"fonts\.gstatic"):
             assert not re.search(pattern, html, re.I), f"{page.name} matches {pattern}"
+
+        # And every local `url(...)` has to resolve, or the page renders in
+        # the fallback face while every check above still passes — which is
+        # exactly the failure this batch was called to fix.
+        for ref in re.findall(r'url\("([^"]+)"\)', html):
+            assert (page.parent / ref).resolve().exists(), f"{page.name}: {ref}"
 
 
 def test_links_stay_relative_without_a_base_url(repo):

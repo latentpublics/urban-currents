@@ -32,7 +32,13 @@ FETCHING = (
     re.compile(r"<script\b", re.I),
     re.compile(r"<img\b", re.I),
     re.compile(r"<iframe\b", re.I),
-    re.compile(r"@font-face", re.I),
+    # Was `@font-face`. The site self-hosts three OFL faces from
+    # `site/assets/fonts/` since 0R — same origin, no request off the box —
+    # so the pattern is now the thing it always stood for: a URL somewhere
+    # else. `preview.html` and `email.html` still carry no `@font-face`,
+    # which `test_the_preview_is_one_self_contained_file` asserts directly.
+    re.compile(r"url\(\s*['\"]?https?:", re.I),
+    re.compile(r"fonts\.(googleapis|gstatic)", re.I),
     re.compile(r"url\(\s*['\"]?https?:", re.I),
     re.compile(r"@import", re.I),
 )
@@ -74,7 +80,7 @@ def _pages(repo) -> dict[str, str]:
         "preview": web,
         "email": to_email(web),
         "home": build_home().read_text(encoding="utf-8"),
-        "archive": build_archive().read_text(encoding="utf-8"),
+        "archive": build_archive()[0].read_text(encoding="utf-8"),
         "design-review": build_design_review().read_text(encoding="utf-8"),
     }
 

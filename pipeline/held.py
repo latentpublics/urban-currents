@@ -42,7 +42,7 @@ from pathlib import Path
 from typing import Any, Iterable, Optional
 
 from . import paths
-from .config import cfg
+from .config import cfg, vocab_file
 from .metrics import utcnow
 from .models import Item
 
@@ -62,7 +62,22 @@ from .models import Item
 # to evaluate.
 RULE_OFF_SUBFIELD = "off_subfield"
 
-# ...and it is **recorded, not enforced**, because it was measured and it fails.
+# ...and it is **enforced again**, against a list derived from articles.
+#
+# The original rule failed because of its list, not its logic: it asked whether
+# a paper's subfield was in `openalex.whitelist_subfields`, which was built to
+# choose *journals*. Measured, that lost 27 of 44 keeps — 61.4% — and took 59%
+# and 79% of two backfilled days.
+#
+# `vocab/paper_subfields.yaml` is derived from our own labels instead
+# (phase 0N, P2). Under it the same rule loses **6.8%** of keeps and withholds
+# **0.2217** across the backfilled archive, both inside the pre-registered
+# limits (10% and 0.30), so it removes items again.
+#
+# It is a weak gate by construction — it excludes only the four subfields our
+# labels have seen at least three times and rejected more often than not. That
+# is the point: its job is to stop taking our own subject matter, not to filter
+# hard.
 #
 # Against the 75 labelled journal items, gating on the paper's own subfield
 # loses **27 of 44 keeps (61.4%)** and leaves no day with enough labelled items
@@ -134,7 +149,37 @@ def enabled() -> bool:
 
 
 def whitelist_subfield_ids() -> set[str]:
+    """The journal-selection list. Kept for reference; **not** the gate."""
     return {str(s) for s in (cfg("openalex.whitelist_subfields", []) or [])}
+
+
+def rejected_subfield_ids() -> set[str]:
+    """Subfields our own labels have seen enough of, and rejected.
+
+    **A deny-list, not an allow-list, and the direction is the whole point.**
+
+    The first attempt at this used the derived *inclusion* list — the 42
+    subfields our labels have actually seen. That silently withheld every paper
+    in a subfield the labels had never seen at all, which is the harshest
+    possible treatment of the most complete absence of evidence, and the exact
+    opposite of the rule it claimed to implement ("thin evidence is not evidence
+    against"). A test asking about an unseen subfield caught it.
+
+    We have evidence that **four** subfields are not ours — seen at least three
+    times and kept less than half the time. We have no evidence about the
+    hundreds we have never labelled, and acting on evidence we do not have is
+    what `openalex.whitelist_subfields` did wrong in the first place.
+
+    Empty if the file is missing, which means the rule holds nothing back —
+    failing open, because a gate built on a list that failed to load should not
+    quietly start rejecting things.
+    """
+    doc = vocab_file("paper_subfields.yaml") or {}
+    return {
+        str(entry["id"])
+        for entry in (doc.get("excluded") or [])
+        if isinstance(entry, dict) and entry.get("id")
+    }
 
 
 def paper_subfield(item: Item) -> Optional[str]:
@@ -194,14 +239,17 @@ def inspect(
     title = item.bibliography.title or ""
 
     if source == "journal" and selected:
-        wanted = whitelist_subfield_ids()
+        rejected = rejected_subfield_ids()
         own = paper_subfield(item)
-        if wanted and own and own not in wanted:
+        if rejected and own and own in rejected:
             return Suspicion(
                 work_key=item.work_key,
                 rule=RULE_OFF_SUBFIELD,
                 kind=WITHHELD if _off_subfield_withholds() else NEAR_MISS,
-                detail=f"the paper's own subfield {own} is outside {sorted(wanted)}",
+                detail=(
+                    f"the paper's own subfield {own} is one our labels have "
+                    f"seen and rejected {sorted(rejected)}"
+                ),
                 score=score,
                 source=source,
                 title=title,
@@ -237,6 +285,29 @@ def inspect(
 # --------------------------------------------------------------------------
 # Writing and reading the queue
 # --------------------------------------------------------------------------
+
+
+def over_warn_threshold(published: int, withheld: int) -> Optional[str]:
+    """A day that withholds too much has replaced the editorial policy.
+
+    59% and 79% were not issues, they were wreckage. Returns a sentence when the
+    rate crosses `held.withheld_rate_warn`, and **nothing is blocked** — refusing
+    to publish on this would lose the whole day instead of part of it. The point
+    is that the drift becomes visible on the day it happens rather than three
+    batches later.
+    """
+    denom = published + withheld
+    if not denom:
+        return None
+    rate = withheld / denom
+    limit = float(cfg("held.withheld_rate_warn", 0.30))
+    if rate <= limit:
+        return None
+    return (
+        f"held: withheld {withheld} of {denom} ({rate:.2%}), over the {limit:.0%} "
+        f"line — the suspicion rules are acting as the editorial policy, not as "
+        f"a filter"
+    )
 
 
 def record(d: date, suspicions: Iterable[Suspicion], published: int) -> Optional[Path]:

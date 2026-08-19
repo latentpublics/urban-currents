@@ -575,6 +575,9 @@ def stage_select(
     selected.sort(key=lambda it: (-it.scores.headline, -it.scores.relevance, it.work_key))
 
     held_queue.record(run.metrics.date, suspicions, published=len(selected))
+    warning = held_queue.over_warn_threshold(len(selected), len(withheld_keys))
+    if warning:
+        run.error(warning)
     run.count("held_withheld", len(withheld_keys))
     run.count("held_near_miss", len(suspicions) - len(withheld_keys))
 

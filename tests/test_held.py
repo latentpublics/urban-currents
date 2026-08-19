@@ -58,32 +58,28 @@ def _item(key: str, subfield: str | None = "3305", score: float = 0.9) -> Item:
 # --------------------------------------------------------------------------
 
 
-def test_a_paper_outside_the_whitelist_subfields_is_filed_not_withheld(repo):
-    """R1 records and does not remove, because it was measured and it fails.
+def test_a_subfield_our_labels_have_never_seen_is_let_through(repo):
+    """Thin evidence is not evidence against.
 
-    Gating on the paper's own subfield loses 27 of 44 keeps in the labels — 61%
-    — and took 59% and 79% of two backfilled days. `whitelist_subfields` was
-    built to pick journals, and OpenAlex scatters individual urban articles
-    across a dozen other subfields, so it is the wrong instrument for judging an
-    article (phase 0L, N3).
+    The derived list includes any subfield fewer than three labelled papers
+    carry, because excluding on absence of evidence is the measured-zero
+    mistake this project keeps making (phase 0N, P2). 2500 is unseen, so it
+    passes rather than being withheld.
     """
-    materials = _item("doi:10.1/materials", subfield="2500")
-    suspicion = inspect(materials, "journal", selected=True)
+    unseen = _item("doi:10.1/unseen", subfield="2500")
 
-    assert suspicion is not None
-    assert suspicion.rule == RULE_OFF_SUBFIELD
-    assert suspicion.kind == NEAR_MISS      # filed for judgement, not removed
-    assert "2500" in suspicion.detail
+    assert inspect(unseen, "journal", selected=True) is None
 
 
-def test_r1_can_be_made_to_withhold_again_by_config(repo, monkeypatch):
-    """One line turns enforcement back on, once the subfield list is re-derived."""
+def test_enforcement_can_be_switched_off_by_config(repo, monkeypatch):
+    """One line demotes the rule back to recording, if it ever misbehaves again."""
     import pipeline.held as held_mod
 
-    monkeypatch.setattr(held_mod, "_off_subfield_withholds", lambda: True)
-    suspicion = inspect(_item("doi:10.1/materials", subfield="2500"), "journal", selected=True)
+    monkeypatch.setattr(held_mod, "_off_subfield_withholds", lambda: False)
+    suspicion = inspect(_item("doi:10.1/rejected", subfield="2208"), "journal", selected=True)
 
-    assert suspicion.kind == WITHHELD
+    assert suspicion is not None
+    assert suspicion.kind == NEAR_MISS
 
 
 def test_the_whole_queue_can_be_switched_off(repo, monkeypatch):
@@ -321,12 +317,10 @@ def test_a_filed_item_does_not_block_the_issue(repo, monkeypatch):
     selected = run_stages.stage_select(run)
     keys = {it.work_key for it in selected}
 
-    # R1 files rather than removes, so the day keeps everything...
+    # 2500 is a subfield our labels have never seen, so it publishes...
     assert "doi:10.1/materials" in keys
-    # ...and the doubt is still on the record for someone to judge.
-    doc = held.load(DAY)
-    assert doc["near_miss"] == 1
-    assert doc["items"][0]["rule"] == RULE_OFF_SUBFIELD
+    # ...and nothing was withheld, because the day held no doubtful item.
+    assert held.load(DAY) is None
 
 
 def test_a_held_item_is_not_carried_into_a_later_issue(repo):
@@ -380,3 +374,51 @@ def test_a_sitting_is_capped_but_the_queue_is_not(repo):
     assert result["remaining"] == 40
     assert any("Showing 25" in line for line in said)
     assert any("still waiting" in line for line in said)
+
+
+def test_a_day_that_withholds_too_much_warns_without_blocking(repo):
+    """59% and 79% were not issues, they were wreckage.
+
+    The warning makes that visible on the day. It does not block publication —
+    refusing to publish would lose the whole day instead of part of it.
+    """
+    from pipeline.held import over_warn_threshold
+
+    assert over_warn_threshold(published=17, withheld=3) is None       # 0.15
+    loud = over_warn_threshold(published=4, withheld=15)               # 0.79
+    assert loud is not None
+    assert "78.95%" in loud and "editorial policy" in loud
+
+
+def test_the_gate_denies_rather_than_allows(repo):
+    """A deny-list, and the direction is the whole point.
+
+    An allow-list of the 42 subfields our labels have seen would withhold every
+    paper in a subfield never labelled — the harshest treatment of the most
+    complete absence of evidence, and the opposite of the rule it implements.
+    We have evidence about four subfields; we have none about the hundreds we
+    have not labelled.
+    """
+    from pipeline.held import rejected_subfield_ids, whitelist_subfield_ids
+
+    rejected = rejected_subfield_ids()
+
+    assert whitelist_subfield_ids() == {"3305", "3313", "3322"}, "journal list must not move"
+    assert rejected == {"1408", "2208", "2306", "3312"}
+    assert len(rejected) < 10, "a deny-list, not an allow-list wearing a disguise"
+
+
+def test_a_paper_in_a_rejected_subfield_is_withheld_again(repo):
+    """Enforcement is back on, against the derived list."""
+    rejected = _item("doi:10.1/rejected", subfield="2208")
+    suspicion = inspect(rejected, "journal", selected=True)
+
+    assert suspicion is not None
+    assert suspicion.rule == RULE_OFF_SUBFIELD
+    assert suspicion.kind == WITHHELD
+
+
+def test_a_paper_our_labels_keep_is_no_longer_withheld(repo):
+    """2305 was taken by the old rule and our labels keep 4 of 4."""
+    kept = _item("doi:10.1/heat", subfield="2305")
+    assert inspect(kept, "journal", selected=True) is None

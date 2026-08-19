@@ -356,7 +356,17 @@ held:
   # Set true to enforce, once the subfield list has been re-derived from
   # articles. Until then the rule still fills the labelling queue, which is
   # what it is actually good for.
-  off_subfield_withholds: false
+  # Enforced again as of phase 0N (P2), against `vocab/paper_subfields.yaml`
+  # rather than the journal-selection list. Pre-registered conditions, both met:
+  # keep loss 0.0676 (limit 0.10, old rule 0.614) and withheld rate 0.2217
+  # (limit 0.30) over the backfilled archive.
+  off_subfield_withholds: true
+
+  # A day that withholds more than this is not filtering, it is replacing the
+  # editorial policy — 59% and 79% were not issues, they were wreckage. It does
+  # NOT block publication: refusing to publish would lose the whole day instead
+  # of part of it. It records a warning so the drift is visible.
+  withheld_rate_warn: 0.30
 
   # R2: the band where the classifier is closest to a coin flip. These sit below
   # the 0.80 publication floor and are not published either way — they are held

@@ -1,0 +1,79 @@
+# Paper-level subfields — which OpenAlex subfields our own labels say are ours.
+#
+# NOT `openalex.whitelist_subfields`, and that list is untouched. That one
+# chooses *journals* (3305, 3313, 3322) and using it to judge *articles* is a
+# category error: `Landscape and Urban Planning` is an urban journal whose
+# papers carry environmental-science, ecology and public-health subfields.
+#
+# Measured cost of the confusion (phase 0L, N3): gating articles on the
+# journal list lost 27 of 44 keeps — 61.4% — and left no day with enough
+# label coverage to compute a precision at all.
+#
+# Derived here from our own labels (phase 0N, P2), by a rule written before
+# the numbers were read:
+#
+#   include a subfield if fewer than 3 labelled papers carry it (thin
+#   evidence is not evidence against — excluding on absence is the
+#   measured-zero mistake this project keeps making), OR if its keep rate is
+#   at least 0.5, the keep rate of a coin flip.
+#
+# Result: 42 subfields in, 4 out.
+#   keep loss   0.0676  (limit 0.1, old rule 0.614)
+#   withheld    0.1394  (limit 0.3)
+#
+# This is a weak gate on purpose. It removes only subfields our labels have
+# actually seen and actually rejected; everything unseen passes. Its value is
+# not that it filters hard, it is that it stops filtering out our own subject.
+#
+# Re-derive with: uv run python scripts/paper_subfields.py
+
+subfields:
+  - id: "1110"    # keep 3/4
+  - id: "1202"    # thin evidence
+  - id: "1208"    # thin evidence
+  - id: "1311"    # thin evidence
+  - id: "1702"    # thin evidence
+  - id: "1705"    # thin evidence
+  - id: "1707"    # thin evidence
+  - id: "1710"    # thin evidence
+  - id: "1711"    # thin evidence
+  - id: "1803"    # thin evidence
+  - id: "2002"    # thin evidence
+  - id: "2202"    # thin evidence
+  - id: "2203"    # keep 3/4
+  - id: "2205"    # thin evidence
+  - id: "2206"    # thin evidence
+  - id: "2207"    # thin evidence
+  - id: "2209"    # keep 2/4
+  - id: "2212"    # thin evidence
+  - id: "2213"    # keep 4/4
+  - id: "2214"    # thin evidence
+  - id: "2215"    # keep 7/9
+  - id: "2302"    # thin evidence
+  - id: "2303"    # thin evidence
+  - id: "2305"    # keep 4/4
+  - id: "2307"    # keep 3/4
+  - id: "2308"    # thin evidence
+  - id: "2725"    # thin evidence
+  - id: "2916"    # thin evidence
+  - id: "3103"    # thin evidence
+  - id: "3109"    # thin evidence
+  - id: "3205"    # thin evidence
+  - id: "3207"    # thin evidence
+  - id: "3305"    # thin evidence
+  - id: "3311"    # thin evidence
+  - id: "3313"    # keep 13/13
+  - id: "3315"    # thin evidence
+  - id: "3317"    # thin evidence
+  - id: "3320"    # thin evidence
+  - id: "3322"    # keep 3/5
+  - id: "3404"    # thin evidence
+  - id: "3600"    # thin evidence
+  - id: "3616"    # thin evidence
+
+# Excluded — seen often enough to judge, and judged against:
+excluded:
+  - id: "3312"    # keep 1/6 = 0.1667
+  - id: "2208"    # keep 2/5 = 0.4
+  - id: "2306"    # keep 1/4 = 0.25
+  - id: "1408"    # keep 1/3 = 0.3333

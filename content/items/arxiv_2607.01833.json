@@ -1,0 +1,174 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The global development of Library and Information Science (LIS) is influenced by various factors such as the economy, society, culture, discipline, tradition, and more. Consequently, the research methods of LIS vary greatly among countries. To better understand these differences, we conducted a study of 5,281 research papers from 81 countries published in internationally representative journals over the past thirty years. We manually annotated the research methods used in some articles through content analysis, and subsequently developed and trained a deep learning model for automatic classification of research methods. Using this method, we conducted a comparative analysis of the usage of research methods in different countries. Our findings reveal that there are differences in the research methods used across countries, with each country having its unique research profile and distribution of research methods. Even when investigating the same topic, research methods can differ between countries. Our study also uncovers that there are differences between the national and international distribution of research methods, these differences have decreased over the past 30 years. By highlighting the characteristics of discipline development in various countries from the perspective of research methods, our study can help guide discipline development at the national level. This study provides insights into the usage trends of research methods across different countries and highlights the unique characteristics of discipline development in each country. This information can be valuable in promoting collaboration and understanding between countries and in guiding discipline development at the national level.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Chengzhi Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Liang Tian",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.DL",
+      "cs.CL",
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.01833v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.01833v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-02",
+    "repository_urls": [],
+    "title": "Non-synchronism in Global Usage of Research Methods in Library and Information Science from 1990 to 2019"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-02_2607.01833",
+    "members": [
+      "arxiv:2607.01833"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:text-analysis",
+        "label": "text analysis"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-02",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.01833",
+    "doi": "10.1007/s11192-023-04740-3",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:49:00Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.0,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2099,
+      "out": 229
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9145,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3658,
+    "relevance": 0.9145
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "1990 to 2019",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The classification model's performance metrics and specific accuracy rates are not disclosed in the abstract.",
+      "what": "The study analyzed 5,281 research papers from 81 countries published in international Library and Information Science (LIS) journals between 1990 and 2019. The researchers manually annotated a subset of articles to train a deep learning model that automatically classified the research methods used across the entire dataset to compare national methodological profiles.",
+      "why": "It demonstrates that methodological preferences for the same research topics vary significantly by country, while also showing that the gap between national and international methodological distributions has steadily narrowed over the past three decades."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-02",
+  "work_key": "arxiv:2607.01833"
+}

@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The complexity of waste disposal regulations across European countries poses significant challenges for the residents and hinders the transition to a Circular Economy. In Germany, the proper sorting and disposal of household waste remains challenging across municipalities. Consequently, substantially reducing incorrectly disposed waste is vital for improving waste management and advancing the Circular Economy. AI-based waste sorting solutions can support residents through user-friendly tools, such as mobile applications, that guide proper waste disposal. To be effective in supporting the Circular Economy, however, these solutions must be configurable to reflect the specific waste sorting scheme of individual municipalities in Germany. In the scope of this work, an evaluation and analysis are performed of two prominent classification strategies: OvA and OvR. The research uses a dataset constructed in alignment with the waste categories and sorting scheme of the city of Goslar in Germany. Moreover, this work aims to extend beyond the overall performance by examining the behavior of OvA and OvR classification strategies in identifying samples likely to be misclassified. These classification strategies are compared by applying varying confidence thresholds to identify uncertain samples for subsequent human review. This evaluation aims to balance the number of misclassifications against the human effort required for data annotation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Mohammed Fahad Ali",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dominique Briechle",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Marit Briechle-Mathiszig",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Tobias Geger",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Andreas Rausch",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.02230v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.02230v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-02",
+    "repository_urls": [],
+    "title": "Efficient Waste Sorting for Circular Economy: A Confidence-guided comparison between One-Vs-All and One-Vs-Rest Classification Strategies with Human-in-the-Loop for Automated Waste Sorting"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-02_2607.02230",
+    "members": [
+      "arxiv:2607.02230"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-02",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.02230",
+    "doi": "10.48550/arxiv.2607.02230",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T07:49:00Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.0,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2029,
+      "out": 271
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9083,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3633,
+    "relevance": 0.9083
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The evaluation is limited to a single dataset tailored specifically to the waste sorting scheme of one German city, Goslar.",
+      "what": "This study evaluates and compares One-Vs-All (OvA) and One-Vs-Rest (OvR) classification strategies for automated waste sorting using a custom dataset aligned with the municipal waste categories of Goslar, Germany. The researchers applied varying confidence thresholds to both models to identify uncertain, high-risk samples and route them to human annotators, balancing classification accuracy against human review effort.",
+      "why": "It demonstrates how automated waste sorting tools can be customized to localized municipal regulations while incorporating a human-in-the-loop mechanism to manage classification uncertainty and reduce sorting errors."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-02",
+  "work_key": "arxiv:2607.02230"
+}

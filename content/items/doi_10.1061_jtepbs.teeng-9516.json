@@ -1,0 +1,354 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Multi-intersection traffic signal control (MTSC) plays a crucial role in intelligent transportation systems. Multiagent reinforcement learning (MARL) has shown great promise in enabling MTSC. However, existing MARL-based MTSC approaches primarily focus on capturing the spatial relationships among intersections, often neglecting the dynamic spatiotemporal correlations that emerge from fluctuating traffic flows. In MTSC scenarios, traffic flow propagates across intersections over time, indicating that the historical traffic information of intersections inherently reflects the spatial relationships among traffic signals. To address this, we propose a novel algorithm called spatiotemporal interaction–aware multiagent reinforcement learning (STIA-MARL), which leverages historical traffic flows to effectively learn the dynamic relationships among intersections. From a modeling perspective, we construct a new graph structure tailored to the traffic network, altering the adjacency relationships at the model level, to improve the adaptability of the shared policy network to different intersections and enhance model performance. Experimental results on both synthetic and real-world data sets demonstrated that STIA-MARL achieved at least an 11.5% improvement in average travel time compared with state-of-the-art methods.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Lanzhou University of Technology",
+            "ror": "03panb555"
+          }
+        ],
+        "name": "M Wang",
+        "openalex": "A5079264255",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Lanzhou University of Technology",
+            "ror": "03panb555"
+          }
+        ],
+        "name": "Kangkang Yang",
+        "openalex": "A5088526356",
+        "orcid": "https://orcid.org/0000-0002-9871-0611"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Lanzhou University of Technology",
+            "ror": "03panb555"
+          }
+        ],
+        "name": "Zhiwen Wang",
+        "openalex": "A5058712930",
+        "orcid": "https://orcid.org/0000-0002-4866-029X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Lanzhou University of Technology",
+            "ror": "03panb555"
+          }
+        ],
+        "name": "Jingxiao Zeng",
+        "openalex": "A5002516329",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Lanzhou University of Technology",
+            "ror": "03panb555"
+          }
+        ],
+        "name": "Long Li",
+        "openalex": "A5139889373",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Lanzhou University of Technology",
+            "ror": "03panb555"
+          }
+        ],
+        "name": "Yaoke Shi",
+        "openalex": "A5061723439",
+        "orcid": "https://orcid.org/0000-0001-8533-3901"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Lanzhou University of Technology",
+            "ror": "03panb555"
+          }
+        ],
+        "name": "Boyan Shen",
+        "openalex": "A5022050272",
+        "orcid": "https://orcid.org/0000-0002-1574-1958"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Lanzhou University of Technology",
+            "ror": "03panb555"
+          }
+        ],
+        "name": "Youwei Pan",
+        "openalex": "A5139866135",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Lanzhou University of Technology",
+            "ror": "03panb555"
+          }
+        ],
+        "name": "Senhai Fan",
+        "openalex": "A5139921571",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9516",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-02",
+    "repository_urls": [],
+    "title": "Spatial–Temporal Interaction–Aware Multiagent Reinforcement Learning for Traffic Signal Control"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-02_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-9516"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03panb555",
+        "label": "Lanzhou University of Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5079264255",
+        "label": "M Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9871-0611",
+        "label": "Kangkang Yang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4866-029X",
+        "label": "Zhiwen Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5002516329",
+        "label": "Jingxiao Zeng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139889373",
+        "label": "Long Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8533-3901",
+        "label": "Yaoke Shi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1574-1958",
+        "label": "Boyan Shen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139866135",
+        "label": "Youwei Pan"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139921571",
+        "label": "Senhai Fan"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": true,
+        "label": "Traffic control and management",
+        "score": 0.8949,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0776,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.0053,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-07-02",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W5525483",
+      "openalex:W1639167632",
+      "openalex:W2015817066",
+      "openalex:W2019974229",
+      "openalex:W2031530760",
+      "openalex:W2088595989",
+      "openalex:W2296589564",
+      "openalex:W2567068623",
+      "openalex:W2761656023",
+      "openalex:W2809148419",
+      "openalex:W2884585870",
+      "openalex:W2899695704",
+      "openalex:W2904065660",
+      "openalex:W2915117209",
+      "openalex:W2945991855",
+      "openalex:W2964749398",
+      "openalex:W2966588692",
+      "openalex:W2983178256",
+      "openalex:W2991995523",
+      "openalex:W3013184722",
+      "openalex:W3014845548",
+      "openalex:W3096739060",
+      "openalex:W3110101394",
+      "openalex:W3190316676",
+      "openalex:W3200607907",
+      "openalex:W4297380497",
+      "openalex:W4386736827",
+      "openalex:W4399618329",
+      "openalex:W4409014172",
+      "openalex:W4412102495"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-9516",
+    "openalex": "W7167028837",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T07:49:04Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005209,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1973,
+      "out": 250
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T07:49:04Z",
+    "doi": "10.1061/jtepbs.teeng-9516",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed a multiagent reinforcement learning algorithm, STIA-MARL, for multi-intersection traffic signal control that incorporates historical traffic flows to capture dynamic spatiotemporal correlations. The model uses a custom graph structure to modify adjacency relationships, which improves how a shared policy network adapts to different intersections. Testing on synthetic and real-world datasets showed at least an 11.5% reduction in average travel time compared to existing state-of-the-art methods.",
+      "why": "It demonstrates that incorporating historical flow data directly into the spatial modeling of traffic networks, rather than relying on static spatial relationships, significantly improves the efficiency of coordinated traffic signal control."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-02",
+  "work_key": "doi:10.1061/jtepbs.teeng-9516"
+}

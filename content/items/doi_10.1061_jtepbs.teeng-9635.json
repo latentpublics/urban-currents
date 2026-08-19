@@ -1,0 +1,293 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Accurate passenger demand prediction is crucial for efficient metro operations, yet remains challenging due to complex network structures, temporal variability, and travel uncertainties. This paper proposes a novel spatiotemporal Kalman filter network (ST-KFNet) framework for metro demand forecasting by integrating an autoregressive integrated moving average (ARIMA) module, a Kalman filter (KF) module, and a convolutional neural network (CNN)-based variational autoencoder (VAE) module. ARIMA constructs the state prediction equation, further enhanced by a neural-network-based predictor. CNN-based VAE captures spatial dependencies and temporal dynamics, refining the KF’s state transition for improved accuracy. The KF then provides real-time, online predictions, effectively handling both stationary and nonstationary uncertainties. By combining the strengths of statistical modeling and deep learning, ST-KFNet achieves high predictive accuracy under normal conditions and robust performance under uncertainty, such as unplanned station closures. Empirical evaluations on a metro data set from Hangzhou show that ST-KFNet consistently outperforms existing benchmarks, including graph convolutional network (GCN)-based methods as well as ARIMA, KF, and CNN-based VAE models.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Ajing Su",
+        "openalex": "A5140508484",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Bing Wu",
+        "openalex": "A5100761165",
+        "orcid": "https://orcid.org/0000-0002-5607-9665"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Nanjing University of Information Science and Technology",
+            "ror": "02y0rxk19"
+          }
+        ],
+        "name": "Xiaoxing Fang",
+        "openalex": "A5140496147",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9635",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-12",
+    "repository_urls": [],
+    "title": "ST-KFNet-Based Framework for Online Metro Passenger OD Demand Forecasting under Uncertainty"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-12_10.1061/jtepbs.t",
+    "members": [
+      "doi:10.1061/jtepbs.teeng-9635"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:cnn",
+        "label": "convolutional neural network"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:statistical-modeling",
+        "label": "statistical modeling"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03rc6as71",
+        "label": "Tongji University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02y0rxk19",
+        "label": "Nanjing University of Information Science and Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5140508484",
+        "label": "Ajing Su"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5607-9665",
+        "label": "Bing Wu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140496147",
+        "label": "Xiaoxing Fang"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.8514,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0993,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0211,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-07-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1983123393",
+      "openalex:W1988580225",
+      "openalex:W2024558842",
+      "openalex:W2077613353",
+      "openalex:W2085987121",
+      "openalex:W2090192376",
+      "openalex:W2156206597",
+      "openalex:W2572939427",
+      "openalex:W2575351252",
+      "openalex:W2588759037",
+      "openalex:W2613322775",
+      "openalex:W2695874637",
+      "openalex:W2750425604",
+      "openalex:W2756203131",
+      "openalex:W2851543567",
+      "openalex:W2900471328",
+      "openalex:W2904430055",
+      "openalex:W2912985636",
+      "openalex:W2947812485",
+      "openalex:W2956452632",
+      "openalex:W2969543086",
+      "openalex:W2969825018",
+      "openalex:W2972093239",
+      "openalex:W2973065886",
+      "openalex:W3021182685",
+      "openalex:W3029687524",
+      "openalex:W3032362243",
+      "openalex:W3119249947",
+      "openalex:W3119688269",
+      "openalex:W3127874529",
+      "openalex:W3136115914",
+      "openalex:W3183282730",
+      "openalex:W3193570342",
+      "openalex:W4213430114",
+      "openalex:W4220752966",
+      "openalex:W4310769220",
+      "openalex:W4312551069",
+      "openalex:W4316466969",
+      "openalex:W4389230177",
+      "openalex:W4390610714",
+      "openalex:W4396542368",
+      "openalex:W4405752252",
+      "openalex:W4409283306",
+      "openalex:W4413023108"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1061/jtepbs.teeng-9635",
+    "openalex": "W7168093287",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:03:32Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005429,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1975,
+      "out": 274
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:03:32Z",
+    "doi": "10.1061/jtepbs.teeng-9635",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.3333,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.5067,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance and generalizability are demonstrated using a dataset from only a single metro network in Hangzhou.",
+      "what": "The researchers developed ST-KFNet, a forecasting framework that combines ARIMA, a Kalman filter, and a CNN-based variational autoencoder to predict online metro passenger origin-destination demand. Tested on a metro dataset from Hangzhou, China, the model integrates statistical and deep learning methods to capture spatial and temporal dynamics while handling travel uncertainties.",
+      "why": "The framework enables real-time, online metro demand forecasting that remains robust during unexpected disruptions, such as unplanned station closures, outperforming traditional GCN, ARIMA, and standard deep learning benchmarks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-12",
+  "work_key": "doi:10.1061/jtepbs.teeng-9635"
+}

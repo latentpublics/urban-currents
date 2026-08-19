@@ -1,0 +1,379 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study investigates public engagement with SAE Level 4 robotaxi services based on more than 170,000 publicly available comments about Apollo Go in Wuhan, China. We use a role-sensitive acceptance–trust–action lens, where role is defined at the comment level (i.e., passenger, pedestrian, motorist) to reflect how the same person may adopt different positions across posts. Role stances are inferred at scale using a RoBERTa classifier fine-tuned on a hand-labeled subset, and Sentence-BERT embeddings are used for semantic clustering to distinguish acceptance evaluations, trust assessments, and action orientations. The analysis examines role-specific discourse patterns and how evaluative language aligns with perceived feasibility and constraints. Results reveal distinct engagement configurations. Pedestrians focus on safety, accountability, and intent legibility, with resistance outweighing trial-oriented language. Passengers express positive ride experiences and trust, but routine use is constrained by service usability frictions such as access rules, operating boundaries, and first–last-mile coordination. Motorists adopt a more defensive stance, citing mixed-traffic unpredictability, congestion externalities, and distributive or occupational concerns. Our study offers a role-structured account of robotaxi engagement and a scalable digital-trace pipeline that complements survey evidence by locating integration bottlenecks under real operations, informing governance and service design as robotaxi deployment moves toward city scale.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Newcastle University",
+            "ror": "01kj2bm70"
+          }
+        ],
+        "name": "Xinyue Hao",
+        "openalex": "A5034734584",
+        "orcid": "https://orcid.org/0000-0001-7136-9612"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Baidu (China)",
+            "ror": "03vs3wt56"
+          }
+        ],
+        "name": "Shuai Huang",
+        "openalex": "A5123193240",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Cardiff University",
+            "ror": "03kk7td41"
+          }
+        ],
+        "name": "Emrah Demir",
+        "openalex": "A5059391208",
+        "orcid": "https://orcid.org/0000-0002-4726-2556"
+      },
+      {
+        "institutions": [
+          {
+            "name": "King Fahd University of Petroleum and Minerals",
+            "ror": "03yez3163"
+          }
+        ],
+        "name": "Ahmad Al-Hanbali",
+        "openalex": "A5140549954",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Eindhoven University of Technology",
+            "ror": "02c2kyt77"
+          }
+        ],
+        "name": "Tom Van Woensel",
+        "openalex": "A5046266340",
+        "orcid": "https://orcid.org/0000-0003-4766-2346"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.tra.2026.105153",
+      "pdf_url": null,
+      "source_id": "S159637997",
+      "source_name": "Transportation Research Part A Policy and Practice",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-13",
+    "repository_urls": [],
+    "title": "Who moves with the robotaxi? A role-based NLP sentiment analysis of acceptance, trust, and action in autonomous mobility"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-13_10.1016/j.tra.20",
+    "members": [
+      "doi:10.1016/j.tra.2026.105153"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.9,
+        "id": "method:text-analysis",
+        "label": "text analysis"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01kj2bm70",
+        "label": "Newcastle University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03vs3wt56",
+        "label": "Baidu (China)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03kk7td41",
+        "label": "Cardiff University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03yez3163",
+        "label": "King Fahd University of Petroleum and Minerals"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02c2kyt77",
+        "label": "Eindhoven University of Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7136-9612",
+        "label": "Xinyue Hao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5123193240",
+        "label": "Shuai Huang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4726-2556",
+        "label": "Emrah Demir"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140549954",
+        "label": "Ahmad Al-Hanbali"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4766-2346",
+        "label": "Tom Van Woensel"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11431",
+        "is_primary": true,
+        "label": "Action Observation and Synchronization",
+        "score": 0.2519,
+        "subfield": "3207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10709",
+        "is_primary": false,
+        "label": "Social Robot Interaction and HRI",
+        "score": 0.1883,
+        "subfield": "3207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11883",
+        "is_primary": false,
+        "label": "Embodied and Extended Cognition",
+        "score": 0.1305,
+        "subfield": "2805"
+      }
+    ]
+  },
+  "first_published": "2026-07-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2052172805",
+      "openalex:W2140463603",
+      "openalex:W2140854401",
+      "openalex:W2167683317",
+      "openalex:W2470364505",
+      "openalex:W2885800163",
+      "openalex:W2905387033",
+      "openalex:W2952370363",
+      "openalex:W2953211038",
+      "openalex:W2963697717",
+      "openalex:W2970641574",
+      "openalex:W2980016443",
+      "openalex:W3004393777",
+      "openalex:W3118459927",
+      "openalex:W3191085100",
+      "openalex:W3193859398",
+      "openalex:W3201838927",
+      "openalex:W4281552318",
+      "openalex:W4291109519",
+      "openalex:W4310983610",
+      "openalex:W4380304829",
+      "openalex:W4386747382",
+      "openalex:W4387339914",
+      "openalex:W4388921300",
+      "openalex:W4389143803",
+      "openalex:W4389310960",
+      "openalex:W4389569412",
+      "openalex:W4390968223",
+      "openalex:W4391720525",
+      "openalex:W4392370252",
+      "openalex:W4392432793",
+      "openalex:W4393254477",
+      "openalex:W4393871329",
+      "openalex:W4396571978",
+      "openalex:W4396808899",
+      "openalex:W4399012123",
+      "openalex:W4399060692",
+      "openalex:W4399236764",
+      "openalex:W4399300603",
+      "openalex:W4399458387",
+      "openalex:W4400443478",
+      "openalex:W4400607225",
+      "openalex:W4400873337",
+      "openalex:W4401077836",
+      "openalex:W4401304488",
+      "openalex:W4401377674",
+      "openalex:W4402585672",
+      "openalex:W4403171454",
+      "openalex:W4403265058",
+      "openalex:W4403451076",
+      "openalex:W4403997126",
+      "openalex:W4404599010",
+      "openalex:W4405012332",
+      "openalex:W4406689609",
+      "openalex:W4406697187",
+      "openalex:W4407162580",
+      "openalex:W4407583938",
+      "openalex:W4407665531",
+      "openalex:W4410718779",
+      "openalex:W4411053620",
+      "openalex:W4411171960",
+      "openalex:W4411182457",
+      "openalex:W4411330189",
+      "openalex:W4412427790",
+      "openalex:W4412758069",
+      "openalex:W4413095421",
+      "openalex:W4413289847",
+      "openalex:W4413430348",
+      "openalex:W4415256176",
+      "openalex:W4415471461",
+      "openalex:W4415601817",
+      "openalex:W4415749372",
+      "openalex:W4415977137",
+      "openalex:W4416087401",
+      "openalex:W4416260600",
+      "openalex:W4416418722",
+      "openalex:W4416666720",
+      "openalex:W4417002648",
+      "openalex:W7084032351",
+      "openalex:W7105046241",
+      "openalex:W7123341827",
+      "openalex:W7124463050",
+      "openalex:W7125793620",
+      "openalex:W7126214173",
+      "openalex:W7127923821",
+      "openalex:W7131299413"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.tra.2026.105153",
+    "openalex": "W7168156324",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:04:30Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005944,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2085,
+      "out": 313
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:04:30Z",
+    "doi": "10.1016/j.tra.2026.105153",
+    "journal": "Transportation Research Part A Policy and Practice",
+    "source_id": "S159637997",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on social media comments from a single Chinese city, which may reflect localized regulatory conditions, platform demographics, and cultural attitudes toward autonomous driving.",
+      "what": "The study analyzed over 170,000 public comments regarding the Apollo Go robotaxi service in Wuhan, China, using a RoBERTa classifier and Sentence-BERT embeddings. It categorized public sentiment and discourse patterns based on three distinct situational roles: passengers, pedestrians, and motorists. The analysis revealed that while passengers generally report positive experiences, their routine use is hindered by operational boundaries and usability frictions, whereas pedestrians and motorists express significant concerns regarding safety, traffic unpredictability, and congestion.",
+      "why": "It provides a scalable, digital-trace methodology to capture real-world user and non-user feedback under actual operating conditions, moving beyond traditional survey methods to pinpoint specific integration bottlenecks for autonomous vehicles in dense urban environments."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-13",
+  "work_key": "doi:10.1016/j.tra.2026.105153"
+}

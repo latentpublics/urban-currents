@@ -1,0 +1,427 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Heat exposure connects the built environment and public health, directly shaping the livability and sustainability of urban areas. Fully understanding the spatial heterogeneity of heat exposure and its driving factors is therefore a vital prerequisite for climate-adaptive urban planning. However, most planning-oriented studies rely on land surface temperature (LST), and whether LST adequately represents human heat exposure and how it differs from physiologically relevant heat stress remains insufficiently examined. Here, adopting Landsat-retrieved 30-m LST and GPU-accelerated 1-m universal thermal climate index (UTCI) in Singapore, this study establishes a comprehensive “Modeling-Comparing-Assessing” framework to systematically evaluate the spatial and mechanistic discrepancies between the two metrics. We further investigate pronounced non-stationary and threshold-based quantitative relationships of the two metrics with urban factors by employing a novel geographically weighted XGBoost (GW-XGBoost) and generalized additive model (GAM) workflow. Our results demonstrate notable discrepancies in spatial patterns of LST and UTCI, along with substantial spatial heterogeneity in how 2D and 3D urban factors impact these two thermal metrics, as revealed by explainable GW-XGBoost models (the test R 2 = 0.855 for LST and 0.905 for UTCI, respectively). Crucially, spatially explicit SHAP interprets that sky view factor plays a central role in explaining UTCI variability but exhibits a comparatively marginal independent contribution to LST, indicating that LST inadequately captures shading-driven and radiative processes governing actual human heat stress. Notably, SHAP-GAM analysis indicates that higher albedo is associated with increased UTCI. These novel findings provide model-informed planning implications for integrating physiologically relevant thermal indices to support targeted heat risk management and climate-adaptive urban planning.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "National University of Singapore",
+            "ror": "01tgyzw49"
+          },
+          {
+            "name": "The Cambridge Centre for Advanced Research and Education in Singapore",
+            "ror": "02f3vh107"
+          }
+        ],
+        "name": "Yuan Wang",
+        "openalex": "A5100344894",
+        "orcid": "https://orcid.org/0000-0003-1442-2952"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University City Science Center",
+            "ror": "00s5a4h94"
+          },
+          {
+            "name": "University of Pennsylvania",
+            "ror": "00b30xv10"
+          }
+        ],
+        "name": "Shengao Yi",
+        "openalex": "A5101696729",
+        "orcid": "https://orcid.org/0009-0008-2377-155X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University City Science Center",
+            "ror": "00s5a4h94"
+          },
+          {
+            "name": "University of Pennsylvania",
+            "ror": "00b30xv10"
+          }
+        ],
+        "name": "Xiaojiang Li",
+        "openalex": "A5100686305",
+        "orcid": "https://orcid.org/0000-0002-4208-1641"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Urbana University",
+            "ror": "04kp3hw27"
+          }
+        ],
+        "name": "Pengyuan Liu",
+        "openalex": "A5100714941",
+        "orcid": "https://orcid.org/0000-0002-5443-5910"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Peking University",
+            "ror": "02v51f717"
+          }
+        ],
+        "name": "Zhiwei Yang",
+        "openalex": "A5140539109",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Cambridge",
+            "ror": "013meh722"
+          }
+        ],
+        "name": "Ronita Bardhan",
+        "openalex": "A5053802889",
+        "orcid": "https://orcid.org/0000-0001-5336-4084"
+      },
+      {
+        "institutions": [
+          {
+            "name": "National University of Singapore",
+            "ror": "01tgyzw49"
+          }
+        ],
+        "name": "Rudi Stouffs",
+        "openalex": "A5026379314",
+        "orcid": "https://orcid.org/0000-0002-4200-5833"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.scs.2026.107659",
+      "pdf_url": null,
+      "source_id": "S163634330",
+      "source_name": "Sustainable Cities and Society",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-13",
+    "repository_urls": [],
+    "title": "From physical surfaces to human-centric heat stress: LST and UTCI heat mapping reveals nonlinear effects of urban morphology"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-13_2604.22433",
+    "members": [
+      "arxiv:2604.22433"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01tgyzw49",
+        "label": "National University of Singapore"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02f3vh107",
+        "label": "The Cambridge Centre for Advanced Research and Education in Singapore"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00s5a4h94",
+        "label": "University City Science Center"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00b30xv10",
+        "label": "University of Pennsylvania"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04kp3hw27",
+        "label": "Urbana University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02v51f717",
+        "label": "Peking University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:013meh722",
+        "label": "University of Cambridge"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1442-2952",
+        "label": "Yuan Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0008-2377-155X",
+        "label": "Shengao Yi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4208-1641",
+        "label": "Xiaojiang Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5443-5910",
+        "label": "Pengyuan Liu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140539109",
+        "label": "Zhiwei Yang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5336-4084",
+        "label": "Ronita Bardhan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4200-5833",
+        "label": "Rudi Stouffs"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q334",
+        "label": "Singapore",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.9596,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.0027,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11371",
+        "is_primary": false,
+        "label": "Wind and Air Flow Studies",
+        "score": 0.0026,
+        "subfield": "2305"
+      }
+    ]
+  },
+  "first_published": "2026-07-13",
+  "graph": {
+    "cited_by_count": 1,
+    "referenced_works": [
+      "openalex:W1672381717",
+      "openalex:W1965114096",
+      "openalex:W1971794754",
+      "openalex:W1975324114",
+      "openalex:W1986328771",
+      "openalex:W1995333520",
+      "openalex:W1996020380",
+      "openalex:W1996075252",
+      "openalex:W1997181432",
+      "openalex:W2009632456",
+      "openalex:W2020716461",
+      "openalex:W2024081693",
+      "openalex:W2029291334",
+      "openalex:W2030872936",
+      "openalex:W2035184138",
+      "openalex:W2036967309",
+      "openalex:W2040482799",
+      "openalex:W2043962305",
+      "openalex:W2045416988",
+      "openalex:W2063286310",
+      "openalex:W2070844476",
+      "openalex:W2078045149",
+      "openalex:W2149187735",
+      "openalex:W2165108312",
+      "openalex:W2165476985",
+      "openalex:W2295598076",
+      "openalex:W2344443431",
+      "openalex:W2553600830",
+      "openalex:W2593888945",
+      "openalex:W2605847660",
+      "openalex:W2621900912",
+      "openalex:W2765315715",
+      "openalex:W2789694445",
+      "openalex:W2913573677",
+      "openalex:W2953090158",
+      "openalex:W3020943541",
+      "openalex:W3042785817",
+      "openalex:W3174622350",
+      "openalex:W3203145978",
+      "openalex:W4283788062",
+      "openalex:W4292722327",
+      "openalex:W4294117813",
+      "openalex:W4295785860",
+      "openalex:W4313528978",
+      "openalex:W4322632023",
+      "openalex:W4327685867",
+      "openalex:W4383851885",
+      "openalex:W4385389234",
+      "openalex:W4385398147",
+      "openalex:W4388448546",
+      "openalex:W4389110037",
+      "openalex:W4390768602",
+      "openalex:W4392245177",
+      "openalex:W4392450360",
+      "openalex:W4392651113",
+      "openalex:W4393238350",
+      "openalex:W4394935570",
+      "openalex:W4396835900",
+      "openalex:W4396906969",
+      "openalex:W4399107366",
+      "openalex:W4400235266",
+      "openalex:W4401054924",
+      "openalex:W4403062440",
+      "openalex:W4403301644",
+      "openalex:W4404201914",
+      "openalex:W4405235203",
+      "openalex:W4405248627",
+      "openalex:W4405298812",
+      "openalex:W4406506122",
+      "openalex:W4407765234",
+      "openalex:W4408963793",
+      "openalex:W4410370608",
+      "openalex:W4410457099",
+      "openalex:W4410461368",
+      "openalex:W4410856704",
+      "openalex:W4411404215",
+      "openalex:W4412519765",
+      "openalex:W4413920830",
+      "openalex:W4414084165",
+      "openalex:W4414817379",
+      "openalex:W4414826832",
+      "openalex:W4415321324",
+      "openalex:W4415436717",
+      "openalex:W4416291624",
+      "openalex:W7104543841",
+      "openalex:W7124427401"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2604.22433",
+    "doi": "10.1016/j.scs.2026.107659",
+    "openalex": "W7168178972",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:04:30Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006305,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2259,
+      "out": 324
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:04:30Z",
+    "doi": "10.1016/j.scs.2026.107659",
+    "journal": "Sustainable Cities and Society",
+    "source_id": "S163634330",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical findings and threshold relationships are derived from a single, highly dense tropical city-state, which may limit direct application to different climate zones or urban forms.",
+      "what": "This study models and compares land surface temperature (LST) at 30-meter resolution and the universal thermal climate index (UTCI) at 1-meter resolution across Singapore. Using a geographically weighted XGBoost and generalized additive model workflow, it evaluates how 2D and 3D urban morphology factors influence both metrics, achieving test R-squared values of 0.855 for LST and 0.905 for UTCI.",
+      "why": "It demonstrates that LST is an inadequate proxy for actual human heat stress because it fails to capture shading-driven and radiative processes, showing specifically that sky view factor dominates UTCI variability but has little effect on LST, and that higher albedo is unexpectedly associated with increased UTCI."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-13",
+  "work_key": "arxiv:2604.22433"
+}

@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Turning movement counts are essential for intersection-level traffic management, yet their collection remains predominantly manual due to the cost of per-camera region annotation. This paper presents an unsupervised pipeline that identifies entry and exit regions directly from raw vehicle trajectories extracted via object detection and multi-object tracking, requiring no manual annotation, camera calibration, or prior knowledge of intersection geometry. Unlike trajectory clustering methods that classify individual trajectories using pairwise similarity and must be re-executed on every new batch, the proposed pipeline clusters initial and terminal point locations to produce persistent spatial region polygons that classify future trajectories by point-in-polygon containment at linear cost. The pipeline comprises six sequential steps, five of which introduce configurable parameters evaluated through a systematic statistical analysis spanning 17,100 pipeline executions across 9 surveillance cameras capturing dense heterogeneous traffic in Bengaluru, India, and 10 sequences from the UA-DETRAC benchmark dataset. Both parametric and nonparametric testing frameworks identify three consistently significant parameters and yield an empirically grounded recommended configuration. Under this configuration, the pipeline achieves a median classification error of 3.4% across all 25 Bengaluru cameras, including 16 held-out locations, with a median per-turning-movement GEH of 2.43. Compared with two trajectory clustering baselines, the proposed pipeline exhibits greater stability across camera views and lower computational cost, at the expense of higher median error. Extended evaluation demonstrates that calibration clips of at least 60 minutes and peak-traffic selection further improve region estimation quality.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Parikshit Singh Rathore",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Vishwajeet Pattanaik",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Punit Rathore",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": "14 pages, 7 figures; Supplementary Material: 7 pages, 3 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.10949v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.10949v2",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-12",
+    "repository_urls": [],
+    "title": "Unsupervised Detection of Entry and Exit Regions from Vehicle Trajectories for Camera-Agnostic Turning Movement Counts"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-12_2607.10949",
+    "members": [
+      "arxiv:2607.10949"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:clustering",
+        "label": "clustering"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.10949",
+    "doi": "10.48550/arxiv.2607.10949",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:03:29Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006397,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2135,
+      "out": 355
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8604,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3442,
+    "relevance": 0.8604
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "While more computationally efficient and stable across different camera views than trajectory clustering baselines, this pipeline yields a higher median classification error.",
+      "what": "An unsupervised pipeline was developed to identify intersection entry and exit regions directly from raw vehicle trajectories without requiring manual camera calibration or geometric annotations. The system clusters the start and end points of trajectories to generate persistent spatial polygons, which were evaluated across 17,100 pipeline runs using 9 surveillance cameras in Bengaluru, India, and 10 sequences from the UA-DETRAC dataset. Tested on 16 held-out cameras in Bengaluru, the pipeline achieved a median classification error of 3.4% and a median turning-movement GEH statistic of 2.43.",
+      "why": "It automates the generation of turning movement counts from traffic cameras without the labor-intensive manual region-of-interest annotation typically required for each new camera deployment. By producing static spatial polygons rather than clustering individual trajectories, the system processes future vehicle paths at a linear computational cost."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-15",
+  "work_key": "arxiv:2607.10949"
+}

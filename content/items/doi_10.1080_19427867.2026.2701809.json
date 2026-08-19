@@ -1,0 +1,250 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Rising traffic accidents demand interpretable risk models. Using GPS data from 10,350 taxis in Beijing (T-Drive, ~16M records), trips were segmented into 5.87M 300-second windows. After DBSCAN and K-Means (k = 2, silhouette = 0.62), 14.85% of windows were labeled risky and 85.15% safe. For each window, we extracted features capturing driving instability: speed volatility, abrupt heading changes, and sudden stops. We compared an Explainable Boosting Machine (EBM) against black-box models (XGBoost, Random Forest) with SHAP. The EBM achieved 99.65% accuracy, 99.66% precision, 99.65% recall, and 99.66% F1-score, matching XGBoost while offering greater interpretability. High speeds, speed fluctuations, and abrupt direction changes were the the strongest risk indicators. The model explicitly reveals how individual features contribute to the risk score per window. These findings show that a glass-box model can match black-box performance with interpretability, providing a practical basis for auditing risky driving from large‑scale trajectory data and supporting transparent warning systems and usage‑based insurance.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Tehran",
+            "ror": "05vf56z40"
+          }
+        ],
+        "name": "Ali Zare Zardiny",
+        "openalex": "A5050066351",
+        "orcid": "https://orcid.org/0000-0003-1420-463X"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/19427867.2026.2701809",
+      "pdf_url": null,
+      "source_id": "S70779598",
+      "source_name": "Transportation Letters",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-12",
+    "repository_urls": [],
+    "title": "A glass-box approach to driving risk: Explainable Boosting Machines for interpreting transient behaviors in trajectory data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-12_10.1080/19427867",
+    "members": [
+      "doi:10.1080/19427867.2026.2701809"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:clustering",
+        "label": "clustering"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:gradient-boosting",
+        "label": "gradient boosting"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05vf56z40",
+        "label": "University of Tehran"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1420-463X",
+        "label": "Ali Zare Zardiny"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q956",
+        "label": "Beijing",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": true,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.6126,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12026",
+        "is_primary": false,
+        "label": "Explainable Artificial Intelligence (XAI)",
+        "score": 0.1024,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11303",
+        "is_primary": false,
+        "label": "Bayesian Modeling and Causal Inference",
+        "score": 0.1,
+        "subfield": "1702"
+      }
+    ]
+  },
+  "first_published": "2026-07-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1480376833",
+      "openalex:W1678356000",
+      "openalex:W2126194848",
+      "openalex:W2740924709",
+      "openalex:W2911964244",
+      "openalex:W2945976633",
+      "openalex:W2947666609",
+      "openalex:W2954250068",
+      "openalex:W2981697131",
+      "openalex:W2996705655",
+      "openalex:W3109695503",
+      "openalex:W3176912151",
+      "openalex:W3197776425",
+      "openalex:W4220889738",
+      "openalex:W4239510810",
+      "openalex:W4319663621",
+      "openalex:W4322154529",
+      "openalex:W4376876703",
+      "openalex:W4385343023",
+      "openalex:W4386923393",
+      "openalex:W4389089202",
+      "openalex:W4391667847",
+      "openalex:W4393238020",
+      "openalex:W4399182781",
+      "openalex:W4400462277",
+      "openalex:W4401020927",
+      "openalex:W4401963599",
+      "openalex:W4405098632",
+      "openalex:W4408408347",
+      "openalex:W4412436590",
+      "openalex:W4412704147"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/19427867.2026.2701809",
+    "openalex": "W7168089818",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:03:32Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006233,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2073,
+      "out": 347
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:03:32Z",
+    "doi": "10.1080/19427867.2026.2701809",
+    "journal": "Transportation Letters",
+    "source_id": "S70779598",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "16M records",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The classification of 'risky' versus 'safe' driving windows relies entirely on unsupervised clustering of GPS-derived movement metrics rather than ground-truth accident or collision data.",
+      "what": "The study trained an Explainable Boosting Machine (EBM) on 16 million GPS records from 10,350 taxis in Beijing, segmenting the trajectories into 5.87 million 300-second windows. Using DBSCAN and K-Means clustering, 14.85% of these windows were classified as risky based on speed volatility, sudden stops, and abrupt heading changes. The EBM achieved 99.65% accuracy, matching the performance of black-box models like XGBoost while directly quantifying how individual driving behaviors contribute to risk scores.",
+      "why": "It demonstrates that glass-box machine learning models can match the predictive accuracy of complex black-box models in traffic safety, providing a transparent, auditable framework suitable for real-time driver warning systems and usage-based insurance."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-12",
+  "work_key": "doi:10.1080/19427867.2026.2701809"
+}

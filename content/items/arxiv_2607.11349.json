@@ -1,0 +1,212 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Dual-source trolleybuses alternate between overhead catenary supply and on-board battery operation, creating energy-use patterns driven by route attributes, high-frequency trajectories, and hourly weather. Existing models struggle to represent these heterogeneous inputs and rarely explain the causal drivers of consumption. This paper proposes a time-aware tabular deep learning framework for inter-stop energy management. Periodic time encoding is integrated into a parameter-efficient batch-ensemble backbone to jointly learn static and sequential features, while Bayesian optimization with tree-structured density estimation tunes hyperparameters. To move beyond prediction, a three-layer causal explanation pipeline combines feature attribution for marginal effects, a linear non-Gaussian acyclic model for causal direction discovery, and a meta-learner for net average treatment effects. Experiments on the Zurich trolleybus dataset enriched with meteorological records achieve a MAPE of 6.52% and R of 0.982, outperforming ten statistical, tree-ensemble, and deep learning baselines. Ablation results show that periodic time encoding contributes most to the accuracy gain. Causal analysis identifies regenerative braking ratio and average speed as the strongest energy-saving factors, while coasting distance is the main driver of excess consumption. The findings offer actionable thresholds for vehicle technology, driving behavior, capacity allocation, and catenary network planning.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "School of Management, Foshan University, Foshan, China a School of Management, Foshan University, Foshan, China",
+            "ror": null
+          }
+        ],
+        "name": "Wentao Zeng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "School of Artificial Intelligence, South China Normal University, Guangzhou, China",
+            "ror": null
+          }
+        ],
+        "name": "Zijian Huang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "School of Transportation, Jilin University, Changchun, China",
+            "ror": null
+          }
+        ],
+        "name": "Yiming Bie",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "School of Management, Foshan University, Foshan, China a School of Management, Foshan University, Foshan, China",
+            "ror": null
+          }
+        ],
+        "name": "Jiabin Wu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Department of Civil Engineering, The University of Hong Kong, Hong Kong, China",
+            "ror": null
+          }
+        ],
+        "name": "Jun Gong",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "math.OC",
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.11349v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.11349v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-13",
+    "repository_urls": [],
+    "title": "Inter-Stop Energy Prediction and Causal Driver Quantification for Dual-Source Trolleybuses via a Time-Aware Tabular Deep Learning Architecture"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-13_2607.11349",
+    "members": [
+      "arxiv:2607.11349"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q72",
+        "label": "Zurich",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.11349",
+    "doi": "10.48550/arxiv.2607.11349",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:04:29Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006139,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2065,
+      "out": 338
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8319,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3328,
+    "relevance": 0.8319
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical findings and causal thresholds are based on a single transit system in Zurich and may not directly generalize to cities with different topographies, climates, or fleet configurations.",
+      "what": "A time-aware tabular deep learning framework was developed to predict inter-stop energy consumption for dual-source trolleybuses, integrating periodic time encoding with a batch-ensemble backbone. Tested on the Zurich trolleybus dataset combined with hourly weather records, the model achieved a Mean Absolute Percentage Error of 6.52% and an R-squared of 0.982, outperforming ten baseline models. A three-layer causal explanation pipeline identified regenerative braking ratio and average speed as the primary energy-saving factors, while coasting distance was the main driver of excess energy use.",
+      "why": "The model moves beyond black-box prediction to quantify the actual causal drivers of trolleybus energy consumption, establishing actionable thresholds for driving behavior, vehicle technology, and catenary network planning."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-13",
+  "work_key": "arxiv:2607.11349"
+}

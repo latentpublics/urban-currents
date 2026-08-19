@@ -1,0 +1,302 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Understanding how urban form and activity interact to shape neighbourhood structure remains a central challenge in urban analysis. While morphological and activity-based approaches have been widely developed, their integration remains methodologically uneven, which can limit their ability to capture the socio-functional organisation of urban space. This paper proposes a reproducible computational workflow that integrates morphometric descriptors with location-based social media data to address two questions: to what extent does combining form and activity signals reveal socio-functional differentiation that morphology-only approaches cannot capture at comparable spatial resolution, and do the resulting units expose identifiable neighbourhood cores structured around concentrated activity? Using MomePy-based tessellations enriched with Foursquare-derived activity indexes within a unified clustering framework, the method is applied to 29 Southern European cities. The results show that this integration reveals consistent and recurrent patterns across cities: socio-functional differentiation within morphologically homogeneous fabrics, functional convergence across morphologically distinct areas, and the emergence of neighbourhood cores as centres of gravity within the resulting units. These patterns remain less visible when relying on morphology alone. The consistency of these findings across diverse urban contexts supports the robustness of the approach and its transferability as a basis for fine-grained urban diagnostics using open data, with direct relevance for neighbourhood-scale analysis and planning.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Alicante",
+            "ror": "05t8bcz72"
+          }
+        ],
+        "name": "Almudena Nolasco-Cirugeda",
+        "openalex": "A5140545488",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Alicante",
+            "ror": "05t8bcz72"
+          }
+        ],
+        "name": "Jesús López-Baeza",
+        "openalex": "A5105013059",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universidad de Zaragoza",
+            "ror": "012a91z28"
+          }
+        ],
+        "name": "Sergio García-Pérez",
+        "openalex": "A5085478809",
+        "orcid": "https://orcid.org/0000-0002-1672-4965"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Alicante",
+            "ror": "05t8bcz72"
+          }
+        ],
+        "name": "Clara García-Mayor",
+        "openalex": "A5013258817",
+        "orcid": "https://orcid.org/0000-0002-7714-3363"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.cities.2026.107373",
+      "pdf_url": null,
+      "source_id": "S137445289",
+      "source_name": "Cities",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-13",
+    "repository_urls": [],
+    "title": "Shaping socio-functional urban identity: When morphometrics meet social media data to reveal neighbourhood structure and cores"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-13_10.1016/j.cities",
+    "members": [
+      "doi:10.1016/j.cities.2026.107373"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:clustering",
+        "label": "clustering"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05t8bcz72",
+        "label": "University of Alicante"
+      },
+      {
+        "confidence": null,
+        "id": "ror:012a91z28",
+        "label": "Universidad de Zaragoza"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5140545488",
+        "label": "Almudena Nolasco-Cirugeda"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5105013059",
+        "label": "Jesús López-Baeza"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1672-4965",
+        "label": "Sergio García-Pérez"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7714-3363",
+        "label": "Clara García-Mayor"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:pysal/pysal",
+        "label": "PySAL"
+      }
+    ],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": true,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.4371,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.1177,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11645",
+        "is_primary": false,
+        "label": "Urban, Neighborhood, and Segregation Studies",
+        "score": 0.1084,
+        "subfield": "3312"
+      }
+    ]
+  },
+  "first_published": "2026-07-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1870267865",
+      "openalex:W1972631516",
+      "openalex:W2091690821",
+      "openalex:W2093014668",
+      "openalex:W2148129885",
+      "openalex:W2525460595",
+      "openalex:W2527510953",
+      "openalex:W2549766072",
+      "openalex:W2591247384",
+      "openalex:W2797963365",
+      "openalex:W2800559344",
+      "openalex:W2901558138",
+      "openalex:W2908479155",
+      "openalex:W2912721175",
+      "openalex:W2972672167",
+      "openalex:W2990662198",
+      "openalex:W2991643180",
+      "openalex:W3016726259",
+      "openalex:W3019051739",
+      "openalex:W3034981313",
+      "openalex:W3048812303",
+      "openalex:W3080868533",
+      "openalex:W3132423117",
+      "openalex:W3139770903",
+      "openalex:W3157230789",
+      "openalex:W3161450934",
+      "openalex:W3171692457",
+      "openalex:W3188601280",
+      "openalex:W4220857402",
+      "openalex:W4229446001",
+      "openalex:W4233255006",
+      "openalex:W4293083019",
+      "openalex:W4296200495",
+      "openalex:W4320527580",
+      "openalex:W4366990427",
+      "openalex:W4392552160",
+      "openalex:W4404800893",
+      "openalex:W4408989784",
+      "openalex:W4409282406",
+      "openalex:W4412604290",
+      "openalex:W4414594463"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.cities.2026.107373",
+    "openalex": "W7168133822",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:04:30Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005452,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2033,
+      "out": 267
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:04:30Z",
+    "doi": "10.1016/j.cities.2026.107373",
+    "journal": "Cities",
+    "source_id": "S137445289",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.5,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.54,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The functional activity patterns rely entirely on Foursquare data, which may bias the identified neighbourhood cores toward the demographic profile of that specific platform's user base.",
+      "what": "The study presents a reproducible computational workflow that combines morphometric descriptors from MomePy-based tessellations with Foursquare-derived activity indexes. This integrated clustering framework was applied to 29 Southern European cities to map socio-functional urban structures and identify concentrated neighbourhood cores.",
+      "why": "It demonstrates that combining spatial form with social media activity reveals functional differences within morphologically identical areas, as well as functional similarities across different physical forms, capturing a layer of urban organization that physical mapping alone misses."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-13",
+  "work_key": "doi:10.1016/j.cities.2026.107373"
+}

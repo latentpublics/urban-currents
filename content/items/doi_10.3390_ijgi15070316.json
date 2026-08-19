@@ -1,0 +1,271 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "To address the challenges of the large-scale georeferencing of tower-based cameras and the limited capability of video-based spatial analysis, we proposed a geospatial mapping method integrating 3D GIS and gradient descent optimization. Using a Digital Elevation Model (DEM), high-resolution remote sensing imagery, and tower-based video data as the primary data sources, the proposed method first estimates the intrinsic parameters of the tower-based camera by aligning a 3D GIS virtual camera with the video imagery. Subsequently, the initial camera extrinsic parameters are estimated using the PnP algorithm based on the previously estimated intrinsic matrix K and the corresponding control point pairs. Building upon these initial estimates, the camera intrinsic and extrinsic parameters are jointly optimized using a constrained L-BFGS-B framework that incorporates prior knowledge of the tower planar location, explicit box constraints, and a semi-constrained parameterization scheme with bounded parameter ranges. Furthermore, an outlier-removal and re-optimization strategy is employed to further improve the accuracy of parameter estimation. Finally, the optimized parameters are employed to transform image coordinates into three-dimensional world coordinates, and video geospatial mapping is achieved through the integration of colored point clouds with the 3D GIS scene. The results showed the following: (1) The 3D GIS scene constructed from publicly available DEM and high-resolution remote sensing imagery met the requirements for the initial estimation of intrinsic and extrinsic camera parameters. (2) Compared with PnP, RANSAC-PnP, SQPnP, and DLT, the proposed method achieves lower reprojection and 3D spatial errors. For the independent check points, the RMSE of the reprojection error is reduced by 66.4%, 73.6%, 68.0%, and 48.3%, respectively, while the RMSE of the 3D spatial error is reduced by 84.6%, 86.2%, 83.1%, and 69.4%, respectively. These results demonstrate that the proposed method provides reliable camera parameter estimates for video geospatial mapping. (3) Using the estimated camera parameters, image coordinates are transformed into 3D world coordinates to generate a georeferenced colored point cloud, which facilitates integrated analysis with existing geospatial datasets. The proposed method provides a feasible solution for tower-based camera georeferencing and three-dimensional visualization under conditions without field calibration. It offers a theoretical and technical basis for geospatial monitoring and related applications.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Xinyang Normal University",
+            "ror": "0190x2a66"
+          }
+        ],
+        "name": "Xianguo Ling",
+        "openalex": "A5140555763",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Xinyang Normal University",
+            "ror": "0190x2a66"
+          }
+        ],
+        "name": "Xingguo Zhang",
+        "openalex": "A5140545101",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Xinyang Normal University",
+            "ror": "0190x2a66"
+          }
+        ],
+        "name": "Xin Li",
+        "openalex": "A5140521263",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Xinyang Normal University",
+            "ror": "0190x2a66"
+          }
+        ],
+        "name": "Xiangfei Meng",
+        "openalex": "A5047368502",
+        "orcid": "https://orcid.org/0000-0002-0857-1305"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.3390/ijgi15070316",
+      "pdf_url": null,
+      "source_id": "S2764431341",
+      "source_name": "ISPRS International Journal of Geo-Information",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-12",
+    "repository_urls": [],
+    "title": "Video Geospatial Mapping of Large-Scale Tower-Based Cameras Based on 3D GIS and Gradient Descent"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-12_10.3390/ijgi1507",
+    "members": [
+      "doi:10.3390/ijgi15070316"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0190x2a66",
+        "label": "Xinyang Normal University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5140555763",
+        "label": "Xianguo Ling"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140545101",
+        "label": "Xingguo Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140521263",
+        "label": "Xin Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0857-1305",
+        "label": "Xiangfei Meng"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11211",
+        "is_primary": true,
+        "label": "3D Surveying and Cultural Heritage",
+        "score": 0.2958,
+        "subfield": "1907"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10191",
+        "is_primary": false,
+        "label": "Robotics and Sensor-Based Localization",
+        "score": 0.2267,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10531",
+        "is_primary": false,
+        "label": "Advanced Vision and Imaging",
+        "score": 0.1455,
+        "subfield": "1707"
+      }
+    ]
+  },
+  "first_published": "2026-07-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1489405158",
+      "openalex:W1971236606",
+      "openalex:W1991544872",
+      "openalex:W2001915690",
+      "openalex:W2018296774",
+      "openalex:W2097649661",
+      "openalex:W2124535811",
+      "openalex:W2155880278",
+      "openalex:W2167667767",
+      "openalex:W2729511297",
+      "openalex:W2963270286",
+      "openalex:W2993491685",
+      "openalex:W3042689508",
+      "openalex:W3175380624",
+      "openalex:W3215541782",
+      "openalex:W4210635529",
+      "openalex:W4389098823",
+      "openalex:W4389687738",
+      "openalex:W4399745590",
+      "openalex:W4415190423",
+      "openalex:W7129000208"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.3390/ijgi15070316",
+    "openalex": "W7168212383",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:03:30Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006653,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2527,
+      "out": 318
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:03:30Z",
+    "doi": "10.3390/ijgi15070316",
+    "journal": "ISPRS International Journal of Geo-Information",
+    "source_id": "S2764431341",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study introduces a geospatial mapping method that georeferences tower-based camera video by aligning it with a 3D GIS scene built from public DEM and high-resolution remote sensing data. It uses a constrained L-BFGS-B optimization framework to jointly optimize camera intrinsic and extrinsic parameters, followed by an outlier-removal and re-optimization step. Compared to standard methods like PnP, RANSAC-PnP, SQPnP, and DLT, this approach reduces the root mean square error of 3D spatial errors by 84.6%, 86.2%, 83.1%, and 69.4% respectively.",
+      "why": "It enables accurate 3D video georeferencing and spatial analysis for large-scale tower cameras without requiring manual, on-site field calibration."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-12",
+  "work_key": "doi:10.3390/ijgi15070316"
+}

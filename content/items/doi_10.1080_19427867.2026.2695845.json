@@ -1,0 +1,317 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This research extends the vehicle routing problem with cross-docking (VRPCD) by incorporating perishable products under freshness-life and travel time uncertainties, resulting in VRPCD-PP-2U. A robust optimization (RO) approach with budget sets is derived to address these uncertainties. While the RO model is tractable for small-scale instances, an adaptive large neighborhood search (ALNS) algorithm integrated with a dynamic programming feasibility-checking procedure under worst-case scenarios is proposed to address large-scale instances. Numerical experiments demonstrate that the proposed ALNS effectively solves all benchmark instances with up to 200 requests, achieving stable performance over 10 runs within reasonable computational times. Sensitivity analysis further shows that incorporating freshness considerations reduces freshness loss by 47.12% compared with the baseline setting, whereas introducing robustness increases the total cost by 9.61% on average across the benchmark instances. It highlights the trade-off among cost, product quality, and robustness, and provide managerial insights under uncertainties.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "National Taiwan University of Science and Technology",
+            "ror": "00q09pe49"
+          }
+        ],
+        "name": "Vincent F. Yu",
+        "openalex": "A5000780003",
+        "orcid": "https://orcid.org/0000-0001-8975-0606"
+      },
+      {
+        "institutions": [
+          {
+            "name": "National Taiwan University of Science and Technology",
+            "ror": "00q09pe49"
+          }
+        ],
+        "name": "Quyen Vo Nguyen Truc",
+        "openalex": "A5117228888",
+        "orcid": "https://orcid.org/0009-0007-0842-5942"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Economics Ho Chi Minh City",
+            "ror": "010yce376"
+          }
+        ],
+        "name": "Pham Tuan Anh",
+        "openalex": "A5135103002",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "National Taiwan University of Science and Technology",
+            "ror": "00q09pe49"
+          }
+        ],
+        "name": "Chau Tuan Cuong",
+        "openalex": "A5028682103",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/19427867.2026.2695845",
+      "pdf_url": null,
+      "source_id": "S70779598",
+      "source_name": "Transportation Letters",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-12",
+    "repository_urls": [],
+    "title": "The vehicle routing problem with cross-docking for perishable products under freshness-life and travel time uncertainties"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-12_10.1080/19427867",
+    "members": [
+      "doi:10.1080/19427867.2026.2695845"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00q09pe49",
+        "label": "National Taiwan University of Science and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:010yce376",
+        "label": "University of Economics Ho Chi Minh City"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8975-0606",
+        "label": "Vincent F. Yu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0007-0842-5942",
+        "label": "Quyen Vo Nguyen Truc"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5135103002",
+        "label": "Pham Tuan Anh"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5028682103",
+        "label": "Chau Tuan Cuong"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": true,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.9912,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12176",
+        "is_primary": false,
+        "label": "Optimization and Packing Problems",
+        "score": 0.0009,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10848",
+        "is_primary": false,
+        "label": "Advanced Multi-Objective Optimization Algorithms",
+        "score": 0.0007,
+        "subfield": "1703"
+      }
+    ]
+  },
+  "first_published": "2026-07-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1984127679",
+      "openalex:W1991780916",
+      "openalex:W2006815288",
+      "openalex:W2008985043",
+      "openalex:W2022969949",
+      "openalex:W2023762180",
+      "openalex:W2023964406",
+      "openalex:W2042681928",
+      "openalex:W2042816232",
+      "openalex:W2045479110",
+      "openalex:W2050670274",
+      "openalex:W2050887546",
+      "openalex:W2056375546",
+      "openalex:W2078491283",
+      "openalex:W2089105401",
+      "openalex:W2090366431",
+      "openalex:W2093017852",
+      "openalex:W2105002757",
+      "openalex:W2111776274",
+      "openalex:W2118666439",
+      "openalex:W2138803696",
+      "openalex:W2155335858",
+      "openalex:W2165775468",
+      "openalex:W2171328669",
+      "openalex:W2201203797",
+      "openalex:W2332834184",
+      "openalex:W2379012095",
+      "openalex:W2473745371",
+      "openalex:W2496394318",
+      "openalex:W2583916352",
+      "openalex:W2596054940",
+      "openalex:W2613252118",
+      "openalex:W2622823936",
+      "openalex:W2625105588",
+      "openalex:W2763094991",
+      "openalex:W2767119104",
+      "openalex:W2775555551",
+      "openalex:W2900539411",
+      "openalex:W2913870466",
+      "openalex:W2945416676",
+      "openalex:W2955472062",
+      "openalex:W2972370647",
+      "openalex:W2972611938",
+      "openalex:W2985242450",
+      "openalex:W3016982196",
+      "openalex:W3018776722",
+      "openalex:W3048259214",
+      "openalex:W3130612522",
+      "openalex:W3134675127",
+      "openalex:W3154132230",
+      "openalex:W4213194232",
+      "openalex:W4214713636",
+      "openalex:W4225114802",
+      "openalex:W4281660288",
+      "openalex:W4281708316",
+      "openalex:W4310355642",
+      "openalex:W4320883629",
+      "openalex:W4321460198",
+      "openalex:W4361297855",
+      "openalex:W4379512969",
+      "openalex:W4382371734",
+      "openalex:W4383695386",
+      "openalex:W4384460937",
+      "openalex:W4386914081",
+      "openalex:W4388970409",
+      "openalex:W4409868771",
+      "openalex:W4410578071",
+      "openalex:W4412634379"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/19427867.2026.2695845",
+    "openalex": "W7168078617",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:03:32Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005335,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1937,
+      "out": 270
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:03:32Z",
+    "doi": "10.1080/19427867.2026.2695845",
+    "journal": "Transportation Letters",
+    "source_id": "S70779598",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance and trade-offs of the model are demonstrated using simulated benchmark instances rather than real-world distribution data.",
+      "what": "This study introduces a robust optimization model and an adaptive large neighborhood search (ALNS) algorithm to solve the vehicle routing problem with cross-docking for perishable products under travel time and freshness-life uncertainties. Tested on benchmark instances with up to 200 requests, the ALNS algorithm maintains stable performance across 10 runs, while sensitivity analysis shows that accounting for freshness constraints reduces freshness loss by 47.12% at an average total cost increase of 9.61% for robustness.",
+      "why": "It provides logistics planners with a computationally viable method to balance the trade-offs between delivery costs, product quality, and schedule robustness when distributing highly perishable goods through cross-docking networks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-12",
+  "work_key": "doi:10.1080/19427867.2026.2695845"
+}

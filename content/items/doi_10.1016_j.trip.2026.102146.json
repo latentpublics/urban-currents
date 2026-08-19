@@ -1,0 +1,239 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study develops a reproducible, data-driven optimisation framework for analysing national-scale routing efficiency within South Korea’s road-ferry transport network. Using empirically derived travel distances and durations obtained from the OpenRouteService (ORS) API, an 85 x 85 origin–destination matrix was constructed to represent nationwide road-ferry connectivity, including links to Jeju Island. Two maritime accessibility scenarios were evaluated: a multi-port configuration (Mokpo, Yeosu, Busan, and Incheon) and a restricted single-port configuration (Mokpo only). Multiple optimisation approaches, including constructive heuristics, local-search methods (2-opt, 3-opt, and Lin-Kernighan), Simulated Annealing, and the exact Concorde solver, were benchmarked to assess solution quality and performance. Results indicate that advanced optimisation methods achieved shorter tours, with Concorde and Lin-Kernighan both identifying the optimal solution. Scenario analysis reveals the importance of maritime accessibility for national routing efficiency. The multi-port configuration achieved approximately 17.2 % shorter travel distance and 8.4 % shorter travel duration than the single-port configuration, demonstrating the benefits of diversified ferry connectivity. Furthermore, distance-based and duration-based optimisation produced structurally distinct routing configurations despite similar aggregate efficiency, highlighting the sensitivity of network topology to objective function selection. Stability analysis showed that the 2-opt heuristic converged consistently to a narrow solution band (coefficient of variation < 2 % across 100 runs), supporting its suitability as a baseline method for comparative accessibility analysis. Methodologically, the study integrates open geospatial routing data with classical optimisation techniques within a transparent and scalable workflow. The resulting framework provides a reproducible benchmark for evaluating road-ferry accessibility and a foundation for future multimodal transport modelling and infrastructure planning.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Universiti Brunei Darussalam",
+            "ror": "02qnf3n86"
+          },
+          {
+            "name": "Universiti Teknologi Brunei",
+            "ror": "004y7f915"
+          }
+        ],
+        "name": "Shiaw Yin Yong",
+        "openalex": "A5012740368",
+        "orcid": "https://orcid.org/0000-0002-0705-5771"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universiti Brunei Darussalam",
+            "ror": "02qnf3n86"
+          }
+        ],
+        "name": "Muhammad Azwa’ien Iman bin Haji Md Safriudin",
+        "openalex": "A5140536382",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102146",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2590198226003118/pdf",
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-13",
+    "repository_urls": [],
+    "title": "A reproducible data-driven framework for national-scale road-ferry accessibility in South Korea"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-13_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102146"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02qnf3n86",
+        "label": "Universiti Brunei Darussalam"
+      },
+      {
+        "confidence": null,
+        "id": "ror:004y7f915",
+        "label": "Universiti Teknologi Brunei"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0705-5771",
+        "label": "Shiaw Yin Yong"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140536382",
+        "label": "Muhammad Azwa’ien Iman bin Haji Md Safriudin"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11622",
+        "is_primary": true,
+        "label": "Maritime Navigation and Safety",
+        "score": 0.2343,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11223",
+        "is_primary": false,
+        "label": "Maritime Ports and Logistics",
+        "score": 0.1231,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0464,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-07-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1968594877",
+      "openalex:W1994863634",
+      "openalex:W2017708378",
+      "openalex:W2024060531",
+      "openalex:W2039568841",
+      "openalex:W2042986967",
+      "openalex:W2084792706",
+      "openalex:W2106292145",
+      "openalex:W2106378689",
+      "openalex:W2148673189",
+      "openalex:W2886734071",
+      "openalex:W2944809352",
+      "openalex:W2956015669",
+      "openalex:W3034939013",
+      "openalex:W3169821571",
+      "openalex:W4386950247",
+      "openalex:W4390060812",
+      "openalex:W4411042430"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102146",
+    "openalex": "W7168160327",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:04:30Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006422,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2253,
+      "out": 338
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:04:30Z",
+    "doi": "10.1016/j.trip.2026.102146",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study developed a reproducible optimization framework to analyze South Korea's national road-ferry network using an 85 x 85 origin-destination matrix generated via the OpenRouteService API. It benchmarked multiple optimization algorithms, including Simulated Annealing and the exact Concorde solver, across two maritime routing scenarios: a multi-port setup and a single-port setup. The multi-port configuration reduced travel distance by approximately 17.2% and travel duration by 8.4% compared to relying on a single port.",
+      "why": "It establishes a scalable, open-source workflow that demonstrates how choosing between distance-based and duration-based optimization criteria structurally alters routing topology, even when aggregate efficiency remains similar."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-13",
+  "work_key": "doi:10.1016/j.trip.2026.102146"
+}

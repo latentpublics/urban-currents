@@ -1,0 +1,276 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "ABSTRACT With the advancement of automation in agriculture, the determination of the health status of fruits, yield estimation, and the realization of automated harvesting have become critical applications in precision agriculture. In this context, accurate extraction of the spatial information of fruits plays a vital role. This study aims to segment kiwi and non‐kiwi points belonging to a kiwi tree using Support Vector Machine (SVM) and Random Forest (RF) algorithms based on terrestrial LiDAR point cloud data. Accordingly, the use of machine learning methods is proposed to contribute to yield estimation in the agricultural sector. In this study, a single kiwi tree point cloud dataset was selected from a kiwi orchard scanned with a terrestrial LiDAR system and manually labeled. The point cloud was divided into two subsets to prepare training and testing datasets for the SVM and RF models. From the LiDAR data of the kiwi tree, red, green, and blue (RGB) color values were extracted along with geometric features representing the spatial structure of the point cloud. For each point, the following features were computed: linearity, planarity, sphericity, omnivariance, anisotropy, curvature, local density, verticality, k‐nearest neighbors (kNN) mean, kNN standard deviation, and normal vector components (Normal X, Normal Y, Normal Z). The computed geometric features were provided to a LinearSVC‐based Recursive Feature Elimination (RFE) algorithm to select the most relevant parameters for the dataset and classification models. Using the selected features, SVM and RF models were trained and tested, and their performances in kiwi fruit segmentation were evaluated and compared using Overall Accuracy (OA), Precision (Pr), Recall (Rc), and F1‐score (F1) metrics. Based on the evaluation conducted on the labeled test dataset, the RF algorithm outperformed the SVM across all accuracy metrics. The most notable difference was observed in the Precision metric, where RF achieved approximately 10% higher performance. Additionally, to assess the generalization capability of the models in kiwi fruit segmentation, prediction experiments were carried out on unlabelled point cloud data acquired from the same kiwi orchard. Considering both quantitative accuracy metrics and qualitative visual results, it was concluded that the RF algorithm produces more reliable and balanced outcomes in distinguishing kiwi and non‐kiwi points, whereas the SVM algorithm provides an advantageous structure in terms of preserving fruit integrity.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Karadeniz Technical University",
+            "ror": "03z8fyr40"
+          }
+        ],
+        "name": "Mustafa Dihkan",
+        "openalex": "A5002222374",
+        "orcid": "https://orcid.org/0000-0002-0027-236X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Karadeniz Technical University",
+            "ror": "03z8fyr40"
+          }
+        ],
+        "name": "Feride Seçil YILDIRIM",
+        "openalex": "A5059713686",
+        "orcid": "https://orcid.org/0000-0003-1091-1791"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Karadeniz Technical University",
+            "ror": "03z8fyr40"
+          }
+        ],
+        "name": "Fevzi Karslı",
+        "openalex": "A5053310486",
+        "orcid": "https://orcid.org/0000-0002-0411-3315"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Karadeniz Technical University",
+            "ror": "03z8fyr40"
+          }
+        ],
+        "name": "Gultekin Erbas",
+        "openalex": "A5140545627",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1111/tgis.70347",
+      "pdf_url": null,
+      "source_id": "S859791518",
+      "source_name": "Transactions in GIS",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-12",
+    "repository_urls": [],
+    "title": "Automatic Kiwifruit Segmentation From Terrestrial LiDAR Point Clouds for Precision Agriculture"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-12_10.1111/tgis.703",
+    "members": [
+      "doi:10.1111/tgis.70347"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03z8fyr40",
+        "label": "Karadeniz Technical University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0027-236X",
+        "label": "Mustafa Dihkan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1091-1791",
+        "label": "Feride Seçil YILDIRIM"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0411-3315",
+        "label": "Fevzi Karslı"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140545627",
+        "label": "Gultekin Erbas"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10616",
+        "is_primary": true,
+        "label": "Smart Agriculture and AI",
+        "score": 0.8877,
+        "subfield": "1110"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10111",
+        "is_primary": false,
+        "label": "Remote Sensing in Agriculture",
+        "score": 0.0333,
+        "subfield": "2303"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12161",
+        "is_primary": false,
+        "label": "Plant Surface Properties and Treatments",
+        "score": 0.0215,
+        "subfield": "1110"
+      }
+    ]
+  },
+  "first_published": "2026-07-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2008056655",
+      "openalex:W2076280802",
+      "openalex:W2138585212",
+      "openalex:W2170347946",
+      "openalex:W2295124130",
+      "openalex:W2625680238",
+      "openalex:W2789410660",
+      "openalex:W2911964244",
+      "openalex:W2972403506",
+      "openalex:W3092075612",
+      "openalex:W3110383822",
+      "openalex:W3159417218",
+      "openalex:W4250174831",
+      "openalex:W4308156238",
+      "openalex:W4322761651",
+      "openalex:W4381165959",
+      "openalex:W4385724694",
+      "openalex:W4392909042",
+      "openalex:W4400445055",
+      "openalex:W4403253227",
+      "openalex:W4403449216",
+      "openalex:W4405310543",
+      "openalex:W4408170399",
+      "openalex:W4413488406",
+      "openalex:W4413770665",
+      "openalex:W4415361242"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1111/tgis.70347",
+    "openalex": "W7168186940",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:03:30Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006394,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2439,
+      "out": 304
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:03:30Z",
+    "doi": "10.1111/tgis.70347",
+    "journal": "Transactions in GIS",
+    "source_id": "S859791518",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The models were trained and tested on a dataset derived from only a single scanned kiwi tree, which may limit immediate generalization to orchards with different training systems or foliage densities.",
+      "what": "This study segmented kiwifruit from non-fruit elements in terrestrial LiDAR point clouds of a kiwi tree using Support Vector Machine (SVM) and Random Forest (RF) classifiers. The models utilized RGB color values and 12 geometric features, such as sphericity, local density, and normal vector components, optimized via LinearSVC-based Recursive Feature Elimination. Evaluation on a labeled test dataset showed that the RF model outperformed SVM across all metrics, notably achieving a 10% higher Precision score, while SVM was better at preserving the physical integrity of individual fruits.",
+      "why": "It demonstrates that combining terrestrial LiDAR geometric features with machine learning can successfully isolate individual fruits in complex agricultural canopies, providing a foundational step for automated yield estimation and robotic harvesting."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-12",
+  "work_key": "doi:10.1111/tgis.70347"
+}

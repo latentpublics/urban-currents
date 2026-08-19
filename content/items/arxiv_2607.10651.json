@@ -1,0 +1,204 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "In large urban areas, planning multi-day travel itineraries is challenging due to the abundance of Points of Interest (POIs), diverse user preferences, and constraints such as opening hours. Effective solutions must dynamically accommodate diverse traveler requirements while optimizing for satisfaction and feasibility within limited computation time. This paper addresses these challenges through introducing an innovative framework that integrates Large Language Models (LLMs) to dynamically capture user requirements with precision and flexibility, and an enhanced Greedy Randomized Adaptive Search Procedure (GRASP) algorithm as a well-suited preference-aware planner to generate feasible multi-day itineraries. The effectiveness of our integrated approach is demonstrated through extensive experiments on two real-world urban datasets from Beijing and Tianjin. Our framework significantly outperforms state-of-the-art (SOTA) methods, improving the average total itinerary score by at least 4.52% and 11.09% across 5,040 user cases with diverse preferences in the two datasets. Furthermore, through end-to-end algorithmic enhancements, it achieves notable average improvements of 17.95% and 26.07% in the computed metrics, while also delivering substantial gains in time efficiency -- realizing average performance increases of 4.64% and 25.55% within shorter computation times compared to suboptimal methods that require multiple iterations. These outcomes underscore our method's superiority in delivering both enhanced itinerary quality and computational efficiency over existing methodologies.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Rongbo Qi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yaqi Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shijun Yan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xuemeng Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xiangrui Cai",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chunyao Song",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "comment": "37 pages, 16 figures, 7 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.10651v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.10651v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-12",
+    "repository_urls": [],
+    "title": "Embark Now: User Demand Oriented Framework for Multi-day Urban Travel Itinerary Planning"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-12_2607.10651",
+    "members": [
+      "arxiv:2607.10651"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:poi",
+        "label": "points of interest"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q956",
+        "label": "Beijing",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.10651",
+    "doi": "10.48550/arxiv.2607.10651",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:03:29Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005578,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2105,
+      "out": 269
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9446,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3778,
+    "relevance": 0.9446
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance improvements are evaluated using simulated user cases on historical datasets rather than real-world deployment with active travelers.",
+      "what": "A new multi-day travel itinerary planning framework integrates Large Language Models to capture user preferences with an enhanced Greedy Randomized Adaptive Search Procedure (GRASP) algorithm. Tested on 5,040 simulated user cases across real-world urban datasets from Beijing and Tianjin, the framework improved average total itinerary scores by at least 4.52% and 11.09% respectively compared to state-of-the-art methods, while reducing computation times.",
+      "why": "It demonstrates that combining semantic LLM inputs with heuristic search algorithms can generate highly customized, multi-day urban travel plans faster and with higher satisfaction scores than existing iterative planning methods."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-12",
+  "work_key": "arxiv:2607.10651"
+}

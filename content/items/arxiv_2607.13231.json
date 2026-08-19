@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Roads make regional integration possible, but they also concentrate risk. When violence reaches a corridor that carries regional movement, the consequences can extend beyond the attacked place. We study this problem in Africa by combining interurban road data, georeferenced conflict events, and bilateral migration flows. Using a Hawkes-style self-exciting memory kernel, we estimate accumulated conflict intensity near roads from 2019 to 2022, and we route modelled movement between cities along the road network. As an empirical check on these modelled corridor flows, we show that country pairs connected by routes with higher accumulated conflict have lower bilateral migration. The association remains negative across alternative assumptions about spatial decay and is strongest for paths that cross regions, consistent with a corridor-deterrence channel rather than only displacement from violent places. We then use cascade and percolation simulations to examine how local disruptions propagate through the road network. Most simulated disruptions isolate relatively small populations, but 18.6% isolate more than one million people, and the largest isolates 13.3 million. Removing roads in order of conflict intensity reveals a tipping point, at which the giant connected component falls from 85% to 39% of the network. Our results identify the roads where violence most threatens regional integration and show how past conflict, mobility, and network structure combine to create persistent corridor vulnerability.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Andrew Renninger",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Valentina Marin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Carmen Cabrera",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rafael Prieto-Curiel",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2607.13231v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.13231v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-07-14",
+    "repository_urls": [],
+    "title": "Conflict, mobility and fragmentation in the African interurban network"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-14_2607.13231",
+    "members": [
+      "arxiv:2607.13231"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-07-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2607.13231",
+    "doi": "10.48550/arxiv.2607.13231",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-19T08:05:53Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006113,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2059,
+      "out": 336
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9833,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3933,
+    "relevance": 0.9833
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2019 to 2022",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on modeled movement routed along the road network rather than direct, observed real-time traffic data.",
+      "what": "This study models regional mobility across Africa from 2019 to 2022 by combining interurban road networks, georeferenced conflict data, and bilateral migration flows. Using a Hawkes-style self-exciting memory kernel to estimate conflict intensity along roads, the analysis shows that country pairs connected by high-conflict corridors experience lower bilateral migration. Network cascade and percolation simulations reveal that while most local disruptions isolate small populations, 18.6% of simulated disruptions isolate over one million people, and removing roads by conflict intensity triggers a tipping point where the network's giant connected component drops from 85% to 39%.",
+      "why": "It demonstrates that localized violence has systemic, network-wide consequences for regional integration by deterring corridor-level movement rather than just displacing local populations, identifying specific vulnerable road segments that threaten continental connectivity."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-14",
+  "work_key": "arxiv:2607.13231"
+}

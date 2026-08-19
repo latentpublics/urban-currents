@@ -1,0 +1,255 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Integrating Uncrewed Aircraft Systems (UAS) for search-and-rescue (SAR) enhances disaster risk reduction (DRR), yet technical and topographical constraints limit efficacy. This study proposes a pragmatic, multi-hazard framework combining geospatial analysis and mathematical optimization for strategic pre-disaster base planning. We evaluated site suitability by integrating evacuation facilities, multi-hazard exposure, slope, and land use data. Applied to Japan’s Mt. Unzen region, prone to landslides and tsunamis, the methodology identified optimal UAS base zones across diverse seasonal scenarios. Results demonstrate that flexible base selection maximizes risk-weighted coverage. Furthermore, while extending UAS operational range improves coverage, marginal benefits diminish beyond a specific threshold. These findings provide DRR practitioners and drone operators with a structured framework for pre-disaster positioning, significantly improving the efficiency and reach of emergency response operations. This integrated model bridges the gap between single-hazard studies and real-world multi-hazard complexity, offering actionable insights for strategic disaster preparedness and rapid SAR deployment.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Japan Aerospace Exploration Agency",
+            "ror": "059yhyy33"
+          }
+        ],
+        "name": "Lhiana Reign S. Bañares",
+        "openalex": "A5140533627",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Japan Aerospace Exploration Agency",
+            "ror": "059yhyy33"
+          },
+          {
+            "name": "Osaka Metropolitan University",
+            "ror": "01hvx5h04"
+          }
+        ],
+        "name": "Adriana Andreeva-Mori",
+        "openalex": "A5025271084",
+        "orcid": "https://orcid.org/0000-0001-8808-7419"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trd.2026.105496",
+      "pdf_url": null,
+      "source_id": "S45181156",
+      "source_name": "Transportation Research Part D Transport and Environment",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-13",
+    "repository_urls": [],
+    "title": "Uncrewed aircraft system base site suitability analysis for multi-hazard disaster response"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-13_10.1016/j.trd.20",
+    "members": [
+      "doi:10.1016/j.trd.2026.105496"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:land-use",
+        "label": "land use data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-analysis",
+        "label": "spatial analysis"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:059yhyy33",
+        "label": "Japan Aerospace Exploration Agency"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01hvx5h04",
+        "label": "Osaka Metropolitan University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5140533627",
+        "label": "Lhiana Reign S. Bañares"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8808-7419",
+        "label": "Adriana Andreeva-Mori"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11502",
+        "is_primary": true,
+        "label": "Facility Location and Emergency Management",
+        "score": 0.502,
+        "subfield": "1407"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11500",
+        "is_primary": false,
+        "label": "Evacuation and Crowd Dynamics",
+        "score": 0.107,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10930",
+        "is_primary": false,
+        "label": "Flood Risk Assessment and Management",
+        "score": 0.0894,
+        "subfield": "2306"
+      }
+    ]
+  },
+  "first_published": "2026-07-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2117565996",
+      "openalex:W2558152615",
+      "openalex:W2599568933",
+      "openalex:W2799688575",
+      "openalex:W2891346267",
+      "openalex:W2943269108",
+      "openalex:W3044200916",
+      "openalex:W3045994033",
+      "openalex:W3080137196",
+      "openalex:W3096464902",
+      "openalex:W3214343395",
+      "openalex:W4214524292",
+      "openalex:W4297148169",
+      "openalex:W4327594614",
+      "openalex:W4385331395",
+      "openalex:W4391719640",
+      "openalex:W4392761295",
+      "openalex:W4395028879",
+      "openalex:W4395469350",
+      "openalex:W4400450451",
+      "openalex:W4403670902",
+      "openalex:W4410879254"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trd.2026.105496",
+    "openalex": "W7168140314",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:04:30Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.003737,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1925,
+      "out": 332
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:04:30Z",
+    "doi": "10.1016/j.trd.2026.105496",
+    "journal": "Transportation Research Part D Transport and Environment",
+    "source_id": "S45181156",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's empirical findings are based on a single case study of the Mt. Unzen region in Japan, which may limit direct generalizability to regions with different topographical or hazard profiles.",
+      "what": "The study presents a multi-hazard geospatial and mathematical optimization framework to identify optimal pre-disaster launch bases for Uncrewed Aircraft Systems (UAS) in search-and-rescue operations. Tested in Japan's Mt. Unzen region, a territory vulnerable to landslides and tsunamis, the model integrates evacuation facilities, slope, land use, and seasonal hazard exposure data to map suitable zones. The analysis reveals that flexible, scenario-based base selection maximizes risk-weighted coverage, and that expanding drone flight ranges yields diminishing coverage returns beyond a specific threshold.",
+      "why": "It provides disaster response planners with a systematic method to position drone launch sites under overlapping, multi-hazard threats rather than relying on single-hazard assumptions or ad-hoc deployment during emergencies."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-13",
+  "work_key": "doi:10.1016/j.trd.2026.105496"
+}

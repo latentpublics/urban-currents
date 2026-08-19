@@ -1,0 +1,293 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study investigates the heterogeneity in crash severity outcomes for three high-risk driving behaviors—speeding, drowsy driving, and inattentive driving—on South Korean expressways, using 17,876 crash records collected between 2019 and 2024. Leveraging the random threshold random parameter ordered probit model within a Bayesian estimation framework, the analysis accounts for both observed and unobserved heterogeneity by incorporating random parameters and flexible threshold structures. The dataset integrates structured crash data with unstructured narrative text from police reports, analyzed using natural language processing techniques such as term frequency-inverse document frequency and latent Dirichlet allocation to identify behavioral factors contributing to crash severity. Results indicate that drowsy-driving crashes were particularly associated with severe outcomes, especially when occurring on mainline expressway segments and when the offending driver was operating a truck. Inattentive-driving crashes were associated with greater severity outcomes when involving mixed vehicle types and when occurring on mainline facilities, whereas younger and female drivers tended to be linked with lower severity. Within the subset of speeding crashes, injury severity tended to be higher when the offending vehicle was a heavy vehicle such as a truck, whereas rainy conditions were associated with somewhat lower injury severity. These findings underscore the importance of behavior-specific modeling in safety analysis and demonstrate the utility of integrating behavioral text-mining approaches with heterogeneity modeling to improve interpretability and policy relevance.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Hanyang University",
+            "ror": "046865y68"
+          }
+        ],
+        "name": "Sungjun Lee",
+        "openalex": "A5101743068",
+        "orcid": "https://orcid.org/0000-0002-2192-9826"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hanyang University",
+            "ror": "046865y68"
+          }
+        ],
+        "name": "Nuri Park",
+        "openalex": "A5047830578",
+        "orcid": "https://orcid.org/0000-0002-9294-6295"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hanyang University",
+            "ror": "046865y68"
+          }
+        ],
+        "name": "Juneyoung Park",
+        "openalex": "A5023644827",
+        "orcid": "https://orcid.org/0000-0002-1598-3367"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Windsor",
+            "ror": "01gw3d370"
+          }
+        ],
+        "name": "Chris Lee",
+        "openalex": "A5019936786",
+        "orcid": "https://orcid.org/0000-0001-5172-8171"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/03611981261461513",
+      "pdf_url": null,
+      "source_id": "S145575934",
+      "source_name": "Transportation Research Record Journal of the Transportation Research Board",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-12",
+    "repository_urls": [],
+    "title": "Modeling Expressway Crash Severity with Heterogeneity: Behavior-Specific Analysis of Speeding and Drowsy/Inattentive Driving with Text-Derived Features"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-12_10.1177/03611981",
+    "members": [
+      "doi:10.1177/03611981261461513"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:text-analysis",
+        "label": "text analysis"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:046865y68",
+        "label": "Hanyang University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01gw3d370",
+        "label": "University of Windsor"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2192-9826",
+        "label": "Sungjun Lee"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9294-6295",
+        "label": "Nuri Park"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1598-3367",
+        "label": "Juneyoung Park"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5172-8171",
+        "label": "Chris Lee"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": true,
+        "label": "Traffic and Road Safety",
+        "score": 0.5426,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11373",
+        "is_primary": false,
+        "label": "Sleep and Work-Related Fatigue",
+        "score": 0.0903,
+        "subfield": "3205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12488",
+        "is_primary": false,
+        "label": "Mental Health via Writing",
+        "score": 0.0502,
+        "subfield": "3207"
+      }
+    ]
+  },
+  "first_published": "2026-07-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1997946769",
+      "openalex:W2017170637",
+      "openalex:W2029865733",
+      "openalex:W2130902307",
+      "openalex:W2154094451",
+      "openalex:W2160251564",
+      "openalex:W2165991084",
+      "openalex:W2203714058",
+      "openalex:W2338179207",
+      "openalex:W2799807643",
+      "openalex:W2894341424",
+      "openalex:W2911930063",
+      "openalex:W2969322340",
+      "openalex:W2980483040",
+      "openalex:W2992034134",
+      "openalex:W2999144441",
+      "openalex:W3042657885",
+      "openalex:W3100807786",
+      "openalex:W3131607254",
+      "openalex:W3157864446",
+      "openalex:W3161873775",
+      "openalex:W3177707784",
+      "openalex:W3187868333",
+      "openalex:W3210639541",
+      "openalex:W4210689475",
+      "openalex:W4224091808",
+      "openalex:W4225725971",
+      "openalex:W4281756444",
+      "openalex:W4281972661",
+      "openalex:W4285494409",
+      "openalex:W4308151510",
+      "openalex:W4319656309",
+      "openalex:W4385760378",
+      "openalex:W4390953199",
+      "openalex:W4404315311",
+      "openalex:W4405142364",
+      "openalex:W4407212865",
+      "openalex:W4412987769"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1177/03611981261461513",
+    "openalex": "W7168140724",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:03:30Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005981,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2097,
+      "out": 315
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:03:30Z",
+    "doi": "10.1177/03611981261461513",
+    "journal": "Transportation Research Record Journal of the Transportation Research Board",
+    "source_id": "S145575934",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2019 and 2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are derived specifically from South Korean expressway data and may not directly generalize to urban arterials or different national road networks.",
+      "what": "The study analyzed 17,876 crash records from South Korean expressways between 2019 and 2024 using a Bayesian random threshold random parameter ordered probit model. It integrated structured crash data with unstructured police report narratives processed via TF-IDF and Latent Dirichlet Allocation to model severity across speeding, drowsy, and inattentive driving. The analysis revealed that drowsy driving on mainline segments and involving trucks yielded the most severe outcomes, while speeding crashes involving heavy vehicles also increased severity, though rainy conditions unexpectedly correlated with lower severity.",
+      "why": "It demonstrates that integrating natural language processing of police narratives with heterogeneity modeling reveals distinct, behavior-specific risk factors that are otherwise masked in aggregate crash analyses."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-12",
+  "work_key": "doi:10.1177/03611981261461513"
+}

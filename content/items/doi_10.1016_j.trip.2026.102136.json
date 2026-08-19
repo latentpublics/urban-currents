@@ -1,0 +1,260 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The prediction of vessel arrival time (VAT) is crucial for port operations, which depend on vessel-reported estimated arrival time (ETA) for scheduling. However, discrepancies between ETA and actual arrival time often undermine planning reliability, causing inefficiencies and economic losses. Unlike ocean shipping, inland waterway transportation (IWT) faces distinct challenges such as fixed routes and dense vessel traffic. Existing VAT studies mainly focus on maritime transport and typically use single data sources (e.g., AIS or port call data), overlooking key IWT characteristics like structured routes and high traffic intensity. To address this gap, we propose a novel framework that integrates multiple data sources, including port call records, AIS trajectories, vessel features for VAT prediction. A tailored feature engineering pipeline reconstructs vessel routes and estimates sailing distances and traffic flow. Using the Port of Rotterdam as a case study, advanced ensemble tree-based models are applied. Experimental results show a 79.55% reduction in mean absolute error (from 17.06 to 3.49 h) relative to vessel-reported ETAs. Feature importance analysis identifies voyage distance, reported ETA, and waterway traffic flow as key factors. This study demonstrates that data-driven VAT prediction can support proactive berth scheduling, traffic-aware coordination, and just-in-time vessel arrivals, thereby improving operational efficiency, reducing emissions in IWT, and supporting sustainable port management.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Universität Hamburg",
+            "ror": "00g30e956"
+          }
+        ],
+        "name": "Peter Wenzel",
+        "openalex": "A5002986636",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          },
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Zhong Chu",
+        "openalex": "A5101660374",
+        "orcid": "https://orcid.org/0000-0002-7974-850X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
+        "name": "Frederik Schulte",
+        "openalex": "A5006372329",
+        "orcid": "https://orcid.org/0000-0003-3159-4393"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trip.2026.102136",
+      "pdf_url": null,
+      "source_id": "S4210230100",
+      "source_name": "Transportation Research Interdisciplinary Perspectives",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-07-13",
+    "repository_urls": [],
+    "title": "Predicting vessel arrival time in inland waterways: Integrating ETA, AIS, and traffic flow data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-07-13_10.1016/j.trip.2",
+    "members": [
+      "doi:10.1016/j.trip.2026.102136"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00g30e956",
+        "label": "Universität Hamburg"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0030zas98",
+        "label": "Hong Kong Polytechnic University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02e2c7k09",
+        "label": "Delft University of Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5002986636",
+        "label": "Peter Wenzel"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7974-850X",
+        "label": "Zhong Chu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3159-4393",
+        "label": "Frederik Schulte"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11622",
+        "is_primary": true,
+        "label": "Maritime Navigation and Safety",
+        "score": 0.9788,
+        "subfield": "2212"
+      }
+    ]
+  },
+  "first_published": "2026-07-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1969483458",
+      "openalex:W2295598076",
+      "openalex:W2522798398",
+      "openalex:W2991108192",
+      "openalex:W3009498923",
+      "openalex:W3146068749",
+      "openalex:W3160178951",
+      "openalex:W4224981453",
+      "openalex:W4285082305",
+      "openalex:W4303022251",
+      "openalex:W4318945054",
+      "openalex:W4321188765",
+      "openalex:W4378191323",
+      "openalex:W4378714768",
+      "openalex:W4382196858",
+      "openalex:W4386434910",
+      "openalex:W4391208666",
+      "openalex:W4405357524",
+      "openalex:W4409447822",
+      "openalex:W4410431470",
+      "openalex:W4413387273",
+      "openalex:W4415596454",
+      "openalex:W7133186244"
+    ],
+    "related_works": [
+      "openalex:W2595380028",
+      "openalex:W2185197683",
+      "openalex:W210698821",
+      "openalex:W585172599",
+      "openalex:W1525941177",
+      "openalex:W306695940",
+      "openalex:W3019845177",
+      "openalex:W2902078260",
+      "openalex:W2390190242",
+      "openalex:W4389662547"
+    ]
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trip.2026.102136",
+    "openalex": "W4408568254",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-19T08:04:30Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005708,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2083,
+      "out": 287
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-19T08:04:30Z",
+    "doi": "10.1016/j.trip.2026.102136",
+    "journal": "Transportation Research Interdisciplinary Perspectives",
+    "source_id": "S4210230100",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's predictive performance was validated using data from a single port case study in Rotterdam.",
+      "what": "This study developed a vessel arrival time prediction framework for inland waterways by integrating port call records, AIS trajectories, and vessel characteristics. Tested on the Port of Rotterdam, the system reconstructs routes to calculate sailing distances and traffic flow, feeding these features into ensemble tree-based models. The model reduced the mean absolute error of arrival predictions by 79.55%, dropping from 17.06 hours in self-reported estimates to 3.49 hours.",
+      "why": "It provides a highly accurate prediction method tailored to the structured routes and high traffic density of inland waterways, replacing unreliable self-reported vessel estimates with data-driven predictions that enable proactive berth scheduling."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-07-13",
+  "work_key": "doi:10.1016/j.trip.2026.102136"
+}

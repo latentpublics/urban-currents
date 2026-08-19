@@ -18,7 +18,7 @@
 #   at least 0.5, the keep rate of a coin flip.
 #
 # Result: 42 subfields in, 4 out.
-# Revised in 0P (Q3) to 44 in, 2 out — see the note above `excluded:`.
+# Revised in 0P (Q3) to **46 in, 0 out** — see the note above `excluded:`.
 #   keep loss   0.0676  (limit 0.1, old rule 0.614)
 #   withheld    0.1394  (limit 0.3)
 #
@@ -55,6 +55,7 @@ subfields:
   - id: "2302"    # thin evidence
   - id: "2303"    # thin evidence
   - id: "2305"    # keep 4/4
+  - id: "2306"    # 0P Q3: subfield_check keep 5/5
   - id: "2307"    # keep 3/4
   - id: "2308"    # thin evidence
   - id: "2725"    # thin evidence
@@ -65,6 +66,7 @@ subfields:
   - id: "3207"    # thin evidence
   - id: "3305"    # thin evidence
   - id: "3311"    # thin evidence
+  - id: "3312"    # 0P Q3: subfield_check keep 2/4 (corrigendum excluded)
   - id: "3313"    # keep 13/13
   - id: "3315"    # thin evidence
   - id: "3317"    # thin evidence
@@ -75,26 +77,36 @@ subfields:
   - id: "3616"    # thin evidence
 
 # Excluded — seen often enough to judge, and judged against:
-# ★ Re-checked in 0P (Q3) against `runs/labels/subfield_check.jsonl`, five
+# ★ Re-checked in 0P (Q3) against `runs/labels/subfield_check.jsonl` — five
 # papers drawn per excluded subfield and judged on purpose. The rule was written
 # before the judgements were read: **a subfield with a keep in it comes off the
-# list.** Two did.
+# list.** All four had keeps, so **the list is empty.**
 #
-# The two rates below are from **different sampling frames and are not added
-# together.** `relevance` is a ranked top-N sample; `subfield_check` is five
-# papers drawn per subfield. Each says what it says about its own draw.
+# The two rates are from **different sampling frames and are not added
+# together.** `relevance` is a ranked top-N draw; `subfield_check` is five drawn
+# per subfield. Each speaks for its own draw.
 #
 #   subfield  relevance (ranked)  subfield_check (targeted)  verdict
-#   1408      keep 1/3            keep 5/5                   INCLUDED
-#   2208      keep 2/5            keep 2/3                   INCLUDED
-#   2306      keep 1/4            not judged (0 of 5)        stays out, UNMEASURED
-#   3312      keep 1/6            not judged (0 of 4)        stays out, UNMEASURED
+#   1408      keep 1/3  0.333     keep 5/5  1.00             INCLUDED
+#   2208      keep 2/5  0.400     keep 4/5  0.80             INCLUDED
+#   2306      keep 1/4  0.250     keep 5/5  1.00             INCLUDED
+#   3312      keep 1/6  0.167     keep 2/4  0.50             INCLUDED
 #
-# 2306 and 3312 are **not confirmed exclusions**. Nobody has judged a paper in
-# them under this frame yet, and "no keep observed" where nothing was observed
-# is the measured-zero mistake. They remain excluded because that is the state
-# they were in, not because the check endorsed it. Finish
-# `uc review --label subfield_check` and re-run this.
-excluded:
-  - id: "3312"    # relevance keep 1/6; subfield_check 0 of 4 judged - UNMEASURED
-  - id: "2306"    # relevance keep 1/4; subfield_check 0 of 5 judged - UNMEASURED
+# 3312 is 2 of **4**, not 5: one of its five was a corrigendum, and a correction
+# notice is not a paper in the wrong subfield — it is not a paper. It is out of
+# the sample rather than counted as a drop (see `pipeline/filters/correction.py`).
+#
+# ## What this says about the rule that built the list
+#
+# Every one of the four was excluded on **three to six** ranked observations,
+# and every one is overturned by five targeted ones. `MIN_OBSERVED = 3` was too
+# low a bar to exclude on: at n=3, "keep 1/3" is one paper away from "keep 2/3",
+# and the difference between those two is the difference between excluding a
+# subfield and keeping it. Thin evidence was treated as evidence against, which
+# is the mistake the header two paragraphs up says the list exists to avoid.
+#
+# The rule and the mechanism are kept. `off_subfield` still runs, and a deny-list
+# with nothing in it withholds nothing — which is the correct resting state for
+# a rule whose evidence has all been withdrawn. Re-derive with
+# `scripts/paper_subfields.py` when there are labels to re-derive from.
+excluded: []

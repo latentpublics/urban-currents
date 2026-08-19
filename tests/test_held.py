@@ -76,11 +76,12 @@ def test_enforcement_can_be_switched_off_by_config(repo, monkeypatch):
     import pipeline.held as held_mod
 
     monkeypatch.setattr(held_mod, "_off_subfield_withholds", lambda: False)
-    # Any member of the live list: this is a test about the switch, not about
-    # which subfields are currently on it.
-    some_rejected = sorted(held_mod.rejected_subfield_ids())[0]
+    # The deny-list is injected, not borrowed. It is empty as of 0P (Q3) —
+    # every subfield on it was overturned by targeted labels — and a test about
+    # the switch must keep working whatever the vocabulary currently says.
+    monkeypatch.setattr(held_mod, "rejected_subfield_ids", lambda: {"9999"})
     suspicion = inspect(
-        _item("doi:10.1/rejected", subfield=some_rejected), "journal", selected=True
+        _item("doi:10.1/rejected", subfield="9999"), "journal", selected=True
     )
 
     assert suspicion is not None
@@ -409,19 +410,24 @@ def test_the_gate_denies_rather_than_allows(repo):
     rejected = rejected_subfield_ids()
 
     assert whitelist_subfield_ids() == {"3305", "3313", "3322"}, "journal list must not move"
-    # Was four. `subfield_check` judged five papers in each and found keeps in
-    # 1408 (5/5) and 2208 (2/3), so both came off the list in 0P (Q3). The two
-    # that remain have **no** targeted judgements yet — they are unmeasured, not
-    # confirmed, and finishing that pass may empty this list entirely.
-    assert rejected == {"2306", "3312"}
+    # Was four. `subfield_check` judged five papers in each of them and **all
+    # four had keeps** — 5/5, 4/5, 5/5 and 2/4 — so the list is empty as of 0P
+    # (Q3). Each had been excluded on three to six ranked observations.
+    #
+    # Empty is the correct resting state for a deny-list whose evidence has all
+    # been withdrawn, and it is still a deny-list: an unseen subfield passes,
+    # which is what makes emptiness safe rather than a hole. The assertion below
+    # is the one that matters and holds either way.
+    assert rejected == set()
     assert len(rejected) < 10, "a deny-list, not an allow-list wearing a disguise"
 
 
-def test_a_paper_in_a_rejected_subfield_is_withheld_again(repo):
+def test_a_paper_in_a_rejected_subfield_is_withheld_again(repo, monkeypatch):
     """Enforcement is back on, against the derived list."""
-    from pipeline.held import rejected_subfield_ids
+    import pipeline.held as held_mod
 
-    rejected = _item("doi:10.1/rejected", subfield=sorted(rejected_subfield_ids())[0])
+    monkeypatch.setattr(held_mod, "rejected_subfield_ids", lambda: {"9999"})
+    rejected = _item("doi:10.1/rejected", subfield="9999")
     suspicion = inspect(rejected, "journal", selected=True)
 
     assert suspicion is not None

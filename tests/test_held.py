@@ -76,7 +76,12 @@ def test_enforcement_can_be_switched_off_by_config(repo, monkeypatch):
     import pipeline.held as held_mod
 
     monkeypatch.setattr(held_mod, "_off_subfield_withholds", lambda: False)
-    suspicion = inspect(_item("doi:10.1/rejected", subfield="2208"), "journal", selected=True)
+    # Any member of the live list: this is a test about the switch, not about
+    # which subfields are currently on it.
+    some_rejected = sorted(held_mod.rejected_subfield_ids())[0]
+    suspicion = inspect(
+        _item("doi:10.1/rejected", subfield=some_rejected), "journal", selected=True
+    )
 
     assert suspicion is not None
     assert suspicion.kind == NEAR_MISS
@@ -404,13 +409,19 @@ def test_the_gate_denies_rather_than_allows(repo):
     rejected = rejected_subfield_ids()
 
     assert whitelist_subfield_ids() == {"3305", "3313", "3322"}, "journal list must not move"
-    assert rejected == {"1408", "2208", "2306", "3312"}
+    # Was four. `subfield_check` judged five papers in each and found keeps in
+    # 1408 (5/5) and 2208 (2/3), so both came off the list in 0P (Q3). The two
+    # that remain have **no** targeted judgements yet — they are unmeasured, not
+    # confirmed, and finishing that pass may empty this list entirely.
+    assert rejected == {"2306", "3312"}
     assert len(rejected) < 10, "a deny-list, not an allow-list wearing a disguise"
 
 
 def test_a_paper_in_a_rejected_subfield_is_withheld_again(repo):
     """Enforcement is back on, against the derived list."""
-    rejected = _item("doi:10.1/rejected", subfield="2208")
+    from pipeline.held import rejected_subfield_ids
+
+    rejected = _item("doi:10.1/rejected", subfield=sorted(rejected_subfield_ids())[0])
     suspicion = inspect(rejected, "journal", selected=True)
 
     assert suspicion is not None

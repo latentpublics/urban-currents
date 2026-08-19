@@ -336,7 +336,16 @@ def run_pending_session(
     those were is exactly the friction this is meant to remove**.
     """
     from . import held as held_queue
-    from .labeling import LABEL_KEYS, _ask_label, append_labels, label_row
+    from .labeling import (
+        LABEL_KEYS,
+        _ask_label,
+        append_one,
+        assert_writable,
+        held_review_row,
+    )
+
+    # Before the first item is shown, not after the last (F2).
+    assert_writable("held_review", "held_review")
 
     everything = held_queue.pending()
     waiting = everything[:limit] if limit else everything
@@ -359,7 +368,7 @@ def run_pending_session(
 
     started = _time.monotonic()
     counts: dict[str, int] = {}
-    rows = []
+    n = 0
     stopped = False
 
     for i, row in enumerate(waiting, start=1):
@@ -378,18 +387,15 @@ def run_pending_session(
         counts[label] = counts.get(label, 0) + 1
         if label == "skip" or item is None:
             continue
-        rows.append(
-            label_row(
-                item,
-                row.get("source") or "journal",
-                0,
-                label,
-                date.fromisoformat(row["date"]),
-                float(row.get("score") or 0.0),
-            )
+        # Written before the next question is asked. This session batched its
+        # rows and wrote them once at the end — the same fault that lost thirty
+        # code-probe judgements (F1), still here because the hotfix only
+        # reached the sessions that had already gone wrong.
+        n += append_one(
+            "held_review",
+            held_review_row(item, row, label, row.get("source") or "journal"),
         )
 
-    n = append_labels("relevance", rows)
     elapsed = _time.monotonic() - started
     remaining = len(everything) - n
     write_progress(last_pending_judged=n, last_pending_remaining=remaining)

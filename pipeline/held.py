@@ -385,7 +385,12 @@ def pending(since: Optional[date] = None) -> list[dict]:
     """
     from .labeling import load_labels, superseded
 
-    judged = {r.get("work_key") for r in superseded(load_labels("relevance"))}
+    # Both files, because either can settle an item: `held_review` is where
+    # `--pending` writes, and a paper judged in the ranked relevance sample has
+    # been judged whatever queue it also sat in. Asking again would be asking a
+    # question we have the answer to.
+    judged = {r.get("work_key") for r in superseded(load_labels("held_review"))}
+    judged |= {r.get("work_key") for r in superseded(load_labels("relevance"))}
     rows = []
     for day in all_held():
         if since and day["date"] < str(since):

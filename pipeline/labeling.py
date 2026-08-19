@@ -138,16 +138,19 @@ RANKED_FACETS = frozenset({"relevance"})
 # ones, and `precision_at_k` refuses them outright rather than returning a
 # number that looks fine.
 #
-# Three frames now, and they answer three questions:
+# Five frames now, and they answer five questions:
 #   relevance      ranked top-N per source  — what precision@k is defined over
 #   affinity_probe band-stratified over canon affinity
 #   code_probe     band-stratified over relevance, among code-bearing arXiv
 #   subfield_check five per subfield, over the four the scope gate excludes
+#   held_review    whatever a suspicion rule stopped — drawn by rule, not rank
 #
 # Any two of them concatenated give a figure that looks reasonable and means
 # nothing, which is why the guard refuses by name rather than hoping nobody
 # points a summariser at the wrong file (phase 0L, N2).
-PROBE_FACETS = frozenset({"affinity_probe", "code_probe", "subfield_check"})
+PROBE_FACETS = frozenset(
+    {"affinity_probe", "code_probe", "subfield_check", "held_review"}
+)
 
 # What each file's rows must declare. A row carries its own frame so a file that
 # was mixed by hand — `cat a.jsonl >> b.jsonl` — is still detectable afterwards.
@@ -159,6 +162,17 @@ SAMPLING_OF_FACET = {
     # Not a ranking, not a band — a fourth question with a fourth frame, and
     # pooling it with any of the others would average two different populations.
     "subfield_check": "subfield_check",
+    # ★ The held queue (0P, Q4). `uc review --pending` used to write its
+    # judgements straight into `relevance.jsonl` with `rank=0`, which is the
+    # pooling this whole registry exists to prevent — and worse than the usual
+    # case, because `precision_at_k` sorts a day by rank and takes the head, so
+    # every held judgement would have sorted **above rank 1** and occupied the
+    # top of its day's top-ten window. The queue is drawn by which rule stopped
+    # an item, not by where the ranking put it; it is its own question.
+    #
+    # It had not fired yet: `relevance.jsonl` holds no rank-0 row, so nobody had
+    # run `--pending` to the end before this was caught.
+    "held_review": "held_review",
 }
 
 
@@ -326,6 +340,7 @@ def _suggest_session(facet: str) -> str:
         "relevance": "Use `uc review --label relevance`.",
         "affinity_probe": "Use `uc review --label affinity`.",
         "code_probe": "Use `uc review --label code_probe`.",
+        "held_review": "Use `uc review --pending`.",
         "subfield_check": "Use `uc review --label subfield_check`.",
     }.get(facet, f"No session writes {facet!r}; the known ones are relevance, "
                  f"affinity and code_probe.")
@@ -429,6 +444,40 @@ def label_row(
         # top-N draw, which is what makes precision@k defined over it.
         "sampling": "ranked_top_n",
         "labelled_at": utcnow().isoformat(),
+    }
+
+
+def held_review_row(
+    item: Item, row: dict, label: str, source: str
+) -> dict[str, Any]:
+    """One judgement on a held item, carrying **why it was held**.
+
+    That is the whole point of the file: these labels exist to tell us whether
+    the rule that stopped an item was right, so `rule`, `kind` and the rule's
+    own `detail` travel with the verdict. Without them the row is just another
+    opinion about a paper and answers nothing about the queue.
+
+    There is no `rank`, because the queue has no ranking — an item is here
+    because a rule flagged it. The old code passed `rank=0` into a ranked row,
+    which sorted it above rank 1 in every precision window it touched.
+    """
+    return {
+        "date": row["date"],
+        "work_key": item.work_key,
+        "source": source,
+        "label": label,
+        "score": round(item.scores.relevance, 4),
+        "title": item.bibliography.title,
+        "rule": row.get("rule"),
+        "kind": row.get("kind"),
+        "why_held": row.get("detail"),
+        "has_summary": bool(item.summary.en and item.summary.en.what),
+        "classifier_version": item.provenance.classifier_version,
+        "model_version": cfg("classifier.model_version"),
+        "sampling": "held_review",
+        "labelled_at": utcnow().isoformat(),
+        # Drawn by rule, never by rank. No precision@k is defined over it.
+        "not_for_precision_at_k": True,
     }
 
 

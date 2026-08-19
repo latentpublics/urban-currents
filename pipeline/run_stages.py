@@ -355,10 +355,14 @@ def journal_rank_score(item: Item) -> float:
     a thin journal day still publishes what a tracked journal actually printed.
     """
     from .filters.book_review import demotion
+    from .filters.correction import demotion as correction_demotion
 
     c = item.scores.components
     base = 0.5 * c.artifact_completeness + 0.3 * c.novelty + 0.2 * c.source_multiplicity
-    return round(base * demotion(item.bibliography.title), 4)
+    # Two genres, two modules, one mechanism. A corrigendum is not a paper at
+    # all (0P Q3) and sinks for the same reason and by the same amount.
+    title = item.bibliography.title
+    return round(base * demotion(title) * correction_demotion(title), 4)
 
 
 UNREADABLE_STAGE = "unreadable"

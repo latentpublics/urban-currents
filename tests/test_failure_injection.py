@@ -39,18 +39,21 @@ from pipeline.models import (
 from pipeline.outcome import NOT_PUBLISHED, PUBLISHED, load_log
 
 DAY = date(2026, 8, 20)
-# A healthy day's stage map. The four after the sources are `REQUIRED_STAGES`
-# (0U, U1): this harness runs only `summarize` through `_guard` and calls the
-# issue stage directly, so without them a day that is fine in every way this
-# file cares about would be refused for stages the harness never ran.
-GOOD_STAGES = {
+# ★ What the **collect stub** may claim, and nothing more (0V, V2-2).
+#
+# This used to carry `classify`, `select`, `summarize` and `issue` as well, all
+# stamped OK before the run had reached any of them. That is what hid U1's
+# defect: with every required stage already marked green at collection time,
+# no test in this file ever exercised `run_daily`'s real order, and the
+# `== PUBLISHED` assertions below passed on a pipeline that could not publish
+# anything at all.
+#
+# Now each stage is stamped by `_guard` when it actually runs, which is the
+# only claim a fixture is entitled to make.
+COLLECTED = {
     "collect": "OK",
     "collect.arxiv": "OK",
     "collect.openalex": "OK",
-    "classify": "OK",
-    "summarize": "OK",
-    "select": "OK",
-    "issue": "OK",
 }
 
 
@@ -94,16 +97,32 @@ def wiring(monkeypatch):
     log, the alert and the delivery ledger are all the real ones — those are
     what is under test.
     """
-    state = {"collect_calls": 0, "summarize_calls": 0, "collected": []}
+    state = {
+        "collect_calls": 0,
+        "classify_calls": 0,
+        "select_calls": 0,
+        "summarize_calls": 0,
+        "collected": [],
+    }
 
     def collect(run, d, backfill_from=None, **kw):
         state["collect_calls"] += 1
         if state.get("collect_fails"):
             raise RuntimeError("arXiv returned 503 for every page")
-        run.metrics.stages.update(GOOD_STAGES)
+        run.metrics.stages.update(COLLECTED)
         run.metrics.counts.arxiv_fetched = 311
         run.metrics.counts.openalex_fetched = 42
         state["collected"] = [_item(0), _item(1)]
+        return state["collected"]
+
+    # `_guard` stamps each of these OK as it returns, so a stage's status
+    # appears at the moment the stage runs and not before.
+    def classify(run, *a, **kw):
+        state["classify_calls"] += 1
+        return state["collected"]
+
+    def select(run, *a, **kw):
+        state["select_calls"] += 1
         return state["collected"]
 
     def summarize(run, use_llm=True, **kw):
@@ -125,11 +144,15 @@ def wiring(monkeypatch):
         return issue
 
     monkeypatch.setattr(run_stages, "stage_collect", collect)
+    monkeypatch.setattr(run_stages, "stage_classify", classify)
+    monkeypatch.setattr(run_stages, "stage_select", select)
     monkeypatch.setattr(run_stages, "stage_summarize", summarize)
     monkeypatch.setattr(run_stages, "stage_issue", issue_stage)
     monkeypatch.setattr(daily_mod, "stage_issue", issue_stage, raising=False)
     monkeypatch.setattr(run_stages, "read_stage", lambda run, name: state["collected"])
-    monkeypatch.setattr(daily_mod, "STAGES", ("summarize",))
+    # The real order, in miniature: the three stages the verdict requires
+    # before an issue may be attempted, then `issue` itself through `_guard`.
+    monkeypatch.setattr(daily_mod, "STAGES", ("classify", "select", "summarize"))
     monkeypatch.setenv("UC_ALERT_RECIPIENT", "yjun@example.org")
     monkeypatch.setenv("UC_PREVIEW_RECIPIENT", "reader@example.org")
     return state

@@ -28,7 +28,6 @@ No network, no keys, and nothing here sleeps for real.
 from __future__ import annotations
 
 from datetime import date
-from pathlib import Path
 from typing import Any
 
 import pytest
@@ -54,8 +53,19 @@ def offline_daily(monkeypatch):
     replaced, because the failures under test are downstream of it.
     """
 
+    # Bound before the patch: `run_stages.stage_collect` inside the stub would
+    # be the stub itself. 0U had that recursion, and because a RecursionError
+    # in collect reads as `collect: FAILED` — which produces the
+    # `not_published` these tests assert — they passed without ever collecting
+    # anything (0V, V6-4).
+    real_collect = run_stages.stage_collect
+
     def collect(run, d, backfill_from=None, **kw):
-        return run_stages.stage_collect(run, d, fixture=True)
+        items = real_collect(run, d, fixture=True)
+        run.metrics.stages["collect.arxiv"] = "OK"
+        run.metrics.stages["collect.openalex"] = "OK"
+        run.count("openalex_fetched", 0)
+        return items
 
     monkeypatch.setattr(run_stages, "stage_collect", collect)
     monkeypatch.setenv("UC_ALERT_RECIPIENT", "yjun@example.org")
@@ -117,39 +127,64 @@ def test_a_total_llm_failure_is_refused_rather_than_published(repo, sample_date,
 
 
 def test_a_total_llm_failure_publishes_no_pending_cards(repo, sample_date, dead_llm, offline_daily):
-    """The symptom, stated as the reader would have met it."""
+    """The symptom, stated as the reader would have met it.
+
+    Looks where the rendered output actually is (0V, V6-3). 0U searched
+    `content/` for the placeholder, and the placeholder is produced at render
+    time into `runs/{run_id}/preview.html` and `email.html` — there is no
+    `.html` under `content/` at all, so that search could not have failed
+    however broken the pipeline was.
+    """
     result = daily_mod.run_daily(d=sample_date, use_llm=True)
 
     assert result["status"] == NOT_PUBLISHED
     assert not _issue_file(sample_date).exists()
-
-    # Nothing was mailed, and nothing on disk carries the placeholder. The
-    # search is over the whole of `content/`, not just today's issue: the
-    # failure being pinned is a card reaching a reader, and any file under
-    # `content/` is a file the site publishes.
-    published = [
-        p for p in paths.CONTENT.rglob("*")
-        if p.is_file() and p.suffix in (".json", ".html")
-        and PENDING_CARD in p.read_text(encoding="utf-8", errors="ignore")
-    ]
-    assert published == []
     assert store.load_issue(sample_date) is None
 
+    rendered = [
+        f for f in paths.RUNS.rglob("*.html")
+        if PENDING_CARD in f.read_text(encoding="utf-8", errors="ignore")
+    ]
+    assert rendered == [], f"a placeholder card was rendered into {rendered}"
 
-def test_the_placeholder_string_still_exists():
-    """Guard against the search above passing for the wrong reason.
+    # And nothing under `content/` either — belt and braces, and the assertion
+    # 0U meant to make.
+    archived = [
+        f for f in paths.CONTENT.rglob("*")
+        if f.is_file()
+        and PENDING_CARD in f.read_text(encoding="utf-8", errors="ignore")
+    ]
+    assert archived == []
 
-    If the template stopped saying *"Summary pending review."* the `rglob`
-    would find nothing and the test would go green while the bug returned
-    under a new wording. Read from the real repository, not the temporary
-    root: the template is source, not output.
+
+def test_an_unsummarised_item_really_does_render_the_placeholder(repo, sample_date):
+    """The positive control the test above needs in order to mean anything.
+
+    0U's version read the template and asserted the string was in the file,
+    which proves the string exists and not that anything reaches it. This
+    renders an issue containing a real unsummarised item and finds the
+    placeholder in the output, so a reworded template or an unreachable
+    fallback branch fails here instead of quietly making the search above
+    unfalsifiable.
     """
-    template = (
-        Path(__file__).resolve().parent.parent
-        / "pipeline" / "render" / "templates" / "item_card.html.j2"
-    ).read_text(encoding="utf-8")
+    from pipeline.models import Bibliography, Headline, Issue, Item, ScanMeta
+    from pipeline.render.preview import render_issue
 
-    assert PENDING_CARD in template
+    item = Item(
+        work_key="arxiv:2608.99999",
+        first_published=sample_date,
+        bibliography=Bibliography(title="An unsummarised paper"),
+    )
+    issue = Issue(
+        date=sample_date,
+        items=[item.work_key],
+        headline=Headline(present=False),
+        scan_meta=ScanMeta(items_published=1, candidates_scanned=1, journals=1),
+    )
+
+    html = render_issue(issue, [item])
+
+    assert PENDING_CARD in html
 
 
 # --------------------------------------------------------------------------
@@ -196,16 +231,37 @@ def test_uc_daily_does_not_publish_the_candidate_pool(
 
 
 def test_a_skipped_upstream_stage_is_still_walked_past(repo, sample_date):
-    """The other half of U4, and the reason it is a list rather than a rule.
+    """The other half of U4, exercised on a stage the rule actually names.
 
-    `enrich` is SKIPPED on every run without a Springer key. If refusing to
-    walk back applied to skipping too, no day would ever publish.
+    Rewritten in 0V (V6-1). The first version asserted
+    `stages.get("enrich") in ("SKIPPED", "PARTIAL", "OK")` — which every
+    possible outcome satisfies — and `enrich` is not in `UPSTREAM_REQUIRED` at
+    all, so the code path it described and the code path it touched were
+    different ones.
+
+    `summarize` **is** listed, as an upstream of `issue`. Skipped, it has to be
+    walked past: that is the whole reason the rule is a list of failures rather
+    than a rule about order. Failed, it must stop the walk.
     """
-    run = run_stages.run_all(sample_date, fixture=True, use_llm=False)
+    from pipeline.metrics import Run
+    from pipeline.run_stages import write_stage
+    from pipeline.stages import UpstreamFailed, read_input
 
-    assert run.metrics.stages.get("enrich") in ("SKIPPED", "PARTIAL", "OK")
-    assert run.metrics.stages["select"] == "OK"
-    assert run.metrics.stages["issue"] == "OK"
+    run = Run.for_date(sample_date)
+    selected = run_stages.stage_collect(run, sample_date, fixture=True)
+    write_stage(run, "select", selected)
+    run.stage("select", "OK")
+
+    # No model, so the stage could not run. `issue` must still see the
+    # selection rather than lose the day.
+    run.stage("summarize", "SKIPPED")
+    walked = read_input(run, "issue")
+    assert [it.work_key for it in walked] == [it.work_key for it in selected]
+
+    # The same stage, failed, is a different fact.
+    run.stage("summarize", "FAILED")
+    with pytest.raises(UpstreamFailed):
+        read_input(run, "issue")
 
 
 # --------------------------------------------------------------------------
@@ -213,25 +269,37 @@ def test_a_skipped_upstream_stage_is_still_walked_past(repo, sample_date):
 # --------------------------------------------------------------------------
 
 
+class _Response:
+    """One 429, carrying whatever headers this server was built with."""
+
+    status_code = 429
+    text = ""
+
+    def __init__(self, headers: dict[str, str]):
+        self.headers = headers
+
+    def raise_for_status(self):  # pragma: no cover - never reached on 429
+        raise AssertionError("raise_for_status must not be called for a 429")
+
+
 class _Always429:
-    """An arXiv that is throttling and never stops."""
+    """An arXiv that is throttling and never stops.
 
-    class _Response:
-        status_code = 429
-        headers: dict[str, str] = {}
-        text = ""
-
-        def raise_for_status(self):  # pragma: no cover - never reached on 429
-            raise AssertionError("raise_for_status must not be called for a 429")
+    State per instance (0V, V6-2). 0U wrote `self._Response.headers = {...}`
+    in `__init__`, which assigns to the **class** — so the server built with
+    `Retry-After: 900` left that header on every instance created afterwards
+    in the same session. Running the module in order hid it; running the
+    count-ceiling test alone with `-k` gave it a 900-second first wait, which
+    breaches the sleep ceiling immediately and passes in zero iterations.
+    """
 
     def __init__(self, retry_after: str | None = None):
         self.calls = 0
-        if retry_after is not None:
-            self._Response.headers = {"Retry-After": retry_after}
+        self.headers = {"Retry-After": retry_after} if retry_after is not None else {}
 
     def get(self, url: str, params: Any = None):
         self.calls += 1
-        return self._Response()
+        return _Response(dict(self.headers))
 
 
 @pytest.fixture
@@ -259,9 +327,13 @@ def test_an_arxiv_throttling_forever_stops_by_itself(repo, no_real_sleep):
     assert "giving up rather than" in str(exc.value)
 
     # Bounded three ways, because a hang is a hang whichever one runs out.
-    assert server.calls <= ArxivCollector.MAX_RATE_LIMIT_RETRIES + 2
+    # The lower bounds matter as much: with the class-attribute leak 0V fixed
+    # (V6-2) this test could finish in **zero** iterations and still pass every
+    # ceiling, which is a test that proves the ceilings by never reaching them.
+    assert server.calls > 1, "the collector gave up without retrying at all"
+    assert 1 < server.calls <= ArxivCollector.MAX_RATE_LIMIT_RETRIES + 2
     cooldowns = [s for s in no_real_sleep if s >= ArxivCollector.RATE_LIMIT_COOLDOWN_S]
-    assert len(cooldowns) <= ArxivCollector.MAX_RATE_LIMIT_RETRIES
+    assert 1 <= len(cooldowns) <= ArxivCollector.MAX_RATE_LIMIT_RETRIES
     assert sum(cooldowns) <= ArxivCollector.MAX_RATE_LIMIT_SLEEP_S
 
 
@@ -311,3 +383,48 @@ def test_a_throttled_collection_fails_the_day_rather_than_hanging(repo, no_real_
     ok, reasons = looked(run)
     assert ok is False
     assert any("collect" in r for r in reasons)
+
+class _Always500:
+    """A server that is up, unhappy, and consistent about it."""
+
+    class _Response:
+        status_code = 500
+        headers: dict = {}
+        text = ""
+
+        def raise_for_status(self):
+            raise RuntimeError("500 Server Error")
+
+    def __init__(self):
+        self.calls = 0
+
+    def get(self, url: str, params=None):
+        self.calls += 1
+        return self._Response()
+
+
+def test_the_ordinary_backoff_has_a_ceiling_too(repo, no_real_sleep):
+    """V7: the 429 budget did not cover the 5xx path.
+
+    `slept` was accumulated only in the rate-limit branch, so the exponential
+    backoff for empty bodies and 5xx spent whatever it liked. The two paths
+    interact: a 429 storm raises the attempt ceiling to nine *and* pushes the
+    request interval to its 12-second cap, and 12x(64+128+256) is about 5,400
+    seconds — no infinite loop, and well past `timeout-minutes: 45`.
+    """
+    from pipeline.collectors.arxiv import ArxivCollector
+    from pipeline.metrics import Run
+
+    server = _Always500()
+    collector = ArxivCollector(Run.for_date(date(2026, 8, 20)), client=server)
+    # The state a 429 storm leaves behind, which is what makes this expensive.
+    collector.interval = 12.0
+    collector.max_retries = 9
+
+    with pytest.raises(RuntimeError):
+        collector._fetch({"search_query": "cat:cs.CY"})
+
+    assert sum(no_real_sleep) <= ArxivCollector.MAX_TOTAL_SLEEP_S
+    assert max(no_real_sleep) <= ArxivCollector.MAX_BACKOFF_SLEEP_S
+    assert server.calls >= 2, "it gave up without retrying"
+

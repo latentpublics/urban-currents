@@ -37,10 +37,15 @@ from pipeline.outcome import (
 )
 
 DAY = date(2026, 8, 20)
-# The stages a healthy day reports. The four after the sources are
-# `REQUIRED_STAGES` (0U, U1) — a run that never summarised is not a published
-# day, so a fixture claiming to be one has to say it summarised.
-GOOD = {
+# Two maps, because they are two different claims (0V, V2-2).
+#
+# `FINISHED` describes a run that ran to the end — it is handed straight to
+# `decide()` as a synthetic finished run, so naming `issue` in it is accurate.
+# `COLLECTED` is all a **collect stub** is entitled to stamp: the stages after
+# it have not happened yet when it returns. 0U used one map for both, which
+# meant every harness in the suite reported `issue: OK` before the issue stage
+# existed — and that is what let U1 refuse every real day unnoticed.
+FINISHED = {
     "collect": "OK",
     "collect.arxiv": "OK",
     "collect.openalex": "OK",
@@ -48,6 +53,11 @@ GOOD = {
     "summarize": "OK",
     "select": "OK",
     "issue": "OK",
+}
+COLLECTED = {
+    "collect": "OK",
+    "collect.arxiv": "OK",
+    "collect.openalex": "OK",
 }
 
 
@@ -108,7 +118,7 @@ def wiring(monkeypatch):
     state: dict = {"collected": []}
 
     def collect(run, d, backfill_from=None, **kw):
-        run.metrics.stages.update(GOOD)
+        run.metrics.stages.update(COLLECTED)
         run.metrics.counts.arxiv_fetched = 300
         run.metrics.counts.openalex_fetched = 40
         return []
@@ -207,7 +217,7 @@ def test_record_interrupted_never_overwrites_a_real_verdict(repo):
     from pipeline.outcome import decide, record
 
     run = Run.for_date(DAY)
-    run.metrics.stages.update(GOOD)
+    run.metrics.stages.update(FINISHED)
     run.metrics.counts.arxiv_candidates = 12
     record(decide(run, DAY, published_count=12))
 
@@ -262,7 +272,7 @@ def test_an_explicit_date_collects_that_dates_window(repo, wiring, monkeypatch):
     def collect(run, d, backfill_from=None, **kw):
         seen["covers_to"] = d
         seen["covers_from"] = backfill_from
-        run.metrics.stages.update(GOOD)
+        run.metrics.stages.update(COLLECTED)
         run.metrics.counts.arxiv_fetched = 10
         run.metrics.counts.openalex_fetched = 10
         return []

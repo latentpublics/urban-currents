@@ -579,7 +579,12 @@ def weekly(
         # `alert_undeliverable` counts as a failure here for exactly that
         # reason: the summary was written into a runner that is about to be
         # destroyed, and nothing about that should look like success.
-        if result.get("status") not in ("weekly_sent", "sent", "ok"):
+        # `weekly_sent` and nothing else (0V, V4). The list used to include
+        # `sent`, which is what `notify_weekly` returned **whatever backend it
+        # used** — so the guard could never fire and the heartbeat this job is
+        # supposed to be was green every Sunday. `notify_weekly` now answers
+        # the same question `notify_failure` does.
+        if result.get("status") != "weekly_sent":
             raise typer.Exit(code=1)
         return
     typer.echo(weekly_body(weekly_summary()))

@@ -98,12 +98,27 @@ def alerting_state() -> dict[str, Any]:
     `uc status` for `SKIPPED|FAILED` and `uc status` never printed stage
     statuses, so neither branch could ever be taken (0U, U10).
     """
-    from .config import cfg
-    from .deliver import reaches_a_person
+    from .deliver import get_backend, reaches_a_person
     from .outcome import all_logs
 
-    backend = str(cfg("deliver.backend", "file"))
-    recipients = [r for r in (cfg("deliver.alert_recipients", []) or []) if r]
+    # ★ The **resolved** backend, not the configured one (0V, V5).
+    #
+    # `get_backend()` falls back to `file` when the credentials for the
+    # configured backend are missing — deliberately, because a missing password
+    # should cost a send and not a day's issue. Reading `deliver.backend`
+    # instead meant that setting it to `smtp` and forgetting `UC_SMTP_PASSWORD`
+    # made `uc status` say *"alerts reach a person"* while every alert went
+    # into a discarded `.eml`. That is the exact false reassurance U2 was
+    # written to remove, planted in U2's own indicator — and the same output
+    # already reported the real name two lines down under `delivery_backend`,
+    # so one screen carried both answers.
+    #
+    # Recipients likewise: `deliver.alert_recipients` is not a key that exists
+    # in `config/pipeline.yaml`, so this always counted zero. The address comes
+    # from `UC_ALERT_RECIPIENT`, which is what `notify_failure` actually sends
+    # to, so ask the same function it asks.
+    backend = get_backend().name
+    recipients = alert_recipients()
 
     logs = all_logs()
     row = max(logs, key=lambda r: r.get("date", "")) if logs else {}
@@ -127,6 +142,22 @@ def alerting_state() -> dict[str, Any]:
         "last_run_failed": failed,
         "last_run_skipped": skipped,
     }
+
+
+def _reached_a_person(backend) -> bool:
+    """Did that send land anywhere a human will look?
+
+    ★ Extracted in 0V (V4) because the two send paths had drifted apart.
+    `notify_failure` asked this question and `notify_weekly` did not, so the
+    weekly job — which `weekly.yml` documents as the repository's heartbeat,
+    red on purpose until a provider exists — went **green** every Sunday
+    writing an `.eml` into a runner that was then destroyed. GitHub does not
+    mail anyone about a green job, so the one signal that survives a dead cron
+    was itself silent.
+    """
+    from .deliver import reaches_a_person
+
+    return reaches_a_person(getattr(backend, "name", ""))
 
 
 def notify_failure(
@@ -162,9 +193,7 @@ def notify_failure(
         #
         # No provider is chosen here; that decision is not this batch's. What
         # changes is that the status now says which of the two happened.
-        from .deliver import reaches_a_person
-
-        delivered = reaches_a_person(getattr(backend, "name", ""))
+        delivered = _reached_a_person(backend)
         return {
             "status": "alerted" if delivered else "alert_undeliverable",
             "reached_a_person": delivered,
@@ -291,7 +320,16 @@ def notify_weekly(end: Optional[date] = None, backend=None) -> dict[str, Any]:
     try:
         backend = backend or get_backend()
         result = backend.send(message)
-        return {"status": "sent", "summary": summary, **result}
+        # The same branch `notify_failure` takes (0V, V4). `weekly_sent` only
+        # when it reached somebody; otherwise the caller exits non-zero and the
+        # red run is the heartbeat.
+        delivered = _reached_a_person(backend)
+        return {
+            "status": "weekly_sent" if delivered else "weekly_undeliverable",
+            "reached_a_person": delivered,
+            "summary": summary,
+            **result,
+        }
     except Exception as e:  # noqa: BLE001 - a summary is never worth a crash
         return {"status": "failed", "error": f"{type(e).__name__}: {e}", "summary": summary}
 

@@ -12,6 +12,7 @@ from datetime import date, timedelta
 
 from pipeline.deliver import DeliveryError, Message
 from pipeline.notify import (
+    alerting_state,
     consecutive_failures,
     failure_body,
     failure_subject,
@@ -345,3 +346,73 @@ def test_one_unrecoverable_day_does_not_stop_the_others(repo, monkeypatch):
 
     assert [r["status"] for r in results] == ["retry_failed", PUBLISHED]
     assert "RuntimeError" in results[0]["error"]
+
+# --------------------------------------------------------------------------
+# Does the indicator describe the system, or the config file? (phase 0V)
+# --------------------------------------------------------------------------
+
+
+def test_the_weekly_send_says_undeliverable_with_a_file_backend(repo, monkeypatch):
+    """The heartbeat has to be able to go red.
+
+    `weekly.yml` documents this job as red-on-purpose until a provider exists,
+    because GitHub mails the owner about a failed scheduled workflow and that
+    mail is the only thing that survives a dead cron. `notify_weekly` returned
+    `sent` for the file backend, so it was green every Sunday.
+    """
+    monkeypatch.setenv("UC_ALERT_RECIPIENT", "yjun@example.org")
+    _log(DAY, PUBLISHED, published=4)
+
+    result = notify_weekly(end=DAY)
+
+    assert result["status"] == "weekly_undeliverable"
+    assert result["reached_a_person"] is False
+
+
+def test_the_weekly_send_says_sent_when_it_reaches_somebody(repo, monkeypatch):
+    monkeypatch.setenv("UC_ALERT_RECIPIENT", "yjun@example.org")
+    _log(DAY, PUBLISHED, published=4)
+
+    class Smtp:
+        name = "smtp"
+
+        def send(self, message):
+            return {"backend": self.name, "recipients": len(message.recipients)}
+
+    result = notify_weekly(end=DAY, backend=Smtp())
+
+    assert result["status"] == "weekly_sent"
+    assert result["reached_a_person"] is True
+
+
+def test_the_alerting_line_names_the_backend_that_will_actually_run(repo, monkeypatch):
+    """`smtp` without a password silently falls back to `file` — by design.
+
+    So reading `deliver.backend` to answer "do alerts reach anyone" gives the
+    configured intention rather than the resolved fact, and says yes while
+    every alert is written into a runner that is about to be destroyed.
+    """
+    from pipeline import deliver as deliver_mod
+
+    monkeypatch.setattr(
+        deliver_mod, "cfg",
+        lambda k, d=None: "smtp" if k == "deliver.backend" else d,
+    )
+    monkeypatch.delenv("UC_SMTP_PASSWORD", raising=False)
+    monkeypatch.delenv("UC_SMTP_USER", raising=False)
+
+    state = alerting_state()
+
+    assert state["backend"] == "file", "the configured name is not the resolved one"
+    assert state["reaches_a_person"] is False
+
+
+def test_the_recipient_count_is_the_one_that_would_receive(repo, monkeypatch):
+    """It read `deliver.alert_recipients`, which is not a key in the config, so
+    it counted zero however many addresses were set."""
+    monkeypatch.delenv("UC_ALERT_RECIPIENT", raising=False)
+    assert alerting_state()["alert_recipients"] == 0
+
+    monkeypatch.setenv("UC_ALERT_RECIPIENT", "yjun@example.org")
+    assert alerting_state()["alert_recipients"] == 1
+

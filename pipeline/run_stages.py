@@ -292,7 +292,25 @@ def stage_classify(run: Run) -> list[Item]:
     setattr(run.metrics.counts, "classify_skipped_journal", len(journal_items))
     run.metrics.stages["classify.model"] = pred.version
     write_stage(run, "classify", items)
-    run.stage("classify", "OK")
+
+    # ★ A fallback to the keyword heuristic is not an OK day (0X, X1).
+    #
+    # `selection.arxiv.floor` is 0.80 and was calibrated against the trained
+    # model. The heuristic scores a typical abstract between 0.05 and 0.4, so
+    # falling back does not lower the arXiv path's quality — it **removes**
+    # the path, and the issue becomes journal-only without saying so. DEGRADED
+    # rather than FAILED because the stage did run and its journal half is
+    # sound; `looked()` reads it and refuses the day, which is the point.
+    if pred.fallback_reason:
+        run.error(
+            f"classify: fell back to {pred.version} — {pred.fallback_reason}. "
+            f"The arXiv floor of {cfg('selection.arxiv.floor', 0.80)} was "
+            f"calibrated against the trained model, so this day's arXiv path "
+            f"is effectively empty rather than merely worse."
+        )
+        run.stage("classify", "DEGRADED")
+    else:
+        run.stage("classify", "OK")
     run.save()
     return items
 

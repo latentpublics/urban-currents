@@ -44,6 +44,14 @@ packages = ["pipeline"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 filterwarnings = ["ignore::DeprecationWarning"]
+# `-rs` prints the reason for every skip (0X, X1). "3 skipped" at the end of a
+# run says nothing about whether a test was skipped on purpose or because a
+# dependency quietly stopped being there — and the difference between "did not
+# run" and "ran and passed" is the one this repository keeps having to relearn.
+addopts = "-rs"
+markers = [
+    "real_classifier: needs the trained model and its embeddings; opts out of the stub",
+]
 
 [tool.ruff]
 line-length = 100

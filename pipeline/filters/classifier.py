@@ -9,6 +9,18 @@ If no trained model exists — or embeddings are unavailable — we fall back to
 transparent keyword-density heuristic and record ``classifier_version:
 "heuristic-v0"`` on every item it touches. The fallback keeps the pipeline
 runnable; the version string keeps the report honest about which one ran.
+
+**And the fallback is now loud** (phase 0X, X1). It used to happen in silence:
+`except Exception` swallowed the reason, the stage reported OK, and the day
+went out. That is worse than it sounds, because the heuristic is not on the
+same scale as the trained model — it saturates at 0.95 but scores a typical
+abstract between 0.05 and 0.4, while `selection.arxiv.floor` is 0.80 and was
+calibrated against the trained model. So a silent fallback does not degrade the
+arXiv path, it **empties** it, and the issue quietly becomes journal-only while
+still claiming to be a scan of the field. That is the same failure
+`REQUIRED_SOURCES` exists for, one layer down, so it is reported the same way:
+the reason travels with the prediction, `stage_classify` writes it into the run
+and marks the stage DEGRADED, and `looked()` refuses the day.
 """
 
 from __future__ import annotations
@@ -29,6 +41,10 @@ from .gate import _compile
 class Prediction:
     probabilities: list[float]
     version: str
+    # Why the trained model was not used, when it was not (0X, X1). `None`
+    # means it was. This is the sentence a person needs and the one the bare
+    # `except Exception` below used to eat.
+    fallback_reason: Optional[str] = None
 
 
 class HeuristicClassifier:
@@ -36,8 +52,11 @@ class HeuristicClassifier:
 
     version = "heuristic-v0"
 
-    def __init__(self) -> None:
+    def __init__(self, reason: Optional[str] = None) -> None:
         self._patterns = _compile(arxiv_vocab().get("keywords", []) or [])
+        # Carried so the run can say *why* it is holding a keyword counter
+        # instead of the classifier the floor was calibrated against.
+        self.reason = reason or "no trained classifier was available"
 
     def predict(self, items: Sequence[Item]) -> Prediction:
         probs = []
@@ -46,7 +65,9 @@ class HeuristicClassifier:
             hits = sum(1 for p in self._patterns if p.search(text))
             # 0 hits -> 0.05, saturating near 0.95 at ~8 distinct keywords.
             probs.append(round(min(0.95, 0.05 + 0.115 * hits), 4))
-        return Prediction(probabilities=probs, version=self.version)
+        return Prediction(
+            probabilities=probs, version=self.version, fallback_reason=self.reason
+        )
 
 
 class TrainedClassifier:
@@ -97,21 +118,31 @@ def latest_model_path() -> Optional[Path]:
 
 
 def load_classifier(allow_fallback: bool = True):
-    """Newest ``models/clf-*.joblib``, else the heuristic."""
+    """Newest ``models/clf-*.joblib``, else the heuristic — and say which.
+
+    The fallback still happens, because a stale joblib or a missing embedding
+    package must not stop a day's run. What changed in 0X is that the reason
+    survives: it is attached to the `HeuristicClassifier`, travels out on the
+    `Prediction`, and is written into the run by `stage_classify`.
+    """
     p = latest_model_path()
-    if p is not None:
+    reason: Optional[str] = None
+    if p is None:
+        reason = f"no trained model in {MODELS}"
+    else:
         try:
             clf = TrainedClassifier.load(p)
             # Fail fast if embeddings are unavailable, rather than mid-run.
             embed([embed_text("probe", "probe")])
             return clf
-        except Exception:
+        except Exception as e:
             # Missing embeddings or a stale joblib must not stop the run.
             if not allow_fallback:
                 raise
+            reason = f"{p.name} could not be used: {type(e).__name__}: {e}"
     if not allow_fallback:
-        raise RuntimeError("no trained classifier available")
-    return HeuristicClassifier()
+        raise RuntimeError(f"no trained classifier available ({reason})")
+    return HeuristicClassifier(reason)
 
 
 def score_items(items: Sequence[Item], clf=None) -> Prediction:

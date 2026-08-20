@@ -244,6 +244,14 @@ def looked(
                 f"{stage} was skipped, and an issue without it is not the "
                 f"product — check that the keys and model it needs are present"
             )
+        elif status == "DEGRADED":
+            # A stage that ran on a substitute for the thing it needs. Today
+            # that is `classify` on the keyword heuristic (0X, X1); the run's
+            # own errors carry the reason.
+            reasons.append(
+                f"{stage} ran degraded — see the run's errors for what it "
+                f"substituted and why"
+            )
 
     if getattr(run.metrics, "budget_exceeded", False):
         reasons.append("the daily LLM budget stopped the run part-way")

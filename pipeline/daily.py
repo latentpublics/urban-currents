@@ -254,7 +254,11 @@ def target_window(today: Optional[date] = None) -> tuple[date, date]:
     an item already published is skipped rather than published twice.
     """
     today = today or date.today()
-    lookback = int(cfg("daily.lookback_days", 3))
+    # The fallback matches `config/pipeline.yaml` and the docstring above. It
+    # read 3 — the number the paragraph above exists to say is wrong, left
+    # behind when the config was corrected. It only bites when the key is
+    # missing, which is the case where nobody is looking (0U, U10).
+    lookback = int(cfg("daily.lookback_days", 7))
     end = today - timedelta(days=int(cfg("daily.min_lag_days", 1)))
     return end - timedelta(days=lookback - 1), end
 

@@ -114,8 +114,12 @@ These are the expensive ones to change later, so they are fixed early:
 
 ## Status
 
-Phase 0. Not deployed, not scheduled, no site. Phase 1 adds the Astro site and
-inherits the schema, the `content/` layout, and the render templates' DOM.
+Phase 0. **Scheduled** — `.github/workflows/daily.yml` fires at 21:00 UTC
+(06:00 KST) and has since 2026-08-19; `weekly.yml` fires Sunday 22:00 UTC. Not
+deployed and no site: `deliver.backend` is `file`, so every issue and every
+failure alert is written into the runner and reaches nobody. `uc status` prints
+which of those two states you are in. Phase 1 adds the Astro site and inherits
+the schema, the `content/` layout, and the render templates' DOM.
 
 ## Licence and attribution
 

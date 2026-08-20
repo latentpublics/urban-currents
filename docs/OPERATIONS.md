@@ -183,9 +183,14 @@ uv run uc gate-recall                                   # → runs/gate_recall.j
 
 ## Turning the schedule on
 
-`.github/workflows/daily.yml` and `weekly.yml` are committed with
-`workflow_dispatch` only; their `schedule:` blocks are commented out. The
-comparison behind choosing GitHub Actions is in `docs/scheduler-options.md`.
+**Both schedules are on.** `daily.yml` has fired at 21:00 UTC since
+2026-08-19, and `weekly.yml` was enabled at Sunday 22:00 UTC in 0U — the weekly
+one as much for the heartbeat as for the summary, since a repository whose
+schedules GitHub has quietly disabled looks exactly like a quiet week.
+`deadman.yml` watches for that at 09:00 UTC. The checklist below is kept
+because it is the order to follow when turning delivery on, which has **not**
+happened: `deliver.backend` is still `file`. The comparison behind choosing
+GitHub Actions is in `docs/scheduler-options.md`.
 
 **The order matters.** It is arranged so that nothing can reach a stranger
 before a human has read what it would have said. Do not skip ahead to step 6.

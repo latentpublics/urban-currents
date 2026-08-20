@@ -104,7 +104,9 @@ def test_the_whole_site_fetches_nothing(repo):
         # check now looks for what it always meant: a URL pointing
         # somewhere else. `preview.html` and `email.html` are covered by
         # their own test below and still carry no `@font-face` at all.
-        for pattern in (r"<link\b", r"<script\b", r"<img\b", r"@import",
+        for pattern in (r'<link[^>]*rel=["\']?(stylesheet|preload|prefetch|icon|manifest)',
+                        r'<link[^>]*href=["\']?https?:',
+                        r"<script\b", r"<img\b", r"@import",
                         r"url\(\s*['\"]?https?:", r"fonts\.googleapis",
                         r"fonts\.gstatic"):
             assert not re.search(pattern, html, re.I), f"{page.name} matches {pattern}"
@@ -116,8 +118,21 @@ def test_the_whole_site_fetches_nothing(repo):
             assert (page.parent / ref).resolve().exists(), f"{page.name}: {ref}"
 
 
-def test_links_stay_relative_without_a_base_url(repo):
-    """A domain we do not have must not appear in a feed or an email."""
+def test_links_stay_relative_without_a_base_url(repo, monkeypatch):
+    """A domain we do not have must not appear in a feed or an email.
+
+    Still true, and now stated as the conditional it always was: with
+    `site.base_url` empty every link is relative. 0X gave the project a domain,
+    so this pins the *other* branch — the one an email and a filesystem copy
+    still take — and `test_the_feed_is_absolute_under_a_base_url` pins the new
+    one.
+    """
+    from pipeline.render import site as site_mod
+
+    monkeypatch.setattr(
+        site_mod, "cfg",
+        lambda k, d=None: "" if k == "site.base_url" else (False if k == "site.published" else d),
+    )
     _seed(repo)
     build_site()
     feed = (paths.ROOT / "site" / "feed.xml").read_text(encoding="utf-8")
@@ -128,6 +143,23 @@ def test_links_stay_relative_without_a_base_url(repo):
     hrefs = re.findall(r'href="([^"]+)"', feed)
     assert hrefs, "the feed should link to its issues"
     assert not [h for h in hrefs if h.startswith(("http://", "https://"))]
+
+
+def test_the_feed_is_absolute_under_a_base_url(repo):
+    """And with a domain, the feed must be absolute — it is read elsewhere.
+
+    A relative `href` in a feed resolves against whatever reader is displaying
+    it, which is not this site (0X, X2/X3).
+    """
+    _seed(repo)
+    build_site()
+    feed = (paths.ROOT / "site" / "feed.xml").read_text(encoding="utf-8")
+
+    base = "https://latentpublics.com/urban-currents"
+    assert f'href="{base}/issues/2026-08-12.html"' in feed
+    assert f'<link rel="self" href="{base}/feed.xml"/>' in feed
+    entry_links = re.findall(r'<link href="([^"]+)"/>', feed)
+    assert entry_links and all(h.startswith(base) for h in entry_links), entry_links
 
 
 def test_the_feed_lists_the_newest_issue_first(repo):

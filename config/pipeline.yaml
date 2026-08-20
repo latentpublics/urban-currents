@@ -394,11 +394,33 @@ deliver:
   unsubscribe_mailto: null
 
 site:
-  # No domain yet. Empty means every link is relative, so the built site
-  # opens from the filesystem and the feed carries relative hrefs. An
-  # absolute URL invented before the domain exists would be a link to
-  # nowhere printed in an email (phase 0k, X4).
-  base_url: ""
+  # The address, decided (phase 0X). The organisation's domain is attached to
+  # `latentpublics.github.io`, and this repository deploys into a **sub-path**
+  # of it. No custom domain is set on this repository: setting one would take
+  # `latentpublics.com` for this project alone and push the organisation site
+  # off it.
+  #
+  # The sub-path is the part that has to be got right. Absolute URLs are used
+  # only where the format demands them — the feed is read on other sites, and
+  # `<loc>` in a sitemap is required by the protocol to be a full URL. Links
+  # between pages stay relative, so the built site still opens from the
+  # filesystem, which is how it is reviewed.
+  base_url: "https://latentpublics.com/urban-currents"
+
+  # ★ One switch for "is this thing public yet" (phase 0X, X5).
+  #
+  # False means the site is reachable at its real address and must not be
+  # indexed: `robots.txt` becomes `Disallow: /`, every page carries
+  # `<meta name="robots" content="noindex">`, and the sitemap is not
+  # advertised. True reverses all of it.
+  #
+  # It is one value on purpose. Two switches is how a repository ends up
+  # half-published — a `robots.txt` that says no and pages that say nothing,
+  # or the reverse — and this project has met that shape often enough to stop
+  # building it. `tests/test_publish_switch.py` pins both directions.
+  #
+  # G5 flips this line and nothing else.
+  published: false
 
 held:
   # The held queue (phase 0L, M2-2). Nobody reviews before publication any more,

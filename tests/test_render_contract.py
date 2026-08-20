@@ -27,7 +27,16 @@ from pipeline.render.site import build_archive, build_design_review, build_home
 # `href` is not a request: a link is followed only if a reader clicks it. What
 # must not appear is anything the client fetches on its own.
 FETCHING = (
-    re.compile(r"<link\b", re.I),
+    # `<link>` was on this list as a proxy for "pulls a resource", and since 0X
+    # the pages carry one that does not: `<link rel="alternate"
+    # type="application/atom+xml" href="feed.xml">`, which is a discovery hint
+    # a client follows only if the reader asks for the feed. Same reasoning as
+    # `@font-face` above — the pattern is narrowed to what it always meant
+    # rather than the page being changed to fit the proxy. The kinds of `link`
+    # that *do* fetch are named, and `test_the_only_link_element_is_the_feed`
+    # keeps the narrowing from quietly admitting a stylesheet later.
+    re.compile(r'<link[^>]*rel=["\']?(stylesheet|preload|prefetch|icon|manifest)', re.I),
+    re.compile(r'<link[^>]*href=["\']?https?:', re.I),
     re.compile(r"<script\b", re.I),
     re.compile(r"<img\b", re.I),
     re.compile(r"<iframe\b", re.I),
@@ -88,6 +97,20 @@ def test_no_page_fetches_anything(repo):
     for name, html in _pages(repo).items():
         for pattern in FETCHING:
             assert not pattern.search(html), f"{name} would fetch: {pattern.pattern}"
+
+
+def test_the_only_link_element_is_the_feed(repo):
+    """The narrowing above, held in place.
+
+    `FETCHING` no longer bans every `<link>`, so this states what the pages are
+    allowed to contain instead: one same-origin `rel="alternate"` per page and
+    nothing else wearing that tag.
+    """
+    for name, html in _pages(repo).items():
+        for tag in re.findall(r"<link[^>]*>", html, re.I):
+            assert 'rel="alternate"' in tag, f"{name}: unexpected {tag}"
+            assert "atom+xml" in tag, f"{name}: unexpected {tag}"
+            assert "http" not in tag.split("href=")[1][:6], f"{name}: off-origin {tag}"
 
 
 def test_paper_links_are_still_there(repo):

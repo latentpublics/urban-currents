@@ -331,6 +331,7 @@ def build_home(out: Optional[Path] = None) -> Path:
         (TEMPLATE_DIR / "base.css.j2").read_text(encoding="utf-8"), "assets/fonts/"
     )
     html = env.get_template("home.html.j2").render(
+        head_extras=Markup(head_extras()),
         stats=stats,
         rows=rows[:HOME_ARCHIVE_DAYS],
         max_items=max([r["published"] for r in rows] or [1]),
@@ -422,6 +423,7 @@ def build_archive(out: Optional[Path] = None) -> list[Path]:
             else (paths.ROOT / "site" / "archive" / f"{month['key']}.html")
         )
         html = env.get_template("archive.html.j2").render(
+            head_extras=Markup(head_extras(root)),
             stats=stats,
             month=month,
             tabs=_month_tabs(months, month["key"], root),
@@ -580,6 +582,10 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
         html = html.replace(
             "<style>", "<style>\n" + site_font_css("../assets/fonts/"), 1
         )
+        # The feed link and, while unpublished, the `noindex`. Injected for the
+        # same reason the navigation is: this markup belongs to the site, and
+        # the identical DOM is also written to `runs/` as an email.
+        html = html.replace("</head>", head_extras("../") + "\n</head>", 1)
         path = target_dir / f"{issue.date}.html"
         path.write_text(html, encoding="utf-8", newline="\n")
         written.append(path)
@@ -616,8 +622,39 @@ def _base_url() -> str:
     An absolute URL invented before a domain exists is a link to nowhere printed
     in an email. Relative paths also mean the built site opens from the
     filesystem, which is how it is reviewed today.
+
+    Set since 0X to `https://latentpublics.com/urban-currents` — a **sub-path**,
+    which is why nothing here may emit a root-absolute `/issues/…`: it would
+    resolve against the organisation's domain root and 404.
     """
     return (cfg("site.base_url", "") or "").rstrip("/")
+
+
+def is_published() -> bool:
+    """Whether this site is meant to be found (phase 0X, X5).
+
+    One value drives `robots.txt`, the `noindex` meta on every page, and
+    whether the sitemap is advertised. See `config/pipeline.yaml: site.published`
+    for why it is one and not three.
+    """
+    return bool(cfg("site.published", False))
+
+
+def head_extras(root: str = "") -> str:
+    """The two `<head>` lines that are the same on every page.
+
+    Built here rather than in the templates because the issue pages are
+    rendered by `preview.html.j2`, which is also the email — and an email must
+    not carry a `noindex` or a feed link relative to a site it is not on. Same
+    reason the navigation and the webfonts are injected by the site build.
+    """
+    parts = [
+        f'<link rel="alternate" type="application/atom+xml" '
+        f'title="Urban Currents" href="{root}feed.xml">'
+    ]
+    if not is_published():
+        parts.append('<meta name="robots" content="noindex, nofollow">')
+    return "\n".join(parts)
 
 
 def build_feed(out: Optional[Path] = None) -> Path:
@@ -653,6 +690,15 @@ def build_feed(out: Optional[Path] = None) -> Path:
         )
 
     self_link = f'<link rel="self" href="{escape(base)}/feed.xml"/>' if base else ""
+    alt_link = f'<link rel="alternate" href="{escape(base)}/"/>' if base else ""
+    # RFC 4287 §4.1.1: a feed **must** contain an `author` unless every entry
+    # carries one. Without it the document is not a valid Atom feed and
+    # validators reject it, which is a poor way to be discovered (0X, X3).
+    author = (
+        "  <author>\n"
+        "    <name>Urban Currents</name>\n"
+        "  </author>\n"
+    )
     xml = (
         '<?xml version="1.0" encoding="utf-8"?>\n'
         '<feed xmlns="http://www.w3.org/2005/Atom">\n'
@@ -660,7 +706,9 @@ def build_feed(out: Optional[Path] = None) -> Path:
         "  <subtitle>A daily scan of urban data science</subtitle>\n"
         "  <id>urn:urban-currents:feed</id>\n"
         f"  <updated>{updated}</updated>\n"
-        f"  {self_link}\n"
+        + author
+        + f"  {self_link}\n"
+        + (f"  {alt_link}\n" if alt_link else "")
         + "\n".join(entries)
         + "\n</feed>\n"
     )
@@ -692,10 +740,19 @@ def build_sitemap(out: Optional[Path] = None) -> Path:
 
 
 def build_robots(out: Optional[Path] = None) -> Path:
+    """`Allow` or `Disallow`, from the one switch (0X, X5).
+
+    While `site.published` is false the sitemap line is left out as well. A
+    sitemap is an invitation to index, and publishing one next to
+    `Disallow: /` states two different intentions in one directory.
+    """
     base = _base_url()
-    lines = ["User-agent: *", "Allow: /"]
-    if base:
-        lines.append(f"Sitemap: {base}/sitemap.xml")
+    if not is_published():
+        lines = ["User-agent: *", "Disallow: /"]
+    else:
+        lines = ["User-agent: *", "Allow: /"]
+        if base:
+            lines.append(f"Sitemap: {base}/sitemap.xml")
     target = out or (paths.ROOT / "site" / "robots.txt")
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
@@ -715,4 +772,7 @@ def build_site() -> dict[str, Any]:
         "sitemap": str(build_sitemap()),
         "robots": str(build_robots()),
         "base_url": _base_url() or "(relative)",
+        # Printed so a person running `uc site` sees which of the two states
+        # they just built, rather than having to open robots.txt (0X, X5).
+        "published": is_published(),
     }

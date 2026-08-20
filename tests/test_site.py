@@ -126,7 +126,13 @@ def test_the_pages_make_no_external_request(repo):
     _seed(repo, [_item("arxiv:2608.00001", ["data"])])
     for path in (build_home(), *build_archive()):
         html = path.read_text(encoding="utf-8")
-        assert "<link" not in html
+        # Not "no `<link>`": since 0X every page carries a same-origin
+        # `rel="alternate"` pointing at the feed, which fetches nothing on its
+        # own. What must not appear is a `<link>` that pulls something.
+        assert not re.search(
+            r'<link[^>]*rel=["\']?(stylesheet|preload|prefetch|icon|manifest)', html, re.I
+        )
+        assert not re.search(r'<link[^>]*href=["\']?https?:', html, re.I)
         assert "<script" not in html
         assert "url(http" not in html
         # `@font-face` is present and self-hosted since 0R; what must not

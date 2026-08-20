@@ -48,6 +48,23 @@ RUNS = Path(os.environ.get("UC_RUNS", ROOT / "runs"))
 # was created to avoid. It follows `UC_ROOT` so the test fixtures still get
 # their own, and `UC_LLM_CACHE` exists for anyone who wants a cold one.
 LLM_CACHE = Path(os.environ.get("UC_LLM_CACHE", ROOT / "runs" / "cache"))
+
+# The resolved citation store, for the same reason and outside the same
+# redirect (phase 0X, follow-up to 0V's V2-1).
+#
+# `canon_resolved.jsonl` is a cache of OpenAlex answers — 146,000 ids that are
+# the same for everyone, and expensive only in wall-clock. When `UC_RUNS` was
+# introduced it moved into the sandbox with everything else, so each
+# verification run re-resolved the whole queue from zero: eight to sixteen
+# minutes and about $0.035 of OpenAlex budget, per run, twice per verification.
+# That is the trade `UC_CONTENT` and `UC_LLM_CACHE` both exist to avoid, and
+# the argument is identical — a sandbox is for **output**, not for a cache of
+# somebody else's facts.
+#
+# `canon_pending.jsonl` follows it because the two are one structure: the
+# pending list is the queue into the store, and splitting them across a
+# sandbox boundary would have a run resolve ids it then forgets it resolved.
+CANON_STORE = Path(os.environ.get("UC_CANON_STORE", ROOT / "runs" / "state"))
 LABELS = RUNS / "labels"
 
 # Scratch state: regenerable, or only meaningful within a run. Stays under

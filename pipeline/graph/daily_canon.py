@@ -107,11 +107,14 @@ def _openalex_spent(run: Run) -> float:
 
 
 def _pending_path() -> Path:
-    return paths.STATE / PENDING_FILE
+    # `CANON_STORE`, not `STATE`: this is a cache of OpenAlex answers and must
+    # not be sandboxed away by `UC_RUNS`, or every verification run re-resolves
+    # 146,000 ids it already knows. See `pipeline/paths.py` (0X).
+    return paths.CANON_STORE / PENDING_FILE
 
 
 def _resolved_path() -> Path:
-    return paths.STATE / RESOLVED_FILE
+    return paths.CANON_STORE / RESOLVED_FILE
 
 
 def load_resolved() -> dict[str, dict]:

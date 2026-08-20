@@ -73,10 +73,30 @@ class ArxivCollector:
     # ordinary 3/6/12s backoff is far too short and just earns another 429.
     RATE_LIMIT_COOLDOWN_S = 90.0
 
+    # ★ Ceilings on that patience (phase 0U, U3).
+    #
+    # The extra patience was implemented as `attempts = max(attempts, attempt + 3)`,
+    # which **never terminates**: the ceiling is re-raised to three past the
+    # counter on every 429, so `attempt < attempts` stays true forever while each
+    # pass sleeps at least 90 seconds. `Deadline.check()` runs *between* stages,
+    # so nothing inside the collector could stop it — the run would sit there
+    # until GitHub's `timeout-minutes: 45` killed the job and the day was
+    # recorded `interrupted`.
+    #
+    # The intent was right and is kept: a 429 should not consume an ordinary
+    # attempt. It now buys extra attempts **from a fixed allowance** instead of
+    # from an unbounded one. Two ceilings because they fail differently — a
+    # server answering instantly with 429 exhausts the count, and one honouring a
+    # long `Retry-After` exhausts the clock.
+    MAX_RATE_LIMIT_RETRIES = 6
+    MAX_RATE_LIMIT_SLEEP_S = 600.0
+
     def _fetch(self, params: dict) -> str:
         last: Optional[Exception] = None
         attempts = self.max_retries
         attempt = 0
+        rate_limited = 0
+        slept = 0.0
         while attempt < attempts:
             self._throttle()
             try:
@@ -85,19 +105,38 @@ class ArxivCollector:
                     retry_after = float(r.headers.get("Retry-After") or 0)
                     wait = max(self.RATE_LIMIT_COOLDOWN_S, retry_after)
                     last = RuntimeError("429 rate limited")
+                    rate_limited += 1
+                    if (
+                        rate_limited > self.MAX_RATE_LIMIT_RETRIES
+                        or slept + wait > self.MAX_RATE_LIMIT_SLEEP_S
+                    ):
+                        raise RuntimeError(
+                            f"arXiv rate limited {rate_limited} time(s) and "
+                            f"{slept:.0f}s slept; giving up rather than waiting "
+                            f"past the day's budget"
+                        )
                     # Rate limiting is recoverable and worth more patience than a
-                    # transient error, so it does not consume a normal attempt.
-                    attempts = max(attempts, attempt + 3)
+                    # transient error, so it does not consume a normal attempt —
+                    # but the allowance it draws on is finite.
+                    attempts = min(
+                        self.max_retries + self.MAX_RATE_LIMIT_RETRIES, attempt + 3
+                    )
+                    attempts = max(attempts, attempt + 1)
                     # Slow down permanently for the rest of the run. Returning to
                     # the old cadence after a 429 just earns the next one.
                     self.interval = min(self.interval * 1.5, 12.0)
                     time.sleep(wait)
+                    slept += wait
                     attempt += 1
                     continue
                 r.raise_for_status()
                 return r.text
             except Exception as e:  # noqa: BLE001
                 last = e
+                # A ceiling breach is a decision, not a transient error: it must
+                # leave the loop rather than be retried like a flaky 5xx.
+                if isinstance(e, RuntimeError) and "giving up rather than" in str(e):
+                    raise
                 # arXiv returns empty bodies or 5xx under load; back off.
                 time.sleep(self.interval * (2**attempt))
                 attempt += 1

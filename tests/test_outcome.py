@@ -37,7 +37,18 @@ def _run(stages: dict[str, str], **counts) -> Run:
     return run
 
 
-GOOD = {"collect": "OK", "collect.arxiv": "OK", "collect.openalex": "OK"}
+# A run that observed the day **and produced an issue**. The four stages after
+# the sources are `REQUIRED_STAGES` (0U, U1): a run that never summarised is not
+# a good day, it is a day whose cards all read "Summary pending review."
+GOOD = {
+    "collect": "OK",
+    "collect.arxiv": "OK",
+    "collect.openalex": "OK",
+    "classify": "OK",
+    "summarize": "OK",
+    "select": "OK",
+    "issue": "OK",
+}
 
 
 # --------------------------------------------------------------------------

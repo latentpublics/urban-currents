@@ -38,7 +38,18 @@ from pipeline.outcome import (
 )
 
 DAY = date(2026, 8, 20)
-GOOD = {"collect": "OK", "collect.arxiv": "OK", "collect.openalex": "OK"}
+# The stages a healthy day reports. The four after the sources are
+# `REQUIRED_STAGES` (0U, U1) — a run that never summarised is not a published
+# day, so a fixture claiming to be one has to say it summarised.
+GOOD = {
+    "collect": "OK",
+    "collect.arxiv": "OK",
+    "collect.openalex": "OK",
+    "classify": "OK",
+    "summarize": "OK",
+    "select": "OK",
+    "issue": "OK",
+}
 
 
 # --------------------------------------------------------------------------

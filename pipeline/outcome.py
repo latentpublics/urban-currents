@@ -78,6 +78,39 @@ REQUIRED_SOURCES = ("collect.arxiv", "collect.openalex")
 # reports success: a source that finishes OK and contributes nothing.
 SOURCE_COUNTS = {"collect.arxiv": "arxiv_fetched", "collect.openalex": "openalex_fetched"}
 
+# ★ Stages whose absence makes the day unpublishable (phase 0U, U1).
+#
+# `looked()` only ever inspected `FAILED`, and `StageSkipped` is a *different*
+# outcome by design: `skips.py` draws the line at "a stage that cannot run for a
+# reason that is not a failure — no key, no model". That line is right, and it
+# had a hole in it. When the LLM is unavailable the summarize stage returns
+# `SKIPPED`, no reason is added, the verdict is `published`, and the issue goes
+# out with every card reading **"Summary pending review."**
+#
+# So the distinction is not skipped-versus-failed; it is **which stage**. Some
+# stages are optional by nature and some are the product.
+#
+#   `summarize`  Required. A digest of unread summaries is not this product.
+#                It is the single thing a reader is here for.
+#   `classify`   Required. Without it the arXiv path has no score, so the
+#                floor cannot be applied and "what appeared" becomes "what we
+#                happened to fetch".
+#   `select`     Required. Without it nothing decided what the issue contains,
+#                and U4 shows what fills the gap: the whole candidate pool.
+#   `issue`      Required. It is the artefact.
+#
+# Deliberately **not** required, and each for a stated reason:
+#
+#   `enrich.springer`  A key nobody has is the normal state, not a fault.
+#   `link` / `extract` Overlay tags enrich a card and no card depends on them.
+#   `synthesis`        Already designed to be absent; silence is a finding.
+#   `canon`            0T's chore. It must never decide a day (D223).
+#   `preview`          Rendering, downstream of the verdict.
+#
+# `PARTIAL` is not refused. A day where some items got summaries is a day worth
+# publishing — the rule is about a stage that produced *nothing*.
+REQUIRED_STAGES = ("summarize", "classify", "select", "issue")
+
 
 @dataclass
 class Outcome:
@@ -87,11 +120,26 @@ class Outcome:
     status: str
     reasons: list[str] = field(default_factory=list)
     failed_stages: list[str] = field(default_factory=list)
+    # Recorded beside the failures because a required stage being skipped is
+    # now a verdict-changing fact and the log has to show which one (U1).
+    skipped_stages: list[str] = field(default_factory=list)
     candidates: Optional[int] = None
     published: int = 0
     attempts: int = 1
     spend_usd: float = 0.0
     silent_sources: list[str] = field(default_factory=list)
+    # ★ Whether the day had a headline (phase 0U, U5).
+    #
+    # `status` and this are **two different facts** and were being written into
+    # one field. `decide()` grants `quiet` for "published nothing"; `daily.py`
+    # then overwrote it with `issue.quiet_day`, which means "nothing cleared the
+    # headline threshold". 2026-08-09 is the proof: `"published": 11` and
+    # `"status": "quiet"` in the same row — eleven papers on a day the log calls
+    # silent. That value feeds `uc weekly`, `uc status` and the archive strip.
+    #
+    # The headline fact is not discarded; `quiet_day` is what the renderer keys
+    # off and it is real. It just stops pretending to be the verdict.
+    headline_present: Optional[bool] = None
 
     @property
     def writes_issue(self) -> bool:
@@ -107,11 +155,13 @@ class Outcome:
             "status": self.status,
             "reasons": self.reasons,
             "failed_stages": self.failed_stages,
+            "skipped_stages": self.skipped_stages,
             "candidates": self.candidates,
             "published": self.published,
             "attempts": self.attempts,
             "spend_usd": round(self.spend_usd, 6),
             "silent_sources": self.silent_sources,
+            "headline_present": self.headline_present,
             "recorded_at": utcnow().isoformat(),
         }
 
@@ -146,6 +196,18 @@ def looked(run: Run, required: tuple[str, ...] = REQUIRED_SOURCES) -> tuple[bool
     failed = [name for name, status in stages.items() if status == "FAILED"]
     if failed:
         reasons.append(f"stages failed: {', '.join(sorted(failed))}")
+
+    # A required stage that did not run at all, or ran and produced nothing, is
+    # as disqualifying as one that raised. See `REQUIRED_STAGES`.
+    for stage in REQUIRED_STAGES:
+        status = stages.get(stage)
+        if status is None:
+            reasons.append(f"{stage} did not run")
+        elif status == "SKIPPED":
+            reasons.append(
+                f"{stage} was skipped, and an issue without it is not the "
+                f"product — check that the keys and model it needs are present"
+            )
 
     if getattr(run.metrics, "budget_exceeded", False):
         reasons.append("the daily LLM budget stopped the run part-way")
@@ -208,6 +270,7 @@ def decide(
         )
 
     failed = sorted(n for n, s in run.metrics.stages.items() if s == "FAILED")
+    skipped = sorted(n for n, s in run.metrics.stages.items() if s == "SKIPPED")
 
     if not ok:
         return Outcome(
@@ -215,6 +278,7 @@ def decide(
             status=NOT_PUBLISHED,
             reasons=reasons,
             failed_stages=failed,
+            skipped_stages=skipped,
             candidates=candidates,
             published=0,
             spend_usd=float(run.metrics.cost.total_usd or 0.0),
@@ -227,6 +291,7 @@ def decide(
         status=status,
         reasons=["nothing cleared the bar"] if status == QUIET else [],
         failed_stages=[],
+        skipped_stages=skipped,
         candidates=candidates,
         published=published_count,
         spend_usd=float(run.metrics.cost.total_usd or 0.0),

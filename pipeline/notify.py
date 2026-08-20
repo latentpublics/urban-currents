@@ -90,6 +90,38 @@ def failure_body(d: date, reasons: list[str], streak: int) -> str:
     return "\n".join(lines) + "\n"
 
 
+def alerting_state() -> dict[str, Any]:
+    """Whether a failure alert would reach a person, and the stage roll-up.
+
+    Both live here because both are read by `uc status` **and** by the daily
+    workflow's dry-run guard, which has been dead since H3: it greps
+    `uc status` for `SKIPPED|FAILED` and `uc status` never printed stage
+    statuses, so neither branch could ever be taken (0U, U10).
+    """
+    from .config import cfg
+    from .deliver import reaches_a_person
+    from .outcome import all_logs
+
+    backend = str(cfg("deliver.backend", "file"))
+    recipients = [r for r in (cfg("deliver.alert_recipients", []) or []) if r]
+
+    stages: dict[str, str] = {}
+    logs = all_logs()
+    if logs:
+        latest = max(logs, key=lambda r: r.get("date", ""))
+        stages = dict(latest.get("stages") or {})
+    return {
+        "backend": backend,
+        "reaches_a_person": reaches_a_person(backend),
+        "alert_recipients": len(recipients),
+        "last_run_date": (max(logs, key=lambda r: r.get("date", "")).get("date")
+                          if logs else None),
+        "last_run_stages": stages,
+        "last_run_skipped": sorted(n for n, v in stages.items() if v == "SKIPPED"),
+        "last_run_failed": sorted(n for n, v in stages.items() if v == "FAILED"),
+    }
+
+
 def notify_failure(
     d: date, reasons: list[str], backend=None, run=None
 ) -> dict[str, Any]:
@@ -113,7 +145,26 @@ def notify_failure(
     try:
         backend = backend or get_backend()
         result = backend.send(message)
-        return {"status": "alerted", "subject": subject, "streak": streak, **result}
+        # ★ "Sent" and "arrived" are different facts (0U, U2).
+        #
+        # `deliver.backend` defaults to `file`, which writes an `.eml` into the
+        # runner and returns success. The runner is then destroyed. Reporting
+        # that as `alerted` is a **false reassurance in the one place the
+        # system is admitting something went wrong** — the day failed, and the
+        # record said somebody was told.
+        #
+        # No provider is chosen here; that decision is not this batch's. What
+        # changes is that the status now says which of the two happened.
+        from .deliver import reaches_a_person
+
+        delivered = reaches_a_person(getattr(backend, "name", ""))
+        return {
+            "status": "alerted" if delivered else "alert_undeliverable",
+            "reached_a_person": delivered,
+            "subject": subject,
+            "streak": streak,
+            **result,
+        }
     except Exception as e:  # noqa: BLE001 - notification failure is never fatal
         if run is not None:
             run.error(f"notify: {type(e).__name__}: {e}")
@@ -173,6 +224,7 @@ def weekly_summary(end: Optional[date] = None, days: int = 7) -> dict[str, Any]:
         # without opening a terminal (M2-4).
         "held": held_counts(),
         "canon": canon_counts(),
+        "alerting": alerting_state(),
         "canon": canon_counts(),
         "llm_cost_total_usd": round(usage.cost_usd, 6),
         "llm_calls_total": usage.calls,

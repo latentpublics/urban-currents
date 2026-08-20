@@ -37,7 +37,7 @@ from typing import Any, Optional
 from . import paths, store
 from .config import cfg
 from .metrics import Run
-from .outcome import NOT_PUBLISHED, Outcome, decide, record
+from .outcome import NOT_PUBLISHED, PUBLISHED, QUIET, Outcome, decide, record
 
 # Stages `uc daily` owns, in order. `collect` is handled separately because it
 # takes the window.
@@ -437,7 +437,21 @@ def run_daily(
             pass
 
         outcome.published = len(issue.items)
-        outcome.status = "quiet" if issue.quiet_day else "published"
+        # **`decide()` owns the verdict** (0U, U5). This used to read
+        # `outcome.status = "quiet" if issue.quiet_day else "published"`, which
+        # substituted a different question — `quiet_day` is "nothing cleared the
+        # headline threshold", not "nothing published". 2026-08-09 recorded
+        # `published: 11, status: quiet` because of it, and that row is read by
+        # `uc weekly`, `uc status` and every archive count.
+        #
+        # The headline fact still travels; it just travels in its own field.
+        outcome.headline_present = not issue.quiet_day
+        if outcome.published and outcome.status == QUIET:
+            # `decide()` was called before the issue existed, so a day that did
+            # publish can still be carrying the pre-issue `quiet`. Correct it
+            # from the count — which is what `quiet` means.
+            outcome.status = PUBLISHED
+            outcome.reasons = [r for r in outcome.reasons if r != "nothing cleared the bar"]
         record(outcome)
 
         delivery = _deliver_issue(run, issue)

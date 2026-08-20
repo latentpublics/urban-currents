@@ -104,12 +104,59 @@ def read_stage(run: Run, stage: str, old_schema: bool = False) -> list[Item]:
 
 
 
+class UpstreamFailed(RuntimeError):
+    """A stage refused to run because the stage that feeds it failed.
+
+    Not a `StageSkipped`: skipping is for something that could not run and was
+    never going to change the answer, and this is the opposite — the answer
+    would have been different and we do not have it.
+    """
+
+
+# ★ Stages a later stage may not silently reach past (phase 0U, U4).
+#
+# `read_input` walks backwards for "the most recent earlier stage that produced
+# data", and the intent behind that is good: a middle stage skipped for want of
+# an API key must not stop the pipeline. But it cannot tell **skipped** from
+# **failed**, and the difference is the whole issue.
+#
+# If `select` fails, `issue` walks back past it and reads `classify.jsonl` —
+# every candidate that cleared the gate, unranked and unchosen. `uc daily`
+# happens to survive because `looked()` refuses the day afterwards; `uc run`
+# has no verdict check at all, so it publishes the entire candidate pool as
+# though someone had picked it.
+#
+# So the rule is not "never walk back". It is **never walk back past a stage
+# that failed**. A stage listed here, found FAILED, stops the stage that
+# depends on it; a stage that is SKIPPED is walked past exactly as before.
+UPSTREAM_REQUIRED = {
+    "select": ("classify",),
+    "link": ("select",),
+    "summarize": ("select",),
+    "score": ("select",),
+    "issue": ("select", "summarize"),
+    "preview": ("issue",),
+}
+
+
 def read_input(run: Run, stage: str) -> list[Item]:
     """Read the output of whichever earlier stage most recently produced data.
 
-    Lets a stage run even when an optional middle stage was skipped (a missing
-    API key must not stop the pipeline).
+    Lets a stage run even when an optional middle stage was **skipped** (a
+    missing API key must not stop the pipeline), and refuses when a stage it
+    depends on **failed** — see `UPSTREAM_REQUIRED`.
     """
+    failed = [
+        name
+        for name in UPSTREAM_REQUIRED.get(stage, ())
+        if run.metrics.stages.get(name) == "FAILED"
+    ]
+    if failed:
+        raise UpstreamFailed(
+            f"{stage} needs {', '.join(failed)}, which failed; refusing to fall "
+            f"back to an earlier stage's output"
+        )
+
     idx = STAGE_ORDER.index(stage)
     for prev in reversed(STAGE_ORDER[:idx]):
         items = read_stage(run, prev)

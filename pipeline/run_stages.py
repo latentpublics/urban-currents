@@ -982,5 +982,29 @@ def run_all(
     _guard(run, "score", lambda: stage_score(run))
     _guard(run, "issue", lambda: stage_issue(run, d, use_llm=use_llm))
     _guard(run, "preview", lambda: stage_preview(run, d))
+
+    # ★ `uc run` gets the same verdict check `uc daily` has (0U, U4).
+    #
+    # It had none. `uc daily` refuses a day whose stages did not hold up, and
+    # `uc run` wrote the issue regardless — so the one command with fewer
+    # safeguards was the one a person reaches for when something has already
+    # gone wrong and they are debugging it by hand.
+    #
+    # This does **not** record an outcome or send anything; `uc run` is not the
+    # scheduled path and must not start writing the run log. It states the
+    # verdict so the operator sees it, and names the reasons.
+    from .outcome import looked
+
+    ok, reasons = looked(run)
+    if not ok:
+        for reason in reasons:
+            run.error(f"outcome: {reason}")
+        print(
+            "\n[NOT PUBLISHABLE] this run would not have been published:\n  - "
+            + "\n  - ".join(reasons)
+            + "\n  The issue file was still written; `uc daily` would have "
+              "refused it. Do not treat it as a day's output."
+        )
+
     run.save()
     return run

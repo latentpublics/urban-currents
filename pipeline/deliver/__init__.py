@@ -140,9 +140,28 @@ def build_email(message: Message, sender: Optional[str] = None) -> EmailMessage:
 # --------------------------------------------------------------------------
 
 
+# Backends that put a message in front of a person. Anything not in here
+# writes a file or a log line and is, for alerting purposes, silence.
+#
+# Named as data rather than checked with `isinstance` at each call site,
+# because the question "can an alert reach anybody" is asked in three places
+# (`notify_failure`, `uc status`, the workflow guard) and three copies of the
+# same predicate is how they drift apart.
+REACHES_A_PERSON = frozenset({"smtp", "ses", "postmark", "resend", "sendgrid"})
+
+
+def reaches_a_person(backend_name: str) -> bool:
+    return backend_name in REACHES_A_PERSON
+
+
 @dataclass
 class FileBackend:
-    """Writes the `.eml` and sends nothing. The default, and the safe one."""
+    """Writes the `.eml` and sends nothing. The default, and the safe one.
+
+    **Safe and silent are the same thing here**, which is the problem 0U (U2)
+    is about: on a CI runner this writes into the runner and the runner is
+    destroyed, so an alert "sent" this way reached nobody and said it worked.
+    """
 
     name: str = "file"
     directory: Optional[Path] = None

@@ -40,7 +40,19 @@ from pipeline.models import (
 from pipeline.outcome import NOT_PUBLISHED, PUBLISHED, load_log
 
 DAY = date(2026, 8, 20)
-GOOD_STAGES = {"collect": "OK", "collect.arxiv": "OK", "collect.openalex": "OK"}
+# A healthy day's stage map. The four after the sources are `REQUIRED_STAGES`
+# (0U, U1): this harness runs only `summarize` through `_guard` and calls the
+# issue stage directly, so without them a day that is fine in every way this
+# file cares about would be refused for stages the harness never ran.
+GOOD_STAGES = {
+    "collect": "OK",
+    "collect.arxiv": "OK",
+    "collect.openalex": "OK",
+    "classify": "OK",
+    "summarize": "OK",
+    "select": "OK",
+    "issue": "OK",
+}
 
 
 class Recorder:
@@ -148,7 +160,12 @@ def test_a_failed_collection_withholds_the_issue_alerts_and_then_recovers(
     assert already_delivered(DAY) is None
 
     # 2. Somebody was told, and the subject says what happened.
-    assert first["alert"]["status"] == "alerted"
+    # An alert was raised **and it reached nobody**, because `deliver.backend`
+    # is `file` (0U, U2). Both halves matter: the day noticed it had failed,
+    # and the notice went into a file on a runner that then evaporated. This
+    # used to assert `"alerted"`, which is the false reassurance U2 removed.
+    assert first["alert"]["status"] == "alert_undeliverable"
+    assert first["alert"]["reached_a_person"] is False
     assert str(DAY) in alerts.sent[0].subject
     assert alerts.sent[0].recipients == ["yjun@example.org"]
     assert "collect" in alerts.sent[0].subject
@@ -187,7 +204,12 @@ def test_a_failed_summarize_withholds_the_issue_and_the_retry_does_not_recollect
     assert first["status"] == NOT_PUBLISHED
     assert not _issue_file(DAY).exists()
     assert "summarize" in first["failed_stages"]
-    assert first["alert"]["status"] == "alerted"
+    # An alert was raised **and it reached nobody**, because `deliver.backend`
+    # is `file` (0U, U2). Both halves matter: the day noticed it had failed,
+    # and the notice went into a file on a runner that then evaporated. This
+    # used to assert `"alerted"`, which is the false reassurance U2 removed.
+    assert first["alert"]["status"] == "alert_undeliverable"
+    assert first["alert"]["reached_a_person"] is False
     assert "summarize" in alerts.sent[0].subject
 
     # A half-summarised day is an incomplete day, not a short one: nothing that

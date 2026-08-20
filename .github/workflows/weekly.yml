@@ -58,12 +58,23 @@ jobs:
 
       # With `deliver.backend: file` — the default, and what is committed —
       # this writes an .eml into the runner's filesystem and the runner is then
-      # destroyed. That is the correct behaviour for a workflow nobody has
-      # turned on yet, and it is why the checklist in OPERATIONS.md sets the
-      # backend last.
+      # destroyed. **So this step is expected to fail every Sunday until a
+      # provider is chosen**, and that is the design: `uc weekly --send` now
+      # exits non-zero when the send reached nobody (0U, U9), GitHub mails the
+      # owner when a scheduled workflow fails, and that mail is currently the
+      # only route by which "this repository's cron is still alive" arrives in
+      # a person's inbox. The checklist in OPERATIONS.md sets the backend last;
+      # when it is set, this goes green and starts meaning something else.
+      #
+      # The summary is written into the job page either way, so a red run is
+      # still readable — `pipefail` keeps the command's exit code rather than
+      # `tee`'s.
       - name: Send the summary
         env:
           UC_SMTP_USER: ${{ secrets.UC_SMTP_USER }}
           UC_SMTP_PASSWORD: ${{ secrets.UC_SMTP_PASSWORD }}
           UC_ALERT_RECIPIENT: ${{ secrets.UC_ALERT_RECIPIENT }}
-        run: uv run uc weekly --send
+        shell: bash
+        run: |
+          set -o pipefail
+          uv run uc weekly --send | tee -a "$GITHUB_STEP_SUMMARY"

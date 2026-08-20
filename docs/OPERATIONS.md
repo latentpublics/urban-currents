@@ -3,7 +3,8 @@
 What a day costs a human, where a human is required, and what to do when a stage
 fails.
 
-**The pipeline runs itself, and reaches nobody.** `uc daily` collects a window,
+**The pipeline runs itself, publishes to a real address, and reaches nobody by
+mail.** `uc daily` collects a window,
 decides an outcome, publishes and sends; `daily.yml` has called it at 21:00 UTC
 since 2026-08-19, `weekly.yml` since 0U, and `deadman.yml` watches for the case
 where neither fires. What has *not* happened is delivery: `deliver.backend` is
@@ -184,6 +185,31 @@ uv run uc backfill --days 90                            # → runs/backfill/ (no
 uv run uc calibrate --apply                             # → config/scoring.yaml
 uv run uc gate-recall                                   # → runs/gate_recall.json
 ```
+
+## The site
+
+Built from `content/` by `uc site` and deployed by `.github/workflows/pages.yml`
+to **<https://latentpublics.com/urban-currents/>**.
+
+| | |
+|---|---|
+| Source | GitHub Actions (`Settings -> Pages -> Source: GitHub Actions`) |
+| Custom domain | **Leave empty.** The domain belongs to `latentpublics.github.io`; setting it here would take `latentpublics.com` for this repository and push the organisation site off it |
+| Trigger | `workflow_run` on a successful `daily`, plus `workflow_dispatch` |
+| Indexed | **No.** `site.published: false` in `config/pipeline.yaml` |
+
+A day that ends `not_published` does not deploy — `daily` exits non-zero, so
+the `workflow_run` condition is false. That is intended. A *quiet* day does
+publish, an empty issue and all, and appears on the site as a day we looked and
+found nothing; a `not_published` day is one the pipeline could not vouch for,
+and the site is an archive of what we can vouch for.
+
+### Making it public (G5)
+
+One line: `site.published: true` in `config/pipeline.yaml`. That turns
+`robots.txt` from `Disallow: /` to `Allow: /` with a `Sitemap:` line, and drops
+`noindex` from every page. Do not edit `robots.txt` or the templates by hand —
+they are generated, and the switch exists so the two cannot disagree.
 
 ## Turning the schedule on
 

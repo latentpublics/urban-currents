@@ -37,6 +37,7 @@ Four measured sections and one written one:
 
 from __future__ import annotations
 
+import hashlib
 import re
 from collections import Counter, defaultdict
 from datetime import date, timedelta
@@ -454,6 +455,117 @@ def repeat_authors(items: list[Item], limit: int = 3) -> list[dict]:
 # --------------------------------------------------------------------------
 
 
+# How many of today's papers must share a controlled-vocabulary tag before that
+# tag counts as a grouping worth naming.
+#
+# Measured over the 63-issue archive (0S, U2):
+#
+#   condition                          days speaking   of 63
+#   OLD: 3 facts incl. >=1 link                   57     90%
+#   a tag on >= 2 of the day's items              63    100%
+#   a tag on >= 3 of the day's items              54     86%
+#   a tag on >= 4 of the day's items              30     48%
+#   >= 2 tags on >= 3 items                       34     54%
+#
+# **Two is not a condition**: it fires on every day in the archive, and a gate
+# that never closes is not a gate. With fifteen items and dozens of tags, some
+# pair shares something by arithmetic. **Four silences 31 days** the old rule
+# let speak, including days that plainly do have a shared subject.
+#
+# Three is the smallest count that reads as "several" rather than "a pair", and
+# it lands slightly *stricter* than the condition it replaces — 86% against 90%.
+GROUP_MIN_PAPERS = 3
+
+# How many groups the paragraph is offered. Measured: the mean day has 1.87
+# groups at this threshold and the richest has 8.
+#
+# **A paragraph that names eight groups is a catalogue, not a paragraph.**
+# 2026-06-24 has seven, and the first draft of that day read as a list of tags
+# with papers hung off each — every sentence true, and nothing a reader could
+# hold. The biggest groups are the ones worth naming; the rest are still in the
+# issue, on the cards, where they belong.
+GROUP_LIMIT = 4
+
+# How many ungrouped papers get a clause of their own.
+HIGHLIGHT_LIMIT = 3
+
+
+def _all_groups(items: list[Item]) -> list[dict]:
+    """Every group, uncapped — what `highlights` must measure "ungrouped" against."""
+    return tag_groups(items, limit=None)
+
+
+def tag_groups(
+    items: list[Item],
+    min_papers: int = GROUP_MIN_PAPERS,
+    limit: Optional[int] = GROUP_LIMIT,
+) -> list[dict]:
+    """Controlled-vocabulary tags that at least `min_papers` of today share.
+
+    **This is the thing V3 deliberately had no place for**, and the reason it
+    is safe now is that the group's name is not invented. 0i removed the slot
+    for a theme because asking a model "what is today about" with nothing to
+    read produces fiction. The name here is **the tag itself** — a string that
+    matched the controlled vocabulary — so naming the group states a fact rather
+    than proposing one.
+
+    The papers in each group travel with it, because the paragraph is asked to
+    name them and it may only name what it was given.
+    """
+    by_tag: dict[str, list[Item]] = {}
+    for item in items:
+        for tag in sorted(set(_tags_of(item))):
+            by_tag.setdefault(tag, []).append(item)
+
+    groups = []
+    for tag, members in by_tag.items():
+        if len(members) < min_papers:
+            continue
+        groups.append({
+            "tag": tag,
+            "papers": len(members),
+            "work_keys": [m.work_key for m in members],
+            "titles": [clean_title(m.bibliography.title) for m in members],
+            "whats": [
+                (m.summary.en.what if m.summary.en else "") or "" for m in members
+            ],
+        })
+    # Biggest first, then alphabetically so the order is stable across runs.
+    groups.sort(key=lambda g: (-g["papers"], g["tag"]))
+    return groups[:limit] if limit else groups
+
+
+def highlights(
+    items: list[Item], groups: list[dict], limit: int = HIGHLIGHT_LIMIT,
+    all_groups: Optional[list[dict]] = None,
+) -> list[dict]:
+    """The best-scoring papers that no group already covers.
+
+    Without this the paragraph would describe only what clustered, and a day's
+    single strongest paper could go unmentioned because nothing else resembled
+    it. Ranked by the same headline score the issue already uses, so the
+    paragraph and the card order do not disagree about what stood out.
+    """
+    # Against **every** group, not only the ones the paragraph was shown. A
+    # paper in a group that fell outside `GROUP_LIMIT` is still a paper that
+    # grouped, and offering it as "in no group" would be false.
+    grouped = {k for g in (all_groups or groups) for k in g["work_keys"]}
+    loose = [it for it in items if it.work_key not in grouped]
+    loose.sort(key=lambda it: (-it.scores.headline, it.work_key))
+    out = []
+    for item in loose[:limit]:
+        what = (item.summary.en.what if item.summary.en else "") or ""
+        if not what:
+            continue
+        out.append({
+            "work_key": item.work_key,
+            "title": clean_title(item.bibliography.title),
+            "what": what,
+            "tags": sorted(set(_tags_of(item)))[:4],
+        })
+    return out
+
+
 def build_facts(
     d: date, items: list[Item], unreadable_n: int = 0
 ) -> dict[str, Any]:
@@ -468,6 +580,13 @@ def build_facts(
         "repeat_authors": repeat_authors(items),
         "first_internal_citation": first_internal_citation(d, items),
     }
+    # New material for the paragraph (0S, U2). The citation facts above are not
+    # removed and not demoted — they keep every label row they had. What
+    # changed is which of them the *paragraph* is written from.
+    facts["tag_groups"] = tag_groups(items)
+    facts["highlights"] = highlights(
+        items, facts["tag_groups"], all_groups=_all_groups(items)
+    )
     facts["material_count"] = (
         len(facts["deviations"]["found"])
         + len(facts["anchors"])
@@ -486,89 +605,77 @@ def build_facts(
 
 PROMPT_PATH = Path(__file__).parent / "prompts" / "synthesis.md"
 
-# What counts as enough to write from. Composition alone is not material —
-# "24 papers, 12 from journals" is the scan line, not a synthesis — so the bar
-# is on the connective facts.
+# What counts as enough to write from.
 #
-# And not every connective fact is equal. On 2026-08-05 the material was three
-# facts — two repeat authors and one recurring institution — and the paragraph
-# written from them was a roster read aloud. Recurrence of a name says who is
-# publishing; it says nothing about how today connects to what came before,
-# which is the only question this paragraph exists to answer. So at least one
-# fact must be a *link*: a canon anchor, a shared-reference cluster, or a tag
-# deviation.
+# **The condition changed in 0S; the principle did not.** The old bar was three
+# connective facts including at least one measured citation link, and it was the
+# right bar for a paragraph made of citation links. The paragraph is now made of
+# the day's own items, so the question "was there a measured link" is no longer
+# the question being asked.
+#
+# What replaces it is the same idea in the new material's terms: **if nothing
+# groups, there is no paragraph.** A day where no controlled-vocabulary tag is
+# shared by three papers is a day whose items do not resemble each other, and
+# the only paragraph available would be "today's seven papers are not much
+# alike" — which is precisely the filler sentence mockup 6a wrote and this
+# project refused. 0i's 08-05 silence was the test of that design and it stays
+# a test; only the trigger moves.
+#
+# Kept for the label rows and for `material_count`, which still measure the
+# citation facts.
 PARAGRAPH_MIN_MATERIAL = 3
 
 REFUSAL = "NOTHING TO SAY"
 
 
 def render_facts(facts: dict[str, Any]) -> str:
-    """The FACTS block the model is allowed to write from, and nothing else.
+    """The FACTS block the model may write from, and nothing else.
+
+    ## What changed in 0S (U2), and what did not
+
+    This used to render the **citation graph**: tag deviations, canon anchors,
+    shared-reference clusters, repeated institutions and authors. The paragraph
+    written from it said who cited whom, which is what YJUN read and asked to
+    change — the cards below already say what each paper did, and the paragraph
+    was spending itself on relationships rather than on **what arrived today**.
+
+    So the material is now the day's own items: the controlled-vocabulary tags
+    at least three of them share, and the best-scoring papers no group covers.
+
+    **The citation facts have not been deleted and have not been demoted.** They
+    keep every label row they had — `tag shift`, `canon`, `coupling`,
+    `institutions`, `authors` — and those rows are the measured record. What
+    moved is narrower than it sounds: **they went from being the prose to being
+    the instrument panel.** A reader who wants the citation structure reads the
+    rows, which state it exactly; a reader who wants to know what showed up
+    reads the paragraph, which no longer pretends the two are the same question.
 
     Rendered as flat statements rather than JSON: a model asked to prosify JSON
-    tends to narrate the schema, and a model given sentences tends to join them.
-    Joining is what is wanted, within the measured connections.
+    narrates the schema, and a model given sentences joins them.
     """
     # Composition is deliberately absent. It is printed directly above the
     # paragraph in the issue, and when it was included the model opened with it
     # every time — a sentence that costs a line and adds nothing.
     lines: list[str] = []
 
-    for dev in facts["deviations"]["found"]:
+    for group in facts.get("tag_groups") or []:
         lines.append(
-            f"- The tag \"{dev['label']}\" appears on {dev['today']} papers today; "
-            f"its average over the previous {dev['window_days']} days is "
-            f"{dev['baseline_per_day']} per day."
+            f"- {group['papers']} of today's papers carry the tag "
+            f"\"{group['tag']}\"."
+        )
+        for title, what in zip(group["titles"], group["whats"]):
+            first = (what or "").split(". ")[0].strip()
+            lines.append(f"    - \"{title}\"" + (f": {first}." if first else "."))
+
+    for hl in facts.get("highlights") or []:
+        first = (hl["what"] or "").split(". ")[0].strip()
+        tags = ", ".join(f'"{t}"' for t in hl["tags"])
+        lines.append(
+            f"- \"{hl['title']}\" is not in any of the groups above"
+            + (f" (its tags: {tags})" if tags else "")
+            + (f". {first}." if first else ".")
         )
 
-    for anchor in facts["anchors"]:
-        who = ", ".join(anchor["authors"]) if anchor["authors"] else ""
-        cite = f"{who} ({anchor['year']})" if who and anchor["year"] else anchor["title"]
-        if anchor["first_in_window"]:
-            lines.append(
-                f"- \"{anchor['title']}\" ({cite}) is cited today by "
-                f"{anchor['citing_today']} paper(s), and by no paper in the "
-                f"archive before today."
-            )
-        else:
-            since = anchor["days_since_last_cited"]
-            tail = f"; last cited {since} days ago" if since is not None else ""
-            lines.append(
-                f"- \"{anchor['title']}\" ({cite}) is cited today by "
-                f"{anchor['citing_today']} papers{tail}."
-            )
-
-    for cl in facts["clusters"]:
-        shared = "; ".join(f'"{t}"' for t in cl["shared_titles"])
-        where = "another paper in today's issue" if cl["scope"] == "today" else (
-            f"a paper published on {cl['partner_date']}"
-        )
-        lines.append(
-            f"- \"{cl['titles'][0]}\" shares {cl['shared']} references with "
-            f"{where}, \"{cl['titles'][1]}\""
-            + (f". Shared references include {shared}." if shared else ".")
-        )
-
-    for a in facts["affiliations"]["today"]:
-        lines.append(f"- {a['name']} appears on {a['papers']} of today's papers.")
-    for a in facts["affiliations"]["in_window"]:
-        lines.append(
-            f"- {a['name']} has appeared on {a['papers']} papers in the last "
-            f"{facts['affiliations']['window_days']} days."
-        )
-    for a in facts["repeat_authors"]:
-        lines.append(f"- {a['name']} is an author on {a['papers_today']} of today's papers.")
-
-    fic = facts.get("first_internal_citation")
-    if fic and fic.get("is_first"):
-        lines.append(
-            "- Today is the first day a paper in this issue cites another paper "
-            "from this archive."
-        )
-    elif fic:
-        lines.append(
-            f"- {len(fic['edges'])} paper(s) today cite earlier papers from this archive."
-        )
     return "\n".join(lines)
 
 
@@ -596,21 +703,17 @@ def write_paragraph(facts: dict[str, Any], client=None) -> dict[str, Any]:
     is better than filling.
     """
     material = material_for_paragraph(facts)
-    links = (
-        len(facts["anchors"])
-        + len(facts["clusters"])
-        + len(facts["deviations"]["found"])
-    )
-    if material < PARAGRAPH_MIN_MATERIAL or links < 1:
+    groups = facts.get("tag_groups") or []
+    if not groups:
         return {
             "text": None,
             "omitted": True,
             "reason": (
-                f"{material} fact(s) and {links} measured link(s); needs "
-                f"{PARAGRAPH_MIN_MATERIAL} facts including at least one link"
+                f"no controlled-vocabulary tag is shared by "
+                f"{GROUP_MIN_PAPERS} or more of today's papers"
             ),
             "material": material,
-            "links": links,
+            "groups": 0,
         }
 
     from .llm import LLMBudgetExceeded, LLMClient
@@ -627,7 +730,20 @@ def write_paragraph(facts: dict[str, Any], client=None) -> dict[str, Any]:
     system = PROMPT_PATH.read_text(encoding="utf-8")
     user = f"FACTS for {facts['date']}:\n\n{render_facts(facts)}"
     try:
-        resp = client.complete(system, user, cache_key=f"synthesis-{facts['date']}")
+        # **The key covers the input, not just the date.** It was
+        # `synthesis-<date>` alone, so a change to what the FACTS block
+        # contains — exactly what 0S is — would have been served the old
+        # answer with no sign that anything was stale. That is the third time
+        # in three batches a cache key has been narrower than the thing it
+        # keys: 0Q's extract comparison found the model missing from the key,
+        # and 0R's headline retry found the hint missing from it.
+        #
+        # Hashing the rendered facts means the next change to the material
+        # invalidates itself and nobody has to remember to bump anything.
+        digest = hashlib.sha1(user.encode("utf-8")).hexdigest()[:12]
+        resp = client.complete(
+            system, user, cache_key=f"synthesis-{facts['date']}-{digest}"
+        )
     except LLMBudgetExceeded as e:
         return {"text": None, "omitted": True, "reason": str(e), "material": material}
 
@@ -639,7 +755,13 @@ def write_paragraph(facts: dict[str, Any], client=None) -> dict[str, Any]:
             "reason": "the model judged the facts too thin",
             "material": material,
         }
-    return {"text": text, "omitted": False, "reason": None, "material": material}
+    return {
+        "text": text,
+        "omitted": False,
+        "reason": None,
+        "material": material,
+        "groups": len(groups),
+    }
 
 
 def build(

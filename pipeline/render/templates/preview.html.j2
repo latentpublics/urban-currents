@@ -119,26 +119,35 @@
   </section>
   {% endif %}
 
-  {#- The canon card. Absent unless `render.still_cited` is on, which it is
-      not — see `build_still_cited` for why that is a finding rather than
-      timidity. -#}
-  {% if still_cited %}
-  <section class="uc-canon">
-    <h2 class="uc-canon__title">Still cited</h2>
-    <p class="uc-canon__work">
-      {% if still_cited.citation %}{{ still_cited.citation }}, {% endif %}
-      <span class="uc-canon__name">{{ still_cited.title }}</span>
-    </p>
-    <p class="uc-canon__counts">
-      {{ still_cited.cited_today }} today ·
-      {{ still_cited.archive_citations }} of {{ still_cited.archive_total }} in the archive stand on it
-    </p>
-  </section>
-  {% endif %}
-
   <div class="uc-cards">
     {% for card in cards %}{% include "item_card.html.j2" %}{% endfor %}
   </div>
+
+  {#- The canon card, **after the items** (0S, U1).
+
+      It was above them, which put "what this field stands on" in front of what
+      the field did today. Mockup 6a and 7a both place it between the cards and
+      `Also published today`, and the reason is the reading order: the day's
+      work is the issue, and the foundation it leans on is a footnote to that,
+      not a preface to it.
+
+      Absent entirely on a day that cites no foundational work — see
+      `build_still_cited`. -#}
+  {% if still_cited %}
+  <section class="uc-canon">
+    <h2 class="uc-canon__title">Still cited</h2>
+    <div class="uc-canon__box">
+      <p class="uc-canon__work">
+        {% if still_cited.citation %}{{ still_cited.citation }}, {% endif %}
+        <span class="uc-canon__name">{{ still_cited.title }}</span>
+        <span class="uc-canon__counts">
+          {{ still_cited.cited_today }} of today's items cite it ·
+          {{ still_cited.archive_citations }} of {{ still_cited.archive_total }} in the archive stand on it
+        </span>
+      </p>
+    </div>
+  </section>
+  {% endif %}
 
   {% if unreadable %}
   {#- `Also published today`. Facts only: no sentence here was generated,

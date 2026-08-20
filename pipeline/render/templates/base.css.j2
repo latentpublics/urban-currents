@@ -602,7 +602,15 @@ body {
 
 /* "Still cited" — off by default; styled so turning it on is a config change
    and not also a design job. */
-.uc-canon { border-left: 3px solid var(--uc-accent); padding: 0.6rem 0 0.6rem 0.9rem; margin: 1.5rem 0; }
+/* Mockup 6a's form: an uppercase label line, then a **bordered box**. It was a
+   left rule, which reads as an aside inside the flow; a box reads as a thing
+   set apart, which is what a foundational work under the day's items is. */
+.uc-canon { border-top: 2px solid var(--uc-ink); padding-top: 0.9rem; margin: 2.5rem 0 1.5rem; }
+.uc-canon__box {
+  border: 1px solid var(--uc-line);
+  border-radius: 2px;
+  padding: 0.9rem 1.15rem;
+}
 .uc-canon__title {
   margin: 0 0 0.3rem;
   font-size: 0.75rem;
@@ -611,9 +619,11 @@ body {
   text-transform: uppercase;
   color: var(--uc-meta);
 }
-.uc-canon__work { margin: 0; font-size: 0.95rem; }
-.uc-canon__name { font-style: italic; }
-.uc-canon__counts { margin: 0.2rem 0 0; font-size: 0.8rem; color: var(--uc-faint); }
+.uc-canon__work { margin: 0; font-size: 0.9rem; line-height: 1.55; }
+/* The work in serif and bold, its counts in the same paragraph and lighter —
+   6a runs them together as one sentence rather than stacking a caption. */
+.uc-canon__name { font-family: var(--uc-font-serif); font-weight: 600; font-style: italic; }
+.uc-canon__counts { color: var(--uc-ink-soft); }
 
 /* A day we could not see. Deliberately not the quiet day's grey: the two are
    different claims and colour alone must not be what separates them, so the row

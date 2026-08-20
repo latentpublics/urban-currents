@@ -192,7 +192,17 @@ llm:
   # about. Short by design: the paragraph is three to five sentences and a
   # bigger budget would only buy room to pad.
   synthesis:
-    prompt_version: "synthesis/daily@0.2.0"
+    # ★ 0.3.0 in phase 0S (U2). The paragraph's **material changed** — from the
+    # measured citation graph to the day's own items and the controlled-
+    # vocabulary tags they share — so every cached 0.2.0 response answers a
+    # question that is no longer being asked.
+    #
+    # Bumping is not optional here. 0R shipped a retry whose cache key did not
+    # cover the prompt, and the sharper prompt silently read back the vaguer
+    # one's answer; the fix looked inert until the key was fixed. **A cache key
+    # must cover everything the prompt varies by**, and the prompt version is
+    # how that is spelled for a whole prompt file.
+    prompt_version: "synthesis/daily@0.3.0"
     max_tokens: 400
 
 gate:

@@ -43,6 +43,12 @@ def _empty_facts(**over):
         "affiliations": {"today": [], "in_window": [], "window_days": 30},
         "repeat_authors": [],
         "first_internal_citation": None,
+        # 0S: the paragraph is written from these two, not from the citation
+        # facts above. Empty by default, so a fixture that says nothing about
+        # grouping produces a day with nothing to group — which is the state
+        # most of these tests are about.
+        "tag_groups": [],
+        "highlights": [],
     }
     facts.update(over)
     return facts
@@ -84,11 +90,16 @@ def test_the_vocabulary_bottleneck_is_still_measured_when_the_baseline_is_short(
 # --------------------------------------------------------------------------
 
 
-def test_no_paragraph_without_a_measured_link(repo):
-    """Recurrence of a name is not a connection.
+def test_no_paragraph_when_nothing_groups(repo):
+    """Recurrence of a name is not a grouping.
 
     2026-08-05 had three facts — two repeat authors and one recurring
     institution — and the paragraph written from them was a roster read aloud.
+    The bar that caught it was "at least one measured citation link"; since 0S
+    the paragraph is written from the day's own items, so the bar is "at least
+    one tag three papers share". **Different question, same refusal**: a day
+    whose papers do not resemble each other has nothing to say about what
+    arrived together.
     """
     facts = _empty_facts(
         repeat_authors=[{"name": "A", "papers_today": 2}, {"name": "B", "papers_today": 2}],
@@ -97,7 +108,7 @@ def test_no_paragraph_without_a_measured_link(repo):
     out = write_paragraph(facts)
 
     assert out["omitted"] is True
-    assert out["links"] == 0
+    assert out["groups"] == 0
     assert out["text"] is None
 
 
@@ -110,16 +121,15 @@ def test_no_paragraph_when_there_is_almost_nothing(repo):
 def test_the_model_may_refuse_and_the_refusal_is_honoured(repo):
     from pipeline.llm import LLMClient, LLMResponse
 
+    # Enough material to reach the model: the refusal being tested is the
+    # model's own, not the gate's.
     facts = _empty_facts(
-        clusters=[
-            {"scope": "today", "work_keys": ["a", "b"], "titles": ["A", "B"],
-             "shared": 4, "shared_titles": ["R"], "partner_date": str(DAY)}
-        ],
-        anchors=[
-            {"openalex_id": "openalex:W1", "title": "T", "year": "2010", "authors": ["X"],
-             "citing_today": 2, "citing_work_keys": [], "days_since_last_cited": 5,
-             "first_in_window": False}
-        ],
+        tag_groups=[{
+            "tag": "clustering", "papers": 3,
+            "work_keys": ["a", "b", "c"],
+            "titles": ["A", "B", "C"],
+            "whats": ["It did a thing.", "It did another.", "It did a third."],
+        }],
         repeat_authors=[{"name": "A", "papers_today": 2}],
     )
     client = LLMClient(
@@ -141,19 +151,36 @@ def test_the_facts_block_never_states_the_issue_size(repo):
     assert "24" not in block
 
 
-def test_the_facts_block_carries_the_shared_references_by_name(repo):
+def test_the_citation_facts_left_the_paragraph_and_kept_their_rows(repo):
+    """0S moved the citation graph **out of the prose and into the rows**.
+
+    V3's guarantee was that an invented theme had nowhere to go, because the
+    material named only shared references. The guarantee survives the change by
+    a different route: the material now names **tags**, and a tag is a string
+    that matched a controlled vocabulary, so naming the group still states a
+    fact rather than proposing one.
+
+    What must not happen is the shared references quietly disappearing. They are
+    not in the paragraph's material any more, and they are still in the issue.
+    """
     facts = _empty_facts(
         clusters=[{
             "scope": "archive", "work_keys": ["a", "b"], "titles": ["A", "B"],
             "shared": 5, "shared_titles": ["Built Environment Correlates of Walking"],
             "partner_date": "2026-08-07",
         }],
+        tag_groups=[{
+            "tag": "walkability", "papers": 3,
+            "work_keys": ["a", "b", "c"], "titles": ["A", "B", "C"],
+            "whats": ["", "", ""],
+        }],
     )
     block = render_facts(facts)
-    # Naming the shared works is what makes an invented theme impossible: there
-    # is nowhere in the output for one to go.
-    assert "Built Environment Correlates of Walking" in block
-    assert "5 references" in block
+
+    assert "Built Environment Correlates of Walking" not in block
+    assert '3 of today\'s papers carry the tag "walkability"' in block
+    # And the fact itself is untouched, for the `coupling` row to render.
+    assert facts["clusters"][0]["shared"] == 5
 
 
 # --------------------------------------------------------------------------

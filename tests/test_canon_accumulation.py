@@ -215,8 +215,24 @@ def test_a_rebuild_reports_what_moved_in_the_top_30(repo):
     assert d["entered"] == ["Enters"]
     assert d["left"] == ["Leaves"]
     assert d["unchanged"] == 1
-    assert d["transport_share_before"] == 0.5
-    assert d["transport_share_after"] == 0.5
+    # Carries its own denominator. A share with no population attached is the
+    # measured-zero error wearing a decimal point.
+    assert d["transport_share_before"]["share"] == 0.5
+    assert d["transport_share_before"]["of"] == 2
+
+
+def test_an_unmeasurable_transport_share_says_so_rather_than_zero(repo):
+    """Not one of the 300 real candidates carries a subfield. Counting matches
+    over an empty field returned 0.0, which reads as "measured, none of them"
+    when the truth is "the field is empty" — the mistake this project has now
+    corrected four times."""
+    from pipeline.graph.canon import top_diff
+
+    doc = {"candidates": [{"openalex_id": "openalex:W9", "title": "No subfield"}]}
+    d = top_diff(doc, doc)
+
+    assert d["transport_share_after"]["share"] is None
+    assert "no candidate has a subfield" in d["transport_share_after"]["reason"]
 
 
 # --------------------------------------------------------------------------

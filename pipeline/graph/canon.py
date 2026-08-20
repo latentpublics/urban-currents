@@ -390,25 +390,76 @@ def top_diff(before: dict, after: dict, n: int = 30) -> dict[str, Any]:
     entered = [label(c) for i, c in new_ids.items() if i not in old_ids]
     left = [label(c) for i, c in old_ids.items() if i not in new_ids]
 
-    def transport_share(doc: dict) -> Optional[float]:
+    # Words that mark a transport-ish subfield. Deliberately a small explicit
+    # list rather than a clever rule: it is a description of a composition, not
+    # a classifier, and a reader should be able to check it by eye.
+    TRANSPORT = ("transport", "traffic", "mobilit", "travel", "vehicle",
+                 "logistic", "automotive")
+
+    def transport_share(doc: dict) -> dict[str, Any]:
         """The composition figure 0P measured at 29.4% for our own canon.
 
         0Q rejected merging an external list because 75.4% of it was transport.
         Ours is the number to watch as the base fills: if finishing the
-        measurement pushes our own share up, that is worth knowing before the
-        card is published from it.
+        measurement pushes our own share up, that is worth knowing **before**
+        the card is published from it.
+
+        ## Where the subfield comes from, and why not from here
+
+        `candidates.json` carries a `subfield` key and **not one of the 300
+        candidates has a value in it.** The first version of this counted
+        matches over that field and returned `0.0` — a number that reads as
+        "measured, and none of them are transport" when the truth is "the field
+        this was measured from is empty". That is the mistake this project has
+        now corrected four times, and it very nearly shipped a fifth.
+
+        So the subfield is joined from `canon_resolved.jsonl`, which is where
+        `_resolve` actually writes it, and the return is a **dict carrying its
+        own denominator** — a share with no population attached is the same
+        error wearing a decimal point.
         """
         cands = doc.get("candidates") or []
         if not cands:
-            return None
-        hits = sum(
-            1 for c in cands
-            if any(
-                word in ((c.get("subfield") or "") + " " + (c.get("topic") or "")).lower()
-                for word in ("transport", "traffic", "mobility", "travel", "vehicle")
-            )
-        )
-        return round(hits / len(cands), 4)
+            return {"share": None, "reason": "no candidates"}
+
+        from .daily_canon import load_resolved
+
+        resolved = load_resolved()
+
+        # **Join on the id, not the name.** The most-cited works — which is
+        # exactly what a candidate is — were resolved by the 0d/0e harvest,
+        # and those rows carry `subfield_id` with no `subfield` display name.
+        # Matching on the name found 0 of 300 and reported a share of `None`,
+        # which was at least honest; matching on the id finds them.
+        names: dict[str, str] = {}
+        for row in resolved.values():
+            sid, name = row.get("subfield_id"), row.get("subfield")
+            if sid and name and sid not in names:
+                names[sid] = name
+
+        known = []
+        for c in cands:
+            row = resolved.get(c.get("openalex_id")) or {}
+            sub = c.get("subfield") or row.get("subfield")
+            if not sub:
+                sid = c.get("subfield_id") or row.get("subfield_id")
+                sub = names.get(sid) if sid else None
+            if sub:
+                known.append(sub.lower())
+        if not known:
+            return {
+                "share": None,
+                "of": 0,
+                "candidates": len(cands),
+                "reason": "no candidate has a subfield in either source",
+            }
+        hits = sum(1 for sub in known if any(w in sub for w in TRANSPORT))
+        return {
+            "share": round(hits / len(known), 4),
+            "of": len(known),
+            "candidates": len(cands),
+            "reason": None,
+        }
 
     return {
         "top_n": n,

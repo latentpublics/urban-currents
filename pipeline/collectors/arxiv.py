@@ -91,6 +91,21 @@ class ArxivCollector:
     MAX_RATE_LIMIT_RETRIES = 6
     MAX_RATE_LIMIT_SLEEP_S = 600.0
 
+    # The ordinary backoff needs a ceiling of its own (phase 0V, V7).
+    #
+    # `MAX_RATE_LIMIT_SLEEP_S` only counted sleeps taken in the 429 branch, and
+    # the 5xx/empty-body path sleeps `interval * 2**attempt` without counting
+    # anything. Those two interact: a 429 storm raises `attempts` toward its
+    # ceiling of nine *and* pushes `interval` to its 12-second cap, so a run of
+    # 5xx after that sleeps 12x(64+128+256) ~ 5,376s — inside no infinite loop
+    # and outside `timeout-minutes: 45`.
+    #
+    # Two numbers rather than one: a per-sleep cap so no single wait is absurd,
+    # and a total that spans **both** branches so the collector cannot spend
+    # the day's budget in small pieces.
+    MAX_BACKOFF_SLEEP_S = 60.0
+    MAX_TOTAL_SLEEP_S = 900.0
+
     def _fetch(self, params: dict) -> str:
         last: Optional[Exception] = None
         attempts = self.max_retries
@@ -137,8 +152,17 @@ class ArxivCollector:
                 # leave the loop rather than be retried like a flaky 5xx.
                 if isinstance(e, RuntimeError) and "giving up rather than" in str(e):
                     raise
-                # arXiv returns empty bodies or 5xx under load; back off.
-                time.sleep(self.interval * (2**attempt))
+                # arXiv returns empty bodies or 5xx under load; back off — but
+                # inside the same budget the 429 branch draws on (0V, V7).
+                wait = min(self.interval * (2**attempt), self.MAX_BACKOFF_SLEEP_S)
+                if slept + wait > self.MAX_TOTAL_SLEEP_S:
+                    raise RuntimeError(
+                        f"arXiv backoff would pass {self.MAX_TOTAL_SLEEP_S:.0f}s "
+                        f"of waiting in one request ({slept:.0f}s already slept); "
+                        f"giving up rather than waiting past the day's budget"
+                    ) from e
+                time.sleep(wait)
+                slept += wait
                 attempt += 1
         raise RuntimeError(f"arXiv request failed after {attempt} attempts: {last}")
 

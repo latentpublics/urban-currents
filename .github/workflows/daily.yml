@@ -32,7 +32,12 @@ on:
         default: false
         type: boolean
 
-  # DO NOT UNCOMMENT WITHOUT WORKING THROUGH docs/OPERATIONS.md FIRST.
+  # ENABLED 2026-08-19 (commit 478c187), after working through the checklist in
+  # docs/OPERATIONS.md — which is ordered so that nothing can reach a stranger
+  # before a person has read what it would have said. **Read it again before
+  # turning this off or changing the hour**: the ordering is the safeguard, not
+  # the comment, and the deadman job (09:00 UTC) will go red 36 hours after the
+  # last run-log row whether the schedule was disabled on purpose or not.
   #
   # 06:00 KST = 21:00 UTC the previous day. GitHub's scheduler is best-effort
   # and routinely runs late under load, which is fine: the window is seven days

@@ -3,10 +3,14 @@
 What a day costs a human, where a human is required, and what to do when a stage
 fails.
 
-**The pipeline can now run itself, and does not.** `uc daily` is one command
-that collects a window, decides an outcome, publishes, and sends; the workflow
-files that would call it every morning are committed with their `schedule:`
-blocks commented out. Turning them on is the checklist below.
+**The pipeline runs itself, and reaches nobody.** `uc daily` collects a window,
+decides an outcome, publishes and sends; `daily.yml` has called it at 21:00 UTC
+since 2026-08-19, `weekly.yml` since 0U, and `deadman.yml` watches for the case
+where neither fires. What has *not* happened is delivery: `deliver.backend` is
+`file`, so every issue and every failure alert is written into the runner and
+discarded with it. `uc status` says which of those two states you are in, on the
+`[ALERTS]` line, using the backend that will actually be used rather than the
+one in the config. The checklist below is the order for turning delivery on.
 
 ## The first command after being away
 

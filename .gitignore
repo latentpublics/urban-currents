@@ -8,10 +8,18 @@ __pycache__/
 .ruff_cache/
 .mypy_cache/
 
-# Working prompts are byproducts, but the reports and the decision log are not:
-# they are the only record of why the code is the way it is.
-prompts/*
-!prompts/reports/
+# `prompts/` stays out of this repository entirely (phase 0W).
+#
+# The judgement that produced the old exception here is unchanged: the batch
+# reports and DECISIONS.md are **not** byproducts, and they remain the only
+# record of why the code is the way it is. What changed is where that record
+# lives. This repository is becoming public, and the working record — briefs
+# written to an agent, reports written back, and a decision log that names
+# people and unfinished judgements — is not something to publish by default.
+#
+# So the reports are still written, as files, exactly as before. They are kept
+# outside this repository. See CLAUDE.md, "Where the working record goes".
+prompts/
 
 # Run artifacts: raw API responses, metrics, previews. Regenerable, often large.
 # Labels are the exception — a human made them and they cannot be regenerated.

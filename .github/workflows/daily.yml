@@ -1,4 +1,6 @@
-# The daily run — **enabled** since 2026-08-19 (commit 478c187).
+# The daily run — **enabled** since 2026-08-19 (commit 478c187, a pre-0W
+# SHA: `prompts/` was removed from the history in 0W and every hash before
+# that point changed).
 #
 # The `schedule:` block below is live and fires at 21:00 UTC. It was turned on
 # after the checklist in docs/OPERATIONS.md §"Turning the schedule on", which is
@@ -32,7 +34,7 @@ on:
         default: false
         type: boolean
 
-  # ENABLED 2026-08-19 (commit 478c187), after working through the checklist in
+  # ENABLED 2026-08-19 (commit 478c187, pre-0W SHA), after working through the checklist in
   # docs/OPERATIONS.md — which is ordered so that nothing can reach a stranger
   # before a person has read what it would have said. **Read it again before
   # turning this off or changing the hour**: the ordering is the safeguard, not

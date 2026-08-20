@@ -10,11 +10,35 @@ editing the document.
   identifiers, commit messages, `README.md`, render templates, and everything
   under `content/`.
   **Korean is allowed for internal working documents** — `docs/` analysis and
-  decision notes, and all of `prompts/`. The earlier rule said "everything
-  committed", which was read literally enough to keep three analysis documents
-  out of git entirely; a re-clone would have lost them, and `docs/PRD-phase0.md`
-  is Korean and has been committed since the first milestone. The line is what
-  a reader outside the project sees, not what language a thought arrived in.
+  decision notes, and everything under `prompts/`. The earlier rule said
+  "everything committed", which was read literally enough to keep three analysis
+  documents out of git entirely; a re-clone would have lost them, and
+  `docs/PRD-phase0.md` is Korean and has been committed since the first
+  milestone. The line is what a reader outside the project sees, not what
+  language a thought arrived in.
+
+## Where the working record goes
+
+`prompts/` is **not in this repository** and never appears in its history
+(phase 0W). The repository is public; the working record is not published by
+default. That is a decision about the audience, not a demotion — the reports and
+`prompts/reports/DECISIONS.md` are still the only account of why the code is the
+way it is, and the habit stands:
+
+- Read the directive in `prompts/`, work, and **write the completion report to
+  `prompts/reports/`** as a file, as before.
+- Continue the `D`-number sequence in `prompts/reports/DECISIONS.md`.
+- Expect `git status` to show nothing for any of it. `.gitignore` excludes
+  `prompts/` wholesale, and a commit that adds a file under it is a mistake.
+- Do **not** point at those files from anything that is committed. `docs/`,
+  `README.md` and code comments are read by people who will not have them; cite
+  the batch ("0Q") and restate the fact and its denominator instead of linking
+  a path. Numbers and populations always survive the move — dropping them is
+  what the pointer was worth.
+
+Commit SHAs quoted in documents written before 0W refer to the pre-rewrite
+history and no longer resolve. They are left in place with a note rather than
+deleted: evidence that has become unreachable is still evidence that existed.
 - **`content/` is pipeline output. Never hand-edit it.** That includes
   `content/items/`, `content/issues/`, `content/entities/`, and
   `content/graph/edges.jsonl`. To change what is in there, change the stage that

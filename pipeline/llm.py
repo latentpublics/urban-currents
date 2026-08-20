@@ -122,7 +122,10 @@ class UsageState:
 
     @classmethod
     def path(cls) -> Path:
-        return paths.STATE / "llm_usage.json"
+        # Cumulative spend outlives the runner (0U, U6): the caps in
+        # `llm.max_calls_total` and `max_spend_usd` are compared against this,
+        # and a file that resets every night means they can never fire.
+        return paths.persistent_state("llm_usage.json")
 
     @classmethod
     def load(cls) -> "UsageState":

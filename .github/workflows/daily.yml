@@ -1,10 +1,11 @@
-# The daily run — committed, and deliberately NOT enabled.
+# The daily run — **enabled** since 2026-08-19 (commit 478c187).
 #
-# `workflow_dispatch` only. The `schedule:` block below is commented out, and
-# turning it on is a decision with a bill and a mailing list attached: see
-# docs/OPERATIONS.md §"Turning the schedule on" for the checklist, which is
+# The `schedule:` block below is live and fires at 21:00 UTC. It was turned on
+# after the checklist in docs/OPERATIONS.md §"Turning the schedule on", which is
 # ordered so that nothing can reach a stranger before someone has read what it
-# would have said.
+# would have said. That ordering still holds: `deliver.backend` is `file`, so
+# nothing is posted to anybody — including, and this is the part that matters,
+# the failure alerts (see the alerting step below and 0U, U2).
 #
 # Why this file exists before it runs: a scheduler that is written the day it is
 # needed is written under time pressure, and the parts that get skipped are the
@@ -99,6 +100,32 @@ jobs:
           restore-keys: |
             llm-${{ hashFiles('config/pipeline.yaml') }}-
             llm-
+
+      # The resolved citation store (0T). 69MB and rewritten daily, so it is
+      # cached rather than committed — a commit that size every day would bury
+      # the archive it lives in. The three small state files that genuinely
+      # cannot be regenerated moved to `content/state/` instead and are
+      # committed with the rest (0U, U6).
+      #
+      # Losing this cache is not a failure: the queue simply refills from the
+      # reference base and the chore re-resolves at $0.0001 a request. It would
+      # be slow, not wrong.
+      # `canon_pending.jsonl` rides along because it carries the **attempts**
+      # counter, and that is the one thing in it that is not regenerable: the
+      # work list refills from the reference base, but an id's strike count
+      # does not, so without this the 3-strikes parking rule (0T) could never
+      # fire on a runner. It is 4.6 MB and rewritten daily, which is why it is
+      # cached rather than committed. A cache miss costs re-asking, not
+      # correctness — ids already parked are in `content/state/`.
+      - name: Cache the resolved citation store
+        uses: actions/cache@v4
+        with:
+          path: |
+            runs/state/canon_resolved.jsonl
+            runs/state/canon_pending.jsonl
+          key: canon-${{ github.run_id }}
+          restore-keys: |
+            canon-
 
       # ★ The cache nobody had listed, and the largest single cost on a runner.
       #
@@ -195,6 +222,15 @@ jobs:
         if: ${{ inputs.dry_run != true }}
         run: uv run uc site --no-review
 
+      # ★ Validate before committing (0U, U7). `uc validate` existed and no
+      # workflow called it, so a malformed item or a dangling issue reference
+      # would have been committed and then read by every later run. Failing
+      # here costs one day's publication; committing it costs an archive that
+      # no longer parses.
+      - name: Validate content
+        if: ${{ inputs.dry_run != true }}
+        run: uv run uc validate
+
       # `content/` is the pipeline's output and the only thing worth persisting
       # from a run. `site/` is not committed: it is regenerable in a second and
       # a daily HTML diff would bury every real change.
@@ -223,6 +259,27 @@ jobs:
             echo "push rejected — rebasing onto origin and retrying once"
             git pull --rebase --no-edit origin "${GITHUB_REF_NAME}"
             git push
+          fi
+
+      # ★ Say it out loud when an alert could not reach anybody (0U, U2).
+      #
+      # `deliver.backend` is `file`, so `notify_failure` writes an `.eml` into
+      # this runner and the runner is then destroyed. The old code returned
+      # `alerted` for that, which is a false reassurance in the one place the
+      # system is admitting something went wrong. It returns
+      # `alert_undeliverable` now, and this surfaces it.
+      #
+      # The job-failure behaviour below is unchanged on purpose: a failed
+      # workflow run is currently **the only signal that reaches a person**.
+      - name: Report whether alerting can reach anyone
+        if: ${{ always() && inputs.dry_run != true }}
+        run: |
+          if ! uv run uc status 2>/dev/null | grep -q "alerts reach"; then
+            echo "::warning::uc status did not report alerting state"
+            exit 0
+          fi
+          if uv run uc status 2>/dev/null | grep -q "alerts reach nobody"; then
+            echo "::error::Failure alerts cannot reach anyone — deliver.backend is 'file', which writes into this runner and is then discarded. A failing day would be silent except for this workflow failing."
           fi
 
       # The last net (hotfix 2, H5-2). `uc daily` records its own death when it
@@ -288,7 +345,12 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
-          if uv run uc status 2>/dev/null | grep -qiE "SKIPPED|FAILED|silent_sources.*\[[^]]"; then
+          # Case-sensitive on purpose. `uc status` prints a JSON block whose
+          # keys include `last_run_skipped`, and the old `-i` matched *that*,
+          # so the guard would have fired on every dry run once U2 gave it
+          # something to read. Only the uppercase words the human lines print
+          # count (0U, U10).
+          if uv run uc status 2>/dev/null | grep -qE "SKIPPED|FAILED|silent_sources.*\[[^]]"; then
             echo "::error::The dry run did not publish AND a stage was skipped or failed. This is setup, not a quiet day — check repository secrets (step 0 in docs/OPERATIONS.md)."
           else
             echo "::warning::The dry run published nothing. If today was genuinely quiet this is fine; check the summary."

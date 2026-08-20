@@ -649,7 +649,10 @@ def build_report(out_path: Optional[Path] = None) -> Path:
     # The token row above counts summarize and extract together while the cost
     # rows count only what daily runs booked, so the two do not reconcile on
     # their own. The per-task ledger is the one that does.
-    usage = load_json(paths.STATE / "llm_usage.json") or {}
+    # The spend tally moved under `content/` in 0U (U6) so it survives a CI
+    # run. The old copy is still on disk and is frozen at the moment of the
+    # move, so reading `paths.STATE` here would under-report for ever.
+    usage = load_json(paths.persistent_state("llm_usage.json")) or {}
     by_task = usage.get("by_task") or {}
     if by_task:
         A("**Per task, cumulative** — every LLM call ever made from this "

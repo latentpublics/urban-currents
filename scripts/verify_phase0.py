@@ -318,7 +318,12 @@ def check_idempotency(d: date, skip: bool, content: Optional[Path] = None) -> Ch
     # property of the pipeline, and asking it of an archive the run was
     # forbidden to touch would pass for the wrong reason.
     root = content or paths.CONTENT
-    volatile = ("runs_log/", "deliveries/")
+    # `state/` joins them for the same reason `runs_log/` is here: it records
+    # facts about **runs**, not about content. Cumulative LLM spend goes up when
+    # you run again — that is what cumulative means — and a spend figure that
+    # did not move on a second run would be the broken one. It lives under
+    # `content/` only because that is the one directory CI keeps (0U, U6).
+    volatile = ("runs_log/", "deliveries/", "state/")
 
     def archive() -> dict[str, bytes]:
         return {
@@ -355,7 +360,8 @@ def check_idempotency(d: date, skip: bool, content: Optional[Path] = None) -> Ch
     c.evidence = [
         f"second run: {(_last_json(out) or {}).get('status')}",
         f"delivery: {((_last_json(out) or {}).get('delivery') or {}).get('status')}",
-        "runs_log/ and deliveries/ excluded from the byte comparison; sends counted instead",
+        "runs_log/, deliveries/ and state/ excluded from the byte comparison; "
+        "sends counted instead",
     ] + (added + removed + changed)[:8]
     return c
 
@@ -388,7 +394,10 @@ def check_costs() -> Check:
         if path.exists():
             data = json.loads(path.read_text(encoding="utf-8"))
             extra[name] = data.get("openalex_cost_usd", 0.0)
-    llm_state = paths.STATE / "llm_usage.json"
+    # `persistent_state`, not `paths.STATE` (0U, U6). The tally moved under
+    # `content/` so it survives CI; the old copy is still on disk here and
+    # reading it would report a number frozen at the moment of the move.
+    llm_state = paths.persistent_state("llm_usage.json")
     llm_total = 0.0
     if llm_state.exists():
         llm_total = json.loads(llm_state.read_text(encoding="utf-8")).get("cost_usd", 0.0)
@@ -399,7 +408,7 @@ def check_costs() -> Check:
     c.evidence = [
         f"daily runs: ${costs['total_usd']:.4f} over {costs['days']} day(s)",
         *[f"{k}: ${v:.4f}" for k, v in extra.items()],
-        f"LLM cumulative (runs/state/llm_usage.json): ${llm_total:.4f}",
+        f"LLM cumulative ({llm_state}): ${llm_total:.4f}",
         f"per published item: {costs['per_item_usd']}",
         f"monthly estimate from daily runs: {costs['monthly_estimate_usd']}",
     ]

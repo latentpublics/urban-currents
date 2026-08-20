@@ -412,9 +412,11 @@ class EnrichQueue:
 
     @staticmethod
     def path():
-        from ..paths import STATE
+        from .. import paths as _paths
 
-        return STATE / "openalex_enrich_pending.json"
+        # The queue config calls "tried first the next day" (0U, U6). It was in
+        # `runs/state/`, which CI does not keep, so there was never a next day.
+        return _paths.persistent_state("openalex_enrich_pending.json")
 
     @classmethod
     def load(cls) -> "EnrichQueue":

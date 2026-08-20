@@ -22,7 +22,6 @@ keyed by work_key and rebuilt from source rather than appended to blindly.
 
 from __future__ import annotations
 
-import json
 from datetime import date
 from pathlib import Path
 from typing import Any, Optional
@@ -151,7 +150,7 @@ def load_attempts() -> dict[str, int]:
 
 
 def load_unresolvable() -> set[str]:
-    p = paths.STATE / UNRESOLVABLE_FILE
+    p = paths.persistent_state(UNRESOLVABLE_FILE)
     if not p.exists():
         return set()
     return {
@@ -184,7 +183,10 @@ def _park(ids: set[str], attempts: dict[str, int]) -> None:
     """
     if not ids:
         return
-    p = paths.STATE / UNRESOLVABLE_FILE
+    # Parked ids outlive the runner (0U, U6). Without that the dead ids return
+    # to the head of the queue — which is ordered by how often we cite them —
+    # and are asked for again every single day.
+    p = paths.persistent_state(UNRESOLVABLE_FILE)
     existing = load_unresolvable()
     rows = sorted(existing | ids)
     p.parent.mkdir(parents=True, exist_ok=True)

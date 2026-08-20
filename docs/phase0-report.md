@@ -1,6 +1,6 @@
 # Urban Currents — Phase 0 report
 
-Generated 2026-08-20T07:08:18+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
+Generated 2026-08-20T12:20:47+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
 
 ## The four questions (PRD §1)
 

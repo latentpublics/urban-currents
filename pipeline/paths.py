@@ -28,11 +28,26 @@ GRAPH = CONTENT / "graph"
 VOCAB = ROOT / "vocab"
 CONFIG = ROOT / "config"
 MODELS = ROOT / "models"
-RUNS = ROOT / "runs"
 DOCS = ROOT / "docs"
 SCHEMAS = ROOT / "pipeline" / "schemas"
 
-LLM_CACHE = RUNS / "cache"
+# `UC_RUNS` redirects the run directory, and only that (phase 0V, V2-1).
+#
+# The sibling of `UC_CONTENT`, and it exists for the same reason: verification
+# needs a clean room. `run_id_for(d)` is `run_{date}`, so a run directory is
+# reused for a given date and `metrics.json` in it is **loaded back** by
+# `Run.for_date`. A machine that had already run that date therefore handed the
+# verification the previous run's stage map — which is how a `uc daily` that
+# could not write an issue at all passed check 2 on a laptop and would have
+# failed on a runner, where `runs/` does not exist. A check that is green only
+# where there is leftover state is not a check.
+RUNS = Path(os.environ.get("UC_RUNS", ROOT / "runs"))
+
+# **Not** inside that redirect. Sandboxing the cache would make a verification
+# run re-pay for every LLM call it makes, which is the same trade `UC_CONTENT`
+# was created to avoid. It follows `UC_ROOT` so the test fixtures still get
+# their own, and `UC_LLM_CACHE` exists for anyone who wants a cold one.
+LLM_CACHE = Path(os.environ.get("UC_LLM_CACHE", ROOT / "runs" / "cache"))
 LABELS = RUNS / "labels"
 
 # Scratch state: regenerable, or only meaningful within a run. Stays under

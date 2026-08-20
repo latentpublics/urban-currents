@@ -92,18 +92,30 @@ def _last_json(out: str) -> Optional[dict]:
         return None
 
 
-def run(cmd: list[str], content: Optional[Path] = None) -> tuple[int, str]:
-    """Run a command, optionally with the published archive redirected.
+def run(
+    cmd: list[str],
+    content: Optional[Path] = None,
+    runs: Optional[Path] = None,
+) -> tuple[int, str]:
+    """Run a command, optionally with the archive and the run directory redirected.
 
     `content` points `UC_CONTENT` at a sandbox so a verification run cannot
     write into the real archive. Phase 0h's run left a ghost issue behind —
     `content/issues/2026-08-14.json`, a quiet day with no items, authored by a
     test rather than by a day's work — and running verification daily would
     accumulate those.
+
+    `runs` does the same for `runs/` (0V, V2-1). Without it the live run
+    inherited whatever `runs/run_<date>/metrics.json` was already on the
+    machine, so a stage that never ran could still report OK from a previous
+    attempt. The LLM cache stays outside the redirect, so this costs nothing
+    beyond the calls the run genuinely makes.
     """
     env = dict(os.environ)
     if content is not None:
         env["UC_CONTENT"] = str(content)
+    if runs is not None:
+        env["UC_RUNS"] = str(runs)
     proc = subprocess.run(
         cmd, cwd=str(ROOT), capture_output=True, text=True, encoding="utf-8",
         errors="replace", env=env,
@@ -123,6 +135,25 @@ def sandbox_content() -> Path:
     return target
 
 
+def sandbox_runs() -> Path:
+    """An empty run directory for the live run (0V, V2-1).
+
+    Empty, unlike the content sandbox, and for the opposite reason: the archive
+    has to be realistic, and the run directory has to be **absent**. A run
+    directory carries `metrics.json`, which `Run.for_date` reads back — so a
+    stale one lets a run inherit stage statuses it never earned. CI never has
+    one; this makes the local check ask the same question CI would.
+
+    Both checks that run `uc daily` share this directory, in that order: the
+    e2e gets it clean, and the idempotency check then runs a second time **on
+    top of what the e2e left**, which is what "running the same date twice"
+    means.
+    """
+    target = Path(tempfile.mkdtemp(prefix="uc-verify-runs-")) / "runs"
+    target.mkdir(parents=True)
+    return target
+
+
 # --------------------------------------------------------------------------
 # Checks
 # --------------------------------------------------------------------------
@@ -137,7 +168,12 @@ def check_pytest() -> Check:
     return c
 
 
-def check_e2e(d: date, skip: bool, content: Optional[Path] = None) -> Check:
+def check_e2e(
+    d: date,
+    skip: bool,
+    content: Optional[Path] = None,
+    runs: Optional[Path] = None,
+) -> Check:
     """`uc daily` against live APIs — the command a scheduler actually calls.
 
     This used to run `uc run --date <today>`, a single publication date. That is
@@ -156,7 +192,7 @@ def check_e2e(d: date, skip: bool, content: Optional[Path] = None) -> Check:
         c.status = "SKIPPED"
         c.detail = "--skip-e2e"
         return c
-    code, out = run(["uv", "run", "uc", "daily"], content=content)
+    code, out = run(["uv", "run", "uc", "daily"], content=content, runs=runs)
 
     result = _last_json(out)
     status = (result or {}).get("status")
@@ -184,14 +220,17 @@ def check_e2e(d: date, skip: bool, content: Optional[Path] = None) -> Check:
     return c
 
 
-def check_outputs(d: date, content: Optional[Path] = None) -> Check:
+def check_outputs(
+    d: date, content: Optional[Path] = None, runs: Optional[Path] = None
+) -> Check:
     """What the live run produced — checked where the run was told to write it."""
     c = Check("2b. expected artefacts exist")
     root = content or paths.CONTENT
+    runs_root = runs or paths.RUNS
     items = sorted((root / "items").glob("*.json"))
     issue = root / "issues" / f"{d}.json"
-    preview = paths.RUNS / f"run_{d}" / "preview.html"
-    email = paths.RUNS / f"run_{d}" / "email.html"
+    preview = runs_root / f"run_{d}" / "preview.html"
+    email = runs_root / f"run_{d}" / "email.html"
     where = "sandbox" if content else "content"
     c.evidence = [
         f"{where}/items: {len(items)} files",
@@ -233,9 +272,11 @@ def check_free_strings() -> Check:
     return c
 
 
-def check_preview(d: date, content: Optional[Path] = None) -> Check:
+def check_preview(
+    d: date, content: Optional[Path] = None, runs: Optional[Path] = None
+) -> Check:
     c = Check("5. preview parses and its card count matches items_published")
-    preview = paths.RUNS / f"run_{d}" / "preview.html"
+    preview = (runs or paths.RUNS) / f"run_{d}" / "preview.html"
     # Read the issue from wherever the run was told to write it. This used to
     # read the real archive unconditionally while the run wrote to the sandbox,
     # so the check could only pass when a same-dated issue happened to exist in
@@ -299,8 +340,18 @@ def _content_snapshot() -> dict[str, bytes]:
     }
 
 
-def check_idempotency(d: date, skip: bool, content: Optional[Path] = None) -> Check:
+def check_idempotency(
+    d: date,
+    skip: bool,
+    content: Optional[Path] = None,
+    runs: Optional[Path] = None,
+) -> Check:
     """The same day twice: identical archive, and nothing sent a second time.
+
+    Deliberately given the **same** run directory the e2e used, unlike the e2e
+    itself (0V, V2-1). A clean room is what the first run needs; running the
+    same date twice is the definition of this one, and that includes resuming
+    from the stages the first run wrote.
 
     Two exclusions, both deliberate. `runs_log/` records that a second attempt
     happened — `attempts` and `recorded_at` change by design, and **a log that
@@ -342,7 +393,7 @@ def check_idempotency(d: date, skip: bool, content: Optional[Path] = None) -> Ch
         return total
 
     before, sends_before = archive(), sends()
-    code, out = run(["uv", "run", "uc", "daily"], content=content)
+    code, out = run(["uv", "run", "uc", "daily"], content=content, runs=runs)
     after, sends_after = archive(), sends()
 
     added = sorted(set(after) - set(before))
@@ -425,15 +476,18 @@ def main() -> int:
     # The live run writes into a copy. Nothing this script does can add a day to
     # the real archive, which is how phase 0h ended up with a ghost issue.
     sandbox = None if args.skip_e2e else sandbox_content()
+    # An empty run directory, shared by the two checks that run `uc daily`.
+    # See `sandbox_runs` for why one is a clean room and the other is not.
+    runs_dir = None if args.skip_e2e else sandbox_runs()
 
     checks = [
         check_pytest(),
-        check_e2e(d, args.skip_e2e, content=sandbox),
-        check_outputs(d, content=sandbox),
+        check_e2e(d, args.skip_e2e, content=sandbox, runs=runs_dir),
+        check_outputs(d, content=sandbox, runs=runs_dir),
         check_schema(),
         check_free_strings(),
-        check_preview(d, content=sandbox),
-        check_idempotency(d, args.skip_e2e, content=sandbox),
+        check_preview(d, content=sandbox, runs=runs_dir),
+        check_idempotency(d, args.skip_e2e, content=sandbox, runs=runs_dir),
         check_report(),
         check_costs(),
     ]

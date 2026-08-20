@@ -1,0 +1,133 @@
+# Publish the built site to GitHub Pages (phase 0X, X4).
+#
+# `site/` is gitignored and rebuilt from `content/` in under a second, so there
+# is nothing to deploy from a branch — this builds and uploads an artifact
+# instead. `docs/` is not the source either; that directory holds analysis, and
+# a deploy that also published it would put working notes on the web.
+#
+# **Why this is its own workflow and not a step in `daily.yml`.**
+#
+#   1. `daily.yml` declares `permissions: contents: write` and its comment says
+#      "only to commit content/ and the run log. **Nothing else.**" Pages needs
+#      `pages: write` and `id-token: write`. Widening the token of the one job
+#      that runs unattended with every API key in the repository, so that it
+#      can also mint a deployment identity, is the opposite of the direction
+#      0U and 0V pushed. Keeping them apart means that sentence stays true.
+#   2. The failure modes are different and should not be confused. A failed
+#      deploy must not make a published day look unpublished, and a day the
+#      pipeline could not vouch for must not reach the web. Two jobs, two
+#      verdicts, two places to look.
+#   3. `daily.yml` is already nineteen steps.
+#
+# **Order.** `workflow_run` fires when `daily` finishes, which is after it has
+# committed `content/`. That ordering is the point: deploying an issue that is
+# not in the archive would leave the site and the record disagreeing, and the
+# archive is the record. The checkout below therefore takes `main` explicitly —
+# `workflow_run` hands us the SHA the daily run *started* from, which is one
+# commit behind the content it just wrote.
+#
+# **A day that was not published does not deploy.** `daily.yml` exits non-zero
+# on `not_published`, so `conclusion == 'success'` is false and this never
+# runs. That is the honest mapping rather than an omission: a *quiet* day does
+# publish an issue — an empty one — and appears on the site as a day we looked
+# and found nothing; a *not_published* day is one the pipeline could not vouch
+# for, and the site is an archive of what we can vouch for, not a status page.
+# The failure is already loud in three other places (the red job, the alert,
+# and `deadman.yml`); adding a fourth by silently reshaping the site would make
+# it less clear, not more.
+name: pages
+
+on:
+  workflow_run:
+    workflows: ["daily"]
+    types: [completed]
+  # For the first deploy, and for re-publishing after a template change that
+  # did not come from a daily run.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time, and a queued one waits rather than cancels: a cancelled
+# deploy can leave Pages holding a half-uploaded artifact.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    # On `workflow_dispatch` there is no triggering run, so `conclusion` is
+    # empty and the first clause carries it.
+    if: >-
+      ${{ github.event_name == 'workflow_dispatch' ||
+          github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    env:
+      PYTHONUNBUFFERED: "1"
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # `main`, not `github.sha`: on a `workflow_run` event that SHA is the
+          # commit the daily run started from, and the issue it just published
+          # is in the commit after it.
+          ref: main
+          fetch-depth: 1
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Install
+        # No `--extra embed`: building the site reads `content/` and renders
+        # templates. Nothing here classifies anything.
+        run: uv sync --frozen
+
+      - name: Build the site
+        run: uv run uc site
+
+      - name: Report what was built
+        shell: bash
+        run: |
+          set -euo pipefail
+          issues=$(find site/issues -name '*.html' | wc -l)
+          {
+            echo "## Site"
+            echo ""
+            echo "- issues: ${issues}"
+            echo "- robots.txt:"
+            echo '```'
+            cat site/robots.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          # The switch, stated in the log. While `site.published` is false this
+          # says `Disallow: /`, and a deploy that quietly stopped saying so is
+          # the one thing about this job worth watching (0X, X5).
+          grep -q "Disallow: /" site/robots.txt \
+            && echo "::notice::Indexing is blocked (site.published=false)" \
+            || echo "::notice::Indexing is ALLOWED (site.published=true)"
+
+      - name: Upload the artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

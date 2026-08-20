@@ -37,7 +37,14 @@ from typing import Any, Optional
 from . import paths, store
 from .config import cfg
 from .metrics import Run
-from .outcome import NOT_PUBLISHED, PUBLISHED, QUIET, Outcome, decide, record
+from .outcome import (
+    NOT_PUBLISHED,
+    PRE_ISSUE_STAGES,
+    QUIET,
+    Outcome,
+    decide,
+    record,
+)
 
 # Stages `uc daily` owns, in order. `collect` is handled separately because it
 # takes the window.
@@ -394,14 +401,28 @@ def run_daily(
                 f"daily: LLM spend ${spent:.4f} exceeded the ${budget_cap:.2f} cap"
             )
 
-        # The verdict comes before the issue, never after.
+        # ★ The verdict comes before the issue, never after — and it is asked
+        # in two parts (0V, V1).
+        #
+        # This half answers *"may this day be turned into an issue at all?"*.
+        # It is reached before `stage_issue` runs, so it cannot ask about the
+        # issue: 0U's single required list did ask, and the answer was
+        # necessarily "issue did not run", which refused every day the schedule
+        # ever attempted.
+        #
+        # X7's ordering is unchanged and is the reason for the split rather
+        # than an argument against it. The decision to produce an artefact
+        # still precedes the artefact, and `record()` still precedes any
+        # delivery.
         selected = run_stages.read_stage(run, "score") or []
+        window_days = (covers_to - covers_from).days + 1
         outcome = decide(
             run,
             issue_date,
             len(selected),
             budget_exceeded=budget_exceeded,
-            window_days=(covers_to - covers_from).days + 1,
+            window_days=window_days,
+            stages=PRE_ISSUE_STAGES,
         )
 
         if outcome.status == NOT_PUBLISHED or dry_run:
@@ -430,7 +451,34 @@ def run_daily(
                 result["alert"] = alert
             return result
 
-        issue = stage_issue(run, issue_date)
+        # Inside `_guard`, which it was not before (0V, V1). An exception in
+        # the issue stage escaped `run_daily` entirely: no verdict, no run-log
+        # row, no alert — and a day with no row is indistinguishable from a day
+        # the schedule never fired on, which is X3's problem returning at the
+        # last possible moment.
+        issue = _guard(run, "issue", lambda: stage_issue(run, issue_date))
+
+        if issue is None:
+            # The artefact failed or could not run. Now the full required list
+            # is the right question, and `issue` has a status to answer it
+            # with. Nothing was published, and the row says why.
+            outcome = decide(
+                run,
+                issue_date,
+                0,
+                budget_exceeded=budget_exceeded,
+                window_days=window_days,
+            )
+            record(outcome)
+            from .notify import notify_failure
+
+            alert = notify_failure(issue_date, outcome.reasons, run=run)
+            run.metrics.timing["daily_s"] = round(time.monotonic() - started, 1)
+            run.save()
+            result = _result(outcome, run, started, covers_from, covers_to, dry_run)
+            result["alert"] = alert
+            return result
+
         issue.covers_from = covers_from
         issue.covers_to = covers_to
         issue.backfilled = backfilled
@@ -440,22 +488,37 @@ def run_daily(
         except StageSkipped:
             pass
 
-        outcome.published = len(issue.items)
-        # **`decide()` owns the verdict** (0U, U5). This used to read
-        # `outcome.status = "quiet" if issue.quiet_day else "published"`, which
-        # substituted a different question — `quiet_day` is "nothing cleared the
-        # headline threshold", not "nothing published". 2026-08-09 recorded
-        # `published: 11, status: quiet` because of it, and that row is read by
-        # `uc weekly`, `uc status` and every archive count.
+        # ★ The second half of the verdict, from what was actually written
+        # (0V, V1 and V3).
         #
-        # The headline fact still travels; it just travels in its own field.
+        # Same function, full required list, and — this is V3 — the count from
+        # the issue rather than from the selection. `stage_issue` drops
+        # anything already published on an earlier date, so on a seven-day
+        # window most days select more than they publish and some publish
+        # nothing at all. 0U handed `decide()` the selection and then corrected
+        # `quiet -> published` in one direction only, so a day that published
+        # nothing was recorded `published` over an empty issue. That is exactly
+        # the row U5 corrected, mirrored.
+        #
+        # **`decide()` owns the verdict** (0U, U5): the status is computed from
+        # the count, not patched afterwards, and `quiet_day` — "nothing cleared
+        # the headline threshold" — travels in its own field because it is a
+        # different fact.
+        outcome = decide(
+            run,
+            issue_date,
+            len(issue.items),
+            budget_exceeded=budget_exceeded,
+            window_days=window_days,
+        )
         outcome.headline_present = not issue.quiet_day
-        if outcome.published and outcome.status == QUIET:
-            # `decide()` was called before the issue existed, so a day that did
-            # publish can still be carrying the pre-issue `quiet`. Correct it
-            # from the count — which is what `quiet` means.
-            outcome.status = PUBLISHED
-            outcome.reasons = [r for r in outcome.reasons if r != "nothing cleared the bar"]
+        if outcome.status == QUIET and selected:
+            # Say which kind of quiet it was. "Nothing cleared the bar" is
+            # wrong when plenty did and all of it was already out.
+            outcome.reasons = [
+                f"nothing new: all {len(selected)} selected item(s) had already "
+                f"been published on an earlier date"
+            ]
         record(outcome)
 
         delivery = _deliver_issue(run, issue)

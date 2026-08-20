@@ -109,7 +109,28 @@ SOURCE_COUNTS = {"collect.arxiv": "arxiv_fetched", "collect.openalex": "openalex
 #
 # `PARTIAL` is not refused. A day where some items got summaries is a day worth
 # publishing — the rule is about a stage that produced *nothing*.
-REQUIRED_STAGES = ("summarize", "classify", "select", "issue")
+#
+# ★ The list is split by **when it can be asked** (phase 0V, V1).
+#
+# 0U put all four in one tuple and `uc daily` then refused every day, on every
+# date, because the verdict is reached *before* the issue is written — so
+# `issue` had no status yet and "issue did not run" was true by construction.
+# The judgement that `issue` is required was right; the error was asking about
+# it at a point where the answer could only be no. 0U's own report excluded
+# `preview` with the sentence that should have excluded it: a verdict that
+# takes its own downstream as a condition is a circle.
+#
+# So there are two moments, and they answer different questions:
+#
+#   PRE_ISSUE_STAGES  "may this day be turned into an issue at all?"  Asked
+#                     before `stage_issue` runs, which is what keeps X7's
+#                     ordering — the verdict precedes the artefact, and
+#                     `record()` still precedes any delivery.
+#   REQUIRED_STAGES   "did the day end up published?"  Asked after, when the
+#                     artefact either exists or does not, with the count the
+#                     issue actually wrote.
+PRE_ISSUE_STAGES = ("summarize", "classify", "select")
+REQUIRED_STAGES = PRE_ISSUE_STAGES + ("issue",)
 
 
 @dataclass
@@ -166,23 +187,38 @@ class Outcome:
         }
 
 
-def looked(run: Run, required: tuple[str, ...] = REQUIRED_SOURCES) -> tuple[bool, list[str]]:
+def looked(
+    run: Run,
+    required: tuple[str, ...] = REQUIRED_SOURCES,
+    stages: tuple[str, ...] = REQUIRED_STAGES,
+) -> tuple[bool, list[str]]:
     """Did this run actually observe the day? Returns (verdict, reasons against).
 
     Deliberately strict and deliberately explicit: every reason it says no is a
     sentence a human can check against the run's own metrics.
+
+    `stages` is which of the required stages to insist on **at this point in
+    the run** (0V, V1). It defaults to all of them, which is right for
+    `uc run` and for the second verdict in `uc daily`; the first verdict passes
+    `PRE_ISSUE_STAGES`, because asking about the artefact before writing it can
+    only ever answer no.
     """
     reasons: list[str] = []
-    stages = run.metrics.stages
+    # `ran`, not `stages`: the parameter carries what to insist on and this
+    # carries what happened. They were both called `stages` for ten minutes in
+    # 0V and the local silently won, so the loop below walked every stage the
+    # run had — which is how `link was skipped` briefly became a reason to
+    # refuse a day.
+    ran = run.metrics.stages
 
     for source in required:
-        status = stages.get(source)
+        status = ran.get(source)
         if status is None:
             reasons.append(f"{source} did not run")
         elif status not in ("OK",):
             reasons.append(f"{source} finished {status}")
 
-    collect = stages.get("collect")
+    collect = ran.get("collect")
     if collect == "EMPTY":
         # The collect stage says EMPTY when it got zero candidates. That is not
         # by itself a failure — but it is the exact case where "quiet" and
@@ -193,14 +229,14 @@ def looked(run: Run, required: tuple[str, ...] = REQUIRED_SOURCES) -> tuple[bool
     elif collect != "OK":
         reasons.append(f"collect finished {collect or 'not at all'}")
 
-    failed = [name for name, status in stages.items() if status == "FAILED"]
+    failed = [name for name, status in ran.items() if status == "FAILED"]
     if failed:
         reasons.append(f"stages failed: {', '.join(sorted(failed))}")
 
     # A required stage that did not run at all, or ran and produced nothing, is
     # as disqualifying as one that raised. See `REQUIRED_STAGES`.
-    for stage in REQUIRED_STAGES:
-        status = stages.get(stage)
+    for stage in stages:
+        status = ran.get(stage)
         if status is None:
             reasons.append(f"{stage} did not run")
         elif status == "SKIPPED":
@@ -248,12 +284,21 @@ def decide(
     published_count: int,
     budget_exceeded: bool = False,
     window_days: int = 1,
+    stages: tuple[str, ...] = REQUIRED_STAGES,
 ) -> Outcome:
-    """The day's verdict. The only place `quiet` can be granted."""
+    """The day's verdict. The only place `quiet` can be granted.
+
+    `published_count` must be **what was actually published**, not what was
+    selected. The two differ every day: the window is seven days wide and the
+    issue drops anything that already appeared on an earlier date, so a day
+    with a full selection and nothing new is a quiet day (0V, V3). Passing the
+    selection here is how `published: 0, status: "published"` was written — the
+    exact mirror of the row U5 corrected.
+    """
     if budget_exceeded:
         setattr(run.metrics, "budget_exceeded", True)
 
-    ok, reasons = looked(run)
+    ok, reasons = looked(run, stages=stages)
     silent = silent_sources(run, window_days)
     if silent:
         # Loud in the log, and loud in the run's own errors, but not a veto —

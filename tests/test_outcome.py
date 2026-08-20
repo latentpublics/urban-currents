@@ -39,6 +39,11 @@ def _run(stages: dict[str, str], **counts) -> Run:
 # A run that observed the day **and produced an issue**. The four stages after
 # the sources are `REQUIRED_STAGES` (0U, U1): a run that never summarised is not
 # a good day, it is a day whose cards all read "Summary pending review."
+#
+# This is a *finished* run, handed to `decide()` directly, so naming `issue`
+# here is accurate — unlike a collect stub, which cannot honestly claim it
+# (0V, V2-2). The two moments the list is asked about are pinned below in
+# `test_the_pre_issue_verdict_does_not_ask_about_the_issue`.
 GOOD = {
     "collect": "OK",
     "collect.arxiv": "OK",
@@ -374,3 +379,56 @@ def test_a_dry_run_sends_no_alert_even_when_the_day_failed(repo, monkeypatch):
 
     assert result["status"] == NOT_PUBLISHED
     assert "alert" not in result
+
+
+# --------------------------------------------------------------------------
+# When the verdict may ask about the artefact (phase 0V, V1)
+# --------------------------------------------------------------------------
+
+
+def test_the_pre_issue_verdict_does_not_ask_about_the_issue(repo):
+    """The first verdict decides whether to write an issue, so it cannot
+    require one. Asked with the full list at that point, every day is refused —
+    which is precisely what `uc daily` did on every date it was given."""
+    from pipeline.outcome import PRE_ISSUE_STAGES, looked
+
+    before = {k: v for k, v in GOOD.items() if k != "issue"}
+    run = _run(before, arxiv_candidates=40, journal_candidates=30)
+
+    ok, reasons = looked(run, stages=PRE_ISSUE_STAGES)
+    assert ok, reasons
+
+    ok_full, reasons_full = looked(run)
+    assert not ok_full
+    assert any("issue did not run" in r for r in reasons_full)
+
+
+def test_the_full_verdict_still_refuses_a_missing_issue(repo):
+    """The judgement 0U made is intact: `issue` is required, it is the
+    artefact. Only the moment it is asked about has moved."""
+    run = _run({k: v for k, v in GOOD.items() if k != "issue"}, arxiv_candidates=10)
+
+    outcome = decide(run, DAY, published_count=3)
+
+    assert outcome.status == NOT_PUBLISHED
+    assert any("issue" in r for r in outcome.reasons)
+
+
+def test_a_failed_issue_is_refused_by_the_full_verdict(repo):
+    run = _run({**GOOD, "issue": "FAILED"}, arxiv_candidates=10)
+
+    outcome = decide(run, DAY, published_count=0)
+
+    assert outcome.status == NOT_PUBLISHED
+    assert "issue" in outcome.failed_stages
+
+
+def test_publishing_nothing_is_quiet_however_much_was_selected(repo):
+    """V3: the count that decides is the count that was published. `decide()`
+    is given `len(issue.items)`, so a day where everything selected had already
+    appeared is quiet — not `published` over an empty issue."""
+    run = _run(GOOD, arxiv_candidates=40, journal_candidates=30)
+
+    assert decide(run, DAY, published_count=0).status == QUIET
+    assert decide(run, DAY, published_count=4).status == PUBLISHED
+

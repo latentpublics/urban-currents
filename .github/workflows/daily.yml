@@ -225,6 +225,10 @@ jobs:
           UC_ALERT_RECIPIENT: ${{ secrets.UC_ALERT_RECIPIENT }}
         run: uv run uc catch-up || true
 
+      # Built here and thrown away, on purpose: since 0X the deploy happens in
+      # `pages.yml`, and this is the pre-flight. A broken template fails the
+      # day here, where the run log and the alert will say so, instead of
+      # failing the deploy afterwards where a reader would meet it first.
       - name: Build the site
         if: ${{ inputs.dry_run != true }}
         run: uv run uc site --no-review

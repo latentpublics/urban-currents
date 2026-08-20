@@ -1,0 +1,95 @@
+# The dead man's handle (phase 0U, U9).
+#
+# Every other alarm in this repository is inside the pipeline, which means every
+# alarm depends on the pipeline running. The failure this exists for is the one
+# where it does not run at all:
+#
+#   * GitHub disables scheduled workflows on a repository with 60 days of no
+#     activity. `docs/scheduler-options.md` could not establish whether the
+#     bot's own commits count as activity, so the possibility stands.
+#   * A workflow file with a syntax error does not run and does not fail.
+#   * An account or billing problem stops the schedule silently.
+#
+# In all three the daily job produces nothing — no run-log row, no alert, no
+# commit — and "nothing" is exactly what a quiet, healthy Sunday looks like from
+# outside. **Absence cannot report itself**, so something else has to notice it.
+#
+# What it checks is the archive, not the workflow: the newest file in
+# `content/runs_log/` is written by every run whatever its verdict, including
+# the failures. If that file is older than the threshold, either the pipeline
+# stopped or it stopped being able to record — and both need a person.
+#
+# It runs at 09:00 UTC, twelve hours off the daily's 21:00. Two jobs on the same
+# cron die together and a watchdog that dies with the thing it watches is
+# decoration.
+name: deadman
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 9 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  deadman:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    env:
+      PYTHONUNBUFFERED: "1"
+      # 36 hours, not 24. The daily run fires once a day, so a 24-hour window
+      # goes red on any ordinary lateness — a slow runner, a queued job, a
+      # retry. 36 tolerates one late run and still catches a missed day, and an
+      # alarm that cries wolf is one people learn to close.
+      MAX_AGE_HOURS: "36"
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Check the archive is still being written to
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          latest="$(ls -1 content/runs_log/*.json 2>/dev/null | sort | tail -1 || true)"
+          if [ -z "$latest" ]; then
+            echo "::error::content/runs_log/ is empty — the pipeline has never recorded a run, or the checkout is wrong."
+            exit 1
+          fi
+
+          # The row's own date, not the file's mtime: a fresh checkout gives
+          # every file today's mtime, so mtime here would always look healthy.
+          # This is the same "measured zero versus not measured" distinction the
+          # rest of the project keeps running into.
+          day="$(basename "$latest" .json)"
+          latest_epoch="$(date -u -d "${day} 00:00:00" +%s)"
+          now_epoch="$(date -u +%s)"
+          age_hours=$(( (now_epoch - latest_epoch) / 3600 ))
+
+          echo "newest run-log row: ${day} (${age_hours}h old, limit ${MAX_AGE_HOURS}h)"
+          {
+            echo "## Deadman"
+            echo ""
+            echo "Newest run-log row: \`${day}\` — ${age_hours}h old."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "$age_hours" -gt "$MAX_AGE_HOURS" ]; then
+            echo "::error::No run has been recorded since ${day} (${age_hours}h ago). The daily schedule may be disabled — check the Actions tab, and see docs/OPERATIONS.md."
+            {
+              echo ""
+              echo "**The daily run has not recorded anything for ${age_hours} hours.**"
+              echo ""
+              echo "This job does not know why. The three usual causes:"
+              echo ""
+              echo "- GitHub disabled the schedule (60 days without repository activity)"
+              echo "- a syntax error in a workflow file, which fails silently"
+              echo "- an account or billing problem"
+              echo ""
+              echo "Re-run \`daily\` by hand from the Actions tab to tell them apart."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi

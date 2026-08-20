@@ -105,20 +105,27 @@ def alerting_state() -> dict[str, Any]:
     backend = str(cfg("deliver.backend", "file"))
     recipients = [r for r in (cfg("deliver.alert_recipients", []) or []) if r]
 
-    stages: dict[str, str] = {}
     logs = all_logs()
-    if logs:
-        latest = max(logs, key=lambda r: r.get("date", ""))
-        stages = dict(latest.get("stages") or {})
+    row = max(logs, key=lambda r: r.get("date", "")) if logs else {}
+
+    # Read from the row's own fields, not from a `stages` map. The first
+    # version of this looked for `latest["stages"]`, which **no run log has
+    # ever contained** — so `last_run_skipped` was permanently `[]` and the
+    # guard it exists to feed was as dead as before. An empty list that means
+    # "we did not look" is the exact bug this batch is about, caught in the fix
+    # for it.
+    #
+    # `skipped_stages` is written from 0U onwards. On an older row its absence
+    # means *not recorded*, and `None` says that where `[]` would lie.
+    failed = sorted(row.get("failed_stages") or [])
+    skipped = sorted(row["skipped_stages"]) if "skipped_stages" in row else None
     return {
         "backend": backend,
         "reaches_a_person": reaches_a_person(backend),
         "alert_recipients": len(recipients),
-        "last_run_date": (max(logs, key=lambda r: r.get("date", "")).get("date")
-                          if logs else None),
-        "last_run_stages": stages,
-        "last_run_skipped": sorted(n for n, v in stages.items() if v == "SKIPPED"),
-        "last_run_failed": sorted(n for n, v in stages.items() if v == "FAILED"),
+        "last_run_date": row.get("date"),
+        "last_run_failed": failed,
+        "last_run_skipped": skipped,
     }
 
 
@@ -207,7 +214,6 @@ def weekly_summary(end: Optional[date] = None, days: int = 7) -> dict[str, Any]:
         })
 
     from .canon_state import counts as canon_counts
-    from .canon_state import counts as canon_counts
     from .held import counts as held_counts
 
     usage = UsageState.load()
@@ -223,8 +229,6 @@ def weekly_summary(end: Optional[date] = None, days: int = 7) -> dict[str, Any]:
         # and it is the only route by which YJUN learns there is work to do
         # without opening a terminal (M2-4).
         "held": held_counts(),
-        "canon": canon_counts(),
-        "alerting": alerting_state(),
         "canon": canon_counts(),
         "llm_cost_total_usd": round(usage.cost_usd, 6),
         "llm_calls_total": usage.calls,
@@ -306,7 +310,6 @@ def status() -> dict[str, Any]:
     from .daily import lock_path, target_window
     from .deliver import get_backend, ledger_dir, recipients
     from .canon_state import counts as canon_counts
-    from .canon_state import counts as canon_counts
     from .held import counts as held_counts
     from .llm import UsageState
     from .outcome import interrupted_dates, unpublished_dates
@@ -351,7 +354,7 @@ def status() -> dict[str, Any]:
         # retrying the second unchanged does the same thing again.
         "interrupted_dates": [r["date"] for r in interrupted_dates()],
         "held": held_counts(),
-        "canon": canon_counts(),
+        "alerting": alerting_state(),
         "canon": canon_counts(),
         # A source that reports OK and returns nothing is the failure that does
         # not look like one. It belongs next to the missed days, not buried in a

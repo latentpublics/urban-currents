@@ -1,10 +1,22 @@
-# The weekly summary — committed, and deliberately NOT enabled.
+# The weekly summary — **enabled** in 0U (U9).
 #
-# Seven days of outcomes, spend and sends, in one mail. Same rule as daily.yml:
-# `workflow_dispatch` only until someone has read what it would have said.
+# Seven days of outcomes, spend and sends, in one mail. It is cheap and
+# stateless — reads `content/runs_log/`, writes nothing — so it needs neither
+# the embedding model nor write permission.
 #
-# This one is cheap and stateless — it reads `content/runs_log/` and writes
-# nothing — so it needs neither the embedding model nor write permission.
+# Turned on for two reasons and the second is the real one:
+#
+#   1. the summary itself, once a provider exists;
+#   2. **it is a heartbeat.** Everything else in this repository only notices a
+#      problem when the pipeline runs. If the daily schedule stops firing —
+#      GitHub disables schedules on repositories with 60 days of no activity,
+#      and docs/scheduler-options.md could not establish whether the bot's own
+#      commits reset that clock — there is nothing to notice it with.
+#
+# Because `deliver.backend` is `file`, the mail reaches nobody. So the signal
+# is **the job's own outcome**: `uc weekly --send` now exits non-zero when the
+# send did not reach anybody, and a red run in this repository's Actions tab is
+# a thing that arrives in a person's inbox.
 
 name: weekly
 
@@ -13,9 +25,8 @@ on:
 
   # 07:00 KST Monday = 22:00 UTC Sunday. After the daily run, so the week it
   # summarises includes the morning it is sent.
-  #
-  # schedule:
-  #   - cron: "0 22 * * 0"
+  schedule:
+    - cron: "0 22 * * 0"
 
 permissions:
   contents: read

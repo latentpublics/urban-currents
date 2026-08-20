@@ -24,9 +24,9 @@ for _stream in (sys.stdout, sys.stderr):
         except Exception:  # pragma: no cover - stream may not support it
             pass
 
-from . import paths, run_stages, store
-from .metrics import Run
-from .models import PIPELINE_VERSION
+from . import paths, run_stages, store  # noqa: E402  - after the reconfigure above
+from .metrics import Run  # noqa: E402
+from .models import PIPELINE_VERSION  # noqa: E402
 
 app = typer.Typer(
     add_completion=False,
@@ -498,6 +498,42 @@ def status():
                 f"The withheld queue is that rule, and nothing else."
             )
 
+    # ★ Two things the daily workflow greps for, and one a person needs (0U).
+    #
+    # `daily.yml`'s dry-run guard has been dead since H3: it looks in
+    # `uc status` for `SKIPPED|FAILED` and `uc status` never printed stage
+    # statuses, so **neither branch was reachable**. Printing them here revives
+    # it, and the alerting line gives the new U2 guard something to read.
+    alerting = state.get("alerting") or {}
+    if alerting:
+        reach = "reach a person" if alerting.get("reaches_a_person") else "reach nobody"
+        typer.echo(
+            f"\n[ALERTS] backend {alerting.get('backend')!r} — "
+            f"alerts {reach} "
+            f"({alerting.get('alert_recipients', 0)} recipient(s) configured)"
+        )
+        if not alerting.get("reaches_a_person"):
+            typer.echo(
+                "         A failing day would be silent except for the GitHub "
+                "workflow run going red. Choosing a provider is a separate "
+                "decision — see docs/OPERATIONS.md."
+            )
+        skipped = alerting.get("last_run_skipped")
+        failed = alerting.get("last_run_failed") or []
+        if skipped or failed:
+            typer.echo(
+                f"         last run {alerting.get('last_run_date')}: "
+                + (f"FAILED {', '.join(failed)} " if failed else "")
+                + (f"SKIPPED {', '.join(skipped)}" if skipped else "")
+            )
+        elif skipped is None and alerting.get("last_run_date"):
+            # Not the same as "nothing was skipped": rows written before 0U do
+            # not carry the field at all.
+            typer.echo(
+                f"         last run {alerting.get('last_run_date')}: "
+                f"skipped stages not recorded (row predates 0U)"
+            )
+
     canon = state.get("canon") or {}
     if canon.get("pending"):
         typer.echo(
@@ -533,6 +569,18 @@ def weekly(
         result = notify_weekly()
         typer.echo(weekly_body(result["summary"]))
         typer.echo(f"[{result['status'].upper()}]")
+        # ★ A send that did not land exits non-zero (0U, U9).
+        #
+        # This always returned 0, so the weekly job went green whatever
+        # happened. That is fine while the mail is the signal — but the mail
+        # currently reaches nobody, so **the job's own success is the signal**,
+        # and a signal that is always green is not one.
+        #
+        # `alert_undeliverable` counts as a failure here for exactly that
+        # reason: the summary was written into a runner that is about to be
+        # destroyed, and nothing about that should look like success.
+        if result.get("status") not in ("weekly_sent", "sent", "ok"):
+            raise typer.Exit(code=1)
         return
     typer.echo(weekly_body(weekly_summary()))
 

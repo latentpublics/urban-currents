@@ -368,11 +368,82 @@ def resolve_candidates(
     }
 
 
+def top_diff(before: dict, after: dict, n: int = 30) -> dict[str, Any]:
+    """What moved in the top `n` between two candidate sets.
+
+    **Recomputing the canon changes what readers see.** `Still cited` publishes
+    from this file every day (0R, T7), so a rebuild is not a private
+    housekeeping act — it silently changes the card. This makes the change
+    something a person can look at and sign off, which is why 0T keeps the
+    rebuild on an explicit command instead of running it after every
+    accumulation.
+    """
+    def head(doc: dict) -> list[dict]:
+        return (doc.get("candidates") or [])[:n]
+
+    old_ids = {c["openalex_id"]: c for c in head(before)}
+    new_ids = {c["openalex_id"]: c for c in head(after)}
+
+    def label(c: dict) -> str:
+        return f"{c.get('title') or c['openalex_id']}"
+
+    entered = [label(c) for i, c in new_ids.items() if i not in old_ids]
+    left = [label(c) for i, c in old_ids.items() if i not in new_ids]
+
+    def transport_share(doc: dict) -> Optional[float]:
+        """The composition figure 0P measured at 29.4% for our own canon.
+
+        0Q rejected merging an external list because 75.4% of it was transport.
+        Ours is the number to watch as the base fills: if finishing the
+        measurement pushes our own share up, that is worth knowing before the
+        card is published from it.
+        """
+        cands = doc.get("candidates") or []
+        if not cands:
+            return None
+        hits = sum(
+            1 for c in cands
+            if any(
+                word in ((c.get("subfield") or "") + " " + (c.get("topic") or "")).lower()
+                for word in ("transport", "traffic", "mobility", "travel", "vehicle")
+            )
+        )
+        return round(hits / len(cands), 4)
+
+    return {
+        "top_n": n,
+        "entered": sorted(entered),
+        "left": sorted(left),
+        "unchanged": len(new_ids) - len(entered),
+        "candidates_before": len(before.get("candidates") or []),
+        "candidates_after": len(after.get("candidates") or []),
+        "transport_share_before": transport_share(before),
+        "transport_share_after": transport_share(after),
+    }
+
+
 def build_candidates(out: Optional[Path] = None, **kwargs) -> dict[str, Any]:
-    result = resolve_candidates(accumulate(), **kwargs)
+    """Rebuild the canon candidate list.
+
+    **Never called automatically.** Daily accumulation fills the reference base
+    and stops there; this is the step that changes what `Still cited` publishes,
+    and it stays behind an explicit `uc canon` so the change is somebody's
+    decision rather than a side effect of a chore that ran overnight.
+    """
     target = out or (paths.CONTENT / "canon" / CANDIDATES_FILE)
+    before: dict[str, Any] = {}
+    if target.exists():
+        try:
+            before = json.loads(target.read_text(encoding="utf-8"))
+        except Exception:  # noqa: BLE001
+            before = {}
+
+    result = resolve_candidates(accumulate(), **kwargs)
     target.parent.mkdir(parents=True, exist_ok=True)
     store.write_text_atomic(
         target, json.dumps(result, indent=2, ensure_ascii=False, sort_keys=True) + "\n"
     )
+    if before:
+        result = dict(result)
+        result["diff"] = top_diff(before, result)
     return result

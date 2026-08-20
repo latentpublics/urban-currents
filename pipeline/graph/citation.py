@@ -65,7 +65,10 @@ def iter_run_candidates() -> Iterator[Item]:
             dir = run_dir
 
         for stage in ("enrich", "classify"):
-            items = read_stage(_R, stage)
+            # Best-effort, as the docstring above already promises: these are
+            # old runs and some predate schema changes. One unreadable line
+            # must not cost the entire reference base.
+            items = read_stage(_R, stage, old_schema=True)
             if not items:
                 continue
             for item in items:

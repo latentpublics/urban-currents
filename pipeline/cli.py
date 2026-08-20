@@ -498,6 +498,20 @@ def status():
                 f"The withheld queue is that rule, and nothing else."
             )
 
+    canon = state.get("canon") or {}
+    if canon.get("pending"):
+        typer.echo(
+            f"\n[CANON] citation base {canon['resolved']:,} resolved, "
+            f"{canon['pending']:,} pending"
+            + (f", {canon['unresolvable']:,} unanswerable"
+               if canon.get("unresolvable") else "")
+            + f" ({canon['share_resolved']:.0%} done)"
+        )
+        typer.echo(
+            "        Fills automatically at the end of each daily run. "
+            "A number that only grows means the budget is too small."
+        )
+
     missing = state["unpublished_dates"]
     if missing:
         typer.echo(
@@ -772,8 +786,16 @@ def accumulate_canon(
 ):
     """Fold a day into the reference base and resolve what the budget allows.
 
-    Takes at most  of the OpenAlex day budget.
-    Unresolved IDs wait in  and go first
+    Runs automatically as the last step of `uc daily` since 0T; this command is
+    for running it by hand or for catching a queue up out of band.
+
+    Takes at most `canon.daily_budget_fraction` of the OpenAlex day budget,
+    minus what the run has already spent, and stops after
+    `canon.max_seconds_per_run` or when the day's deadline is close — whichever
+    comes first. Measured: 50 ids a request, $0.0001 and 1.7s a request, so
+    **time is the binding limit and money is not**.
+
+    Unresolved IDs wait in `runs/state/canon_pending.jsonl` and go first
     tomorrow; the queue length is recorded in metrics, because a queue that only
     grows means the budget is too small.
     """

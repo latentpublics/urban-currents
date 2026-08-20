@@ -151,14 +151,54 @@ class UsageState:
 # --------------------------------------------------------------------------
 
 
-def _cache_path(prompt_version: str, key: str) -> Path:
+def request_digest(
+    model: str, system: str, user: str, schema: Optional[dict] = None
+) -> str:
+    """A short hash of everything that decides the answer.
+
+    Deliberately includes the **model**: the same prompt to two models is two
+    different questions, and `prompt_version` never said which one asked.
+    """
+    import hashlib
+
+    payload = "\x00".join([
+        model,
+        system,
+        user,
+        json.dumps(schema, sort_keys=True) if schema else "",
+    ])
+    return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:10]
+
+
+def _cache_path(prompt_version: str, key: str, digest: str = "") -> Path:
     safe_version = re.sub(r"[^A-Za-z0-9._@-]", "_", prompt_version)
     safe_key = re.sub(r"[^A-Za-z0-9._-]", "_", key)
-    return paths.LLM_CACHE / safe_version / f"{safe_key}.json"
+    name = f"{safe_key}.{digest}.json" if digest else f"{safe_key}.json"
+    return paths.LLM_CACHE / safe_version / name
 
 
-def cache_get(prompt_version: str, key: str) -> Optional[LLMResponse]:
-    p = _cache_path(prompt_version, key)
+def cache_get(
+    prompt_version: str, key: str, digest: str = ""
+) -> Optional[LLMResponse]:
+    p = _cache_path(prompt_version, key, digest)
+    if digest and not p.exists():
+        # **One-time grandfathering.** The 2,807 entries written before 0T are
+        # keyed by label alone. They were written from the inputs that are still
+        # on disk, so treating a legacy hit as this request's answer is true
+        # today — and re-keying it on the way past means it is the last time the
+        # assumption is made. Everything after this is keyed by its request.
+        #
+        # The alternative was invalidating the whole cache, which would
+        # re-summarise 2,224 items at roughly $4.50 to learn nothing.
+        legacy = _cache_path(prompt_version, key)
+        if legacy.exists():
+            try:
+                p.parent.mkdir(parents=True, exist_ok=True)
+                legacy.rename(p)
+            except OSError:
+                # Could not re-key it — read it where it is rather than paying
+                # for the call again. It will be re-keyed on the next run.
+                p = legacy
     if not p.exists():
         return None
     try:
@@ -175,8 +215,10 @@ def cache_get(prompt_version: str, key: str) -> Optional[LLMResponse]:
     )
 
 
-def cache_put(prompt_version: str, key: str, resp: LLMResponse) -> None:
-    p = _cache_path(prompt_version, key)
+def cache_put(
+    prompt_version: str, key: str, resp: LLMResponse, digest: str = ""
+) -> None:
+    p = _cache_path(prompt_version, key, digest)
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(
         json.dumps(
@@ -475,8 +517,25 @@ class LLMClient:
         retries: int = 3,
     ) -> LLMResponse:
         version = prompt_version or self.prompt_version
+        # ★ The key covers the whole request, not just the caller's label
+        # (0T, V4-2).
+        #
+        # Three batches running found the same defect in three places: 0Q found
+        # the **model** missing from the key, so two models writing under one
+        # `prompt_version` overwrote each other; 0R found the **retry hint**
+        # missing, so a sharpened prompt read back the answer to a vaguer one;
+        # 0S found the **facts block** missing, so changing what the model was
+        # shown would have returned the old paragraph.
+        #
+        # Each was fixed where it was found, which left the next one waiting.
+        # The class of bug is "the key is narrower than the thing it keys", and
+        # the fix for a class is not another special case: the digest below is
+        # computed from the **actual request** — model, system, user and schema
+        # — so anything that changes the answer changes the key, and nobody has
+        # to remember anything.
+        digest = request_digest(self.model or "", system, user, schema)
         if self.cache_enabled:
-            hit = cache_get(version, cache_key)
+            hit = cache_get(version, cache_key, digest=digest)
             if hit is not None:
                 return hit
 
@@ -501,7 +560,7 @@ class LLMClient:
         usage.save()
 
         if self.cache_enabled:
-            cache_put(version, cache_key, resp)
+            cache_put(version, cache_key, resp, digest=digest)
         return resp
 
     def _call_with_backoff(

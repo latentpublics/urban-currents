@@ -251,7 +251,31 @@ canon:
   # the field is built on; `instrument` is what it runs on. Both lists are
   # kept and both are worth publishing, but the default lead is foundation.
   card_class_priority: [foundation, instrument]
-  daily_budget_fraction: 0.2
+  # ★ Wired into `uc daily` in 0T (V1). It had been built in 0k and called from
+  # nowhere: the pending queue and the resolved store were both last written on
+  # 2026-08-13 while the pipeline ran every day since.
+  accumulate_daily: true
+
+  # Share of the OpenAlex day budget this chore may use, **minus what the run
+  # has already spent**. Raised from 0.2: measured in 0T, the whole 116,630-id
+  # queue costs $0.23 against a $1.00 day, so money was never the thing holding
+  # this back and a fifth was cautious about the wrong resource.
+  daily_budget_fraction: 0.5
+
+  # ★ And the limit that actually binds. Measured against the live API in 0T:
+  # **50 ids per request, $0.0001 per request, 1.70s per request.**
+  #
+  #   whole queue   116,630 ids = 2,333 requests = $0.23 and 66 minutes
+  #
+  # 66 minutes is more than `daily.max_minutes` (30) for the entire run, so the
+  # queue cannot be drained in one day at any price. Ten minutes a run buys
+  # ~350 requests, ~17,600 ids, and drains the standing queue in about a week
+  # while leaving two thirds of the time budget for the work that publishes.
+  #
+  # The chore also stops `SAFETY_MARGIN_S` before the day's own deadline. A run
+  # that publishes fine must never be recorded as interrupted because a
+  # background task was still going when the clock ran out.
+  max_seconds_per_run: 600
   # And a wall-clock ceiling, which is the one that actually binds. On cost
   # alone a fifth of the day budget buys 50,000 ids, or 1,000 requests and the
   # better part of an hour. 40 requests is 2,000 ids a run.

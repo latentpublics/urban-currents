@@ -7,6 +7,7 @@ from datetime import date
 
 import pytest
 
+from pipeline import paths
 from pipeline.llm import LLMClient, LLMResponse, cache_get, parse_json
 from pipeline.metrics import Run
 from pipeline.models import Bibliography, Item
@@ -116,9 +117,14 @@ def test_response_is_cached_and_not_requested_twice(repo):
     client = LLMClient(caller=counting)
     summarize_items([_item()], run, client=client)
     assert calls["n"] == 1
-    # Read the version off the client rather than hard-coding it: bumping a
-    # prompt is a routine act and must not look like a test failure.
-    assert cache_get(client.prompt_version, "arxiv:2608.01234") is not None
+
+    # An entry exists for this item under this prompt version. The **file name**
+    # is not asserted: since 0T the key carries a digest of the whole request,
+    # so hard-coding the path here would pin an implementation detail that is
+    # deliberately allowed to change.
+    version_dir = paths.LLM_CACHE / client.prompt_version.replace("/", "_")
+    entries = list(version_dir.glob("arxiv_2608.01234*.json"))
+    assert entries, f"nothing cached under {version_dir}"
 
     summarize_items([_item()], run, client=LLMClient(caller=counting))
     assert calls["n"] == 1, "second run should have been served from the cache"

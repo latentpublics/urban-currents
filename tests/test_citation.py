@@ -367,9 +367,9 @@ def test_the_pending_queue_is_ordered_by_how_much_we_cite(repo, monkeypatch):
 
     asked: list[list[str]] = []
 
-    def fake_resolve(ids, batch=50):
+    def fake_resolve(ids, batch=50, deadline=None, budget_usd=None):
         asked.append(list(ids))
-        return [], 0.0
+        return [], 0.0, "queue drained"
 
     monkeypatch.setattr(daily_canon, "_resolve", fake_resolve)
     daily_canon.accumulate_day(DAY, max_ids=2)
@@ -382,7 +382,10 @@ def test_running_the_same_day_twice_leaves_no_duplicate_records(repo, monkeypatc
     from pipeline.graph.citation import load_reference_base
 
     store.save_item(_item("doi:a", ["openalex:W1", "openalex:W2"]), today=DAY)
-    monkeypatch.setattr(daily_canon, "_resolve", lambda ids, batch=50: ([], 0.0))
+    monkeypatch.setattr(
+        daily_canon, "_resolve",
+        lambda ids, batch=50, deadline=None, budget_usd=None: ([], 0.0, "queue drained"),
+    )
 
     daily_canon.accumulate_day(DAY)
     daily_canon.accumulate_day(DAY)
@@ -396,8 +399,8 @@ def test_the_queue_shrinks_as_ids_resolve(repo, monkeypatch):
 
     store.save_item(_item("doi:a", [f"openalex:W{i}" for i in range(6)]), today=DAY)
 
-    def resolve_two(ids, batch=50):
-        return [{"openalex_id": i, "title": i} for i in ids[:2]], 0.0
+    def resolve_two(ids, batch=50, deadline=None, budget_usd=None):
+        return [{"openalex_id": i, "title": i} for i in ids[:2]], 0.0, "queue drained"
 
     monkeypatch.setattr(daily_canon, "_resolve", resolve_two)
     first = daily_canon.accumulate_day(DAY, max_ids=2)

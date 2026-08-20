@@ -441,10 +441,14 @@ def run_daily(
         record(outcome)
 
         delivery = _deliver_issue(run, issue)
+        canon = _accumulate_canon(
+            run, issue_date, deadline, dry_run=dry_run, smoke=smoke
+        )
         run.metrics.timing["daily_s"] = round(time.monotonic() - started, 1)
         run.save()
         result = _result(outcome, run, started, covers_from, covers_to, dry_run)
         result["delivery"] = delivery
+        result["canon"] = canon
         return result
 
     except (TimeBudgetExceeded, Interrupted) as e:
@@ -528,6 +532,55 @@ def catch_up(today: Optional[date] = None, limit: Optional[int] = None) -> list[
                 "error": f"{type(e).__name__}: {e}",
             })
     return results
+
+
+def _accumulate_canon(
+    run: Run,
+    d: date,
+    deadline: "Deadline",
+    dry_run: bool = False,
+    smoke: bool = False,
+) -> dict[str, Any]:
+    """Spend what is left of the OpenAlex day on the citation base (0T, V1).
+
+    ## Why it is here and not anywhere earlier
+
+    **The day's verdict is already recorded** by the time this runs — `record()`
+    fires before delivery, and this fires after it. That ordering is the whole
+    safety argument: this is a side task that fattens the archive, and it must
+    not be able to decide whether an issue published.
+
+    So **everything is caught**, including `TimeBudgetExceeded` and
+    `Interrupted`. Both are `RuntimeError`s, and letting either escape would
+    reach `run_daily`'s outer handler and rewrite a published day as
+    `not_published` — a day that went out perfectly, recorded as a failure
+    because a background chore ran long. That is the exact failure this
+    function's shape exists to prevent, and it is why the `except` here is
+    deliberately wide rather than a list of expected errors.
+
+    Budget exhaustion is a **normal ending**, not an alert. The queue keeps what
+    was not reached and tomorrow starts from it.
+
+    Skipped on `--dry-run` and `--smoke`: neither is a real day, and both are
+    meant to be cheap.
+    """
+    if dry_run or smoke:
+        return {"status": "SKIPPED", "reason": "dry run" if dry_run else "smoke"}
+    if not bool(cfg("canon.accumulate_daily", True)):
+        return {"status": "SKIPPED", "reason": "canon.accumulate_daily is false"}
+
+    try:
+        from .graph.daily_canon import accumulate_day
+
+        result = accumulate_day(d, run=run, deadline=deadline)
+        run.stage("canon", "OK")
+        return result
+    except Exception as e:  # noqa: BLE001 - see the docstring
+        # Recorded, never raised. `run.error` puts it in the metrics where the
+        # weekly summary will show it; the day keeps the status it earned.
+        run.error(f"canon: {type(e).__name__}: {e}")
+        run.stage("canon", "FAILED")
+        return {"status": "FAILED", "error": f"{type(e).__name__}: {e}"}
 
 
 def _deliver_issue(run: Run, issue) -> dict[str, Any]:

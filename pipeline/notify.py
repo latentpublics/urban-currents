@@ -155,6 +155,8 @@ def weekly_summary(end: Optional[date] = None, days: int = 7) -> dict[str, Any]:
             "sends": day_sends,
         })
 
+    from .canon_state import counts as canon_counts
+    from .canon_state import counts as canon_counts
     from .held import counts as held_counts
 
     usage = UsageState.load()
@@ -170,6 +172,8 @@ def weekly_summary(end: Optional[date] = None, days: int = 7) -> dict[str, Any]:
         # and it is the only route by which YJUN learns there is work to do
         # without opening a terminal (M2-4).
         "held": held_counts(),
+        "canon": canon_counts(),
+        "canon": canon_counts(),
         "llm_cost_total_usd": round(usage.cost_usd, 6),
         "llm_calls_total": usage.calls,
         "days": rows,
@@ -249,6 +253,8 @@ def status() -> dict[str, Any]:
     """
     from .daily import lock_path, target_window
     from .deliver import get_backend, ledger_dir, recipients
+    from .canon_state import counts as canon_counts
+    from .canon_state import counts as canon_counts
     from .held import counts as held_counts
     from .llm import UsageState
     from .outcome import interrupted_dates, unpublished_dates
@@ -293,6 +299,8 @@ def status() -> dict[str, Any]:
         # retrying the second unchanged does the same thing again.
         "interrupted_dates": [r["date"] for r in interrupted_dates()],
         "held": held_counts(),
+        "canon": canon_counts(),
+        "canon": canon_counts(),
         # A source that reports OK and returns nothing is the failure that does
         # not look like one. It belongs next to the missed days, not buried in a
         # run file nobody opens.

@@ -20,7 +20,6 @@ measured again and a person's judgement cannot.**
 from __future__ import annotations
 
 import json
-from datetime import date
 
 import pytest
 

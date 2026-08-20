@@ -40,7 +40,6 @@ import re
 from pathlib import Path
 from typing import Optional
 
-from ..config import cfg
 from ..llm import LLMBudgetExceeded, LLMClient, LLMQuotaExhausted, LLMUnavailable
 from ..models import Item
 

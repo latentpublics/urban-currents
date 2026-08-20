@@ -15,7 +15,6 @@ from pipeline.models import (
     Author,
     Bibliography,
     EntityRef,
-    Ids,
     Institution,
     Item,
     PlaceRef,

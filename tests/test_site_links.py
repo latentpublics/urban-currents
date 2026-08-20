@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import re
 from datetime import date
-from pathlib import Path
 from urllib.parse import unquote, urldefrag
 
 from pipeline import paths, store

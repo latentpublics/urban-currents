@@ -270,7 +270,6 @@ def main() -> None:
     # 2. THE TEST THAT CAN END THIS SECTION. Are anchors drawn from longer
     #    bibliographies than the candidates they are drawn from?
     lengths = reference_lengths(pairs)
-    population = sorted(lengths.values())
 
     length_test: dict[str, dict] = {}
     for criterion in ("shared", "jaccard", "geometric"):

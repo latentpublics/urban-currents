@@ -9,9 +9,8 @@ from __future__ import annotations
 
 import re
 from datetime import date
-from pathlib import Path
 
-from pipeline import paths, store
+from pipeline import store
 from pipeline.models import (
     Bibliography,
     Headline,

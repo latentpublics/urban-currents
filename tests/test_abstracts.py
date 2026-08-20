@@ -13,7 +13,6 @@ import pytest
 
 from pipeline.collectors.abstracts import (
     AbstractEnricher,
-    SpringerQuotaExceeded,
     doi_prefix,
     enrich_abstracts,
     publisher_of,

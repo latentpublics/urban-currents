@@ -20,7 +20,6 @@ retry rather than a reason to unwind a day's work.
 
 from __future__ import annotations
 
-import json
 from datetime import date
 
 import pytest

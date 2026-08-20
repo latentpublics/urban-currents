@@ -21,7 +21,6 @@ from pipeline.outcome import (
     QUIET,
     decide,
     load_log,
-    looked,
     record,
     unpublished_dates,
 )

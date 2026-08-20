@@ -1293,7 +1293,7 @@ def run_probe_session(
             facet, probe_row(item, band, rank, key, detail, priors.get(source_id))
         )
 
-    
+
     elapsed = time.monotonic() - started
     printer(
         f"\nwrote {n} probe labels to {labels_path(facet)} in {elapsed / 60:.1f} min "
@@ -1598,7 +1598,7 @@ def run_rejudge_session(
         counts[label] += 1
         n += append_one(facet, rejudge_row(original, label, by=by))
 
-    
+
     elapsed = time.monotonic() - started
     remaining = len(todo) - n
     printer(

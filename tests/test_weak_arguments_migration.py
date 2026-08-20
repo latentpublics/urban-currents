@@ -18,7 +18,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-import pytest
 
 from pipeline import paths
 
@@ -45,8 +44,8 @@ def _write(rows, name="relevance.jsonl"):
 
 
 def _read(name="relevance.jsonl"):
-    return [json.loads(l) for l in
-            (paths.LABELS / name).read_text(encoding="utf-8").splitlines() if l.strip()]
+    return [json.loads(line) for line in
+            (paths.LABELS / name).read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
 ROWS = [

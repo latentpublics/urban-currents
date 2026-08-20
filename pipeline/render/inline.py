@@ -32,7 +32,6 @@ from __future__ import annotations
 
 import re
 from html.parser import HTMLParser
-from typing import Optional
 
 # The email body width. 600px is the conventional safe measure and the mockup's
 # own email pass uses it.

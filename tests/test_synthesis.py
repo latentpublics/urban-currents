@@ -21,7 +21,7 @@ from pipeline.synthesis import (
     render_facts,
     write_paragraph,
 )
-from tests.test_selection_paths import _whitelist_source_id, arxiv_item, journal_item
+from tests.test_selection_paths import _whitelist_source_id, journal_item
 
 DAY = date(2026, 8, 11)
 

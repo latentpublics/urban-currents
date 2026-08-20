@@ -14,12 +14,10 @@ pin the three properties that follow.
 
 from __future__ import annotations
 
-import json
 from datetime import date, timedelta
 
-import pytest
 
-from pipeline import held, paths, store
+from pipeline import held
 from pipeline.held import (
     NEAR_MISS,
     RULE_AT_THE_FLOOR,

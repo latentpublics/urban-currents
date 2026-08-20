@@ -46,7 +46,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 # Inside the package, not in .  is build output — a clean rebuild
-# would drop anything kept there, and the fonts are a source asset. 
+# would drop anything kept there, and the fonts are a source asset.
 # copies them into  so the published tree is complete and
 # reproducible from a checkout.
 OUT = ROOT / "pipeline" / "render" / "assets" / "fonts"

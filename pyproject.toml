@@ -48,3 +48,46 @@ filterwarnings = ["ignore::DeprecationWarning"]
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+
+# The gate CI enforces (phase 0U, U8).
+#
+# `ruff check .` with no `select` reported 898 problems the first time anyone
+# ran it, because ruff's default set has grown well past this codebase. A gate
+# that is red on the day it is switched on is a gate people learn to ignore, so
+# this lists what the repository actually holds to. It is deliberately narrow
+# and deliberately explicit: pinning the set means a ruff upgrade cannot turn
+# CI red on a Monday morning for a rule nobody chose.
+#
+#   F   — real defects: unused imports, undefined names, dead assignments,
+#         duplicate dict keys. This is the family the batch fixed (72 findings,
+#         67 of them auto-fixed; the rest were three dead locals and the
+#         duplicate `"canon"` key a 0U edit had just introduced).
+#   E4/E7/E9, W — import placement, ambiguous names, syntax errors, whitespace.
+#   A   — a local named `id` or `list` shadowing a builtin.
+#   T10 — a forgotten `breakpoint()`, which in an unattended run hangs the job
+#         until the timeout. Squarely this batch's subject.
+#   RSE — `raise X()` hygiene.
+#
+# Not selected, and each one is a decision to make later rather than a thing to
+# fix in passing. Counts are from the pre-0U run:
+#
+#   UP045 (365), UP035 (26), UP037 (12), UP017 (7) — `Optional[X]` → `X | None`
+#       and friends. Auto-fixable and purely cosmetic, but it would rewrite
+#       roughly every annotation in `pipeline/models.py`, which is the schema's
+#       source of truth. Not in a batch about unattended failure.
+#   RUF100 (160) — unused `# noqa`. They are "unused" only because this select
+#       is narrow; widening the set would make most of them live again.
+#       Deleting them now would be deleting the evidence.
+#   I001 (46) — import sorting. Safe, but it touches nearly every file and
+#       would bury the actual 0U diff.
+#   DTZ011 (22) — naive `date.today()`. Worth a look: this pipeline is keyed on
+#       dates and runs at 21:00 UTC / 06:00 KST, so a naive "today" is a real
+#       question, not a style one. It needs its own investigation.
+#   BLE001 (16), S110/S112 (18) — blind `except Exception` and swallowed
+#       errors. Also worth a look for the same reason 0U exists, and also not
+#       something to auto-fix: each one has to be read to know whether the
+#       silence is deliberate.
+#   ARG (575), FURB, SIM, PL*, B*, ISC, RUF0xx — style and refactoring
+#       families; no defects among the ones sampled.
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "W", "A", "T10", "RSE"]

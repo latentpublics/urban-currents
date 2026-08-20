@@ -42,7 +42,7 @@ import re
 from collections import Counter, defaultdict
 from datetime import date, timedelta
 from pathlib import Path
-from typing import Any, Iterable, Optional
+from typing import Any, Optional
 
 from . import paths, store
 from .config import cfg

@@ -43,7 +43,7 @@ from __future__ import annotations
 import json
 import math
 import sys
-from collections import Counter, defaultdict
+from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -283,7 +283,7 @@ def main() -> None:
     withheld = measure_withheld_rate(included, rejected)
 
     print(f"\nderived list: {len(included)} subfields")
-    print(f"\nrecall — reported first:")
+    print("\nrecall — reported first:")
     print(f"  keeps {recall['keeps']}, lost {recall['keeps_lost']} "
           f"({recall['keep_loss_rate']})   baseline to beat: 0.614")
     for t in recall["lost_titles"]:

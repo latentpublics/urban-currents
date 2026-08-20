@@ -26,7 +26,7 @@ from __future__ import annotations
 
 import json
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -34,7 +34,6 @@ sys.path.insert(0, str(ROOT))
 
 from journal_gate import _index_stage_items, precision_at_k  # noqa: E402
 from pipeline import paths  # noqa: E402
-from pipeline.config import cfg  # noqa: E402
 from pipeline.held import paper_subfield, rejected_subfield_ids  # noqa: E402
 from pipeline.labeling import load_labels, superseded  # noqa: E402
 

@@ -9,7 +9,6 @@ spend ceiling instead of going over, and it resumes where it stopped.
 
 from __future__ import annotations
 
-import json
 from datetime import date, timedelta
 
 import pytest
@@ -18,7 +17,6 @@ from pipeline import paths
 from pipeline.backfill_issues import (
     LIVE_MARGIN_DAYS,
     backfill,
-    existing_issue_dates,
     load_checkpoint,
     target_dates,
 )
@@ -211,7 +209,6 @@ def test_the_budget_spans_passes_rather_than_resetting(repo):
     pass a fresh ceiling — fifteen passes, fifteen budgets. The symptom was a
     checkpoint reporting *less* spend after a day had been added than before it.
     """
-    from pipeline.llm import UsageState
 
     first: list = []
     backfill(

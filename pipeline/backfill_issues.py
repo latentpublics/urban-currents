@@ -53,7 +53,7 @@ from datetime import date, timedelta
 from pathlib import Path
 from typing import Any, Callable, Optional
 
-from . import paths, store
+from . import paths
 from .config import cfg
 
 CHECKPOINT = "backfill_issues.json"

@@ -19,7 +19,6 @@ And one property that matters as much: `interrupted` is kept apart from
 
 from __future__ import annotations
 
-import json
 from datetime import date, timedelta
 
 import pytest

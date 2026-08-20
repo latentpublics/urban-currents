@@ -346,7 +346,18 @@ def run_pending_session(
     those were is exactly the friction this is meant to remove**.
     """
     from . import held as held_queue
-    from .labeling import (
+
+    # Imported here rather than taken from the module-level re-export above,
+    # and `noqa`'d because ruff reads it as a redefinition. It is: the point is
+    # that these three are looked up **when the session runs**, not when the
+    # module loads. `test_a_failed_write_raises_rather_than_continues`
+    # substitutes a failing `append_one` to prove that an answer which is not
+    # written raises rather than being lost, and against a name bound at import
+    # time that substitution silently does nothing — a test that passes while
+    # testing the unpatched function. Ruff's F811 autofix removed this in 0U
+    # and the test caught it immediately, which is the argument for keeping
+    # both the import and this comment.
+    from .labeling import (  # noqa: F811
         LABEL_KEYS,
         LabelWriteFailed,
         _ask_label,

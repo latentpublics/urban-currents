@@ -448,7 +448,6 @@ def test_zero_affinity_and_no_references_are_not_the_same_band():
 
 def test_a_labelling_set_survives_the_round_trip(repo):
     """An export nobody has read back is a backup nobody has restored."""
-    import json as _json
     from pathlib import Path
 
     from pipeline.labeling import export_labeling_set, import_labeling_set

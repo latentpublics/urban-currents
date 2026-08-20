@@ -30,9 +30,8 @@ from __future__ import annotations
 
 import json
 import sys
-from collections import Counter, defaultdict
+from collections import defaultdict
 from pathlib import Path
-from typing import Optional
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -195,13 +194,13 @@ def main() -> None:
         1 for r in rows if not r["keep"] and r["work_key"] in passing
     )
 
-    print(f"\nprecision@10 (journal path), days with >= 8/10 labelled:")
+    print("\nprecision@10 (journal path), days with >= 8/10 labelled:")
     print(f"  before  {before['mean_precision_over_usable_days']} "
           f"over {before['days_with_coverage_8_of_10']}/{before['days_total']} days")
     print(f"  after   {after['mean_precision_over_usable_days']} "
           f"over {after['days_with_coverage_8_of_10']}/{after['days_total']} days")
 
-    print(f"\nrecall loss — the number precision alone hides:")
+    print("\nrecall loss — the number precision alone hides:")
     print(f"  keeps  {total_keeps} -> {kept_keeps}   (lost {lost_keeps}, "
           f"{round(100 * lost_keeps / total_keeps, 1) if total_keeps else 0}%)")
     print(f"  drops  {total_drops} -> {total_drops - dropped_drops}   "

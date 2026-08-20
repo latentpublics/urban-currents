@@ -6,9 +6,7 @@ them is a place where a display choice could quietly become a claim.
 
 from __future__ import annotations
 
-import json
 
-import pytest
 
 from pipeline.models import (
     Author,

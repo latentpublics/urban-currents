@@ -58,7 +58,6 @@ sys.path.insert(0, str(ROOT))
 
 import yaml  # noqa: E402
 
-from pipeline.config import journals_vocab  # noqa: E402
 from pipeline.graph.citation import load_reference_base  # noqa: E402
 from pipeline.graph.daily_canon import load_resolved  # noqa: E402
 
@@ -356,10 +355,10 @@ def main() -> None:
         )
 
     ts = result["transport_share_top30"]
-    print(f"\ntransport share of the top 30:")
+    print("\ntransport share of the top 30:")
     print(f"   raw 2yr_mean_citedness      : {ts['raw_2yr_mean_citedness']:.1%}")
     print(f"   prestige_pct_in_subfield    : {ts['prestige_pct_in_subfield']:.1%}")
-    print(f"\nbibliography-length correlation (lower is better):")
+    print("\nbibliography-length correlation (lower is better):")
     for k, v in result["length_bias_correlation"].items():
         print(f"   {k:<8}: {v:+.4f}")
 

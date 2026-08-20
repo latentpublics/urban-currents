@@ -38,11 +38,9 @@ never deleted.
 
 from __future__ import annotations
 
-import json
-from collections import Counter
 from datetime import date
 from pathlib import Path
-from typing import Any, Iterable, Optional
+from typing import Any, Optional
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
@@ -474,7 +472,6 @@ def build_design_review(out: Optional[Path] = None) -> Path:
     """
     import re
 
-    from ..metrics import Run
     from ..render.preview import render_issue
 
     # `docs/design-review.html` is what the fonts are actually compared in, so

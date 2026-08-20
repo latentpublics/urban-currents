@@ -24,7 +24,7 @@ from .filters.gate import Gate, apply_gate
 from .metrics import Run
 from .models import Headline, Issue, Item, ScanMeta
 from .render.preview import write_preview
-from .score.headline import headline_line, pick_headline, score_all
+from .score.headline import pick_headline, score_all
 from .signals import apply_badges, apply_rule_signals
 # Defined in `pipeline/skips.py` so the collectors and the LLM client can
 # inherit it without importing this module (hotfix H2). Re-exported because

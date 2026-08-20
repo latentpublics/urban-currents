@@ -9,7 +9,6 @@ from __future__ import annotations
 
 from datetime import date, timedelta
 
-import pytest
 
 from pipeline.deliver import DeliveryError, Message
 from pipeline.notify import (

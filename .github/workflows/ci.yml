@@ -1,0 +1,60 @@
+# Tests and lint, on every push and pull request (phase 0U, U8).
+#
+# There were 652 tests and a `ruff` config in this repository and **nothing ran
+# either of them automatically**. The only workflows were `daily` and `weekly`,
+# both of which run the pipeline rather than check it, so a commit that broke
+# the suite would have been found by the next person to type `pytest` — or by
+# the daily run failing in production, which is a worse place to find out.
+#
+# `tests/` promises "no network, no keys", so this needs neither secrets nor the
+# embedding model. That promise is worth something precisely here: it is what
+# lets the test suite run on a pull request from anyone.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  # A newer commit makes an older run's answer irrelevant, unlike `daily`, where
+  # a queued run waits because it holds a lock on real output.
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    env:
+      PYTHONUNBUFFERED: "1"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Install
+        run: uv sync --frozen
+
+      # Lint first: it is seconds, and a failure here is cheaper to read than a
+      # test failure caused by the same typo.
+      - name: Lint
+        run: uv run ruff check .
+
+      - name: Test
+        # No secrets in `env`, deliberately. If a test starts needing a key it
+        # has stopped being a unit test, and the suite's own promise —
+        # "tests must pass with no API keys present and no network" — is the
+        # thing that keeps them honest.
+        run: uv run pytest -q

@@ -186,7 +186,7 @@ def main() -> None:
 
     print(f"\nmatched: {matched} | unmatched: {sum(unmatched.values())} "
           f"across {len(unmatched)} distinct terms")
-    print(f"\ntop 30 unmatched:")
+    print("\ntop 30 unmatched:")
     for row in result["top_unmatched"][:30]:
         print(f"  {row['count']:>3}  {row['facet']:<8} {row['term'][:52]}")
 

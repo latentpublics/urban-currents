@@ -16,7 +16,6 @@ from __future__ import annotations
 
 from datetime import date
 
-import pytest
 
 from pipeline.models import (
     Bibliography,

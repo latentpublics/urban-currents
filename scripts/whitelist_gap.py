@@ -83,8 +83,6 @@ def why_excluded(source: dict) -> str:
     if not (subfields & SUBFIELDS):
         return "subfield mismatch: none of its topics sit in 3322/3305/3313"
 
-    counts = source.get("counts_by_year") or []
-    recent = sum(c.get("works_count", 0) for c in counts[:3])
     in_subfield = sum(
         t.get("count", 0)
         for t in (source.get("topics") or [])

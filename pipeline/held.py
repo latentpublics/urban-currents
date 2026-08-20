@@ -36,14 +36,13 @@ late.
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 from typing import Any, Iterable, Optional
 
 from . import paths
 from .config import cfg, vocab_file
-from .metrics import utcnow
 from .models import Item
 
 # --------------------------------------------------------------------------

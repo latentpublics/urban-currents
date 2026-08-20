@@ -6,16 +6,14 @@ nothing goes out twice, and nothing in the mail can tell us a reader opened it.
 
 from __future__ import annotations
 
-import json
 import re
 from datetime import date
 from html.parser import HTMLParser
 
 import pytest
 
-from pipeline import paths, store
+from pipeline import paths
 from pipeline.deliver import (
-    ConsoleBackend,
     DeliveryError,
     FileBackend,
     Message,
@@ -117,7 +115,6 @@ def test_web_html_mail_and_plain_text_say_the_same_things(repo):
     mail = to_email(web)
     text = render_text(issue, items)
 
-    web_visible = " ".join(_Visible().text) if False else None
     parser = _Visible()
     parser.feed(web)
     web_blob = " ".join(parser.text)

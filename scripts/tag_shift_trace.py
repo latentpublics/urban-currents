@@ -30,13 +30,14 @@ Usage:
     uv run python scripts/tag_shift_trace.py
 """
 
-import sys, json
+import sys
+import json
 from collections import Counter
 from datetime import date
 sys.path.insert(0, r"C:/Users/jour/Documents/GitHub/urban-currents")
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-from pipeline import store
-from pipeline.synthesis import deviations, _tags_of, DEVIATION_MIN_TODAY, DEVIATION_MIN_RATIO
+from pipeline import store  # noqa: E402  - sys.path is set two lines up
+from pipeline.synthesis import deviations, _tags_of  # noqa: E402
 
 issues = sorted((store.paths.CONTENT / "issues").glob("*.json"))
 print(f"{'date':12} {'items':>5} {'base':>5} {'status':13} {'found':>5} {'distinct':>8} {'max_today':>9}")

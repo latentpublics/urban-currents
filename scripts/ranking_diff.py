@@ -139,7 +139,7 @@ def main() -> None:
             continue
         print(f"{key:<20} {c['keep_median']:>10.4f} {c['drop_median']:>10.4f}  "
               f"{str(c['separates']):>9}  {c['drop_ranks_of_15']}")
-    print(f"\nthe two `not_our_kind` items, by foundation_only rank:")
+    print("\nthe two `not_our_kind` items, by foundation_only rank:")
     for i, r in enumerate(result["rows"], 1):
         if not r["kept"]:
             print(f"   rank {i}/15  {r['foundation_only']:>8.3f}  "

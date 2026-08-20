@@ -8,7 +8,7 @@ from datetime import date
 import pytest
 
 from pipeline import paths
-from pipeline.llm import LLMClient, LLMResponse, cache_get, parse_json
+from pipeline.llm import LLMClient, LLMResponse, parse_json
 from pipeline.metrics import Run
 from pipeline.models import Bibliography, Item
 from pipeline.summarize.run import summarize_items, validate_payload

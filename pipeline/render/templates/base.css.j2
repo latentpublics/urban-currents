@@ -533,6 +533,10 @@ body {
 .uc-rows { list-style: none; padding: 0; margin: 0; }
 .uc-row {
   display: flex;
+  /* Wrapping exists for `.uc-row__note`, which is the only item with a
+     100% basis. Every other item has a fixed or shrinkable basis, so a row
+     without a note still lays out on one line exactly as before (0Y). */
+  flex-wrap: wrap;
   align-items: baseline;
   gap: 0.75rem;
   padding: 0.4rem 0;
@@ -644,3 +648,29 @@ body {
 }
 .uc-chip--missing { background: transparent; border: 1px solid var(--uc-line); color: var(--uc-faint); }
 .uc-row__reason { color: var(--uc-faint); font-style: italic; }
+
+/* A day assembled after the fact (phase 0Y). Distinct from both a quiet day
+   and a day nobody could see, and deliberately **not** drawn as a fault: the
+   bar keeps its accent colour because the issue is real and was published, and
+   the difference is carried by an outlined chip and a sentence. Colour alone
+   never carries meaning here, which is why the row also says "filled in later"
+   in words and explains itself underneath. */
+.uc-row--backfilled .uc-row__fill {
+  background: repeating-linear-gradient(
+    90deg, var(--uc-accent), var(--uc-accent) 3px, transparent 3px, transparent 5px
+  );
+}
+.uc-chip--backfilled {
+  background: transparent;
+  border: 1px dashed var(--uc-line);
+  color: var(--uc-meta);
+}
+/* Its own line under the row. `flex-basis: 100%` is what forces the wrap, and
+   nothing else in the row sets one, so rows without a note are unchanged. */
+.uc-row__note {
+  flex: 1 0 100%;
+  margin: 0.15rem 0 0 6.25rem;
+  color: var(--uc-faint);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}

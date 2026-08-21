@@ -106,11 +106,36 @@ def archive_rows(
     happened", which is exactly the claim we could not make — so it gets a row
     saying the sources did not answer, drawn differently from a quiet day.
     Same grey chip for both would undo the whole outcome model.
+
+    ★ A **backfilled** day is a third kind and says so (phase 0Y, Y1).
+    `backfill_issues.py` writes `backfilled: true` and explains why — *"so no
+    aggregate mixes the two kinds without saying so"* — and the aggregates have
+    kept that promise while the screen has not: nothing under `render/` read
+    the flag, so a day assembled weeks later looked exactly like a day the
+    pipeline watched. It is not an apology, it is part of the method, and the
+    row states it rather than hiding it.
+
+    ★ And a day can carry **two** facts (0Y, Y1-2). A date may have both a
+    `not_published` run-log row — the live run that morning withheld the day —
+    and a backfilled issue written afterwards. Before this, the issue silently
+    replaced the record: the `missing` row below is only added for dates with
+    no issue, so filling a withheld day erased the evidence that
+    `REQUIRED_SOURCES` had done its job. `pages.yml` states the principle this
+    breaks — *"the archive is the record"* — so the row now says both.
     """
     from ..outcome import NOT_PUBLISHED, all_logs
 
     issues = load_issues() if issues is None else issues
     items = item_index() if items is None else items
+
+    # Dates whose live run reached `not_published`, with the reason it gave.
+    # Most backfilled dates have no run log at all — the pipeline was not
+    # running yet — and those simply do not appear here.
+    withheld = {
+        log["date"]: (log.get("reasons") or ["the sources did not answer"])[0]
+        for log in all_logs()
+        if log.get("status") == NOT_PUBLISHED
+    }
 
     rows = []
     for issue in issues:
@@ -137,6 +162,14 @@ def archive_rows(
             "data": data,
             "missing": False,
             "reason": None,
+            # Assembled after the fact rather than watched. Also means the day
+            # skipped arXiv enrichment (`enrich_arxiv=not backfilled`), so the
+            # contents differ slightly from a live day — one more reason the
+            # reader is told which kind they are looking at.
+            "backfilled": bool(getattr(issue, "backfilled", False)),
+            # Set when the live run for this date withheld it. Both facts are
+            # true and the row prints both (Y1-2).
+            "withheld": withheld.get(str(issue.date)),
         })
 
     published_dates = {r["date"] for r in rows}
@@ -156,6 +189,8 @@ def archive_rows(
             "lead_key": None,
             "code": 0,
             "data": 0,
+            "backfilled": False,
+            "withheld": None,
         })
 
     rows.sort(key=lambda r: r["date"])
@@ -184,6 +219,12 @@ def archive_stats(rows: list[dict], items: dict[str, Item]) -> dict[str, Any]:
         "published_days": len(published),
         "quiet_days": sum(1 for r in rows if r["quiet"]),
         "missing_days": sum(1 for r in rows if r.get("missing")),
+        # Counted separately, not subtracted. `backfill_issues.py` promised
+        # that no aggregate would mix the two kinds "without saying so"; this
+        # is the saying so. `published_days` still counts every day that
+        # published, because it did, and this says how many of those nobody
+        # watched at the time (0Y, Y1).
+        "backfilled_days": sum(1 for r in rows if r.get("backfilled")),
         "range_low": _quantile(published, RANGE_LOW),
         "range_high": _quantile(published, RANGE_HIGH),
         "range_rule": f"p{int(RANGE_LOW * 100)}-p{int(RANGE_HIGH * 100)} of days that published",

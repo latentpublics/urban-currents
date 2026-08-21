@@ -5,7 +5,7 @@
 # where it does not run at all:
 #
 #   * GitHub disables scheduled workflows on a repository with 60 days of no
-#     activity. `docs/scheduler-options.md` could not establish whether the
+#     activity. The scheduler comparison in 0k could not establish whether the
 #     bot's own commits count as activity, so the possibility stands.
 #   * A workflow file with a syntax error does not run and does not fail.
 #   * An account or billing problem stops the schedule silently.

@@ -33,6 +33,19 @@ subscribers/
 *.subscribers
 UC_PREVIEW_RECIPIENT
 
+# ★ Analysis output that must not come back (phase G4b).
+#
+# `docs/` now holds five files — the PRD, the generated report, the ledger and
+# the two operations manuals — and the analysis documents moved to the private
+# working record. Two scripts here still *write* into `docs/`:
+# `scripts/repo_link_audit.py` and `scripts/journals_rebuild_review_render.py`.
+# Running either would recreate a file that was deliberately removed, in a
+# repository that is now public. The scripts are left alone — they are the
+# record of how those measurements were made — and their output is ignored
+# instead. Copy it to the notes repository if it is worth keeping.
+docs/repo-link-audit.md
+docs/journals-rebuild-review.md
+
 # The built site. Regenerable from `content/` by `uc site` in under a second,
 # and rebuilt on every run — committing it would put a large diff of derived
 # HTML in front of every real change. `docs/design-review.html` is the same

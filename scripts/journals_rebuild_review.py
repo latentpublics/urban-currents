@@ -1,4 +1,9 @@
-"""U3: the data behind `docs/journals-rebuild-review.md` (phase 0h).
+"""U3: the data behind the journal whitelist rebuild review (phase 0h).
+
+Its output is an analysis document and is **not committed here** (0W, G4b):
+it belongs with the working record, and `.gitignore` keeps a re-run from
+quietly putting it back into a public repository.
+
 
 164 YAML entries are not a thing anyone can judge. This joins the rebuild
 against the current whitelist, the 0g source metrics, and the citations our own

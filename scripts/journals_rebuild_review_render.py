@@ -1,4 +1,9 @@
-"""U3: render `docs/journals-rebuild-review.md` (phase 0h).
+"""U3: render the journal whitelist rebuild review (phase 0h).
+
+Its output is an analysis document and is **not committed here** (0W, G4b):
+it belongs with the working record, and `.gitignore` keeps a re-run from
+quietly putting it back into a public repository.
+
 
 Every figure here comes from `runs/journals_rebuild_review.json`, and every
 column carries the population it was measured over — including the one that had

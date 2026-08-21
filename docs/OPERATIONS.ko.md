@@ -417,8 +417,10 @@ GitHub 웹에서:
 | `runs/{run_id}/metrics.json` | 건수 · 비용 · 시간 · 스테이지 상태 |
 | `runs/labels/relevance.jsonl` | **박사님의 라벨. 재생성 불가** |
 | `docs/design-review.html` | 실제 데이터로 렌더한 화면 모음 |
-| `docs/email-delivery-options.md` | 이메일 제공자 비교 |
-| `docs/scheduler-options.md` | 어디서 돌릴지 비교 |
+
+> 이메일 제공자 비교(0k, SES와 Resend로 좁힘)와 스케줄러 비교(0k, GitHub Actions
+> 선택)는 이 저장소에 없습니다. 분석·검토 문서는 별도의 비공개 작업 기록에 있고,
+> 결론은 이 안내서와 `docs/phase0-ledger.md`에 옮겨 적혀 있습니다.
 
 ---
 

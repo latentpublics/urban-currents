@@ -10,8 +10,8 @@
 #   2. **it is a heartbeat.** Everything else in this repository only notices a
 #      problem when the pipeline runs. If the daily schedule stops firing —
 #      GitHub disables schedules on repositories with 60 days of no activity,
-#      and docs/scheduler-options.md could not establish whether the bot's own
-#      commits reset that clock — there is nothing to notice it with.
+#      and the scheduler comparison in 0k could not establish whether the bot's
+#      own commits reset that clock — there is nothing to notice it with.
 #
 # Because `deliver.backend` is `file`, the mail reaches nobody. So the signal
 # is **the job's own outcome**: `uc weekly --send` now exits non-zero when the

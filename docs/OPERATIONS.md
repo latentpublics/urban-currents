@@ -219,8 +219,13 @@ one as much for the heartbeat as for the summary, since a repository whose
 schedules GitHub has quietly disabled looks exactly like a quiet week.
 `deadman.yml` watches for that at 09:00 UTC. The checklist below is kept
 because it is the order to follow when turning delivery on, which has **not**
-happened: `deliver.backend` is still `file`. The comparison behind choosing
-GitHub Actions is in `docs/scheduler-options.md`.
+happened: `deliver.backend` is still `file`.
+
+GitHub Actions was chosen in 0k over a laptop and a VPS, and the deciding
+argument was the **shape of the failure**, not cost or convenience: a laptop
+that sleeps misses the day silently, which is the state this whole phase exists
+to remove, while a late Actions run is absorbed by the seven-day window and
+`uc catch-up`.
 
 **The order matters.** It is arranged so that nothing can reach a stranger
 before a human has read what it would have said. Do not skip ahead to step 6.
@@ -262,7 +267,8 @@ before a human has read what it would have said. Do not skip ahead to step 6.
    archive each morning as a stranger would.
 5. **Uncomment `schedule:` in `weekly.yml`.** One summary mail a week to the
    operator. Confirms the mail path end to end with an audience of one.
-6. **Only then**: pick a provider (`docs/email-delivery-options.md`), buy the
+6. **Only then**: pick a provider — the comparison in 0k narrowed it to
+   Amazon SES and Resend, and the domain question was still open — buy the
    domain, set up SPF/DKIM/DMARC, fill in `UC_SMTP_*`, and change
    `deliver.backend` to `smtp`. **This is the step that can reach someone who
    did not ask.**

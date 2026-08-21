@@ -9,34 +9,57 @@ editing the document.
 - **English for anything published or executed.** Code, comments, docstrings,
   identifiers, commit messages, `README.md`, render templates, and everything
   under `content/`.
-  **Korean is allowed for internal working documents** — `docs/` analysis and
-  decision notes, and everything under `prompts/`. The earlier rule said
-  "everything committed", which was read literally enough to keep three analysis
-  documents out of git entirely; a re-clone would have lost them, and
-  `docs/PRD-phase0.md` is Korean and has been committed since the first
-  milestone. The line is what a reader outside the project sees, not what
-  language a thought arrived in.
+  **Korean is allowed for internal working documents** — everything under
+  `prompts/`, and `docs/PRD-phase0.md`, which is the specification and has been
+  Korean and committed since the first milestone. The line is what a reader
+  outside the project sees, not what language a thought arrived in.
+
+  `docs/` no longer holds analysis or decision notes. Since G4b it holds five
+  files and nothing else: the specification (`PRD-phase0.md`), the generated
+  report (`phase0-report.md`), the phase 0 ledger (`phase0-ledger.md`), and the
+  two operations manuals (`OPERATIONS.md`, `OPERATIONS.ko.md`). `README.md` has
+  described `docs/` that way for a long time; G4b made the description true.
 
 ## Where the working record goes
 
-`prompts/` is **not in this repository** and never appears in its history
-(phase 0W). The repository is public; the working record is not published by
-default. That is a decision about the audience, not a demotion — the reports and
-`prompts/reports/DECISIONS.md` are still the only account of why the code is the
-way it is, and the habit stands:
+**`latentpublics/urban-currents-notes`, private.** It holds `prompts/` — the
+directives, the completion reports and `DECISIONS.md` — and the fourteen
+analysis, review and decision documents that used to sit in `docs/`.
+
+Neither appears in this repository's history. `prompts/` was removed in 0W and
+the fourteen documents in G4b, both with `git filter-repo`, before this
+repository was made public. The notes repository was built by the mirror of the
+same operation, so those documents kept their history: `git log` on any of them
+still reaches the batch that wrote it.
+
+This is a decision about audience, not a demotion. The record names people,
+quotes unfinished judgements and discusses third parties, and it remains the
+only account of why the code is the way it is. `CLAUDE.md` once argued the
+opposite — that keeping analysis out of git risked losing it, because *"a
+re-clone would have lost them"*. That worry was right and is answered rather
+than abandoned: the documents are still in git, still versioned, still
+recoverable by clone, in a repository whose audience is the project.
+
+The habit is unchanged:
 
 - Read the directive in `prompts/`, work, and **write the completion report to
   `prompts/reports/`** as a file, as before.
 - Continue the `D`-number sequence in `prompts/reports/DECISIONS.md`.
 - Expect `git status` to show nothing for any of it. `.gitignore` excludes
   `prompts/` wholesale, and a commit that adds a file under it is a mistake.
-- Do **not** point at those files from anything that is committed. `docs/`,
-  `README.md` and code comments are read by people who will not have them; cite
-  the batch ("0Q") and restate the fact and its denominator instead of linking
-  a path. Numbers and populations always survive the move — dropping them is
-  what the pointer was worth.
+- Do **not** point at either repository's private files from anything that is
+  committed here. `docs/`, `README.md` and code comments are read by people who
+  will not have them; cite the batch ("0Q") and restate the fact and its
+  denominator instead of linking a path. Numbers and populations always survive
+  the move — dropping them is what the pointer was worth. G4b rewrote sixteen
+  such pointers that way, in workflow comments, the operations manuals, the
+  ledger and one collector docstring.
+- Two scripts still write into `docs/` — `repo_link_audit.py` and
+  `journals_rebuild_review_render.py`. Their output is gitignored, because a
+  re-run would otherwise put a deliberately removed document back into a public
+  repository.
 
-Commit SHAs quoted in documents written before 0W refer to the pre-rewrite
+Commit SHAs quoted in documents written before 0W or G4b refer to a pre-rewrite
 history and no longer resolve. They are left in place with a note rather than
 deleted: evidence that has become unreachable is still evidence that existed.
 - **`content/` is pipeline output. Never hand-edit it.** That includes

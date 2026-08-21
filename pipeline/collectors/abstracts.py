@@ -14,7 +14,7 @@ first, and it stops at the first hit — `provenance.abstract_source` records wh
 one paid off. What survives all three is genuinely unreadable, and that is a
 measurement rather than a failure (see `stage_issue`'s `unreadable` list).
 
-Not attempted, and why (docs/abstract-sources-and-attribution.md):
+Not attempted, and why — measured in 0c and recorded in the working notes:
 
 - **Elsevier**: abstracts need an institutional entitlement, the terms forbid
   public display, and they forbid processing content through public AI tools.
@@ -70,7 +70,7 @@ PUBLISHER_BY_PREFIX = {
 
 # Which route can reach a publisher's abstracts, keyed by the publisher name
 # OpenAlex reports. Percentages are Crossref deposit rates for current articles,
-# measured 2026-08-13 (docs/abstract-sources-and-attribution.md §1).
+# measured 2026-08-13 (0c, source survey).
 #
 # This is a **routing** field, not an exclusion rule. A journal whose abstracts
 # we cannot get stays on the whitelist and its articles still publish, in

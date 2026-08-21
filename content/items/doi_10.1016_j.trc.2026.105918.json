@@ -1,0 +1,269 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Urban traffic authorities increasingly act as both regulators and investors in sensing and traffic signal control infrastructure. However, field trials before deployment are costly, disruptive and politically risky, limiting opportunities for evidence-based public investment and algorithmic approval in urban traffic management. We present a high-fidelity digital-twin-based regulatory sandbox that enables authorities to evaluate detector deployment schemes and signal control algorithms without affecting real traffic operations. The sandbox executes the deployed signal control provisioning files through a controller-compatible middleware, calibrates movement-specific driving behaviour using imitation learning, and aligns the digital traffic state with observations from real-world detectors. The middleware provides interfaces for heterogeneous detector inputs, signal control operational parameters and standard signal control commands used in the DACH region (Germany, Austria and Switzerland). These interfaces allow sensing configurations, parameter settings and control algorithms to be evaluated under the operational constraints of the field controller. For what-if assessment, the current and candidate signal programmes can run in parallel, starting from the same field-aligned traffic state. Vehicles interact dynamically with the virtual detectors and actuated controller, allowing the sandbox to compare the traffic effects of alternative programmes while the tested programmes remain within the digital environment. We demonstrate the sandbox at a signalised intersection in Leipzig, Germany. The digital twin achieves high trajectory-level and signal control fidelity. Sandbox experiments show that camera-based detection provides substantially larger operational benefits than loop or LiDAR detection under the existing control logic, while the tested signal control algorithm achieves consistent performance gains across the evaluated metrics. The findings suggest that this digital-twin-based sandbox can support more informed regulatory and investment decisions in urban traffic systems and strengthen evidence-based governance.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Technische Universität Dresden",
+            "ror": "042aqky30"
+          }
+        ],
+        "name": "Runhao Zhou",
+        "openalex": "A5015331504",
+        "orcid": "https://orcid.org/0000-0002-1623-8051"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technische Universität Dresden",
+            "ror": "042aqky30"
+          }
+        ],
+        "name": "Menglin Yang",
+        "openalex": "A5044844339",
+        "orcid": "https://orcid.org/0000-0002-5719-4198"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technische Universität Dresden",
+            "ror": "042aqky30"
+          }
+        ],
+        "name": "Sebastian Pape",
+        "openalex": "A5147149673",
+        "orcid": "https://orcid.org/0009-0006-2085-4304"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technische Universität Dresden",
+            "ror": "042aqky30"
+          }
+        ],
+        "name": "Meng Wang",
+        "openalex": "A5100693187",
+        "orcid": "https://orcid.org/0000-0001-6555-5558"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105918",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-14",
+    "repository_urls": [],
+    "title": "Digital twin as regulatory sandbox for intersection-level traffic management and infrastructure decision-making: A case study in Leipzig, Germany"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-14_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105918"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:digital-twin",
+        "label": "digital twin"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:traffic-assignment",
+        "label": "traffic assignment"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:042aqky30",
+        "label": "Technische Universität Dresden"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1623-8051",
+        "label": "Runhao Zhou"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5719-4198",
+        "label": "Menglin Yang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0006-2085-4304",
+        "label": "Sebastian Pape"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6555-5558",
+        "label": "Meng Wang"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": true,
+        "label": "Traffic control and management",
+        "score": 0.7523,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0845,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.0202,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-08-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1986320533",
+      "openalex:W1992072135",
+      "openalex:W2341808896",
+      "openalex:W2548464518",
+      "openalex:W2962787969",
+      "openalex:W3110830102",
+      "openalex:W3214985079",
+      "openalex:W4313527145",
+      "openalex:W4313830525",
+      "openalex:W4315702361",
+      "openalex:W4404377071",
+      "openalex:W4409725281",
+      "openalex:W4413194323",
+      "openalex:W4413388950"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105918",
+    "openalex": "W7203489117",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-21T15:17:51Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005852,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2191,
+      "out": 285
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-21T15:17:51Z",
+    "doi": "10.1016/j.trc.2026.105918",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The sandbox was demonstrated and validated at only a single intersection in Leipzig, Germany.",
+      "what": "The researchers developed a high-fidelity digital-twin-based regulatory sandbox that evaluates detector deployment schemes and signal control algorithms under real-world operational constraints. Tested at a single signalized intersection in Leipzig, Germany, the system uses imitation learning to calibrate driving behavior and a controller-compatible middleware to run actual signal control files. The simulation demonstrated that camera-based detection yielded greater operational benefits than loop or LiDAR systems under the current control logic, and successfully quantified performance gains from a candidate control algorithm.",
+      "why": "It provides a risk-free, virtual environment for municipal traffic authorities to test and compare alternative signal programs and sensor configurations in parallel before investing in physical infrastructure or deploying new algorithms."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-14",
+  "work_key": "doi:10.1016/j.trc.2026.105918"
+}

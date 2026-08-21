@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The task of constructing vehicles optimal routes for pickup and delivery of goods is one of most promising tasks in the context of global urban population growth. Although this kind of problems with small size can be solved by various classical approaches, a fast (or realtime) route optimizer under the constraints of the real world (such as capacity and time windows constraints) for medium-large size problems still remains a highly challenging task. In this work we, for the first time, successfully applied a deep Reinforcing Learning approach (modified JAMPR model) to solve Pickup and Delivery problem with Capacity and Time Window constraints (CPDPTW). We obtained a robust model that gives a fast optimal solution for problems of small and medium size, and gives fast suboptimal solution for problems of larger (> 200) size.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Andrew Soroka",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alex Meshcheryakov",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sergey Gerasimov",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.14156v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.14156v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-14",
+    "repository_urls": [],
+    "title": "Deep Reinforcement Learning solution for pickup and delivery routing problems with time window and capacity constraints"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-14_2608.14156",
+    "members": [
+      "arxiv:2608.14156"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:reinforcement-learning",
+        "label": "reinforcement learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.14156",
+    "doi": "10.48550/arxiv.2608.14156",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-21T15:17:49Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.0,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1837,
+      "out": 192
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9214,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3686,
+    "relevance": 0.9214
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study adapted the JAMPR deep reinforcement learning model to solve the Capacitated Pickup and Delivery Problem with Time Windows (CPDPTW). The modified model generates fast, optimal routing solutions for small and medium-sized problems, and fast, suboptimal solutions for larger problems containing more than 200 nodes.",
+      "why": "It demonstrates the first successful application of deep reinforcement learning to this specific, highly constrained routing problem, offering a real-time optimization capability for medium-to-large logistics operations where classical exact methods fail to scale."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-14",
+  "work_key": "arxiv:2608.14156"
+}

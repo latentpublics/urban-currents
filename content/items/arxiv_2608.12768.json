@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Generating multi-attribute synthetic populations with realistic joint distributions and geographic variation is a foundational requirement for geo-simulation techniques, such as micro-simulation and agent-based modeling. However, it remains challenging for existing methods to reconstruct region-specific joint distributions from aggregated-level data alone. Thus, we propose a hierarchical diffusion-based generative framework that utilizes a realistic region-specific joint distribution of multiple attributes as the training target to create a synthetic population along with assigning their explicit home and work locations. Applied to 50 U.S. states and Washington, D.C., this framework generates a nationwide geographically-explicit synthetic population consisting of 332,387,543 individuals with five attributes (e.g., age, gender, employment, education, income). Held-out regional experiments show improved reconstruction of joint distributions relative to Iterative Proportional Fitting (IPF) and a one-shot diffusion baseline. At the same time, the location assignment preserves major residential and workplace patterns. As such, the proposed framework provides a scalable generative approach for creating geographically explicit synthetic populations at both regional and national levels. By reconstructing region-specific joint distributions of these five attributes using this framework, the resulting synthetic population could introduce more realistic behaviors into geo-simulations, such as agent-based modeling, enabling further exploration of the emergence of complex urban phenomena through human interactions.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Jinlin Wu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Si Qiao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yi Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Fuzhen Yin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Na Jiang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.12768v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.12768v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-13",
+    "repository_urls": [],
+    "title": "A Generative Framework for the Creation of Multi-Attribute Geographically-Explicit Synthetic Population"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-13_2608.12768",
+    "members": [
+      "arxiv:2608.12768"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.12768",
+    "doi": "10.48550/arxiv.2608.12768",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-21T15:08:16Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005732,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2075,
+      "out": 291
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.869,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3476,
+    "relevance": 0.869
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "A hierarchical diffusion-based generative framework was developed to synthesize populations with realistic, region-specific joint distributions of five attributes (age, gender, employment, education, and income) alongside explicit home and work locations. The model was applied across 50 U.S. states and Washington, D.C., generating a nationwide synthetic population of 332,387,543 individuals. Evaluation against Iterative Proportional Fitting (IPF) and a one-shot diffusion baseline demonstrated superior reconstruction of joint distributions while preserving realistic residential and workplace spatial patterns.",
+      "why": "It provides a scalable method to generate highly detailed, geographically explicit synthetic populations from aggregated data, allowing agent-based models and micro-simulations to incorporate more realistic human behaviors and interactions at both regional and national scales."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-13",
+  "work_key": "arxiv:2608.12768"
+}

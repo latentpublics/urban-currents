@@ -1,0 +1,361 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Station-based bike-sharing systems routinely experience spatiotemporal imbalances that lead to empty and full stations, thereby reducing travel opportunities. Although the literature offers many optimization-based rebalancing models, including dynamic formulations that re-optimize over a rolling horizon, live operations still often depend on field staff’s heuristics because rigid centrally prescribed routes are difficult to maintain under traffic uncertainty and rapidly changing station conditions. A further obstacle is that such methods must be operated continuously: the computational budget, real-time data pipelines, and tight central–field coordination they presuppose are difficult to sustain for many smaller or regional operators, for whom rebalancing must instead be absorbed into routine field work at minimal marginal cost. This study proposes a hybrid centralized–distributed rebalancing framework for HELLO CYCLING, a nationwide shared-mobility platform in Japan, and examines its deployment in the electric bike-sharing network of Chiba City. The proposed procedure computes time-of-day target inventory levels from historical demand and logged empty/full episodes, then prepares a station-level decision table that lists target inventory ranges and associated priorities. Field staff compare these targets with current station inventories and use the table as decision support when choosing which relocations to execute. The scheme adopts relatively simple rule-based calculations rather than large-scale optimization, keeping computational costs minimal and allowing straightforward integration into daily field operations. The framework is examined through a live two-week deployment and compared with a pre-intervention operational baseline and a randomized relocation baseline. The empirical analysis shows spatial and temporal heterogeneity in demand and indicates that many stations face exposure to both empty and full states, motivating intraday repositioning. During the deployment period, the proposed workflow shows higher avoided demand losses per relocated bicycle than both the randomized baseline and routine operations. The results suggest that the proposed support scheme can identify stations requiring near-term intervention and can also reveal stations that were more likely to be overlooked under knowledge- and experience-based operations. Although the present deployment relied on contractor-based execution, the same logic may also provide a basis for more distributed user-side rebalancing schemes in the future.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Tokyo Institute of Technology",
+            "ror": "0112mx960"
+          }
+        ],
+        "name": "Takahiro Ezaki",
+        "openalex": "A5147161308",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Toshiba (Japan)",
+            "ror": "0326v3z14"
+          }
+        ],
+        "name": "Shin Kenjo",
+        "openalex": "A5147172174",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Toshiba (Japan)",
+            "ror": "0326v3z14"
+          }
+        ],
+        "name": "Akira Tazawa",
+        "openalex": "A5147224326",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Toshiba (Japan)",
+            "ror": "0326v3z14"
+          }
+        ],
+        "name": "Keiji Yamada",
+        "openalex": "A5147214693",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Mitsui & Co (Japan)",
+            "ror": "05tm9j755"
+          }
+        ],
+        "name": "Kazuhiro Fujitsuka",
+        "openalex": "A5098672189",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tokyo Institute of Technology",
+            "ror": "0112mx960"
+          }
+        ],
+        "name": "Naoto Imura",
+        "openalex": "A5017109854",
+        "orcid": "https://orcid.org/0000-0002-1428-7407"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Vaughn College of Aeronautics and Technology",
+            "ror": "056e22e24"
+          },
+          {
+            "name": "The University of Tokyo",
+            "ror": "057zh3y96"
+          }
+        ],
+        "name": "Katsuhiro Nishinari",
+        "openalex": "A5086650139",
+        "orcid": "https://orcid.org/0000-0003-3069-1757"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.tra.2026.105190",
+      "pdf_url": null,
+      "source_id": "S159637997",
+      "source_name": "Transportation Research Part A Policy and Practice",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-14",
+    "repository_urls": [],
+    "title": "Data-driven rebalancing support for station-based bike sharing: A hybrid centralized-distributed deployment in Chiba city"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-14_10.1016/j.tra.20",
+    "members": [
+      "doi:10.1016/j.tra.2026.105190"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0112mx960",
+        "label": "Tokyo Institute of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0326v3z14",
+        "label": "Toshiba (Japan)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05tm9j755",
+        "label": "Mitsui & Co (Japan)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:056e22e24",
+        "label": "Vaughn College of Aeronautics and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:057zh3y96",
+        "label": "The University of Tokyo"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5147161308",
+        "label": "Takahiro Ezaki"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147172174",
+        "label": "Shin Kenjo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147224326",
+        "label": "Akira Tazawa"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147214693",
+        "label": "Keiji Yamada"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5098672189",
+        "label": "Kazuhiro Fujitsuka"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1428-7407",
+        "label": "Naoto Imura"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3069-1757",
+        "label": "Katsuhiro Nishinari"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.9756,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.0103,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10768",
+        "is_primary": false,
+        "label": "Electric Vehicles and Infrastructure",
+        "score": 0.0017,
+        "subfield": "2208"
+      }
+    ]
+  },
+  "first_published": "2026-08-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W109636739",
+      "openalex:W1970180010",
+      "openalex:W1979411729",
+      "openalex:W1980881078",
+      "openalex:W2029422051",
+      "openalex:W2031736545",
+      "openalex:W2032251915",
+      "openalex:W2040282510",
+      "openalex:W2051496781",
+      "openalex:W2052997156",
+      "openalex:W2054274567",
+      "openalex:W2062672519",
+      "openalex:W2067646912",
+      "openalex:W2074069971",
+      "openalex:W2085203873",
+      "openalex:W2089031378",
+      "openalex:W2095204134",
+      "openalex:W2111237817",
+      "openalex:W2121204839",
+      "openalex:W2124708011",
+      "openalex:W2135616346",
+      "openalex:W2160031103",
+      "openalex:W2176511201",
+      "openalex:W2294139373",
+      "openalex:W2579114861",
+      "openalex:W2605114698",
+      "openalex:W2783226629",
+      "openalex:W2793018423",
+      "openalex:W2889326414",
+      "openalex:W2957361684",
+      "openalex:W2963578052",
+      "openalex:W2968001529",
+      "openalex:W2980806123",
+      "openalex:W2995595602",
+      "openalex:W3021861102",
+      "openalex:W3081895275",
+      "openalex:W3129065798",
+      "openalex:W3188562392",
+      "openalex:W4382203353",
+      "openalex:W4385687651",
+      "openalex:W4388732294",
+      "openalex:W4392018366",
+      "openalex:W4400986259",
+      "openalex:W4413275425",
+      "openalex:W4414569029"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.tra.2026.105190",
+    "openalex": "W7203493020",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-21T15:17:51Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006644,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2377,
+      "out": 342
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-21T15:17:51Z",
+    "doi": "10.1016/j.tra.2026.105190",
+    "journal": "Transportation Research Part A Policy and Practice",
+    "source_id": "S159637997",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The evaluation was limited to a single two-week live deployment in one city, and the execution relied on contractor-based field staff rather than crowdsourced user-side rebalancing.",
+      "what": "This study developed and tested a hybrid centralized-distributed rebalancing framework for the HELLO CYCLING electric bike-sharing network in Chiba City, Japan. Instead of complex optimization models, the system uses historical demand and historical empty or full events to generate a station-level decision table of target inventory ranges and priorities for field staff. The framework was evaluated during a live two-week deployment and compared against both a pre-intervention baseline and a randomized relocation baseline.",
+      "why": "It demonstrates that a low-cost, rule-based decision support tool can outperform both routine heuristic operations and randomized relocations in avoiding demand losses. This provides smaller or regional bike-share operators with a computationally light, easily integrated alternative to rigid, centrally optimized routing systems that are difficult to maintain during real-time traffic disruptions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-14",
+  "work_key": "doi:10.1016/j.tra.2026.105190"
+}

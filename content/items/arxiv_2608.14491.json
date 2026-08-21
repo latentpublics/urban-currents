@@ -163,9 +163,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The surrogate model's performance and scalability were demonstrated only on a single case study in the Newark area.",
-      "what": "This study develops data-driven surrogate models to approximate equilibrium arc flows directly from origin-destination demand, bypassing the computationally expensive repeated solutions of traditional traffic assignment models during road capacity reductions. The surrogate models use optimization-based equilibrium solutions as ground truth and were validated using a real-world case study of traffic data from the Newark, New Jersey area.",
-      "why": "It provides a computationally scalable alternative for evaluating traffic flows under capacity constraints, making it feasible to embed equilibrium traffic assignment directly into network-level road maintenance scheduling frameworks."
+      "caveats": "The surrogate models were validated on a single case study in the Newark area, and their performance across different network topologies or severe capacity disruptions remains to be demonstrated.",
+      "what": "This paper develops and tests data-driven surrogate models that approximate equilibrium traffic arc flows directly from origin-destination demand, bypassing the need for computationally expensive iterative equilibrium traffic assignment models during road capacity reductions. The surrogate models are trained on optimization-based equilibrium solutions and evaluated using a real-world case study of the road network in Newark, New Jersey.",
+      "why": "It provides a computationally scalable method to repeatedly estimate traffic redistribution during roadworks, enabling the integration of complex traffic equilibrium constraints directly into network-level maintenance scheduling frameworks."
     }
   },
   "track": "papers",

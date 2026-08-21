@@ -1,0 +1,161 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Socioeconomic indicators in England exhibit complex spatial patterns that are not well captured by standard approaches based on averages or broad geographic classifications. We propose a method for comparing areas based on their internal spatial structure, using a multiresolution representation derived from the discrete wavelet transform. The method embeds areal data into a regular grid, extracts local windows, and represents each as a set of scale- and direction-specific detail coefficients. A dissimilarity measure, defined over these coefficients and minimised over rotations and reflections, is used to identify contiguous sets of statistical units with similar spatial structure. We apply the approach to England's 2025 Index of Multiple Deprivation at the lower layer super output area level. We show that areas with similar internal structure are often found across regions, levels of urbanisation, and average deprivation, challenging the use of these categories as proxies for local geography. The results provide a framework for identifying comparable places based on how deprivation is distributed within them, with implications for policy evaluation and transferability.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Duncan Cook",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "John AD Aston",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "9 figures, 19 pages. Submitted to the Journal of the Royal Statistical Society: Series A",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.13196v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.13196v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-13",
+    "repository_urls": [],
+    "title": "Spatial similarity in socioeconomic data: a wavelet approach for England"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-13_2608.13196",
+    "members": [
+      "arxiv:2608.13196"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.13196",
+    "doi": "10.48550/arxiv.2608.13196",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-21T15:08:16Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.0,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1913,
+      "out": 237
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9185,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3674,
+    "relevance": 0.9185
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study introduces a method to compare geographic areas based on their internal spatial patterns by embedding areal data into a regular grid and applying a discrete wavelet transform to extract scale- and direction-specific coefficients. This approach was applied to England's 2025 Index of Multiple Deprivation at the Lower Layer Super Output Area (LSOA) level to group contiguous units with similar spatial structures.",
+      "why": "It demonstrates that areas sharing highly similar internal spatial structures are distributed across different regions, levels of urbanization, and average deprivation levels, showing that standard geographic classifications are poor proxies for local spatial patterns."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-13",
+  "work_key": "arxiv:2608.13196"
+}

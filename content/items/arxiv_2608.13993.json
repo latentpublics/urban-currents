@@ -162,9 +162,9 @@
   },
   "summary": {
     "en": {
-      "caveats": "The method's validation relies on simulated and calibrated models of only two Belgian cities, rather than direct deployment on real-world physical sensor networks.",
-      "what": "The researchers developed a simulation-based data augmentation method that replaces physical traffic sensors with virtual ones at surrogate road network locations. Tested in Brussels and Namur, Belgium, using calibrated and synthetic models, the method uses a graph-search heuristic to select surrogate locations that maintain vehicle-flow continuity and traffic-metric similarity while enforcing spatial displacement. The resulting augmented datasets successfully preserved bimodal daily demand profiles and local traffic dynamics.",
-      "why": "It provides a way to expand traffic sensor coverage and train machine learning models without the high deployment costs and privacy constraints of physical hardware, while ensuring models do not need to be retrained when physical infrastructure changes."
+      "caveats": "The method's validation relies on simulated and synthetic models of two Belgian cities rather than real-world deployment data.",
+      "what": "The researchers developed a simulation-based data augmentation method that replaces physical traffic sensors with virtual sensors at surrogate locations in a road network. A graph-search heuristic selects these surrogate locations by maximizing vehicle-flow continuity and traffic-metric similarity while maintaining a minimum spatial distance. The methodology was validated using a calibrated model of Brussels and synthetic models of Namur, Belgium, successfully preserving bimodal daily demand profiles and local traffic dynamics.",
+      "why": "This approach allows traffic management systems to expand their spatial coverage and train machine learning models without the financial and privacy constraints of deploying new physical hardware."
     }
   },
   "track": "papers",

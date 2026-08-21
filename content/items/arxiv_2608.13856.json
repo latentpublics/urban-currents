@@ -1,0 +1,170 @@
+{
+  "badges": [
+    "code",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Timely urban-canopy information is essential for linking remote sensing with heat, mobility, and neighborhood planning. We developed an optical GeoAI workflow for Davis, California, using 2022 National Agriculture Imagery Program imagery (0.6 m RGB+NIR). DeepForest generated crown candidates; an NDVI threshold, non-maximum suppression, and box-prompted Segment Anything Model (ViT-B) produced a crown-anchored canopy surface. Analyses used the 25.92 km2 Census TIGER municipal boundary and a 100 m grid. The workflow retained 11,741 candidate crowns and mapped 2.43 km2 of canopy (9.37% of the city). On the identical extent, 87.8% of mapped canopy pixels and 97.4% of candidate centers agreed with the 2022 USDA/CAL FIRE LiDAR-assisted canopy product; the optical surface represented 34.2% of the reference canopy area (IoU 0.288; Dice 0.448). Approximately 49% of candidates occurred within 15 m of a road. Canopy was inversely associated with Landsat land-surface temperature (Spearman rho = -0.293; partial rho = -0.370 controlling for built probability), and spatial-lag modeling confirmed clear neighborhood structure. Two transparent attention surfaces combined canopy need with thermal and contextual indicators. The framework provides a reproducible, updateable screening layer that complements structural canopy products and municipal inventories while retaining assumptions, data provenance, and spatial diagnostics for planning interpretation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Mohammadreza Narimani",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shreyan Mitra",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Parastoo Farajpoor",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "eess.IV",
+      "cs.CV",
+      "stat.AP"
+    ],
+    "comment": "17 pages, 10 figures + 5 supplementary figures, 7 tables. Preprint submitted to Taylor & Francis. Code: https://github.com/MohammadrezaNarimaniUCDavis/Davis_Urban_Canopy_GeoAI Data: https://doi.org/10.5281/zenodo.21925527",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.13856v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.13856v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-14",
+    "repository_urls": [],
+    "title": "From crown candidates to neighborhood screening: integrating optical GeoAI and spatial modeling for urban-canopy assessment in Davis, California"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-14_2608.13856",
+    "members": [
+      "arxiv:2608.13856"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.13856",
+    "doi": "10.48550/arxiv.2608.13856",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-21T15:17:49Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006692,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2205,
+      "out": 376
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.8383,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4153,
+    "relevance": 0.8383
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "from the arXiv comment",
+      "url": "https://github.com/MohammadrezaNarimaniUCDavis/Davis_Urban_Canopy_GeoAI",
+      "value": true
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The optical workflow significantly underestimated the total canopy area, capturing only about one-third of the canopy area identified by the reference LiDAR product.",
+      "what": "The study developed an optical GeoAI workflow using 0.6-meter resolution 2022 National Agriculture Imagery Program imagery to map the urban canopy in Davis, California. By combining DeepForest, NDVI thresholding, and the Segment Anything Model, the workflow identified 11,741 candidate tree crowns and mapped 2.43 square kilometers of canopy, which represents 9.37% of the city. When validated against a 2022 LiDAR-assisted reference product, the optical method achieved 87.8% pixel agreement and 97.4% center agreement, capturing 34.2% of the reference canopy area.",
+      "why": "It demonstrates a reproducible, updateable screening framework that can estimate urban canopy and its cooling effects using widely available optical imagery, reducing the reliance on expensive and less frequent LiDAR flights for municipal planning."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-14",
+  "work_key": "arxiv:2608.13856"
+}

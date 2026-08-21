@@ -1,19 +1,16 @@
 {
-  "attempts": 1,
-  "candidates": 130,
+  "attempts": 2,
+  "candidates": 313,
   "date": "2026-08-20",
-  "failed_stages": [
-    "collect.openalex"
-  ],
-  "headline_present": null,
-  "published": 0,
-  "reasons": [
-    "collect.openalex finished FAILED",
-    "stages failed: collect.openalex"
-  ],
-  "recorded_at": "2026-08-20T21:38:47+00:00",
+  "failed_stages": [],
+  "headline_present": false,
+  "published": 2,
+  "reasons": [],
+  "recorded_at": "2026-08-21T21:42:52+00:00",
   "silent_sources": [],
-  "skipped_stages": [],
-  "spend_usd": 0.026273,
-  "status": "not_published"
+  "skipped_stages": [
+    "enrich.springer"
+  ],
+  "spend_usd": 0.012737,
+  "status": "published"
 }

@@ -1,0 +1,392 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Surface Urban Heat Island (SUHI) is a major environmental concern especially in rapidly expanding cities with substantial impacts on urban climate, human health, and energy demand. Despite extensive documentation of the phenomenon, our understanding of the driving forces behind SUHI remains limited. Therefore, the present study is intended to analysed the drivers of SUHI and their spatial pattern of influence in Mumbai metropolitan region (MMR) using google earth engine (GEE) and machine learning (ML) models. The SUHI intensity has been calculated using ML models like random forest (RF), gradient boosting, XGBoost, and LightGBM. The divers of SUHI have been analysed using explainable artificial intelligence (XAI) and for the spatial pattern of influence of the drivers, a novel spatial XAI model has been estimated. Multi-stage feature selection involving correlation screening and variance inflation factor (VIF) analysis ensured numerical stability and interpretability. Model performance has been evaluated using multiple metrics, including R 2, RMSE, MAE, explained variance, bias, and maximum error. Result shows that LightGBM has the best overall performance, achieving a test R 2 of 0.86 and the lowest RMSE (1.49 °C), followed by XGBoost (test R 2 = 0.86; RMSE = 1.52 °C). Spatial cross-validation produced conservative yet robust estimates (CV R 2 = 0.77–0.78), confirming strong spatial generalisation. Bootstrap-based uncertainty analysis further shows narrow confidence intervals for both R 2 and RMSE, indicating high model stability and low sensitivity to sampling variability. Graphical and spatial XAI analyses identified built-up intensity (NDBI), bare land index, night-time light intensity, and population density as dominant positive drivers of SUHII. SUHI intensity in low category has decreased from 13.69 percent in 2002 to 6.31 percent in 2024 while SUHI intensity in very high zone has increased significantly. Spatial prediction shows pronounced SUHII hotspots in densely urbanised and industrial zones, whereas coastal areas, vegetated regions, and water bodies consistently exhibited lower SUHII. The spatial heterogeneity captured by XAI highlights the necessity of location-specific mitigation strategies rather than uniform city-wide interventions. These findings provide critical evidence to enhance urban thermal comfort and resilience for achieving sustainable development goals (SDGs) such as SDG-11.3 (sustainable urban growth), SDG-11.5 (resilience to urban hazards), SDG-11.6 (reducing environmental impacts), and SDG-11.7 (inclusive access to green spaces).",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Banaras Hindu University",
+            "ror": "04cdn2797"
+          }
+        ],
+        "name": "Shahfahad",
+        "openalex": "A5138281293",
+        "orcid": "https://orcid.org/0000-0001-5868-1062"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Calcutta",
+            "ror": "01e7v7w47"
+          }
+        ],
+        "name": "Swapan Talukdar",
+        "openalex": "A5064098467",
+        "orcid": "https://orcid.org/0000-0001-6680-9791"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Jamia Millia Islamia",
+            "ror": "00pnhhv55"
+          }
+        ],
+        "name": "Mohd Waseem Naikoo",
+        "openalex": "A5048921865",
+        "orcid": "https://orcid.org/0000-0001-5779-9325"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Banaras Hindu University",
+            "ror": "04cdn2797"
+          }
+        ],
+        "name": "Harsh Raj",
+        "openalex": "A5147403021",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Calcutta",
+            "ror": "01e7v7w47"
+          }
+        ],
+        "name": "Sayanti Poddar",
+        "openalex": "A5147428228",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Jamia Millia Islamia",
+            "ror": "00pnhhv55"
+          }
+        ],
+        "name": "Md Rejaul Islam",
+        "openalex": "A5106746267",
+        "orcid": "https://orcid.org/0000-0002-1931-649X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Jamia Millia Islamia",
+            "ror": "00pnhhv55"
+          }
+        ],
+        "name": "Mohd Rihan",
+        "openalex": "A5019013529",
+        "orcid": "https://orcid.org/0000-0002-2533-8433"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Jamia Millia Islamia",
+            "ror": "00pnhhv55"
+          }
+        ],
+        "name": "Atiqur Rahman",
+        "openalex": "A5086301726",
+        "orcid": "https://orcid.org/0000-0002-9001-5059"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s43762-026-00291-4",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s43762-026-00291-4.pdf",
+      "source_id": "S4210175573",
+      "source_name": "Computational Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-19",
+    "repository_urls": [],
+    "title": "Predicting surface urban heat island intensity and its drivers using machine learning and spatial XAI for achieving SDG-11"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-20_10.1007/s43762-0",
+    "members": [
+      "doi:10.1007/s43762-026-00291-4"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:gradient-boosting",
+        "label": "gradient boosting"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04cdn2797",
+        "label": "Banaras Hindu University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01e7v7w47",
+        "label": "University of Calcutta"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00pnhhv55",
+        "label": "Jamia Millia Islamia"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5868-1062",
+        "label": "Shahfahad"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6680-9791",
+        "label": "Swapan Talukdar"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5779-9325",
+        "label": "Mohd Waseem Naikoo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147403021",
+        "label": "Harsh Raj"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147428228",
+        "label": "Sayanti Poddar"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1931-649X",
+        "label": "Md Rejaul Islam"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2533-8433",
+        "label": "Mohd Rihan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9001-5059",
+        "label": "Atiqur Rahman"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:giswqs/geemap",
+        "label": "geemap"
+      }
+    ],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.9375,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10930",
+        "is_primary": false,
+        "label": "Flood Risk Assessment and Management",
+        "score": 0.0059,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13890",
+        "is_primary": false,
+        "label": "Remote Sensing and Land Use",
+        "score": 0.0045,
+        "subfield": "1902"
+      }
+    ]
+  },
+  "first_published": "2026-08-19",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2003361059",
+      "openalex:W2038125488",
+      "openalex:W2061048346",
+      "openalex:W2162063693",
+      "openalex:W2605399805",
+      "openalex:W2746901177",
+      "openalex:W2750595772",
+      "openalex:W2751018383",
+      "openalex:W2751455304",
+      "openalex:W2891828069",
+      "openalex:W2895792649",
+      "openalex:W2946215271",
+      "openalex:W2972986068",
+      "openalex:W2989019186",
+      "openalex:W3023058341",
+      "openalex:W3040358556",
+      "openalex:W3045495141",
+      "openalex:W3164212919",
+      "openalex:W3174416060",
+      "openalex:W3183906350",
+      "openalex:W3186137031",
+      "openalex:W3189919994",
+      "openalex:W3201512168",
+      "openalex:W4210994343",
+      "openalex:W4214527188",
+      "openalex:W4225620699",
+      "openalex:W4245972137",
+      "openalex:W4307187134",
+      "openalex:W4317569365",
+      "openalex:W4319315870",
+      "openalex:W4320919240",
+      "openalex:W4366262984",
+      "openalex:W4375851212",
+      "openalex:W4376877259",
+      "openalex:W4379791081",
+      "openalex:W4379930740",
+      "openalex:W4380365756",
+      "openalex:W4386168787",
+      "openalex:W4388383263",
+      "openalex:W4388772553",
+      "openalex:W4390222850",
+      "openalex:W4390457269",
+      "openalex:W4391250688",
+      "openalex:W4391617520",
+      "openalex:W4391788124",
+      "openalex:W4392450042",
+      "openalex:W4394723514",
+      "openalex:W4396767241",
+      "openalex:W4396929193",
+      "openalex:W4399069471",
+      "openalex:W4399365170",
+      "openalex:W4399726432",
+      "openalex:W4400391992",
+      "openalex:W4402397718",
+      "openalex:W4404815042",
+      "openalex:W4407357193",
+      "openalex:W4415289956"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s43762-026-00291-4",
+    "openalex": "W7203727800",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-21T21:32:01Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.007814,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2629,
+      "out": 430
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-21T21:32:01Z",
+    "doi": "10.1007/s43762-026-00291-4",
+    "journal": "Computational Urban Science",
+    "source_id": "S4210175573",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The predictive models and spatial XAI relationships were developed and tested solely within a single metropolitan region, which may limit direct transferability to cities with different climatic or morphological characteristics.",
+      "what": "The study modeled Surface Urban Heat Island (SUHI) intensity in the Mumbai Metropolitan Region from 2002 to 2024 using Google Earth Engine and four machine learning algorithms. LightGBM performed best with a test R² of 0.86 and an RMSE of 1.49 °C, while spatial cross-validation yielded a robust R² of 0.77 to 0.78. Explainable AI (XAI) and a novel spatial XAI model identified built-up intensity, bare land, night-time lights, and population density as the primary positive drivers of heat intensity, which shifted from 13.69% low-intensity coverage in 2002 to 6.31% in 2024.",
+      "why": "It introduces a spatial explainable AI approach that maps exactly where and how different urban features drive heat accumulation across a metropolitan area. This shifts urban heat mitigation from uniform, city-wide policies to targeted, location-specific interventions based on localized driver patterns."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-19",
+  "work_key": "doi:10.1007/s43762-026-00291-4"
+}

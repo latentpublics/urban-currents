@@ -64,11 +64,62 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5124053265",
+        "label": "Hossein Z. Saghazadeh"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5120607492",
+        "label": "Yonas Ayalew"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147410885",
+        "label": "Reza Ahmari"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5143399449",
+        "label": "Parham Kebria"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1179-3221",
+        "label": "Abdollah Homaifar"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11489",
+        "is_primary": true,
+        "label": "Air Traffic Management and Optimization",
+        "score": 0.6927,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.1467,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11599",
+        "is_primary": false,
+        "label": "Aviation Industry Analysis and Trends",
+        "score": 0.0389,
+        "subfield": "2000"
+      }
+    ]
   },
   "first_published": "2026-08-15",
   "graph": {
@@ -79,7 +130,7 @@
   "ids": {
     "arxiv": "2608.14974",
     "doi": "10.48550/arxiv.2608.14974",
-    "openalex": null,
+    "openalex": "W7203699691",
     "pmid": null
   },
   "provenance": {
@@ -87,7 +138,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-18T07:20:14Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005806,
     "llm": {
@@ -175,6 +227,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-15",
+  "updated": "2026-08-21",
   "work_key": "arxiv:2608.14974"
 }

@@ -264,11 +264,11 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "The researchers developed SDLane, a lane detection model that reduces the required number of line anchors to a quantity matching the actual lane instances. Tested on four datasets, including a newly created heavy rain dataset called RainyLane, the model achieves an F1-score of 79.76% at a processing speed of 486 frames per second on the CULane test set using only five anchors.",
-      "why": "It eliminates the need for computationally heavy feature extraction and fusion mechanisms like Feature Pyramid Networks or attention modules, enabling high-speed lane detection on resource-constrained hardware even in extreme weather conditions."
+      "what": "The researchers developed SDLane, a lane detection model that reduces the required number of line anchors to a count matching the actual lane instances. Tested on four datasets, including a newly created heavy rain dataset named RainyLane, the model achieves an F1-score of 79.76% at a processing speed of 486 frames per second on the CULane test set using only five anchors.",
+      "why": "It eliminates the need for computationally heavy feature extraction and fusion components like Feature Pyramid Networks or attention mechanisms, enabling high-speed, accurate lane detection on resource-constrained hardware during extreme weather and night conditions."
     }
   },
   "track": "papers",
-  "updated": "2026-08-13",
+  "updated": "2026-08-20",
   "work_key": "doi:10.1177/03611981261468759"
 }

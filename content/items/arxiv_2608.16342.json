@@ -1,0 +1,174 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Germany's climate target requires carbon capture and sequestration for residual emissions from hard-to-abate sectors such as cement production and waste incineration. Planning this infrastructure is challenging because capture investments and CO2 transport networks are strongly interdependent. Existing energy system models capture system-wide interactions but provide limited insight into robust transport topologies, while detailed infrastructure studies usually neglect feedbacks with the wider energy system. This study combines graph-theoretic topology generation with a large-scale sector-coupled energy system model to evaluate alternative CO2 transport networks for Germany in 2035. We generate and evaluate 60 candidate topologies that differ in network length, sink accessibility and source prioritization. The deployment of a domestic CO2 transport network reduces German consumer costs by around 22 bnEUR/a relative to a scenario without CO2 pipelines. The resulting network is primarily used by industrial point sources, including process emissions, cement production and biomass-based carbon dioxide removal, while contributions from backup power generation remain comparatively small. Transport corridors are repeatedly selected and utilized in north-western Germany, reflecting the concentration of industrial CO2 sources and access to international sequestration routes. Early access to Dutch sink infrastructure provides particularly high system value. Compared to 1500 km, as little as 500 km of CO2 pipeline infrastructure captures most of the economic benefit when North Rhine-Westphalia is connected to the Netherlands, while also limiting long-term transport infrastructure lock-in. These findings suggest that the availability of CO2 transport infrastructure is more important than the exact topology once major industrial source regions and sink access points are connected.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Toni Seibold",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Luna Lütz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Tom Brown",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.16342v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.16342v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-17",
+    "repository_urls": [],
+    "title": "Exploring Initial CO2 Transport Topologies for Germany's Carbon Management"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-19_2608.16342",
+    "members": [
+      "arxiv:2608.16342"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q55",
+        "label": "Netherlands",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.16342",
+    "doi": "10.48550/arxiv.2608.16342",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-21T21:40:00Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006293,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2155,
+      "out": 340
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9283,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3713,
+    "relevance": 0.9283
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a sector-coupled energy system model projecting to the year 2035, meaning the cost-benefit calculations depend heavily on the model's underlying assumptions about future industrial emissions and international sink availability.",
+      "what": "This study combines graph-theoretic topology generation with a sector-coupled energy system model to evaluate 60 candidate CO2 transport networks for Germany in 2035. The analysis shows that establishing a domestic CO2 pipeline network reduces annual consumer costs by approximately 22 billion Euros compared to a no-pipeline scenario. The model reveals that a short 500 km pipeline connecting the industrial North Rhine-Westphalia region to Dutch sinks captures the majority of the economic benefits compared to a longer 1500 km network.",
+      "why": "It demonstrates that the economic value of carbon transport infrastructure is concentrated in connecting major industrial source regions to international sinks, meaning planners can achieve most of the cost savings with a minimal 500 km footprint that avoids long-term infrastructure lock-in."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-17",
+  "work_key": "arxiv:2608.16342"
+}

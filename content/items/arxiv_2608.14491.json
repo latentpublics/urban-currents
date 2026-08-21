@@ -58,11 +58,57 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5147368075",
+        "label": "Charitha Nandepu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147315859",
+        "label": "Lohitha Kalepu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147351955",
+        "label": "Gabriele Ciavarella"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147362872",
+        "label": "SangWoo Park"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": true,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.3458,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11606",
+        "is_primary": false,
+        "label": "Infrastructure Maintenance and Monitoring",
+        "score": 0.204,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.1,
+        "subfield": "2207"
+      }
+    ]
   },
   "first_published": "2026-08-14",
   "graph": {
@@ -73,7 +119,7 @@
   "ids": {
     "arxiv": "2608.14491",
     "doi": "10.48550/arxiv.2608.14491",
-    "openalex": null,
+    "openalex": "W7203602992",
     "pmid": null
   },
   "provenance": {
@@ -81,7 +127,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-18T07:20:14Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.002989,
     "llm": {
@@ -163,12 +210,12 @@
   },
   "summary": {
     "en": {
-      "caveats": "The surrogate models were validated on a single case study in the Newark area, and their performance across different network topologies or severe capacity disruptions remains to be demonstrated.",
-      "what": "This paper develops and tests data-driven surrogate models that approximate equilibrium traffic arc flows directly from origin-destination demand, bypassing the need for computationally expensive iterative equilibrium traffic assignment models during road capacity reductions. The surrogate models are trained on optimization-based equilibrium solutions and evaluated using a real-world case study of the road network in Newark, New Jersey.",
-      "why": "It provides a computationally scalable method to repeatedly estimate traffic redistribution during roadworks, enabling the integration of complex traffic equilibrium constraints directly into network-level maintenance scheduling frameworks."
+      "caveats": "The surrogate model's performance and scalability were demonstrated only on a single case study in the Newark area.",
+      "what": "This study develops data-driven surrogate models to approximate equilibrium arc flows directly from origin-destination demand, bypassing the computationally expensive repeated solutions of traditional traffic assignment models during road capacity reductions. The surrogate models use optimization-based equilibrium solutions as ground truth and were validated using a real-world case study of traffic data from the Newark, New Jersey area.",
+      "why": "It provides a computationally scalable alternative for evaluating traffic flows under capacity constraints, making it feasible to embed equilibrium traffic assignment directly into network-level road maintenance scheduling frameworks."
     }
   },
   "track": "papers",
-  "updated": "2026-08-14",
+  "updated": "2026-08-21",
   "work_key": "arxiv:2608.14491"
 }

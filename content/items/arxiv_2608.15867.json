@@ -1,0 +1,174 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Synthetic populations are critical inputs for activity-based travel demand models, yet generating realistic populations from limited survey data remains challenging. Small samples miss valid attribute combinations, known as sampling zeros, and generative models may also produce infeasible structural zeros. Moreover, realistic synthetic populations must capture both static socio-demographic attributes and sequential travel behaviour, such as trip chains. This paper proposes a regularized two-stage generative framework to address these challenges, where regularization refers to additional loss terms that guide the generator toward broader valid coverage and fewer infeasible samples. In Stage 1, a Wasserstein GAN with gradient penalty is augmented with three regularization terms, IGP, LDR, and CLAP, to improve feasibility, diversity, and novelty in tabular population synthesis. In Stage 2, Transformer and LSTM-Attention models generate sequential travel attributes, including departure time, trip purpose, and travel mode, conditioned on the synthesized tabular profiles. We also introduce novelty and count-aware metrics to evaluate whether valid unseen combinations are recovered and generated in realistic proportions. Results show that regularized models outperform the vanilla WGAN-GP across feasibility, diversity, and novelty. Regularization increases feasibility by 2.1 to 3.7 percentage points and novelty by 6.6 to 10.0 percentage points, improving sampling-zero recovery without sacrificing feasibility. The F1 score improves by 6.3 to 8.6 percentage points. For sequential attributes, LSTM-Attention best matches the trip-length distribution, while Transformer achieves higher overall sequential F1, 90.6\\% versus 89.1\\%. Cross-stage validation confirms strong consistency between generated mobility status and generated trip chains.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Farbod Abbasi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zachary Patterson",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Bilal Farooq",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "comment": "11 figures, 6 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.15867v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.15867v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-16",
+    "repository_urls": [],
+    "title": "Feasible and Novel Synthetic Population Generation with Tabular and Sequential Travel Attributes"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-19_2608.15867",
+    "members": [
+      "arxiv:2608.15867"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:transformer",
+        "label": "transformer"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-16",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.15867",
+    "doi": "10.48550/arxiv.2608.15867",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-21T21:40:09Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005944,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2193,
+      "out": 295
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9274,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.371,
+    "relevance": 0.9274
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "A regularized two-stage generative framework was developed to synthesize populations with both static tabular socio-demographics and sequential travel attributes. Stage 1 uses a Wasserstein GAN with gradient penalty augmented by three regularization terms to improve tabular synthesis, while Stage 2 employs Transformer and LSTM-Attention models to generate trip chains conditioned on those profiles. Tested on survey data, the regularized models improved feasibility by 2.1 to 3.7 percentage points, novelty by 6.6 to 10.0 percentage points, and sequential F1 scores up to 90.6% compared to baseline models.",
+      "why": "The framework successfully recovers valid but unobserved attribute combinations (sampling zeros) while preventing the generation of logically impossible combinations (structural zeros), a persistent trade-off in activity-based travel demand modeling."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-16",
+  "work_key": "arxiv:2608.15867"
+}

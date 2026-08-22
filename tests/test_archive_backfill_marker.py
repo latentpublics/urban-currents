@@ -146,8 +146,13 @@ def test_the_backfilled_row_is_drawn_differently(archive):
     assert "uc-row--backfilled" not in live
     assert "filled in later" in filled
     assert "filled in later" not in live
-    # Not colour alone: the row says it in words and explains itself.
-    assert "Assembled later" in filled
+    # Not colour alone: the row still says it in words. What moved in 0Z-C is
+    # the *explanation*, out of the row and into the legend under the list —
+    # the same sentence on every backfilled row was what made half the table
+    # two lines tall. The chip stayed exactly because moving it would leave
+    # the row drawn in colour alone.
+    assert "Assembled later" not in filled, "the sentence is in the legend now"
+    assert "assembled from the archived candidates" in html, "and it is still said"
 
 
 def test_the_rendered_row_states_both_facts(archive):
@@ -157,9 +162,13 @@ def test_the_rendered_row_states_both_facts(archive):
 
     both = _li(html, BOTH)
 
-    assert "Assembled later" in both, "the issue is there and says how it got there"
+    assert "filled in later" in both, "the issue is there and says how it got there"
     assert "published nothing" in both, "the live verdict survives the fill"
     assert "collect.openalex finished FAILED" in both, "including why"
+    # ★ The withheld reason is the one note 0Z-C could not move. A legend says
+    # a thing once for every row that carries the mark, and this reason is one
+    # date's own — no sentence written once under the table can hold it.
+    assert 'class="uc-row__note"' in both
 
 
 def test_a_backfilled_day_is_not_drawn_as_a_failure(archive):

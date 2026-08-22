@@ -573,9 +573,10 @@ body {
 .uc-rows { list-style: none; padding: 0; margin: 0; }
 .uc-row {
   display: flex;
-  /* Wrapping exists for `.uc-row__note`, which is the only item with a
-     100% basis. Every other item has a fixed or shrinkable basis, so a row
-     without a note still lays out on one line exactly as before (0Y). */
+  /* Wrapping exists for two things: `.uc-row__note`, the only item with a
+     100% basis, and the narrow-screen rule at the bottom of this file, which
+     drops the lead onto its own line on purpose. It is **not** meant to fire
+     on a wide screen, and for a long time it did — see `.uc-row__lead`. */
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.75rem;
@@ -584,15 +585,44 @@ body {
   font-size: 0.85rem;
 }
 .uc-row:first-child { border-top: 0; }
-.uc-row__date { flex: 0 0 5.5rem; color: var(--uc-meta); font-variant-numeric: tabular-nums; }
+/* The border is on every row and transparent unless the row is recent (0Z-C).
+   Adding it only to the recent rows made those rows 2px taller than the rest —
+   not a wrapped line, but the row height is supposed to be the one thing that
+   does not depend on state, and 2px is still a dependency. */
+.uc-row__date {
+  flex: 0 0 5.5rem;
+  color: var(--uc-meta);
+  font-variant-numeric: tabular-nums;
+  border-bottom: 2px dotted transparent;
+}
 .uc-row__bar { flex: 0 0 3.5rem; height: 0.45rem; background: var(--uc-hairline); display: inline-block; }
 .uc-row__fill { display: block; height: 100%; background: var(--uc-accent); }
 /* A quiet day's bar is grey AND the row says "a quiet day" in words. Colour
    never carries the meaning on its own. */
 .uc-row--quiet .uc-row__fill { background: var(--uc-state-quiet); }
-.uc-row__count { flex: 0 0 5.5rem; font-variant-numeric: tabular-nums; }
+/* The count and its chips. `min-width` rather than a fixed basis (0Z-C): the
+   number still starts at the same x on every row, which is what the fixed
+   5.5rem was for, but the box may now grow rightward to hold the chips.
+   Fixed at 5.5rem they had nowhere to go but downward, and a row carrying two
+   chips stacked them four lines deep inside an 88px box — measured, on the
+   home strip, before anything about this was believed. */
+.uc-row__count {
+  flex: 0 0 auto;
+  min-width: 5.5rem;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+/* ★ `flex-basis: 0`, not `auto` (0Z-C). This is the row-height bug that the
+   ellipsis hid. A flex line breaks on an item's *hypothetical* size — its
+   flex-basis — not on the size it would shrink to, so with `auto` the basis
+   was the full untruncated title and any long one wrapped the lead onto a
+   line of its own. It then shrank to the full row width and ellipsised there,
+   looking exactly like a truncated one-line lead one line too low. Twelve of
+   fourteen rows were doing this, more than were carrying a note.
+   With a basis of 0 the item never forces a break, and it still ellipsises
+   because `min-width: 0` lets it shrink below its content. */
 .uc-row__lead {
-  flex: 1 1 auto;
+  flex: 1 1 0;
   min-width: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -637,6 +667,12 @@ body {
   .uc-card__meta > p { margin: 0; }
   .uc-row { flex-wrap: wrap; gap: 0.25rem 0.6rem; }
   .uc-row__lead { flex: 1 1 100%; white-space: normal; }
+  /* 7b's stacked row is deliberately more than one line, so the chips may
+     wrap here — and must, or three of them on a 375px screen would push the
+     row wider than the screen. `nowrap` above is a wide-screen rule. */
+  .uc-row__count { flex: 0 1 auto; min-width: 0; white-space: normal; }
+  .uc-legend__list { grid-template-columns: 1fr; gap: 0.1rem 0; }
+  .uc-legend__list dt { margin-top: 0.5rem; }
   .uc-columns { flex-direction: column; gap: 1.25rem; }
   /* 7b: the rail stops being a rail. It drops below the lead and becomes a
      row of figures, so the left border would be a line across the top of
@@ -715,10 +751,45 @@ body {
 /* Our knowledge of this day is still settling (0Z, Z2). */
 .uc-chip--recent { background: transparent; border: 1px dotted var(--uc-meta); color: var(--uc-meta); }
 .uc-spark__legend { color: var(--uc-faint); }
-/* Additive, like the histogram's: the row keeps its own state. */
-.uc-row--recent .uc-row__date { border-bottom: 2px dotted var(--uc-meta); }
-/* Its own line under the row. `flex-basis: 100%` is what forces the wrap, and
-   nothing else in the row sets one, so rows without a note are unchanged. */
+/* Additive, like the histogram's: the row keeps its own state. Colour only —
+   the border itself is on every row, see `.uc-row__date`. */
+.uc-row--recent .uc-row__date { border-bottom-color: var(--uc-meta); }
+/* The legend under the list (0Z-C). Every sentence here used to sit on the
+   rows, once per row that carried the chip — the same words seven times in a
+   fourteen-row table, each one costing that row a second line. A definition
+   belongs to the mark, not to the day, so it is written where the mark is
+   defined and the rows go back to being a table.
+   The chips themselves stay on the rows. Moving *those* down here would leave
+   the row drawn only in colour, which is the one thing this stylesheet has
+   said all along it will not do. */
+.uc-legend {
+  margin: 1.1rem 0 0;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--uc-hairline);
+}
+.uc-legend__label {
+  margin: 0 0 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--uc-meta);
+}
+.uc-legend__list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.3rem 0.75rem;
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+.uc-legend__list dt { justify-self: start; }
+.uc-legend__list dd { margin: 0; color: var(--uc-faint); }
+
+/* Its own line under the row, and now only ever for a withheld day (0Z-C):
+   that reason is one date's own and cannot be said once in the legend.
+   `flex-basis: 100%` is what forces the wrap, and nothing else in the row
+   sets one, so every other row is a single line. */
 .uc-row__note {
   flex: 1 0 100%;
   margin: 0.15rem 0 0 6.25rem;

@@ -8,7 +8,12 @@
 
     The bar is a <span> sized by an inline width percentage. That is the one
     place an inline style is unavoidable: the width is data, not design, and it
-    differs per row. Everything else lives in the stylesheet. -#}
+    differs per row. Everything else lives in the stylesheet.
+
+    ★ Every row is one line tall (0Z-C). The chips stay on the row, because
+    they are what keeps a state from being carried by colour alone; the
+    sentence that explained each chip moved to the legend below the list, where
+    it is written once instead of once per row. -#}
 <ul class="uc-rows">
   {% for row in rows %}
   <li class="uc-row{% if row.quiet %} uc-row--quiet{% endif %}{% if row.missing %} uc-row--missing{% endif %}{% if row.backfilled %} uc-row--backfilled{% endif %}{% if row.recent %} uc-row--recent{% endif %}" data-date="{{ row.date }}">
@@ -37,22 +42,56 @@
         still derived and still reported on the latest issue's stat rail, where
         they describe one day a reader is actually looking at; in a fourteen-row
         table they were a column of ones. -#}
-    {#- The note wraps onto its own line and only exists when there is
-        something to say. A backfilled day says so; a day whose live run
-        withheld it says that too, and a day that is both says both — the
-        record and the issue disagreeing in silence is the thing this
-        prevents (0Y, Y1-2). -#}
-    {%- if row.backfilled or row.withheld or row.recent or row.unranked %}
-    <span class="uc-row__note">
-      {%- if row.backfilled %}Assembled later: nobody was watching on {{ row.date }}, so this issue was built from the archived candidates afterwards.{% endif %}
-      {%- if row.withheld %}{% if row.backfilled %} {% endif %}That morning's live run published nothing — {{ row.withheld }}.{% endif %}
-      {%- if row.unranked %}{% if row.backfilled or row.withheld %} {% endif %}Papers went out; none of them scored high enough to lead the day.{% endif %}
-      {#- The fact, and only the fact. Issues are immutable and nothing
-          revisits them, so this must not read as a promise to revise: what
-          arrives late appears in a **later** issue, not in this one. -#}
-      {%- if row.recent %}{% if row.backfilled or row.withheld or row.unranked %} {% endif %}arXiv indexes about three days late, so papers posted around this date can still appear in a later issue.{% endif %}
-    </span>
+    {#- ★ The one note that survives, and the only one that could (0Z-C).
+        Every other note said the same sentence on every row that carried the
+        same chip, so it belonged to the chip and moved to the legend. This one
+        does not: the reason a live run withheld a day is that day's own, and a
+        legend cannot hold "collect.openalex finished FAILED" for one date in
+        August. Losing it would undo Y1-2 exactly — a backfilled issue would
+        again silently replace the record of the morning it was withheld.
+        Rare by construction: it needs a `not_published` run log *and* an issue
+        for the same date, which no day in the archive has yet. -#}
+    {%- if row.withheld %}
+    <span class="uc-row__note">That morning's live run published nothing — {{ row.withheld }}.</span>
     {%- endif %}
   </li>
   {% endfor %}
 </ul>
+{#- The legend. One sentence per chip, written once under the list instead of
+    repeated on every row that carries the chip — which is what made half the
+    rows two lines tall.
+
+    Only chips that are actually on this page are explained: a definition for a
+    mark the reader cannot see is the same noise in a different place. -#}
+{%- set has_backfilled = rows | selectattr("backfilled") | list | length > 0 %}
+{%- set has_unranked = rows | selectattr("unranked") | list | length > 0 %}
+{%- set has_recent = rows | selectattr("recent") | list | length > 0 %}
+{%- set has_missing = rows | selectattr("missing") | list | length > 0 %}
+{%- set has_quiet = rows | selectattr("quiet") | list | length > 0 %}
+{%- if has_backfilled or has_unranked or has_recent or has_missing or has_quiet %}
+<div class="uc-legend">
+  <p class="uc-legend__label">What the marks mean</p>
+  <dl class="uc-legend__list">
+  {%- if has_quiet %}
+  <dt><span class="uc-chip">a quiet day</span></dt>
+  <dd>The day was reviewed and nothing was worth publishing. It still has a row, because a gap in the list would say nothing happened.</dd>
+  {%- endif %}
+  {%- if has_missing %}
+  <dt><span class="uc-chip uc-chip--missing">no issue</span></dt>
+  <dd>The sources did not answer that day, so there is nothing to link to. What went wrong is printed where a title would be.</dd>
+  {%- endif %}
+  {%- if has_backfilled %}
+  <dt><span class="uc-chip uc-chip--backfilled">filled in later</span></dt>
+  <dd>Nobody was watching that morning, so the issue was assembled from the archived candidates afterwards. It is part of the method, not an apology.</dd>
+  {%- endif %}
+  {%- if has_unranked %}
+  <dt><span class="uc-chip uc-chip--unranked">no headline</span></dt>
+  <dd>Papers went out; none of them scored high enough to lead the day. Not a quiet day — a quiet day published nothing at all.</dd>
+  {%- endif %}
+  {%- if has_recent %}
+  <dt><span class="uc-chip uc-chip--recent">more may follow</span></dt>
+  <dd>arXiv indexes about three days late, so papers posted around those dates can still turn up — in a <em>later</em> issue, never in that one. Issues do not change once published.</dd>
+  {%- endif %}
+  </dl>
+</div>
+{%- endif %}

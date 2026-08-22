@@ -15,11 +15,18 @@ and only the first was the one the eye lands on:
      nowhere to go but downward, and two chips stacked four lines deep.
 
 All three were measured in a browser before any of it was believed; only the
-first was in the brief. This file cannot measure pixels, so it fixes the three
-structural facts that produce the single line, each next to the failure it
-prevents.
+first was in the brief. The structural half of this file fixes the three facts
+that produce the single line, each next to the failure it prevents.
 
-No network, no keys.
+★ And then a second accident (0Z-D) showed why that is not enough on its own:
+an issue page lost its whole navigation while every string-level test passed,
+because the markup was present and merely in the wrong place. A test that reads
+CSS cannot see a screen. So the last test here **opens the built page in
+headless chromium and measures the rendered rows**, which is the only assertion
+in this file that would have failed for the original bug.
+
+No network, no keys. The browser test skips if chromium is not installed —
+`uv run python -m playwright install chromium` puts it there.
 """
 
 from __future__ import annotations
@@ -226,3 +233,79 @@ def test_the_narrow_screen_rule_survives():
     assert re.search(r"\.uc-row__count \{[^}]*white-space: normal", narrow), (
         "nowrap is a wide-screen rule and must be undone for the stacked layout"
     )
+
+
+# --------------------------------------------------------------------------
+# 3. And the only assertion here that looks at a screen
+# --------------------------------------------------------------------------
+
+
+def _browser():
+    """Headless chromium, or a skip that says which of the two is missing."""
+    sync_playwright = pytest.importorskip(
+        "playwright.sync_api", reason="playwright is not installed"
+    ).sync_playwright
+    pw = sync_playwright().start()
+    try:
+        return pw, pw.chromium.launch()
+    except Exception as exc:  # the package is there, the browser binary is not
+        pw.stop()
+        pytest.skip(f"chromium is not installed: {exc}")
+
+
+def test_the_rendered_rows_are_all_the_same_height(every_state):
+    """The measurement, not the stylesheet.
+
+    Every row on the wide layout must render to one height whatever state it
+    carries — chips or none, a 131-character headline or a 62-character one.
+    The first row is allowed to be exactly 1px shorter, and only that: it has
+    `border-top: 0`, which is its **position** in the list and not its state.
+    """
+    pw, browser = _browser()
+    try:
+        page = browser.new_page(viewport={"width": 1280, "height": 1400})
+        page.goto((paths.ROOT / "site" / "archive.html").as_uri())
+        rows = page.evaluate(
+            """() => [...document.querySelectorAll('.uc-row')].map(li => {
+                 const lead = li.querySelector('.uc-row__lead');
+                 return {
+                   date: li.dataset.date,
+                   height: +li.getBoundingClientRect().height.toFixed(2),
+                   borderTop: getComputedStyle(li).borderTopWidth,
+                   chips: li.querySelectorAll('.uc-chip').length,
+                   headline: lead ? lead.textContent.trim().length : 0,
+                   cut: lead ? lead.scrollWidth > lead.clientWidth : false,
+                 };
+               })"""
+        )
+        overflow = page.evaluate(
+            "document.documentElement.scrollWidth - document.documentElement.clientWidth"
+        )
+    finally:
+        browser.close()
+        pw.stop()
+
+    assert len(rows) == 5, "one row per kind"
+
+    # Take the border off each row's box and one height is left. The first row
+    # has none (`border-top: 0`), the rest have 1px; subtracting it is what
+    # makes the comparison about state instead of position.
+    def body_height(row):
+        return round(row["height"] - float(row["borderTop"].rstrip("px")), 2)
+
+    heights = {body_height(r) for r in rows}
+    assert len(heights) == 1, (
+        "rows differ in height: "
+        + ", ".join(
+            f"{r['date']} h={r['height']} chips={r['chips']} headline={r['headline']}"
+            for r in rows
+        )
+    )
+
+    # And the states really were different, or the assertion above is vacuous.
+    assert len({r["chips"] for r in rows}) > 1, "every row carried the same chips"
+    assert max(r["headline"] for r in rows) > min(r["headline"] for r in rows)
+    # Truncation is the healthy state: the DOM keeps the whole string and the
+    # ellipsis is CSS, so a long lead overflows its box on purpose.
+    assert any(r["cut"] for r in rows), "nothing was truncated, so nothing was long"
+    assert overflow == 0, "the page scrolls sideways"

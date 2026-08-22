@@ -31,6 +31,7 @@ uc = "pipeline.cli:app"
 
 [dependency-groups]
 dev = [
+    "playwright>=1.62.0",
     "pytest>=8.2",
     "ruff>=0.5",
 ]

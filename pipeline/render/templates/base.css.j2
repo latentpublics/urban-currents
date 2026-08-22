@@ -411,11 +411,16 @@ body {
 /* The nav centres itself (phase 0Z, Z5).
    On the home and archive pages it sits inside `.uc-page`, which is
    `max-width: 46rem; margin: 0 auto`. On an issue page the site build injects
-   it **before** `<main class="uc-issue">`, so it is a direct child of `body`
+   it ahead of the issue's main element, so it is a direct child of `body`
    with no wrapper — and it spanned the whole viewport, taking its bottom
    border to both window edges while the content below stayed centred.
    Carrying its own width makes the three pages agree; inside a wrapper the
-   `margin: 0 auto` is a no-op because the wrapper is already that wide. */
+   `margin: 0 auto` is a no-op because the wrapper is already that wide.
+
+   ★ That sentence used to quote the opening tag the injection searches for.
+   This file is inlined into the issue page's `<head>`, so the quotation was
+   the first match in the document and the navigation was injected **into this
+   comment** for a day (0Z-D). Describe the anchor here; do not spell it. */
 .uc-nav {
   display: flex;
   align-items: baseline;

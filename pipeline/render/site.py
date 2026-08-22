@@ -663,6 +663,36 @@ def build_design_review(out: Optional[Path] = None) -> Path:
     return target
 
 
+def _replace_once(html: str, anchor: str, replacement: str, what: str) -> str:
+    """Substitute `anchor` exactly once, and refuse to do it quietly otherwise.
+
+    ★ This exists because of the accident it prevents (0Z-D). The site's
+    navigation is injected into the issue page by finding `<main class="uc-issue"`
+    and putting the nav in front of it. In 0Z-A a comment was added to
+    `base.css.j2` explaining that injection, and the comment **quoted the
+    anchor**. The stylesheet is inlined into `<head>`, so from that commit on
+    the first match in the document was inside a CSS comment, and
+    `str.replace(..., 1)` put the whole navigation there — where it is a
+    comment, not a menu.
+
+    Nothing raised. The nav markup was still in the file, so anything that
+    asked whether the page *contained* a nav still passed, and a reader who
+    opened an issue had no way back to the site.
+
+    Two ways to be wrong, both now loud: **0** matches means the anchor drifted
+    out of the template, **2 or more** means it is not unique any more and the
+    substitution is a coin toss. Neither is a thing to find out in production.
+    """
+    found = html.count(anchor)
+    if found != 1:
+        raise RuntimeError(
+            f"{what}: expected exactly one {anchor!r} to substitute, found {found}. "
+            "0 means the template moved; 2+ means the anchor is also somewhere "
+            "else (a CSS comment counts) and the injection would land there."
+        )
+    return html.replace(anchor, replacement, 1)
+
+
 def issue_page_path(d: date) -> Path:
     return paths.ROOT / "site" / "issues" / f"{d}.html"
 
@@ -693,22 +723,36 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
 
         previous = issues[i - 1] if i > 0 else None
         following = issues[i + 1] if i + 1 < len(issues) else None
-        html = html.replace(
-            '<main class="uc-issue"',
-            _issue_nav(previous, following, lead) + '\n<main class="uc-issue"',
-            1,
+        # The anchor carries `data-date=`, which prose about the injection
+        # will not. `<main class="uc-issue"` on its own matched a CSS
+        # comment that quoted it, and the nav spent a day inside the
+        # stylesheet (0Z-D).
+        anchor = '<main class="uc-issue" data-date='
+        html = _replace_once(
+            html,
+            anchor,
+            _issue_nav(previous, following, lead) + "\n" + anchor,
+            f"issue nav for {issue.date}",
         )
         # The site copy gets the webfonts; `runs/*/preview.html` does not. Same
         # DOM, same CSS, one extra at-rule block — the preview's whole point is
         # that it is a single self-contained file, and the site's is that it
         # looks like the mockup.
-        html = html.replace(
-            "<style>", "<style>\n" + site_font_css("../assets/fonts/"), 1
+        html = _replace_once(
+            html,
+            "<style>",
+            "<style>\n" + site_font_css("../assets/fonts/"),
+            f"webfonts for {issue.date}",
         )
         # The feed link and, while unpublished, the `noindex`. Injected for the
         # same reason the navigation is: this markup belongs to the site, and
         # the identical DOM is also written to `runs/` as an email.
-        html = html.replace("</head>", head_extras("../") + "\n</head>", 1)
+        html = _replace_once(
+            html,
+            "</head>",
+            head_extras("../") + "\n</head>",
+            f"head extras for {issue.date}",
+        )
         # ★ The site's copy titles the page with its **date** (0Z, Z6).
         #
         # `preview.html.j2` puts "Urban Currents" in the h1 because in the
@@ -717,10 +761,11 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
         # never said, in its own heading, which day it was. Swapped here rather
         # than in the template so the email keeps the brand — and so the DOM
         # still has exactly one h1, which `test_render_contract` requires.
-        html = html.replace(
+        html = _replace_once(
+            html,
             '<h1 class="uc-issue__title">Urban Currents</h1>',
             f'<h1 class="uc-issue__title">{issue.date}</h1>',
-            1,
+            f"date heading for {issue.date}",
         )
         path = target_dir / f"{issue.date}.html"
         path.write_text(html, encoding="utf-8", newline="\n")

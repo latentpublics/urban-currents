@@ -26,10 +26,12 @@
 </head>
 <body>
 <main class="uc-page">
+  {#- One list, from `site.nav_links` — the issue pages inject the same one
+      (0Z, Z4). Two renderers is deliberate; two link lists was drift. -#}
   <nav class="uc-nav">
-    <span class="uc-nav__brand">Urban Currents</span>
-    <a href="{{ root }}index.html">Today</a>
-    <a href="{{ root }}archive.html">Archive</a>
+    {%- for link in nav %}
+    <a{% if link.cls %} class="{{ link.cls }}"{% endif %} href="{{ link.href }}">{{ link.label }}</a>
+    {%- endfor %}
     <span class="uc-nav__lang">EN</span>
   </nav>
 

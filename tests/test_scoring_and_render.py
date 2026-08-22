@@ -268,16 +268,42 @@ def test_card_carries_the_two_layers_and_canonical_tag_ids(repo):
     assert p.external == []
 
 
-def test_quiet_day_renders_the_quiet_line_and_still_shows_cards(repo):
-    """A quiet day is not an empty day (PRD §5.6)."""
+def test_a_day_with_no_headline_still_shows_every_card(repo):
+    """PRD §5.6's actual guarantee, kept; its suggested wording, changed (0Z, Z1).
+
+    §5.6 says a quiet day is *"not an empty day but a day that needs no
+    editorial judgement"*, and that all of its cards are still published. That
+    guarantee is what this test protects and it is unchanged.
+
+    What changed is the sentence §5.7 suggests for the headline slot — "a quiet
+    day in urban data science" — because that string was being printed over
+    nine and eleven published papers (2026-08-21 and 2026-08-09), and to a
+    reader it asserts the very thing §5.6 says a quiet day is not. The slot now
+    distinguishes "published nothing" from "published papers, ranked none of
+    them highly enough to lead". The conflict with §5.7 is recorded rather than
+    resolved by editing the PRD, which is not this batch's to edit.
+    """
     item = _item()
     item.summary.en = SummaryEn(what="What.", why="Why.")
     html = render_issue(_issue_with([item], quiet=True), [item])
-    assert "a quiet day in urban data science" in html
-    assert "uc-headline--quiet" in html
+
+    # The day had an item, so it is not quiet however the flag reads.
+    assert "a quiet day in urban data science" not in html
+    assert "nothing cleared the headline bar" in html
+    assert "uc-headline--unranked" in html
+
+    # And the guarantee §5.6 actually makes:
     p = _Collector()
     p.feed(html)
     assert p.cards == 1
+
+
+def test_a_day_with_no_items_renders_the_quiet_line(repo):
+    """The other half: when the day really did publish nothing, it says so."""
+    html = render_issue(_issue_with([], quiet=True), [])
+
+    assert "a quiet day in urban data science" in html
+    assert "uc-headline--quiet" in html
 
 
 def test_item_without_a_summary_still_renders(repo):

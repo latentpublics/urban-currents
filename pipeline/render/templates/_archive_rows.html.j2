@@ -11,7 +11,7 @@
     differs per row. Everything else lives in the stylesheet. -#}
 <ul class="uc-rows">
   {% for row in rows %}
-  <li class="uc-row{% if row.quiet %} uc-row--quiet{% endif %}{% if row.missing %} uc-row--missing{% endif %}{% if row.backfilled %} uc-row--backfilled{% endif %}" data-date="{{ row.date }}">
+  <li class="uc-row{% if row.quiet %} uc-row--quiet{% endif %}{% if row.missing %} uc-row--missing{% endif %}{% if row.backfilled %} uc-row--backfilled{% endif %}{% if row.recent %} uc-row--recent{% endif %}" data-date="{{ row.date }}">
     <span class="uc-row__date">
       {%- if row.missing %}{{ row.date }}
       {%- else %}<a href="{{ issue_href }}{{ row.date }}.html">{{ row.date }}</a>{% endif %}
@@ -24,6 +24,8 @@
       {%- elif row.quiet %}<span class="uc-chip">a quiet day</span>
       {%- else %}{{ row.published }} items{% endif %}
       {%- if row.backfilled %} <span class="uc-chip uc-chip--backfilled">filled in later</span>{% endif %}
+      {%- if row.unranked %} <span class="uc-chip uc-chip--unranked">no headline</span>{% endif %}
+      {%- if row.recent %} <span class="uc-chip uc-chip--recent">more may follow</span>{% endif %}
     </span>
     {#- Full title in the DOM; the ellipsis is CSS. A string cut in Python is
         cut for a screen reader too. -#}
@@ -31,20 +33,24 @@
       {%- if row.missing %}<span class="uc-row__reason">{{ row.reason }}</span>
       {%- else %}{{ row.lead_title }}{% endif %}
     </span>
-    <span class="uc-row__artifacts">
-      {%- if row.code %}{{ row.code }} code{% endif %}
-      {%- if row.code and row.data %}, {% endif %}
-      {%- if row.data %}{{ row.data }} data{% endif %}
-    </span>
+    {#- The per-row "1 code, 1 data" column is gone (0Z, Z10). The counts are
+        still derived and still reported on the latest issue's stat rail, where
+        they describe one day a reader is actually looking at; in a fourteen-row
+        table they were a column of ones. -#}
     {#- The note wraps onto its own line and only exists when there is
         something to say. A backfilled day says so; a day whose live run
         withheld it says that too, and a day that is both says both — the
         record and the issue disagreeing in silence is the thing this
         prevents (0Y, Y1-2). -#}
-    {%- if row.backfilled or row.withheld %}
+    {%- if row.backfilled or row.withheld or row.recent or row.unranked %}
     <span class="uc-row__note">
       {%- if row.backfilled %}Assembled later: nobody was watching on {{ row.date }}, so this issue was built from the archived candidates afterwards.{% endif %}
       {%- if row.withheld %}{% if row.backfilled %} {% endif %}That morning's live run published nothing — {{ row.withheld }}.{% endif %}
+      {%- if row.unranked %}{% if row.backfilled or row.withheld %} {% endif %}Papers went out; none of them scored high enough to lead the day.{% endif %}
+      {#- The fact, and only the fact. Issues are immutable and nothing
+          revisits them, so this must not read as a promise to revise: what
+          arrives late appears in a **later** issue, not in this one. -#}
+      {%- if row.recent %}{% if row.backfilled or row.withheld or row.unranked %} {% endif %}arXiv indexes about three days late, so papers posted around this date can still appear in a later issue.{% endif %}
     </span>
     {%- endif %}
   </li>

@@ -511,7 +511,9 @@ def run_daily(
             budget_exceeded=budget_exceeded,
             window_days=window_days,
         )
-        outcome.headline_present = not issue.quiet_day
+        # `has_headline`, not the inverse of a field whose name misleads
+        # (0Z, Z1). Same answer today, said in the words that mean it.
+        outcome.headline_present = issue.has_headline
         if outcome.status == QUIET and selected:
             # Say which kind of quiet it was. "Nothing cleared the bar" is
             # wrong when plenty did and all of it was already out.

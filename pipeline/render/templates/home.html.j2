@@ -17,10 +17,12 @@
 </head>
 <body>
 <main class="uc-page">
+  {#- One list, from `site.nav_links` — the issue pages inject the same one
+      (0Z, Z4). Two renderers is deliberate; two link lists was drift. -#}
   <nav class="uc-nav">
-    <span class="uc-nav__brand">Urban Currents</span>
-    <a href="index.html">Today</a>
-    <a href="archive.html">Archive</a>
+    {%- for link in nav %}
+    <a{% if link.cls %} class="{{ link.cls }}"{% endif %} href="{{ link.href }}">{{ link.label }}</a>
+    {%- endfor %}
     <span class="uc-nav__lang">EN</span>
   </nav>
 
@@ -82,7 +84,7 @@
   <section class="uc-archive">
     <div class="uc-archive__head">
       <h2 class="uc-archive__title">Archive — last {{ rows|length }} days</h2>
-      <a class="uc-archive__all" href="archive.html">all issues</a>
+      <a class="uc-archive__all" href="archive.html">All issues →</a>
     </div>
     {#- Mockup 5a's 14-bar histogram. Height is proportional to what was
         published; the colour says which kind of day it was.
@@ -95,7 +97,7 @@
     <div class="uc-spark" role="img"
          aria-label="Published items per day over the last {{ rows|length }} days.">
       {% for bar in spark %}
-      <div class="uc-spark__slot">
+      <div class="uc-spark__slot{% if bar.recent %} uc-spark__slot--recent{% endif %}">
         <div class="uc-spark__bar uc-spark__bar--{{ bar.kind }}"
              style="height: {{ bar.height }}%"
              title="{{ bar.label }}"></div>
@@ -103,9 +105,18 @@
       </div>
       {% endfor %}
     </div>
+    {#- Every state the strip can draw has a name here (0Z, Z8).
+        `base.css.j2` states the rule the old caption only half kept: colour
+        never carries the meaning on its own, so a state that is drawn is a
+        state that is named. -#}
     <p class="uc-spark__caption">
       <span>{{ spark_from }}</span>
-      <span>quiet days in grey — each still reviews what appeared</span>
+      <span class="uc-spark__legend">
+        grey — a quiet day, nothing published ·
+        hatched — not seen ·
+        dashed — filled in later ·
+        underlined — still filling in
+      </span>
       <span>{{ spark_to }}</span>
     </p>
     {% with issue_href = "issues/" %}{% include "_archive_rows.html.j2" %}{% endwith %}

@@ -86,10 +86,18 @@ def render_text(
     ))
     out.append("")
 
-    if issue.quiet_day:
+    # Derived, not read from the file (0Z, Z1): `quiet_day` on disk means "no
+    # item cleared the headline bar", and printing "a quiet day" over nine
+    # papers is what that confusion looked like to a reader.
+    if issue.is_quiet:
         out.append(_wrap("A quiet day in urban data science."))
     elif issue.headline.line:
         out.append(_wrap(issue.headline.line))
+    else:
+        out.append(_wrap(
+            "No single paper stood out today — nothing cleared the headline "
+            "bar, so the day is below without one."
+        ))
     out.append("")
 
     synthesis = build_synthesis(issue, ordered)

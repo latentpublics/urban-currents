@@ -79,12 +79,32 @@ def headline_threshold() -> float:
     return float(scoring_config().get("headline_threshold", 0.5))
 
 
-def pick_headline(items: Sequence[Item], threshold: Optional[float] = None) -> Optional[Item]:
-    """Top-scoring item, if any clears the threshold. Otherwise it is a quiet day."""
+def best_candidate(items: Sequence[Item]) -> Optional[Item]:
+    """The top-scoring item, **whether or not it clears the bar** (0Z, Z1).
+
+    `pick_headline` computed this and threw it away, so a day where nothing
+    cleared the threshold recorded `headline.work_key: null` and the archive
+    row lost its representative title — the lead column went blank on a day
+    that had published nine papers. `Headline` already keeps `present` and
+    `work_key` as separate fields, so the day can say "nothing cleared the bar"
+    and still name what came closest.
+    """
     if not items:
         return None
+    return max(items, key=lambda it: (it.scores.headline, it.work_key))
+
+
+def pick_headline(items: Sequence[Item], threshold: Optional[float] = None) -> Optional[Item]:
+    """Top-scoring item, if any clears the threshold.
+
+    Returning None means **no item cleared the headline bar**. It does not mean
+    the day was quiet — that is a question about how much was published, and
+    `Issue.is_quiet` answers it (0Z, Z1).
+    """
+    best = best_candidate(items)
+    if best is None:
+        return None
     thr = headline_threshold() if threshold is None else threshold
-    best = max(items, key=lambda it: (it.scores.headline, it.work_key))
     return best if best.scores.headline >= thr else None
 
 

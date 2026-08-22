@@ -438,7 +438,9 @@ def email_subject(issue: Issue) -> str:
     mail client truncates a subject at a byte count with no ellipsis and no
     tooltip.
     """
-    if issue.quiet_day or not issue.items:
+    # `is_quiet` counts what was published; the stored `quiet_day` answers a
+    # different question and is wrong on two published days (0Z, Z1).
+    if issue.is_quiet:
         return f"Urban Currents {issue.date} — a quiet day"
     line = (issue.headline.line or "").strip()
     head = line.split(". ")[0].rstrip(".")

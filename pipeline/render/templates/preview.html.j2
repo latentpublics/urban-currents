@@ -30,11 +30,20 @@
     {%- endif %}
   </p>
 
-  <section class="uc-headline{% if issue.quiet_day %} uc-headline--quiet{% endif %}">
-    <p class="uc-headline__label">{% if issue.quiet_day %}No headline{% else %}Headline{% endif %}</p>
+{#- Three states, not two (phase 0Z, Z1). `issue.quiet_day` on disk means "no
+    item cleared the headline bar" and two published issues carry it over nine
+    and eleven papers, so this reads `is_quiet` — which counts what was
+    published — and `has_headline` for the other fact. A day with papers and no
+    headline is neither quiet nor headlined, and it says which. -#}
+  <section class="uc-headline{% if issue.is_quiet %} uc-headline--quiet{% elif not issue.has_headline %} uc-headline--unranked{% endif %}">
+    <p class="uc-headline__label">
+      {%- if issue.is_quiet %}No headline{% elif not issue.has_headline %}No headline today{% else %}Headline{% endif -%}
+    </p>
     <p class="uc-headline__line">
-      {%- if issue.quiet_day -%}
+      {%- if issue.is_quiet -%}
       a quiet day in urban data science
+      {%- elif not issue.has_headline -%}
+      nothing cleared the headline bar today — the day's papers are below
       {%- else -%}
       {{ issue.headline.line }}
       {%- endif -%}

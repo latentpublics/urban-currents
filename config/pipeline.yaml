@@ -422,6 +422,35 @@ site:
   # G5 flips this line and nothing else.
   published: false
 
+  # ★ How many recent days are still filling in (phase 0Z, Z2).
+  #
+  # arXiv's `submittedDate` index runs about three days behind — measured, not
+  # assumed: asked on 2026-08-18 it returned 0 for D-1, D-2 and D-3 and 221-453
+  # per day from D-4 back (`scripts/arxiv_visibility.py`). That lag is why
+  # `daily.lookback_days` is 7 and `daily.min_lag_days` is 1: a live run sweeps
+  # a window wide enough to catch what arrived late.
+  #
+  # The consequence for a reader is that an issue from the last few days does
+  # not yet contain everything posted around its date, and the stragglers turn
+  # up in a **later** issue rather than in that one — issues are immutable
+  # (D127) and nothing revisits them. The archive says so on those rows.
+  #
+  # Three, matching the measured lag rather than the seven-day window: the
+  # window is wide for safety, the lag is the fact a reader needs.
+  recent_days: 3
+
+  # ★ Whether the home page's LATEST ISSUE skips those days (0Z, Z3).
+  #
+  # True means the front page shows the newest issue that is **older** than
+  # `recent_days`, so what a first-time reader lands on is a day that has
+  # stopped changing. The cost is real and deliberate: the front page is three
+  # days behind, and the archive directly below it shows newer dates than the
+  # issue above. YJUN chose that trade.
+  #
+  # Set to false to show the newest issue, whatever its age. That is the whole
+  # revert — no code change.
+  latest_skips_recent: true
+
 held:
   # The held queue (phase 0L, M2-2). Nobody reviews before publication any more,
   # so the doubtful items are withheld rather than published, and the day goes

@@ -502,6 +502,27 @@ class Issue(StrictModel):
     # also what `--smoke` produces.
     backfilled: bool = False
     headline: Headline = Field(default_factory=Headline)
+    # ★ **This field does not mean what its name says** (phase 0Z, Z1).
+    #
+    # `stage_issue` writes `quiet_day=headline_item is None`, and
+    # `pick_headline` returns None whenever nothing clears the headline
+    # threshold — so the stored value means *"no item cleared the headline
+    # bar"*, which is a fact about ranking, not about how much was published.
+    # 2026-08-21 published **nine** papers with `quiet_day: true`; 2026-08-09
+    # published **eleven**. Both are on disk and both are immutable (D127).
+    #
+    # U5 caught exactly this confusion one layer up and fixed the run log,
+    # noting that `status` and the headline fact were "two different facts …
+    # being written into one field". It then said `quiet_day` "is what the
+    # renderer keys on, and that one is true" — which was the half that had not
+    # been checked. The renderers printed "A quiet day in urban data science."
+    # over nine papers.
+    #
+    # **So nothing reads this field to decide whether a day was quiet.** Use
+    # `is_quiet` below, which counts what was published, and `has_headline`
+    # for the other fact. The field is kept and still written because the
+    # archive is immutable and a reader of old JSON should find it where it
+    # always was — but it is, in effect, `headline.present` inverted.
     quiet_day: bool = False
     scan_meta: ScanMeta = Field(default_factory=ScanMeta)
     items: list[str] = Field(default_factory=list)
@@ -517,6 +538,33 @@ class Issue(StrictModel):
     # connection legitimately produces very little.
     synthesis: Optional[Synthesis] = None
     run_id: Optional[str] = None
+
+    @property
+    def is_quiet(self) -> bool:
+        """Did this day publish nothing? (phase 0Z, Z1)
+
+        **Derived, never read from storage.** `quiet_day` on disk carries a
+        different fact and two published archives already have it wrong.
+
+        The definition is `outcome.decide()`'s, deliberately: *quiet* is
+        granted there for "published nothing", and the run log has used that
+        meaning since U5. A second definition of the same word — "fewer than
+        n" — would recreate the very confusion this fixes, and nobody has made
+        the judgement about what n would be. So a day is quiet when it
+        published nothing at all, and nothing else is quiet.
+        """
+        return not self.items
+
+    @property
+    def has_headline(self) -> bool:
+        """Did anything clear the headline bar?
+
+        The other half of what `quiet_day` was conflating. A day can publish
+        nine papers and have no headline; that day is not quiet, and the
+        renderers say so in words rather than leaving the reader to infer it
+        from an absence.
+        """
+        return bool(self.headline.present and self.headline.line)
 
 
 # --------------------------------------------------------------------------

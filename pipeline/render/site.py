@@ -38,7 +38,7 @@ never deleted.
 
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, date as dt_date, timedelta
 from pathlib import Path
 from typing import Any, Optional
 
@@ -150,7 +150,15 @@ def archive_rows(
             # fails somewhere unrelated. This is the second template in this
             # batch to hit it.
             "published": len(keys),
-            "quiet": issue.quiet_day or not keys,
+            # Derived from the count, never from the stored flag (0Z, Z1).
+            # `quiet_day` on disk answers "did anything clear the headline
+            # bar", and 2026-08-09 (11 papers) and 2026-08-21 (9) both carry it
+            # as true. Deriving here means those files cannot put "a quiet day"
+            # on a day that published nine papers.
+            "quiet": issue.is_quiet,
+            # The other fact, said in its own words rather than borrowed from
+            # the first. A day with papers and no headline is not quiet.
+            "unranked": not issue.is_quiet and not issue.has_headline,
             "unreadable": issue.scan_meta.unreadable_count,
             # The representative title, whole. Trimming happens in CSS so the
             # DOM keeps the full string and a narrow screen only *looks*
@@ -191,7 +199,18 @@ def archive_rows(
             "data": 0,
             "backfilled": False,
             "withheld": None,
+            "unranked": False,
         })
+
+    # Recency is **additive**, not a fifth state (0Z, Z2). published / quiet /
+    # missing / backfilled say what happened on a day; recency says whether our
+    # knowledge of that day is still settling. A day can be quiet *and* recent,
+    # or withheld *and* recent, and collapsing the two into one label would be
+    # the same mistake Z1 exists to undo. So no state wins — the row keeps its
+    # kind and gains a note.
+    cutoff = str(recent_cutoff())
+    for r in rows:
+        r["recent"] = r["date"] >= cutoff
 
     rows.sort(key=lambda r: r["date"])
     return list(reversed(rows))
@@ -294,6 +313,33 @@ def with_fonts(css: str, prefix: str) -> str:
     return f"{site_font_css(prefix)}\n{css}"
 
 
+def latest_issue(issues: list[Issue]) -> Optional[Issue]:
+    """The issue the home page leads with (phase 0Z, Z3).
+
+    By default the newest issue that is **older than `site.recent_days`**, so a
+    first-time reader lands on a day that has stopped filling in. arXiv indexes
+    about three days late, and an issue from yesterday does not yet hold
+    everything posted yesterday.
+
+    **The cost is deliberate and visible**: the front page runs three days
+    behind, and the archive immediately below it shows newer dates than the
+    issue above. That is a trade YJUN chose, and `site.latest_skips_recent`
+    turns it off in one line without touching code.
+
+    Falls back to the newest issue with items when the filter would leave
+    nothing — a young archive should still have a front page.
+    """
+    with_items = [i for i in issues if i.items]
+    if not with_items:
+        return None
+    newest = max(with_items, key=lambda i: i.date)
+    if not bool(cfg("site.latest_skips_recent", True)):
+        return newest
+    cutoff = recent_cutoff()
+    settled = [i for i in with_items if i.date < cutoff]
+    return max(settled, key=lambda i: i.date) if settled else newest
+
+
 def spark_bars(rows: list[dict], today: Optional[str] = None) -> list[dict]:
     """Mockup 5a's fourteen bars, oldest on the left.
 
@@ -301,16 +347,28 @@ def spark_bars(rows: list[dict], today: Optional[str] = None) -> list[dict]:
     with a floor so a quiet day is still a visible mark rather than nothing —
     **a bar of zero height would say "no day here", and there was a day here.**
 
-    Three kinds, and they are not three shades of the same claim:
+    The kinds are not shades of the same claim:
 
-      `published`  an issue went out
-      `quiet`      we looked and there was little to publish
-      `missing`    we could not see the day at all
+      `published`   an issue went out
+      `quiet`       we looked and published nothing
+      `missing`     we could not see the day at all
+      `backfilled`  assembled later; nobody was watching that day
+      `featured`    the issue shown above — not necessarily the newest (Z3)
 
     `missing` is drawn like `quiet` in the mockup, which has no such day in it.
     It gets its own class here so the two can never be read as one; a day nobody
     could see is not a day with nothing in it, and the whole outcome model rests
     on that distinction.
+
+    ★ `backfilled` was missing entirely until 0Z (Z8): the list drew it with a
+    dashed blue bar and a chip while the histogram drew it exactly like a live
+    published day, so the same state had two different appearances forty pixels
+    apart. `recent` rides along as a flag rather than a kind, for the reason
+    given in `archive_rows`.
+
+    ★ The colours come from the `--uc-state-*` tokens, which the list rows use
+    too. Before 0Z the mapping was hardcoded twice, ninety lines apart, and
+    `quiet` was dark grey in one and near-white in the other.
     """
     window = list(reversed(rows))  # oldest first, the way a time axis reads
     tallest = max([r["published"] for r in window] or [1]) or 1
@@ -320,14 +378,24 @@ def spark_bars(rows: list[dict], today: Optional[str] = None) -> list[dict]:
             kind, note = "missing", f"not seen — {r.get('reason') or 'the sources did not answer'}"
         elif r["quiet"] or not r["published"]:
             kind, note = "quiet", "a quiet day"
+        elif r.get("backfilled"):
+            kind, note = "backfilled", f"{r['published']} items, filled in later"
         else:
             kind, note = "published", f"{r['published']} items"
+        if r.get("unranked"):
+            note += ", no headline"
+        if r.get("recent"):
+            note += "; more may follow"
+        # `featured`, not `today`: with `site.latest_skips_recent` the issue on
+        # the home page is deliberately a few days old, and calling its bar
+        # "today" would have the page state a date it is not showing (0Z, Z3).
         if today and r["date"] == today:
-            kind = "today"
+            kind = "featured"
         height = max(8, round(100 * r["published"] / tallest)) if r["published"] else 12
         bars.append({
             "date": r["date"],
             "kind": kind,
+            "recent": bool(r.get("recent")),
             "height": height,
             "label": f"{r['date']}: {note}",
         })
@@ -360,7 +428,7 @@ def build_home(out: Optional[Path] = None) -> Path:
     rows = archive_rows(issues, items)
     stats = archive_stats(rows, items)
 
-    latest = next((i for i in reversed(issues) if i.items), None)
+    latest = latest_issue(issues)
     lead_item = items.get(latest.headline.work_key or "") if latest else None
 
     window = rows[:HOME_ARCHIVE_DAYS]
@@ -373,9 +441,14 @@ def build_home(out: Optional[Path] = None) -> Path:
     )
     html = env.get_template("home.html.j2").render(
         head_extras=Markup(head_extras()),
+        nav=nav_links("", latest),
         stats=stats,
         rows=rows[:HOME_ARCHIVE_DAYS],
-        max_items=max([r["published"] for r in rows] or [1]),
+        # `or 1` on the outside too: an archive whose every row published
+            # nothing gives `max(...)` of 0, and the bar width divides by
+            # this (0Z). An all-quiet archive is rare but it is exactly the
+            # case a young or a broken week produces.
+            max_items=max([r["published"] for r in rows] or [1]) or 1,
         latest=latest,
         # The full headline line, not a regenerated short one. There is room.
         lead_line=latest.headline.line if latest else None,
@@ -448,6 +521,7 @@ def build_archive(out: Optional[Path] = None) -> list[Path]:
     rows = archive_rows(issues, items)
     stats = archive_stats(rows, items)
     months = _month_buckets(rows)
+    lead = latest_issue(issues)
 
     env = _env()
     raw_css = (TEMPLATE_DIR / "base.css.j2").read_text(encoding="utf-8")
@@ -465,11 +539,16 @@ def build_archive(out: Optional[Path] = None) -> list[Path]:
         )
         html = env.get_template("archive.html.j2").render(
             head_extras=Markup(head_extras(root)),
+            nav=nav_links(root, lead),
             stats=stats,
             month=month,
             tabs=_month_tabs(months, month["key"], root),
             root=root,
-            max_items=max([r["published"] for r in rows] or [1]),
+            # `or 1` on the outside too: an archive whose every row published
+            # nothing gives `max(...)` of 0, and the bar width divides by
+            # this (0Z). An all-quiet archive is rare but it is exactly the
+            # case a young or a broken week produces.
+            max_items=max([r["published"] for r in rows] or [1]) or 1,
             css=Markup(with_fonts(raw_css, f"{root}assets/fonts/")),
             pipeline_version=PIPELINE_VERSION,
         )
@@ -604,6 +683,9 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
 
     written: list[Path] = []
     issues = load_issues()
+    # The same issue the home page leads with, so `Latest` cannot point at a
+    # different day from the one the front page shows (0Z, Z4).
+    lead = latest_issue(issues)
     for i, issue in enumerate(issues):
         day_items = [items[k] for k in issue.items if k in items]
         unreadable = [items[k] for k in issue.unreadable if k in items]
@@ -613,7 +695,7 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
         following = issues[i + 1] if i + 1 < len(issues) else None
         html = html.replace(
             '<main class="uc-issue"',
-            _issue_nav(previous, following) + '\n<main class="uc-issue"',
+            _issue_nav(previous, following, lead) + '\n<main class="uc-issue"',
             1,
         )
         # The site copy gets the webfonts; `runs/*/preview.html` does not. Same
@@ -627,24 +709,69 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
         # same reason the navigation is: this markup belongs to the site, and
         # the identical DOM is also written to `runs/` as an email.
         html = html.replace("</head>", head_extras("../") + "\n</head>", 1)
+        # ★ The site's copy titles the page with its **date** (0Z, Z6).
+        #
+        # `preview.html.j2` puts "Urban Currents" in the h1 because in the
+        # email that is the only title there is. On the site the nav already
+        # carries the brand two lines above, so the h1 repeated it and the page
+        # never said, in its own heading, which day it was. Swapped here rather
+        # than in the template so the email keeps the brand — and so the DOM
+        # still has exactly one h1, which `test_render_contract` requires.
+        html = html.replace(
+            '<h1 class="uc-issue__title">Urban Currents</h1>',
+            f'<h1 class="uc-issue__title">{issue.date}</h1>',
+            1,
+        )
         path = target_dir / f"{issue.date}.html"
         path.write_text(html, encoding="utf-8", newline="\n")
         written.append(path)
     return written
 
 
-def _issue_nav(previous: Optional[Issue], following: Optional[Issue]) -> str:
+def nav_links(root: str = "", latest: Optional[Issue] = None) -> list[dict]:
+    """The navigation, in one place (phase 0Z, Z4).
+
+    There are two renderers for this chrome and there have to be: the issue
+    page's copy is injected by the site build because `preview.html.j2` is also
+    the email, and an email must not carry links to a site it is not on. What
+    there does **not** have to be is two lists of what the chrome contains —
+    they had already drifted, with `uc-nav__lang` present in the templates and
+    absent from the injected version.
+
+    So the links come from here and both renderers read them.
+    `test_nav_is_the_same_everywhere` fails if they diverge again.
+
+    `Latest` points at the issue the home page leads with, not at the newest
+    date in the archive: with `site.latest_skips_recent` those differ, and two
+    places disagreeing about "latest" is the next bug (Z4).
+    """
+    target = f"{root}index.html"
+    if latest is not None:
+        target = f"{root}issues/{latest.date}.html"
+    return [
+        # The brand is a link now: it is the obvious way back to the landing
+        # page and a reader will try it whether or not it works.
+        {"label": "Urban Currents", "href": f"{root}index.html", "cls": "uc-nav__brand"},
+        {"label": "Latest", "href": target, "cls": ""},
+        {"label": "Archive", "href": f"{root}archive.html", "cls": ""},
+    ]
+
+
+def _issue_nav(
+    previous: Optional[Issue],
+    following: Optional[Issue],
+    latest: Optional[Issue] = None,
+) -> str:
     """Site navigation, injected rather than templated into the issue.
 
     The same markup is also written to `runs/` as a preview, where these links
-    would point nowhere — so the chrome belongs to the site build.
+    would point nowhere — so the chrome belongs to the site build. The *link
+    list* comes from `nav_links`, which the templates use too.
     """
-    parts = [
-        '<nav class="uc-nav">',
-        '<span class="uc-nav__brand">Urban Currents</span>',
-        '<a href="../index.html">Today</a>',
-        '<a href="../archive.html">Archive</a>',
-    ]
+    parts = ['<nav class="uc-nav">']
+    for link in nav_links("../", latest):
+        cls = f' class="{link["cls"]}"' if link["cls"] else ""
+        parts.append(f'<a{cls} href="{link["href"]}">{link["label"]}</a>')
     if previous:
         parts.append(
             f'<a class="uc-nav__prev" href="{previous.date}.html">&larr; {previous.date}</a>'
@@ -653,6 +780,7 @@ def _issue_nav(previous: Optional[Issue], following: Optional[Issue]) -> str:
         parts.append(
             f'<a class="uc-nav__next" href="{following.date}.html">{following.date} &rarr;</a>'
         )
+    parts.append('<span class="uc-nav__lang">EN</span>')
     parts.append("</nav>")
     return "\n".join(parts)
 
@@ -669,6 +797,22 @@ def _base_url() -> str:
     resolve against the organisation's domain root and 404.
     """
     return (cfg("site.base_url", "") or "").rstrip("/")
+
+
+def recent_days() -> int:
+    """How many days back are still filling in (0Z, Z2). See the config."""
+    return int(cfg("site.recent_days", 3) or 0)
+
+
+def recent_cutoff(today: Optional[dt_date] = None) -> dt_date:
+    """The oldest date that still counts as recent.
+
+    A row is recent when its date is **on or after** this. Computed from
+    today rather than from the newest issue: the claim is about arXiv's
+    indexing lag now, not about how far the archive happens to reach.
+    """
+    today = today or dt_date.today()
+    return today - timedelta(days=recent_days() - 1) if recent_days() > 0 else today + timedelta(days=1)
 
 
 def is_published() -> bool:
@@ -714,8 +858,13 @@ def build_feed(out: Optional[Path] = None) -> Path:
     entries = []
     for issue in issues[:50]:
         link = f"{base}/issues/{issue.date}.html" if base else f"issues/{issue.date}.html"
+        # Derived (0Z, Z1). A feed entry saying "a quiet day" over nine
+        # papers is the same false sentence as the archive row's, reaching
+        # further — a feed is read on other people's sites.
         summary = issue.headline.line or (
-            "A quiet day in urban data science." if issue.quiet_day else ""
+            "A quiet day in urban data science." if issue.is_quiet
+            else f"{len(issue.items)} papers; none cleared the headline bar."
+            if issue.items else ""
         )
         lead = items.get(issue.headline.work_key or "")
         if lead and not summary:

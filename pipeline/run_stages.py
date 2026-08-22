@@ -899,14 +899,23 @@ def stage_issue(run: Run, d: date, use_llm: bool = True) -> Issue:
         if headline_basis != "llm":
             run.error(f"headline: {headline_basis}")
 
+    # The best item is recorded even when it did not clear the bar (0Z, Z1).
+    # `present` stays false — nothing is being claimed as a headline — but the
+    # archive keeps a representative title for the day instead of a blank.
+    from .score.headline import best_candidate
+
+    lead = headline_item or best_candidate(publish)
+
     issue = Issue(
         date=d,
         headline=Headline(
             present=headline_item is not None,
-            work_key=headline_item.work_key if headline_item else None,
+            work_key=lead.work_key if lead else None,
             line=headline_text,
             basis=headline_basis,
         ),
+        # Written as it always was, and read by nobody: see the field's own
+        # comment in `models.py`. `Issue.is_quiet` is what the renderers use.
         quiet_day=headline_item is None,
         scan_meta=scan,
         items=sorted(it.work_key for it in publish),

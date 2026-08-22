@@ -591,7 +591,7 @@ def build_report(out_path: Optional[Path] = None) -> Path:
         offset = load_json(paths.RUNS / "backfill" / "novelty_offset.json")
         mat = (offset or {}).get("archive_maturity") or {}
         if mat.get("status") == "OK":
-            live_rate = sum(1 for i in issues if not i.quiet_day)
+            live_rate = sum(1 for i in issues if i.has_headline)
             A(f"**The live rate will not match this yet.** {live_rate} of "
               f"{len(issues)} published days currently carry a headline. The "
               f"threshold was calibrated against an archive {mat['archive_items_replay']} "
@@ -809,7 +809,13 @@ def build_report(out_path: Optional[Path] = None) -> Path:
     # -- archive ----------------------------------------------------------
     A("## Archive")
     A("")
-    quiet = sum(1 for i in issues if i.quiet_day)
+    # Two rows, because they are two facts and one of them used to stand in
+    # for the other (0Z, Z1). A day that published nothing is quiet; a day that
+    # published nine papers and ranked none of them highly enough for a
+    # headline is not, and counting it as quiet made the publication rate on
+    # the About page wrong.
+    quiet = sum(1 for i in issues if i.is_quiet)
+    no_headline = sum(1 for i in issues if not i.is_quiet and not i.has_headline)
     with_summary = sum(1 for i in items if i.summary.en and i.summary.en.what)
     L.extend(
         _table(
@@ -818,7 +824,8 @@ def build_report(out_path: Optional[Path] = None) -> Path:
                 ["items", len(items)],
                 ["items with a summary", with_summary],
                 ["issues", len(issues)],
-                ["quiet days", quiet],
+                ["quiet days (published nothing)", quiet],
+                ["days with items but no headline", no_headline],
                 ["items with an OpenAlex ID", sum(1 for i in items if i.ids.openalex)],
                 ["items with referenced_works", sum(1 for i in items if i.graph.referenced_works)],
                 ["published (journal) items", sum(1 for i in items

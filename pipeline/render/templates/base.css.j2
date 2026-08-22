@@ -37,6 +37,18 @@
   --uc-accent: #1f5fa8;
   /* Blue badge: an artifact exists (code, data, published). */
   --uc-badge-bg: #eef2f8;
+  /* ★ One state -> one colour, named once (phase 0Z, Z8).
+     The archive list and the histogram drew the same states from two separate
+     hardcoded mappings ninety lines apart, and they had drifted: a quiet day
+     was `--uc-quiet` (#5f646d, dark grey) in the list and `--uc-line`
+     (#e3e5ea, nearly white) in the histogram, and `backfilled` existed in one
+     and not the other. Both now read these. */
+  --uc-state-published: var(--uc-accent);
+  --uc-state-quiet: var(--uc-quiet);
+  --uc-state-missing: var(--uc-hairline);
+  --uc-state-backfilled: var(--uc-accent);
+  --uc-state-featured: var(--uc-ink);
+
   /* Grey chip: a state (preprint, a quiet day). */
   --uc-chip-bg: #f0f1f3;
   --uc-quiet: #5f646d;
@@ -130,6 +142,9 @@ body {
 }
 .uc-headline__line { font-size: 1.12rem; font-weight: 600; margin: 0; line-height: 1.45; }
 .uc-headline--quiet .uc-headline__line { font-weight: 400; color: var(--uc-quiet); font-style: italic; }
+/* Papers were published, none of them ranked high enough to lead (0Z, Z1).
+   Not the quiet day's styling: the day is not empty and must not look it. */
+.uc-headline--unranked .uc-headline__line { font-weight: 400; color: var(--uc-ink-soft); font-style: italic; }
 
 .uc-cards { display: flex; flex-direction: column; gap: 0; }
 
@@ -393,10 +408,20 @@ body {
 
 .uc-page { max-width: 46rem; margin: 0 auto; }
 
+/* The nav centres itself (phase 0Z, Z5).
+   On the home and archive pages it sits inside `.uc-page`, which is
+   `max-width: 46rem; margin: 0 auto`. On an issue page the site build injects
+   it **before** `<main class="uc-issue">`, so it is a direct child of `body`
+   with no wrapper — and it spanned the whole viewport, taking its bottom
+   border to both window edges while the content below stayed centred.
+   Carrying its own width makes the three pages agree; inside a wrapper the
+   `margin: 0 auto` is a no-op because the wrapper is already that wide. */
 .uc-nav {
   display: flex;
   align-items: baseline;
   gap: 0.9rem;
+  max-width: 46rem;
+  margin: 0 auto;
   padding: 0 0 0.75rem;
   border-bottom: 1px solid var(--uc-line);
   font-size: 0.82rem;
@@ -432,7 +457,9 @@ body {
   text-transform: uppercase;
   color: var(--uc-meta);
 }
-.uc-latest__date, .uc-archive__all { font-size: 0.8rem; color: var(--uc-meta); text-decoration: none; }
+.uc-latest__date, /* Same affordance as `Read →` on the latest issue, so the two links that
+   leave this page look like the same kind of thing (0Z, Z7). */
+.uc-archive__all { color: var(--uc-accent); text-decoration: none; font-size: 0.82rem; }
 .uc-latest__lead {
   font-family: var(--uc-font-serif);
   font-size: 1.05rem;
@@ -465,16 +492,29 @@ body {
    share of the width — 14 slots, always, including the days we could not see. */
 .uc-spark { display: flex; gap: 6px; align-items: flex-end; height: 56px; margin: 0 0 0.4rem; }
 .uc-spark__slot { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
-.uc-spark__bar--published { background: var(--uc-accent); }
-.uc-spark__bar--today { background: var(--uc-ink); }
-.uc-spark__bar--quiet { background: var(--uc-line); }
+.uc-spark__bar--published { background: var(--uc-state-published); }
+/* `featured`, not `today`: with `site.latest_skips_recent` the issue on the
+   home page is deliberately a few days old (0Z, Z3). */
+.uc-spark__bar--featured { background: var(--uc-state-featured); }
+.uc-spark__bar--quiet { background: var(--uc-state-quiet); }
+/* The list's dashed language, at histogram scale (0Z, Z8). */
+.uc-spark__bar--backfilled {
+  background: repeating-linear-gradient(
+    90deg, var(--uc-state-backfilled), var(--uc-state-backfilled) 2px,
+    transparent 2px, transparent 4px
+  );
+}
+/* Recency is additive — it never replaces the bar's state, so it is drawn
+   under it rather than in it (0Z, Z2). */
+.uc-spark__slot--recent { border-bottom: 2px dotted var(--uc-meta); }
 /* A day nobody could see is not a quiet day. Same weight on the page, a
    different mark: hatched rather than solid, so the two are distinguishable
    without colour and without reading the label. */
 .uc-spark__bar--missing {
   background: repeating-linear-gradient(
-    45deg, var(--uc-line), var(--uc-line) 2px, transparent 2px, transparent 4px);
-  border: 1px solid var(--uc-line);
+    45deg, var(--uc-state-missing), var(--uc-state-missing) 2px,
+    transparent 2px, transparent 4px);
+  border: 1px solid var(--uc-state-missing);
 }
 .uc-spark__caption {
   display: flex;
@@ -549,7 +589,7 @@ body {
 .uc-row__fill { display: block; height: 100%; background: var(--uc-accent); }
 /* A quiet day's bar is grey AND the row says "a quiet day" in words. Colour
    never carries the meaning on its own. */
-.uc-row--quiet .uc-row__fill { background: var(--uc-quiet); }
+.uc-row--quiet .uc-row__fill { background: var(--uc-state-quiet); }
 .uc-row__count { flex: 0 0 5.5rem; font-variant-numeric: tabular-nums; }
 .uc-row__lead {
   flex: 1 1 auto;
@@ -559,7 +599,8 @@ body {
   text-overflow: ellipsis;
   color: var(--uc-ink);
 }
-.uc-row__artifacts { flex: 0 0 auto; color: var(--uc-faint); font-size: 0.78rem; }
+/* `.uc-row__artifacts` was removed with the column it styled (0Z, Z10).
+   The counts live on in the latest issue stat rail and in archive_stats. */
 .uc-chip {
   background: var(--uc-chip-bg);
   color: var(--uc-meta);
@@ -568,13 +609,14 @@ body {
   font-size: 0.75rem;
 }
 
-/* The hover detail is CSS only and purely additive: the row is complete
-   without it, which is the condition for having it at all. Touch devices and
-   mail clients simply never see it. */
-.uc-row__lead:hover, .uc-row:focus-within .uc-row__lead {
-  white-space: normal;
-  overflow: visible;
-}
+/* The hover expansion that used to be here is gone (phase 0Z, Z9).
+   `white-space: normal` on hover reflowed the row and pushed every row below
+   it down, so pointing at a title moved the thing you were about to click.
+   Its own comment said it was "purely additive: the row is complete without
+   it, which is the condition for having it at all" — which is exactly the
+   argument for removing it once it costs something.
+   **The full string stays in the DOM**; only the truncation is CSS, because a
+   string cut in Python is cut for a screen reader too. */
 
 .uc-columns { display: flex; gap: 1.75rem; border-top: 1px solid var(--uc-line); padding-top: 1.25rem; }
 .uc-column { flex: 1 1 0; }
@@ -643,7 +685,8 @@ body {
 .uc-row--missing .uc-row__fill { background: transparent; }
 .uc-row--missing .uc-row__bar {
   background: repeating-linear-gradient(
-    45deg, var(--uc-hairline), var(--uc-hairline) 2px, transparent 2px, transparent 4px
+    45deg, var(--uc-state-missing), var(--uc-state-missing) 2px,
+    transparent 2px, transparent 4px
   );
 }
 .uc-chip--missing { background: transparent; border: 1px solid var(--uc-line); color: var(--uc-faint); }
@@ -657,7 +700,8 @@ body {
    in words and explains itself underneath. */
 .uc-row--backfilled .uc-row__fill {
   background: repeating-linear-gradient(
-    90deg, var(--uc-accent), var(--uc-accent) 3px, transparent 3px, transparent 5px
+    90deg, var(--uc-state-backfilled), var(--uc-state-backfilled) 3px,
+    transparent 3px, transparent 5px
   );
 }
 .uc-chip--backfilled {
@@ -665,6 +709,14 @@ body {
   border: 1px dashed var(--uc-line);
   color: var(--uc-meta);
 }
+/* Papers went out, none of them led (0Z, Z1). Not a fault and not a quiet
+   day — the chip says which, because colour never carries meaning alone. */
+.uc-chip--unranked { background: transparent; border: 1px dotted var(--uc-line); color: var(--uc-meta); }
+/* Our knowledge of this day is still settling (0Z, Z2). */
+.uc-chip--recent { background: transparent; border: 1px dotted var(--uc-meta); color: var(--uc-meta); }
+.uc-spark__legend { color: var(--uc-faint); }
+/* Additive, like the histogram's: the row keeps its own state. */
+.uc-row--recent .uc-row__date { border-bottom: 2px dotted var(--uc-meta); }
 /* Its own line under the row. `flex-basis: 100%` is what forces the wrap, and
    nothing else in the row sets one, so rows without a note are unchanged. */
 .uc-row__note {

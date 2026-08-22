@@ -180,7 +180,7 @@ def issue(date_: Optional[str] = DateOpt):
     iss = run_stages.stage_issue(run, d)
     typer.echo(
         f"[{run.metrics.stages.get('issue')}] issue — {len(iss.items)} items, "
-        f"{'quiet day' if iss.quiet_day else 'headline: ' + (iss.headline.line or '')}"
+        f"{'quiet day' if iss.is_quiet else 'headline: ' + (iss.headline.line or 'none cleared the bar')}"
     )
 
 

@@ -58,11 +58,52 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5126345699",
+        "label": "Farbod Abbasi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147389377",
+        "label": "Zachary Patterson"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147447528",
+        "label": "Bilal Farooq"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.3422,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.2269,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.1415,
+        "subfield": "2215"
+      }
+    ]
   },
   "first_published": "2026-08-16",
   "graph": {
@@ -73,7 +114,7 @@
   "ids": {
     "arxiv": "2608.15867",
     "doi": "10.48550/arxiv.2608.15867",
-    "openalex": null,
+    "openalex": "W7203696217",
     "pmid": null
   },
   "provenance": {
@@ -81,7 +122,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-21T21:40:09Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005944,
     "llm": {
@@ -169,6 +211,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-16",
+  "updated": "2026-08-22",
   "work_key": "arxiv:2608.15867"
 }

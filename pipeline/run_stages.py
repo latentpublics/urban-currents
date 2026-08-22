@@ -887,35 +887,47 @@ def stage_issue(run: Run, d: date, use_llm: bool = True) -> Issue:
     except Exception as e:  # noqa: BLE001
         run.error(f"synthesis: {type(e).__name__}: {e}")
 
-    # One call, for the selected item only, and never fatal — see
-    # `pipeline/summarize/headline.py` for why this is the most carefully
-    # fenced LLM call in the pipeline.
-    headline_text, headline_basis = (None, None)
-    if headline_item is not None:
-        from .summarize.headline import write_headline
-
-        headline_text, headline_basis = write_headline(headline_item, use_llm=use_llm)
-        run.count(f"headline_{headline_basis.split(':')[0]}", 1)
-        if headline_basis != "llm":
-            run.error(f"headline: {headline_basis}")
-
-    # The best item is recorded even when it did not clear the bar (0Z, Z1).
-    # `present` stays false — nothing is being claimed as a headline — but the
-    # archive keeps a representative title for the day instead of a blank.
-    from .score.headline import best_candidate
+    # One call per issue, and never fatal — see `pipeline/summarize/headline.py`
+    # for why this is the most carefully fenced LLM call in the pipeline.
+    #
+    # ★ The threshold now chooses the **shape**, not whether a line exists
+    # (0Z-B, B0). With a standout paper the line is about that paper; without
+    # one it is about the day's papers, because a day of evenly solid work is
+    # not a day with nothing to say. `headline_form` carries the measurement
+    # that forced the change.
+    from .score.headline import best_candidate, headline_form
 
     lead = headline_item or best_candidate(publish)
+    form = headline_form(publish)
+
+    headline_text, headline_basis = (None, None)
+    if lead is not None:
+        from .summarize.headline import write_headline
+
+        headline_text, headline_basis = write_headline(
+            lead, use_llm=use_llm, others=publish if form == "day" else None
+        )
+        run.count(f"headline_{headline_basis.split(':')[0]}", 1)
+        run.metrics.stages["headline.form"] = form
+        if not headline_basis.startswith("llm"):
+            run.error(f"headline: {headline_basis}")
 
     issue = Issue(
         date=d,
         headline=Headline(
-            present=headline_item is not None,
+            # True whenever a line was written. Before 0Z-B this tracked "an
+            # item cleared the bar", which is now `form == "lead"` and is
+            # recorded in the run's metrics rather than in the issue.
+            present=headline_text is not None,
             work_key=lead.work_key if lead else None,
             line=headline_text,
             basis=headline_basis,
         ),
         # Written as it always was, and read by nobody: see the field's own
         # comment in `models.py`. `Issue.is_quiet` is what the renderers use.
+        # Still keyed on the threshold rather than on whether a line was
+        # written, so the field keeps the one meaning it has always had
+        # ("no item cleared the bar") instead of acquiring a third (0Z-B).
         quiet_day=headline_item is None,
         scan_meta=scan,
         items=sorted(it.work_key for it in publish),

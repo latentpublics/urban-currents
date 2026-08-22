@@ -149,7 +149,12 @@ llm:
   # broke, or an empty reply. **An issue must not fail to publish because a
   # headline could not be written.**
   headline:
-    prompt_version: "headline@0.1.0"
+    # 0.2.0 (phase 0Z-B): the prompt now takes the day's papers, not one, and
+    # forbids the failure that only appears at that width — an invented common
+    # theme, a quantity word, or a claimed relation between papers. Bumping the
+    # version is what stops the cache replaying single-paper lines written under
+    # 0.1.0 against the new material.
+    prompt_version: "headline@0.2.0"
     # Short output. The line is capped at twelve words and the check rejects
     # anything longer rather than trimming it — a truncated claim is a
     # different claim.

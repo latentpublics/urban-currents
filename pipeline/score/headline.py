@@ -99,13 +99,52 @@ def pick_headline(items: Sequence[Item], threshold: Optional[float] = None) -> O
 
     Returning None means **no item cleared the headline bar**. It does not mean
     the day was quiet — that is a question about how much was published, and
-    `Issue.is_quiet` answers it (0Z, Z1).
+    `Issue.is_quiet` answers it (0Z-A, Z1) — and since 0Z-B it does not mean the
+    day gets no headline either. See `headline_form`.
     """
     best = best_candidate(items)
     if best is None:
         return None
     thr = headline_threshold() if threshold is None else threshold
     return best if best.scores.headline >= thr else None
+
+
+def headline_form(items: Sequence[Item], threshold: Optional[float] = None) -> str:
+    """`"lead"` or `"day"` — which shape the day's headline takes (0Z-B, B0).
+
+    ## What the threshold now decides
+
+    It used to decide **whether** a day had a headline at all: no item over the
+    bar, no headline. That was right while a headline compressed one paper —
+    with no representative paper there was nothing to compress.
+
+    Once the line summarises the day, the premise stops holding. A day of nine
+    evenly solid papers is not a day with nothing to say; it is the day a
+    summary is *most* useful. So the threshold chooses the **form** instead:
+
+      `lead`  one paper stands out — the line is about that paper
+      `day`   nothing stands out — the line is about the day's papers
+
+    ## And the measurement that forced it
+
+    The score is degenerate at the published tier. Of 2,315 items in the archive
+    on 2026-08-22: **33.8% score exactly 0.44** and only **3.1%** clear the
+    0.444 threshold. Every "no headline" day in the archive — 08-21, 08-20,
+    08-13, 08-09, 08-02 — has *every* item sitting on that same 0.44, while the
+    days that got one have a single item at 0.46 to 0.67.
+
+    So the bar was not separating a standout day from an ordinary one. It was
+    separating "one paper happened to pick up a small component bonus" from
+    "none did", by a margin of 0.004 over a plateau holding a third of the
+    archive. That is a coin toss deciding whether the most visible line on the
+    page exists.
+
+    **The weights are untouched** and so is `scoring.yaml`; what changed is how
+    the number is used. What it now predicts is the share of days led by a
+    single paper rather than the share of days with a headline — see the report
+    for what that does to the calibrated `headline_rate`.
+    """
+    return "lead" if pick_headline(items, threshold) is not None else "day"
 
 
 def headline_line(item: Item) -> str:

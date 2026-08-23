@@ -18,6 +18,9 @@ the HTML *contains* `uc-nav` would have passed too, because the markup was
 there — in the wrong place. So these assertions are about **position**: in the
 body, out of `<style>`, before the article.
 
+It also holds the masthead's other half (0Z-E): the site says the date once
+and the email still says it the way an email has to.
+
 No network, no keys.
 """
 
@@ -126,6 +129,64 @@ def test_the_date_heading_survived_the_fix(pages):
     for d, html in pages.items():
         assert f'<h1 class="uc-issue__title">{d}</h1>' in html
         assert '<h1 class="uc-issue__title">Urban Currents</h1>' not in html
+
+
+# --------------------------------------------------------------------------
+# The masthead says the date once — on the site, and only on the site
+# --------------------------------------------------------------------------
+
+
+def _masthead(html: str) -> str:
+    start = html.index('<header class="uc-issue__masthead">')
+    return html[start : html.index("</header>", start)]
+
+
+def test_the_site_masthead_says_the_date_once(pages):
+    """Z6 swapped the h1 to the date and left the line that used to carry it,
+    so the header printed the same day twice (0Z-E)."""
+    for d, html in pages.items():
+        head = _masthead(html)
+        assert head.count(str(d)) == 1, f"{d} appears {head.count(str(d))} times"
+        assert "uc-issue__date" not in head, "the dateline is the h1's job here"
+
+
+def test_the_email_keeps_its_brand_and_its_dateline(repo):
+    """★ The reason this is removed in the build and not in the template.
+
+    An email has no navigation carrying the brand two lines above the heading,
+    so its h1 stays "Urban Currents" — and then the dateline is the only thing
+    telling a reader which day they were sent. Same template, two outputs, and
+    only one of them is allowed to lose the line.
+    """
+    from pipeline.render.preview import render_issue
+
+    _seed()
+    d = DAYS[1]
+    issue = store.load_issue(d)
+    items = [store.load_item(k) for k in issue.items]
+    head = _masthead(render_issue(issue, [i for i in items if i], []))
+
+    assert '<h1 class="uc-issue__title">Urban Currents</h1>' in head
+    assert f'<p class="uc-issue__date">{d}</p>' in head
+
+
+def test_the_dateline_rule_is_still_in_the_stylesheet():
+    """It is unused on the site and must not be tidied away: one stylesheet
+    serves both outputs, and the email is the one that still uses it."""
+    import pipeline.render
+    from pathlib import Path
+
+    css = (Path(pipeline.render.__file__).parent / "templates" / "base.css.j2").read_text(
+        encoding="utf-8"
+    )
+    assert ".uc-issue__date {" in css
+
+
+def test_removing_a_dateline_that_is_not_there_raises(pages):
+    """0Z-D's rule, applied to the line this batch removes: if the template
+    stops emitting it, the build says so instead of quietly not removing it."""
+    with pytest.raises(RuntimeError, match="found 0"):
+        _replace_once("<header></header>", '<p class="uc-issue__date">x</p>', "", "a test")
 
 
 # --------------------------------------------------------------------------

@@ -117,6 +117,13 @@ body {
   margin-bottom: 1.5rem;
 }
 .uc-issue__title { font-size: 1.5rem; font-weight: 700; margin: 0; letter-spacing: -0.01em; }
+/* ★ Unused on the site and kept anyway (0Z-E). The site build removes this
+   paragraph, because there the h1 has been swapped to the date and the line
+   would say it twice. **The email still has it** — one stylesheet serves both,
+   and an email has no navigation carrying the brand, so its h1 stays "Urban
+   Currents" and this dateline is the only thing saying which day was sent.
+   Deleting a rule because a grep of `site/` does not find it would break the
+   thing that is not in `site/`. */
 .uc-issue__date { color: var(--uc-ink-soft); font-size: 0.95rem; margin: 0.25rem 0 0; }
 
 .uc-scanmeta {

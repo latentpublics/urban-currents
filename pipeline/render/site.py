@@ -767,6 +767,26 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
             f'<h1 class="uc-issue__title">{issue.date}</h1>',
             f"date heading for {issue.date}",
         )
+        # ★ And with the h1 saying the date, the line under it that used to
+        # say the date is saying it twice (0Z-E). `uc-issue__date` was the
+        # masthead's dateline back when the h1 was the brand; the swap above
+        # took its job. Removed here and **only here** — in the email the h1
+        # is still "Urban Currents", because an email has no navigation
+        # carrying the brand two lines up, and that dateline is the only
+        # thing telling a reader which day they were sent.
+        #
+        # The anchor takes the newline and indent with it so the header does
+        # not keep a blank line where the paragraph was. That makes it
+        # sensitive to how the template is indented, which is the intended
+        # trade: `_replace_once` turns a reindent into a failed build rather
+        # than a silently unremoved line, and 0Z-D is the whole argument for
+        # preferring the first.
+        html = _replace_once(
+            html,
+            f'\n    <p class="uc-issue__date">{issue.date}</p>',
+            "",
+            f"dateline for {issue.date}",
+        )
         path = target_dir / f"{issue.date}.html"
         path.write_text(html, encoding="utf-8", newline="\n")
         written.append(path)

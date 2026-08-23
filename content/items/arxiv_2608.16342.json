@@ -51,7 +51,23 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5118846006",
+        "label": "Toni Seibold"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5094347215",
+        "label": "Luna Lütz"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147446973",
+        "label": "Tom Brown"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -62,7 +78,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11185",
+        "is_primary": true,
+        "label": "Integrated Energy Systems Optimization",
+        "score": 0.8948,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10967",
+        "is_primary": false,
+        "label": "Carbon Dioxide Capture Technologies",
+        "score": 0.049,
+        "subfield": "2210"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10435",
+        "is_primary": false,
+        "label": "Environmental Impact and Sustainability",
+        "score": 0.0139,
+        "subfield": "2305"
+      }
+    ]
   },
   "first_published": "2026-08-17",
   "graph": {
@@ -73,7 +114,7 @@
   "ids": {
     "arxiv": "2608.16342",
     "doi": "10.48550/arxiv.2608.16342",
-    "openalex": null,
+    "openalex": "W7203661648",
     "pmid": null
   },
   "provenance": {
@@ -81,7 +122,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-21T21:40:00Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006293,
     "llm": {
@@ -169,6 +211,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-17",
+  "updated": "2026-08-23",
   "work_key": "arxiv:2608.16342"
 }

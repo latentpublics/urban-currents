@@ -86,7 +86,43 @@
     ],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0009-9082",
+        "label": "Peilin Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147427806",
+        "label": "Pengfei Chen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147388075",
+        "label": "Jingyu Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147432529",
+        "label": "Zhifeng Yang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5006815617",
+        "label": "陈天胜"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147377060",
+        "label": "Mengjie Gong"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5132676922",
+        "label": "Xiao Cheng"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -109,7 +145,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": true,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.2442,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.1944,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0756,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-08-17",
   "graph": {
@@ -120,7 +181,7 @@
   "ids": {
     "arxiv": "2608.16310",
     "doi": "10.48550/arxiv.2608.16310",
-    "openalex": null,
+    "openalex": "W7203700691",
     "pmid": null
   },
   "provenance": {
@@ -128,7 +189,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-18T07:20:14Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.007139,
     "llm": {
@@ -216,6 +278,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-17",
+  "updated": "2026-08-23",
   "work_key": "arxiv:2608.16310"
 }

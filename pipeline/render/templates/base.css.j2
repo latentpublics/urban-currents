@@ -660,6 +660,66 @@ body {
    **The full string stays in the DOM**; only the truncation is CSS, because a
    string cut in Python is cut for a screen reader too. */
 
+/* "How this is made" (Launch A, A2), and the API document, which uses the
+   same two rules. Set narrower than the body text and a shade quieter: this is
+   the page explaining itself, and it should read as an aside to the issues
+   rather than compete with them. */
+.uc-method {
+  border-top: 1px solid var(--uc-line);
+  padding-top: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+.uc-method__h2 {
+  margin: 0 0 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--uc-meta);
+}
+.uc-method__p {
+  margin: 0 0 0.7rem;
+  max-width: 40rem;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--uc-ink-soft);
+}
+.uc-method__p strong { color: var(--uc-ink); font-weight: 650; }
+.uc-method__api { margin-bottom: 0; }
+
+.uc-doc__h2 {
+  margin: 1.75rem 0 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--uc-meta);
+}
+.uc-doc__note {
+  margin: 0 0 0.8rem;
+  max-width: 40rem;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--uc-ink-soft);
+}
+.uc-doc__note strong, .uc-legend__list dd strong { color: var(--uc-ink); font-weight: 650; }
+.uc-doc code, .uc-doc__cite {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+}
+.uc-doc__cite {
+  background: var(--uc-chip-bg);
+  padding: 0.7rem 0.9rem;
+  margin: 0 0 0.8rem;
+  overflow-x: auto;
+  line-height: 1.6;
+  color: var(--uc-ink-soft);
+}
+/* The document's field list is long, so its terms get their own column width
+   rather than the legend's `max-content`, which would let one long field name
+   set the width for all of them. */
+.uc-doc .uc-legend__list { grid-template-columns: minmax(6rem, 12rem) 1fr; margin-bottom: 1rem; }
+
 .uc-columns { display: flex; gap: 1.75rem; border-top: 1px solid var(--uc-line); padding-top: 1.25rem; }
 .uc-column { flex: 1 1 0; }
 .uc-column h3 {

@@ -122,38 +122,69 @@
     {% with issue_href = "issues/" %}{% include "_archive_rows.html.j2" %}{% endwith %}
   </section>
 
-  <section class="uc-columns">
-    <div class="uc-column">
-      <h3>Method</h3>
-      <p>
-        Two entry paths. A journal article enters because a journal we track
-        published it; an arXiv preprint enters on a classifier's probability and
-        only above a floor set from labelled examples. Neither path is asked to
-        fill a quota.
-      </p>
-    </div>
-    <div class="uc-column">
-      <h3>Honesty</h3>
-      <p>
-        Bibliography, authors and links come from the sources, never from a
-        model. Where a measurement was not possible we leave the line out rather
-        than print a zero, and where it was possible and found nothing we say
-        so.
-      </p>
-    </div>
-    <div class="uc-column">
-      <h3>Tags</h3>
-      <p>
-        Every tag carries a canonical identifier — OpenAlex, ORCID, ROR — so a
-        method named twice is one thing, not two. Free strings are a test
-        failure rather than a warning.
-      </p>
-    </div>
+  {#- How this is made (Launch A, A2). No separate About page — YJUN's call —
+      and this is the page somebody arriving from a search result lands on, so
+      the answer has to be here.
+
+      **The unflattering number is in the middle of it, not at the end.** If a
+      reader is going to find out that the filter misses the bar we set, they
+      should find out from us. The vocabulary is not repeated here: the legend
+      under the archive strip above already defines every mark, and saying it
+      twice on one page is the noise 0Z-C removed.
+
+      Every figure is passed in. `quality` is measured from the labels; when it
+      is absent the sentence is left out rather than printed with a zero. -#}
+  <section class="uc-method">
+    <h2 class="uc-method__h2">How this is made</h2>
+    <p class="uc-method__p">
+      Every weekday morning an unattended pipeline reads
+      {{ stats.arxiv_categories }} arXiv categories and {{ stats.journals }}
+      journals. A journal article enters because a journal we track published
+      it. An arXiv preprint enters on a classifier's probability, above a floor
+      set from labelled examples. Neither path is asked to fill a quota, which
+      is why some days are short and some are empty.
+    </p>
+    {%- if quality %}
+    <p class="uc-method__p">
+      <strong>How well that works, measured:</strong> of the ten papers each
+      path ranked highest on a given day,
+      {% for name, q in quality.sources.items() -%}
+      {{ '%.2f'|format(q.precision) }} were worth publishing on the
+      {{ name }} path ({{ q.n_labels }} labels over {{ q.days }} days){% if not loop.last %}, and {% endif %}
+      {%- endfor %}.
+      <strong>We set ourselves {{ '%.2f'|format(quality.target) }} and both
+      miss it.</strong> Precision holds at the target through about rank
+      {{ quality.sources.values()|map(attribute='depth_holding_target')|min }} and
+      falls after — so the top of a day is better than these figures, and the
+      tail is worse. {{ quality.n_labels }} judgements over
+      {{ quality.days }} days is a thin basis for saying even that.
+    </p>
+    {%- endif %}
+    <p class="uc-method__p">
+      arXiv indexes about three days late, so the newest rows keep filling in
+      after they first appear — in a later issue, never in one already
+      published. Bibliography, authors and links come from the sources, never
+      from a model; a model writes the summaries and the one-line headline, from
+      the abstract and nothing else. Every tag carries a canonical identifier —
+      OpenAlex, ORCID, ROR — so a method named twice is one thing, not two.
+    </p>
+    <p class="uc-method__p uc-method__api">
+      All of it is also <a href="api.html">available as JSON</a>, with the
+      licence and the field meanings written out.
+    </p>
   </section>
+
+  {#- The three columns that were here — Method, Honesty, Tags — are gone
+      (Launch A, A2). "How this is made" above says all three things and says
+      them with the measured numbers attached; keeping both left the page
+      making the same three claims twice, forty lines apart, which is the noise
+      0Z-C removed from the archive rows for the same reason. The stylesheet
+      keeps `.uc-columns`: the design review page is built from these bodies
+      and the rule costs nothing. -#}
 
   <footer class="uc-footer">
     <p class="uc-footer__ilp">Institute for Latent Publics · free, no ads, no metrics</p>
-    <p class="uc-footer__build">urban-currents {{ pipeline_version }}</p>
+    <p class="uc-footer__build">urban-currents {{ pipeline_version }} · <a href="api.html">API</a></p>
     {# arXiv's terms require this wording exactly, including the disclaimer. #}
     <p class="uc-attribution">
       Thank you to arXiv for use of its open access interoperability. This

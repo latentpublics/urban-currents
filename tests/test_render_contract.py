@@ -36,8 +36,19 @@ FETCHING = (
     # that *do* fetch are named, and `test_the_only_link_element_is_the_feed`
     # keeps the narrowing from quietly admitting a stylesheet later.
     re.compile(r'<link[^>]*rel=["\']?(stylesheet|preload|prefetch|icon|manifest)', re.I),
-    re.compile(r'<link[^>]*href=["\']?https?:', re.I),
-    re.compile(r"<script\b", re.I),
+    # Narrowed a second time for the same reason (Launch A): a
+    # `rel="canonical"` is an absolute URL that **states an identity** and
+    # is never fetched by a browser. It has to be absolute — a canonical is
+    # meaningless relative — so the choice was to narrow the pattern or to
+    # drop the tag, and dropping it would leave a sub-path deploy with no
+    # way to say which URL is the real one.
+    re.compile(r'<link(?![^>]*rel=["\']?canonical)[^>]*href=["\']?https?:', re.I),
+    # And a third: `<script type="application/ld+json">` is a data island.
+    # The parser hands it to consumers; nothing executes and nothing is
+    # fetched. **Every other script is still banned**, which is the rule
+    # this project actually holds — no JavaScript on the site — and
+    # `test_the_only_script_is_structured_data` states it as a positive.
+    re.compile(r"<script\b(?![^>]*type=[\"']?application/ld\+json)", re.I),
     re.compile(r"<img\b", re.I),
     re.compile(r"<iframe\b", re.I),
     # Was `@font-face`. The site self-hosts three OFL faces from
@@ -99,18 +110,40 @@ def test_no_page_fetches_anything(repo):
             assert not pattern.search(html), f"{name} would fetch: {pattern.pattern}"
 
 
-def test_the_only_link_element_is_the_feed(repo):
+def test_the_only_link_elements_are_the_feed_and_the_canonical(repo):
     """The narrowing above, held in place.
 
     `FETCHING` no longer bans every `<link>`, so this states what the pages are
-    allowed to contain instead: one same-origin `rel="alternate"` per page and
-    nothing else wearing that tag.
+    allowed to contain instead. **Two** kinds now, and each is checked for the
+    property that made it allowable: the feed hint is same-origin, and the
+    canonical states an identity rather than pulling anything.
     """
     for name, html in _pages(repo).items():
         for tag in re.findall(r"<link[^>]*>", html, re.I):
+            if 'rel="canonical"' in tag:
+                # Absolute by necessity; it names a URL, it does not fetch one.
+                assert tag.count("href=") == 1, f"{name}: {tag}"
+                continue
             assert 'rel="alternate"' in tag, f"{name}: unexpected {tag}"
             assert "atom+xml" in tag, f"{name}: unexpected {tag}"
             assert "http" not in tag.split("href=")[1][:6], f"{name}: off-origin {tag}"
+
+
+def test_the_only_script_is_structured_data(repo):
+    """No JavaScript on this site — stated as a positive, not as an absence.
+
+    `FETCHING` bans every script that is not `application/ld+json`. That is a
+    negative and a negative can be satisfied by a page having no scripts at
+    all, so this walks the ones that *are* there and checks each is the data
+    island it claims to be: right type, and parses as JSON.
+    """
+    import json
+
+    for name, html in _pages(repo).items():
+        for tag, body in re.findall(r"(<script[^>]*>)(.*?)</script>", html, re.S | re.I):
+            assert 'type="application/ld+json"' in tag, f"{name}: {tag}"
+            parsed = json.loads(body)
+            assert parsed.get("@context") == "https://schema.org", f"{name}: {tag}"
 
 
 def test_paper_links_are_still_there(repo):

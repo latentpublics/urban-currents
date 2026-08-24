@@ -104,9 +104,18 @@ def test_the_whole_site_fetches_nothing(repo):
         # check now looks for what it always meant: a URL pointing
         # somewhere else. `preview.html` and `email.html` are covered by
         # their own test below and still carry no `@font-face` at all.
+        # Narrowed twice more in Launch A, both for the reason above — the
+        # pattern moves to what it always meant rather than the page being
+        # changed to fit the proxy. A `rel="canonical"` names a URL and never
+        # fetches it, and has to be absolute to mean anything at all. A
+        # `ld+json` script is a data island the parser hands to consumers, not
+        # to an interpreter; **every other script is still banned**, and
+        # `test_render_contract.py::test_the_only_script_is_structured_data`
+        # states that as a positive over the scripts that do exist.
         for pattern in (r'<link[^>]*rel=["\']?(stylesheet|preload|prefetch|icon|manifest)',
-                        r'<link[^>]*href=["\']?https?:',
-                        r"<script\b", r"<img\b", r"@import",
+                        r'<link(?![^>]*rel=["\']?canonical)[^>]*href=["\']?https?:',
+                        r"<script\b(?![^>]*type=[\"']?application/ld\+json)",
+                        r"<img\b", r"@import",
                         r"url\(\s*['\"]?https?:", r"fonts\.googleapis",
                         r"fonts\.gstatic"):
             assert not re.search(pattern, html, re.I), f"{page.name} matches {pattern}"

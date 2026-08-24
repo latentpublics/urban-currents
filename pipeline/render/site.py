@@ -38,6 +38,7 @@ never deleted.
 
 from __future__ import annotations
 
+import json
 from datetime import date, date as dt_date, timedelta
 from pathlib import Path
 from typing import Any, Optional
@@ -46,6 +47,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
 
 from .. import paths, store
+from .api import build_api
 from ..config import cfg
 from ..models import Issue, Item, PIPELINE_VERSION
 
@@ -439,8 +441,22 @@ def build_home(out: Optional[Path] = None) -> Path:
     css = with_fonts(
         (TEMPLATE_DIR / "base.css.j2").read_text(encoding="utf-8"), "assets/fonts/"
     )
+    # Derived, like every other number on this page: the description a search
+    # engine shows is the same sentence the page opens with, built from the
+    # archive rather than typed into the template.
+    description = (
+        f"{stats['arxiv_categories']} arXiv categories and {stats['journals']} journals, "
+        f"read every day. {stats['published_days']} issues since {stats['first_month']}; "
+        f"{stats['total_published']} papers worth your time, and the quiet days said so."
+    )
     html = env.get_template("home.html.j2").render(
-        head_extras=Markup(head_extras()),
+        head_extras=Markup(head_extras(
+            description=description,
+            path="",
+            title="Urban Currents — a daily scan of urban data science",
+            jsonld=ld_home(stats, _base_url()),
+        )),
+        quality=selection_quality(),
         nav=nav_links("", latest),
         stats=stats,
         rows=rows[:HOME_ARCHIVE_DAYS],
@@ -537,8 +553,17 @@ def build_archive(out: Optional[Path] = None) -> list[Path]:
             (out or (paths.ROOT / "site" / "archive.html")) if newest
             else (paths.ROOT / "site" / "archive" / f"{month['key']}.html")
         )
+        month_desc = (
+            f"Urban Currents issues from {month['label']}: {month['published']} "
+            f"published, {month['quiet']} quiet, {month['missing']} not seen."
+        )
         html = env.get_template("archive.html.j2").render(
-            head_extras=Markup(head_extras(root)),
+            head_extras=Markup(head_extras(
+                root,
+                description=month_desc,
+                path="archive.html" if newest else f"archive/{month['key']}.html",
+                title=f"Urban Currents — Archive — {month['label']}",
+            )),
             nav=nav_links(root, lead),
             stats=stats,
             month=month,
@@ -750,7 +775,15 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
         html = _replace_once(
             html,
             "</head>",
-            head_extras("../") + "\n</head>",
+            head_extras(
+                "../",
+                description=issue_summary(issue, items),
+                path=f"issues/{issue.date}.html",
+                title=f"Urban Currents {issue.date}",
+                og_type="article",
+                jsonld=ld_issue(issue, items, _base_url(), issue_summary(issue, items)),
+            )
+            + "\n</head>",
             f"head extras for {issue.date}",
         )
         # ★ The site's copy titles the page with its **date** (0Z, Z6).
@@ -890,21 +923,304 @@ def is_published() -> bool:
     return bool(cfg("site.published", False))
 
 
-def head_extras(root: str = "") -> str:
-    """The two `<head>` lines that are the same on every page.
+SCHEMA = "https://schema.org"
+
+
+def _periodical(base: str) -> dict:
+    """The serial itself.
+
+    ★ **`Periodical`, and deliberately not `Blog` or `Article`** (Launch A, A4).
+    What this publishes is a dated issue on a fixed schedule with a stable
+    scope, which is what a periodical is; a blog is a stream of posts and an
+    article is one piece of writing. Getting this wrong is not cosmetic —
+    structured data that overstates what a thing is, is worse than none, and
+    the overstatement available here is the tempting one: calling our summaries
+    scholarly articles. We do not write papers. We publish an issue that
+    **mentions** other people's papers, and `mentions` is the property that
+    says exactly that without claiming authorship, hosting, or endorsement.
+
+    No `issn`. There isn't one, and inventing an identifier is the same fault
+    as inventing an issue number.
+    """
+    node = {
+        "@type": "Periodical",
+        "name": "Urban Currents",
+        "description": "A daily scan of urban data science research.",
+        "publisher": {"@type": "Organization", "name": "Institute for Latent Publics"},
+    }
+    if base:
+        node["@id"] = f"{base}/#periodical"
+        node["url"] = f"{base}/"
+    return node
+
+
+def ld_home(stats: dict, base: str) -> dict:
+    """`WebSite` plus the `Periodical` it publishes."""
+    site = {
+        "@context": SCHEMA,
+        "@type": "WebSite",
+        "name": "Urban Currents",
+        "description": "A daily scan of urban data science research.",
+        "inLanguage": "en",
+        "publisher": {"@type": "Organization", "name": "Institute for Latent Publics"},
+        "mainEntity": _periodical(base),
+    }
+    if base:
+        site["url"] = f"{base}/"
+    return site
+
+
+def ld_issue(issue: Issue, items: dict, base: str, summary: str) -> dict:
+    """One day, as an issue of the periodical.
+
+    `mentions` carries the papers: third-party works this issue points at. They
+    are `ScholarlyArticle` because that is what they are, with the author's
+    identifier and the publisher's URL — and **not** `hasPart`, `citation` or
+    `isBasedOn`, each of which would say something we are not entitled to say
+    about a work we neither wrote nor host.
+
+    Only `name`, `url` and `identifier`. No abstract: the same reason the API
+    does not serve one.
+    """
+    node = {
+        "@context": SCHEMA,
+        "@type": "PublicationIssue",
+        "name": f"Urban Currents {issue.date}",
+        "datePublished": str(issue.date),
+        "inLanguage": "en",
+        "isPartOf": _periodical(base),
+    }
+    if summary:
+        node["description"] = summary
+    if base:
+        node["url"] = f"{base}/issues/{issue.date}.html"
+    mentions = []
+    for key in issue.items:
+        item = items.get(key)
+        if item is None:
+            continue
+        paper = {"@type": "ScholarlyArticle", "name": item.bibliography.title}
+        url = item.bibliography.primary_location.landing_page_url
+        if url:
+            paper["url"] = url
+        if item.ids.doi:
+            paper["identifier"] = item.ids.doi
+        mentions.append(paper)
+    if mentions:
+        node["mentions"] = mentions
+    return node
+
+
+def ld_api(base: str, days: int) -> dict:
+    """The API, as a `Dataset` with its endpoints as downloads.
+
+    `Dataset` is accurate — a body of structured information about a topic —
+    and it is the type an AI search actually looks for when deciding whether a
+    site has a machine-readable original behind its prose.
+
+    `license` points at the API page rather than at a CC BY URL, because the
+    licence is **three licences** (ours, the sources', and one field under
+    none of them) and a single `license` URL on the whole dataset would be the
+    over-claim this property most invites.
+    """
+    node = {
+        "@context": SCHEMA,
+        "@type": "Dataset",
+        "name": "Urban Currents issues",
+        "description": (
+            "Daily issues of Urban Currents as JSON: which papers were selected "
+            "on which day, the state of each day, and the scores behind them."
+        ),
+        "creator": {"@type": "Organization", "name": "Institute for Latent Publics"},
+        "isAccessibleForFree": True,
+        "measurementTechnique": "Automated selection from arXiv and a journal whitelist",
+    }
+    if base:
+        node["url"] = f"{base}/api.html"
+        node["license"] = f"{base}/api.html"
+        node["distribution"] = [
+            {
+                "@type": "DataDownload",
+                "encodingFormat": "application/json",
+                "name": name,
+                "contentUrl": f"{base}/api/{path}",
+            }
+            for name, path in (
+                ("Catalogue of every day", "index.json"),
+                ("The newest issue", "latest.json"),
+            )
+        ]
+    if days:
+        node["distribution"] = (node.get("distribution") or []) + [
+            {
+                "@type": "DataDownload",
+                "encodingFormat": "application/json",
+                "name": "One issue, by date",
+                "contentUrl": f"{base}/api/issues/{{date}}.json" if base else None,
+            }
+        ]
+    return node
+
+
+def _attr(value: str) -> str:
+    """Escape a string for an HTML attribute.
+
+    A paper title containing a double quote would otherwise close the attribute
+    and spill the rest of the sentence into the markup as tags. Titles with
+    quotes in them are not rare, and the `meta description` is built from them.
+    """
+    from xml.sax.saxutils import escape
+
+    return escape(str(value), {'"': "&quot;"})
+
+
+def head_extras(
+    root: str = "",
+    *,
+    description: Optional[str] = None,
+    path: Optional[str] = None,
+    title: Optional[str] = None,
+    og_type: str = "website",
+    jsonld: Optional[dict] = None,
+) -> str:
+    """Everything in `<head>` that the site build owns, in one place.
 
     Built here rather than in the templates because the issue pages are
     rendered by `preview.html.j2`, which is also the email — and an email must
-    not carry a `noindex` or a feed link relative to a site it is not on. Same
-    reason the navigation and the webfonts are injected by the site build.
+    not carry a `noindex`, a feed link, or a canonical URL relative to a site it
+    is not on. Same reason the navigation and the webfonts are injected by the
+    site build.
+
+    Launch A put the rest of it — description, Open Graph, canonical and the
+    structured data — through the same function, so that three page builders
+    cannot end up with three ideas of what a page's description is.
+
+    **Every string here is derived.** The callers compute `description`: the
+    home page from `archive_stats`, an issue from `issue_summary`.
+    `test_no_number_in_the_chrome_is_written_into_the_template` has kept that
+    rule for the visible chrome since 0Z, and a `meta description` is the same
+    sentence, read by someone who never opens the page.
+
+    ★ **No image tags.** An `og:image` pointing at a file that does not exist
+    is worse than no card at all: the preview renders as a broken box instead
+    of as plain text. When there is an image there will be a tag.
     """
+    base = _base_url()
     parts = [
         f'<link rel="alternate" type="application/atom+xml" '
         f'title="Urban Currents" href="{root}feed.xml">'
     ]
+    if description:
+        parts.append(f'<meta name="description" content="{_attr(description)}">')
+
+    # Canonical and `og:url` need an absolute URL, and this deploy is a
+    # **sub-path** — a root-absolute `/issues/…` would resolve against the
+    # organisation's domain and 404 (see `_base_url`). With no base URL nothing
+    # absolute is emitted at all, rather than a guess at one.
+    canonical = f"{base}/{path}" if (base and path is not None) else None
+    if canonical:
+        parts.append(f'<link rel="canonical" href="{_attr(canonical)}">')
+    if title:
+        parts.append(f'<meta property="og:title" content="{_attr(title)}">')
+        parts.append(f'<meta name="twitter:title" content="{_attr(title)}">')
+    if description:
+        parts.append(f'<meta property="og:description" content="{_attr(description)}">')
+        parts.append(f'<meta name="twitter:description" content="{_attr(description)}">')
+    if title or description:
+        parts.append(f'<meta property="og:type" content="{_attr(og_type)}">')
+        parts.append('<meta property="og:site_name" content="Urban Currents">')
+        # `summary`, not `summary_large_image`: the large card wants an image.
+        parts.append('<meta name="twitter:card" content="summary">')
+    if canonical:
+        parts.append(f'<meta property="og:url" content="{_attr(canonical)}">')
+
+    if jsonld is not None:
+        # ★ The only `<script>` on this site, and it executes nothing: a
+        # `ld+json` block is a data island the parser hands to consumers rather
+        # than to an interpreter. `test_the_whole_site_fetches_nothing` used to
+        # ban `<script` outright as a proxy for "fetches nothing from anywhere
+        # else"; it now bans every script that is not this type, which is what
+        # it always meant.
+        parts.append(
+            '<script type="application/ld+json">'
+            + "\n"
+            + json.dumps(jsonld, indent=2, ensure_ascii=False)
+            + "\n"
+            + "</script>"
+        )
+
     if not is_published():
         parts.append('<meta name="robots" content="noindex, nofollow">')
     return "\n".join(parts)
+
+
+# PRD Q1b's criterion, not a measurement: the bar we said we would clear, which
+# is specification and belongs in the code the way a threshold does. The
+# measured value against it is read from the labels. `report.py:222` applies the
+# same number to the same question; there is no config key for it because it is
+# not a knob — moving it would be moving the goalposts, not tuning.
+Q1B_TARGET = 0.7
+
+
+def issue_summary(issue: Issue, items: Optional[dict[str, Item]] = None) -> str:
+    """One sentence describing a day, for anywhere a day needs describing.
+
+    Derived (0Z, Z1). A feed entry saying "a quiet day" over nine papers is the
+    same false sentence as the archive row's, reaching further — a feed is read
+    on other people's sites, and since Launch A this line is also the page's
+    `meta description`, which is read by search engines and by whatever
+    summarises the page for someone who never visits it. One definition, so the
+    three cannot drift.
+    """
+    items = item_index() if items is None else items
+    summary = issue.headline.line or (
+        "A quiet day in urban data science." if issue.is_quiet
+        else f"{len(issue.items)} papers; none cleared the headline bar."
+        if issue.items else ""
+    )
+    lead = items.get(issue.headline.work_key or "")
+    if lead and not summary:
+        summary = lead.bibliography.title
+    return summary
+
+
+def selection_quality() -> Optional[dict]:
+    """`precision@10` per entry path, measured, or nothing (Launch A, A2).
+
+    The home page states this and states that it misses the 0.70 target we set,
+    because the alternative is that somebody else notices first. Read from the
+    labels rather than written into the template for the reason every other
+    number on that page is: a figure typed into HTML is a figure that stops
+    being true without anything failing.
+
+    `None` when the labels are not in the checkout — the sentence is then left
+    out rather than printed with a zero in it, which is the rule this project
+    keeps having to restate.
+    """
+    try:
+        from ..labeling import precision_at_k
+
+        result = precision_at_k("relevance", 10)
+    except Exception:
+        return None
+    by_source = result.get("by_source") or {}
+    if not by_source:
+        return None
+    return {
+        "k": result.get("k", 10),
+        "n_labels": result.get("n_labels", 0),
+        "days": result.get("days_labelled", 0),
+        "target": Q1B_TARGET,
+        "sources": {
+            name: {
+                "precision": d.get(f"precision_at_{result.get('k', 10)}"),
+                "n_labels": d.get("n_labels", 0),
+                "days": d.get("days", 0),
+                "depth_holding_target": d.get("depth_holding_0.7"),
+            }
+            for name, d in sorted(by_source.items())
+        },
+    }
 
 
 def build_feed(out: Optional[Path] = None) -> Path:
@@ -923,17 +1239,7 @@ def build_feed(out: Optional[Path] = None) -> Path:
     entries = []
     for issue in issues[:50]:
         link = f"{base}/issues/{issue.date}.html" if base else f"issues/{issue.date}.html"
-        # Derived (0Z, Z1). A feed entry saying "a quiet day" over nine
-        # papers is the same false sentence as the archive row's, reaching
-        # further — a feed is read on other people's sites.
-        summary = issue.headline.line or (
-            "A quiet day in urban data science." if issue.is_quiet
-            else f"{len(issue.items)} papers; none cleared the headline bar."
-            if issue.items else ""
-        )
-        lead = items.get(issue.headline.work_key or "")
-        if lead and not summary:
-            summary = lead.bibliography.title
+        summary = issue_summary(issue, items)
         entries.append(
             "  <entry>\n"
             f"    <title>Urban Currents {issue.date}</title>\n"
@@ -973,13 +1279,207 @@ def build_feed(out: Optional[Path] = None) -> Path:
     return target
 
 
+def _inline_md(text: str) -> Markup:
+    """`code` and **bold** in a short string, as HTML.
+
+    The API document's field notes are written with backticks because that is
+    how the rest of this repository writes a field name, and they were rendering
+    as literal backticks on the page. Escaped **first** and then marked safe, so
+    the conversion cannot turn a stray angle bracket in a field note into a tag.
+    """
+    import re as _re
+    from markupsafe import escape as _escape
+
+    out = str(_escape(text))
+    out = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", out)
+    out = _re.sub(r"`([^`]+)`", r"<code>\1</code>", out)
+    return Markup(out)
+
+
+API_ENDPOINTS = (
+    ("api/index.json", "Every day, newest first: date, state, how many papers, "
+                       "the headline line, and the URL of the page. Days with no "
+                       "issue are in here too — a gap would say nothing happened."),
+    ("api/latest.json", "The newest issue in full, at an address that does not move."),
+    ("api/issues/<date>.json", "One day in full. `<date>` is `YYYY-MM-DD`."),
+)
+
+# ★ Walked against the model in `test_api.py`, not maintained by hand. The two
+# starred entries are the reason this section exists: both have had a name that
+# disagreed with what they held, and a consumer cannot see that from the JSON.
+API_FIELDS = (
+    ("date", "The day the issue covers."),
+    ("state", "`published`, `quiet`, `no_headline` or `not_seen`. ★ Derived here "
+              "from the day's contents, not read from the stored `quiet_day` flag "
+              "— that flag answers 'did anything clear the headline bar', and it "
+              "is true on days that published nine papers. `quiet` here means "
+              "nothing was published at all."),
+    ("backfilled", "The issue was assembled after the fact from archived "
+                   "candidates, because nobody was watching that morning. It is "
+                   "part of the method, not a fault — but those days skipped "
+                   "arXiv enrichment, so their contents differ slightly."),
+    ("withheld", "The reason the live run that morning published nothing, when "
+                 "there was one. A day can be both `withheld` and `backfilled`: "
+                 "the run refused and the issue was built later. Both facts are "
+                 "kept."),
+    ("recent", "Our knowledge of this day is still settling — arXiv indexes "
+               "about three days late. Papers posted around then can still "
+               "appear in a *later* issue. Issues never change once published."),
+    ("headline.present", "★ Whether there is a line in `headline.line`. It does "
+                         "**not** mean a paper stood out: since 0Z-B the "
+                         "threshold chooses the headline's *shape*, not whether "
+                         "there is one. `headline.basis` records which."),
+    ("headline.basis", "How the line was produced: `llm:lead` (written about one "
+                       "paper), `llm:day` (written about the day), `:retry` if a "
+                       "check rejected the first attempt, `fallback:<reason>` if "
+                       "no attempt passed."),
+    ("counts.unreadable", "Papers we could see existed and could not read, "
+                          "because no source exposed an abstract. Published "
+                          "because it is the one blind spot this pipeline "
+                          "measures exactly."),
+    ("scores.relevance", "The classifier's probability for the arXiv path. On "
+                         "the journal path the paper entered because a journal "
+                         "we track published it, and the classifier is not "
+                         "consulted."),
+    ("scores.headline", "What decides the headline's shape. A third of the "
+                        "archive sits at exactly 0.44; treat small differences "
+                        "as noise."),
+    ("summary", "What the paper did and why it matters, written by a model from "
+                "the abstract. **Not under the open licence** — see below."),
+)
+
+
+def build_api_docs(out: Optional[Path] = None) -> Path:
+    """One page describing the JSON, its promises, and who owns what."""
+    from .api import SCHEMA_VERSION, build_api  # noqa: F401  (version, not a rebuild)
+
+    issues = load_issues()
+    items = item_index()
+    rows = archive_rows(issues, items)
+    stats = archive_stats(rows, items)
+    latest = latest_issue(issues)
+    base = _base_url()
+
+    env = _env()
+    css = with_fonts(
+        (TEMPLATE_DIR / "base.css.j2").read_text(encoding="utf-8"), "assets/fonts/"
+    )
+    description = (
+        "Every Urban Currents issue as JSON: which papers were selected on which "
+        "day, what state the day was in, and who owns which part of it."
+    )
+    html = env.get_template("api.html.j2").render(
+        head_extras=Markup(head_extras(
+            description=description,
+            path="api.html",
+            title="Urban Currents — API",
+            jsonld=ld_api(base, len(rows)),
+        )),
+        nav=nav_links("", latest),
+        stats=stats,
+        endpoints=[{"path": p, "what": _inline_md(w)} for p, w in API_ENDPOINTS],
+        fields=[{"name": n, "what": _inline_md(w)} for n, w in API_FIELDS],
+        schema_version=SCHEMA_VERSION,
+        # Measured after the deploy and written into the config, never guessed:
+        # whether a browser may fetch these files cross-origin is the whole
+        # question for anyone building on them (A1-2).
+        cors_note=cfg("site.cors_note", "") or "",
+        example={
+            "date": str(latest.date) if latest else "",
+            "url": (f"{base}/issues/{latest.date}.html" if base and latest else ""),
+        },
+        css=Markup(css),
+        pipeline_version=PIPELINE_VERSION,
+    )
+    target = out or (paths.ROOT / "site" / "api.html")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(html, encoding="utf-8", newline="\n")
+    return target
+
+
+def build_llms_txt(out: Optional[Path] = None) -> Optional[Path]:
+    """`llms.txt` — a **proposed convention, not a standard** (Launch A, A4).
+
+    It has no RFC and no registry; it is a file some people have agreed to look
+    for. That is a reason to write it plainly and to say so here, not a reason
+    to skip it: the cost is a few hundred bytes and the benefit is that an
+    assistant summarising this site finds the machine-readable original instead
+    of scraping the prose.
+
+    ★ Written **only when the site is published**, for the same reason the
+    sitemap line is left out of `robots.txt` until then (0X, X5). A sitemap is
+    an invitation to index. So is this — more so, because it is discovered by
+    convention at a fixed path — and publishing an invitation next to
+    `Disallow: /` states two intentions in one directory.
+    """
+    target = out or (paths.ROOT / "site" / "llms.txt")
+    if not is_published():
+        if target.exists():
+            target.unlink()
+        return None
+
+    base = _base_url()
+    issues = load_issues()
+    latest = latest_issue(issues)
+    rows = archive_rows(issues, item_index())
+    stats = archive_stats(rows, item_index())
+
+    def link(label: str, path: str, note: str) -> str:
+        return f"- [{label}]({base}/{path}): {note}" if base else f"- {label} ({path}): {note}"
+
+    lines = [
+        "# Urban Currents",
+        "",
+        "> A daily scan of urban data science research, published by the Institute "
+        "for Latent Publics. Papers are selected from arXiv by a classifier and "
+        "from a journal whitelist; each day says what it looked at, what it "
+        "published, and when it published nothing.",
+        "",
+        "Bibliography, authors and links come from the sources, never from a "
+        "model. Where a measurement was not possible the line is left out rather "
+        "than printed as a zero.",
+        "",
+        "## Machine-readable",
+        "",
+        link("API documentation", "api.html", "addresses, fields, licence, how to cite"),
+        link("Catalogue", "api/index.json", f"every day ({stats['days']}), newest first"),
+        link("Newest issue", "api/latest.json", "the current issue in full"),
+        link("Atom feed", "feed.xml", "the last 50 issues"),
+        "",
+        "## Pages",
+        "",
+        link("Home", "index.html", "what this is, how papers are chosen, and how well"),
+        link("Archive", "archive.html", "every issue, by month"),
+    ]
+    if latest is not None:
+        lines.append(link("Latest issue", f"issues/{latest.date}.html", str(latest.date)))
+    lines += [
+        "",
+        "## Licence",
+        "",
+        "The selection, scores and headlines are CC BY 4.0. Bibliographic records "
+        "are the sources' under their own terms. The per-paper summaries are "
+        "offered under no open licence — see the API documentation for why.",
+        "",
+    ]
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text("\n".join(lines), encoding="utf-8", newline="\n")
+    return target
+
+
 def build_sitemap(out: Optional[Path] = None) -> Path:
     from xml.sax.saxutils import escape
 
     base = _base_url()
-    urls = ["index.html", "archive.html"] + [
-        f"issues/{issue.date}.html" for issue in reversed(load_issues())
-    ]
+    # Every page a reader can reach, including the month pages, which were
+    # missing: `archive.html` is only the newest month and the others were
+    # discoverable by a crawler following tabs but never advertised.
+    rows = archive_rows()
+    urls = (
+        ["index.html", "archive.html", "api.html"]
+        + [f"archive/{m['key']}.html" for m in _month_buckets(rows)[1:]]
+        + [f"issues/{issue.date}.html" for issue in reversed(load_issues())]
+    )
     body = "\n".join(
         f"  <url><loc>{escape(f'{base}/{u}' if base else u)}</loc></url>" for u in urls
     )
@@ -1024,8 +1524,16 @@ def build_site() -> dict[str, Any]:
         "archive": [str(p) for p in build_archive()],
         "issues": len(build_issue_pages()),
         "feed": str(build_feed()),
+        # The JSON and the page that documents it. Built after the pages so a
+        # failure here cannot leave the site half-written, and before the
+        # sitemap, which advertises `api.html`.
+        "api": len(build_api()),
+        "api_docs": str(build_api_docs()),
         "sitemap": str(build_sitemap()),
         "robots": str(build_robots()),
+        # `None` until `site.published` — an invitation to index next to
+        # `Disallow: /` states two intentions in one directory.
+        "llms_txt": str(build_llms_txt() or "(unpublished)"),
         "base_url": _base_url() or "(relative)",
         # Printed so a person running `uc site` sees which of the two states
         # they just built, rather than having to open robots.txt (0X, X5).

@@ -132,8 +132,17 @@ def test_the_pages_make_no_external_request(repo):
         assert not re.search(
             r'<link[^>]*rel=["\']?(stylesheet|preload|prefetch|icon|manifest)', html, re.I
         )
-        assert not re.search(r'<link[^>]*href=["\']?https?:', html, re.I)
-        assert "<script" not in html
+        # Two exemptions since Launch A, both narrowings of the same proxy: a
+        # `rel="canonical"` names a URL rather than pulling one and has to be
+        # absolute to mean anything, and a `ld+json` script is a data island
+        # handed to consumers rather than to an interpreter. Every other script
+        # is still forbidden — the site carries no JavaScript.
+        assert not re.search(
+            r'<link(?![^>]*rel=["\']?canonical)[^>]*href=["\']?https?:', html, re.I
+        )
+        assert not re.search(
+            r"<script\b(?![^>]*type=[\"']?application/ld\+json)", html, re.I
+        )
         assert "url(http" not in html
         # `@font-face` is present and self-hosted since 0R; what must not
         # appear is a URL to another origin, which `url(http` above

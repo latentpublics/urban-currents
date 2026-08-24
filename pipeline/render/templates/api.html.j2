@@ -1,0 +1,174 @@
+{#- The API document (Launch A, A1-3).
+
+    Every number and every address on this page is passed in. The one thing
+    that must never be written here by hand is a field list: `fields` is walked
+    from the model, so a schema change that this page does not describe is a
+    failing test rather than a stale paragraph.
+
+    The licence section is the reason this page exists at all. `content/` has
+    been public JSON for months; what was missing was somebody saying what a
+    consumer is allowed to do with it, and being honest about the parts where
+    we do not know. -#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Urban Currents — API</title>
+{{ head_extras }}
+<style>
+{{ css }}
+</style>
+</head>
+<body>
+<main class="uc-page">
+  <nav class="uc-nav">
+    {%- for link in nav %}
+    <a{% if link.cls %} class="{{ link.cls }}"{% endif %} href="{{ link.href }}">{{ link.label }}</a>
+    {%- endfor %}
+    <span class="uc-nav__lang">EN</span>
+  </nav>
+
+  <header class="uc-archive__masthead">
+    <h1 class="uc-archive__h1">API</h1>
+    <p class="uc-archive__summary">
+      Every issue as JSON, at addresses that will not move. Nothing here is
+      generated for the API — it is what the pipeline already wrote, in another
+      shape. {{ stats.days }} days are available, the oldest from
+      {{ stats.first_month }}.
+    </p>
+  </header>
+
+  <section class="uc-doc">
+    <h2 class="uc-doc__h2">Addresses</h2>
+    <dl class="uc-legend__list">
+      {%- for ep in endpoints %}
+      <dt><code>{{ ep.path }}</code></dt>
+      <dd>{{ ep.what }}</dd>
+      {%- endfor %}
+    </dl>
+    <p class="uc-doc__note">
+      There is no rate limit and no key. It is a static file on a CDN; fetch it
+      like any other file. {{ cors_note }}
+    </p>
+
+    <h2 class="uc-doc__h2">Fields</h2>
+    <p class="uc-doc__note">
+      Two of these have had a name that disagreed with their meaning, so both
+      are spelled out rather than left to be guessed.
+    </p>
+    <dl class="uc-legend__list">
+      {%- for f in fields %}
+      <dt><code>{{ f.name }}</code></dt>
+      <dd>{{ f.what }}</dd>
+      {%- endfor %}
+    </dl>
+
+    <h2 class="uc-doc__h2">What we promise</h2>
+    <dl class="uc-legend__list">
+      <dt>Addresses</dt>
+      <dd>
+        <code>api/index.json</code>, <code>api/latest.json</code> and
+        <code>api/issues/&lt;date&gt;.json</code> stay where they are. A date
+        that has been published keeps its file.
+      </dd>
+      <dt>Fields</dt>
+      <dd>
+        Fields are added, not removed or repurposed. If a field's meaning has to
+        change, it gets a new name and the old one is left as it was —
+        renaming in place is how a consumer ends up silently wrong.
+      </dd>
+      <dt>Values</dt>
+      <dd>
+        <code>work_key</code> never changes once assigned. Fields that come from
+        OpenAlex keep their OpenAlex names.
+      </dd>
+      <dt>Breaking it</dt>
+      <dd>
+        <code>schema_version</code> is <code>{{ schema_version }}</code> and is
+        on every document. A change that cannot be made by adding will raise it,
+        and the previous version stays reachable for at least ninety days. There
+        is no mailing list to announce it on, so the version field is the
+        announcement — read it.
+      </dd>
+      <dt>What is not promised</dt>
+      <dd>
+        Uptime, and the contents of any particular day. The pipeline runs
+        unattended and some days it publishes nothing; that is a
+        <code>state</code>, not an outage.
+      </dd>
+    </dl>
+
+    <h2 class="uc-doc__h2">Licence and provenance</h2>
+    <p class="uc-doc__note">
+      <strong>Three different things are in these files and they are not
+      under one licence.</strong> Saying so is not lawyerly caution — it is the
+      difference between a source you can build on and one that will surprise
+      you later.
+    </p>
+    <dl class="uc-legend__list">
+      <dt>Ours — <strong>CC BY 4.0</strong></dt>
+      <dd>
+        The selection (which papers on which day), the scores, the badges and
+        topic assignments, the day's state, and the headline line. This is the
+        work: the deciding, not the describing. Attribute it to Urban Currents,
+        Institute for Latent Publics, with a link to the day you used.
+      </dd>
+      <dt>Not ours — <strong>the sources' terms</strong></dt>
+      <dd>
+        Titles, identifiers, landing-page URLs, journal names and dates come
+        from arXiv and OpenAlex and are passed through unchanged. OpenAlex
+        places its data in the public domain (CC0); arXiv metadata is used under
+        arXiv's own terms. We do not relicense either.
+      </dd>
+      <dt>Uncertain — <strong>no open licence offered</strong></dt>
+      <dd>
+        <code>summary.what</code> and <code>summary.why</code>. A model wrote
+        them from an abstract we do not own. Whether that makes them ours to
+        license is a question we have not answered, and
+        <strong>we will not stamp an open licence on something we have not
+        established we can grant.</strong> Read them, quote them with
+        attribution as you would any other page on the web; do not assume a
+        redistribution right. If that is not enough for your use, the fields
+        above it are, and they are the ones under CC BY.
+      </dd>
+      <dt>Absent on purpose</dt>
+      <dd>
+        <strong>Abstracts</strong> are not served: third-party expressive text,
+        and an API is a redistribution. <strong>Authors, ORCIDs and
+        affiliations</strong> are not served either — a per-day machine-readable
+        list of people is a different artefact from a citation and not one we
+        cleared. Every item carries a DOI or an arXiv identifier, so the
+        authoritative record is one fetch away.
+      </dd>
+    </dl>
+    {# arXiv's terms require this wording exactly, including the disclaimer. #}
+    <p class="uc-attribution">
+      Thank you to arXiv for use of its open access interoperability. This
+      service was not reviewed or approved by, nor does it necessarily express
+      or reflect the policies or opinions of, arXiv.
+    </p>
+
+    <h2 class="uc-doc__h2">Citing a day</h2>
+    <p class="uc-doc__note">
+      A day is the citable unit — there is no issue number, and inventing one
+      here would make this page the source of a fact that exists nowhere else.
+    </p>
+    <pre class="uc-doc__cite">Urban Currents ({{ stats.first_month.split(' ')[-1] }}–).
+Institute for Latent Publics.
+Issue {{ example.date }}. {{ example.url }}
+Accessed &lt;date&gt;.</pre>
+    <p class="uc-doc__note">
+      If you are citing what we selected or scored, cite the day. If you are
+      citing a paper we listed, cite the paper — its identifier is in the
+      record, and it is not ours to stand in front of.
+    </p>
+  </section>
+
+  <footer class="uc-footer">
+    <p class="uc-footer__ilp">Institute for Latent Publics · free, no ads, no metrics</p>
+    <p class="uc-footer__build">urban-currents {{ pipeline_version }}</p>
+  </footer>
+</main>
+</body>
+</html>

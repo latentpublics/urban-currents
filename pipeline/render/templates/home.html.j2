@@ -146,11 +146,27 @@
     </p>
     {%- if quality %}
     <p class="uc-method__p">
-      <strong>How well that works, measured:</strong> of the ten papers each
-      path ranked highest on a given day,
+      {#- ★ This said "<rate> were worth publishing", which cannot be true of
+          papers — there is no fraction of a paper — and it said it in the one
+          paragraph where the number *is* the claim.
+
+          The tempting repair is worse. "N of the ten" reads more confident and
+          states an integer for a single day, while the figure is `precision@10`
+          **averaged over each labelled day**, and the days behind it are not
+          alike. So the sentence says `precision was <rate>`, which is what was
+          measured.
+
+          The figures are deliberately not spelled out in this comment. The
+          header at the top of this file explains why, and
+          `test_the_precision_figures_are_not_written_into_the_template` is the
+          check a quoted figure here would defeat — which is exactly the shape
+          of the accident 0Z-D was: a comment describing a thing, quoting it,
+          and breaking the mechanism that watched it. -#}
+      <strong>How well that works, measured:</strong> taking the ten papers
+      each path ranked highest on a day,
       {% for name, q in quality.sources.items() -%}
-      {{ '%.2f'|format(q.precision) }} were worth publishing on the
-      {{ name }} path ({{ q.n_labels }} labels over {{ q.days }} days){% if not loop.last %}, and {% endif %}
+      {% if loop.first %}precision was {% endif %}{{ '%.2f'|format(q.precision) }} on the
+      {{ q.label }} path ({{ q.n_labels }} labels over {{ q.days }} days){% if not loop.last %}, and {% endif %}
       {%- endfor %}.
       <strong>We set ourselves {{ '%.2f'|format(quality.target) }} and both
       miss it.</strong> Precision holds at the target through about rank

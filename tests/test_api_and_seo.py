@@ -254,10 +254,10 @@ def test_the_home_page_states_the_measured_precision_and_the_miss(built, monkeyp
         lambda: {
             "k": 10, "n_labels": 148, "days": 5, "target": 0.7,
             "sources": {
-                "arxiv": {"precision": 0.6, "n_labels": 73, "days": 5,
-                          "depth_holding_target": 8},
-                "journal": {"precision": 0.66, "n_labels": 75, "days": 5,
-                            "depth_holding_target": 8},
+                "arxiv": {"label": "arXiv", "precision": 0.6, "n_labels": 73,
+                          "days": 5, "depth_holding_target": 8},
+                "journal": {"label": "journal", "precision": 0.66, "n_labels": 75,
+                            "days": 5, "depth_holding_target": 8},
             },
         },
     )
@@ -266,6 +266,39 @@ def test_the_home_page_states_the_measured_precision_and_the_miss(built, monkeyp
     assert "0.60" in html and "0.70" in html
     assert "miss it" in html, "and says so, rather than leaving it to arithmetic"
     assert "73 labels" in html and "75 labels" in html, "with the population"
+
+
+def test_the_precision_sentence_says_precision_and_not_a_count_of_papers(built, monkeypatch):
+    """★ The figure is a rate, and the sentence has to read as one.
+
+    It said "0.60 were worth publishing", which cannot be true of papers —
+    there is no such thing as 0.60 of a paper. The tempting repair is worse:
+    "6 of the ten" reads more confident and states an integer for one day,
+    while the number is the **mean of each labelled day's precision** and the
+    days behind it are not alike. This is the paragraph where the number *is*
+    the claim, so it says what was measured.
+    """
+    monkeypatch.setattr(
+        site_mod,
+        "selection_quality",
+        lambda: {
+            "k": 10, "n_labels": 148, "days": 5, "target": 0.7,
+            "sources": {
+                "arxiv": {"label": "arXiv", "precision": 0.6, "n_labels": 73,
+                          "days": 5, "depth_holding_target": 8},
+            },
+        },
+    )
+    html = build_home().read_text(encoding="utf-8")
+    body = html[html.index("How well that works") :][:400]
+
+    assert "precision was 0.60 on the" in body
+    assert "were worth publishing" not in body, "papers are counted, not rated"
+    assert not re.search(r"\d+ of the ten", body), "a mean is not a count"
+    # And the source is spelled the way its own organisation spells it, in the
+    # one paragraph where getting a name wrong costs the most.
+    assert "arXiv path" in body
+    assert "arxiv path" not in body
 
 
 def test_the_home_page_leaves_the_sentence_out_when_it_cannot_measure(built, monkeypatch):

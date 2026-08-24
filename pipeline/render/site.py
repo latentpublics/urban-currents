@@ -1213,6 +1213,12 @@ def selection_quality() -> Optional[dict]:
         "target": Q1B_TARGET,
         "sources": {
             name: {
+                # How the source is spelled on a page, which is not how it is
+                # keyed in the labels. `arxiv` is a dict key; **arXiv** is the
+                # organisation's own capitalisation, and the paragraph this
+                # feeds is the one making an accuracy claim — spelling the
+                # source wrong there costs more than it does anywhere else.
+                "label": {"arxiv": "arXiv"}.get(name, name),
                 "precision": d.get(f"precision_at_{result.get('k', 10)}"),
                 "n_labels": d.get("n_labels", 0),
                 "days": d.get("days", 0),

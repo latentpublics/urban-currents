@@ -52,11 +52,52 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5061371777",
+        "label": "Serdar Yıldız"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2645-8071",
+        "label": "Abbas Memiş"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5137718120",
+        "label": "Songül Varlı"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10627",
+        "is_primary": true,
+        "label": "Advanced Image and Video Retrieval Techniques",
+        "score": 0.3116,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10191",
+        "is_primary": false,
+        "label": "Robotics and Sensor-Based Localization",
+        "score": 0.1903,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11714",
+        "is_primary": false,
+        "label": "Multimodal Machine Learning Applications",
+        "score": 0.1363,
+        "subfield": "1707"
+      }
+    ]
   },
   "first_published": "2026-08-17",
   "graph": {
@@ -67,7 +108,7 @@
   "ids": {
     "arxiv": "2608.17033",
     "doi": "10.48550/arxiv.2608.17033",
-    "openalex": null,
+    "openalex": "W7203764352",
     "pmid": null
   },
   "provenance": {
@@ -75,7 +116,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-23T21:29:12Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00568,
     "llm": {
@@ -163,6 +205,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-17",
+  "updated": "2026-08-24",
   "work_key": "arxiv:2608.17033"
 }

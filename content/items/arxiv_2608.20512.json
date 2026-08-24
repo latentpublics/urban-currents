@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Non-pharmaceutical interventions (NPIs) alter epidemic risk through behavioral reallocations, not simply aggregate mobility reductions. Scenario-based NPI analysis therefore requires a behavioral layer that translates alternative policy calendars into plausible activity and mobility trajectories before downstream outcomes are simulated. We introduce UrbanShare-MoE-PA, a data-driven agent-level framework that maps factual and alternative NPI calendars to daily time-allocation trajectories and propagates them through a calibrated behavior-driven SEIR simulator. The behavioral engine decomposes each agent-day into travel share, POI-category allocation conditional on staying, and travel-mode allocation conditional on traveling. It combines a structured UrbanShare baseline, mixture-of-experts heads for heterogeneous POI and mode responses, and phase-aware preference alignment for calendar-conditioned rollouts. Using data from 911 agents in Singapore observed from March to August 2020, we evaluate factual reconstruction, four alternative lockdown calendars, and epidemic-activity trade-offs. UrbanShare-MoE improves POI reconstruction over the baseline, while UrbanShare-MoE-PA achieves the lowest travel-mode errors and the clearest alternative-calendar trajectories. In the calibrated SEIR simulation, early lockdown lowers infectious burden, late lockdown increases it, and short lockdown preserves the highest weighted activity with only a modest increase in epidemic burden relative to the original policy. These results show that epidemic-activity conclusions depend on how policy calendars are translated into behavior, and that agent-level mobility-share modeling provides an interpretable bridge between policy timing, behavior, and downstream simulation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Yun Ye",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Arsalan Dezhkam",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Junyuan Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xinglei Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Tao Cheng",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.20512v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.20512v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-20",
+    "repository_urls": [],
+    "title": "From Urban Mobility to Epidemic Dynamics: A Mixture-of-Experts Framework with Preference Alignment for Policy Scenario Simulation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-23_2608.20512",
+    "members": [
+      "arxiv:2608.20512"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q334",
+        "label": "Singapore",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-20",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.20512",
+    "doi": "10.48550/arxiv.2608.20512",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-24T21:37:03Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006061,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2169,
+      "out": 312
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9278,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3711,
+    "relevance": 0.9278
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's behavioral parameters and epidemic simulations are calibrated using a small sample of 911 agents within a single city-state during the initial 2020 COVID-19 wave.",
+      "what": "The researchers developed UrbanShare-MoE-PA, an agent-level simulation framework that translates non-pharmaceutical intervention (NPI) calendars into daily time-allocation, point-of-interest (POI) category, and travel-mode choices. Tested on longitudinal data from 911 agents in Singapore tracked between March and August 2020, the model propagates these behavioral shifts through a calibrated SEIR epidemic simulator to evaluate four alternative lockdown scenarios.",
+      "why": "It provides a method to simulate epidemic outcomes based on how policies actually alter individual behavioral choices and time allocation, rather than assuming uniform, aggregate reductions in mobility."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-20",
+  "work_key": "arxiv:2608.20512"
+}

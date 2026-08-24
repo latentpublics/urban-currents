@@ -52,11 +52,42 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5147424260",
+        "label": "Piotr C. Kaminski"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": true,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.9889,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0009,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10799",
+        "is_primary": false,
+        "label": "Data Visualization and Analytics",
+        "score": 0.0008,
+        "subfield": "1707"
+      }
+    ]
   },
   "first_published": "2026-08-17",
   "graph": {
@@ -67,7 +98,7 @@
   "ids": {
     "arxiv": "2608.16758",
     "doi": "10.48550/arxiv.2608.16758",
-    "openalex": null,
+    "openalex": "W7203668522",
     "pmid": null
   },
   "provenance": {
@@ -75,7 +106,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-18T07:20:14Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00629,
     "llm": {
@@ -163,6 +195,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-19",
+  "updated": "2026-08-24",
   "work_key": "arxiv:2608.16758"
 }

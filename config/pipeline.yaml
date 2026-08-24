@@ -412,6 +412,29 @@ site:
   # filesystem, which is how it is reviewed.
   base_url: "https://latentpublics.com/urban-currents"
 
+  # ★ CORS, **measured after a deploy, never assumed** (Launch A, A1-2).
+  #
+  # The batch that added the API expected GitHub Pages not to send an
+  # `Access-Control-Allow-Origin` header, which would have made the raw
+  # repository files the only address a browser could use. Measured on
+  # 2026-08-24 against the live deploy, that is wrong: Pages sends `*`, and so
+  # does `raw.githubusercontent.com`. The difference that does exist is the
+  # content type and the preflight, and those are what the sentence below says.
+  #
+  # This is prose on a published page, so it is English and it is here rather
+  # than in the template: a claim about somebody else's HTTP behaviour has to be
+  # re-measured when the host changes, and a value in config is a thing you can
+  # see is stale. Re-measure with:
+  #   curl -sSI https://latentpublics.com/urban-currents/api/index.json
+  cors_note: >-
+    Measured on 2026-08-24: this address answers with
+    Access-Control-Allow-Origin *, so a browser on any origin may read it.
+    The same files under raw.githubusercontent.com do too, but arrive as
+    text/plain rather than application/json, and the repository layout is not
+    part of the promise below — prefer these addresses. Only simple requests
+    work: a preflight (OPTIONS) is answered 405, so send a plain GET and do
+    not add custom headers.
+
   # ★ One switch for "is this thing public yet" (phase 0X, X5).
   #
   # False means the site is reachable at its real address and must not be

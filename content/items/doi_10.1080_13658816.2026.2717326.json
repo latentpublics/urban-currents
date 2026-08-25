@@ -1,0 +1,279 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Georeferencing provides a foundation for transforming historical maps into usable data for geographic analysis. Existing methods remain limited in their ability to integrate spatial semantics with geometric feature extraction, accommodate complex street geometries and stay robust under sparse or uneven ground control points (GCPs). These limitations restrict the scalability and reliability of automated georeferencing for historical map collections. Building on advances in vision–language models (VLMs), this study reconceptualizes georeferencing as a spatially contextual inference problem rather than a geometric fitting task. We propose a framework that integrates geometric feature extraction, semantic interpretation and spatial dependence. Specifically, the framework (1) employs VLMs for topology-aware semantic enrichment of GCPs, (2) supports complex morphologies through convolutional neural network–based spatial anchor extraction with graph-based reasoning and (3) stabilizes georeferencing under sparse and uneven GCP conditions using a projection-similarity prior. Evaluation of Sanborn maps from Chicago showed that 84.3% of map sheets were successfully georeferenced. The method achieved an 80% success rate with fewer than three GCPs and a 74.3% success rate under uneven GCP distributions, demonstrating robustness and scalability for historical map georeferencing. This study provides a proof of concept that can be generalized to a wider class of historical cartographic materials.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Central Arkansas",
+            "ror": "029bp0k25"
+          }
+        ],
+        "name": "Yanan Wu",
+        "openalex": "A5138727152",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "West Virginia University",
+            "ror": "011vxgd24"
+          }
+        ],
+        "name": "Yalin Yang",
+        "openalex": "A5114099491",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "CRC for Spatial information",
+            "ror": "022482e21"
+          },
+          {
+            "name": "University of Oklahoma",
+            "ror": "02aqsxs83"
+          }
+        ],
+        "name": "Chengbin Deng",
+        "openalex": "A5045246722",
+        "orcid": "https://orcid.org/0000-0002-5459-5586"
+      },
+      {
+        "institutions": [
+          {
+            "name": "West Virginia University",
+            "ror": "011vxgd24"
+          }
+        ],
+        "name": "Aaron Maxwell",
+        "openalex": "A5128618317",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/13658816.2026.2717326",
+      "pdf_url": null,
+      "source_id": "S4210181446",
+      "source_name": "International Journal of Geographical Information Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-24",
+    "repository_urls": [
+      "https://osf.io/9y2bx",
+      "https://doi.org/10.17605/osf.io/9y2bx"
+    ],
+    "title": "‘Give me a point and I will place the map’: automated georeferencing historical maps using spatially explicit AI"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-24_10.1080/13658816",
+    "members": [
+      "doi:10.1080/13658816.2026.2717326"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:cnn",
+        "label": "convolutional neural network"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:029bp0k25",
+        "label": "University of Central Arkansas"
+      },
+      {
+        "confidence": null,
+        "id": "ror:011vxgd24",
+        "label": "West Virginia University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:022482e21",
+        "label": "CRC for Spatial information"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02aqsxs83",
+        "label": "University of Oklahoma"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5138727152",
+        "label": "Yanan Wu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5114099491",
+        "label": "Yalin Yang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5459-5586",
+        "label": "Chengbin Deng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5128618317",
+        "label": "Aaron Maxwell"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1297",
+        "label": "Chicago",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": true,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.3706,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13854",
+        "is_primary": false,
+        "label": "Historical Geography and Cartography",
+        "score": 0.1138,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10799",
+        "is_primary": false,
+        "label": "Data Visualization and Analytics",
+        "score": 0.0766,
+        "subfield": "1707"
+      }
+    ]
+  },
+  "first_published": "2026-08-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1080/13658816.2026.2717326",
+    "openalex": "W7197004204",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-25T21:36:55Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00577,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2077,
+      "out": 295
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-25T21:36:55Z",
+    "doi": "10.1080/13658816.2026.2717326",
+    "journal": "International Journal of Geographical Information Systems",
+    "source_id": "S4210181446",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://osf.io/9y2bx",
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The evaluation and proof of concept were restricted to Sanborn maps from a single city, Chicago.",
+      "what": "This study develops a georeferencing framework that combines vision-language models, convolutional neural networks, and graph-based reasoning to align historical maps using spatial semantics and geometry. Tested on Sanborn fire insurance maps of Chicago, the method successfully georeferenced 84.3% of the map sheets, maintaining an 80% success rate with fewer than three ground control points (GCPs) and a 74.3% success rate under uneven GCP distributions.",
+      "why": "The framework shifts automated georeferencing from a rigid geometric fitting task to a spatially contextual inference problem. This allows researchers to accurately digitize historical map collections even when reference points are highly sparse or poorly distributed, a common bottleneck in historical GIS workflows."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-24",
+  "work_key": "doi:10.1080/13658816.2026.2717326"
+}

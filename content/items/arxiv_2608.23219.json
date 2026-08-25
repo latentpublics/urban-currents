@@ -1,0 +1,202 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Vehicular traffic is a major source of air pollution; however, the contribution of remotely acquired traffic information to local machine-learning (ML) air-pollution models remains insufficiently characterised. This study evaluates four interpretable tree-based ML models (Random Forest, Extra Trees, LightGBM, and XGBoost) under six predictor scenarios combining progressively larger predictor sets, ranging from remotely acquired traffic, meteorological, and temporal variables alone to the inclusion of measurements from one and four neighbouring monitoring stations, to estimate NO$_2$, PM$_{10}$, PM$_{2.5}$, and O$_3$ concentrations across several sites in London. ML model performance was compared with a ridge linear regression model as a baseline, with spatial interpolation methods and with a cross-site validation experiment. When modelling without data from neighbouring stations, the RMSE for NO$_2$ ranged from 9.73 to 11.66 $μ$g/m$^3$ without traffic information, compared with 8.72 to 11.52 $μ$g/m$^3$ when traffic information was included. Additionally, for NO$_2$, SHAP analyses indicate that traffic-related variables can contribute at levels comparable to pollutant measurements from neighbouring monitoring stations in traffic-dominated~environments.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Valeria Legaria-Santiago",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Amadeo Arguelles",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Magdalena Saldana-Perez",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jocelyn Richardson",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Marcella Bona",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": "Accepted for publication in Atmosphere",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.23219v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.23219v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-21",
+    "repository_urls": [],
+    "title": "Leveraging Remote Traffic Data for Local Air Pollutant Estimation: A Scenario-Based Machine Learning Study Across London Monitoring Sites"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-24_2608.23219",
+    "members": [
+      "arxiv:2608.23219"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:gradient-boosting",
+        "label": "gradient boosting"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q84",
+        "label": "London",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-21",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.23219",
+    "doi": "10.48550/arxiv.2608.23219",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-25T21:36:51Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006442,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2051,
+      "out": 374
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9722,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3889,
+    "relevance": 0.9722
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance improvements and variable importance metrics were evaluated specifically within London's monitoring network, which may limit generalizability to cities with different traffic patterns or sparser sensor distributions.",
+      "what": "This study evaluated four tree-based machine learning models (Random Forest, Extra Trees, LightGBM, and XGBoost) across six predictor scenarios to estimate NO2, PM10, PM2.5, and O3 concentrations across multiple monitoring sites in London. Using remote traffic data, meteorological variables, and temporal data alongside measurements from up to four neighboring stations, the models improved NO2 estimation accuracy, reducing the RMSE from a range of 9.73–11.66 μg/m³ without traffic data to 8.72–11.52 μg/m³ when traffic data was included.",
+      "why": "It demonstrates that remotely acquired traffic data can substitute for physical monitoring infrastructure in traffic-dominated urban environments, as SHAP analysis reveals its predictive contribution to NO2 estimation is comparable to actual pollutant measurements from neighboring stations."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-21",
+  "work_key": "arxiv:2608.23219"
+}

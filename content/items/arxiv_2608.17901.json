@@ -57,11 +57,52 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0616-7242",
+        "label": "Yao Ying"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147612338",
+        "label": "Nan Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147608934",
+        "label": "Daniel J. Graham"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11568",
+        "is_primary": true,
+        "label": "Railway Systems and Energy Efficiency",
+        "score": 0.3964,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.2364,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13439",
+        "is_primary": false,
+        "label": "Transport and Economic Policies",
+        "score": 0.1005,
+        "subfield": "1408"
+      }
+    ]
   },
   "first_published": "2026-08-18",
   "graph": {
@@ -72,7 +113,7 @@
   "ids": {
     "arxiv": "2608.17901",
     "doi": "10.48550/arxiv.2608.17901",
-    "openalex": null,
+    "openalex": "W7203733695",
     "pmid": null
   },
   "provenance": {
@@ -80,7 +121,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-19T21:33:33Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006289,
     "llm": {
@@ -168,6 +210,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-18",
+  "updated": "2026-08-25",
   "work_key": "arxiv:2608.17901"
 }

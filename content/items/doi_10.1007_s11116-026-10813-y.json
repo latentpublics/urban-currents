@@ -1,0 +1,349 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Despite strong indirect evidence that physical energy exertion shapes cycling behaviour, it has never been explicitly incorporated into route choice models. This paper introduces a generalisable, individual-specific, physics-based energy model that computes expected energy expenditure (Joules) and energy intensity (Joules per metre) for every link in the network. The model accounts for slope, individual cruising speed preferences, and acceleration losses at intersections using empirically derived, intersection-specific stopping probabilities. Calibration is performed on a large-scale GPS dataset from the Greater Copenhagen Area. Descriptive analysis of observed routes reveals that excess energy is mainly driven by frequent stopping on major roads and dedicated cycleways. We then demonstrate one key application of the model by integrating both total energy (Joules) and energy intensity (Joules per metre) into a series of route choice models (Multinomial Logit, Latent Class, and Mixed Logit). Results confirm statistically significant dispreference for energy attributes and reveal substantial taste heterogeneity: a substantial subset of cyclists exhibits strong dispreference for high-intensity links and is willing to accept considerable detours to avoid them. This study provides a methodological foundation for integrating mechanical energy into route choice models in a way that is individually calibrated, physically grounded, and adaptable to diverse contexts and datasets. By grounding route choice in a quantity that combines slope, stop-and-go dynamics, and cyclist-specific cruising speed into a single measure of effort, the framework both improves the empirical fit of route choice models and offers a more interpretable account of the mechanisms behind observed preferences. The energy model itself has applications beyond route choice, and opens the door to understanding cyclists’ behaviour through more fundamental physical quantities.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Danish Academy of Technical Sciences",
+            "ror": "03px3wr77"
+          },
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Laurent Cazor",
+        "openalex": "A5093756833",
+        "orcid": "https://orcid.org/0000-0002-1017-4317"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Danish Academy of Technical Sciences",
+            "ror": "03px3wr77"
+          },
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Lawrence Christopher Duncan",
+        "openalex": "A5004868273",
+        "orcid": "https://orcid.org/0000-0001-9162-4334"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Danish Academy of Technical Sciences",
+            "ror": "03px3wr77"
+          },
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Corin Edward Staves",
+        "openalex": "A5148008704",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Danish Academy of Technical Sciences",
+            "ror": "03px3wr77"
+          },
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Ueli Isenschmid",
+        "openalex": "A5148042125",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Danish Academy of Technical Sciences",
+            "ror": "03px3wr77"
+          },
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Mads Paulsen",
+        "openalex": "A5003689565",
+        "orcid": "https://orcid.org/0000-0002-1445-0876"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Danish Academy of Technical Sciences",
+            "ror": "03px3wr77"
+          },
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Thomas Kjær Rasmussen",
+        "openalex": "A5129339997",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s11116-026-10813-y",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11116-026-10813-y.pdf",
+      "source_id": "S62009534",
+      "source_name": "Transportation",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-24",
+    "repository_urls": [],
+    "title": "Formulation of energy exertion in bicycle networks and estimation of its impact on route choices"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-24_10.1007/s11116-0",
+    "members": [
+      "doi:10.1007/s11116-026-10813-y"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03px3wr77",
+        "label": "Danish Academy of Technical Sciences"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04qtj9h94",
+        "label": "Technical University of Denmark"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1017-4317",
+        "label": "Laurent Cazor"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9162-4334",
+        "label": "Lawrence Christopher Duncan"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148008704",
+        "label": "Corin Edward Staves"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148042125",
+        "label": "Ueli Isenschmid"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1445-0876",
+        "label": "Mads Paulsen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5129339997",
+        "label": "Thomas Kjær Rasmussen"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.6279,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.2031,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10841",
+        "is_primary": false,
+        "label": "Economic and Environmental Valuation",
+        "score": 0.0461,
+        "subfield": "2002"
+      }
+    ]
+  },
+  "first_published": "2026-08-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1543331290",
+      "openalex:W1859757623",
+      "openalex:W1981679638",
+      "openalex:W1999568555",
+      "openalex:W2022106248",
+      "openalex:W2025019873",
+      "openalex:W2036849019",
+      "openalex:W2037158084",
+      "openalex:W2049120536",
+      "openalex:W2073781008",
+      "openalex:W2082288635",
+      "openalex:W2106844645",
+      "openalex:W2116251523",
+      "openalex:W2135822894",
+      "openalex:W2137344397",
+      "openalex:W2167889269",
+      "openalex:W2170758513",
+      "openalex:W2366478090",
+      "openalex:W2625108209",
+      "openalex:W2789424546",
+      "openalex:W2874390031",
+      "openalex:W2883794777",
+      "openalex:W2911821175",
+      "openalex:W2938149748",
+      "openalex:W2993807788",
+      "openalex:W3004963052",
+      "openalex:W3122433681",
+      "openalex:W4249399960",
+      "openalex:W4285277394",
+      "openalex:W4292998854",
+      "openalex:W4378974738",
+      "openalex:W4387071926",
+      "openalex:W4391074592",
+      "openalex:W4393181064",
+      "openalex:W4396907226",
+      "openalex:W4398214325",
+      "openalex:W4400182414",
+      "openalex:W4403842383",
+      "openalex:W4406738903",
+      "openalex:W4408074524",
+      "openalex:W4408954879",
+      "openalex:W4411583492",
+      "openalex:W7139996467",
+      "openalex:W7160207855"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s11116-026-10813-y",
+    "openalex": "W7204071578",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-25T21:36:55Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006296,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2187,
+      "out": 335
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-25T21:36:55Z",
+    "doi": "10.1007/s11116-026-10813-y",
+    "journal": "Transportation",
+    "source_id": "S62009534",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical calibration and route choice modeling are demonstrated using data from a single region, the Greater Copenhagen Area, which may limit immediate generalizability to cities with vastly different cycling cultures or topographies.",
+      "what": "A physics-based energy model was developed to calculate expected energy expenditure in Joules and energy intensity in Joules per metre for individual bicycle network links, accounting for slope, cruising speeds, and intersection stopping probabilities. The model was calibrated using a large-scale GPS dataset from the Greater Copenhagen Area and integrated into Multinomial Logit, Latent Class, and Mixed Logit route choice models. The analysis revealed that cyclists have a statistically significant dispreference for high-energy routes, with a distinct subgroup willing to take major detours to avoid high-intensity links.",
+      "why": "It replaces proxy measures of cycling effort with a physically grounded, individual-specific metric of energy expenditure. This allows planners to evaluate how the combined effects of topography and intersection stop-and-go dynamics directly influence cyclist route choices."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-24",
+  "work_key": "doi:10.1007/s11116-026-10813-y"
+}

@@ -1,0 +1,358 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Sudden disruptions, such as the COVID-19 pandemic, can reshape multiple dimensions of everyday urban life by affecting social interactions, mobility patterns, and the use of urban spaces. Previous research efforts trying to understand the consequences for citizens relied on top-down proxies such as mobility traces, transit usage, or aggregate economic indicators. While these capture where and how much people move, they do not create new insights into how different domains of everyday urban life are perceived, discussed, and coped with over time. This study investigates how geotagged Twitter data can be used to classify posts into predefined urban functional categories and analyze their temporal and spatial dynamics in New York City from 2018 to 2022. The research focuses on five key domains: Transportation, Retail Activity, Cultural/Social Activity, Healthcare, and Work/Remote Work. To classify content related to these categories, a methodological workflow combining Wikipedia-derived keyword filtering with BERTopic-based modeling was developed. Temporal and spatial analyses of category-related activity reveal distinct patterns of intensifications and declines, particularly within Transportation and Cultural/Social Activity. Deviations from long-term baseline shares illustrate localized disruptions and partial recoveries in these categories, while domains with sparse representation, such as Healthcare and Work/Remote Work, display fragmented patterns that limit interpretability. The study demonstrates the potential and constraints of using geotagged social media as a complementary source for understanding urban behavioral change. While representation biases and data sparsity remain challenges, the developed workflow offers a means to trace spatial and temporal shifts in selected aspects of urban life, particularly during large-scale events such as the COVID-19 pandemic.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Salzburg",
+            "ror": "05gs8cd61"
+          },
+          {
+            "name": "Fachhochschule Salzburg",
+            "ror": "0072dxg89"
+          },
+          {
+            "name": "Pädagogische Hochschule Salzburg",
+            "ror": "05q3g7p38"
+          }
+        ],
+        "name": "Marjorie Mattes",
+        "openalex": "A5147906177",
+        "orcid": "https://orcid.org/0009-0007-2736-7469"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Austrian Research Institute for Artificial Intelligence",
+            "ror": "04j47vk14"
+          },
+          {
+            "name": "University of Salzburg",
+            "ror": "05gs8cd61"
+          },
+          {
+            "name": "Fachhochschule Salzburg",
+            "ror": "0072dxg89"
+          },
+          {
+            "name": "Pädagogische Hochschule Salzburg",
+            "ror": "05q3g7p38"
+          }
+        ],
+        "name": "Dorian Arifi",
+        "openalex": "A5036193258",
+        "orcid": "https://orcid.org/0000-0002-4834-7893"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Austrian Research Institute for Artificial Intelligence",
+            "ror": "04j47vk14"
+          },
+          {
+            "name": "Harvard University Press",
+            "ror": "006v7bf86"
+          }
+        ],
+        "name": "Bernd Resch",
+        "openalex": "A5024678235",
+        "orcid": "https://orcid.org/0000-0002-2233-6926"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s43762-026-00293-2",
+      "pdf_url": null,
+      "source_id": "S4210175573",
+      "source_name": "Computational Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-24",
+    "repository_urls": [],
+    "title": "Understanding pre- and post-COVID urban neighborhood dynamics: a study analyzing georeferenced tweets for New York City"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-24_10.1007/s43762-0",
+    "members": [
+      "doi:10.1007/s43762-026-00293-2"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:social-media",
+        "label": "social media data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:text-analysis",
+        "label": "text analysis"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-analysis",
+        "label": "spatial analysis"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05gs8cd61",
+        "label": "University of Salzburg"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0072dxg89",
+        "label": "Fachhochschule Salzburg"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05q3g7p38",
+        "label": "Pädagogische Hochschule Salzburg"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04j47vk14",
+        "label": "Austrian Research Institute for Artificial Intelligence"
+      },
+      {
+        "confidence": null,
+        "id": "ror:006v7bf86",
+        "label": "Harvard University Press"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0007-2736-7469",
+        "label": "Marjorie Mattes"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4834-7893",
+        "label": "Dorian Arifi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2233-6926",
+        "label": "Bernd Resch"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q60",
+        "label": "New York City",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.8487,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0272,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11819",
+        "is_primary": false,
+        "label": "Data-Driven Disease Surveillance",
+        "score": 0.0191,
+        "subfield": "2713"
+      }
+    ]
+  },
+  "first_published": "2026-08-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W151377110",
+      "openalex:W1804959266",
+      "openalex:W1837843568",
+      "openalex:W1978393907",
+      "openalex:W2006047816",
+      "openalex:W2080549699",
+      "openalex:W2080678433",
+      "openalex:W2110673348",
+      "openalex:W2180566385",
+      "openalex:W2182156439",
+      "openalex:W2196332753",
+      "openalex:W2342271261",
+      "openalex:W2464046665",
+      "openalex:W2520828129",
+      "openalex:W2555792308",
+      "openalex:W2586131832",
+      "openalex:W2742970053",
+      "openalex:W2887928931",
+      "openalex:W2889326414",
+      "openalex:W2890819481",
+      "openalex:W2994867511",
+      "openalex:W3014301954",
+      "openalex:W3035390927",
+      "openalex:W3082836205",
+      "openalex:W3096451393",
+      "openalex:W3105667161",
+      "openalex:W3110378733",
+      "openalex:W3119078578",
+      "openalex:W3122227173",
+      "openalex:W3126941198",
+      "openalex:W3136950538",
+      "openalex:W3160446642",
+      "openalex:W3170985760",
+      "openalex:W3185790183",
+      "openalex:W3216196525",
+      "openalex:W4200399698",
+      "openalex:W4213450095",
+      "openalex:W4223999294",
+      "openalex:W4226516448",
+      "openalex:W4229011615",
+      "openalex:W4283651999",
+      "openalex:W4287881762",
+      "openalex:W4296201861",
+      "openalex:W4302287596",
+      "openalex:W4306391382",
+      "openalex:W4307137867",
+      "openalex:W4309183064",
+      "openalex:W4320527580",
+      "openalex:W4324311295",
+      "openalex:W4367042402",
+      "openalex:W4381851637",
+      "openalex:W4387122954",
+      "openalex:W4388453340",
+      "openalex:W4389330715",
+      "openalex:W4393859245",
+      "openalex:W4401448642",
+      "openalex:W4406972304",
+      "openalex:W4408095759",
+      "openalex:W4411136162",
+      "openalex:W4411299430",
+      "openalex:W4411913355",
+      "openalex:W7081919017"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s43762-026-00293-2",
+    "openalex": "W7204053953",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-08-25T21:36:59Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005858,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2195,
+      "out": 285
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-08-25T21:36:59Z",
+    "doi": "10.1007/s43762-026-00293-2",
+    "journal": "Computational Urban Science",
+    "source_id": "S4210175573",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2018 to 2022",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The method is constrained by data sparsity and representation biases, which left domains like Healthcare and Work/Remote Work with fragmented, difficult-to-interpret patterns.",
+      "what": "This study analyzed geotagged Twitter data from New York City between 2018 and 2022 to track urban behavioral changes across five domains: Transportation, Retail Activity, Cultural/Social Activity, Healthcare, and Work/Remote Work. The researchers developed a workflow combining Wikipedia-derived keyword filtering with BERTopic modeling to classify posts and measure spatial and temporal deviations from long-term baselines.",
+      "why": "It demonstrates how geotagged social media can serve as a bottom-up sensor to capture how residents perceived and adapted to pandemic disruptions, moving beyond traditional top-down mobility and economic indicators."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-24",
+  "work_key": "doi:10.1007/s43762-026-00293-2"
+}

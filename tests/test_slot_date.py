@@ -142,7 +142,10 @@ def test_the_workflow_passes_a_date_rather_than_letting_the_clock_decide():
     """
     text = _daily_yml()
     assert "uc slot-date" in text
-    assert "--date \"$ISSUE_DATE\"" in text or "--date \"$ISSUE_DATE\"" in text.replace("'", '"')
+    assert 'args+=(--date "$ISSUE_DATE")' in text
+    # And the manual input still wins, so `uc daily --date` keeps meaning what
+    # the operator typed.
+    assert 'day="$INPUT_DATE"' in text
 
 
 def test_the_interrupted_net_asks_about_the_slot_day():

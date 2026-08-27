@@ -30,9 +30,15 @@ issue published before the outcome model existed has no run-log row, so a null
 
 ```bash
 uv run uc review --pending   # judge what was held while you were away
+uv run uc missing-days       # days inside the horizon with no run-log row at all
 uv run uc catch-up           # retry the missed dates still inside the horizon
 uv run uc weekly             # seven days of outcomes, spend and sends
 ```
+
+`missing-days` answers a question `status` cannot. `status` reads the rows in
+`content/runs_log/` and tells you what they say; a day that was never attempted
+has no row to read, so it appears nowhere in `status` and nowhere in the archive
+either — it is simply absent. See **A day with no row** below.
 
 ## Reviewing, now that nobody reviews daily
 
@@ -227,6 +233,15 @@ that sleeps misses the day silently, which is the state this whole phase exists
 to remove, while a late Actions run is absorbed by the seven-day window and
 `uc catch-up`.
 
+That last clause was too generous and 2026-08-26 collected on it. A late
+Actions run is absorbed **as long as the day it files under is the day it was
+due for**, and until the 08-26 batch it was not: the run took its date from the
+clock, the 21:00 UTC slot is three hours from midnight, and a three-and-a-half
+hour delay produced an issue dated the next day and a gap where 08-26 should
+have been. A scheduled run is now dated from its cron slot instead
+(`uc slot-date`), catch-up walks the calendar so a day with no row is retried
+like any other, and the deadman looks for holes as well as for staleness.
+
 **The order matters.** It is arranged so that nothing can reach a stranger
 before a human has read what it would have said. Do not skip ahead to step 6.
 
@@ -291,8 +306,15 @@ Two things to know before step 4:
   activity.** Whether the workflow's own commits reset that clock is not
   something the documentation makes clear, so treat a missing weekly summary as
   a possible symptom of it. `uc status` shows a stale `last_success` either way.
-- **The scheduler is best-effort and runs late under load.** That costs nothing
-  here — the window is seven days wide and `uc catch-up` retries for a week.
+- **The scheduler is best-effort and runs late under load.** It costs nothing
+  now, and it is worth knowing why the earlier version of this sentence was
+  wrong. It said the seven-day window and `uc catch-up` absorbed any lateness.
+  They absorb the *collection*; they did not absorb the *date*. The 21:00 UTC
+  slot is three hours from midnight, the run took its date from the clock, and
+  on 2026-08-26 a three-and-a-half-hour delay published the day's issue as
+  08-27 and left 08-26 with no issue and no row. A scheduled run is now dated
+  from its cron slot (`uc slot-date`), so lateness has to reach the *next* slot
+  before it can misfile anything.
 
 ### If the bot cannot push
 
@@ -321,9 +343,38 @@ Every stage records `OK` / `SKIPPED` / `PARTIAL` / `FAILED` in
 | An item shows "Summary pending review." | LLM output violated the schema twice | `review.status` is `pending`; fix by hand in review or re-run summarize after a prompt change |
 | `uc daily` exits 75 | another run holds the lock | wait. A lock whose owner is dead is reclaimed automatically; one held by a live process refuses on purpose |
 | `status: not_published` | **we could not see the day** | `reasons` in `content/runs_log/` names which of the four conditions failed. `uc catch-up` retries it |
+| a date has **no row at all** | the day was never attempted, or was attempted under another date | `uc missing-days`. Catch-up retries it on the next daily run; past `daily.catch_up_days` it cannot be recovered. See **A day with no row** |
 | an alert arrives with `alert_failed` in the run log | the mail could not go out | the run log is still correct — the alert is a copy of it, never the record |
 | `uc status` shows `last_success: null` with issues in the archive | those issues predate the outcome model | expected. `last_issue` is the other half of the answer |
 | `silent_sources: ["collect.arxiv"]` | a source finished **OK** and returned nothing across the whole window | **the failure that reports success.** Check `daily.lookback_days` against the source's indexing lag, then the source itself. It does not block publication — the other source's papers are real — so nothing else will tell you |
+
+### A day with no row
+
+Every alarm in this repository except one reads a run-log row and judges it.
+The exception exists because of 2026-08-26, which has **no row** — the run that
+should have carried that date published itself as 08-27 — and a day with no row
+was invisible to all of them at once. `uc status` had nothing to list, the
+workflow's interrupted-row net asked about the wrong day and found it already
+written, `uc catch-up` built its queue from the rows that existed, and the
+deadman asked how old the newest row was and got a reassuring answer.
+
+```bash
+uv run uc missing-days               # the last 7 days, ignoring the newest one
+uv run uc missing-days --days 30     # wider, for looking rather than alarming
+uv run uc missing-days --as-of 2026-08-27 --grace 0
+```
+
+It exits 1 when it finds a gap, which is how `deadman.yml` goes red. The
+`--grace` window keeps it from firing on a day whose run is merely late:
+by default the newest day it will name is one whose slot was about 36 hours
+ago, the same tolerance the freshness check uses.
+
+**What to do about one.** Catch-up retries days with no row automatically on
+the next daily run, so a gap that is still there has already survived an
+attempt. Dispatch `daily` by hand from the Actions tab with that `date` while
+it is still inside `daily.catch_up_days` — seven days. Past the horizon the
+sources have moved on and the day cannot be recovered; it stays a gap, and the
+archive says so rather than pretending otherwise.
 
 ## Cost control
 

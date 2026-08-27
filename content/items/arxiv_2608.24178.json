@@ -1,0 +1,167 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Gravity models describe bike-sharing origin-destination (OD) flows as increasing with origin and destination activity and decreasing with distance. Yet how these relationships change within a day and across observation areas remains unclear. We examine temporal and spatial variation in origin, destination and distance exponents $α$, $β$, and $γ$, together with $R^2$ and mean absolute error (MAE), across eight bike-sharing systems. Temporal modeling uses sliding windows, while spatial modeling expands a circular area and separates intra-zonal, cross-zonal outflow, cross-zonal inflow and extra-zonal trips. We find recurring patterns across cities: morning and evening peaks differ in origin and destination dependence, while cross-zonal outflow and inflow across the same boundary show opposite changes in their relative origin and destination dependence as radius increases. Model performance and distance dependence also vary with time and radius. A full-day, citywide fit therefore combines time periods and flow types with different gravity relationships.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Hanbo Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Qi Rao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Bo Yang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": "Supplementary information is provided as an ancillary file",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.24178v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.24178v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-25",
+    "repository_urls": [],
+    "title": "Spatiotemporal organization in bike-sharing systems using gravity model parameters"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-26_2608.24178",
+    "members": [
+      "arxiv:2608.24178"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-25",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.24178",
+    "doi": "10.48550/arxiv.2608.24178",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-27T00:38:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004966,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1907,
+      "out": 234
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9636,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3854,
+    "relevance": 0.9636
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study analyzes temporal and spatial variations in gravity model parameters—specifically origin, destination, and distance exponents, alongside R-squared and mean absolute error—across eight bike-sharing systems. Using sliding temporal windows and expanding circular spatial zones, the research evaluates how these parameters fluctuate throughout the day and across different trip types, including intra-zonal, cross-zonal, and extra-zonal flows.",
+      "why": "It demonstrates that standard citywide, full-day gravity model fits conflate distinct temporal and spatial flow dynamics, proving that bike-sharing models must separate peak hours and specific zone boundaries to accurately predict trip distribution."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-25",
+  "work_key": "arxiv:2608.24178"
+}

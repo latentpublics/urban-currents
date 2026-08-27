@@ -100,11 +100,62 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5147761423",
+        "label": "Narges Ahmadi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7133-4567",
+        "label": "Yubo Jiao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5139481846",
+        "label": "Jônatas Augusto Manzolli"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147811883",
+        "label": "Jiangbo Yu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5130626161",
+        "label": "Luis Miranda-Moreno"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.5587,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14074",
+        "is_primary": false,
+        "label": "Persona Design and Applications",
+        "score": 0.0439,
+        "subfield": "1709"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.04,
+        "subfield": "2203"
+      }
+    ]
   },
   "first_published": "2026-08-20",
   "graph": {
@@ -115,7 +166,7 @@
   "ids": {
     "arxiv": "2608.20320",
     "doi": "10.48550/arxiv.2608.20320",
-    "openalex": null,
+    "openalex": "W7203939916",
     "pmid": null
   },
   "provenance": {
@@ -123,7 +174,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-21T21:31:54Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00655,
     "llm": {
@@ -211,6 +263,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-20",
+  "updated": "2026-08-27",
   "work_key": "arxiv:2608.20320"
 }

@@ -1,0 +1,162 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Cities are beginning to use AI not only to analyze public space, but also to define what counts as evidence about it. This thesis asks what follows when scores, maps, and generated images become part of municipal decision-making. I argue that contemporary urbanism operates through two coupled infrastructures: the material city and an epistemic, algorithmic layer that shapes what cities can perceive, compare, and act upon. Because public space is contested, this algorithmic layer cannot be governed through technical performance alone. The thesis develops a civic Right to AI and a pluralistic approach to alignment in which differences in public values are made visible rather than averaged into a single objective. Methodologically, the thesis moves between normative theory, participatory research, machine learning, and governance design. The empirical work is grounded in Montréal. Street Review combines participatory research with computer vision to examine how residents evaluate streets differently and how those judgments can be mapped at city scale using approximately 45,000 street-view images. LIVS (Local Intersectional Visual Spaces) extends the same problem to generative AI. Developed with 30 community organizations, it contains 37,710 pairwise comparisons across 13,462 images and is used to fine-tune and evaluate a Stable Diffusion XL model with Direct Preference Optimization. The results show that alignment can improve, but disagreement and neutrality persist. I treat these outcomes not as annotation noise, but as evidence that some values remain contested. The thesis concludes by translating these findings into municipal practice through lifecycle governance, procurement rules, oversight, recommissioning, and recourse. The resulting framework shows how cities can govern AI without treating plural values as measurement error or forcing them into a single objective.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Rashid Mushkani",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": "Ph.D. dissertation, Université de Montréal, 231 pages, 59 figures, 28 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.23999v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.23999v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-25",
+    "repository_urls": [],
+    "title": "The urban right to AI: Pluralistic co-design and governance of public space"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-26_2608.23999",
+    "members": [
+      "arxiv:2608.23999"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-25",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.23999",
+    "doi": "10.48550/arxiv.2608.23999",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-27T00:38:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006248,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2203,
+      "out": 327
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9327,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4531,
+    "relevance": 0.9327
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "13,462 images",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical applications and participatory datasets are grounded in the specific local context of Montreal, which may limit how directly the specific model alignments transfer to other cities.",
+      "what": "This thesis develops a civic 'Right to AI' framework and two empirical tools tested in Montreal to govern public space algorithms. The Street Review tool combines participatory research with computer vision to map resident evaluations of streets using 45,000 street-view images, while the LIVS dataset compiles 37,710 pairwise comparisons across 13,462 images with 30 community organizations to fine-tune a Stable Diffusion XL model. The resulting framework translates these pluralistic evaluations into municipal governance practices, including procurement rules, oversight, and recourse mechanisms.",
+      "why": "It establishes a method for municipal AI governance that treats public disagreement and value differences as valid, persistent evidence rather than as annotation noise or measurement error to be averaged out."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-25",
+  "work_key": "arxiv:2608.23999"
+}

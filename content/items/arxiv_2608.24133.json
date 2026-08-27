@@ -1,0 +1,182 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "People search for urban outdoor places not only by category or function, but also by what activities a place can support and how it is perceived. Existing geospatial retrieval remains largely POIcentric and metadata-driven, making it difficult to satisfy openended, affective, or activity-oriented needs. We present PlaceSeek, a human-centered outdoor place retrieval framework that maps natural-language queries to geolocated street-view imagery. PlaceSeek introduces an intent-aware retrieval mechanism that decomposes user queries into functional and affective sub-intents. A Semantic Grounding Module verifies whether candidate street-view results contain the physical evidence needed to support the intended activity, while an Affective Alignment Module re-ranks physically valid candidates using a LoRA-adapted vision-language model trained on human urban perception judgments. We evaluate PlaceSeek on 31,956 street-view locations in Milan across 10 naturallanguage queries annotated by five human evaluators. PlaceSeek achieves 88.0% Precision@5, a mean match score of 3.39/4.0, and 0.920 nDCG@5, outperforming CLIP, fine-tuned CLIP, SigLIP, and a VQA-based baseline. Ablation results show that physical grounding is essential for retrieval validity, while affective alignment improves ranking quality among physically valid candidates. These findings highlight that complex urban spatial queries require modeling both verifiable visual evidence and human perceptual preferences. PlaceSeek provides a potential framework for human-centered nextgeneration geospatial retrieval systems.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ziqi Cui",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shangyu Lou",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.IR"
+    ],
+    "comment": "Accepted as a Research Paper (short) at ACM SIGSPATIAL 2026. This arXiv version is the full version of the paper",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.24133v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.24133v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-25",
+    "repository_urls": [],
+    "title": "PlaceSeek: Human-Centered Geospatial Retrieval of Urban Outdoor Places via Semantic Grounding and Affective Alignment"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-26_2608.24133",
+    "members": [
+      "arxiv:2608.24133"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q490",
+        "label": "Milan",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:openai/CLIP",
+        "label": "CLIP"
+      }
+    ],
+    "topics": []
+  },
+  "first_published": "2026-08-25",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.24133",
+    "doi": "10.48550/arxiv.2608.24133",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-27T00:38:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006662,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2155,
+      "out": 381
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9046,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3618,
+    "relevance": 0.9046
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and human evaluation are based on a single European city, Milan, which may limit its immediate generalizability to cities with different architectural styles and urban layouts.",
+      "what": "The researchers developed PlaceSeek, a geospatial retrieval framework that matches natural-language queries to geolocated street-view imagery by analyzing both functional and affective user intents. The system uses a Semantic Grounding Module to verify physical features and a LoRA-adapted vision-language model to rank candidates based on human perception. Tested on 31,956 street-view locations in Milan across 10 queries, the framework achieved an 88.0% Precision@5 and a 0.920 nDCG@5, outperforming CLIP and SigLIP baselines.",
+      "why": "It shifts geospatial search from rigid, metadata-driven point-of-interest queries to flexible, human-centered searches based on activities and emotional perceptions. This enables search engines to reliably find urban spaces that match complex, subjective descriptions like 'peaceful places for reading' by verifying both physical suitability and visual atmosphere."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-25",
+  "work_key": "arxiv:2608.24133"
+}

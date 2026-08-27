@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Assessing fine-scale spatio-temporal air pollution contrasts in urban contexts is a major challenge for environmental epidemiology. We propose a Bayesian spatio-temporal model to predict daily concentrations of NO$_2$, PM$_{10}$, and PM$_{2.5}$ in Rome (Italy), over 2011-2022, on a fine grid scale (1 km), using data from 8 to 13 monitoring stations, depending on pollutant. The model includes meteorological and temporal (working day/weekend) fixed effects together with a lag-1 autoregressive spatio-temporal random effect aimed at capturing spatial and daily dependence. Predictive performance was assessed by leave-one-site-out cross-validation. Estimated exposures were then linked to geolocated cause-specific mortality data for Rome (2012-2019), and a case-crossover time-stratified approach was adopted to investigate acute effects. Cross-validation showed good overall predictive performance, with larger errors at high-traffic sites. Estimated exposure (mean lag 0-5) was positively associated with natural-cause mortality, with percent increase in risk of 1.3 (95% CI: 0.6-2.0) for PM$_{10}$, 2.1 for NO$_2$ (1.4-2.9), and 2.4 for PM$_{2.5}$ (1.4-3.3) per 10 $μ$g/m$^3$ increase. Corresponding estimates when using the city-specific daily average exposure, instead of our 1 km resolution model, were of comparable magnitude. The proposed Bayesian spatio-temporal framework provides reliable fine-scale exposure estimates for epidemiological use, with results consistent across independent exposure estimates, supporting its application in urban air-pollution health studies.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Edoardo Rosci",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Giovanna Jona Lasinio",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Paola Michelozzi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Massimo Stafoggia",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.21848v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.21848v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-22",
+    "repository_urls": [],
+    "title": "Bayesian spatio-temporal exposure modelling of air pollution in Rome, Italy, and short-term effects on cause-specific mortality"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-26_2608.21848",
+    "members": [
+      "arxiv:2608.21848"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:weather",
+        "label": "weather and climate data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q220",
+        "label": "Rome",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.21848",
+    "doi": "10.48550/arxiv.2608.21848",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-27T00:38:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006953,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2295,
+      "out": 390
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8894,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3558,
+    "relevance": 0.8894
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2011-2022",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The predictive model exhibited larger estimation errors at high-traffic monitoring sites.",
+      "what": "The study developed a Bayesian spatio-temporal model to predict daily concentrations of NO2, PM10, and PM2.5 across Rome, Italy, at a 1 km resolution from 2011 to 2022 using data from 8 to 13 monitoring stations. These daily exposure estimates were linked to geolocated cause-specific mortality data from 2012 to 2019 using a case-crossover design, finding that a 10 Αg/m3 increase in PM2.5, NO2, and PM10 (mean lag 0-5) was associated with natural-cause mortality increases of 2.4%, 2.1%, and 1.3% respectively.",
+      "why": "It demonstrates that a high-resolution 1 km exposure model yields mortality risk estimates of comparable magnitude to those derived from simple city-wide daily averages, while providing a reliable framework for fine-scale urban environmental epidemiology."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-22",
+  "work_key": "arxiv:2608.21848"
+}

@@ -347,12 +347,12 @@
   },
   "summary": {
     "en": {
-      "caveats": "The method is constrained by data sparsity and representation biases, which left domains like Healthcare and Work/Remote Work with fragmented, difficult-to-interpret patterns.",
-      "what": "This study analyzed geotagged Twitter data from New York City between 2018 and 2022 to track urban behavioral changes across five domains: Transportation, Retail Activity, Cultural/Social Activity, Healthcare, and Work/Remote Work. The researchers developed a workflow combining Wikipedia-derived keyword filtering with BERTopic modeling to classify posts and measure spatial and temporal deviations from long-term baselines.",
-      "why": "It demonstrates how geotagged social media can serve as a bottom-up sensor to capture how residents perceived and adapted to pandemic disruptions, moving beyond traditional top-down mobility and economic indicators."
+      "caveats": "The method proved less effective for domains with sparse data, such as Healthcare and Work/Remote Work, which produced fragmented patterns that limited clear interpretation.",
+      "what": "This study analyzed geotagged Twitter data from New York City between 2018 and 2022 to track urban behavioral shifts across five domains: Transportation, Retail Activity, Cultural/Social Activity, Healthcare, and Work/Remote Work. The researchers developed a classification workflow combining Wikipedia-derived keyword filtering with BERTopic modeling to categorize posts and measure spatial and temporal deviations from long-term baselines. The analysis revealed distinct patterns of disruption and partial recovery, particularly showing sharp declines and intensifications in transportation and cultural activities.",
+      "why": "It demonstrates how geotagged social media can serve as a bottom-up sensor to capture how citizens perceive and experience urban disruptions, moving beyond traditional top-down mobility traces that only record physical movement."
     }
   },
   "track": "papers",
-  "updated": "2026-08-24",
+  "updated": "2026-08-27",
   "work_key": "doi:10.1007/s43762-026-00293-2"
 }

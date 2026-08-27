@@ -63,7 +63,33 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5147929436",
+        "label": "Yun Ye"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1852-2117",
+        "label": "Arsalan Dezhkam"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2186-1243",
+        "label": "Junyuan Liu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147957459",
+        "label": "Xinglei Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147938361",
+        "label": "Tao Cheng"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -74,7 +100,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10410",
+        "is_primary": true,
+        "label": "COVID-19 epidemiological studies",
+        "score": 0.8021,
+        "subfield": "2611"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0938,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11500",
+        "is_primary": false,
+        "label": "Evacuation and Crowd Dynamics",
+        "score": 0.014,
+        "subfield": "2212"
+      }
+    ]
   },
   "first_published": "2026-08-20",
   "graph": {
@@ -85,7 +136,7 @@
   "ids": {
     "arxiv": "2608.20512",
     "doi": "10.48550/arxiv.2608.20512",
-    "openalex": null,
+    "openalex": "W7204116005",
     "pmid": null
   },
   "provenance": {
@@ -93,7 +144,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-24T21:37:03Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006061,
     "llm": {
@@ -181,6 +233,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-20",
+  "updated": "2026-08-27",
   "work_key": "arxiv:2608.20512"
 }

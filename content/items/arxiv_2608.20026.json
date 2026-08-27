@@ -52,11 +52,47 @@
     ],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3003-0895",
+        "label": "Joan Perez"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147763430",
+        "label": "Giovanni Fusco"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.2048,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.2,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.1112,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-08-20",
   "graph": {
@@ -67,7 +103,7 @@
   "ids": {
     "arxiv": "2608.20026",
     "doi": "10.48550/arxiv.2608.20026",
-    "openalex": null,
+    "openalex": "W7203898458",
     "pmid": null
   },
   "provenance": {
@@ -75,7 +111,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-21T21:31:54Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005782,
     "llm": {
@@ -163,6 +200,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-20",
+  "updated": "2026-08-27",
   "work_key": "arxiv:2608.20026"
 }

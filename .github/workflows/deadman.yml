@@ -14,10 +14,24 @@
 # commit — and "nothing" is exactly what a quiet, healthy Sunday looks like from
 # outside. **Absence cannot report itself**, so something else has to notice it.
 #
-# What it checks is the archive, not the workflow: the newest file in
-# `content/runs_log/` is written by every run whatever its verdict, including
-# the failures. If that file is older than the threshold, either the pipeline
-# stopped or it stopped being able to record — and both need a person.
+# What it checks is the archive, not the workflow: `content/runs_log/` gets a
+# row from every run whatever its verdict, including the failures.
+#
+# It asks **two** questions about that directory, and until the 08-26 batch it
+# asked only the first:
+#
+#   1. Is the newest row recent enough?  Catches the pipeline stopping.
+#   2. Is any day inside the horizon missing a row entirely?  Catches a day
+#      that was skipped while the ones around it went out.
+#
+# The second exists because 2026-08-26 has no issue and no row, and this job
+# was green throughout. Its 21:00 UTC slot ran late enough to cross midnight,
+# the pipeline dated itself from the clock, and the day was published as 08-27.
+# So the newest row was *newer* than it should have been and the archive looked
+# healthier than it was. **A gap is invisible to any check that only asks how
+# recent the last entry is** — the freshness question is not a weaker version of
+# the completeness question, it is a different one, and no threshold on the
+# first can answer the second.
 #
 # It runs at 09:00 UTC, twelve hours off the daily's 21:00. Two jobs on the same
 # cron die together and a watchdog that dies with the thing it watches is
@@ -35,7 +49,10 @@ permissions:
 jobs:
   deadman:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    # 15, not 5: the gap check below installs the project so it can use the same
+    # tested code an operator runs by hand. The freshness check above it needs
+    # nothing installed and runs first, on purpose — see its step.
+    timeout-minutes: 15
 
     env:
       PYTHONUNBUFFERED: "1"
@@ -45,11 +62,26 @@ jobs:
       # alarm that cries wolf is one people learn to close.
       MAX_AGE_HOURS: "36"
 
+      # How far back the gap check looks, and how much of the recent end it
+      # leaves alone. `GRACE_DAYS: 1` is the same tolerance stated differently:
+      # this job runs at 09:00 UTC and the daily slot is 21:00, so the newest
+      # day it will call missing is one whose run was due about 36 hours ago.
+      # A day inside the grace window may simply be late, and catch-up has not
+      # had its turn at it yet.
+      HORIZON_DAYS: "7"
+      GRACE_DAYS: "1"
+
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
+      # Question 1: is the newest row recent enough?
+      #
+      # First, and deliberately dependency-free. This is the check that has to
+      # survive the project being unbuildable — `ls` and `date` and nothing
+      # else. The gap check below is better at what it does and needs `uv sync`
+      # to run at all, which is a thing that can break; this one cannot.
       - name: Check the archive is still being written to
         shell: bash
         run: |
@@ -90,6 +122,66 @@ jobs:
               echo "- an account or billing problem"
               echo ""
               echo "Re-run \`daily\` by hand from the Actions tab to tell them apart."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
+      # Question 2: is any day inside the horizon missing a row entirely?
+      #
+      # `always()`, so a red freshness check does not hide a gap — the two
+      # findings are different and an operator wants both in one place.
+      #
+      # This is the check 2026-08-26 needed and did not have. `uc missing-days`
+      # walks the calendar back from the most recent cron slot and names the
+      # days `content/runs_log/` has nothing at all for. It is the same command
+      # `docs/OPERATIONS.md` tells a person to run, rather than a second
+      # implementation of the rule in bash: the whole failure being fixed here
+      # came from two places disagreeing about what day it was.
+      - name: Install
+        if: always()
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+
+      - name: Look for days with no row at all
+        if: always()
+        shell: bash
+        run: |
+          set -uo pipefail
+
+          # Fail loudly and separately if the install is what broke, rather than
+          # letting `uc missing-days` fail for that reason and reporting a gap
+          # that was never measured.
+          if ! uv python install 3.11 || ! uv sync --frozen --quiet; then
+            echo "::error::The deadman could not install the project, so the gap check did not run. This is not a gap; it is a missing measurement."
+            exit 1
+          fi
+
+          out="$(uv run uc missing-days --days "$HORIZON_DAYS" --grace "$GRACE_DAYS" 2>&1)"
+          code=$?
+          echo "$out"
+
+          {
+            echo ""
+            echo "### Gaps"
+            echo ""
+            echo '```'
+            echo "$out"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "$code" -ne 0 ]; then
+            echo "::error::A day inside the ${HORIZON_DAYS}-day horizon has no run-log row. It was never attempted, or it was attempted under the wrong date — see docs/OPERATIONS.md, 'A day with no row'."
+            {
+              echo ""
+              echo "**A day inside the horizon has no run-log row at all.**"
+              echo ""
+              echo "Catch-up retries such days automatically on the next daily run,"
+              echo "so a gap that is still here has already survived one attempt."
+              echo "Dispatch \`daily\` by hand with that \`date\` while it is still"
+              echo "inside \`daily.catch_up_days\` — past the horizon it cannot be"
+              echo "recovered."
             } >> "$GITHUB_STEP_SUMMARY"
             exit 1
           fi

@@ -44,7 +44,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass, field
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 from typing import Any, Optional
 
@@ -68,6 +68,15 @@ NOT_PUBLISHED = "not_published"
 # not fit in the time it was given, and retrying it unchanged will do the same
 # thing again.
 INTERRUPTED = "interrupted"
+
+# The verdicts `uc catch-up` will ask about again. `interrupted` is in here
+# even though the comment above says retrying it unchanged will do the same
+# thing again — that is true of a day whose run genuinely does not fit in the
+# time given, and false of the far commoner case the row actually covers, a
+# runner that vanished. Nothing retried these at all until the 08-26 batch, and
+# an unretried day is a permanent gap; a retried day that fails again writes a
+# row saying so, which is strictly more than silence.
+RETRYABLE = frozenset({NOT_PUBLISHED, INTERRUPTED})
 
 # Sources that must answer before a day can be called quiet. Both, because the
 # issue claims a scope — "what appeared in urban data science today" — and half
@@ -414,10 +423,41 @@ def all_logs() -> list[dict]:
 
 
 def unpublished_dates(limit: Optional[int] = None) -> list[dict]:
-    """Days we could not see, newest first — the catch-up queue."""
+    """Days we could not see, newest first.
+
+    A reporting view, not the catch-up queue — `daily.catch_up` walks the
+    calendar instead, because this list can only contain days that got as far
+    as writing a row.
+    """
     rows = [r for r in all_logs() if r.get("status") == NOT_PUBLISHED]
     rows.sort(key=lambda r: r["date"], reverse=True)
     return rows[:limit] if limit else rows
+
+
+def logged_dates() -> set[str]:
+    """Every date `content/runs_log/` has a row for, whatever it says."""
+    return {r["date"] for r in all_logs() if "date" in r}
+
+
+def missing_dates(start: date, end: date) -> list[date]:
+    """Days in `[start, end]` with **no run-log row at all** — the gaps.
+
+    Every other alarm in this repository reads a row and judges it. This one
+    reads the calendar and notices where a row is not, which is the only way to
+    see 2026-08-26: a day whose run happened, published under the wrong date,
+    and left nothing behind saying it had ever been due. The deadman's freshness
+    check cannot see it either — the newest row was *newer* than it should have
+    been, so the archive looked healthier than it was. A gap is invisible to any
+    check that only asks how recent the last entry is.
+    """
+    have = logged_dates()
+    out: list[date] = []
+    d = start
+    while d <= end:
+        if d.isoformat() not in have:
+            out.append(d)
+        d += timedelta(days=1)
+    return out
 
 
 def record_interrupted(d: date, reason: str) -> Path:

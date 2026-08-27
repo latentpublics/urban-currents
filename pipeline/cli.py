@@ -423,20 +423,85 @@ def record_interrupted_cmd(
     typer.echo(f"[RECORDED] {d} interrupted — {path}")
 
 
+@app.command("slot-date")
+def slot_date_cmd(
+    hour: Optional[int] = typer.Option(
+        None, help="Slot hour in UTC (default: daily.slot_hour_utc)"
+    ),
+):
+    """Print the date a scheduled run happening now belongs to.
+
+    `.github/workflows/daily.yml` calls this and passes the answer to
+    `uc daily --date`, so the issue is dated by the cron slot rather than by
+    whatever the clock says when GitHub's best-effort scheduler gets round to
+    it. See `pipeline.daily.slot_date` for what that bought and what it cost.
+    """
+    from .daily import slot_date
+
+    typer.echo(slot_date(slot_hour=hour).isoformat())
+
+
+@app.command("missing-days")
+def missing_days_cmd(
+    days: int = typer.Option(7, help="How far back to look"),
+    grace: int = typer.Option(
+        1, help="Days at the recent end to leave alone, for a late run"
+    ),
+    as_of: Optional[str] = typer.Option(
+        None, "--as-of", help="Treat this as the newest slot date (default: now)"
+    ),
+):
+    """Name the days inside the horizon with **no run-log row at all**.
+
+    The gap alarm. `deadman.yml` runs this, and it is a different question from
+    the one the deadman used to ask — "is the newest row recent enough" cannot
+    see a hole behind a fresh row, which is exactly the shape 2026-08-26 had.
+
+    `grace` keeps it from crying wolf. The newest `grace` days are not checked,
+    because the daily schedule runs late routinely and a day is not missing
+    until the run that owed it has plainly not arrived. With the default of 1,
+    the 09:00 UTC deadman asks about a day roughly 36 hours after its slot —
+    the same tolerance the freshness check was tuned to.
+
+    Exits 1 when there is a gap, so the workflow goes red.
+    """
+    from .daily import slot_date
+    from .outcome import missing_dates
+
+    end = (date.fromisoformat(as_of) if as_of else slot_date()) - timedelta(days=grace)
+    start = end - timedelta(days=days - 1)
+    gaps = missing_dates(start, end)
+
+    typer.echo(f"checked {start} .. {end}")
+    if not gaps:
+        typer.echo("[OK] every day in the horizon has a run-log row")
+        return
+    for d in gaps:
+        typer.echo(f"[MISSING] {d}")
+    raise typer.Exit(code=1)
+
+
 @app.command("catch-up")
 def catch_up_cmd(
     limit: Optional[int] = typer.Option(None, help="Retry at most this many days"),
+    date_: Optional[str] = typer.Option(
+        None, "--date", "-d", help="Treat this as today (default: today)"
+    ),
 ):
     """Retry the days the pipeline could not see, oldest first.
 
     Bounded by `daily.catch_up_days`. A day past that horizon stays missed and
     stays in the log saying so — asking again cannot recover a window whose
     sources have moved on.
+
+    `--date` sets where the horizon ends, and the workflow passes the slot date
+    so a run that started after midnight does not silently drop the day it was
+    supposed to be catching up on.
     """
     from .daily import DailyLocked, catch_up
 
     try:
-        results = catch_up(limit=limit)
+        results = catch_up(today=date.fromisoformat(date_) if date_ else None, limit=limit)
     except DailyLocked as e:
         typer.echo(f"[LOCKED] {e}")
         raise typer.Exit(code=75)
@@ -548,6 +613,27 @@ def status():
             "A number that only grows means the budget is too small."
         )
 
+    # ★ Printed before `unpublished_dates`, because it is the worse news and the
+    # old code exited before it could have been reached (08-26 batch).
+    #
+    # A date here has no run-log row at all: nothing ever spoke for it. Every
+    # other line above is read off a row, which is why 2026-08-26 appeared in
+    # none of them — its run published itself as 08-27 and left nothing behind.
+    gaps = state.get("missing_dates") or []
+    if gaps:
+        typer.echo(
+            f"\n[GAP] {len(gaps)} date(s) inside the horizon have no run-log row "
+            f"at all: {', '.join(gaps[:5])}{' …' if len(gaps) > 5 else ''}"
+        )
+        typer.echo(
+            "      Not the same as a failed day — nothing was ever recorded for "
+            "these.\n"
+            "      Catch-up retries them on the next daily run; past "
+            "daily.catch_up_days\n"
+            "      they cannot be recovered. See docs/OPERATIONS.md, "
+            "'A day with no row'."
+        )
+
     missing = state["unpublished_dates"]
     if missing:
         typer.echo(
@@ -555,6 +641,8 @@ def status():
             f"{', '.join(missing[:5])}{' …' if len(missing) > 5 else ''}"
         )
         typer.echo("            uc catch-up  — retry the ones still in range")
+
+    if missing or gaps:
         raise typer.Exit(code=1)
 
 

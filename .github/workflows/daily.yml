@@ -42,10 +42,25 @@ on:
   # last run-log row whether the schedule was disabled on purpose or not.
   #
   # 06:00 KST = 21:00 UTC the previous day. GitHub's scheduler is best-effort
-  # and routinely runs late under load, which is fine: the window is seven days
-  # wide and `uc catch-up` retries anything missed for a week. A cron that fires
-  # an hour late costs nothing here; one that never fires is caught by the
-  # missing run-log row, not by anybody noticing the mail did not arrive.
+  # and routinely runs late under load.
+  #
+  # ★ That used to be described here as costing nothing, and on 2026-08-26 it
+  # cost a day. This slot is three hours from midnight UTC; the 08-26 run
+  # started at about 00:35 on 08-27, dated itself from the clock, and published
+  # an 08-27 issue. The reassurance was not wrong about the seven-day window, it
+  # simply never did the arithmetic on the three hours of headroom the hour
+  # itself leaves — and `uc catch-up` did not in fact retry "anything missed",
+  # only days that had left a row behind.
+  #
+  # Both are fixed rather than worked around, so the hour did not need to move:
+  # the run is dated from the slot (see "Resolve the issue date" below), and
+  # catch-up walks the calendar. **If this hour changes, change
+  # `daily.slot_hour_utc` in `config/pipeline.yaml` and `SLOT_HOUR_UTC` below in
+  # the same commit** — `tests/test_slot_date.py` checks all three agree.
+  #
+  # A cron that never fires is caught by a missing run-log row, not by anybody
+  # noticing the mail did not arrive — and since the 08-26 batch `deadman.yml`
+  # looks for gaps behind the newest row as well as for the newest row's age.
   #
   schedule:
     - cron: "0 21 * * *"
@@ -71,6 +86,16 @@ jobs:
       # whole buffer — which is why the 45-minute timeout produced 44 minutes of
       # silence and left us guessing where the time went (hotfix 2, H5-3).
       PYTHONUNBUFFERED: "1"
+
+      # ★ The hour of the `cron:` slot above, in UTC, and the same number as
+      # `daily.slot_hour_utc` in `config/pipeline.yaml`. Three copies of one
+      # fact is two too many, so `tests/test_slot_date.py` reads all three out
+      # of the files and fails if they disagree.
+      #
+      # It is here rather than only in config because the last step in this job
+      # runs under `always()` — including when the install never finished, which
+      # is exactly when there is no `uc` to ask. See that step.
+      SLOT_HOUR_UTC: "21"
 
     steps:
       - uses: actions/checkout@v4
@@ -168,6 +193,38 @@ jobs:
           print('embedding model ready')
           " 
 
+      # ★ Which day is this run's day? (08-26 batch.)
+      #
+      # Not `date -u +%F`, and not `date.today()` inside the pipeline either.
+      # Both answer "what is the wall clock now", and GitHub's scheduler is
+      # best-effort: the 21:00 UTC slot for 2026-08-26 started at about 00:35
+      # UTC on 08-27. The run dated itself 08-27, published an 08-27 issue,
+      # wrote an 08-27 run-log row with `attempts: 1` — it had no idea it was
+      # late — and 08-26 ended up with no issue, no row, and nothing anywhere
+      # able to notice. Three and a half hours of ordinary lateness, and the
+      # archive lost a day.
+      #
+      # `uc slot-date` answers the other question: which cron slot does this run
+      # belong to. Past 21:00 UTC it is today, before it, yesterday. Twenty
+      # hours late now costs nothing where three used to cost a day.
+      #
+      # A manual `date` input still wins — the operator asked for a date.
+      - name: Resolve the issue date
+        id: slot
+        env:
+          INPUT_DATE: ${{ inputs.date }}
+        run: |
+          set -euo pipefail
+          if [ -n "$INPUT_DATE" ]; then
+            day="$INPUT_DATE"
+            echo "issue date from the workflow input: ${day}"
+          else
+            day="$(uv run uc slot-date)"
+            echo "issue date from the ${SLOT_HOUR_UTC}:00 UTC slot: ${day} (now $(date -u +'%F %T') UTC)"
+          fi
+          echo "date=${day}" >> "$GITHUB_OUTPUT"
+          echo "Issue date: \`${day}\`" >> "$GITHUB_STEP_SUMMARY"
+
       - name: Run the day
         id: run
         env:
@@ -183,12 +240,16 @@ jobs:
           # into the script text. `${{ }}` inside `run:` is textual substitution
           # and turns any input into code — a bad habit to commit even where
           # only someone with write access can dispatch the workflow.
-          INPUT_DATE: ${{ inputs.date }}
+          # Already resolved above: the manual input if there was one, the cron
+          # slot's date otherwise. Always passed, so `run_daily` never reaches
+          # its `date.today()` fallback on a runner — that fallback stays for a
+          # person typing `uc daily`, who does mean the day they are having.
+          ISSUE_DATE: ${{ steps.slot.outputs.date }}
           INPUT_DRY_RUN: ${{ inputs.dry_run }}
           INPUT_SMOKE: ${{ inputs.smoke }}
         run: |
           args=()
-          if [ -n "$INPUT_DATE" ]; then args+=(--date "$INPUT_DATE"); fi
+          if [ -n "$ISSUE_DATE" ]; then args+=(--date "$ISSUE_DATE"); fi
           if [ "$INPUT_DRY_RUN" = "true" ]; then args+=(--dry-run); fi
           if [ "$INPUT_SMOKE" = "true" ]; then args+=(--smoke); fi
 
@@ -215,15 +276,24 @@ jobs:
 
       # Retry the days we could not see. Skipped on a dry run and on a manual
       # run for one specific date, where the operator asked for that date only.
+      #
+      # Since the 08-26 batch this walks the calendar rather than the rows in
+      # `content/runs_log/`, so a day that was never attempted is retried too.
+      # It could not be before: the queue was built from the rows that existed,
+      # and the whole problem with 08-26 was that no row existed.
       - name: Catch up on missed days
         if: ${{ inputs.dry_run != true && inputs.date == '' && steps.run.outputs.locked != '1' }}
         env:
+          # The horizon ends at the slot date, not at `date.today()` on the
+          # runner. A run that crossed midnight would otherwise measure its
+          # seven days from tomorrow and drop the oldest one off the back.
+          ISSUE_DATE: ${{ steps.slot.outputs.date }}
           OPENALEX_KEY: ${{ secrets.OPENALEX_KEY }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           SPRINGER_API_KEY: ${{ secrets.SPRINGER_API_KEY }}
           CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
           UC_ALERT_RECIPIENT: ${{ secrets.UC_ALERT_RECIPIENT }}
-        run: uv run uc catch-up || true
+        run: uv run uc catch-up --date "$ISSUE_DATE" || true
 
       # Built here and thrown away, on purpose: since 0X the deploy happens in
       # `pages.yml`, and this is the pre-flight. A broken template fails the
@@ -303,17 +373,41 @@ jobs:
       # `always()` steps, so the ordinary commit step never happens — a row
       # written here and left in the workspace would die with the runner, which
       # is the same silence this is meant to end.
+      #
+      # ★ It asks about the **slot date**, not `date -u +%F` (08-26 batch).
+      # On the night this was written the two differed, and the difference is
+      # the whole failure: the job had crossed midnight, `date -u` said 08-27,
+      # the row for 08-27 had just been written by the run itself, and the step
+      # reported "already written" and passed. The day it was meant to protect —
+      # 08-26 — was never in its field of view. A net that checks the wrong day
+      # reports success for the same reason an empty room is quiet.
+      #
+      # The slot step may not have run (a failed install, a cancelled checkout),
+      # so the hour rule is repeated here in bash. It is repeated, not derived,
+      # because deriving it needs the thing that failed to install; the
+      # duplication is pinned by `tests/test_slot_date.py`.
       - name: Record an interrupted run
         if: ${{ always() && inputs.dry_run != true }}
+        env:
+          SLOT_DATE: ${{ steps.slot.outputs.date }}
         run: |
-          day=$(date -u +%Y-%m-%d)
+          day="$SLOT_DATE"
+          if [ -z "$day" ]; then
+            if [ "$(date -u +%H)" -ge "$SLOT_HOUR_UTC" ]; then
+              day="$(date -u +%Y-%m-%d)"
+            else
+              day="$(date -u -d 'yesterday' +%Y-%m-%d)"
+            fi
+            echo "::warning::The slot step did not run; the ${SLOT_HOUR_UTC}:00 UTC rule was applied here instead — ${day}."
+          fi
+
           if [ -f "content/runs_log/${day}.json" ]; then
             echo "run log already written — the pipeline recorded its own verdict"
             exit 0
           fi
 
           echo "::warning::No run-log row for ${day} — recording it as interrupted."
-          uv run uc record-interrupted \
+          uv run uc record-interrupted --date "${day}" \
             --reason "the job ended without a verdict (cancelled, timed out, or the runner died)" || true
 
           if [ ! -f "content/runs_log/${day}.json" ]; then

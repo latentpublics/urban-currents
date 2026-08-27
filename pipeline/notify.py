@@ -350,12 +350,25 @@ def status() -> dict[str, Any]:
     from .canon_state import counts as canon_counts
     from .held import counts as held_counts
     from .llm import UsageState
-    from .outcome import interrupted_dates, unpublished_dates
+    from .config import cfg
+    from .daily import slot_date
+    from .outcome import interrupted_dates, missing_dates, unpublished_dates
 
     logs = all_logs()
     successes = [r for r in logs if r.get("status") in (PUBLISHED, QUIET)]
     successes.sort(key=lambda r: r["date"])
     missing = unpublished_dates()
+
+    # ★ Days with no row at all (08-26 batch).
+    #
+    # Every other field here is read off a row, so none of them could describe
+    # 2026-08-26: the run that owed that date published itself as 08-27, no
+    # 08-26 row was ever written, and a day nothing spoke for was reported by
+    # nothing. Same horizon as catch-up, because a gap outside it is not
+    # actionable and an unactionable alarm teaches people to stop reading.
+    horizon = int(cfg("daily.catch_up_days", 7))
+    gap_end = slot_date()
+    gaps = missing_dates(gap_end - timedelta(days=horizon - 1), gap_end)
 
     # The run log and the archive answer different questions, and right now they
     # disagree: every issue published before X3 exists without a log row. Showing
@@ -386,6 +399,10 @@ def status() -> dict[str, Any]:
         "last_issue": issues[-1] if issues else None,
         "issues_published": len(issues),
         "unpublished_dates": [r["date"] for r in missing],
+        # Not a subset of `unpublished_dates` and not a weaker version of it.
+        # That list is days the pipeline looked at and could not see; this is
+        # days it never looked at, which no row can say.
+        "missing_dates": [str(d) for d in gaps],
         # Kept apart from `unpublished_dates` on purpose. `not_published` is a
         # verdict the pipeline reached; `interrupted` means it never reached one
         # because something killed it. Retrying the first usually works;

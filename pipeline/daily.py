@@ -30,7 +30,7 @@ import json
 import os
 import time
 from dataclasses import dataclass
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Optional
 
@@ -239,6 +239,48 @@ def acquire_lock(stale_after_s: int = 6 * 3600) -> Lock:
         encoding="utf-8",
     )
     return Lock(path=path, acquired=True, reclaimed_from=reclaimed)
+
+
+# --------------------------------------------------------------------------
+# Which day a scheduled run belongs to
+# --------------------------------------------------------------------------
+
+
+def slot_date(
+    now: Optional[datetime] = None, slot_hour: Optional[int] = None
+) -> date:
+    """The date a scheduled run belongs to, taken from its **cron slot** rather
+    than from the wall clock at the moment it happens to start.
+
+    This exists because of 2026-08-26, which has no issue and no run-log row and
+    was not caused by anything failing. GitHub's scheduler is best-effort; the
+    21:00 UTC slot for 08-26 started at about 00:35 UTC on 08-27, roughly three
+    and a half hours late. The pipeline dated itself with `date.today()`, so
+    that run published a **2026-08-27** issue and wrote a 2026-08-27 row with
+    `attempts: 1` — it did not know it was late. 08-26 became a gap that nothing
+    downstream could see: the workflow's interrupted-row net asked about "today"
+    and found the row that had just been written, and `catch_up` only ever read
+    rows that already existed, so a day with no row at all was invisible to it.
+
+    The fix is to stop asking the clock what day it is and ask the schedule.
+    The 21:00 slot belongs to the date the slot fell on, so a run is dated
+    `today` once 21:00 UTC has passed and `yesterday` before it. Three hours of
+    lateness now costs nothing, and so does twenty; only a run that slips past
+    the *next* slot is misfiled, and one that late has bigger problems.
+
+    `slot_hour` must match the `cron:` in `.github/workflows/daily.yml` — the
+    duplication is real and `tests/test_slot_date.py` pins the two together
+    along with the workflow's bash fallback.
+
+    Manual runs are deliberately unaffected: `uc daily --date` still wins, and
+    `run_daily` without a date still uses `date.today()`, because a person
+    typing the command means the day they are having.
+    """
+    now = now or datetime.now(timezone.utc)
+    if now.tzinfo is not None:
+        now = now.astimezone(timezone.utc)
+    hour = int(cfg("daily.slot_hour_utc", 21) if slot_hour is None else slot_hour)
+    return now.date() if now.hour >= hour else now.date() - timedelta(days=1)
 
 
 # --------------------------------------------------------------------------
@@ -579,23 +621,41 @@ def catch_up(today: Optional[date] = None, limit: Optional[int] = None) -> list[
     coupling window used by the 4th. And bounded, because a day whose sources
     have moved on cannot be recovered by asking again — past the horizon a
     missed day stays missed, and stays in the log saying so.
+
+    **The queue is a calendar, not a list of files.** It used to be built from
+    `unpublished_dates()`, which reads the rows in `content/runs_log/` — so a
+    day that had failed was retried and a day that had never been *attempted*
+    was not, because there was no file to read. That is the hole 2026-08-26
+    fell through (see `slot_date`): the run that should have been dated 08-26
+    filed itself under 08-27, no 08-26 row was ever written, and `catch_up`
+    walked straight past it every day while `daily.yml`'s comment claimed it
+    "retries anything missed for a week". It does now. Walking the horizon day
+    by day and asking whether each one has a row makes the absence of a row the
+    signal it always should have been — the same "measured zero versus not
+    measured" distinction the rest of this repository keeps running into.
+
+    `interrupted` rows join `not_published` in the retry set for the same
+    reason. The workflow writes one when a job dies without a verdict, which is
+    exactly a day worth asking about again, and nothing retried it.
     """
-    from .outcome import unpublished_dates
+    from .outcome import RETRYABLE, all_logs
 
     today = today or date.today()
     horizon = today - timedelta(days=int(cfg("daily.catch_up_days", 7)))
 
-    pending = [
-        row for row in unpublished_dates()
-        if horizon <= date.fromisoformat(row["date"]) < today
-    ]
-    pending.sort(key=lambda r: r["date"])
+    rows = {r["date"]: r for r in all_logs() if "date" in r}
+    pending: list[date] = []
+    d = horizon
+    while d < today:
+        row = rows.get(d.isoformat())
+        if row is None or row.get("status") in RETRYABLE:
+            pending.append(d)
+        d += timedelta(days=1)
     if limit:
         pending = pending[:limit]
 
     results = []
-    for row in pending:
-        d = date.fromisoformat(row["date"])
+    for d in pending:
         try:
             # `today=d`, not the real today. `target_window` derives the window
             # from "today", so passing the actual date made a catch-up collect
@@ -610,7 +670,7 @@ def catch_up(today: Optional[date] = None, limit: Optional[int] = None) -> list[
             raise
         except Exception as e:  # noqa: BLE001 - one bad day must not stop the rest
             results.append({
-                "date": row["date"],
+                "date": d.isoformat(),
                 "status": "retry_failed",
                 "error": f"{type(e).__name__}: {e}",
             })

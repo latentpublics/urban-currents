@@ -337,6 +337,22 @@ daily:
   lookback_days: 7
   min_lag_days: 1
 
+  # ★ The hour the daily cron slot falls on, in UTC. **This must equal the hour
+  # in `cron:` in .github/workflows/daily.yml**, and `tests/test_slot_date.py`
+  # fails if it does not.
+  #
+  # A scheduled run dates itself from the slot it belongs to, not from the clock
+  # at the moment it starts: `today` once this hour has passed, `yesterday`
+  # before it. That is the whole fix for 2026-08-26, which has no issue and no
+  # run-log row because its 21:00 UTC slot started at about 00:35 UTC on 08-27
+  # and `date.today()` said 08-27. The run published an 08-27 issue with
+  # `attempts: 1` — it did not know it was late — and 08-26 became a gap that
+  # neither the interrupted-row net nor `catch-up` nor the deadman could see.
+  #
+  # Moving this hour is therefore not the same kind of edit as moving a
+  # threshold. Change the cron in the same commit.
+  slot_hour_utc: 21
+
   # A day that costs more than this in LLM calls stops and publishes nothing.
   # A truncated issue claims a scope it did not cover, and the whole point of
   # the outcome model is that we would rather say nothing than say that.

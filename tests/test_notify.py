@@ -288,13 +288,32 @@ def test_status_counts_recipients_without_printing_them(repo, monkeypatch):
 # --------------------------------------------------------------------------
 # Catch-up
 # --------------------------------------------------------------------------
+#
+# Every test here fills the rest of the horizon with published days.
+#
+# That is not padding. Since the 08-26 batch the queue is built by walking the
+# calendar rather than by reading the rows that happen to exist, so a day with
+# no row at all is queued — which is the whole point of the change and would
+# otherwise swamp what these three tests are each actually about (order, the
+# horizon, and one bad day not stopping the rest). The calendar behaviour has
+# its own tests in `tests/test_slot_date.py`.
+
+
+def _fill_horizon(today: date, skip: set[date] = frozenset()) -> None:
+    """Give every day in the catch-up horizon a `published` row."""
+    for i in range(1, 8):
+        d = today - timedelta(days=i)
+        if d not in skip:
+            _log(d, PUBLISHED, published=3)
 
 
 def test_catch_up_retries_the_missed_days_oldest_first(repo, monkeypatch):
     from pipeline import daily as daily_mod
 
-    for i in range(3):
-        _log(DAY - timedelta(days=i), NOT_PUBLISHED, ["collect.arxiv did not run"])
+    missed = {DAY - timedelta(days=i) for i in range(3)}
+    _fill_horizon(DAY + timedelta(days=1), skip=missed)
+    for d in missed:
+        _log(d, NOT_PUBLISHED, ["collect.arxiv did not run"])
 
     attempted: list[date] = []
     monkeypatch.setattr(
@@ -313,6 +332,7 @@ def test_catch_up_stops_at_the_horizon(repo, monkeypatch):
     from pipeline import daily as daily_mod
 
     old = DAY - timedelta(days=30)
+    _fill_horizon(DAY + timedelta(days=1), skip={DAY})
     _log(old, NOT_PUBLISHED, ["collect.arxiv did not run"])
     _log(DAY, NOT_PUBLISHED, ["collect.arxiv did not run"])
 
@@ -333,6 +353,7 @@ def test_catch_up_stops_at_the_horizon(repo, monkeypatch):
 def test_one_unrecoverable_day_does_not_stop_the_others(repo, monkeypatch):
     from pipeline import daily as daily_mod
 
+    _fill_horizon(DAY + timedelta(days=1), skip={DAY, DAY - timedelta(days=1)})
     _log(DAY - timedelta(days=1), NOT_PUBLISHED, ["x"])
     _log(DAY, NOT_PUBLISHED, ["x"])
 

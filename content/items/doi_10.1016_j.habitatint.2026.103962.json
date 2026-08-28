@@ -1,10 +1,17 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Faced with global crises, many cities are experimenting with new urban models to reduce car use, promoting more sustainable mobility and reclaiming public space and urban greenery. However, while certainly an improvement, these experiments also risk contributing to gentrification, increasing the cost of living and of housing in the areas concerned. This article considers the case study of Barcelona, and analyses how the municipal government, between 2015 and 2023, has sought to balance well known sustainable mobility policies, such as the superblock experiments, with housing policies aimed at mitigating these risks and expanding the supply of public housing.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Politecnico di Torino",
+            "ror": "00bgk9508"
+          }
+        ],
         "name": "Gabriele D’Adda",
         "openalex": "A5029171709",
         "orcid": "https://orcid.org/0009-0009-2739-4437"
@@ -40,7 +47,13 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00bgk9508",
+        "label": "Politecnico di Torino"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -53,8 +66,15 @@
         "label": "Elisabetta Vitale Brovarone"
       }
     ],
-    "places": [],
-    "places_status": "not_attempted",
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1492",
+        "label": "Barcelona",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
     "tools": [],
     "topics": [
       {
@@ -145,14 +165,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-08-25T21:36:55Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -174,26 +197,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2015 and 2023",
+      "url": null,
+      "value": true
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The analysis is a qualitative case study of a single city under a specific municipal administration, which may limit its direct application to cities with different governance structures or housing market dynamics.",
+      "what": "This study analyzes Barcelona's municipal policies between 2015 and 2023, examining how the local government attempted to coordinate sustainable mobility initiatives, specifically the superblock experiments, with housing policies designed to curb gentrification and increase public housing supply.",
+      "why": "It documents a concrete policy attempt to resolve the tension between urban greening and housing displacement, showing how mobility and housing strategies can be intentionally integrated to protect vulnerable residents from the inflationary effects of public space improvements."
+    }
   },
   "track": "papers",
-  "updated": "2026-08-24",
+  "updated": "2026-08-28",
   "work_key": "doi:10.1016/j.habitatint.2026.103962"
 }

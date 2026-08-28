@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Large language models are increasingly used to inform safety decisions in cities, such as where it is safe to walk, rent, or travel. We ask whether such judgments track measured risk or the patterns attached to an urban neighborhood's name. We probe seven instruct-tuned models under three conditions that dissociate name from geography: coordinates-only, name-only, and name+coordinates, across 186 neighborhoods in Los Angeles and Chicago, joined to violent crime and American Community Survey data. First, ratings are nearly flat under coordinates for six of seven models, while names carry most between neighborhood variation and are moderately calibrated to violent crime; only at frontier scale does the coordinate channel show appreciable variation. Second, names lower safety ratings more for neighborhoods with higher shares of the locally dominant marginalized group (percent Black in Chicago, percent Hispanic in Los Angeles), and this name effect tracks demographic share in all seven models and both cities. In Los Angeles, where demographic share and crime are more separable, the effect survives controls for crime and income and is confirmed by crime-matched pairs. An enforcement-elasticity analysis further shows that over-caution tracks near-fully-reported homicide rather than discretionary, deployment-driven offenses. Third, the effect scales with geographic knowledge: models that better distinguish real neighborhoods apply more demographic stereotype to them. Because neighborhood names carry both genuine crime signal and demographic stereotype, removing names reduces both bias and accuracy. We discuss implications for deploying LLMs in advice and decision-support settings.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Huy Nguyen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yue Lin",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "comment": "12 pages, 8 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.26188v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.26188v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-23",
+    "repository_urls": [],
+    "title": "Is Your Neighborhood Safe? Place-based Stigma in Large Language Models' Urban Safety Judgments"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-27_2608.26188",
+    "members": [
+      "arxiv:2608.26188"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.9091,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q65",
+        "label": "Los Angeles",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1297",
+        "label": "Chicago",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-23",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.26188",
+    "doi": "10.48550/arxiv.2608.26188",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-28T05:11:34Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006143,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2121,
+      "out": 329
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9367,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3747,
+    "relevance": 0.9367
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on safety judgments across two major US cities and may reflect specific American patterns of racial segregation and spatial stigma.",
+      "what": "The study evaluated seven instruct-tuned large language models on their safety ratings of 186 neighborhoods in Los Angeles and Chicago under three conditions: coordinates-only, name-only, and name+coordinates. The ratings were compared against violent crime statistics and American Community Survey demographic data. The models showed flat safety ratings when given coordinates alone, whereas neighborhood names drove most of the variation and lowered safety ratings in proportion to the share of Black residents in Chicago and Hispanic residents in Los Angeles, even when controlling for actual crime and income levels.",
+      "why": "It demonstrates that large language models rely on demographic stereotypes embedded in neighborhood names rather than geographic coordinates to assess urban safety, and that this bias actually increases in models with superior geographic knowledge. This reveals a fundamental trade-off for urban decision-support systems, where removing neighborhood names to eliminate demographic bias simultaneously degrades the models' ability to leverage genuine crime data."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-23",
+  "work_key": "arxiv:2608.26188"
+}

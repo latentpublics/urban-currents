@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Neighborhood livability is commonly assessed with static built-environment indicators, such as facility proximity, street connectivity, and access to public space. These measures describe available opportunities but do not directly represent how residents with different mobility capacities, household roles, schedules, and care responsibilities experience the neighborhood. This paper presents a prototype framework that uses a spatial knowledge graph (KG) and large language models (LLMs) to generate and revise household schedules, followed by rule-based feasibility checking and GIS-based network materialization. The spatial KG integrates residents, residences, facilities, neighborhood context, and sampled road hubs; Graph-RAG retrieves each household's nearby spatial context, including candidate POIs and approximate walking times, for the scheduling LLM. The LLM produces structured household schedules, while rules are used for lightweight repairs and auditable feasibility checks. The LLM then revises schedules in response to identified feasibility issues. A routing module derives the actual travel paths, travel times, modes, and event histories from the road network. The resulting events support synthetic resident-agent interviews about daily convenience, travel burden, activity feasibility, and household coordination. A prototype demonstration in a Shenzhen neighborhood shows that nominal facility availability does not necessarily imply convenient access: residents with limited mobility and households with care responsibilities experience greater travel and coordination burdens. The framework offers an auditable way to connect spatial opportunity, household activity constraints, and resident-specific livability interpretation, while keeping simulated experience distinct from observed perception.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Haiyan Hao",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY",
+      "cs.MA"
+    ],
+    "comment": "31 pages, 4 figures, prototype framework",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.25952v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.25952v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-26",
+    "repository_urls": [],
+    "title": "Spatial-Knowledge-Graph-Grounded LLM Agents for Neighborhood Livability Evaluation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-27_2608.25952",
+    "members": [
+      "arxiv:2608.25952"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-network",
+        "label": "street network data"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:poi",
+        "label": "points of interest"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q15174",
+        "label": "Shenzhen",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.25952",
+    "doi": "10.48550/arxiv.2608.25952",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-28T05:11:29Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006128,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2111,
+      "out": 329
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9911,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3964,
+    "relevance": 0.9911
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's utility is demonstrated through a prototype simulation in a single neighborhood in Shenzhen, and the simulated experiences remain distinct from observed, real-world human perceptions.",
+      "what": "The researchers developed a prototype framework that combines a spatial knowledge graph with large language models to simulate and evaluate neighborhood livability through synthetic household schedules. Tested in a neighborhood in Shenzhen, the system integrates residents, facilities, and road networks to generate daily schedules, perform rule-based feasibility checks, and calculate actual travel paths and times. The resulting simulated events were used to conduct synthetic resident-agent interviews regarding daily convenience, travel burdens, and household coordination.",
+      "why": "The framework demonstrates that nominal facility proximity does not guarantee actual accessibility, revealing that residents with limited mobility and care responsibilities experience disproportionate travel burdens. This provides a new, auditable method to evaluate urban livability by simulating how diverse household constraints and schedules interact with the physical built environment, moving beyond static spatial indicators."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-26",
+  "work_key": "arxiv:2608.25952"
+}

@@ -1,0 +1,182 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "We study the relationship between exposure to immigrants and right-wing votes used as a proxy for anti-immigrant sentiment in the Netherlands. Exposure to immigrants is measured using a novel indicator, adapted from the residential segregation literature, applied to grid data available for the entire country at the aggregate level. Using the proxy of election results, we are able to study the entire voting population instead of a limited subset of panel respondents. In our cross-sectional study of the 2023 national election, we find that municipalities and neighbourhoods with greater exposure have less anti-immigrant sentiment. However, looking at the increase in right-wing vote share from the 2021 to the 2023 national elections, we find evidence of an ``overexposure effect'', as this relationship reverses, and the areas that saw significant increases in migrants subsequently experienced an increase in right-wing votes. Furthermore, we see that at high levels of exposure, wealth (and inequality) plays an important role in the voting dynamics, indicating that relative deprivation theory may play a role.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Benedikt Meylahn",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Tommaso Giommoni",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mike Lees",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alessandro Nai",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.CE"
+    ],
+    "comment": "30 pages (incl. Appendix), 8 Figures (main text)",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.25072v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.25072v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-25",
+    "repository_urls": [],
+    "title": "The complex relationship between anti-immigrant sentiment and exposure in the Netherlands"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-27_2608.25072",
+    "members": [
+      "arxiv:2608.25072"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q55",
+        "label": "Netherlands",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-25",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.25072",
+    "doi": "10.48550/arxiv.2608.25072",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-28T05:11:29Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005755,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1941,
+      "out": 316
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9107,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4443,
+    "relevance": 0.9107
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on right-wing voting outcomes as a proxy for anti-immigrant sentiment, which may capture other political or economic grievances.",
+      "what": "This study analyzed the relationship between immigrant exposure and anti-immigrant sentiment across the Netherlands using national grid data and voting results from the 2021 and 2023 national elections. Using a novel exposure indicator adapted from residential segregation metrics, the analysis found that while municipalities and neighborhoods with higher overall immigrant exposure had lower right-wing vote shares in 2023, areas experiencing rapid increases in immigrant exposure between 2021 and 2023 showed a reversal, with rising right-wing vote shares. The research also identified that wealth and inequality levels influence these voting dynamics at high exposure thresholds.",
+      "why": "It demonstrates that the spatial relationship between immigrant presence and political backlash is dynamic rather than static, revealing an 'overexposure effect' where rapid demographic change triggers right-wing voting shifts even if highly diverse areas remain generally less right-wing."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-25",
+  "work_key": "arxiv:2608.25072"
+}

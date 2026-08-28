@@ -63,7 +63,33 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5148120028",
+        "label": "Zhiyong Zhou"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148141961",
+        "label": "Song Gao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148114236",
+        "label": "Qianheng Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148085737",
+        "label": "Feng Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148090497",
+        "label": "Zhenhong Du"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -74,7 +100,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.951,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0208,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.0069,
+        "subfield": "2203"
+      }
+    ]
   },
   "first_published": "2026-08-21",
   "graph": {
@@ -85,7 +136,7 @@
   "ids": {
     "arxiv": "2608.21567",
     "doi": "10.48550/arxiv.2608.21567",
-    "openalex": null,
+    "openalex": "W7204189172",
     "pmid": null
   },
   "provenance": {
@@ -93,7 +144,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-25T21:36:51Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005519,
     "llm": {
@@ -181,6 +233,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-21",
+  "updated": "2026-08-28",
   "work_key": "arxiv:2608.21567"
 }

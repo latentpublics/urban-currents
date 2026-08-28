@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The inappropriate disposal of solid waste remains a significant public health and environmental concern worldwide, including in Ghana. Poor sanitation and improper waste management practices contribute to substantial economic costs and avoidable deaths annually. In 2022, a field study in Atonsu, Kumasi, Ghana, reported a community-perceived relationship between household waste disposal and illness patterns, but only through descriptive analysis without quantitative validation. This study extends that investigation using two data-driven approaches. First, a Random Forest classifier was developed to predict illness categories using waste disposal practices and demographic survey data. On a held-out group of respondents who reported illness (N=69), the model obtained a macro F1 score of 0.63, with disposal method emerging as the most important substantive predictor of illness type. Second, a MobileNetV2 image classification model enabled automated waste sorting via visual recognition, achieving 88.2% accuracy and a macro F1 score of 0.87 on the test set (N=415). The vision-based approach offers an affordable, camera-driven alternative to complex multi-sensor systems, making it highly suitable for resource-constrained settings. Taken together, the findings provide quantitative evidence for a community health relationship previously documented only qualitatively. They demonstrate the potential for automated waste-sorting in low-resource environments. Importantly, the results illustrate that technological performance alone does not guarantee public health improvements; effective institutional support and implementation are equally necessary.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Hilda Adwubi Osei",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Catherine Tenewaa Osei",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Desdemona Yaa Asobayire",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.CV",
+      "cs.CY"
+    ],
+    "comment": "16 pages, 3 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.25759v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.25759v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-26",
+    "repository_urls": [],
+    "title": "Learning from waste: Machine Learning for health risk prediction and computer vision-based sorting in Ghana"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-27_2608.25759",
+    "members": [
+      "arxiv:2608.25759"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:remote-sensing-classification",
+        "label": "remote sensing classification"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.25759",
+    "doi": "10.48550/arxiv.2608.25759",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-28T05:11:29Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006187,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2115,
+      "out": 335
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9365,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3746,
+    "relevance": 0.9365
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "N=69",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The health prediction model was trained and evaluated on a very small sample size of 69 respondents who reported illness.",
+      "what": "This study developed two machine learning models using 2022 field data from Atonsu in Kumasi, Ghana. First, a Random Forest classifier predicted illness categories from demographic and waste disposal survey data, achieving a macro F1 score of 0.63 on a test set of 69 respondents and identifying disposal method as the top predictor. Second, a MobileNetV2 computer vision model classified waste images for automated sorting, reaching 88.2% accuracy and an F1 score of 0.87 on a test set of 415 images.",
+      "why": "The research provides quantitative validation for a previously unproven link between household waste practices and specific illness patterns in Ghana, while demonstrating that a low-cost, single-camera vision system can effectively sort waste in resource-constrained settings without relying on expensive multi-sensor hardware."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-26",
+  "work_key": "arxiv:2608.25759"
+}

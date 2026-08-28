@@ -1,0 +1,211 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban food environments may reflect broader socioeconomic inequalities, but district-level evidence remains limited in Brazilian cities. This study examined whether indicators of food retail and street-market availability discriminate between levels of social vulnerability across the 96 districts of São Paulo. We conducted an exploratory cross-sectional ecological analysis integrating the São Paulo Social Vulnerability Index (IPVS), establishment records from the Relação Anual de Informações Sociais (RAIS), and street-market data from CAISAN. Census-sector information was aggregated at the district level. Twenty districts without an IPVS classification were excluded, resulting in 76 observations. The outcome distinguished districts classified as IPVS level 1 from those classified as levels 2--7. Predictors described the densities of healthy and unhealthy food establishments, the number of street markets, and the availability of establishments selling fresh or in natura food. Eight conventional machine-learning classifiers were evaluated using leave-one-out cross-validation. Reported mean F-scores ranged from 0.62 to 0.75, with XGBoost obtaining the highest value. In the Random Forest model, the densities of healthy and unhealthy food establishments jointly accounted for approximately 60% of the total impurity-based feature importance. These findings indicate that publicly available food-environment indicators contain information associated with the district-level distribution of social vulnerability. However, the small ecological sample, class imbalance, outcome binarization, and cross-sectional design limit predictive generalization and preclude causal or household-level interpretations.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Pedro Lemes Sixel Lobo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Eric Tokuda",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kuruvilla Joseph Abraham",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Roberto Fray",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dirce Maria Marchioni",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alexandre Cláudio Botazzo Delbem",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rogerio Salvini",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.LG",
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.26299v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.26299v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-26",
+    "repository_urls": [],
+    "title": "District-Level Food Environment Indicators and Social Vulnerability in São Paulo"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-27_2608.26299",
+    "members": [
+      "arxiv:2608.26299"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:gradient-boosting",
+        "label": "gradient boosting"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q174",
+        "label": "São Paulo",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.26299",
+    "doi": "10.48550/arxiv.2608.26299",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-28T05:11:29Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.007024,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2127,
+      "out": 426
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9864,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3946,
+    "relevance": 0.9864
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "76 observations",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are constrained by a small ecological sample size, class imbalance, and a cross-sectional design that prevents causal or household-level interpretations.",
+      "what": "This study analyzed the relationship between food retail availability and social vulnerability across 76 districts in S\u0003\u0002o Paulo, Brazil, using data from the Rela\u0003\u0002\u0003\u0002o Anual de Informa\u0003\u0002\u0003\u0005es Sociais and CAISAN. Eight machine learning classifiers were trained to predict binary social vulnerability levels based on the densities of healthy and unhealthy food outlets and street markets, with XGBoost achieving the highest mean F-score of 0.75. In a Random Forest model, the combined densities of healthy and unhealthy food establishments accounted for roughly 60% of the feature importance.",
+      "why": "It demonstrates that publicly available administrative data on food retail can successfully map onto district-level social vulnerability, offering a potential proxy for identifying socioeconomically disadvantaged areas when direct census data is unavailable."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-26",
+  "work_key": "arxiv:2608.26299"
+}

@@ -1,0 +1,174 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Bike-sharing systems are an important component of low-carbon urban mobility, but continued expansion creates challenges in both cold-start prediction and equitable resource allocation. Newly deployed stations lack historical ridership records, causing a mismatch between training and inference for graph-based models on evolving networks. Historical demand may also encode structural inequalities, as lower ridership in low-income neighborhoods can reflect limited infrastructure access rather than weak latent demand. Models trained directly on such data may therefore reinforce existing mobility disparities. We propose FairGIN, a fairness-aware graph neural network for demand prediction in expanding bike-sharing systems. FairGIN integrates three components. Expansion-Simulated Increment Training stochastically simulates network expansion during training to reduce the cold-start distribution gap. Attention-Based Knowledge Transfer combines station-adaptive temperature scaling with orthogonal embedding alignment to transfer representations from data-rich existing stations to data-sparse new stations. Fairness-Aware Optimization introduces income-stratified regularization and an equity-calibrated deployment score to support more inclusive station placement. Experiments on NYC and Seattle demonstrate that FairGIN achieves state-of-the-art predictive accuracy across diverse expansion scenarios while substantially reducing income-based disparities without compromising overall system efficiency.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Man Luo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yixuan Zhao",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.26451v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.26451v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-26",
+    "repository_urls": [],
+    "title": "Toward Equitable Low-Carbon Mobility: Fairness-Aware Demand Prediction for Expanding Bike-Sharing Systems"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-27_2608.26451",
+    "members": [
+      "arxiv:2608.26451"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:gnn",
+        "label": "graph neural network"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q60",
+        "label": "New York City",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.26451",
+    "doi": "10.48550/arxiv.2608.26451",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-28T05:11:29Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00536,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2001,
+      "out": 262
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9394,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3758,
+    "relevance": 0.9394
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The proposed FairGIN framework is a fairness-aware graph neural network designed to predict bike-sharing demand for newly added stations. It simulates network expansion during training, transfers spatial representations from established to new stations using attention-based alignment, and incorporates income-stratified regularization. Evaluated on bike-sharing networks in New York City and Seattle, the model achieves state-of-the-art predictive accuracy across various expansion scenarios.",
+      "why": "It prevents predictive models from perpetuating historical infrastructure inequalities, allowing planners to identify latent demand in low-income neighborhoods and allocate new stations more equitably without sacrificing overall system efficiency."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-26",
+  "work_key": "arxiv:2608.26451"
+}

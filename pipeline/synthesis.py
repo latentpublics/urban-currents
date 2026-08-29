@@ -33,6 +33,15 @@ Four measured sections and one written one:
    **omitted entirely when the facts are thin**. Forcing a paragraph every day
    produces filler, and filler is the failure mode this whole design is built
    against. Same principle as the quiet day.
+
+   What "thin" means changed in 0Z-F (S1) and what it protects did not. The
+   paragraph asks two questions of a day and they have separate answers:
+   *what arrived together*, which needs a measured group and is silent without
+   one, and *what arrived*, which needs only the day's own papers. Losing the
+   second because the first was empty is what silenced every issue from
+   2026-08-21. A day with no group now gets a paragraph that **makes no
+   grouping claim** — the facts block it is written from contains no count of
+   papers sharing anything, so there is nothing to copy one from.
 """
 
 from __future__ import annotations
@@ -77,6 +86,25 @@ _TAG = re.compile(r"</?[a-zA-Z][^>]*>")
 
 def clean_title(title: str) -> str:
     return _TAG.sub("", title or "").strip()
+
+
+def _first_sentence(what: str) -> str:
+    """The opening sentence of a summary, without its full stop.
+
+    The full stop is stripped because every caller adds one, and a `what` that
+    is a single sentence therefore reached the facts block as "It measured a
+    thing.." — a doubled period in the one text a model is asked to write from.
+
+    **The split itself is naive and stays naive**, which is worth saying rather
+    than hiding: it breaks on the first ". " and so cuts
+    *"…across 109 U.S. Cities"* down to *"…across 109 U.S."*. Doing better
+    needs an abbreviation-aware splitter, which is a change with its own tests
+    and its own failure modes; guessing at one here — "split only before a
+    capital" — would trade a visible truncation for an invisible one. Recorded
+    in 0Z-F rather than half-fixed.
+    """
+    first = (what or "").split(". ")[0].strip()
+    return first[:-1].strip() if first.endswith(".") else first
 
 
 def _foundation_canon() -> dict[str, dict]:
@@ -489,6 +517,32 @@ GROUP_LIMIT = 4
 # How many ungrouped papers get a clause of their own.
 HIGHLIGHT_LIMIT = 3
 
+# ★ The floor under a paragraph written **without** a measured group (0Z-F, S1).
+#
+# From 2026-08-21 the paragraph stopped appearing, and nothing was broken: no
+# controlled-vocabulary tag was shared by three papers on any of those days, and
+# `write_paragraph` treated that as "nothing to say". It is not. It is "nothing
+# to say *about grouping*", and the 2026-08-18 paragraph shows the difference —
+# it opens with a measured claim ("4 of today's papers carry the tag …") and
+# then does something else entirely: *"Outside this group, another paper
+# introduces … while another paper utilizes …"*. That second half needs no group
+# and invents nothing. It says which paper did what.
+#
+# So a day with no group can still have a paragraph, and the condition is not
+# how much grouped but **whether the paragraph selects**. `highlights` names at
+# most `HIGHLIGHT_LIMIT` papers; a day with that many papers or fewer would get
+# a paragraph that names all of them, which is the issue read aloud rather than
+# a summary of it. Hence one more than the limit, derived rather than typed so
+# the two cannot drift apart.
+#
+# **The archive cannot choose this number and is not being asked to.** Over the
+# 73 published issues the item counts are 1, 2, 2, 6, 7, 9, … — there is no day
+# with 3, 4 or 5 papers, so every floor from 3 to 6 behaves identically on
+# everything ever published. What the archive does say is which days are
+# affected: 16 issues have no group, 13 of them have 6 or more papers and gain a
+# paragraph, and 3 (2026-08-20, 08-23, 08-24 — 2, 1 and 2 papers) stay silent.
+PARAGRAPH_MIN_ITEMS = HIGHLIGHT_LIMIT + 1
+
 
 def _all_groups(items: list[Item]) -> list[dict]:
     """Every group, uncapped — what `highlights` must measure "ungrouped" against."""
@@ -664,19 +718,66 @@ def render_facts(facts: dict[str, Any]) -> str:
             f"\"{group['tag']}\"."
         )
         for title, what in zip(group["titles"], group["whats"]):
-            first = (what or "").split(". ")[0].strip()
+            first = _first_sentence(what)
             lines.append(f"    - \"{title}\"" + (f": {first}." if first else "."))
 
+    # ★ On a day with no measured group the ungrouped lines lose two things
+    # (0Z-F, S1), and the second was found by running it.
+    #
+    # **"is not in any of the groups above"** is only true when there are groups
+    # above. On a day with none it points at nothing, and pointing a model at an
+    # absent group is how an absent group acquires a name.
+    #
+    # **The tag list goes too, and that is the part that mattered.** The first
+    # generation for 2026-08-03 opened *"Two of today's papers carry the tag
+    # 'Transportation Planning and Optimization'"* — a group that does not exist
+    # and was never in the facts block, because two is below `GROUP_MIN_PAPERS`.
+    # The model had not invented the tag: it read the same string in two of the
+    # `(its tags: ...)` clauses and did the arithmetic itself. Leaving the
+    # material there and asking the prompt not to use it is the arrangement 0i
+    # rejected — *"we did not write in the prompt that it must not name a topic,
+    # we removed the place in the output where a topic could go"*. So on a day
+    # with no group there is no shared string to count, and the claim is
+    # unavailable rather than merely forbidden. The regex in `write_paragraph`
+    # is what is left after that, not instead of it.
+    grouped = bool(facts.get("tag_groups"))
     for hl in facts.get("highlights") or []:
-        first = (hl["what"] or "").split(". ")[0].strip()
-        tags = ", ".join(f'"{t}"' for t in hl["tags"])
-        lines.append(
-            f"- \"{hl['title']}\" is not in any of the groups above"
-            + (f" (its tags: {tags})" if tags else "")
-            + (f". {first}." if first else ".")
-        )
+        first = _first_sentence(hl["what"])
+        if grouped:
+            tags = ", ".join(f'"{t}"' for t in hl["tags"])
+            head = f'- "{hl["title"]}" is not in any of the groups above'
+            head += f" (its tags: {tags})" if tags else ""
+        else:
+            head = f'- "{hl["title"]}"'
+        lines.append(head + (f". {first}." if first else "."))
 
     return "\n".join(lines)
+
+
+# Two shapes of claim about the day **as a set**, refused on a day where no set
+# was measured. See `write_paragraph` for why these two and not a general
+# detector.
+#
+# The first is a count: "4 of today's papers …". On an ungrouped day no such
+# count is in the FACTS block, so any sentence of this shape was invented — the
+# claim-about-an-unmeasured-population that 0Z-B recorded as D273.
+#
+# The second is subtler and the model produced it on the first try. Asked for a
+# paragraph about 2026-08-28's nine unrelated papers it opened *"This issue
+# features research across several distinct areas of urban data science."* —
+# grammatical, harmless-looking, and an assertion about the spread of the day
+# that nobody measured. It is the negative of the forbidden claim rather than
+# the claim, which is why it slipped past both the prompt's "no opening
+# flourish" line and the count pattern. On a day with no measured grouping
+# there is **no true sentence whose subject is the issue**, so the subject
+# itself is the thing to refuse.
+_GROUP_CLAIM = re.compile(
+    r"\b(\d+|one|two|three|four|five|six|seven|eight|nine|ten|several|many|"
+    r"most|both|half)\s+of\s+(today'?s|the\s+day'?s)\s+papers\b"
+    r"|\b(this|today'?s)\s+(issue|digest|research\s+digest|collection|selection|"
+    r"day'?s\s+papers)\b",
+    re.IGNORECASE,
+)
 
 
 def material_for_paragraph(facts: dict[str, Any]) -> int:
@@ -704,17 +805,45 @@ def write_paragraph(facts: dict[str, Any], client=None) -> dict[str, Any]:
     """
     material = material_for_paragraph(facts)
     groups = facts.get("tag_groups") or []
+    highlights_ = facts.get("highlights") or []
+    published = int((facts.get("composition") or {}).get("published") or 0)
+
+    # ★ No group is no longer the end of the question (0Z-F, S1).
+    #
+    # It used to be: no group, no paragraph, and from 2026-08-21 that silenced
+    # every issue. The gate was right about what it was protecting — a day whose
+    # papers do not resemble each other must not be given a sentence saying they
+    # do — and wrong about the only remedy being silence. The ungrouped
+    # paragraph makes no claim about resemblance; it says which paper did what,
+    # which is measured for each paper separately.
+    #
+    # Two conditions replace it, and both are about whether the paragraph is
+    # doing work the cards do not already do:
     if not groups:
-        return {
-            "text": None,
-            "omitted": True,
-            "reason": (
-                f"no controlled-vocabulary tag is shared by "
-                f"{GROUP_MIN_PAPERS} or more of today's papers"
-            ),
-            "material": material,
-            "groups": 0,
-        }
+        if published < PARAGRAPH_MIN_ITEMS:
+            return {
+                "text": None,
+                "omitted": True,
+                "reason": (
+                    f"no controlled-vocabulary tag is shared by "
+                    f"{GROUP_MIN_PAPERS} or more of today's papers, and "
+                    f"{published} paper(s) is too few to summarise separately"
+                ),
+                "material": material,
+                "groups": 0,
+            }
+        if len(highlights_) < 2:
+            return {
+                "text": None,
+                "omitted": True,
+                "reason": (
+                    "no controlled-vocabulary tag is shared by "
+                    f"{GROUP_MIN_PAPERS} or more of today's papers, and fewer "
+                    "than two of them have a summary to compress"
+                ),
+                "material": material,
+                "groups": 0,
+            }
 
     from .llm import LLMBudgetExceeded, LLMClient
 
@@ -755,6 +884,30 @@ def write_paragraph(facts: dict[str, Any], client=None) -> dict[str, Any]:
             "reason": "the model judged the facts too thin",
             "material": material,
         }
+
+    # ★ The last defence on an ungrouped day, and deliberately a narrow one
+    # (0Z-F, S1). `_GROUP_CLAIM` above says which two shapes and why.
+    #
+    # **It does not try to detect invention in general.** A regex that claimed
+    # to would be worse than none: it would read as a guarantee and catch one
+    # phrasing out of twenty. What it does is refuse the two claims whose
+    # subject is known to be unmeasured, and record why, so a day that trips it
+    # is visible rather than published. Everything else rests on the FACTS
+    # block having nothing to invent from, which is the older and better
+    # defence — 0i's *"we removed the place in the output where a topic could
+    # go"*.
+    if not groups and _GROUP_CLAIM.search(text):
+        return {
+            "text": None,
+            "omitted": True,
+            "reason": (
+                "the paragraph made a claim about today's papers as a set and "
+                "no grouping among them was measured"
+            ),
+            "material": material,
+            "groups": 0,
+        }
+
     return {
         "text": text,
         "omitted": False,

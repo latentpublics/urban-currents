@@ -141,18 +141,34 @@ def test_a_paper_with_no_summary_is_not_offered(repo):
 # --------------------------------------------------------------------------
 
 
-def test_no_group_means_no_paragraph(repo):
-    """If nothing groups, the only paragraph available is "today's papers are
-    not much alike" — the filler sentence mockup 6a wrote and this project
-    refused."""
+def test_no_group_means_no_grouping_sentence(repo):
+    """Rewritten in 0Z-F (S1), and the thing it guards did not move.
+
+    It used to assert that a day with no group gets no paragraph at all, on the
+    argument that the only paragraph available would be "today's papers are not
+    much alike" — the filler sentence mockup 6a wrote and this project refused.
+    The argument was right about that sentence and wrong that it was the only
+    one available: a paragraph can name what each paper did without saying
+    anything about the set. So the assertion moves from **no paragraph** to
+    **no grouping claim**, which is what was ever at stake.
+
+    `tests/test_ungrouped_paragraph.py` holds the rest of that story.
+    """
     items = [_item(f"arxiv:2608.0000{i}", tags=[f"tag{i}"]) for i in range(5)]
     facts = build_facts(date(2026, 8, 5), items)
+    block = render_facts(facts)
 
-    result = write_paragraph(facts)
+    assert facts["tag_groups"] == []
+    assert "carry the tag" not in block
+    assert "of today's papers" not in block
+    # Still refused, loudly, if the model claims one anyway.
+    from pipeline.llm import LLMClient, LLMResponse
 
-    assert result["omitted"] is True
-    assert "shared by" in result["reason"]
-    assert result["text"] is None
+    bad = LLMClient(
+        task="synthesis",
+        caller=lambda s, u: LLMResponse(text="Two of today's papers agree."),
+    )
+    assert write_paragraph(facts, client=bad)["omitted"] is True
 
 
 def test_a_grouped_day_is_not_blocked_by_thin_citations(repo):
@@ -222,4 +238,4 @@ def test_the_prompt_version_moved_with_the_material(repo):
     read back the stale answer; this is the same failure at file scale."""
     from pipeline.llm import LLMClient
 
-    assert LLMClient(task="synthesis").prompt_version == "synthesis/daily@0.3.0"
+    assert LLMClient(task="synthesis").prompt_version == "synthesis/daily@0.4.0"

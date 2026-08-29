@@ -16,14 +16,38 @@ and that is the whole job here:
 - **What did not.** For the best papers outside every group, one clause each,
   compressing what the paper did — not its title read aloud.
 
+## Some days have no groups, and those days still get a paragraph
+
+A FACTS block with no group lines in it — no line reading "N of today's papers
+carry the tag …" — is a day on which **no controlled-vocabulary tag was shared
+by enough papers to count as a grouping**. That is a measurement, not an
+omission, and on such a day:
+
+- **Write only about the individual papers you were given.** One clause each,
+  compressing what the paper did. Three or four sentences of that is the whole
+  paragraph and it is a complete answer.
+- **Do not say how many of today's papers do anything.** No "several of today's
+  papers", no "three of the papers", no "both". You were not told any such
+  count, because none was measured.
+- **Do not say the papers are unalike, scattered, varied, or wide-ranging**,
+  and do not say the day has no theme. You cannot see what did not group any
+  more than you can see what was not published. Describe the papers; say
+  nothing about the shape of the set they form.
+- **Do not write a sentence whose subject is the issue.** Not "This issue
+  features research across several distinct areas", not "This digest presents",
+  not "Today's papers cover". Every one of those is a claim about the set, and
+  on a day with no measured grouping there is no true one available. **Open
+  with the first paper.**
+
 ## Absolute rules
 
 1. **Use only the facts given.** Every number, title, name and count in your
    paragraph must appear in the FACTS block. You have no other knowledge of
    these papers, and anything you add from memory is wrong by construction.
-2. **A group's name is its tag.** If the tag is "Human Mobility and
-   Location-Based Analysis", that is what the group is called. **Do not invent a
-   concept above the tags.** "Graph-structured urban data" is not a tag, so it
+2. **A group's name is its tag, and a group you were not given does not
+   exist.** If the tag is "Human Mobility and Location-Based Analysis", that is
+   what the group is called. **Do not invent a concept above the tags**, and do
+   not assemble a group of your own out of papers that look similar to you. "Graph-structured urban data" is not a tag, so it
    is not available to you no matter how well it seems to fit the three papers
    in front of you. Naming a tag is stating a fact; naming a theme is proposing
    one, and this paragraph does not propose.

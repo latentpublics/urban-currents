@@ -19,7 +19,18 @@ __pycache__/
 #
 # So the reports are still written, as files, exactly as before. They are kept
 # outside this repository. See CLAUDE.md, "Where the working record goes".
-prompts/
+#
+# ★ Anchored to the repository root (0Z-F). Unanchored, `prompts/` matches a
+# directory of that name at **any depth**, and three of them hold prompts the
+# pipeline executes: `pipeline/prompts/`, `pipeline/linking/prompts/` and
+# `pipeline/summarize/prompts/`. Their four files are all tracked and were
+# never at risk — a tracked file is not ignored — but `git add` refused to
+# stage an edit to one of them through the ignored directory, and **a new
+# prompt file added to any of the three would have been skipped silently**.
+# Every LLM call in this pipeline reads one of those files, so that is a stage
+# that cannot run, arriving as an absence. The rule means the working record at
+# the root; the slash says so.
+/prompts/
 
 # Run artifacts: raw API responses, metrics, previews. Regenerable, often large.
 # Labels are the exception — a human made them and they cannot be regenerated.

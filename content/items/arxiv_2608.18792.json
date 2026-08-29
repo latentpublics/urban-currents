@@ -44,12 +44,38 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04kcjtk03",
+        "label": "Identités et Différenciation de l'Environnement des Espaces et des Sociétés"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5119959662",
+        "label": "Victor Vignolles"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0396-9488",
+        "label": "Rémi Lemoy"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10393",
+        "is_primary": true,
+        "label": "Economic Growth and Productivity",
+        "score": 0.2444,
+        "subfield": "2002"
+      }
+    ]
   },
   "first_published": "2026-08-19",
   "graph": {
@@ -60,7 +86,7 @@
   "ids": {
     "arxiv": "2608.18792",
     "doi": "10.48550/arxiv.2608.18792",
-    "openalex": null,
+    "openalex": "W4415090323",
     "pmid": null
   },
   "provenance": {
@@ -68,7 +94,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-21T21:31:54Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005009,
     "llm": {
@@ -156,6 +183,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-19",
+  "updated": "2026-08-26",
   "work_key": "arxiv:2608.18792"
 }

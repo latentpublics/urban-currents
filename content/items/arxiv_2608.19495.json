@@ -45,11 +45,47 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5147722749",
+        "label": "Nils Bonfils"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147683153",
+        "label": "Christoph Becker"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12238",
+        "is_primary": true,
+        "label": "Green IT and Sustainability",
+        "score": 0.6288,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10609",
+        "is_primary": false,
+        "label": "Digital Marketing and Social Media",
+        "score": 0.0556,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11437",
+        "is_primary": false,
+        "label": "Digital Platforms and Economics",
+        "score": 0.0431,
+        "subfield": "1408"
+      }
+    ]
   },
   "first_published": "2026-08-19",
   "graph": {
@@ -60,7 +96,7 @@
   "ids": {
     "arxiv": "2608.19495",
     "doi": "10.48550/arxiv.2608.19495",
-    "openalex": null,
+    "openalex": "W7203946026",
     "pmid": null
   },
   "provenance": {
@@ -68,7 +104,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-21T21:31:54Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005066,
     "llm": {
@@ -156,6 +193,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-19",
+  "updated": "2026-08-26",
   "work_key": "arxiv:2608.19495"
 }

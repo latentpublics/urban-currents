@@ -4,31 +4,60 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Antwerp",
+            "ror": "008x57b05"
+          }
+        ],
         "name": "Chris den Heijer",
         "openalex": "A5050727523",
         "orcid": "https://orcid.org/0000-0002-2112-5078"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Antwerp",
+            "ror": "008x57b05"
+          }
+        ],
         "name": "Roel Nagy",
         "openalex": "A5139977831",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Antwerp",
+            "ror": "008x57b05"
+          }
+        ],
         "name": "Axelle Vincent",
         "openalex": "A5057407906",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Antwerp",
+            "ror": "008x57b05"
+          },
+          {
+            "name": "Institute of Natural Sciences",
+            "ror": "02y22ws83"
+          }
+        ],
         "name": "Tine Compernolle",
         "openalex": "A5148464406",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Antwerp",
+            "ror": "008x57b05"
+          }
+        ],
         "name": "Tom Coppens",
         "openalex": "A5031459074",
         "orcid": "https://orcid.org/0000-0002-0529-295X"
@@ -58,7 +87,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:008x57b05",
+        "label": "University of Antwerp"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02y22ws83",
+        "label": "Institute of Natural Sciences"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -176,7 +216,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-08-29T03:10:28Z",
+    "collected_at": "2026-08-29T23:13:12Z",
     "collectors": [
       "openalex"
     ],
@@ -223,6 +263,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-08-27",
+  "updated": "2026-08-29",
   "work_key": "doi:10.1016/j.landurbplan.2026.105779"
 }

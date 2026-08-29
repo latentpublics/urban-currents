@@ -58,11 +58,57 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9621-4940",
+        "label": "Mohamed Khalafalla"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147763571",
+        "label": "Doreen Kobelo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5112676067",
+        "label": "Thobias Sando"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147700040",
+        "label": "Janeroza Matyeni"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.8299,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12315",
+        "is_primary": false,
+        "label": "Older Adults Driving Studies",
+        "score": 0.1117,
+        "subfield": "3612"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.0149,
+        "subfield": "2203"
+      }
+    ]
   },
   "first_published": "2026-08-19",
   "graph": {
@@ -73,7 +119,7 @@
   "ids": {
     "arxiv": "2608.19291",
     "doi": "10.48550/arxiv.2608.19291",
-    "openalex": null,
+    "openalex": "W7203946692",
     "pmid": null
   },
   "provenance": {
@@ -81,7 +127,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-21T21:31:54Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005371,
     "llm": {
@@ -169,6 +216,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-19",
+  "updated": "2026-08-26",
   "work_key": "arxiv:2608.19291"
 }

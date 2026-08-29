@@ -1,0 +1,170 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Epidemic models often pool air travel, commuting, and other mobility layers into a single weighted network. Pooling keeps the total imported infections into a region but discards the transport mode and route that delivered them, the information a mode-specific intervention needs. We make this precise for directed multilayer flows with heavy-tailed variation. Pooling acts as an asymmetric filter. The magnitude of an extreme importation, its radial tail index, is an exact invariant of sampling and nonnegative aggregation, whereas its composition across layers and routes, the angular part, is reweighted by layer-specific sampling and can be irrecoverably merged. We give a necessary and sufficient condition for recovering route composition, attach a surveillance decision cost to the loss, and show that the first established route need not be the busiest. A controlled metapopulation study calibrates the cost, and two contrasting reconstructions show where it bites. In US pandemic influenza, air adds fitted information beyond commuting, and a layer-resolved ranking targets more air-import burden than a pooled one. In the early Italian COVID-19 wave, commuting improves onset reconstruction while air attribution stays unresolved. Pooling can therefore support total-importation surveillance but cannot in general identify the mode or route behind an importation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Tiandong Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Wei Yang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "math.ST",
+      "physics.bio-ph",
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.25766v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.25766v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-26",
+    "repository_urls": [],
+    "title": "Pooling Mobility Obscures Epidemic Invasion Routes"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-28_2608.25766",
+    "members": [
+      "arxiv:2608.25766"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.25766",
+    "doi": "10.48550/arxiv.2608.25766",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-29T03:10:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00572,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1995,
+      "out": 303
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9044,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3618,
+    "relevance": 0.9044
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are demonstrated using historical influenza and COVID-19 data, meaning the relative importance of specific mobility layers may vary for pathogens with different transmission dynamics.",
+      "what": "The study mathematically demonstrates how pooling different mobility layers, such as air travel and commuting, into a single network preserves total infection imports but obscures the specific transport modes and routes of epidemic invasion. Using a controlled metapopulation model and historical reconstructions of US pandemic influenza and early Italian COVID-19 waves, the researchers quantified the surveillance decision cost of this information loss. They found that while air travel provided distinct predictive information beyond commuting in the US context, commuting data was more critical for reconstructing early COVID-19 onset in Italy.",
+      "why": "It proves that aggregate mobility networks are fundamentally inadequate for designing mode-specific interventions, establishing a mathematical condition for when route composition can be recovered and when it is permanently lost."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-26",
+  "work_key": "arxiv:2608.25766"
+}

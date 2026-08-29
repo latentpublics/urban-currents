@@ -63,12 +63,79 @@
       }
     ],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05cq64r17",
+        "label": "University of Łódź"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05t4zqc79",
+        "label": "GeoInformation (United Kingdom)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:038t36y30",
+        "label": "Heidelberg University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01h85cx24",
+        "label": "Institute of Geography"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8229-9661",
+        "label": "Maciej Adamiak"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5089946206",
+        "label": "Sascha Fendrich"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5114534295",
+        "label": "Julian Psotta"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4916-9838",
+        "label": "Alexander Zipf"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": true,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.8716,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0328,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.0191,
+        "subfield": "2213"
+      }
+    ]
   },
   "first_published": "2026-08-22",
   "graph": {
@@ -79,7 +146,7 @@
   "ids": {
     "arxiv": "2608.22116",
     "doi": "10.48550/arxiv.2608.22116",
-    "openalex": null,
+    "openalex": "W7171358570",
     "pmid": null
   },
   "provenance": {
@@ -87,7 +154,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-25T21:36:51Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005888,
     "llm": {
@@ -175,6 +243,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-22",
+  "updated": "2026-08-29",
   "work_key": "arxiv:2608.22116"
 }

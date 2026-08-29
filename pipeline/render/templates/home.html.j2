@@ -136,13 +136,34 @@
       is absent the sentence is left out rather than printed with a zero. -#}
   <section class="uc-method">
     <h2 class="uc-method__h2">How this is made</h2>
+    {#- ★ "Every weekday morning" was wrong and had been since the schedule was
+        turned on (0Z-F, S5). `daily.yml`'s only cron is `0 21 * * *` — every
+        day, weekends included, and the archive shows Saturday and Sunday
+        issues. It is the kind of error that survives because it sounds like
+        the shape of the thing rather than a claim about it. -#}
     <p class="uc-method__p">
-      Every weekday morning an unattended pipeline reads
+      Every morning, seven days a week, an unattended pipeline reads
       {{ stats.arxiv_categories }} arXiv categories and {{ stats.journals }}
       journals. A journal article enters because a journal we track published
       it. An arXiv preprint enters on a classifier's probability, above a floor
       set from labelled examples. Neither path is asked to fill a quota, which
       is why some days are short and some are empty.
+    </p>
+    {#- What the filter is *for*, which the page had never said (0Z-F, S5).
+        Deliberately short on provenance: who labelled and to what standard is
+        not written down anywhere this template can read, so the claim stops at
+        what is checkable — the labels are ours, they were applied by hand, and
+        the classifier extends a human judgement rather than replacing it.
+
+        "computational urban science" is lower-cased on purpose. *Computational
+        Urban Science* is also one of the journals in `vocab/journals.yaml`, and
+        the sentence means the field. -#}
+    <p class="uc-method__p">
+      <strong>What we are looking for:</strong> work that matters to urban AI
+      and computational urban science, as the Institute for Latent Publics
+      judges it. The examples the floor is set from were labelled here, by
+      hand, paper by paper. The classifier is a way of applying that judgement
+      to more papers than a person can read — it does not form one of its own.
     </p>
     {%- if quality %}
     <p class="uc-method__p">
@@ -166,14 +187,22 @@
       each path ranked highest on a day,
       {% for name, q in quality.sources.items() -%}
       {% if loop.first %}precision was {% endif %}{{ '%.2f'|format(q.precision) }} on the
-      {{ q.label }} path ({{ q.n_labels }} labels over {{ q.days }} days){% if not loop.last %}, and {% endif %}
+      {{ q.label }} path{% if not loop.last %}, and {% endif %}
       {%- endfor %}.
       <strong>We set ourselves {{ '%.2f'|format(quality.target) }} and both
       miss it.</strong> Precision holds at the target through about rank
       {{ quality.sources.values()|map(attribute='depth_holding_target')|min }} and
       falls after — so the top of a day is better than these figures, and the
-      tail is worse. {{ quality.n_labels }} judgements over
-      {{ quality.days }} days is a thin basis for saying even that.
+      tail is worse.
+      {# ★ The populations came off in 0Z-F (S5), YJUN's call. What replaces
+         them is not nothing: a rate quoted bare reads as if it were solid, and
+         this one is a mean over a handful of hand-labelled days. The sentence
+         that says so has to stay even though the numbers behind it do not.
+
+         Written with `{#`, not `{#-`: the stripping form ate the space between
+         two sentences and produced "worse.All of it rests". #}
+      All of it rests on a small sample judged by hand, so read these as
+      an order of magnitude rather than as figures.
     </p>
     {%- endif %}
     <p class="uc-method__p">
@@ -183,6 +212,42 @@
       from a model; a model writes the summaries and the one-line headline, from
       the abstract and nothing else. Every tag carries a canonical identifier —
       OpenAlex, ORCID, ROR — so a method named twice is one thing, not two.
+    </p>
+    {#- What the four measured rows on an issue count (0Z-F, S5).
+        Written from `pipeline/synthesis.py` and `pipeline/graph/`, not from the
+        row labels — a wrong methodology note is worse than none on a page whose
+        whole claim is that we say only what we measure. Each one ends with what
+        it does **not** say, which is the distinction this project keeps making
+        everywhere else.
+
+        `canon` is the one that would not compress. Whether a cited work counts
+        as a foundation or an instrument is decided by looking its OpenAlex
+        topic up in two curated lists, and only when the topic is on neither
+        does a citation-ratio threshold decide. That is a judgement encoded in a
+        file, not a measurement, and the sentence says so rather than pretending
+        to a one-line rule. -#}
+    <p class="uc-method__p">
+      <strong>What the rows on an issue count.</strong>
+      <em>tag shift</em> — how many of the day's papers carry a tag, against
+      that tag's own daily average over the previous 30 days; listed only above
+      3 papers and 3× the average, and nothing at all until the archive holds
+      seven days to average over. It compares today with our own archive, so a
+      shift can mean our collecting changed rather than the field did.
+      <em>canon</em> — works our own archive cites often enough to have been
+      resolved and kept, filtered to the ones classified as foundations rather
+      than instruments; listed when two of the day's papers cite the same one,
+      or when it is the first citation in 90 days and the archive covers that
+      long. The foundation-or-instrument split is a curated decision about
+      OpenAlex topics, not a measurement, and it is the part of this row to
+      treat as ours.
+      <em>coupling</em> — pairs of papers citing at least three of the same
+      works, today with today and today with a paper from the previous 90 days;
+      the shared works are named. Sharing references is not sharing a question,
+      and a paper with a long bibliography pairs more easily than a short one.
+      <em>institutions</em> — how many of the day's papers carry each name in a
+      byline, listed at two, and the same count over 30 days, listed at three.
+      A frequency, never a ranking, and it counts affiliations we were given
+      rather than work anybody did.
     </p>
     <p class="uc-method__p uc-method__api">
       All of it is also <a href="api.html">available as JSON</a>, with the

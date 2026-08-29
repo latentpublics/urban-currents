@@ -19,6 +19,7 @@ No network, no keys.
 from __future__ import annotations
 
 import json
+import pathlib
 import re
 from datetime import date
 
@@ -265,7 +266,25 @@ def test_the_home_page_states_the_measured_precision_and_the_miss(built, monkeyp
 
     assert "0.60" in html and "0.70" in html
     assert "miss it" in html, "and says so, rather than leaving it to arithmetic"
-    assert "73 labels" in html and "75 labels" in html, "with the population"
+
+    # ★ The populations came off in 0Z-F (S5), on YJUN's call, and this
+    # assertion is the reason the removal needed a decision rather than a
+    # deletion: `73 labels over 5 days` was there to stop `0.60` reading as a
+    # settled figure. Taking the number out without taking the caution out
+    # would have made the page *more* confident than the measurement.
+    #
+    # So the caution stays and only the count goes, and the test now pins both
+    # halves — the numbers are gone, and the sentence that keeps 0.60 honest is
+    # not.
+    assert "73 labels" not in html and "75 labels" not in html
+    assert "148 judgements" not in html
+    text = " ".join(html.split())
+    assert "small sample judged by hand" in text, "the caution outlives the count"
+    assert "an order of magnitude" in text
+    # A Jinja comment written with the stripping form `{#- … -#}` between two
+    # sentences ate the space and rendered "worse.All of it rests". Whitespace
+    # control in a template is invisible until it is printed.
+    assert "tail is worse. All of it rests" in text
 
 
 def test_the_precision_sentence_says_precision_and_not_a_count_of_papers(built, monkeypatch):
@@ -493,3 +512,100 @@ def test_llms_txt_waits_for_the_publish_switch(built, monkeypatch):
     text = written.read_text(encoding="utf-8")
     assert "api/index.json" in text
     assert "CC BY 4.0" in text and "no open licence" in text
+
+
+# --------------------------------------------------------------------------
+# 0Z-F, S5 — "How this is made" describes the method that exists
+# --------------------------------------------------------------------------
+
+
+def test_the_page_does_not_claim_the_pipeline_skips_weekends(built):
+    """It said "Every weekday morning" and had since the schedule went on.
+
+    `daily.yml`'s only cron is `0 21 * * *`. The archive has Saturday and
+    Sunday issues in it. The sentence was not a rounding error about a
+    schedule, it was a claim about the method that the method contradicts —
+    and it survived because it sounds like the shape of such a thing.
+    """
+    html = build_home().read_text(encoding="utf-8")
+    text = " ".join(html.split())
+
+    assert "weekday" not in text
+    assert "seven days a week" in text
+
+
+def test_the_cron_and_the_sentence_agree():
+    """Pinned against the workflow rather than against a remembered fact."""
+    import yaml
+
+    # The real checkout, not `paths.ROOT`: that is monkeypatched to a temporary
+    # tree by the `repo` fixture and carries no workflows.
+    real_root = pathlib.Path(__file__).resolve().parent.parent
+    workflow = yaml.safe_load(
+        (real_root / ".github/workflows/daily.yml").read_text(encoding="utf-8")
+    )
+    triggers = workflow.get("on", workflow.get(True))
+    days_of_week = [entry["cron"].split()[4] for entry in triggers["schedule"]]
+
+    assert days_of_week == ["*"], (
+        "the daily cron restricts the day of the week, so the home page's "
+        "'seven days a week' has stopped being true"
+    )
+
+
+def test_the_page_says_what_the_selection_is_for(built):
+    """Added in S5. The page explained the mechanism and never the intent.
+
+    Deliberately checked at the level the claim is made: who labelled, that it
+    was by hand, and that the classifier extends the judgement rather than
+    holding one. Nothing here asserts how many people or by what procedure,
+    because that is not written down anywhere the page could read it from.
+    """
+    text = " ".join(build_home().read_text(encoding="utf-8").split())
+
+    assert "Institute for Latent Publics judges it" in text
+    assert "labelled here, by hand" in text
+    assert "it does not form one of its own" in text
+
+
+def test_the_field_is_not_confused_with_the_journal_of_the_same_name(built):
+    """*Computational Urban Science* is a journal we track. The sentence means
+    the field, and the capitalisation is the only thing that says which."""
+    text = " ".join(build_home().read_text(encoding="utf-8").split())
+
+    assert "urban AI and computational urban science" in text
+
+
+def test_each_measured_row_is_explained_with_what_it_does_not_say(built):
+    """S5 asked for the arithmetic, and the arithmetic came from the code.
+
+    The rows are `tag shift`, `canon`, `coupling` and `institutions`, and the
+    numbers below are the ones in `pipeline/synthesis.py` and
+    `config/pipeline.yaml`. If one moves, this fails — which is the point: a
+    methodology note that drifts from the method is worse than none on a page
+    whose claim is that it says only what it measures.
+    """
+    from pipeline import synthesis
+    from pipeline.config import cfg
+
+    text = " ".join(build_home().read_text(encoding="utf-8").split())
+
+    for label in ("tag shift", "canon", "coupling", "institutions"):
+        assert f"<em>{label}</em>" in text
+
+    assert f"previous {synthesis.BASELINE_DAYS} days" in text
+    assert f"above {synthesis.DEVIATION_MIN_TODAY} papers" in text
+    assert f"{synthesis.DEVIATION_MIN_RATIO:.0f}\u00d7 the average" in text
+    assert "seven days to average over" in text  # MIN_BASELINE_DAYS
+    assert synthesis.MIN_BASELINE_DAYS == 7
+
+    assert f"first citation in {synthesis.RARE_EVENT_DAYS} days" in text
+    shared = int(cfg("citation.min_shared_references", 3))
+    assert f"at least {['zero','one','two','three'][shared]} of the same works" in text
+    assert f"previous {int(cfg('citation.coupling_window_days', 90))} days" in text
+
+    # And each one says what it does not say.
+    assert "our collecting changed rather than the field did" in text
+    assert "not a measurement" in text
+    assert "not sharing a question" in text
+    assert "never a ranking" in text

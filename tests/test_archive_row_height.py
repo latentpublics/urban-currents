@@ -128,7 +128,7 @@ def test_the_states_are_still_named_on_the_row(every_state):
 def test_the_legend_says_each_thing_once(every_state):
     """Once under the table, not once per row — that was the whole bug."""
     html = every_state
-    assert html.count("assembled from the archived candidates") == 1
+    assert html.count("from the candidates archived for that date") == 1
     assert html.count("none of them scored high enough") == 1
     assert html.count("The sources did not answer") == 1
     assert html.count("nothing was worth publishing") == 1
@@ -309,3 +309,73 @@ def test_the_rendered_rows_are_all_the_same_height(every_state):
     # ellipsis is CSS, so a long lead overflows its box on purpose.
     assert any(r["cut"] for r in rows), "nothing was truncated, so nothing was long"
     assert overflow == 0, "the page scrolls sideways"
+
+
+# --------------------------------------------------------------------------
+# 0Z-F, S3/S4 — the three state chips, and what they say
+# --------------------------------------------------------------------------
+
+
+def _css() -> str:
+    # The real checkout. `paths.ROOT` is a temporary tree under the `repo`
+    # fixture and holds no templates.
+    from pathlib import Path
+
+    real_root = Path(__file__).resolve().parent.parent
+    return " ".join(
+        (real_root / "pipeline/render/templates/base.css.j2")
+        .read_text(encoding="utf-8")
+        .split()
+    )
+
+
+def test_the_three_state_chips_share_one_border_rule():
+    """They had three borders — dashed on the line colour, dotted on the line
+    colour, dotted on the meta colour — which read as three degrees of severity
+    nobody had ranked. One selector now, so they cannot drift apart again.
+    """
+    css = _css()
+
+    assert ".uc-chip--backfilled, .uc-chip--unranked, .uc-chip--recent {" in css
+    assert "border: 1px dashed" not in css, "the odd one out is gone"
+
+
+def test_the_day_we_could_not_see_keeps_its_own_chip():
+    """Deliberately outside the unification. A row with no issue behind it is
+    not a variant of a published day, and its solid border and faint ink are
+    the one place on the page that says so."""
+    css = _css()
+
+    assert ".uc-chip--missing { background: transparent; border: 1px solid" in css
+
+
+def test_each_state_is_still_named_in_words(every_state):
+    """The rule the unification had to respect: `base.css` refuses to let
+    colour carry meaning alone, and the answer has never been the border."""
+    html = every_state
+
+    for words in ("filled in later", "no headline", "more may follow",
+                  "a quiet day", "no issue"):
+        assert words in html
+
+
+def test_the_marks_explain_themselves_without_defending_themselves(every_state):
+    """S4. Three phrases came off, each for a stated reason.
+
+    *"Nobody was watching that morning"* described the operator rather than the
+    method. *"It is part of the method, not an apology"* is an apology — a line
+    saying it will not defend itself is a defence. *"Not a quiet day — a quiet
+    day published nothing at all"* explained one state by denying another,
+    which the marks already distinguish on their own.
+    """
+    text = " ".join(every_state.split())
+
+    for gone in ("Nobody was watching", "not an apology",
+                 "Not a quiet day — a quiet day published nothing"):
+        assert gone not in text, gone
+
+    # And the facts they were carrying are still carried.
+    assert "from the candidates archived for that date" in text
+    assert "rather than on the morning it covers" in text
+    assert "none of them scored high enough to lead the day" in text
+    assert "when it clears a fixed threshold" in text

@@ -151,8 +151,8 @@ def test_the_backfilled_row_is_drawn_differently(archive):
     # the same sentence on every backfilled row was what made half the table
     # two lines tall. The chip stayed exactly because moving it would leave
     # the row drawn in colour alone.
-    assert "Assembled later" not in filled, "the sentence is in the legend now"
-    assert "assembled from the archived candidates" in html, "and it is still said"
+    assert "one-day window" not in filled, "the sentence is in the legend now"
+    assert "from the candidates archived for that date" in html, "and it is still said"
 
 
 def test_the_rendered_row_states_both_facts(archive):
@@ -172,7 +172,13 @@ def test_the_rendered_row_states_both_facts(archive):
 
 
 def test_a_backfilled_day_is_not_drawn_as_a_failure(archive):
-    """It is part of the method, not an apology."""
+    """A day assembled later is a published day, drawn as one.
+
+    The phrase this docstring used to carry — *"it is part of the method, not
+    an apology"* — was on the page until 0Z-F (S4), where it came off for the
+    reason it was written: a line saying it will not apologise is one. The
+    principle it stated is unchanged and is what the assertions below check.
+    """
     build_archive()
     html = (paths.ROOT / "site" / "archive.html").read_text(encoding="utf-8")
     filled = _li(html, FILLED)

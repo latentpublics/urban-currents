@@ -812,16 +812,30 @@ body {
     transparent 3px, transparent 5px
   );
 }
-.uc-chip--backfilled {
+/* ★ One rule for the three state chips (0Z-F, S3).
+   `filled in later`, `no headline` and `more may follow` had three different
+   borders — dashed on `--uc-line`, dotted on `--uc-line`, dotted on
+   `--uc-meta` — which read in the legend as three degrees of severity that
+   nobody had ranked. `more may follow` was the one that looked right, so it is
+   the one the others were moved onto.
+
+   **This does not weaken what the rule above protects.** `base.css` refuses to
+   let colour carry meaning alone, and the answer to that has never been the
+   border: it is that every chip says its state in words, and that the *rows*
+   keep their own patterns — the backfilled fill is still a 90° hatch, the
+   missing bar still a 45° one. What is gone is a visual difference between the
+   chips that meant nothing and looked like it meant something.
+
+   `--missing` deliberately stays out. A day we could not see is not a variant
+   of a day we published, and its chip is the one place on the page where a
+   solid border and the faint ink say "this row has no issue behind it". */
+.uc-chip--backfilled,
+.uc-chip--unranked,
+.uc-chip--recent {
   background: transparent;
-  border: 1px dashed var(--uc-line);
+  border: 1px dotted var(--uc-meta);
   color: var(--uc-meta);
 }
-/* Papers went out, none of them led (0Z, Z1). Not a fault and not a quiet
-   day — the chip says which, because colour never carries meaning alone. */
-.uc-chip--unranked { background: transparent; border: 1px dotted var(--uc-line); color: var(--uc-meta); }
-/* Our knowledge of this day is still settling (0Z, Z2). */
-.uc-chip--recent { background: transparent; border: 1px dotted var(--uc-meta); color: var(--uc-meta); }
 .uc-spark__legend { color: var(--uc-faint); }
 /* Additive, like the histogram's: the row keeps its own state. Colour only —
    the border itself is on every row, see `.uc-row__date`. */

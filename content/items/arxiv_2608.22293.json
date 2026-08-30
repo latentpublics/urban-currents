@@ -1,0 +1,218 @@
+{
+  "badges": [
+    "code",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban wildfire resilience depends on interactions among built form, vegetation condition, and extreme fire weather, yet city-scale risk models often overlook whether predictive skill transfers across neighborhoods. We developed a spatially validated GeoAI workflow for the January 2025 Palisades Fire, linking 12,081 CAL FIRE damage inspections to pre-fire Sentinel-2 vegetation indices, Landsat surface temperature, LANDFIRE fuels, terrain, and OpenStreetMap buildings and roads. Among 9,883 inspected residential structures, 5,566 were destroyed. Random cross-validation yielded ROC-AUC 0.92 for the integrated XGBoost model, but 1 km spatial block validation reduced performance to 0.75; logistic regression performed similarly and was better calibrated. Building count within 100 m was the strongest predictor, with destruction odds increasing 4.12-fold per standard deviation. Vegetation moisture and greenness showed opposing conditional associations: NDMI at 100-300 m was protective (OR 0.52), whereas NDVI at 30-100 m was positively associated with destruction after accounting for moisture (OR 1.74). Predictive information was concentrated at the 100-300 m neighborhood scale. A separate post-fire track mapped burn severity and vegetation recovery without leakage. The results support neighborhood-scale susceptibility screening, moisture-aware vegetation management, and spatial block validation as a minimum standard for single-event urban wildfire modeling.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Parastoo Farajpoor",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mohammadreza Narimani",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.geo-ph",
+      "cs.LG",
+      "eess.IV"
+    ],
+    "comment": "20 pages, 13 figures, 4 tables. Data and derived products: https://doi.org/10.5281/zenodo.22061862. Replication code: https://github.com/MohammadrezaNarimaniUCDavis/Palisades_Urban_Wildfire_GeoAI",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.22293v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.22293v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-23",
+    "repository_urls": [],
+    "title": "The spatial anatomy of urban wildfire vulnerability: a spatially validated GeoAI framework reveals the roles of building density and vegetation moisture in structure loss during the 2025 Palisades Fire"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-29_2608.22293",
+    "members": [
+      "arxiv:2608.22293"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:gradient-boosting",
+        "label": "gradient boosting"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:regression",
+        "label": "regression"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5099045207",
+        "label": "Parastoo Farajpoor"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5070844683",
+        "label": "Mohammadreza Narimani"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10555",
+        "is_primary": true,
+        "label": "Fire effects on ecosystems",
+        "score": 0.9834,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12597",
+        "is_primary": false,
+        "label": "Fire Detection and Safety Systems",
+        "score": 0.0018,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10747",
+        "is_primary": false,
+        "label": "Disaster Management and Resilience",
+        "score": 0.0014,
+        "subfield": "3312"
+      }
+    ]
+  },
+  "first_published": "2026-08-23",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.22293",
+    "doi": "10.48550/arxiv.2608.22293",
+    "openalex": "W7204179824",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-08-30T23:22:25Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.007094,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2173,
+      "out": 426
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.8882,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4353,
+    "relevance": 0.8882
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "from the arXiv comment",
+      "url": "https://github.com/MohammadrezaNarimaniUCDavis/Palisades_Urban_Wildfire_GeoAI",
+      "value": true
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The predictive models and findings are derived from a single wildfire event, which may limit their direct generalizability to other geographic regions or different fire weather conditions.",
+      "what": "The study developed a spatially validated GeoAI workflow using XGBoost and logistic regression to analyze structure loss during the January 2025 Palisades Fire, utilizing 12,081 CAL FIRE damage inspections alongside Sentinel-2, Landsat, LANDFIRE, and OpenStreetMap data. Among 9,883 residential structures inspected, 5,566 were destroyed, with building count within 100 meters emerging as the strongest predictor of destruction (4.12-fold odds increase per standard deviation). Random cross-validation yielded an ROC-AUC of 0.92, which dropped to 0.75 under a more rigorous 1 km spatial block validation.",
+      "why": "It demonstrates that standard random cross-validation severely overestimates the predictive accuracy of urban wildfire models, establishing spatial block validation as a necessary methodological standard for single-event risk assessments. It also quantifies how neighborhood-scale building density and the opposing roles of vegetation moisture (NDMI) and greenness (NDVI) drive urban structure loss."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-23",
+  "work_key": "arxiv:2608.22293"
+}

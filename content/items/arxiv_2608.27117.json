@@ -1,0 +1,161 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "We develop a log-Gaussian Cox process framework for modelling street-level crime data observed on a road network when the released event locations are spatially obfuscated. Motivated by UK Police street-level crime data, where published coordinates are anonymised proxy locations rather than exact event locations, we address the resulting support mismatch by representing each observation through an aggregated support on the street network. The latent log-intensity is modelled as a Whittle--Matérn Gaussian field defined on a metric graph through an SPDE representation, allowing the crime intensity to vary continuously along streets while respecting the geometry of the road network. We compare the proposed metric-graph aggregated model with two alternatives: a planar point model that treats the released locations as exact points, and a planar aggregated model that accounts for spatial aggregation but ignores the network support. In a simulation study where data are generated on a street network, the metric-graph model provides more accurate parameter recovery and better overall fit than the planar alternative. In the City of London application, the metric-graph model also achieves the best fit across several crime types, including theft from the person, robbery, drugs, and bicycle theft. The results further suggest that the relationship between environmental amenities and crime risk varies by crime type, with supermarkets showing the most consistent positive associations. The proposed framework provides a principled approach for analysing network-constrained spatial event data with privacy-protected and imprecise locations.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Lulu Jiang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "David Bolin",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.27117v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.27117v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-27",
+    "repository_urls": [],
+    "title": "Modeling Spatially Obfuscated Street-Crime Data using Log-Gaussian Cox Processes on Metric Graphs"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-30_2608.27117",
+    "members": [
+      "arxiv:2608.27117"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.27117",
+    "doi": "10.48550/arxiv.2608.27117",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-01T00:31:51Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006361,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2087,
+      "out": 359
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.886,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3544,
+    "relevance": 0.886
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "While the model outperforms planar alternatives, its empirical validation is limited to crime types within a single, highly specific urban jurisdiction, the City of London.",
+      "what": "The researchers developed a log-Gaussian Cox process framework to model street-level crime on road networks when the public data has been spatially obfuscated for privacy. Using a Whittle-Mat\u0000ern Gaussian field on a metric graph, the model represents anonymized proxy coordinates as aggregated supports along the street network. Tested on simulated data and real-world crime records from the City of London, the model outperformed planar point and planar aggregated models in parameter recovery and fit across multiple crime types, including theft, robbery, and drug offenses.",
+      "why": "It provides a mathematically principled method to analyze network-constrained spatial events using publicly available, anonymized police data without losing the structural constraints of the road network. This allows researchers to accurately assess how environmental amenities, like supermarkets, correlate with crime risk even when exact crime locations are withheld."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-27",
+  "work_key": "arxiv:2608.27117"
+}

@@ -1,0 +1,161 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban transportation systems consist of multiple mobility modes that coexist within the same city and exhibit complex interdependencies, leading to correlated demand dynamics across modes. However, forecasting demand jointly across different modes remains challenging due to substantial heterogeneity in space and the limited availability of historical data for emerging modes. Existing forecasting methods are largely developed for individual mobility modes and implicitly assume compatible spatial structures between source and target systems, which severely restricts their applicability in multi-modal settings. To address these challenges, we propose \\textbf{TransMod}, a unified framework for urban mobility demand forecasting that enables effective knowledge transfer across heterogeneous mobility modes. TransMod constructs a shared zone-level spatial representation that aligns mobility systems with different spatial granularities into a common space, thereby reducing structural mismatch and distributional shift. Built on this unified representation, TransMod further learns transferable spatio-temporal patterns from data-rich source modes and adapts them to data-scarce target modes, alleviating the dependence on extensive target-domain histories. Extensive experiments on real-world datasets demonstrate that TransMod consistently outperforms existing approaches and provides robust forecasting performance under limited target data.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Yixuan Zhao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Man Luo",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.28273v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.28273v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-28",
+    "repository_urls": [],
+    "title": "Learning to Transfer Across Modes: Towards Unified Urban Mobility Forecasting"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-30_2608.28273",
+    "members": [
+      "arxiv:2608.28273"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.28273",
+    "doi": "10.48550/arxiv.2608.28273",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-01T00:31:51Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004978,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1945,
+      "out": 229
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9437,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3775,
+    "relevance": 0.9437
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed TransMod, a unified forecasting framework that transfers spatio-temporal demand patterns from data-rich transportation modes to data-scarce ones. The model aligns different spatial granularities into a shared zone-level representation to resolve structural mismatches and distributional shifts across heterogeneous mobility systems. The framework's performance was validated through experiments on real-world multi-modal datasets.",
+      "why": "It enables accurate demand forecasting for newly emerging or data-poor transit modes by leveraging historical data from established, data-rich modes, bypassing the traditional requirement for extensive historical datasets for every individual mode."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-28",
+  "work_key": "arxiv:2608.28273"
+}

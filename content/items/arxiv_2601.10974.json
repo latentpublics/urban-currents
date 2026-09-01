@@ -1,0 +1,246 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study uses connected vehicle data to analyze speeding behavior on residential roads. A scalable pipeline processes trajectory data and supplements missing speed limits to generate summaries at OpenStreetMap’s way ID level. The findings reveal a highly skewed distribution of both aggressive and reckless speeding. Based on a case study of Charlottesville, VA’s connected vehicle data on residential roads, 38% of segments had at least one instance of aggressive speeding, and 20% had at least one instance of reckless speeding. In addition, the point-based nighttime speeding rates were higher than daytime rates for the vast majority of residential segments, and extreme violations on specific road segments highlight how severe the issue can be. Several segments rank among the top 10 for both aggressive and reckless speeding incidents, indicating particularly high-risk residential roads. These findings support the need for both spatial and behavioral interventions. This study provides a rich foundation for policy and planning, offering a valuable complement to traditional enforcement and planning tools. In conclusion, this framework sets the foundation for future applications in traffic safety analytics, demonstrating the growing potential of telematics data to inform safer, more livable communities.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Virginia",
+            "ror": "0153tk833"
+          }
+        ],
+        "name": "Shi Feng",
+        "openalex": "A5123337522",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Virginia",
+            "ror": "0153tk833"
+          }
+        ],
+        "name": "B. Brian Park",
+        "openalex": "A5123344215",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Virginia",
+            "ror": "0153tk833"
+          }
+        ],
+        "name": "Andrew Mondschein",
+        "openalex": "A5064073322",
+        "orcid": "https://orcid.org/0000-0002-8454-0463"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/03611981261479946",
+      "pdf_url": null,
+      "source_id": "S145575934",
+      "source_name": "Transportation Research Record Journal of the Transportation Research Board",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-31",
+    "repository_urls": [],
+    "title": "Analyzing Residential Speeding Using Connected Vehicle Data: A Case Study in the Charlottesville, VA Area"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-31_2601.10974",
+    "members": [
+      "arxiv:2601.10974"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0153tk833",
+        "label": "University of Virginia"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5123337522",
+        "label": "Shi Feng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5123344215",
+        "label": "B. Brian Park"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8454-0463",
+        "label": "Andrew Mondschein"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": true,
+        "label": "Traffic and Road Safety",
+        "score": 0.8003,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0581,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0493,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-08-31",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1970113749",
+      "openalex:W1976603371",
+      "openalex:W1992228222",
+      "openalex:W2062195473",
+      "openalex:W2062663239",
+      "openalex:W2118900266",
+      "openalex:W2949083670",
+      "openalex:W3006109009",
+      "openalex:W4206664553",
+      "openalex:W4288758412",
+      "openalex:W4309436710",
+      "openalex:W4386591370",
+      "openalex:W4389265793",
+      "openalex:W4391644255",
+      "openalex:W4392264375",
+      "openalex:W4404454110",
+      "openalex:W4404894080",
+      "openalex:W4414048218"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2601.10974",
+    "doi": "10.1177/03611981261479946",
+    "openalex": "W7124756835",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-01T23:14:14Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005647,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1977,
+      "out": 298
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-01T23:14:14Z",
+    "doi": "10.1177/03611981261479946",
+    "journal": "Transportation Research Record Journal of the Transportation Research Board",
+    "source_id": "S145575934",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical findings are limited to a single case study of residential roads in the Charlottesville, Virginia area.",
+      "what": "This study developed a scalable data pipeline that processes connected vehicle trajectory data and fills in missing speed limits to analyze speeding behavior at the OpenStreetMap way ID level. Applying this framework to residential roads in the Charlottesville, Virginia area, the analysis revealed that 38% of road segments experienced at least one instance of aggressive speeding, while 20% had at least one instance of reckless speeding. The data also showed that point-based speeding rates on the vast majority of residential segments were higher during the night than during the day.",
+      "why": "It demonstrates how telematics and connected vehicle data can be systematically processed to identify specific, high-risk residential road segments and temporal speeding patterns, offering a scalable alternative to traditional, localized speed-monitoring equipment."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-31",
+  "work_key": "arxiv:2601.10974"
+}

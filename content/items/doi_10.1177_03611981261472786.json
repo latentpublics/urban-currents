@@ -1,0 +1,280 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Traffic microsimulation routinely generates second-by-second speed trajectories that contain nonphysical fluctuations in acceleration and jerk, which can lead to systematic overestimation of vehicular emissions. This study presents Trajectory Refinement for Emission Modeling (TRIM), a platform-independent post-processing framework that refines microsimulated trajectories through physics-based optimization. By enforcing acceleration-dependent jerk constraints, car-following safety constraints, and trajectory-consistency within a mixed-integer quadratic programming formulation, TRIM transforms raw simulation outputs into physically plausible, emission-consistent trajectories. Validated against high-resolution unmanned aerial vehicle-derived ground truth under three car-following models (Wiedemann 99, Krauss, and the Intelligent Driver Model), TRIM reduces total emission errors within 9% for nitrogen oxides and 7% for PM 2.5, with spatial errors predominantly within ±20% (±10% midblock). The platform-independent framework provides a transferable pathway for standardized emission assessment across simulation platforms, with an open-source implementation publicly available.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Shaomin Qin",
+        "openalex": "A5122119303",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Haobing Liu",
+        "openalex": "A5051972627",
+        "orcid": "https://orcid.org/0000-0002-3588-4593"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Inha University",
+            "ror": "01easw929"
+          }
+        ],
+        "name": "Daejin Kim",
+        "openalex": "A5043129222",
+        "orcid": "https://orcid.org/0000-0001-7866-7698"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Lishengsa Yue",
+        "openalex": "A5072215524",
+        "orcid": "https://orcid.org/0000-0002-0864-0075"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/03611981261472786",
+      "pdf_url": null,
+      "source_id": "S145575934",
+      "source_name": "Transportation Research Record Journal of the Transportation Research Board",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-08-31",
+    "repository_urls": [],
+    "title": "TRIM: Platform-Independent Framework for Speed Trajectory Refinement in Emission Modeling"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-31_10.1177/03611981",
+    "members": [
+      "doi:10.1177/03611981261472786"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03rc6as71",
+        "label": "Tongji University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01easw929",
+        "label": "Inha University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5122119303",
+        "label": "Shaomin Qin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3588-4593",
+        "label": "Haobing Liu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7866-7698",
+        "label": "Daejin Kim"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0864-0075",
+        "label": "Lishengsa Yue"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12095",
+        "is_primary": true,
+        "label": "Vehicle emissions and performance",
+        "score": 0.7544,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11524",
+        "is_primary": false,
+        "label": "Advanced Aircraft Design and Technologies",
+        "score": 0.063,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11489",
+        "is_primary": false,
+        "label": "Air Traffic Management and Optimization",
+        "score": 0.0543,
+        "subfield": "2202"
+      }
+    ]
+  },
+  "first_published": "2026-08-31",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1609246297",
+      "openalex:W1822270526",
+      "openalex:W1966360739",
+      "openalex:W1982305838",
+      "openalex:W1984541800",
+      "openalex:W2033833409",
+      "openalex:W2056586165",
+      "openalex:W2057590735",
+      "openalex:W2065361793",
+      "openalex:W2079245257",
+      "openalex:W2100860155",
+      "openalex:W2174064172",
+      "openalex:W2292050234",
+      "openalex:W2302256292",
+      "openalex:W2737370309",
+      "openalex:W2749448278",
+      "openalex:W2765477946",
+      "openalex:W2888039395",
+      "openalex:W2903709398",
+      "openalex:W3121862791",
+      "openalex:W3151316411",
+      "openalex:W3163772393",
+      "openalex:W3169347457",
+      "openalex:W4237088892",
+      "openalex:W4322743248",
+      "openalex:W4392769001",
+      "openalex:W4394000793",
+      "openalex:W4405729960",
+      "openalex:W4412798774"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1177/03611981261472786",
+    "openalex": "W7204823975",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-01T23:14:14Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005143,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1941,
+      "out": 248
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-01T23:14:14Z",
+    "doi": "10.1177/03611981261472786",
+    "journal": "Transportation Research Record Journal of the Transportation Research Board",
+    "source_id": "S145575934",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The Trajectory Refinement for Emission Modeling (TRIM) framework post-processes microsimulated vehicle trajectories using mixed-integer quadratic programming to eliminate nonphysical acceleration and jerk fluctuations. Validated against high-resolution UAV-derived ground truth across three car-following models (Wiedemann 99, Krauss, and the Intelligent Driver Model), the optimization framework reduces total emission estimation errors to within 9% for nitrogen oxides and 7% for PM 2.5.",
+      "why": "It provides a platform-independent, standardized method to correct systematic overestimation of vehicular emissions in traffic microsimulations without requiring modification of the underlying simulation engines."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-31",
+  "work_key": "doi:10.1177/03611981261472786"
+}

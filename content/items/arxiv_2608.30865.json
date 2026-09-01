@@ -1,0 +1,167 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Dakar's residential rental market remains poorly documented despite its economic and social importance: 54.4% of households are renters, compared to 23.3% nationally. This study develops a complete machine learning pipeline to predict residential rents in Dakar, from data collection to model interpretation. An original dataset of 1,507 rental listings was built through systematic web scraping and a documented cleaning pipeline, then enriched with four purpose-built features, including a luxury score and a keyword-based quality score. Five models were compared: linear regression, Random Forest (baseline), XGBoost, and LightGBM optimized through Bayesian optimization with Optuna, using leakage-free KFold target encoding for location. The optimized XGBoost model achieved the best performance with an $R^2$ of 0.847, an MAE of 210,902 XOF, and an RMSE of 324,195 XOF. Feature importance was assessed using native XGBoost gain and SHAP values, revealing a substantial difference in the ranking of location, which appears as a minor predictor by gain but as the second most influential variable by SHAP. This result carries methodological implications for hedonic studies using target-encoded categorical variables. This study provides an interpretable benchmark for Dakar's rental market and highlights several avenues for improvement, including the integration of geospatial features and conformal prediction.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Amadou Tidiane Kassa Diallo",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "comment": "19 pages, 16 figures, 4 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.30865v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.30865v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-31",
+    "repository_urls": [],
+    "title": "Predicting Residential Rents in Dakar Using Machine Learning"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-31_2608.30865",
+    "members": [
+      "arxiv:2608.30865"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:housing-transaction",
+        "label": "housing transactions"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-31",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.30865",
+    "doi": "10.48550/arxiv.2608.30865",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-01T23:14:05Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006332,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2079,
+      "out": 357
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9081,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3632,
+    "relevance": 0.9081
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The predictive models rely on a relatively small dataset of 1,507 scraped online listings, which may not fully represent the informal rental market in Dakar.",
+      "what": "A machine learning pipeline was developed to predict residential rents in Dakar, Senegal, using a newly compiled dataset of 1,507 rental listings scraped from the web. The researchers engineered custom features, including a luxury score and a keyword-based quality score, and compared five models using target encoding for location. The optimized XGBoost model performed best, achieving an R² of 0.847, a Mean Absolute Error of 210,902 XOF, and a Root Mean Squared Error of 324,195 XOF.",
+      "why": "It establishes an interpretable benchmark for a highly undocumented rental market where over half of the households rent, while demonstrating that SHAP values and native XGBoost gain yield highly divergent rankings for the importance of target-encoded location variables."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-31",
+  "work_key": "arxiv:2608.30865"
+}

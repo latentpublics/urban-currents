@@ -46,11 +46,42 @@
     ],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5148355331",
+        "label": "Rashid Mushkani"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11479",
+        "is_primary": true,
+        "label": "Smart Cities and Technologies",
+        "score": 0.2249,
+        "subfield": "2214"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10883",
+        "is_primary": false,
+        "label": "Ethics and Social Impacts of AI",
+        "score": 0.0791,
+        "subfield": "3311"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10239",
+        "is_primary": false,
+        "label": "Urban Planning and Governance",
+        "score": 0.0546,
+        "subfield": "3322"
+      }
+    ]
   },
   "first_published": "2026-08-25",
   "graph": {
@@ -61,7 +92,7 @@
   "ids": {
     "arxiv": "2608.23999",
     "doi": "10.48550/arxiv.2608.23999",
-    "openalex": null,
+    "openalex": "W7204246965",
     "pmid": null
   },
   "provenance": {
@@ -69,7 +100,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-27T00:38:27Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006248,
     "llm": {
@@ -157,6 +189,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-25",
+  "updated": "2026-09-01",
   "work_key": "arxiv:2608.23999"
 }

@@ -1,0 +1,161 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Automatic vehicle location (AVL) data produced by transit vehicles is invaluable in performance studies, but turning raw AVL points into a detailed view of vehicle stop-and-gos is burdensome: the datasets are sparse, noisy, and prone to blunders. While recent research has explored methods of reconstructing trajectories describing the position of vehicles over time, the common techniques can be complex, and no open-source tools exist to help practitioners process the raw AVL. We fill this gap by proposing a thorough methodology for cleaning transit AVL data and providing an open-source R package, built on open data standards, to implement the workflow and reconstruct vehicle trajectories, allowing practitioners to easily formulate custom microscopic performance metrics. Using a large AVL dataset with over 3,000 trips from Indianapolis, Indiana, we demonstrate the workflow, evaluate the package's efficiency, and demonstrate the utility of the trajectories by estimating various traffic signal performance metrics. Finally, we use cross-validation to quantify the error in reconstructed trajectories at various polling frequencies. We find that the proposed data processing methodology and tool are efficient, requiring roughly 3 minutes of processing time on the large dataset, and error in position estimates is low (root mean square error under 10 meters at polling frequencies of 15 seconds). The estimated signal performance metrics can inform future evaluations of signal programming along the corridor. In sum, this paper serves as a practical guide and complementary toolbox for practitioners seeking to use transit AVL data to build a detailed view of vehicle stop-and-go cycles.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ben O'Brien",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Lewis J. Lehe",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "26 pages, 13 figures, R package available at https://cran.r-project.org/web/packages/transittraj/index.html",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.31078v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.31078v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-31",
+    "repository_urls": [],
+    "title": "A Tool for Reconstructing Transit Vehicle Trajectories: A Case Study at IndyGo"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-08-31_2608.31078",
+    "members": [
+      "arxiv:2608.31078"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-31",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.31078",
+    "doi": "10.48550/arxiv.2608.31078",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-01T23:14:05Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005797,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2125,
+      "out": 290
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.971,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3884,
+    "relevance": 0.971
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "3,000 trips",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The methodology and tool performance were demonstrated and validated using data from a single transit agency in Indianapolis.",
+      "what": "This study introduces an open-source R package built on open data standards to clean raw transit automatic vehicle location (AVL) data and reconstruct vehicle trajectories. The tool's performance was validated using a dataset of over 3,000 transit trips from Indianapolis, Indiana, achieving a root mean square error in position estimates under 10 meters at a 15-second polling frequency. The entire dataset was processed in approximately 3 minutes, and the resulting trajectories were used to estimate traffic signal performance metrics.",
+      "why": "It provides the first open-source tool for transit practitioners to convert sparse and noisy AVL data into detailed stop-and-go trajectories, enabling them to calculate custom microscopic performance metrics without developing complex custom algorithms."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-31",
+  "work_key": "arxiv:2608.31078"
+}

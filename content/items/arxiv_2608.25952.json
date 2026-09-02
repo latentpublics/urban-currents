@@ -57,7 +57,13 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5148431292",
+        "label": "Haiyan Hao"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -68,7 +74,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.2761,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12698",
+        "is_primary": false,
+        "label": "3D Modeling in Geospatial Applications",
+        "score": 0.1571,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.068,
+        "subfield": "2215"
+      }
+    ]
   },
   "first_published": "2026-08-26",
   "graph": {
@@ -79,7 +110,7 @@
   "ids": {
     "arxiv": "2608.25952",
     "doi": "10.48550/arxiv.2608.25952",
-    "openalex": null,
+    "openalex": "W7204467225",
     "pmid": null
   },
   "provenance": {
@@ -87,7 +118,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-28T05:11:29Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006128,
     "llm": {
@@ -175,6 +207,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-26",
+  "updated": "2026-09-02",
   "work_key": "arxiv:2608.25952"
 }

@@ -64,11 +64,52 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0005-4873-7719",
+        "label": "Hilda Adwubi Osei"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0005-4030-517X",
+        "label": "Catherine Tenewaa Osei"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5124174691",
+        "label": "Desdemona Yaa Asobayire"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11108",
+        "is_primary": true,
+        "label": "Municipal Solid Waste Management",
+        "score": 0.9689,
+        "subfield": "2311"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12920",
+        "is_primary": false,
+        "label": "Healthcare and Environmental Waste Management",
+        "score": 0.0047,
+        "subfield": "2739"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11781",
+        "is_primary": false,
+        "label": "Wastewater Treatment and Reuse",
+        "score": 0.0023,
+        "subfield": "2311"
+      }
+    ]
   },
   "first_published": "2026-08-26",
   "graph": {
@@ -79,7 +120,7 @@
   "ids": {
     "arxiv": "2608.25759",
     "doi": "10.48550/arxiv.2608.25759",
-    "openalex": null,
+    "openalex": "W7204477457",
     "pmid": null
   },
   "provenance": {
@@ -87,7 +128,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-28T05:11:29Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006187,
     "llm": {
@@ -175,6 +217,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-26",
+  "updated": "2026-09-02",
   "work_key": "arxiv:2608.25759"
 }

@@ -1,0 +1,210 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Mobile phone mobility data have transformed the study of human behavior, but demographic and behavioral biases can compromise their representativeness and distort population-level inference. Existing calibration approaches primarily address demographic and geographic representativeness, leaving behavioral discrepancies largely uncorrected. Here we introduce the Behavioral Population (BePop) framework, which jointly calibrates mobility data to representative demographic and behavioral distributions using census data and time-use surveys. BePop embeds mobility sequences into behavioral profiles and estimates person-level weights that align both population composition and daily activity patterns. Across three U.S. metropolitan areas, the framework consistently improves agreement between GPS-derived mobility and representative behavioral distributions, including time allocation, activity transitions, and mobility motifs. Calibration also substantially alters downstream mobility indicators, demonstrating that behavioral biases can propagate into commonly used mobility measures. Our results establish behavioral representativeness as a critical complement to demographic calibration and provide a general framework for population-representative mobility inference.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Nicolò Alessandro Girardini",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Unchitta Kan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Eduardo López",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Bruno Lepri",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Lorenzo Lucchini",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Simone Centellegher",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.CY",
+      "cs.SI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.01042v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.01042v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-01",
+    "repository_urls": [],
+    "title": "Behavioral calibration of mobile-phone GPS data for population-representative analyses"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-01_2609.01042",
+    "members": [
+      "arxiv:2609.01042"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.8947,
+        "id": "data:mobile-phone",
+        "label": "mobile phone data"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      },
+      {
+        "confidence": 0.9677,
+        "id": "data:travel-survey",
+        "label": "travel survey"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.01042",
+    "doi": "10.48550/arxiv.2609.01042",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-02T23:14:15Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004918,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1881,
+      "out": 233
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.935,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.374,
+    "relevance": 0.935
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The Behavioral Population (BePop) framework was developed to calibrate mobile phone GPS data by aligning both demographic and behavioral distributions using census data and time-use surveys. Tested across three U.S. metropolitan areas, the framework embeds mobility sequences into behavioral profiles and estimates person-level weights to correct daily activity patterns, including time allocation, activity transitions, and mobility motifs.",
+      "why": "It addresses behavioral biases in GPS data that demographic-only calibration leaves uncorrected, preventing these discrepancies from distorting downstream mobility indicators and population-level inferences."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-01",
+  "work_key": "arxiv:2609.01042"
+}

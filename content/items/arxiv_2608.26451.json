@@ -51,7 +51,18 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5148523464",
+        "label": "Man Luo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148537915",
+        "label": "Yixuan Zhao"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -62,7 +73,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.9244,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0188,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.012,
+        "subfield": "2203"
+      }
+    ]
   },
   "first_published": "2026-08-26",
   "graph": {
@@ -73,7 +109,7 @@
   "ids": {
     "arxiv": "2608.26451",
     "doi": "10.48550/arxiv.2608.26451",
-    "openalex": null,
+    "openalex": "W7204584491",
     "pmid": null
   },
   "provenance": {
@@ -81,7 +117,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-28T05:11:29Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00536,
     "llm": {
@@ -169,6 +206,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-26",
+  "updated": "2026-09-02",
   "work_key": "arxiv:2608.26451"
 }

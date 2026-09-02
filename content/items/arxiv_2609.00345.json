@@ -1,0 +1,199 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Human mobility is central to urban planning, transportation, public health, and emergency response, yet fine-grained trajectory data are often proprietary, restricted, and privacy-sensitive. Large language models (LLMs) offer a potential alternative by generating plausible mobility traces and predicting individual movement, but their ability to infer aggregate neighborhood-level mobility remains unclear. We evaluate zero-shot LLMs on Census Block Group-level mobility prediction across four U.S. metropolitan areas using anonymized Cuebiq data to construct point-level, trajectory-level, and temporal mobility outcomes, paired with sociodemographic and built-environment predictors. We compare LLM predictions with supervised baselines and introduce a directional alignment analysis to test whether LLM-implied predictor effects agree with empirical OLS and Jonckheere-Terpstra trends. Supervised models achieve 0.580 average accuracy, compared with 0.435 for the best LLM, with spatial extent outcomes showing the strongest predictability but also the largest LLM-baseline gaps. Directional analysis shows that LLMs often rely on coarse, stable predictor-level priors that remain similar across outcomes and cities, including asymmetric treatment of protected-group predictors. Overall, LLMs can partially recover aggregate mobility patterns from urban context, but their predictions should not be treated as structurally grounded without auditing empirical alignment and potential bias.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Saad Mohammad Abrar",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Eesha Kurella",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Arnav Dadarya",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Naman Awasthi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kazi Tasnim Zinat",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Vanessa Frias-Martinez",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.00345v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.00345v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-31",
+    "repository_urls": [],
+    "title": "Do LLMs Know Your Neighborhood? Auditing LLM Priors for Neighborhood-Level Mobility Prediction and Structural Alignment"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-01_2609.00345",
+    "members": [
+      "arxiv:2609.00345"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-08-31",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.00345",
+    "doi": "10.48550/arxiv.2609.00345",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-02T23:14:15Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006343,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2081,
+      "out": 358
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9404,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3762,
+    "relevance": 0.9404
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The evaluation is restricted to four metropolitan areas in a single country, and the underlying mobility patterns are derived from a single proprietary mobile device dataset.",
+      "what": "This study evaluated zero-shot Large Language Models (LLMs) on predicting Census Block Group-level mobility outcomes across four U.S. metropolitan areas using anonymized Cuebiq trajectory data. The researchers compared LLM predictions against supervised baselines across point-level, trajectory-level, and temporal metrics, finding that supervised models achieved 0.580 average accuracy compared to 0.435 for the best-performing LLM. A directional alignment analysis revealed that LLMs rely on coarse, stable predictor-level priors that remain uniform across different cities and outcomes, including asymmetric treatment of protected-group predictors.",
+      "why": "It establishes the performance boundaries and systematic biases of LLMs when used as zero-shot generators of aggregate neighborhood mobility, proving that their internal priors do not yet align structurally with empirical urban dynamics."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-31",
+  "work_key": "arxiv:2609.00345"
+}

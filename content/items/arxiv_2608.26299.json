@@ -88,7 +88,43 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7990-1343",
+        "label": "Pedro Lobo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148508478",
+        "label": "Eric Tokuda"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0520-4665",
+        "label": "K. Abraham"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148483377",
+        "label": "Roberto Fray"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5125002860",
+        "label": "Dirce Maria Marchioni"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1810-1742",
+        "label": "Alexandre C. B. Delbem"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5129363602",
+        "label": "Rogerio Salvini"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -99,7 +135,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11610",
+        "is_primary": true,
+        "label": "Food Security and Health in Diverse Populations",
+        "score": 0.467,
+        "subfield": "3600"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10010",
+        "is_primary": false,
+        "label": "Obesity, Physical Activity, Diet",
+        "score": 0.1073,
+        "subfield": "2739"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10235",
+        "is_primary": false,
+        "label": "Health disparities and outcomes",
+        "score": 0.0615,
+        "subfield": "3306"
+      }
+    ]
   },
   "first_published": "2026-08-26",
   "graph": {
@@ -110,7 +171,7 @@
   "ids": {
     "arxiv": "2608.26299",
     "doi": "10.48550/arxiv.2608.26299",
-    "openalex": null,
+    "openalex": "W7204588668",
     "pmid": null
   },
   "provenance": {
@@ -118,7 +179,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-08-28T05:11:29Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.007024,
     "llm": {
@@ -206,6 +268,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-26",
+  "updated": "2026-09-02",
   "work_key": "arxiv:2608.26299"
 }

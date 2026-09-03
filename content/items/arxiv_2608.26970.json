@@ -1,0 +1,200 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Place names provide persistent records of how landscapes have been described and organised, but their quantitative reuse requires explicit separation between mapped places, lexical annotations and environmental measurements. TEMPLAR Wales is a georeferenced environmental-toponymy dataset comprising 3,757 settlement records across Wales. The resource links a reproducible settlement frame to deterministic lexical screening and settlement-level environmental attributes through stable identifiers. It contains 1,350 lexical detections across 1,294 settlements, generated from a frozen registry of 24 Welsh place-name elements, while retaining exact- and prefix-token matches and their provenance separately. Environmental attributes describe river and coastal proximity, elevation and local terrain context at multiple spatial scales, land cover and neighbourhood woody cover, with parallel terrain measurements derived from independent elevation products. The dataset is distributed as four relational tables accompanied by a field-level data dictionary, source-provenance register and licensing metadata. Technical validation confirms relational integrity, deterministic lexical reconstruction, documented environmental coverage, strong agreement between independent terrain sources and reproducible reconstruction of the frozen release. TEMPLAR Wales provides a reusable foundation for research in toponymy, linguistic geography, historical and environmental landscape studies, GIS and spatial data analysis without treating computational lexical detections as verified etymologies or contemporary environmental measurements as historical landscape reconstructions.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Oktay Karakuş",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Can Eyupoglu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.CL"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.26970v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.26970v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-27",
+    "repository_urls": [],
+    "title": "TEMPLAR Wales: A georeferenced environmental and toponymic dataset of Welsh settlements"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-02_2608.26970",
+    "members": [
+      "arxiv:2608.26970"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5148546929",
+        "label": "Oktay Karakuş"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6133-8617",
+        "label": "Can Eyüpoğlu"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": true,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.2645,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14355",
+        "is_primary": false,
+        "label": "Historical Studies of British Isles",
+        "score": 0.0501,
+        "subfield": "1202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13339",
+        "is_primary": false,
+        "label": "Landscape and Cultural Studies",
+        "score": 0.0218,
+        "subfield": "1204"
+      }
+    ]
+  },
+  "first_published": "2026-08-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.26970",
+    "doi": "10.48550/arxiv.2608.26970",
+    "openalex": "W7204579374",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-03T23:12:06Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005969,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2053,
+      "out": 321
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.879,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4316,
+    "relevance": 0.879
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The dataset uses contemporary environmental measurements and computational lexical matches which should not be treated as verified historical landscape reconstructions or definitive etymologies.",
+      "what": "The TEMPLAR Wales dataset compiles 3,757 settlement records across Wales, linking a reproducible settlement frame to 1,350 lexical detections across 1,294 settlements based on 24 Welsh place-name elements. It integrates settlement-level environmental attributes including river and coastal proximity, elevation, terrain context, land cover, and woody cover across multiple spatial scales. The resource is structured as four relational tables accompanied by a field-level data dictionary and source-provenance register.",
+      "why": "It provides a standardized, georeferenced foundation for quantitative toponymy and linguistic geography by explicitly separating computational lexical detections from verified etymologies, and contemporary environmental measurements from historical landscape reconstructions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-27",
+  "work_key": "arxiv:2608.26970"
+}

@@ -45,11 +45,47 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5148539745",
+        "label": "Lulu Jiang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148492993",
+        "label": "David Bolin"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10574",
+        "is_primary": true,
+        "label": "Crime Patterns and Interventions",
+        "score": 0.8964,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11838",
+        "is_primary": false,
+        "label": "Crime, Illicit Activities, and Governance",
+        "score": 0.026,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10764",
+        "is_primary": false,
+        "label": "Privacy-Preserving Technologies in Data",
+        "score": 0.0121,
+        "subfield": "1702"
+      }
+    ]
   },
   "first_published": "2026-08-27",
   "graph": {
@@ -60,7 +96,7 @@
   "ids": {
     "arxiv": "2608.27117",
     "doi": "10.48550/arxiv.2608.27117",
-    "openalex": null,
+    "openalex": "W7204571377",
     "pmid": null
   },
   "provenance": {
@@ -68,7 +104,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-01T00:31:51Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006361,
     "llm": {
@@ -156,6 +193,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-27",
+  "updated": "2026-09-03",
   "work_key": "arxiv:2608.27117"
 }

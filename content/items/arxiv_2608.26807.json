@@ -1,0 +1,284 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Travel planning agents assist users in generating personalized travel plans by modeling their individual preferences. Existing agents either rely on explicit user instructions or engage in multi-turn clarification to elicit user preferences. However, both approaches overlook the rich behavioral signals latent in users' past behaviors, which implicitly encode their preferences. This over-reliance on active user input increases interaction burden and limits plan personalization. To bridge this gap, we introduce a new task, Behavior-Aware Travel Planning, which infers user preferences directly from past behaviors and generates personalized travel plans. To facilitate research on this task, we introduce Behavior2Trip, a benchmark constructed from one of the largest Chinese online travel platforms, comprising 11,400 instances. Each instance represents an average of 39.8 past user behaviors spanning 14 attributes across 5 preference dimensions. We further propose B2T-Agent, a reinforcement learning-based agent that leverages user behavior trajectories, interacts with external tools for preference-aligned retrieval, and maintains an internal memory module. Experiments on Behavior2Trip show that GPT-4.1 achieves a full-constraint pass rate of only 0.5\\% on the hardest tasks, while B2T-Agent built upon Qwen3-8B outperforms all baselines, highlighting the substantial challenge of this task. Moreover, Qwen3-8B trained with B2T-Agent also outperforms GPT-4.1 on the TravelPlanner benchmark, demonstrating strong generalization. Code and data are available at https://github.com/BUAA-IRIP-LLM/Behavior2Trip",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Zihao Cheng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yingyu Shan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hongru Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zeming Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xinyi Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xiangrong Zhu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yuhang Guo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Wei Lin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yunhong Wang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "comment": "Accepted by EMNLP 2026 Findings",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.26807v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.26807v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-27",
+    "repository_urls": [],
+    "title": "Behavior2Trip: Towards Personalized Travel Planning via User Behavior Trajectory"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-02_2608.26807",
+    "members": [
+      "arxiv:2608.26807"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:reinforcement-learning",
+        "label": "reinforcement learning"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5148478327",
+        "label": "Zihao Cheng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148523876",
+        "label": "Yingyu Shan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8305-5231",
+        "label": "Hongru Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5120309026",
+        "label": "Zeming Liu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148527123",
+        "label": "Xinyi Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148488005",
+        "label": "Xiangrong Zhu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148561382",
+        "label": "Yuhang Guo"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3003-0150",
+        "label": "Wei Lin"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148564679",
+        "label": "Yunhong Wang"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11106",
+        "is_primary": true,
+        "label": "Data Management and Algorithms",
+        "score": 0.4795,
+        "subfield": "1711"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11596",
+        "is_primary": false,
+        "label": "Constraint Satisfaction and Optimization",
+        "score": 0.0767,
+        "subfield": "1705"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11904",
+        "is_primary": false,
+        "label": "Spatial Cognition and Navigation",
+        "score": 0.0509,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-08-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.26807",
+    "doi": "10.48550/arxiv.2608.26807",
+    "openalex": "W7204574807",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-03T23:12:06Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.006317,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2153,
+      "out": 343
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.8,
+      "novelty": 0.0,
+      "relevance": 0.883,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.5132,
+    "relevance": 0.883
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/BUAA-IRIP-LLM/Behavior2Trip",
+      "value": true
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The benchmark data is sourced from a single Chinese online travel platform, which may reflect specific regional travel habits and platform-specific user behaviors.",
+      "what": "The researchers established a new task, Behavior-Aware Travel Planning, and built the Behavior2Trip benchmark using 11,400 instances from a major Chinese online travel platform, where each instance averages 39.8 past user behaviors across 14 attributes. They developed B2T-Agent, a reinforcement learning-based agent that uses behavior trajectories, external retrieval tools, and an internal memory module. While GPT-4.1 achieved a full-constraint pass rate of only 0.5% on the hardest tasks within the benchmark, the Qwen3-8B model trained with B2T-Agent outperformed all baselines and demonstrated strong generalization on the external TravelPlanner benchmark.",
+      "why": "It shifts personalized travel planning away from relying on active, burdensome user inputs or multi-turn clarifications, proving instead that rich, latent preferences can be extracted directly from historical behavior trajectories."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-27",
+  "work_key": "arxiv:2608.26807"
+}

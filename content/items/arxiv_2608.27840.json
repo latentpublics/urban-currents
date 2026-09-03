@@ -64,11 +64,62 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0001-0201-3564",
+        "label": "Peibo Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148769693",
+        "label": "Yang Song"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148800037",
+        "label": "Hao Xue"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1086-0202",
+        "label": "Maarten de Rijke"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148790224",
+        "label": "Flora D. Salim"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.5008,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11106",
+        "is_primary": false,
+        "label": "Data Management and Algorithms",
+        "score": 0.1431,
+        "subfield": "1711"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.1025,
+        "subfield": "2203"
+      }
+    ]
   },
   "first_published": "2026-08-28",
   "graph": {
@@ -79,7 +130,7 @@
   "ids": {
     "arxiv": "2608.27840",
     "doi": "10.1145/3841645.3843403",
-    "openalex": null,
+    "openalex": "W7204777668",
     "pmid": null
   },
   "provenance": {
@@ -87,7 +138,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-01T00:31:51Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00548,
     "llm": {
@@ -175,6 +227,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-28",
+  "updated": "2026-09-03",
   "work_key": "arxiv:2608.27840"
 }

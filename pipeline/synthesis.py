@@ -175,19 +175,42 @@ def deviations(
     thirties, so even with a full baseline most days have nothing here that
     clears the bar — and the count of deviations found is itself the measurement
     of what the pending vocabulary curation is worth.
+
+    ★ **The baseline counts published items, not collected ones (1A, B2).**
+    It used to walk `store.iter_items()`, which is everything the archive
+    holds whether or not any issue ever carried it. So `today` was tags among
+    the ~6 papers an issue publishes and `baseline_per_day` was tags among the
+    ~29 papers a day collects — two different populations, one divided by the
+    other. Measured over the 30 days to 2026-09-02: 864 items in the store
+    against 297 in the issues, **567 of them never published**, a 2.9x bias
+    against the ratio ever clearing.
+
+    It was not a threshold that was too high; it was a fraction whose halves
+    counted different things, and no threshold can be set correctly against a
+    denominator that means something else. The measured effect: `Urban
+    Transport and Accessibility` reached 3 occurrences on 2026-08-25 against a
+    baseline of 5.80/day, requiring 17.4 — from a day that published 7 papers
+    in total. The bar was above the ceiling.
     """
     today = Counter(t for it in items for t in _tags_of(it))
 
     start = d - timedelta(days=window_days)
     history: dict[str, Counter] = defaultdict(Counter)
     days_seen: set[str] = set()
-    for item in store.iter_items():
-        pub = item.first_published
-        if not pub or not (start <= pub < d):
+    for issue in store.iter_issues():
+        if not (start <= issue.date < d):
             continue
-        days_seen.add(str(pub))
-        for tag in set(_tags_of(item)):
-            history[tag][str(pub)] += 1
+        # A day that published nothing is still a day the comparison saw: it
+        # is a zero in the average, not an absence from it. Skipping it would
+        # raise every baseline by shrinking the divisor, which is the same
+        # class of error this fix is undoing.
+        days_seen.add(str(issue.date))
+        for key in issue.items:
+            item = store.load_item(key)
+            if not item:
+                continue
+            for tag in set(_tags_of(item)):
+                history[tag][str(issue.date)] += 1
 
     def scan(n: int) -> list[dict]:
         out = []

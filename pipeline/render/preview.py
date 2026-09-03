@@ -325,30 +325,50 @@ def build_synthesis(issue: Issue, items: Iterable[Item] = ()) -> dict | None:
             "empty_text": "no tag ran above its 30-day average",
         },
         {
-            "label": "canon",
-            "measurable": with_refs > 0,
-            "entries": anchors,
-            "empty_text": "no foundational work is cited twice today",
-        },
-        {
             "label": "coupling",
             "measurable": with_refs >= 2,
             "entries": clusters,
             "empty_text": "no items share references today",
         },
-        {
-            "label": "institutions",
-            "measurable": True,
-            "entries": institutions + in_window,
-            "empty_text": None,
-        },
-        {
-            "label": "authors",
-            "measurable": True,
-            "entries": authors,
-            "empty_text": None,
-        },
     ]
+    # ★ Three rows left this list in 1A (B2). They are still computed and still
+    # stored — nothing in `content/` or the schema changed — they are no longer
+    # *shown*, because measurement said each was empty every day for a reason
+    # that lowering a threshold cannot reach.
+    #
+    #   `canon`         Needs two of today's papers to cite the same foundation
+    #                   work. Over 16 days the most any foundation work got was
+    #                   **one**, every single day. Not for want of citations:
+    #                   1-4 canon works are cited on a typical day, and all 269
+    #                   appear somewhere in the reference base. The ceiling is
+    #                   the material — only 2-3 of a day's papers have a
+    #                   reference list at all, because issues run half arXiv and
+    #                   arXiv items are 9% covered against journals' 93%.
+    #                   Its escape hatch ("first seen in 90 days") is shut
+    #                   twice over: the archive spans 82 days of the 89 needed,
+    #                   and every canon work cited today had already been cited
+    #                   earlier in the window — which is what being canon means.
+    #   `institutions`  Two halves, both silent. `today` needs one institution
+    #                   on two of a day's papers; the most any reached was one,
+    #                   from the ~3 papers a day that carry an affiliation at
+    #                   all. `in_window` was never empty and never *moved*: four
+    #                   entries every day for 16 days, the same four names.
+    #   `authors`       Needs an author on two of a day's papers. The most any
+    #                   reached was one, on every day measured.
+    #
+    # Widening the window was the obvious alternative and was measured before
+    # being rejected. Over 30 days the same rules do produce entries — 23
+    # anchors, 34 repeat authors, 37 shared institutions — but **0 to 2 of them
+    # are new on any given day**. That is `institutions_in_window`'s failure
+    # repeated three more times: a block that looks like content, costs a
+    # reader's attention every morning, and says the same thing it said
+    # yesterday. Emptiness in a costume is still emptiness.
+    #
+    # `tag shift` is not in this list because it was a defect rather than an
+    # absence, and the defect is fixed (see `synthesis.deviations`). `coupling`
+    # is not, because it actually fires.
+    #
+    # Undo: paste the three dicts back. The values are right there above.
 
     return {
         "composition": syn.composition,
@@ -368,9 +388,15 @@ def build_synthesis(issue: Issue, items: Iterable[Item] = ()) -> dict | None:
         # paragraph is absent is a fact about the pipeline, not about the field,
         # and the reader should simply see a shorter issue.
         "omitted_reason": syn.paragraph_omitted_reason,
+        # ★ `first_internal_citation` is no longer a term here (1A, B2). It is
+        # a one-time flag — "today is the first day this digest cited itself" —
+        # and that day was 2026-06-24. `is_first` has been False ever since and
+        # cannot become True again, so as a condition it only ever contributed
+        # False; had it somehow been True the section would now render with
+        # nothing in it, because the block that displayed it is gone.
         "has_content": any(
             r["measurable"] and (r["entries"] or r["empty_text"]) for r in rows
-        ) or bool(syn.paragraph) or syn.first_internal_citation,
+        ) or bool(syn.paragraph),
     }
 
 

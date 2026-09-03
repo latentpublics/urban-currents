@@ -579,19 +579,42 @@ def test_the_field_is_not_confused_with_the_journal_of_the_same_name(built):
 def test_each_measured_row_is_explained_with_what_it_does_not_say(built):
     """S5 asked for the arithmetic, and the arithmetic came from the code.
 
-    The rows are `tag shift`, `canon`, `coupling` and `institutions`, and the
-    numbers below are the ones in `pipeline/synthesis.py` and
-    `config/pipeline.yaml`. If one moves, this fails — which is the point: a
-    methodology note that drifts from the method is worse than none on a page
-    whose claim is that it says only what it measures.
+    The rows are `tag shift` and `coupling`, and the numbers below are the ones
+    in `pipeline/synthesis.py` and `config/pipeline.yaml`. If one moves, this
+    fails — which is the point: a methodology note that drifts from the method
+    is worse than none on a page whose claim is that it says only what it
+    measures.
+
+    ★ It drifted the other way in 1A (B2), which is why the second half of this
+    test exists. `canon` and `institutions` were removed from the issue page
+    after measurement, and the note still explained them — a description of a
+    row the reader cannot find, which is the same fault as a description that
+    is wrong. The note must list exactly the rows `build_synthesis` builds,
+    so the two are compared here rather than both being spelled out by hand.
     """
     from pipeline import synthesis
     from pipeline.config import cfg
+    from pipeline.render.preview import build_synthesis
 
     text = " ".join(build_home().read_text(encoding="utf-8").split())
 
-    for label in ("tag shift", "canon", "coupling", "institutions"):
+    for label in ("tag shift", "coupling"):
         assert f"<em>{label}</em>" in text
+    for label in ("canon", "institutions", "authors"):
+        assert f"<em>{label}</em>" not in text, (
+            f"the note still explains {label!r}, which no issue shows any more"
+        )
+
+    # The note and the renderer, compared rather than both asserted by hand.
+    from pipeline.models import Synthesis
+
+    item = _item("arxiv:2608.55001", "A paper for the row list")
+    issue = _issue(DAY, [item.work_key])
+    issue.synthesis = Synthesis(deviation_status="OK")
+    built = {r["label"] for r in build_synthesis(issue, [item])["rows"]}
+    described = {m for m in ("tag shift", "canon", "coupling", "institutions", "authors")
+                 if f"<em>{m}</em>" in text}
+    assert built == described, f"note describes {described}, renderer builds {built}"
 
     assert f"previous {synthesis.BASELINE_DAYS} days" in text
     assert f"above {synthesis.DEVIATION_MIN_TODAY} papers" in text
@@ -599,13 +622,29 @@ def test_each_measured_row_is_explained_with_what_it_does_not_say(built):
     assert "seven days to average over" in text  # MIN_BASELINE_DAYS
     assert synthesis.MIN_BASELINE_DAYS == 7
 
-    assert f"first citation in {synthesis.RARE_EVENT_DAYS} days" in text
     shared = int(cfg("citation.min_shared_references", 3))
     assert f"at least {['zero','one','two','three'][shared]} of the same works" in text
     assert f"previous {int(cfg('citation.coupling_window_days', 90))} days" in text
 
     # And each one says what it does not say.
     assert "our collecting changed rather than the field did" in text
-    assert "not a measurement" in text
     assert "not sharing a question" in text
-    assert "never a ranking" in text
+
+
+def test_the_note_says_what_stopped_being_shown(built):
+    """★ 1A (B2). Three rows left the issue page, and a reader who had seen
+    them is owed the reason rather than a quieter page.
+
+    The claim in the paragraph is a measurement, so the shape of it is pinned:
+    it must say the rows were empty, why the material runs out, and that
+    widening the window was tried rather than dismissed. Otherwise the removal
+    reads as a redesign, which is the one thing it was not.
+    """
+    text = " ".join(build_home().read_text(encoding="utf-8").split())
+
+    assert "What we stopped showing." in text
+    assert "empty on every issue for sixteen days" in text
+    assert "two or three of them" in text          # the material, not the rule
+    assert "preprints reach us with neither" in text
+    assert "thirty days does fill them" in text    # the alternative was measured
+    assert "still computed and still in the JSON" in text

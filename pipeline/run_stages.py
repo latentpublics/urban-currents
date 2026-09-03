@@ -253,6 +253,23 @@ def stage_enrich(
     if "springer" in sources and not secret("SPRINGER_API_KEY"):
         # A missing key is a SKIPPED sub-step, not a failure: the run continues
         # and the recoverable items simply stay unreadable for now.
+        #
+        # ★ And it says how many (1A, C1). This sub-step has been SKIPPED on 16
+        # of 18 days, which is a line that stops being read — the failure mode
+        # the alerting work keeps running into, arriving in the run log
+        # instead. A bare SKIPPED cannot be told apart from a sub-step nobody
+        # needs; the count can. Measured over the 16 days to 2026-09-02: 252 of
+        # 1,546 unreadable items were Springer-owned, 16%, which is the size of
+        # what the key would recover and the reason the stage is kept rather
+        # than removed.
+        from .collectors.abstracts import SPRINGER_PREFIXES
+
+        recoverable = sum(
+            1
+            for it in targets
+            if (it.ids.doi or "").split("/")[0] in SPRINGER_PREFIXES
+        )
+        run.count("abstract_springer_unasked", recoverable)
         run.stage("enrich.springer", "SKIPPED")
 
     write_stage(run, "enrich", items)

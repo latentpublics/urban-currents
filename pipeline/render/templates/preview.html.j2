@@ -77,6 +77,12 @@
           {% elif row.label == "tag shift" %}
             {% for d in row.entries %}{{ d.label }} on {{ d.today }} items, against a
             {{ d.window_days }}-day average of {{ d.baseline }}{% if not loop.last %}; {% endif %}{% endfor %}
+          {#- `canon`, `institutions` and `authors` no longer appear in
+              `synthesis.rows` (1A, B2), so these three branches are
+              unreachable today. They are kept, not deleted: the rows are
+              still computed and still stored, and restoring one is meant to
+              be pasting a dict back into `preview.py` rather than rewriting
+              its markup from scratch. -#}
           {% elif row.label == "canon" %}
             {% for a in row.entries %}{{ a.count }} item{{ 's' if a.count != 1 }} cite
             <span class="uc-synthesis__work">{{ a.title }}</span>{% if a.cite %} ({{ a.cite }}){% endif %}
@@ -110,14 +116,16 @@
       {% endif %}
       {% endfor %}
 
-      {% if synthesis.first_internal_citation %}
-      <div class="uc-synthesis__row" data-row="first-internal">
-        <dt class="uc-synthesis__label">first</dt>
-        <dd class="uc-synthesis__value">
-          Today is the first time a paper in this digest cites another paper from it.
-        </dd>
-      </div>
-      {% endif %}
+      {#- ★ The `first` row is gone (1A, B2). It announced "today is the first
+          time a paper in this digest cites another paper from it" — a
+          one-time event, which happened on 2026-06-24 and cannot happen
+          again. The flag has been False on every issue since, so the row was
+          a branch that could only ever be skipped.
+
+          The underlying fact is not gone and is not nothing: 32 papers in the
+          archive cite another paper in it. It is the *first* framing that
+          expired, not the citation. Anything that wants to say so needs a
+          different sentence, and that is a decision, not a rename. -#}
     </dl>
 
     {% if synthesis.paragraph %}

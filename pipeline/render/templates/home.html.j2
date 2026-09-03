@@ -213,41 +213,49 @@
       the abstract and nothing else. Every tag carries a canonical identifier —
       OpenAlex, ORCID, ROR — so a method named twice is one thing, not two.
     </p>
-    {#- What the four measured rows on an issue count (0Z-F, S5).
+    {#- What the measured rows on an issue count (0Z-F, S5).
         Written from `pipeline/synthesis.py` and `pipeline/graph/`, not from the
         row labels — a wrong methodology note is worse than none on a page whose
         whole claim is that we say only what we measure. Each one ends with what
         it does **not** say, which is the distinction this project keeps making
         everywhere else.
 
-        `canon` is the one that would not compress. Whether a cited work counts
-        as a foundation or an instrument is decided by looking its OpenAlex
-        topic up in two curated lists, and only when the topic is on neither
-        does a citation-ratio threshold decide. That is a judgement encoded in a
-        file, not a measurement, and the sentence says so rather than pretending
-        to a one-line rule. -#}
+        ★ It described four rows until 1A (B2), and two of them — `canon` and
+        `institutions` — no longer appear on an issue. A note explaining a row
+        the reader never sees is the same drift this comment warns about,
+        pointing the other way, so the two paragraphs left together: the
+        methodology and the last paragraph, which now says what stopped being
+        shown and why. `test_the_method_note_matches_the_code` fails if this
+        list and `preview.py`'s rows disagree again. -#}
     <p class="uc-method__p">
       <strong>What the rows on an issue count.</strong>
       <em>tag shift</em> — how many of the day's papers carry a tag, against
       that tag's own daily average over the previous 30 days; listed only above
       3 papers and 3× the average, and nothing at all until the archive holds
-      seven days to average over. It compares today with our own archive, so a
-      shift can mean our collecting changed rather than the field did.
-      <em>canon</em> — works our own archive cites often enough to have been
-      resolved and kept, filtered to the ones classified as foundations rather
-      than instruments; listed when two of the day's papers cite the same one,
-      or when it is the first citation in 90 days and the archive covers that
-      long. The foundation-or-instrument split is a curated decision about
-      OpenAlex topics, not a measurement, and it is the part of this row to
-      treat as ours.
+      seven days to average over. Both halves count the papers we published, so
+      it compares today with our own archive — a shift can mean our collecting
+      changed rather than the field did.
       <em>coupling</em> — pairs of papers citing at least three of the same
       works, today with today and today with a paper from the previous 90 days;
       the shared works are named. Sharing references is not sharing a question,
       and a paper with a long bibliography pairs more easily than a short one.
-      <em>institutions</em> — how many of the day's papers carry each name in a
-      byline, listed at two, and the same count over 30 days, listed at three.
-      A frequency, never a ranking, and it counts affiliations we were given
-      rather than work anybody did.
+    </p>
+    {#- ★ Added in 1A (B2). Three rows were removed from the issue page after
+        measurement, and the reader is told that rather than left with a
+        quieter page and no reason for it. The numbers are the measured ones. -#}
+    <p class="uc-method__p">
+      <strong>What we stopped showing.</strong> Three more rows — foundational
+      works cited twice in a day, repeated authors, repeated institutions —
+      were empty on every issue for sixteen days running, and measurement said
+      why: an issue publishes about six papers, and only two or three of them
+      arrive with a reference list or an affiliation, because roughly half are
+      preprints and preprints reach us with neither. Each of those rows needs
+      two of the day's papers to share something; the most any of them ever
+      found was one. Widening the window to thirty days does fill them, and
+      changes nothing from one morning to the next — nought to two entries
+      differ between consecutive days — so it would buy the appearance of a
+      finding at the price of saying the same thing every day. They are still
+      computed and still in the JSON; they are no longer on the page.
     </p>
     <p class="uc-method__p uc-method__api">
       All of it is also <a href="api.html">available as JSON</a>, with the

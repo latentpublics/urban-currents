@@ -648,7 +648,15 @@ def test_a_row_is_absent_when_the_measurement_was_impossible(repo):
     rows = {r["label"]: r for r in build_synthesis(issue, [item])["rows"]}
     assert rows["tag shift"]["measurable"] is False   # baseline too short
     assert rows["coupling"]["measurable"] is False    # no reference lists
-    assert rows["institutions"]["measurable"] is True  # every item has a byline
+    # ★ `institutions` used to be asserted here as the row that *is* measurable
+    # on this day — every item has a byline, so a zero would be a real zero.
+    # It is gone from the page in 1A (B2), not because the measurement became
+    # impossible but because it came back empty every day for sixteen days and
+    # a wider window only made it repeat itself. That is a third thing, and it
+    # is a decision rather than a reading, so it is asserted as an absence.
+    assert "institutions" not in rows
+    assert "authors" not in rows
+    assert "canon" not in rows
 
 
 def test_a_measured_zero_is_stated(repo):

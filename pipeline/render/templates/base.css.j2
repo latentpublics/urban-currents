@@ -641,6 +641,15 @@ body {
   text-overflow: ellipsis;
   color: var(--uc-ink);
 }
+/* ★ The fallback shown when a day published papers but none cleared the
+   headline bar (1A, A): a paper's title standing in for a sentence the day
+   does not have. Drawn exactly like `.uc-row__reason`, and for the same
+   reason — both say "this column is not holding its usual content". It is a
+   second carrier for what the `no headline` chip already says in words, never
+   the only one, so nothing here depends on a reader seeing the difference.
+   Italic and colour only: no size, weight or line-height change, because the
+   row is one line tall and that is not allowed to depend on state (0Z-C). */
+.uc-row__lead--title { color: var(--uc-faint); font-style: italic; }
 /* `.uc-row__artifacts` was removed with the column it styled (0Z, Z10).
    The counts live on in the latest issue stat rail and in archive_stats. */
 .uc-chip {

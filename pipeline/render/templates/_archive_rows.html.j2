@@ -32,11 +32,32 @@
       {%- if row.unranked %} <span class="uc-chip uc-chip--unranked">no headline</span>{% endif %}
       {%- if row.recent %} <span class="uc-chip uc-chip--recent">more may follow</span>{% endif %}
     </span>
-    {#- Full title in the DOM; the ellipsis is CSS. A string cut in Python is
-        cut for a screen reader too. -#}
-    <span class="uc-row__lead" title="{{ row.lead_title or row.reason }}">
+    {#- ★ The day's headline sentence, not one paper's title (1A, A).
+
+        Three cases, in the order a reader meets them:
+
+        1. The day has a headline. The row shows that sentence — the thing
+           written about the day, which is what the reader is scanning for.
+        2. The day published papers and none cleared the bar. There is no
+           sentence to show, so the row falls back to the representative
+           paper's title — and marks it, because an unmarked title in this
+           column would read as a headline the day did not have. The `no
+           headline` chip is already on the row; the italic-and-faint styling
+           is the second half of the same statement, and matches how a missing
+           day's `reason` is drawn for exactly the same purpose.
+        3. Neither. Every such day is a backfilled one or predates 0Z-A, which
+           is when a sub-threshold day started recording its `work_key` — so
+           there is no representative to fall back to. The column stays empty
+           rather than promoting `items[0]`, which is a collection order and
+           not a judgement about the day.
+
+        Full string in the DOM; the ellipsis is CSS. A string cut in Python is
+        cut for a screen reader too — so `title` carries whatever is shown. -#}
+    <span class="uc-row__lead" title="{{ row.lead_line or row.lead_title or row.reason }}">
       {%- if row.missing %}<span class="uc-row__reason">{{ row.reason }}</span>
-      {%- else %}{{ row.lead_title }}{% endif %}
+      {%- elif row.lead_line %}{{ row.lead_line }}
+      {%- elif row.lead_title %}<span class="uc-row__lead--title">{{ row.lead_title }}</span>
+      {%- endif %}
     </span>
     {#- The per-row "1 code, 1 data" column is gone (0Z, Z10). The counts are
         still derived and still reported on the latest issue's stat rail, where
@@ -86,7 +107,7 @@
   {%- endif %}
   {%- if has_unranked %}
   <dt><span class="uc-chip uc-chip--unranked">no headline</span></dt>
-  <dd>Papers went out; none of them scored high enough to lead the day. The headline is the day's best-scoring paper when it clears a fixed threshold, and on these days nothing did.</dd>
+  <dd>Papers went out; none of them scored high enough to lead the day. The headline is the day's best-scoring paper when it clears a fixed threshold, and on these days nothing did. Where a row like this shows text, it is that day's representative paper's title, set in italic — the day has no headline sentence to show.</dd>
   {%- endif %}
   {%- if has_recent %}
   <dt><span class="uc-chip uc-chip--recent">more may follow</span></dt>

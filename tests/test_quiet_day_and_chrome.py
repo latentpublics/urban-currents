@@ -362,23 +362,43 @@ def test_hovering_a_row_no_longer_reflows_it(repo):
     assert ".uc-row__lead:hover" not in css
 
 
-def test_the_full_title_is_still_in_the_dom(repo):
+def test_the_full_lead_is_still_in_the_dom(repo):
     """Removing the hover must not become removing the string: a string cut in
-    Python is cut for a screen reader too."""
+    Python is cut for a screen reader too.
+
+    ★ The subject changed in 1A, not the rule. The row's lead is now the day's
+    **headline sentence** rather than one paper's title, so that is the string
+    which must survive whole; the paper title is asserted in the same way
+    where it is still what gets shown — the fallback for a day that cleared no
+    headline. Both are long enough here that the CSS ellipsis is doing real
+    work, which is the condition under which a Python-side cut would hide.
+    """
+    long_line = "A very long headline sentence that the archive row will visually truncate " * 2
     long_title = "A very long paper title that the archive row will visually truncate " * 2
     _item("arxiv:9999.0001", long_title.strip(), 0.9)
-    issue = Issue(
+
+    store.save_issue(Issue(
         date=date(2026, 8, 18),
         items=["arxiv:9999.0001"],
-        headline=Headline(present=True, work_key="arxiv:9999.0001", line="A line."),
+        headline=Headline(
+            present=True, work_key="arxiv:9999.0001", line=long_line.strip()
+        ),
         scan_meta=ScanMeta(items_published=1, candidates_scanned=10, journals=96),
-    )
-    store.save_issue(issue)
+    ))
+    # The other day: papers went out, nothing led, so the row falls back to
+    # the representative title — which must arrive whole for the same reason.
+    store.save_issue(Issue(
+        date=date(2026, 8, 17),
+        items=["arxiv:9999.0001"],
+        headline=Headline(present=False, work_key="arxiv:9999.0001", line=None),
+        scan_meta=ScanMeta(items_published=1, candidates_scanned=10, journals=96),
+    ))
 
     build_archive()
     html = (paths.ROOT / "site" / "archive.html").read_text(encoding="utf-8")
 
-    assert long_title.strip() in html
+    assert long_line.strip() in html, "the headline sentence was cut in Python"
+    assert long_title.strip() in html, "the fallback title was cut in Python"
 
 
 def test_rows_no_longer_carry_a_code_data_column(repo):

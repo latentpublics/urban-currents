@@ -162,10 +162,19 @@ def archive_rows(
             # the first. A day with papers and no headline is not quiet.
             "unranked": not issue.is_quiet and not issue.has_headline,
             "unreadable": issue.scan_meta.unreadable_count,
-            # The representative title, whole. Trimming happens in CSS so the
-            # DOM keeps the full string and a narrow screen only *looks*
-            # shorter — a truncated string in the markup is a truncated string
-            # for a screen reader too.
+            # ★ The day's headline sentence, which is what the row is for
+            # (1A, A). The row used to show `lead.bibliography.title` — the
+            # title of one paper — while the sentence written *about the day*
+            # sat unused in `headline.line`. A reader scanning the archive was
+            # reading a bibliography, not a record of days.
+            "lead_line": issue.headline.line or None,
+            # The representative title, whole. Still carried, because it is the
+            # fallback for a day that published papers and had none clear the
+            # headline bar: on those the row shows this instead, marked so it
+            # cannot be mistaken for a headline the day did not have.
+            # Trimming happens in CSS so the DOM keeps the full string and a
+            # narrow screen only *looks* shorter — a truncated string in the
+            # markup is a truncated string for a screen reader too.
             "lead_title": lead.bibliography.title if lead else "",
             "lead_key": lead.work_key if lead else None,
             "code": code,
@@ -195,6 +204,7 @@ def archive_rows(
             # The reader is told what happened, not made to guess from a blank.
             "reason": reasons[0] if reasons else "the sources did not answer",
             "unreadable": 0,
+            "lead_line": None,
             "lead_title": "",
             "lead_key": None,
             "code": 0,

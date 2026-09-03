@@ -66,13 +66,22 @@ def _item(key: str, title: str) -> Item:
 
 
 def _issue(d, keys, *, backfilled=False, headline=True):
+    """`headline` is True, False, or "unranked".
+
+    ★ "unranked" is the third state (1A, A): the day published papers, none
+    cleared the bar, and since 0Z-A the representative `work_key` is recorded
+    anyway. `False` keeps meaning the older shape — no line and no work_key —
+    which every such day in the archive still has.
+    """
+    has_line = headline is True and bool(keys)
+    has_key = headline is not False and bool(keys)
     issue = Issue(
         date=d,
         items=sorted(keys),
         headline=Headline(
-            present=bool(headline and keys),
-            work_key=keys[0] if (headline and keys) else None,
-            line="A line." if (headline and keys) else None,
+            present=has_line,
+            work_key=keys[0] if has_key else None,
+            line="A line." if has_line else None,
         ),
         scan_meta=ScanMeta(items_published=len(keys), candidates_scanned=100, journals=96),
         backfilled=backfilled,
@@ -90,6 +99,11 @@ def every_state(repo):
     _issue(date(2026, 8, 18), ["arxiv:2608.30001"])                       # plain
     _issue(date(2026, 8, 17), ["arxiv:2608.30002"], backfilled=True)      # filled in
     _issue(date(2026, 8, 16), ["arxiv:2608.30001"], headline=False)       # no headline
+    # ★ The same chip, the other shape: no headline sentence, but a
+    # representative paper to fall back to (1A, A). The long title is the
+    # point — the fallback is the one row whose lead is a title again, so it
+    # is the one that could put the wrapping bug back.
+    _issue(date(2026, 8, 13), ["arxiv:2608.30001"], headline="unranked")  # no headline, title
     quiet = _issue(date(2026, 8, 15), ["arxiv:2608.30002"])               # quiet
     quiet.items = []
     store.save_issue(quiet)
@@ -112,7 +126,7 @@ def _rows(html: str) -> list[str]:
 def test_no_row_carries_a_note(every_state):
     """The withheld day is the only exception, and there is not one here."""
     rows = _rows(every_state)
-    assert len(rows) == 5, "one row per kind, or this test is not testing them"
+    assert len(rows) == 6, "one row per kind, or this test is not testing them"
 
     for row in rows:
         assert "uc-row__note" not in row, f"a note is a second line: {row[:120]}"
@@ -285,7 +299,7 @@ def test_the_rendered_rows_are_all_the_same_height(every_state):
         browser.close()
         pw.stop()
 
-    assert len(rows) == 5, "one row per kind"
+    assert len(rows) == 6, "one row per kind"
 
     # Take the border off each row's box and one height is left. The first row
     # has none (`border-top: 0`), the rest have 1px; subtracting it is what

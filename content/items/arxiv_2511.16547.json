@@ -1,0 +1,263 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study introduces an innovative dynamic charging solution, defined as a platoon-based vehicle-to-vehicle charging (PV2VC). technology. A fleet of electricity suppliers (ESs) can be deployed to transfer power to other electric vehicles, defined as electricity requests (ERs), while moving in platoon to avoid the detour and delay at a charging station. We mathematically formulate a mixed integer linear programming (MILP) model for the PV2VC problem, along with two fundamental and benchmark operation scenarios with minor simplifications, the electric vehicle routing problem (EVRP) and electric vehicle platooning problem (EVPP). The objective is to minimize the total energy consumption and travel time for ERs, including the charging time at CS, platoon formation delay, and wait time for the PV2VC service. A set of numerical experiments with five scenarios are tested and the computational performance between the commercial software applied to the MILP model and the proposed genetic algorithm are compared on a modified Sioux Falls network. By comparison with the optimal benchmark scenario, the results show that the PV2VC technology can save up to 11.07% in energy consumption, 11.65% in travel time, and 11.26% in total cost. For the PV2VC operational scenario, it would be more beneficial for long-distance vehicle routes with low initial state of charge, sparse charging facilities, and where travel time is perceived to be higher than energy consumption costs.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University Transportation Research Center",
+            "ror": "03pz4a950"
+          }
+        ],
+        "name": "Zhexi Fu",
+        "openalex": null,
+        "orcid": "https://orcid.org/0000-0003-0449-0812"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University Transportation Research Center",
+            "ror": "03pz4a950"
+          }
+        ],
+        "name": "Joseph Y. J. Chow",
+        "openalex": null,
+        "orcid": "https://orcid.org/0000-0002-6471-3419"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/03611981261475669",
+      "pdf_url": null,
+      "source_id": "S145575934",
+      "source_name": "Transportation Research Record Journal of the Transportation Research Board",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-03",
+    "repository_urls": [],
+    "title": "On the Modular Platoon-based Vehicle-to-Vehicle Electric Charging Problem"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-03_2511.16547",
+    "members": [
+      "arxiv:2511.16547"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03pz4a950",
+        "label": "University Transportation Research Center"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0449-0812",
+        "label": "Zhexi Fu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6471-3419",
+        "label": "Joseph Y. J. Chow"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10768",
+        "is_primary": true,
+        "label": "Electric Vehicles and Infrastructure",
+        "score": 0.6131,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.2578,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": false,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.0654,
+        "subfield": "2209"
+      }
+    ]
+  },
+  "first_published": "2026-09-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1429802841",
+      "openalex:W1965856911",
+      "openalex:W2007942860",
+      "openalex:W2025383794",
+      "openalex:W2028276056",
+      "openalex:W2092609753",
+      "openalex:W2094764575",
+      "openalex:W2108170386",
+      "openalex:W2325312983",
+      "openalex:W2414479368",
+      "openalex:W2461335435",
+      "openalex:W2525994412",
+      "openalex:W2547563495",
+      "openalex:W2593704234",
+      "openalex:W2594133485",
+      "openalex:W2789830598",
+      "openalex:W2932582930",
+      "openalex:W2941511030",
+      "openalex:W2964233842",
+      "openalex:W2972676994",
+      "openalex:W2972680096",
+      "openalex:W2982401929",
+      "openalex:W2989947400",
+      "openalex:W3001045518",
+      "openalex:W3049116196",
+      "openalex:W3080750924",
+      "openalex:W3089162156",
+      "openalex:W3112462431",
+      "openalex:W3115072041",
+      "openalex:W3159936066",
+      "openalex:W3183868003",
+      "openalex:W3196485901",
+      "openalex:W3197759749",
+      "openalex:W4221037789",
+      "openalex:W4223955150",
+      "openalex:W4225738793",
+      "openalex:W4226033490",
+      "openalex:W4248089643",
+      "openalex:W4292070314",
+      "openalex:W4310769357",
+      "openalex:W4313397477",
+      "openalex:W4379191908",
+      "openalex:W4390049671",
+      "openalex:W4404610330",
+      "openalex:W4404875993",
+      "openalex:W4406328795",
+      "openalex:W4409695765",
+      "openalex:W4411369606",
+      "openalex:W4412050237",
+      "openalex:W4413143356",
+      "openalex:W4416681743"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2511.16547",
+    "doi": "10.1177/03611981261475669",
+    "openalex": "W7106300871",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-04T23:00:20Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005567,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2109,
+      "out": 267
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-04T23:00:20Z",
+    "doi": "10.1177/03611981261475669",
+    "journal": "Transportation Research Record Journal of the Transportation Research Board",
+    "source_id": "S145575934",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings and performance metrics are based on numerical experiments simulated on a single, simplified network model rather than a real-world deployment.",
+      "what": "This study models a dynamic charging system where a fleet of mobile electricity suppliers transfers power to electric vehicles in motion within a platoon. The authors formulated a mixed integer linear programming model to minimize energy consumption and travel time, testing it against genetic algorithms and benchmark scenarios on a modified Sioux Falls network.",
+      "why": "The dynamic platooning approach demonstrates that in-motion vehicle-to-vehicle charging can reduce energy consumption by up to 11.07%, travel time by 11.65%, and total costs by 11.26% compared to traditional charging station stops, particularly benefiting long-distance routes in areas with sparse charging infrastructure."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-03",
+  "work_key": "arxiv:2511.16547"
+}

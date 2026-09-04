@@ -45,11 +45,47 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5148798445",
+        "label": "Yixuan Zhao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148793778",
+        "label": "Man Luo"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.7607,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.1767,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.0068,
+        "subfield": "2203"
+      }
+    ]
   },
   "first_published": "2026-08-28",
   "graph": {
@@ -60,7 +96,7 @@
   "ids": {
     "arxiv": "2608.28273",
     "doi": "10.48550/arxiv.2608.28273",
-    "openalex": null,
+    "openalex": "W7204825503",
     "pmid": null
   },
   "provenance": {
@@ -68,7 +104,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-01T00:31:51Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004978,
     "llm": {
@@ -98,11 +135,11 @@
     "components": {
       "artifact_completeness": 0.0,
       "novelty": 0.0,
-      "relevance": 0.9437,
+      "relevance": 0.9462,
       "source_multiplicity": 0.0
     },
-    "headline": 0.3775,
-    "relevance": 0.9437
+    "headline": 0.3785,
+    "relevance": 0.9462
   },
   "signals": {
     "code_available": {
@@ -150,12 +187,12 @@
   },
   "summary": {
     "en": {
-      "caveats": null,
-      "what": "The researchers developed TransMod, a unified forecasting framework that transfers spatio-temporal demand patterns from data-rich transportation modes to data-scarce ones. The model aligns different spatial granularities into a shared zone-level representation to resolve structural mismatches and distributional shifts across heterogeneous mobility systems. The framework's performance was validated through experiments on real-world multi-modal datasets.",
+      "caveats": "The performance of the framework is validated on real-world datasets, but the abstract does not specify the number of cities, the specific transit modes tested, or the exact scale of the evaluation data.",
+      "what": "The researchers developed TransMod, a unified forecasting framework that transfers spatio-temporal demand patterns from data-rich transportation modes to data-scarce ones. The model aligns heterogeneous spatial structures into a shared zone-level representation to resolve structural mismatches and distributional shifts across different urban mobility networks.",
       "why": "It enables accurate demand forecasting for newly emerging or data-poor transit modes by leveraging historical data from established, data-rich modes, bypassing the traditional requirement for extensive historical datasets for every individual mode."
     }
   },
   "track": "papers",
-  "updated": "2026-08-28",
+  "updated": "2026-09-04",
   "work_key": "arxiv:2608.28273"
 }

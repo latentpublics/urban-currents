@@ -1,0 +1,342 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Cycling is a cornerstone of a sustainable mobility transition in cities. Cycling research depends on the data available, but it has been difficult to produce or access these data in comparable ways. Sports tracking platforms like Strava have been transformative in mass-tracking cycling patterns and data sharing through applications and data competitions. Nevertheless, access to data has remained limited. Here, we present a framework that draws on the openly accessible Strava Global Heatmap to estimate spatial patterns of relative cycling intensity on an urban scale. To refine the raw heatmap outputs, we weighted them with population and point of interest (POI) counts within varying buffers. The cycling patterns were validated in a global context, comparing the heatmap values with cycle count data from 29 cities. Both population and POI weighting delivered high correlations in most cases between the heatmap and the cycle counts, POI weighting performing better overall. The strongest associations between Strava heatmap and cycle counts were observed in European cities and along the North American east coast, with ρ > 0.7 for all, and ρ > 0.8 for most cities. Additionally, the performance of our approach improved with higher cycling modal share at the city level. We demonstrate that a POI-weighted Strava heatmap can accurately represent urban cycling patterns and provide categorical estimates of cycling volume. Our approach can be applied with relatively low effort to support the planning for urban cycling if official counts are sparse. Furthermore, it can enable the use of consistent cycling data for large-scale urban cycling analyses.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Helsinki",
+            "ror": "040af2s02"
+          },
+          {
+            "name": "General Electric (Finland)",
+            "ror": "04h6zzz03"
+          }
+        ],
+        "name": "Robert Klein",
+        "openalex": "A5127929690",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Helsinki",
+            "ror": "040af2s02"
+          },
+          {
+            "name": "General Electric (Finland)",
+            "ror": "04h6zzz03"
+          }
+        ],
+        "name": "Elias Willberg",
+        "openalex": "A5022322923",
+        "orcid": "https://orcid.org/0000-0003-0159-0084"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Helsinki",
+            "ror": "040af2s02"
+          },
+          {
+            "name": "Finnish Environment Institute",
+            "ror": "013nat269"
+          },
+          {
+            "name": "General Electric (Finland)",
+            "ror": "04h6zzz03"
+          }
+        ],
+        "name": "Silviya Korpilo",
+        "openalex": "A5002817535",
+        "orcid": "https://orcid.org/0000-0002-6399-4239"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Helsinki",
+            "ror": "040af2s02"
+          },
+          {
+            "name": "General Electric (Finland)",
+            "ror": "04h6zzz03"
+          }
+        ],
+        "name": "Tuuli Toivonen",
+        "openalex": "A5037120357",
+        "orcid": "https://orcid.org/0000-0002-6625-4922"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.jtrangeo.2026.104822",
+      "pdf_url": null,
+      "source_id": "S80150607",
+      "source_name": "Journal of Transport Geography",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-03",
+    "repository_urls": [],
+    "title": "A global framework to estimate urban spatial cycling patterns based on crowdsourced data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-03_2603.00095",
+    "members": [
+      "arxiv:2603.00095"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-analysis",
+        "label": "spatial analysis"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:040af2s02",
+        "label": "University of Helsinki"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04h6zzz03",
+        "label": "General Electric (Finland)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:013nat269",
+        "label": "Finnish Environment Institute"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5127929690",
+        "label": "Robert Klein"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0159-0084",
+        "label": "Elias Willberg"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6399-4239",
+        "label": "Silviya Korpilo"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6625-4922",
+        "label": "Tuuli Toivonen"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.8462,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0235,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0197,
+        "subfield": "2307"
+      }
+    ]
+  },
+  "first_published": "2026-09-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1453544075",
+      "openalex:W1973987365",
+      "openalex:W1976240829",
+      "openalex:W1984504891",
+      "openalex:W1988792008",
+      "openalex:W2005508268",
+      "openalex:W2080113883",
+      "openalex:W2083717481",
+      "openalex:W2110182076",
+      "openalex:W2114528461",
+      "openalex:W2145590366",
+      "openalex:W2164690523",
+      "openalex:W2286727482",
+      "openalex:W2337641284",
+      "openalex:W2592842441",
+      "openalex:W2625710138",
+      "openalex:W2638424764",
+      "openalex:W2765166237",
+      "openalex:W2775571880",
+      "openalex:W2790784270",
+      "openalex:W2791186590",
+      "openalex:W2792010188",
+      "openalex:W2904304173",
+      "openalex:W2914627459",
+      "openalex:W2914778676",
+      "openalex:W2916706735",
+      "openalex:W2920601580",
+      "openalex:W2956250156",
+      "openalex:W3002282062",
+      "openalex:W3046640293",
+      "openalex:W3083713237",
+      "openalex:W3084182907",
+      "openalex:W3107926067",
+      "openalex:W3119513886",
+      "openalex:W3122177782",
+      "openalex:W3126424845",
+      "openalex:W3134137699",
+      "openalex:W3135500412",
+      "openalex:W3137211741",
+      "openalex:W3150052136",
+      "openalex:W3163842369",
+      "openalex:W3216999574",
+      "openalex:W4220768062",
+      "openalex:W4225140195",
+      "openalex:W4247110653",
+      "openalex:W4320536025",
+      "openalex:W4362475835",
+      "openalex:W4376613934",
+      "openalex:W4387071926",
+      "openalex:W4387584149",
+      "openalex:W4387721512",
+      "openalex:W4392345021",
+      "openalex:W4393989099",
+      "openalex:W4400403620",
+      "openalex:W4401456376",
+      "openalex:W4401729306",
+      "openalex:W4404120444",
+      "openalex:W4407714091",
+      "openalex:W4408197716",
+      "openalex:W4409319937",
+      "openalex:W4415298018"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2603.00095",
+    "doi": "10.1016/j.jtrangeo.2026.104822",
+    "openalex": "W7133335713",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-04T23:00:20Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005656,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2115,
+      "out": 276
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-04T23:00:20Z",
+    "doi": "10.1016/j.jtrangeo.2026.104822",
+    "journal": "Journal of Transport Geography",
+    "source_id": "S80150607",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "29 cities",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's estimation accuracy is dependent on local cycling rates, performing better in cities that already have a higher cycling modal share.",
+      "what": "The researchers developed a framework to estimate relative urban cycling intensity by weighting openly accessible Strava Global Heatmap data with population and point of interest (POI) counts. They validated this approach against official cycle count data from 29 cities across Europe and North America, finding strong correlations (Spearman's rho > 0.7 for all, and > 0.8 for most cities), with POI-weighting performing best.",
+      "why": "It provides a low-effort, globally consistent method to estimate spatial cycling volumes in cities where official physical counter infrastructure is sparse or non-existent."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-03",
+  "work_key": "arxiv:2603.00095"
+}

@@ -57,11 +57,52 @@
     ],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5148910011",
+        "label": "Andrew Renninger"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5120355227",
+        "label": "Egor Kotov"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147222165",
+        "label": "Carmen Cabrera"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.8849,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0883,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11963",
+        "is_primary": false,
+        "label": "Impact of Light on Environment and Health",
+        "score": 0.0026,
+        "subfield": "2306"
+      }
+    ]
   },
   "first_published": "2026-08-28",
   "graph": {
@@ -72,7 +113,7 @@
   "ids": {
     "arxiv": "2608.28734",
     "doi": "10.48550/arxiv.2608.28734",
-    "openalex": null,
+    "openalex": "W7204887195",
     "pmid": null
   },
   "provenance": {
@@ -80,7 +121,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-01T23:14:05Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005182,
     "llm": {
@@ -168,6 +210,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-28",
+  "updated": "2026-09-04",
   "work_key": "arxiv:2608.28734"
 }

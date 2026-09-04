@@ -57,7 +57,28 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0006-2027-3091",
+        "label": "Toshiya Kitahara"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0000-0965-5685",
+        "label": "Ryu Shirakami"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148773940",
+        "label": "Koh Takeuchi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148784737",
+        "label": "Hisashi Kashima"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -68,7 +89,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.99,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.002,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0009,
+        "subfield": "2207"
+      }
+    ]
   },
   "first_published": "2026-08-28",
   "graph": {
@@ -79,7 +125,7 @@
   "ids": {
     "arxiv": "2608.27942",
     "doi": "10.48550/arxiv.2608.27942",
-    "openalex": null,
+    "openalex": "W7204828123",
     "pmid": null
   },
   "provenance": {
@@ -87,7 +133,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-03T23:12:02Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005441,
     "llm": {
@@ -175,6 +222,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-08-28",
+  "updated": "2026-09-04",
   "work_key": "arxiv:2608.27942"
 }

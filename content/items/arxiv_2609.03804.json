@@ -1,0 +1,206 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Communities are fundamental spatial units that shape urban form and social life. Whether a residential compound is spatially open or enclosed affects mobility, access to public services, and equity, yet studies of Chinese fengbi xiaoqu remain largely qualitative or small-scale, limiting reproducible city-scale analysis. We address this gap by introducing GBA-GCs, a metropolitan-scale multimodal benchmark for locally grounded gated/open community recognition in China's Greater Bay Area, covering 37,444 residential compounds with aligned boundary polygons, high-resolution satellite imagery, Chinese metadata, and structured attributes, together with expert-verified labels, inter-annotator reliability, and official evaluation splits. Built on this benchmark, we present Multimodal Classifier for Gated Community (MCGC), a vision-centric multimodal framework based on DINOv3-SAT that fuses imagery, text, and structured cues via modality-aware cross-attention and adaptive gating to mitigate modality imbalance. MCGC consistently outperforms strong unimodal and multimodal baselines. Finally, we apply the validated model to metropolitan-scale mapping and report equity-oriented findings including spatial clustering of GCs, privatized green space, and reduced pedestrian connectivity. The benchmark, code, and release documentation are available at https://github.com/MinweiZhao/GBA-GCs.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Minwei Zhao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Weiming Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jiawang Du",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Qiming Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Weiming Zhuang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Pei Nie",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Cai Wu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": "ECCV 2026 camera-ready version",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.03804v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.03804v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-03",
+    "repository_urls": [],
+    "title": "Urban Boundaries, Social Barriers: A Benchmark and Vision-Centric Framework for Mapping Gated Communities and Equity Implications"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-03_2609.03804",
+    "members": [
+      "arxiv:2609.03804"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.03804",
+    "doi": "10.48550/arxiv.2609.03804",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-04T23:00:09Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006271,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2063,
+      "out": 353
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.8,
+      "novelty": 0.0,
+      "relevance": 0.9514,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.5406,
+    "relevance": 0.9514
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/MinweiZhao/GBA-GCs",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The classification framework and benchmark are specifically tailored to the architectural and administrative context of Chinese residential compounds (fengbi xiaoqu), which may limit direct transferability to other international contexts.",
+      "what": "The researchers developed GBA-GCs, a multimodal benchmark dataset containing 37,444 residential compounds in China's Greater Bay Area, featuring aligned boundary polygons, high-resolution satellite imagery, Chinese metadata, and expert-verified gated/open labels. They also built the Multimodal Classifier for Gated Community (MCGC), a vision-centric framework based on DINOv3-SAT that fuses imagery, text, and structured data using cross-attention and adaptive gating. Applying this model to the metropolitan scale revealed spatial clustering of gated communities, privatized green spaces, and reduced pedestrian connectivity.",
+      "why": "It provides a reproducible, automated method to map gated communities at a metropolitan scale, replacing qualitative or small-scale manual audits with a high-performing multimodal machine learning approach."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-03",
+  "work_key": "arxiv:2609.03804"
+}

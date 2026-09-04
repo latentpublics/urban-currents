@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Path representation learning (PRL) for road networks has received increasing research attention, due to various path-related applications. Existing works on PRL typically exploit the co-occurrence relationship among road segments and paths to learn a vector as the path representation, without exploring the varied traveler behaviors and the regional correlation on the path. In this work, we propose to learn distributional representations, which provide valuable information for use in path-related applications, by capturing the varied traveler behaviors as well as the various dependencies within regions of road segments. We propose a novel Transformer-based Multi-view Distributional Representation Learning (TraveL) framework to encode a path along with a travel starting time to a distributional representation, which can be used to decode possible samples of on-path traveler behavior. Moreover, by analyzing the regional correlation which reveals various road segment relationships, we propose a regional attention to encode these correlations in a path. Also, we explore the idea of Kolmogorov-Smirnov (K-S) test to compare the sampled traveler behavior against the collected ground truth to facilitate training. Experimental results show that the proposed TraveL model outperforms the state-of-the-art methods on both synthetic and real-world datasets, by 14.7% in Mean K-S distance for travel time distribution estimation, 16.7% in Mean Absolute Error (MAE) for path similarity prediction, and 3.97% in MAE for destination prediction.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Fang He",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Tao-yang Fu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Wang-chien Lee",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "comment": "10 pages",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.03427v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.03427v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-03",
+    "repository_urls": [],
+    "title": "TraveL: Transformer-based Multi-view Path Distributional Representation Learning"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-03_2609.03427",
+    "members": [
+      "arxiv:2609.03427"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.96,
+        "id": "data:street-network",
+        "label": "street network data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:transformer",
+        "label": "transformer"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.03427",
+    "doi": "10.48550/arxiv.2609.03427",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-04T23:00:09Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005419,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2101,
+      "out": 252
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9012,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3605,
+    "relevance": 0.9012
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The TraveL framework uses a Transformer-based model to encode road network paths and departure times into distributional representations that capture varied traveler behaviors and regional segment correlations. Tested on synthetic and real-world datasets, the model improves travel time distribution estimation by 14.7% in Mean Kolmogorov-Smirnov distance, path similarity prediction by 16.7% in Mean Absolute Error (MAE), and destination prediction by 3.97% in MAE.",
+      "why": "It shifts path representation learning from static vector embeddings to distributional representations, allowing models to capture the inherent variability of human travel behavior and complex spatial dependencies across different regions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-03",
+  "work_key": "arxiv:2609.03427"
+}

@@ -16,6 +16,7 @@ from markupsafe import Markup
 from .. import paths
 from ..config import cfg
 from ..models import PIPELINE_VERSION, Issue, Item
+from .. import synthesis
 
 TEMPLATE_DIR = Path(__file__).parent / "templates"
 
@@ -240,7 +241,9 @@ def _items_with_references(items: Iterable[Item]) -> int:
     return sum(1 for it in items if it.work_key in _REFERENCE_KEYS)
 
 
-def build_synthesis(issue: Issue, items: Iterable[Item] = ()) -> dict | None:
+def build_synthesis(
+    issue: Issue, items: Iterable[Item] = (), tag_shift: dict | None = None
+) -> dict | None:
     """The synthesis layer, shaped for the template.
 
     Flattened into strings here rather than in Jinja: the template's job is
@@ -255,7 +258,12 @@ def build_synthesis(issue: Issue, items: Iterable[Item] = ()) -> dict | None:
     report a zero it could not have measured, so:
 
     - `tag shift` requires a 30-day baseline with at least seven days in it.
-      Below that the row is absent, not zero.
+      Below that the row is absent, not zero. ★ It is **derived here, not read
+      from the issue** (1B). The stored `synthesis.deviations` was computed by
+      the run that published the day, under the population bug 1A fixed, and an
+      issue is immutable once published (D127) — so the file keeps what that
+      morning computed and the page shows what the archive says now. One source
+      for anything displayed, and it is the derivation.
     - `canon` and `coupling` require items that have reference lists at all.
       With none, the rows are absent; with some and nothing found, they read
       zero.
@@ -296,14 +304,28 @@ def build_synthesis(issue: Issue, items: Iterable[Item] = ()) -> dict | None:
             "partner_date": c.partner_date if c.scope == "archive" else None,
         })
 
+    # ★ Derived, never read from `issue.synthesis.deviations` (1B).
+    #
+    # `build_issue_pages` and `build_api` pass the archive-wide index in, so
+    # eighty pages cost one pass. Anything rendering a single issue —
+    # `uc preview`, a test, an issue not yet in `content/issues/` — falls
+    # through to `deviations()`, which walks the store for that one day. That
+    # is the **same rule**: both end in `_verdict`, which exists so the two
+    # cannot drift. What neither path does is fall back to the stored value;
+    # a second source is the next bug, not a fallback.
+    shift = (
+        tag_shift
+        if tag_shift is not None
+        else synthesis.deviations(issue.date, list(items))
+    )
     deviations = [
         {
-            "label": d.label,
-            "today": d.today,
-            "baseline": d.baseline_per_day,
-            "window_days": d.window_days,
+            "label": d["label"],
+            "today": d["today"],
+            "baseline": d["baseline_per_day"],
+            "window_days": d["window_days"],
         }
-        for d in syn.deviations
+        for d in shift["found"]
     ]
     institutions = [
         {"name": i.name, "papers": i.papers, "scope": "today"}
@@ -320,7 +342,11 @@ def build_synthesis(issue: Issue, items: Iterable[Item] = ()) -> dict | None:
     rows = [
         {
             "label": "tag shift",
-            "measurable": syn.deviation_status == "OK",
+            # The derived status, matching the derived entries above. Reading
+            # `syn.deviation_status` here would let a row say "no tag ran above
+            # its average" from one calculation while the entries came from
+            # another.
+            "measurable": shift["status"] == "OK",
             "entries": deviations,
             "empty_text": "no tag ran above its 30-day average",
         },
@@ -430,7 +456,10 @@ def card_order(item: Item, headline_key: Optional[str]) -> tuple:
 
 
 def render_issue(
-    issue: Issue, items: Iterable[Item], unreadable: Iterable[Item] = ()
+    issue: Issue,
+    items: Iterable[Item],
+    unreadable: Iterable[Item] = (),
+    tag_shift: dict | None = None,
 ) -> str:
     by_key = {it.work_key: it for it in items}
     ordered = [by_key[k] for k in issue.items if k in by_key]
@@ -441,7 +470,7 @@ def render_issue(
         issue=issue,
         scan_meta=issue.scan_meta,
         cards=[build_card(it) for it in ordered],
-        synthesis=build_synthesis(issue, ordered),
+        synthesis=build_synthesis(issue, ordered, tag_shift=tag_shift),
         still_cited=build_still_cited(issue, ordered),
         unreadable=[build_unreadable_row(it) for it in unreadable],
         status_changes=[

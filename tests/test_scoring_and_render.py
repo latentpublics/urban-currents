@@ -5,6 +5,7 @@ from __future__ import annotations
 from datetime import date, timedelta
 from html.parser import HTMLParser
 
+from pipeline import store
 from pipeline.calibrate import _quantile, calibrate_threshold, daily_distribution
 from pipeline.models import (
     Bibliography,
@@ -245,6 +246,37 @@ def _issue_with(items: list[Item], quiet: bool = False) -> Issue:
         items=[i.work_key for i in items],
         run_id="run_2026-08-11",
     )
+
+
+def _baseline_archive(days: int = 8) -> None:
+    """Eight quiet days behind 2026-08-11, saved to the archive.
+
+    ★ Needed since 1B. `tag shift` is derived from the archive at render time
+    rather than read from `issue.synthesis.deviation_status`, so setting that
+    field by hand no longer makes the row measurable — and it should not, because
+    with one day of archive there is no 30-day average to compare against and
+    `NO_BASELINE` is the truthful answer. These tests are about what the box does
+    once a measurement *is* possible, so they have to make one possible.
+    """
+    for i in range(1, days + 1):
+        d = date(2026, 8, 11) - timedelta(days=i)
+        key = f"arxiv:2608.9{i:04d}"
+        store.save_item(
+            Item(
+                work_key=key,
+                first_published=d,
+                bibliography=Bibliography(title=f"Background {i}", abstract="x"),
+            )
+        )
+        store.save_issue(
+            Issue(
+                date=d,
+                headline=Headline(present=True, work_key=key, line="A line."),
+                scan_meta=ScanMeta(items_published=1, candidates_scanned=10, journals=96),
+                items=[key],
+                run_id=f"run_{d}",
+            )
+        )
 
 
 def test_card_carries_the_two_layers_and_canonical_tag_ids(repo):
@@ -663,14 +695,36 @@ def test_a_measured_zero_is_stated(repo):
     from pipeline.models import Synthesis
     from pipeline.render.preview import build_synthesis
 
+    _baseline_archive()
     item = _item()
     issue = _issue_with([item])
     issue.synthesis = Synthesis(deviation_status="OK")
 
     rows = {r["label"]: r for r in build_synthesis(issue, [item])["rows"]}
+    # Measurable because the archive behind the day supports a comparison, not
+    # because the issue file says so — that flag is no longer read (1B).
     assert rows["tag shift"]["measurable"] is True
     assert rows["tag shift"]["entries"] == []
     assert "no tag ran above" in rows["tag shift"]["empty_text"]
+
+
+def test_a_zero_that_could_not_be_measured_is_not_stated(repo):
+    """The other half, and the one 1B made reachable by accident.
+
+    With no archive behind the day there is no 30-day average, so the row is
+    absent rather than reading zero — even though the issue file claims `OK`.
+    Before 1B the hand-set flag decided this, which meant a stored claim could
+    put a measured-looking zero on a day nothing had been measured for.
+    """
+    from pipeline.models import Synthesis
+    from pipeline.render.preview import build_synthesis
+
+    item = _item()
+    issue = _issue_with([item])
+    issue.synthesis = Synthesis(deviation_status="OK")
+
+    rows = {r["label"]: r for r in build_synthesis(issue, [item])["rows"]}
+    assert rows["tag shift"]["measurable"] is False
 
 
 def test_a_quiet_day_keeps_the_box_and_drops_only_the_paragraph(repo):
@@ -682,6 +736,7 @@ def test_a_quiet_day_keeps_the_box_and_drops_only_the_paragraph(repo):
     from pipeline.models import Synthesis
     from pipeline.render.preview import render_issue
 
+    _baseline_archive()
     item = _item()
     issue = _issue_with([item])
     issue.synthesis = Synthesis(

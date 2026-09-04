@@ -195,7 +195,7 @@ def deviations(
     today = Counter(t for it in items for t in _tags_of(it))
 
     start = d - timedelta(days=window_days)
-    history: dict[str, Counter] = defaultdict(Counter)
+    history: Counter = Counter()
     days_seen: set[str] = set()
     for issue in store.iter_issues():
         if not (start <= issue.date < d):
@@ -209,15 +209,31 @@ def deviations(
             item = store.load_item(key)
             if not item:
                 continue
-            for tag in set(_tags_of(item)):
-                history[tag][str(issue.date)] += 1
+            history.update(set(_tags_of(item)))
+
+    return _verdict(today, history, len(days_seen), window_days)
+
+
+def _verdict(
+    today: Counter, history: Counter, n_days: int, window_days: int
+) -> dict[str, Any]:
+    """The rule itself, given both halves already counted.
+
+    ★ Split out in 1B so the pipeline and the renderer cannot drift.
+    `deviations` gathers the two counters from the store for one day;
+    `deviations_over_archive` gathers them for every issue at once out of an
+    index a render already holds. Both then land here, so there is exactly one
+    place where a threshold meets a baseline — which is the point, because a
+    stored value and a derived one that disagreed would be the next bug rather
+    than a fix.
+    """
 
     def scan(n: int) -> list[dict]:
         out = []
         for tag, count in today.most_common():
             if count < DEVIATION_MIN_TODAY:
                 continue
-            baseline = sum(history.get(tag, Counter()).values()) / max(1, n)
+            baseline = history.get(tag, 0) / max(1, n)
             if count < max(DEVIATION_MIN_RATIO * baseline, DEVIATION_MIN_TODAY):
                 continue
             out.append({
@@ -228,7 +244,6 @@ def deviations(
             })
         return out[:5]
 
-    n_days = len(days_seen)
     if n_days < MIN_BASELINE_DAYS:
         return {
             "found": [],
@@ -247,13 +262,68 @@ def deviations(
             "distinct_tags_today": len(today),
         }
 
-    found = scan(n_days)
     return {
-        "found": found[:5],
+        "found": scan(n_days)[:5],
         "baseline_days": n_days,
         "status": "OK",
         "distinct_tags_today": len(today),
     }
+
+
+def deviations_over_archive(
+    issues: list, index: dict[str, Item], window_days: int = BASELINE_DAYS
+) -> dict[date, dict[str, Any]]:
+    """`tag shift` for **every** issue, from an archive already in memory (1B).
+
+    Why this exists: the fix in 1A is real but it only reaches days the pipeline
+    runs after it. Every issue already published carries the old, structurally
+    empty number in its file, and **an issue is immutable once published**
+    (D127) — a rule `backfill_issues.py`, `pages.yml` and `site.py` all stand
+    on, and which D312 refused to bend for a smaller reason than this one.
+
+    So the value is derived at render instead, exactly as `site.py` already
+    derives the per-issue code and data counts and deliberately does not store
+    them. Both halves of the fraction are in the archive: an issue names its
+    items, an item carries its tags. Nothing is rewritten, and every past issue
+    gets the corrected number — 29 of 80 issues show one, against the 10 whose
+    stored value is non-empty.
+
+    **Cost is why this takes the whole archive at once rather than one call per
+    page.** Building the per-day tag counters once and walking a 30-entry window
+    per issue is 0.044s over 80 issues, against the 152s `build_issue_pages`
+    already spends rendering them — 0.02%. Calling `deviations()` once per page
+    would instead re-read every item file 80 times.
+
+    ★ **The value moves as the archive fills, and that is intended.** Four
+    backfilled days (08-05, 08-07, 08-10, 08-11) were recorded `NO_BASELINE`
+    because when they were assembled there were not yet seven days of archive
+    behind them; there are now, so they get a real comparison. The measurement
+    is defined against the archive's own 30-day average, the archive is what it
+    is today, and freezing the number would mean storing it — the thing this
+    function exists not to do. The home page's methodology note says so, because
+    a number that can change has to admit that it can.
+    """
+    day_tags: dict[date, Counter] = {}
+    for issue in issues:
+        c: Counter = Counter()
+        for key in issue.items:
+            item = index.get(key)
+            if item:
+                c.update(set(_tags_of(item)))
+        day_tags[issue.date] = c
+
+    dates = sorted(day_tags)
+    out: dict[date, dict[str, Any]] = {}
+    for d in dates:
+        start = d - timedelta(days=window_days)
+        history: Counter = Counter()
+        n_days = 0
+        for other in dates:
+            if start <= other < d:
+                n_days += 1
+                history.update(day_tags[other])
+        out[d] = _verdict(day_tags[d], history, n_days, window_days)
+    return out
 
 
 # --------------------------------------------------------------------------

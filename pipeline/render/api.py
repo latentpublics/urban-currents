@@ -106,9 +106,16 @@ def _item_json(item: Item) -> dict[str, Any]:
     }
 
 
-def _issue_json(issue: Issue, row: dict, items: dict[str, Item], base: str) -> dict[str, Any]:
+def _issue_json(
+    issue: Issue,
+    row: dict,
+    items: dict[str, Item],
+    base: str,
+    tag_shift: dict | None = None,
+) -> dict[str, Any]:
     scan = issue.scan_meta
     keys = [k for k in issue.items if k in items]
+    shift = tag_shift or {"status": "NO_BASELINE", "found": [], "baseline_days": 0}
     return {
         "schema_version": SCHEMA_VERSION,
         "date": str(issue.date),
@@ -136,6 +143,29 @@ def _issue_json(issue: Issue, row: dict, items: dict[str, Item], base: str) -> d
             "work_key": issue.headline.work_key,
             "basis": issue.headline.basis,
         },
+        # ★ `tag shift`, the same derived value the issue page shows (1B).
+        # The API said nothing about it before, which was not a disagreement
+        # but was not an answer either; now the page and the JSON come from one
+        # call to `deviations_over_archive`. `status` is carried because an
+        # absent measurement and a measured zero are different claims and this
+        # project refuses to collapse them: `NO_BASELINE` means there was not
+        # enough archive behind the day to compare against, and an empty
+        # `found` under `OK` means the comparison ran and nothing stood out.
+        "synthesis": {
+            "tag_shift": {
+                "status": shift["status"],
+                "baseline_days": shift.get("baseline_days", 0),
+                "found": [
+                    {
+                        "label": d["label"],
+                        "today": d["today"],
+                        "baseline_per_day": d["baseline_per_day"],
+                        "window_days": d["window_days"],
+                    }
+                    for d in shift["found"]
+                ],
+            }
+        },
         "items": [_item_json(items[k]) for k in keys],
     }
 
@@ -154,10 +184,15 @@ def build_api(out_dir: Optional[Path] = None) -> list[Path]:
     """`api/index.json`, `api/latest.json`, and one file per issue."""
     from .site import _base_url, archive_rows, item_index, latest_issue, load_issues
 
+    from .. import synthesis
+
     base = _base_url()
     issues = load_issues()
     items = item_index()
     rows = {r["date"]: r for r in archive_rows(issues, items)}
+    # The same call the issue pages make, so the page and the JSON cannot
+    # disagree about a day (1B).
+    shifts = synthesis.deviations_over_archive(issues, items)
     target_dir = out_dir or (paths.ROOT / "site" / "api")
 
     written: list[Path] = []
@@ -166,7 +201,7 @@ def build_api(out_dir: Optional[Path] = None) -> list[Path]:
         row = rows.get(str(issue.date))
         if row is None:  # an issue with no row cannot happen; not a reason to crash
             continue
-        body = _issue_json(issue, row, items, base)
+        body = _issue_json(issue, row, items, base, tag_shift=shifts.get(issue.date))
         written.append(_dump(target_dir / "issues" / f"{issue.date}.json", body))
         catalogue.append(
             {k: body[k] for k in ("date", "url", "state", "backfilled", "withheld", "recent")}

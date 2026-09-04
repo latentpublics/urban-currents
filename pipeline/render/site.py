@@ -740,6 +740,7 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
     component, and a page built from a different template here would be a second
     component to keep in step with it.
     """
+    from .. import synthesis
     from .preview import render_issue
 
     items = item_index()
@@ -748,13 +749,22 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
 
     written: list[Path] = []
     issues = load_issues()
+    # ★ `tag shift` for every issue, once (1B). Derived rather than read from
+    # the issue files, because the number stored in a published issue was
+    # computed under the population bug 1A fixed and an issue is immutable
+    # (D127). Building it here rather than inside `render_issue` is what keeps
+    # it free: 0.018s for the whole archive, against the ~1.9s each page costs
+    # to render anyway.
+    shifts = synthesis.deviations_over_archive(issues, items)
     # The same issue the home page leads with, so `Latest` cannot point at a
     # different day from the one the front page shows (0Z, Z4).
     lead = latest_issue(issues)
     for i, issue in enumerate(issues):
         day_items = [items[k] for k in issue.items if k in items]
         unreadable = [items[k] for k in issue.unreadable if k in items]
-        html = render_issue(issue, day_items, unreadable)
+        html = render_issue(
+            issue, day_items, unreadable, tag_shift=shifts.get(issue.date)
+        )
 
         previous = issues[i - 1] if i > 0 else None
         following = issues[i + 1] if i + 1 < len(issues) else None
@@ -1362,6 +1372,19 @@ API_FIELDS = (
                         "as noise."),
     ("summary", "What the paper did and why it matters, written by a model from "
                 "the abstract. **Not under the open licence** — see below."),
+    ("synthesis.tag_shift", "★ Tags that ran above their own 30-day average on "
+                            "this day, with that average. **Recomputed from the "
+                            "archive on every build, not stored in the issue** — "
+                            "an issue never changes once published, and this "
+                            "number was wrong in issues published before "
+                            "2026-09-03. So it can move as the archive fills: a "
+                            "backfilled day added inside the 30-day window "
+                            "changes what the average was. `status` is "
+                            "`NO_BASELINE` when there was not enough archive "
+                            "behind the day to compare against at all, which is "
+                            "a different claim from an empty `found` under "
+                            "`OK` — that one means the comparison ran and "
+                            "nothing stood out."),
 )
 
 

@@ -24,7 +24,7 @@
     {{ scan_meta.arxiv_categories }} arXiv categories<span class="uc-scanmeta__sep">·</span>
     {{ scan_meta.journals }} journals<span class="uc-scanmeta__sep">·</span>
     {{ scan_meta.candidates_scanned }} candidates —
-    <strong class="uc-scanmeta__verdict">{{ scan_meta.items_published }} worth your time</strong>
+    <strong class="uc-scanmeta__verdict">{{ published_count }} worth your time</strong>
     {%- if scan_meta.unreadable_count %}<span class="uc-scanmeta__sep">·</span>
     <span class="uc-scanmeta__unreadable">{{ scan_meta.unreadable_count }} without an open abstract</span>
     {%- endif %}

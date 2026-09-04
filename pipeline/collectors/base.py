@@ -14,19 +14,64 @@ ARXIV_SOURCE_ID = "S4306400194"
 
 # Matches 2608.01234, 2608.01234v3, arXiv:2608.01234, and the pre-2007 form
 # cs.CY/0701001.
-_ARXIV_NEW = re.compile(r"(?<![\d.])(\d{4}\.\d{4,5})(v\d+)?", re.I)
+#
+# ★ The lookbehind excludes `-` as well as digits and dots (1D). It was there to
+# stop the pattern biting into the middle of a longer number — Elsevier's
+# `10.1016/j.trc.2026.105852` is safe because a dot precedes `2026` — and a
+# hyphen was not considered, because nothing in the whitelist put one in front
+# of a five-digit run until IJURR arrived. See `normalize_arxiv_id`.
+_ARXIV_NEW = re.compile(r"(?<![\d.\-])(\d{4}\.\d{4,5})(v\d+)?", re.I)
 _ARXIV_OLD = re.compile(r"\b([a-z\-]+(?:\.[A-Z]{2})?/\d{7})(v\d+)?", re.I)
 _ARXIV_DOI = re.compile(r"10\.48550/arxiv\.(.+)$", re.I)
+# A DOI, with or without a resolver prefix. Used to refuse the whole string
+# rather than to parse it.
+_DOI_SHAPE = re.compile(r"(?:^|/)(10\.\d{4,9}/\S+)$")
 
 
 def normalize_arxiv_id(value: Optional[str]) -> Optional[str]:
-    """Extract a bare arXiv ID (version stripped) from an ID, URL, or DOI."""
+    r"""Extract a bare arXiv ID (version stripped) from an ID, URL, or DOI.
+
+    ★ **A DOI that is not an arXiv DOI never yields an arXiv ID (1D).** This is
+    the structural half of the fix and the lookbehind above is the defensive
+    half; either alone would have stopped the bug that prompted it, and the two
+    fail in different directions.
+
+    What happened: `10.1111/1468-2427.70128` is an IJURR article, and
+    `1468-2427` is that journal's **ISSN**. The old pattern read the ISSN's
+    second half plus the article number — `2427.70128` — as an arXiv ID, so
+    twenty journal articles were stored under `arxiv:` work keys and eighteen of
+    them were published as preprints.
+
+    **Why it passed for three months.** The lookbehind `(?<![\d.])` was written
+    against the failure everybody had seen: matching inside a longer digit run,
+    which is what every Elsevier and Springer DOI looks like
+    (`10.1016/j.trc.2026.105852` — a dot precedes, so it is refused). A hyphen
+    reaches the same place and was never in the guard, and no journal in the
+    whitelist put an ISSN in its DOI until IJURR was added. The pattern was not
+    wrong about the cases it was written for; it had simply never met this one.
+
+    **The same shape does occur elsewhere.** Measured over the 2,403 non-arXiv
+    DOIs in the archive, exactly two prefixes reached it: `10.1111` (the twenty
+    above) and `10.4108`, where EAI encodes a date —
+    `10.4108/eai.16-4-2021.169337` yields `2021.16933`. That one never produced
+    a bad work key, because the item was a real arXiv preprint whose ID came
+    from arXiv itself; what it did instead was silently drop that DOI from
+    `dedup.merge_keys`, since that function skips a DOI it believes is an arXiv
+    DOI. A wrong identifier does not have to be visible to cost something.
+
+    Other identifier families were checked and do not reach it: an ISBN has no
+    dot-separated five-digit tail, and a PMID is a bare integer.
+    """
     if not value:
         return None
     v = value.strip()
     m = _ARXIV_DOI.search(v)
     if m:
         v = m.group(1)
+    elif _DOI_SHAPE.search(v):
+        # A DOI from some other registrant. Whatever digits it contains, they
+        # are that publisher's, not arXiv's.
+        return None
     m = _ARXIV_NEW.search(v)
     if m:
         return m.group(1)

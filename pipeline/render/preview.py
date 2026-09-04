@@ -469,6 +469,9 @@ def render_issue(
     return env.get_template("preview.html.j2").render(
         issue=issue,
         scan_meta=issue.scan_meta,
+        # ★ Derived, not `scan_meta.items_published` (1D). See
+        # `Issue.published_count`.
+        published_count=issue.published_count,
         cards=[build_card(it) for it in ordered],
         synthesis=build_synthesis(issue, ordered, tag_shift=tag_shift),
         still_cited=build_still_cited(issue, ordered),

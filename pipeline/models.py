@@ -556,6 +556,24 @@ class Issue(StrictModel):
         return not self.items
 
     @property
+    def published_count(self) -> int:
+        """How many papers this issue published. ★ The only definition (1D).
+
+        There were two. `scan_meta.items_published` is written by the run and
+        read by the home stat rail, the issue page's *"N worth your time"* and
+        the plain-text build; `len(issue.items)` is what the archive row and the
+        JSON have always derived. They agreed only because nothing had ever
+        corrected an issue — and the moment 1D removed a correction notice from
+        2026-06-16, one number would have moved and the other would not.
+
+        `items` is the list the page actually renders, so it is the one that
+        cannot be wrong about itself. `scan_meta.items_published` stays in the
+        file as the record of what that run counted, and is no longer read for
+        display — the same relationship 1B established for `tag shift`.
+        """
+        return len(self.items)
+
+    @property
     def has_headline(self) -> bool:
         """Did anything clear the headline bar?
 

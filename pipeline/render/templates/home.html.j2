@@ -67,7 +67,7 @@
         {% endif %}
       </div>
       <dl class="uc-latest__stats">
-        <div><dt>items</dt><dd>{{ latest.scan_meta.items_published }}</dd></div>
+        <div><dt>items</dt><dd>{{ latest.published_count }}</dd></div>
         <div><dt>candidates scanned</dt><dd>{{ latest.scan_meta.candidates_scanned }}</dd></div>
         <div><dt>with code / data</dt><dd class="uc-latest__accent">{{ latest_code }} / {{ latest_data }}</dd></div>
         <div><dt>no open abstract</dt><dd class="uc-latest__quiet">{{ latest.scan_meta.unreadable_count }}</dd></div>

@@ -9,6 +9,7 @@ key produces SKIPPED and the run continues — a partial issue beats no issue.
 
 from __future__ import annotations
 
+import re
 import time
 import traceback
 from dataclasses import dataclass
@@ -402,6 +403,54 @@ def journal_rank_score(item: Item) -> float:
 
 UNREADABLE_STAGE = "unreadable"
 
+# ★ Journal apparatus: things a journal issues that are not papers (1D, D1b).
+#
+# A DOI and a place in a tracked journal are not enough to make something an
+# article. IJURR's `Issue Information` and `Cover Image` reached
+# `Also published today`, and a correction notice reached the 2026-06-16 issue
+# as a card whose summary reads *"a formal correction ... updating the
+# acknowledgments section"*. The summariser had understood exactly what it was
+# and the pipeline published it anyway, because nothing asked the question.
+#
+# **Both rules were measured against the whole archive before being chosen, and
+# the loosest rule that suggested itself was rejected.** Over 2,670 items:
+#
+#   exact front-matter title      40 matches,  0 of them ever published
+#   correction-notice shape       29 matches,  2 of them published
+#   no authors at all             52 matches,  2 published  <- REJECTED
+#
+# The third would also have removed "Cities, not rural areas, power the digital
+# infrastructure of the USA" and three more Nature Cities pieces, which carry no
+# byline and are real writing. Absence of a byline is a fact about the metadata,
+# not about the thing.
+_APPARATUS_TITLES = frozenset({
+    "issue information", "editorial board", "front matter", "back matter",
+    "contents", "table of contents", "cover image", "issue cover",
+    "title page", "copyright", "index", "masthead",
+    "acknowledgements to reviewers", "acknowledgments to reviewers",
+})
+
+# `Correction to '...'`, `Corrigendum To: ...`, `Erratum: ...`, or the bare word.
+# ★ Anchored on the *shape* of a notice, not on the first word alone: a paper
+# called "Correction of GPS drift in ..." is a paper. No such title is in the
+# archive today, so the two rules currently catch the same 29 items — the
+# narrower one is chosen for the day one arrives.
+_CORRECTION = re.compile(
+    r"^(correction|corrigendum|erratum|retraction|withdrawal)"
+    r"(\s+(to|for)\b|\s*[:\u2018\u201c\"]|\s*$)",
+    re.I,
+)
+
+
+def is_journal_apparatus(item: Item) -> bool:
+    """Front matter, back matter, or a correction notice — not a paper."""
+    title = (item.bibliography.title or "").strip()
+    if not title:
+        return False
+    if title.lower() in _APPARATUS_TITLES:
+        return True
+    return bool(_CORRECTION.match(title))
+
 
 def has_abstract(item: Item) -> bool:
     return bool((item.bibliography.abstract or "").strip())
@@ -546,6 +595,15 @@ def stage_select(
     """
     items = read_input(run, "select")
     thr = cfg("classifier.threshold", 0.35) if threshold is None else threshold
+
+    # ★ Removed before either path sees them (1D, D1b), so a non-paper cannot
+    # arrive as a card *or* in `Also published today`. Counted rather than
+    # dropped silently: a filter nobody can see the size of is the next thing
+    # to go wrong quietly.
+    apparatus = [it for it in items if is_journal_apparatus(it)]
+    if apparatus:
+        items = [it for it in items if not is_journal_apparatus(it)]
+    run.count("journal_apparatus_dropped", len(apparatus))
 
     policy = SlotPolicy.even_split(top_n) if top_n is not None else SlotPolicy.from_config()
 

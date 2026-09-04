@@ -151,7 +151,7 @@ def archive_rows(
             # dict's own `items` method, so the template gets a bound method and
             # fails somewhere unrelated. This is the second template in this
             # batch to hit it.
-            "published": len(keys),
+            "published": issue.published_count,
             # Derived from the count, never from the stored flag (0Z, Z1).
             # `quiet_day` on disk answers "did anything clear the headline
             # bar", and 2026-08-09 (11 papers) and 2026-08-21 (9) both carry it

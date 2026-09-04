@@ -126,7 +126,11 @@ def _issue_json(
         "withheld": row.get("withheld"),
         "recent": bool(row.get("recent")),
         "counts": {
-            "published": len(keys),
+            # ★ One definition, shared with the archive row, the home stat rail
+            # and the issue page (1D). It counts what the issue published, not
+            # what happens to be loadable — those differed only if a key had no
+            # file, which is a broken archive rather than a smaller day.
+            "published": issue.published_count,
             "candidates_scanned": scan.candidates_scanned,
             "arxiv_categories": scan.arxiv_categories,
             "journals": scan.journals,

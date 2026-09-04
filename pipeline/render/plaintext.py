@@ -79,7 +79,7 @@ def render_text(
     scan = issue.scan_meta
     out.append(_wrap(
         f"{scan.arxiv_categories} arXiv categories, {scan.journals} journals, "
-        f"{scan.candidates_scanned} candidates — {scan.items_published} worth "
+        f"{scan.candidates_scanned} candidates — {issue.published_count} worth "
         f"your time"
         + (f", {scan.unreadable_count} without an open abstract"
            if scan.unreadable_count else "")

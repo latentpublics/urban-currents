@@ -80,8 +80,13 @@
       </dd>
       <dt>Values</dt>
       <dd>
-        <code>work_key</code> never changes once assigned. Fields that come from
-        OpenAlex keep their OpenAlex names.
+        <code>work_key</code> never changes once assigned — with one exception,
+        taken once, on 2026-09-04: seventeen IJURR articles had been keyed
+        <code>arxiv:2427.…</code> because that journal's ISSN sits inside its
+        DOI and the parser read it as an arXiv identifier. They now carry the
+        <code>doi:</code> key they should always have had. The promise means
+        "a key does not drift"; it was never a promise to keep a wrong one.
+        Fields that come from OpenAlex keep their OpenAlex names.
       </dd>
       <dt>Breaking it</dt>
       <dd>

@@ -1,0 +1,168 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Vision-language models are increasingly used to measure urban change from repeated street-level imagery, but their longitudinal reliability is not well understood. We test how much a perception score can change when the street itself does not undergo substantial redevelopment. Using 4,648 consecutive-epoch image pairs from 435 Google Street View standpoints across five US cities, we find that re-photographing the same street changes a perception score by 0.80 points on average, equivalent to 66.5% of the difference between two different streets in the same city. Repeated model calls contribute almost no variation, while image re-encoding and prompt-order changes each account for about one fifth of the between-street difference. Six image statistics describing scattering, contrast, colour, exposure, sharpness and specularity explain almost none of the remaining epoch-to-epoch variation. A small systematic drift of about 0.1 points remains and increases with the interval between captures, consistent with minor physical changes not recorded by redevelopment labels. Controlled experiments further show that acquisition conditions can shift scores when camera and image properties are allowed to vary, and that the direction of these shifts depends on the model. In crowdsourced imagery, camera geometry alone causes a model to report physical change in 45% of identical-scene pairs; normalising both images to a common virtual camera reduces this rate to 7.5%. Despite poor reliability at the individual-location level, aggregation recovers a coherent redevelopment signal: changed streets are judged wealthier, better maintained, more enclosed and less green. These results show that vision-language measurement of urban change is reliable at the scale of hundreds of paired observations, but not at the scale of individual sample points.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Kaizhen Tan",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.00649v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.00649v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-01",
+    "repository_urls": [],
+    "title": "You Cannot Photograph the Same Street Twice: Reliability Limits in Vision-Language Measurement of Urban Change"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-04_2609.00649",
+    "members": [
+      "arxiv:2609.00649"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.00649",
+    "doi": "10.48550/arxiv.2609.00649",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-05T22:46:07Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006362,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2219,
+      "out": 337
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8755,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3502,
+    "relevance": 0.8755
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "0.80 points",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on perception scores from five US cities and specific vision-language model architectures, which may not generalize to all geographic contexts or alternative model classes.",
+      "what": "The study evaluated the longitudinal reliability of vision-language models in measuring urban change using 4,648 consecutive-epoch image pairs from 435 Google Street View standpoints across five US cities. Re-photographing the same unchanged street altered perception scores by an average of 0.80 points, which represents 66.5% of the typical difference between two distinct streets in the same city. While camera geometry in crowdsourced imagery caused models to falsely report physical change in 45% of identical-scene pairs, normalising images to a common virtual camera reduced this error rate to 7.5%.",
+      "why": "It establishes that vision-language models are unreliable for detecting urban change at individual sample points due to high sensitivity to acquisition conditions and camera geometry, but demonstrates that aggregating hundreds of paired observations can successfully recover a coherent redevelopment signal."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-01",
+  "work_key": "arxiv:2609.00649"
+}

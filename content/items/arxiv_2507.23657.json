@@ -1,0 +1,281 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Accurate trajectory prediction of vulnerable road users is a cornerstone of safe autonomous driving and intelligent transportation systems. While large-scale pre-training has advanced this field, achieving robust zero-shot generalization remains a critical challenge for real-world deployment, particularly when vehicles encounter unseen environments and heterogeneous sensor configurations (e.g., varying frame rates and observation horizons). In this work, we revisit zero-shot trajectory prediction from the perspective of distribution shifts and distinguish three transfer settings: temporal transfer, scene transfer, and joint scene–temporal transfer. Through systematic experiments, we show that temporal mismatch is a key source of failure in current pre-trained models. By isolating temporal configuration from dataset shift, we demonstrate that explicitly conditioning on temporal metadata provides a simple and highly effective solution. Building on this insight, we propose OmniTraj, a Transformer-based framework pre-trained on large-scale heterogeneous data with explicit temporal-aware design. OmniTraj is designed to handle omni-generalization in trajectory prediction, namely adaptability across temporal configuration and scene shifts. It achieves state-of-the-art zero-shot generalization under joint scene–temporal transfer, reducing prediction error by over 70%. Furthermore, it exhibits exceptional robustness in safety-critical edge cases with severely limited observations and maintains high few-shot data efficiency, paving the way for scalable, dataset-agnostic deployment in real-world autonomous systems. The code is publicly available: https://github.com/vita-epfl/omnitraj.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "École Polytechnique Fédérale de Lausanne",
+            "ror": "02s376052"
+          }
+        ],
+        "name": "Yang Gao",
+        "openalex": "A5100564879",
+        "orcid": "https://orcid.org/0000-0002-3695-9155"
+      },
+      {
+        "institutions": [
+          {
+            "name": "École Polytechnique Fédérale de Lausanne",
+            "ror": "02s376052"
+          }
+        ],
+        "name": "Po‐Chien Luan",
+        "openalex": "A5024304902",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Télécom Paris",
+            "ror": "01naq7912"
+          },
+          {
+            "name": "Laboratoire Traitement et Communication de l’Information",
+            "ror": "057er4c39"
+          }
+        ],
+        "name": "Kaouther Messaoud",
+        "openalex": "A5063024690",
+        "orcid": "https://orcid.org/0000-0002-4602-8100"
+      },
+      {
+        "institutions": [
+          {
+            "name": "École Polytechnique Fédérale de Lausanne",
+            "ror": "02s376052"
+          }
+        ],
+        "name": "Lan Feng",
+        "openalex": "A5100296334",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "École Polytechnique Fédérale de Lausanne",
+            "ror": "02s376052"
+          }
+        ],
+        "name": "Alexandre Alahi",
+        "openalex": "A5068504559",
+        "orcid": "https://orcid.org/0000-0002-5004-1498"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105971",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-04",
+    "repository_urls": [],
+    "title": "OmniTraj: Pre-training on heterogeneous data for adaptive and zero-shot human trajectory prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-04_2507.23657",
+    "members": [
+      "arxiv:2507.23657"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.9565,
+        "id": "method:self-supervised",
+        "label": "self-supervised learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02s376052",
+        "label": "École Polytechnique Fédérale de Lausanne"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01naq7912",
+        "label": "Télécom Paris"
+      },
+      {
+        "confidence": null,
+        "id": "ror:057er4c39",
+        "label": "Laboratoire Traitement et Communication de l’Information"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3695-9155",
+        "label": "Yang Gao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5024304902",
+        "label": "Po‐Chien Luan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4602-8100",
+        "label": "Kaouther Messaoud"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5100296334",
+        "label": "Lan Feng"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5004-1498",
+        "label": "Alexandre Alahi"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": true,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.9862,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.9667,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12740",
+        "is_primary": false,
+        "label": "Gait Recognition and Analysis",
+        "score": 0.9582,
+        "subfield": "2204"
+      }
+    ]
+  },
+  "first_published": "2026-09-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2507.23657",
+    "doi": "10.1016/j.trc.2026.105971",
+    "openalex": "W4414921690",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-05T22:46:12Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005354,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2129,
+      "out": 240
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-05T22:46:12Z",
+    "doi": "10.1016/j.trc.2026.105971",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/vita-epfl/omnitraj",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed OmniTraj, a Transformer-based trajectory prediction framework designed to handle varying sensor frame rates and observation horizons. By explicitly conditioning the model on temporal metadata, it addresses temporal mismatches across datasets and reduces prediction errors by over 70% under joint scene-temporal transfer conditions, while maintaining high accuracy in edge cases with limited observations.",
+      "why": "It provides a trajectory prediction model capable of zero-shot generalization across different sensor configurations and unseen environments, removing the need to retrain models when deploying them on vehicles with different camera frame rates or observation windows."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-04",
+  "work_key": "arxiv:2507.23657"
+}

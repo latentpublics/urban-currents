@@ -1,0 +1,245 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Accurate traffic flow prediction is fundamental to intelligent transportation systems, playing a pivotal role in urban mobility optimization and smart city development. While Graph Neural Networks (GNNs) integrated with time series forecasting have emerged as promising solutions, two critical limitations persist: (1) the quadratic complexity of attention-based architectures hinders real-time deployment in large-scale networks, and (2) high-frequency noise in sensor data significantly degrades prediction reliability. These challenges are particularly acute in metropolitan scenarios where both computational efficiency and noise robustness are paramount. To address these limitations, we introduce \\textbf{ButterMamba}, a novel and efficient framework based on State Space Models (SSMs). ButterMamba consists of two key components: (1) a Butterworth Spectral Filtering module that preprocesses the data by removing high-frequency noise, allowing the model to focus on significant underlying trends, and (2) a Spatial-Temporal State Mixer that uses a parallel Mamba architecture to efficiently capture both long-range temporal dependencies and complex spatial correlations across the road network. By decoupling noise filtering from spatial-temporal modeling, ButterMamba achieves superior predictive accuracy with linear computational complexity. Extensive experiments on three public datasets demonstrate that ButterMamba not only outperforms existing state-of-the-art models in terms of prediction accuracy but also considerably reduces training time and memory usage.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Limiao Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yuhui Lu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jie Gao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hao Jiang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Haiping Ma",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xingyi Zhang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.LG",
+      "physics.data-an"
+    ],
+    "comment": "9 pages, 6 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2608.29658v1",
+      "pdf_url": "https://arxiv.org/pdf/2608.29658v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-08-30",
+    "repository_urls": [],
+    "title": "ButterMamba: Butterworth-Enhanced Spatial-Temporal Mamba for Efficient Traffic Flow Prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-04_2608.29658",
+    "members": [
+      "arxiv:2608.29658"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0072-4047",
+        "label": "Limiao Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5135268649",
+        "label": "Yuhui Lu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148933799",
+        "label": "Jie Gao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148943545",
+        "label": "Hao Jiang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5099-1987",
+        "label": "Haiping Ma"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5052-000X",
+        "label": "Xingyi Zhang"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.9754,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0056,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0017,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-08-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2608.29658",
+    "doi": "10.48550/arxiv.2608.29658",
+    "openalex": "W7204875083",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-05T22:46:07Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.00517,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2055,
+      "out": 232
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.8706,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4282,
+    "relevance": 0.8706
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed ButterMamba, a traffic flow prediction framework that combines a Butterworth Spectral Filtering module to filter out high-frequency sensor noise with a parallel Mamba-based Spatial-Temporal State Mixer. The model was evaluated on three public datasets, demonstrating linear computational complexity alongside reduced training times and memory consumption compared to existing state-of-the-art models.",
+      "why": "It overcomes the quadratic computational complexity of attention-based architectures and the noise sensitivity of standard graph neural networks, enabling real-time, resource-efficient traffic forecasting across large-scale metropolitan road networks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-08-30",
+  "work_key": "arxiv:2608.29658"
+}

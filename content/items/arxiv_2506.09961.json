@@ -4,13 +4,27 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Indian Institute of Science Bangalore",
+            "ror": "04dese585"
+          }
+        ],
         "name": "Helen Thomas",
         "openalex": null,
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Robert Bosch (China)",
+            "ror": "00cedkn40"
+          },
+          {
+            "name": "Indian Institute of Science Bangalore",
+            "ror": "04dese585"
+          }
+        ],
         "name": "Tarun Rambha",
         "openalex": "A5000409322",
         "orcid": "https://orcid.org/0000-0003-0307-995X"
@@ -31,7 +45,7 @@
     "title": "A branch-and-cut algorithm for the optimal design of parking lots with one-way and two-way lanes"
   },
   "cluster": {
-    "cluster_id": "clu_2026-09-05_2506.09961",
+    "cluster_id": "clu_2026-09-06_2506.09961",
     "members": [
       "arxiv:2506.09961"
     ],
@@ -40,7 +54,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04dese585",
+        "label": "Indian Institute of Science Bangalore"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00cedkn40",
+        "label": "Robert Bosch (China)"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -93,7 +118,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-09-06T22:51:41Z",
+    "collected_at": "2026-09-07T23:25:58Z",
     "collectors": [
       "openalex"
     ],
@@ -140,6 +165,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-09-05",
+  "updated": "2026-09-07",
   "work_key": "arxiv:2506.09961"
 }

@@ -1,0 +1,300 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Urbanization has significantly transformed land use/land cover (LULC) patterns and urban environmental conditions. This study examined urbanization-induced LULC transformation, its effects on land surface temperature (LST) dynamics, and spectral index responses in Adama City. Spatiotemporal changes in LULC, LST, Normalized Difference Vegetation Index (NDVI), Normalized Difference Built-up Index (NDBI), and Normalized Difference Water Index (NDWI) were assessed using multi-temporal Landsat satellite images acquired for 2004, 2014, and 2024, together with remote sensing-based thermal analysis techniques. Spectral indices (NDVI, NDBI, and NDWI) were derived from reflective Landsat bands, while LST was retrieved from thermal infrared bands. Data analysis involved preprocessing, supervised maximum likelihood classification, post-classification, change detection, spectral index analysis, and remote sensing-based thermal analysis. LST was derived through DN-to-radiance conversion, brightness temperature estimation, emissivity correction, and temperature calculation in °C using ArcGIS and ENVI software. The classified maps achieved high overall accuracies of 93.31%, 92.00%, and 93.33% for 2004, 2014, and 2024, respectively, confirming the robustness of the classification and supporting the reliability of the subsequent land use, spectral index, and LST analyses. The findings revealed that agricultural land dominated in 2004 (38.65%) and expanded to 67.74% in 2014, whereas built-up areas became dominant in 2024, covering 54.96% of the total area. Between 2004 and 2024, built-up areas increased by 43.3%, whereas agricultural land declined by 14.67%. Land transformations occurred from agricultural land, vegetation, and barren land into built-up areas. Vegetation experienced fragmentation and decline, while wetlands showed severe deterioration, indicating increasing ecological pressure. LST analysis showed increasing minimum temperatures and spatial homogenization of urban thermal conditions associated with expanding impervious surfaces and declining natural cooling. Built-up areas consistently exhibited higher LST values, whereas vegetated and moisture-rich areas showed lower thermal conditions. Spectral index analysis revealed declining NDVI and NDWI values, indicating vegetation degradation, and reduced surface moisture, while rising NDBI values reflected intensified urban growth and impervious surfaces. The study highlights the strong interaction between urban growth, environmental change, and urban microclimate dynamics, emphasizing the need for integrating blue-green urban infrastructures into sustainable urban planning, ecological conservation, and climate-sensitive land management strategies.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "GeoSAS (Ethiopia)",
+            "ror": "011smmt78"
+          },
+          {
+            "name": "Ambo University",
+            "ror": "02e6z0y17"
+          }
+        ],
+        "name": "Dagim Hailu Hurisa",
+        "openalex": "A5150111095",
+        "orcid": "https://orcid.org/0009-0008-4415-4884"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Ambo University",
+            "ror": "02e6z0y17"
+          }
+        ],
+        "name": "Abebe Tufa Angessa",
+        "openalex": "A5003077925",
+        "orcid": "https://orcid.org/0000-0002-1981-5168"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s44327-026-00358-1",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44327-026-00358-1.pdf",
+      "source_id": "S5407042847",
+      "source_name": "Discover Cities",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-05",
+    "repository_urls": [],
+    "title": "Urbanization induced LULC transformation, its effects on land surface temperature and spectral index responses in Adama city, Ethiopia"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-06_10.1007/s44327-0",
+    "members": [
+      "doi:10.1007/s44327-026-00358-1"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:remote-sensing-classification",
+        "label": "remote sensing classification"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:011smmt78",
+        "label": "GeoSAS (Ethiopia)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02e6z0y17",
+        "label": "Ambo University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0008-4415-4884",
+        "label": "Dagim Hailu Hurisa"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1981-5168",
+        "label": "Abebe Tufa Angessa"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.9774,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.0122,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10111",
+        "is_primary": false,
+        "label": "Remote Sensing in Agriculture",
+        "score": 0.0032,
+        "subfield": "2303"
+      }
+    ]
+  },
+  "first_published": "2026-09-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W93036164",
+      "openalex:W1551968882",
+      "openalex:W1963894054",
+      "openalex:W1984811700",
+      "openalex:W1991776813",
+      "openalex:W2006273284",
+      "openalex:W2011500029",
+      "openalex:W2044609898",
+      "openalex:W2051047430",
+      "openalex:W2063623478",
+      "openalex:W2066131315",
+      "openalex:W2077509829",
+      "openalex:W2095579308",
+      "openalex:W2097467169",
+      "openalex:W2117706739",
+      "openalex:W2127437631",
+      "openalex:W2131022626",
+      "openalex:W2139709933",
+      "openalex:W2153763028",
+      "openalex:W2153989276",
+      "openalex:W2161241309",
+      "openalex:W2162063693",
+      "openalex:W2162480849",
+      "openalex:W2515324324",
+      "openalex:W2554470513",
+      "openalex:W2563067728",
+      "openalex:W2606365015",
+      "openalex:W2655325265",
+      "openalex:W2734530555",
+      "openalex:W2766721260",
+      "openalex:W2782535317",
+      "openalex:W2794473757",
+      "openalex:W2805769055",
+      "openalex:W2806533383",
+      "openalex:W2807007945",
+      "openalex:W2888389184",
+      "openalex:W2907470085",
+      "openalex:W2920930972",
+      "openalex:W2984285297",
+      "openalex:W2998170710",
+      "openalex:W3043984493",
+      "openalex:W3086033521",
+      "openalex:W3115333395",
+      "openalex:W3173101435",
+      "openalex:W3173814450",
+      "openalex:W3197529628",
+      "openalex:W3198895007",
+      "openalex:W3210792509",
+      "openalex:W4210699701",
+      "openalex:W4220933320",
+      "openalex:W4248638890",
+      "openalex:W4288056683",
+      "openalex:W4294168222",
+      "openalex:W4318065355",
+      "openalex:W4389201442",
+      "openalex:W4395662984",
+      "openalex:W4398218980",
+      "openalex:W4400240421",
+      "openalex:W4402017619",
+      "openalex:W4402678118",
+      "openalex:W4404427296",
+      "openalex:W4404491945",
+      "openalex:W4406493913",
+      "openalex:W4407186405",
+      "openalex:W4408112775",
+      "openalex:W4409588502",
+      "openalex:W4409889875",
+      "openalex:W4413082640",
+      "openalex:W4413783159",
+      "openalex:W4415096692",
+      "openalex:W4416262243",
+      "openalex:W4416746097",
+      "openalex:W7128923829"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s44327-026-00358-1",
+    "openalex": "W7208806767",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-07T23:26:01Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.007643,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2665,
+      "out": 405
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-07T23:26:01Z",
+    "doi": "10.1007/s44327-026-00358-1",
+    "journal": "Discover Cities",
+    "source_id": "S5407042847",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2004 and 2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on land surface temperature derived from satellite thermal infrared bands, which represents skin temperature at a specific time of day rather than continuous ambient air temperature.",
+      "what": "This study analyzed land use/land cover (LULC) changes, land surface temperature (LST), and spectral indices in Adama City, Ethiopia, using Landsat satellite images from 2004, 2014, and 2024. The supervised maximum likelihood classification achieved accuracies above 92% across all years, revealing that built-up areas expanded by 43.3% to cover 54.96% of the city by 2024, while agricultural land declined by 14.67%. This urban expansion led to declining NDVI and NDWI values, rising NDBI values, and a spatial homogenization of higher urban temperatures.",
+      "why": "It quantifies the direct relationship between rapid urban expansion and the degradation of local thermal and ecological conditions in a rapidly growing Ethiopian city, providing empirical evidence of how the loss of agricultural and wet areas alters the urban microclimate."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-05",
+  "work_key": "doi:10.1007/s44327-026-00358-1"
+}

@@ -30,6 +30,11 @@
       {%- else %}{{ row.published }} items{% endif %}
       {%- if row.backfilled %} <span class="uc-chip uc-chip--backfilled">filled in later</span>{% endif %}
       {%- if row.unranked %} <span class="uc-chip uc-chip--unranked">no headline</span>{% endif %}
+      {#- ★ A required source that answered with nothing (1E, A). One chip per
+          source, named, because "a source was silent" and "arXiv was silent"
+          are different amounts of information and the second one costs
+          nothing. -#}
+      {%- for name in row.silent %} <span class="uc-chip uc-chip--silent">no {{ name }}</span>{% endfor %}
       {%- if row.recent %} <span class="uc-chip uc-chip--recent">more may follow</span>{% endif %}
     </span>
     {#- ★ The day's headline sentence, not one paper's title (1A, A).
@@ -87,9 +92,10 @@
 {%- set has_backfilled = rows | selectattr("backfilled") | list | length > 0 %}
 {%- set has_unranked = rows | selectattr("unranked") | list | length > 0 %}
 {%- set has_recent = rows | selectattr("recent") | list | length > 0 %}
+{%- set has_silent = rows | selectattr("silent") | list | length > 0 %}
 {%- set has_missing = rows | selectattr("missing") | list | length > 0 %}
 {%- set has_quiet = rows | selectattr("quiet") | list | length > 0 %}
-{%- if has_backfilled or has_unranked or has_recent or has_missing or has_quiet %}
+{%- if has_backfilled or has_unranked or has_recent or has_missing or has_quiet or has_silent %}
 <div class="uc-legend">
   <p class="uc-legend__label">What the marks mean</p>
   <dl class="uc-legend__list">
@@ -108,6 +114,10 @@
   {%- if has_unranked %}
   <dt><span class="uc-chip uc-chip--unranked">no headline</span></dt>
   <dd>Papers went out; none of them scored high enough to lead the day. The headline is the day's best-scoring paper when it clears a fixed threshold, and on these days nothing did. Where a row like this shows text, it is that day's representative paper's title, set in italic — the day has no headline sentence to show.</dd>
+  {%- endif %}
+  {%- if has_silent %}
+  <dt><span class="uc-chip uc-chip--silent">no arXiv</span></dt>
+  <dd>One of the two sources we promise to read answered that day and returned nothing. The issue went out on the other one, because the papers in it are real and withholding them would trade a partial day for none — so what is missing is the other half of the scope, not the reading. The chip names the source.</dd>
   {%- endif %}
   {%- if has_recent %}
   <dt><span class="uc-chip uc-chip--recent">more may follow</span></dt>

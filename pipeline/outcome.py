@@ -87,6 +87,15 @@ REQUIRED_SOURCES = ("collect.arxiv", "collect.openalex")
 # reports success: a source that finishes OK and contributes nothing.
 SOURCE_COUNTS = {"collect.arxiv": "arxiv_fetched", "collect.openalex": "openalex_fetched"}
 
+# What a reader is called to call these (1E, A). `collect.arxiv` is a stage
+# name; it belongs in the log and nowhere near a page. One map, so the issue
+# page, the archive row and the API cannot spell the same source three ways.
+SOURCE_LABELS = {"collect.arxiv": "arXiv", "collect.openalex": "OpenAlex"}
+
+
+def source_label(stage: str) -> str:
+    return SOURCE_LABELS.get(stage, stage)
+
 # ★ Stages whose absence makes the day unpublishable (phase 0U, U1).
 #
 # `looked()` only ever inspected `FAILED`, and `StageSkipped` is a *different*
@@ -432,6 +441,69 @@ def unpublished_dates(limit: Optional[int] = None) -> list[dict]:
     rows = [r for r in all_logs() if r.get("status") == NOT_PUBLISHED]
     rows.sort(key=lambda r: r["date"], reverse=True)
     return rows[:limit] if limit else rows
+
+
+def silent_by_date() -> dict[str, list[str]]:
+    """Every logged day's silent sources, as **display labels**, in one pass.
+
+    The whole archive at once, for the same reason 1B computes `tag shift` that
+    way: the site builds 84 issue pages and re-reading `content/runs_log/` once
+    per page would be 84 walks of the same directory for a fact that fits in a
+    dict.
+    """
+    return {
+        row["date"]: [source_label(s) for s in (row.get("silent_sources") or [])]
+        for row in all_logs()
+    }
+
+
+def silent_for(d: date, table: Optional[dict[str, list[str]]] = None) -> list[str]:
+    """Which required sources answered with nothing on `d` — the one rule (1E, A).
+
+    **Derived from `content/runs_log/`, never from the issue file**, the same
+    relationship 1B established for `tag shift` and D322 for the published
+    count. A source going quiet is a fact about the *run*, not about the
+    artefact it produced, and the run log is where the run's facts live. No
+    issue file has ever carried it, so there is no stored value to fall back
+    to and deliberately none is added: a second home for this number is the
+    next bug, not a safety net.
+
+    `table` is the batch form's answer for the same date. Both callers converge
+    here so a single page and a whole-site build cannot disagree.
+
+    **An empty list is not the same as no answer.** A date with no run-log row
+    returns `[]` here, and every such date in the archive today is a backfilled
+    one — five of them — where silence is not merely unrecorded but
+    *unmeasurable*: `silent_sources()` needs a window of two days or more, and
+    a backfill reads one. Those days already say `filled in later`, which is
+    the honest mark for "nobody was watching"; adding a second mark that could
+    only ever be blank would say less, not more.
+    """
+    if table is not None:
+        return list(table.get(str(d), []))
+    row = load_log(d)
+    if not row:
+        return []
+    return [source_label(s) for s in (row.get("silent_sources") or [])]
+
+
+def silent_streak(source: str, upto: date, limit: int = 60) -> int:
+    """How many days in a row ending at `upto` this source returned nothing.
+
+    Counted over days that have a row. A day with no row breaks the streak,
+    because "we did not look" is not evidence of silence — the distinction this
+    whole module is about.
+    """
+    logs = {row["date"]: row for row in all_logs()}
+    streak = 0
+    day = upto
+    for _ in range(limit):
+        row = logs.get(str(day))
+        if not row or source not in (row.get("silent_sources") or []):
+            break
+        streak += 1
+        day -= timedelta(days=1)
+    return streak
 
 
 def logged_dates() -> set[str]:

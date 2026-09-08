@@ -460,7 +460,31 @@ def render_issue(
     items: Iterable[Item],
     unreadable: Iterable[Item] = (),
     tag_shift: dict | None = None,
+    silent: list[str] | None = None,
+    silent_table: dict[str, list[str]] | None = None,
 ) -> str:
+    """The issue, as one self-contained HTML file.
+
+    ★ `silent` is the required sources that answered with nothing (1E, A), as
+    display labels. Three ways in, one rule, the shape 1B settled on for
+    `tag shift`:
+
+      * `silent=[...]`      the live run passes what it just measured, because
+                            it renders its preview **before** the run-log row
+                            it would otherwise read exists;
+      * `silent_table=...`  the site build passes the whole archive's answer,
+                            computed once for 84 pages;
+      * neither             one issue on its own looks its own date up.
+
+    All three end at `outcome.silent_for`, so a single page and a whole-site
+    build cannot disagree about a day. Nothing reads it from the issue file,
+    because no issue file has it and giving it one would create the second home
+    that D318 refused.
+    """
+    if silent is None:
+        from ..outcome import silent_for
+
+        silent = silent_for(issue.date, silent_table)
     by_key = {it.work_key: it for it in items}
     ordered = [by_key[k] for k in issue.items if k in by_key]
     ordered.sort(key=lambda it: card_order(it, issue.headline.work_key))
@@ -472,6 +496,7 @@ def render_issue(
         # ★ Derived, not `scan_meta.items_published` (1D). See
         # `Issue.published_count`.
         published_count=issue.published_count,
+        silent=silent,
         cards=[build_card(it) for it in ordered],
         synthesis=build_synthesis(issue, ordered, tag_shift=tag_shift),
         still_cited=build_still_cited(issue, ordered),
@@ -513,13 +538,14 @@ def write_email(
     items: Iterable[Item],
     out_path: Path,
     unreadable: Iterable[Item] = (),
+    silent: list[str] | None = None,
 ) -> Path:
     """The email edition, derived from the same render — never a second template."""
     from .inline import to_email
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(
-        to_email(render_issue(issue, items, unreadable)),
+        to_email(render_issue(issue, items, unreadable, silent=silent)),
         encoding="utf-8",
         newline="\n",
     )
@@ -531,10 +557,13 @@ def write_preview(
     items: Iterable[Item],
     out_path: Path,
     unreadable: Iterable[Item] = (),
+    silent: list[str] | None = None,
 ) -> Path:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(
-        render_issue(issue, items, unreadable), encoding="utf-8", newline="\n"
+        render_issue(issue, items, unreadable, silent=silent),
+        encoding="utf-8",
+        newline="\n",
     )
     return out_path
 

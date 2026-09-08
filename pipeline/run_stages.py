@@ -1045,6 +1045,31 @@ def _journal_count() -> int:
 # --------------------------------------------------------------------------
 
 
+def _silent_for_preview(run: Run, issue) -> Optional[list[str]]:
+    """Which required sources went quiet, for the preview this run is writing.
+
+    ★ The one case where the render cannot read the answer off disk (1E, A).
+    `preview` runs **before** `record()`, by design — X7 puts the verdict
+    ahead of the artefact — so on a live day the run-log row this issue's
+    silence would be read from does not exist yet, and a lookup would render
+    the day as though both sources had answered.
+
+    So a run that collected reports what it just measured, and anything else
+    (`uc preview --date` on an old day, with no collectors behind it) returns
+    `None` and lets the renderer look the date up. Both are
+    `outcome.silent_sources` — once live, once read back out of the row it
+    wrote — so the two paths cannot say different things about a day.
+    """
+    from .outcome import silent_sources, source_label
+
+    if run.metrics.stages.get("collect") not in ("OK", "EMPTY"):
+        return None
+    window_days = 1
+    if issue.covers_from and issue.covers_to:
+        window_days = (issue.covers_to - issue.covers_from).days + 1
+    return [source_label(s) for s in silent_sources(run, window_days)]
+
+
 def stage_preview(run: Run, d: date):
     issue = store.load_issue(d)
     if issue is None:
@@ -1053,13 +1078,18 @@ def stage_preview(run: Run, d: date):
     unreadable = [
         it for it in (store.load_item(k) for k in issue.unreadable) if it is not None
     ]
-    out = write_preview(issue, items, run.dir / "preview.html", unreadable=unreadable)
+    silent = _silent_for_preview(run, issue)
+    out = write_preview(
+        issue, items, run.dir / "preview.html", unreadable=unreadable, silent=silent
+    )
     # The email edition, from the same render. Written beside the preview so
     # the two can never be produced from different inputs, and so a diff
     # between them is always a formatting diff.
     from .render.preview import email_subject, write_email
 
-    write_email(issue, items, run.dir / "email.html", unreadable=unreadable)
+    write_email(
+        issue, items, run.dir / "email.html", unreadable=unreadable, silent=silent
+    )
     run.metrics.timing.setdefault("email_subject", 0.0)
     setattr(run.metrics, "email_subject", email_subject(issue))
     run.stage("preview", "OK")

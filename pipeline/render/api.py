@@ -125,6 +125,15 @@ def _issue_json(
         "backfilled": bool(row.get("backfilled")),
         "withheld": row.get("withheld"),
         "recent": bool(row.get("recent")),
+        # ★ Required sources that answered and returned nothing (1E, A).
+        # Empty on a normal day; `["arXiv"]` on 2026-09-07, when the issue went
+        # out on the journals alone. **Added rather than folded into
+        # `counts`**: `counts.arxiv_categories` is what the run was configured
+        # to query and it is still true, and the promise on `api.html` is that
+        # fields are added, never repurposed — so the honest fix is a second
+        # field that says whether the query returned anything, not a first
+        # field that quietly changes meaning.
+        "silent_sources": list(row.get("silent") or []),
         "counts": {
             # ★ One definition, shared with the archive row, the home stat rail
             # and the issue page (1D). It counts what the issue published, not
@@ -132,6 +141,9 @@ def _issue_json(
             # file, which is a broken archive rather than a smaller day.
             "published": issue.published_count,
             "candidates_scanned": scan.candidates_scanned,
+            # How many categories the run was set to query. It says nothing
+            # about whether arXiv answered — `silent_sources` says that, and
+            # the field documentation says so too.
             "arxiv_categories": scan.arxiv_categories,
             "journals": scan.journals,
             # Papers we could see existed and could not read. The one blind
@@ -208,7 +220,13 @@ def build_api(out_dir: Optional[Path] = None) -> list[Path]:
         body = _issue_json(issue, row, items, base, tag_shift=shifts.get(issue.date))
         written.append(_dump(target_dir / "issues" / f"{issue.date}.json", body))
         catalogue.append(
-            {k: body[k] for k in ("date", "url", "state", "backfilled", "withheld", "recent")}
+            {
+                k: body[k]
+                for k in (
+                    "date", "url", "state", "backfilled", "withheld", "recent",
+                    "silent_sources",
+                )
+            }
             | {"published": body["counts"]["published"], "headline": body["headline"]["line"]}
         )
 
@@ -225,6 +243,9 @@ def build_api(out_dir: Optional[Path] = None) -> list[Path]:
                 "backfilled": False,
                 "withheld": row.get("reason"),
                 "recent": bool(row.get("recent")),
+                # A day with no issue already carries its reason in `withheld`.
+                # Empty here rather than repeating it in a second vocabulary.
+                "silent_sources": [],
                 "published": 0,
                 "headline": None,
             })

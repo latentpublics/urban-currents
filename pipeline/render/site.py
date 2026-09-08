@@ -124,11 +124,22 @@ def archive_rows(
     no issue, so filling a withheld day erased the evidence that
     `REQUIRED_SOURCES` had done its job. `pages.yml` states the principle this
     breaks — *"the archive is the record"* — so the row now says both.
+
+    ★ And a day can carry a **third** fact (1E, A): a required source that
+    answered and returned nothing. 2026-09-07 published three papers with arXiv
+    silent and the row looked like any other Monday, because `REQUIRED_SOURCES`
+    caught the half-empty scope in the verdict layer and nothing carried it to
+    the screen. Like `withheld`, it is additive and never the row's kind.
     """
-    from ..outcome import NOT_PUBLISHED, all_logs
+    from ..outcome import NOT_PUBLISHED, all_logs, silent_by_date
 
     issues = load_issues() if issues is None else issues
     items = item_index() if items is None else items
+
+    # ★ Days a required source answered with nothing (1E, A). Derived from the
+    # run log for every date at once — see `outcome.silent_for` for why the
+    # run log rather than the issue file, and for what an empty list means.
+    silent = silent_by_date()
 
     # Dates whose live run reached `not_published`, with the reason it gave.
     # Most backfilled dates have no run log at all — the pipeline was not
@@ -189,6 +200,11 @@ def archive_rows(
             # Set when the live run for this date withheld it. Both facts are
             # true and the row prints both (Y1-2).
             "withheld": withheld.get(str(issue.date)),
+            # ★ Required sources that reported OK and returned nothing (1E, A).
+            # Additive, like `recent`: a day can be silent-on-arXiv *and*
+            # published, and it usually is — that is the whole reason the mark
+            # is needed. It never replaces the row's kind.
+            "silent": silent.get(str(issue.date), []),
         })
 
     published_dates = {r["date"] for r in rows}
@@ -212,6 +228,10 @@ def archive_rows(
             "backfilled": False,
             "withheld": None,
             "unranked": False,
+            # A day with no issue already says the sources did not answer, in
+            # its own `reason`. Saying it twice, in two vocabularies, would
+            # make one of them look like a second finding.
+            "silent": [],
         })
 
     # Recency is **additive**, not a fifth state (0Z, Z2). published / quiet /
@@ -367,6 +387,10 @@ def spark_bars(rows: list[dict], today: Optional[str] = None) -> list[dict]:
       `backfilled`  assembled later; nobody was watching that day
       `featured`    the issue shown above — not necessarily the newest (Z3)
 
+    A silent required source rides along in the note rather than becoming a
+    kind, for the reason `recent` does: it says something about how far we
+    could see that day, not about what the day was (1E, A).
+
     `missing` is drawn like `quiet` in the mockup, which has no such day in it.
     It gets its own class here so the two can never be read as one; a day nobody
     could see is not a day with nothing in it, and the whole outcome model rests
@@ -396,6 +420,8 @@ def spark_bars(rows: list[dict], today: Optional[str] = None) -> list[dict]:
             kind, note = "published", f"{r['published']} items"
         if r.get("unranked"):
             note += ", no headline"
+        for name in r.get("silent") or []:
+            note += f", no {name}"
         if r.get("recent"):
             note += "; more may follow"
         # `featured`, not `today`: with `site.latest_skips_recent` the issue on
@@ -741,6 +767,7 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
     component to keep in step with it.
     """
     from .. import synthesis
+    from ..outcome import silent_by_date
     from .preview import render_issue
 
     items = item_index()
@@ -756,6 +783,9 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
     # it free: 0.018s for the whole archive, against the ~1.9s each page costs
     # to render anyway.
     shifts = synthesis.deviations_over_archive(issues, items)
+    # ★ And the same shape for the silent sources (1E, A): one walk of
+    # `content/runs_log/` for every page, rather than one per page.
+    silent = silent_by_date()
     # The same issue the home page leads with, so `Latest` cannot point at a
     # different day from the one the front page shows (0Z, Z4).
     lead = latest_issue(issues)
@@ -763,7 +793,11 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
         day_items = [items[k] for k in issue.items if k in items]
         unreadable = [items[k] for k in issue.unreadable if k in items]
         html = render_issue(
-            issue, day_items, unreadable, tag_shift=shifts.get(issue.date)
+            issue,
+            day_items,
+            unreadable,
+            tag_shift=shifts.get(issue.date),
+            silent_table=silent,
         )
 
         previous = issues[i - 1] if i > 0 else None
@@ -1359,6 +1393,18 @@ API_FIELDS = (
                        "paper), `llm:day` (written about the day), `:retry` if a "
                        "check rejected the first attempt, `fallback:<reason>` if "
                        "no attempt passed."),
+    ("silent_sources", "★ Sources we promise to read that answered on this day "
+                       "and returned nothing — `arXiv`, `OpenAlex`, or both. "
+                       "The issue was still published: the papers in it are "
+                       "real, and withholding them would trade a partial day "
+                       "for none. What is missing is the other half of the "
+                       "scope. Empty on a normal day, and empty on a day with "
+                       "no issue, where `withheld` carries the reason instead."),
+    ("counts.arxiv_categories", "How many arXiv categories the run was "
+                                "configured to query. It does **not** say that "
+                                "arXiv answered — `silent_sources` says that, "
+                                "and on 2026-09-07 this field reads 7 while "
+                                "arXiv contributed nothing."),
     ("counts.unreadable", "Papers we could see existed and could not read, "
                           "because no source exposed an abstract. Published "
                           "because it is the one blind spot this pipeline "

@@ -312,6 +312,21 @@ body {
 
 .uc-scanmeta__unreadable { color: var(--uc-quiet); }
 
+/* ★ A required source that answered with nothing (1E, A). Directly under the
+   scan line, because it is a correction to that line's scope and reading it
+   afterwards would be reading the numbers first.
+   No box, no rule, no colour of its own: the chip carries the state in words
+   and the sentence explains it. A day that published papers must not be drawn
+   as a fault — see `.uc-chip--silent`. */
+.uc-silent {
+  margin: -1.6rem 0 2rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--uc-ink-soft);
+}
+.uc-silent .uc-chip { margin-right: 0.2rem; }
+.uc-silent__note { color: var(--uc-faint); }
+
 .uc-attribution {
   margin-top: 0.8rem;
   font-size: 0.72rem;
@@ -837,10 +852,17 @@ body {
 
    `--missing` deliberately stays out. A day we could not see is not a variant
    of a day we published, and its chip is the one place on the page where a
-   solid border and the faint ink say "this row has no issue behind it". */
+   solid border and the faint ink say "this row has no issue behind it".
+
+   ★ `--silent` joins the three rather than the exception (1E, A). A day a
+   required source went quiet **did** publish — that is the whole awkwardness
+   of it — so drawing it like a day with no issue would overstate what
+   happened. It reads as one more thing this row is telling you, which is what
+   it is. */
 .uc-chip--backfilled,
 .uc-chip--unranked,
-.uc-chip--recent {
+.uc-chip--recent,
+.uc-chip--silent {
   background: transparent;
   border: 1px dotted var(--uc-meta);
   color: var(--uc-meta);

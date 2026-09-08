@@ -19,9 +19,18 @@
 
   {#- Scope, then verdict. `candidates_after_gate` is still recorded and still
       in the report; it is off the screen because "through the gate" is our
-      internal vocabulary and a reader cannot act on it. -#}
+      internal vocabulary and a reader cannot act on it.
+
+      ★ The line claims **only what answered** (1E, A). On 2026-09-07 arXiv
+      returned nothing and this sentence said "7 arXiv categories" anyway — the
+      configured number, printed as if it were a reading. `REQUIRED_SOURCES`
+      exists to stop half a scope being presented as the whole one, and it was
+      doing that in the verdict while the page undid it two lines later. So a
+      silent source's clause is dropped rather than shown as zero: we did query
+      those categories, and what we cannot claim is that they contributed. -#}
   <p class="uc-scanmeta">
-    {{ scan_meta.arxiv_categories }} arXiv categories<span class="uc-scanmeta__sep">·</span>
+    {% if 'arXiv' not in silent %}{{ scan_meta.arxiv_categories }} arXiv categories<span class="uc-scanmeta__sep">·</span>
+    {% endif %}
     {{ scan_meta.journals }} journals<span class="uc-scanmeta__sep">·</span>
     {{ scan_meta.candidates_scanned }} candidates —
     <strong class="uc-scanmeta__verdict">{{ published_count }} worth your time</strong>
@@ -29,6 +38,21 @@
     <span class="uc-scanmeta__unreadable">{{ scan_meta.unreadable_count }} without an open abstract</span>
     {%- endif %}
   </p>
+
+  {#- And it says so in words, including what it does **not** mean. The mark
+      stands beside `not seen`, `filled in later` and `no headline`: lowercase,
+      short, and followed by one sentence that keeps a reader from reading it
+      as a retraction of the papers below. -#}
+  {% if silent %}
+  <p class="uc-silent">
+    {% for name in silent %}<span class="uc-chip uc-chip--silent">no {{ name }}</span>{% if not loop.last %} {% endif %}{% endfor %}
+    <span class="uc-silent__note">
+      {{ silent | join(' and ') }} answered and returned nothing this day, so this
+      issue covers the rest. The papers below are real — what is missing is the
+      other half of the scope, not the reading.
+    </span>
+  </p>
+  {% endif %}
 
 {#- Three states, not two (phase 0Z, Z1). `issue.quiet_day` on disk means "no
     item cleared the headline bar" and two published issues carry it over nine

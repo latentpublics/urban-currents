@@ -58,10 +58,17 @@ def _rule(char: str = "-") -> str:
 
 
 def render_text(
-    issue: Issue, items: Iterable[Item], unreadable: Iterable[Item] = ()
+    issue: Issue,
+    items: Iterable[Item],
+    unreadable: Iterable[Item] = (),
+    silent: list[str] | None = None,
 ) -> str:
     from .preview import build_card, build_synthesis, build_unreadable_row
 
+    if silent is None:
+        from ..outcome import silent_for
+
+        silent = silent_for(issue.date)
     by_key = {it.work_key: it for it in items}
     ordered = [by_key[k] for k in issue.items if k in by_key]
     ordered.sort(
@@ -77,14 +84,26 @@ def render_text(
     out.append("")
 
     scan = issue.scan_meta
+    # ★ Only what answered (1E, A). Same rule as the HTML: a source that
+    # returned nothing does not get to contribute a number to the scope
+    # sentence. See `preview.html.j2`.
     out.append(_wrap(
-        f"{scan.arxiv_categories} arXiv categories, {scan.journals} journals, "
+        ("" if "arXiv" in silent else f"{scan.arxiv_categories} arXiv categories, ")
+        + f"{scan.journals} journals, "
         f"{scan.candidates_scanned} candidates — {issue.published_count} worth "
         f"your time"
         + (f", {scan.unreadable_count} without an open abstract"
            if scan.unreadable_count else "")
     ))
     out.append("")
+    if silent:
+        out.append(_wrap(
+            f"no {', no '.join(silent)} — {' and '.join(silent)} answered and "
+            f"returned nothing this day, so this issue covers the rest. The "
+            f"papers below are real; what is missing is the other half of the "
+            f"scope, not the reading."
+        ))
+        out.append("")
 
     # Derived, not read from the file (0Z, Z1): `quiet_day` on disk means "no
     # item cleared the headline bar", and printing "a quiet day" over nine

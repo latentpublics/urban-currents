@@ -343,14 +343,21 @@ def _css() -> str:
     )
 
 
-def test_the_three_state_chips_share_one_border_rule():
+def test_the_state_chips_share_one_border_rule():
     """They had three borders — dashed on the line colour, dotted on the line
     colour, dotted on the meta colour — which read as three degrees of severity
     nobody had ranked. One selector now, so they cannot drift apart again.
+
+    ★ `--silent` joined them in 1E and had to (A): a day a required source went
+    quiet still published, so drawing it any other way would rank it against
+    the three by accident, which is the thing this rule exists to stop.
     """
     css = _css()
 
-    assert ".uc-chip--backfilled, .uc-chip--unranked, .uc-chip--recent {" in css
+    assert (
+        ".uc-chip--backfilled, .uc-chip--unranked, .uc-chip--recent, "
+        ".uc-chip--silent {"
+    ) in css
     assert "border: 1px dashed" not in css, "the odd one out is gone"
 
 

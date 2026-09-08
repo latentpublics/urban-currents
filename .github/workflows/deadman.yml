@@ -20,9 +20,16 @@
 # It asks **two** questions about that directory, and until the 08-26 batch it
 # asked only the first:
 #
-#   1. Is the newest row recent enough?  Catches the pipeline stopping.
+#   1. Is the archive still being written to?  Catches the pipeline stopping.
 #   2. Is any day inside the horizon missing a row entirely?  Catches a day
 #      that was skipped while the ones around it went out.
+#
+# ★ Those are two questions and 1E finished separating them. Question 1 used to
+# measure staleness from the newest row's **date**, which is a fact about which
+# day the archive has reached — question 2's job — rather than about when
+# anything was last written. It now reads the row's own `recorded_at`. The
+# split is clean: **question 1 asks about writing activity, question 2 asks
+# about day coverage**, and neither half-answers the other any more.
 #
 # The second exists because 2026-08-26 has no issue and no row, and this job
 # was green throughout. Its 21:00 UTC slot ran late enough to cross midnight,
@@ -56,18 +63,41 @@ jobs:
 
     env:
       PYTHONUNBUFFERED: "1"
-      # 36 hours, not 24. The daily run fires once a day, so a 24-hour window
-      # goes red on any ordinary lateness — a slow runner, a queued job, a
-      # retry. 36 tolerates one late run and still catches a missed day, and an
-      # alarm that cries wolf is one people learn to close.
-      MAX_AGE_HOURS: "36"
+      # ★ 30 hours, measured from the newest row's `recorded_at` (1E, B).
+      #
+      # It was 36 hours measured from the row's **date at midnight**, and those
+      # two changes belong together — keeping 36 against the new measurement
+      # would be a worse alarm than the old one, not a better one.
+      #
+      # The arithmetic, from this repository's own timings. `daily` fires at
+      # 21:00 UTC and records at 22:50–23:26; this job fires at 09:00. So on a
+      # healthy morning the newest row is 9.5–10.5 hours old, and the 79 rows
+      # in the archive put the worst healthy case at 11.5. After **one missed
+      # slot** the same measurement reads 33.6 hours or more. Any limit between
+      # those two numbers separates a late watchdog from a stopped pipeline,
+      # and 30 sits in the middle:
+      #
+      #   false alarm   needs this job to run ~20h late, not the 3h it needed
+      #                 before. 2026-09-07 was a 5h delay and it alarmed.
+      #   detection     unchanged. A missed slot is caught at the very next
+      #                 09:00, exactly as 36-from-midnight caught it, because
+      #                 the deadman only asks once a day. Replaying 2026-08-21,
+      #                 a real missed day, gives 35.3h — still over the limit.
+      #
+      # **What raising the limit alone would have cost.** Staying on the
+      # midnight measurement and going to 48 or 60 would have bought the same
+      # margin by pushing detection a whole cycle later: that measurement moves
+      # in 24-hour steps at a once-a-day check, so the next threshold up is not
+      # a few hours later, it is a day later. Fixing what is measured buys the
+      # margin for nothing. What it costs instead is written on the script.
+      MAX_AGE_HOURS: "30"
 
       # How far back the gap check looks, and how much of the recent end it
-      # leaves alone. `GRACE_DAYS: 1` is the same tolerance stated differently:
-      # this job runs at 09:00 UTC and the daily slot is 21:00, so the newest
-      # day it will call missing is one whose run was due about 36 hours ago.
-      # A day inside the grace window may simply be late, and catch-up has not
-      # had its turn at it yet.
+      # leaves alone. `GRACE_DAYS: 1` is a tolerance on a different question
+      # and is left alone: this job runs at 09:00 UTC and the daily slot is
+      # 21:00, so the newest day it will call missing is one whose run was due
+      # about 36 hours ago. A day inside the grace window may simply be late,
+      # and catch-up has not had its turn at it yet.
       HORIZON_DAYS: "7"
       GRACE_DAYS: "1"
 
@@ -76,55 +106,22 @@ jobs:
         with:
           fetch-depth: 1
 
-      # Question 1: is the newest row recent enough?
+      # Question 1: is the archive still being written to?
       #
       # First, and deliberately dependency-free. This is the check that has to
-      # survive the project being unbuildable — `ls` and `date` and nothing
+      # survive the project being unbuildable — `ls`, `sed`, `date` and nothing
       # else. The gap check below is better at what it does and needs `uv sync`
       # to run at all, which is a thing that can break; this one cannot.
+      #
+      # ★ The arithmetic lives in a script rather than here (1E, B), for one
+      # reason: it was wrong for three weeks and no test could have said so.
+      # A shell block inside a YAML string cannot be run with a fabricated
+      # clock; a file can, and `tests/test_deadman_freshness.py` replays both
+      # 2026-09-07 (the false alarm) and 2026-08-21 (a real missed day)
+      # against it.
       - name: Check the archive is still being written to
         shell: bash
-        run: |
-          set -euo pipefail
-
-          latest="$(ls -1 content/runs_log/*.json 2>/dev/null | sort | tail -1 || true)"
-          if [ -z "$latest" ]; then
-            echo "::error::content/runs_log/ is empty — the pipeline has never recorded a run, or the checkout is wrong."
-            exit 1
-          fi
-
-          # The row's own date, not the file's mtime: a fresh checkout gives
-          # every file today's mtime, so mtime here would always look healthy.
-          # This is the same "measured zero versus not measured" distinction the
-          # rest of the project keeps running into.
-          day="$(basename "$latest" .json)"
-          latest_epoch="$(date -u -d "${day} 00:00:00" +%s)"
-          now_epoch="$(date -u +%s)"
-          age_hours=$(( (now_epoch - latest_epoch) / 3600 ))
-
-          echo "newest run-log row: ${day} (${age_hours}h old, limit ${MAX_AGE_HOURS}h)"
-          {
-            echo "## Deadman"
-            echo ""
-            echo "Newest run-log row: \`${day}\` — ${age_hours}h old."
-          } >> "$GITHUB_STEP_SUMMARY"
-
-          if [ "$age_hours" -gt "$MAX_AGE_HOURS" ]; then
-            echo "::error::No run has been recorded since ${day} (${age_hours}h ago). The daily schedule may be disabled — check the Actions tab, and see docs/OPERATIONS.md."
-            {
-              echo ""
-              echo "**The daily run has not recorded anything for ${age_hours} hours.**"
-              echo ""
-              echo "This job does not know why. The three usual causes:"
-              echo ""
-              echo "- GitHub disabled the schedule (60 days without repository activity)"
-              echo "- a syntax error in a workflow file, which fails silently"
-              echo "- an account or billing problem"
-              echo ""
-              echo "Re-run \`daily\` by hand from the Actions tab to tell them apart."
-            } >> "$GITHUB_STEP_SUMMARY"
-            exit 1
-          fi
+        run: bash .github/scripts/deadman-freshness.sh
 
       # Question 2: is any day inside the horizon missing a row entirely?
       #

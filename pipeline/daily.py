@@ -565,6 +565,24 @@ def run_daily(
             ]
         record(outcome)
 
+        # ★ A day that published with half its scope empty (1E, B).
+        #
+        # After `record()`, because `notify_silent_sources` counts the streak
+        # out of `content/runs_log/` and today's row is part of it — the same
+        # ordering X7 gives the failure alert, for the same reason: the log is
+        # the fact and the mail is a copy of it.
+        #
+        # Not on the `not_published` paths above. Those already mail, and a
+        # second envelope about the same morning is the noise this tier exists
+        # to avoid.
+        silent_alert = None
+        if outcome.silent_sources and not dry_run:
+            from .notify import notify_silent_sources
+
+            silent_alert = notify_silent_sources(
+                issue_date, outcome.silent_sources, run=run
+            )
+
         delivery = _deliver_issue(run, issue)
         canon = _accumulate_canon(
             run, issue_date, deadline, dry_run=dry_run, smoke=smoke
@@ -574,6 +592,8 @@ def run_daily(
         result = _result(outcome, run, started, covers_from, covers_to, dry_run)
         result["delivery"] = delivery
         result["canon"] = canon
+        if silent_alert is not None:
+            result["silent_alert"] = silent_alert
         return result
 
     except (TimeBudgetExceeded, Interrupted) as e:

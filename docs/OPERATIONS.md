@@ -367,7 +367,54 @@ uv run uc missing-days --as-of 2026-08-27 --grace 0
 It exits 1 when it finds a gap, which is how `deadman.yml` goes red. The
 `--grace` window keeps it from firing on a day whose run is merely late:
 by default the newest day it will name is one whose slot was about 36 hours
-ago, the same tolerance the freshness check uses.
+ago.
+
+### The deadman said the pipeline was dead and it was not
+
+2026-09-07, and it was the watchdog that was wrong. The alert read *"No run has
+been recorded since 2026-09-06 (38h ago)"* while the 09-06 run had finished
+normally at 22:54 UTC — fifteen hours earlier — and the 09-07 run went out
+seven hours later.
+
+Two things caused it and both are fixed. The freshness check measured a row's
+age from **midnight on the row's own date**, but a run that covers a day
+records at 22:50–23:26 *on* that day, so a healthy archive always read 33 hours
+old at the 09:00 slot, against a 36-hour limit. Three hours of slack, for a job
+whose own cron is routinely late — this repository's `daily` arrives at +2:19
+every single day, and the deadman that morning was about five hours behind.
+
+It now reads the row's own `recorded_at`, and the limit is 30 hours. A healthy
+morning reads 9.5–10.5, so the job can be roughly twenty hours late before it
+accuses anything; one missed 21:00 slot reads 33.6 or more, so it is still
+caught at the very next 09:00 check, exactly as before. **Detection did not
+move — only the false-alarm margin did.** Raising the old limit instead would
+have traded the other way: on a once-a-day check the date measurement steps in
+whole days, so the next threshold up would have delayed detection by 24 hours.
+
+The arithmetic is in `.github/scripts/deadman-freshness.sh` rather than inside
+the workflow, so it can be run with a fabricated clock;
+`tests/test_deadman_freshness.py` replays both that morning and the real missed
+day of 2026-08-21.
+
+### A source we promise to read returned nothing
+
+Different direction, same morning. `collect.arxiv` finished successfully and
+fetched zero items, so 2026-09-07's issue covers the journals alone. Three
+things are true at once and it is worth keeping them apart:
+
+* **the day still publishes**, deliberately — the journal papers are real and
+  withholding them would trade a partial issue for none;
+* **it says so**: the issue page, the archive row and `silent_sources` in the
+  API all name the source, and the scan line stops claiming arXiv categories it
+  read nothing from;
+* **nobody is mailed for one such day.** A required source silent for three
+  days running gets one mail, on the third day and not again; every silent day
+  appears in the weekly summary for as long as it lasts.
+
+Three causes look identical from here and the alert says so rather than
+guessing: the source is down, our query stopped matching, or the window we ask
+for sits inside the source's indexing lag. `uc run --date <day> --dry-run`
+tells them apart.
 
 **What to do about one.** Catch-up retries days with no row automatically on
 the next daily run, so a gap that is still there has already survived an

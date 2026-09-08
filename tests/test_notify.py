@@ -437,3 +437,132 @@ def test_the_recipient_count_is_the_one_that_would_receive(repo, monkeypatch):
     monkeypatch.setenv("UC_ALERT_RECIPIENT", "yjun@example.org")
     assert alerting_state()["alert_recipients"] == 1
 
+
+
+# --------------------------------------------------------------------------
+# ★ A source that answered and returned nothing (1E, B)
+#
+# 2026-09-07 turned both dials the wrong way at once: the deadman mailed about
+# a healthy pipeline, and `collect.arxiv` returned nothing all day and mailed
+# nobody, because `notify_failure` fires on `not_published` and the day
+# published. Launch B's rule — *"if the same mail goes out every day for the
+# same reason it stops being read"* — decides where the fact goes, and the
+# answer is neither "daily" nor "never".
+# --------------------------------------------------------------------------
+
+
+def _silent(d: date, sources: list[str], status_: str = PUBLISHED) -> None:
+    record(
+        Outcome(
+            date=d,
+            status=status_,
+            published=3,
+            candidates=200,
+            silent_sources=sources,
+        )
+    )
+
+
+def test_one_silent_day_mails_nobody(repo, monkeypatch):
+    """A single day is ordinary enough to be noise if it were mailed, and the
+    issue still went out. It is on the page, in the API, and in the weekly."""
+    from pipeline.notify import notify_silent_sources
+
+    monkeypatch.setenv("UC_ALERT_RECIPIENT", "yjun@example.org")
+    _silent(DAY, ["collect.arxiv"])
+    backend = _Recorder()
+
+    result = notify_silent_sources(DAY, ["collect.arxiv"], backend=backend)
+
+    assert result["status"] == "no_streak_started"
+    assert backend.sent == []
+
+
+def test_the_third_day_running_mails_once_and_never_again(repo, monkeypatch):
+    """The streak is the news; its continuing is not.
+
+    A fortnight-long outage produces one mail and thirteen quiet days, with the
+    weekly summary carrying it the whole time. That asymmetry is the tier: this
+    project has twice watched a channel die from repetition — `enrich.springer`
+    printing `SKIPPED` on sixteen days of eighteen (D317), and the deadman.
+    """
+    from pipeline.notify import SILENT_ALERT_DAYS, notify_silent_sources
+
+    monkeypatch.setenv("UC_ALERT_RECIPIENT", "yjun@example.org")
+    backend = _Recorder()
+
+    sent_on = []
+    for i in range(6):
+        day = DAY + timedelta(days=i)
+        _silent(day, ["collect.arxiv"])
+        before = len(backend.sent)
+        notify_silent_sources(day, ["collect.arxiv"], backend=backend)
+        if len(backend.sent) > before:
+            sent_on.append(day)
+
+    assert sent_on == [DAY + timedelta(days=SILENT_ALERT_DAYS - 1)]
+    assert len(backend.sent) == 1
+    assert f"{SILENT_ALERT_DAYS} days" in backend.sent[0].subject
+    assert "arXiv" in backend.sent[0].subject
+    assert "collect.arxiv" not in backend.sent[0].subject
+
+
+def test_the_mail_says_what_it_cannot_tell_apart(repo, monkeypatch):
+    """D261's lesson. The alert is the only thing that leaves the runner, so it
+    carries what a person would otherwise have to guess — and it does not
+    pretend to know which of the three causes it is."""
+    from pipeline.notify import notify_silent_sources
+
+    monkeypatch.setenv("UC_ALERT_RECIPIENT", "yjun@example.org")
+    backend = _Recorder()
+    for i in range(3):
+        day = DAY + timedelta(days=i)
+        _silent(day, ["collect.arxiv"])
+        notify_silent_sources(day, ["collect.arxiv"], backend=backend)
+
+    body = backend.sent[0].text
+    assert "down or rate-limiting" in body
+    assert "stopped matching" in body
+    assert "indexing lag" in body
+    assert "uc status" in body
+
+
+def test_a_broken_source_never_costs_the_day(repo, monkeypatch):
+    """Same guarantee as every other alert here: an unreachable mail server
+    must not turn a published day into a failed one."""
+    from pipeline.notify import notify_silent_sources
+
+    monkeypatch.setenv("UC_ALERT_RECIPIENT", "yjun@example.org")
+    for i in range(3):
+        _silent(DAY + timedelta(days=i), ["collect.arxiv"])
+
+    result = notify_silent_sources(
+        DAY + timedelta(days=2), ["collect.arxiv"], backend=_Broken()
+    )
+    assert result["status"] == "alert_failed"
+
+
+def test_the_weekly_counts_silent_days_per_source(repo):
+    """Per source, not per day: "arXiv on 3 of 7" is actionable and "3 silent
+    days" is not, when there were two sources it could have been."""
+    for i in range(7):
+        day = DAY + timedelta(days=i)
+        _silent(day, ["collect.arxiv"] if i < 3 else [])
+
+    summary = weekly_summary(end=DAY + timedelta(days=6))
+    assert summary["silent_source_days"] == {"collect.arxiv": 3}
+
+    body = weekly_body(summary)
+    assert "arXiv on 3 of 7 days" in body
+    assert "no arXiv" in body, "and on the day rows themselves"
+
+
+def test_a_week_with_nothing_silent_says_nothing_about_it(repo):
+    """The regression guard. A heading that appears every week saying zero is
+    the thing this tier is trying not to become."""
+    for i in range(7):
+        _silent(DAY + timedelta(days=i), [])
+
+    summary = weekly_summary(end=DAY + timedelta(days=6))
+    assert summary["silent_source_days"] == {}
+    assert "returned nothing" not in weekly_body(summary)

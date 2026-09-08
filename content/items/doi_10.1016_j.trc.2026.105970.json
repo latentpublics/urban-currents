@@ -1,0 +1,277 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Reliable calibration is essential for model-based research, yet challenges persist in calibrating car-following (CF) models due to the difficulty of determining the optimal calibration outcome from multiple similar-fitting results and the conundrum that calibrated parameter sets deviating from normal physical values can still yield plausible fitting errors due to error compensation. Furthermore, the existing CF calibration literature does not explicitly account for safety–critical traffic dynamics, thereby limiting the applicability of these models in traffic safety contexts. To address these issues, this study introduces the Multi-level Safety-augmented CF Calibration framework (MS-CFC), consisting of the kinematic, regime, and risk levels. While the kinematic level aligns with traditional CF calibration, the regime and risk levels act as instructive constraints, akin to regularization terms in machine learning, with clear and important physical meanings related to traffic safety. A huge number of calibration experiments using (both perfect and noisy) synthetic trajectories with ground-truth parameters are carefully designed and implemented to validate MS-CFC’s effectiveness. Moreover, we verified MS-CFC’s capability of bringing significant safety benefits using data from a high-fidelity driving simulator experiment and real-world trajectories. These results highlight MS-CFC’s superiority in terms of accuracy, reliability, and practicality in recovering physically meaningful parameter values, especially for incomplete trajectories, such as those commonly used in the literature with limited regimes or short durations. The implementation code of MS-CFC is publicly available at https://github.com/XFXZ-PCF/MS-CFC.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "The University of Queensland",
+            "ror": "00rqy9422"
+          }
+        ],
+        "name": "Pengcheng Fan",
+        "openalex": "A5083020200",
+        "orcid": "https://orcid.org/0000-0002-3399-7041"
+      },
+      {
+        "institutions": [
+          {
+            "name": "The University of Queensland",
+            "ror": "00rqy9422"
+          }
+        ],
+        "name": "Zuduo Zheng",
+        "openalex": "A5000972645",
+        "orcid": "https://orcid.org/0000-0002-5289-2106"
+      },
+      {
+        "institutions": [
+          {
+            "name": "The University of Queensland",
+            "ror": "00rqy9422"
+          }
+        ],
+        "name": "Tong Chen",
+        "openalex": "A5150586380",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105970",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-07",
+    "repository_urls": [],
+    "title": "Beyond kinematic error: a multi-level safety-augmented calibration framework for car-following models"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-07_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.105970"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00rqy9422",
+        "label": "The University of Queensland"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3399-7041",
+        "label": "Pengcheng Fan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5289-2106",
+        "label": "Zuduo Zheng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5150586380",
+        "label": "Tong Chen"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": true,
+        "label": "Traffic control and management",
+        "score": 0.9552,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.0167,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.0076,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-09-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1592568942",
+      "openalex:W1965142824",
+      "openalex:W1965455100",
+      "openalex:W1978569053",
+      "openalex:W1983681808",
+      "openalex:W2007700466",
+      "openalex:W2010541316",
+      "openalex:W2022797785",
+      "openalex:W2044519836",
+      "openalex:W2050109517",
+      "openalex:W2056877664",
+      "openalex:W2057483198",
+      "openalex:W2077197253",
+      "openalex:W2078727509",
+      "openalex:W2084933300",
+      "openalex:W2088765131",
+      "openalex:W2094039233",
+      "openalex:W2099585388",
+      "openalex:W2126270075",
+      "openalex:W2127431192",
+      "openalex:W2150623003",
+      "openalex:W2152374007",
+      "openalex:W2154373748",
+      "openalex:W2487175822",
+      "openalex:W2896439941",
+      "openalex:W2907077230",
+      "openalex:W2952588393",
+      "openalex:W3035816518",
+      "openalex:W3037189789",
+      "openalex:W3092798740",
+      "openalex:W3107132985",
+      "openalex:W3158742847",
+      "openalex:W3161651929",
+      "openalex:W3169975582",
+      "openalex:W4200170951",
+      "openalex:W4238452080",
+      "openalex:W4255861502",
+      "openalex:W4360596535",
+      "openalex:W4362630970",
+      "openalex:W4364379138",
+      "openalex:W4367557594",
+      "openalex:W4381053565",
+      "openalex:W4389816804",
+      "openalex:W4399903090",
+      "openalex:W4410500366",
+      "openalex:W4412644169",
+      "openalex:W7162634027"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.105970",
+    "openalex": "W7211903700",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-08T23:18:26Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005345,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2141,
+      "out": 237
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-08T23:18:26Z",
+    "doi": "10.1016/j.trc.2026.105970",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/XFXZ-PCF/MS-CFC",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed the Multi-level Safety-augmented Car-Following Calibration (MS-CFC) framework, which integrates kinematic alignment with regime and risk-level constraints to calibrate car-following models. The framework was validated using synthetic trajectories with ground-truth parameters, high-fidelity driving simulator data, and real-world vehicle trajectories.",
+      "why": "It prevents calibration algorithms from selecting physically unrealistic parameter values that happen to minimize kinematic error through error compensation, making car-following models reliable for safety-critical traffic safety simulations even when using short or incomplete trajectory data."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-07",
+  "work_key": "doi:10.1016/j.trc.2026.105970"
+}

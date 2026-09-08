@@ -1,0 +1,167 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Climate change and increasingly severe wildfires pose significant threats to both people and ecosystems, yet little research has focused on the impacts of wildfires on crops. In addition to direct effects such as health risks to agricultural workers and crop damage, there is evidence that smoke may affect crop productivity and quality. This study aims to analyze the effects of wildfire smoke on crop production in Northern California. We quantified the relationship of particulate matter on grape yields using statistical regression models with a wide range of different climate and air quality predictor variables. Our analysis identifies an association between air quality deterioration due to wildfire smoke emissions and reduction in wine grape yields. For two of the three study sites, particulate matter emerged as a significant predictor variable in combination with temperature. Final models for Sonoma and Napa had R2 values of 0.79 and 0.66 respectively, suggesting a shift from climate only-controlled yields to wildfire and climate-controlled yields. This work sets the stage for the next generation of agronomic models that incorporate the growing threat of wildfire on agriculture production systems.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Astrid N. Hoefler",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Robert B. Lund",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "J. Elliott Campbell",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.04422v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.04422v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-03",
+    "repository_urls": [],
+    "title": "Quantifying Impacts of Wildfire Smoke on Crop Yields in California"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-07_2609.04422",
+    "members": [
+      "arxiv:2609.04422"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.04422",
+    "doi": "10.48550/arxiv.2609.04422",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-08T23:18:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005276,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1927,
+      "out": 265
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8725,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.349,
+    "relevance": 0.8725
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on only three study sites in Northern California, and the statistical association was only significant for two of those three locations.",
+      "what": "This study analyzed the impact of wildfire smoke on wine grape yields at three sites in Northern California using statistical regression models. Incorporating particulate matter alongside temperature as predictor variables yielded models with R-squared values of 0.79 for Sonoma and 0.66 for Napa, demonstrating a significant association between smoke-induced air quality degradation and reduced crop yields.",
+      "why": "It establishes that agricultural productivity models in wildfire-prone regions can no longer rely solely on climate variables, proving that particulate matter is now a critical factor in predicting crop yields."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-03",
+  "work_key": "arxiv:2609.04422"
+}

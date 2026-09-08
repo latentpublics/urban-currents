@@ -45,7 +45,13 @@
     ],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5129499263",
+        "label": "Kaizhen Tan"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -56,7 +62,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": true,
+        "label": "Urban Green Space and Health",
+        "score": 0.215,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.212,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10689",
+        "is_primary": false,
+        "label": "Remote-Sensing Image Classification",
+        "score": 0.1364,
+        "subfield": "2214"
+      }
+    ]
   },
   "first_published": "2026-09-01",
   "graph": {
@@ -67,7 +98,7 @@
   "ids": {
     "arxiv": "2609.00649",
     "doi": "10.48550/arxiv.2609.00649",
-    "openalex": null,
+    "openalex": "W7206166629",
     "pmid": null
   },
   "provenance": {
@@ -75,7 +106,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-05T22:46:07Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006362,
     "llm": {
@@ -163,6 +195,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-01",
+  "updated": "2026-09-08",
   "work_key": "arxiv:2609.00649"
 }

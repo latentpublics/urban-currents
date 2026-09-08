@@ -1,0 +1,310 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The 3D geometric documentation of cultural heritage monuments requires spatial datasets that are accurate, complete and suitable for conservation, monitoring, visualization and heritage management. However, complex geometries, occlusions, limited accessibility, vegetation and other field-acquisition constraints often prevent a single surveying technique from providing a complete and metrically reliable representation. In this context, photogrammetry and simultaneous localization and mapping (SLAM)-based mapping provide complementary capabilities, with each method offering advantages and limitations regarding metric accuracy, spatial coverage, detail representation, acquisition flexibility and operational efficiency. This work develops, applies and evaluates a reproducible end-to-end workflow for the metric 3D documentation of complex cultural heritage monuments through multi-sensor integration. The proposed approach combines the metric robustness and visual richness of photogrammetric reconstruction with the rapid acquisition and spatial coverage enabled by SLAM-based mapping, while producing reusable datasets for conservation planning, comparative studies, education and broader heritage applications. The workflow integrates unmanned aerial vehicle (UAV) and close-range photogrammetry, SLAM-based mapping and geodetic control within a common reference system and is demonstrated through the documentation of a historic monastery. Both datasets showed centimetre-level agreement with geodetic observations, while photogrammetry yielded fuller exterior coverage and higher-quality texture, and SLAM enabled rapid interior coverage. The CH-PhotoSLAM3D dataset is released to support reproducibility and further research.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "National Technical University of Athens",
+            "ror": "03cx6bg69"
+          }
+        ],
+        "name": "Styliani Verykokou",
+        "openalex": "A5008181826",
+        "orcid": "https://orcid.org/0000-0002-2613-3181"
+      },
+      {
+        "institutions": [
+          {
+            "name": "National Technical University of Athens",
+            "ror": "03cx6bg69"
+          }
+        ],
+        "name": "Konstantinos Nikolitsas",
+        "openalex": "A5029935859",
+        "orcid": "https://orcid.org/0000-0002-6142-2317"
+      },
+      {
+        "institutions": [
+          {
+            "name": "National Technical University of Athens",
+            "ror": "03cx6bg69"
+          }
+        ],
+        "name": "George Piniotis",
+        "openalex": "A5065840510",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "National Technical University of Athens",
+            "ror": "03cx6bg69"
+          }
+        ],
+        "name": "Regina Chliverou",
+        "openalex": "A5068303628",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "National Technical University of Athens",
+            "ror": "03cx6bg69"
+          }
+        ],
+        "name": "Efi Dimopoulou",
+        "openalex": "A5150316595",
+        "orcid": "https://orcid.org/0000-0002-7071-6309"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.3390/ijgi15090404",
+      "pdf_url": null,
+      "source_id": "S2764431341",
+      "source_name": "ISPRS International Journal of Geo-Information",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-05",
+    "repository_urls": [],
+    "title": "Integrating Photogrammetry and SLAM for the 3D Geometric Documentation of Cultural Heritage Monuments: A Reproducible Multi-Sensor Workflow Supported by an Open Dataset"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-07_10.3390/ijgi1509",
+    "members": [
+      "doi:10.3390/ijgi15090404"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03cx6bg69",
+        "label": "National Technical University of Athens"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2613-3181",
+        "label": "Styliani Verykokou"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6142-2317",
+        "label": "Konstantinos Nikolitsas"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5065840510",
+        "label": "George Piniotis"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5068303628",
+        "label": "Regina Chliverou"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7071-6309",
+        "label": "Efi Dimopoulou"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11211",
+        "is_primary": true,
+        "label": "3D Surveying and Cultural Heritage",
+        "score": 0.9653,
+        "subfield": "1907"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11164",
+        "is_primary": false,
+        "label": "Remote Sensing and LiDAR Applications",
+        "score": 0.0122,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10191",
+        "is_primary": false,
+        "label": "Robotics and Sensor-Based Localization",
+        "score": 0.012,
+        "subfield": "2202"
+      }
+    ]
+  },
+  "first_published": "2026-09-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1975809100",
+      "openalex:W1987648924",
+      "openalex:W2017817409",
+      "openalex:W2049981393",
+      "openalex:W2127578024",
+      "openalex:W2160821342",
+      "openalex:W2461937780",
+      "openalex:W2807476510",
+      "openalex:W2897625716",
+      "openalex:W2912200409",
+      "openalex:W2914625032",
+      "openalex:W2953545949",
+      "openalex:W2963264709",
+      "openalex:W3049239917",
+      "openalex:W3080880111",
+      "openalex:W3111598592",
+      "openalex:W3122822131",
+      "openalex:W3172645717",
+      "openalex:W3173277851",
+      "openalex:W3177280664",
+      "openalex:W3198964603",
+      "openalex:W3203086465",
+      "openalex:W4226373316",
+      "openalex:W4229442277",
+      "openalex:W4246818198",
+      "openalex:W4280547338",
+      "openalex:W4282040384",
+      "openalex:W4289134404",
+      "openalex:W4311624591",
+      "openalex:W4313318248",
+      "openalex:W4313576926",
+      "openalex:W4321020006",
+      "openalex:W4378382212",
+      "openalex:W4381888660",
+      "openalex:W4381929756",
+      "openalex:W4386714836",
+      "openalex:W4390685598",
+      "openalex:W4391804924",
+      "openalex:W4391805640",
+      "openalex:W4399204292",
+      "openalex:W4402643666",
+      "openalex:W4407614557",
+      "openalex:W4410360891",
+      "openalex:W4413408519",
+      "openalex:W4414240947",
+      "openalex:W4414810431",
+      "openalex:W7124832247",
+      "openalex:W7140488526",
+      "openalex:W7160052241"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.3390/ijgi15090404",
+    "openalex": "W7211869311",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-08T23:18:27Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006065,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2117,
+      "out": 321
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-08T23:18:27Z",
+    "doi": "10.3390/ijgi15090404",
+    "journal": "ISPRS International Journal of Geo-Information",
+    "source_id": "S2764431341",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The workflow was demonstrated and validated on a single historic monastery, which may not capture the full range of environmental and structural challenges found in other heritage sites.",
+      "what": "This study presents a reproducible multi-sensor workflow that integrates UAV and close-range photogrammetry, SLAM-based mapping, and geodetic control within a single reference system to document complex cultural heritage monuments. Tested on a historic monastery, both photogrammetry and SLAM datasets achieved centimeter-level agreement with geodetic observations, with photogrammetry providing superior exterior coverage and textures, while SLAM captured interior spaces rapidly.",
+      "why": "It establishes a reliable, integrated methodology that overcomes the individual limitations of photogrammetry and SLAM, providing a complete and metrically accurate 3D representation of complex structures for conservation and monitoring."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-05",
+  "work_key": "doi:10.3390/ijgi15090404"
+}

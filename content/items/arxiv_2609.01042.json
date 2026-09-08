@@ -87,7 +87,38 @@
     ],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0004-6374-9905",
+        "label": "Nicolò Alessandro Girardini"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5030115153",
+        "label": "Unchitta Kan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3940-2608",
+        "label": "Eduardo López"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5149298474",
+        "label": "Bruno Lepri"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2843-2580",
+        "label": "Lorenzo Lucchini"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9510-8000",
+        "label": "Simone Centellegher"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -98,7 +129,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.9761,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11896",
+        "is_primary": false,
+        "label": "Opportunistic and Delay-Tolerant Networks",
+        "score": 0.0079,
+        "subfield": "1705"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11963",
+        "is_primary": false,
+        "label": "Impact of Light on Environment and Health",
+        "score": 0.0016,
+        "subfield": "2306"
+      }
+    ]
   },
   "first_published": "2026-09-01",
   "graph": {
@@ -109,7 +165,7 @@
   "ids": {
     "arxiv": "2609.01042",
     "doi": "10.48550/arxiv.2609.01042",
-    "openalex": null,
+    "openalex": "W7206173818",
     "pmid": null
   },
   "provenance": {
@@ -117,7 +173,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-02T23:14:15Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004918,
     "llm": {
@@ -205,6 +262,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-01",
+  "updated": "2026-09-08",
   "work_key": "arxiv:2609.01042"
 }

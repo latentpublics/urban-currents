@@ -1,0 +1,179 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban air quality can vary significantly along transit corridors, necessitating high-resolution monitoring. This work introduces a novel mobile-sensing dataset from Surat, Gujarat, India, comprising PM$*{2.5}$ concentrations, meteorological variables (temperature, humidity, wind speed, wind direction), and land-use features. To represent the spatiotemporal data as a graph, two node-definition strategies were used: (i) uniform segmentation (200--400~m intervals) and (ii) DBSCAN clustering to adaptively group dense observations. For each node, rolling mean and standard deviation of meteorological variables were computed. To model this high-dimensional data, we propose a SA-GNN for fine-grained, short-term PM$*{2.5}$ forecasting and hotspot identification. We compared SA-GNN with LSTM, RNN, GRU, and ANN models. These models performed well on low-resolution data but had difficulty capturing rapidly changing patterns in urban air quality. SA-GNN employs cluster-specific GRUs to capture localized temporal dependencies and a Graph Attention Network to learn spatial heterogeneity. This hybrid architecture effectively models rapid fluctuations and complex spatial interactions. On our dataset, SA-GNN achieved $R^2 = 0.95$, RMSE $= 6.8$, and MAE $= 4.2~\\si{\\micro\\gram\\per\\meter\\cubed}$, outperforming all baseline models. Combining spatial clustering with adaptive attention significantly improves forecasting, enabling real-time, fine-grained monitoring and supporting personalized exposure tracking and timely alerts for healthier cities.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Om Chiddarwar",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Priyanka Mandal",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Praveen Kumar Chandaliya",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shriniwas Arkatkar",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "comment": "24 Pages, 14 Figures, World Conference of Transport Research2026 Transport Research",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.04693v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.04693v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-04",
+    "repository_urls": [],
+    "title": "Predicting Spatiotemporal Mobile Sensing-Based PM2.5 Concentrations Using Low-Rank Adapted Spatially Attentive Graph Neural Network"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-07_2609.04693",
+    "members": [
+      "arxiv:2609.04693"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:gnn",
+        "label": "graph neural network"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.04693",
+    "doi": "10.48550/arxiv.2609.04693",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-08T23:18:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006496,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2189,
+      "out": 357
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9785,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3914,
+    "relevance": 0.9785
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's high performance was demonstrated using a dataset from a single city, which may limit immediate generalizability to urban environments with different spatial layouts or meteorological patterns.",
+      "what": "The researchers developed a Spatially Attentive Graph Neural Network (SA-GNN) to forecast short-term PM2.5 concentrations using a new mobile-sensing dataset from Surat, India. The model processes meteorological and land-use data mapped to spatial nodes defined via uniform 200-400 meter segments and DBSCAN clustering. The SA-GNN achieved an R2 of 0.95, an RMSE of 6.8, and an MAE of 4.2 micrograms per cubic meter, outperforming LSTM, RNN, GRU, and ANN baselines.",
+      "why": "It provides a method to capture rapid, localized air quality fluctuations along transit corridors that standard deep learning models fail to resolve, enabling real-time hotspot identification and personalized exposure tracking."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-04",
+  "work_key": "arxiv:2609.04693"
+}

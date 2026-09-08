@@ -1,0 +1,187 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Cities must allocate limited resources to maintain mobility, with uncertainties about the resulting state of the system. Analyzing roughly 3,000 bus routes with more than 4 billion yearly riders across 19 metropolitan areas worldwide, we uncover a robust scaling law of the form $f \\sim (d/t)^α$ with exponent $α\\in [1/2,\\,2/3]$, linking the service frequency $f$ to passenger demand $d$ and route duration $t$. We show that this scaling emerges from a simple optimization principle: cities implicitly minimize total passenger waiting time under a fixed operational budget when both schedule frequency and crowding are taken into account. This mechanism produces two universal regimes: a frequency-dominated regime with $α= 1/2$ when crowding is negligible, and a capacity-dominated regime with $α= 2/3$ when most routes are overloaded. Intermediate exponents arise when only part of the network operates near capacity. Furthermore, we find that the benefits of additional investment are highly uneven across systems. For instance, our model suggests that a $20\\%$ budget increase yields nearly a 5-minute reduction in daily waiting time per passenger in Boston, compared to only about 1 minute in Paris. These findings place urban transit within a broader class of constrained capacity-allocation problems, while highlighting a distinct regime in which prescribed route demands shape the allocation of limited service resources. The resulting scaling laws show how simple optimization principles can generate systematic exponents in complex transport systems, beyond the dissipation-based frameworks usually considered in physical and biological flow networks.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Siddharth Patwardhan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Şirag Erkol",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Filippo Radicchi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Marc Barthelemy",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "physics.data-an"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.04520v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.04520v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-03",
+    "repository_urls": [],
+    "title": "Crowding controls the scaling of bus frequency with demand"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-07_2609.04520",
+    "members": [
+      "arxiv:2609.04520"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q100",
+        "label": "Boston",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q90",
+        "label": "Paris",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.04520",
+    "doi": "10.1073/pnas.2535998123",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-08T23:18:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005755,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2145,
+      "out": 282
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9385,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3754,
+    "relevance": 0.9385
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "By analyzing approximately 3,000 bus routes carrying over 4 billion annual riders across 19 global metropolitan areas, this study identifies a universal scaling law where bus service frequency scales with passenger demand and route duration to an exponent between 1/2 and 2/3. The research demonstrates that this relationship is driven by cities minimizing passenger wait times under fixed budgets, transitioning from an exponent of 1/2 in uncongested networks to 2/3 when routes are highly crowded.",
+      "why": "It establishes a predictive, optimization-based framework for transit resource allocation, demonstrating that the return on budget increases is highly unequal across cities; for example, a 20% budget expansion reduces daily passenger wait times by nearly 5 minutes in Boston but only about 1 minute in Paris."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-03",
+  "work_key": "arxiv:2609.04520"
+}

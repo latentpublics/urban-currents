@@ -21,7 +21,7 @@ second copy of the number (D318's rule, and D322's).
 from __future__ import annotations
 
 import json
-from datetime import date
+from datetime import date, timedelta
 
 import pytest
 
@@ -120,12 +120,25 @@ def test_a_date_with_no_row_claims_nothing(repo):
     assert silent_for(date(2026, 1, 1)) == []
 
 
-def test_the_streak_breaks_on_a_day_with_no_row(archive):
+def test_the_streak_stops_at_a_day_that_answered(archive):
+    """09-06 has a row and it is not silent, so 09-05's silence is a separate
+    episode rather than a continuation. The streak counts consecutive days."""
+    assert silent_streak("collect.arxiv", DAY) == 1
+    _row(date(2026, 9, 5), ["collect.arxiv"])
+    assert silent_streak("collect.arxiv", DAY) == 1
+
+
+def test_the_streak_stops_at_a_day_with_no_row(repo):
     """"We did not look" is not evidence of silence. A gap in the log ends the
-    count rather than being read through."""
-    assert silent_streak("collect.arxiv", DAY) == 1
-    _row(date(2026, 9, 5), ["collect.arxiv"])          # 09-06 has a row, not silent
-    assert silent_streak("collect.arxiv", DAY) == 1
+    count rather than being read through — the distinction `outcome.py` exists
+    for, applied to the thing that decides whether a person gets mailed."""
+    _row(DAY, ["collect.arxiv"])
+    _row(DAY - timedelta(days=1), ["collect.arxiv"])
+    assert silent_streak("collect.arxiv", DAY) == 2
+
+    # DAY-3 was silent too, but DAY-2 has no row at all. The streak is 2, not 3.
+    _row(DAY - timedelta(days=3), ["collect.arxiv"])
+    assert silent_streak("collect.arxiv", DAY) == 2
 
 
 # --------------------------------------------------------------------------

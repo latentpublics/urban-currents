@@ -778,10 +778,16 @@ def build_report(out_path: Optional[Path] = None) -> Path:
     A("## What we could not read")
     A("")
     unreadable_keys = {wk for issue in issues for wk in issue.unreadable}
+    # ★ Keys stored before 1E can be bare DOI prefixes, and this table's column
+    # is headed "publisher". Translated on the way out rather than in the
+    # files, which never change (D127).
+    from .collectors.abstracts import display_publisher
+
     by_publisher: dict[str, int] = {}
     for issue in issues:
         for name, n in (issue.scan_meta.unreadable_by_publisher or {}).items():
-            by_publisher[name] = by_publisher.get(name, 0) + n
+            label = display_publisher(name)
+            by_publisher[label] = by_publisher.get(label, 0) + n
     if not unreadable_keys:
         A("No items are currently unreadable, or no issue has recorded any.")
         A("")

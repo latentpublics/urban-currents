@@ -224,9 +224,39 @@ def test_crossref_is_tried_before_springer(repo, monkeypatch):
         ("10.1016/j.cities.2026.1", "Elsevier"),
         ("10.1080/23748834.2026.1", "Taylor & Francis"),
         ("10.1007/s44212-026-1", "Springer"),
-        ("10.9999/unknown.1", "10.9999"),
+        # ★ Looked up in Crossref's prefix registry in 1E, because these three
+        # were reaching the report as bare numbers under a column headed
+        # "publisher".
+        ("10.1215/22011919-1", "Duke University Press"),
+        ("10.12813/kieae.2026.26.4.005",
+         "Korea Institute of Ecological Architecture and Environment"),
+        ("10.9999/unknown.1", "unidentified (DOI prefix 10.9999)"),
     ],
 )
 def test_publisher_is_named_from_the_doi_prefix(doi, publisher):
     assert publisher_of(_item(doi)) == publisher
     assert doi_prefix(_item(doi)) == doi.split("/")[0]
+
+
+def test_an_unmapped_prefix_is_never_shown_as_if_it_were_a_name():
+    """★ 1E. The refusal to guess is kept; what changes is that it says so.
+
+    `publisher_of` returned the bare prefix, and its callers use the string as
+    a display label — `docs/phase0-report.md` puts it in a column headed
+    **publisher**. So the report was naming a publisher called `10.12813`,
+    which is 1D's ISSN wearing a different number: an internal identifier
+    reaching a reader's screen as somebody's name.
+    """
+    from pipeline.collectors.abstracts import display_publisher, unmapped_publisher
+
+    label = publisher_of(_item("10.4444/x.1"))
+    assert label == unmapped_publisher("10.4444")
+    assert not label.startswith("10."), "a bare prefix is not a publisher name"
+
+    # And the eighty-four issue files that already store bare prefixes are read
+    # back through the same rule rather than rewritten (D127).
+    assert display_publisher("10.12813") == (
+        "Korea Institute of Ecological Architecture and Environment"
+    )
+    assert display_publisher("10.4444") == unmapped_publisher("10.4444")
+    assert display_publisher("Elsevier") == "Elsevier"

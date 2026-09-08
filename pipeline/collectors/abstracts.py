@@ -27,6 +27,7 @@ Not attempted, and why — measured in 0c and recorded in the working notes:
 
 from __future__ import annotations
 
+import re
 import time
 from typing import Iterable, Optional
 
@@ -45,8 +46,13 @@ SPRINGER_API = "https://api.springernature.com/meta/v2/json"
 SPRINGER_PREFIXES = ("10.1007", "10.1186", "10.1038", "10.1057", "10.1140", "10.1245")
 
 # Publisher name by DOI prefix, for the unreadable-by-publisher tally. Only the
-# prefixes the whitelist actually contains; anything else is reported by its
-# bare prefix rather than guessed at.
+# prefixes the whitelist actually contains; anything else is **not** guessed at
+# — see `publisher_of`.
+#
+# ★ The last three were added in 1E from Crossref's own prefix registry
+# (`api.crossref.org/prefixes/<prefix>`, its `name` field), which is the
+# registrant, not an inference from the journal title. They were showing up on
+# the page as bare numbers.
 PUBLISHER_BY_PREFIX = {
     "10.1016": "Elsevier",
     "10.1080": "Taylor & Francis",
@@ -65,7 +71,46 @@ PUBLISHER_BY_PREFIX = {
     "10.5194": "Copernicus",
     "10.1017": "Cambridge",
     "10.1093": "Oxford",
+    "10.1215": "Duke University Press",
+    "10.11361": "The City Planning Institute of Japan",
+    "10.12813": "Korea Institute of Ecological Architecture and Environment",
 }
+
+# What an unmapped prefix is called on a page. ★ 1E.
+#
+# `publisher_of` used to return the bare prefix, and the tally's keys are
+# display labels: `docs/phase0-report.md` prints them in a column headed
+# **publisher**, so the archive's report has been telling a reader that a
+# publisher named `10.12813` could not be read — 19 items across three
+# prefixes. It is the same shape as 1D's ISSN, an internal identifier reaching
+# a reader's screen wearing someone else's name.
+#
+# The refusal to guess was right and is kept. What changes is that the refusal
+# now says it is one. Three prefixes were also looked up and added above,
+# because a name that can be checked beats a label that admits ignorance —
+# but the label has to be right for the fourth prefix, which arrives without
+# warning.
+def unmapped_publisher(prefix: str) -> str:
+    return f"unidentified (DOI prefix {prefix})"
+
+
+_BARE_PREFIX = re.compile(r"^10\.\d+$")
+
+
+def display_publisher(name: str) -> str:
+    """Read a stored tally key back as something a person can read (1E).
+
+    Eighty-four issue files already hold `10.12813` as a publisher name, and an
+    issue never changes once published (D127). The same answer 1B and D322
+    reached applies: **fix the display, not the file.** A key that is a bare
+    DOI prefix is translated on the way out — through the mapping if it is
+    known now, and into the honest label if it is not — so the archive's report
+    stops naming a publisher that does not exist without a byte of `content/`
+    moving.
+    """
+    if not _BARE_PREFIX.match(name):
+        return name
+    return PUBLISHER_BY_PREFIX.get(name) or unmapped_publisher(name)
 
 
 # Which route can reach a publisher's abstracts, keyed by the publisher name
@@ -115,10 +160,16 @@ def doi_prefix(item: Item) -> Optional[str]:
 
 
 def publisher_of(item: Item) -> str:
+    """The publisher's name, or a label that says we do not have one.
+
+    Never the bare DOI prefix: this string is a display label. See
+    `unmapped_publisher`.
+    """
     prefix = doi_prefix(item)
     if not prefix:
         return "unknown"
-    return PUBLISHER_BY_PREFIX.get(prefix, prefix)
+    known = PUBLISHER_BY_PREFIX.get(prefix)
+    return known if known else unmapped_publisher(prefix)
 
 
 def needs_abstract(item: Item) -> bool:

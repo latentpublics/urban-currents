@@ -126,13 +126,19 @@ def render_text(
         for row in synthesis["rows"]:
             if not row["measurable"] or not (row["entries"] or row["empty_text"]):
                 continue
+            # ★ The display name, not the identifier (1G, G2). The plain-text
+            # edition is a reader's edition too, and a row called one thing on
+            # the page and another in the mail is two names for one number.
+            name = row.get("display") or row["label"]
             if not row["entries"]:
-                out.append(_wrap(f"{row['label']}: {row['empty_text']}"))
+                out.append(_wrap(f"{name}: {row['empty_text']}"))
+                if row.get("scope"):
+                    out.append(_wrap(row["scope"], indent="    "))
                 continue
             if row["label"] == "coupling":
                 for c in row["entries"]:
                     out.append(_wrap(
-                        f"coupling: \"{c['titles'][0]}\" shares {c['shared']} "
+                        f"{name}: \"{c['titles'][0]}\" shares {c['shared']} "
                         f"references with \"{c['titles'][1]}\""
                         + (f" ({c['partner_date']})" if c["partner_date"] else "")
                     ))
@@ -141,9 +147,14 @@ def render_text(
             elif row["label"] == "canon":
                 for a in row["entries"]:
                     out.append(_wrap(
-                        f"canon: {a['count']} cite \"{a['title']}\""
+                        f"{name}: {a['count']} of the day's papers cite "
+                        f"\"{a['title']}\""
                         + (f" ({a['cite']})" if a["cite"] else "")
                     ))
+            elif row["label"] == "first appearance":
+                names = "; ".join(e["name"] for e in row["entries"])
+                more = f"; and {row['more']} more" if row.get("more") else ""
+                out.append(_wrap(f"{name}: {names}{more}"))
             elif row["label"] == "tag shift":
                 for d in row["entries"]:
                     out.append(_wrap(
@@ -154,7 +165,12 @@ def render_text(
                 names = "; ".join(
                     f"{e['name']} ({e['papers']})" for e in row["entries"]
                 )
-                out.append(_wrap(f"{row['label']}: {names}"))
+                out.append(_wrap(f"{name}: {names}"))
+            if row.get("scope"):
+                out.append(_wrap(row["scope"], indent="    "))
+        if synthesis.get("scope_note"):
+            out.append("")
+            out.append(_wrap(synthesis["scope_note"]))
         if synthesis["paragraph"]:
             out.append("")
             out.append(_wrap(synthesis["paragraph"]))

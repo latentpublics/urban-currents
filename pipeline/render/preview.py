@@ -241,8 +241,51 @@ def _items_with_references(items: Iterable[Item]) -> int:
     return sum(1 for it in items if it.work_key in _REFERENCE_KEYS)
 
 
+_NO_FIRSTS = {"measurable": False, "entries": [], "window_days": 0, "total": 0}
+
+
+def _derived_for(issue: Issue, want_shoulders: bool, want_firsts: bool) -> tuple:
+    """`on the same shoulders` and `first appearance` for one issue on its own.
+
+    The archive table costs one store walk and `build_issue_pages` pays it once
+    for eighty-five pages. Everything else — `uc preview` on the morning's own
+    issue, a test, an issue not yet on disk — comes through here, and it walks
+    the store **once for both** rather than once each. Both paths end in the
+    same two functions in `synthesis`, so a page rendered alone and the same
+    page rendered in a site build cannot disagree: the rule 1B settled for
+    `tag shift` and D318 for anything displayed.
+
+    ★ `first appearance` needs the archive and not just the day — the question
+    is whether an institution appeared in the days *before* this issue, and one
+    issue on its own has no before. An issue not yet saved is added to the list
+    rather than looked up in it, so a live run's preview asks the same question
+    the site will ask tomorrow instead of quietly reporting no row.
+    """
+    from .. import store, synthesis as syn_mod
+
+    if not (want_shoulders or want_firsts):
+        return None, None
+
+    index = {it.work_key: it for it in store.iter_items()}
+    shoulders = firsts = None
+    if want_shoulders:
+        shoulders = syn_mod.shoulders_over_archive([issue], index)[issue.date]
+    if want_firsts:
+        issues = sorted(store.iter_issues(), key=lambda i: i.date)
+        if not any(i.date == issue.date for i in issues):
+            issues = sorted(issues + [issue], key=lambda i: i.date)
+        firsts = syn_mod.first_seen_institutions_over_archive(issues, index).get(
+            issue.date, dict(_NO_FIRSTS)
+        )
+    return shoulders, firsts
+
+
 def build_synthesis(
-    issue: Issue, items: Iterable[Item] = (), tag_shift: dict | None = None
+    issue: Issue,
+    items: Iterable[Item] = (),
+    tag_shift: dict | None = None,
+    shoulders: dict | None = None,
+    firsts: dict | None = None,
 ) -> dict | None:
     """The synthesis layer, shaped for the template.
 
@@ -270,6 +313,17 @@ def build_synthesis(
     - `institutions` and `authors` are always measurable — every item has a
       byline — so those rows may always read zero, and simply do not appear
       when there is nothing above the repeat threshold.
+    - ★ `first appearance` requires sixty days of archive behind the issue
+      (1G, G4). Below that it is absent, because "we have not seen this
+      institution before" would be measuring the age of the archive.
+
+    ★ **Three rows, three populations, and the row says which** (1G, G1/G2).
+    `coupling` and `first appearance` count the papers published above;
+    `canon` counts every paper the day named, most of which have no abstract
+    anyone here could read. Two rows about citation standing next to each other
+    is how a reader comes to believe one thing was counted twice, so each of
+    them carries a `scope` line naming its own denominator, and the section
+    says the difference once in words underneath.
     """
     syn = issue.synthesis
     if syn is None:
@@ -337,11 +391,32 @@ def build_synthesis(
     ]
     authors = [{"name": a.name, "papers": a.papers} for a in syn.repeat_authors]
 
+    # ★ Derived like `tag shift`, and for the same reasons (1G, G1/G4).
+    # `shoulders` and `firsts` are the whole archive's answer, computed once by
+    # `build_issue_pages`; a single page — `uc preview`, a test, an issue not
+    # yet on disk — falls through to the same functions for its own date. What
+    # neither path does is read the stored value: `issue.synthesis.anchors`
+    # holds what that morning computed at a threshold of two over the papers it
+    # published, and an issue is immutable (D127).
+    derived_shoulders, derived_firsts = _derived_for(
+        issue, shoulders is None, firsts is None
+    )
+    shoulders_row = shoulders if shoulders is not None else derived_shoulders
+    firsts_row = firsts if firsts is not None else derived_firsts
+
+    published_n = issue.published_count
     # label -> (measurable, value-or-None). The template renders a row only for
     # the measurable ones, and prints the zero sentence when the value is empty.
+    #
+    # `label` is the identifier and `display` is the screen. 1C asked for the
+    # split before any name was changed: `coupling` is 27 places in the code,
+    # the configuration key `citation.min_shared_references`, and the
+    # `data-row=` hook the tests read — and "bibliographic coupling" is the
+    # correct term for what it computes. Only the `<dt>` moves.
     rows = [
         {
             "label": "tag shift",
+            "display": "tag shift",
             # The derived status, matching the derived entries above. Reading
             # `syn.deviation_status` here would let a row say "no tag ran above
             # its average" from one calculation while the entries came from
@@ -349,12 +424,62 @@ def build_synthesis(
             "measurable": shift["status"] == "OK",
             "entries": deviations,
             "empty_text": "no tag ran above its 30-day average",
+            # No scope line: it prints its own window in every entry, and it is
+            # not one of the two rows a reader can mistake for the other.
+            "scope": None,
         },
         {
             "label": "coupling",
+            # ★ Literal, because it is what the row does (1G, G2). The metaphor
+            # below is the only one on the site and it belongs to the other row.
+            "display": "shares references",
             "measurable": with_refs >= 2,
             "entries": clusters,
             "empty_text": "no items share references today",
+            "scope": f"counted over the {published_n} papers published above",
+        },
+        {
+            "label": "canon",
+            # ★ The one metaphor on the site (1G, G1; name YJUN's). Everything
+            # it could be taken to mean beyond the arithmetic is denied in the
+            # words beside it: what happened, and what it does not imply.
+            "display": "on the same shoulders",
+            "measurable": shoulders_row["measurable"],
+            "entries": shoulders_row["entries"],
+            # "four of them" would point at nothing: the row's own denominator
+            # is on the line below, and a zero has to name its population in
+            # the same breath as the others do.
+            "empty_text": "no foundation work was cited by four of the day's papers",
+            # The denominator, and then what the row does **not** claim. The
+            # metaphor is the one figure of speech on the site, so the sentence
+            # beside it does the literal work: four papers reaching for the
+            # same old book is not four papers about one subject, and a reader
+            # who takes "the same shoulders" for "the same field" has been
+            # misled by us rather than by the arithmetic.
+            "scope": (
+                f"counted over the {shoulders_row['with_references']} of this "
+                f"day's {shoulders_row['named']} named papers whose reference "
+                f"lists we have — standing on the same older work is not the "
+                f"same as being about the same thing"
+            ),
+        },
+        {
+            "label": "first appearance",
+            "display": "first appearance",
+            "measurable": firsts_row["measurable"],
+            "entries": firsts_row["entries"],
+            "empty_text": (
+                "no institution here was new to the last "
+                f"{firsts_row['window_days']} days"
+            ),
+            "scope": (
+                f"none of them on a paper we published in the "
+                f"{firsts_row['window_days']} days before this issue"
+            ),
+            # Shown after the named three; `total` is what the row was cut down
+            # from, and a cut that does not say so is a count a reader cannot
+            # check.
+            "more": max(0, firsts_row["total"] - len(firsts_row["entries"])),
         },
     ]
     # ★ Three rows left this list in 1A (B2). They are still computed and still
@@ -396,9 +521,24 @@ def build_synthesis(
     #
     # Undo: paste the three dicts back. The values are right there above.
 
+    # ★ The difference said once, in words, under the list (1G, G2). Only when
+    # both kinds of row are actually on the page: a sentence explaining the
+    # difference between two rows, one of which is absent, is the same noise
+    # the legend rule exists to keep off the archive.
+    shown = {r["label"] for r in rows if r["measurable"] and (r["entries"] or r["empty_text"])}
+    scope_note = None
+    if "canon" in shown and shown & {"coupling", "first appearance", "tag shift"}:
+        scope_note = (
+            "Two counts, not one counted twice: every row here but "
+            "“on the same shoulders” counts the papers published above, and "
+            "that one counts every paper this day named — those and the ones "
+            "under Also published today, whose abstracts we could not read."
+        )
+
     return {
         "composition": syn.composition,
         "rows": rows,
+        "scope_note": scope_note,
         "deviations": deviations,
         "deviation_note": syn.deviation_note,
         "anchors": anchors,
@@ -462,6 +602,8 @@ def render_issue(
     tag_shift: dict | None = None,
     silent: list[str] | None = None,
     silent_table: dict[str, list[str]] | None = None,
+    shoulders: dict | None = None,
+    firsts: dict | None = None,
 ) -> str:
     """The issue, as one self-contained HTML file.
 
@@ -498,7 +640,9 @@ def render_issue(
         published_count=issue.published_count,
         silent=silent,
         cards=[build_card(it) for it in ordered],
-        synthesis=build_synthesis(issue, ordered, tag_shift=tag_shift),
+        synthesis=build_synthesis(
+            issue, ordered, tag_shift=tag_shift, shoulders=shoulders, firsts=firsts
+        ),
         still_cited=build_still_cited(issue, ordered),
         unreadable=[build_unreadable_row(it) for it in unreadable],
         status_changes=[

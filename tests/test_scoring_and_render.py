@@ -688,7 +688,19 @@ def test_a_row_is_absent_when_the_measurement_was_impossible(repo):
     # is a decision rather than a reading, so it is asserted as an absence.
     assert "institutions" not in rows
     assert "authors" not in rows
-    assert "canon" not in rows
+
+    # ★ `canon` came back in 1G (G1) and is asserted the other way now: it is
+    # on the list and **not measurable** here, which is the same claim the two
+    # rows above make. It was off the list entirely in 1A because the
+    # measurement found nothing on any day — over the papers we published,
+    # which is the population that was empty. It now counts every paper the day
+    # named; this fixture names one paper and it has no reference list, so the
+    # question still cannot be asked and the row still says nothing.
+    assert rows["canon"]["measurable"] is False
+    # And the same distinction for the row 1G added: sixty days of archive
+    # behind an issue before "we have not seen this institution" is about the
+    # institution rather than about the archive.
+    assert rows["first appearance"]["measurable"] is False
 
 
 def test_a_measured_zero_is_stated(repo):

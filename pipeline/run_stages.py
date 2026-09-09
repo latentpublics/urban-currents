@@ -846,13 +846,26 @@ def stage_issue(run: Run, d: date, use_llm: bool = True) -> Issue:
     publication (PRD §5.2): its status is updated and a ``status_changes`` line
     is recorded. Matching on Item existence alone would make a second run of the
     same day publish an empty issue.
+
+    ★ **And most transitions never come through here** (1G, G3). The branch
+    below can only fire for a paper that is in today's selection *and* changed
+    state today; a preprint that came out in a journal months after we carried
+    it is picked up by `enrich`, which pulls it out of the archive and saves it
+    without ever handing it to this stage. That is why `status_changes` was
+    empty in all eighty issues while the archive filled with the transitions.
+    `enrich` now records them in the run directory and they are merged in here,
+    so the day's issue says what the day learned rather than only what the
+    day's selection happened to contain.
     """
+    from .stages import read_status_changes
+
     items = read_input(run, "issue")
     already = store.published_index()
     today = str(d)
 
     publish: list[Item] = []
-    status_changes = []
+    status_changes = list(read_status_changes(run))
+    recorded = {c.work_key for c in status_changes}
 
     for it in items:
         prior_date = already.get(it.work_key)
@@ -868,9 +881,15 @@ def stage_issue(run: Run, d: date, use_llm: bool = True) -> Issue:
             # otherwise leave a published paper still wearing a preprint badge.
             apply_badges(it)
             after = it.publication_status.state
-            if prior_date and prior_date != today and before != after:
+            if (
+                prior_date
+                and prior_date != today
+                and before != after
+                and it.work_key not in recorded
+            ):
                 from .models import StatusChange
 
+                recorded.add(it.work_key)
                 status_changes.append(
                     StatusChange(
                         work_key=it.work_key,

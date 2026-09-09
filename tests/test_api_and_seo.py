@@ -598,9 +598,14 @@ def test_each_measured_row_is_explained_with_what_it_does_not_say(built):
 
     text = " ".join(build_home().read_text(encoding="utf-8").split())
 
-    for label in ("tag shift", "coupling"):
+    # ★ The note is written from the **display** names since 1G (G2): the
+    # screen says `shares references` where the code says `coupling`, and a
+    # methodology note explaining an identifier the reader never meets is the
+    # same drift as one explaining a row that is not there.
+    for label in ("tag shift", "shares references", "on the same shoulders",
+                  "first appearance"):
         assert f"<em>{label}</em>" in text
-    for label in ("canon", "institutions", "authors"):
+    for label in ("coupling", "canon", "institutions", "authors"):
         assert f"<em>{label}</em>" not in text, (
             f"the note still explains {label!r}, which no issue shows any more"
         )
@@ -611,8 +616,10 @@ def test_each_measured_row_is_explained_with_what_it_does_not_say(built):
     item = _item("arxiv:2608.55001", "A paper for the row list")
     issue = _issue(DAY, [item.work_key])
     issue.synthesis = Synthesis(deviation_status="OK")
-    built = {r["label"] for r in build_synthesis(issue, [item])["rows"]}
-    described = {m for m in ("tag shift", "canon", "coupling", "institutions", "authors")
+    built = {r["display"] for r in build_synthesis(issue, [item])["rows"]}
+    described = {m for m in ("tag shift", "shares references",
+                             "on the same shoulders", "first appearance",
+                             "canon", "coupling", "institutions", "authors")
                  if f"<em>{m}</em>" in text}
     assert built == described, f"note describes {described}, renderer builds {built}"
 
@@ -631,20 +638,32 @@ def test_each_measured_row_is_explained_with_what_it_does_not_say(built):
     assert "not sharing a question" in text
 
 
-def test_the_note_says_what_stopped_being_shown(built):
-    """★ 1A (B2). Three rows left the issue page, and a reader who had seen
-    them is owed the reason rather than a quieter page.
+def test_the_note_says_what_stopped_being_shown_and_what_came_back(built):
+    """★ 1A (B2), extended in 1G. Three rows left the issue page, and a reader
+    who had seen them is owed the reason rather than a quieter page.
 
     The claim in the paragraph is a measurement, so the shape of it is pinned:
     it must say the rows were empty, why the material runs out, and that
     widening the window was tried rather than dismissed. Otherwise the removal
     reads as a redesign, which is the one thing it was not.
+
+    ★ Two of the three came back in 1G, and the same rule applies pointing the
+    other way: a row that reappears under a different threshold on a different
+    population is not the row that was taken away, and the paragraph has to say
+    which of the three is still gone. Otherwise the return reads as an admission
+    that the removal was a redesign after all.
     """
     text = " ".join(build_home().read_text(encoding="utf-8").split())
 
-    assert "What we stopped showing." in text
+    assert "What we stopped showing, and what came back." in text
     assert "empty on every issue for sixteen days" in text
     assert "two or three of them" in text          # the material, not the rule
     assert "preprints reach us with neither" in text
     assert "thirty days does fill them" in text    # the alternative was measured
     assert "still computed and still in the JSON" in text
+
+    # The one that did not come back is named, and the two that did say what
+    # changed — a threshold and a population, not a decision reversed.
+    assert "Repeated authors is still in exactly that state" in text
+    assert "four of every paper the day named instead of two" in text
+    assert "not who repeats, but who has not appeared here before" in text

@@ -801,6 +801,13 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
     # it free: 0.018s for the whole archive, against the ~1.9s each page costs
     # to render anyway.
     shifts = synthesis.deviations_over_archive(issues, items)
+    # ★ The same shape again for the two signals 1G added or revived (G1, G4).
+    # `on the same shoulders` counts every paper each day named, and
+    # `first appearance` needs the days *before* an issue, so both are
+    # archive-wide questions that would each cost a full store walk per page if
+    # asked one day at a time. Together they take 0.05s for the whole archive.
+    shoulders = synthesis.shoulders_over_archive(issues, items)
+    firsts = synthesis.first_seen_institutions_over_archive(issues, items)
     # ★ And the same shape for the silent sources (1E, A): one walk of
     # `content/runs_log/` for every page, rather than one per page.
     silent = silent_by_date()
@@ -816,6 +823,8 @@ def build_issue_pages(out_dir: Optional[Path] = None) -> list[Path]:
             unreadable,
             tag_shift=shifts.get(issue.date),
             silent_table=silent,
+            shoulders=shoulders.get(issue.date),
+            firsts=firsts.get(issue.date),
         )
 
         previous = issues[i - 1] if i > 0 else None

@@ -94,8 +94,14 @@
     <dl class="uc-synthesis__facts">
       {% for row in synthesis.rows %}
       {% if row.measurable and (row.entries or row.empty_text) %}
+      {#- ★ `data-row` is the identifier and the `<dt>` is the screen (1G, G2).
+          They came apart when `coupling` was given a literal display name and
+          `canon` a figurative one: the code, the configuration key and the
+          tests still say `coupling`, because "bibliographic coupling" is what
+          it computes and renaming twenty-seven call sites to match a caption
+          is how a caption becomes a fact. -#}
       <div class="uc-synthesis__row" data-row="{{ row.label }}">
-        <dt class="uc-synthesis__label">{{ row.label }}</dt>
+        <dt class="uc-synthesis__label">{{ row.display or row.label }}</dt>
         <dd class="uc-synthesis__value">
           {% if not row.entries %}<span class="uc-synthesis__zero">{{ row.empty_text }}</span>
           {% elif row.label == "tag shift" %}
@@ -107,10 +113,22 @@
               still computed and still stored, and restoring one is meant to
               be pasting a dict back into `preview.py` rather than rewriting
               its markup from scratch. -#}
+          {#- ★ `on the same shoulders` (1G, G1). The count and its denominator
+              in the same clause, because this row's denominator is not the
+              one every other row here uses and a bare "6 papers" beside
+              "shares references" reads as the same six. -#}
           {% elif row.label == "canon" %}
-            {% for a in row.entries %}{{ a.count }} item{{ 's' if a.count != 1 }} cite
+            {#- "of the day's papers" on the first entry only: it is the
+                clause that says this row is not counting the papers above,
+                and repeating it on every entry turns a distinction into a
+                stutter. The scope line under the value carries the real
+                denominator. -#}
+            {% for a in row.entries %}{{ a.count }}{{ " of the day's papers" if loop.first }} cite
             <span class="uc-synthesis__work">{{ a.title }}</span>{% if a.cite %} ({{ a.cite }}){% endif %}
-            {%- if a.note %}, {{ a.note }}{% endif %}{% if not loop.last %}; {% endif %}{% endfor %}
+            {%- if not loop.last %}; {% endif %}{% endfor %}
+          {% elif row.label == "first appearance" %}
+            {% for e in row.entries %}{{ e.name }}{% if not loop.last %}; {% endif %}{% endfor %}
+            {%- if row.more %}; and {{ row.more }} more{% endif %}
           {% elif row.label == "coupling" %}
             {% for c in row.entries %}
             <span class="uc-synthesis__work">{{ c.titles[0] }}</span> shares
@@ -135,6 +153,14 @@
             {% for a in row.entries %}{{ a.name }} on {{ a.papers }} of today's papers
             {%- if not loop.last %}; {% endif %}{% endfor %}
           {% endif %}
+          {#- ★ The row's own denominator, on its own line (1G, G2). Printed
+              whether the row found something or read zero: "no items share
+              references today" is a different sentence depending on how many
+              papers it looked at, and the reader should not have to guess
+              which. -#}
+          {%- if row.scope %}
+          <span class="uc-synthesis__scope">{{ row.scope }}</span>
+          {%- endif %}
         </dd>
       </div>
       {% endif %}
@@ -151,6 +177,15 @@
           expired, not the citation. Anything that wants to say so needs a
           different sentence, and that is a decision, not a rename. -#}
     </dl>
+
+    {#- ★ Said once, in words, and only when both kinds of row are on the page
+        (1G, G2). The two citation rows are different measurements over
+        different sets, and nothing on the screen makes that visible on its own
+        — a reader meeting "shares references" above "on the same shoulders"
+        has every reason to read the second as a second helping of the first. -#}
+    {% if synthesis.scope_note %}
+    <p class="uc-synthesis__scopes">{{ synthesis.scope_note }}</p>
+    {% endif %}
 
     {% if synthesis.paragraph %}
     <p class="uc-synthesis__paragraph">{{ synthesis.paragraph }}</p>

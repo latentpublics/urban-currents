@@ -34,6 +34,60 @@ STAGE_ORDER = [
 ]
 
 
+# ★ A status change is the one thing a stage learns that is not an Item (1G, G3).
+#
+# `enrich` is where a preprint becomes a journal article: it pulls Items back
+# out of the archive, asks OpenAlex about them again, and writes them straight
+# to `content/items/`. `stage_issue` never sees them — they are not in today's
+# selection — so the branch that was built to record the transition
+# (`reconcile_with_archive`, and the `prior_date` test in `stage_issue`) could
+# only ever fire for a paper that happened to be re-collected the same day. In
+# eighty issues it fired **zero** times while the archive accumulated the
+# transitions themselves.
+#
+# So the two stages need to say one thing to each other, and the run directory
+# is where a run's own facts live. `run_id` is derived from the date, so
+# `uc enrich --date X` and `uc issue --date X` land in the same directory even
+# in separate processes — which is what keeps `uc <stage> --date` independently
+# runnable (PRD §5).
+#
+# **Read deduplicated by work_key**, so re-running either stage cannot make a
+# day's issue grow a second copy of the same line. Idempotence is a promise
+# about `content/`, and this file feeds it.
+STATUS_CHANGES_FILE = "status_changes.jsonl"
+
+
+def status_changes_path(run: Run) -> Path:
+    return run.dir / STATUS_CHANGES_FILE
+
+
+def record_status_change(run: Run, change) -> None:
+    """Append one transition for `stage_issue` to pick up."""
+    p = status_changes_path(run)
+    with p.open("a", encoding="utf-8", newline="\n") as fh:
+        fh.write(change.model_dump_json(by_alias=True) + "\n")
+
+
+def read_status_changes(run: Run) -> list:
+    """What earlier stages recorded this run, one line per work_key."""
+    from .models import StatusChange
+
+    p = status_changes_path(run)
+    if not p.exists():
+        return []
+    seen: dict[str, StatusChange] = {}
+    for line in p.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            change = StatusChange.model_validate_json(line)
+        except Exception:  # noqa: BLE001 - a half-written line is not fatal
+            continue
+        seen.setdefault(change.work_key, change)
+    return [seen[k] for k in sorted(seen)]
+
+
 def stage_path(run: Run, stage: str) -> Path:
     d = run.dir / "stages"
     d.mkdir(parents=True, exist_ok=True)

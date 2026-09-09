@@ -364,9 +364,13 @@ body {
   line-height: 1.55;
 }
 .uc-synthesis__row:first-child { border-top: 0; }
+/* ★ Wider since 1G. `on the same shoulders` is twenty-one characters and the
+   column was eighty-eight pixels, which is `tag shift` and nothing longer. The
+   alternative was letting the label wrap, and a two-line label beside a
+   one-line value is a row that looks broken rather than one that reads. */
 .uc-synthesis__label {
-  width: 88px;
-  flex: 0 0 88px;
+  width: 9.5rem;
+  flex: 0 0 9.5rem;
   color: var(--uc-meta);
   font-size: 0.78rem;
   line-height: 1.9;
@@ -376,6 +380,24 @@ body {
 /* A measured zero is stated in the same ink as a measured something. It is not
    an error state and must not look like one. */
 .uc-synthesis__zero { color: var(--uc-meta); }
+/* ★ The row's own denominator (1G, G2). Its own line, in the faintest ink,
+   because it is not part of the finding — it is what the finding was counted
+   over. Two rows here count citations across two different sets of papers, and
+   a reader with no denominator in front of them has no way to know that. */
+.uc-synthesis__scope {
+  display: block;
+  color: var(--uc-faint);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+/* And the difference said once, under the list. Same ink as a scope line: it
+   is the same kind of statement, made about the section rather than a row. */
+.uc-synthesis__scopes {
+  margin: 0.6rem 0 0;
+  color: var(--uc-faint);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
 .uc-synthesis__shared { display: inline; }
 .uc-synthesis__shared > summary {
   display: inline;

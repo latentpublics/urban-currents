@@ -75,6 +75,41 @@ MIN_BASELINE_DAYS = 7
 # the reference base actually covers.
 RARE_EVENT_DAYS = 90
 
+# ★ `on the same shoulders` (1G, G1). How many of a day's papers have to cite
+# the same foundation work before it is a shared footing rather than a
+# citation.
+#
+# **Four is measured, not chosen.** 1C swept the threshold over fourteen days of
+# the whole day's papers, and the shape of a signal is in the sweep:
+#
+#     >=2   12.9/day, 14 of 14 days      a list
+#     >=3    3.2/day, 14 of 14 days      still every day
+#     >=4    1.1/day,  9 of 14 days      neither daily nor empty
+#     >=6    0.1/day,  1 of 14 days      gone
+#
+# Lower it and the row becomes a directory of everything the day happened to
+# cite; raise it and it stops firing. The number moves with how many papers a
+# day names, so it is a threshold to re-measure, not a constant to trust.
+SHOULDERS_MIN_CITING = 4
+
+# ★ `first appearance` (1G, G4). The window an institution has to have been
+# absent from, and the archive a day needs behind it before the question can be
+# asked at all.
+#
+# **The window is a ceiling, not a claim.** The archive begins 2026-06-12, so
+# a day in September has ~88 days behind it and 180 is unreachable until
+# December. What is displayed is always the window actually used, derived from
+# the archive — 1C measured N=90 and N=180 returning identical values for
+# exactly this reason, which is what a hard-coded 180 in a sentence would have
+# hidden.
+FIRST_SEEN_WINDOW_DAYS = 180
+
+# **Sixty is where "new to us" stops meaning "we are new".** 1C measured the
+# share of a day's tags that had never been seen before, by how much archive
+# stood behind the issue: 62% at 0-6 days, 22% at 14-29, and 11% at 60-90. Below
+# sixty the row would be reporting the age of the archive.
+FIRST_SEEN_MIN_HISTORY_DAYS = 60
+
 
 # Publisher markup reaches us inside titles — `<i>`, `<scp>`, `<sub>`. It is
 # harmless in a card, where the title is one field, and not harmless here: a
@@ -331,11 +366,18 @@ def deviations_over_archive(
 # --------------------------------------------------------------------------
 
 
-def canon_anchors(d: date, items: list[Item], limit: int = 4) -> list[dict]:
+def canon_anchors(
+    d: date, items: list[Item], limit: int = 4, min_citing: int = 2
+) -> list[dict]:
     """Foundation works today's papers cite, and the ones long unseen.
 
     Foundation only. An instrument — random forests, a transformer — is cited by
     every field at once and says nothing about which one this is.
+
+    ★ `min_citing` is the same question asked of a bigger population (1G, G1).
+    The pipeline still stores this at two, over the papers it published; the
+    screen reads `shoulders_over_archive`, which asks four of every paper the
+    day named. One function, so the two cannot come to mean different things.
     """
     canon = _foundation_canon()
     if not canon:
@@ -377,7 +419,7 @@ def canon_anchors(d: date, items: list[Item], limit: int = 4) -> list[dict]:
         # One paper citing one foundational work is not an anchor, it is a
         # citation. Two or more is a shared footing; a single one is worth a
         # line only when it is the first in the whole window.
-        if len(cited_by) < 2 and not first_in_window:
+        if len(cited_by) < min_citing and not first_in_window:
             continue
         out.append({
             "openalex_id": ref,
@@ -478,6 +520,159 @@ def clusters(d: date, items: list[Item], limit: int = 3) -> list[dict]:
             })
     archive.sort(key=lambda r: -r["shared"])
     return (out + archive)[:limit]
+
+
+def shoulders_over_archive(
+    issues: list,
+    index: dict[str, Item],
+    min_citing: int = SHOULDERS_MIN_CITING,
+    limit: int = 3,
+) -> dict[date, dict[str, Any]]:
+    """`on the same shoulders` for every issue, over **every paper the day named**.
+
+    ★ This is the one measurement in the section that does not count the issue
+    (1G, G1, on 1C's finding). Everything else here is about the papers we
+    published; this is about the papers we saw. The reason is what the two
+    measurements depend on:
+
+      * a citation is complete without an abstract — 93% of the papers we could
+        not read carry a reference list, against 41% of the ones we published;
+      * a tag is not — the papers we could not read carry no method, data or
+        tool tag at all, because those come from a summary of an abstract.
+
+    So `tag shift` counts the issue and would become a different measurement on
+    a bigger population, and this one counts citations and merely becomes
+    possible on it. Over fourteen days the same rule found **nothing at all** on
+    the published set — 0 of 14 days — and 1.1 a day on this one. The row was
+    taken off the screen in 1A for being empty every day; it is that population,
+    not the rule, that was empty.
+
+    **Derived at render, never read from the issue** (D318, and the shape 1B
+    settled for `tag shift`). `issue.synthesis.anchors` still holds what the
+    morning's run computed at a threshold of two over the published papers, and
+    an issue is immutable once published (D127) — so the file keeps its number
+    and the page shows what the archive says now.
+
+    `named` travels with the entries because the row states its own population
+    on the screen: *"4 of the day's 121 papers"*. A count printed without its
+    denominator next to a row that counts something else is how two different
+    measurements come to look like one measured twice.
+    """
+    canon = _foundation_canon()
+    refs = _references_by_work()
+
+    out: dict[date, dict[str, Any]] = {}
+    for issue in issues:
+        keys = list(issue.items) + list(issue.unreadable)
+        with_refs = sum(1 for k in keys if refs.get(k))
+        citing: dict[str, list[str]] = defaultdict(list)
+        for key in keys:
+            for ref in refs.get(key, ()):
+                if ref in canon:
+                    citing[ref].append(key)
+
+        entries = []
+        for ref, cited_by in sorted(citing.items(), key=lambda kv: (-len(kv[1]), kv[0])):
+            if len(cited_by) < min_citing:
+                continue
+            entry = canon[ref]
+            who = ", ".join((entry.get("authors") or [])[:2])
+            year = (entry.get("publication_date") or "")[:4] or None
+            entries.append({
+                "openalex_id": ref,
+                "title": clean_title(entry.get("title") or ref),
+                # No parentheses of its own: both renderers put this inside
+                # a pair, and "(Cervero, Kockelman (1997))" is what happens
+                # when a fragment brings its own punctuation.
+                "cite": f"{who} {year}" if who and year else (who or year or ""),
+                "count": len(cited_by),
+                "named": len(keys),
+            })
+
+        out[issue.date] = {
+            # Fewer papers with reference lists than the threshold and the
+            # question cannot be answered at all — the row is absent rather
+            # than reading zero. A zero here would say "no foundation work was
+            # shared", which is not what "we could not have seen one" means.
+            "measurable": with_refs >= min_citing,
+            "entries": entries[:limit],
+            "named": len(keys),
+            "with_references": with_refs,
+        }
+    return out
+
+
+def first_seen_institutions_over_archive(
+    issues: list,
+    index: dict[str, Item],
+    window_days: int = FIRST_SEEN_WINDOW_DAYS,
+    min_history_days: int = FIRST_SEEN_MIN_HISTORY_DAYS,
+    limit: int = 3,
+) -> dict[date, dict[str, Any]]:
+    """Institutions on today's papers that the archive had not named lately (1G, G4).
+
+    Institutions only. 1C measured all three vocabularies and two of them are
+    already closed: the curated method/data/tool tags added ten entries in six
+    weeks and produce **0.0 a day**, and topics are still growing but
+    decelerating. Affiliations are an open set — 248 new ones in three weeks —
+    so "we have not seen this one before" stays a fact about the field rather
+    than about our vocabulary.
+
+    🔴 **The window on the screen is the window that was used.** The ceiling is
+    180 days and the archive began 2026-06-12, so nothing has 180 days behind it
+    until December; every issue uses `min(180, days of archive behind it)` and
+    the sentence prints that number. 1C measured N=90 and N=180 returning
+    identical values, which is what a hard-coded "180 days" in the template
+    would have quietly claimed anyway.
+
+    🔴 **Backwards from the issue's own date, never from today.** Otherwise a
+    page published in July changes what it says every morning, which is D318's
+    rule and the reason `tag shift` is derived per-issue rather than globally.
+
+    Below `min_history_days` of archive the row is **absent, not empty**. At
+    fourteen days of history 22% of a day's tags are "first seen"; that is a
+    measurement of how young the archive is, wearing the costume of a finding.
+    """
+    per_day: dict[date, Counter] = {}
+    for issue in issues:
+        counts: Counter = Counter()
+        for key in issue.items:
+            item = index.get(key)
+            if item:
+                counts.update(_institutions_of(item))
+        per_day[issue.date] = counts
+
+    dates = sorted(per_day)
+    out: dict[date, dict[str, Any]] = {}
+    if not dates:
+        return out
+    archive_starts = dates[0]
+
+    for d in dates:
+        behind = (d - archive_starts).days
+        if behind < min_history_days:
+            out[d] = {"measurable": False, "entries": [], "window_days": 0, "total": 0}
+            continue
+        window = min(window_days, behind)
+        start = d - timedelta(days=window)
+        seen: set[str] = set()
+        for other in dates:
+            if start <= other < d:
+                seen |= set(per_day[other])
+        # Most present first, then alphabetical: with a cap of three, "which
+        # three" has to be a rule and not the order a set happened to iterate
+        # in. Frequency is the only ordering here that is not a judgement.
+        new = sorted(
+            (n for n in per_day[d] if n not in seen),
+            key=lambda n: (-per_day[d][n], n),
+        )
+        out[d] = {
+            "measurable": True,
+            "entries": [{"name": n, "papers": per_day[d][n]} for n in new[:limit]],
+            "window_days": window,
+            "total": len(new),
+        }
+    return out
 
 
 def first_internal_citation(d: date, items: list[Item]) -> Optional[dict]:

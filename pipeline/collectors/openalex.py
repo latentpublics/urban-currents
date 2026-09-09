@@ -352,6 +352,10 @@ class OpenAlexCollector:
                 else:
                     targets.append(archived)
 
+        # Which work_keys an earlier issue already carried. One walk, and only
+        # when there is something from the archive to ask about.
+        published_before = store.published_index() if retry_archive else {}
+
         updated_archive: list[Item] = []
         for item in targets:
             if attempted >= max_lookups:
@@ -375,12 +379,45 @@ class OpenAlexCollector:
                 queue.defer(item.work_key)
                 continue
 
+            before = item.publication_status.state
             apply_passthrough(item, work)
             _apply_publication_status(item, work)
             queue.drop(item.work_key)
             enriched += 1
             if item.work_key not in fresh_keys:
                 updated_archive.append(item)
+                # ★ The preprint we already carry has come out in a journal
+                # (1G, G3). This is the moment it happens, and until now it was
+                # the moment nothing wrote it down: the Item is saved a few
+                # lines below and `stage_issue` never meets it, so the day's
+                # issue recorded no change and the archive accumulated the
+                # transitions silently.
+                #
+                # **Precision over recall.** Only one direction, only a paper an
+                # earlier issue actually carried — so a reader can find it —
+                # and only on the identity match this lookup is built from: the
+                # arXiv DOI singleton `10.48550/arxiv.{id}`. No title matching
+                # is involved. 1C measured the fuzzy rule at **7 pairs, 7 of
+                # them false**, all of them journal front matter with no
+                # author; naming two different papers as one is the failure
+                # this stays clear of.
+                if (
+                    before == "preprint"
+                    and item.publication_status.state == "published"
+                    and published_before.get(item.work_key)
+                ):
+                    from ..models import StatusChange
+                    from ..stages import record_status_change
+
+                    record_status_change(
+                        self.run,
+                        StatusChange(
+                            work_key=item.work_key,
+                            **{"from": before},
+                            to=item.publication_status.state,
+                            journal=item.publication_status.journal,
+                        ),
+                    )
 
         # Items pulled back out of the archive are saved here; today's items flow
         # on through the stages and are saved by `uc issue`.

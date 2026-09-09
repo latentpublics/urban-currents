@@ -226,7 +226,12 @@
         pointing the other way, so the two paragraphs left together: the
         methodology and the last paragraph, which now says what stopped being
         shown and why. `test_the_method_note_matches_the_code` fails if this
-        list and `preview.py`'s rows disagree again. -#}
+        list and `preview.py`'s rows disagree again.
+
+        ★ Four rows again in 1G, and the note is written from the **display**
+        names now: `coupling` is `shares references` on the screen and stays
+        `coupling` in the code, so a note written from the identifiers would
+        explain a word the reader never sees. -#}
     <p class="uc-method__p">
       <strong>What the rows on an issue count.</strong>
       <em>tag shift</em> — how many of the day's papers carry a tag, against
@@ -239,27 +244,50 @@
       can gain this row, or see its average move, when a day is filled in later
       inside its 30-day window. The papers an issue published never change; what
       moves is what we can now compare them against.
-      <em>coupling</em> — pairs of papers citing at least three of the same
-      works, today with today and today with a paper from the previous 90 days;
-      the shared works are named. Sharing references is not sharing a question,
-      and a paper with a long bibliography pairs more easily than a short one.
+      <em>shares references</em> — pairs of papers citing at least three of the
+      same works, today with today and today with a paper from the previous 90
+      days; the shared works are named. Sharing references is not sharing a
+      question, and a paper with a long bibliography pairs more easily than a
+      short one.
+      <em>on the same shoulders</em> — a foundational work cited by four or
+      more of the papers a day named. This is the one row that is not counted
+      over the papers we published: it counts every paper the day named,
+      including the ones under <em>Also published today</em>, whose abstracts we
+      could not read. A citation list is complete without an abstract and a tag
+      is not, which is why this row can use the wider set and the others cannot.
+      Four is a measured threshold, not a chosen one — at two the row lists
+      something every day, at six it is empty — and it is the count of papers,
+      not a claim about them: standing on the same older work is not being about
+      the same thing, and it is not the row above counted again.
+      <em>first appearance</em> — an institution on one of today's papers that
+      has not been on a paper we published in the window before this issue. The
+      window is 180 days or the whole archive behind that issue, whichever is
+      shorter, and the row prints the number it actually used; below 60 days of
+      archive there is no row, because at two weeks a fifth of everything looks
+      new and that is a fact about us rather than about the field.
     </p>
     {#- ★ Added in 1A (B2). Three rows were removed from the issue page after
         measurement, and the reader is told that rather than left with a
         quieter page and no reason for it. The numbers are the measured ones. -#}
     <p class="uc-method__p">
-      <strong>What we stopped showing.</strong> Three more rows — foundational
-      works cited twice in a day, repeated authors, repeated institutions —
-      were empty on every issue for sixteen days running, and measurement said
-      why: an issue publishes about six papers, and only two or three of them
-      arrive with a reference list or an affiliation, because roughly half are
-      preprints and preprints reach us with neither. Each of those rows needs
-      two of the day's papers to share something; the most any of them ever
-      found was one. Widening the window to thirty days does fill them, and
-      changes nothing from one morning to the next — nought to two entries
-      differ between consecutive days — so it would buy the appearance of a
-      finding at the price of saying the same thing every day. They are still
-      computed and still in the JSON; they are no longer on the page.
+      <strong>What we stopped showing, and what came back.</strong> Three rows
+      — foundational works cited twice in a day, repeated authors, repeated
+      institutions — were empty on every issue for sixteen days running, and
+      measurement said why: an issue publishes about six papers, and only two or
+      three of them arrive with a reference list or an affiliation, because
+      roughly half are preprints and preprints reach us with neither. Each of
+      those rows needed two of the day's papers to share something; the most any
+      of them ever found was one. Widening the window to thirty days does fill
+      them, and changes nothing from one morning to the next — nought to two
+      entries differ between consecutive days — so it would buy the appearance
+      of a finding at the price of saying the same thing every day.
+      Repeated authors is still in exactly that state and still off the page.
+      The other two came back on different terms rather than being restored:
+      the foundational works row was empty because six papers are too few to
+      share one, so it now asks four of every paper the day named instead of two
+      of the ones we published, and the institutions row was replaced by the
+      opposite question — not who repeats, but who has not appeared here before.
+      Everything taken off is still computed and still in the JSON.
     </p>
     <p class="uc-method__p uc-method__api">
       All of it is also <a href="api.html">available as JSON</a>, with the

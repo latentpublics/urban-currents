@@ -659,11 +659,20 @@ body {
 /* ★ The fallback shown when a day published papers but none cleared the
    headline bar (1A, A): a paper's title standing in for a sentence the day
    does not have. Drawn exactly like `.uc-row__reason`, and for the same
-   reason — both say "this column is not holding its usual content". It is a
-   second carrier for what the `no headline` chip already says in words, never
-   the only one, so nothing here depends on a reader seeing the difference.
+   reason — both say "this column is not holding its usual content".
    Italic and colour only: no size, weight or line-height change, because the
-   row is one line tall and that is not allowed to depend on state (0Z-C). */
+   row is one line tall and that is not allowed to depend on state (0Z-C).
+
+   ★ It was the second carrier and is now the only one (1F). The `no headline`
+   chip beside it said the same thing in words, and it came off when the marks
+   went from six to four; on the archive row nothing else distinguishes a
+   paper's title from the day's headline sentence. That is a knowing exception
+   to this file's rule, taken by YJUN with the trade stated, not an oversight —
+   see the comment on `.uc-chip--backfilled` and `_archive_rows.html.j2`. The
+   issue page still writes the state out in words, and the histogram bar's
+   `.uc-visually-hidden` label still carries it; a row-level repair, if one is
+   ever wanted, is the same helper in front of this span rather than the chip
+   coming back. */
 .uc-row__lead--title { color: var(--uc-faint); font-style: italic; }
 /* `.uc-row__artifacts` was removed with the column it styled (0Z, Z10).
    The counts live on in the latest issue stat rail and in archive_stats. */
@@ -836,7 +845,7 @@ body {
     transparent 3px, transparent 5px
   );
 }
-/* ★ One rule for the three state chips (0Z-F, S3).
+/* ★ One rule for the state chips (0Z-F, S3).
    `filled in later`, `no headline` and `more may follow` had three different
    borders — dashed on `--uc-line`, dotted on `--uc-line`, dotted on
    `--uc-meta` — which read in the legend as three degrees of severity that
@@ -858,9 +867,19 @@ body {
    required source went quiet **did** publish — that is the whole awkwardness
    of it — so drawing it like a day with no issue would overstate what
    happened. It reads as one more thing this row is telling you, which is what
-   it is. */
+   it is.
+
+   ★ `--unranked` is gone and `--silent` is not (1F). The archive dropped both
+   chips, but only one of the two class names went with them: the issue page
+   still prints `no arXiv` above its own sentence, so `--silent` has a producer
+   and `--unranked` has none. The head of this file warns that Phase 1's Astro
+   components take these names over verbatim — that warning is about
+   *renaming*, where the stylesheet and the markup drift apart silently. This
+   is the markup and the rule leaving together, and a name Phase 1 finds no
+   rule for is a name it also finds nothing emitting. `.uc-headline--unranked`
+   below is untouched: it styles the issue page's headline slot, which is the
+   sentence the chip was removed in favour of. */
 .uc-chip--backfilled,
-.uc-chip--unranked,
 .uc-chip--recent,
 .uc-chip--silent {
   background: transparent;

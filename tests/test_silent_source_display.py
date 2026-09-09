@@ -16,6 +16,14 @@ So: the issue page, the archive row and the API. And the derivation, which is
 the other half of the fix — the fact lives in `content/runs_log/` and no issue
 file has ever carried it, so the pages read the log rather than gaining a
 second copy of the number (D318's rule, and D322's).
+
+★ 1F took the `no arXiv` chip off the archive row and left everything else
+standing: the run log, the derivation, the API field, the alert, the bar's
+label and the issue page's own notice. Six marks was too many and this was one
+of the two that a second surface already covered. The tests below are split
+along that line on purpose — the ones that hold "the state is recorded" are
+unchanged, and only the one that held "the chip is on the archive row" was
+rewritten, into its opposite.
 """
 
 from __future__ import annotations
@@ -200,7 +208,8 @@ def test_the_plain_text_edition_says_the_same(archive):
 
 
 # --------------------------------------------------------------------------
-# Surface 2: the archive row
+# Surface 2: the archive row — the state it derives, and the chip it stopped
+# drawing (1F)
 # --------------------------------------------------------------------------
 
 
@@ -219,23 +228,39 @@ def test_the_archive_row_carries_the_mark_without_changing_its_kind(archive):
     assert rows[str(QUIET_DAY)]["silent"] == []
 
 
-def test_the_row_and_the_legend_both_appear(archive):
+def test_the_archive_row_no_longer_carries_a_chip_for_it(archive):
+    """1F. The mark came off the row; the state did not come off with it.
+
+    Six marks was too many, and this was one of the two a second surface
+    already covered: the issue page's scan line stops claiming the categories
+    arXiv did not read and says so in words underneath, and the operator is
+    mailed (1E, B). What this test exists to stop is the next step somebody
+    would take from an empty screen — reading the derivation as unused and
+    deleting it. So the state is asserted here too, beside the absence.
+    """
     from pipeline.render.site import archive_rows, build_archive
 
     rows = archive_rows()
     html = "\n".join(
         p.read_text(encoding="utf-8") for p in build_archive()
     )
-    assert 'uc-chip--silent">no arXiv<' in html
-    # The legend explains only marks that are on the page — a definition for
-    # something the reader cannot see is noise in a different place.
-    assert "One of the two sources we promise to read" in html
-    assert any(r["silent"] for r in rows)
+    assert any(r["silent"] for r in rows), "the state is still derived"
+
+    # The class name is in the inlined stylesheet on every page — the issue
+    # page still uses it. What must be gone is the markup on the row.
+    assert 'uc-chip--silent">no arXiv<' not in html, "the chip is off the row"
+    assert "One of the two sources we promise to read" not in html, (
+        "and its legend entry went with it"
+    )
 
 
 def test_the_histogram_note_says_it_too(archive):
     """Colour never carries meaning here, and the bar has no room for a chip,
-    so the fact travels in the bar's own label."""
+    so the fact travels in the bar's own label.
+
+    ★ Which is why 1F left it alone when the row's chip came off. A note is
+    one string per bar, read on hover and by a screen reader; it is not a
+    sixth entry in a legend, which is what the chip had become."""
     from pipeline.render.site import archive_rows, spark_bars
 
     bars = {b["date"]: b for b in spark_bars(archive_rows())}

@@ -138,12 +138,15 @@ def test_no_render_path_calls_a_nine_paper_day_quiet(repo):
     assert "quiet day" not in subject.lower()
     assert "9 papers" in subject
 
-    # 4. the archive row
+    # 4. the archive row. ★ Since 1F the row says it by drawing the lead as a
+    # paper's title rather than by carrying a `no headline` chip — the state is
+    # still derived (see the next test) and the issue page above still writes
+    # it out in words.
     build_archive()
     html = (paths.ROOT / "site" / "archive.html").read_text(encoding="utf-8")
     row = _li(html, d)
     assert "a quiet day" not in row
-    assert "no headline" in row
+    assert "uc-row__lead--title" in row
 
 
 def test_a_genuinely_quiet_day_still_says_so(repo):
@@ -160,6 +163,10 @@ def test_a_genuinely_quiet_day_still_says_so(repo):
 
 
 def test_the_row_distinguishes_quiet_from_unranked(repo):
+    """★ The state, not the chip (1F). `unranked` lost its mark on the screen
+    and kept everything else: the bar's label, the italic lead, the issue
+    page's sentence and this derivation. A row that cannot tell the two apart
+    is the bug Z1 exists to prevent, chip or no chip."""
     _issue(date(2026, 8, 21), 9, headline=False, stored_quiet=True)
     _issue(date(2026, 8, 16), 0, headline=False, stored_quiet=True)
     _issue(date(2026, 8, 18), 4, headline=True, stored_quiet=False)

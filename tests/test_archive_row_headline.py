@@ -15,6 +15,10 @@ Three states, and the third is why this file is longer than the change:
      It falls back to the representative paper's title — recorded since 0Z-A
      even below the threshold — and **marks it**, because an unmarked title in
      that column is indistinguishable from a headline the day did not have.
+     ★ Since 1F the marking is the italic-and-faint styling alone: the row's
+     `no headline` chip came off with the reduction to four marks, and YJUN
+     took that loss knowingly. The issue page still says it in words, and the
+     histogram's bar label still carries it; the row no longer does.
   3. A day with neither shows nothing. Every such day in the archive is
      backfilled or predates 0Z-A. The alternative is promoting `items[0]`,
      which is a collection order, not a judgement about the day.
@@ -126,9 +130,14 @@ def test_a_day_with_no_headline_falls_back_to_the_title_and_marks_it(three_days)
     assert "uc-row__lead--title" in lead, (
         "an unmarked title here reads as a headline the day did not have"
     )
-    # The words carry it too. The class is the second signal, never the only
-    # one — base.css refuses meaning carried by styling alone.
-    assert "no headline" in row
+    # ★ And that class is now the only signal on the row (1F). The `no
+    # headline` chip beside it was one of the two marks removed, so the words
+    # that used to back the styling up are gone from here — the accepted cost
+    # of four marks instead of six. Asserted rather than left implicit, so the
+    # next reader meets the trade instead of discovering it.
+    assert "no headline" not in row, (
+        "the chip came off in 1F; if it is back, the legend needs it back too"
+    )
 
 
 def test_a_day_with_neither_shows_nothing_rather_than_inventing_a_lead(three_days):

@@ -171,6 +171,12 @@ def archive_rows(
             "quiet": issue.is_quiet,
             # The other fact, said in its own words rather than borrowed from
             # the first. A day with papers and no headline is not quiet.
+            # ★ No longer a chip on the row (1F) and still derived here: the
+            # histogram's label says it, the lead below is drawn as a title
+            # because of it, and the issue page writes it out in the headline
+            # slot. Deriving it costs nothing; the reason it is not on the row
+            # is that a second place was saying what the issue page already
+            # said, not that the fact stopped mattering.
             "unranked": not issue.is_quiet and not issue.has_headline,
             "unreadable": issue.scan_meta.unreadable_count,
             # ★ The day's headline sentence, which is what the row is for
@@ -204,6 +210,12 @@ def archive_rows(
             # Additive, like `recent`: a day can be silent-on-arXiv *and*
             # published, and it usually is — that is the whole reason the mark
             # is needed. It never replaces the row's kind.
+            # ★ The row's chip came off in 1F and this did not follow it. The
+            # fact reaches a reader through the issue page — whose scan line
+            # stops claiming categories arXiv did not read — and an operator
+            # through the alert (1E, B); it stays in the API and in
+            # `runs_log.silent_sources`. Empty here still means "no mark", never
+            # "both sources answered": see `outcome.silent_for`.
             "silent": silent.get(str(issue.date), []),
         })
 
@@ -390,6 +402,12 @@ def spark_bars(rows: list[dict], today: Optional[str] = None) -> list[dict]:
     A silent required source rides along in the note rather than becoming a
     kind, for the reason `recent` does: it says something about how far we
     could see that day, not about what the day was (1E, A).
+
+    ★ The bar's note keeps `no headline` and `no arXiv` after 1F took both
+    chips off the list rows. A note is not a mark: it is one string per bar,
+    read on hover and by a screen reader, and it does not add a sixth thing to
+    the legend or a fifth colour to the histogram. Removing it here would take
+    a state off the screen, which 1F explicitly did not do.
 
     `missing` is drawn like `quiet` in the mockup, which has no such day in it.
     It gets its own class here so the two can never be read as one; a day nobody

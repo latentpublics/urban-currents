@@ -13,7 +13,11 @@
     ★ Every row is one line tall (0Z-C). The chips stay on the row, because
     they are what keeps a state from being carried by colour alone; the
     sentence that explained each chip moved to the legend below the list, where
-    it is written once instead of once per row. -#}
+    it is written once instead of once per row.
+
+    ★ Four of them, not six (1F). See the comment in the count column for
+    which two came off and what still carries each fact — the states did not
+    leave with their chips. -#}
 <ul class="uc-rows">
   {% for row in rows %}
   <li class="uc-row{% if row.quiet %} uc-row--quiet{% endif %}{% if row.missing %} uc-row--missing{% endif %}{% if row.backfilled %} uc-row--backfilled{% endif %}{% if row.recent %} uc-row--recent{% endif %}" data-date="{{ row.date }}">
@@ -29,12 +33,23 @@
       {%- elif row.quiet %}<span class="uc-chip">a quiet day</span>
       {%- else %}{{ row.published }} items{% endif %}
       {%- if row.backfilled %} <span class="uc-chip uc-chip--backfilled">filled in later</span>{% endif %}
-      {%- if row.unranked %} <span class="uc-chip uc-chip--unranked">no headline</span>{% endif %}
-      {#- ★ A required source that answered with nothing (1E, A). One chip per
-          source, named, because "a source was silent" and "arXiv was silent"
-          are different amounts of information and the second one costs
-          nothing. -#}
-      {%- for name in row.silent %} <span class="uc-chip uc-chip--silent">no {{ name }}</span>{% endfor %}
+      {#- ★ Four marks, not six (1F). `no headline` and `no arXiv` came off
+          this row because each was the second place saying a fact another
+          place already said, and neither state left with its chip:
+
+            `no arXiv`    the issue page's scan line stops claiming the
+                          categories arXiv did not read, and says so in words
+                          underneath; the operator is mailed (1E, B). `row.silent`
+                          is still derived, still on the bar's label and still in
+                          the API, and `silent_sources` is still written to the
+                          run log.
+            `no headline` the issue page writes it where the headline goes
+                          — "nothing cleared the headline bar today". `row.unranked`
+                          is still derived and still on the bar's label; the
+                          lead below is still marked as a title.
+
+          A mark that comes back needs a reason the sentence is not enough, not
+          just room on the row. -#}
       {%- if row.recent %} <span class="uc-chip uc-chip--recent">more may follow</span>{% endif %}
     </span>
     {#- ★ The day's headline sentence, not one paper's title (1A, A).
@@ -46,10 +61,13 @@
         2. The day published papers and none cleared the bar. There is no
            sentence to show, so the row falls back to the representative
            paper's title — and marks it, because an unmarked title in this
-           column would read as a headline the day did not have. The `no
-           headline` chip is already on the row; the italic-and-faint styling
-           is the second half of the same statement, and matches how a missing
-           day's `reason` is drawn for exactly the same purpose.
+           column would read as a headline the day did not have. The
+           italic-and-faint styling is what does that marking, and matches how
+           a missing day's `reason` is drawn for exactly the same purpose.
+           ★ Since 1F it is the only thing on the row that does: the `no
+           headline` chip stood beside it and is gone, and YJUN took that
+           loss knowingly — the row no longer distinguishes a headline from a
+           fallback title in words. The issue page still does.
         3. Neither. Every such day is a backfilled one or predates 0Z-A, which
            is when a sub-threshold day started recording its `work_key` — so
            there is no representative to fall back to. The column stays empty
@@ -90,12 +108,10 @@
     Only chips that are actually on this page are explained: a definition for a
     mark the reader cannot see is the same noise in a different place. -#}
 {%- set has_backfilled = rows | selectattr("backfilled") | list | length > 0 %}
-{%- set has_unranked = rows | selectattr("unranked") | list | length > 0 %}
 {%- set has_recent = rows | selectattr("recent") | list | length > 0 %}
-{%- set has_silent = rows | selectattr("silent") | list | length > 0 %}
 {%- set has_missing = rows | selectattr("missing") | list | length > 0 %}
 {%- set has_quiet = rows | selectattr("quiet") | list | length > 0 %}
-{%- if has_backfilled or has_unranked or has_recent or has_missing or has_quiet or has_silent %}
+{%- if has_backfilled or has_recent or has_missing or has_quiet %}
 <div class="uc-legend">
   <p class="uc-legend__label">What the marks mean</p>
   <dl class="uc-legend__list">
@@ -110,14 +126,6 @@
   {%- if has_backfilled %}
   <dt><span class="uc-chip uc-chip--backfilled">filled in later</span></dt>
   <dd>Assembled afterwards from the candidates archived for that date, rather than on the morning it covers. It reads a one-day window where a live run reads seven.</dd>
-  {%- endif %}
-  {%- if has_unranked %}
-  <dt><span class="uc-chip uc-chip--unranked">no headline</span></dt>
-  <dd>Papers went out; none of them scored high enough to lead the day. The headline is the day's best-scoring paper when it clears a fixed threshold, and on these days nothing did. Where a row like this shows text, it is that day's representative paper's title, set in italic — the day has no headline sentence to show.</dd>
-  {%- endif %}
-  {%- if has_silent %}
-  <dt><span class="uc-chip uc-chip--silent">no arXiv</span></dt>
-  <dd>One of the two sources we promise to read answered that day and returned nothing. The issue went out on the other one, because the papers in it are real and withholding them would trade a partial day for none — so what is missing is the other half of the scope, not the reading. The chip names the source.</dd>
   {%- endif %}
   {%- if has_recent %}
   <dt><span class="uc-chip uc-chip--recent">more may follow</span></dt>

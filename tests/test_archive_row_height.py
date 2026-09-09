@@ -135,17 +135,25 @@ def test_no_row_carries_a_note(every_state):
 def test_the_states_are_still_named_on_the_row(every_state):
     """Because the alternative is colour alone, which base.css refuses."""
     html = every_state
-    for words in ("filled in later", "no headline", "a quiet day", "no issue"):
+    # ★ Four marks since 1F. `no headline` and `no arXiv` came off the row
+    # because another surface was already saying each in words; the four left
+    # are the four that nothing else says.
+    for words in ("filled in later", "a quiet day", "no issue", "more may follow"):
         assert words in html, f"{words!r} left the row and nothing replaced it"
+    # The stylesheet is inlined on every page and its comments discuss the
+    # chip that was removed, so this looks at the rows themselves.
+    for row in _rows(html):
+        assert "no headline" not in row, "1F took this one off the archive"
 
 
 def test_the_legend_says_each_thing_once(every_state):
     """Once under the table, not once per row — that was the whole bug."""
     html = every_state
     assert html.count("from the candidates archived for that date") == 1
-    assert html.count("none of them scored high enough") == 1
     assert html.count("The sources did not answer") == 1
     assert html.count("nothing was worth publishing") == 1
+    # And the entry for a mark that no longer exists is not said even once.
+    assert html.count("none of them scored high enough") == 0
 
 
 def test_the_legend_explains_only_marks_that_are_on_the_page(repo):
@@ -354,11 +362,13 @@ def test_the_state_chips_share_one_border_rule():
     """
     css = _css()
 
-    assert (
-        ".uc-chip--backfilled, .uc-chip--unranked, .uc-chip--recent, "
-        ".uc-chip--silent {"
-    ) in css
+    assert ".uc-chip--backfilled, .uc-chip--recent, .uc-chip--silent {" in css
     assert "border: 1px dashed" not in css, "the odd one out is gone"
+    # ★ `--unranked` left the selector in 1F because it left the markup: no
+    # template emits it any more. `--silent` stayed, because the issue page
+    # still prints `no arXiv` above its own sentence even though the archive
+    # row does not.
+    assert ".uc-chip--unranked" not in css, "a rule for a class nothing emits"
 
 
 def test_the_day_we_could_not_see_keeps_its_own_chip():
@@ -375,7 +385,7 @@ def test_each_state_is_still_named_in_words(every_state):
     colour carry meaning alone, and the answer has never been the border."""
     html = every_state
 
-    for words in ("filled in later", "no headline", "more may follow",
+    for words in ("filled in later", "more may follow",
                   "a quiet day", "no issue"):
         assert words in html
 
@@ -398,5 +408,7 @@ def test_the_marks_explain_themselves_without_defending_themselves(every_state):
     # And the facts they were carrying are still carried.
     assert "from the candidates archived for that date" in text
     assert "rather than on the morning it covers" in text
-    assert "none of them scored high enough to lead the day" in text
-    assert "when it clears a fixed threshold" in text
+    # The third was the `no headline` entry's "when it clears a fixed
+    # threshold", and it went with the entry in 1F. Nothing on the archive
+    # explains the bar any more; the issue page's own sentence -- "nothing
+    # cleared the headline bar today" -- is what a reader meets instead.

@@ -1,0 +1,284 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Machine learning-based automated valuation models (AVMs) are increasingly used in urban housing markets, yet their performance varies substantially depending on local market conditions. This study investigates spatial variations in the accuracy of five AVMs across Greater Sydney, including ordinary least squares (OLS), geographically weighted regression (GWR), random forest (RF), extreme gradient boosting (XGB), and multilayer perceptron (MLP). Among the models, RF achieved the highest overall accuracy, followed by XGB and MLP, while OLS showed the lowest performance. GWR demonstrated competitive accuracy in submarkets with homogeneous housing and high transaction volume but performed poorly in spatially isolated or topographically complex areas. Correlation analysis revealed that AVM accuracy tends to improve in submarkets with lower mean prices, lower price dispersion, and higher sales volume. The findings suggest that model selection should be tailored to submarket characteristics rather than applying a universal model. In particular, spatial models such as GWR may offer interpretable alternatives to black-box machine learning models in stable submarkets.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Hojun Lee",
+        "openalex": "A5150726958",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hoon Han",
+        "openalex": "A5131003474",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chris Pettit",
+        "openalex": "A5150817390",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sang Ho Lee",
+        "openalex": "A5150768179",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s10901-026-10353-y",
+      "pdf_url": null,
+      "source_id": "S24809831",
+      "source_name": "Journal of Housing and the Built Environment",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-08",
+    "repository_urls": [],
+    "title": "Geographical variations in AVM accuracy: comparing statistical and machine learning models in Greater Sydney"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-08_10.1007/s10901-0",
+    "members": [
+      "doi:10.1007/s10901-026-10353-y"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:housing-transaction",
+        "label": "housing transactions"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-econometrics",
+        "label": "spatial econometrics"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5150726958",
+        "label": "Hojun Lee"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5131003474",
+        "label": "Hoon Han"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5150817390",
+        "label": "Chris Pettit"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5150768179",
+        "label": "Sang Ho Lee"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10632",
+        "is_primary": true,
+        "label": "Housing Market and Economics",
+        "score": 0.9589,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11911",
+        "is_primary": false,
+        "label": "Spatial and Panel Data Analysis",
+        "score": 0.0037,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.0023,
+        "subfield": "2306"
+      }
+    ]
+  },
+  "first_published": "2026-09-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1678356000",
+      "openalex:W2003358461",
+      "openalex:W2028399164",
+      "openalex:W2046444350",
+      "openalex:W2051688880",
+      "openalex:W2054089917",
+      "openalex:W2084677554",
+      "openalex:W2092578780",
+      "openalex:W2128752089",
+      "openalex:W2156923322",
+      "openalex:W2487770199",
+      "openalex:W2528400543",
+      "openalex:W2789818674",
+      "openalex:W2804983979",
+      "openalex:W2908970112",
+      "openalex:W2911964244",
+      "openalex:W2912061583",
+      "openalex:W2946372251",
+      "openalex:W2946580006",
+      "openalex:W2946979579",
+      "openalex:W2964784419",
+      "openalex:W2969193389",
+      "openalex:W2984471200",
+      "openalex:W2990075114",
+      "openalex:W2991098006",
+      "openalex:W3049178242",
+      "openalex:W3112003890",
+      "openalex:W3126917317",
+      "openalex:W3136830993",
+      "openalex:W3152187935",
+      "openalex:W3195358098",
+      "openalex:W3209396547",
+      "openalex:W3213421813",
+      "openalex:W4210509679",
+      "openalex:W4220743529",
+      "openalex:W4229054665",
+      "openalex:W4245953385",
+      "openalex:W4293235959",
+      "openalex:W4304147695",
+      "openalex:W4307569198",
+      "openalex:W4310266306",
+      "openalex:W4311830539",
+      "openalex:W4322194904",
+      "openalex:W4367316638",
+      "openalex:W4380203594",
+      "openalex:W4389613083",
+      "openalex:W4402650311",
+      "openalex:W4416097323",
+      "openalex:W6922175436"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s10901-026-10353-y",
+    "openalex": "W7211965851",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-09T23:08:48Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005564,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1933,
+      "out": 296
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-09T23:08:48Z",
+    "doi": "10.1007/s10901-026-10353-y",
+    "journal": "Journal of Housing and the Built Environment",
+    "source_id": "S24809831",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a single metropolitan area, and the specific performance thresholds of the models may differ in other urban housing markets.",
+      "what": "The study evaluated the spatial accuracy of five automated valuation models—ordinary least squares, geographically weighted regression, random forest, extreme gradient boosting, and multilayer perceptron—across housing submarkets in Greater Sydney. Random forest achieved the highest overall predictive accuracy, while geographically weighted regression performed competitively only in stable submarkets characterized by homogeneous housing and high transaction volumes. Correlation analysis showed that model accuracy systematically improves in areas with lower average housing prices, lower price dispersion, and higher sales volumes.",
+      "why": "It demonstrates that automated valuation model performance is highly sensitive to local market conditions, showing that practitioners cannot rely on a single universal model and should instead tailor model selection to specific submarket characteristics."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-08",
+  "work_key": "doi:10.1007/s10901-026-10353-y"
+}

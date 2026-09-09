@@ -1,0 +1,187 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban region embeddings have shown promising results in diverse urban sensing tasks such as crime, income, and service-call prediction. Recent methods improve representation quality by integrating mobility data with auxiliary modalities, using cross-view attention or contrastive objectives to align heterogeneous features into a unified region representation. However, leveraging the temporal dynamics of human mobility remains under-explored. Regional inflow and outflow fluctuate throughout the day, and inter-region connections emerge, persist, and dissolve over time. Moreover, prevailing fusion strategies combine views additively and miss the joint signal that emerges only when views co-occur. To address these gaps, we propose Mobility Stream-Structure Synergy (MoSS), which derives complementary views from mobility data: a Sequence view that preserves each region's hourly inflow/outflow profile, and a Structure view based on zigzag persistence diagrams that capture how regional connectivity emerges, persists, and dissolves over time. A synergy module then extracts emergent representations from the co-occurrence of these views through multi-degree interactions, explicitly capturing higher-order signal across views. Extensive experiments on New York City and Chicago show that MoSS achieves state-of-the-art performance across three downstream tasks using mobility data alone, outperforming baselines that rely on auxiliary modalities.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Namwoo Kim",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jeeyun Chang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kanghoon Lee",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yoonjin Yoon",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "comment": "Submitted to IEEE Transactions on Knowledge and Data Engineering",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.08268v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.08268v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-08",
+    "repository_urls": [],
+    "title": "Synergistic Fusion of Topological Structure and Temporal Semantics of Mobility for Urban Region Embedding"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-08_2609.08268",
+    "members": [
+      "arxiv:2609.08268"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q60",
+        "label": "New York City",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1297",
+        "label": "Chicago",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.08268",
+    "doi": "10.48550/arxiv.2609.08268",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-09T23:08:35Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005645,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2017,
+      "out": 291
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.924,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3696,
+    "relevance": 0.924
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's performance was validated on downstream tasks in only two major US cities, New York City and Chicago, which may not represent mobility dynamics in smaller or differently structured urban areas.",
+      "what": "The researchers developed Mobility Stream-Structure Synergy (MoSS), a region embedding model that represents urban areas by combining hourly inflow/outflow profiles with topological structure views derived from zigzag persistence diagrams. Evaluated in New York City and Chicago, the model captures how regional connectivity changes over time and extracts higher-order signals from the co-occurrence of these temporal and structural views.",
+      "why": "It demonstrates that modeling the temporal dynamics and topological structure of human mobility alone can outperform existing region representation methods that rely on auxiliary data modalities, simplifying the data requirements for urban sensing tasks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-08",
+  "work_key": "arxiv:2609.08268"
+}

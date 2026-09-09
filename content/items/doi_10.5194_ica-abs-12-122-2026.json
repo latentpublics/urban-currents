@@ -1,10 +1,18 @@
 {
-  "badges": [],
+  "badges": [
+    "data",
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "The National Atlas of Spain is constantly updating its topics.The thematic structure comprises 24 chapters grouped into 9 parts.Each section is available in printed book format, and the latest edition is dedicated to Social Services and Facilities.To ensure the well-being and quality of life of the population, it is important to meet basic needs such as health, education, social care and culture, encompassing both services and physical spaces.These are the key issues relating to the European welfare model, which we analyse in this thematic section.To provide an overview of the situation in Spain regarding social services and facilities, three themes were defined, corresponding to: \"Chapter 14.Education, science, culture and sport\"; \"Chapter 15.Health and social policies\"; and \"Chapter 16.Defence, home affairs and justice\".In this edition, as well as in the update of other themes on which work has been ongoing since 2022, a double-page spread is included at the start to contextualise the national situation within the European framework.Furthermore, wherever possible, the gender variable is included in the data sources where official data is available, thereby providing a transversely integrated view for the gender equality indicator.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Instituto Geográfico Nacional",
+            "ror": "03yycdv57"
+          }
+        ],
         "name": "Irene Sahagún Luis",
         "openalex": "A5150598206",
         "orcid": null
@@ -32,9 +40,27 @@
     "merge_basis": "singleton"
   },
   "entities": {
-    "data": [],
-    "methods": [],
-    "orgs": [],
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-analysis",
+        "label": "spatial analysis"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03yycdv57",
+        "label": "Instituto Geográfico Nacional"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -43,7 +69,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": []
   },
@@ -60,14 +86,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-09-08T23:18:26Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -89,26 +118,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.6,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.52,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "since 2022",
+      "url": null,
+      "value": true
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": null,
+      "what": "This publication presents the updated printed edition of Part VI of the National Atlas of Spain, focusing on social services and facilities across three thematic chapters: education, science, culture, and sport; health and social policies; and defence, home affairs, and justice. The atlas incorporates a new double-page spread comparing Spain's national indicators against the broader European framework and integrates gender-disaggregated official data across its thematic maps.",
+      "why": "It provides a standardized, cartographic baseline of Spain's social infrastructure and welfare distribution, allowing planners to analyze regional disparities in public service access with integrated gender equality indicators."
+    }
   },
   "track": "papers",
-  "updated": "2026-09-07",
+  "updated": "2026-09-09",
   "work_key": "doi:10.5194/ica-abs-12-122-2026"
 }

@@ -1,7 +1,11 @@
 {
-  "badges": [],
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "We report on an empirical map study to investigate the influence of audience scrolling and direct cartographic interaction on the engagement with, performance on, and trust of map-based visual stories.Visual storytelling describes the use of illustrations, graphics, imagery, and video (i.e., the graphic sign system) in addition to, oral, written, and audio forms (i.e., the linguistic sign system) (Gershon and Page 2001; Roth 2021).In the following, we adopt Pearce's (2008) distinction between story as an account of specific events, places, and people and narrative as the presentation and structure of the story content.Specifically, we examine how differences in author-driven versus reader-driven narrative structures influence engagement, performance, and trust (after Segel and Heer 2010).While there are infinite ways to design for differences in author-versus reader-agency in experiencing a visual story, we focus on two existing alternatives.First, browser scrolling-often referred to as scrollytelling in data journalism-is a common author-driven structure for enforcing a linear narrative in an otherwise non-linear map.Accordingly, mostly static visuals and text are arranged in a pre-determined order to form a beginning, middle, and ending of the story, a structure sometimes described as a three-act narrative from set-up (Act 1), problem (Act 2), and resolution (Act 3) (Roth 2021).Evidence suggests that the scrollytelling genre is now the most prevalent narrative structure used in data journalism (Roth et al. forthcoming), with the focus on scrolling considered less about author control over the narrative and more to support a single interaction on mobile-first viewing (Houtman 2026).In contrast, a reader-driven structure empowers the audience to bring the story to their own geographic proximity, providing multiple pathways through the narrative structure, often available through direct interaction with the (e.g., panning, zooming, Segel and Heer 2010).Reader-driven, interactive digital narratives (IDNs) can take branching, hierarchical, and radiating structures, and often do in more complex multimedia such as gaming (Baldrica-Franklin et al. forthcoming).Given our emphasis on scrollytelling, we narrowed our focus into the martini glass reader-driven structure, which breaks a visual story into two sections: the stem (the author-driven linear narrative, supported through scrollytelling) and the bowl (the reader-driven open narrative, supported by an interactive map) (Segel and Heer 2010;).Specifically, we test how differences in placing the interactive map at the beginning (the reverse martini glass structure, with the metaphorical bowl first) versus the ending (as defined by Segel & Heer).We recruited 135 participants from Prolific.We purposefully sampled (45 each) into three groups based on geographic proximity to create an independent variable for RQ3: california, texas, and other-us.We created the survey using MapStudy (https://github.com/uwcartlab/mapstudy),an integrated and modularized framework for quickly creating and administering mixed-methods empirical research on interactive and online maps (see Vincent et al. 2019;Song et al. 2022 for prior implementations of MapStudy for empirical research).Specifically, we developed a new module called \"Story\" that enables scrollytelling.Notably, the Story module tracked the amount of time the browser displayed a given html element (i.e., static or interactive visual assets), as well as any interactions (as defined in Roth 2013) with interactive maps embedded within the visual story.We designed two visual stories on Vujaković's (2014) \"Environment & Science\" category: hurricanes and wildfire.The hurricane story focuses on the impact of Hurricane Harvey on Texas, particularly the City of Houston, demonstrating the damage caused by climate-related disasters.The wildfire story focuses on the impact of the Tubbs Fire on California, particularly the City of Santa Rosa, demonstrating the damage caused by climate-related disasters.Both",
     "authors": [
       {
         "institutions": [
@@ -93,7 +97,13 @@
   },
   "entities": {
     "data": [],
-    "methods": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:survey",
+        "label": "survey"
+      }
+    ],
     "orgs": [
       {
         "confidence": null,
@@ -149,7 +159,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": [
       {
@@ -191,14 +201,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-09-08T23:18:25Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -220,26 +233,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 1.0,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.6,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/uwcartlab/mapstudy",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The study is presented as a preliminary investigation with a relatively small sample size of 135 participants split across three geographic groups.",
+      "what": "This empirical map study evaluated how narrative structure affects user engagement, performance, and trust by testing 135 participants recruited via Prolific. Using a custom-built 'Story' module in the MapStudy framework, the researchers compared two variations of the 'martini glass' narrative structure: placing an interactive map at the beginning (reverse martini glass) versus at the end of a linear, scroll-based story. The experiment utilized two environmental hazard stories—one on Hurricane Harvey in Texas and another on the Tubbs Fire in California—and tracked element-level viewing times and map interactions.",
+      "why": "It provides a framework and empirical baseline for testing how the sequencing of author-driven scrollytelling and reader-driven map exploration influences how audiences comprehend and trust spatial narratives."
+    }
   },
   "track": "papers",
-  "updated": "2026-09-07",
+  "updated": "2026-09-09",
   "work_key": "doi:10.5194/ica-abs-12-22-2026"
 }

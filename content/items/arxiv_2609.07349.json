@@ -1,0 +1,210 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Real-time urban governance depends not only on knowing where people are, but on how they move between places, directional flows that could be conventionally resolved by tracking individuals through space, i.e., expensive to sustain and built on traces that are highly unique and readily re-identifiable. Here we show that this directional structure need not be observed to be known: aggregated counts which cities already collect retain enough information to reconstruct the temporal evolution of origin-destination (OD) matrix. Using an uncertainty-aware physics-informed framework, we infer future OD flows from area-level counts alone across twelve mobility datasets from cities in the United States and China, reaching accuracy comparable to models that take historical OD matrices as input. Probabilistic modeling corrects the systematic underestimation of sparse, high-value corridors and yields calibrated predictions consistent with observed flows. Architectures that respect the generation-before-assignment logic of transport planning recover interactions more faithfully, indicating that location-level spatial heterogeneity should be preserved before pairwise interactions are reconstructed. Because inference requires only aggregated observations after training, recovering interactions this way reduces reliance on continuous individual-level tracking, pointing toward a more deployable and less exposure-heavy basis for real-time urban intelligence.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Yi Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jing Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jinliang Deng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zhenghong Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yizhi Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Fan Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ivor W. Tsang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yu Liu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.07349v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.07349v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-07",
+    "repository_urls": [],
+    "title": "Inferring Urban Mobility Interactions from Aggregated Dynamics"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-08_2609.07349",
+    "members": [
+      "arxiv:2609.07349"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.07349",
+    "doi": "10.48550/arxiv.2609.07349",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-09T23:08:35Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005222,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1987,
+      "out": 249
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9557,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3823,
+    "relevance": 0.9557
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "An uncertainty-aware, physics-informed framework reconstructs temporal origin-destination (OD) matrices using only aggregated, area-level population counts. Tested across twelve mobility datasets from cities in the United States and China, the model achieves prediction accuracy comparable to methods requiring historical OD matrices as input, while correcting the systematic underestimation of sparse, high-volume corridors.",
+      "why": "It demonstrates that directional flow patterns can be accurately inferred without continuous, individual-level tracking, offering a privacy-preserving and less resource-intensive method for real-time urban mobility monitoring."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-07",
+  "work_key": "arxiv:2609.07349"
+}

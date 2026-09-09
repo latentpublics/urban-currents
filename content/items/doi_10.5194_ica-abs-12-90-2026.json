@@ -1,16 +1,29 @@
 {
-  "badges": [],
+  "badges": [
+    "data",
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "User engagement has become a key factor for successful and sustainable use of open data and for realizing the benefits that open data initiatives are promising.While governments, international organizations, and public institutions increasingly make their data available to use free of charge, ultimately, its value doesn't depend on the quantity of published datasets, rather on how users interact with it, interpret it, and apply it in real live context.To facilitate user interaction with open data, it is necessary to provide solutions that enable active engagement and meaningful understanding and use of the data.Within this context, visualization, particularly geovisualizations, hold particular value for increasing citizen engagement with open data.By enabling interaction with spatial data, geovisualizations allow users to explore information dynamically, adjust their focus, and examine data at different levels of detail.These capabilities of geovisualizations are what distinguish them from more static forms of data visualization and are especially valuable for users with lower levels of data literacy, for whom raw datasets and complex analytical tools may be difficult to interpret and use.In this sense, geovisualizations can serve as an interface between open data and users, facilitating greater accessibility and understanding.However, despite its recognized importance, the concept of user engagement in geovisualization remains underresearched.In the Human-Computer Interaction (HCI) literature, user engagement is often used as a broad concept, referring to a range of related but distinct phenomena, frequently overlapping with related terms such as interest, sustained attention, involvement, user experience etc (Peters et al., 2009).Recent studies, such as (Jansen et al., 2025) highlight significant inconsistencies in how user engagement is conceptualized, which leads to lack of reliable and standardized approaches for its measurement.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Zagreb",
+            "ror": "00mv6sv71"
+          }
+        ],
         "name": "Andrea Miletić",
         "openalex": "A5083463029",
         "orcid": "https://orcid.org/0000-0002-3324-201X"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Zagreb",
+            "ror": "00mv6sv71"
+          }
+        ],
         "name": "Ana Kuveždić Divjak",
         "openalex": "A5150602492",
         "orcid": null
@@ -40,7 +53,13 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00mv6sv71",
+        "label": "University of Zagreb"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -54,7 +73,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -96,14 +115,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-09-08T23:18:26Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -125,26 +147,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.6,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.52,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The framework is conceptual and the abstract does not indicate that it has been empirically tested or validated on specific user groups or geovisualization platforms.",
+      "what": "This study establishes a conceptual framework for defining and measuring user engagement with open-data-based geovisualizations. It synthesizes literature from Human-Computer Interaction and spatial data science to address inconsistencies in how engagement is distinguished from related concepts like user experience, interest, and sustained attention.",
+      "why": "It provides a structured foundation for evaluating how citizens interact with spatial open data, moving the metric of open data success from the sheer volume of published datasets to the quality of user comprehension and interaction."
+    }
   },
   "track": "papers",
-  "updated": "2026-09-07",
+  "updated": "2026-09-09",
   "work_key": "doi:10.5194/ica-abs-12-90-2026"
 }

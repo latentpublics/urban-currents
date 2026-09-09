@@ -1,0 +1,163 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Fine-grained mobile traffic demand forecasting is essential for long-term planning of 5G and future 6G networks, including radio upgrades, site densification, backhaul expansion, and spectrum activation. This paper proposes the Traffic Demand Spatio-Temporal Graph Transformer (TD-STGT), a graph neural forecasting framework for predicting changes in wireless mobile traffic demand across fine geographic grids. The framework uses a population-scaled demand proxy developed from crowdsourced mobile measurements and daytime population information. Experiments across five Canadian metropolitan regions show that TD-STGT achieves the best performance in forecasting grid-level demand changes, reaching a $ΔR^2$ of 0.462 and reducing $Δ$RMSE by 5.7\\% relative to the strongest baseline. The proposed model provides a practical tool for identifying areas with increasing demand pressure and prioritizing future mobile-network capacity upgrades.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Mohamad Alkadamani",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Halim Yanikomeroglu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "eess.SY",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.06636v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.06636v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-06",
+    "repository_urls": [],
+    "title": "TD-STGT: A Spatio-Temporal Graph Transformer for Mobile Traffic Demand Forecasting"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-08_2609.06636",
+    "members": [
+      "arxiv:2609.06636"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-06",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.06636",
+    "doi": "10.48550/arxiv.2609.06636",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-09T23:08:35Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00545,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1875,
+      "out": 293
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8862,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3545,
+    "relevance": 0.8862
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model relies on a population-scaled proxy for demand rather than direct, proprietary carrier traffic measurements.",
+      "what": "The Traffic Demand Spatio-Temporal Graph Transformer (TD-STGT) is a new graph neural forecasting framework designed to predict grid-level changes in wireless mobile traffic demand. The model utilizes a population-scaled demand proxy constructed from daytime population data and crowdsourced mobile measurements. Evaluated across five Canadian metropolitan regions, TD-STGT outperformed the strongest baseline model, achieving a ΔR² of 0.462 and reducing ΔRMSE by 5.7%.",
+      "why": "It provides network operators with a highly accurate, fine-grained forecasting tool to proactively identify localized demand surges, allowing them to prioritize infrastructure upgrades like 5G/6G site densification and spectrum activation before congestion occurs."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-06",
+  "work_key": "arxiv:2609.06636"
+}

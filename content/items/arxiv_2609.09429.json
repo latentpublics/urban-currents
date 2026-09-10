@@ -1,0 +1,174 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "While accurate measurement of socioeconomic indicators remains challenging in data-scarce regions, which limits policy interventions and resource allocation, high-resolution geospatial data is widely available and can contain information on various livability statistics. We investigate which physical features are encoded within foundation model embeddings, such as AlphaEarth, AnySat, and TerraMind, and provide a systematic framework for identifying the most predictive geospatial indicators. By analyzing how different types of geospatial data influence urban livability predictions, our approach enables researchers to prioritize the most informative features for their specific applications. Additionally, we demonstrate how to leverage foundation model embeddings to enhance prediction performance for these outcomes. This work contributes a principled methodology for extracting actionable information from satellite imagery while accounting for complex spatial dependencies, with applications in predicting urban livability in regions with limited observation data.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ayush Khot",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Wen Zhou",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shaowen Wang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.CY"
+    ],
+    "comment": "11 pages, 5 figures, 6 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.09429v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.09429v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-08",
+    "repository_urls": [],
+    "title": "Applying foundation model embeddings towards urban livability evaluation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-09_2609.09429",
+    "members": [
+      "arxiv:2609.09429"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.09429",
+    "doi": "10.1145/3841645.3843316",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-10T23:05:30Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005035,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1821,
+      "out": 256
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9448,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3779,
+    "relevance": 0.9448
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The abstract does not specify the exact livability indicators used, the geographic location of the evaluation, or the baseline performance metrics of the models.",
+      "what": "This study evaluates how physical features encoded within geospatial foundation models—specifically AlphaEarth, AnySat, and TerraMind—can predict urban livability indicators. The researchers developed a systematic framework to identify the most predictive geospatial features from satellite imagery and analyze how different spatial data types influence these predictions while accounting for complex spatial dependencies.",
+      "why": "It establishes a principled methodology to extract actionable livability metrics in data-scarce regions, providing a way to substitute high-resolution satellite imagery and foundation model embeddings for missing ground-level socioeconomic observations."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-08",
+  "work_key": "arxiv:2609.09429"
+}

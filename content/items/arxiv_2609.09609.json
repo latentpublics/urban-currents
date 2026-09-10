@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Large language models (LLMs) are increasingly used for individual next-location prediction, while sociodemographic conditioning is common in LLM-based travel simulation. Yet the incremental predictive value of sociodemographic attributes remains unclear. To directly test this contribution, sociodemographic records were linked with passively sensed mobility data from 5,000 Shenzhen residents to construct a closed-set benchmark in which models rank 100 candidate destinations. Each prediction instance is evaluated with and without age, gender, occupation and income, while holding mobility history, candidates and all other prompt content fixed. Results show that across four history lengths, the paired change in top-1 accuracy ranges from -0.8 to +0.5 percentage points, with no detectable gain from attributes. This result remains consistent when stay history is withheld, across alternative prediction times, in two additional LLMs and in a supervised reranker trained on the same benchmark. The null does not reflect a lack of model responsiveness to demographic information, as permuted attributes reduce LLM accuracy whereas correctly matched attributes do not improve it. A further asymmetry emerges in the reverse predictive direction, as pre-cut mobility trajectories recover income with an AUC of 0.708, while sociodemographic attributes contribute little to next-location prediction. Beyond demographic conditioning, candidate construction exerts a much larger influence on reported performance. Removing distance raises top-1 accuracy by 7.7 percentage points under proximity sampling but lowers it by 22.3 points under popularity sampling, with the reversal reproduced across all three LLMs. These results distinguish demographic association from incremental predictive usefulness and show that sampled next-location accuracy depends strongly on how candidate alternatives are constructed.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Xin Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Paraic Carroll",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kerry Nice",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sachith Seneviratne",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Li Zhang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": "17 pages, 4 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.09609v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.09609v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-09",
+    "repository_urls": [],
+    "title": "Who You Are Adds Nothing Detectable to Where You Go Next: Sociodemographic Conditioning in LLM Next-Location Prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-09_2609.09609",
+    "members": [
+      "arxiv:2609.09609"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q15174",
+        "label": "Shenzhen",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.09609",
+    "doi": "10.48550/arxiv.2609.09609",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-10T23:05:30Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006575,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2217,
+      "out": 361
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9588,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3835,
+    "relevance": 0.9588
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "22.3 points",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a closed-set benchmark where models rank 100 candidate destinations, which may not fully capture open-ended or generative next-location prediction scenarios.",
+      "what": "The study evaluates the predictive value of sociodemographic attributes in LLM-based next-location prediction using a closed-set benchmark of 5,000 Shenzhen residents. Across three LLMs and a supervised reranker, adding age, gender, occupation, and income to prompts changed top-1 accuracy by only -0.8 to +0.5 percentage points, showing no detectable predictive gain. Conversely, mobility trajectories alone could predict income with an AUC of 0.708, while candidate destination sampling methods shifted top-1 accuracy by up to 22.3 percentage points.",
+      "why": "It demonstrates that adding demographic profiles to LLM mobility prompts does not improve next-location prediction accuracy, challenging a common practice in agent-based travel simulations. It also reveals that reported LLM performance in mobility tasks is highly sensitive to how candidate destinations are sampled rather than the model's actual predictive capability."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-09",
+  "work_key": "arxiv:2609.09609"
+}

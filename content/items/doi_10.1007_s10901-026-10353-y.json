@@ -6,25 +6,45 @@
     "abstract": "Abstract Machine learning-based automated valuation models (AVMs) are increasingly used in urban housing markets, yet their performance varies substantially depending on local market conditions. This study investigates spatial variations in the accuracy of five AVMs across Greater Sydney, including ordinary least squares (OLS), geographically weighted regression (GWR), random forest (RF), extreme gradient boosting (XGB), and multilayer perceptron (MLP). Among the models, RF achieved the highest overall accuracy, followed by XGB and MLP, while OLS showed the lowest performance. GWR demonstrated competitive accuracy in submarkets with homogeneous housing and high transaction volume but performed poorly in spatially isolated or topographically complex areas. Correlation analysis revealed that AVM accuracy tends to improve in submarkets with lower mean prices, lower price dispersion, and higher sales volume. The findings suggest that model selection should be tailored to submarket characteristics rather than applying a universal model. In particular, spatial models such as GWR may offer interpretable alternatives to black-box machine learning models in stable submarkets.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "UNSW Sydney",
+            "ror": "03r8z3t63"
+          }
+        ],
         "name": "Hojun Lee",
         "openalex": "A5150726958",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "UNSW Sydney",
+            "ror": "03r8z3t63"
+          }
+        ],
         "name": "Hoon Han",
         "openalex": "A5131003474",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "UNSW Sydney",
+            "ror": "03r8z3t63"
+          }
+        ],
         "name": "Chris Pettit",
         "openalex": "A5150817390",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Hanbat National University",
+            "ror": "00x514t95"
+          }
+        ],
         "name": "Sang Ho Lee",
         "openalex": "A5150768179",
         "orcid": null
@@ -71,7 +91,18 @@
         "label": "random forest"
       }
     ],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03r8z3t63",
+        "label": "UNSW Sydney"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00x514t95",
+        "label": "Hanbat National University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -279,6 +310,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-08",
+  "updated": "2026-09-10",
   "work_key": "doi:10.1007/s10901-026-10353-y"
 }

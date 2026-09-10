@@ -4,19 +4,34 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          }
+        ],
         "name": "Hongyu Zhang",
         "openalex": "A5100412598",
         "orcid": "https://orcid.org/0000-0002-3063-9425"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Huashan Hospital",
+            "ror": "05201qm87"
+          }
+        ],
         "name": "Ying Yang",
         "openalex": "A5100965879",
         "orcid": "https://orcid.org/0009-0006-3197-8839"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          }
+        ],
         "name": "Shuaian Wang",
         "openalex": "A5070050188",
         "orcid": "https://orcid.org/0000-0001-9247-4403"
@@ -26,7 +41,7 @@
     "comment": null,
     "primary_location": {
       "landing_page_url": "https://doi.org/10.1016/j.trc.2026.105982",
-      "pdf_url": null,
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0968090X26004687/pdf",
       "source_id": "S64511102",
       "source_name": "Transportation Research Part C Emerging Technologies",
       "type": "journal",
@@ -37,7 +52,7 @@
     "title": "A data-driven fuel selection optimization approach for dual-fuel ships"
   },
   "cluster": {
-    "cluster_id": "clu_2026-09-08_10.1016/j.trc.20",
+    "cluster_id": "clu_2026-09-09_10.1016/j.trc.20",
     "members": [
       "doi:10.1016/j.trc.2026.105982"
     ],
@@ -46,7 +61,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0030zas98",
+        "label": "Hong Kong Polytechnic University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05201qm87",
+        "label": "Huashan Hospital"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -151,7 +177,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-09-09T23:08:45Z",
+    "collected_at": "2026-09-10T23:05:43Z",
     "collectors": [
       "openalex"
     ],
@@ -198,6 +224,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-09-08",
+  "updated": "2026-09-10",
   "work_key": "doi:10.1016/j.trc.2026.105982"
 }

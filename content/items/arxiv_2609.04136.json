@@ -46,11 +46,42 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5092594605",
+        "label": "Mayleen Cortez-Rodriguez"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10747",
+        "is_primary": true,
+        "label": "Disaster Management and Resilience",
+        "score": 0.7816,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11886",
+        "is_primary": false,
+        "label": "Agricultural risk and resilience",
+        "score": 0.0438,
+        "subfield": "1111"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11430",
+        "is_primary": false,
+        "label": "Disaster Response and Management",
+        "score": 0.041,
+        "subfield": "3604"
+      }
+    ]
   },
   "first_published": "2026-09-03",
   "graph": {
@@ -61,7 +92,7 @@
   "ids": {
     "arxiv": "2609.04136",
     "doi": "10.48550/arxiv.2609.04136",
-    "openalex": null,
+    "openalex": "W7208789694",
     "pmid": null
   },
   "provenance": {
@@ -69,7 +100,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-04T23:00:09Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004585,
     "llm": {
@@ -157,6 +189,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-03",
+  "updated": "2026-09-10",
   "work_key": "arxiv:2609.04136"
 }

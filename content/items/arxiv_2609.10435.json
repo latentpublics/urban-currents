@@ -1,0 +1,162 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban rail transit systems (URTSs) are increasingly exposed to extreme floods following heavy precipitation, yet passenger travel impacts are often assessed through delay-based indicators that overlook infeasible journeys under large-scale disruptions. This study develops a passenger-oriented, resilience-informed framework for assessing flood impacts on URTS journeys from disruption onset to recovery completion. The framework presents a novel six-category classification of journey impacts, explicitly considering rerouting, alternative station use, and a delay threshold. It is demonstrated through hourly dynamic simulations of 15 London URTS lines under 30-year, 100-year, and 1,000-year flood risk scenarios. Results indicate that severe flood disruptions lead to substantial unsatisfied demand, driven primarily by unavailable routes rather than unacceptable delays. Compared with finer behaviour adjustments, rerouting dominates travel impacts. These findings highlight the significance of moving beyond delay-based assessment and provide valuable evidence on essential behavioural mechanisms for strategic-level stress testing intended to inform URTS flood resilience intervention planning.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Wei Bi",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.10435v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.10435v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-09",
+    "repository_urls": [],
+    "title": "Assessing extreme flood impacts on urban rail transit: A passenger-oriented, resilience-informed framework"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-09_2609.10435",
+    "members": [
+      "arxiv:2609.10435"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q84",
+        "label": "London",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.10435",
+    "doi": "10.48550/arxiv.2609.10435",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-10T23:05:30Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00532,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1939,
+      "out": 268
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9797,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3919,
+    "relevance": 0.9797
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's behavioral assumptions and simulation parameters were demonstrated using a single transit system in London.",
+      "what": "This study develops a passenger-oriented framework to classify journey impacts into six categories, accounting for rerouting, alternative station use, and delay thresholds during disruptions. The framework was tested using hourly dynamic simulations of 15 London rail transit lines under 30-year, 100-year, and 1,000-year flood scenarios, revealing that unsatisfied travel demand is primarily caused by completely unavailable routes rather than unacceptable delays.",
+      "why": "It shifts flood impact assessments from simple delay-based metrics to a model that captures completely blocked journeys and passenger rerouting behavior, showing that rerouting is the dominant factor in travel disruption during severe events."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-09",
+  "work_key": "arxiv:2609.10435"
+}

@@ -64,11 +64,52 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5150005084",
+        "label": "Fang He"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6121-6778",
+        "label": "Tao-Yang Fu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8949-489X",
+        "label": "Wang-Chien Lee"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.9236,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0171,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.0107,
+        "subfield": "2212"
+      }
+    ]
   },
   "first_published": "2026-09-03",
   "graph": {
@@ -79,7 +120,7 @@
   "ids": {
     "arxiv": "2609.03427",
     "doi": "10.48550/arxiv.2609.03427",
-    "openalex": null,
+    "openalex": "W7208773832",
     "pmid": null
   },
   "provenance": {
@@ -87,7 +128,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-04T23:00:09Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005419,
     "llm": {
@@ -175,6 +217,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-03",
+  "updated": "2026-09-10",
   "work_key": "arxiv:2609.03427"
 }

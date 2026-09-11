@@ -109,12 +109,79 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03mjnxj17",
+        "label": "LEK Consulting (United States)"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5100202946",
+        "label": "Laura Fraade-Blanar"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5150600395",
+        "label": "Jackson Graves"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4283-0788",
+        "label": "Aaron Clark‐Ginsberg"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5150600262",
+        "label": "Sam Cooper"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5150694467",
+        "label": "Jeremy Kaufman"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5110551964",
+        "label": "Jackie Lindsey"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5074574723",
+        "label": "Piet van Os"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10525",
+        "is_primary": true,
+        "label": "Human-Automation Interaction and Safety",
+        "score": 0.2155,
+        "subfield": "3207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10809",
+        "is_primary": false,
+        "label": "Occupational Health and Safety Research",
+        "score": 0.1942,
+        "subfield": "3614"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11357",
+        "is_primary": false,
+        "label": "Risk and Safety Analysis",
+        "score": 0.0678,
+        "subfield": "1804"
+      }
+    ]
   },
   "first_published": "2026-09-04",
   "graph": {
@@ -125,7 +192,7 @@
   "ids": {
     "arxiv": "2609.04777",
     "doi": "10.48550/arxiv.2609.04777",
-    "openalex": null,
+    "openalex": "W7211894365",
     "pmid": null
   },
   "provenance": {
@@ -133,7 +200,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-08T23:18:21Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004949,
     "llm": {
@@ -221,6 +289,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-04",
+  "updated": "2026-09-11",
   "work_key": "arxiv:2609.04777"
 }

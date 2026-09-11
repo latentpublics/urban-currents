@@ -65,11 +65,57 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9122-4709",
+        "label": "Giulia Zarpellon"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7551-3423",
+        "label": "Joseph Aylett-Bullock"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5043-3099",
+        "label": "Frank Krauss"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5136385196",
+        "label": "Miguel Luengo-Oroz"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11500",
+        "is_primary": true,
+        "label": "Evacuation and Crowd Dynamics",
+        "score": 0.6862,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10410",
+        "is_primary": false,
+        "label": "COVID-19 epidemiological studies",
+        "score": 0.0592,
+        "subfield": "2611"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11502",
+        "is_primary": false,
+        "label": "Facility Location and Emergency Management",
+        "score": 0.0254,
+        "subfield": "1407"
+      }
+    ]
   },
   "first_published": "2026-09-04",
   "graph": {
@@ -80,7 +126,7 @@
   "ids": {
     "arxiv": "2609.05342",
     "doi": "10.48550/arxiv.2609.05342",
-    "openalex": null,
+    "openalex": "W7211901746",
     "pmid": null
   },
   "provenance": {
@@ -88,7 +134,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-08T23:18:21Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004438,
     "llm": {
@@ -176,6 +223,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-04",
+  "updated": "2026-09-11",
   "work_key": "arxiv:2609.05342"
 }

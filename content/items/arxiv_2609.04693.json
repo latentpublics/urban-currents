@@ -63,11 +63,57 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5133934348",
+        "label": "Om Chiddarwar"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8330-7232",
+        "label": "Priyanka Mandal"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3229-2637",
+        "label": "Praveen Kumar Chandaliya"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5150607109",
+        "label": "Shriniwas Arkatkar"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12120",
+        "is_primary": true,
+        "label": "Air Quality Monitoring and Forecasting",
+        "score": 0.973,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0072,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10190",
+        "is_primary": false,
+        "label": "Air Quality and Health Impacts",
+        "score": 0.0045,
+        "subfield": "2307"
+      }
+    ]
   },
   "first_published": "2026-09-04",
   "graph": {
@@ -78,7 +124,7 @@
   "ids": {
     "arxiv": "2609.04693",
     "doi": "10.48550/arxiv.2609.04693",
-    "openalex": null,
+    "openalex": "W7211917765",
     "pmid": null
   },
   "provenance": {
@@ -86,7 +132,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-08T23:18:21Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006496,
     "llm": {
@@ -174,6 +221,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-04",
+  "updated": "2026-09-11",
   "work_key": "arxiv:2609.04693"
 }

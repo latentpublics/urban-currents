@@ -1,0 +1,302 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Detailed building-envelope information is essential for robust urban-scale energy performance analyses. However, national energy certificate databases in Spain and other countries often lack key attributes such as orientation-specific external perimeter measurements and glazing ratios. This paper introduces UrbanFormAnalyzer, an open-source Python library developed with QGIS, which automatically derives orientation-specific external perimeters and additional envelope descriptors from cadastral geometries. The workflow establishes a standard input structure to support integration with varied cadastral sources. As an example, we offer an adapter for the Spanish Cadastre that downloads and preprocesses their KML files, converting them into the required format. The spatial processing stage then calculates the perimeters by cardinal orientation, distinguishing exposed from adjacent walls. To illustrate a potential downstream application, the enhanced datasets are matched with national energy certificates to explore the estimation of orientation-specific glazing ratios, where such data are available. While predictive accuracy remains limited, the case study highlights how UrbanFormAnalyzer could support the creation of reproducible and harmonized building envelope data suitable for a range of analytical applications, including large-scale energy modeling, planning, and renovation assessment.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Universidade da Coruña",
+            "ror": "01qckj285"
+          },
+          {
+            "name": "Instituto de Investigación Biomédica de A Coruña",
+            "ror": "04c9g9234"
+          }
+        ],
+        "name": "Daniel Garcia-Gonzalez",
+        "openalex": "A5059599386",
+        "orcid": "https://orcid.org/0000-0003-0686-3168"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universidade da Coruña",
+            "ror": "01qckj285"
+          },
+          {
+            "name": "Instituto de Investigación Biomédica de A Coruña",
+            "ror": "04c9g9234"
+          }
+        ],
+        "name": "Jorge Rodríguez‐Álvarez",
+        "openalex": "A5049966149",
+        "orcid": "https://orcid.org/0000-0003-3141-3046"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universidade da Coruña",
+            "ror": "01qckj285"
+          },
+          {
+            "name": "Instituto de Investigación Biomédica de A Coruña",
+            "ror": "04c9g9234"
+          }
+        ],
+        "name": "Miguel R. Luaces",
+        "openalex": "A5007513751",
+        "orcid": "https://orcid.org/0000-0003-0549-2000"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Universidade da Coruña",
+            "ror": "01qckj285"
+          },
+          {
+            "name": "Instituto de Investigación Biomédica de A Coruña",
+            "ror": "04c9g9234"
+          }
+        ],
+        "name": "Susana Ladra",
+        "openalex": "A5085109336",
+        "orcid": "https://orcid.org/0000-0003-4616-0774"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s43762-026-00288-z",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s43762-026-00288-z.pdf",
+      "source_id": "S4210175573",
+      "source_name": "Computational Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-10",
+    "repository_urls": [],
+    "title": "UrbanFormAnalyzer: an open-source workflow to derive orientation-specific building envelope attributes from cadastral data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-10_10.1007/s43762-0",
+    "members": [
+      "doi:10.1007/s43762-026-00288-z"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:land-use",
+        "label": "land use data"
+      }
+    ],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01qckj285",
+        "label": "Universidade da Coruña"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04c9g9234",
+        "label": "Instituto de Investigación Biomédica de A Coruña"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0686-3168",
+        "label": "Daniel Garcia-Gonzalez"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3141-3046",
+        "label": "Jorge Rodríguez‐Álvarez"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0549-2000",
+        "label": "Miguel R. Luaces"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4616-0774",
+        "label": "Susana Ladra"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": true,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.6429,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12698",
+        "is_primary": false,
+        "label": "3D Modeling in Geospatial Applications",
+        "score": 0.1228,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11164",
+        "is_primary": false,
+        "label": "Remote Sensing and LiDAR Applications",
+        "score": 0.0355,
+        "subfield": "2305"
+      }
+    ]
+  },
+  "first_published": "2026-09-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1678356000",
+      "openalex:W1972050067",
+      "openalex:W2092432929",
+      "openalex:W2242530323",
+      "openalex:W2612242444",
+      "openalex:W2766585573",
+      "openalex:W2769174254",
+      "openalex:W2802932158",
+      "openalex:W2911964244",
+      "openalex:W2924514946",
+      "openalex:W2953367155",
+      "openalex:W2973648407",
+      "openalex:W2989936006",
+      "openalex:W3022039226",
+      "openalex:W3045182024",
+      "openalex:W3083964105",
+      "openalex:W3136570575",
+      "openalex:W3148568426",
+      "openalex:W3203290648",
+      "openalex:W3203492910",
+      "openalex:W4200304978",
+      "openalex:W4239510810",
+      "openalex:W4379052683",
+      "openalex:W4386701516",
+      "openalex:W4392916863",
+      "openalex:W4396695032",
+      "openalex:W4401236135",
+      "openalex:W4401946734",
+      "openalex:W4402545599",
+      "openalex:W4405834753"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s43762-026-00288-z",
+    "openalex": "W7212028839",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-11T23:10:28Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005366,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1975,
+      "out": 267
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-11T23:10:28Z",
+    "doi": "10.1007/s43762-026-00288-z",
+    "journal": "Computational Urban Science",
+    "source_id": "S4210175573",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The predictive accuracy for estimating orientation-specific glazing ratios remains limited in the initial case study.",
+      "what": "The UrbanFormAnalyzer is an open-source Python library integrated with QGIS that automatically extracts orientation-specific external perimeters and envelope descriptors from cadastral geometries. It features a standardized input structure, includes an adapter to download and preprocess Spanish Cadastre KML files, and distinguishes exposed from adjacent walls by cardinal direction. The tool was tested by matching the generated spatial data with national energy certificates to estimate orientation-specific glazing ratios.",
+      "why": "It automates the extraction of detailed building envelope attributes that are critical for urban energy modeling but are typically missing from national energy certificate databases."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-10",
+  "work_key": "doi:10.1007/s43762-026-00288-z"
+}

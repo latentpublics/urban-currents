@@ -1,0 +1,199 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Area-based social risk indices summarize residents' socioeconomic conditions but incompletely capture physical features of place that may affect health. We evaluated whether numerical representations of physical place produced by four geospatial foundation model families from 2022 satellite data explained residual variance in tract-level associations between the Area Deprivation Index, Social Deprivation Index, and Social Vulnerability Index with health outcomes. We used LightGBM to predict variables from the American Community Survey and 40 chronic disease and health-behavior outcomes from CDC PLACES across 82,646 census tracts in the contiguous United States, evaluating performance across 10 held-out states. Among survey variables, models were moderately predictive of some variables including housing type (R-squared up to 0.54) but weak for disability, unemployment, and income disparity. For health outcomes, models explained up to 54% of variance left unexplained by social risk indices, with the largest gains for annual checkups, arthritis, and high blood pressure. Mean total variance explained by geospatial foundation models across the 40 health-related outcomes increased from 0.31 in the smallest tract-size decile to 0.39 in the largest. Geospatial foundation models capture health-relevant features of place not represented by conventional social risk indices and may usefully augment them in epidemiological analyses.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Nathaniel Hendrix",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Carl Y. Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chris Heitzig",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Andrew Bazemore",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "David H. Rehkopf",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP",
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.11689v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.11689v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-10",
+    "repository_urls": [],
+    "title": "Geospatial Foundation Models Capture Health-Relevant Dimensions of Place Beyond Conventional Social Risk Indices"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-10_2609.11689",
+    "members": [
+      "arxiv:2609.11689"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:gradient-boosting",
+        "label": "gradient boosting"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.11689",
+    "doi": "10.48550/arxiv.2609.11689",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-11T23:10:13Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006308,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2069,
+      "out": 356
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9401,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.376,
+    "relevance": 0.9401
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "from 2022",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The models' predictive performance is weaker for non-visual socioeconomic factors like unemployment, disability, and income inequality, and their accuracy decreases in smaller census tracts.",
+      "what": "The study evaluated four geospatial foundation model families using 2022 satellite imagery to predict American Community Survey variables and 40 chronic disease and health-behavior outcomes from CDC PLACES across 82,646 census tracts in the contiguous United States. Using LightGBM, the models predicted housing type with an R-squared of up to 0.54, though they performed poorly on disability, unemployment, and income disparity. Crucially, the models explained up to 54% of the health outcome variance left unexplained by traditional social risk indices, with performance scaling from a mean explained variance of 0.31 in the smallest census tracts to 0.39 in the largest.",
+      "why": "It demonstrates that satellite-derived geospatial foundation models capture physical characteristics of neighborhoods that directly relate to public health outcomes but are entirely missed by standard socioeconomic risk indices."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-10",
+  "work_key": "arxiv:2609.11689"
+}

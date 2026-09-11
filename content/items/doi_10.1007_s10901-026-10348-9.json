@@ -1,0 +1,269 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The differences in predictive performance between econometric and machine learning (ML) spatially varying models for the mass appraisal of residential properties are largely unknown. Therefore, this article aims to identify the most accurate and precise model to serve as an automated valuation model for the housing market. The study examines global approaches such as multiple regression (LR) and eXtreme gradient boosting (XGBoost), but places greater emphasis on local methods. Among the latter, econometric linear models were analysed, particularly geographically weighted regression (GWR) and multiscale GWR (MGWR), as well as ML methods such as geographically weighted random forest (GWRF) and geographical XGBoost (G-XGBoost). The set of models was supplemented with a local hybrid model – geographically gradient boosting weighted regression (GWRBoost). The housing markets of Warsaw and Amsterdam were selected as case studies, with both rental and sales prices examined. The results revealed that GWRF and XGBoost performed best in terms of out-of-sample prediction, while offering reasonable computational time. The performance of GWRF and XGBoost was statistically equivalent for rental prices, whereas GWRF achieved significantly better results for sales prices. Analysis of partial dependence plots and local variable importance values revealed both nonlinear and spatially varying relationships between price and the predictors. In the rental market, modelling nonlinearity is largely sufficient to achieve high predictive performance. Spatial heterogeneity, on the other hand, is an additional advantage when predicting sales prices.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Krakow University of Economics",
+            "ror": "0262te083"
+          }
+        ],
+        "name": "Mateusz Tomal",
+        "openalex": "A5016925931",
+        "orcid": "https://orcid.org/0000-0002-8393-1614"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s10901-026-10348-9",
+      "pdf_url": null,
+      "source_id": "S24809831",
+      "source_name": "Journal of Housing and the Built Environment",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-10",
+    "repository_urls": [],
+    "title": "Econometric and machine learning spatially varying models for the mass appraisal of residential properties"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-10_10.1007/s10901-0",
+    "members": [
+      "doi:10.1007/s10901-026-10348-9"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-econometrics",
+        "label": "spatial econometrics"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0262te083",
+        "label": "Krakow University of Economics"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8393-1614",
+        "label": "Mateusz Tomal"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q727",
+        "label": "Amsterdam",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10632",
+        "is_primary": true,
+        "label": "Housing Market and Economics",
+        "score": 0.9127,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11911",
+        "is_primary": false,
+        "label": "Spatial and Panel Data Analysis",
+        "score": 0.0307,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13920",
+        "is_primary": false,
+        "label": "Urban Planning and Valuation",
+        "score": 0.0139,
+        "subfield": "2308"
+      }
+    ]
+  },
+  "first_published": "2026-09-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1541504294",
+      "openalex:W1797580880",
+      "openalex:W1967087580",
+      "openalex:W1970010064",
+      "openalex:W1975509631",
+      "openalex:W1978286842",
+      "openalex:W1986792128",
+      "openalex:W1988980926",
+      "openalex:W1994840423",
+      "openalex:W1999120383",
+      "openalex:W2029469881",
+      "openalex:W2047120335",
+      "openalex:W2051688880",
+      "openalex:W2070300253",
+      "openalex:W2075651857",
+      "openalex:W2077520869",
+      "openalex:W2078245821",
+      "openalex:W2084376234",
+      "openalex:W2101677938",
+      "openalex:W2118049491",
+      "openalex:W2119194442",
+      "openalex:W2136844083",
+      "openalex:W2156378058",
+      "openalex:W2159598654",
+      "openalex:W2560136348",
+      "openalex:W2605661896",
+      "openalex:W2743729757",
+      "openalex:W2747207142",
+      "openalex:W2757285809",
+      "openalex:W2781064434",
+      "openalex:W2911964244",
+      "openalex:W2930389570",
+      "openalex:W2952307397",
+      "openalex:W2972629016",
+      "openalex:W2998570674",
+      "openalex:W3041783027",
+      "openalex:W3118899449",
+      "openalex:W3127361658",
+      "openalex:W3133936714",
+      "openalex:W3152187935",
+      "openalex:W3186245229",
+      "openalex:W4200279259",
+      "openalex:W4200603477",
+      "openalex:W4205666762",
+      "openalex:W4205820543",
+      "openalex:W4213223730",
+      "openalex:W4281996971",
+      "openalex:W4291289123",
+      "openalex:W4292247423",
+      "openalex:W4294325987",
+      "openalex:W4296907701",
+      "openalex:W4307569198",
+      "openalex:W4367316638",
+      "openalex:W4394882139",
+      "openalex:W4395463936",
+      "openalex:W4400240286",
+      "openalex:W4405572883",
+      "openalex:W4409203535",
+      "openalex:W4413950081",
+      "openalex:W4415008610"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s10901-026-10348-9",
+    "openalex": "W7212120807",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-11T23:10:27Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006281,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2099,
+      "out": 348
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-11T23:10:27Z",
+    "doi": "10.1007/s10901-026-10348-9",
+    "journal": "Journal of Housing and the Built Environment",
+    "source_id": "S24809831",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on two European capital cities and may not generalize to housing markets with different structural dynamics or data availability.",
+      "what": "The study compared the predictive performance of global and local econometric models against machine learning models for housing sales and rental prices in Warsaw and Amsterdam. It evaluated multiple regression, XGBoost, Geographically Weighted Regression (GWR), Multiscale GWR (MGWR), Geographically Weighted Random Forest (GWRF), Geographical XGBoost (G-XGBoost), and a hybrid GWRBoost model. GWRF and XGBoost achieved the highest out-of-sample accuracy, with GWRF significantly outperforming other models on sales prices, while both performed equivalently on rental prices.",
+      "why": "It demonstrates that while modeling nonlinear relationships is sufficient for high predictive accuracy in rental markets, accounting for spatial heterogeneity is crucial for predicting sales prices. This provides automated valuation model developers with clear guidance on when to deploy computationally intensive local spatial models versus simpler global machine learning models."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-10",
+  "work_key": "doi:10.1007/s10901-026-10348-9"
+}

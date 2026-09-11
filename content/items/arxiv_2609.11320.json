@@ -1,0 +1,199 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Where a mobile signal is available shapes who can work, learn, bank, seek health care and respond to crises in the digital age, yet no globally consistent, sub-national record of mobile network coverage exists. We present such a record: annual 1km maps of the probability of 2G, 3G and 4G coverage for 214 countries and territories for the years 1999 to 2030. The maps are produced by three independent models: a calibrated machine-learning model, a techno-economic simulator of network build-out, and a spatial deep-learning model. The three estimates are then combined, per country and technology and in proportion to their measured accuracy, into a single best estimate with per-pixel 90% uncertainty bands; all four layers are released as part of the dataset. Because mobile roll-out closely follows a country's socio-economic conditions (population distribution, electrification, physical infrastructure), the models are grounded in existing geospatial data and tuned on 2,409 quality-screened operator-reported coverage maps, which are available up to 2020. For 2021--2024 the maps are predicted from recent geospatial data alone; for 2025--2030 they are extrapolated from demographic and infrastructure projections. On countries held out during training, the machine-learning model attains AUC 0.89--0.92. Baseline comparisons and the combined product's external validation are reported in Technical Validation. The dataset supports mapping the global digital divide, linking connectivity to household-survey outcomes, and humanitarian and infrastructure planning.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Till Koebe",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Theophilus Aidoo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ali El Chami",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ali Kanso",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Akansh Maurya",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Purushottam Sharma",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ingmar Weber",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ridhi Kashyap",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY",
+      "cs.SI"
+    ],
+    "comment": "Dataset linked to that paper: https://zenodo.org/records/21594337",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.11320v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.11320v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-10",
+    "repository_urls": [],
+    "title": "A global mobile network coverage raster product at 1km resolution, 1999--2030"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-10_2609.11320",
+    "members": [
+      "arxiv:2609.11320"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.11320",
+    "doi": "10.48550/arxiv.2609.11320",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-11T23:10:13Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006529,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2211,
+      "out": 357
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9468,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4587,
+    "relevance": 0.9468
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "1999 to 2030",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Estimates for the years 2021 through 2030 rely entirely on model predictions and demographic projections rather than direct operator reports.",
+      "what": "This study produces annual 1km resolution global maps estimating the probability of 2G, 3G, and 4G mobile network coverage across 214 countries and territories from 1999 to 2030. The dataset combines predictions from a machine-learning model (achieving an AUC of 0.89 to 0.92 on held-out countries), a techno-economic simulator, and a spatial deep-learning model, all trained on 2,409 operator-reported coverage maps up to 2020. Predictions for 2021 to 2024 rely on recent geospatial data, while 2025 to 2030 estimates are projected from demographic and infrastructure forecasts.",
+      "why": "It provides the first globally consistent, sub-national, and longitudinal record of mobile connectivity, establishing a baseline to measure the digital divide and link network access to household-level socio-economic outcomes."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-10",
+  "work_key": "arxiv:2609.11320"
+}

@@ -1,22 +1,39 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Smart city initiatives aim to improve quality of life for urban residents, but many have suffered from public backlash. As a result, scholars have begun to investigate the role of trust in the adoption of smart technologies, and many have advocated for greater public participation. However, the relationship between trust and participation in this context has often remained underexamined. This article aims to clarify how participatory approaches can function as opportunities for trust-building between residents and the experts and institutions behind smart city initiatives. Drawing on a thematic synthesis of recent sociological research on trust alongside the literature on public participation, we reframe this connection in terms of the relational context in which smart city experts, the public, and technologies are embedded. We argue that participation does not produce trust as an outcome but establishes the reciprocal exchanges within which relational ties between residents and expertise are formed, altered, or withheld. We then develop a typology of three roles for public participation- the public as co-accessors, co-collectors, and co-designers- named for the position residents occupy in relation to smart city experts. Because a relation cannot be specified from one side alone, each role also names what smart city experts and institutions must place at stake for trust to emerge: scrutiny of data practices, reliance on resident-produced data, and a share of control in shaping an initiative. We draw on case studies to show how each arrangement establishes distinct interactional contexts within which both trust and mistrust can productively operate.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Columbia University",
+            "ror": "00hj8s172"
+          }
+        ],
         "name": "Brady Kennedy",
         "openalex": "A5129262689",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Claremont Graduate University",
+            "ror": "0157pnt69"
+          }
+        ],
         "name": "Cristian Capotescu",
         "openalex": "A5150749322",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Lehman College",
+            "ror": "03m908832"
+          }
+        ],
         "name": "Jennifer Laird",
         "openalex": "A5150818578",
         "orcid": null
@@ -46,7 +63,23 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00hj8s172",
+        "label": "Columbia University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0157pnt69",
+        "label": "Claremont Graduate University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03m908832",
+        "label": "Lehman College"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -65,7 +98,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -231,14 +264,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-09-09T23:08:48Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -260,26 +296,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The framework is conceptual and relies on a synthesis of existing literature and illustrative case studies rather than new empirical testing.",
+      "what": "This paper presents a theoretical framework and typology that reframes public participation in smart cities as a relational process for building trust rather than a direct outcome. By synthesizing sociological research on trust with public participation literature, it categorizes resident involvement into three distinct roles: co-accessors, co-collectors, and co-designers. Each role is analyzed through case studies to demonstrate how it alters the interactional context between residents, smart city experts, and institutions.",
+      "why": "It shifts the understanding of smart city public engagement from a transactional exercise to a relational one, showing exactly what institutions must risk—such as data scrutiny or shared control—for genuine trust or productive mistrust to develop."
+    }
   },
   "track": "papers",
-  "updated": "2026-09-08",
+  "updated": "2026-09-12",
   "work_key": "doi:10.1007/s44327-026-00352-7"
 }

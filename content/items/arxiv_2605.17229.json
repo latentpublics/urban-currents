@@ -1,0 +1,322 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Automated driving system (ADS) deployment requires rigorous validation across safety–critical vehicle–pedestrian interactions, yet real-world datasets rarely capture high-risk scenarios while simulation platforms lack realistic behavior. In response, this study proposes a three-stage framework that combines real-world grounding with adaptive simulation to generate behaviorally realistic safety–critical scenarios at scale. Stage 1 pre-trains multi-agent state-space Transformer-enhanced DDPG (MA-SST-DDPG) agents on real-world safety–critical data to learn human-like interactive evasive behaviors through data-driven learning. Stage 2 deploys pre-trained multi-agents in CARLA for online reinforcement learning to generalize across diverse scenarios, integrating real-world knowledge with simulation experience to produce a refined MA-SST-DDPG model. Stage 3 uses CARLA with the refined model to generate over 198,000 high-resolution interaction episodes from eight intersection scenarios, culminating in the Vehicle–Pedestrian Safety-Critical Interaction (VPSCI) dataset. The Refined MA-SST-DDPG model outperformed baseline methods in reproducing realistic evasive behaviors, achieving the lowest trajectory errors (ADE = 0.072 m, FDE = 0.142 m). Statistical comparison confirmed distributional equivalence between the generated and real-world data in both conflict severity and behavioral response. A Turing test confirmed that the three-stage framework generated evasive behaviors were indistinguishable from real-world interactions. The generated data revealed realistic behavioral patterns: conflict rates rose with speed, and pedestrian yielding increased with vehicle proximity and speed—trends matching real-world observations. These results demonstrate the framework’s effectiveness in producing high-fidelity safety–critical data, offering valuable sources for the development of ADS and simulation-based safety evaluations.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "National University of Singapore",
+            "ror": "01tgyzw49"
+          },
+          {
+            "name": "Southwest Jiaotong University",
+            "ror": "00hn7w693"
+          }
+        ],
+        "name": "Qian Pu",
+        "openalex": "A5059449514",
+        "orcid": "https://orcid.org/0000-0003-3195-7262"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Old Dominion University",
+            "ror": "04zjtrb98"
+          }
+        ],
+        "name": "Kun Xie",
+        "openalex": "A5136456322",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Inner Mongolia University",
+            "ror": "0106qb496"
+          }
+        ],
+        "name": "Yuan Zhu",
+        "openalex": "A5136500829",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Southwest Jiaotong University",
+            "ror": "00hn7w693"
+          }
+        ],
+        "name": "Guocong Zhai",
+        "openalex": "A5079263500",
+        "orcid": "https://orcid.org/0000-0003-4054-2376"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.106002",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-11",
+    "repository_urls": [],
+    "title": "Generating realistic safety–critical scenarios for vehicle–pedestrian interactions"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-12_2605.17229",
+    "members": [
+      "arxiv:2605.17229"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01tgyzw49",
+        "label": "National University of Singapore"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00hn7w693",
+        "label": "Southwest Jiaotong University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04zjtrb98",
+        "label": "Old Dominion University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0106qb496",
+        "label": "Inner Mongolia University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3195-7262",
+        "label": "Qian Pu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5136456322",
+        "label": "Kun Xie"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5136500829",
+        "label": "Yuan Zhu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4054-2376",
+        "label": "Guocong Zhai"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": true,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.8599,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10525",
+        "is_primary": false,
+        "label": "Human-Automation Interaction and Safety",
+        "score": 0.0388,
+        "subfield": "3207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.0263,
+        "subfield": "2213"
+      }
+    ]
+  },
+  "first_published": "2026-09-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W610469435",
+      "openalex:W1536719639",
+      "openalex:W2001190238",
+      "openalex:W2092187344",
+      "openalex:W2327037637",
+      "openalex:W2487365028",
+      "openalex:W2509270060",
+      "openalex:W2562203785",
+      "openalex:W2774244856",
+      "openalex:W2896752973",
+      "openalex:W2905628759",
+      "openalex:W2980001345",
+      "openalex:W3145618165",
+      "openalex:W4205373550",
+      "openalex:W4213019189",
+      "openalex:W4224290225",
+      "openalex:W4287887617",
+      "openalex:W4297964528",
+      "openalex:W4312453817",
+      "openalex:W4317825455",
+      "openalex:W4361861254",
+      "openalex:W4362630970",
+      "openalex:W4376278629",
+      "openalex:W4379472329",
+      "openalex:W4382138478",
+      "openalex:W4387204804",
+      "openalex:W4388126669",
+      "openalex:W4388543751",
+      "openalex:W4390662480",
+      "openalex:W4392796643",
+      "openalex:W4392877780",
+      "openalex:W4398226264",
+      "openalex:W4398249840",
+      "openalex:W4399060692",
+      "openalex:W4400673736",
+      "openalex:W4400904998",
+      "openalex:W4402390426",
+      "openalex:W4402733211",
+      "openalex:W4405663467",
+      "openalex:W4405896166",
+      "openalex:W4407688542",
+      "openalex:W4407715995",
+      "openalex:W4407749945",
+      "openalex:W4408128142",
+      "openalex:W4408854524",
+      "openalex:W4409286644",
+      "openalex:W4410287616",
+      "openalex:W4411298368",
+      "openalex:W4411874075",
+      "openalex:W4412785909",
+      "openalex:W4415556280",
+      "openalex:W4416749558",
+      "openalex:W4416749873",
+      "openalex:W4417229311",
+      "openalex:W7128388419",
+      "openalex:W7160219051",
+      "openalex:W7161559077",
+      "openalex:W7171827927"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2605.17229",
+    "doi": "10.1016/j.trc.2026.106002",
+    "openalex": "W7161744941",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-13T23:15:50Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006458,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2259,
+      "out": 341
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-13T23:15:50Z",
+    "doi": "10.1016/j.trc.2026.106002",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed a three-stage framework combining real-world data pre-training with online reinforcement learning in the CARLA simulator to generate realistic vehicle-pedestrian conflict scenarios. Using a multi-agent state-space Transformer-enhanced DDPG (MA-SST-DDPG) model, they generated the Vehicle-Pedestrian Safety-Critical Interaction (VPSCI) dataset containing over 198,000 high-resolution interaction episodes across eight intersection scenarios. The refined model reproduced human-like evasive behaviors with low trajectory errors (average displacement error of 0.072 m and final displacement error of 0.142 m), matching real-world statistical distributions of conflict severity.",
+      "why": "It provides a validated method to generate high-fidelity, safety-critical training and testing scenarios at scale, overcoming the dual limitations of scarce real-world crash data and unrealistic default simulator behaviors for autonomous vehicle validation."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-11",
+  "work_key": "arxiv:2605.17229"
+}

@@ -1,0 +1,430 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Managing municipal solid waste in rapidly urbanizing Sub-Saharan Africa remains challenging due to dispersed informal dumping and limited high-resolution datasets for spatial monitoring. We present an open-access deep learning model for automated detection of openly dumped dispersed MSW (ODD-MSW) via crowdsourced UAV imagery, trained and evaluated across 29 regions in 10 Sub-Saharan African countries, encompassing diverse environmental contexts. A deep learning model trained on manually annotated image tiles achieved an overall accuracy of 92.87% (F1 = 0.927) in detecting ODD-MSW across all study regions. Applied without any site-specific retraining to 25 independent OpenAerialMap scenes from 21 cities in 19 countries on five continents, the frozen model retained an F1 score of 0.867, providing direct evidence of transferability beyond the training domain. Predicted distributions reveal heterogeneous accumulation patterns, ranging from localized hotspots — often along waterways, where waste can exacerbate flood and public health risks — to more dispersed litter across urban areas. Waste accumulation is most strongly associated with population density (Spearman ρ = 0.674, p < 0.001) and indicators of lack of local infrastructure access (ρ = 0.700, p < 0.001), whereas its relationship with broader measures of regional development is weaker and not statistically significant (ρ = 0.215, p = 0.26), highlighting the importance of fine-scale data for understanding localized waste dynamics. By releasing the model, this study provides a ready-to-use tool for UAV imagery collected by municipalities and local mapping communities, enabling ODD-MSW monitoring without extensive technical expertise. This approach empowers local practitioners to convert UAV imagery into actionable insights, supporting targeted interventions and improved municipal solid waste management across Sub-Saharan Africa.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Steffen Knoblauch",
+        "openalex": "A5135338031",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "R. Muthusamy",
+        "openalex": "A5062040913",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Santa Fe Institute",
+            "ror": "01arysc35"
+          },
+          {
+            "name": "University of Chicago",
+            "ror": "024mw5h28"
+          },
+          {
+            "name": "Complexity Science Hub",
+            "ror": "023dz9m50"
+          }
+        ],
+        "name": "Luís M. A. Bettencourt",
+        "openalex": "A5021812568",
+        "orcid": "https://orcid.org/0000-0001-6176-5160"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Imperial College London",
+            "ror": "041kmwe10"
+          }
+        ],
+        "name": "Costas Velis",
+        "openalex": "A5135318485",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Global Environment Facility",
+            "ror": "006xm7s91"
+          }
+        ],
+        "name": "Pierre Chrzanowski",
+        "openalex": "A5041864574",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Global Environment Facility",
+            "ror": "006xm7s91"
+          }
+        ],
+        "name": "Edward Charles Anderson",
+        "openalex": "A5073333040",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Humanitarian OpenStreetMap Team",
+            "ror": "02dxhv267"
+          }
+        ],
+        "name": "Pete Masters",
+        "openalex": "A5000350997",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Open University of Tanzania",
+            "ror": "02m6yfe37"
+          }
+        ],
+        "name": "Innocent Maholi",
+        "openalex": "A5016554470",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Lúrio University",
+            "ror": "03sbnrq14"
+          }
+        ],
+        "name": "António Inguane",
+        "openalex": "A5095287739",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Levi Szamek",
+        "openalex": "A5106343196",
+        "orcid": "https://orcid.org/0009-0002-2115-6883"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Alexander Zipf",
+        "openalex": "A5091474205",
+        "orcid": "https://orcid.org/0000-0003-4916-9838"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.compenvurbsys.2026.102517",
+      "pdf_url": null,
+      "source_id": "S60115552",
+      "source_name": "Computers Environment and Urban Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-12",
+    "repository_urls": [],
+    "title": "Open-access model for detecting openly dumped dispersed municipal solid waste from crowdsourced UAV imagery in Sub-Saharan Africa"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-12_2605.02316",
+    "members": [
+      "arxiv:2605.02316"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:038t36y30",
+        "label": "Heidelberg University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01arysc35",
+        "label": "Santa Fe Institute"
+      },
+      {
+        "confidence": null,
+        "id": "ror:024mw5h28",
+        "label": "University of Chicago"
+      },
+      {
+        "confidence": null,
+        "id": "ror:023dz9m50",
+        "label": "Complexity Science Hub"
+      },
+      {
+        "confidence": null,
+        "id": "ror:041kmwe10",
+        "label": "Imperial College London"
+      },
+      {
+        "confidence": null,
+        "id": "ror:006xm7s91",
+        "label": "Global Environment Facility"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02dxhv267",
+        "label": "Humanitarian OpenStreetMap Team"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02m6yfe37",
+        "label": "Open University of Tanzania"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03sbnrq14",
+        "label": "Lúrio University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5135338031",
+        "label": "Steffen Knoblauch"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5062040913",
+        "label": "R. Muthusamy"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6176-5160",
+        "label": "Luís M. A. Bettencourt"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5135318485",
+        "label": "Costas Velis"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5041864574",
+        "label": "Pierre Chrzanowski"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5073333040",
+        "label": "Edward Charles Anderson"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5000350997",
+        "label": "Pete Masters"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5016554470",
+        "label": "Innocent Maholi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5095287739",
+        "label": "António Inguane"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-2115-6883",
+        "label": "Levi Szamek"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4916-9838",
+        "label": "Alexander Zipf"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11108",
+        "is_primary": true,
+        "label": "Municipal Solid Waste Management",
+        "score": 0.6485,
+        "subfield": "2311"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11963",
+        "is_primary": false,
+        "label": "Impact of Light on Environment and Health",
+        "score": 0.0306,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10036",
+        "is_primary": false,
+        "label": "Advanced Neural Network Applications",
+        "score": 0.028,
+        "subfield": "1707"
+      }
+    ]
+  },
+  "first_published": "2026-09-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1777906110",
+      "openalex:W1964945423",
+      "openalex:W1989140782",
+      "openalex:W2594845751",
+      "openalex:W2797793834",
+      "openalex:W2806493999",
+      "openalex:W2914665624",
+      "openalex:W2922289719",
+      "openalex:W2965438574",
+      "openalex:W3006965889",
+      "openalex:W3168039476",
+      "openalex:W3182389135",
+      "openalex:W4200030570",
+      "openalex:W4200580899",
+      "openalex:W4220655782",
+      "openalex:W4283746145",
+      "openalex:W4309085624",
+      "openalex:W4312239766",
+      "openalex:W4317924725",
+      "openalex:W4318617179",
+      "openalex:W4321372454",
+      "openalex:W4324359021",
+      "openalex:W4361027456",
+      "openalex:W4362553834",
+      "openalex:W4365454215",
+      "openalex:W4391835764",
+      "openalex:W4399704345",
+      "openalex:W4401364517",
+      "openalex:W4403919945",
+      "openalex:W4408283552",
+      "openalex:W4413946397",
+      "openalex:W4414400163",
+      "openalex:W7172407712"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2605.02316",
+    "doi": "10.1016/j.compenvurbsys.2026.102517",
+    "openalex": "W7160276041",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-13T23:15:50Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.002346,
+    "llm": null,
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1006,
+      "out": 93
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-13T23:15:50Z",
+    "doi": "10.1016/j.compenvurbsys.2026.102517",
+    "journal": "Computers Environment and Urban Systems",
+    "source_id": "S60115552",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": null,
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "21 cities",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": null
+  },
+  "track": "papers",
+  "updated": "2026-09-12",
+  "work_key": "arxiv:2605.02316"
+}

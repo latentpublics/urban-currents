@@ -1,0 +1,284 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Understanding how built environment (BE) characteristics influence active travel behavior is critical for promoting sustainable mobility in rapidly urbanizing megacities of the Global South. This study applies a comparative machine learning framework—including logistic regression and seven state-of-the-art ML algorithms—to analyze the non-linear impact of BE attributes on the probability of choosing active travel trips in the Mumbai Metropolitan Region. Among all models, Gradient Boosting Decision Trees (GBDT) demonstrated the highest predictive accuracy (Accuracy = 64%, AUC = 0.70 for work trips), outperforming both traditional and ML-based approaches. Importantly, BE variables proved more influential than socio-demographic factors, accounting for 38% of predictive importance for work trips and 48% for non-work trips. Partial dependence plots (PDPs) revealed clear observed response inflection ranges: active travel likelihood peaks within 200 m of commercial areas, 500 m of bus stops, and in neighborhoods with intersection densities over 400/km 2. A land-use entropy index between 0.7 and 0.8 was also found to be optimal. These thresholds are directly actionable for urban planners seeking to enhance walkability and reduce car dependence. We present an India-based comparative benchmark that translates non-linear BE effects into probability-scale threshold bands for policy in Mumbai. For cities like Mumbai and similar Global South urban centers, the findings support compact, connected, and mixed-use development strategies that enable more equitable and sustainable mobility systems. The framework is replicable in other high-density cities where comparable travel survey or mobility data are available, enabling locally calibrated built-environment response benchmarks for walkability-oriented planning.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Siksha O Anusandhan University",
+            "ror": "056ep7w45"
+          }
+        ],
+        "name": "Ali Shkera",
+        "openalex": "A5092114604",
+        "orcid": "https://orcid.org/0000-0003-4614-7043"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Budapest University of Technology and Economics",
+            "ror": "02w42ss30"
+          }
+        ],
+        "name": "Domokos Esztergár‐Kiss",
+        "openalex": "A5029416815",
+        "orcid": "https://orcid.org/0000-0002-7424-4214"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.jum.2026.100552",
+      "pdf_url": null,
+      "source_id": "S2898527796",
+      "source_name": "Journal of Urban Management",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-11",
+    "repository_urls": [],
+    "title": "A comparative machine learning approach to analyze the non-linear dynamics of the built environment in active travel behavior"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-12_10.1016/j.jum.20",
+    "members": [
+      "doi:10.1016/j.jum.2026.100552"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:regression",
+        "label": "regression"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:056ep7w45",
+        "label": "Siksha O Anusandhan University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02w42ss30",
+        "label": "Budapest University of Technology and Economics"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4614-7043",
+        "label": "Ali Shkera"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7424-4214",
+        "label": "Domokos Esztergár‐Kiss"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1156",
+        "label": "Mumbai",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.9736,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0043,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.0036,
+        "subfield": "2213"
+      }
+    ]
+  },
+  "first_published": "2026-09-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1678356000",
+      "openalex:W1966716734",
+      "openalex:W1987233492",
+      "openalex:W2003549425",
+      "openalex:W2016953154",
+      "openalex:W2093447364",
+      "openalex:W2144512297",
+      "openalex:W2163557510",
+      "openalex:W2278347881",
+      "openalex:W2302685394",
+      "openalex:W2330219538",
+      "openalex:W2517491419",
+      "openalex:W2751160607",
+      "openalex:W2907345964",
+      "openalex:W3006958671",
+      "openalex:W3043542085",
+      "openalex:W3090335068",
+      "openalex:W3145442279",
+      "openalex:W3158353711",
+      "openalex:W3177279312",
+      "openalex:W3212354445",
+      "openalex:W4200333330",
+      "openalex:W4205521008",
+      "openalex:W4206718691",
+      "openalex:W4212862921",
+      "openalex:W4280596464",
+      "openalex:W4286484248",
+      "openalex:W4309763686",
+      "openalex:W4319878836",
+      "openalex:W4367856907",
+      "openalex:W4377107690",
+      "openalex:W4387059562",
+      "openalex:W4388487651",
+      "openalex:W4392432791",
+      "openalex:W4392505172",
+      "openalex:W4392619673",
+      "openalex:W4392976341",
+      "openalex:W4396665508",
+      "openalex:W4396957938",
+      "openalex:W4398326493",
+      "openalex:W4399076131",
+      "openalex:W4399848470",
+      "openalex:W4400182522",
+      "openalex:W4404210875",
+      "openalex:W4404536383",
+      "openalex:W4404825904",
+      "openalex:W4410053820",
+      "openalex:W4411174401"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.jum.2026.100552",
+    "openalex": "W7212303220",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-13T23:15:53Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006385,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2223,
+      "out": 339
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-13T23:15:53Z",
+    "doi": "10.1016/j.jum.2026.100552",
+    "journal": "Journal of Urban Management",
+    "source_id": "S2898527796",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study evaluated a logistic regression model alongside seven machine learning algorithms to analyze how built environment characteristics influence active travel choices in the Mumbai Metropolitan Region. The Gradient Boosting Decision Trees model performed best, achieving 64% accuracy and an AUC of 0.70 for work trips, and revealed that built environment features hold more predictive power (38% for work and 48% for non-work trips) than socio-demographic factors. Non-linear analysis identified specific threshold ranges where active travel likelihood peaks, including proximity within 200 meters of commercial areas, 500 meters of bus stops, intersection densities exceeding 400 per square kilometer, and a land-use entropy index between 0.7 and 0.8.",
+      "why": "It establishes precise, non-linear threshold bands for built environment design in a high-density Global South megacity, replacing general planning assumptions with actionable, locally calibrated spatial metrics for walkability."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-11",
+  "work_key": "doi:10.1016/j.jum.2026.100552"
+}

@@ -111,18 +111,111 @@ def test_an_unclassified_paper_is_not_treated_as_off_subfield(repo):
     assert inspect(unclassified, "journal", selected=True) is None
 
 
-def test_an_arxiv_item_scraping_the_floor_is_withheld(repo):
-    """Above the line by less than the model's calibration error is not above it."""
+def test_an_arxiv_item_scraping_the_floor_is_filed_not_withheld(repo):
+    """R3 still fires and still lands in the file — it just costs nothing (1H).
+
+    The rule was demoted rather than deleted, and the difference between those
+    two is this test: the row is still written, so [0.80,0.83) — the window
+    D196 found had no relevance labels at all — can still be labelled.
+    """
     borderline = _item("arxiv:2608.1", score=0.81)
     suspicion = inspect(borderline, "arxiv", selected=True, floor=0.80)
+
+    assert suspicion is not None
+    assert suspicion.rule == RULE_AT_THE_FLOOR
+    assert suspicion.kind == NEAR_MISS
+
+
+def test_the_floor_rule_withholds_again_when_the_switch_is_on(repo, monkeypatch):
+    """One config line puts it back, exactly as R1 has."""
+    import pipeline.held as held_mod
+
+    monkeypatch.setattr(held_mod, "_at_the_floor_withholds", lambda: True)
+    suspicion = inspect(_item("arxiv:2608.1", score=0.81), "arxiv", selected=True, floor=0.80)
 
     assert suspicion is not None
     assert suspicion.rule == RULE_AT_THE_FLOOR
     assert suspicion.kind == WITHHELD
 
 
+def test_the_default_is_off(repo):
+    """Read from the real config file, not from the code default.
+
+    `held.at_the_floor_withholds: false` is the shipped setting; a test that
+    only monkeypatched the function would pass with the config line missing.
+    """
+    import pipeline.held as held_mod
+
+    assert held_mod._at_the_floor_withholds() is False
+
+
+def test_the_arxiv_floor_is_read_from_config_not_from_the_fallback(repo):
+    """H3. This lookup asked for `selection.arxiv_floor` — no such key.
+
+    It always missed and always fell back to the literal 0.80, which nobody saw
+    because 0.80 is also the configured value and because `run_stages.py` passes
+    `floor=` explicitly on every real call.
+
+    Move the configured floor to 0.85 and 0.86 goes from clear of the floor to
+    inside the margin. Under the old lookup it stays clear, because the lookup
+    never reached the config at all.
+    """
+    import yaml
+
+    from pipeline import config
+
+    clear_at_80 = _item("arxiv:2608.86", score=0.86)
+    assert inspect(clear_at_80, "arxiv", selected=True) is None
+
+    path = repo / "config" / "pipeline.yaml"
+    doc = yaml.safe_load(path.read_text(encoding="utf-8"))
+    doc["selection"]["arxiv"]["floor"] = 0.85
+    path.write_text(yaml.safe_dump(doc, allow_unicode=True), encoding="utf-8")
+    config.reset_caches()
+
+    import pipeline.held as held_mod
+
+    assert held_mod.cfg("selection.arxiv.floor") == 0.85
+    suspicion = inspect(_item("arxiv:2608.86", score=0.86), "arxiv", selected=True)
+    assert suspicion is not None
+    assert suspicion.rule == RULE_AT_THE_FLOOR
+    assert "0.85 floor" in suspicion.detail
+
+
 def test_an_arxiv_item_well_clear_of_the_floor_publishes(repo):
     assert inspect(_item("arxiv:2608.2", score=0.95), "arxiv", selected=True, floor=0.80) is None
+
+
+def test_an_item_just_above_the_floor_stays_in_the_issue(repo, monkeypatch):
+    """The symptom YJUN saw, pinned to the selection path (1H, H4-3).
+
+    On 2026-09-06 a 0.8018 arXiv preprint was withheld and the issue went out
+    with one item instead of two. Running the real select stage over the same
+    shape must now publish it.
+    """
+    from pipeline import run_stages
+    from pipeline.metrics import Run
+    from pipeline.stages import write_stage
+
+    scraping = _item("arxiv:2609.00192", subfield=None, score=0.8018)
+    clear = _item("arxiv:2609.00193", subfield=None, score=0.93)
+    pool = [scraping, clear]
+
+    run = Run.for_date(DAY)
+    write_stage(run, "classify", pool)
+    monkeypatch.setattr(run_stages, "_is_whitelist_journal", lambda it: False)
+
+    selected = run_stages.stage_select(run)
+    keys = {it.work_key for it in selected}
+
+    assert "arxiv:2609.00192" in keys, "0.8018 is above the 0.80 floor and publishes"
+    assert "arxiv:2609.00193" in keys
+    # Filed all the same: the row is there, and it costs the day nothing.
+    doc = held.load(DAY)
+    assert doc is not None
+    assert doc["withheld"] == 0
+    floor_rows = [r for r in doc["items"] if r["rule"] == RULE_AT_THE_FLOOR]
+    assert [r["kind"] for r in floor_rows] == [NEAR_MISS]
 
 
 def test_the_uncertain_band_is_a_near_miss_not_a_withholding(repo):
@@ -378,6 +471,19 @@ def test_a_sitting_is_capped_but_the_queue_is_not(repo):
     assert result["remaining"] == 40
     assert any("Showing 25" in line for line in said)
     assert any("still waiting" in line for line in said)
+
+
+def test_withholding_nothing_is_not_a_warning(repo):
+    """Since 1H the normal day withholds 0. Zero must be silence, not an alert.
+
+    The empty denominator — nothing published and nothing withheld — is silence
+    for the same reason: a day with no issue is reported by the outcome record,
+    not by a rate computed over nothing.
+    """
+    from pipeline.held import over_warn_threshold
+
+    assert over_warn_threshold(published=12, withheld=0) is None
+    assert over_warn_threshold(published=0, withheld=0) is None
 
 
 def test_a_day_that_withholds_too_much_warns_without_blocking(repo):

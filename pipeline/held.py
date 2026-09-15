@@ -7,11 +7,18 @@ is checking before the mail goes out, so **the selection policy has to do the
 job the daily review was doing**.
 
 That makes conservatism the correct setting. When we are not sure, we publish
-less. An item that trips a suspicion rule is not published and not discarded —
-it is held, and the day goes out with a hole where it would have been. **The
+less. An item that a *withholding* rule trips is not published and not discarded
+— it is held, and the day goes out with a hole where it would have been. **The
 hole is the right answer**: a digest that fills its slots with things it is
 unsure about is worth less than a shorter one, and a reader cannot see the
 difference between a confident item and a slot that needed filling.
+
+What that does not license is holding on doubt we have not measured. Each rule
+has had to earn the right to leave a hole, and both rules that could have been
+asked to earn it failed: `off_subfield` on the wrong list (0N, 0Q) and
+`at_the_floor` on an argument that the calibration numbers turned out to
+contradict (1H). Being unsure is the reason to *ask*, and asking is what this
+file is for; it is not on its own a reason to publish less.
 
 Two kinds of doubt land here, and they are not the same fact:
 
@@ -21,6 +28,13 @@ Two kinds of doubt land here, and they are not the same fact:
   policy adopted by accident.
 - `near_miss` — it was never going to be published, but it sits close enough to
   the line that a judgement would be worth having. Costs the issue nothing.
+
+**As of 1H every rule files rather than withholds, so `withheld` is 0 and stays
+0 until a switch is turned back on.** That is the resting state of the queue,
+not a fault in it: `off_subfield` has an empty deny-list (0Q) and
+`at_the_floor` was demoted because the argument behind it did not survive being
+measured (1H). The kinds stay, because the distinction is about what a
+judgement is worth, and the rules can be switched back one config line each.
 
 Both are the same thing to a labeller, which is the point of the design: **the
 held queue is the labelling queue is the training set.** It routes the rare
@@ -106,8 +120,36 @@ RULE_UNCERTAIN = "uncertain_score"
 
 # R3. Scored right at the floor.
 #
-# Above the line by a margin smaller than the model's own calibration error is
-# not meaningfully above the line.
+# It used to read: *"Above the line by a margin smaller than the model's own
+# calibration error is not meaningfully above the line."* **That argument is
+# wrong, and it is left here rather than overwritten because the way it failed
+# is the useful part.** It is kept as a quotation, not as a rule.
+#
+# It failed twice over, on the same measurement that was supposed to support it
+# (D196, and see `held.floor_margin` in config):
+#
+#  - **The error at the top is under-confidence, not noise.** In [0.80,0.90) the
+#    mean score is 0.861 and the observed keep rate is 1.00 (n=5). The argument
+#    assumed the error was symmetric — that a 0.81 might really be a 0.78. It
+#    points the other way at the top of the range, and withholding is the wrong
+#    response to an item being *better* than its score says.
+#  - **The withheld window was not measured when the margin was set.** Zero
+#    relevance labels fall in [0.80,0.83): a margin justified by a calibration
+#    curve was cutting at the one place the curve had no observations.
+#
+# It has been measured since, in a different frame, and the number is not the
+# one the demotion was argued from. See `held.floor_margin` in
+# `config/pipeline.yaml` for the 35 `held_review` judgements of 2026-08-20 —
+# 16 keep, 19 drop — and for why they can neither be pooled with the relevance
+# labels nor ignored.
+#
+# So the rule is **demoted, not deleted** (1H). It still runs and still files,
+# because `content/held/` is the labelling queue and that unmeasured window can
+# only be measured by keeping these items on record. What it no longer does is
+# remove anything from an issue: arXiv is a single 0.80 floor again.
+#
+# `RULE_AT_THE_FLOOR` keeps its name. 79 days of `content/held/` files carry
+# this string and renaming it would split the record in two.
 RULE_AT_THE_FLOOR = "at_the_floor"
 
 WITHHELD = "withheld"
@@ -140,6 +182,18 @@ def _off_subfield_withholds() -> bool:
     from journals — that is the fix, and it is YJUN's call (§N3).
     """
     return bool(cfg("held.off_subfield_withholds", False))
+
+
+def _at_the_floor_withholds() -> bool:
+    """Whether R3 removes an item or merely files it. Default: files it.
+
+    See RULE_AT_THE_FLOOR. The same switch R1 has, for the same reason and with
+    the opposite history: R1 was demoted because its list was wrong and was
+    restored once the list was rebuilt, while R3 is demoted because the
+    *argument* was wrong. Restoring it would need a new argument, not a new
+    number — the margin is not what failed.
+    """
+    return bool(cfg("held.at_the_floor_withholds", False))
 
 
 def enabled() -> bool:
@@ -234,7 +288,13 @@ def inspect(
     if not enabled():
         return None
     score = float(getattr(item.scores, "relevance", 0.0) or 0.0)
-    floor = float(cfg("selection.arxiv_floor", 0.80)) if floor is None else floor
+    # `selection.arxiv.floor`, with the dot. This read `selection.arxiv_floor`
+    # from phase 0L until 1H — a key that has never existed, so the lookup
+    # always missed and always fell back to the literal below. It was invisible
+    # because the two values happen to be equal and because `run_stages.py`
+    # passes `floor=` explicitly on every real call. Moving the floor would have
+    # silently left this path on 0.80.
+    floor = float(cfg("selection.arxiv.floor", 0.80)) if floor is None else floor
     title = item.bibliography.title or ""
 
     if source == "journal" and selected:
@@ -258,7 +318,7 @@ def inspect(
         return Suspicion(
             work_key=item.work_key,
             rule=RULE_AT_THE_FLOOR,
-            kind=WITHHELD,
+            kind=WITHHELD if _at_the_floor_withholds() else NEAR_MISS,
             detail=f"{score:.3f} is within {_floor_margin()} of the {floor} floor",
             score=score,
             source=source,
@@ -294,6 +354,12 @@ def over_warn_threshold(published: int, withheld: int) -> Optional[str]:
     to publish on this would lose the whole day instead of part of it. The point
     is that the drift becomes visible on the day it happens rather than three
     batches later.
+
+    This is a one-sided test and has to stay one: since 1H `withheld` is 0 on a
+    normal day, and 0 must produce silence. The zero denominator — a day that
+    published nothing and withheld nothing — is silence for the same reason. A
+    day with no issue is reported by the outcome record, not by a rate with
+    nothing in it.
     """
     denom = published + withheld
     if not denom:
@@ -403,13 +469,23 @@ def pending(since: Optional[date] = None) -> list[dict]:
 
 
 def _rule_can_fire(rule: str) -> bool:
-    """Could this rule withhold something on the next run?
+    """Could this rule **withhold** something on the next run?
 
-    Only `off_subfield` can go inert, and only by having nothing to deny. The
-    other two are thresholds on a score and are always live.
+    Not "could it file something" — `at_the_floor` still fills the labelling
+    queue every day it fires, and `uncertain_score` only ever did that. This
+    asks the narrower question the `withheld` total depends on.
+
+    Both switchable rules are off as of 1H, by different routes: `off_subfield`
+    has nothing left to deny *and* is switched on, `at_the_floor` has plenty to
+    catch and is switched off. `uncertain_score` sits below the floor and has
+    never withheld anything, so it cannot go from live to inert — it was never
+    live in this sense, and saying it can fire would put it in `inert_rules`'s
+    complement as though it were holding the queue open.
     """
     if rule == RULE_OFF_SUBFIELD:
         return bool(rejected_subfield_ids()) and _off_subfield_withholds()
+    if rule == RULE_AT_THE_FLOOR:
+        return _at_the_floor_withholds()
     return True
 
 
@@ -417,15 +493,24 @@ def counts() -> dict[str, Any]:
     """What the weekly summary reports: how much is waiting, and **from which
     rule**.
 
-    The per-rule breakdown is here because of what 0Q made true: the
-    `off_subfield` deny-list is empty, so every future withholding comes from
-    `at_the_floor` alone. **One rule now produces the entire withheld queue**,
-    and its margin rests on a calibration figure measured over a window that
-    contains no relevance labels at all (D196).
+    The per-rule breakdown was added in 0Q because one rule had come to own the
+    whole withheld queue: the `off_subfield` deny-list emptied, leaving
+    `at_the_floor` as the only rule that could take anything out of an issue. A
+    single total hides that — three rules sharing a queue and one rule owning it
+    are the same number and completely different situations.
 
-    A single total hides that completely. Three rules sharing a queue and one
-    rule owning it look identical in a number called `withheld`, and they are
-    not remotely the same situation.
+    **1H made that count zero.** `at_the_floor` was demoted to `near_miss`, so
+    no rule withholds anything today and `withheld` is expected to sit at 0
+    while `near_miss` grows. Read the three fields accordingly:
+
+    - `withheld: 0` is the **normal resting state**, not a broken queue. If it
+      ever becomes an alert, that is the regression.
+    - `withheld_by_one_rule` is None when no rule withholds *and* when several
+      do. Only a single name means "one rule is the queue"; the absence of a
+      name is not a diagnosis either way.
+    - `inert_rules` names rules that hold items here and can withhold no more of
+      them. `at_the_floor` is on that list now while remaining the busiest rule
+      in the file — inert is about withholding, not about filing.
     """
     waiting = pending()
     by_rule: dict[str, dict[str, int]] = {}
@@ -445,13 +530,18 @@ def counts() -> dict[str, Any]:
         "near_miss": sum(1 for r in waiting if r["kind"] == NEAR_MISS),
         "oldest": min((r["date"] for r in waiting), default=None),
         "by_rule": dict(sorted(by_rule.items())),
-        # A rule can hold items in the queue and be unable to produce another
-        # one. `off_subfield` is exactly that as of 0Q: the deny-list is empty,
-        # so its 81 withholdings are history rather than standing policy. Left
-        # unmarked they read as an active rule that withholds twice as much as
-        # the one that actually does.
+        # A rule can hold items in the queue and be unable to withhold another
+        # one. `off_subfield` is that as of 0Q — the deny-list is empty, so its
+        # 81 withholdings are history rather than standing policy — and
+        # `at_the_floor` is that as of 1H, by the switch rather than by running
+        # out of things to catch. Left unmarked, past withholdings read as
+        # standing policy.
         "inert_rules": sorted(r for r in by_rule if not _rule_can_fire(r)),
         # Named rather than left to be worked out from `by_rule`: this is the
         # fact that has to be noticeable without reading a table.
+        #
+        # None for zero rules as well as for several, and the two are not the
+        # same thing — but neither of them is "one rule is the queue", which is
+        # the only claim this field makes. Since 1H zero is the usual case.
         "withheld_by_one_rule": withheld_rules[0] if len(withheld_rules) == 1 else None,
     }

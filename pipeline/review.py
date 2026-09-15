@@ -425,8 +425,11 @@ def run_pending_session(
         printer(f"  {row.get('title') or (item.bibliography.title if item else '')}")
         if venue:
             printer(f"  venue: {venue}")
-        # `at_the_floor` is the only rule that can withhold anything now, so its
-        # score is the thing being judged and belongs on screen.
+        # The score is the thing being judged for most of this queue and
+        # belongs on screen. Since 1H `at_the_floor` files rather than
+        # withholds, which makes these rows *more* worth showing, not less —
+        # [0.80,0.83) is the window D196 found had no relevance labels in it,
+        # and this screen is the only place that gets fixed.
         score = row.get("score")
         if score is not None:
             printer(f"  score: {float(score):.4f}")

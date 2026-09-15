@@ -63,7 +63,9 @@ def main() -> None:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-    floor = float(cfg("selection.arxiv_floor", 0.80))
+    # `selection.arxiv.floor`, with the dot — the same missed key 1H fixed in
+    # `held.py`. It read the floor from a key that does not exist.
+    floor = float(cfg("selection.arxiv.floor", 0.80))
     rows = []
     totals = Counter()
 

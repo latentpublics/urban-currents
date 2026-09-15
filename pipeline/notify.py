@@ -431,14 +431,28 @@ def weekly_body(summary: dict[str, Any]) -> str:
 
     held = summary.get("held") or {}
     if held.get("waiting"):
-        lines += [
+        lines.append(
             f"  {held['waiting']} item(s) held and waiting for a judgement"
-            + (f", oldest {held['oldest']}" if held.get("oldest") else ""),
-            f"    {held.get('withheld', 0)} were withheld from an issue, "
-            f"{held.get('near_miss', 0)} were near misses",
-            "    uc review --pending",
-            "",
-        ]
+            + (f", oldest {held['oldest']}" if held.get("oldest") else "")
+        )
+        # ★ 1H. `withheld 0` is the expected state now that no rule withholds,
+        # and a line reading "0 were withheld" invites the reader to look for
+        # the fault. There is none: the queue being all near-misses means it
+        # cost the issues nothing, which is the good version of a growing
+        # queue. The withheld count is printed only when there is one, because
+        # that is the number that means an issue lost a slot.
+        withheld = held.get("withheld", 0)
+        if withheld:
+            lines.append(
+                f"    {withheld} were withheld from an issue, "
+                f"{held.get('near_miss', 0)} were near misses"
+            )
+        else:
+            lines.append(
+                f"    none of them cost an issue an item — "
+                f"{held.get('near_miss', 0)} near misses, all of them questions"
+            )
+        lines += ["    uc review --pending", ""]
     for row in summary["days"]:
         detail = f" — {row['reasons'][0]}" if row["reasons"] and row["status"] == NOT_PUBLISHED else ""
         if row.get("silent"):

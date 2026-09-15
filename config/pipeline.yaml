@@ -538,28 +538,76 @@ held:
   uncertain_from: 0.50
   uncertain_to: 0.80
 
-  # R3: above the floor by less than the model's own calibration error is not
-  # meaningfully above the floor.
+  # R3: scored right at the floor.
   #
-  # ★ That calibration error was an assumption when this was written. Measured
-  # in 0P (Q1) over the 73 arXiv relevance labels: expected calibration error
-  # **0.1397**, largest single-band gap 0.2117 — both far larger than 0.03.
-  # Pre-registered condition was "smaller than 0.03, shrink the margin to it;
-  # larger, keep it and write the number down". It is larger, so the margin
-  # stays and the justification is now a measurement.
+  # ★ 1H. **This rule no longer withholds.** It runs, it files, and it takes
+  # nothing out of an issue. arXiv is a single 0.80 floor again; above the
+  # floor is published.
   #
-  # Two things the same measurement says that this rule does NOT act on, and
-  # must not be quietly tuned to:
+  # The measurements below are D196's and are kept because they are the grounds
+  # for the change — what moved is the conclusion drawn from them, not the
+  # numbers. D196 measured the calibration error this margin was supposed to
+  # stand for: over the 73 arXiv relevance labels, expected calibration error
+  # **0.1397**, largest single-band gap 0.2117 — both far larger than 0.03. The
+  # pre-registered condition asked only about *size* ("smaller than 0.03, shrink
+  # the margin to it; larger, keep it and write the number down"), so D196 kept
+  # the margin and wrote down two things it did not act on. Both are still true,
+  # and 1H acts on them:
+  #
   #  - The error at the top is **under**-confidence, not noise: in [0.80,0.90)
-  #    the mean score is 0.861 and the observed keep rate is 1.00 (n=5). If that
-  #    holds, items just above the floor are better than their score says, and
-  #    withholding is the wrong response to it.
+  #    the mean score is 0.861 and the observed keep rate is 1.00 (n=5). Items
+  #    just above the floor are better than their score says, and **withholding
+  #    is the wrong response to under-confidence** (D196's own words).
   #  - **Zero** relevance labels fall in the withheld window [0.80,0.83), so the
   #    window itself is unmeasured. The only judgements touching it are 2 rows
   #    from `code_probe`, a different sampling frame that cannot be pooled with
   #    relevance; within their own frame both are `keep`.
-  # 35 items in 57 held days were withheld by this margin. Deciding it on 2
-  # borrowed rows would be tuning a rule to the cases we happen to have seen.
+  #
+  # ⚠️ The window is **no longer unmeasured**, and 1H found that out while
+  # implementing the demotion. On 2026-08-20 — the day after D196 was written —
+  # 122 held rows were judged through `uc review --pending`, 35 of them items
+  # this rule had withheld. They came back **16 keep, 19 drop (0.457)**, not the
+  # 2 of 2 D196 had to work from. Read it with both caveats attached and neither
+  # of them is small:
+  #
+  #  - **Different sampling frame.** `held_review` is not `relevance` and the
+  #    two cannot be pooled — the same rule that kept D196 from using the 2
+  #    `code_probe` rows. But it is the only frame with observations *inside*
+  #    [0.80,0.83), and it has 35 of them against the relevance frame's 0.
+  #  - **Different labelling standard.** Every relevance arXiv label is
+  #    generation 1 and every `held_review` label is generation 2 (see
+  #    `labeling.standard_changed_at`, 2026-08-19). The split is total: no item
+  #    in this band has been judged under both bars, so how much of 1.00 → 0.457
+  #    is the band and how much is the stricter bar cannot be separated.
+  #
+  # So this setting does **not** rest on the band being good. It rests on the
+  # editorial call that arXiv has one floor and 0.80 is it. What the 35
+  # judgements do settle is that the band is worth publishing *or* withholding
+  # on evidence, rather than on a calibration argument about a window nobody had
+  # looked in.
+  #
+  # Measured again in 1H over the archive. **Anything that moves with time
+  # carries the day it was measured**, because a bare denominator is exactly how
+  # D196's figures came to be reused after they had gone stale — and this
+  # comment was itself caught with a five-day-old one before it was committed:
+  #
+  #   38 items withheld across 91 issue days (measured 2026-09-15)
+  #   0.42 withheld per issue day (measured 2026-09-15)
+  #
+  # The rest does not move and needs no date: the 38 are a closed set, their
+  # scores run 0.8003–0.8291 with a median of 0.81455, and exactly one of them
+  # cost a visible day — 2026-09-06 published one item instead of two because a
+  # 0.8018 preprint was held.
+  #
+  # Set true to withhold again. The margin below then means what it used to.
+  at_the_floor_withholds: false
+
+  # How wide the band is. This is **no longer a withholding width** — it is the
+  # width of the labelling queue above the floor, and the gap D196 named
+  # ([0.80,0.83) has no relevance labels at all) can only be filled by keeping
+  # this band on record. Narrowing it buys nothing and loses judgements, so it
+  # stays where it is. If `at_the_floor_withholds` is ever set true, this is the
+  # withholding width again.
   floor_margin: 0.03
 
 backfill:

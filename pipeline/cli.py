@@ -549,12 +549,17 @@ def status():
         # the subfield deny-list is empty, so one rule can quietly own the whole
         # withheld queue — and a rule that is the only thing withholding
         # anything deserves to be looked at, not averaged into a total.
+        #
+        # Since 1H no rule withholds at all and every line here reads
+        # `withheld 0`. That is the expected shape, and the `(inert)` marks say
+        # why: a rule can be the busiest thing in the file and still take
+        # nothing out of an issue.
         inert = set(held.get("inert_rules") or [])
         for rule, bucket in (held.get("by_rule") or {}).items():
             typer.echo(
                 f"            {rule:<16} withheld {bucket['withheld']:>4}   "
                 f"near miss {bucket['near_miss']:>4}"
-                + ("   (inert — cannot hold anything new)" if rule in inert else "")
+                + ("   (inert — withholds nothing)" if rule in inert else "")
             )
         alone = held.get("withheld_by_one_rule")
         if alone:

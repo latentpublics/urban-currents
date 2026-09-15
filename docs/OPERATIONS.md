@@ -62,10 +62,11 @@ removed.
 
 ### The held queue
 
-When the pipeline is not sure about an item it **holds** it rather than
-publishing it, and the day goes out with a hole. The hole is the intended
-outcome — a slot filled with something we are unsure of is worth less than a
-shorter issue, and a reader cannot tell the two apart.
+When the pipeline is not sure about an item it **files** it for a judgement, and
+a rule that is set to withhold also takes it out of the day, which then goes out
+with a hole. The hole is the intended outcome for a withholding rule — a slot
+filled with something we are unsure of is worth less than a shorter issue, and a
+reader cannot tell the two apart.
 
 Held items are **not** carried into a later issue. They are waiting for a
 judgement, not owed to readers. Two kinds:
@@ -74,6 +75,20 @@ judgement, not owed to readers. Two kinds:
   issue an item, and is offered first in `--pending`.
 - **near miss** — it was never going to be published but sits close enough to
   the line that a judgement is worth having. Costs nothing.
+
+**As of batch 1H no rule withholds, so `withheld` is 0 and that is normal.**
+`uc status` and the weekly mail will show a queue made entirely of near misses.
+Two rules could withhold and neither does: `off_subfield` has an empty deny-list
+(every subfield on it was overturned by targeted labels, batch 0Q), and
+`at_the_floor` was switched off in 1H on an editorial call: arXiv has one floor
+and 0.80 is it. Above the floor is published.
+
+Both rules still run and still file, and `uc status` marks them `inert` — which
+means "withholds nothing", not "does nothing". `at_the_floor` is the busiest
+rule in the queue. That is deliberate: [0.80, 0.83) can only stop being an
+unmeasured window if the items in it keep arriving for judgement. One line in
+`config/pipeline.yaml` (`held.at_the_floor_withholds`, `held.off_subfield_withholds`)
+turns either back on.
 
 The rules live in `pipeline/held.py` and are tuned in `config/pipeline.yaml`
 under `held:`. **The queue is the labelling queue is the training set**: it puts
@@ -88,7 +103,8 @@ uv run python scripts/held_rate.py    # how much the rules would hold back
 they are not a filter, they are a different editorial policy adopted by
 accident. Measured 2026-08-18: **0.2917 over one day**, and 4 of the 7 withheld
 were plainly urban papers arriving through an environmental-science subfield.
-That is the first thing to look at.
+That is the first thing to look at. The check is one-sided and stays that way:
+with nothing withheld the rate is 0 and says nothing at all.
 
 ## Where a human is required
 

@@ -1,0 +1,157 @@
+{
+  "badges": [
+    "code",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Global estimates of access to health care treat every facility alike. Drive time was routed on the OpenStreetMap network from all 217,841 of its hospitals and 15-, 30- and 60-minute isochrones dissolved for nested capability tiers, weighted with GHS-POP 2025. 96.2% of the world's population lives within an hour's drive of a hospital, 78.5% of a hospital with a documented emergency department, and 40.3% of one with a helipad or university name marking tertiary care. The 1.45 billion people within an hour of a hospital but not of an emergency hospital live mainly in South and East Asia and Nigeria; the 312 million beyond an hour of any hospital lie in a belt from the Sahel to Madagascar. Defining the tertiary tier by helipad alone leaves its estimate unchanged, and the isochrone construction shifts the 60-minute figures by a few percent. Counting every facility as equivalent overstates access to time-critical care.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Johan Emilsson",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.CY"
+    ],
+    "comment": "19 pages, 6 figures, 7 tables. Code and data: https://github.com/emailsson/global-hospital-travel-time",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.12696v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.12696v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-11",
+    "repository_urls": [],
+    "title": "Global maps of travel time to emergency and tertiary hospitals"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-14_2609.12696",
+    "members": [
+      "arxiv:2609.12696"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.12696",
+    "doi": "10.48550/arxiv.2609.12696",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-15T23:30:07Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006211,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1957,
+      "out": 364
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9426,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.457,
+    "relevance": 0.9426
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "from the arXiv comment",
+      "url": "https://github.com/emailsson/global-hospital-travel-time",
+      "value": true
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The classification of tertiary care facilities relies on proxies like helipads or university names in OpenStreetMap, which may not capture all high-level medical centers uniformly across different regions.",
+      "what": "The study mapped global drive-time access to 217,841 hospitals using OpenStreetMap routing and GHS-POP 2025 population data, categorizing facilities into nested capability tiers. It found that while 96.2% of the global population lives within a one-hour drive of any hospital, this share drops to 78.5% for hospitals with documented emergency departments, and to 40.3% for tertiary care facilities. Approximately 1.45 billion people live within an hour of a basic hospital but lack access to an emergency hospital, concentrated heavily in South Asia, East Asia, and Nigeria.",
+      "why": "It demonstrates that treating all healthcare facilities as equal severely overestimates actual access to life-saving, time-critical emergency and specialized care, providing a more realistic baseline for global health planning."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-11",
+  "work_key": "arxiv:2609.12696"
+}

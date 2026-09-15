@@ -1,0 +1,179 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Cities are commonly characterized through population density, infrastructure, and mobility flows. These quantities describe where people are and how they move, but movement does not uniquely determine where populations repeatedly encounter one another or whether different locations participate in the same social environments. Here, we construct co-presence overlap networks across 13 Brazilian cities to distinguish these dimensions of urban organization. We introduce two complementary measures: colocation, which quantifies recurrent co-presence activity within individual locations, and co-connectedness, which measures the extent to which locations share the same co-present pairs. We find that the spatial concentration of colocation differs substantially from that of mobility, producing social centers that can differ in both number and location from mobility centers. At the network level, co-connectedness exhibits a non-random hierarchical organization in which locations preferentially share recurrent pairs with locations of similar activity. This hierarchy is systematically weaker and substantially more variable across cities than the corresponding mobility hierarchy, demonstrating that cities with similar mobility organization can differ in how recurrent social overlap is organized across locations. Finally, we show that the spatial proximity of colocation activity to social centers relative to residential centers provides a complementary spatial dimension of urban organization. Together, these results separate three features that are conflated when cities are characterized through mobility alone: movement between locations, local opportunities for social interaction, and the organization of recurrent social overlap across locations.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Bibandhan Poudyal",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mariana Macedo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ronaldo Menezes",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Gourab Ghoshal",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": "26 pages, 6 figures, 69 references. Supplementary information, 17 pages, 8 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.12888v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.12888v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-11",
+    "repository_urls": [],
+    "title": "The hierarchical organization of urban social overlap: How shared social spaces diverge from physical mobility"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-14_2609.12888",
+    "members": [
+      "arxiv:2609.12888"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:network-analysis",
+        "label": "network analysis"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.12888",
+    "doi": "10.48550/arxiv.2609.12888",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-15T23:30:07Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005642,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2069,
+      "out": 282
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9863,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3945,
+    "relevance": 0.9863
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on urban areas within a single national context, which may limit generalizability to countries with different urban forms or social dynamics.",
+      "what": "The study constructs co-presence overlap networks across 13 Brazilian cities to analyze urban social organization using two new metrics: colocation, which measures recurrent co-presence at specific sites, and co-connectedness, which measures how locations share co-present pairs. The analysis reveals that social centers differ in both quantity and location from mobility centers, and that co-connectedness forms a non-random hierarchical structure where locations of similar activity levels preferentially share recurrent pairs.",
+      "why": "It demonstrates that physical mobility patterns do not dictate social overlap, showing that cities with nearly identical mobility structures can possess vastly different spatial organizations of recurrent social interaction."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-11",
+  "work_key": "arxiv:2609.12888"
+}

@@ -1,0 +1,179 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Achieving universal health coverage, as set out in Sustainable Development Goal 3.8, requires closing persistent geographic and socioeconomic gaps in healthcare access, especially in under-resourced settings across Africa. Healthcare-access inequality is shaped not only by poor local access, but also by limited connectivity to city- and regional-level services and opportunities. Conventional accessibility analysis can identify where poor access occurs, but not whether poorly served places form structurally disconnected pockets across scales. This paper therefore builds on and extends the percolation divergence tree framework to develop a connectivity-based multiscale approach for examining healthcare-access inequality in Ghana. It combines street-level accessibility mapping with the hierarchical structure of the road network to identify the scales at which inequality coincides with connectivity breaks. The results first show substantial inequality: around one quarter of the population lives more than 5 km from the nearest healthcare facility. Multiscale analysis further reveals distinct structural forms of poor access. In relatively well-connected, monocentric regions, local poor-access pockets emerge around metropolitan fringes despite overall regional advantage. In less well-connected, polycentric regions, poor access extends across larger subsystems, with local pockets nested within broader poorly served areas. These findings show that healthcare-access inequality reflects both local conditions and the hierarchical connectivity of the wider spatial system, which may also constrain marginalised communities' access to other key resources and services. The framework can inform targeted local interventions and policy coordination across local and regional scales.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Miao Zeng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Roberto Murcio",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Camilo Vargas-Ruiz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Elsa Arcaute",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.14510v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.14510v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-13",
+    "repository_urls": [],
+    "title": "Unveiling healthcare-access inequality in Ghana using a multiscale approach"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-14_2609.14510",
+    "members": [
+      "arxiv:2609.14510"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-network",
+        "label": "street network data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.14510",
+    "doi": "10.48550/arxiv.2609.14510",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-15T23:30:07Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005351,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2091,
+      "out": 246
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.954,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3816,
+    "relevance": 0.954
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study maps healthcare access across Ghana by combining street-level accessibility with road network hierarchy using an extended percolation divergence tree framework. It reveals that approximately 25% of the national population resides more than 5 kilometers from the closest healthcare facility. The analysis identifies distinct spatial patterns of deprivation, showing that poor access manifests as isolated fringe pockets in well-connected monocentric regions, but spans entire nested subsystems in poorly connected polycentric regions.",
+      "why": "It shifts the analysis of healthcare inequality from simple proximity mapping to a multiscale connectivity approach, demonstrating how regional road network structures dictate whether healthcare isolation is a localized issue or a systemic regional barrier."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-13",
+  "work_key": "arxiv:2609.14510"
+}

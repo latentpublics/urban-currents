@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Increasing wildfire activities in the United States have generated far-reaching effects on air pollution and human health. While prescribed fires are used as a preventive strategy to reduce wildfire risks, the health impacts of their smoke remain uncertain. Small-scale case studies indicate that prescribed fires generally produce lower pollutant emissions than uncontrolled wildfires, potentially benefiting air quality. However, the extent to which this translates into reduced population-level smoke exposure remains uncertain due to a lack of robust, large-scale quantitative evidence. Moreover, the factors driving differences in air quality impacts between prescribed fires and wildfires were underexplored. Using fire data in California, Florida, and Georgia (2006-2020) and a causal forest approach, we quantified and compared the impacts of prescribed fires and wildfires on air quality, assessed their differences in population-level smoke exposure, and identified key factors influencing their smoke exposure levels. On a per square-kilometer basis, prescribed fires resulted in over six times less population-level smoke exposure compared to wildfires. Additionally, prescribed fires were associated with lower smoke exposure in regions with higher relative humidity and precipitation. This work could enable the broad risk-benefit assessment to guide the judicious use of prescribed fires and optimize public health outcomes while mitigating wildfire threats.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ting-Hsuan Chang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Minghao Qiu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yaguang Wei",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xiao Wu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.12977v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.12977v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-11",
+    "repository_urls": [],
+    "title": "Evaluating differential air quality impacts of prescribed fire and wildfire in the United States"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-14_2609.12977",
+    "members": [
+      "arxiv:2609.12977"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:weather",
+        "label": "weather and climate data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.12977",
+    "doi": "10.48550/arxiv.2609.12977",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-15T23:30:07Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005578,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2015,
+      "out": 284
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9425,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.377,
+    "relevance": 0.9425
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2006-2020",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on data from three specific states, which may not fully represent the fire dynamics and meteorological conditions of other regions in the United States.",
+      "what": "Using fire records from California, Florida, and Georgia spanning 2006 to 2020, this study applied a causal forest model to compare the air quality impacts of prescribed burns and wildfires. The analysis revealed that prescribed fires generate over six times less population-level smoke exposure per square kilometer burned than wildfires. Additionally, the smoke exposure from prescribed burns was found to be lower in areas characterized by higher relative humidity and precipitation.",
+      "why": "It provides the first large-scale, multi-state quantitative evidence proving that preventive prescribed burns significantly reduce population-level smoke exposure compared to uncontrolled wildfires, offering specific environmental conditions under which these burns minimize public health risks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-11",
+  "work_key": "arxiv:2609.12977"
+}

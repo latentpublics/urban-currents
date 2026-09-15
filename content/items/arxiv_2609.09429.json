@@ -58,11 +58,52 @@
     ],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1077-016X",
+        "label": "Ayush Khot"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5151226268",
+        "label": "Wen Zhou"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5151250209",
+        "label": "Shaowen Wang"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": true,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.3331,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11963",
+        "is_primary": false,
+        "label": "Impact of Light on Environment and Health",
+        "score": 0.1873,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10689",
+        "is_primary": false,
+        "label": "Remote-Sensing Image Classification",
+        "score": 0.1173,
+        "subfield": "2214"
+      }
+    ]
   },
   "first_published": "2026-09-08",
   "graph": {
@@ -73,7 +114,7 @@
   "ids": {
     "arxiv": "2609.09429",
     "doi": "10.1145/3841645.3843316",
-    "openalex": null,
+    "openalex": "W7212124711",
     "pmid": null
   },
   "provenance": {
@@ -81,7 +122,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-10T23:05:30Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005035,
     "llm": {
@@ -169,6 +211,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-08",
+  "updated": "2026-09-15",
   "work_key": "arxiv:2609.09429"
 }

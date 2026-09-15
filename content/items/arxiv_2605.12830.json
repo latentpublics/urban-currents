@@ -1,0 +1,290 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Income inequality is a major contributor to health disparities, yet its effects often vary by geography and are commonly represented as compositional distributions (e.g., proportions of households across income brackets). Existing spatial regression methods struggle in this setting: they typically assume smooth spatial variation, cannot accommodate abrupt spatial heterogeneity, and lack principled treatment of compositional covariates. We propose a geographically weighted penalized compositional regression model that addresses these challenges simultaneously. Our method adopts a pairwise fusion penalty that enables detection of both contiguous and noncontiguous regional clusters with shared regression effects, thereby relaxing strong assumptions of spatial smoothness and geographic contiguity. This allows regions with similar underlying socioeconomic structures to be identified even when they are not geographically adjacent. By incorporating nonconvex penalties, such as the minimax concave penalty (MCP), the approach achieves improved estimation accuracy, interpretability, and scalability in high-dimensional spatial settings. We illustrate the method through an analysis linking U.S. income composition to chronic obstructive pulmonary disease (COPD) prevalence, revealing spatially heterogeneous associations that are obscured by conventional models. The proposed framework provides a flexible and robust tool for spatial data analysis involving compositional predictors and region-specific heterogeneity.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Texas Health and Science University",
+            "ror": "041621784"
+          }
+        ],
+        "name": "Jingwen Deng",
+        "openalex": "A5136120823",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shujie Ma",
+        "openalex": "A5102746691",
+        "orcid": "https://orcid.org/0000-0001-8181-6586"
+      },
+      {
+        "institutions": [
+          {
+            "name": "San Diego State University",
+            "ror": "0264fdx42"
+          }
+        ],
+        "name": "Sergio J. Rey",
+        "openalex": "A5136186547",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Michigan State University",
+            "ror": "05hs6h993"
+          }
+        ],
+        "name": "Guanyu Hu",
+        "openalex": "A5136128246",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/24694452.2026.2722318",
+      "pdf_url": null,
+      "source_id": "S2764498735",
+      "source_name": "Annals of the American Association of Geographers",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-14",
+    "repository_urls": [],
+    "title": "Linking COPD Prevalence with Income Distribution: A Spatial Heterogeneous Compositional Regression via Geographically Weighted Penalized Approach"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-14_2605.12830",
+    "members": [
+      "arxiv:2605.12830"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:041621784",
+        "label": "Texas Health and Science University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0264fdx42",
+        "label": "San Diego State University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05hs6h993",
+        "label": "Michigan State University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5136120823",
+        "label": "Jingwen Deng"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8181-6586",
+        "label": "Shujie Ma"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5136186547",
+        "label": "Sergio J. Rey"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5136128246",
+        "label": "Guanyu Hu"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11911",
+        "is_primary": true,
+        "label": "Spatial and Panel Data Analysis",
+        "score": 0.3038,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12157",
+        "is_primary": false,
+        "label": "Geochemistry and Geologic Mapping",
+        "score": 0.1078,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11819",
+        "is_primary": false,
+        "label": "Data-Driven Disease Surveillance",
+        "score": 0.0777,
+        "subfield": "2713"
+      }
+    ]
+  },
+  "first_published": "2026-09-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1586792387",
+      "openalex:W1965125844",
+      "openalex:W1973749534",
+      "openalex:W2007741247",
+      "openalex:W2017606789",
+      "openalex:W2029607409",
+      "openalex:W2033403400",
+      "openalex:W2046011840",
+      "openalex:W2047120335",
+      "openalex:W2051243106",
+      "openalex:W2057681319",
+      "openalex:W2074682976",
+      "openalex:W2078112764",
+      "openalex:W2082503527",
+      "openalex:W2085210969",
+      "openalex:W2086205459",
+      "openalex:W2123139375",
+      "openalex:W2135046866",
+      "openalex:W2156619449",
+      "openalex:W2529065146",
+      "openalex:W2529212188",
+      "openalex:W2553784009",
+      "openalex:W2904250115",
+      "openalex:W2904335155",
+      "openalex:W2969402787",
+      "openalex:W2975484662",
+      "openalex:W3001537280",
+      "openalex:W3009781082",
+      "openalex:W3094191583",
+      "openalex:W3210906757",
+      "openalex:W4292363360",
+      "openalex:W4300956553",
+      "openalex:W4379015838",
+      "openalex:W4394884513"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2605.12830",
+    "doi": "10.1080/24694452.2026.2722318",
+    "openalex": "W7161181774",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-15T23:30:15Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005147,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1979,
+      "out": 242
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-15T23:30:15Z",
+    "doi": "10.1080/24694452.2026.2722318",
+    "journal": "Annals of the American Association of Geographers",
+    "source_id": "S2764498735",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed a geographically weighted penalized compositional regression model that handles income distribution data as compositional covariates while detecting both contiguous and noncontiguous regional clusters with shared regression effects. They applied this framework to analyze the relationship between household income distribution brackets and chronic obstructive pulmonary disease (COPD) prevalence across the United States, utilizing a pairwise fusion penalty and the minimax concave penalty to capture abrupt spatial variations.",
+      "why": "The model overcomes the limitations of traditional spatial regressions that assume smooth, continuous geographic transitions, allowing researchers to identify shared socioeconomic-health relationships across geographically isolated regions that share similar structural characteristics."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-14",
+  "work_key": "arxiv:2605.12830"
+}

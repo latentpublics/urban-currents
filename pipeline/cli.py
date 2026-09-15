@@ -568,6 +568,21 @@ def status():
                 f"The withheld queue is that rule, and nothing else."
             )
 
+    # ★ 1H. A judgement file outside version control is one `git clean` from
+    # gone, and nothing else in this output would ever say so. Silent when
+    # there is nothing to say, which is the normal case.
+    labels = state.get("labels") or {}
+    if labels.get("untracked"):
+        typer.echo("")
+        typer.echo(
+            f"[LABELS] {len(labels['untracked'])} judgement file(s) not in git: "
+            f"{', '.join(labels['untracked'])}"
+        )
+        typer.echo(
+            "            These are judgements, not regenerable output — "
+            "`git add runs/labels/`."
+        )
+
     # ★ Two things the daily workflow greps for, and one a person needs (0U).
     #
     # `daily.yml`'s dry-run guard has been dead since H3: it looks in

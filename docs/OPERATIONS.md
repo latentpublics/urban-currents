@@ -54,6 +54,14 @@ the doubt the daily pass used to carry.
 | `uc review --date D` | the full review of one issue, when you want to look at a specific day |
 | `uc review --relabel weak` | split the pre-M1 `drop_weak` labels into method and results |
 
+**Judgements are the scarcest thing this project produces, and they live in
+`runs/labels/`.** `uc status` prints a `[LABELS]` line if any judgement file is
+outside version control, and stays silent otherwise. It exists because
+`held_review.jsonl` — 122 judgements — sat untracked for three weeks while a
+decision those judgements had already answered went on being cited as
+unmeasured. `.gitignore` keeps `runs/labels/*.jsonl` tracked and excludes only
+`*_pool.jsonl`, which are regenerable candidate lists rather than judgements.
+
 **There is deliberately no `--latest`.** An argument-free "show me today" would
 be a standing invitation to check every morning, which is the habit this design
 exists to remove. `--pending` asks for no date on purpose: a week away leaves a

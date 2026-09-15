@@ -515,6 +515,7 @@ def status() -> dict[str, Any]:
     from .deliver import get_backend, ledger_dir, recipients
     from .canon_state import counts as canon_counts
     from .held import counts as held_counts
+    from .labeling import label_file_health
     from .llm import UsageState
     from .config import cfg
     from .daily import slot_date
@@ -575,6 +576,11 @@ def status() -> dict[str, Any]:
         # retrying the second unchanged does the same thing again.
         "interrupted_dates": [r["date"] for r in interrupted_dates()],
         "held": held_counts(),
+        # ★ 1H. Judgements are the scarcest thing this project produces and the
+        # easiest to lose: 122 of them sat untracked for three weeks while a
+        # decision they had answered was reused. Two facts, next to the queue
+        # that asks for more of them.
+        "labels": label_file_health(),
         "alerting": alerting_state(),
         "canon": canon_counts(),
         # A source that reports OK and returns nothing is the failure that does

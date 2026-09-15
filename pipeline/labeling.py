@@ -32,7 +32,7 @@ import json
 import sys
 import time
 from collections import Counter
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any, Iterable, Optional
 
@@ -293,6 +293,69 @@ def _ask_label(prompt, printer) -> Optional[str]:
 def labels_path(facet: str = "relevance") -> Path:
     paths.LABELS.mkdir(parents=True, exist_ok=True)
     return paths.LABELS / f"{facet}.jsonl"
+
+
+def label_file_health() -> dict:
+    """Is every judgement file in version control, and when was the last one?
+
+    ★ 1H. `held_review.jsonl` — 122 judgements, the largest single labelling
+    session this project has had — sat untracked for three weeks while a
+    decision (D196) was reused that those very judgements had answered. It was
+    never ignored: `.gitignore` excludes `runs/*`, re-includes `runs/labels/`,
+    then excludes only `runs/labels/*_pool.jsonl`. A judgement file is meant to
+    be tracked. That one simply was not added, and nothing said so.
+
+    Two cheap facts, and deliberately no more than two. The pool files are
+    excluded because they are regenerable candidate lists, not judgements.
+
+    Fails quiet and open. `git` may be absent, this may not be a checkout, and
+    a status line is not worth an exception — an unanswerable question returns
+    an empty list, never a false alarm.
+    """
+    import subprocess
+
+    from . import paths
+
+    files = sorted(
+        p.name
+        for p in paths.LABELS.glob("*.jsonl")
+        if not p.name.endswith("_pool.jsonl")
+    )
+
+    untracked: list[str] = []
+    if files:
+        try:
+            tracked = subprocess.run(
+                ["git", "ls-files", "--", "runs/labels/"],
+                cwd=str(paths.ROOT), capture_output=True, text=True, timeout=10,
+            )
+            if tracked.returncode == 0:
+                known = {line.rsplit("/", 1)[-1] for line in tracked.stdout.split()}
+                untracked = [f for f in files if f not in known]
+        except Exception:  # noqa: BLE001 - see docstring: quiet and open
+            untracked = []
+
+    latest = ""
+    for facet in sorted(RANKED_FACETS | PROBE_FACETS):
+        for row in load_labels(facet):
+            at = str(row.get("labelled_at") or "")
+            if at > latest:
+                latest = at
+
+    days = None
+    if latest:
+        try:
+            when = datetime.fromisoformat(latest.replace("Z", "+00:00")).date()
+            days = (date.today() - when).days
+        except ValueError:
+            days = None
+
+    return {
+        "files": len(files),
+        "untracked": untracked,
+        "last_judged": latest[:10] or None,
+        "days_since_last_judgement": days,
+    }
 
 
 def load_labels(facet: str = "relevance") -> list[dict]:

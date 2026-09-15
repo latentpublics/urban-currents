@@ -295,6 +295,49 @@ jobs:
           UC_ALERT_RECIPIENT: ${{ secrets.UC_ALERT_RECIPIENT }}
         run: uv run uc catch-up --date "$ISSUE_DATE" || true
 
+      # ★ 1L, L4. The run directory survives the runner.
+      #
+      # `runs/` is gitignored (`.gitignore:37`) and has always died with the
+      # job. Four separate investigations dead-ended on that one fact: the held
+      # counts never reached the repository (1J §1-1), 2026-09-13's near-miss
+      # cliff cannot be read (1J §4), a labelling session cannot be prepared for
+      # any recent date because the candidate pool is gone (1K §2-2), and D261
+      # recorded a `collect.openalex` FAILED whose *reason* was unrecoverable.
+      #
+      # `if: always()` is the point. The runs worth reading are the ones that
+      # failed, and a step that only uploads on success would have missed every
+      # case above.
+      #
+      # 🔴 What is NOT uploaded, and why:
+      #
+      #   raw/          API response bodies. Audited across 71 local runs and
+      #                 281 raw files: no secret value appears, and `write_raw`
+      #                 is only ever handed a *response body* (two call sites,
+      #                 both checked). But `CONTACT_EMAIL` and `SPRINGER_API_KEY`
+      #                 are unset locally, so that audit could not cover them —
+      #                 unmeasured, not clean. Nothing here needs raw/ (L2 now
+      #                 records HTTP status and totals directly), so it is
+      #                 excluded rather than argued about.
+      #   *.html        The rendered issue and the email, which carries a
+      #                 recipient address. Regenerable from content/.
+      #
+      # Retention matches the Actions log (90 days) so a run's log and its
+      # evidence expire together; a reader who still has one always has the
+      # other. Not unlimited, per L4.
+      - name: Keep the run directory
+        if: ${{ always() && inputs.dry_run != true }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: run-${{ steps.slot.outputs.date || 'unknown' }}
+          retention-days: 90
+          if-no-files-found: ignore
+          path: |
+            runs/run_*/metrics.json
+            runs/run_*/stages/
+            runs/run_*/status_changes.jsonl
+            runs/run_*/unmatched.jsonl
+            runs/run_*/gate_dropped.jsonl
+
       # Built here and thrown away, on purpose: since 0X the deploy happens in
       # `pages.yml`, and this is the pre-flight. A broken template fails the
       # day here, where the run log and the alert will say so, instead of
@@ -317,6 +360,19 @@ jobs:
       # a daily HTML diff would bury every real change.
       - name: Commit content
         if: ${{ inputs.dry_run != true }}
+        env:
+          # ★ 1L, L6. The slot date, not the runner's wall clock.
+          #
+          # This file warns about exactly this trap in four other places and
+          # then fell into it here: `date -u +%Y-%m-%d` is the moment the commit
+          # is made, so a run that crosses midnight labels itself with the next
+          # day. `32e9d69` is the specimen — the 2026-09-14 run, committed as
+          # "content: 2026-09-15 run". The 08-26 lesson reached every step that
+          # decides *what to do* and none of the one that says *what was done*.
+          #
+          # The data was always right; only the label lied. Which is worse than
+          # it sounds, because the label is what a person greps for.
+          SLOT_DATE: ${{ steps.slot.outputs.date }}
         run: |
           set -e
           git config user.name  "urban-currents[bot]"
@@ -326,7 +382,8 @@ jobs:
             echo "nothing to commit"
             exit 0
           fi
-          git commit -m "content: $(date -u +%Y-%m-%d) run"
+          day="${SLOT_DATE:-$(date -u +%Y-%m-%d)}"
+          git commit -m "content: ${day} run"
 
           # Someone may have pushed while we ran — a review edit, a config
           # change. Rebase and retry ONCE. If the second attempt also fails,

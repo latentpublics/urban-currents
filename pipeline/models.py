@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import re
 from datetime import date, datetime
-from typing import Literal, Optional
+from typing import Any, Literal, Optional
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
@@ -685,5 +685,17 @@ class Metrics(StrictModel):
     linking: Linking = Field(default_factory=Linking)
     stages: dict[str, str] = Field(default_factory=dict)  # stage -> OK|SKIPPED|FAILED
     errors: list[str] = Field(default_factory=list)
+    # ★ 1L. What a source *did*, kept strictly apart from what its stage
+    # concluded. `stages` is the verdict `outcome.looked()` reads; these two are
+    # facts beside it and are never consulted by a verdict.
+    #
+    # `source_failures` maps a source to the reasons its requests failed —
+    # including when other requests to the same source succeeded, which is how a
+    # 90-day backfill losing one window stays visible. `source_observations`
+    # carries what the wire said (HTTP status, result totals, windows tried), so
+    # "the request failed" and "the request worked and matched nothing" stop
+    # being the same empty list.
+    source_failures: dict[str, list[str]] = Field(default_factory=dict)
+    source_observations: dict[str, dict[str, Any]] = Field(default_factory=dict)
 
 

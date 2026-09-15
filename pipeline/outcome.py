@@ -167,6 +167,25 @@ class Outcome:
     attempts: int = 1
     spend_usd: float = 0.0
     silent_sources: list[str] = field(default_factory=list)
+    # ★ 1L. Facts about what the sources did, recorded beside the verdict and
+    # never consulted by it.
+    #
+    # `failed_sources` is **not** `silent_sources` and must never be folded into
+    # it. Silence is "the stage reported OK and the count was zero"; failure is
+    # "every request we made died". They looked identical in the log until now,
+    # which is how a dead arXiv window got written down as a quiet arXiv day.
+    #
+    # 🔴 Neither changes `status`. A day arXiv failed still publishes its journal
+    # papers — see L0 and `silent_sources` below. What changes is what we know.
+    failed_sources: list[str] = field(default_factory=list)
+    source_failures: dict[str, list[str]] = field(default_factory=dict)
+    source_observations: dict[str, Any] = field(default_factory=dict)
+    # ★ 1L, L5. Computed in `run_stages.stage_select` since 0L and thrown away
+    # with `runs/` ever since. `None` means **this row predates 1L or select
+    # never ran** — it does not mean zero, and reading it as zero would recreate
+    # the ambiguity this field exists to remove.
+    held_withheld: Optional[int] = None
+    held_near_miss: Optional[int] = None
     # ★ Whether the day had a headline (phase 0U, U5).
     #
     # `status` and this are **two different facts** and were being written into
@@ -200,6 +219,11 @@ class Outcome:
             "attempts": self.attempts,
             "spend_usd": round(self.spend_usd, 6),
             "silent_sources": self.silent_sources,
+            "failed_sources": self.failed_sources,
+            "source_failures": self.source_failures,
+            "source_observations": self.source_observations,
+            "held_withheld": self.held_withheld,
+            "held_near_miss": self.held_near_miss,
             "headline_present": self.headline_present,
             "recorded_at": utcnow().isoformat(),
         }
@@ -304,6 +328,45 @@ def silent_sources(run: Run, window_days: int = 1) -> list[str]:
     return out
 
 
+def failed_sources(run: Run) -> list[str]:
+    """Sources whose every request died, so their zero is blindness not silence.
+
+    ★ 1L, L1. Read from `metrics.source_observations[...]["failed_all"]`, which
+    the collector sets — **not** from `stages`, which stays OK on purpose (L0).
+
+    The distinction this draws is the one `silent_sources` could not: that
+    function excludes a source whose stage is not OK, reasoning that a failure
+    is "already counted as a failure". For arXiv it never was. A dead window
+    makes `collect()` return `[]` with the stage still OK, so the day was filed
+    as silence — the source politely having nothing — when in fact we were
+    blind. 2026-09-07, 09-12 and 09-13 are all recorded that way and cannot now
+    be told apart.
+    """
+    out = []
+    for source, obs in (run.metrics.source_observations or {}).items():
+        if isinstance(obs, dict) and obs.get("failed_all"):
+            out.append(source)
+    return sorted(out)
+
+
+def held_counts(run: Run) -> tuple[Optional[int], Optional[int]]:
+    """The day's held tallies, or `(None, None)` when select never ran.
+
+    ★ 1L, L5. `None` is load-bearing. A day that selected nothing and a day that
+    never reached selection are different facts, and filling the second with 0
+    is precisely the measured-zero-versus-could-not-measure mistake this
+    project keeps making — most recently in `content/held/`, where an absent
+    file meant three different things (1J §3-1).
+    """
+    counts = run.metrics.counts
+    withheld = getattr(counts, "held_withheld", None)
+    near_miss = getattr(counts, "held_near_miss", None)
+    return (
+        None if withheld is None else int(withheld),
+        None if near_miss is None else int(near_miss),
+    )
+
+
 def decide(
     run: Run,
     d: date,
@@ -343,6 +406,25 @@ def decide(
     failed = sorted(n for n, s in run.metrics.stages.items() if s == "FAILED")
     skipped = sorted(n for n, s in run.metrics.stages.items() if s == "SKIPPED")
 
+    # ★ 1L. Read, never consulted. `ok` was decided above by `looked()` and
+    # nothing below this line may change it — that is L0, and the regression
+    # test for it asserts a failed arXiv day still publishes.
+    blind = failed_sources(run)
+    if blind:
+        run.error(
+            f"outcome: {', '.join(blind)} failed every request and returned "
+            f"nothing — recorded as a failure, not as silence; the day is "
+            f"published on whatever the other sources found"
+        )
+    withheld_n, near_miss_n = held_counts(run)
+    extra = {
+        "failed_sources": blind,
+        "source_failures": dict(run.metrics.source_failures or {}),
+        "source_observations": dict(run.metrics.source_observations or {}),
+        "held_withheld": withheld_n,
+        "held_near_miss": near_miss_n,
+    }
+
     if not ok:
         return Outcome(
             date=d,
@@ -354,6 +436,7 @@ def decide(
             published=0,
             spend_usd=float(run.metrics.cost.total_usd or 0.0),
             silent_sources=silent,
+            **extra,
         )
 
     status = PUBLISHED if published_count else QUIET
@@ -367,6 +450,7 @@ def decide(
         published=published_count,
         spend_usd=float(run.metrics.cost.total_usd or 0.0),
         silent_sources=silent,
+        **extra,
     )
 
 

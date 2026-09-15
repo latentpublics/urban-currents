@@ -28,6 +28,10 @@ from ..metrics import Run
 from ..models import Author, Bibliography, Ids, Item, PrimaryLocation, Provenance
 from .base import ARXIV_SOURCE_ID, arxiv_doi, clean_text, normalize_arxiv_id
 
+# The stage name this collector reports under. Used for the 1L facts recorded
+# beside the stage verdict, never for the verdict itself.
+SOURCE = "collect.arxiv"
+
 ATOM = "{http://www.w3.org/2005/Atom}"
 ARXIV_NS = "{http://arxiv.org/schemas/atom}"
 
@@ -51,6 +55,9 @@ class ArxivCollector:
         self.categories = list(cfg("arxiv.categories", []) or [])
         self._client = client
         self._last_request = 0.0
+        # ★ 1L, L2. The last HTTP status seen, so a run that never got a usable
+        # response still records *what* it got. None means no request completed.
+        self.last_status: Optional[int] = None
 
     # -- HTTP ------------------------------------------------------------
 
@@ -144,6 +151,10 @@ class ArxivCollector:
                     slept += wait
                     attempt += 1
                     continue
+                # ★ 1L, L2. The last status this source actually returned.
+                # A 200 with nothing in it and a request that never completed
+                # are the same empty list once `collect()` is done.
+                self.last_status = r.status_code
                 r.raise_for_status()
                 return r.text
             except Exception as e:  # noqa: BLE001
@@ -191,8 +202,11 @@ class ArxivCollector:
         start = backfill_from or d
         items: dict[str, Item] = {}
         pages_used = 0
+        attempted = 0
+        failed = 0
 
         for w_start, w_end in self._windows(start, d):
+            attempted += 1
             try:
                 got, pages = self._collect_window(
                     w_start, w_end, None if max_pages is None else max_pages - pages_used
@@ -200,16 +214,50 @@ class ArxivCollector:
             except Exception as e:  # noqa: BLE001
                 # One bad window must not discard the rest of a 90-day backfill.
                 # The gap is recorded so the report can say which days are thin.
-                self.run.error(
-                    f"collect.arxiv: window {w_start}..{w_end} failed: "
-                    f"{type(e).__name__}: {e}"
-                )
+                failed += 1
+                reason = f"window {w_start}..{w_end}: {type(e).__name__}: {e}"
+                self.run.error(f"collect.arxiv: {reason} failed")
+                # ★ 1L, L3. The same sentence, but somewhere that survives the
+                # runner. `run.error()` reaches `runs/{run_id}/metrics.json` and
+                # `runs/` is thrown away; this reaches `content/runs_log/`.
+                # D261 recorded exactly this gap ("the reason disappears with
+                # the runner") and proposed only printing to stdout, which
+                # Actions keeps for 90 days. This keeps it for good.
+                self.run.source_failure(SOURCE, reason)
                 continue
             pages_used += pages
             for item in got:
                 items.setdefault(item.work_key, item)
             if max_pages is not None and pages_used >= max_pages:
                 break
+
+        # ★ 1L, L1/L2. Two facts the stage verdict cannot carry.
+        #
+        # L1: a daily run has exactly one window, so one dead window means the
+        # collector returns `[]` while every stage stays OK — and
+        # `silent_sources` then writes down "reported OK and returned nothing",
+        # which is the *wrong fact*. Silence and failure are different, and this
+        # is the line that tells them apart. `failed_all` is deliberately "every
+        # window we tried died", not "any window died": a backfill that loses
+        # one window of thirteen is thin, not blind.
+        #
+        # L2: an empty result with no exception at all — a query arXiv rejected
+        # or silently corrected — is invisible to L1 because nothing raised.
+        # `total_results` straight from the feed is what separates it.
+        #
+        # 🔴 Neither touches `stages["collect.arxiv"]`. See L0: the verdict is
+        # read by `outcome.looked()`, and a failed arXiv collection must not
+        # cost the day its journal papers.
+        self.run.observe_source(
+            SOURCE,
+            windows=attempted,
+            windows_failed=failed,
+            failed_all=bool(attempted and failed == attempted),
+            items=len(items),
+            # Recorded here as well as per-page, because a window that never
+            # returned a page leaves no other trace of what the wire said.
+            http_status=self.last_status,
+        )
 
         return sorted(items.values(), key=lambda it: it.work_key)
 
@@ -242,6 +290,15 @@ class ArxivCollector:
             xml = self._fetch(params)
             self.run.write_raw(f"arxiv/{start}_{end}_p{page_no:03d}.xml", xml)
             page = parse_atom(xml)
+            if page_no == 0:
+                # ★ 1L, L2. `total_results` is the feed's own count for the
+                # query, so a rejected or silently corrected query shows up as
+                # 0 here with an HTTP 200 beside it — the case L1 cannot see
+                # because nothing raised.
+                self.run.observe_source(
+                    SOURCE, http_status=self.last_status,
+                    total_results=page.total_results,
+                )
 
             for entry in page.entries:
                 item = entry_to_item(entry)

@@ -43,6 +43,8 @@ from .outcome import (
     QUIET,
     Outcome,
     decide,
+    failed_sources,
+    held_counts,
     record,
 )
 
@@ -613,6 +615,15 @@ def run_daily(
             candidates=None,
             published=0,
             spend_usd=_spend_since(baseline_spend),
+            # ★ 1L. An interrupted run still knows what the sources did before
+            # it was cut off, and that is exactly the run whose evidence used to
+            # vanish with the runner. `held_*` stay None here unless `select`
+            # actually reached the point of counting.
+            failed_sources=failed_sources(run),
+            source_failures=dict(run.metrics.source_failures or {}),
+            source_observations=dict(run.metrics.source_observations or {}),
+            held_withheld=held_counts(run)[0],
+            held_near_miss=held_counts(run)[1],
         )
         if not dry_run:
             record(outcome)

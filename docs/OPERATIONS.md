@@ -135,6 +135,43 @@ would retract. Nothing blocks on a human — the held queue absorbs the doubt
 instead, and gets judged whenever someone is back. See `docs/phase0-ledger.md`
 for what the old definition measured (nothing: zero days carried a `review_s`).
 
+## What a run leaves behind
+
+`content/runs_log/YYYY-MM-DD.json` is the committed record of a run. Since
+batch 1L it carries what the sources actually did, not just what the day
+concluded:
+
+| field | what it means |
+|---|---|
+| `silent_sources` | the source finished **OK** and returned nothing |
+| `failed_sources` | **every request to that source failed** — we were blind, not quiet |
+| `source_failures` | the exception type and message, per source |
+| `source_observations` | HTTP status, the feed's own result total, windows tried and failed |
+| `held_withheld` / `held_near_miss` | the day's held-queue tallies |
+
+`silent_sources` and `failed_sources` are different facts and are never merged.
+A dead arXiv window used to produce zero items with the stage still green, so it
+was filed as silence — the source politely having nothing — when in fact we
+could not see. 2026-09-07, 09-12 and 09-13 are all recorded the old way and
+cannot now be told apart.
+
+🔴 **A missing field means "this row predates 1L", not zero.** `held_withheld:
+null` says the run never reached selection, or the row was written before these
+fields existed; `held_withheld: 0` says it selected and held nothing. Reading
+the first as the second rebuilds exactly the ambiguity these fields removed.
+**Rows before 2026-09-15 have none of them.** They are not backfilled — a value
+we did not record is not a value we can invent.
+
+**An arXiv failure does not stop the day.** The issue still goes out on whatever
+the other sources found, because journal articles collected on a day arXiv was
+unreachable are real papers and withholding them would trade a partial issue for
+none. The failure is recorded, not acted on.
+
+The full run directory — `metrics.json`, `stages/`, the unmatched and dropped
+lists — is uploaded by the daily workflow as a **90-day artifact**, named
+`run-YYYY-MM-DD` on the workflow run page. It is not committed; `runs/` stays
+gitignored. Raw API responses and the rendered email are deliberately excluded.
+
 ## Daily run
 
 ```bash

@@ -16,6 +16,7 @@ from typing import Any, Iterator, Optional
 
 from . import paths
 from .models import Metrics
+from .redact import redact
 
 
 def run_id_for(d: date | str | None = None) -> str:
@@ -99,8 +100,43 @@ class Run:
         self.metrics.stages[name] = status
 
     def error(self, msg: str) -> None:
+        """Record a failure, with credentials scrubbed out of it first.
+
+        ★ 1L. Every error string in the pipeline arrives here, which is the only
+        reason scrubbing at one place is enough. Call sites stringify exceptions
+        (`f"...: {type(e).__name__}: {e}"`) and a `requests` exception carries
+        the request URL — `abstracts.py` puts the Springer key in a query
+        parameter, so that URL carries the key. It was harmless while errors
+        died with the runner in gitignored `runs/`; L3 writes them into
+        `content/runs_log/` in a public repo and L4 uploads them as an artefact.
+        See `pipeline/redact.py`.
+        """
+        msg = redact(msg)
         if msg not in self.metrics.errors:
             self.metrics.errors.append(msg)
+
+    # -- What a source did, kept apart from what the stage concluded (1L) ----
+
+    def source_failure(self, source: str, reason: str) -> None:
+        """One request to `source` failed, and why.
+
+        **Does not touch `stages[source]`.** The stage verdict stays whatever
+        the collector concluded, because `outcome.looked()` reads it and a
+        failed arXiv collection must not cost the day its journal papers (L0,
+        and `outcome.silent_sources`' own docstring). This records a fact
+        beside the verdict; it never becomes one.
+        """
+        self.metrics.source_failures.setdefault(source, []).append(redact(reason))
+
+    def observe_source(self, source: str, **facts: Any) -> None:
+        """What the wire actually said: HTTP status, result totals, windows.
+
+        The point is to separate "the request failed" from "the request
+        succeeded and matched nothing" after the fact. Today those are the same
+        empty list, which is why 2026-09-13's near-miss cliff cannot be read
+        (1J §4) and why an arXiv zero cannot be attributed (nightly §3).
+        """
+        self.metrics.source_observations.setdefault(source, {}).update(facts)
 
     def write_raw(self, name: str, text: str) -> Path:
         """Raw API responses are preserved verbatim (PRD §5.1, non-negotiable)."""

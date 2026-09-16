@@ -63,7 +63,33 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5151133914",
+        "label": "Xin Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6235-3798",
+        "label": "Páraic Carroll"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5123599953",
+        "label": "Kerry Nice"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5151242684",
+        "label": "Sachith Seneviratne"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5151135400",
+        "label": "Li Zhang"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -74,7 +100,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.6226,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.1695,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0793,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-09-09",
   "graph": {
@@ -85,7 +136,7 @@
   "ids": {
     "arxiv": "2609.09609",
     "doi": "10.48550/arxiv.2609.09609",
-    "openalex": null,
+    "openalex": "W7212146318",
     "pmid": null
   },
   "provenance": {
@@ -93,7 +144,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-10T23:05:30Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006575,
     "llm": {
@@ -181,6 +233,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-09",
+  "updated": "2026-09-16",
   "work_key": "arxiv:2609.09609"
 }

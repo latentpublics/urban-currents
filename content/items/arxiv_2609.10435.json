@@ -39,7 +39,13 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5151193020",
+        "label": "Wei Bi"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -50,7 +56,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11807",
+        "is_primary": true,
+        "label": "Infrastructure Resilience and Vulnerability Analysis",
+        "score": 0.5196,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10930",
+        "is_primary": false,
+        "label": "Flood Risk Assessment and Management",
+        "score": 0.2263,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11500",
+        "is_primary": false,
+        "label": "Evacuation and Crowd Dynamics",
+        "score": 0.0605,
+        "subfield": "2212"
+      }
+    ]
   },
   "first_published": "2026-09-09",
   "graph": {
@@ -61,7 +92,7 @@
   "ids": {
     "arxiv": "2609.10435",
     "doi": "10.48550/arxiv.2609.10435",
-    "openalex": null,
+    "openalex": "W7212150961",
     "pmid": null
   },
   "provenance": {
@@ -69,7 +100,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-10T23:05:30Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00532,
     "llm": {
@@ -157,6 +189,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-09",
+  "updated": "2026-09-16",
   "work_key": "arxiv:2609.10435"
 }

@@ -58,11 +58,57 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5107084543",
+        "label": "Gul Sher Ali"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5135406037",
+        "label": "Michail Giannakos"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5015110034",
+        "label": "Monica Lillefjell"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6055-9285",
+        "label": "Sobah Abbas Petersen"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11519",
+        "is_primary": true,
+        "label": "Digital Mental Health Interventions",
+        "score": 0.2966,
+        "subfield": "3202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10803",
+        "is_primary": false,
+        "label": "Innovative Human-Technology Interaction",
+        "score": 0.1259,
+        "subfield": "1709"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0685,
+        "subfield": "2307"
+      }
+    ]
   },
   "first_published": "2026-09-09",
   "graph": {
@@ -73,7 +119,7 @@
   "ids": {
     "arxiv": "2609.10779",
     "doi": "10.48550/arxiv.2609.10779",
-    "openalex": null,
+    "openalex": "W7212259429",
     "pmid": null
   },
   "provenance": {
@@ -81,7 +127,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-11T23:10:13Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004765,
     "llm": {
@@ -169,6 +216,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-09",
+  "updated": "2026-09-16",
   "work_key": "arxiv:2609.10779"
 }

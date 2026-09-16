@@ -1,0 +1,275 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Bicycle Sharing Services (BSS) have become an important component of urban mobility, particularly in dense metropolitan areas where first- and last-mile connectivity is critical. However, much of the existing literature relies on trip counts and origin–destination flows, which do not directly capture short-term operational imbalance at the station level. This study examines whether temporal imbalance profiles derived from high-frequency station-availability data can be used to classify functional station roles in Tokyo, a dense rail-oriented metropolis. The analysis uses data from the two major dock-based BSS systems in Tokyo and includes 3,207 stations observed in autumn 2023, winter 2024, and spring 2024 at 15-minute intervals. Net bike change was used to represent short-term bicycle accumulation and depletion at stations, and weekday and weekend temporal profiles were analysed using Principal Component Analysis (PCA) and Ward’s hierarchical clustering. The results identify a broadly stable three-cluster typology across seasons, consisting of commuter-destination stations, commuter-origin stations, and balanced or low-signature stations, with the balanced role essentially season-invariant and the commuter roles somewhat more season-sensitive; weekend profiles are also more dispersed and variable. These station roles are systematically associated with urban structure, particularly land-use context and train-station proximity. The findings indicate that Tokyo’s BSS network is strongly organised by recurrent weekday commuting routines and closely linked to rail accessibility. By shifting attention from aggregate ridership to temporal imbalance, the study provides a more operationally grounded basis for station classification and highlights the value of role-based planning for integrated last-mile transport management in transit-oriented cities.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Tokyo Metropolitan University",
+            "ror": "00ws30h19"
+          }
+        ],
+        "name": "Muhammad Hakim Khan",
+        "openalex": "A5112722549",
+        "orcid": "https://orcid.org/0000-0002-1136-4817"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tokyo Metropolitan University",
+            "ror": "00ws30h19"
+          }
+        ],
+        "name": "Fumiko Ito",
+        "openalex": "A5025583364",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s44327-026-00353-6",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44327-026-00353-6.pdf",
+      "source_id": "S5407042847",
+      "source_name": "Discover Cities",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-11",
+    "repository_urls": [],
+    "title": "Classifying bicycle sharing station roles using temporal imbalance profiles in Tokyo"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-15_10.1007/s44327-0",
+    "members": [
+      "doi:10.1007/s44327-026-00353-6"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:dimensionality-reduction",
+        "label": "dimensionality reduction"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00ws30h19",
+        "label": "Tokyo Metropolitan University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1136-4817",
+        "label": "Muhammad Hakim Khan"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5025583364",
+        "label": "Fumiko Ito"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1490",
+        "label": "Tokyo",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.9792,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0052,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.0043,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-09-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1892081045",
+      "openalex:W1972189565",
+      "openalex:W1979680764",
+      "openalex:W1980881078",
+      "openalex:W2098557804",
+      "openalex:W2102690263",
+      "openalex:W2116554828",
+      "openalex:W2124334006",
+      "openalex:W2219236274",
+      "openalex:W2620983010",
+      "openalex:W2626751457",
+      "openalex:W2729818655",
+      "openalex:W2804438378",
+      "openalex:W2862315792",
+      "openalex:W2905901582",
+      "openalex:W2914073280",
+      "openalex:W2915145711",
+      "openalex:W2917068685",
+      "openalex:W2936504517",
+      "openalex:W2940288393",
+      "openalex:W2943313549",
+      "openalex:W2953661112",
+      "openalex:W2958840775",
+      "openalex:W2996199496",
+      "openalex:W3001039745",
+      "openalex:W3012371201",
+      "openalex:W3016193691",
+      "openalex:W3039120554",
+      "openalex:W3096053722",
+      "openalex:W3120603175",
+      "openalex:W3157345337",
+      "openalex:W3180982847",
+      "openalex:W3194651900",
+      "openalex:W4210722001",
+      "openalex:W4221078823",
+      "openalex:W4224219461",
+      "openalex:W4280490194",
+      "openalex:W4281718590",
+      "openalex:W4285287614",
+      "openalex:W4309896560",
+      "openalex:W4324143221",
+      "openalex:W4362723563",
+      "openalex:W4387836890",
+      "openalex:W4388817571",
+      "openalex:W4393152073",
+      "openalex:W4394891343",
+      "openalex:W4402208669",
+      "openalex:W4405900505",
+      "openalex:W7117317232",
+      "openalex:W7124134764"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s44327-026-00353-6",
+    "openalex": "W7212256335",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-16T23:37:35Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005836,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2199,
+      "out": 282
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-16T23:37:35Z",
+    "doi": "10.1007/s44327-026-00353-6",
+    "journal": "Discover Cities",
+    "source_id": "S5407042847",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "3,207 stations",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The classification is based on Tokyo's highly rail-oriented urban structure and dock-based systems, which may limit its direct applicability to cities with different transit densities or dockless bike-sharing models.",
+      "what": "This study classified the functional roles of 3,207 bicycle sharing stations in Tokyo using 15-minute interval availability data across three seasons between autumn 2023 and spring 2024. By applying Principal Component Analysis and Ward's hierarchical clustering to net bike changes, the researchers identified a stable three-cluster typology consisting of commuter-destination, commuter-origin, and balanced stations.",
+      "why": "It demonstrates that station roles can be classified using high-frequency temporal imbalance profiles rather than aggregate trip counts, revealing how closely bicycle sharing dynamics are tied to rail transit proximity and weekday commuting routines in a transit-oriented metropolis."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-11",
+  "work_key": "doi:10.1007/s44327-026-00353-6"
+}

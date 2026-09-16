@@ -1,22 +1,39 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Urban green spaces are widely recognised as essential social infrastructure, yet their implementation often gives rise to the paradox of “green gentrification”, which displaces the very communities that should benefit from them. This article addresses a key gap in the urban planning literature: the need to identify specific governance models and equity indicators capable of preventing the displacement of communities during ecological regeneration. The research carries out a comparative analysis of two prominent European case studies: Ekostaden Augustenborg (Malmö, Sweden) and DakPark (Rotterdam, the Netherlands). The two projects are examined along three analytical dimensions: institutional governance structures, the policy frameworks in place, and the use of ex-ante equity indicators. The findings reveal sharply divergent social outcomes. In Malmö, the full institutional integration of green-space management with the bodies responsible for social housing, supported by binding indicators such as residential turnover and local employment, successfully fostered community stability and social inclusion. In Rotterdam, by contrast, the DakPark project—shaped by market-oriented housing policies—led to measurable demographic replacement and exclusion. These results suggest that, for urban green spaces to function as genuinely inclusive social spaces, social housing must be treated as an intrinsic component of green infrastructure. The article concludes by proposing a reference toolkit for planners and policymakers. This instrument serves as an operational guide to ensure that ecologically driven urban regeneration projects are aligned with United Nations Sustainable Development Goals (SDGs) 11, 3, and 10, turning ecological transitions into opportunities to strengthen social justice, community stewardship, and long-term residential stability.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Sapienza University of Rome",
+            "ror": "02be6w209"
+          }
+        ],
         "name": "Laura Ricci",
         "openalex": "A5151638113",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Sapienza University of Rome",
+            "ror": "02be6w209"
+          }
+        ],
         "name": "Carmela Mariano",
         "openalex": "A5151691356",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Sapienza University of Rome",
+            "ror": "02be6w209"
+          }
+        ],
         "name": "Marsia Marino",
         "openalex": "A5088045662",
         "orcid": "https://orcid.org/0000-0002-2425-9872"
@@ -46,7 +63,13 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02be6w209",
+        "label": "Sapienza University of Rome"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -64,8 +87,21 @@
         "label": "Marsia Marino"
       }
     ],
-    "places": [],
-    "places_status": "not_attempted",
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q34370",
+        "label": "Rotterdam",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q55",
+        "label": "Netherlands",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
     "tools": [],
     "topics": [
       {
@@ -132,14 +168,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-09-15T23:30:17Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -161,26 +200,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The findings are based on a comparative analysis of only two European case studies, which may limit their direct applicability to different institutional and housing market contexts.",
+      "what": "This study conducts a comparative analysis of two European greening projects—Ekostaden Augustenborg in Malmö, Sweden, and DakPark in Rotterdam, the Netherlands—to evaluate how institutional governance, policy frameworks, and ex-ante equity indicators affect green gentrification. The research finds that Malmö's integration of green-space management with social housing authorities, guided by binding indicators like residential turnover and local employment, maintained community stability, whereas Rotterdam's market-oriented approach resulted in demographic displacement.",
+      "why": "It demonstrates that preventing green gentrification requires treating social housing as an intrinsic component of green infrastructure planning, rather than managing ecological regeneration and housing policy in isolation."
+    }
   },
   "track": "papers",
-  "updated": "2026-09-14",
+  "updated": "2026-09-16",
   "work_key": "doi:10.1007/s44327-026-00363-4"
 }

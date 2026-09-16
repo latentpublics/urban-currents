@@ -1,0 +1,179 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Infrastructure networks essentially underlie human mobility and transport. Improving the quality of single links increases network performance locally. However, efficient transport requires high-quality connected corridors across multi-link paths that do not emerge from independent single-link upgrades. Here, we introduce a framework for evaluating the impact of jointly upgrading multiple links as inherently higher-order interactions, enabling us to quantify link synergies in complex transport networks. Two links are synergistic if an upgrade of one increases the benefit of upgrading the other, promoting upgrades of topologically complementary links along the same path while discouraging upgrades of redundant parallel links. By expressing these synergies as second-order derivatives of overall network performance, we develop an efficient computational framework to identify synergistic links that form a connected network backbone. We apply our theoretical framework by combining empirical street network and cycling demand data for Hamburg, Germany, with a perturbed utility route choice model for urban bicycle traffic. Our results reveal synergies from higher-order interactions, thereby enabling strategic infrastructure planning that goes beyond local link importance in complex transport and flow networks.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Christoph Steinacker",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Henrik Wolf",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Marc Timme",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Malte Schröder",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.16285v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.16285v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-14",
+    "repository_urls": [],
+    "title": "Higher-order interactions reveal synergistic backbones of cycling infrastructure networks"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-15_2609.16285",
+    "members": [
+      "arxiv:2609.16285"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-network",
+        "label": "street network data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.16285",
+    "doi": "10.48550/arxiv.2609.16285",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-16T23:37:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005288,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1917,
+      "out": 268
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.954,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3816,
+    "relevance": 0.954
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical application is demonstrated on a single city and relies on a simulated route choice model rather than observed post-upgrade cycling behavior.",
+      "what": "The study introduces a computational framework to evaluate the joint impact of upgrading multiple infrastructure links simultaneously, treating these relationships as higher-order interactions. By calculating synergies as second-order derivatives of overall network performance, the method identifies complementary links along paths and filters out redundant parallel links. The framework was tested using empirical street network and cycling demand data from Hamburg, Germany, integrated with a perturbed utility route choice model.",
+      "why": "It provides a method to identify connected network backbones for cycling infrastructure based on multi-link corridors rather than evaluating links in isolation, preventing fragmented planning that fails to generate continuous routes."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-14",
+  "work_key": "arxiv:2609.16285"
+}

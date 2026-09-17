@@ -1,0 +1,223 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Road disruption can change access to basic services even when the services themselves remain in place. This study develops a national network stress test for Yemen using OpenStreetMap road extract and WorldPop constrained population surface. Demand is represented by 8,460 population-weighted grid cells covering 41.18 million people and linked to mapped markets, health facilities, and fuel stations. The study then evaluates five stylized closure mechanisms at 1%, 5%, 10%, and 20% of simplified physical road links, including random removal, spatially clustered removal, major-road targeting, access-betweenness targeting, and exact-bridge targeting. At 1% random removal, the mean newly disconnected population share across services is 1.12%, indicating a shallow low-intensity response. The most disruptive mechanism depends on closure intensity. Exact bridges produce the largest disconnection at 1% closure (15.65% across services), access-betweenness targeting at 5% (35.28%), and major-road targeting at 10% and 20% (49.65% and 65.04%). Among people who remain connected, rerouting is highest under major-road targeting at 1% and 5%. At higher intensities, connected-only delay becomes non-monotonic because disconnected users no longer remain in that distribution. Spatial closures look modest in national averages but impose severe local losses. At 1% closure, 2.01% of the national population is newly disconnected, compared with 59.64% of the population within 25 km of the closure center and 93.95% within the realized closure footprint. These findings show that national averages should be complemented by local exposure measures when assessing road-network vulnerability and prioritizing access-sensitive recovery.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "International Institute for Applied Systems Analysis",
+            "ror": "02wfhk785"
+          }
+        ],
+        "name": "Dmitry Erokhin",
+        "openalex": "A5151794963",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s12061-026-10012-3",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s12061-026-10012-3.pdf",
+      "source_id": "S53719608",
+      "source_name": "Applied Spatial Analysis and Policy",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-16",
+    "repository_urls": [],
+    "title": "Road-Closure Stress Testing of Essential-Service Accessibility in Yemen"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-16_10.1007/s12061-0",
+    "members": [
+      "doi:10.1007/s12061-026-10012-3"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-network",
+        "label": "street network data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:network-analysis",
+        "label": "network analysis"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02wfhk785",
+        "label": "International Institute for Applied Systems Analysis"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5151794963",
+        "label": "Dmitry Erokhin"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11807",
+        "is_primary": true,
+        "label": "Infrastructure Resilience and Vulnerability Analysis",
+        "score": 0.3736,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.1883,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12248",
+        "is_primary": false,
+        "label": "Water Governance and Infrastructure",
+        "score": 0.0555,
+        "subfield": "3320"
+      }
+    ]
+  },
+  "first_published": "2026-09-16",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1682091427",
+      "openalex:W1851619020",
+      "openalex:W1973573843",
+      "openalex:W1996643763",
+      "openalex:W2000182187",
+      "openalex:W2001000274",
+      "openalex:W2057442840",
+      "openalex:W2063935068",
+      "openalex:W2070207525",
+      "openalex:W2101834443",
+      "openalex:W2104849445",
+      "openalex:W2343343747",
+      "openalex:W2582264034",
+      "openalex:W4413198685",
+      "openalex:W7160546908"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s12061-026-10012-3",
+    "openalex": "W7213273481",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-17T23:30:44Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006716,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2263,
+      "out": 369
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-17T23:30:44Z",
+    "doi": "10.1007/s12061-026-10012-3",
+    "journal": "Applied Spatial Analysis and Policy",
+    "source_id": "S53719608",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The simulation relies on simplified physical road links and stylized closure mechanisms rather than real-time, empirical disruption data.",
+      "what": "This study develops a national network stress test for Yemen using OpenStreetMap road data and WorldPop population grids to model access to markets, health facilities, and fuel stations for 41.18 million people across 8,460 cells. It simulates five road-closure scenarios (random, clustered, major-road, access-betweenness, and bridge targeting) at intensities of 1%, 5%, 10%, and 20%. The analysis reveals that bridge targeting is most disruptive at 1% closure (disconnecting 15.65% of the population), access-betweenness at 5% (35.28%), and major-road targeting at higher intensities, while spatial closures cause extreme localized disconnection of up to 93.95% within the immediate footprint.",
+      "why": "It demonstrates that national-level network vulnerability metrics mask severe localized isolation, proving that infrastructure resilience planning must pair national averages with local exposure measures to protect access to essential services."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-16",
+  "work_key": "doi:10.1007/s12061-026-10012-3"
+}

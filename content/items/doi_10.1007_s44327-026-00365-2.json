@@ -1,28 +1,50 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Coastal urbanization increases the risks of accelerating sea-level rise (SLR), amplifying flood risks in low-elevation zones. Understanding the relationship between urban expansion patterns and SLR exposure is necessary for sustainable planning. This study focuses on Kakinada, a rapidly growing industrial and port city in the Krishna-Godavari delta, Andhra Pradesh, India. We quantified Land Use/Land Cover (LULC) changes and urban sprawl dynamics in Kakinada (1990–2022) and assessed the potential exposure of the urban footprint to future sea-level rise (SLR). Multi-temporal Landsat satellite imagery (1990–2022) was processed using the Google Earth Engine (GEE) platform. LULC classification was performed employing a Random Forest (RF) machine learning algorithm, followed by accuracy assessment using independent validation data. Urban sprawl was quantified using the Shannon entropy method. Potential coastal inundation exposure under future SLR scenarios (SSP2-4.5 and SSP5-8.5 for 2100), derived from the Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6), was modelled using a Digital Elevation Model (DEM) based modified bathtub approach incorporating hydrological connectivity. Built-up area in Kakinada increased from 5.87% (1990) to 15.84% (2022), primarily replacing vegetation and cropland. Urban growth showed sprawl characteristics, including significant outward expansion and fragmentation. Inundation modelling using FABDEM indicates that 3.96 km² of the study area is exposed under a 1-meter sea-level rise scenario, putting approximately 0.31 km² of built up area at risk. Under an extreme 7-meter surge scenario, exposure increases to 337.12 km², affecting 43.12 km² of built-up area. Industrial-driven sprawl has expandied the urban footprint into low-elevation coastal zones and increasing SLR exposure. This trajectory increases the city’s exposure to future SLR, highlighting the need to integrate regional climate projections into spatial planning frameworks.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Central University of Jharkhand",
+            "ror": "04y763m95"
+          }
+        ],
         "name": "Chandra Shekhar Dwivedi",
         "openalex": "A5024535417",
         "orcid": "https://orcid.org/0000-0002-3270-6193"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Central University of Jharkhand",
+            "ror": "04y763m95"
+          }
+        ],
         "name": "Devbart Kumar",
         "openalex": "A5140444974",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Central University of Jharkhand",
+            "ror": "04y763m95"
+          }
+        ],
         "name": "Arvind Chandra Pandey",
         "openalex": "A5039808597",
         "orcid": "https://orcid.org/0000-0003-2796-0477"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Institute of Forest Ecology of the Slovak Academy of Sciences",
+            "ror": "002fnes28"
+          }
+        ],
         "name": "K K Basheer Ahammed",
         "openalex": "A5137689466",
         "orcid": "https://orcid.org/0000-0001-9003-923X"
@@ -51,8 +73,25 @@
   },
   "entities": {
     "data": [],
-    "methods": [],
-    "orgs": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04y763m95",
+        "label": "Central University of Jharkhand"
+      },
+      {
+        "confidence": null,
+        "id": "ror:002fnes28",
+        "label": "Institute of Forest Ecology of the Slovak Academy of Sciences"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -76,8 +115,14 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
-    "tools": [],
+    "places_status": "unspecified",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:giswqs/geemap",
+        "label": "geemap"
+      }
+    ],
     "topics": [
       {
         "confidence": null,
@@ -160,14 +205,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-09-12T23:09:19Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -189,26 +237,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "1990–2022",
+      "url": null,
+      "value": true
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The inundation modeling relies on a modified bathtub approach, which may not fully capture complex hydrodynamic processes during actual storm surge events.",
+      "what": "This study quantified land use changes and urban sprawl in Kakinada, India, from 1990 to 2022 using Landsat imagery, Random Forest classification, and Shannon entropy. The built-up area expanded from 5.87% to 15.84% over this period, encroaching on vegetation and cropland. Integrating FABDEM elevation data with IPCC AR6 sea-level rise scenarios, the researchers modeled future inundation, finding that a 1-meter rise threatens 0.31 square kilometers of built-up area, while an extreme 7-meter surge exposes 43.12 square kilometers of urban footprint.",
+      "why": "It measures how industrial-driven sprawl is actively pushing urban development into low-elevation coastal zones, quantifying the direct link between historical expansion patterns and future climate vulnerability in a rapidly growing deltaic port city."
+    }
   },
   "track": "papers",
-  "updated": "2026-09-11",
+  "updated": "2026-09-17",
   "work_key": "doi:10.1007/s44327-026-00365-2"
 }

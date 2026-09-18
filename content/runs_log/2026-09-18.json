@@ -1,0 +1,37 @@
+{
+  "attempts": 1,
+  "candidates": 208,
+  "date": "2026-09-18",
+  "failed_sources": [
+    "collect.arxiv"
+  ],
+  "failed_stages": [],
+  "headline_present": true,
+  "held_near_miss": 0,
+  "held_withheld": 0,
+  "published": 5,
+  "reasons": [],
+  "recorded_at": "2026-09-18T23:13:08+00:00",
+  "silent_sources": [
+    "collect.arxiv"
+  ],
+  "skipped_stages": [
+    "enrich.springer"
+  ],
+  "source_failures": {
+    "collect.arxiv": [
+      "window 2026-09-11..2026-09-17: RuntimeError: arXiv request failed after 3 attempts: Client error '406 Not Acceptable' for url 'https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CY+OR+cat%3Acs.SI+OR+cat%3Acs.LG+OR+cat%3Acs.CV+OR+cat%3Acs.AI+OR+cat%3Astat.AP+OR+cat%3Aphysics.soc-ph%29+AND+submittedDate%3A%5B202609110000+TO+202609172359%5D&start=0&max_results=1000&sortBy=submittedDate&sortOrder=descending'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/406"
+    ]
+  },
+  "source_observations": {
+    "collect.arxiv": {
+      "failed_all": true,
+      "http_status": 406,
+      "items": 0,
+      "windows": 1,
+      "windows_failed": 1
+    }
+  },
+  "spend_usd": 0.029775,
+  "status": "published"
+}

@@ -1,0 +1,301 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Local government bonds (LGBs) constitute a form of spatially selective development finance, combining top-down selectivity in quota allocation and bottom-up selectivity in borrowing capacity and mechanisms under uneven institutional and market conditions. Drawing on a dataset covering 2507 county-level administrative units in China in 2022, this study integrates spatial statistical analysis, XGBoost-SHAP, and geographically weighted regression to investigate the geographical logic of LGBs. Our findings reveal that bond allocation selectivity is manifested in the concentration of county-level LGBs in urban agglomerations and developed regions under top-down quota allocation. Borrowing capacity selectivity concerns uneven bottom-up local borrowing capacity and the distinction between development needs and financeability. Differences in institutional conditions, market conditions, and socioeconomic foundations are associated with this capacity through nonlinear and interactive relationships. Borrowing mechanism selectivity captures the differentiated roles of LGBs across regions with different development trajectories. Industrial development and investment expansion show stronger associations with LGBs in developed counties, while fiscal and land market conditions gain prominence in less developed areas, and industrial associations weaken in shrinking regions. These findings reveal a geographical paradox of development finance, in which LGBs may reinforce uneven development instead of alleviating fiscal stress, and speak to geographical debates on public finance and uneven development.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Nanjing University",
+            "ror": "01rxvg760"
+          }
+        ],
+        "name": "Zhilin Wu",
+        "openalex": "A5151957861",
+        "orcid": "https://orcid.org/0009-0001-4910-368X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Nanjing University",
+            "ror": "01rxvg760"
+          }
+        ],
+        "name": "Dehao Shi",
+        "openalex": "A5113271817",
+        "orcid": "https://orcid.org/0000-0002-8129-9256"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Nanjing University",
+            "ror": "01rxvg760"
+          }
+        ],
+        "name": "Tao Yu",
+        "openalex": "A5151932323",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.apgeog.2026.104181",
+      "pdf_url": null,
+      "source_id": "S115443327",
+      "source_name": "Applied Geography",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-17",
+    "repository_urls": [],
+    "title": "Spatially selective development finance: The uneven geography of county-level local government bonds in China"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-18_10.1016/j.apgeog",
+    "members": [
+      "doi:10.1016/j.apgeog.2026.104181"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-econometrics",
+        "label": "spatial econometrics"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01rxvg760",
+        "label": "Nanjing University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0001-4910-368X",
+        "label": "Zhilin Wu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8129-9256",
+        "label": "Dehao Shi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5151932323",
+        "label": "Tao Yu"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11461",
+        "is_primary": true,
+        "label": "Local Government Finance and Decentralization",
+        "score": 0.2272,
+        "subfield": "3320"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11621",
+        "is_primary": false,
+        "label": "Fiscal Policies and Political Economy",
+        "score": 0.1459,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12961",
+        "is_primary": false,
+        "label": "Regional Development and Policy",
+        "score": 0.0715,
+        "subfield": "3320"
+      }
+    ]
+  },
+  "first_published": "2026-09-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1976663647",
+      "openalex:W1979897645",
+      "openalex:W1999257582",
+      "openalex:W2001264418",
+      "openalex:W2046371694",
+      "openalex:W2096133167",
+      "openalex:W2221046587",
+      "openalex:W2341971656",
+      "openalex:W2735975625",
+      "openalex:W2949073496",
+      "openalex:W2979029935",
+      "openalex:W2991576921",
+      "openalex:W2995365259",
+      "openalex:W2999615587",
+      "openalex:W3046122286",
+      "openalex:W3082669857",
+      "openalex:W3092526571",
+      "openalex:W3094948551",
+      "openalex:W3096679985",
+      "openalex:W3109423882",
+      "openalex:W3135028703",
+      "openalex:W3141376353",
+      "openalex:W3147156676",
+      "openalex:W3185133529",
+      "openalex:W3190982258",
+      "openalex:W4200142149",
+      "openalex:W4206545172",
+      "openalex:W4213286197",
+      "openalex:W4214895545",
+      "openalex:W4224288661",
+      "openalex:W4281687914",
+      "openalex:W4298009751",
+      "openalex:W4307045382",
+      "openalex:W4322013068",
+      "openalex:W4381480412",
+      "openalex:W4383652668",
+      "openalex:W4385073435",
+      "openalex:W4385564613",
+      "openalex:W4385678950",
+      "openalex:W4385811603",
+      "openalex:W4389191056",
+      "openalex:W4392366997",
+      "openalex:W4393388062",
+      "openalex:W4394563814",
+      "openalex:W4394725379",
+      "openalex:W4396914615",
+      "openalex:W4400276547",
+      "openalex:W4401282804",
+      "openalex:W4401476891",
+      "openalex:W4403129506",
+      "openalex:W4403711791",
+      "openalex:W4407918245",
+      "openalex:W4408044607",
+      "openalex:W4409965047",
+      "openalex:W4410383546",
+      "openalex:W4415214825",
+      "openalex:W7116201652",
+      "openalex:W7123341430",
+      "openalex:W7126016800",
+      "openalex:W7169509786"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.apgeog.2026.104181",
+    "openalex": "W7213450437",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-19T22:52:28Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005704,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2039,
+      "out": 294
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-19T22:52:28Z",
+    "doi": "10.1016/j.apgeog.2026.104181",
+    "journal": "Applied Geography",
+    "source_id": "S115443327",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on cross-sectional data from a single year, which limits the ability to observe how these spatial disparities and borrowing mechanisms evolve over longer macroeconomic cycles.",
+      "what": "This study analyzes the distribution and drivers of county-level local government bonds (LGBs) across 2,507 county-level administrative units in China for the year 2022. Using spatial statistical analysis, XGBoost-SHAP, and geographically weighted regression, the research maps how bond allocations concentrate in developed regions and urban agglomerations, and how local borrowing capacity relates nonlinearly to institutional, market, and socioeconomic factors.",
+      "why": "It demonstrates a geographical paradox where development finance instruments designed to alleviate fiscal stress may instead reinforce regional inequality, as industrial development drives bond capacity in wealthy counties while struggling regions remain dependent on fiscal and land market conditions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-17",
+  "work_key": "doi:10.1016/j.apgeog.2026.104181"
+}

@@ -1,6 +1,6 @@
 {
   "badges": [
-    "preprint"
+    "published"
   ],
   "bibliography": {
     "abstract": "In multimodal transportation systems, shared mobility services (SMSs) are promoted for their potential to enhance flexibility and reduce congestion. However, SMS demand is often concentrated in high-density areas, which can limit the effectiveness and accessibility for various commuter groups. This uneven integration challenges transportation system efficiency, especially in terms of emissions and spatial equity. Addressing these issues requires coordination among multiple stakeholders whose objectives frequently conflict. Whereas authorities aim to ensure sustainable and equitable mobility, SMS providers focus on revenue maximization, and travelers seek to minimize personal travel costs. This paper proposes a multi-agent deep reinforcement learning framework that captures these interactions through dynamic pricing and incentivization strategies for SMSs and public transport. The framework integrates two reinforcement learning (RL) agents: (i) a public authority that allocates spatio-temporal public transport incentives to improve equity, emissions, and efficiency, and (ii) an SMS provider that dynamically adjusts fares to optimize revenue. The agents interact with the transportation system and adapt strategies in response to evolving demand, congestion, and network conditions. Numerical experiments conducted over a three-hour morning peak period show that dynamic incentivization effectively reduces congestion peaks, lowers commuters' costs by around 20% and emissions by approximately 10%, while nearly doubling public transport profit and supporting a more equitable distribution of benefits. When combined with dynamic SMS pricing, the two RL agents demonstrate the ability to balance conflicting objectives between private providers and public authorities. The proposed approach provides a decision-support tool for sustainable and equitable multimodal mobility planning.",
@@ -8,32 +8,32 @@
       {
         "institutions": [],
         "name": "Khadidja Kadem",
-        "openalex": null,
-        "orcid": null
+        "openalex": "A5075010793",
+        "orcid": "https://orcid.org/0000-0002-8509-6835"
       },
       {
         "institutions": [],
         "name": "Mostafa Ameli",
-        "openalex": null,
-        "orcid": null
+        "openalex": "A5056796193",
+        "orcid": "https://orcid.org/0000-0002-2470-6812"
       },
       {
         "institutions": [],
         "name": "Carlos Lima Azevedo",
-        "openalex": null,
+        "openalex": "A5139191250",
         "orcid": null
       },
       {
         "institutions": [],
         "name": "Mahdi Zargayouna",
-        "openalex": null,
-        "orcid": null
+        "openalex": "A5015917791",
+        "orcid": "https://orcid.org/0000-0002-1221-8977"
       },
       {
         "institutions": [],
         "name": "Latifa Oukhellou",
-        "openalex": null,
-        "orcid": null
+        "openalex": "A5029516915",
+        "orcid": "https://orcid.org/0000-0002-5193-1732"
       }
     ],
     "categories": [
@@ -43,12 +43,12 @@
     ],
     "comment": null,
     "primary_location": {
-      "landing_page_url": "https://arxiv.org/abs/2606.23257v1",
-      "pdf_url": "https://arxiv.org/pdf/2606.23257v1",
-      "source_id": "S4306400194",
-      "source_name": "arXiv",
-      "type": "repository",
-      "version": "submittedVersion"
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.106028",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
     },
     "publication_date": "2026-06-22",
     "repository_urls": [],
@@ -125,7 +125,62 @@
   "first_published": "2026-06-22",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
+    "referenced_works": [
+      "openalex:W2063877484",
+      "openalex:W2592538545",
+      "openalex:W2610806364",
+      "openalex:W2746643623",
+      "openalex:W2781042121",
+      "openalex:W2802038282",
+      "openalex:W2885833055",
+      "openalex:W2906957789",
+      "openalex:W2942911487",
+      "openalex:W2947837049",
+      "openalex:W2948246143",
+      "openalex:W2950452973",
+      "openalex:W2962787757",
+      "openalex:W2973199529",
+      "openalex:W3034703225",
+      "openalex:W3041051493",
+      "openalex:W3097781489",
+      "openalex:W3098280323",
+      "openalex:W3107222670",
+      "openalex:W3124950351",
+      "openalex:W3125064629",
+      "openalex:W3126898730",
+      "openalex:W3127952193",
+      "openalex:W3128033921",
+      "openalex:W3135457647",
+      "openalex:W3156651008",
+      "openalex:W3161153024",
+      "openalex:W3176349493",
+      "openalex:W3184681642",
+      "openalex:W4214886000",
+      "openalex:W4221075825",
+      "openalex:W4229332963",
+      "openalex:W4230397650",
+      "openalex:W4243403996",
+      "openalex:W4247188141",
+      "openalex:W4283704288",
+      "openalex:W4308028258",
+      "openalex:W4308147545",
+      "openalex:W4308462681",
+      "openalex:W4381384119",
+      "openalex:W4385786240",
+      "openalex:W4388159066",
+      "openalex:W4388507529",
+      "openalex:W4392357221",
+      "openalex:W4393861150",
+      "openalex:W4394897575",
+      "openalex:W4400420621",
+      "openalex:W4400625223",
+      "openalex:W4401283629",
+      "openalex:W4404179963",
+      "openalex:W4404720635",
+      "openalex:W4413418598",
+      "openalex:W4414188482",
+      "openalex:W7082049315"
+    ],
     "related_works": []
   },
   "ids": {
@@ -154,11 +209,11 @@
     }
   },
   "publication_status": {
-    "detected_at": null,
-    "doi": null,
-    "journal": null,
-    "source_id": null,
-    "state": "preprint"
+    "detected_at": "2026-09-20T23:09:32Z",
+    "doi": "10.1016/j.trc.2026.106028",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
   },
   "review": {
     "edits": [],
@@ -168,13 +223,13 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
-      "relevance": 0.9525,
+      "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.381,
-    "relevance": 0.9525
+    "headline": 0.44,
+    "relevance": 1.0
   },
   "signals": {
     "code_available": {
@@ -222,12 +277,12 @@
   },
   "summary": {
     "en": {
-      "caveats": "The framework's performance and benefits were evaluated only within a simulated three-hour morning peak window rather than a continuous, multi-day deployment.",
-      "what": "The study introduces a multi-agent deep reinforcement learning framework that models interactions between a public authority agent and a shared mobility service (SMS) provider agent. The authority agent dynamically distributes spatio-temporal public transport incentives to target equity, emissions, and efficiency, while the SMS agent adjusts fares to maximize revenue. Numerical simulations of a three-hour morning peak period demonstrate that this coordinated dynamic pricing reduces commuter costs by roughly 20%, cuts emissions by about 10%, and nearly doubles public transport profits.",
+      "caveats": "The framework's performance and 20% cost reduction benefits are demonstrated only within a simulated three-hour morning peak period rather than a real-world deployment.",
+      "what": "The study develops a multi-agent deep reinforcement learning framework that models interactions between a public transit authority and a shared mobility service provider. The authority agent dynamically distributes spatio-temporal public transport incentives to target equity, emissions, and efficiency, while the provider agent dynamically adjusts fares to maximize revenue. Numerical simulations of a three-hour morning peak period demonstrate that this coordinated approach reduces commuter costs by approximately 20%, cuts emissions by about 10%, and nearly doubles public transit profits.",
       "why": "It demonstrates that conflicting public and private transportation goals can be balanced dynamically, showing that targeted public transit incentives can simultaneously improve social equity and environmental outcomes without destroying private operator profitability."
     }
   },
   "track": "papers",
-  "updated": "2026-06-22",
+  "updated": "2026-09-20",
   "work_key": "arxiv:2606.23257"
 }

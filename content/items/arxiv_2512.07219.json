@@ -1,0 +1,237 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Characterizing and understanding lane-changing behavior in the presence of automated vehicles (AVs) is crucial to ensuring safety and efficiency in mixed traffic. Accordingly, this study aims to characterize the interactions between the lane-changing vehicle (active vehicle) and the vehicle directly impacted by the maneuver in the target lane (passive vehicle). Utilizing real-world trajectory data from the Waymo Open Motion Dataset (WOMD), this study explores patterns in lane-changing behavior and provides insight into how these behaviors evolve under different AV market penetration rates (MPRs). In particular, we propose a game-theoretic framework to analyze cooperative and defective behaviors in mixed traffic, applied to the 7,636 observed lane-changing events in the WOMD. First, we utilize k-means clustering to classify vehicles as cooperative or defective, revealing that the proportions of cooperative AVs are higher than those of HDVs in both active and passive roles. Next, we jointly estimate the utilities of active and passive vehicles to model their behaviors using the quantal response equilibrium framework. Empirical payoff tables are then constructed based on these utilities. Using these payoffs, we analyze the presence of social dilemmas and examine the evolution of cooperative behaviors using evolutionary game theory. Our results reveal the presence of social dilemmas in approximately 4% and 11% of lane-changing events for active and passive vehicles, respectively, with most classified as Stag Hunt or Prisoner's Dilemma (Chicken Game rarely observed). Moreover, the Monte Carlo simulation results show that repeated lane-changing interactions consistently lead to increased cooperative behavior over time, regardless of the AV penetration rate.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Sungyong Chung",
+        "openalex": null,
+        "orcid": "https://orcid.org/0009-0001-3131-6011"
+      },
+      {
+        "institutions": [],
+        "name": "Alireza Talebpour",
+        "openalex": null,
+        "orcid": "https://orcid.org/0000-0002-5412-5592"
+      },
+      {
+        "institutions": [],
+        "name": "Samer H. Hamdar",
+        "openalex": null,
+        "orcid": "https://orcid.org/0000-0001-6896-367X"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.106039",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-23",
+    "repository_urls": [],
+    "title": "Characterizing lane-changing behavior in mixed traffic"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-24_2512.07219",
+    "members": [
+      "arxiv:2512.07219"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0001-3131-6011",
+        "label": "Sungyong Chung"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5412-5592",
+        "label": "Alireza Talebpour"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6896-367X",
+        "label": "Samer H. Hamdar"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": true,
+        "label": "Traffic control and management",
+        "score": 0.976,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.0158,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.0015,
+        "subfield": "2213"
+      }
+    ]
+  },
+  "first_published": "2026-09-23",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1521666793",
+      "openalex:W1657305500",
+      "openalex:W1833552892",
+      "openalex:W1991502314",
+      "openalex:W2013480952",
+      "openalex:W2013813669",
+      "openalex:W2024845611",
+      "openalex:W2132979098",
+      "openalex:W2264897026",
+      "openalex:W2493168586",
+      "openalex:W2555059533",
+      "openalex:W2787978017",
+      "openalex:W2912639125",
+      "openalex:W2957045907",
+      "openalex:W3005014946",
+      "openalex:W3007128802",
+      "openalex:W3024731701",
+      "openalex:W3111320405",
+      "openalex:W3111364346",
+      "openalex:W3127056839",
+      "openalex:W3157274478",
+      "openalex:W4213083224",
+      "openalex:W4225250063",
+      "openalex:W4295067681",
+      "openalex:W4385521734",
+      "openalex:W4386162783",
+      "openalex:W4396621866",
+      "openalex:W4400555966",
+      "openalex:W7124273160"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2512.07219",
+    "doi": "10.1016/j.trc.2026.106039",
+    "openalex": "W7110856710",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-25T23:56:19Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006074,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2147,
+      "out": 317
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-25T23:56:19Z",
+    "doi": "10.1016/j.trc.2026.106039",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on trajectory data from a single curated autonomous vehicle dataset, which may not fully represent the diverse driving cultures and conditions of general mixed traffic.",
+      "what": "This study analyzed 7,636 lane-changing events from the Waymo Open Motion Dataset using a game-theoretic framework to model interactions between active lane-changing vehicles and passive target-lane vehicles. Using k-means clustering and a quantal response equilibrium framework, the researchers classified vehicle behaviors as cooperative or defective and constructed empirical payoff tables. The analysis revealed that social dilemmas occur in 4% of active and 11% of passive lane-changing scenarios, primarily manifesting as Stag Hunt or Prisoner's Dilemma games.",
+      "why": "It demonstrates that automated vehicles exhibit higher rates of cooperative behavior than human-driven vehicles in both active and passive lane-changing roles, and proves through simulations that repeated traffic interactions drive long-term cooperation regardless of automated vehicle market penetration."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-23",
+  "work_key": "arxiv:2512.07219"
+}

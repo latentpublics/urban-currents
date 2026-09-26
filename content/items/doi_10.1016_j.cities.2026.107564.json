@@ -1,7 +1,9 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Political polarization is increasing globally through the rise of national actors further to the political right who often invoke faith-based values. In the United States, they argue for defending God-given unalienable rights and stewarding God's Kingdom on Earth. Local government increasingly is the locus of so-framed debates on policies from school curriculum to immigration and vaccination requirements. Efforts to reflect religious/faith-based beliefs in policies challenge the role of governance and are antithetical to decision making where separation between church/faith-based institutions and the state is long-standing. However, scant scholarly attention alongside rising conservatism at the local level has stymied our understanding in planning scholarship. In response, a novel conceptual framework is developed to guide research and analysis of faith fueled local activism and may align with broader political right efforts. It integrates religious studies, populism, social movement and planning scholarship. I present the case of conservative actors in rural Northern California's Shasta County, which is emblematic of broader trends in political right politics, polarization and faith-based motivations and influence, drawing upon in-depth interviews with respondents who largely identify as Christian and further to the political right and field observations. I find that local activism is interconnected with broader political right and faith-related U.S. efforts. Residents prefigure desired futures through policymaking engagement by creating civic opportunities and ecosystems of alternative news sources, education and governing. Interviewees recounted having direct callings from God and argued rights come from God, not government. This is in stark contrast to secularized society's norms. • Political right polarization infused with faith-based values is rising globally. • Local government increasingly is the locus of so-framed staunch contention. • Scant scholarship of religion and conservativism in planning stymies theorization. • A rural local California case emblematic of such polarization is analyzed. • Faith-based actors had significant impact anathema to secularized local governing.",
     "authors": [
       {
         "institutions": [
@@ -54,7 +56,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": [
       {
@@ -134,14 +136,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-09-22T23:34:48Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -163,26 +168,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The findings are based on a single-case study of one rural county in Northern California, which may limit direct generalizability to urban areas or regions with different political dynamics.",
+      "what": "This study analyzes conservative, faith-fueled local activism in rural Shasta County, California, using a new conceptual framework that integrates religious studies, populism, social movement theory, and planning scholarship. Drawing on in-depth interviews with right-leaning Christian residents and field observations, the research documents how activists engage in local policymaking, establish alternative news and educational ecosystems, and assert that rights originate from God rather than government.",
+      "why": "It provides a rare empirical look at how religious nationalism and right-wing polarization directly reshape local governance and planning, offering a framework to understand activism that rejects traditional secular norms of state decision-making."
+    }
   },
   "track": "papers",
-  "updated": "2026-09-22",
+  "updated": "2026-09-25",
   "work_key": "doi:10.1016/j.cities.2026.107564"
 }

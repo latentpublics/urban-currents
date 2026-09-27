@@ -1,0 +1,261 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Ensuring the feasibility and robustness of train operations in stations and network nodes is receiving more and more attention given the trend towards a stronger integration of timetabling and network planning in railway systems. Existing approaches for robust station routing most commonly rely on the maximization of buffer times between consecutive trains. This view, however, neglects indirect dependencies between trains which may exacerbate delay propagation in the station, as well as dwell-time supplements. In this work we develop a new exact robust routing approach for stations that allows to minimize the expected delay caused by primary delays, generalizing delay absorption concepts used in timetable stability analysis and recoverable robustness. The methodology is based on a mixed-integer linear programming (MILP) approach for modeling delay propagation that takes both direct and indirect train dependencies into account. We test our approach on three railway stations from the Netherlands, where it is found that the optimized routings of the new method can reduce the delay propagation compared to buffer-based methodologies.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Deutsches Zentrum für Luft- und Raumfahrt e. V. (DLR)",
+            "ror": "04bwf3e34"
+          },
+          {
+            "name": "Technical University of Munich",
+            "ror": "02kkvpp62"
+          }
+        ],
+        "name": "Philipp Widmann",
+        "openalex": "A5116485420",
+        "orcid": "https://orcid.org/0009-0009-8932-4776"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technical University of Munich",
+            "ror": "02kkvpp62"
+          }
+        ],
+        "name": "Norman Weik",
+        "openalex": "A5090755698",
+        "orcid": "https://orcid.org/0000-0002-5977-9958"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s12469-026-00425-1",
+      "pdf_url": null,
+      "source_id": "S33948620",
+      "source_name": "Public Transport",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-26",
+    "repository_urls": [],
+    "title": "Extending robustness concepts and model formulations for the timetable-constrained railway station routing problem using absorption graphs"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-26_10.1007/s12469-0",
+    "members": [
+      "doi:10.1007/s12469-026-00425-1"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04bwf3e34",
+        "label": "Deutsches Zentrum für Luft- und Raumfahrt e. V. (DLR)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02kkvpp62",
+        "label": "Technical University of Munich"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-8932-4776",
+        "label": "Philipp Widmann"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5977-9958",
+        "label": "Norman Weik"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q55",
+        "label": "Netherlands",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11568",
+        "is_primary": true,
+        "label": "Railway Systems and Energy Efficiency",
+        "score": 0.9973,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10842",
+        "is_primary": false,
+        "label": "Railway Engineering and Dynamics",
+        "score": 0.001,
+        "subfield": "2210"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13439",
+        "is_primary": false,
+        "label": "Transport and Economic Policies",
+        "score": 0.0003,
+        "subfield": "1408"
+      }
+    ]
+  },
+  "first_published": "2026-09-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1636491287",
+      "openalex:W1979100315",
+      "openalex:W1985067646",
+      "openalex:W1989888032",
+      "openalex:W2006192728",
+      "openalex:W2018539472",
+      "openalex:W2027906557",
+      "openalex:W2029372500",
+      "openalex:W2046399924",
+      "openalex:W2056990712",
+      "openalex:W2069722194",
+      "openalex:W2098613757",
+      "openalex:W2105144073",
+      "openalex:W2110804857",
+      "openalex:W2125320823",
+      "openalex:W2143014321",
+      "openalex:W2159363368",
+      "openalex:W2200221095",
+      "openalex:W2296147677",
+      "openalex:W2465190182",
+      "openalex:W2553821459",
+      "openalex:W2610114207",
+      "openalex:W2738071030",
+      "openalex:W2945974401",
+      "openalex:W2952894872",
+      "openalex:W3005537099",
+      "openalex:W4206879945",
+      "openalex:W4220794571",
+      "openalex:W4281676406",
+      "openalex:W4309736011",
+      "openalex:W4360956589",
+      "openalex:W4404440474",
+      "openalex:W4408107986"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s12469-026-00425-1",
+    "openalex": "W7214438228",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-09-27T23:45:48Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.004813,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1901,
+      "out": 218
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-09-27T23:45:48Z",
+    "doi": "10.1007/s12469-026-00425-1",
+    "journal": "Public Transport",
+    "source_id": "S33948620",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study develops a mixed-integer linear programming model for robust train routing in stations, utilizing absorption graphs to minimize expected delay propagation from primary delays. The approach accounts for both direct and indirect train dependencies as well as dwell-time supplements, and was tested on three railway stations in the Netherlands.",
+      "why": "It shifts station routing optimization from simply maximizing buffer times to directly minimizing expected delay propagation, capturing complex, indirect train interactions that traditional buffer-based methods overlook."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-26",
+  "work_key": "doi:10.1007/s12469-026-00425-1"
+}

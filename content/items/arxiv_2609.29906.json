@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The estimation of Annual Average Daily Traffic (AADT) is vital for transportation planning and infrastructure maintenance, yet obtaining accurate values for an entire urban network across multiple years remains challenging due to the high cost and spatial sparsity of physical sensors. This research proposes a novel spatio-temporally complementary feature propagation framework that leverages the strengths of two distinct data sources: spatially sparse but temporally dense loop detector data, and a spatially complete but temporally sparse macroscopic transportation model. The methodology highlights a feature propagation algorithm on directed graphs, formulated as a Poisson energy minimization considering residues. The standard binary adjacency matrix is replaced with flow ratio matrices to capture real-world vehicle turn ratios at intersections. Validated in the city of Zurich, the algorithm demonstrates high computational efficiency, achieving convergence within minutes. Results indicate that the framework effectively reconciles theoretical models with empirical ground truths, yielding a normalized mean absolute error below $10\\%$. This scalable approach provides a feasible solution for spatio-temporal network-wide AADT estimation through combining real-world limited sensor coverage and traffic models.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Linghang Sun",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Qishen Zhou",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Michail A. Makridis",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Anastasios Kouvelas",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.29906v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.29906v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-24",
+    "repository_urls": [],
+    "title": "Spatio-temporally complementary feature propagation on graphs for longitudinal AADT estimation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-27_2609.29906",
+    "members": [
+      "arxiv:2609.29906"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q72",
+        "label": "Zurich",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.29906",
+    "doi": "10.48550/arxiv.2609.29906",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-29T00:56:08Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005318,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1937,
+      "out": 268
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9424,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.377,
+    "relevance": 0.9424
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and high accuracy were validated using data from a single city, Zurich.",
+      "what": "The study introduces a spatio-temporally complementary feature propagation framework on directed graphs to estimate Annual Average Daily Traffic (AADT) across urban networks over multiple years. The model combines temporally dense but spatially sparse loop detector data with a spatially complete but temporally sparse macroscopic traffic model, replacing standard binary adjacency matrices with flow ratio matrices to represent intersection turn ratios. Tested in Zurich, the algorithm converged within minutes and achieved a normalized mean absolute error below 10%.",
+      "why": "It provides a computationally efficient method to reconcile theoretical traffic models with empirical sensor data, enabling network-wide, multi-year traffic estimation without the prohibitive cost of dense physical sensor deployment."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-24",
+  "work_key": "arxiv:2609.29906"
+}

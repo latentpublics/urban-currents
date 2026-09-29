@@ -1,0 +1,168 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Cities differ in built form, land cover and development history, complicating comparison across places and time. Satellite foundation models map Earth's surface onto common numerical representations. Yet the tasks and targets used to shape them typically do not focus on cities: globally consistent labels for urban function do not exist, and many datasets - especially land cover and land use classifications - collapse the built environment into few classes. Here we audit the representation, focusing on AlphaEarth but with broader applicability to other Earth embeddings, by probing the geometry and geography of embeddings for 1,000 urban areas in 162 countries. We find that cities occupy a shifted but overlapping region on the hypersphere, 62.7° from the global mean direction, and continent and climate predict 24.3% of variation among the mean directions of urban centres in excluded countries. Inside cities, degrees of urbanisation carry 8.9% of the variation, and what they leave holds shared directions whose local orientation varies, not one universal axis of urbanisation. Retained variation is itself unequal: dispersion within urban centres is 14.1% greater per standard deviation of national development, even after adjusting for population, land area and continent. Further controls suggest cities in developing countries present less contrast in vegetation and texture, and dispersion follows that contrast: full adjustment for it leaves at most 6.4% of the gradient. Annually, a city's representation moves nearly eight times more than redrawing its own pixels explains, and contracts where the 2022 loss of Sentinel-1B removed a pass direction. AlphaEarth's representations therefore support comparison across regions, while the differences between its annual layers are not yet validated for comparison over time.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Andrew Renninger",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.30356v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.30356v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-24",
+    "repository_urls": [],
+    "title": "AlphaEarth distinguishes cities but compresses urban variation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-27_2609.30356",
+    "members": [
+      "arxiv:2609.30356"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:dimensionality-reduction",
+        "label": "dimensionality reduction"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.30356",
+    "doi": "10.48550/arxiv.2609.30356",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-29T00:56:08Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005798,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2203,
+      "out": 277
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9651,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.386,
+    "relevance": 0.9651
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are based on a specific audit of AlphaEarth, though the structural limitations regarding urban variation and temporal instability likely apply to other Earth observation embeddings.",
+      "what": "This study audited the AlphaEarth satellite foundation model by analyzing the geometry and geography of embeddings across 1,000 urban areas in 162 countries. The analysis revealed that cities occupy a distinct, shifted region on the hypersphere (62.7° from the global mean direction), with continent and climate explaining 24.3% of the variation between urban centers. However, internal urban variation is unevenly captured, with embedding dispersion within cities being 14.1% greater per standard deviation of national development, and annual representations shifting eight times more than pixel changes explain.",
+      "why": "It demonstrates that while global satellite foundation models successfully support cross-regional urban comparisons, their representations compress internal urban variation in developing countries and are highly sensitive to sensor changes, making them currently unreliable for tracking urban changes over time."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-24",
+  "work_key": "arxiv:2609.30356"
+}

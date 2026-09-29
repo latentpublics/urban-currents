@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Infrastructure-based radar systems offer robust and long-range solutions for traffic monitoring, yet their detection and tracking performance under real-world conditions remains insufficiently evaluated. This study introduces DRaT (Drone and Radar Trajectories), a dual-modality dataset of naturalistic vehicle trajectories collected at a highway merging segment in Fort Worth, Texas, to systematically assess radar sensing performance against drone-derived ground truth. The performance is evaluated at three levels: individual vehicle detection, trajectory tracking, and macroscopic traffic parameter estimation. For individual vehicle detection, the radar achieves an overall precision of 78% and a recall of 57%, with degraded performance under congested traffic conditions and at longer distances. At the trajectory level, the radar demonstrates reasonably strong tracking performance (IDF1 = 0.699), maintaining reliable vehicle identities when tracks are successfully established. For macroscopic traffic flow metrics, the radar accurately estimates space-mean speed (MAPE < 4%) but underestimates density and volume by approximately 23% due to missed detections. The paper also discusses practical deployment considerations and potential downstream applications of roadside radar sensing systems. To support reproducible research on infrastructure-based sensing systems, we have open-sourced the DRaT dataset on Zenodo: https://zenodo.org/records/20171110.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Tianheng Zhu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Woei-chyi Chang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alamss Riaz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sogand Hasanzadeh",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yiheng Feng",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": "Accepted by IEEE ITSC 2026. Compared with the accepted version, this version includes an expanded trajectory tracking analysis with additional evaluation metrics",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.27143v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.27143v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-22",
+    "repository_urls": [],
+    "title": "A Systematic Evaluation of Infrastructure-Based Radar System for Highway Traffic Monitoring"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-27_2609.27143",
+    "members": [
+      "arxiv:2609.27143"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.27143",
+    "doi": "10.48550/arxiv.2609.27143",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-29T00:56:13Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006061,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2043,
+      "out": 333
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9113,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4445,
+    "relevance": 0.9113
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The evaluation is based on a single highway merging segment, meaning the performance metrics may not generalize to more complex urban intersections or different geometric layouts.",
+      "what": "This study evaluates infrastructure-based radar performance using DRaT, a new dual-modality dataset of vehicle trajectories collected at a highway merging segment in Fort Worth, Texas, validated against drone-derived ground truth. The radar achieved a 78% precision and 57% recall for individual vehicle detection, with performance dropping under congestion and at greater distances. While it tracked trajectories with an IDF1 score of 0.699 and estimated space-mean speed with a mean absolute percentage error under 4%, it underestimated traffic density and volume by roughly 23% due to missed detections.",
+      "why": "It establishes the first systematic, multi-level benchmark for roadside radar systems against high-fidelity drone imagery, quantifying the exact margin of error practitioners must expect when using radar for macroscopic traffic flow estimation."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-22",
+  "work_key": "arxiv:2609.27143"
+}

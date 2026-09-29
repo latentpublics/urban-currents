@@ -1,0 +1,204 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Global building and settlement datasets increasingly support population mapping, exposure assessment, urban monitoring, and other analyses of the built environment, yet comparative evidence remains fragmented across products, geographic regions, reference datasets, spatial scales, and evaluation methods. We benchmark seven global or near-global products, including Overture Maps, Global Building Atlas, 3D-GloBFP, Google Open Buildings 2.5D Temporal (OBT), Microsoft TEMPO, GHSL, and WSF Tracker, against harmonized reference footprints across 135 study areas. The evaluation combines complementary measures of detection, geometric agreement, and aggregate quantity accuracy, together with stratified analyses of settlement characteristics and diagnostic experiments on error size and temporal alignment. Overture achieved the highest median city-level vector F1 (0.786). Raster rankings were resolution-dependent: OBT achieved the highest median F1 at 10m (0.642), whereas WSF Tracker led at 100m (0.862). However, WSF Tracker substantially overestimated built-up area, emphasizing that when using raster products, it is important for the user to understand whether the raster identifies only buildings or includes additional impervious surfaces. Raster accuracy increased consistently with building density (Spearman \\r{ho} = 0.58-0.75), while small candidate buildings were disproportionately associated with false positives in the vector products. Temporally aligning WSF Tracker with reference imagery increased mean F1 by 0.060 (median +0.037), indicating that the reported accuracies are conservative in rapidly growing areas. The study establishes a reproducible benchmark for comparing heterogeneous global urban and settlement layer datasets across geographic and settlement contexts.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Rufai Omowunmi Balogun",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Caroline Margaux Gevaert",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Capucine Riom",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Derrick Mirindi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Aaron Opdyke",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hamed Alemohammad",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Pierre Chrzanowski",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Edward Charles Anderson",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "eess.IV"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.28154v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.28154v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-23",
+    "repository_urls": [],
+    "title": "A comparative assessment of global building and settlement datasets across geographic and settlement contexts"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-27_2609.28154",
+    "members": [
+      "arxiv:2609.28154"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:building-footprint",
+        "label": "building footprints"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-23",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.28154",
+    "doi": "10.48550/arxiv.2609.28154",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-29T00:56:08Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006881,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2217,
+      "out": 395
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9541,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3816,
+    "relevance": 0.9541
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The reported accuracies are conservative in rapidly growing areas due to temporal mismatches, though aligning the WSF Tracker with reference imagery improved its mean F1 score by 0.060.",
+      "what": "The study benchmarks seven global building and settlement datasets, including Overture Maps, Google Open Buildings 2.5D Temporal, and WSF Tracker, against harmonized reference footprints across 135 study areas. Overture achieved the highest median city-level vector F1 score of 0.786, while raster performance varied by resolution, with Google's product leading at 10m (F1 of 0.642) and WSF Tracker leading at 100m (F1 of 0.862). The analysis also revealed that raster accuracy correlates with building density and that small candidate buildings frequently cause false positives in vector datasets.",
+      "why": "It establishes a standardized, reproducible benchmark that clarifies how different global spatial products perform across varying geographic contexts, helping researchers select the appropriate dataset based on their specific resolution and settlement density needs."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-23",
+  "work_key": "arxiv:2609.28154"
+}

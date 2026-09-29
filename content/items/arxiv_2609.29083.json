@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Physical Internet (PI) is an emerging concept that applies the digital internet as a design metaphor for the development of sustainable, interoperable, and collaborative freight transportation. It is considered a way to bring logistics into the next generation of transformation. Effective tools for organizing and integrating knowledge are essential for navigating the emerging research in this area. In this study, we explore the application of Graph Retrieval Augmented Generation (GraphRAG) in the context of PI, using GPT-4o mini and Neo4j to construct a knowledge graph and systematically analyze existing PI-related literature. Our approach synthesizes scattered research findings, highlights emerging trends, and identifies knowledge gaps. Furthermore, we demonstrate that GraphRAG improves accessibility by structuring complex information into interconnected graphs and provides a deeper understanding of underlying research dynamics. This research will contribute to future research and innovation by providing a new method of information analysis in the PI domain.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Hisatoshi Naganawa",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Enna Hirata",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Russell G. Thompson",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Akira Yamada",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.SI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.29083v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.29083v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-24",
+    "repository_urls": [],
+    "title": "Advancing the Physical Internet with GraphRAG: A New Way to Review and Integrate Existing Research"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-27_2609.29083",
+    "members": [
+      "arxiv:2609.29083"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.29083",
+    "doi": "10.35090/gatech/13249",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-29T00:56:08Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004846,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1881,
+      "out": 225
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9392,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3757,
+    "relevance": 0.9392
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study implements a Graph Retrieval Augmented Generation (GraphRAG) system using the GPT-4o mini language model and a Neo4j graph database to systematically analyze and synthesize the literature on the Physical Internet. The system structures scattered research findings into an interconnected knowledge graph to map emerging trends and identify research gaps in collaborative freight transportation.",
+      "why": "It introduces a new methodological capability for logistics researchers, demonstrating how graph-based retrieval-augmented generation can make complex, fragmented academic literature more accessible and structured than traditional review methods."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-24",
+  "work_key": "arxiv:2609.29083"
+}

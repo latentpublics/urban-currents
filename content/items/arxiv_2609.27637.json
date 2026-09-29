@@ -1,0 +1,198 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Traffic flow forecasting is essential to intelligent transportation systems. Large-scale traffic forecasting requires jointly modeling local spatial dependencies and cross-region context.Spatial dependencies between geographically neighboring nodes are heterogeneous due to differences in road identity and travel direction, while acquiring global information through allpairs node interactions incurs substantial computational costs. Therefore, capturing local heterogeneity while efficiently acquiring long-range context remains an important challenge in largescale traffic forecasting. To address these challenges, we propose LoReST, a Local-Region Spatial Temporal network that models spatial dependencies at two complementary granularities: node neighborhoods and road network regions. Specifically, relation-aware local aggregation captures heterogeneous dependencies within geographic neighborhoods through road and direction specific feature transformations. Cross-region interaction constructs region representations through mean pooling, exchanges long range context via inter-region attention, and broadcasts it back to nodes. By integrating local information aggregation with crossregion interaction, LoReST is able to effectively achieve spatial dependency learning in large-scale road networks. Experiments on four datasets of the LargeST benchmark show average relative reductions of 4.78%, 3.60%, and 5.75% in MAE, RMSE, and MAPE, respectively.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Qi Feng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zidong Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Bo Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xiaoguang Gao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jiayu Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chenfeng Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kaifang Wan",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.27637v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.27637v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-23",
+    "repository_urls": [],
+    "title": "Learning Local Heterogeneity and Cross-Region Context for Large-Scale Traffic Forecasting"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-27_2609.27637",
+    "members": [
+      "arxiv:2609.27637"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-network",
+        "label": "street network data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-23",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.27637",
+    "doi": "10.48550/arxiv.2609.27637",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-29T00:56:13Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005557,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1989,
+      "out": 286
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.921,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3684,
+    "relevance": 0.921
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed LoReST, a spatial-temporal network model that captures local road heterogeneity and long-range spatial context for large-scale traffic forecasting. The model uses relation-aware local aggregation to handle road- and direction-specific features, alongside an inter-region attention mechanism that pools and broadcasts regional representations to reduce computational costs. Evaluated on four datasets from the LargeST benchmark, the model achieved average relative reductions of 4.78% in MAE, 3.60% in RMSE, and 5.75% in MAPE compared to existing baselines.",
+      "why": "It provides a computationally efficient way to scale traffic forecasting to large road networks without sacrificing the fine-grained, direction-specific local details that dictate real-world traffic flow."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-23",
+  "work_key": "arxiv:2609.27637"
+}

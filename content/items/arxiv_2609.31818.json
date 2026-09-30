@@ -1,0 +1,174 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This study addresses a theoretical model regarding equity and accessibility challenges in designing shared transportation systems (such as micro-mobility networks) by applying graph-vertex domination setting. The work focuses on identifying dominating forced vertices, that represent nodes belonging to every dominating set of a graph of the smallest possible cardinality, and which correspond to critical, non-negotiable station locations essential for maintaining system efficiency and coverage. From a theoretical perspective, in the paper it is first demonstrated that determining whether a given vertex is a dominating forced vertex is co-NP-hard, establishing the computational infeasibility of exact identification in large networks. To analyze graph structures, sharp theoretical bounds on the maximum number of dominating forced vertices are established, proving that their count is bounded above by one-third of the order of the graph, and provide complete structural characterizations for graphs achieving this bound, as well as, trees with no dominating forced vertices. To overcome computational limits in practical urban settings, the study uses an iterated greedy metaheuristic framework to generate minimal dominating sets and approximate critical forced nodes based on their appearance frequency across iterations. The methodology is validated on strong grid graphs and applied to real-world road network models of Algeciras and La Línea de la Concepción, two cities in the area of Campo de Gibraltar, Spain, which successfully pinpoints candidate location points for scooter-sharing stations across both cities.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Mohammad Farhan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dorota Kuziak",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Iztok Peterin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ismael G. Yero",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "math.CO"
+    ],
+    "comment": "26 pages",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.31818v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.31818v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-25",
+    "repository_urls": [],
+    "title": "Vertices that belong to every minimum dominating set of a graph and their connection with transportation sharing systems with study cases in Campo de Gibraltar area"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-28_2609.31818",
+    "members": [
+      "arxiv:2609.31818"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-25",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.31818",
+    "doi": "10.48550/arxiv.2609.31818",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-30T00:19:33Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00598,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2085,
+      "out": 317
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9577,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3831,
+    "relevance": 0.9577
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The proposed station locations are based purely on graph-theoretic road network topology and do not incorporate empirical travel demand, land use, or demographic data.",
+      "what": "This study models shared transportation station placement by identifying 'dominating forced vertices'—nodes that must appear in every minimum dominating set of a graph to guarantee coverage. The researchers proved that identifying these vertices is co-NP-hard, established a theoretical upper bound showing their count cannot exceed one-third of a graph's vertices, and developed an iterated greedy metaheuristic to approximate these critical locations. The approach was validated on strong grid graphs and applied to the road networks of Algeciras and La Línea de la Concepción, Spain, to identify optimal scooter-sharing station locations.",
+      "why": "It establishes the mathematical limits of optimizing micro-mobility networks, proving the computational hardness of finding absolute critical stations while providing a practical heuristic to bypass this limitation in real-world municipal planning."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-25",
+  "work_key": "arxiv:2609.31818"
+}

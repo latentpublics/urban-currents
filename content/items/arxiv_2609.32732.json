@@ -1,0 +1,204 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Human mobility generation aims to synthesize realistic point-of-interest (POI) visitation trajectories and has become an important tool for travel behavior modeling, transportation management, and urban planning. Existing diffusion-based methods achieve high fidelity but require per-city generation, given the inherent heterogeneity of geospatial locations and POI categories, while large language model-based methods generalize across cities but remain too costly at scale, especially for long-horizon trajectory generation. To address this, we propose SeMoFlow, a Semantic human Mobility generation framework based on latent Flow matching. We first encode heterogeneous POIs from different cities into a shared cross-city representation space via hierarchical Semantic IDs, where shared prefixes capture transferable semantics, and successive codes progressively refine the representation toward individual POIs. Building on the semantic IDs, SeMoFlow follows a plan-to-synthesis hierarchical generation paradigm, in which an autoregressive planner generates coarse-grained semantic and recurrence patterns, and a flow matching realizer synthesizes fine-grained suffix latents. The generated latents are subsequently decoded and grounded to concrete POIs. Extensive experiments on large-scale multi-city datasets show that SeMoFlow achieves higher trajectory fidelity than existing baselines, preserves city-specific mobility motifs, and supports both joint multi-city generation and effective cross-city transfer.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Zhoufu Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Baoshen Guo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zhiqing Hong",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Junyi Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kailai Sun",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Heye Huang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alok Prakash",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shenhao Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jinhua Zhao",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.SI",
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.32732v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.32732v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-26",
+    "repository_urls": [],
+    "title": "Plan-to-Synthesis: Cross-City Human Mobility Generation via Semantic Latent Flow Matching"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-28_2609.32732",
+    "members": [
+      "arxiv:2609.32732"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.32732",
+    "doi": "10.48550/arxiv.2609.32732",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-30T00:19:22Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005521,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2043,
+      "out": 273
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9516,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3806,
+    "relevance": 0.9516
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed SeMoFlow, a hierarchical human mobility generation framework that uses semantic latent flow matching to synthesize realistic point-of-interest (POI) trajectories across different cities. The model maps heterogeneous POIs into a shared cross-city representation space using hierarchical Semantic IDs, combining an autoregressive planner for coarse-grained patterns with a flow matching realizer for fine-grained POI suffix latents. The framework was evaluated on large-scale, multi-city datasets, demonstrating higher trajectory fidelity and better preservation of city-specific mobility motifs than existing baselines.",
+      "why": "It provides a scalable, cross-city transferable mobility generation method that avoids both the high computational costs of large language models and the city-specific retraining limitations of traditional diffusion-based models."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-26",
+  "work_key": "arxiv:2609.32732"
+}

@@ -1,0 +1,155 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This manuscript is an English translation and extended version of a paper originally published in Japanese(otomo 2021) Recent years have seen a rapid expansion in applying satellite remote sensing and big data to economic analysis. In particular, satellite-observed nighttime light intensity has proven to be closely correlated with key socio-economic indicators, including gross domestic product, employment rates, population density, and educational attainment across countries. In this paper, I first outline the methodology for calculating regional nightlight intensity across Japanese prefectures and municipalities. Next, to evaluate the versatility of nightlight data, I examine the relationship between city-level nightlight intensity and various public socio-economic metrics, using Japan as a case study. The findings suggest that nightlight intensity can serve as a effective proxy for these diverse indicators. Finally, I explore the potential of nightlight data for enabling rapid economic impact assessments during sudden social disruptions, such as the COVID-19 pandemic.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Shoichi Otomo",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": "12 pages, 11 figures. Published in Theory and Applications of GIS, Vol. 29, No. 1, pp. 23-28 (2021) (in Japanese)",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.33861v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.33861v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-27",
+    "repository_urls": [],
+    "title": "Correlation Between Nighttime Light and Various Statistical Indicators in Japan"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-28_2609.33861",
+    "members": [
+      "arxiv:2609.33861"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.33861",
+    "doi": "10.5638/thagis.29.23",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-30T00:19:10Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005017,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1887,
+      "out": 243
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9562,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3825,
+    "relevance": 0.9562
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study establishes a methodology for calculating regional nightlight intensity across Japanese prefectures and municipalities, evaluating its correlation with local socio-economic metrics. The analysis demonstrates that city-level nighttime light intensity serves as a reliable proxy for public indicators such as gross domestic product, employment rates, population density, and educational attainment.",
+      "why": "It validates the use of satellite-observed nightlight data as a rapid, alternative measurement tool for socio-economic conditions in Japan, particularly for conducting real-time economic impact assessments during sudden disruptions like the COVID-19 pandemic."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-27",
+  "work_key": "arxiv:2609.33861"
+}

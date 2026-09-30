@@ -1,0 +1,207 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This article describes a behavioural dataset from a collective-risk dilemma public experiment carried out in Barcelona, Spain, within the citizen science \\textit{xAire} air quality project. Participants played a ten-round game in groups of six, each deciding every round how many monetary units to contribute from a private endowment toward a shared target; groups that fell short forfeited all remaining capital. Three endowment treatments held the group total fixed: an equal condition and two unequal conditions in which low-endowment participants formed either the minority or the majority of the group. Data were collected at two public outdoor venues using a tablet-based interface under lab-in-the-field protocols. Participants were recruited on-site from a demographically heterogeneous pool of individuals passing through the venues, mostly local residents. The dataset comprises 462 participants across 77 six-player games, 4\\,620 contribution decisions in total. Each participant record links the full ten-round contribution trajectory to initial endowment, wealth treatment, venue, district of residence and its measured nitrogen-dioxide concentration, and socio-demographic and attitudinal survey items covering gender, age, education, economic and working status, air-quality perception, fairness norms, environmental-justice beliefs, residential mobility, and community participation. The release provides raw and cleaned participant tables, a variable codebook, the survey instrument, the district-pollution linkage, and the preprocessing code.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Marc Sadurní",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Martín F. Díaz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Julián Vicens",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Anna Cigarini",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Isabelle Bonhoure",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Miquel Montero",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Josep Perelló",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.CY",
+      "physics.data-an"
+    ],
+    "comment": "30 pages, 6 figures, 6 tables, data descriptor article",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.35417v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.35417v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-28",
+    "repository_urls": [],
+    "title": "A citizen science behavioural dataset of an urban collective-risk dilemma on air pollution mitigation under resource inequality"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-28_2609.35417",
+    "members": [
+      "arxiv:2609.35417"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:survey",
+        "label": "survey"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1492",
+        "label": "Barcelona",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.35417",
+    "doi": "10.48550/arxiv.2609.35417",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-09-30T00:19:10Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006061,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2097,
+      "out": 324
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9359,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4544,
+    "relevance": 0.9359
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The behavioral data is derived from a gamified lab-in-the-field experiment using monetary endowments, which may not fully capture how individuals respond to real-world air pollution mitigation costs.",
+      "what": "This dataset captures 4,620 individual contribution decisions made by 462 participants across 77 six-player games during a ten-round collective-risk dilemma experiment in Barcelona, Spain. The experiment tested three wealth endowment treatments (one equal and two unequal) to observe how resource disparity affects contributions toward a shared public goods target. Each participant's decision trajectory is linked to their local district's nitrogen dioxide levels, socio-demographic survey responses, and environmental-justice beliefs.",
+      "why": "The dataset provides a rare empirical link between controlled behavioral experiment decisions on public goods and the real-world environmental conditions, air pollution levels, and socio-demographic backgrounds of the participants."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-28",
+  "work_key": "arxiv:2609.35417"
+}

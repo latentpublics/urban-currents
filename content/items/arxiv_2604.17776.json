@@ -5,35 +5,41 @@
     "authors": [
       {
         "institutions": [],
-        "name": "Selin Aslan Şenol",
-        "openalex": "A5116872038",
-        "orcid": null
+        "name": "Yutian Pang",
+        "openalex": "A5052702236",
+        "orcid": "https://orcid.org/0000-0001-6343-9641"
       },
       {
         "institutions": [],
-        "name": "Turgay Kerem Koramaz",
-        "openalex": "A5062263822",
-        "orcid": "https://orcid.org/0000-0002-4754-8095"
+        "name": "Daniel Delahaye",
+        "openalex": "A5091888698",
+        "orcid": "https://orcid.org/0000-0002-4965-6815"
+      },
+      {
+        "institutions": [],
+        "name": "John-Paul Clarke",
+        "openalex": "A5134134590",
+        "orcid": null
       }
     ],
     "categories": [],
     "comment": null,
     "primary_location": {
-      "landing_page_url": "https://doi.org/10.1016/j.ccs.2026.100753",
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.106053",
       "pdf_url": null,
-      "source_id": "S2764821314",
-      "source_name": "City Culture and Society",
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
       "type": "journal",
       "version": "publishedVersion"
     },
-    "publication_date": "2026-09-28",
+    "publication_date": "2026-09-29",
     "repository_urls": [],
-    "title": "Ethical and Aesthetical Judgement in Open Urban Space: The Case of Taksim Square"
+    "title": "Trajectory-based optimization for air traffic control in the terminal maneuvering area"
   },
   "cluster": {
-    "cluster_id": "clu_2026-09-29_10.1016/j.ccs.20",
+    "cluster_id": "clu_2026-09-29_2604.17776",
     "members": [
-      "doi:10.1016/j.ccs.2026.100753"
+      "arxiv:2604.17776"
     ],
     "merge_basis": "singleton"
   },
@@ -44,13 +50,18 @@
     "people": [
       {
         "confidence": null,
-        "id": "openalex:A5116872038",
-        "label": "Selin Aslan Şenol"
+        "id": "orcid:0000-0001-6343-9641",
+        "label": "Yutian Pang"
       },
       {
         "confidence": null,
-        "id": "orcid:0000-0002-4754-8095",
-        "label": "Turgay Kerem Koramaz"
+        "id": "orcid:0000-0002-4965-6815",
+        "label": "Daniel Delahaye"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5134134590",
+        "label": "John-Paul Clarke"
       }
     ],
     "places": [],
@@ -59,58 +70,46 @@
     "topics": [
       {
         "confidence": null,
-        "id": "openalex:T13699",
+        "id": "openalex:T11489",
         "is_primary": true,
-        "label": "Public Spaces through Art",
-        "score": 0.0475,
-        "subfield": "3322"
+        "label": "Air Traffic Management and Optimization",
+        "score": 0.9825,
+        "subfield": "2202"
       },
       {
         "confidence": null,
-        "id": "openalex:T14092",
+        "id": "openalex:T12125",
         "is_primary": false,
-        "label": "Ethics, Aesthetics, and Art",
-        "score": 0.0454,
-        "subfield": "1211"
+        "label": "Aerospace and Aviation Technology",
+        "score": 0.0047,
+        "subfield": "2202"
       },
       {
         "confidence": null,
-        "id": "openalex:T12819",
+        "id": "openalex:T11082",
         "is_primary": false,
-        "label": "Environmental Philosophy and Ethics",
-        "score": 0.0403,
-        "subfield": "2309"
+        "label": "Spacecraft Dynamics and Control",
+        "score": 0.0034,
+        "subfield": "2202"
       }
     ]
   },
-  "first_published": "2026-09-28",
+  "first_published": "2026-09-29",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [
-      "openalex:W2013241673",
-      "openalex:W2030008532",
-      "openalex:W2095368407",
-      "openalex:W2099452304",
-      "openalex:W2626092866",
-      "openalex:W2760068809",
-      "openalex:W2767639819",
-      "openalex:W2886368623",
-      "openalex:W2955569092",
-      "openalex:W4249979416",
-      "openalex:W4404618959"
-    ],
+    "referenced_works": [],
     "related_works": []
   },
   "ids": {
-    "arxiv": null,
-    "doi": "10.1016/j.ccs.2026.100753",
-    "openalex": "W7214598032",
+    "arxiv": "2604.17776",
+    "doi": "10.1016/j.trc.2026.106053",
+    "openalex": "W7155091179",
     "pmid": null
   },
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-10-01T00:30:38Z",
+    "collected_at": "2026-10-01T00:30:36Z",
     "collectors": [
       "openalex"
     ],
@@ -123,10 +122,10 @@
     }
   },
   "publication_status": {
-    "detected_at": "2026-09-30T00:19:44Z",
-    "doi": "10.1016/j.ccs.2026.100753",
-    "journal": "City Culture and Society",
-    "source_id": "S2764821314",
+    "detected_at": "2026-10-01T00:30:36Z",
+    "doi": "10.1016/j.trc.2026.106053",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
     "state": "published"
   },
   "review": {
@@ -157,6 +156,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-09-30",
-  "work_key": "doi:10.1016/j.ccs.2026.100753"
+  "updated": "2026-09-29",
+  "work_key": "arxiv:2604.17776"
 }

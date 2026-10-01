@@ -87,12 +87,99 @@
       }
     ],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04123ky43",
+        "label": "Clark University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00ae7jd04",
+        "label": "World Bank"
+      },
+      {
+        "confidence": null,
+        "id": "ror:006xm7s91",
+        "label": "Global Environment Facility"
+      },
+      {
+        "confidence": null,
+        "id": "ror:006hf6230",
+        "label": "University of Twente"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7741-2957",
+        "label": "Rufai Omowunmi Balogun"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3983-2459",
+        "label": "Caroline Margaux Gevaert"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5152754853",
+        "label": "Capucine Riom"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5152591711",
+        "label": "Derrick Mirindi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1507-6270",
+        "label": "Aaron Opdyke"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5662-3643",
+        "label": "Hamed Alemohammad"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5041864574",
+        "label": "Pierre Chrzanowski"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5073333040",
+        "label": "Edward Charles Anderson"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11963",
+        "is_primary": true,
+        "label": "Impact of Light on Environment and Health",
+        "score": 0.2499,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11164",
+        "is_primary": false,
+        "label": "Remote Sensing and LiDAR Applications",
+        "score": 0.2229,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10689",
+        "is_primary": false,
+        "label": "Remote-Sensing Image Classification",
+        "score": 0.1418,
+        "subfield": "2214"
+      }
+    ]
   },
   "first_published": "2026-09-23",
   "graph": {
@@ -103,7 +190,7 @@
   "ids": {
     "arxiv": "2609.28154",
     "doi": "10.48550/arxiv.2609.28154",
-    "openalex": null,
+    "openalex": "W7214227833",
     "pmid": null
   },
   "provenance": {
@@ -111,7 +198,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-29T00:56:08Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006881,
     "llm": {
@@ -199,6 +287,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-23",
+  "updated": "2026-09-30",
   "work_key": "arxiv:2609.28154"
 }

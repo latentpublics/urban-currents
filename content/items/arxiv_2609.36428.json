@@ -1,0 +1,174 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Entering the post-pandemic era, cities navigate a new normal shaped by hybrid work and space-time flexibility, but existing evidence is spatially scattered and temporally limited. Here we develop an analytical approach that examines this reorganization through three dimensions: remote work adoption via sector composition, daily travel behavior via trip-level metrics, and functional urban form via mobility-derived measures. To capture the interplay of urban dynamics, we synthesize three complementary spatial metrics. In particular, coupling overall trip centrality with work-trip concentration differentiates whether employment and daily activity organize around the same centers. Applied to population-scale data across 15 U.S. metropolitan areas spanning 2019-2024, our approach shows that daily car travel increased despite elevated remote work, a pattern consistent across cities with distinct spatial structures. Decomposition and regression identify trip frequency as the primary contributor to VKT growth, moderated by compact urban form and concentrated employment. The approach provides a replicable framework for comparative study of post-pandemic urban mobility.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Baoqi Eileen Chen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Marta C. González",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": "18 pages, 4 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.36428v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.36428v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-29",
+    "repository_urls": [],
+    "title": "Hybrid Work and the Restructuring of Urban Mobility in U.S. Cities"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-29_2609.36428",
+    "members": [
+      "arxiv:2609.36428"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:regression",
+        "label": "regression"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-29",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.36428",
+    "doi": "10.48550/arxiv.2609.36428",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-01T00:29:40Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005744,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1921,
+      "out": 318
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9914,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3966,
+    "relevance": 0.9914
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2019-2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings rely on aggregate mobility-derived metrics and vehicle kilometers traveled, which may not capture the specific travel motivations or socio-demographic variations of individual hybrid workers.",
+      "what": "The study analyzes the reorganization of urban mobility across 15 U.S. metropolitan areas from 2019 to 2024 using population-scale travel data. It measures remote work adoption, daily travel behavior, and functional urban form through three synthesized spatial metrics, including the coupling of overall trip centrality with work-trip concentration. The analysis reveals that daily vehicle kilometers traveled (VKT) increased despite high levels of remote work, driven primarily by higher trip frequency, though this growth was moderated in areas with compact urban forms and concentrated employment.",
+      "why": "It establishes that remote work has not reduced overall driving as previously assumed, but has instead shifted travel patterns toward more frequent non-work trips, demonstrating that compact urban design remains a critical tool for mitigating vehicle travel even in a hybrid work era."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-29",
+  "work_key": "arxiv:2609.36428"
+}

@@ -1,0 +1,168 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Climate change is intensifying natural hazards, and preparing cities for them falls primarily to local governments. Yet what municipal codes say about hazards, and whether their requirements match each city's risk profile, has not been measured. I analyze 3.6 million sentences from 204 U.S. cities' municipal codes and compare each city's hazard text to its actual risk from FEMA's National Risk Index. I document four patterns. First, a small share of code text consists of provisions relevant for natural hazards (1.5%), and codes in high-risk cities contain marginally more. Second, hazard coverage is highly concentrated on flooding (61% of hazard-relevant text), even though flooding accounts for only 9% of the average city's risk. Third, city codes emphasize emergency response over prevention. Emergency management is the largest regulatory category, and land use is the smallest. Fourth, codes track the types of risks relevant to each location, but only loosely. The median city would need to reallocate 70% of its regulatory text to match its risk profile. The results suggest that U.S. city codes do not include regulation for most of the hazards cities face.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Arianna Salazar-Miranda",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.36191v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.36191v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-28",
+    "repository_urls": [],
+    "title": "What Do City Codes Say About Climate Risk?"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-29_2609.36191",
+    "members": [
+      "arxiv:2609.36191"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:text-analysis",
+        "label": "text analysis"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.36191",
+    "doi": "10.48550/arxiv.2609.36191",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-01T00:29:40Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005714,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1985,
+      "out": 304
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9521,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3808,
+    "relevance": 0.9521
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on FEMA's National Risk Index to define actual risk, which may not capture all localized or future climate projections.",
+      "what": "An analysis of 3.6 million sentences from the municipal codes of 204 U.S. cities reveals that only 1.5% of code text addresses natural hazards, with 61% of that hazard text focused on flooding despite it representing only 9% of average city risk. The study compared local regulations against FEMA's National Risk Index, finding that emergency management dominates regulatory text while land use is the smallest category. To align their municipal codes with actual local risk profiles, the median city would need to reallocate 70% of its hazard-related regulatory text.",
+      "why": "It establishes a quantitative mismatch between local legal frameworks and actual environmental threats, demonstrating that municipal codes are heavily skewed toward emergency response over prevention and fail to regulate the majority of climate hazards cities face."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-28",
+  "work_key": "arxiv:2609.36191"
+}

@@ -1,0 +1,419 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Accurate delineation of village boundaries is essential for analysing agricultural and socio-economic dynamics, yet such spatial data are often unavailable in many African countries. While ground surveys can provide this information, they are time-consuming and costly. To address this challenge, we present a novel methodological framework for the automatic delineation of village territories using widely available data: village coordinates, population census data, and agroecological zones. We applied four fixed-size models (10 km square; 2.5 km, 5 km, 10 km radial buffers) and three variable-size models (population-weighted buffers, Voronoi, Weighted Nearest Neighbour WNN) to a dataset of 1059 villages in North and Centre Benin. This geospatial database was constructed by integrating non-georeferenced census data with settlement locations, population statistics, and agroecological context. Model outputs were assessed using participatory mapping data from 62 villages across four agroecological zones. Evaluation relied on four geometric indicators (territory area, user and producer accuracies, F1-score) and two remote sensing-based landscape indicators (cropland fraction and NDVI). Voronoi-based models outperformed fixed-size models on geometric criteria, with the WNN model achieving the highest F1-score (54.1% for WNN vs. 46.1% for the 5 km buffer). Landscape indicators revealed substantial regional variation from north to south, but limited inter-model differences, suggesting high local landscape homogeneity. In conclusion, Voronoi-based models demonstrated adequate precision for applications such as linking household surveys with satellite data, however, their performance declined near national borders or large natural features. The proposed methodology is reproducible over all Benin districts and across African regions where detailed administrative boundaries are lacking.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Centre National de la Recherche Scientifique",
+            "ror": "02feahw73"
+          },
+          {
+            "name": "Centre de Coopération Internationale en Recherche Agronomique pour le Développement",
+            "ror": "05kpkpg04"
+          },
+          {
+            "name": "Université de Montpellier",
+            "ror": "051escj72"
+          },
+          {
+            "name": "Institut National de Recherche pour l'Agriculture, l'Alimentation et l'Environnement",
+            "ror": "003vg9w96"
+          },
+          {
+            "name": "Territoires",
+            "ror": "026tc4g97"
+          }
+        ],
+        "name": "Omoto Aurelle Sedegnan",
+        "openalex": "A5136044858",
+        "orcid": "https://orcid.org/0009-0000-1102-214X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Institut National des Recherches Agricoles du Bénin",
+            "ror": "00xpnyt30"
+          }
+        ],
+        "name": "Comlan Hervé Sossou",
+        "openalex": "A5042911163",
+        "orcid": "https://orcid.org/0000-0002-9438-7896"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Centre National de la Recherche Scientifique",
+            "ror": "02feahw73"
+          },
+          {
+            "name": "Centre de Coopération Internationale en Recherche Agronomique pour le Développement",
+            "ror": "05kpkpg04"
+          },
+          {
+            "name": "Université de Montpellier",
+            "ror": "051escj72"
+          },
+          {
+            "name": "Institut National de Recherche pour l'Agriculture, l'Alimentation et l'Environnement",
+            "ror": "003vg9w96"
+          },
+          {
+            "name": "Territoires",
+            "ror": "026tc4g97"
+          }
+        ],
+        "name": "Raffaele Gaetano",
+        "openalex": "A5086726562",
+        "orcid": "https://orcid.org/0000-0003-1214-6712"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Université d'Abomey-Calavi",
+            "ror": "03gzr6j88"
+          }
+        ],
+        "name": "Naboua Abdelkader Kouhoundji",
+        "openalex": "A5119386619",
+        "orcid": "https://orcid.org/0000-0001-5320-5972"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Centre National de la Recherche Scientifique",
+            "ror": "02feahw73"
+          },
+          {
+            "name": "Centre de Coopération Internationale en Recherche Agronomique pour le Développement",
+            "ror": "05kpkpg04"
+          },
+          {
+            "name": "Université de Montpellier",
+            "ror": "051escj72"
+          },
+          {
+            "name": "Institut National de Recherche pour l'Agriculture, l'Alimentation et l'Environnement",
+            "ror": "003vg9w96"
+          },
+          {
+            "name": "Territoires",
+            "ror": "026tc4g97"
+          }
+        ],
+        "name": "Laurent Gazull",
+        "openalex": "A5000718961",
+        "orcid": "https://orcid.org/0000-0001-9819-6133"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Institut National des Recherches Agricoles du Bénin",
+            "ror": "00xpnyt30"
+          }
+        ],
+        "name": "Nestor R. Ahoyo Adjovi",
+        "openalex": "A5031878363",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Centre National de la Recherche Scientifique",
+            "ror": "02feahw73"
+          },
+          {
+            "name": "Centre de Coopération Internationale en Recherche Agronomique pour le Développement",
+            "ror": "05kpkpg04"
+          },
+          {
+            "name": "Université de Montpellier",
+            "ror": "051escj72"
+          },
+          {
+            "name": "Institut National de Recherche pour l'Agriculture, l'Alimentation et l'Environnement",
+            "ror": "003vg9w96"
+          },
+          {
+            "name": "Territoires",
+            "ror": "026tc4g97"
+          }
+        ],
+        "name": "Agnès Bégué",
+        "openalex": "A5043863290",
+        "orcid": "https://orcid.org/0000-0002-9289-1052"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s10708-026-11713-5",
+      "pdf_url": null,
+      "source_id": "S123313652",
+      "source_name": "GeoJournal",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-09-29",
+    "repository_urls": [],
+    "title": "Socio-spatial modelling of village territory boundaries in North and Centre Benin"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-09-29_10.1007/s10708-0",
+    "members": [
+      "doi:10.1007/s10708-026-11713-5"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02feahw73",
+        "label": "Centre National de la Recherche Scientifique"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05kpkpg04",
+        "label": "Centre de Coopération Internationale en Recherche Agronomique pour le Développement"
+      },
+      {
+        "confidence": null,
+        "id": "ror:051escj72",
+        "label": "Université de Montpellier"
+      },
+      {
+        "confidence": null,
+        "id": "ror:003vg9w96",
+        "label": "Institut National de Recherche pour l'Agriculture, l'Alimentation et l'Environnement"
+      },
+      {
+        "confidence": null,
+        "id": "ror:026tc4g97",
+        "label": "Territoires"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00xpnyt30",
+        "label": "Institut National des Recherches Agricoles du Bénin"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03gzr6j88",
+        "label": "Université d'Abomey-Calavi"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0000-1102-214X",
+        "label": "Omoto Aurelle Sedegnan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9438-7896",
+        "label": "Comlan Hervé Sossou"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1214-6712",
+        "label": "Raffaele Gaetano"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5320-5972",
+        "label": "Naboua Abdelkader Kouhoundji"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9819-6133",
+        "label": "Laurent Gazull"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5031878363",
+        "label": "Nestor R. Ahoyo Adjovi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9289-1052",
+        "label": "Agnès Bégué"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": true,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.3509,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11963",
+        "is_primary": false,
+        "label": "Impact of Light on Environment and Health",
+        "score": 0.1787,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12253",
+        "is_primary": false,
+        "label": "Urban Agriculture and Sustainability",
+        "score": 0.0814,
+        "subfield": "1110"
+      }
+    ]
+  },
+  "first_published": "2026-09-29",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W139295943",
+      "openalex:W901548182",
+      "openalex:W1972838518",
+      "openalex:W1979100951",
+      "openalex:W1996090069",
+      "openalex:W2019131731",
+      "openalex:W2068637695",
+      "openalex:W2081824782",
+      "openalex:W2090143077",
+      "openalex:W2104465738",
+      "openalex:W2171540760",
+      "openalex:W2313202942",
+      "openalex:W2531838449",
+      "openalex:W2581906016",
+      "openalex:W2906296120",
+      "openalex:W2912272178",
+      "openalex:W2944769296",
+      "openalex:W2946517510",
+      "openalex:W2955455458",
+      "openalex:W2991020922",
+      "openalex:W3082186063",
+      "openalex:W3133962347",
+      "openalex:W3175490795",
+      "openalex:W3198826474",
+      "openalex:W3208909472",
+      "openalex:W4206179883",
+      "openalex:W4210567771",
+      "openalex:W4236187186",
+      "openalex:W4239339957",
+      "openalex:W4251250421",
+      "openalex:W4311551852",
+      "openalex:W4390581800",
+      "openalex:W4390872858"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s10708-026-11713-5",
+    "openalex": "W7214783275",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-01T00:30:36Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00634,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2235,
+      "out": 332
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-01T00:30:36Z",
+    "doi": "10.1007/s10708-026-11713-5",
+    "journal": "GeoJournal",
+    "source_id": "S123313652",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The performance of the top-performing Voronoi-based models decreases when applied near national borders or major natural geographic features.",
+      "what": "The study developed and evaluated seven spatial models to automatically delineate village boundaries across 1,059 villages in North and Centre Benin. Using a newly constructed geospatial database that integrates non-georeferenced census data, settlement locations, and agroecological zones, the models were validated against participatory mapping data from 62 villages. The Weighted Nearest Neighbour (WNN) model achieved the highest geometric accuracy with an F1-score of 54.1%, outperforming standard fixed-size radial buffers.",
+      "why": "It provides a reproducible, low-cost methodology to estimate village territories in regions lacking official administrative boundaries, enabling researchers to accurately link household-level survey data with satellite-derived environmental metrics."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-29",
+  "work_key": "doi:10.1007/s10708-026-11713-5"
+}

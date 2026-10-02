@@ -6,19 +6,34 @@
     "abstract": "Urban digital twins are increasingly perceived as a way to pool the growing digital resources of cities for the purpose of a more sustainable and integrated urban planning. Models and simulations are central to this undertaking: They enable \"what if?\" scenarios, create insights and describe relationships between the vast data that is being collected. However, the process of integrating and subsequently using models in urban digital twins is an inherently complex undertaking. It raises questions about how to represent urban complexity, how to deal with uncertain assumptions and modeling paradigms, and how to capture underlying power relations. Existent approaches in the domain largely focus on monolithic and centralized solutions in the tradition of neoliberal city-making, oftentimes prohibiting pluralistic and open interoperable models. Using a participatory design for participatory systems approach together with the City of Hamburg, Germany, we find that an open Urban Model Platform can function both as a public technological backbone for modeling and simulation in urban digital twins and as a socio-technical framework for a collaborative and pluralistic representation of urban processes. Such a platform builds on open standards, allows for a decentralized integration of models, enables communication between models and supports a multi-model approach to representing urban systems.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "HafenCity University Hamburg",
+            "ror": "01fzsd381"
+          }
+        ],
         "name": "Rico H. Herzog",
         "openalex": null,
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "HafenCity University Hamburg",
+            "ror": "01fzsd381"
+          }
+        ],
         "name": "Till Degkwitz",
         "openalex": "A5055264304",
         "orcid": "https://orcid.org/0000-0002-0121-2588"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Loughborough University",
+            "ror": "04vg4w365"
+          }
+        ],
         "name": "Trivik Verma",
         "openalex": "A5082117791",
         "orcid": "https://orcid.org/0000-0003-2761-5155"
@@ -48,7 +63,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01fzsd381",
+        "label": "HafenCity University Hamburg"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04vg4w365",
+        "label": "Loughborough University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -190,12 +216,12 @@
   },
   "summary": {
     "en": {
-      "caveats": "The platform's design and utility are demonstrated through a single case study in Hamburg, which may reflect specific local institutional capacities and governance structures.",
-      "what": "The study co-designed and developed the Urban Model Platform in collaboration with the City of Hamburg, Germany, using a participatory design approach. The platform serves as an open, decentralized, and standards-based technological backbone that allows diverse urban models and simulations to integrate and communicate with each other.",
-      "why": "It shifts urban digital twin architecture away from closed, monolithic, and centralized systems toward a collaborative, socio-technical framework that supports a pluralistic representation of urban processes."
+      "caveats": "The platform's design and efficacy are demonstrated through a single case study in Hamburg, which may limit immediate generalizability to cities with different institutional capacities or technical infrastructures.",
+      "what": "The researchers co-designed and developed the Urban Model Platform in partnership with the City of Hamburg, Germany, using a participatory design approach. The platform serves as an open, decentralized socio-technical system that integrates diverse urban models and simulations using open standards, allowing them to communicate with each other to support multi-model representations of urban systems.",
+      "why": "It provides an alternative to the monolithic, centralized digital twin architectures that dominate neoliberal city-making, enabling cities to collaboratively model complex processes using pluralistic, interoperable, and decentralized tools."
     }
   },
   "track": "papers",
-  "updated": "2026-09-29",
+  "updated": "2026-10-01",
   "work_key": "arxiv:2506.10964"
 }

@@ -50,12 +50,64 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0112mx960",
+        "label": "Tokyo Institute of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02c7akf81",
+        "label": "Systems Biology Institute"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5110646047",
+        "label": "Y. Y. Zheng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5152781459",
+        "label": "Hideki Takayasu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5152814055",
+        "label": "Misako Takayasu"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.3926,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.1939,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.1468,
+        "subfield": "2215"
+      }
+    ]
   },
   "first_published": "2026-09-24",
   "graph": {
@@ -66,7 +118,7 @@
   "ids": {
     "arxiv": "2609.29057",
     "doi": "10.48550/arxiv.2609.29057",
-    "openalex": null,
+    "openalex": "W7214313508",
     "pmid": null
   },
   "provenance": {
@@ -74,7 +126,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-29T00:56:08Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005051,
     "llm": {
@@ -162,6 +215,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-24",
+  "updated": "2026-10-01",
   "work_key": "arxiv:2609.29057"
 }

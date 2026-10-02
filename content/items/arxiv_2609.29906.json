@@ -56,8 +56,50 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05a28rw58",
+        "label": "ETH Zurich"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00baskk38",
+        "label": "Institute for Biomedical Engineering"
+      },
+      {
+        "confidence": null,
+        "id": "ror:025em6n98",
+        "label": "Institute for Transport Planning and Systems"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00js3aw79",
+        "label": "Jilin University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-3134-5469",
+        "label": "Linghang Sun"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8074-4111",
+        "label": "Qishen Zhou"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5152905559",
+        "label": "Michail A. Makridis"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4571-2530",
+        "label": "Anastasios Kouvelas"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -68,7 +110,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.9658,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0242,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.0017,
+        "subfield": "2212"
+      }
+    ]
   },
   "first_published": "2026-09-24",
   "graph": {
@@ -79,7 +146,7 @@
   "ids": {
     "arxiv": "2609.29906",
     "doi": "10.48550/arxiv.2609.29906",
-    "openalex": null,
+    "openalex": "W7214398417",
     "pmid": null
   },
   "provenance": {
@@ -87,7 +154,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-29T00:56:08Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005318,
     "llm": {
@@ -175,6 +243,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-24",
+  "updated": "2026-10-01",
   "work_key": "arxiv:2609.29906"
 }

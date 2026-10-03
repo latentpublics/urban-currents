@@ -58,11 +58,57 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0000-2381-7919",
+        "label": "Mohammad Farhan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9660-3284",
+        "label": "Dorota Kuziak"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1990-6967",
+        "label": "Iztok Peterin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1619-1572",
+        "label": "Ismael G. Yero"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": true,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.7932,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0886,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0458,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-09-25",
   "graph": {
@@ -73,7 +119,7 @@
   "ids": {
     "arxiv": "2609.31818",
     "doi": "10.48550/arxiv.2609.31818",
-    "openalex": null,
+    "openalex": "W7214699977",
     "pmid": null
   },
   "provenance": {
@@ -81,7 +127,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-30T00:19:33Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00598,
     "llm": {
@@ -169,6 +216,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-25",
+  "updated": "2026-10-02",
   "work_key": "arxiv:2609.31818"
 }

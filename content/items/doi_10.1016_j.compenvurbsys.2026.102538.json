@@ -1,0 +1,333 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Aging in place depends on a barrier-free neighborhood travel environment, yet quantitative assessment of the “last kilometer” barrier-free accessibility has not been adequately addressed. This study proposes an assessment framework based on handheld LiDAR point clouds. Near ground obstacles are first detected using elevation interquartile range (IQR) values to construct an obstacle cost map. An eight-neighbor reverse Dijkstra procedure is then used to compute accessible areas, geometric and equivalent travel distances for key neighborhood nodes. Experiments across three sites (including both flat and hilly residential neighborhoods, as well as a school) demonstrate that: 1) The elevation IQR-based obstacle detection method, evaluated at the adopted 0.5 m grid resolution, achieved a Precision of 88.2%, Recall of 83.6%, and F1-score of 85.8% across five manually labelled subsets. 2) Geometric and equivalent distances provide complementary information on wheelchair accessibility. Under the prescribed optimized scenarios, geometric path distance and equivalent travel distance across five functional nodes in the flat terrain neighborhood decreased by 4.24%–76.17% and 17.12%–76.86%, respectively, while the accessible area in the hilly neighborhood increased from 14,501 to 68,761 m 2. The proposed framework provides a quantitative means for diagnosing accessibility deficiencies and assessing potential barrier-free modifications in the examined neighborhood-scale environments. To foster further research, the handheld LiDAR point cloud dataset used in this study is publicly available at: https://github.com/c175044/Handheld-LiDAR-Neighborhood-Accessibility-Dataset.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Ministry of Natural Resources",
+            "ror": "02kxqx159"
+          },
+          {
+            "name": "Chongqing Jiaotong University",
+            "ror": "01t001k65"
+          }
+        ],
+        "name": "Maolin Chen",
+        "openalex": "A5153789708",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Ministry of Natural Resources",
+            "ror": "02kxqx159"
+          },
+          {
+            "name": "Chongqing Jiaotong University",
+            "ror": "01t001k65"
+          }
+        ],
+        "name": "Jianwei Ding",
+        "openalex": "A5154135187",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mei Xue",
+        "openalex": "A5154133604",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Wuhan University",
+            "ror": "033vjfk17"
+          }
+        ],
+        "name": "Xudong Lai",
+        "openalex": "A5027377914",
+        "orcid": "https://orcid.org/0000-0003-4611-820X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Hubei University of Technology",
+            "ror": "02d3fj342"
+          }
+        ],
+        "name": "Mingwei Wang",
+        "openalex": "A5100683210",
+        "orcid": "https://orcid.org/0000-0001-9459-6930"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chongqing Jiaotong University",
+            "ror": "01t001k65"
+          }
+        ],
+        "name": "Cuicui Ji",
+        "openalex": "A5016351233",
+        "orcid": "https://orcid.org/0000-0001-7764-6422"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.compenvurbsys.2026.102538",
+      "pdf_url": null,
+      "source_id": "S60115552",
+      "source_name": "Computers Environment and Urban Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-01",
+    "repository_urls": [],
+    "title": "Neighborhood-scale barrier-free accessibility assessment using handheld LiDAR point cloud"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-01_10.1016/j.compen",
+    "members": [
+      "doi:10.1016/j.compenvurbsys.2026.102538"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02kxqx159",
+        "label": "Ministry of Natural Resources"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01t001k65",
+        "label": "Chongqing Jiaotong University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:033vjfk17",
+        "label": "Wuhan University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02d3fj342",
+        "label": "Hubei University of Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5153789708",
+        "label": "Maolin Chen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5154135187",
+        "label": "Jianwei Ding"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5154133604",
+        "label": "Mei Xue"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4611-820X",
+        "label": "Xudong Lai"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9459-6930",
+        "label": "Mingwei Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7764-6422",
+        "label": "Cuicui Ji"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.6176,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.0406,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0274,
+        "subfield": "2307"
+      }
+    ]
+  },
+  "first_published": "2026-10-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1997542300",
+      "openalex:W2000018820",
+      "openalex:W2087166203",
+      "openalex:W2436494909",
+      "openalex:W2554050866",
+      "openalex:W2791841014",
+      "openalex:W2909662287",
+      "openalex:W2916063838",
+      "openalex:W2975480154",
+      "openalex:W3016371561",
+      "openalex:W3082127293",
+      "openalex:W3127077120",
+      "openalex:W4214678451",
+      "openalex:W4291901980",
+      "openalex:W4311284242",
+      "openalex:W4362456460",
+      "openalex:W4383113409",
+      "openalex:W4388626475",
+      "openalex:W4388709714",
+      "openalex:W4389823412",
+      "openalex:W4390150953",
+      "openalex:W4393371702",
+      "openalex:W4400612557",
+      "openalex:W4403450744",
+      "openalex:W4404347579",
+      "openalex:W4404450035",
+      "openalex:W4407152351",
+      "openalex:W4410232657",
+      "openalex:W4410266513",
+      "openalex:W4412553909",
+      "openalex:W4412902429",
+      "openalex:W4413684289",
+      "openalex:W4414603487",
+      "openalex:W4416264382",
+      "openalex:W7077853242",
+      "openalex:W7102570367",
+      "openalex:W7147361182"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.compenvurbsys.2026.102538",
+    "openalex": "W7215043557",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-03T00:22:15Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006008,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2199,
+      "out": 301
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-03T00:22:15Z",
+    "doi": "10.1016/j.compenvurbsys.2026.102538",
+    "journal": "Computers Environment and Urban Systems",
+    "source_id": "S60115552",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/c175044/Handheld-LiDAR-Neighborhood-Accessibility-Dataset",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and obstacle detection accuracy were validated on a relatively small sample of three local sites.",
+      "what": "This study develops a neighborhood-scale barrier-free accessibility assessment framework using handheld LiDAR point clouds. The method detects ground obstacles at a 0.5 m grid resolution using elevation interquartile range values to build an obstacle cost map, then applies an eight-neighbor reverse Dijkstra algorithm to calculate accessible areas and travel distances. Tested across three sites (a flat neighborhood, a hilly neighborhood, and a school), the obstacle detection achieved a Precision of 88.2% and an F1-score of 85.8%, while simulated barrier-free modifications increased the accessible area in the hilly site from 14,501 to 68,761 square meters.",
+      "why": "It provides a highly detailed, quantitative method to diagnose micro-scale physical barriers and simulate the impact of specific infrastructure modifications on wheelchair routing before they are built."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-01",
+  "work_key": "doi:10.1016/j.compenvurbsys.2026.102538"
+}

@@ -1,0 +1,189 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Mass gathering events like concerts, sports matches, and festivals bring many people into close contact within a short period, creating localized bursts of infection that can shape epidemic outcomes across an entire city. To evaluate how these transient transmission events translate into broader urban impacts, we developed a simulation model linking event-scale contact dynamics with citywide commuting networks. Using Madrid, Spain, as a case study, we compared several types of gatherings and examined how their effects changed under different levels of disease transmissibility. We found that mass gatherings consistently amplified outbreak magnitude, accelerated progression, advanced district-level arrival times, and synchronized spatial spread. Remarkably, while the initial seed size generated at the event accounted for much of this acceleration, post-event transmission conditions provided complementary predictive signal regarding invasion timing. These findings demonstrate that mitigating transmission during mass gatherings can yield downstream public health benefits by delaying broader spatial spread. More generally, this multiscale framework offers a tool to evaluate how temporary, localized contact shifts produce longer-lasting consequences for urban populations.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Jaeyoung Kwak",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Michael H. Lees",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chin Chun Ooi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Wentong Cai",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.CY",
+      "cs.MA",
+      "q-bio.PE"
+    ],
+    "comment": "40 pages, 19 figures, 5 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.35162v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.35162v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-28",
+    "repository_urls": [],
+    "title": "Hybrid epidemic simulation framework coupling equation-based and individual-based models"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-01_2609.35162",
+    "members": [
+      "arxiv:2609.35162"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q2807",
+        "label": "Madrid",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.35162",
+    "doi": "10.48550/arxiv.2609.35162",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-03T00:22:03Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.0053,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1913,
+      "out": 270
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9227,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3691,
+    "relevance": 0.9227
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's findings are demonstrated using a single case study of Madrid, Spain, which may limit immediate generalizability to cities with different commuting structures or gathering patterns.",
+      "what": "The researchers built a multiscale simulation framework that couples event-scale contact dynamics with citywide commuting networks to model how mass gatherings affect urban epidemic spread. Using Madrid, Spain, as a case study, the model simulates how different types of events and varying disease transmissibility levels influence outbreak magnitude, progression speed, and district-level arrival times.",
+      "why": "It establishes a quantitative link between transient, localized transmission events and long-term, citywide epidemic trajectories, demonstrating that post-event transmission conditions interact with initial event-generated infections to dictate how fast a disease spreads across urban districts."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-28",
+  "work_key": "arxiv:2609.35162"
+}

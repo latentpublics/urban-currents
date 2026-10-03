@@ -88,11 +88,82 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5030197870",
+        "label": "王周福"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7435-8238",
+        "label": "Baoshen Guo"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3682-4290",
+        "label": "Zhiqing Hong"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5153455437",
+        "label": "Junyi Jessy Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1648-3409",
+        "label": "Kailai Sun"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8964-8764",
+        "label": "Heye Huang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8257-2974",
+        "label": "Alok Prakash"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5153452587",
+        "label": "Shenhao Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5153468070",
+        "label": "Jinhua Zhao"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.4524,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.2129,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11106",
+        "is_primary": false,
+        "label": "Data Management and Algorithms",
+        "score": 0.1199,
+        "subfield": "1711"
+      }
+    ]
   },
   "first_published": "2026-09-26",
   "graph": {
@@ -103,7 +174,7 @@
   "ids": {
     "arxiv": "2609.32732",
     "doi": "10.48550/arxiv.2609.32732",
-    "openalex": null,
+    "openalex": "W7214769525",
     "pmid": null
   },
   "provenance": {
@@ -111,7 +182,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-09-30T00:19:22Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005521,
     "llm": {
@@ -199,6 +271,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-09-26",
+  "updated": "2026-10-03",
   "work_key": "arxiv:2609.32732"
 }

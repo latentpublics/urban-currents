@@ -1,0 +1,285 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Optimizing urban morphology is pivotal for lowering energy consumption and carbon emissions while supporting sustainable development. However, traditional methods often rely on inefficient post-evaluation, hindering direct, goal-oriented design feedback. This study thus presents the PC-GAN model, an automated block design tool that integrates Pix2pix with a two-step GAN mechanism inspired by CycleGAN, generating high-resolution 3D urban forms under specific climatic and energy-reduction targets. Focusing on Guangzhou’s six main LCZ types (LCZ1, LCZ2, LCZ4, LCZ5, LCZ6, LCZ8) and iterating 10% stepwise reductions in baseline energy use, the model illuminates distinctive low-carbon optimization pathways across various urban morphologies. In doing so, PC-GAN offers rapid generation of diverse design alternatives while fulfilling low-energy requirements. This new framework not only improves planning efficiency and flexibility but also directs future research toward more adaptive, data-driven methodologies for low-carbon urban morphology optimization.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Tao Wu",
+        "openalex": "A5153890155",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Zeyin Chen",
+        "openalex": "A5148067547",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Shiqi Zhou",
+        "openalex": "A5153729278",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Zhiqiang Wu",
+        "openalex": "A5153983503",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s44212-026-00113-2",
+      "pdf_url": null,
+      "source_id": "S4387283136",
+      "source_name": "Urban Informatics",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-02",
+    "repository_urls": [],
+    "title": "An advanced generative framework for low-carbon urban morphology optimization"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-02_10.1007/s44212-0",
+    "members": [
+      "doi:10.1007/s44212-026-00113-2"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:energy-consumption",
+        "label": "energy consumption data"
+      }
+    ],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03rc6as71",
+        "label": "Tongji University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5153890155",
+        "label": "Tao Wu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5148067547",
+        "label": "Zeyin Chen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5153729278",
+        "label": "Shiqi Zhou"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5153983503",
+        "label": "Zhiqiang Wu"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12698",
+        "is_primary": true,
+        "label": "3D Modeling in Geospatial Applications",
+        "score": 0.2088,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": false,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.1303,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.0919,
+        "subfield": "2306"
+      }
+    ]
+  },
+  "first_published": "2026-10-02",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2030737358",
+      "openalex:W2289974587",
+      "openalex:W2552465644",
+      "openalex:W2765709874",
+      "openalex:W2788623958",
+      "openalex:W2962793481",
+      "openalex:W2988769327",
+      "openalex:W3109269228",
+      "openalex:W3200874687",
+      "openalex:W4200185932",
+      "openalex:W4213140590",
+      "openalex:W4292117317",
+      "openalex:W4293011025",
+      "openalex:W4294946213",
+      "openalex:W4321487365",
+      "openalex:W4361027015",
+      "openalex:W4385146828",
+      "openalex:W4385525207",
+      "openalex:W4386316655",
+      "openalex:W4386914624",
+      "openalex:W4390155075",
+      "openalex:W4391515458",
+      "openalex:W4392949585",
+      "openalex:W4398139373",
+      "openalex:W4402029229",
+      "openalex:W4404047737",
+      "openalex:W4405802535",
+      "openalex:W4406241034",
+      "openalex:W4406684430",
+      "openalex:W4408267997",
+      "openalex:W4409039050",
+      "openalex:W4409662695",
+      "openalex:W4409791429",
+      "openalex:W4410314575",
+      "openalex:W7088018192"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s44212-026-00113-2",
+    "openalex": "W7215069673",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-03T23:43:44Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005474,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1915,
+      "out": 289
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-03T23:43:44Z",
+    "doi": "10.1007/s44212-026-00113-2",
+    "journal": "Urban Informatics",
+    "source_id": "S4387283136",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's optimization pathways and design generations are demonstrated only on the specific climate and urban morphology conditions of Guangzhou.",
+      "what": "The PC-GAN model integrates Pix2pix with a two-step CycleGAN-inspired mechanism to automatically generate high-resolution 3D urban block designs optimized for specific energy-reduction targets. The framework was tested on Guangzhou's six main Local Climate Zone types (LCZ1, LCZ2, LCZ4, LCZ5, LCZ6, and LCZ8) using stepwise 10% reductions in baseline energy use to produce low-carbon spatial configurations.",
+      "why": "It replaces slow, iterative post-evaluation workflows with a generative design tool that directly translates quantitative energy-reduction goals into 3D urban forms."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-02",
+  "work_key": "doi:10.1007/s44212-026-00113-2"
+}

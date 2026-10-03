@@ -1,0 +1,161 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Hospice quality should be interpreted in relation to both provider organization and the local conditions under which care is delivered. This study develops a provider-county performance assessment framework by linking national Centers for Medicare & Medicaid Services (CMS) hospice data and Consumer Assessment of Healthcare Providers and Systems (CAHPS) Hospice Survey outcomes with county measures of rurality, social vulnerability, health burden, and workforce and health-resource context. The adjusted analysis includes 2,928 providers in 1,078 counties and combines geographic mapping, blockwise regression, six secondary CAHPS outcomes, and eight sensitivity analyses. Adding county context increased adjusted R-squared from 0.077 to 0.202. After full adjustment, for-profit hospices had overall caregiver ratings 3.832 percentage points lower than nonprofit hospices. This negative association appeared across all six secondary CAHPS domains and remained significant in every sensitivity specification. Higher county social vulnerability was also associated with poorer caregiver experience, although its magnitude depended partly on the specification of community health burden. These findings show that county context materially improves hospice performance assessment but does not eliminate the ownership difference. The framework supports context-aware monitoring, peer comparison, and targeted quality improvement.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Jinho Cha",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Misun Roh",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "35 pages, 5 figures, 7 tables. Submitted to Health Care Management Science",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2609.36507v1",
+      "pdf_url": "https://arxiv.org/pdf/2609.36507v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-09-29",
+    "repository_urls": [],
+    "title": "Geographic Disparities in Hospice Quality and Family Caregiver Experience: The Roles of Ownership, Social Vulnerability, and Workforce Capacity"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-02_2609.36507",
+    "members": [
+      "arxiv:2609.36507"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-09-29",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2609.36507",
+    "doi": "10.48550/arxiv.2609.36507",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-03T23:43:30Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005812,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2045,
+      "out": 305
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9116,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3646,
+    "relevance": 0.9116
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study analyzed caregiver experience data from 2,928 hospice providers across 1,078 US counties by linking national CMS and CAHPS survey outcomes with county-level social vulnerability, rurality, health burden, and workforce capacity. Incorporating county context into performance models increased the adjusted R-squared from 0.077 to 0.202. Even after full adjustment, for-profit hospices scored 3.832 percentage points lower in overall caregiver ratings compared to non-profit providers, a deficit that persisted across all six secondary survey domains.",
+      "why": "The study demonstrates that while local socioeconomic and resource contexts significantly shape hospice performance, they do not explain away the systematic quality deficit of for-profit providers. This establishes a more equitable, context-aware framework for comparing hospice quality across different geographic regions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-09-29",
+  "work_key": "arxiv:2609.36507"
+}

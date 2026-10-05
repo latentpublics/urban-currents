@@ -472,6 +472,45 @@ things are true at once and it is worth keeping them apart:
   days running gets one mail, on the third day and not again; every silent day
   appears in the weekly summary for as long as it lasts.
 
+> **🔴 That mail does not reach anyone today. Do not wait for it.**
+> `deliver.backend` is `file`, so the "third day" mail is written as an `.eml`
+> into the Actions runner, and the runner is then destroyed. It happened:
+> arXiv refused every request from 2026-09-17 to 09-27, the mail was decided
+> on 09-19 (`silent_alert.status: alert_undeliverable` in that run's log), and
+> it went nowhere. The *"Failure alerts cannot reach anyone"* line the workflow
+> prints on every run is an `::error::` **annotation** — it shows red in the
+> log, but the step passes, the job stays green, and GitHub mails nobody. All
+> eleven of those runs finished green.
+>
+> **What does reach a person since 1N:** if a required source has failed
+> outright — every request died, `failed_sources` in the run-log row — on
+> **two consecutive days**, the last step of `daily` fails the job, and GitHub
+> mails a failed scheduled run to the account that last edited its `cron:`
+> line (subject to that account's notification settings — not verified from
+> here). The issue
+> for that day has already been published and committed by then; the red cross
+> is about the source, not the day. `uv run uc dead-sources --date <day>` asks
+> the same question locally.
+>
+> Silence (a source that answered and had nothing) does **not** turn the job
+> red; only failure does. Until a real alert provider is configured, a silent
+> source is seen only by someone reading `uc status`, the issue page or the
+> weekly summary.
+
+**Reading the failure.** `source_failures` in `content/runs_log/<day>.json`
+carries the collector's own sentence. Since 1N the two shapes read differently:
+
+* *"arXiv rejected the request immediately: HTTP 406 …(not retried)"* — a 4xx
+  refusal. One request, no backoff, because asking again gets the same answer.
+  Look at what we send, or at whether arXiv changed what it accepts.
+* *"arXiv request failed after 3 attempts: …"* — a 5xx, a timeout or an empty
+  body, retried with backoff. Usually arXiv under load; usually transient.
+
+Before 1N both were written as the second, which is why the eleven days of 406
+looked like a flaky server in the record. 429 has its own sentence (*"rate
+limited … giving up rather than waiting past the day's budget"*) and was never
+part of this.
+
 Three causes look identical from here and the alert says so rather than
 guessing: the source is down, our query stopped matching, or the window we ask
 for sits inside the source's indexing lag. `uc run --date <day> --dry-run`

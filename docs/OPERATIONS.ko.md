@@ -364,7 +364,9 @@ GitHub 웹에서:
 | `uc daily`가 **75**로 종료 | 다른 실행이 잠금을 쥠 | 기다리십시오. 주인이 죽은 잠금은 자동 회수되고, 살아 있는 프로세스가 쥔 것은 **일부러** 거부합니다 |
 | `status: not_published` | **그날을 못 봤다** | `content/runs_log/`의 `reasons`가 넷 중 무엇이 실패했는지 말합니다. `uc catch-up` |
 | 어떤 날짜에 **행이 아예 없음** | 그날이 한 번도 시도되지 않았거나, 다른 날짜로 시도됨 | `uc missing-days`. 다음 daily 실행의 catch-up이 자동으로 재시도합니다. `daily.catch_up_days`(7일)를 넘기면 복구 불가 |
-| `silent_sources: ["collect.arxiv"]` | 소스가 **OK로 끝났는데** 창 전체에서 0건 | **성공을 보고하는 실패입니다.** `daily.lookback_days`를 소스의 색인 지연과 대조하고, 그다음 소스 자체를 보십시오. 발행은 그대로 되지만 **더 이상 조용하지는 않습니다**: 그날의 이슈 페이지·아카이브 행·API가 어느 소스가 침묵했는지 말하고, 3일 연속이면 메일이 한 번 나가고, 주간 요약이 계속되는 동안 싣습니다 |
+| `silent_sources: ["collect.arxiv"]` | 소스가 **OK로 끝났는데** 창 전체에서 0건 | **성공을 보고하는 실패입니다.** `daily.lookback_days`를 소스의 색인 지연과 대조하고, 그다음 소스 자체를 보십시오. 발행은 그대로 되지만 **더 이상 조용하지는 않습니다**: 그날의 이슈 페이지·아카이브 행·API가 어느 소스가 침묵했는지 말하고, 3일 연속이면 메일이 한 번 "나가기로" 하고, 주간 요약이 계속되는 동안 싣습니다. 🔴 **그 메일은 지금 아무에게도 닿지 않습니다** — 아래 줄 |
+| **Actions 잡이 빨간 X, 마지막 단계가 `Fail the job if a required source is dead`** (1N) | **필수 소스가 2일 연속 요청 전부 실패**(`failed_sources`). **그날 이슈는 이미 발행·커밋됐습니다** — 날이 아니라 소스에 대한 판정입니다 | `content/runs_log/<날짜>.json`의 `source_failures`를 보십시오. *"rejected the request immediately: HTTP 4xx"* 는 거절(재시도해도 같음), *"failed after 3 attempts"* 는 5xx·타임아웃(대개 일시적). `uv run uc dead-sources --date <날짜>` |
+| 로그에 빨간 `Failure alerts cannot reach anyone` | **주석(annotation)일 뿐 잡을 실패시키지 않습니다.** 잡은 초록색으로 끝나고 GitHub는 아무에게도 메일을 보내지 않습니다 | `deliver.backend: file`이라 "3일째 메일"은 러너 안에 `.eml`로 쓰이고 러너와 함께 사라집니다. 2026-09-17~27 arXiv 406 11일 동안 실제로 그랬습니다 — 09-19에 발송 결정(`alert_undeliverable`), 11번 모두 초록색. **메일을 기다리지 마십시오** |
 | deadman이 빨간데 파이프라인은 멀쩡함 | **2026-09-07에 실제로 있었던 일입니다.** 오경보였고 고쳤습니다 | 아래 §6-2 |
 | `collect.openalex: SKIPPED` | `OPENALEX_KEY` 없음 | arXiv 쪽은 돕니다. 키를 넣고 `uc collect` 재실행 |
 | `summarize: SKIPPED` | `GOOGLE_API_KEY` 없음 | 요약 없이 발행됩니다. 키 넣고 `uc summarize` 재실행 |

@@ -481,6 +481,42 @@ def missing_days_cmd(
     raise typer.Exit(code=1)
 
 
+@app.command("dead-sources")
+def dead_sources_cmd(
+    date_: Optional[str] = typer.Option(
+        None, "--date", "-d", help="The day to count back from (default: slot date)"
+    ),
+):
+    """Exit 1 when a required source has failed outright for N days running.
+
+    ★ 1N, N3. The daily workflow ends on this, so a dead source turns the job
+    red — and a red scheduled run is the one thing GitHub mails somebody about
+    while `deliver.backend` is `file`. The day's issue has already been
+    published and committed by then: this judges the source, not the day.
+
+    N is `notify.FAILED_SOURCE_RED_DAYS`; its argument is written beside it.
+    A day with no run-log row breaks the count.
+    """
+    from .daily import slot_date
+    from .notify import FAILED_SOURCE_RED_DAYS, dead_required_sources
+    from .outcome import source_label
+
+    d = date.fromisoformat(date_) if date_ else slot_date()
+    dead = dead_required_sources(d)
+    if not dead:
+        typer.echo(
+            f"[OK] no required source has failed {FAILED_SOURCE_RED_DAYS} days "
+            f"running as of {d}"
+        )
+        return
+    for source, n in sorted(dead.items()):
+        typer.echo(
+            f"[DEAD] {source_label(source)} ({source}): every request failed on "
+            f"each of the last {n} days, through {d}"
+        )
+    raise typer.Exit(code=1)
+
+
 @app.command("catch-up")
 def catch_up_cmd(
     limit: Optional[int] = typer.Option(None, help="Retry at most this many days"),

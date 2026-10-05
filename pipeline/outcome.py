@@ -590,6 +590,30 @@ def silent_streak(source: str, upto: date, limit: int = 60) -> int:
     return streak
 
 
+def failed_streak(source: str, upto: date, limit: int = 60) -> int:
+    """How many days in a row ending at `upto` every request to `source` died.
+
+    ★ 1N, N3. The sibling of `silent_streak`, over `failed_sources` instead of
+    `silent_sources` — blindness rather than silence, the distinction 1L drew.
+    The same rules: a day whose row does not name the source resets the count
+    (it was seen working), and a day with no row at all breaks it too, because
+    a day we did not run says nothing either way.
+
+    Read only; nothing here feeds `decide()`. The verdict for a day with arXiv
+    dead is still `published` on its journal papers.
+    """
+    logs = {row["date"]: row for row in all_logs()}
+    streak = 0
+    day = upto
+    for _ in range(limit):
+        row = logs.get(str(day))
+        if not row or source not in (row.get("failed_sources") or []):
+            break
+        streak += 1
+        day -= timedelta(days=1)
+    return streak
+
+
 def logged_dates() -> set[str]:
     """Every date `content/runs_log/` has a row for, whatever it says."""
     return {r["date"] for r in all_logs() if "date" in r}

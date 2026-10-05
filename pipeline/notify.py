@@ -77,6 +77,46 @@ def alert_recipients() -> list[str]:
 SILENT_ALERT_DAYS = 3
 
 
+# How many days in a row a required source may fail outright before the daily
+# job goes red. ★ 1N, N3.
+#
+# Two, and it is the conservative end of what was observed, chosen before
+# YJUN has ruled on it:
+#
+#   - The only failure streak ever *measured* is 2026-09-17..27: eleven days,
+#     all `failed_all` at HTTP 406. Any N up to 11 would have caught it; N=11
+#     would have caught it on the day it ended. Every day of N past 2 is a day
+#     of that outage nobody would have heard about.
+#   - Before 1L (09-15) failure and silence were recorded as one thing. arXiv
+#     was silent on 09-07 (one day) and 09-12..14 (three days); whether either
+#     was a failure is **unmeasured and stays so**. If 09-12..14 was, N=4 would
+#     have missed it and N=3 would have caught it on its last day.
+#   - One day is not enough: a single morning of arXiv being down is plausible
+#     and the next run asks again. Two consecutive runs 24 hours apart that
+#     both had every request die is not a blip.
+#
+# Not `SILENT_ALERT_DAYS`, whose three-day argument is about arXiv's indexing
+# lag making an empty week look like silence. A failed request has no lag.
+#
+# Not a config key, for the same reason that constant is not one: it is a
+# judgement with an argument attached, and the argument belongs where the
+# number is.
+FAILED_SOURCE_RED_DAYS = 2
+
+
+def dead_required_sources(upto: date) -> dict[str, int]:
+    """Required sources whose failure streak ending at `upto` has reached
+    `FAILED_SOURCE_RED_DAYS`, with the streak length."""
+    from .outcome import REQUIRED_SOURCES, failed_streak
+
+    out = {}
+    for source in REQUIRED_SOURCES:
+        n = failed_streak(source, upto)
+        if n >= FAILED_SOURCE_RED_DAYS:
+            out[source] = n
+    return out
+
+
 def consecutive_failures(upto: date, limit: int = 30) -> int:
     """How many days in a row ending at `upto` we could not see."""
     logs = {row["date"]: row for row in all_logs()}

@@ -409,6 +409,16 @@ jobs:
       #
       # The job-failure behaviour below is unchanged on purpose: a failed
       # workflow run is currently **the only signal that reaches a person**.
+      #
+      # ★ 1N, N3 — and this step does not produce one. `::error::` is an
+      # annotation: it paints a red line in the log and the run summary, and
+      # the step still exits 0, so the job finishes green and nobody is mailed.
+      # Since 0U it has been printed on every scheduled run, which is easy to
+      # read as "the error is being raised, so somebody knows". Nobody did:
+      # through 2026-09-17..27 the job was green eleven mornings running.
+      # Left as an annotation on purpose — failing every run on a standing
+      # configuration fact would teach everyone to ignore the red cross that
+      # "Fail the job if a required source is dead" below now means something.
       - name: Report whether alerting can reach anyone
         if: ${{ always() && inputs.dry_run != true }}
         run: |
@@ -527,3 +537,29 @@ jobs:
         run: |
           echo "::error::No issue was published. See the run log and uc status."
           exit 1
+
+      # ★ 1N, N3. A required source dead N days running turns the job red.
+      #
+      # 2026-09-17..27 arXiv refused every request for eleven days, the issues
+      # went out on journal papers alone (correctly — see L0), and every run was
+      # green. The three-day mail was decided on 09-19 and written into this
+      # runner, which was then destroyed (`deliver.backend: file`). Nothing
+      # reached anybody until a person happened to look.
+      #
+      # 🔴 Last, and after the commit, on purpose. The day's issue is already
+      # published and pushed by the time this runs; it judges the *source*, not
+      # the day, and nothing here can withhold an issue. N and its argument live
+      # beside `FAILED_SOURCE_RED_DAYS` in `pipeline/notify.py`.
+      #
+      # `always()` so a source that dies on a day which also failed elsewhere is
+      # still named. Not on a dry run, and not when another run held the lock —
+      # that run will ask the same question about the same row.
+      - name: Fail the job if a required source is dead
+        if: ${{ always() && inputs.dry_run != true && steps.run.outputs.locked != '1' && steps.slot.outputs.date != '' }}
+        env:
+          SLOT_DATE: ${{ steps.slot.outputs.date }}
+        run: |
+          if ! uv run uc dead-sources --date "$SLOT_DATE"; then
+            echo "::error::A required source has failed outright on consecutive days. The issue was still published from the other source. See source_failures in content/runs_log/${SLOT_DATE}.json."
+            exit 1
+          fi

@@ -236,8 +236,10 @@ def get_backend(name: Optional[str] = None) -> Backend:
     """The configured backend, falling back to `file` when it cannot run.
 
     Falling back rather than failing is deliberate: a missing password should
-    cost a send, not a day's issue. The fallback is recorded in the ledger so
-    "why did nobody get it" has an answer.
+    cost a send, not a day's issue. The fallback is **said** so "why did nobody
+    get it" has an answer: by name on stderr, in the send result
+    (`fell_back_from`, `missing`), and in `uc status`. It is not written to the
+    delivery ledger, which records reader sends only (1P).
     """
     name = name or cfg("deliver.backend", "file")
     if name == "console":

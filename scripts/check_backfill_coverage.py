@@ -70,7 +70,7 @@ def arxiv_total_for(start: datetime.date, end: datetime.date) -> int:
         f" AND submittedDate:[{start.strftime('%Y%m%d')}0000 TO {end.strftime('%Y%m%d')}2359]"
     )
     r = httpx.get(
-        cfg("arxiv.api_url", "http://export.arxiv.org/api/query"),
+        cfg("arxiv.api_url", "https://export.arxiv.org/api/query"),
         params={"search_query": query, "start": 0, "max_results": 1},
         headers={"User-Agent": f"urban-currents/0.2 (mailto:{contact_email()})"},
         timeout=120.0,

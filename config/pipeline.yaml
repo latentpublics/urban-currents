@@ -10,7 +10,11 @@ arxiv:
   # costs far more time than the larger responses do. Measured: a 1000-entry
   # page returns in ~3s.
   page_size: 1000
-  api_url: "http://export.arxiv.org/api/query"
+  # https since 1N (N2). The http address was answered with a redirect to
+  # https that `follow_redirects` quietly took — the 406 log lines of
+  # 2026-09-17..27 all show the https URL. One hop fewer is one variable fewer
+  # the next time arXiv refuses us; it is not a claim about why it did.
+  api_url: "https://export.arxiv.org/api/query"
 
 openalex:
   # A free key gives a $1/day budget. We stop a stage at 80% of it.

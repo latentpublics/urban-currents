@@ -1,7 +1,9 @@
 """arXiv collector (PRD §5.1).
 
 The arXiv API asks for at least 3 seconds between requests and a contact address
-in the User-Agent; both are honoured here, along with three backoff retries.
+in the User-Agent; both are honoured here, along with three backoff retries
+for the failures a retry can change (5xx, timeouts, empty bodies). A 4xx other
+than 429 is not retried at all — see `ArxivRejected`.
 
 An Item must stand up on arXiv metadata alone — the matching OpenAlex Work often
 does not exist yet on the day a preprint appears, and waiting for it would mean
@@ -37,6 +39,38 @@ ARXIV_NS = "{http://arxiv.org/schemas/atom}"
 
 USER_AGENT_TEMPLATE = "urban-currents/0.2 (Phase 0 research scan; mailto:{email})"
 
+# ★ 1N, N2. Said out loud rather than left to httpx's `*/*`.
+#
+# 2026-09-17..27 every request came back `406 Not Acceptable`, eleven days in a
+# row, and then stopped on 09-28 with nothing changed on our side. The cause is
+# **not known** and this does not claim to be it. 406 is literally a
+# content-negotiation refusal, though, so it is the one candidate the status
+# code itself points at — and naming the type we parse costs nothing. The
+# `*/*;q=0.1` tail keeps any representation acceptable, so this header cannot
+# itself produce a 406 that the old default would not have.
+#
+# A removed variable, not a fix: if 406 comes back, this is already ruled out.
+ACCEPT = "application/atom+xml, application/xml;q=0.9, */*;q=0.1"
+
+
+class ArxivRejected(RuntimeError):
+    """arXiv refused the request outright (a 4xx other than 429). Not retried.
+
+    ★ 1N, N1. The 406 of 2026-09-17..27 went through the 5xx backoff — three
+    attempts and 35 seconds of sleep a morning, eleven mornings — and was
+    written down as *"failed after 3 attempts"*, which reads exactly like a
+    flaky server. Nobody could tell from the record that it was a refusal that
+    no retry would ever change. This type is that distinction: its message says
+    "rejected immediately" and carries the status code.
+    """
+
+    def __init__(self, status: int, reason: str, url: str):
+        self.status = status
+        super().__init__(
+            f"arXiv rejected the request immediately: HTTP {status} {reason} "
+            f"(not retried — a {status} does not change on retry) for url '{url}'"
+        )
+
 
 @dataclass
 class ArxivPage:
@@ -51,7 +85,7 @@ class ArxivCollector:
         self.interval = float(cfg("arxiv.request_interval_s", 3.0))
         self.max_retries = int(cfg("arxiv.max_retries", 3))
         self.page_size = int(cfg("arxiv.page_size", 200))
-        self.api_url = cfg("arxiv.api_url", "http://export.arxiv.org/api/query")
+        self.api_url = cfg("arxiv.api_url", "https://export.arxiv.org/api/query")
         self.categories = list(cfg("arxiv.categories", []) or [])
         self._client = client
         self._last_request = 0.0
@@ -64,7 +98,10 @@ class ArxivCollector:
     def _http(self) -> httpx.Client:
         if self._client is None:
             self._client = httpx.Client(
-                headers={"User-Agent": USER_AGENT_TEMPLATE.format(email=contact_email())},
+                headers={
+                    "User-Agent": USER_AGENT_TEMPLATE.format(email=contact_email()),
+                    "Accept": ACCEPT,
+                },
                 timeout=60.0,
                 follow_redirects=True,
             )
@@ -155,8 +192,19 @@ class ArxivCollector:
                 # A 200 with nothing in it and a request that never completed
                 # are the same empty list once `collect()` is done.
                 self.last_status = r.status_code
+                # ★ 1N, N1. Any other 4xx is a refusal, and asking again gets
+                # the same refusal. 429 never reaches here (its branch is above
+                # and stays exactly as it was).
+                if 400 <= r.status_code < 500:
+                    raise ArxivRejected(
+                        r.status_code,
+                        getattr(r, "reason_phrase", "") or "",
+                        str(getattr(r, "url", self.api_url)),
+                    )
                 r.raise_for_status()
                 return r.text
+            except ArxivRejected:
+                raise
             except Exception as e:  # noqa: BLE001
                 last = e
                 # A ceiling breach is a decision, not a transient error: it must

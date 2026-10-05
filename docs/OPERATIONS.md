@@ -3,15 +3,18 @@
 What a day costs a human, where a human is required, and what to do when a stage
 fails.
 
-**The pipeline runs itself, publishes to a real address, and reaches nobody by
-mail.** `uc daily` collects a window,
+**The pipeline runs itself, publishes to a real address, and mails one
+operator.** `uc daily` collects a window,
 decides an outcome, publishes and sends; `daily.yml` has called it at 21:00 UTC
 since 2026-08-19, `weekly.yml` since 0U, and `deadman.yml` watches for the case
-where neither fires. What has *not* happened is delivery: `deliver.backend` is
-`file`, so every issue and every failure alert is written into the runner and
-discarded with it. `uc status` says which of those two states you are in, on the
-`[ALERTS]` line, using the backend that will actually be used rather than the
-one in the config. The checklist below is the order for turning delivery on.
+where neither fires. Since 1P (2026-10-05) `deliver.backend` is `smtp` through
+Resend, and that reaches **`UC_ALERT_RECIPIENT` only** — failure alerts, the
+third-day silence mail and the weekly summary. The issue itself still goes to
+nobody: it is sent to `UC_PREVIEW_RECIPIENT`, which does not exist. Until 1P
+everything was `file`, written into the runner and discarded with it.
+`uc status` says which state you are in, on the `[ALERTS]` line, using the
+backend that will actually be used rather than the one in the config — and,
+if that differs, which secret is missing.
 
 ## The first command after being away
 
@@ -124,6 +127,8 @@ with nothing withheld the rate is 0 and says nothing at all.
 | 4 | Relevance labelling for Q1 | 5 days × 30 items | ~15 min/day | `uc review --label relevance --date …` |
 | 5 | Drain `unmatched.jsonl` into the vocabulary | weekly | ~10 min | read `runs/*/unmatched.jsonl` |
 | 6 | Re-calibrate the quiet-day threshold | after a backfill | ~2 min | `uc calibrate --apply` |
+| 7 | **Read an alert mail** and act on it | when one arrives (since 1P) | ~5 min | the mail names the command; `uc status` |
+| 8 | Set or rotate a mail secret — **values are set by a person, never by the agent** | when the provider or key changes | ~5 min | see "Mail provider" |
 
 Tasks 1, 2 and 5 are the ones that decay if skipped: the whitelist drives the
 training set, and the vocabulary drives every overlay tag.
@@ -285,8 +290,9 @@ they are generated, and the switch exists so the two cannot disagree.
 one as much for the heartbeat as for the summary, since a repository whose
 schedules GitHub has quietly disabled looks exactly like a quiet week.
 `deadman.yml` watches for that at 09:00 UTC. The checklist below is kept
-because it is the order to follow when turning delivery on, which has **not**
-happened: `deliver.backend` is still `file`.
+because it is the order delivery was turned on in. Steps 0–5 were done by
+2026-08-19; step 6 was done for **operator mail only** in 1P — see
+"Mail provider" below. Reader mail is a seventh step that has not been taken.
 
 GitHub Actions was chosen in 0k over a laptop and a VPS, and the deciding
 argument was the **shape of the failure**, not cost or convenience: a laptop
@@ -346,8 +352,56 @@ before a human has read what it would have said. Do not skip ahead to step 6.
 6. **Only then**: pick a provider — the comparison in 0k narrowed it to
    Amazon SES and Resend, and the domain question was still open — buy the
    domain, set up SPF/DKIM/DMARC, fill in `UC_SMTP_*`, and change
-   `deliver.backend` to `smtp`. **This is the step that can reach someone who
-   did not ask.**
+   `deliver.backend` to `smtp`. *Done in 1P with Resend; the values are under
+   "Mail provider" below.* With `UC_PREVIEW_RECIPIENT` unset this reaches the
+   operator and nobody else.
+7. **Reader mail: add `UC_PREVIEW_RECIPIENT`.** Not taken. **This is the step
+   that can reach someone who did not ask** — the moment that secret exists,
+   the next published issue is mailed to it. It is one address; there is no
+   subscriber list and nothing reads one.
+
+### Mail provider (1P)
+
+| | |
+|---|---|
+| provider | Resend, SMTP |
+| host · port | `smtp.resend.com` · `587` (STARTTLS). 465/2465 are implicit TLS, which `SmtpBackend` does not speak |
+| `UC_SMTP_USER` | the literal string **`resend`** — not an email address. An address here fails authentication; it is the most common mistake |
+| `UC_SMTP_PASSWORD` | a Resend API key |
+| sender (`deliver.sender`) | `Urban Currents <no-reply@send.latentpublics.com>` |
+| verified domain | `send.latentpublics.com` — Resend refuses a From on any domain it has not verified. Its DKIM/SPF state is visible only in the Resend dashboard |
+
+Two recipient switches, independent of the backend and of each other:
+
+| path | recipient | if unset |
+|---|---|---|
+| alerts, silence mail, weekly summary | `UC_ALERT_RECIPIENT` | `no_alert_recipient`, nothing sent |
+| the issue | `UC_PREVIEW_RECIPIENT` | `no_recipients`, nothing sent |
+
+Setting a secret without leaving the value in shell history:
+
+```
+gh secret set UC_SMTP_USER     --repo latentpublics/urban-currents --body "resend"
+gh secret set UC_SMTP_PASSWORD --repo latentpublics/urban-currents
+```
+
+The second line has no `--body` on purpose; `gh` prompts for the value. The
+web route is **Settings → Secrets and variables → Actions → New repository
+secret**.
+
+If one of the three (`deliver.smtp.host`, `UC_SMTP_USER`, `UC_SMTP_PASSWORD`)
+is missing, the backend falls back to `file` for that run and says which, by
+name: a `[DELIVER]` line on stderr, `fell_back_from`/`missing` in the send
+result, and a line under `[ALERTS]` in `uc status`. A missing password costs a
+send, not a day — and it must not look like alerting is on.
+
+**To check the path end to end:** Actions → `weekly` → Run workflow. It mails
+the weekly summary to `UC_ALERT_RECIPIENT` and goes red if the send did not
+land. Check the inbox **and the spam folder**, and the From line.
+
+**Changing provider:** `deliver.smtp.host`/`port`, `deliver.sender` (on the new
+provider's verified domain), and the two `UC_SMTP_*` secrets. Nothing else
+names Resend.
 
 ### Where each step happens in GitHub
 
@@ -472,15 +526,23 @@ things are true at once and it is worth keeping them apart:
   days running gets one mail, on the third day and not again; every silent day
   appears in the weekly summary for as long as it lasts.
 
-> **🔴 That mail does not reach anyone today. Do not wait for it.**
-> `deliver.backend` is `file`, so the "third day" mail is written as an `.eml`
-> into the Actions runner, and the runner is then destroyed. It happened:
-> arXiv refused every request from 2026-09-17 to 09-27, the mail was decided
-> on 09-19 (`silent_alert.status: alert_undeliverable` in that run's log), and
-> it went nowhere. The *"Failure alerts cannot reach anyone"* line the workflow
-> prints on every run is an `::error::` **annotation** — it shows red in the
-> log, but the step passes, the job stays green, and GitHub mails nobody. All
-> eleven of those runs finished green.
+> **🔴 Until 2026-10-05 that mail reached nobody, and there was a stretch when
+> that mattered.** `deliver.backend` was `file`, so the "third day" mail was
+> written as an `.eml` into the Actions runner, and the runner was then
+> destroyed. arXiv refused every request from 2026-09-17 to 09-27. The alarm
+> worked: the silence was detected, the mail was decided on 09-19
+> (`silent_alert.status: alert_undeliverable` in that run's log), and it went
+> nowhere. An operator who read "no mail came, so it is fine" during those
+> eleven days was reading the absence of a mail that could not have arrived.
+> The *"Failure alerts cannot reach anyone"* line the workflow printed on every
+> run is an `::error::` **annotation** — it shows red in the log, but the step
+> passes, the job stays green, and GitHub mails nobody. All eleven of those
+> runs finished green.
+>
+> **Since 1P the mail goes to `UC_ALERT_RECIPIENT` through Resend** (see "Mail
+> provider"). Absence of mail now means something only while `uc status` says
+> *"alerts reach a person"*; if it says *"reach nobody"*, it names what is
+> missing.
 >
 > **What does reach a person since 1N:** if a required source has failed
 > outright — every request died, `failed_sources` in the run-log row — on
@@ -493,9 +555,8 @@ things are true at once and it is worth keeping them apart:
 > the same question locally.
 >
 > Silence (a source that answered and had nothing) does **not** turn the job
-> red; only failure does. Until a real alert provider is configured, a silent
-> source is seen only by someone reading `uc status`, the issue page or the
-> weekly summary.
+> red; only failure does. A silent source reaches a person through the
+> third-day mail (once per streak) and the weekly summary.
 
 **Reading the failure.** `source_failures` in `content/runs_log/<day>.json`
 carries the collector's own sentence. Since 1N the two shapes read differently:

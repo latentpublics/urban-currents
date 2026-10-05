@@ -30,6 +30,7 @@ import hashlib
 import json
 import os
 import re
+import sys
 from dataclasses import dataclass, field
 from datetime import date
 from email.message import EmailMessage
@@ -165,13 +166,22 @@ class FileBackend:
 
     name: str = "file"
     directory: Optional[Path] = None
+    # ★ 1P, P5-3. Set when this is standing in for a backend that could not
+    # run, so the result says *which* and *why* instead of looking like the
+    # configured choice. Names only — never a value.
+    fell_back_from: Optional[str] = None
+    missing: tuple[str, ...] = ()
 
     def send(self, message: Message) -> dict[str, Any]:
         target = self.directory or (paths.RUNS / "outbox")
         target.mkdir(parents=True, exist_ok=True)
         path = target / f"{message.issue_date}.eml"
         path.write_bytes(bytes(build_email(message)))
-        return {"backend": self.name, "path": str(path), "recipients": len(message.recipients)}
+        out = {"backend": self.name, "path": str(path), "recipients": len(message.recipients)}
+        if self.fell_back_from:
+            out["fell_back_from"] = self.fell_back_from
+            out["missing"] = list(self.missing)
+        return out
 
 
 @dataclass
@@ -202,7 +212,15 @@ class SmtpBackend:
         if not (host and user and password):
             raise DeliveryError("smtp backend selected but host/user/password are not set")
 
-        email = build_email(message, sender=cfg("deliver.sender", user))
+        # ★ 1P, P3. No fallback to the SMTP user name. With Resend that name is
+        # the literal string `resend`, which is not an address, and a provider
+        # refuses a From outside a verified domain — so the old
+        # `cfg("deliver.sender", user)` would have failed every send in a way
+        # that read like a credentials problem.
+        sender = cfg("deliver.sender", None)
+        if not sender or "@" not in str(sender):
+            raise DeliveryError("smtp backend selected but deliver.sender is not an address")
+        email = build_email(message, sender=sender)
         with smtplib.SMTP(host, port, timeout=30) as smtp:
             smtp.starttls()
             smtp.login(user, password)
@@ -225,10 +243,34 @@ def get_backend(name: Optional[str] = None) -> Backend:
     if name == "console":
         return ConsoleBackend()
     if name == "smtp":
-        if secret("UC_SMTP_USER") and secret("UC_SMTP_PASSWORD") and cfg("deliver.smtp.host", None):
+        missing = smtp_missing()
+        if not missing:
             return SmtpBackend()
-        return FileBackend()
+        # ★ 1P, P5-3. The docstring above always said the fallback was
+        # recorded; it was not. It returned a plain `FileBackend()`, so a run
+        # with one secret missing looked exactly like a run that had chosen
+        # `file` — "alerts reach nobody", with no word about why. The day one
+        # secret goes missing is the day someone believes alerting is on.
+        # Now the backend carries the names, and stderr says it once per run.
+        print(
+            "[DELIVER] backend 'smtp' configured but "
+            f"{', '.join(missing)} not set — falling back to 'file'; "
+            "nothing sent this run reaches a person",
+            file=sys.stderr,
+        )
+        return FileBackend(fell_back_from="smtp", missing=tuple(missing))
     return FileBackend()
+
+
+def smtp_missing() -> list[str]:
+    """What `smtp` needs and does not have, by **name** — never by value."""
+    missing = []
+    if not cfg("deliver.smtp.host", None):
+        missing.append("deliver.smtp.host")
+    for var in ("UC_SMTP_USER", "UC_SMTP_PASSWORD"):
+        if not secret(var):
+            missing.append(var)
+    return missing
 
 
 # --------------------------------------------------------------------------

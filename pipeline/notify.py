@@ -52,6 +52,7 @@ from typing import Any, Optional
 
 from . import paths
 from .config import cfg
+from .redact import redact
 from .outcome import NOT_PUBLISHED, PUBLISHED, QUIET, all_logs, load_log
 
 
@@ -197,7 +198,8 @@ def alerting_state() -> dict[str, Any]:
     # in `config/pipeline.yaml`, so this always counted zero. The address comes
     # from `UC_ALERT_RECIPIENT`, which is what `notify_failure` actually sends
     # to, so ask the same function it asks.
-    backend = get_backend().name
+    resolved = get_backend()
+    backend = resolved.name
     recipients = alert_recipients()
 
     logs = all_logs()
@@ -216,7 +218,12 @@ def alerting_state() -> dict[str, Any]:
     skipped = sorted(row["skipped_stages"]) if "skipped_stages" in row else None
     return {
         "backend": backend,
-        "reaches_a_person": reaches_a_person(backend),
+        # ★ 1P, P5-3. Which backend was asked for, and what stopped it — so a
+        # missing secret reads as a missing secret, not as "file was chosen".
+        "configured_backend": cfg("deliver.backend", "file"),
+        "fallback_missing": list(getattr(resolved, "missing", ()) or []),
+        # A backend that reaches people, with nobody to reach, reaches nobody.
+        "reaches_a_person": reaches_a_person(backend) and bool(recipients),
         "alert_recipients": len(recipients),
         "last_run_date": row.get("date"),
         "last_run_failed": failed,
@@ -284,7 +291,7 @@ def notify_failure(
     except Exception as e:  # noqa: BLE001 - notification failure is never fatal
         if run is not None:
             run.error(f"notify: {type(e).__name__}: {e}")
-        return {"status": "alert_failed", "error": f"{type(e).__name__}: {e}"}
+        return {"status": "alert_failed", "error": redact(f"{type(e).__name__}: {e}")}
 
 
 # --------------------------------------------------------------------------
@@ -365,7 +372,7 @@ def notify_silent_sources(
     except Exception as e:  # noqa: BLE001 - notification failure is never fatal
         if run is not None:
             run.error(f"notify: {type(e).__name__}: {e}")
-        return {"status": "alert_failed", "error": f"{type(e).__name__}: {e}"}
+        return {"status": "alert_failed", "error": redact(f"{type(e).__name__}: {e}")}
 
 
 # --------------------------------------------------------------------------
@@ -537,7 +544,7 @@ def notify_weekly(end: Optional[date] = None, backend=None) -> dict[str, Any]:
             **result,
         }
     except Exception as e:  # noqa: BLE001 - a summary is never worth a crash
-        return {"status": "failed", "error": f"{type(e).__name__}: {e}", "summary": summary}
+        return {"status": "failed", "error": redact(f"{type(e).__name__}: {e}"), "summary": summary}
 
 
 # --------------------------------------------------------------------------

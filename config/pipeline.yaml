@@ -397,18 +397,37 @@ daily:
   smoke_summaries: 3
 
 deliver:
-  # `file` writes an .eml and sends nothing. It is the default and it stays the
-  # default until YJUN picks a provider and fills in the credentials — a
-  # pipeline that can mail strangers by accident is not a pipeline anyone should
-  # leave running unattended.
+  # `smtp` since 1P (2026-10-05), through Resend. Before that it was `file`,
+  # which writes an .eml into the runner and sends nothing — and through
+  # 2026-09-17..27, eleven days of arXiv refusing every request, the third-day
+  # alert was decided on 09-19, written into a runner, and destroyed with it.
   #
-  # `smtp` needs UC_SMTP_USER and UC_SMTP_PASSWORD in .env plus a host here.
-  # If any of the three is missing the backend falls back to `file` and records
-  # the fallback, because a missing password should cost a send, not a day.
-  backend: file
-  sender: "Urban Currents <urban-currents@localhost>"
+  # **What this switch turns on is operator mail only**, and that is checked,
+  # not assumed. Two independent recipient switches sit behind it:
+  #   - failure/silence/weekly alerts go to `UC_ALERT_RECIPIENT` — one address;
+  #   - the issue itself goes to `UC_PREVIEW_RECIPIENT` — one address, and on
+  #     2026-10-05 that secret does not exist, so `deliver()` returns
+  #     `no_recipients` and sends nothing.
+  # There is no subscriber list. A pipeline that can mail strangers by
+  # accident is not a pipeline anyone should leave running unattended; adding
+  # `UC_PREVIEW_RECIPIENT` is the step that starts reader mail, and it is a
+  # separate decision.
+  #
+  # `smtp` needs UC_SMTP_USER and UC_SMTP_PASSWORD in the environment plus a
+  # host here. If any of the three is missing the backend falls back to `file`
+  # and **says which** — on stderr, in the send result, and in `uc status` —
+  # because a missing password should cost a send, not a day, and must not
+  # look like alerting is on.
+  backend: smtp
+  # Must be an address on a domain verified in Resend (`send.latentpublics.com`).
+  # There is no fallback to the SMTP user name any more; see SmtpBackend.
+  sender: "Urban Currents <no-reply@send.latentpublics.com>"
   smtp:
-    host: null
+    # Resend: smtp.resend.com, 587 with STARTTLS (465/2465 are implicit TLS,
+    # which `SmtpBackend` does not speak). The **user name is the literal
+    # string `resend`** — not an email address; putting an address in
+    # UC_SMTP_USER fails authentication. The password is a Resend API key.
+    host: smtp.resend.com
     port: 587
 
   # RFC 8058 one-click needs an endpoint, and there is no domain yet. Left null

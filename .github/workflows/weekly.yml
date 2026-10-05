@@ -56,10 +56,16 @@ jobs:
       # count seven JSON files would be four minutes for nothing.
       - run: uv sync --frozen
 
-      # With `deliver.backend: file` — the default, and what is committed —
-      # this writes an .eml into the runner's filesystem and the runner is then
-      # destroyed. **So this step is expected to fail every Sunday until a
-      # provider is chosen**, and that is the design: `uc weekly --send` now
+      # ★ 1P: `deliver.backend` is `smtp` (Resend) since 2026-10-05, so this
+      # should now go **green** by actually mailing `UC_ALERT_RECIPIENT`. A red
+      # Sunday from here on means the send did not land — a missing secret
+      # (named in the log), or Resend refusing it. It is also the path used
+      # to send 1P's one real verification mail, by `workflow_dispatch`.
+      #
+      # Before 1P, with `deliver.backend: file`, this wrote an .eml into the
+      # runner's filesystem and the runner was then destroyed. **So this step
+      # was expected to fail every Sunday until a provider was chosen**, and
+      # that was the design: `uc weekly --send` now
       # exits non-zero when the send reached nobody (0U, U9), GitHub mails the
       # owner when a scheduled workflow fails, and that mail is currently the
       # only route by which "this repository's cron is still alive" arrives in

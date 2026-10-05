@@ -33,6 +33,30 @@ from pathlib import Path
 import pytest
 
 
+@pytest.fixture(autouse=True)
+def no_real_mail(monkeypatch):
+    """No test may open an SMTP connection, whatever the environment holds.
+
+    ★ 1P. `config/pipeline.yaml` says `deliver.backend: smtp` now, and the
+    real config is what most tests read. Until then "the default sends
+    nothing" was the protection; now it is credentials being absent, and a
+    developer's `.env` with `UC_SMTP_*` in it would have turned the suite into
+    a mailer aimed at `UC_ALERT_RECIPIENT`. Two layers, because either alone
+    has a gap: the variables are cleared (but `load_env()` may re-read
+    `.env`), and the socket is refused (whatever was read).
+    """
+    import smtplib
+
+    for var in ("UC_SMTP_USER", "UC_SMTP_PASSWORD", "UC_ALERT_RECIPIENT", "UC_PREVIEW_RECIPIENT"):
+        monkeypatch.delenv(var, raising=False)
+
+    def refuse(*_a, **_k):
+        raise AssertionError("a test tried to open a real SMTP connection")
+
+    monkeypatch.setattr(smtplib, "SMTP", refuse)
+    monkeypatch.setattr(smtplib, "SMTP_SSL", refuse)
+
+
 @pytest.fixture()
 def repo(tmp_path: Path, monkeypatch):
     """A temporary UC_ROOT with config and vocab copied from the real repo."""

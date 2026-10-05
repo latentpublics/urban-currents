@@ -783,7 +783,11 @@ def _deliver_issue(run: Run, issue) -> dict[str, Any]:
         return deliver(issue.date, message, backend=get_backend())
     except (DeliveryError, OSError) as e:
         run.error(f"deliver: {type(e).__name__}: {e}")
-        return {"status": "failed", "error": f"{type(e).__name__}: {e}"}
+        # Redacted here as well as in `run.error()`: this dict is printed to
+        # the Actions log by `uc daily` (1P, P6).
+        from .redact import redact
+
+        return {"status": "failed", "error": redact(f"{type(e).__name__}: {e}")}
 
 
 def _result(

@@ -5,9 +5,10 @@
 # The `schedule:` block below is live and fires at 21:00 UTC. It was turned on
 # after the checklist in docs/OPERATIONS.md §"Turning the schedule on", which is
 # ordered so that nothing can reach a stranger before someone has read what it
-# would have said. That ordering still holds: `deliver.backend` is `file`, so
-# nothing is posted to anybody — including, and this is the part that matters,
-# the failure alerts (see the alerting step below and 0U, U2).
+# would have said. That ordering still holds. Since 1P `deliver.backend` is
+# `smtp` (Resend), which reaches **one operator address** for alerts; the issue
+# itself goes to nobody until `UC_PREVIEW_RECIPIENT` exists, and on 2026-10-05
+# it does not (see the alerting step below, 0U U2, and 1P).
 #
 # Why this file exists before it runs: a scheduler that is written the day it is
 # needed is written under time pressure, and the parts that get skipped are the
@@ -293,6 +294,12 @@ jobs:
           SPRINGER_API_KEY: ${{ secrets.SPRINGER_API_KEY }}
           CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
           UC_ALERT_RECIPIENT: ${{ secrets.UC_ALERT_RECIPIENT }}
+          # ★ 1P. Missing until now. A caught-up day that still could not be
+          # seen sends `notify_failure` like any other, and without these the
+          # backend fell back to `file` here — the one step whose alerts are
+          # about days already missed once.
+          UC_SMTP_USER: ${{ secrets.UC_SMTP_USER }}
+          UC_SMTP_PASSWORD: ${{ secrets.UC_SMTP_PASSWORD }}
         run: uv run uc catch-up --date "$ISSUE_DATE" || true
 
       # ★ 1L, L4. The run directory survives the runner.
@@ -419,15 +426,25 @@ jobs:
       # Left as an annotation on purpose — failing every run on a standing
       # configuration fact would teach everyone to ignore the red cross that
       # "Fail the job if a required source is dead" below now means something.
+      #
+      # ★ 1P. This step asks `uc status`, and `uc status` answers from the
+      # *resolved* backend and `UC_ALERT_RECIPIENT` (0V, V5). Neither the SMTP
+      # secrets nor the recipient were ever passed to this step, so it would
+      # have said "reach nobody" forever, even after a provider was set. Passed
+      # now, so its answer is about the same environment `uc daily` sends from.
       - name: Report whether alerting can reach anyone
         if: ${{ always() && inputs.dry_run != true }}
+        env:
+          UC_SMTP_USER: ${{ secrets.UC_SMTP_USER }}
+          UC_SMTP_PASSWORD: ${{ secrets.UC_SMTP_PASSWORD }}
+          UC_ALERT_RECIPIENT: ${{ secrets.UC_ALERT_RECIPIENT }}
         run: |
           if ! uv run uc status 2>/dev/null | grep -q "alerts reach"; then
             echo "::warning::uc status did not report alerting state"
             exit 0
           fi
           if uv run uc status 2>/dev/null | grep -q "alerts reach nobody"; then
-            echo "::error::Failure alerts cannot reach anyone — deliver.backend is 'file', which writes into this runner and is then discarded. A failing day would be silent except for this workflow failing."
+            echo "::error::Failure alerts cannot reach anyone — the resolved backend writes into this runner, or no recipient is set. See the [ALERTS] lines of uc status for which. A failing day would be silent except for this workflow failing."
           fi
 
       # The last net (hotfix 2, H5-2). `uc daily` records its own death when it

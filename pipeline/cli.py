@@ -633,6 +633,14 @@ def status():
             f"alerts {reach} "
             f"({alerting.get('alert_recipients', 0)} recipient(s) configured)"
         )
+        # ★ 1P, P5-3. Say *why* when the configured backend is not the one in
+        # use. Names only.
+        if alerting.get("fallback_missing"):
+            typer.echo(
+                f"         configured {alerting.get('configured_backend')!r} but "
+                f"{', '.join(alerting['fallback_missing'])} not set — fell back "
+                f"to 'file'"
+            )
         if not alerting.get("reaches_a_person"):
             typer.echo(
                 "         A failing day would be silent except for the GitHub "
@@ -713,6 +721,10 @@ def weekly(
         result = notify_weekly()
         typer.echo(weekly_body(result["summary"]))
         typer.echo(f"[{result['status'].upper()}]")
+        # The reason, when there is one. Already redacted by `notify_weekly`;
+        # without it a red Sunday said FAILED and nothing else (1P).
+        if result.get("error"):
+            typer.echo(f"  {result['error']}")
         # ★ A send that did not land exits non-zero (0U, U9).
         #
         # This always returned 0, so the weekly job went green whatever

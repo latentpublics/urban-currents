@@ -7,10 +7,15 @@
         "institutions": [],
         "name": "Can Zhang",
         "openalex": "A5111426761",
-        "orcid": "https://orcid.org/0000-0003-1989-5097"
+        "orcid": "https://orcid.org/0009-0006-2455-9759"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Hong Kong",
+            "ror": "02zhqgq86"
+          }
+        ],
         "name": "Isabelle Yee Shan Chan",
         "openalex": "A5054489340",
         "orcid": "https://orcid.org/0000-0001-5429-5674"
@@ -43,7 +48,7 @@
     "title": "Urban Morphology and Building Energy Patterns: A Three-level Meta-analysis of Multi-scale Global Evidence"
   },
   "cluster": {
-    "cluster_id": "clu_2026-10-03_10.1016/j.scs.20",
+    "cluster_id": "clu_2026-10-04_10.1016/j.scs.20",
     "members": [
       "doi:10.1016/j.scs.2026.107975"
     ],
@@ -52,11 +57,17 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02zhqgq86",
+        "label": "University of Hong Kong"
+      }
+    ],
     "people": [
       {
         "confidence": null,
-        "id": "orcid:0000-0003-1989-5097",
+        "id": "orcid:0009-0006-2455-9759",
         "label": "Can Zhang"
       },
       {
@@ -81,27 +92,27 @@
     "topics": [
       {
         "confidence": null,
-        "id": "openalex:T12325",
-        "is_primary": true,
-        "label": "Urban Design and Spatial Analysis",
-        "score": 0.1312,
-        "subfield": "2215"
-      },
-      {
-        "confidence": null,
-        "id": "openalex:T10435",
-        "is_primary": false,
-        "label": "Environmental Impact and Sustainability",
-        "score": 0.0832,
-        "subfield": "2305"
-      },
-      {
-        "confidence": null,
         "id": "openalex:T10121",
-        "is_primary": false,
+        "is_primary": true,
         "label": "Building Energy and Comfort Optimization",
-        "score": 0.0672,
+        "score": 0.4819,
         "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.3608,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": false,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.1064,
+        "subfield": "2305"
       }
     ]
   },
@@ -196,7 +207,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-10-04T23:55:27Z",
+    "collected_at": "2026-10-06T01:43:53Z",
     "collectors": [
       "openalex"
     ],
@@ -243,6 +254,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-10-01",
+  "updated": "2026-10-05",
   "work_key": "doi:10.1016/j.scs.2026.107975"
 }

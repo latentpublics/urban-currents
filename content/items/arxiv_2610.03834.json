@@ -1,0 +1,174 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Short-term bike-sharing demand forecasting is complicated by spatial-temporal non-stationarity and the practical difficulty of incorporating unstructured external text into numerical pipelines. Conventional approaches rely on historical flow sequences and fixed graph structures, thereby constraining their accuracy when anomalous social events perturb normal travel patterns. We propose a forecasting framework in which a Large Language Model (LLM) drives a semantic shockwave mechanism that converts free-form urban text, such as municipal event schedules, local news, and transit bulletins, into quantified spatial-temporal perturbation fields. The LLM extracts three physically interpretable parameters per event (intensity, spatial reach, and temporal lag), from which Gaussian decay fields are constructed and injected into a Zero-Inflated Adaptive Spatio-Temporal Graph Convolutional Network (ZI-ASTGCN). To handle the pronounced sparsity of grid-level measurements, the model couples a dual-branch output head with a multi-task zero-inflated loss that jointly trains a gating probability and a conditional flow intensity. Experiments on the operational Barcelona Bicing dataset show that ZI-ASTGCN outperforms established neural baselines, with particularly strong gains during high-demand periods, validating the utility of physics-grounded semantic signals in spatial-temporal mobility forecasting.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Xuxilu Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Francesc Soriguera",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": "Accepted for publication at the 2026 IEEE 29th International Conference on Intelligent Transportation Systems (ITSC)",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.03834v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.03834v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-02",
+    "repository_urls": [],
+    "title": "LLM-enhanced spatio-temporal learning for grid-level docked bike sharing demand prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-04_2610.03834",
+    "members": [
+      "arxiv:2610.03834"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1492",
+        "label": "Barcelona",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-02",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.03834",
+    "doi": "10.48550/arxiv.2610.03834",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-06T01:43:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006062,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2019,
+      "out": 337
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9172,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3669,
+    "relevance": 0.9172
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework's performance and validation are demonstrated using a single bike-sharing dataset in Barcelona.",
+      "what": "The proposed forecasting framework, ZI-ASTGCN, uses a Large Language Model to convert unstructured urban text like event schedules and news into quantified spatial-temporal perturbation fields. The model extracts intensity, spatial reach, and temporal lag parameters to construct Gaussian decay fields, which are integrated with a dual-branch output head and a multi-task zero-inflated loss to handle sparse grid-level data. Evaluated on the Barcelona Bicing bike-sharing dataset, the model outperformed established neural baselines, showing significant accuracy improvements during high-demand periods.",
+      "why": "It establishes a systematic method to inject unstructured, real-time textual information about urban events directly into numerical spatial-temporal deep learning models, allowing forecasting systems to adapt to sudden travel demand shocks that historical flow data alone cannot predict."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-02",
+  "work_key": "arxiv:2610.03834"
+}

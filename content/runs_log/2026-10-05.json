@@ -1,0 +1,30 @@
+{
+  "attempts": 1,
+  "candidates": 405,
+  "date": "2026-10-05",
+  "failed_sources": [],
+  "failed_stages": [],
+  "headline_present": true,
+  "held_near_miss": 63,
+  "held_withheld": 0,
+  "published": 4,
+  "reasons": [],
+  "recorded_at": "2026-10-06T01:49:07+00:00",
+  "silent_sources": [],
+  "skipped_stages": [
+    "enrich.springer"
+  ],
+  "source_failures": {},
+  "source_observations": {
+    "collect.arxiv": {
+      "failed_all": false,
+      "http_status": 200,
+      "items": 4340,
+      "total_results": 4340,
+      "windows": 1,
+      "windows_failed": 0
+    }
+  },
+  "spend_usd": 0.023438,
+  "status": "published"
+}

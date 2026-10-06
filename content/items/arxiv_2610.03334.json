@@ -1,0 +1,161 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "\\ textbf{Background.} Ireland's position on the eastern North Atlantic exposes it to moisture-laden westerlies and frequent low-pressure systems, generating abundant precipitation and substantial pluvial and fluvial flood risk. Climate change is intensifying heavy rainfall and compound flood risk, with consequences extending beyond physical damage and conventional economic indicators. \\ textbf{Method.} We present a framework for assessing flood-related wellbeing from unobtrusive public discourse over time. The framework develops an assessment instrument comprising three complementary constructs: \\emph{distress}, \\emph{functional disruption}, and \\emph{institutional alienation}, capturing flood-related impacts on affective appraisal, daily functioning, and social and institutional connectedness. To enable population-scale analysis of complex cognitive and psychological responses, we develop a dedicated flood-related wellbeing reasoning model (\\textsc{Wellbeing-Former}) that reads evidence of flood-related wellbeing, assigns evidence-grounded scores, and produces transparent rationales. \\textbf{Data, Results \\& Implications.} Using the research platform \\textsc{MCL} (Meta Content Library), we construct a flood-related discourse dataset by querying posts from Ireland containing the terms \\emph{flood}, \\emph{rain}, and \\emph{storm}. The resulting dataset comprises approximately \\textbf{$224{,}000$} posts produced between 2012 and 2016. We apply the resulting \\textsc{Wellbeing-Former} to this dataset to conduct a population-level analysis. This approach provides temporally sensitive evidence of experienced and anticipated flood impacts, complements survey-based assessment, and supports a multidimensional understanding of wellbeing under climate-related hazards for policy development, adaptation planning, public communication, and decision-making.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Róisín Luo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Karyn Morrissey",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": "Extended Abstract for CERIS Workshop 2026",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.03334v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.03334v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-02",
+    "repository_urls": [],
+    "title": "A population-level assessment framework for flood-related wellbeing from public discourse in Ireland"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-04_2610.03334",
+    "members": [
+      "arxiv:2610.03334"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-02",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.03334",
+    "doi": "10.48550/arxiv.2610.03334",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-06T01:43:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005687,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2213,
+      "out": 263
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9198,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3679,
+    "relevance": 0.9198
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2012 and 2016",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on social media posts from a single platform as a proxy for public discourse, which may introduce demographic biases in who is represented.",
+      "what": "The researchers developed Wellbeing-Former, a reasoning model designed to measure flood-related wellbeing across three dimensions: distress, functional disruption, and institutional alienation. The model was applied to a dataset of approximately 224,000 social media posts from Ireland containing flood-related terms, spanning the years 2012 to 2016.",
+      "why": "It establishes a method to continuously monitor the psychological and social impacts of climate hazards at a population scale, capturing subtle human responses like institutional alienation that traditional economic damage assessments overlook."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-02",
+  "work_key": "arxiv:2610.03334"
+}

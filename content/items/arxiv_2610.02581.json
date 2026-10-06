@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Metropolitan concentration has motivated policies for more balanced regional development. We use agent-based simulation to examine trajectory diversity, the variety of people's recurring activity orientations toward neighborhoods, urban centers, and wider networks. The model maps 2010 population shares to 2026 distributions in five country cases, China, Russia, Japan, the United Kingdom, and the United States, and simulates change to 2036. Trajectory diversity declines by 52.6-79.0% over 2026-2036. Russia and Japan show the largest increases in the share of the most common trajectory, while US diversity contracts despite a slight decline in this share. Cost burdens rise throughout, whereas welfare falls in the Russian and Japanese cases but rises in the other three. These findings suggest that regional development should be assessed through activity diversity, cost burdens, and welfare together.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Daneul Kim",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yuyeong Kim",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": "10 pages; Accepted to SBP-BRiMS 2026 Poster Session",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.02581v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.02581v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-01",
+    "repository_urls": [],
+    "title": "Conditions for Social Trajectory Collapse: Agent-Based Simulation of Time-Geographic Trajectory Distributions"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-04_2610.02581",
+    "members": [
+      "arxiv:2610.02581"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q145",
+        "label": "United Kingdom",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.02581",
+    "doi": "10.48550/arxiv.2610.02581",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-06T01:43:27Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005425,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1895,
+      "out": 287
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9744,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3898,
+    "relevance": 0.9744
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2026-2036",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings rely entirely on simulated agent behaviors and projected population distributions rather than observed empirical trajectories.",
+      "what": "An agent-based simulation model was developed to project changes in trajectory diversity—the variety of recurring activity orientations toward neighborhoods and urban centers—from 2026 to 2036 across five countries: China, Russia, Japan, the United Kingdom, and the United States. The model, initialized with 2010 population shares, projects a 52.6% to 79.0% decline in trajectory diversity over the decade, alongside rising cost burdens in all cases and falling welfare in Russia and Japan.",
+      "why": "The study establishes a new framework for evaluating regional development policies by demonstrating that spatial concentration leads to a severe contraction in the variety of daily human activity patterns, a dimension of urban life that is overlooked by traditional economic metrics."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-01",
+  "work_key": "arxiv:2610.02581"
+}

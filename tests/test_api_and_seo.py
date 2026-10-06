@@ -94,6 +94,10 @@ def _issue(d, keys, *, backfilled=False, headline=True) -> Issue:
 
 @pytest.fixture
 def built(repo):
+    return _build_all()
+
+
+def _build_all():
     _item("arxiv:2608.50001", 'A paper with a "quoted" phrase in its title')
     _item("arxiv:2608.50002", "Another paper")
     _issue(DAY, ["arxiv:2608.50001", "arxiv:2608.50002"])
@@ -486,9 +490,24 @@ def test_an_issue_with_a_missing_item_still_renders(repo):
 # --------------------------------------------------------------------------
 
 
-def test_nothing_new_escapes_the_noindex(built):
-    """G5 has not happened. Every page this batch added carries the same
+@pytest.fixture
+def built_unpublished(repo, monkeypatch):
+    """`built`, with the switch held at `false` whatever the config says.
+
+    ★ G5. These two tests were written while `site.published` was false and
+    read the real config to get that. G5 flipped it, which made them assert the
+    opposite of the new truth. What they guard — nothing escapes the `noindex`
+    *while unpublished* — is still worth guarding, because the switch can be
+    turned back; so they now say which state they mean instead of inheriting it.
+    """
+    monkeypatch.setattr(site_mod, "is_published", lambda: False)
+    return _build_all()
+
+
+def test_nothing_new_escapes_the_noindex(built_unpublished):
+    """While unpublished, every page this batch added carries the same
     `noindex` as the ones that were already here."""
+    built = built_unpublished
     for name in ("index.html", "archive.html", "api.html", f"issues/{DAY}.html"):
         html = (built / name).read_text(encoding="utf-8")
         assert 'content="noindex, nofollow"' in html, name
@@ -498,7 +517,7 @@ def test_nothing_new_escapes_the_noindex(built):
     assert "Disallow: /" in build_robots().read_text(encoding="utf-8")
 
 
-def test_llms_txt_waits_for_the_publish_switch(built, monkeypatch):
+def test_llms_txt_waits_for_the_publish_switch(built_unpublished, monkeypatch):
     """It is discovered by convention at a fixed path, so writing it *is*
     advertising — the same argument that keeps the sitemap line out of
     `robots.txt` until then."""

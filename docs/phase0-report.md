@@ -1,6 +1,6 @@
 # Urban Currents — Phase 0 report
 
-Generated 2026-10-05T11:34:32+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
+Generated 2026-10-06T02:58:32+00:00 by `uc report`. Every figure below is computed from files in this repository; anything not measured says so.
 
 ## The four questions (PRD §1)
 
@@ -147,7 +147,7 @@ The threshold is enumerated rather than estimated. The daily top scores take onl
 
 In steady state a whitelist journal article scores a flat 0.44 and only an arXiv item carrying code or data links can lift a day above it. Whether a term that saturates in two weeks belongs in the headline formula is PRD §5.6's question — recorded here, not decided here.
 
-**The live rate will not match this yet.** 82 of 111 published days currently carry a headline. The threshold was calibrated against an archive 1989 items deep; `content/` holds 36 behind those days, so almost every tag is still fresh — mean novelty 0.8534 live against 0.0 in the replay, worth 0.1707 on the headline score. The LLM tags the backfill lacks account for only 0.0351 of that. It decays on its own as days accumulate; it is the archive being young, not the threshold being wrong.
+**The live rate will not match this yet.** 83 of 112 published days currently carry a headline. The threshold was calibrated against an archive 1989 items deep; `content/` holds 36 behind those days, so almost every tag is still fresh — mean novelty 0.8534 live against 0.0 in the replay, worth 0.1707 on the headline score. The LLM tags the backfill lacks account for only 0.0351 of that. It decays on its own as days accumulate; it is the archive being young, not the threshold being wrong.
 
 Headline-score quantiles over the published backfill items:
 
@@ -199,13 +199,13 @@ Current `config/scoring.yaml` threshold: 0.444 (source: backfill).
 
 | task | calls | cost |
 |---|---|---|
-| extract | 1695 | $3.375561 |
-| headline | 105 | $0.256093 |
-| summarize | 1514 | $5.430267 |
-| synthesis | 224 | $0.796367 |
-| **total** | 3540 | **$9.865574** |
+| extract | 1699 | $3.384123 |
+| headline | 106 | $0.259669 |
+| summarize | 1518 | $5.444643 |
+| synthesis | 225 | $0.799243 |
+| **total** | 3550 | **$9.894964** |
 
-Tokens: 3719385 in, 488861 out, 0 thinking. Summarize and extract run one call each per item (D8 was reverted in N1), so a per-item token figure divided by the published count describes neither task on its own.
+Tokens: 3731112 in, 490172 out, 0 thinking. Summarize and extract run one call each per item (D8 was reverted in N1), so a per-item token figure divided by the published count describes neither task on its own.
 
 Embeddings are local (`BAAI/bge-base-en-v1.5` on CPU), so their marginal cost is zero — which is what makes backfills and retraining free.
 
@@ -229,24 +229,24 @@ Where the depth holding 0.7 is below the slot count, the path is being asked for
 
 ## What actually gets published
 
-Across 111 issues, **1272 items were `published`** — 383 from arXiv and 889 from whitelist journals.
+Across 112 issues, **1276 items were `published`** — 387 from arXiv and 889 from whitelist journals.
 
-`content/items/` holds 3566 files, 2294 more than the issues reference. Those are items an earlier selection rule published and the current one does not; they are still part of the archive novelty is measured against, which is why the difference is counted rather than rounded away.
+`content/items/` holds 3574 files, 2298 more than the issues reference. Those are items an earlier selection rule published and the current one does not; they are still part of the archive novelty is measured against, which is why the difference is counted rather than rounded away.
 
 The split is structural, not a quota. Each entry path owns its slots — journal 12, arXiv 12 — and a path that cannot fill its own lends them to the other, which the run records. The earlier `classifier.arxiv_min_share` quota is gone (N4): it was treating a symptom, since a whitelist article scores ~0.99 nearly by construction and the classifier could not rank within that path at all. Measured on 2026-08-11 under the old single-classifier design: 23 of 24 slots went to journal articles.
 
 ## What we could not read
 
-**2286 items across 111 issues had no abstract from any source** and published in `Also published today` instead of as cards — 2286/3558 of everything that reached an issue. Springer Nature withdrew its non-OA abstracts from OpenAlex in 2022 and Elsevier followed in 2024; Crossref and Springer's own API are asked for what they can still supply, and what none of them has cannot be summarised, because the abstract is the only evidence a summary is allowed to use.
+**2290 items across 112 issues had no abstract from any source** and published in `Also published today` instead of as cards — 2290/3566 of everything that reached an issue. Springer Nature withdrew its non-OA abstracts from OpenAlex in 2022 and Elsevier followed in 2024; Crossref and Springer's own API are asked for what they can still supply, and what none of them has cannot be summarised, because the abstract is the only evidence a summary is allowed to use.
 
 | publisher | `unreadable` items |
 |---|---|
-| Elsevier | 4064 |
+| Elsevier | 4095 |
 | Copernicus | 692 |
-| Springer | 582 |
-| Taylor & Francis | 416 |
-| Springer Nature | 177 |
-| Sage | 96 |
+| Springer | 591 |
+| Taylor & Francis | 419 |
+| Springer Nature | 178 |
+| Sage | 104 |
 | The City Planning Institute of Japan | 40 |
 | Springer (BMC) | 21 |
 | Wiley | 17 |
@@ -261,14 +261,14 @@ This is the one blind spot the pipeline can measure exactly, and the count is st
 
 | thing | count |
 |---|---|
-| items | 3566 |
-| items with a summary | 1279 |
-| issues | 111 |
+| items | 3574 |
+| items with a summary | 1283 |
+| issues | 112 |
 | quiet days (published nothing) | 3 |
 | days with items but no headline | 26 |
-| items with an OpenAlex ID | 3390 |
-| items with referenced_works | 2818 |
-| published (journal) items | 3223 |
+| items with an OpenAlex ID | 3394 |
+| items with referenced_works | 2821 |
+| published (journal) items | 3227 |
 
 ## Runs
 

@@ -125,12 +125,14 @@ Phase 0. **Scheduled and deployed, and not yet public.**
   issue as 08-27, and left a gap none of the alarms could see.
 - The site is built from `content/` on every successful day and deployed to
   **<https://latentpublics.com/urban-currents/>** by `pages.yml`.
-- **It is deliberately not indexed.** `site.published` is `false`, which puts
-  `Disallow: /` in `robots.txt` and `noindex` on every page. One value moves
-  both; `tests/test_publish_switch.py` pins that.
-- Mail still reaches nobody: `deliver.backend` is `file`, so every issue and
-  every failure alert is written into the runner and discarded with it.
-  `uc status` says so on the `[ALERTS]` line.
+- **It may be indexed since 2026-10-06.** `site.published` is `true`, which
+  puts `Allow: /` and a `Sitemap:` line in `robots.txt` and leaves `noindex`
+  off every page. One value moves both; `tests/test_publish_switch.py` pins
+  that.
+- Mail reaches one operator: `deliver.backend` is `smtp` (Resend), and failure
+  alerts and the weekly summary go to a single configured address. The issue
+  itself is mailed to nobody — there is no subscriber list. `uc status` says
+  which state applies on the `[ALERTS]` line.
 
 Phase 1 adds the Astro site and inherits the schema, the `content/` layout, and
 the render templates' DOM.

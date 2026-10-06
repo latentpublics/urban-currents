@@ -268,7 +268,7 @@ to **<https://latentpublics.com/urban-currents/>**.
 | Source | GitHub Actions (`Settings -> Pages -> Source: GitHub Actions`) |
 | Custom domain | **Leave empty.** The domain belongs to `latentpublics.github.io`; setting it here would take `latentpublics.com` for this repository and push the organisation site off it |
 | Trigger | `workflow_run` on a successful `daily`, plus `workflow_dispatch` |
-| Indexed | **No.** `site.published: false` in `config/pipeline.yaml` |
+| Indexed | **Allowed since 2026-10-06** (G5). `site.published: true` in `config/pipeline.yaml`. Allowed is not the same as indexed — see below |
 
 A day that ends `not_published` does not deploy — `daily` exits non-zero, so
 the `workflow_run` condition is false. That is intended. A *quiet* day does
@@ -282,6 +282,40 @@ One line: `site.published: true` in `config/pipeline.yaml`. That turns
 `robots.txt` from `Disallow: /` to `Allow: /` with a `Sitemap:` line, and drops
 `noindex` from every page. Do not edit `robots.txt` or the templates by hand —
 they are generated, and the switch exists so the two cannot disagree.
+
+**Done on 2026-10-06** and deployed the same morning by dispatching `pages`.
+
+Three things worth knowing, all measured rather than assumed:
+
+* **Turning it on is cheaper than turning it off.** Setting the line back to
+  `false` restores `noindex` on the next deploy, but a search engine's copy, its
+  snapshot and links from elsewhere outlive it. Treat `false` as "stop new
+  indexing", not "unpublish".
+* **A commit is not a deploy.** `pages.yml` builds from `main` only when a
+  `daily` run succeeds or when it is dispatched by hand
+  (**Actions → `pages` → Run workflow**). After changing this line, dispatch
+  `pages` and then check the live site — do not dispatch it to overlap the
+  21:00 UTC `daily`.
+* **The `robots.txt` under `/urban-currents/` is not the one crawlers read.**
+  Crawlers read `https://latentpublics.com/robots.txt` only, which belongs to
+  the organisation site and has said `Allow: /` throughout. So the sub-path
+  `robots.txt` has never blocked anything, and its `Sitemap:` line will not be
+  discovered from there. **What kept this site out of search was the
+  `<meta name="robots" content="noindex, nofollow">` on every page**, and that
+  is what the switch now removes. To have the sitemap read, submit
+  `https://latentpublics.com/urban-currents/sitemap.xml` in Search Console.
+
+To check the state from anywhere:
+
+```
+curl -sS https://latentpublics.com/urban-currents/robots.txt
+curl -sS https://latentpublics.com/urban-currents/ | grep -i 'name="robots"'
+curl -sSI https://latentpublics.com/urban-currents/sitemap.xml
+```
+
+Published, the first prints `Allow: /` and a `Sitemap:` line, the second
+prints nothing, and the third is `200`. Not appearing in search for some days
+after the switch is normal, not a fault.
 
 ## Turning the schedule on
 

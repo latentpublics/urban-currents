@@ -319,14 +319,22 @@ def test_no_test_can_open_a_real_smtp_connection():
 
 
 def _step(text: str, name: str) -> str:
-    start = text.index(f"- name: {name}")
+    # The whole line: "Report" is a prefix of "Report whether alerting…".
+    start = text.index(f"- name: {name}\n")
     nxt = text.find("\n      - ", start + 1)
     return text[start: nxt if nxt != -1 else None]
 
 
 @pytest.mark.parametrize(
     "name",
-    ["Run the day", "Catch up on missed days", "Report whether alerting can reach anyone"],
+    [
+        "Run the day",
+        "Catch up on missed days",
+        "Report whether alerting can reach anyone",
+        # The plain `uc status` at the end — missed in 1P's first pass and
+        # caught on the first live run.
+        "Report",
+    ],
 )
 def test_every_step_that_can_alert_has_the_smtp_secrets(name):
     from pathlib import Path

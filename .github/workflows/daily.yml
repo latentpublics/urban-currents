@@ -507,8 +507,17 @@ jobs:
             git pull --rebase --no-edit origin "${GITHUB_REF_NAME}" && git push
           } || echo "::error::Could not push the interrupted row."
 
+      # ★ 1P, found on the first live run (2026-10-05 slot). This step had no
+      # secrets either, so it printed "alerts reach nobody … fell back to
+      # 'file'" as the last thing in the log — directly under the guard step
+      # that had just (correctly) said a person is reachable. The last line a
+      # reader sees must describe the same environment the run sent from.
       - name: Report
         if: always()
+        env:
+          UC_SMTP_USER: ${{ secrets.UC_SMTP_USER }}
+          UC_SMTP_PASSWORD: ${{ secrets.UC_SMTP_PASSWORD }}
+          UC_ALERT_RECIPIENT: ${{ secrets.UC_ALERT_RECIPIENT }}
         run: uv run uc status || true
 
       # A dry run that publishes nothing does not fail the job — a quiet

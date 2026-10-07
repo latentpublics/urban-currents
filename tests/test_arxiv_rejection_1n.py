@@ -80,8 +80,13 @@ def test_a_406_fails_at_once_and_is_not_retried(repo, no_real_sleep):
     with pytest.raises(ArxivRejected) as exc:
         collector._fetch({"search_query": "cat:cs.CY"})
 
-    assert len(seen) == 1, "a 406 was asked again"
-    assert no_real_sleep == [], "a 406 was backed off as if it were transient"
+    # ★ 1Q changed one thing here: a 406 now earns one *different* request (the
+    # pre-1N shape, `test_arxiv_406_probe_1q.py`). The same request is still
+    # never sent twice, and nothing is backed off — the only sleep is the
+    # ordinary between-requests throttle.
+    assert len(seen) == 2
+    assert seen[0].headers["accept"] != seen[1].headers["accept"], "a 406 was asked again"
+    assert no_real_sleep == [collector.interval], "a 406 was backed off as if it were transient"
     message = str(exc.value)
     assert "406" in message and "rejected the request immediately" in message
     # The sentence the 11 days recorded, and could not be told apart from a

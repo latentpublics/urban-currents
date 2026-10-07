@@ -3,7 +3,8 @@
 The arXiv API asks for at least 3 seconds between requests and a contact address
 in the User-Agent; both are honoured here, along with three backoff retries
 for the failures a retry can change (5xx, timeouts, empty bodies). A 4xx other
-than 429 is not retried at all — see `ArxivRejected`.
+than 429 is not retried at all — see `ArxivRejected`. A 406 alone gets one
+*different* request, in the pre-1N shape, per window — see `_fallback`.
 
 An Item must stand up on arXiv metadata alone — the matching OpenAlex Work often
 does not exist yet on the day a preprint appears, and waiting for it would mean
@@ -20,7 +21,7 @@ import re
 import time
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
-from typing import Iterator, Optional
+from typing import Any, Iterator, Optional
 from xml.etree import ElementTree as ET
 
 import httpx
@@ -28,6 +29,7 @@ import httpx
 from ..config import cfg, contact_email
 from ..metrics import Run
 from ..models import Author, Bibliography, Ids, Item, PrimaryLocation, Provenance
+from ..redact import redact
 from .base import ARXIV_SOURCE_ID, arxiv_doi, clean_text, normalize_arxiv_id
 
 # The stage name this collector reports under. Used for the 1L facts recorded
@@ -52,6 +54,74 @@ USER_AGENT_TEMPLATE = "urban-currents/0.2 (Phase 0 research scan; mailto:{email}
 # A removed variable, not a fix: if 406 comes back, this is already ruled out.
 ACCEPT = "application/atom+xml, application/xml;q=0.9, */*;q=0.1"
 
+# ★ 1Q, Q1. The request shape before 1N, kept so a 406 can be answered with it.
+#
+# Before 1N this collector sent no `Accept` at all and httpx filled in `*/*`.
+# An explicit `*/*` is the same value but **not the same request**: httpx puts
+# its own default first in the header list and appends one the caller sets,
+# so the bytes on the wire differ in order. Measured on httpx 0.28.1 — and a
+# WAF that fingerprints a request is exactly the kind of thing that reads
+# order. So the fallback is not "1N's request with another Accept"; it is the
+# request a client configured the pre-1N way builds, header for header (see
+# `pre_1n_headers`). The one deliberate difference is the URL: pre-1N went to
+# `http://` and followed a redirect, and the request it actually completed —
+# the one after the redirect — is this one, over https. `api_url` stays put.
+PRE_1N = "pre-1N"
+CURRENT = "1N"
+PRE_1N_ACCEPT = "*/*"
+
+# ★ 1Q, Q2. Which response headers a refusal leaves behind.
+#
+# Enough to say who answered (`Server`, `Via`, a CDN's `CF-*`, a WAF's `X-*`)
+# and nothing a credential could ride in on. Names are matched first, then
+# every kept value still goes through `redact()` — an `X-` header can echo
+# whatever we sent, and the User-Agent we send carries the contact address.
+# `Set-Cookie` is never kept; that one was set is recorded as a yes/no.
+_DIAGNOSTIC_HEADERS = frozenset({
+    "server", "via", "date", "content-type", "content-length", "retry-after",
+    "vary", "age", "cache-control", "x-cache",
+})
+_DIAGNOSTIC_PREFIXES = ("cf-", "x-")
+_NEVER_KEEP = ("cookie", "auth", "token", "key", "secret", "session", "password")
+MAX_KEPT_HEADERS = 20
+MAX_HEADER_VALUE = 200
+
+
+def pre_1n_headers() -> httpx.Headers:
+    """The headers a pre-1N client sent: its User-Agent over httpx's defaults.
+
+    Built by configuring a client exactly as `_http()` did before 1N and
+    reading back what it holds, rather than by writing the list out, so a
+    change in httpx's defaults changes both sides of the comparison together.
+    """
+    with httpx.Client(
+        headers={"User-Agent": USER_AGENT_TEMPLATE.format(email=contact_email())}
+    ) as client:
+        return httpx.Headers(client.headers)
+
+
+def diagnostic_headers(response) -> dict[str, Any]:
+    """The part of a refusal's headers worth keeping, scrubbed. Never raises."""
+    try:
+        kept: dict[str, Any] = {}
+        set_cookie = False
+        for name, value in response.headers.items():
+            low = name.lower()
+            if low == "set-cookie":
+                set_cookie = True
+                continue
+            if any(word in low for word in _NEVER_KEEP):
+                continue
+            if low not in _DIAGNOSTIC_HEADERS and not low.startswith(_DIAGNOSTIC_PREFIXES):
+                continue
+            if len(kept) >= MAX_KEPT_HEADERS:
+                break
+            kept[low] = redact(str(value))[:MAX_HEADER_VALUE]
+        kept["set_cookie_present"] = set_cookie
+        return kept
+    except Exception:  # noqa: BLE001 - a diagnostic must not become the failure
+        return {"unreadable": True}
+
 
 class ArxivRejected(RuntimeError):
     """arXiv refused the request outright (a 4xx other than 429). Not retried.
@@ -64,11 +134,12 @@ class ArxivRejected(RuntimeError):
     "rejected immediately" and carries the status code.
     """
 
-    def __init__(self, status: int, reason: str, url: str):
+    def __init__(self, status: int, reason: str, url: str, note: str = ""):
         self.status = status
         super().__init__(
             f"arXiv rejected the request immediately: HTTP {status} {reason} "
-            f"(not retried — a {status} does not change on retry) for url '{url}'"
+            f"(not retried — a {status} does not change on retry){note} "
+            f"for url '{url}'"
         )
 
 
@@ -92,6 +163,14 @@ class ArxivCollector:
         # ★ 1L, L2. The last HTTP status seen, so a run that never got a usable
         # response still records *what* it got. None means no request completed.
         self.last_status: Optional[int] = None
+        # ★ 1Q, Q1. Which request shape this window is using, whether its one
+        # fallback has been spent, and every fallback taken this run. Reset per
+        # window by `_collect_window`; a bare `_fetch()` starts fresh.
+        self._shape = CURRENT
+        self._fallback_spent = False
+        self._window: Optional[str] = None
+        self._fallbacks: list[dict[str, Any]] = []
+        self._last_ok_shape: Optional[str] = None
 
     # -- HTTP ------------------------------------------------------------
 
@@ -106,6 +185,91 @@ class ArxivCollector:
                 follow_redirects=True,
             )
         return self._client
+
+    def _get(self, params: dict) -> httpx.Response:
+        """One request, in whichever shape this window is using."""
+        if self._shape == PRE_1N:
+            return self._send_pre_1n(params)
+        return self._http().get(self.api_url, params=params)
+
+    def _send_pre_1n(self, params: dict) -> httpx.Response:
+        """The pre-1N request, sent through the same client and transport.
+
+        Built as a bare `httpx.Request` so the client's 1N headers are not
+        merged into it, and without the client's cookie jar: pre-1N's request
+        each morning went out on a fresh client with no cookies, and a 406 that
+        sets one (a WAF challenge, say) must not make the fallback a request
+        pre-1N never sent. The timeout is carried over by hand because
+        `build_request` is what normally attaches it.
+        """
+        client = self._http()
+        request = httpx.Request(
+            "GET",
+            self.api_url,
+            params=params,
+            headers=pre_1n_headers(),
+            extensions={"timeout": client.timeout.as_dict()},
+        )
+        return client.send(request)
+
+    def _fallback(self, params: dict, refused) -> str:
+        """★ 1Q, Q1. A 406 is answered once with the pre-1N request. Not a retry.
+
+        1N's rule stands — a refusal is not asked again, because the same
+        request gets the same answer. This sends a **different** request, the
+        one shape whose result separates two explanations:
+
+        - it returns 200: the `Accept` header 1N added is what arXiv refuses,
+          and the window is recovered rather than lost;
+        - it returns 406 too: the request's shape is not the trigger, and the
+          question narrows to IP, rate or a WAF on arXiv's side.
+
+        Once per window, 406 only, no loop: a second refusal ends the window
+        exactly as a first one did before this existed. The throttle is
+        honoured; the 429 and 5xx branches are not entered from here.
+        """
+        self._fallback_spent = True
+        entry: dict[str, Any] = {
+            "window": self._window,
+            "trigger_status": refused.status_code,
+            "trigger_accept": ACCEPT,
+            "trigger_headers": diagnostic_headers(refused),
+            "fallback_shape": PRE_1N,
+            "fallback_accept": PRE_1N_ACCEPT,
+            "fallback_status": None,
+            "recovered": False,
+        }
+        self._fallbacks.append(entry)
+        note = ""
+        try:
+            self._throttle()
+            r = self._send_pre_1n(params)
+            self.last_status = r.status_code
+            entry["fallback_status"] = r.status_code
+            if 200 <= r.status_code < 300:
+                entry["recovered"] = True
+                # The rest of this window's pages go out the way that worked.
+                self._shape = PRE_1N
+                return r.text
+            entry["fallback_headers"] = diagnostic_headers(r)
+            note = (
+                f"; asked once more in the pre-1N shape (Accept: {PRE_1N_ACCEPT}) "
+                f"and got HTTP {r.status_code}"
+            )
+        except Exception as e:  # noqa: BLE001 - the probe's failure is recorded, not raised
+            entry["fallback_error"] = redact(f"{type(e).__name__}: {e}")[:300]
+            note = (
+                f"; asked once more in the pre-1N shape (Accept: {PRE_1N_ACCEPT}) "
+                f"and that request did not complete"
+            )
+        finally:
+            self.run.observe_source(SOURCE, accept_fallback=list(self._fallbacks))
+        raise ArxivRejected(
+            refused.status_code,
+            getattr(refused, "reason_phrase", "") or "",
+            str(getattr(refused, "url", self.api_url)),
+            note=note,
+        )
 
     def _throttle(self) -> None:
         elapsed = time.monotonic() - self._last_request
@@ -159,7 +323,7 @@ class ArxivCollector:
         while attempt < attempts:
             self._throttle()
             try:
-                r = self._http().get(self.api_url, params=params)
+                r = self._get(params)
                 if r.status_code == 429:
                     retry_after = float(r.headers.get("Retry-After") or 0)
                     wait = max(self.RATE_LIMIT_COOLDOWN_S, retry_after)
@@ -196,12 +360,31 @@ class ArxivCollector:
                 # the same refusal. 429 never reaches here (its branch is above
                 # and stays exactly as it was).
                 if 400 <= r.status_code < 500:
+                    # ★ 1Q, Q2. Who said no, before the refusal is raised.
+                    self.run.observe_source(
+                        SOURCE,
+                        rejected_status=r.status_code,
+                        rejected_headers=diagnostic_headers(r),
+                    )
+                    # ★ 1Q, Q1. 406 only, and once per window. 400, 403 and
+                    # 404 are not about the request's shape; a fallback there
+                    # would add a request and prove nothing.
+                    if r.status_code == 406 and not self._fallback_spent:
+                        text = self._fallback(params, r)
+                        self._last_ok_shape = self._shape
+                        return text
                     raise ArxivRejected(
                         r.status_code,
                         getattr(r, "reason_phrase", "") or "",
                         str(getattr(r, "url", self.api_url)),
+                        note=(
+                            f"; sent in the {self._shape} shape, fallback "
+                            f"already spent this window"
+                            if r.status_code == 406 else ""
+                        ),
                     )
                 r.raise_for_status()
+                self._last_ok_shape = self._shape
                 return r.text
             except ArxivRejected:
                 raise
@@ -305,6 +488,10 @@ class ArxivCollector:
             # Recorded here as well as per-page, because a window that never
             # returned a page leaves no other trace of what the wire said.
             http_status=self.last_status,
+            # ★ 1Q, Q1. Which request shape the last successful response came
+            # back to: "1N" normally, "pre-1N" if a 406 was recovered by the
+            # fallback, None if nothing succeeded.
+            accept_shape=self._last_ok_shape,
         )
 
         return sorted(items.values(), key=lambda it: it.work_key)
@@ -323,6 +510,12 @@ class ArxivCollector:
         self, start: date, end: date, max_pages: Optional[int]
     ) -> tuple[list[Item], int]:
         query = self.date_range_query(self.categories, start, end)
+        # ★ 1Q, Q1. Every window starts in the current shape with its one
+        # fallback unspent, so a backfill tests the question again per window
+        # instead of carrying one morning's answer through thirteen.
+        self._shape = CURRENT
+        self._fallback_spent = False
+        self._window = f"{start}..{end}"
         items: list[Item] = []
         offset = 0
         page_no = 0

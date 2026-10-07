@@ -606,6 +606,32 @@ looked like a flaky server in the record. 429 has its own sentence (*"rate
 limited … giving up rather than waiting past the day's budget"*) and was never
 part of this.
 
+**A 406 gets one second request, in a different shape (1Q).** The 406 came
+back on 2026-10-06, the day after a 200 on the same code. A request that does
+not change cannot by itself fail one day and succeed the next, so 1N's
+explicit `Accept` is not *the cause* of the 406 — but whether arXiv is
+refusing that request's *shape* is still open. So on a 406, and only a 406,
+the collector sends one more request: the one it sent before 1N, header for
+header (no `Accept` of its own, so httpx's `*/*` in httpx's position — an
+explicit `Accept: */*` is not the same bytes). It is not a retry: the refused
+request is never sent twice. 400, 401, 403 and 404 get no second request; 429
+and 5xx behave as before. It happens at most once per collection window, after
+the usual five-second gap; if the second request is refused too, the window
+ends there.
+
+Read it in `source_observations["collect.arxiv"]` of that day's run-log row:
+
+| `accept_fallback[].fallback_status` | What it means |
+|---|---|
+| **200** (`recovered: true`, `accept_shape: "pre-1N"`) | arXiv refuses the `Accept` header 1N added. **The day was recovered** — arXiv papers are in that issue. Bring this to whoever owns the collector: the header should go. |
+| **406** (`recovered: false`) | The request's shape is not the trigger. What is left is on arXiv's side or the path to it: our IP, our rate, a firewall in front of the API. Read `rejected_headers` and `fallback_headers` — `server`, `via`, `cf-*`, `x-*` say who answered. |
+| `null` with `fallback_error` | The second request never completed. Inconclusive; wait for the next 406. |
+
+`rejected_headers` is kept for every 4xx, not only 406. Header values are
+scrubbed before they are written, `Set-Cookie` is reduced to
+`set_cookie_present`, and nothing named like a credential is kept at all.
+`accept_shape` is on every row from 1Q on: `"1N"` on a normal day.
+
 Three causes look identical from here and the alert says so rather than
 guessing: the source is down, our query stopped matching, or the window we ask
 for sits inside the source's indexing lag. `uc run --date <day> --dry-run`

@@ -1,0 +1,312 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Post-disaster humanitarian logistics face severe challenges due to time-critical demand, damaged transportation infrastructure, and operational uncertainty. Recently, truck-drone cooperative delivery systems have emerged as a promising solution to improve accessibility and responsiveness in disaster-affected areas. However, existing studies often overlook key humanitarian requirements and do not fully exploit the operational flexibility offered by truck-drone collaboration. To address these gaps, this paper proposes the Robust Vehicle Routing Problem with Flexible Docking Drones. The model incorporates a flexible docking mechanism that allows drones to be launched from one truck and recovered by another, increasing routing flexibility under disrupted network conditions. We also explicitly model humanitarian-specific characteristics, including hierarchical delivery deadlines and uncertainty in drone energy consumption. To solve the problem, we develop a mixed-integer linear programming formulation and an Adaptive Large Neighborhood Search (ALNS) algorithm with tailored operators. Computational experiments demonstrate that the proposed ALNS outperforms benchmark methods on both small- and large-scale instances. The results further show that flexible docking significantly improves delivery performance, while robust energy modeling enhances solution reliability under uncertainty. Sensitivity analyses indicate that increasing drone fleet size and battery capacity can substantially improve service coverage and cost efficiency. Future research may incorporate dynamic information updates and real-time decision-making to further enhance applicability in rapidly evolving disaster scenarios. The source code and the benchmark instances are publicly available at https://github.com/Shiyunnz/ALNS_VRPFD.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Dalian Maritime University",
+            "ror": "002b7nr53"
+          }
+        ],
+        "name": "Mingze Wu",
+        "openalex": "A5132922792",
+        "orcid": "https://orcid.org/0009-0006-7146-8681"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Dalian Maritime University",
+            "ror": "002b7nr53"
+          }
+        ],
+        "name": "Xinpeng Geng",
+        "openalex": "A5106798439",
+        "orcid": "https://orcid.org/0009-0001-8249-2955"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Dalian University of Technology",
+            "ror": "023hj5876"
+          }
+        ],
+        "name": "Chun Cheng",
+        "openalex": "A5002968801",
+        "orcid": "https://orcid.org/0000-0001-9995-4055"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Wisconsin–Madison",
+            "ror": "01y2jtd41"
+          }
+        ],
+        "name": "Hang Zhou",
+        "openalex": "A5069597439",
+        "orcid": "https://orcid.org/0000-0002-0472-9515"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.106048",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-05",
+    "repository_urls": [],
+    "title": "Robust vehicle routing problem with flexible docking drones in humanitarian logistics"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-05_10.1016/j.trc.20",
+    "members": [
+      "doi:10.1016/j.trc.2026.106048"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:002b7nr53",
+        "label": "Dalian Maritime University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:023hj5876",
+        "label": "Dalian University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01y2jtd41",
+        "label": "University of Wisconsin–Madison"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0006-7146-8681",
+        "label": "Mingze Wu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0001-8249-2955",
+        "label": "Xinpeng Geng"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9995-4055",
+        "label": "Chun Cheng"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0472-9515",
+        "label": "Hang Zhou"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": true,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.9966,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11502",
+        "is_primary": false,
+        "label": "Facility Location and Emergency Management",
+        "score": 0.0032,
+        "subfield": "1407"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12306",
+        "is_primary": false,
+        "label": "Urban and Freight Transport Logistics",
+        "score": 0.0,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-10-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1972463350",
+      "openalex:W1977319619",
+      "openalex:W2049604994",
+      "openalex:W2054585614",
+      "openalex:W2075650258",
+      "openalex:W2084792706",
+      "openalex:W2089542102",
+      "openalex:W2105002757",
+      "openalex:W2118578357",
+      "openalex:W2118666439",
+      "openalex:W2342478160",
+      "openalex:W2471190594",
+      "openalex:W2740601807",
+      "openalex:W2765544588",
+      "openalex:W2890722280",
+      "openalex:W2910105989",
+      "openalex:W2921047495",
+      "openalex:W2927378423",
+      "openalex:W2940865666",
+      "openalex:W2945416676",
+      "openalex:W2973603239",
+      "openalex:W2984182507",
+      "openalex:W2990601306",
+      "openalex:W3041611419",
+      "openalex:W3045813202",
+      "openalex:W3121017033",
+      "openalex:W3128252576",
+      "openalex:W3157520357",
+      "openalex:W3185199585",
+      "openalex:W4200270441",
+      "openalex:W4224309848",
+      "openalex:W4225797003",
+      "openalex:W4313593040",
+      "openalex:W4321487121",
+      "openalex:W4323044206",
+      "openalex:W4360612231",
+      "openalex:W4381949822",
+      "openalex:W4382656934",
+      "openalex:W4384035854",
+      "openalex:W4386476613",
+      "openalex:W4391677279",
+      "openalex:W4392363553",
+      "openalex:W4393256333",
+      "openalex:W4395084533",
+      "openalex:W4396609541",
+      "openalex:W4396739004",
+      "openalex:W4398768421",
+      "openalex:W4399246380",
+      "openalex:W4399580298",
+      "openalex:W4406748871",
+      "openalex:W4411225498",
+      "openalex:W4411368769",
+      "openalex:W4414808908",
+      "openalex:W4417531820",
+      "openalex:W7126174536",
+      "openalex:W7165372544"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.trc.2026.106048",
+    "openalex": "W7220431825",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-07T00:34:11Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00529,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2081,
+      "out": 241
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-07T00:34:11Z",
+    "doi": "10.1016/j.trc.2026.106048",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/Shiyunnz/ALNS_VRPFD",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The algorithm's performance and the routing model's benefits were evaluated using simulated benchmark instances rather than real-world post-disaster deployment data.",
+      "what": "The study models a vehicle routing problem that allows drones to launch from one truck and land on another, incorporating hierarchical delivery deadlines and uncertain drone energy consumption. To solve this, the researchers developed a mixed-integer linear programming formulation and an Adaptive Large Neighborhood Search (ALNS) algorithm, testing it on small- and large-scale simulated instances.",
+      "why": "It introduces a flexible docking mechanism that allows cooperative truck-drone fleets to operate under disrupted post-disaster conditions, proving that decoupling drone launch and recovery vehicles improves delivery performance and service coverage."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-05",
+  "work_key": "doi:10.1016/j.trc.2026.106048"
+}

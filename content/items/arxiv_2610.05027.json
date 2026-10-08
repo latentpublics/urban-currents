@@ -1,0 +1,185 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Objectives: The study designs a simultaneous speed prediction model based on Bayesian Markov Chain Monte Carlo (MCMC) methods for heterogeneous, non-lane-based traffic on urban primary roads, with the aim of determining the effects of vehicle-specific traffic densities on the operating speeds of the six vehicle types. Methods: The traffic data were obtained from videos recorded by unmanned aerial vehicles on five main urban roads in Dhaka, Bangladesh, and were then processed by a deep learning approach in order to derive information on vehicle trajectories, traffic volumes, densities, and space-mean speeds. Six simultaneous equations for speed prediction were developed using a Bayesian MCMC framework, covering standard cars, utility vehicles, heavy vehicles, three-wheelers, two-wheelers, and non-motorized vehicles. The performance of the models was assessed by means of goodness-of-fit measures. Findings: The coefficients of determination for the models varied from 0.922 to 0.956 and the root mean square errors were between 0.50 and 1.56 km/h for the six types of vehicle. Operating speeds decreased steadily as traffic volume increased, although traffic composition had a significant effect on speed when the demand was moderate or high. Operating speeds increased and congestion was delayed when non-motorized vehicles were excluded. The transferability study showed that the models had a reliable ability to make predictions on separate road sections.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "S. M Towhidul Alam",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Md. Muhtashim Shahrier",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Nazmul Haque",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Md Asif Raihan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Md. Hadiuzzaman",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "Total Number of Pages: 20",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.05027v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.05027v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-04",
+    "repository_urls": [],
+    "title": "Bayesian Markov Chain Monte Carlo-Based Simultaneous Speed Prediction Model for Heterogeneous Traffic on Urban Primary Roads"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-06_2610.05027",
+    "members": [
+      "arxiv:2610.05027"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.05027",
+    "doi": "10.48550/arxiv.2610.05027",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-08T00:55:03Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006241,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2097,
+      "out": 344
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9809,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3924,
+    "relevance": 0.9809
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical data used to calibrate and validate the model is limited to five primary road corridors within a single city.",
+      "what": "The study developed a simultaneous speed prediction model using a Bayesian Markov Chain Monte Carlo framework to estimate the operating speeds of six distinct vehicle types under heterogeneous, non-lane-based traffic conditions. Using vehicle trajectory data extracted via deep learning from drone videos of five primary roads in Dhaka, Bangladesh, the model achieved R-squared values between 0.922 and 0.956 and root mean square errors ranging from 0.50 to 1.56 km/h. The analysis revealed that excluding non-motorized vehicles increases overall operating speeds and delays the onset of congestion.",
+      "why": "It provides a method to model and predict speeds for highly diverse, unstructured traffic streams where different vehicle classes—ranging from heavy trucks to non-motorized transport—interact without lane discipline, a capability missing from standard homogeneous traffic models."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-04",
+  "work_key": "arxiv:2610.05027"
+}

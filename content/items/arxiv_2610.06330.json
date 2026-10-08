@@ -1,0 +1,161 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Flooding is an environmental hazard that produces social and psychological consequences for exposed individuals, shaping threat appraisal, perceived coping capacity, access to social support, and confidence in institutional response. This paper studies flood-related wellbeing in Ireland from 2012 to 2025 using large-scale, unobtrusive public discourse from Meta Content Library. We develop a bespoke flood-wellbeing instrument organised with three domains: \\emph{affective--cognitive distress appraisal}, \\emph{diminished perceived efficacy and agency}, and \\emph{perceived relational--institutional connectedness}. We then design a flood-wellbeing reasoning pipeline with large language models to extract multi-indicator, multi-domain flood-wellbeing measures from public discourse at scale. The analysis reveals both stressor activation and social--ecological resilience mediation pathways in Irish flood discourse. Flood stressors directly activate affective--cognitive distress appraisal, diminished perceived efficacy and agency, and perceived relational--institutional connectedness. The analysis further identifies two major mediation pathways: an appraisal--efficacy pathway linking flood exposure to threat appraisal, affective burden, uncertainty, and perceived coping capacity; and a social-buffering pathway in which social and institutional protective resources are associated with perceived efficacy and appraisal of flood-related adversity. The paper contributes an unobtrusive discourse-based approach to flood-wellbeing research by introducing a bespoke instrument, identifying activation and mediation pathways in flood discourse, and producing a temporal dataset for studying wellbeing, adaptation, and resilience under recurrent flood exposure.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Róisín Luo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Karyn Morrissey",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.06330v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.06330v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-05",
+    "repository_urls": [],
+    "title": "Assessing flood-related wellbeing from public discourse in Ireland using large language model as judge, 2012--2025"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-06_2610.06330",
+    "members": [
+      "arxiv:2610.06330"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.06330",
+    "doi": "10.48550/arxiv.2610.06330",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-08T00:54:57Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005738,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2139,
+      "out": 281
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9382,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3753,
+    "relevance": 0.9382
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2012 to 2025",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on social media discourse from a single platform's library, which may introduce demographic biases in who is represented in the wellbeing assessment.",
+      "what": "The study analyzes flood-related wellbeing in Ireland from 2012 to 2025 using public discourse data from the Meta Content Library. Researchers developed a three-domain flood-wellbeing instrument and deployed a large language model reasoning pipeline to extract multi-indicator measures, mapping how flood stressors activate distress, shape coping capacity, and interact with social-institutional support systems.",
+      "why": "It provides an unobtrusive, discourse-based method and a longitudinal dataset to measure the psychological and social dimensions of flood exposure over more than a decade, replacing traditional reactive surveys with continuous, large-scale monitoring of community resilience and adaptation."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-05",
+  "work_key": "arxiv:2610.06330"
+}

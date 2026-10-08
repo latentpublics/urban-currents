@@ -1,0 +1,187 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The mean travel time to work is one of the most cited statistics of the American Community Survey (ACS), yet its distribution, its dependence on mode and departure time and its relation to other measurement bases are rarely set out together. Using ACS 1-year tables, we report that US workers aged 16 and over who did not work from home averaged 27.2 minutes one way in 2024, against 25.0 minutes in 2006, a peak of 27.6 in 2019 and 25.6 in 2021. Dividing published aggregate minutes by workers, commuter rail, long-distance train and ferry riders averaged 71.0 minutes, 2.68 times the 26.5 minutes of solo drivers, and all public transportation 49.5 minutes. In 2024, 9.3% of commuters, about 13.3 million people, travelled 60 minutes or more each way and 3.0% 90 minutes or more; commuters leaving between 5:00 and 5:29 a.m. averaged 35.1 minutes. State means ranged from 33.2 minutes in New York to 17.5 in North Dakota, and big-metro means from 36.5 minutes in New York to 21.5 in Buffalo. Working from home rose from 5.7% of workers in 2019 to 17.9% in 2021 and stood at 13.3% in 2024. The 2022 National Household Travel Survey recorded an average commute trip of 13.43 miles at 25.51 mph. On different definitions, the 2019 EU labour force survey module gave an EU average of 25 minutes and 30 minutes for the United Kingdom, and England's travel diary a commuting trip of 31.5 minutes in 2025 against 26.5 in 2002. The three bases are reported side by side and never pooled. All inputs are public.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Marcus Oyelaran",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Daniel R. Whitcombe",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "12 pages, 5 figures, 4 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.05218v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.05218v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-04",
+    "repository_urls": [],
+    "title": "How Long Is the Journey to Work? One-Way Commuting Time in the United States from American Community Survey Data, 2006-2024, with Travel-Diary, European and English Comparisons"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-06_2610.05218",
+    "members": [
+      "arxiv:2610.05218"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q60",
+        "label": "New York City",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q145",
+        "label": "United Kingdom",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.05218",
+    "doi": "10.48550/arxiv.2610.05218",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-08T00:55:03Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.007469,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2501,
+      "out": 413
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9854,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4742,
+    "relevance": 0.9854
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2006-2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The analysis relies on three distinct national data collection systems with different definitions of commuting, which are presented side-by-side rather than integrated into a single model.",
+      "what": "This study analyzes US one-way commuting times using American Community Survey 1-year tables from 2006 to 2024, alongside comparisons from the 2022 National Household Travel Survey, the 2019 EU labor force survey, and England's travel diary. The average US commute for non-home-based workers rose from 25.0 minutes in 2006 to 27.2 minutes in 2024, peaking at 27.6 minutes in 2019. Public transit riders averaged 49.5 minutes compared to 26.5 minutes for solo drivers, while 9.3% of all commuters traveled 60 minutes or more each way in 2024.",
+      "why": "It provides a comprehensive, multi-source baseline of commuting durations and modes across nearly two decades, capturing the dramatic shifts in work-from-home rates which spiked from 5.7% in 2019 to 17.9% in 2021 before settling at 13.3% in 2024."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-04",
+  "work_key": "arxiv:2610.05218"
+}

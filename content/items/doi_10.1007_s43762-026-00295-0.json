@@ -1,5 +1,6 @@
 {
   "badges": [
+    "data",
     "published"
   ],
   "bibliography": {
@@ -225,12 +226,12 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.2,
+      "artifact_completeness": 0.6,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.44,
+    "headline": 0.52,
     "relevance": 1.0
   },
   "signals": {
@@ -243,10 +244,10 @@
     },
     "data_available": {
       "basis": "rule",
-      "confidence": "low",
+      "confidence": "high",
       "detail": null,
-      "url": null,
-      "value": false
+      "url": "https://figshare.com/articles/journal_contribution/Mitigating_sensor_bias_a_location-aware_calibration_framework_for_pedestrian_analytics/34070442",
+      "value": true
     },
     "geographic_scope": {
       "basis": "llm",
@@ -285,6 +286,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-05",
+  "updated": "2026-10-08",
   "work_key": "doi:10.1007/s43762-026-00295-0"
 }

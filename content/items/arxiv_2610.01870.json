@@ -56,11 +56,47 @@
     ],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0304-6878",
+        "label": "Hosam Elgendy"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-5302-0657",
+        "label": "Utkarsh Mall"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10775",
+        "is_primary": true,
+        "label": "Generative Adversarial Networks and Image Synthesis",
+        "score": 0.7588,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0809,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11479",
+        "is_primary": false,
+        "label": "Smart Cities and Technologies",
+        "score": 0.0612,
+        "subfield": "2214"
+      }
+    ]
   },
   "first_published": "2026-10-01",
   "graph": {
@@ -71,7 +107,7 @@
   "ids": {
     "arxiv": "2610.01870",
     "doi": "10.48550/arxiv.2610.01870",
-    "openalex": null,
+    "openalex": "W7216038617",
     "pmid": null
   },
   "provenance": {
@@ -79,7 +115,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-03T00:21:53Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005689,
     "llm": {
@@ -167,6 +204,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-01",
+  "updated": "2026-10-08",
   "work_key": "arxiv:2610.01870"
 }

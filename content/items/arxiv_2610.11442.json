@@ -1,0 +1,203 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Human mobility generation, an important task in urban research, synthesizes trajectory data for urban planning and transportation management. Human mobility can be characterized as a \"why-where-when\" decision process: people form an intention to move and then determine where and when the corresponding activity will take place. Trajectory generation under user-level and temporal distribution shifts may benefit from explicitly modeling this decision structure. However, many existing human mobility generation methods either represent behavioral intent at a coarse granularity, such as a daily plan or a trajectory-level description, or directly predict future locations without explicitly reasoning about a possible motivation for each movement step. We introduce MotiveMob, a motivation-driven autoregressive framework for human mobility generation that first forms a hypothesis about why the next movement may occur and then jointly generates where and when it may occur. At each step, a motivation predictor conditions on the current mobility state, a long-term behavioral report, and the mobility history to infer a plausible motivation or determine whether the trajectory should terminate. Given the hypothesized motivation, a state predictor grounds it in a candidate next location and arrival time. The candidate then undergoes speed-feasibility and repetition checks before being fed back for the next decision. We evaluate MotiveMob under distribution shifts involving unseen users and unseen temporal periods, including seasonal changes and the substantial behavioral disruption caused by the COVID-19 pandemic. Experiments show that MotiveMob consistently achieves better distributional fidelity than competitive pretraining-based and prompting-based methods under user-level and temporal distribution shifts, demonstrating robust generalization to out-of-distribution mobility patterns.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Mengkun Gao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zengqing Wu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Renhe Jiang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jiawei Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yusong Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chuang Yang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shuyuan Zheng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Makoto Onizuka",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chuan Xiao",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.11442v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.11442v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-08",
+    "repository_urls": [],
+    "title": "MotiveMob: Motivation as Semantic Action for Closed-Loop Human Mobility Generation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-08_2610.11442",
+    "members": [
+      "arxiv:2610.11442"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.11442",
+    "doi": "10.48550/arxiv.2610.11442",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-10T00:40:54Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005627,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2149,
+      "out": 267
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9653,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3861,
+    "relevance": 0.9653
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The researchers developed MotiveMob, an autoregressive human mobility generation framework that models movement as a sequential 'why-where-when' decision process. At each step, the model predicts a specific behavioral motivation based on the user's current state, long-term behavioral report, and trajectory history, using this intent to jointly generate the next location and arrival time. When evaluated against pretraining and prompting baselines under user-level and temporal distribution shifts—including seasonal variations and COVID-19 pandemic disruptions—the model demonstrated superior distributional fidelity and generalization.",
+      "why": "By explicitly modeling step-by-step behavioral motivation rather than relying on coarse daily plans or direct location prediction, this framework enables realistic trajectory synthesis even when simulating unseen users or highly disrupted historical periods."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-08",
+  "work_key": "arxiv:2610.11442"
+}

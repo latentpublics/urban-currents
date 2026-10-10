@@ -63,7 +63,28 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5157637492",
+        "label": "Bijin Joseph"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5086547902",
+        "label": "Hamish Nigel Gibbs"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8967-1967",
+        "label": "Takahiro Yabe"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2894-1024",
+        "label": "Esteban Moro"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -80,7 +101,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.4849,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.4797,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0196,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-10-02",
   "graph": {
@@ -91,7 +137,7 @@
   "ids": {
     "arxiv": "2610.02639",
     "doi": "10.48550/arxiv.2610.02639",
-    "openalex": null,
+    "openalex": "W7220412761",
     "pmid": null
   },
   "provenance": {
@@ -99,7 +145,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-06T01:43:27Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005764,
     "llm": {
@@ -187,6 +234,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-02",
+  "updated": "2026-10-09",
   "work_key": "arxiv:2610.02639"
 }

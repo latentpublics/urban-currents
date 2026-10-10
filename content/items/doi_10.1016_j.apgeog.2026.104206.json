@@ -1,0 +1,292 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Platform-mediated food delivery demand concentrates last-mile freight, yet planning aggregates it into zonal units, introducing Modifiable Areal Unit Problem (MAUP) distortion. Even though increasing literature on MAUP in freight literature exists, its impact on digital delivery has not been explored before. The current paper aims to provide a diagnosis of MAUP in ODFD estimation for New Delhi, using street view built environment variables and night light variables within hexagonal grids of different sizes (250 m – 1000 m), aggregating them to ward and Traffic Analysis Zones (TAZ). The Negative Binomial model used to explain global relationship, the MGWR – local relationship, while the hierarchical multilevel regression will consider nested variance. The Decision Score considering prediction error, information loss, spatial dependence, and coefficient instability will be used as an indicator of scale suitability. Delivery point density (β = 1.52), road density (β = 0.29) and night light density (β = 0.20) at 250 m were significantly related to the ODFD. The 500 m grid proved to be a more stable scale under MGWR. Since delivery point density is highly correlated with ODFD, the Decision Score is recomputed using all predictors except the delivery point density: the global model scale shifts from 250 m to 750 m, and the MGWR scales from 500 m to the 500–750 m range; the impact of PCA vs. equal weighting on the sensitivity ranking is greatly reduced when delivery point density is removed from consideration. Aggregation by wards produces a negative coefficient for parking length (p = 0.042), which is corroborated by pooled cross-scale tests for both ward and TAZ boundaries (p = 0.038 and p = 0.001, respectively); while road density switches significance (p = 0.079), pedestrian count changes sign but remains insignificant. Aggregation by TAZ eliminates most built environment variables, except for delivery point density and Distance to CBD. ICC declines from 0.348 at 250 m to 0.119 at 1000 m, which confirms information loss with increasing scale. In addition to reducing model fit, incorrect scale choice can change sign of some significant coefficients, which infrastructure planning depends on. The Decision Score provides planners with a reproducible way to select an appropriate scale.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Indian Institute of Technology BHU",
+            "ror": "01kh5gc44"
+          }
+        ],
+        "name": "S. N. Mishra",
+        "openalex": "A5113442261",
+        "orcid": "https://orcid.org/0009-0009-8650-8780"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Indian Institute of Technology BHU",
+            "ror": "01kh5gc44"
+          }
+        ],
+        "name": "Ayush Raj",
+        "openalex": "A5156354572",
+        "orcid": "https://orcid.org/0009-0008-4304-5360"
+      },
+      {
+        "institutions": [],
+        "name": "Tomoya Kawasaki",
+        "openalex": "A5000892809",
+        "orcid": "https://orcid.org/0000-0002-7305-5980"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Indian Institute of Technology BHU",
+            "ror": "01kh5gc44"
+          }
+        ],
+        "name": "Agnivesh Pani",
+        "openalex": "A5012684859",
+        "orcid": "https://orcid.org/0000-0002-0136-8224"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.apgeog.2026.104206",
+      "pdf_url": null,
+      "source_id": "S115443327",
+      "source_name": "Applied Geography",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-04",
+    "repository_urls": [],
+    "title": "Nested spatial processes in urban food delivery: How scale and boundary choice shape built-environment relationships in New Delhi, India"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-08_10.1016/j.apgeog",
+    "members": [
+      "doi:10.1016/j.apgeog.2026.104206"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:dimensionality-reduction",
+        "label": "dimensionality reduction"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01kh5gc44",
+        "label": "Indian Institute of Technology BHU"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-8650-8780",
+        "label": "S. N. Mishra"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0008-4304-5360",
+        "label": "Ayush Raj"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7305-5980",
+        "label": "Tomoya Kawasaki"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0136-8224",
+        "label": "Agnivesh Pani"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12306",
+        "is_primary": true,
+        "label": "Urban and Freight Transport Logistics",
+        "score": 0.896,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0667,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0086,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-10-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W8979033",
+      "openalex:W1969471249",
+      "openalex:W1983417922",
+      "openalex:W1996897230",
+      "openalex:W2025411670",
+      "openalex:W2026169687",
+      "openalex:W2048675050",
+      "openalex:W2099577306",
+      "openalex:W2465587637",
+      "openalex:W2520292280",
+      "openalex:W2591436041",
+      "openalex:W2593685093",
+      "openalex:W2736667640",
+      "openalex:W2786125546",
+      "openalex:W2886421922",
+      "openalex:W2893280452",
+      "openalex:W2901554918",
+      "openalex:W2907411870",
+      "openalex:W2964375788",
+      "openalex:W2979056762",
+      "openalex:W2979421798",
+      "openalex:W2979845081",
+      "openalex:W3015134117",
+      "openalex:W3032865461",
+      "openalex:W3036937874",
+      "openalex:W3111369198",
+      "openalex:W3146336879",
+      "openalex:W3163789200",
+      "openalex:W3205270030",
+      "openalex:W4281624263",
+      "openalex:W4311983078",
+      "openalex:W4319453893",
+      "openalex:W4366230164",
+      "openalex:W4385128706",
+      "openalex:W4387410045",
+      "openalex:W4387630362",
+      "openalex:W4392876709",
+      "openalex:W4401731881",
+      "openalex:W4404684148",
+      "openalex:W4405051873",
+      "openalex:W4408270857",
+      "openalex:W4409214349",
+      "openalex:W4411448683",
+      "openalex:W4412446926",
+      "openalex:W4413900372",
+      "openalex:W4414929426",
+      "openalex:W7119114035"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.apgeog.2026.104206",
+    "openalex": "W7219098471",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-10T00:41:10Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.007118,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2555,
+      "out": 365
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-10T00:41:10Z",
+    "doi": "10.1016/j.apgeog.2026.104206",
+    "journal": "Applied Geography",
+    "source_id": "S115443327",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical findings and scale thresholds are based entirely on a single case study of New Delhi's food delivery network.",
+      "what": "This study analyzed the impact of the Modifiable Areal Unit Problem (MAUP) on online food delivery demand (ODFD) in New Delhi, testing hexagonal grids from 250 m to 1000 m alongside administrative ward and Traffic Analysis Zone (TAZ) boundaries. Using Negative Binomial, Multiscale Geographically Weighted Regression (MGWR), and hierarchical multilevel models, the researchers evaluated how built environment and nightlight variables relate to delivery demand. The analysis showed that while a 250 m grid yielded strong local relationships, a 500 m grid offered more stable spatial relationships, and aggregating data to TAZ levels eliminated the significance of most built environment variables.",
+      "why": "It establishes a reproducible Decision Score that allows planners to systematically choose the most stable spatial scale for digital freight modeling, preventing incorrect scale choices that can reverse the sign of critical infrastructure coefficients."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-04",
+  "work_key": "doi:10.1016/j.apgeog.2026.104206"
+}

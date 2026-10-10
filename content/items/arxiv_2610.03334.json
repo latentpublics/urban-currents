@@ -45,11 +45,47 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5111305794",
+        "label": "Róisín Luo"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7259-1047",
+        "label": "Karyn Morrissey"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10930",
+        "is_primary": true,
+        "label": "Flood Risk Assessment and Management",
+        "score": 0.9756,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11488",
+        "is_primary": false,
+        "label": "Climate Change Communication and Perception",
+        "score": 0.0098,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10747",
+        "is_primary": false,
+        "label": "Disaster Management and Resilience",
+        "score": 0.0072,
+        "subfield": "3312"
+      }
+    ]
   },
   "first_published": "2026-10-02",
   "graph": {
@@ -60,7 +96,7 @@
   "ids": {
     "arxiv": "2610.03334",
     "doi": "10.48550/arxiv.2610.03334",
-    "openalex": null,
+    "openalex": "W7220367645",
     "pmid": null
   },
   "provenance": {
@@ -68,7 +104,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-06T01:43:27Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005687,
     "llm": {
@@ -156,6 +193,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-02",
+  "updated": "2026-10-09",
   "work_key": "arxiv:2610.03334"
 }

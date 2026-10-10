@@ -1,0 +1,162 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This study develops a survey-calibrated, path-dependent agent-based microsimulation for evaluating crime and violence reduction policies in Bolivia. A synthetic population is constructed from the 2025 Household Survey and the fourth-quarter 2025 Continuous Employment Survey using official expansion weights and cross-survey donor matching. The model combines heterogeneous agents, place-based risk, criminal adaptation, institutional capacity, community organization, and multiple policy channels. Uncertainty is propagated through adaptive Gaussian-process and tree-ensemble emulators, global sensitivity analysis, tempered ensemble MCMC, and predictive meta-calibration. Simulated portfolios include focused policing, community control, Guardabosques-type incentives, social prevention, environmental interventions, justice reforms, investigation, rehabilitation, and financial-network disruption. Results are interpreted as structural policy scenarios rather than causal forecasts, with explicit attention to displacement, distributional effects, implementation capacity, and multi-objective trade-offs.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ricardo Alonzo Fernández-Salguero",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "econ.EM",
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.03895v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.03895v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-02",
+    "repository_urls": [],
+    "title": "A Path-Dependent Agent-Based Microsimulation of Crime and Violence Reduction Policy Portfolios in Bolivia: Survey Calibration, Adaptive Emulator Ensembles, Global Sensitivity, Tempered MCMC, and Multi-Objective Policy Analysis"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-08_2610.03895",
+    "members": [
+      "arxiv:2610.03895"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.898,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-02",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.03895",
+    "doi": "10.48550/arxiv.2610.03895",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-10T00:41:07Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005777,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1949,
+      "out": 317
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8541,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3416,
+    "relevance": 0.8541
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The simulation results are designed to be interpreted as structural policy scenarios rather than predictive causal forecasts.",
+      "what": "This study develops a survey-calibrated, path-dependent agent-based microsimulation to evaluate crime and violence reduction policies in Bolivia. The model constructs a synthetic population using official expansion weights and cross-survey donor matching from the 2025 Household Survey and the fourth-quarter 2025 Continuous Employment Survey. It simulates heterogeneous agents, place-based risk, and criminal adaptation across multiple policy portfolios, propagating uncertainty through adaptive Gaussian-process and tree-ensemble emulators, global sensitivity analysis, and tempered ensemble MCMC.",
+      "why": "It provides a structural framework to evaluate multi-objective policy trade-offs, displacement, and distributional effects of complex crime interventions under deep uncertainty, rather than relying on simple causal forecasts."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-02",
+  "work_key": "arxiv:2610.03895"
+}

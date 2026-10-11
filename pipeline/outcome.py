@@ -614,6 +614,94 @@ def failed_streak(source: str, upto: date, limit: int = 60) -> int:
     return streak
 
 
+# --------------------------------------------------------------------------
+# Days we did not see a source at all (issue #1)
+# --------------------------------------------------------------------------
+
+# Why a day shows up in an unseen streak. Three values, because a day can carry
+# both marks at once and the mail has to be able to say so.
+#
+# `content/runs_log/2026-10-06.json` is the proof that `UNSEEN_BOTH` is a real
+# state and not a defensive branch: `collect.arxiv` is in `silent_sources` and
+# in `failed_sources` on that row. It is there because `silent_sources()`
+# checks `stages`, and L0 froze the stage at OK however badly a source failed,
+# so the check can never exclude anything. That is a defect in
+# `silent_sources()` and it is **not fixed here** — the fix needs display
+# wording that has not been decided. What is fixed here is that the alert no
+# longer depends on which of the two fields a day happens to land in.
+UNSEEN_SILENT = "silent"
+UNSEEN_FAILED = "failed"
+UNSEEN_BOTH = "both"
+
+# What each reason is called in a sentence a person reads.
+UNSEEN_REASON_TEXT = {
+    UNSEEN_SILENT: "finished OK and returned nothing",
+    UNSEEN_FAILED: "every request failed",
+    UNSEEN_BOTH: "every request failed, and the day was recorded as silent too",
+}
+
+
+def unseen_reason(row: dict, source: str) -> Optional[str]:
+    """Why `row` did not see `source`, or `None` if it did.
+
+    Reads the two recorded facts and never the stage, for the reason L0 gives:
+    the stage stays OK however badly a source failed, so it cannot tell these
+    apart. `failed_sources` and `silent_sources` can.
+    """
+    silent = source in (row.get("silent_sources") or [])
+    failed = source in (row.get("failed_sources") or [])
+    if silent and failed:
+        return UNSEEN_BOTH
+    if failed:
+        return UNSEEN_FAILED
+    if silent:
+        return UNSEEN_SILENT
+    return None
+
+
+def unseen_days(
+    source: str, upto: date, limit: int = 60
+) -> list[tuple[date, str]]:
+    """The run of consecutive days ending at `upto` on which we did not see
+    `source`, oldest first, each with why.
+
+    **Silence and failure are one streak and two reasons.** `silent_streak` and
+    `failed_streak` each count one of them, and a source that is silent on
+    Monday, refused on Tuesday and silent again on Wednesday has been invisible
+    for three days while neither of those counts past one. Three days of not
+    seeing a required source is a state whichever way round the reasons fell,
+    and that is what gets a person mailed.
+
+    The same two rules as its two siblings, and for the same reasons: a day
+    whose row names the source in neither list ends the run (it was seen
+    working), and a day with no row at all ends it too, because a day we did
+    not run is not evidence of anything.
+
+    Returns the reasons alongside the days so the one walk serves both the
+    count and the mail body. The alternative — a length here and a second walk
+    in `notify` to find out what the days were — is two implementations of
+    "which days", which is how they drift.
+    """
+    logs = {row["date"]: row for row in all_logs()}
+    out: list[tuple[date, str]] = []
+    day = upto
+    for _ in range(limit):
+        row = logs.get(str(day))
+        reason = unseen_reason(row, source) if row else None
+        if reason is None:
+            break
+        out.append((day, reason))
+        day -= timedelta(days=1)
+    out.reverse()
+    return out
+
+
+def unseen_streak(source: str, upto: date, limit: int = 60) -> int:
+    """How many days in a row ending at `upto` we did not see `source` —
+    silent or failed, counted together. See `unseen_days`."""
+    return len(unseen_days(source, upto, limit))
+
+
 def logged_dates() -> set[str]:
     """Every date `content/runs_log/` has a row for, whatever it says."""
     return {r["date"] for r in all_logs() if "date" in r}

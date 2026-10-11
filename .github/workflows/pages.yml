@@ -84,7 +84,12 @@ jobs:
           enable-cache: true
 
       - name: Set up Python
-        run: uv python install
+        # Pinned for the reason `ci.yml` spells out at length: an unpinned
+        # `uv python install` takes whatever CPython is newest that morning,
+        # and on 2026-10-11 that was 3.15.0, which has no scipy wheel. This
+        # job would have died in `uv sync --frozen` exactly as `ci` did —
+        # and a deploy that cannot install is a deploy that does not happen.
+        run: uv python install 3.11
 
       - name: Install
         # No `--extra embed`: building the site reads `content/` and renders

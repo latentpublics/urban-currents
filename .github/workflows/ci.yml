@@ -42,7 +42,27 @@ jobs:
           enable-cache: true
 
       - name: Set up Python
-        run: uv python install
+        # ★ Pinned, and pinned to **3.11** because that is what production
+        # runs. `daily`, `weekly` and `deadman` have all said `uv python
+        # install 3.11` since they were written; `ci` and `pages` said
+        # `uv python install`, which means "whatever is newest today".
+        #
+        # On 2026-10-11 that became CPython 3.15.0, for which scipy 1.18.0
+        # (a transitive dependency of scikit-learn) publishes no wheel. `uv`
+        # fell back to the sdist, the meson build asked for OpenBLAS, which
+        # `ubuntu-latest` does not carry, and `uv sync --frozen` died:
+        #
+        #   error: Failed to build `scipy==1.18.0`
+        #   ../scipy/meson.build:296:11: ERROR: Dependency "OpenBLAS" not found
+        #
+        # Nothing in this repository changed. `main`'s own tip went from green
+        # on 10-07 to red on a re-run on 10-11 with no commit in between, which
+        # is the proof that the interpreter moved and we did not.
+        #
+        # An unpinned interpreter also meant CI was not testing what `daily`
+        # runs. That is the worse half of the bug: a suite green on an
+        # interpreter production never uses answers a question nobody asked.
+        run: uv python install 3.11
 
       - name: Install
         run: uv sync --frozen

@@ -556,9 +556,18 @@ things are true at once and it is worth keeping them apart:
 * **it says so**: the issue page, the archive row and `silent_sources` in the
   API all name the source, and the scan line stops claiming arXiv categories it
   read nothing from;
-* **nobody is mailed for one such day.** A required source silent for three
-  days running gets one mail, on the third day and not again; every silent day
-  appears in the weekly summary for as long as it lasts.
+* **nobody is mailed for one such day.** A required source we have **not
+  seen** for three days running gets one mail, on the third day and not again;
+  every such day appears in the weekly summary for as long as it lasts.
+
+  "Not seen" is `silent_sources` **and** `failed_sources` together (issue #1).
+  It used to be silence alone, which left the mail unable to reach the one
+  outage this repository has actually measured: eleven days of HTTP 406 in
+  September, every one of them a failure and therefore none of them a silent
+  day. A run of days that mixes the two — refused on Tuesday, empty on
+  Wednesday — was invisible to it for the same reason. The weekly summary
+  still counts silent days and failed days **separately**, because the two ask
+  different things of you.
 
 > **🔴 Until 2026-10-05 that mail reached nobody, and there was a stretch when
 > that mattered.** `deliver.backend` was `file`, so the "third day" mail was
@@ -589,8 +598,11 @@ things are true at once and it is worth keeping them apart:
 > the same question locally.
 >
 > Silence (a source that answered and had nothing) does **not** turn the job
-> red; only failure does. A silent source reaches a person through the
-> third-day mail (once per streak) and the weekly summary.
+> red; only failure does. Both reach a person through the third-day mail (once
+> per streak) and the weekly summary — since issue #1 that mail counts the two
+> together, so the confirmed Resend route no longer depends on which of the two
+> fields a bad day happens to land in. The red job is a second, unconfirmed
+> route, not a replacement for it.
 
 **Reading the failure.** `source_failures` in `content/runs_log/<day>.json`
 carries the collector's own sentence. Since 1N the two shapes read differently:

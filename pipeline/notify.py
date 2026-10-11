@@ -32,13 +32,16 @@ every day for the same reason it stops being read"*. So the answer is not a
 daily mail about silence. Three tiers, by how much the fact asks of a person:
 
   **now**      `not_published`. The day has no issue. Mailed, with the reason.
-  **soon**     a required source silent for `SILENT_ALERT_DAYS` days running.
-               One mail, on the day the streak reaches it, and **not again** —
-               the streak is the news, its continuing is not. The weekly says
-               it is still true.
-  **weekly**   a single silent day, and any silence still going on. It changes
+  **soon**     a required source **not seen** for `SILENT_ALERT_DAYS` days
+               running — silent or failed, counted together (issue #1). One
+               mail, on the day the streak reaches it, and **not again** — the
+               streak is the news, its continuing is not. The weekly says it is
+               still true.
+  **weekly**   a single unseen day, and anything still going on. It changes
                nothing a person must do today, and it is exactly the drift the
-               weekly mail exists to surface.
+               weekly mail exists to surface. Silent days and failed days are
+               counted **separately** there: they are two facts and a reader
+               acts on them differently.
 
 `quiet` stays unmailed as an outcome and mailed as a normal issue; nothing
 about it has changed.
@@ -72,6 +75,17 @@ def alert_recipients() -> list[str]:
 # arXiv's own indexing runs about three days behind us. Two days could still be
 # one outage seen twice. Three consecutive days is no longer an incident; it is
 # a state, and a state is worth a person's attention.
+#
+# ★ The number is unchanged; what it counts is wider (issue #1). The streak
+# is now days we did **not see** the source — silent or failed, together —
+# rather than silent days alone. Three days of a source contributing nothing is
+# a state whichever way round the reasons fell, and counting only one of the two
+# reasons left three holes: a multi-day HTTP 406 outage reached this tier not at
+# all, a run of mixed days reached it not at all, and the weekly called the
+# failed days silent. See `outcome.unseen_days`.
+#
+# Widening only. Every streak that mailed before still mails: a genuinely silent
+# source is unseen on each of those days too.
 #
 # Not a config key. It is a judgement with an argument attached, and the
 # argument belongs where the number is.
@@ -300,57 +314,110 @@ def notify_failure(
 
 
 def notify_silent_sources(
-    d: date, silent: list[str], backend=None, run=None
+    d: date,
+    silent: list[str],
+    failed: Optional[list[str]] = None,
+    backend=None,
+    run=None,
 ) -> dict[str, Any]:
-    """Mail once, on the day a source's silence becomes a state. Never raises.
+    """Mail once, on the day a source stops being seen. Never raises.
 
     Fires only on the day a streak **reaches** `SILENT_ALERT_DAYS`, so an
-    outage that lasts a fortnight produces one mail and thirteen silent days,
+    outage that lasts a fortnight produces one mail and thirteen unseen days,
     with the weekly summary carrying it the whole time. That asymmetry is the
     point of the tier: repeating a fact daily is how a channel stops being
     read, and this project has now watched that happen twice — to
     `enrich.springer`'s daily `SKIPPED` (D317) and to the deadman.
 
-    `silent` holds stage names (`collect.arxiv`), because the streak is counted
-    over what the run log stores. The mail says the reader's name for them.
+    ★ The streak is **days we did not see the source** — `silent ∪ failed`
+    (issue #1). It used to be silent days only, which meant a source that
+    failed outright never reached this tier at all and a source that alternated
+    reached it never either. The only alert those days got was the daily job
+    going red at `FAILED_SOURCE_RED_DAYS`, which mails whichever account last
+    edited the workflow's `cron:` — a route nobody has ever confirmed anyone
+    reads. This one is confirmed end to end (1P). Losing the confirmed route
+    and keeping the unconfirmed one is the trade this widening refuses.
+
+    `silent` and `failed` hold stage names (`collect.arxiv`), because the
+    streak is counted over what the run log stores. The mail says the reader's
+    name for them, and says **which day was which** — a streak that spans two
+    reasons must not be described as if it were one.
     """
     from .deliver import Message, get_backend
-    from .outcome import silent_streak, source_label
+    from .outcome import (
+        UNSEEN_BOTH,
+        UNSEEN_FAILED,
+        UNSEEN_REASON_TEXT,
+        UNSEEN_SILENT,
+        source_label,
+        unseen_days,
+    )
 
     recipients = alert_recipients()
-    started = [s for s in silent if silent_streak(s, d) == SILENT_ALERT_DAYS]
+    # Order-preserving union. Both lists are today's, and a source can be on
+    # both at once — `content/runs_log/2026-10-06.json` is such a row.
+    absent = list(dict.fromkeys(list(silent or []) + list(failed or [])))
+    streaks = {s: unseen_days(s, d) for s in absent}
+    started = [s for s in absent if len(streaks[s]) == SILENT_ALERT_DAYS]
     if not started:
         return {"status": "no_streak_started"}
     if not recipients:
         return {"status": "no_alert_recipient", "sources": started}
 
     names = ", ".join(source_label(s) for s in started)
+    reasons = {reason for s in started for _, reason in streaks[s]}
+    any_silent = bool(reasons & {UNSEEN_SILENT, UNSEEN_BOTH})
+    any_failed = bool(reasons & {UNSEEN_FAILED, UNSEEN_BOTH})
+
     subject = (
-        f"Urban Currents: {names} has returned nothing for "
+        f"Urban Currents: {names} has not been seen for "
         f"{SILENT_ALERT_DAYS} days — {d}"
     )
-    body = "\n".join([
-        f"{names} finished successfully on each of the last {SILENT_ALERT_DAYS} "
-        f"days and returned no items.",
+
+    body_lines = [
+        f"{names} contributed nothing on each of the last {SILENT_ALERT_DAYS} "
+        f"days.",
+        "",
+        "Which day was which:",
+        "",
+    ]
+    for source in started:
+        body_lines.append(f"  {source_label(source)}")
+        for day, reason in streaks[source]:
+            body_lines.append(f"    {day}  {UNSEEN_REASON_TEXT[reason]}")
+    body_lines += [
         "",
         "Issues went out on the remaining source. That is deliberate — the "
         "papers in them are real, and withholding a partial day would trade it "
         "for none — and the issue pages, the archive rows and the API all say "
         "which days were affected.",
         "",
-        "What this does not tell you is why. Three things look identical from "
-        "here:",
-        "",
-        "  - the source is down or rate-limiting us",
-        "  - our query for it stopped matching anything",
-        "  - the window we ask for sits inside the source's indexing lag",
-        "",
+    ]
+    if any_failed:
+        body_lines += [
+            "A day that failed is a day we were blind rather than a day the "
+            "source had nothing. What each request died of is on that day's "
+            "row in content/runs_log/ under `source_failures`.",
+            "",
+        ]
+    if any_silent:
+        body_lines += [
+            "A day that finished OK and returned nothing does not tell you "
+            "why. Three things look identical from here:",
+            "",
+            "  - the source is down or rate-limiting us",
+            "  - our query for it stopped matching anything",
+            "  - the window we ask for sits inside the source's indexing lag",
+            "",
+        ]
+    body_lines += [
         "  uv run uc status",
         f"  uv run uc run --date {d} --dry-run",
         "",
         "You will not be mailed about this again while it continues. The "
         "weekly summary carries it until it stops.",
-    ])
+    ]
+    body = "\n".join(body_lines)
     message = Message(
         subject=subject,
         html=f"<pre>{body}</pre>",
@@ -412,6 +479,12 @@ def weekly_summary(end: Optional[date] = None, days: int = 7) -> dict[str, Any]:
             # declared scope is not an emergency and is not nothing, and this
             # mail is the one channel shaped for exactly that.
             "silent": list((log or {}).get("silent_sources") or []),
+            # ★ Beside it, never folded into it (issue #1). A day the source
+            # refused us and a day it answered with nothing are two facts, and
+            # the reader does different things about them: one is chased with
+            # the source, the other with our query or our window. Summed, the
+            # mail would report a number that is true of neither.
+            "failed": list((log or {}).get("failed_sources") or []),
         })
 
     from .canon_state import counts as canon_counts
@@ -421,14 +494,18 @@ def weekly_summary(end: Optional[date] = None, days: int = 7) -> dict[str, Any]:
     # Days per source, not days: "arXiv on 3 of 7" is actionable and "3 silent
     # days" is not, when there are two sources it could have been.
     silent_days: dict[str, int] = {}
+    failed_days: dict[str, int] = {}
     for r in rows:
         for source in r["silent"]:
             silent_days[source] = silent_days.get(source, 0) + 1
+        for source in r["failed"]:
+            failed_days[source] = failed_days.get(source, 0) + 1
     return {
         "from": str(start),
         "to": str(end),
         "outcomes": counts,
         "silent_source_days": silent_days,
+        "failed_source_days": failed_days,
         "days_without_a_record": sum(1 for r in rows if r["status"] == "no record"),
         "items_published": published_items,
         "emails_sent": sends,
@@ -476,6 +553,25 @@ def weekly_body(summary: dict[str, Any]) -> str:
             "",
         ]
 
+    # ★ A separate heading, not a bigger number (issue #1). Until now a day
+    # every request to a source died was counted above, under a label that
+    # said the source had answered — the one thing `outcome.py` exists to
+    # stop being said. The count is split rather than corrected because both
+    # halves are worth knowing.
+    failed = summary.get("failed_source_days") or {}
+    if failed:
+        from .outcome import source_label
+
+        days = len(summary["days"])
+        lines.append("  a source we promise to read failed every request:")
+        for source, n in sorted(failed.items(), key=lambda kv: (-kv[1], kv[0])):
+            lines.append(f"    {source_label(source)} on {n} of {days} days")
+        lines += [
+            "    On those days we were blind, not told there was nothing. "
+            "content/runs_log/ has what each request died of.",
+            "",
+        ]
+
     held = summary.get("held") or {}
     if held.get("waiting"):
         lines.append(
@@ -502,10 +598,11 @@ def weekly_body(summary: dict[str, Any]) -> str:
         lines += ["    uc review --pending", ""]
     for row in summary["days"]:
         detail = f" — {row['reasons'][0]}" if row["reasons"] and row["status"] == NOT_PUBLISHED else ""
-        if row.get("silent"):
+        if row.get("silent") or row.get("failed"):
             from .outcome import source_label
 
             detail += "".join(f"  no {source_label(s)}" for s in row["silent"])
+            detail += "".join(f"  {source_label(s)} failed" for s in row["failed"])
         lines.append(f"  {row['date']}  {row['status']:<14} {row['published']:>3}{detail}")
     return "\n".join(lines) + "\n"
 

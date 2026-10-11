@@ -577,12 +577,21 @@ def run_daily(
         # Not on the `not_published` paths above. Those already mail, and a
         # second envelope about the same morning is the noise this tier exists
         # to avoid.
+        #
+        # ★ Both lists, and the guard asks about both (issue #1). A day arXiv
+        # refused every request publishes on its journal papers — that is L0,
+        # and it is right — so this is the only tier that can tell anyone, and
+        # it never fired, because the day went into `failed_sources` and the
+        # guard only read `silent_sources`.
         silent_alert = None
-        if outcome.silent_sources and not dry_run:
+        if (outcome.silent_sources or outcome.failed_sources) and not dry_run:
             from .notify import notify_silent_sources
 
             silent_alert = notify_silent_sources(
-                issue_date, outcome.silent_sources, run=run
+                issue_date,
+                outcome.silent_sources,
+                outcome.failed_sources,
+                run=run,
             )
 
         delivery = _deliver_issue(run, issue)

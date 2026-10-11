@@ -1,52 +1,96 @@
 {
-  "badges": [],
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Autonomous highway overtaking and merging remain hazardous when a large vehicle masks a fast-approaching agent until its path intersects the ego maneuver. Reacting only after line-of-sight recovery leaves little braking margin, whereas uniform caution produces disruptive deceleration toward shadows that are in fact empty. Existing risk-field planners largely score a static or externally supplied map and couple it to one planning layer, which precludes coordinated pre-reveal intervention. We introduce DREAM, which treats occlusion-conditioned latent hazard as a transported physical state governed by an inertial advection–diffusion–reaction partial differential equation, and injects the resulting Cartesian field into Frenet-domain model predictive control with control barrier functions through maneuver-level decision veto, risk-adaptive barrier modulation, and horizon-wise cost shaping. Evaluation spans controlled Python episodes, paired trailer-occlusion ablations, sensor-mediated CARLA experiments, naturalistic Bird-eye-view dataset trajectories replay, and a ROS 2 platform demonstration. The propagated field withdrew the requested merge about one second before the hidden actor became planner-visible, raised minimum hidden-actor clearance by 0.428 m, and lowered collision-or-near incidence from 29/30 to 19/30 in dense traffic, at a bounded empty-shadow speed cost. Under inD replay it tracked logged human speed profiles more closely than non-field and reduced-field variants, indicating calibrated anticipation rather than uniform conservatism. This evidence supports improved anticipatory hidden-interaction margins. The code implementation and selected scenario demonstrations for this study could be found at https://github.com/SAS-HKU/DREAM.git.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Hong Kong",
+            "ror": "02zhqgq86"
+          }
+        ],
         "name": "Zian Wang",
         "openalex": "A5134740809",
         "orcid": "https://orcid.org/0009-0001-1145-7933"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Hong Kong",
+            "ror": "02zhqgq86"
+          }
+        ],
         "name": "Yiming Shu",
         "openalex": "A5114418479",
         "orcid": "https://orcid.org/0009-0004-4695-8852"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Hong Kong",
+            "ror": "02zhqgq86"
+          }
+        ],
         "name": "Zejian Deng",
         "openalex": "A5024182112",
         "orcid": "https://orcid.org/0000-0002-2765-3162"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Hong Kong",
+            "ror": "02zhqgq86"
+          }
+        ],
         "name": "Guoshun Cai",
         "openalex": "A5088587379",
         "orcid": "https://orcid.org/0009-0000-6554-1818"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Hong Kong",
+            "ror": "02zhqgq86"
+          }
+        ],
         "name": "Jiahui Xu",
         "openalex": "A5157972966",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Hong Kong",
+            "ror": "02zhqgq86"
+          }
+        ],
         "name": "Jiwei Tang",
         "openalex": "A5069906374",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tsinghua University",
+            "ror": "03cve4549"
+          }
+        ],
         "name": "Dongpu Cao",
         "openalex": "A5009572966",
         "orcid": "https://orcid.org/0000-0003-2541-5272"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Hong Kong",
+            "ror": "02zhqgq86"
+          }
+        ],
         "name": "Chen Sun",
         "openalex": "A5157930197",
         "orcid": null
@@ -76,7 +120,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02zhqgq86",
+        "label": "University of Hong Kong"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03cve4549",
+        "label": "Tsinghua University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -120,7 +175,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "not_applicable",
     "tools": [],
     "topics": [
       {
@@ -192,14 +247,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-10-10T00:41:09Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -221,26 +279,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 1.0,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.6,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/SAS-HKU/DREAM.git",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": null,
+      "what": "The DREAM framework models occluded vehicular hazards using an advection-diffusion-reaction partial differential equation and integrates the generated risk field into Frenet-domain model predictive control via control barrier functions. Evaluated across CARLA simulations, ROS 2 hardware tests, and the inD dataset, the system aborted unsafe merges approximately one second prior to line-of-sight recovery, improved minimum clearance to hidden agents by 0.428 meters, and decreased collision or near-miss events from 29/30 to 19/30 in high-density scenarios.",
+      "why": "This approach enables autonomous planners to proactively hedge against hidden dynamic hazards behind large vehicles without resorting to overly cautious slowdowns near unthreatened occlusions."
+    }
   },
   "track": "papers",
-  "updated": "2026-10-08",
+  "updated": "2026-10-10",
   "work_key": "doi:10.1016/j.trc.2026.106062"
 }

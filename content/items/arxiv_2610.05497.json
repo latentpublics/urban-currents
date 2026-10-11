@@ -1,0 +1,212 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Geographic information systems increasingly rely on sophisticated spatial representation learning techniques to extract meaningful patterns from complex geospatial data. This paper introduces LEON, a novel self-supervised framework that adapts Graph Masked Autoencoders (GraphMAE) for geospatial region representation learning. Our method leverages the inherent spatial structure of geographic data by constructing hexagonal grid graphs using H3 indexing and applying masked autoencoding techniques to learn robust spatial embeddings from OpenStreetMap (OSM) amenity distribution patterns. We evaluate LEON on multiple real-world datasets including EuroSAT satellite imagery classification and various geographic prediction tasks (housing prices, crime prediction, and urban analytics). Experimental results demonstrate that LEON achieves significant improvements in spatial understanding, with up to 1.87% accuracy improvement on EuroSAT classification and consistent performance gains across geographic prediction benchmarks. The learned embeddings exhibit highly structured and distinct properties, making them particularly suitable for downstream spatial analysis tasks. Our findings suggest that self-supervised learning provides an effective paradigm for geospatial region representation learning using widely available crowdsourced data.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Szymon Soltysiak",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Radoslaw Malek",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jedrzej Kusnierz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Milosz Chojecki",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Piotr Szymanski",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Aleksandra Kawala-Sterniuk",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": "15 pages, 5 figures, 5 tables. Pre-review preprint version of a paper published in Advances in Computational Collective Intelligence (ICCCI 2026), CCIS 3044, Springer, pp. 274-287",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.05497v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.05497v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-04",
+    "repository_urls": [],
+    "title": "LEON: Location Embeddings from OSM Neighborhoods via Hexagonal Graph Masked Autoencoders"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-09_2610.05497",
+    "members": [
+      "arxiv:2610.05497"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:housing-transaction",
+        "label": "housing transactions"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:administrative-records",
+        "label": "administrative records"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:self-supervised",
+        "label": "self-supervised learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:gnn",
+        "label": "graph neural network"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.05497",
+    "doi": "10.1007/978-3-032-37936-8_19",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-11T00:12:25Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004523,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1923,
+      "out": 182
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.2,
+      "relevance": 0.8377,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3751,
+    "relevance": 0.8377
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "LEON is a self-supervised representation learning framework that generates location embeddings by applying Graph Masked Autoencoders to OpenStreetMap amenity distributions mapped over H3 hexagonal grids. Evaluation against benchmark datasets yielded up to a 1.87% accuracy increase in EuroSAT satellite image classification, alongside improvements in predicting housing prices, crime rates, and urban analytics metrics.",
+      "why": "This approach demonstrates that structured, generalizable spatial representations can be learned directly from globally available, crowdsourced vector data without relying on labeled targets or imagery."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-04",
+  "work_key": "arxiv:2610.05497"
+}

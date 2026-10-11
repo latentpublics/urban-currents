@@ -69,11 +69,62 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5157788611",
+        "label": "S. M Towhidul Alam"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5120539754",
+        "label": "Md. Muhtashim Shahrier"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0006-4698-3366",
+        "label": "Nazmul Haque"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0005-1762-8528",
+        "label": "Md Asif Raihan"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5157783650",
+        "label": "Md. Hadiuzzaman"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": true,
+        "label": "Traffic control and management",
+        "score": 0.8301,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.1558,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.006,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-10-04",
   "graph": {
@@ -84,7 +135,7 @@
   "ids": {
     "arxiv": "2610.05027",
     "doi": "10.48550/arxiv.2610.05027",
-    "openalex": null,
+    "openalex": "W7220682699",
     "pmid": null
   },
   "provenance": {
@@ -92,7 +143,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-08T00:55:03Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006241,
     "llm": {
@@ -180,6 +232,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-04",
+  "updated": "2026-10-10",
   "work_key": "arxiv:2610.05027"
 }

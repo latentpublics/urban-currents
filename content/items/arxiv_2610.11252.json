@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This study presents the Neuro-Memory Fuzzy Inference System (NeMeFIS), a hierarchical machine learning architecture that asymmetrically models acceleration and deceleration in car following behavior by integrating five human memory types procedural, working, episodic, semantic, and declarative. By linking external variables to memory functions via metaheuristics and validating them through factor and p-value analyses, NeMeFIS uncovers latent cognitive influences across Arterial, Collector, and Rural Highway corridors for different types of vehicles. Results from 54 different trained models emphasize cognitive thresholds shaped by driver perception limits and cognitive load. The trained NeMeFIS models outperform traditional statistical and conventional machine learning models in replicating realistic driving behavior, including comparisons with Linear Regression, ANFIS, and LSTM architectures. Fuzzy rule analysis reveals that declarative memory demands the highest rule, especially during deceleration, indicating complex braking decisions. Procedural memory drives acceleration, while semantic and declarative memory guide deceleration. Risk perception also emerges as a key factor, particularly on urban roads. Validated on both heterogeneous and homogeneous datasets, NeMeFIS offers a robust framework for modeling driver cognition. The findings support psychotherapeutic applications and the development of adaptive, human-like decision systems in Connected and Autonomous Vehicles (CAVs) to enhance traffic safety.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Nazmul Haque",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Md Asif Raihan. Md. Hadiuzzaman",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "comment": "20 Pages",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.11252v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.11252v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-08",
+    "repository_urls": [],
+    "title": "Neuro-Memory Fuzzy Inference System for Mimicking Human-like Car Following Behavior"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-09_2610.11252",
+    "members": [
+      "arxiv:2610.11252"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:regression",
+        "label": "regression"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:rnn",
+        "label": "recurrent neural network"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.11252",
+    "doi": "10.48550/arxiv.2610.11252",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-11T00:12:12Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005089,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2013,
+      "out": 230
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8318,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3327,
+    "relevance": 0.8318
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The Neuro-Memory Fuzzy Inference System (NeMeFIS) models human car-following action by separating acceleration and deceleration into five cognitive memory structures across 54 setups on Arterial, Collector, and Rural Highway corridors. Across these configurations, the model outperformed Linear Regression, ANFIS, and LSTM benchmarks in simulating real driving responses. Fuzzy rule parsing demonstrated that procedural memory primarily governs acceleration decisions, whereas declarative and semantic memory regulate deceleration due to higher risk perception and cognitive load.",
+      "why": "By assigning different cognitive memory frameworks to distinct driving maneuvers, this approach allows autonomous vehicle algorithms to mimic human reaction thresholds and braking choices more accurately than standard neural architectures."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-08",
+  "work_key": "arxiv:2610.11252"
+}

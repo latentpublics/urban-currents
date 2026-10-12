@@ -1,22 +1,39 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "In hyper-dense urban cores, the traditional quantity–proximity paradigm is insufficient to explain urban green space (UGS)–health associations. Using Shanghai's Inner Ring as a case study, this study applies an observed-variable structural path analysis guided by the Exposure–Perception–Behavior (EPB) framework to examine how UGS spatial patterns are associated with realized green contact, perception, behavioral processes, and self-rated physical and mental health. Neighborhood committee-scale UGS indicators were linked with individual health outcomes to estimate cross-sectional associations. UGS patterns were characterized across four dimensions—quantity, location, morphology, and distribution—and compared using dimension-specific and joint models. The results revealed heterogeneous spatial entry points but stable internal EPB associations. Quantity and distribution showed detectable positive total indirect associations with both physical and mental health; greater proximity to parks was directly associated with better mental health; and morphology showed associations with selected EPB components but no detectable total indirect association. The joint model showed that some UGS associations reflected shared information among correlated attributes, while connectivity-related associations remained stable across models. Restoration-related processes were associated with both health dimensions, whereas physical activity was more strongly associated with physical health and social interaction with mental health. These findings suggest that UGS–health associations in land-constrained urban cores cannot be fully understood through green provision or residential proximity alone. Instead, they require consideration of how spatial attributes relate to realized contact, perception, and behavioral processes. This study supports a pathway-sensitive diagnostic perspective for UGS planning.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
         "name": "Haoyang Song",
         "openalex": "A5103180035",
         "orcid": "https://orcid.org/0009-0002-7367-7752"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Guangzhou Urban Planning Survey & Design Institute",
+            "ror": "02crg7060"
+          }
+        ],
         "name": "Mengxuan Chen",
         "openalex": "A5066964713",
         "orcid": "https://orcid.org/0000-0002-2450-177X"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
         "name": "Min Wang",
         "openalex": "A5157438212",
         "orcid": null
@@ -46,7 +63,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03rc6as71",
+        "label": "Tongji University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02crg7060",
+        "label": "Guangzhou Urban Planning Survey & Design Institute"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -64,8 +92,15 @@
         "label": "Min Wang"
       }
     ],
-    "places": [],
-    "places_status": "not_attempted",
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q8686",
+        "label": "Shanghai",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
     "tools": [],
     "topics": [
       {
@@ -157,14 +192,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-10-07T00:34:11Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -186,26 +224,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The cross-sectional design restricts the ability to establish causal direction between green space configurations, behavioral pathways, and health outcomes.",
+      "what": "Using a structural path analysis based on the Exposure-Perception-Behavior framework, this study evaluated how neighborhood committee-scale green space quantity, location, morphology, and distribution relate to self-rated physical and mental health in Shanghai's Inner Ring. Green space quantity and distribution exhibited positive indirect associations with both health outcomes, whereas park proximity was directly associated with improved mental health and morphology showed no total indirect association. Restoration processes were linked to both health domains, while physical activity primarily aligned with physical health and social contact with mental health.",
+      "why": "This research demonstrates that green space evaluations in hyper-dense urban settings must move beyond mere proximity and acreage to account for how specific spatial arrangements influence human contact, perception, and behavior."
+    }
   },
   "track": "papers",
-  "updated": "2026-10-05",
+  "updated": "2026-10-11",
   "work_key": "doi:10.1016/j.apgeog.2026.104208"
 }

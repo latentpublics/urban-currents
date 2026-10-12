@@ -52,7 +52,18 @@
     ],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5157022024",
+        "label": "Marcus Oyelaran"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5153650197",
+        "label": "Daniel R. Whitcombe"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -75,7 +86,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": true,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.9956,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0018,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12725",
+        "is_primary": false,
+        "label": "transportation and logistics systems",
+        "score": 0.0004,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-10-04",
   "graph": {
@@ -86,7 +122,7 @@
   "ids": {
     "arxiv": "2610.05218",
     "doi": "10.48550/arxiv.2610.05218",
-    "openalex": null,
+    "openalex": "W7220691938",
     "pmid": null
   },
   "provenance": {
@@ -94,7 +130,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-08T00:55:03Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.007469,
     "llm": {
@@ -182,6 +219,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-04",
+  "updated": "2026-10-11",
   "work_key": "arxiv:2610.05218"
 }

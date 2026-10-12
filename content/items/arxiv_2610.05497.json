@@ -95,23 +95,101 @@
         "label": "graph neural network"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:008fyn775",
+        "label": "Wrocław University of Science and Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0001-2054-2857",
+        "label": "Szymon Sołtysiak"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0007-1834-9453",
+        "label": "Radoslaw Malek"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0008-6086-9118",
+        "label": "Jedrzej Kusnierz"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0007-7802-3463",
+        "label": "Milosz Chojecki"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7733-3239",
+        "label": "Piotr Szymański"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7826-1292",
+        "label": "Aleksandra Kawala‐Sterniuk"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11273",
+        "is_primary": true,
+        "label": "Advanced Graph Neural Networks",
+        "score": 0.8643,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": false,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.0773,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0168,
+        "subfield": "2215"
+      }
+    ]
   },
   "first_published": "2026-10-04",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
+    "referenced_works": [
+      "openalex:W2081881831",
+      "openalex:W2513506629",
+      "openalex:W2788114581",
+      "openalex:W2904832339",
+      "openalex:W2907492528",
+      "openalex:W2962790412",
+      "openalex:W2963341956",
+      "openalex:W2964194231",
+      "openalex:W3088611441",
+      "openalex:W4214587150",
+      "openalex:W4226002507",
+      "openalex:W4290876361",
+      "openalex:W4388824030",
+      "openalex:W4400445967",
+      "openalex:W4414291954"
+    ],
     "related_works": []
   },
   "ids": {
     "arxiv": "2610.05497",
     "doi": "10.1007/978-3-032-37936-8_19",
-    "openalex": null,
+    "openalex": "W7213463891",
     "pmid": null
   },
   "provenance": {
@@ -119,7 +197,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-11T00:12:25Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004523,
     "llm": {
@@ -207,6 +286,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-04",
+  "updated": "2026-10-11",
   "work_key": "arxiv:2610.05497"
 }

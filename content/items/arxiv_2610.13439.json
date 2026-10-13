@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Collective Autonomous Vehicle (AV) route choices in real-world traffic networks can create externalities for Human-Driven Vehicles (HDVs), as routes that benefit AVs may increase travel times for other road users. To address this, we introduce a social component, the marginal cost, to the selfish travel time AV reward. Marginal cost captures an AV's impact on other road users by comparing their travel times with those in a counterfactual simulation in which the AV is removed. We study AV route choice in mixed-autonomy traffic settings using Multi-Agent Reinforcement Learning (MARL), where AVs learn routing policies through repeated interactions with the traffic environment. Experiments on the real-world networks of Ingolstadt and Provins show that incorporating marginal cost into the AV reward not only limits the increase in HDV travel times and shortens AV travel times relative to selfish AV routing, but also improves overall system performance. In Ingolstadt, selfish routing of 40\\% AVs increases the travel times of other vehicles by 1.7\\%, and this drops to 1.1\\% when the social reward is included. Interestingly, not only does overall system performance improve, but the AVs are also better off when acting socially.This effect is consistent across tested cities, penetration rates, and replications, yet when the weight of the social component in the reward increases, the system fails to reach the desired performance. For a more scalable approach to social AV routing in mixed-autonomy traffic, we compute the marginal cost only for the AVs whose route choices most affect the traffic system. This reduces the number of counterfactual simulations and achieves similar performance at a significantly lower computational cost. Our results suggest that AV routing should go beyond selfish rewards and, for the benefit of all traffic participants, include a social component in its objective.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Anastasia Psarou",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mikolaj Rams",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Blazej Torbus",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rafal Kucharski",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.MA",
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.13439v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.13439v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-09",
+    "repository_urls": [],
+    "title": "Collective Autonomous Vehicle Routing Needs Social Awareness for Coexistence with Human Drivers"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-11_2610.13439",
+    "members": [
+      "arxiv:2610.13439"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.96,
+        "id": "data:street-network",
+        "label": "street network data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.13439",
+    "doi": "10.48550/arxiv.2610.13439",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-13T02:31:12Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006017,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2253,
+      "out": 293
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9143,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3657,
+    "relevance": 0.9143
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The evaluated routing strategies rely on counterfactual traffic simulations to calculate marginal costs, which requires high computational resources and real-time network state estimates to deploy.",
+      "what": "This study introduces a multi-agent reinforcement learning routing framework for autonomous vehicles (AVs) that incorporates marginal cost into the AV reward function based on counterfactual simulations without the AV present. Evaluated on road networks in Ingolstadt and Provins, social-aware routing with a 40% AV market share reduced the travel time penalty inflicted on human-driven vehicles from 1.7% under selfish routing to 1.1% in Ingolstadt, while simultaneously lowering AV travel times. A targeted approach that computes marginal costs for only the most impactful AVs achieved comparable network performance with substantially lower computational overhead.",
+      "why": "It demonstrates that incorporating social awareness into AV routing algorithms resolves a coordination trap where selfish AV optimization hurts both human drivers and the AV fleet itself."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-09",
+  "work_key": "arxiv:2610.13439"
+}

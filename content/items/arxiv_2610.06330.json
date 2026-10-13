@@ -44,12 +44,54 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03bea9k73",
+        "label": "Ollscoil na Gaillimhe – University of Galway"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5111305794",
+        "label": "Róisín Luo"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7259-1047",
+        "label": "Karyn Morrissey"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10930",
+        "is_primary": true,
+        "label": "Flood Risk Assessment and Management",
+        "score": 0.5474,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10747",
+        "is_primary": false,
+        "label": "Disaster Management and Resilience",
+        "score": 0.3162,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12488",
+        "is_primary": false,
+        "label": "Mental Health via Writing",
+        "score": 0.0216,
+        "subfield": "3207"
+      }
+    ]
   },
   "first_published": "2026-10-05",
   "graph": {
@@ -60,7 +102,7 @@
   "ids": {
     "arxiv": "2610.06330",
     "doi": "10.48550/arxiv.2610.06330",
-    "openalex": null,
+    "openalex": "W7220671638",
     "pmid": null
   },
   "provenance": {
@@ -68,7 +110,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-08T00:54:57Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005738,
     "llm": {
@@ -156,6 +199,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-05",
+  "updated": "2026-10-12",
   "work_key": "arxiv:2610.06330"
 }

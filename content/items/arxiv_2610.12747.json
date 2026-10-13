@@ -1,0 +1,175 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Ego-trajectory prediction in urban roadway work zones remains an underexplored topic in autonomous-driving research, with limited dedicated data and systematic evaluation. Roadway work zones involve temporary changes in the lane layouts and connectivity of the roads, complicating interactions with surrounding vehicles and workers. These changes make future vehicle trajectories difficult to predict. To address these challenges, we collect WZDrive-Data, a multimodal dataset comprising 1,183 work-zone driving segments from 33 drivers, using a human-in-the-loop driving simulator with prerecorded worker animations and VR-controlled workers. Driver control and gaze signals are recorded from human participants, while vehicle trajectories and scene information are obtained from the simulator. Our proposed multimodal ego-trajectory predictor, WZDrive, achieves a mean minADE (K=6) of 1.09 m and minFDE (K=6) of 2.12 m. Compared with the best-performing state-of-the-art baseline for each metric in our benchmark, WZDrive reduces minADE (K=6) by 7.18% and minFDE (K=6) by 13.18%. This research addresses a gap in autonomous-driving research on urban work zones by combining human-in-the-loop data collection with multimodal learning from human driving signals and in the context of work zones.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Shuo Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Aman Sunesh",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Semiha Ergan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kaan Ozbay",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.12747v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.12747v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-08",
+    "repository_urls": [],
+    "title": "Trajectory Prediction for Autonomous Driving in Road Construction Zones Using Human-in-the-Loop Driving Data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-11_2610.12747",
+    "members": [
+      "arxiv:2610.12747"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.12747",
+    "doi": "10.48550/arxiv.2610.12747",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-13T02:31:12Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005758,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2099,
+      "out": 290
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.939,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3756,
+    "relevance": 0.939
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Evaluation relies on simulated work-zone environments and virtual human interactions rather than real-world road construction data.",
+      "what": "Researchers created WZDrive-Data, a dataset of 1,183 work-zone driving segments collected from 33 participants using a human-in-the-loop VR simulator featuring worker animations. Utilizing driver gaze and control signals alongside scene contextual data, the authors developed WZDrive, a multimodal trajectory predictor achieving a minADE of 1.09 m and minFDE of 2.12 m at K=6. The approach outperforms leading baseline models on these metrics by 7.18% and 13.18%, respectively.",
+      "why": "Integrating human driver gaze and control patterns into multimodal predictors improves autonomous vehicle trajectory forecasting through chaotic, temporarily reconfigured work zones where traditional map priors fail."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-08",
+  "work_key": "arxiv:2610.12747"
+}

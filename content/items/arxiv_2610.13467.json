@@ -1,0 +1,204 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Overtourism concentrates visitor demand on few iconic sites, while other points of interest (POIs) in the same area often remain known only to a narrower public. This imbalance is especially critical in mountain environments, where limited infrastructure amplifies environmental pressures. Discovering lesser-known POIs is relevant for redistributing tourism demand spatially, valuing underrepresented heritage, and temporally, easing high seasonality pressures on popular POIs. Across the literature, definitions of lesser-known POIs or hidden gems remain scattered, and existing scoring approaches remain incomplete, relying on narrow indicators (e.g., number of photos, reviews, likes) which fail to characterize mountain POIs holistically. These approaches are further constrained by their reliance on commercial proprietary sources, or by questionnaires that are subject to memory bias. To address these gaps, we introduce a novel multi-dimensional metric, the Obscurity Score, that groups fragmented literature into four key dimensions (International Awareness, Attractiveness, Promotion, and Accessibility) to systematically detect and characterize lesser-known POIs and enable their promotion as a first step toward mitigating overtourism. To operationalize this score, we develop a generic pipeline mapping open data sources onto these four dimensions. Preliminary results from a web-based prototype demonstrate the practical relevance of the proposed approach.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "LIUPPA, UPPA",
+            "ror": null
+          }
+        ],
+        "name": "Adriana Pompejano",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "LIUPPA, UPPA",
+            "ror": null
+          }
+        ],
+        "name": "Sébastien Laborie",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "LIUPPA, UPPA",
+            "ror": null
+          }
+        ],
+        "name": "Maxime Masson",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "LIUPPA, UPPA",
+            "ror": null
+          }
+        ],
+        "name": "Christian Sallaberry",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "UPPA, LIUPPA",
+            "ror": null
+          }
+        ],
+        "name": "Philippe Roose",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.SI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.13467v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.13467v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-09",
+    "repository_urls": [],
+    "title": "A Multi-Dimensional Score for Detecting Lesser-Known Points of Interest in Mountain Regions"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-11_2610.13467",
+    "members": [
+      "arxiv:2610.13467"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.13467",
+    "doi": "10.48550/arxiv.2610.13467",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-13T02:31:12Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00493,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2033,
+      "out": 209
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.946,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3784,
+    "relevance": 0.946
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework relies on preliminary results from a web prototype without providing empirical validation of actual visitor redistribution or long-term environmental impacts.",
+      "what": "The Obscurity Score framework synthesizes open spatial data across four dimensions—International Awareness, Attractiveness, Promotion, and Accessibility—to systematically identify and classify lesser-known points of interest in mountain environments. The authors built a generic data processing pipeline alongside a web-based prototype to operationalize and evaluate the scoring system.",
+      "why": "By moving beyond single-variable metrics like social media counts or proprietary survey data, this approach gives destination planners an open-source tool to divert foot traffic away from congested alpine landmarks toward underutilized sites."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-09",
+  "work_key": "arxiv:2610.13467"
+}

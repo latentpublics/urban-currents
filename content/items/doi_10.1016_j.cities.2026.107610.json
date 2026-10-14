@@ -1,46 +1,83 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Exploring the associations between housing vacancy and public facility allocation in shrinking cities is valuable for sustainable development policymaking. However, the existing studies on the associative effect of housing vacancy on public facility allocation in shrinking cities remain limited. Taking Northeast China, a region characterized by a significant number of shrinking cities, as a case study, this research examines the evolution of housing vacancy and its association with the allocation of public administration and service facilities, commercial services, and the diversity of public facilities. The analysis considers both the physical spatial structure and residents' perceptions. The results show that shrinking cities exhibit an increasing trend in housing vacancy during the research period. Public facility allocation in shrinking cities changes significantly in response to variations in housing vacancy. Among the various aspects, the diversity of public facility allocation shows a stronger response to housing vacancy, and the changes in public facility allocation are more pronounced in severely vacant cities than in mildly vacant cities. Meanwhile, the neighborhood atmosphere in shrinking cities moderates the relationship between residents' perception of housing vacancy and their perception of public facility allocation. Residents in severely vacant shrinking cities show stronger perceptions and attitudinal responses toward commercial facility allocation. The more pronounced the perceived housing vacancy in shrinking cities, the lower residents' satisfaction with public facility allocation. The study intends to provide references for formulating sustainable development strategies for shrinking cities.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Northeast Normal University",
+            "ror": "02rkvz144"
+          }
+        ],
         "name": "Hongri Sun",
         "openalex": "A5016486390",
         "orcid": "https://orcid.org/0000-0001-5221-2441"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Northeast Institute of Geography and Agroecology",
+            "ror": "01a9z1q73"
+          }
+        ],
         "name": "Zuopeng Ma",
         "openalex": "A5102570344",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Northeast Institute of Geography and Agroecology",
+            "ror": "01a9z1q73"
+          }
+        ],
         "name": "Guolei Zhou",
         "openalex": "A5101699911",
         "orcid": "https://orcid.org/0000-0001-6726-8093"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Northeast Normal University",
+            "ror": "02rkvz144"
+          }
+        ],
         "name": "Yanjun Liu",
         "openalex": "A5123558316",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Northeast Normal University",
+            "ror": "02rkvz144"
+          }
+        ],
         "name": "Hui Fu",
         "openalex": "A5049051689",
         "orcid": "https://orcid.org/0000-0001-7720-0463"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Northeast Normal University",
+            "ror": "02rkvz144"
+          }
+        ],
         "name": "Yu Jin",
         "openalex": "A5041914914",
         "orcid": "https://orcid.org/0000-0002-6250-6811"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Northeast Normal University",
+            "ror": "02rkvz144"
+          }
+        ],
         "name": "Hanchun Wu",
         "openalex": "A5102649099",
         "orcid": "https://orcid.org/0000-0003-0293-9022"
@@ -70,7 +107,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02rkvz144",
+        "label": "Northeast Normal University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01a9z1q73",
+        "label": "Northeast Institute of Geography and Agroecology"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -109,7 +157,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": [
       {
@@ -208,14 +256,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-10-10T00:41:09Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -237,26 +288,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The study relies on cross-sectional survey data to capture residents' perceptions, which limits causal claims about how neighborhood atmosphere alters attitudes over time.",
+      "what": "This study evaluated the relationship between rising housing vacancy and public facility allocation across shrinking cities in Northeast China, examining public administration, commercial services, and facility diversity through physical spatial metrics and resident surveys. The findings demonstrate that facility diversity is particularly responsive to housing vacancy rates, with severely vacant cities experiencing larger shifts in facility distribution and stronger negative impacts on resident satisfaction. Additionally, local neighborhood atmosphere was found to moderate how residents perceive the link between vacant housing and nearby commercial services.",
+      "why": "It provides empirical evidence on how urban shrinkage alters specific categories of municipal services, demonstrating that facility diversity declines more sharply than individual service types as housing vacancy worsens."
+    }
   },
   "track": "papers",
-  "updated": "2026-10-08",
+  "updated": "2026-10-13",
   "work_key": "doi:10.1016/j.cities.2026.107610"
 }

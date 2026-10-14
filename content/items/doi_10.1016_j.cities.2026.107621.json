@@ -1,46 +1,87 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Understanding how changes in the built environment causally shape travel behavior remains a central challenge in urban studies, particularly in contexts of large-scale resettlement and urban peripheralization. This study exploits a quasi-random housing allocation system in Shanghai as a natural experiment to identify the causal impacts of built environment degradation on commuting mode choices. An integrated analytical framework combining double machine learning and causal mediation analysis is developed to disentangle direct effects and indirect pathways operating through household transportation assets. Using survey data from 5967 households across resettlement communities, the empirical results show that built environment degradation significantly suppresses active travel while, counterintuitively, increasing reliance on public transit. Mediation analysis further reveals that these effects are jointly shaped by adjustments in private car ownership and non-motorized vehicle ownership, with distinct and heterogeneous transmission mechanisms across different built environment dimensions. In particular, declines in land-use mix, accessibility, and transit service provision weaken local walkability while reinforcing reliance on public transit under constrained mobility conditions. These findings challenge conventional expectations derived from Western suburbanization and point to a context-specific mechanism in which spatial mismatch, combined with institutional constraints on car ownership, reshapes mode choices by limiting households' ability to adapt through motorization. By integrating causal inference with a natural experiment, this study provides new insights into the behavioral consequences of housing resettlement and offers policy implications for coordinating land use, transport provision, and social equity in rapidly urbanizing megacities.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
         "name": "Huiqin Liu",
         "openalex": "A5157936785",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Leeds",
+            "ror": "024mrxd33"
+          }
+        ],
         "name": "Yuchen Huang",
         "openalex": "A5150048991",
         "orcid": "https://orcid.org/0009-0002-1844-9351"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Hong Kong",
+            "ror": "02zhqgq86"
+          }
+        ],
         "name": "Waishan Qiu",
         "openalex": "A5013220522",
         "orcid": "https://orcid.org/0000-0001-6461-7243"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
         "name": "Yingfei Tu",
         "openalex": "A5079396948",
         "orcid": "https://orcid.org/0009-0002-6226-4530"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "China Academy of Urban Planning and Design",
+            "ror": "0265jtk41"
+          }
+        ],
         "name": "Chang Yuan",
         "openalex": "A5157966296",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Shanghai Urban Transportation Design Institute (China)",
+            "ror": "01wxtxj33"
+          }
+        ],
         "name": "Lin Xiao",
         "openalex": "A5157962627",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          },
+          {
+            "name": "Harvard University",
+            "ror": "03vek6s52"
+          }
+        ],
         "name": "Faan Chen",
         "openalex": "A5157959953",
         "orcid": null
@@ -69,8 +110,45 @@
   },
   "entities": {
     "data": [],
-    "methods": [],
-    "orgs": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:causal-inference",
+        "label": "causal inference"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03rc6as71",
+        "label": "Tongji University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:024mrxd33",
+        "label": "University of Leeds"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02zhqgq86",
+        "label": "University of Hong Kong"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0265jtk41",
+        "label": "China Academy of Urban Planning and Design"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01wxtxj33",
+        "label": "Shanghai Urban Transportation Design Institute (China)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03vek6s52",
+        "label": "Harvard University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -108,8 +186,15 @@
         "label": "Faan Chen"
       }
     ],
-    "places": [],
-    "places_status": "not_attempted",
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q8686",
+        "label": "Shanghai",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
     "tools": [],
     "topics": [
       {
@@ -240,14 +325,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-10-10T00:41:09Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -269,26 +357,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "5967 households",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The findings rely on self-reported survey data from a single megacity under unique local car-ownership restrictions.",
+      "what": "Using a survey of 5,967 households across Shanghai resettlement communities, this study leveraged a quasi-random housing allocation scheme alongside double machine learning and causal mediation analysis to evaluate travel behavior changes. Deterioration in the built environment—specifically reduced land-use mix, lower accessibility, and decreased transit service provision—decreased active travel while increasing public transit reliance. The effect operates through constrained adjustments in car and non-motorized vehicle ownership under institutional motorization limits.",
+      "why": "The findings counter standard Western suburbanization models by demonstrating that degraded peripheral environments can force higher transit dependency rather than car use when institutional barriers limit automobile acquisition."
+    }
   },
   "track": "papers",
-  "updated": "2026-10-08",
+  "updated": "2026-10-13",
   "work_key": "doi:10.1016/j.cities.2026.107621"
 }

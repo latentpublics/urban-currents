@@ -1,34 +1,77 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Africa lies at the frontline of climate vulnerability and global poverty, yet how extreme temperature changes affect household asset wealth remains poorly understood. To address this gap, this study combines a high-resolution, long-term dataset of African asset wealth with hourly climate observations to quantify the unequal impacts of extreme temperature changes. The results show that rural areas experience significantly larger adverse effects from extreme heat, whereas urban areas exhibit weaker impacts. Moreover, the negative effects increase with increasing distance from cities, highlighting the greater vulnerability of remote rural areas. Notably, the effects are more pronounced in lower-asset wealth regions. Between 2000 and 2023, extreme temperature changes contributed to annual losses equivalent to 2.42% of Africa's asset wealth growth, with pronounced rural–urban disparities. Rural areas experienced greater losses, with annual losses equivalent to 2.54% of their asset wealth growth, compared to only 0.34% in urban areas. Regionally, Middle Africa was most severely affected, with annual losses equivalent to 16.33% of its asset wealth growth. The poorest settlements lost nearly 50% of their annual asset wealth growth, while the wealthiest settlements lost only 1.24%. These findings indicate that extreme temperature changes not only reduce asset wealth growth across Africa but also exacerbate regional wealth disparities, demonstrating how high-resolution wealth monitoring can inform targeted climate policies for vulnerable populations.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Wuhan University",
+            "ror": "033vjfk17"
+          },
+          {
+            "name": "State Key Laboratory of Information Engineering in Surveying Mapping and Remote Sensing",
+            "ror": "02bpap860"
+          }
+        ],
         "name": "Mengjie Wang",
         "openalex": "A5157941839",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Wuhan University",
+            "ror": "033vjfk17"
+          },
+          {
+            "name": "Wuhan Business University",
+            "ror": "0282ggx30"
+          }
+        ],
         "name": "Mian Yang",
         "openalex": "A5157909318",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Wuhan University",
+            "ror": "033vjfk17"
+          },
+          {
+            "name": "State Key Laboratory of Information Engineering in Surveying Mapping and Remote Sensing",
+            "ror": "02bpap860"
+          }
+        ],
         "name": "Deren Li",
         "openalex": "A5130202336",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Hubei University Of Economics",
+            "ror": "012a84b59"
+          }
+        ],
         "name": "Wenliang Tang",
         "openalex": "A5071259478",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Wuhan University",
+            "ror": "033vjfk17"
+          },
+          {
+            "name": "State Key Laboratory of Information Engineering in Surveying Mapping and Remote Sensing",
+            "ror": "02bpap860"
+          }
+        ],
         "name": "Xi Li",
         "openalex": "A5157918247",
         "orcid": null
@@ -58,7 +101,28 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:033vjfk17",
+        "label": "Wuhan University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02bpap860",
+        "label": "State Key Laboratory of Information Engineering in Surveying Mapping and Remote Sensing"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0282ggx30",
+        "label": "Wuhan Business University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:012a84b59",
+        "label": "Hubei University Of Economics"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -87,7 +151,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": [
       {
@@ -165,14 +229,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-10-10T00:41:09Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -194,26 +261,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2000 and 2023",
+      "url": null,
+      "value": true
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": null,
+      "what": "Analysis combining high-resolution asset wealth data with hourly temperature records across Africa from 2000 to 2023 demonstrates that extreme heat reduced annual continental asset wealth growth by 2.42%. Rural communities lost 2.54% of annual growth compared to 0.34% in urban centers, with damage escalating further from urban cores. The poorest settlements forfeited nearly 50% of their annual asset growth due to extreme heat, whereas the wealthiest settlements lost 1.24%, causing Middle Africa to lose 16.33% of its annual growth.",
+      "why": "This quantifies how extreme climate events actively widen economic inequality across a continent by selectively stripping growth from remote, low-wealth populations while leaving wealthier urban centers relatively insulated."
+    }
   },
   "track": "papers",
-  "updated": "2026-10-08",
+  "updated": "2026-10-13",
   "work_key": "doi:10.1016/j.apgeog.2026.104212"
 }

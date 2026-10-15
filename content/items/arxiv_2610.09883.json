@@ -58,11 +58,57 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5138688082",
+        "label": "Lars Sickert Karam"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4398-0718",
+        "label": "Rui M. Castro"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4904-1255",
+        "label": "Maarten Schoukens"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6979-3414",
+        "label": "Alessandro Corbetta"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11830",
+        "is_primary": true,
+        "label": "Point processes and geometric inequalities",
+        "score": 0.9624,
+        "subfield": "2604"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11500",
+        "is_primary": false,
+        "label": "Evacuation and Crowd Dynamics",
+        "score": 0.0284,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0047,
+        "subfield": "2215"
+      }
+    ]
   },
   "first_published": "2026-10-07",
   "graph": {
@@ -73,7 +119,7 @@
   "ids": {
     "arxiv": "2610.09883",
     "doi": "10.48550/arxiv.2610.09883",
-    "openalex": null,
+    "openalex": "W7221023320",
     "pmid": null
   },
   "provenance": {
@@ -81,7 +127,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-09T01:09:42Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005458,
     "llm": {
@@ -169,6 +216,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-07",
+  "updated": "2026-10-14",
   "work_key": "arxiv:2610.09883"
 }

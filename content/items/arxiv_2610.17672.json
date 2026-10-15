@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Large language models (LLMs) have shown strong potential for human mobility generation by modeling individual routines, activities, and mobility preferences. However, existing approaches remain largely resident-centric: generating realistic individual trajectories does not necessarily recover the encounters that emerge when multiple residents co-occur at the same place and time. To this end, we study encounter-aware human mobility generation, which jointly preserves individual mobility and population-level interaction structure. We propose EncounterMob, an encounter-driven LLM framework consisting of a coarse-to-fine Encounter Generator and an Iterative Coupling Framework. The Encounter Generator first captures city-level encounter rhythms and then instantiates participant-time-venue encounters, while the Iterative Coupling Framework coordinates these encounters with personal mobility behavior through successive refinement. We further introduce an encounter recovery protocol covering encounter marginal and joint distributions over residents, times, and venues. Experiments on the Japan and NYC datasets show that EncounterMob outperforms all external baselines on all seven encounter metrics and all six personal mobility metrics. Compared with ELLMob, it reduces the participant-time-venue joint error by 40.4%/41.7% and the mean personal mobility error by 58.8%/32.7% on Japan/NYC, respectively.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Chao Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Renhe Jiang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chuan Xiao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jiawei Wang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "comment": "29 pages, including references and appendices",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.17672v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.17672v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-13",
+    "repository_urls": [],
+    "title": "Encounter-Driven City-Scale Human Mobility Generation with Large Language Models"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-13_2610.17672",
+    "members": [
+      "arxiv:2610.17672"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q60",
+        "label": "New York City",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.17672",
+    "doi": "10.48550/arxiv.2610.17672",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-14T23:50:15Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00466,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2021,
+      "out": 181
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.904,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3616,
+    "relevance": 0.904
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "EncounterMob uses large language models with a coarse-to-fine Encounter Generator and an Iterative Coupling Framework to generate city-scale human mobility while maintaining population co-occurrence patterns. Evaluated on datasets from Japan and New York City, the model reduced participant-time-venue joint error by 40.4% and 41.7% and mean personal mobility error by 58.8% and 32.7% compared to the ELLMob baseline.",
+      "why": "Generative mobility models can now reproduce both individual movement patterns and collective, spatio-temporal population encounter structures simultaneously."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-13",
+  "work_key": "arxiv:2610.17672"
+}

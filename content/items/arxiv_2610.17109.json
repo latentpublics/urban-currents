@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Because household travel surveys combine household characteristics, variable-length person rosters, vehicle rosters, and trip chains, existing synthesis pipelines split them across separate models or flatten them into cropped fixed-length vectors. Representation, rather than modeling, becomes the bottleneck: splitting severs cross-segment dependence, and cropping truncates the household-structure distribution. We instead tokenize the diary and keep the object whole: each household-day becomes one token sequence with count tokens for vehicles, persons, and trips, and distinct symbols for padded, hidden, unobserved, and inapplicable positions. We introduce DiaryBridge, a masked diffusion model that bridges the fully hidden sequence to the distribution of complete diaries by unmasking positions in any order. One trained model, conditioned on any observed subset, performs synthesis and partial-diary completion alike. Experiments on real data extracted from the 2017/2018 Regional Travel Survey of the Baltimore region show that DiaryBridge generates travel reflecting vehicle availability and employment status, recovers shared trips using other household members' observed diaries, and better reproduces aggregate demand across modes, purposes, and departure periods than the learned baselines.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Pascal Jutras-Dubé",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Raziq Zaman",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Fabian Bastin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Cinzia Cirillo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ruqi Zhang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.SI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.17109v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.17109v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-12",
+    "repository_urls": [],
+    "title": "Masked Diffusion for Travel Diaries Synthesis"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-13_2610.17109",
+    "members": [
+      "arxiv:2610.17109"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.902,
+        "id": "data:travel-survey",
+        "label": "travel survey"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.17109",
+    "doi": "10.48550/arxiv.2610.17109",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-14T23:50:15Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005219,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1955,
+      "out": 254
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9351,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.374,
+    "relevance": 0.9351
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model was evaluated on data from a single metropolitan region's travel survey.",
+      "what": "The authors developed DiaryBridge, a masked diffusion model that converts household travel survey records into single token sequences containing variable counts of persons, vehicles, and trip chains. Evaluated on the 2017/2018 Regional Travel Survey of the Baltimore region, the unified model handles both full synthetic generation and conditional completion of partial travel diaries while capturing intra-household shared trips. It outperformed learned baselines at matching aggregate demand distributions across travel modes, trip purposes, and departure times.",
+      "why": "This approach replaces multi-step or truncated vector pipelines with a single sequence model, preserving cross-member dependencies and household structures that traditional travel survey synthesis methods break."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-12",
+  "work_key": "arxiv:2610.17109"
+}

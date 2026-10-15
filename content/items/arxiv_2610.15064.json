@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The world has seen several threats that include resource depletion, food security, poverty and inequality, difficulties associated with urbanization, migration, and environmental effects. The World Risk Index (WRI) is a metric that is used to measure the susceptibility of nations against natural disasters and related risks that is reported by the Humanitarian Data Exchange. The WRI is comprised of factors such as susceptibility, vulnerability to natural hazards, and coping mechanisms. The WRI index has allowed to recognize regions in advance in order to face threats and situations beforehand. This study was conducted by analyzing the data that was related to years from 2000 to 2025 using data visualization techniques. Python related libraries of Matplotlib, Seaborn, and Geopandas were used due to their efficiency and usability in analyzing WRI data. As per the analysis, it was identified that countries of Philippines, Mexico, Indonesia, and India were recorded with high WRI index values that showed these nations should be prepared for natural disasters and situations. Hence, this study has provided insights using data visualization techniques in understanding natural disasters and threats so that necessary measures can be taken",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Malithi Nawarathne",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Nadeesha Herath Mudiyanselage",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Lihini Sangeetha",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.CY"
+    ],
+    "comment": "16 pages",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.15064v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.15064v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-10",
+    "repository_urls": [],
+    "title": "Global Disaster Risk Assessment Using World Risk Index Data: A Geospatial and Visual Analytics Approach"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-13_2610.15064",
+    "members": [
+      "arxiv:2610.15064"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-analysis",
+        "label": "spatial analysis"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:geopandas/geopandas",
+        "label": "GeoPandas"
+      }
+    ],
+    "topics": []
+  },
+  "first_published": "2026-10-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.15064",
+    "doi": "10.48550/arxiv.2610.15064",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-14T23:50:19Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004904,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1973,
+      "out": 216
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9449,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.378,
+    "relevance": 0.9449
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2000 to 2025",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study mapped national-level disaster risk from 2000 to 2025 using World Risk Index datasets processed through Python geospatial tools. Visualizations identified the Philippines, Mexico, Indonesia, and India as consistently recording the highest risk scores based on their exposure, vulnerability, and coping capacities.",
+      "why": "It transforms multi-decadal aggregate risk index records into dynamic spatial visualizations that highlight persistent global disaster hotspots requiring prioritized preparedness."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-10",
+  "work_key": "arxiv:2610.15064"
+}

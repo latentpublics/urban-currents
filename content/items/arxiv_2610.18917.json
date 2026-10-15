@@ -1,0 +1,188 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban venues such as restaurants, shops, bars and parks host the daily life of a city, and their collective rise and fall signals how vibrant a neighbourhood is. The usual assumption is that a venue's fortunes follow its neighbourhood's, so that how wealthy an area is and how many people live there will decide a venue's performance. Yet whether there is a common performance trajectory shared by venues over time is underexplored. In this study, we use 5.5 years of Foursquare data for about 10^4 venues in London and Barcelona. We found six distinguishable shapes recur in both cities, that are (1) Fall, (2) Rise, (3) Rise & Fall, (4) Steady, (5) Ephemeral (an early hit that loses popularity fast) and (6) Underdogs (a slow starter that gains popularity late). However, no recovery shape appears, that is neither city yields a U-shaped fall-and-rise group. Additionally, we found that deprivation and population density are not indicative which shape a venue follows. We also discovered that how early a shape can be recognized depends on when its distinctive segment occurs, not a shape's complexity. Proximity between venues, however, does predict how well-performing a venue is. We uncovered a mixing pattern where venues of the same shape tend to locate together more often than chance within roughly 200 to 600 metres. Finally, our qualitative reading of two contrasting districts, one rising in London and one falling in Barcelona, show that comparable socioeconomic conditions but divergent gentrification histories can generate vastly different popularity trajectories. All in all, our results altogether point at that urban vibrancy emerges at the block- and street- level, and social and historical contexts matter in terms of the characteristics of such patterns.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Wang Ngai Yeung",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Lakmal Meegahapola",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Daniele Quercia",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Riccardo Di Clemente",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.LG",
+      "cs.SI"
+    ],
+    "comment": "18 pages for main body, 8 pages for supplementary materials; 5 figures and 2 tables in main body, 7 figures and 9 tables in supplementary materials",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.18917v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.18917v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-12",
+    "repository_urls": [],
+    "title": "Popularity Trajectories and Mixing Patterns of Urban Venues in Two European Cities"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-14_2610.18917",
+    "members": [
+      "arxiv:2610.18917"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q84",
+        "label": "London",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1492",
+        "label": "Barcelona",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.18917",
+    "doi": "10.48550/arxiv.2610.18917",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-15T23:38:42Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005872,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2253,
+      "out": 277
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9733,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3893,
+    "relevance": 0.9733
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "5 years of",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on Foursquare location check-in data, which reflects the behavior of a self-selected platform user base rather than total foot traffic.",
+      "what": "Using 5.5 years of Foursquare data covering roughly 10,000 venues in London and Barcelona, six distinct popularity trajectories emerged across both locations: Fall, Rise, Rise & Fall, Steady, Ephemeral, and Underdogs. Deprivation and population density fail to predict which trajectory a venue follows, but venues sharing the same trajectory cluster spatially within 200 to 600 meters. A qualitative comparison of gentrifying districts in both cities further showed that divergent neighborhood histories produce contrasting venue performance patterns despite similar socioeconomic profiles.",
+      "why": "This refutes the common assumption that neighborhood-level wealth and demographic density govern individual venue success, showing instead that commercial vitality is driven by block-level spatial proximity and localized gentrification histories."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-12",
+  "work_key": "arxiv:2610.18917"
+}

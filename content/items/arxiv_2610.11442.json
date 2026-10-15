@@ -86,12 +86,104 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:035t8zc32",
+        "label": "The University of Osaka"
+      },
+      {
+        "confidence": null,
+        "id": "ror:057zh3y96",
+        "label": "The University of Tokyo"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00q4vv597",
+        "label": "Hong Kong University of Science and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05dqf9946",
+        "label": "Institute of Science Tokyo"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5024568567",
+        "label": "Mengkun Gao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5114129919",
+        "label": "Zengqing Wu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5158235045",
+        "label": "Renhe Jiang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5158069511",
+        "label": "Jiawei Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-7457-3139",
+        "label": "Yusong Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5158226186",
+        "label": "Chuang Yang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5158032575",
+        "label": "Shuyuan Zheng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5158061938",
+        "label": "Makoto Onizuka"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5158000585",
+        "label": "Chuan Xiao"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.958,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11106",
+        "is_primary": false,
+        "label": "Data Management and Algorithms",
+        "score": 0.0309,
+        "subfield": "1711"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.003,
+        "subfield": "2215"
+      }
+    ]
   },
   "first_published": "2026-10-08",
   "graph": {
@@ -102,7 +194,7 @@
   "ids": {
     "arxiv": "2610.11442",
     "doi": "10.48550/arxiv.2610.11442",
-    "openalex": null,
+    "openalex": "W7221079321",
     "pmid": null
   },
   "provenance": {
@@ -110,7 +202,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-10T00:40:54Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005627,
     "llm": {
@@ -198,6 +291,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-08",
+  "updated": "2026-10-15",
   "work_key": "arxiv:2610.11442"
 }

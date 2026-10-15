@@ -1,0 +1,161 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This dissertation discusses the distribution of city sizes using censuses of the Brazilian Institute for Geography and Statistics (IBGE) spanning 150 years, from 1872 to 2022, as well as the allometric scaling relation with the 2022 census data. The Gompertz distribution is fitted to the population size of less populated cities, while the Zipf power law is used to represent the cities having larger populations, with threshold varying between 20,216 and 102,857 inhabitants. The data analysis shows that the Gompertz-Zipf distribution can describe the data across all censuses, with the Gompertz parameter $B$ oscillating between $-2.39\\times10^{-5}$ and $-1.49\\times10^{-5}$, indicating periods with faster decreases and periods with slower decreases in the number of cities within the less populated segment as population increases, while the Zipf exponent ranges from $a=3.61\\pm0.09$ in 1872 to $a=2.28\\pm0.02$ in 2022. The Gini coefficient $G$ and the Zanardi index $Z$ are used to quantify the inequality in the city population distribution, whose obtained values are $G=0.439$ and $Z=-0.002$ for the 1872 census and $G=0.733$ and $Z=0.018$ for the 2022 dataset, while the Pietra index $p$ and the Kolkata index $k$, associated with the most populated cities, are $p=31.893\\%$ and $k=65.894\\%$ for 1872, and $p=57.395\\%$ and $k=78.342\\%$ for 2022. These results reveal a high concentration of population in larger cities, with $G$ increasing from 1872 to 2022 and $Z$ becoming positive after 1900, indicating a greater concentration of population in the group of more populated cities than in the group of less populated cities. Finally, urban allometry is also examined, generating an exponent $b=0.835$ for the 2022 data, showing that the scaling relation between area and population holds for urbanized area but not for total administrative area, indicating that scaling is associated with spatial occupation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Sharon Teles",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": "69 pages",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.19338v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.19338v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-14",
+    "repository_urls": [],
+    "title": "The Gompertz-Zipf city size distribution and urban allometry"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-14_2610.19338",
+    "members": [
+      "arxiv:2610.19338"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.19338",
+    "doi": "10.48550/arxiv.2610.19338",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-15T23:38:38Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00644,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2595,
+      "out": 283
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9701,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.388,
+    "relevance": 0.9701
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The allometric scaling relationships were evaluated using only the 2022 census data rather than the full historical series.",
+      "what": "The study modeled Brazilian city size distributions using IBGE census records from 1872 to 2022, combining a Gompertz distribution for smaller towns and a Zipf power law for larger cities above a population threshold between 20,216 and 102,857. Analysis reveals that population inequality grew significantly over 150 years, with the Gini index rising from 0.439 to 0.733 and the Zipf exponent dropping from 3.61 to 2.28, while 2022 urban allometric scaling yielded a sublinear exponent of b=0.835 for built-up urbanized area against total population.",
+      "why": "Long-term empirical tracking confirms that urban allometric scaling governs built footprint rather than administrative boundaries, while proving that population concentration in upper-tier cities has intensified continually across a 150-year national urbanization process."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-14",
+  "work_key": "arxiv:2610.19338"
+}

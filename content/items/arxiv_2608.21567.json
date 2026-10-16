@@ -1,38 +1,53 @@
 {
   "badges": [
-    "preprint"
+    "published"
   ],
   "bibliography": {
     "abstract": "Human mobility serves as an essential proxy for understanding social, economic, and environmental dynamics in urban systems. Geospatial transferability, which measures a model's capability in a new location or unseen region, is a critical dimension for comparing different human mobility generation models. However, few studies have studied the intrinsic characteristics of geospatial transferability. To this end, this study systematically investigates the geospatial transferability of four representative human mobility generation models using a large-scale benchmark dataset of census tract level commuting flows across 2265 counties in the United States. Inspired by the domain adaptation theory in machine learning, we introduce geographic domain shift to describe the intrinsic differences in geographic feature distributions and spatial structures between source and target regions, which may jointly affect model transferability. Moreover, we propose two metrics, mutual information and spatial shift, to quantify the geographic domain shift. To examine their associations with model transferability, we employ linear mixed-effects regression to analyze the associations between geographic domain shifts and transferability. Our results reveal substantial spatial heterogeneity and asymmetry in transfer performance across regions. Both information shift and spatial shift exhibit statistically significant and complementary explanatory power. This indicates that geospatial transferability depends not only on model design but also on intrinsic geographic differences. These findings provide a novel methodological framework for evaluating and improving the geospatial transferability of human mobility generation models and support more robust and fair human mobility data synthesis across diverse regions. It also offers insights on spatial transferability for GeoAI model development.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
         "name": "Zhiyong Zhou",
-        "openalex": null,
+        "openalex": "A5148120028",
         "orcid": null
       },
       {
         "institutions": [],
         "name": "Song Gao",
-        "openalex": null,
+        "openalex": "A5148141961",
         "orcid": null
       },
       {
         "institutions": [],
         "name": "Qianheng Zhang",
-        "openalex": null,
+        "openalex": "A5148114236",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
         "name": "Feng Zhang",
-        "openalex": null,
+        "openalex": "A5148085737",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
         "name": "Zhenhong Du",
-        "openalex": null,
+        "openalex": "A5148090497",
         "orcid": null
       }
     ],
@@ -41,12 +56,12 @@
     ],
     "comment": "28 pages, 4 figures",
     "primary_location": {
-      "landing_page_url": "https://arxiv.org/abs/2608.21567v1",
-      "pdf_url": "https://arxiv.org/pdf/2608.21567v1",
-      "source_id": "S4306400194",
-      "source_name": "arXiv",
-      "type": "repository",
-      "version": "submittedVersion"
+      "landing_page_url": "https://doi.org/10.1080/24694452.2026.2733292",
+      "pdf_url": null,
+      "source_id": "S2764498735",
+      "source_name": "Annals of the American Association of Geographers",
+      "type": "journal",
+      "version": "publishedVersion"
     },
     "publication_date": "2026-08-21",
     "repository_urls": [],
@@ -62,7 +77,13 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00a2xv884",
+        "label": "Zhejiang University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -130,7 +151,85 @@
   "first_published": "2026-08-21",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
+    "referenced_works": [
+      "openalex:W1965555277",
+      "openalex:W1973749534",
+      "openalex:W1982300822",
+      "openalex:W1990433983",
+      "openalex:W2028138594",
+      "openalex:W2052611179",
+      "openalex:W2105897946",
+      "openalex:W2146960954",
+      "openalex:W2151508424",
+      "openalex:W2156730765",
+      "openalex:W2165698076",
+      "openalex:W2277972536",
+      "openalex:W2473269940",
+      "openalex:W2584886900",
+      "openalex:W2760942449",
+      "openalex:W2799597355",
+      "openalex:W2807841289",
+      "openalex:W2896775444",
+      "openalex:W2953640184",
+      "openalex:W3012808657",
+      "openalex:W3023401249",
+      "openalex:W3041133507",
+      "openalex:W3091692300",
+      "openalex:W3092609815",
+      "openalex:W3092785986",
+      "openalex:W3121125901",
+      "openalex:W3164766304",
+      "openalex:W3165093051",
+      "openalex:W3194059001",
+      "openalex:W3209190492",
+      "openalex:W3214036562",
+      "openalex:W3214685769",
+      "openalex:W3217016897",
+      "openalex:W4200453434",
+      "openalex:W4210246397",
+      "openalex:W4310055260",
+      "openalex:W4311519526",
+      "openalex:W4313470292",
+      "openalex:W4366378392",
+      "openalex:W4367060089",
+      "openalex:W4382989325",
+      "openalex:W4383823320",
+      "openalex:W4385302684",
+      "openalex:W4386065512",
+      "openalex:W4389132373",
+      "openalex:W4389132751",
+      "openalex:W4389474133",
+      "openalex:W4392488475",
+      "openalex:W4392850377",
+      "openalex:W4394564044",
+      "openalex:W4394620247",
+      "openalex:W4395684813",
+      "openalex:W4401030975",
+      "openalex:W4403637867",
+      "openalex:W4404644662",
+      "openalex:W4404735064",
+      "openalex:W4405699969",
+      "openalex:W4407333815",
+      "openalex:W4407661778",
+      "openalex:W4409335149",
+      "openalex:W4410131708",
+      "openalex:W4410189993",
+      "openalex:W4410854590",
+      "openalex:W4412693363",
+      "openalex:W4413143651",
+      "openalex:W4413237909",
+      "openalex:W4413254695",
+      "openalex:W4413874617",
+      "openalex:W4414592064",
+      "openalex:W4414979713",
+      "openalex:W4415571196",
+      "openalex:W4416540988",
+      "openalex:W4416593314",
+      "openalex:W4417283655",
+      "openalex:W4417466101",
+      "openalex:W7133196894",
+      "openalex:W7164577506"
+    ],
     "related_works": []
   },
   "ids": {
@@ -159,11 +258,11 @@
     }
   },
   "publication_status": {
-    "detected_at": null,
-    "doi": null,
-    "journal": null,
-    "source_id": null,
-    "state": "preprint"
+    "detected_at": "2026-10-16T23:26:16Z",
+    "doi": "10.1080/24694452.2026.2733292",
+    "journal": "Annals of the American Association of Geographers",
+    "source_id": "S2764498735",
+    "state": "published"
   },
   "review": {
     "edits": [],
@@ -173,13 +272,13 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
-      "relevance": 0.9856,
+      "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.3942,
-    "relevance": 0.9856
+    "headline": 0.44,
+    "relevance": 1.0
   },
   "signals": {
     "code_available": {
@@ -227,12 +326,12 @@
   },
   "summary": {
     "en": {
-      "caveats": "The evaluation is limited to commuting flows at the census tract level within a single national context, which may not represent other types of human mobility or international spatial structures.",
-      "what": "This study evaluates the geospatial transferability of four representative human mobility generation models using a benchmark dataset of census tract-level commuting flows across 2,265 US counties. It introduces two new metrics, mutual information and spatial shift, to quantify geographic domain shifts in feature distributions and spatial structures, analyzing their relationship with model performance using linear mixed-effects regression.",
-      "why": "It demonstrates that model transferability is highly asymmetric and spatially heterogeneous, proving that transfer performance is driven by intrinsic geographic differences between regions rather than just model architecture."
+      "caveats": "The evaluation relies exclusively on census-tract-level US commuting data, which may not capture finer-grained urban mobility patterns or non-work travel dynamics.",
+      "what": "This study evaluated four human mobility generation models across 2,265 US counties using census-tract commuting data, introducing mutual information and spatial shift metrics to quantify geographic domain shift via linear mixed-effects regression. The analysis reveals significant spatial heterogeneity and directional asymmetry in cross-regional model performance, proving that domain shift components independently drive model transferability.",
+      "why": "Researchers can now isolate geographic structural differences from algorithm performance when evaluating GeoAI models, preventing misleading transferability assessments across disparate regions."
     }
   },
   "track": "papers",
-  "updated": "2026-08-28",
+  "updated": "2026-10-16",
   "work_key": "arxiv:2608.21567"
 }

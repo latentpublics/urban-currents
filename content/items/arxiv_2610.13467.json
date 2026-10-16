@@ -88,11 +88,62 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5133496444",
+        "label": "Adriana Pompejano"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9254-8027",
+        "label": "Sébastien Laborie"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5254-7583",
+        "label": "Maxime Masson"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3605-3927",
+        "label": "Christian Sallaberry"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2227-3283",
+        "label": "Philippe Roose"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10055",
+        "is_primary": true,
+        "label": "Diverse Aspects of Tourism Research",
+        "score": 0.7305,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12670",
+        "is_primary": false,
+        "label": "Urbanism, Landscape, and Tourism Studies",
+        "score": 0.1567,
+        "subfield": "3316"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0416,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-10-09",
   "graph": {
@@ -103,7 +154,7 @@
   "ids": {
     "arxiv": "2610.13467",
     "doi": "10.48550/arxiv.2610.13467",
-    "openalex": null,
+    "openalex": "W7221533224",
     "pmid": null
   },
   "provenance": {
@@ -111,7 +162,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-13T02:31:12Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00493,
     "llm": {
@@ -199,6 +251,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-09",
+  "updated": "2026-10-16",
   "work_key": "arxiv:2610.13467"
 }

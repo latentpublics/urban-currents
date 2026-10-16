@@ -52,11 +52,52 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5158489785",
+        "label": "Zhenhao Huang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5158487505",
+        "label": "Li Sun"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5128004771",
+        "label": "Philip S. Yu"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11106",
+        "is_primary": true,
+        "label": "Data Management and Algorithms",
+        "score": 0.6875,
+        "subfield": "1711"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.1643,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0428,
+        "subfield": "2215"
+      }
+    ]
   },
   "first_published": "2026-10-09",
   "graph": {
@@ -67,7 +108,7 @@
   "ids": {
     "arxiv": "2610.13131",
     "doi": "10.48550/arxiv.2610.13131",
-    "openalex": null,
+    "openalex": "W7221532351",
     "pmid": null
   },
   "provenance": {
@@ -75,7 +116,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-13T02:31:12Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004553,
     "llm": {
@@ -163,6 +205,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-09",
+  "updated": "2026-10-16",
   "work_key": "arxiv:2610.13131"
 }

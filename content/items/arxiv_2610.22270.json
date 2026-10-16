@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Surveillance cameras along urban roads produce large volumes of unlabeled video that could support the monitoring of public transport, but grouping the observed vehicles into meaningful categories without manual annotation remains challenging, since buses from different routes often share the same body structure and differ mainly in their color schemes. This study presents an unsupervised clustering methodology for public transport vehicles that combines morphological features extracted with a frozen DINOv2 Vision Transformer and handcrafted HSV color histograms through weighted early fusion, followed by UMAP projection and K-Means clustering. The method was evaluated on 7,972 bus images extracted from about 1,460 hours of video of an arterial road in Mexico City, with the goal of isolating the buses of the city's public bus network (RTP) without supervision. With a fusion of 65\\% morphological and 35\\% color features, the pipeline produced 14 clusters that separate distinct routes and vehicle types, and it increased the precision of the target cluster with respect to morphological features alone. These results show that color complements self-supervised features for route-level clustering, provided that it does not dominate the representation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Juan Irving Vasquez",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": "Conference paper: under review",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.22270v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.22270v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-15",
+    "repository_urls": [],
+    "title": "Unsupervised Clustering of Public Transport Vehicles Using Deep Morphological Features and Color Histograms"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-15_2610.22270",
+    "members": [
+      "arxiv:2610.22270"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:transformer",
+        "label": "transformer"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:dimensionality-reduction",
+        "label": "dimensionality reduction"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1489",
+        "label": "Mexico City",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.22270",
+    "doi": "10.48550/arxiv.2610.22270",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-16T23:26:01Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005576,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1977,
+      "out": 290
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9413,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3765,
+    "relevance": 0.9413
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The pipeline was tested along a single arterial corridor in Mexico City, meaning its effectiveness depends on transit fleets maintaining distinct, consistent color schemes across different routes.",
+      "what": "An unsupervised pipeline combining DINOv2 morphological embeddings with handcrafted HSV color histograms (65% to 35% fusion ratio) isolated specific public transit routes using UMAP and K-Means. Evaluated on 7,972 bus images captured across 1,460 hours of video from an arterial road in Mexico City, the approach generated 14 distinct clusters that improved route-level target precision compared to using visual features alone.",
+      "why": "It demonstrates that adding basic color distributions to self-supervised vision models allows traffic monitoring systems to automatically distinguish between visually identical bus models operating on different transit lines without requiring manual data labeling."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-15",
+  "work_key": "arxiv:2610.22270"
+}

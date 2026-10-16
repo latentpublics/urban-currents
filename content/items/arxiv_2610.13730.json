@@ -57,8 +57,45 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00rqy9422",
+        "label": "The University of Queensland"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04xysgw12",
+        "label": "Pohang University of Science and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01r024a98",
+        "label": "Chung-Ang University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-0689-3746",
+        "label": "Taeyoung Yu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5093751418",
+        "label": "Seonbin Jo"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5158486611",
+        "label": "Jiwon Kim"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8752-0305",
+        "label": "Junyoung Byun"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -69,7 +106,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.9824,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0088,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0068,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-10-09",
   "graph": {
@@ -80,7 +142,7 @@
   "ids": {
     "arxiv": "2610.13730",
     "doi": "10.48550/arxiv.2610.13730",
-    "openalex": null,
+    "openalex": "W7221512295",
     "pmid": null
   },
   "provenance": {
@@ -88,7 +150,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-13T02:31:12Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005522,
     "llm": {
@@ -176,6 +239,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-09",
+  "updated": "2026-10-16",
   "work_key": "arxiv:2610.13730"
 }

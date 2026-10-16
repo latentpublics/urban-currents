@@ -1,0 +1,190 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban spatial configurations emerge as the result of interactions between citizens' activities, movements and the landscape. Topography forms part of the physical settings through which mobility occurs, influencing movement energetic requirements. Using road networks, elevation data and mobility flows inferred from geolocated records, we define a simplified comparative measure of movement energy and test how it changes when the observed urban configuration is translated, rotated or rescaled within its topographic setting while mobility demand is held fixed. Across 56 cities, observed configurations consistently show lower movement energy requirements than most of the alternative configurations examined. This recurrent pattern reveals a measurable relationship between topography and urban spatial organization and is compatible with cumulative adaptation among urban structure, mobility and terrain. These findings add an energetic dimension to our understanding of how topography relates to urban spatial organization and provide an empirical basis for considering terrain-related movement requirements when evaluating future urban growth and densification.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Federico Bellisardi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Enrique Cano-Suñén",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ana Ruiz-Varona",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "José Javier Ramasco",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.21558v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.21558v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-15",
+    "repository_urls": [],
+    "title": "Mobility energetic balance frames spatial configuration of cities"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-15_2610.21558",
+    "members": [
+      "arxiv:2610.21558"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.96,
+        "id": "data:street-network",
+        "label": "street network data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-analysis",
+        "label": "spatial analysis"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:network-analysis",
+        "label": "network analysis"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.21558",
+    "doi": "10.48550/arxiv.2610.21558",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-16T23:26:01Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005042,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1861,
+      "out": 250
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9956,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3982,
+    "relevance": 0.9956
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "56 cities",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on a simplified proxy for movement energy and inferred mobility flows rather than direct measurements of mode-specific energy consumption.",
+      "what": "Using elevation profiles, road networks, and geolocated mobility traces from 56 cities, this study calculated a simplified metric of movement energy and evaluated how it shifts when existing spatial configurations are translated, rotated, or rescaled across local terrain while maintaining fixed mobility demand. The actual observed urban layouts consistently demanded less movement energy than the vast majority of generated alternative configurations.",
+      "why": "It empirically demonstrates that urban spatial structures systematically align with topography to minimize physical transport energy, establishing a measurable baseline for integrating terrain-related energy requirements into future growth and densification plans."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-15",
+  "work_key": "arxiv:2610.21558"
+}

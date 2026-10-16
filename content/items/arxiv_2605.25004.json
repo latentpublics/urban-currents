@@ -1,0 +1,313 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Inferring network-wide traffic states from sparse observations with high accuracy and trustworthy uncertainty quantification is essential for intelligent transportation systems, yet it remains challenging due to the underdetermined nature of the problem, multifaceted disturbances in sensing networks, and the inherent conflicts among multiple inference subtasks when modeled jointly. We propose the Task-Aware Attentive Neural Process (TA-ANP), a unified probabilistic framework for resilient and trustworthy global traffic state inference (GTSI) by fusing floating car data (FCD) with sparse fixed-detector measurements. By casting GTSI as a stochastic process, TA-ANP leverages the meta-learning properties of neural processes to adapt rapidly to changes in sensing configurations without retraining. A task-aware multi-query attention module with distinct spatiotemporal inductive biases is introduced to jointly handle three GTSI subtasks—real-time estimation at unobserved locations, forecasting at both observed and unobserved locations—while mitigating cross-task interference. For uncertainty quantification, we combine neural processes with Monte Carlo Dropout to capture both aleatoric and epistemic uncertainty. To support metropolis-scale evaluation, we construct the Metropolitan Multi-Source Traffic Dataset (MMTD), integrating fixed-loop sensor measurements, FCD statistics, and OpenStreetMap road-network data over an urban network of 26,166 road segments, including 2371 fixed-sensor-equipped segments used for quantitative evaluation. Experiments across multiple independently generated sensor configurations show that TA-ANP achieves best performance across all subtasks under deterministic and probabilistic metrics. The resulting well-calibrated uncertainties enable more efficient fixed-sensor placement with fewer sensor deployments. Under a Damage–Repair–Addition sensing lifecycle, TA-ANP demonstrates superior resilience in terms of disturbance absorption, performance recovery, and adaptability to unseen sensing configurations.The code and processed datasets are publicly available on GitHub and Zenodo, respectively.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Jilin University",
+            "ror": "00js3aw79"
+          }
+        ],
+        "name": "Qishen Zhou",
+        "openalex": "A5005339778",
+        "orcid": "https://orcid.org/0000-0001-8074-4111"
+      },
+      {
+        "institutions": [
+          {
+            "name": "City University of Hong Kong",
+            "ror": "03q8dnn23"
+          },
+          {
+            "name": "City University of Hong Kong (Dongguan)",
+            "ror": "03hj2gd47"
+          }
+        ],
+        "name": "Yifan Zhang",
+        "openalex": "A5137073169",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "ETH Zurich",
+            "ror": "05a28rw58"
+          },
+          {
+            "name": "Institute for Transport Planning and Systems",
+            "ror": "025em6n98"
+          }
+        ],
+        "name": "Michail Makridis",
+        "openalex": "A5015419644",
+        "orcid": "https://orcid.org/0000-0001-7462-4674"
+      },
+      {
+        "institutions": [
+          {
+            "name": "ETH Zurich",
+            "ror": "05a28rw58"
+          },
+          {
+            "name": "Institute for Transport Planning and Systems",
+            "ror": "025em6n98"
+          }
+        ],
+        "name": "Anastasios Kouvelas",
+        "openalex": "A5091697261",
+        "orcid": "https://orcid.org/0000-0003-4571-2530"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
+        "name": "Yibing Wang",
+        "openalex": "A5137026743",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
+        "name": "Simon Hu",
+        "openalex": "A5137059099",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.106083",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-15",
+    "repository_urls": [],
+    "title": "Metropolis-scale resilient and trustworthy traffic flow inference using multi-source data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-15_2605.25004",
+    "members": [
+      "arxiv:2605.25004"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00js3aw79",
+        "label": "Jilin University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03q8dnn23",
+        "label": "City University of Hong Kong"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03hj2gd47",
+        "label": "City University of Hong Kong (Dongguan)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05a28rw58",
+        "label": "ETH Zurich"
+      },
+      {
+        "confidence": null,
+        "id": "ror:025em6n98",
+        "label": "Institute for Transport Planning and Systems"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00a2xv884",
+        "label": "Zhejiang University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8074-4111",
+        "label": "Qishen Zhou"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5137073169",
+        "label": "Yifan Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7462-4674",
+        "label": "Michail Makridis"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4571-2530",
+        "label": "Anastasios Kouvelas"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5137026743",
+        "label": "Yibing Wang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5137059099",
+        "label": "Simon Hu"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.9941,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0052,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0001,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-10-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2605.25004",
+    "doi": "10.1016/j.trc.2026.106083",
+    "openalex": "W7162392620",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-16T23:26:16Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005897,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2269,
+      "out": 277
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-16T23:26:16Z",
+    "doi": "10.1016/j.trc.2026.106083",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The Task-Aware Attentive Neural Process (TA-ANP) predicts traffic flows and quantifies both aleatoric and epistemic uncertainty by fusing floating car data with sparse fixed-detector records. The model was evaluated on a newly built dataset covering 26,166 road segments with 2,371 sensor-equipped segments, successfully performing real-time estimation and forecasting at unobserved locations while adapting to altered sensor setups without retraining.",
+      "why": "The framework allows traffic monitoring systems to maintain high accuracy and calibrated uncertainty during sensor failures or reconfigurations without requiring model retraining. It also provides reliable uncertainty metrics that reduce the number of physical sensors needed for optimal coverage."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-15",
+  "work_key": "arxiv:2605.25004"
+}

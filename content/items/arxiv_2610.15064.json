@@ -57,8 +57,40 @@
         "label": "spatial analysis"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00fhk4582",
+        "label": "Sri Lanka Institute of Information Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:040af2s02",
+        "label": "University of Helsinki"
+      },
+      {
+        "confidence": null,
+        "id": "ror:025h79t26",
+        "label": "University of Peradeniya"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5116047610",
+        "label": "Malithi Nawarathne"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5158717267",
+        "label": "Nadeesha Herath Mudiyanselage"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5158697484",
+        "label": "Lihini Sangeetha"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [
@@ -68,7 +100,32 @@
         "label": "GeoPandas"
       }
     ],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10747",
+        "is_primary": true,
+        "label": "Disaster Management and Resilience",
+        "score": 0.998,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10930",
+        "is_primary": false,
+        "label": "Flood Risk Assessment and Management",
+        "score": 0.0007,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14410",
+        "is_primary": false,
+        "label": "Safety and Risk Management",
+        "score": 0.0003,
+        "subfield": "1407"
+      }
+    ]
   },
   "first_published": "2026-10-10",
   "graph": {
@@ -79,7 +136,7 @@
   "ids": {
     "arxiv": "2610.15064",
     "doi": "10.48550/arxiv.2610.15064",
-    "openalex": null,
+    "openalex": "W7221768631",
     "pmid": null
   },
   "provenance": {
@@ -87,7 +144,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-14T23:50:19Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004904,
     "llm": {
@@ -175,6 +233,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-10",
+  "updated": "2026-10-17",
   "work_key": "arxiv:2610.15064"
 }

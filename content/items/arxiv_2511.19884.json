@@ -1,0 +1,218 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This work addresses electric vehicle (EV) charging station placement through a bi-level optimization model, where the upper-level planner maximizes charging revenue by selecting station locations under budget constraints, while EV users at the lower level choose routes and charging stations to minimize travel and charging costs. To account for battery range limitation, we construct a battery-expanded network and apply a shortest path algorithm with Frank-Wolfe traffic assignment. Our primary contribution is developing the first global solution algorithm for large scale EV charging station placement problems. We propose a Branch-and-Price-and-Cut algorithm enhanced with value function cuts and column generation. Our exact algorithm delivers solutions provably within the reported optimality gap of the global optimum with mathematical certainty. Computational experiments on the Eastern Massachusetts network (74 nodes, 248 links), the Anaheim network (416 nodes, 914 links), and the Barcelona network (110 zones, 1020 nodes, and 2512 links) demonstrate exceptional performance. Our algorithm terminates in a reasonable runtime while achieving optimality gaps below 1% across all instances. Controlled benchmarks against two genetic algorithms on identical instances confirm that the proposed algorithm finds equal or better solutions in less computation time across all tested networks. The algorithm successfully handles problems with over 300,000 feasible combinations, transforming EV charging infrastructure planning into a tractable optimization suitable for practical decision making on real-world networks with optimality guaranteed.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Minnesota",
+            "ror": "017zqws13"
+          }
+        ],
+        "name": "Mobina Nankali",
+        "openalex": null,
+        "orcid": "https://orcid.org/0000-0003-0949-7378"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Minnesota",
+            "ror": "017zqws13"
+          }
+        ],
+        "name": "Michael W. Levin",
+        "openalex": null,
+        "orcid": "https://orcid.org/0000-0002-8778-0964"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trb.2026.103620",
+      "pdf_url": null,
+      "source_id": "S96305778",
+      "source_name": "Transportation Research Part B Methodological",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-16",
+    "repository_urls": [],
+    "title": "An exact solution algorithm for the bi-level optimization problem of electric vehicles charging station placement"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-16_2511.19884",
+    "members": [
+      "arxiv:2511.19884"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:017zqws13",
+        "label": "University of Minnesota"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0949-7378",
+        "label": "Mobina Nankali"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8778-0964",
+        "label": "Michael W. Levin"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1492",
+        "label": "Barcelona",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10768",
+        "is_primary": true,
+        "label": "Electric Vehicles and Infrastructure",
+        "score": 0.9966,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": false,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.001,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0008,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-10-16",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2511.19884",
+    "doi": "10.1016/j.trb.2026.103620",
+    "openalex": "W7106819897",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-17T23:00:31Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005807,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2107,
+      "out": 294
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-17T23:00:31Z",
+    "doi": "10.1016/j.trb.2026.103620",
+    "journal": "Transportation Research Part B Methodological",
+    "source_id": "S96305778",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "An exact Branch-and-Price-and-Cut algorithm was developed to solve the bi-level optimization problem of electric vehicle charging station placement, optimizing planner revenue alongside user routing and charging choices. Evaluated on transportation networks in Eastern Massachusetts (74 nodes), Anaheim (416 nodes), and Barcelona (1,020 nodes), the method handled problem instances exceeding 300,000 feasible combinations, achieving optimality gaps below 1% in reasonable runtimes while outperforming genetic algorithms in both solution quality and speed.",
+      "why": "This approach introduces the first global solution algorithm for large-scale charging location problems, replacing heuristic approximations with provable mathematical bounds for infrastructure planning."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-16",
+  "work_key": "arxiv:2511.19884"
+}

@@ -1,22 +1,44 @@
 {
-  "badges": [],
+  "badges": [
+    "data",
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Predicting pedestrian activity across unmonitored urban space from sparse sensor data remains a fundamental challenge for evidence-based policy and decision-making. Effective urban regeneration depends on understanding mobility patterns that shape accessibility, vitality, and social equity, yet limited monitoring infrastructure creates spatial blind spots that undermine investment decisions, risking misallocation toward low-activity areas while neglecting underserved neighbourhoods. This paper introduces the Geospatial Pedestrian Activity Engine (GPAE), a GeoAI framework that bridges human activity patterns, emerging sensing technologies, and urban planning by learning non-linear relationships between the built environment and pedestrian activity. Applied to Loughborough, UK, GPAE fuses WiFi sensor data and computer vision-derived video counts (29 monitoring points) with engineered spatial context features, deploying LightGBM gradient boosting to predict city-wide, high-resolution pedestrian activity data. Model performance was validated using Leave-One-Out Cross-Validation against raw observation points (R 2 = 0.89, MAE = 400 pedestrians/day). Feature importance analysis reveals that pedestrian activity is associated with the combined contribution of social amenities, daily necessities, and residential density rather than transit infrastructure alone, directly informing active travel and public realm policy. The resulting intelligence, when combined with infrastructure provision data, supports a Policy Decision Framework which is designed to classify urban areas into four actionable intervention typologies: overburdened, underutilised, neglected, and effectively supported, enabling planners to target infrastructure upgrades, active travel investment, and equity-informed regeneration based on predicted activity rather than reactive observation. Beyond prediction accuracy, GPAE shows how existing pedestrian data can be transformed into decision-ready evidence for sustainable mobility and pedestrian-focused urban planning supporting modal shift to walking and contributing to sustainable urban mobility goals.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Loughborough University",
+            "ror": "04vg4w365"
+          },
+          {
+            "name": "South Valley University",
+            "ror": "00jxshx33"
+          }
+        ],
         "name": "Mohamed Shamroukh",
         "openalex": "A5136146411",
         "orcid": "https://orcid.org/0000-0002-1005-2600"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Loughborough University",
+            "ror": "04vg4w365"
+          }
+        ],
         "name": "Asya Natapov",
         "openalex": "A5073659354",
         "orcid": "https://orcid.org/0000-0001-7654-1864"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Loughborough University",
+            "ror": "04vg4w365"
+          }
+        ],
         "name": "Taimaz Larimian",
         "openalex": "A5016354639",
         "orcid": "https://orcid.org/0000-0001-5346-2303"
@@ -45,8 +67,25 @@
   },
   "entities": {
     "data": [],
-    "methods": [],
-    "orgs": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:gradient-boosting",
+        "label": "gradient boosting"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04vg4w365",
+        "label": "Loughborough University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00jxshx33",
+        "label": "South Valley University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -65,7 +104,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": [
       {
@@ -145,14 +184,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-10-14T00:17:43Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -174,26 +216,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.6,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.52,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://figshare.com/articles/journal_contribution/A_predictive_geospatial_engine_for_city-wide_pedestrian-centric_urban_regeneration/34448850",
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The predictive framework was developed and validated on a single small city using only 29 monitoring points, which may limit immediate generalizability to larger or structurally different urban environments.",
+      "what": "The Geospatial Pedestrian Activity Engine (GPAE) uses a LightGBM model to predict high-resolution, city-wide pedestrian counts across Loughborough, UK. The framework integrates 29 monitoring points of WiFi sensor data and computer vision video counts with spatial built environment features, achieving a Leave-One-Out Cross-Validation performance of R2 = 0.89 and an MAE of 400 pedestrians per day. Feature analysis indicates that pedestrian volume is driven primarily by the joint presence of social amenities, daily necessities, and residential density rather than transit infrastructure alone.",
+      "why": "Urban planners can now map continuous pedestrian activity across entire cities without dense physical sensor networks, using those predictions to systematically categorize streets into four intervention typologies for targeted public realm investments."
+    }
   },
   "track": "papers",
-  "updated": "2026-10-12",
+  "updated": "2026-10-17",
   "work_key": "doi:10.1016/j.tbs.2026.101422"
 }

@@ -1,10 +1,17 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "This study proposes a quantitative framework for assessing narrative environments in historic districts by integrating space syntax with agent-based simulation (ABS). Taking five historic districts in the Old Town of Xun County, China, as the case study, the research combines global integration, local integration, choice, and intelligibility to identify spatial accessibility, corridor potential, and cognitive efficiency, and uses ABS together with manual pedestrian observations to validate movement concentration and detect anomalous areas. Syntactic analysis identifies East Housi Street and South Street as the primary movement corridors, with the highest accessibility (global integration = 1.182 and 1.256, respectively) and pedestrian concentration, whereas Xinzhuang Street exhibits critically weak connectivity (intelligibility R 2 = 0.427), while Pifu Road emerges as an important southern corridor (choice = 45,369) whose continuity is constrained by spatial obstructions. The results reveal a clear north–south gradient in spatial accessibility: northern districts exhibit higher accessibility and stronger pedestrian concentration, but also greater risks of over-commercialization and narrative homogenization, whereas southern districts are characterized by corridor fragmentation, weaker accessibility, and disrupted cultural continuity. ABS validation reveals two anomalies: North Xiaoximenli (low flow despite moderate syntax, blocked by illegal structures) and Nanshan (high traffic despite low syntax, anchored by the City God Temple). Based on these spatially explicit diagnostics, the proposed framework provides an evidence-based priority pathway for removing physical obstructions, reactivating southern heritage nodes, and restoring corridor continuity along East Housi Street, offering a replicable technical pathway for spatial diagnosis, narrative restoration, and conservation-oriented renewal in multi-district historic environments.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Zhejiang Gongshang University",
+            "ror": "0569mkk41"
+          }
+        ],
         "name": "Bin Wang",
         "openalex": "A5008311325",
         "orcid": "https://orcid.org/0009-0004-4227-7646"
@@ -32,9 +39,32 @@
     "merge_basis": "singleton"
   },
   "entities": {
-    "data": [],
-    "methods": [],
-    "orgs": [],
+    "data": [
+      {
+        "confidence": 0.9143,
+        "id": "data:traffic-sensor",
+        "label": "traffic sensor data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:network-analysis",
+        "label": "network analysis"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0569mkk41",
+        "label": "Zhejiang Gongshang University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -42,8 +72,15 @@
         "label": "Bin Wang"
       }
     ],
-    "places": [],
-    "places_status": "not_attempted",
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
     "tools": [],
     "topics": [
       {
@@ -142,14 +179,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-10-16T23:26:19Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -171,26 +211,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The empirical validation relies on a single county case study, which may limit how well the observed movement anomalies apply to historic districts with different spatial layouts.",
+      "what": "The authors developed a spatial assessment framework combining space syntax analysis and agent-based crowd simulation validated by physical pedestrian counts across five historic districts in Xun County, China. The analysis revealed a strong north-south accessibility gradient, identifying East Housi Street and South Street as primary corridors with global integration values of 1.182 and 1.256, alongside spatial anomalies where crowd flows diverged from syntax predictions due to physical barriers or cultural anchors.",
+      "why": "The method replaces intuitive heritage planning with a tool that pinpoints specific physical obstructions and underutilized cultural nodes affecting pedestrian movement in historic urban spaces."
+    }
   },
   "track": "papers",
-  "updated": "2026-10-15",
+  "updated": "2026-10-17",
   "work_key": "doi:10.1007/s43762-026-00296-z"
 }

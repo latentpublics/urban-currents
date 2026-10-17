@@ -1,0 +1,179 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Surface urban heat islands (SUHIs) are commonly studied using satellite-derived land surface temperature (LST), but many analyses rely on static summaries or pointwise urban-rural contrasts, providing limited inference on temporal change, spatial dependence, and uncertainty. This study models LST as a stochastic spatio-temporal process using a spatially varying coefficient formulation that decomposes LST into a baseline spatial field and a location-specific temporal trend. This structure allows persistent thermal differences and local warming rates to be estimated within a unified probabilistic framework. SUHI is derived from the posterior distribution of the baseline spatial field by contrasting the estimated LST at a given pixel with the minimum estimated LST among non-urban pixels. Posterior excursion probabilities are used to identify areas where temporal changes are supported under simultaneous probability control. The framework is applied to summer Landsat 8 LST observations for Bologna, Italy, from 2013 to 2025. Results show strong spatial heterogeneity in SUHI, with higher values over impervious surfaces and lower values over forests and water bodies. Summer LST increased overall, but local trends varied markedly across the municipality. Joint excursion sets identify areas with warming greater than the domain-wide average and smaller clusters with statistically supported cooling. These results reveal changing thermal patterns across Bologna and help distinguish areas experiencing increasing surface heat from locations where thermal conditions have improved over time. The framework therefore provides an uncertainty-aware basis for monitoring urban thermal change.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Marika D'Agostini",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Massimo Ventrucci",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Francesca K. de'Donato",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Andrea Ranzi",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "24 pages, 7 images, 4 ancillary materials",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.21980v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.21980v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-15",
+    "repository_urls": [],
+    "title": "A Bayesian Spatially Varying Coefficient Model for Surface Urban Heat Island Estimation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-16_2610.21980",
+    "members": [
+      "arxiv:2610.21980"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.21980",
+    "doi": "10.48550/arxiv.2610.21980",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-17T23:00:16Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005134,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2097,
+      "out": 221
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9013,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3605,
+    "relevance": 0.9013
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2013 to 2025",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical demonstration is restricted to a single municipality using clear-sky summer satellite imagery.",
+      "what": "The authors developed a Bayesian spatially varying coefficient model that decomposes satellite land surface temperature into a baseline spatial field and a location-specific temporal trend. Applied to summer Landsat 8 observations for Bologna, Italy, spanning 2013 to 2025, the probabilistic framework calculates surface urban heat island intensity against non-urban baseline temperatures and uses joint excursion sets to identify areas with statistically supported local warming or cooling. Results reveal widespread summer thermal increases alongside distinct localized cooling clusters across the municipality.",
+      "why": "This approach replaces static, deterministic urban-rural temperature contrasts with a unified spatio-temporal model that quantifies local rates of warming while controlling for simultaneous spatial uncertainty."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-15",
+  "work_key": "arxiv:2610.21980"
+}

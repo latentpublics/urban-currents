@@ -67,12 +67,59 @@
         "label": "traffic assignment"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01r024a98",
+        "label": "Chung-Ang University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5158711237",
+        "label": "Eunseung Lee"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6109-5416",
+        "label": "Gyeongjun Kim"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7270-7094",
+        "label": "Keemin Sohn"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": true,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.9805,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0035,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0022,
+        "subfield": "2215"
+      }
+    ]
   },
   "first_published": "2026-10-12",
   "graph": {
@@ -83,7 +130,7 @@
   "ids": {
     "arxiv": "2610.16140",
     "doi": "10.48550/arxiv.2610.16140",
-    "openalex": null,
+    "openalex": "W7221766399",
     "pmid": null
   },
   "provenance": {
@@ -91,7 +138,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-17T23:00:29Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004603,
     "llm": {
@@ -179,6 +227,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-12",
+  "updated": "2026-10-18",
   "work_key": "arxiv:2610.16140"
 }

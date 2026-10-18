@@ -1,0 +1,222 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Synthetic populations are essential for individual-based simulations, such as agent-based models, enabling the evaluation of policy interventions for epidemic control, demographic studies and mobility management, to mention a few. Existing synthetic populations are often designed for specific settings and rarely combine nationwide coverage with realistic and explicit spatial detail. This limits their ability to represent realistic spatial relationships and interplay between households, workplaces, leisure activities, and mobility patterns, reducing models utility for targeted decision-making. Here, we present a harmonized dataset of synthetic populations taking as case studies Spain, France, and Italy. Despite heterogeneous census data sources and formats, we release a unified data structure ensuring consistency and interoperability. The synthetic population generation pipeline reproduces household composition, population density, age-sex structure, and occupation distribution at census-tract level, enriched with municipality-level commuting flows and economic activity patterns. Country-specific pre-processing, statistical calibration, and data integration produce coherent demographic and spatial characteristics suitable for large-scale, country-agnostic simulations. As the pipeline relies on publicly available census data, it is readily extensible to other countries, supporting high-resolution modeling of infectious diseases, hazard exposure, demographic analysis, and urban mobility.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Davide Torre",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Miguel Artigues",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Benjamin Faucher",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Roberto Alcaraz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jacopo D'Ignazi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Antonia Tugores",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mattia Mazzoli",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Daniela Paolotti",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "José J. Ramasco",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Eugenio Valdano",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": "31 pages, 6 figures, 12 tables (including Supplementary Information)",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.21784v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.21784v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-15",
+    "repository_urls": [],
+    "title": "Synthetic populations for epidemic, demographic and mobility modeling"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-17_2610.21784",
+    "members": [
+      "arxiv:2610.21784"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.21784",
+    "doi": "10.48550/arxiv.2610.21784",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-18T22:58:28Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004754,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1981,
+      "out": 198
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.884,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4336,
+    "relevance": 0.884
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The authors developed a harmonized dataset and pipeline generating synthetic populations across Spain, France, and Italy at the census-tract level. The pipeline integrates census, commuting flow, and economic activity data to reproduce age-sex distributions, household structures, population density, and municipal workplace patterns.",
+      "why": "Researchers can now run standardized, cross-border individual-based simulations using identical data structures for three major European nations, bypassing the need to reconcile disparate country-specific census formats."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-15",
+  "work_key": "arxiv:2610.21784"
+}

@@ -1,0 +1,170 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The interaction between human infrastructures and external events results in loss of functionality or even complete system disruption through a snowball effect of cascading-failures. Their complex interplay challenges their prevention, affecting the human population that rely on their functionality. Understanding how these networks respond to external perturbations is crucial for predicting and mitigating the impacts of disruptive events. In particular, meteorological events, while not preventable, can have significant impacts on human infrastructure. Here, we propose a model coupling the dynamics of transportation systems to the dynamics of external events considered as fields, to capture at the same time the critical behavior of the former and the level of influence of the latter. The impact of rainfalls on real-world railway networks provides a compelling case study, showcasing local endemic and system-wide disruptions around a critical value of the rainfall strength. Remarkably, localized perturbations on the wider network reveals the local weaknesses of the global infrastructure, and we assess them in terms of system perturbability and corresponding societal risk. Our framework opens the door to the quantitative analysis of criticalities in essential human infrastructure imputable to vulnerabilities that are set to intensify due to climate change.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Mauro Faccin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Tomas Scagliarini",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Manlio De Domenico",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cond-mat.dis-nn",
+      "cond-mat.stat-mech",
+      "physics.app-ph"
+    ],
+    "comment": "24 pages, 5 figure and Supplementary Information",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.26428v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.26428v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-19",
+    "repository_urls": [],
+    "title": "Systemic collapse emergence from climate-induced perturbations in transportation networks"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-19_2610.26428",
+    "members": [
+      "arxiv:2610.26428"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-19",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.26428",
+    "doi": "10.1073/pnas.2532180123",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-20T23:45:54Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004987,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1951,
+      "out": 229
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9101,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.364,
+    "relevance": 0.9101
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework is demonstrated on railway systems under rainfall, so its parameters may require recalibration for other infrastructure systems or extreme weather hazards.",
+      "what": "The study introduces a coupled dynamic framework that models transportation networks as complex systems interacting with external spatial fields, using real-world railway networks exposed to rainfall as a primary case study. The model identifies a critical threshold in rainfall intensity where local disruptions transition into systemic transportation collapse. It introduces metrics for system perturbability and societal risk to map structural vulnerabilities across the broader rail infrastructure under localized environmental perturbations.",
+      "why": "Instead of treating weather disruptions as uniform or purely localized events, this framework quantifies the exact threshold at which weather perturbations induce cascading system-wide collapse in transport networks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-19",
+  "work_key": "arxiv:2610.26428"
+}

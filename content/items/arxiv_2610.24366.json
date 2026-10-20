@@ -1,0 +1,175 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Mobile device location-based service (LBS) data provide large-scale spatiotemporal observations that can help airport planners understand air travelers' mobility patterns. However, airport sightings are often missing before or after flights, making strictly rule-based detection incomplete. This study develops a two-stage framework to infer U.S. domestic air trips from large-scale LBS data under incomplete airport sightings. Stage 1 uses heuristic rules to identify high-confidence air trips whose endpoints are observed at two distinct airports. Stage 2 addresses latent air trips with a probabilistic model that infers air routes using spatial proximity, temporal compatibility, and historical flight schedule information. Using January 2022 nationwide LBS data with nearly 10 million users and 131 million sightings, results are validated against T-100 Domestic Segment route benchmarks and a Stage 1 pseudo-ground-truth reference set. The framework increases air route coverage from 10.65% under Stage 1 to 50.60% and recovers nearly all top-1,000 benchmark routes. It improves Spearman rank correlation with T-100 route shares from 0.4490 to 0.7630 and reduces Jensen-Shannon divergence from 0.2808 to 0.2263. Stage 2 also recovers 92.2% of Stage 1 reference trips. This study formalizes three endpoint observation regimes for LBS-based air trip inference (airport-observed, semi-observed, and latent) and helps airport agencies identify domestic air travel patterns missed when airport sightings are incomplete.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Hsuan-Chih Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xianfeng Terry Yang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI",
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.24366v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.24366v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-17",
+    "repository_urls": [],
+    "title": "A Two-Stage Hybrid Framework for Inferring Air Trips from Mobile Location-based Service (LBS) Data under Incomplete Airport Sightings"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-19_2610.24366",
+    "members": [
+      "arxiv:2610.24366"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:mobile-phone",
+        "label": "mobile phone data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.24366",
+    "doi": "10.48550/arxiv.2610.24366",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-20T23:45:54Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006139,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2215,
+      "out": 313
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9108,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3643,
+    "relevance": 0.9108
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "10 million users",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Validation relies in part on a pseudo-ground-truth dataset constructed from the high-confidence trips identified during the first stage of the same pipeline.",
+      "what": "A two-stage hybrid framework infers U.S. domestic air travel from mobile location-based service (LBS) data by combining rule-based detection with a probabilistic model using spatial, temporal, and flight schedule constraints. Applied to January 2022 LBS records covering nearly 10 million users and 131 million sightings across the U.S., the method expanded air route coverage from 10.65% to 50.60% and raised the Spearman rank correlation against official T-100 flight benchmarks from 0.4490 to 0.7630.",
+      "why": "By reconstructing passenger journeys even when device pings are missing at one or both airports, this approach allows planning agencies to track passenger demand across the vast majority of domestic flight corridors without relying on full airport trace continuity."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-17",
+  "work_key": "arxiv:2610.24366"
+}

@@ -63,7 +63,28 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5158755214",
+        "label": "Chao Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2593-4638",
+        "label": "Renhe Jiang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7239-5134",
+        "label": "Chuan Xiao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5158710030",
+        "label": "Jiawei Wang"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -74,7 +95,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.9902,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11106",
+        "is_primary": false,
+        "label": "Data Management and Algorithms",
+        "score": 0.0026,
+        "subfield": "1711"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0019,
+        "subfield": "2215"
+      }
+    ]
   },
   "first_published": "2026-10-13",
   "graph": {
@@ -85,7 +131,7 @@
   "ids": {
     "arxiv": "2610.17672",
     "doi": "10.48550/arxiv.2610.17672",
-    "openalex": null,
+    "openalex": "W7221815580",
     "pmid": null
   },
   "provenance": {
@@ -93,7 +139,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-14T23:50:15Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00466,
     "llm": {
@@ -181,6 +228,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-13",
+  "updated": "2026-10-20",
   "work_key": "arxiv:2610.17672"
 }

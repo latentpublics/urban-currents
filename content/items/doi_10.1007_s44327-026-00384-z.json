@@ -1,0 +1,242 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Publicly available walkability tools are easy to use but place-based: they assign the same value to everyone sharing a location, computed from fixed category weights and category definitions calibrated on North American service landscapes. Accessibility research has long held that accessibility varies among individuals at the same location, and has accordingly developed preference- and person-sensitive measures; those measures are run as analyst-operated geographic information system workflows, out of reach of the residents whose preferences they represent. We present a deployed framework in which the preference structure is supplied by the user at query time. A user states which amenity categories matter, how much each matters, which are non-negotiable, which to avoid, which substitute for one another, and how far they will walk for each, and the map updates accordingly. This is possible because a rectangular travel impedance reduces the measure to the number of amenities reachable within a user-set threshold, which can be precomputed via shortest-path routing, leaving only arithmetic at query time. The score also stays interpretable: it is bounded, and each category’s contribution can be read on its own. We evaluate the framework across Bengaluru, reporting its sensitivity to discretisation choices and comparing it against existing measures using identical inputs. Configuration moves ward rankings considerably more than the choice of aggregation does.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Christ University",
+            "ror": "022tv9y30"
+          }
+        ],
+        "name": "Prabhanjana Ghuriki",
+        "openalex": "A5121213356",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Christ University",
+            "ror": "022tv9y30"
+          }
+        ],
+        "name": "S. Chanti",
+        "openalex": "A5159034751",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s44327-026-00384-z",
+      "pdf_url": null,
+      "source_id": "S5407042847",
+      "source_name": "Discover Cities",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-19",
+    "repository_urls": [],
+    "title": "An interactive framework for personalised urban accessibility assessment"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-19_10.1007/s44327-0",
+    "members": [
+      "doi:10.1007/s44327-026-00384-z"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:022tv9y30",
+        "label": "Christ University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5121213356",
+        "label": "Prabhanjana Ghuriki"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159034751",
+        "label": "S. Chanti"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.9917,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0029,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": false,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.0018,
+        "subfield": "3305"
+      }
+    ]
+  },
+  "first_published": "2026-10-19",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1973573843",
+      "openalex:W1985062488",
+      "openalex:W1997635670",
+      "openalex:W2015485796",
+      "openalex:W2042593386",
+      "openalex:W2060907774",
+      "openalex:W2088468221",
+      "openalex:W2095560214",
+      "openalex:W2101834443",
+      "openalex:W2103613143",
+      "openalex:W2136050606",
+      "openalex:W2160366881",
+      "openalex:W2888063211",
+      "openalex:W3036845322",
+      "openalex:W3085404930",
+      "openalex:W3095712009",
+      "openalex:W3118576082",
+      "openalex:W3120694366",
+      "openalex:W3171859741",
+      "openalex:W4225120154",
+      "openalex:W4382318400",
+      "openalex:W4387059412",
+      "openalex:W4387880686",
+      "openalex:W4390822637",
+      "openalex:W4392388516",
+      "openalex:W4398174689",
+      "openalex:W4404404919",
+      "openalex:W4405443225",
+      "openalex:W6930692127",
+      "openalex:W6959737655"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s44327-026-00384-z",
+    "openalex": "W7222967084",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-20T23:46:11Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.004939,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2021,
+      "out": 212
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-20T23:46:11Z",
+    "doi": "10.1007/s44327-026-00384-z",
+    "journal": "Discover Cities",
+    "source_id": "S5407042847",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The fast interactive computations rely on a rectangular travel impedance function, which simplifies distance decay into strict step-function cutoffs for amenity reachability.",
+      "what": "Researchers built and deployed a web framework that calculates individual-level urban accessibility scores based on user-defined preferences, amenity weights, and walkability thresholds. The system precomputes shortest-path routing with rectangular travel impedance so that custom map queries require only lightweight arithmetic at run time. An evaluation across Bengaluru wards showed that individual user preferences alter ward rankings significantly more than choice of spatial aggregation method.",
+      "why": "This system bridges the gap between static, one-size-fits-all walkability indices and complex GIS workflows, allowing non-expert residents to calculate personalized accessibility maps interactively."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-19",
+  "work_key": "doi:10.1007/s44327-026-00384-z"
+}

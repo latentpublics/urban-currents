@@ -57,12 +57,74 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:042w3r845",
+        "label": "Scarsdale Public Schools"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02jx3x895",
+        "label": "University College London"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00hj8s172",
+        "label": "Columbia University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5158695758",
+        "label": "Angelina Liu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8670-4735",
+        "label": "Mengqiu Cao"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7072-2995",
+        "label": "Sen Pei"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5050884759",
+        "label": "Yao Qing"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10747",
+        "is_primary": true,
+        "label": "Disaster Management and Resilience",
+        "score": 0.6948,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13800",
+        "is_primary": false,
+        "label": "Earthquake and Disaster Impact Studies",
+        "score": 0.1935,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11807",
+        "is_primary": false,
+        "label": "Infrastructure Resilience and Vulnerability Analysis",
+        "score": 0.0906,
+        "subfield": "2205"
+      }
+    ]
   },
   "first_published": "2026-10-13",
   "graph": {
@@ -73,7 +135,7 @@
   "ids": {
     "arxiv": "2610.17550",
     "doi": "10.48550/arxiv.2610.17550",
-    "openalex": null,
+    "openalex": "W7221832830",
     "pmid": null
   },
   "provenance": {
@@ -81,7 +143,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-14T23:50:15Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004141,
     "llm": {
@@ -169,6 +232,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-13",
+  "updated": "2026-10-20",
   "work_key": "arxiv:2610.17550"
 }

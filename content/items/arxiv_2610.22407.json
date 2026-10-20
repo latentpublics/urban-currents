@@ -1,0 +1,185 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "In existing agent-based simulations of multimodal urban mobility, agents, representing humans, choose their travel modes either using discrete choice or machine learning models fitted on structured travel survey data, or with rules explicitly written by the domain experts. Such approaches fix a priori the agents' possible behaviour space. Hence, a factor absent from variables or rules cannot affect agents' decisions. In reality, choosing a transport mode is a multidimensional decision in which objective and subjective factors intertwine and change over time. Integrating such complexity into a city-scale multimodal mobility simulation remains a challenge. Generative agents (GAs) built on large language models promise to respond to this challenge because they carry decision heuristics that travel surveys do not record. However, to the best of our knowledge, aligning their decisions with real household travel surveys remains an open question. In this paper, we build an agent-based model of daily multimodal mobility for Toulouse (France). We compare the performance of fifteen decision-makers (simple baselines, models fitted on the survey, GAs with minimal and tuned prompts, and a typed classifier) on the real household travel survey. Our results show that GAs with tuned prompts come close to the fitted models on the modal split of a simulated day without transport disruptions, but not trip by trip. GAs also react when unforeseen events occur. The recently released Jev-1.13 TypeSafe classifier gives surprisingly great results, showing that generating output text is not necessary. The results presented in this paper would be of interest to transport policy makers and service providers looking to apply generative agent-based modelling for improving urban mobility services.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Yves Bru",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kamaldeep Singh Oberoi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Benoit Gaudou",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.MA",
+      "cs.AI"
+    ],
+    "comment": "Preprint submitted to AAMAS 2027",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.22407v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.22407v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-14",
+    "repository_urls": [],
+    "title": "Towards Adaptive and Real-Survey-Aligned Simulated Urban Mobility Behaviour of Generative Agents"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-19_2610.22407",
+    "members": [
+      "arxiv:2610.22407"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.902,
+        "id": "data:travel-survey",
+        "label": "travel survey"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.22407",
+    "doi": "10.48550/arxiv.2610.22407",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-20T23:46:05Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005543,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2165,
+      "out": 255
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9758,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3903,
+    "relevance": 0.9758
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "While tuned GAs match overall modal split, they struggle to correctly predict individual choices at the trip level.",
+      "what": "An agent-based daily multimodal mobility model was evaluated for Toulouse, France, comparing fifteen decision-making approaches on a real household travel survey. The testing evaluated simple baselines, survey-fitted models, Generative Agents (GAs) using minimal and tuned prompts, and the Jev-1.13 TypeSafe classifier. GAs with tuned prompts achieved modal splits comparable to survey-fitted models under normal conditions and adapted to unexpected disruptions, though they did not match performance on a trip-by-trip basis.",
+      "why": "This demonstrates that large language model-based agents can approximate aggregate urban mode choice and dynamically respond to unexpected transit disruptions without requiring hand-coded rules or predefined survey variables."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-14",
+  "work_key": "arxiv:2610.22407"
+}

@@ -1,0 +1,289 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Urban water insecurity is an increasingly important challenge for cities worldwide, with significant implications for public health, environmental justice, and sustainable urban development. Limited research has examined the spatiotemporal distribution of water service disruptions and their disproportionate impacts on vulnerable populations. We investigate demographic vulnerability to recurring Boil Water Notices (BWNs) in Jackson, Mississippi, USA, using historical BWN records from 2016 to 2024. A geospatial workflow integrating GIS, Python, OpenStreetMap (OSM), census data, and building-footprint-based dasymetric mapping was developed to transform street-address-based BWN records into census block-level datasets. We employed Getis–Ord Gi* hot spot analysis and hot spot comparison analysis to evaluate the spatial coincidence between recurring BWN hot spots and demographic characteristics. The results reveal persistent spatial inequalities in BWN exposure among older adults, populations with lower educational attainment, Black residents, individuals living below the poverty line, and children under five years of age. Older adults exhibited the strongest and most persistent spatial association with BWN hot spots, followed by populations with lower educational attainment, Black residents, and low-income populations. In contrast, higher-income and more highly educated populations generally experienced lower and less persistent exposure. BWN exposure is not randomly distributed across the city but instead overlaps with existing socioeconomic vulnerabilities, suggesting growing disparities in urban water hardship over time. By utilizing historical BWN records as indicators of water service disruptions, this study advances the understanding of urban water vulnerability and service delivery inequality while providing a transferable framework for identifying communities disproportionately affected by urban water insecurity and informing more equitable and resilient water governance strategies.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Mississippi State University",
+            "ror": "0432jq872"
+          }
+        ],
+        "name": "Tanmoy Malaker",
+        "openalex": "A5009835883",
+        "orcid": "https://orcid.org/0009-0007-6927-2556"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Mississippi State University",
+            "ror": "0432jq872"
+          }
+        ],
+        "name": "Qingmin Meng",
+        "openalex": "A5073524444",
+        "orcid": "https://orcid.org/0000-0002-6287-5553"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s44327-026-00382-1",
+      "pdf_url": null,
+      "source_id": "S5407042847",
+      "source_name": "Discover Cities",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-18",
+    "repository_urls": [],
+    "title": "Spatiotemporal analytics of demographic vulnerability to urban water hardship"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-18_10.1007/s44327-0",
+    "members": [
+      "doi:10.1007/s44327-026-00382-1"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:building-footprint",
+        "label": "building footprints"
+      }
+    ],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0432jq872",
+        "label": "Mississippi State University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0007-6927-2556",
+        "label": "Tanmoy Malaker"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6287-5553",
+        "label": "Qingmin Meng"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12259",
+        "is_primary": true,
+        "label": "Environmental Justice and Health Disparities",
+        "score": 0.8823,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12248",
+        "is_primary": false,
+        "label": "Water Governance and Infrastructure",
+        "score": 0.0887,
+        "subfield": "3320"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11220",
+        "is_primary": false,
+        "label": "Water Systems and Optimization",
+        "score": 0.0066,
+        "subfield": "2205"
+      }
+    ]
+  },
+  "first_published": "2026-10-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1967137980",
+      "openalex:W1990607561",
+      "openalex:W2004317157",
+      "openalex:W2015751006",
+      "openalex:W2035234215",
+      "openalex:W2042688391",
+      "openalex:W2058976080",
+      "openalex:W2074615289",
+      "openalex:W2095310523",
+      "openalex:W2096611525",
+      "openalex:W2099166405",
+      "openalex:W2155304622",
+      "openalex:W2162391263",
+      "openalex:W2399311649",
+      "openalex:W2597682480",
+      "openalex:W2625732935",
+      "openalex:W2742543346",
+      "openalex:W2748276123",
+      "openalex:W2789404186",
+      "openalex:W2801629752",
+      "openalex:W2882924549",
+      "openalex:W2918593895",
+      "openalex:W2921148836",
+      "openalex:W2976926612",
+      "openalex:W3006662014",
+      "openalex:W3036389812",
+      "openalex:W3036820233",
+      "openalex:W3043501028",
+      "openalex:W3093049192",
+      "openalex:W3097444175",
+      "openalex:W3117678572",
+      "openalex:W3125996142",
+      "openalex:W3138012991",
+      "openalex:W3203830359",
+      "openalex:W4237156576",
+      "openalex:W4247934567",
+      "openalex:W4281392615",
+      "openalex:W4291019350",
+      "openalex:W4291121668",
+      "openalex:W4308745670",
+      "openalex:W4311062986",
+      "openalex:W4311256835",
+      "openalex:W4319922998",
+      "openalex:W4362663581",
+      "openalex:W4367396920",
+      "openalex:W4368357952",
+      "openalex:W4379328949",
+      "openalex:W4382236900",
+      "openalex:W4385175600",
+      "openalex:W4387833952",
+      "openalex:W4387983363",
+      "openalex:W4389223448",
+      "openalex:W4389494797",
+      "openalex:W4392809450",
+      "openalex:W4399273330",
+      "openalex:W4400580661",
+      "openalex:W4401826012",
+      "openalex:W4402723368",
+      "openalex:W4405580315",
+      "openalex:W4410166771",
+      "openalex:W4410237724",
+      "openalex:W7133323406",
+      "openalex:W7138236305",
+      "openalex:W7165555662",
+      "openalex:W7169583101",
+      "openalex:W7202076412"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s44327-026-00382-1",
+    "openalex": "W7222865724",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-20T00:18:09Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006188,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2175,
+      "out": 325
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-20T00:18:09Z",
+    "doi": "10.1007/s44327-026-00382-1",
+    "journal": "Discover Cities",
+    "source_id": "S5407042847",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2016 to 2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical analysis relies on a single-city case study of Jackson, Mississippi, which may limit the direct generalizability of specific spatial demographic patterns to other municipal water systems.",
+      "what": "A dasymetric mapping workflow transformed street-address Boil Water Notice (BWN) records from 2016 to 2024 in Jackson, Mississippi, into census block-level data to evaluate spatial exposure to water service disruptions. Using Getis–Ord Gi* hot spot analysis, the study found that recurring BWN hot spots consistently overlapped with areas having higher concentrations of older adults, lower-income residents, Black residents, populations with lower educational attainment, and young children. Older adults demonstrated the strongest spatial coincidence with persistent notices over time.",
+      "why": "The study provides a transferable geospatial framework that converts raw administrative water notices into fine-grained census-level datasets to empirical quantify social inequality in urban water infrastructure failures."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-18",
+  "work_key": "doi:10.1007/s44327-026-00382-1"
+}

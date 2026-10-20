@@ -1,0 +1,38 @@
+{
+  "attempts": 1,
+  "candidates": 247,
+  "date": "2026-10-19",
+  "failed_sources": [
+    "collect.arxiv"
+  ],
+  "failed_stages": [],
+  "headline_present": true,
+  "held_near_miss": 0,
+  "held_withheld": 0,
+  "published": 4,
+  "reasons": [],
+  "recorded_at": "2026-10-20T00:18:50+00:00",
+  "silent_sources": [
+    "collect.arxiv"
+  ],
+  "skipped_stages": [
+    "enrich.springer"
+  ],
+  "source_failures": {
+    "collect.arxiv": [
+      "window 2026-10-12..2026-10-18: RuntimeError: arXiv request failed after 4 attempts: The read operation timed out"
+    ]
+  },
+  "source_observations": {
+    "collect.arxiv": {
+      "accept_shape": null,
+      "failed_all": true,
+      "http_status": 503,
+      "items": 0,
+      "windows": 1,
+      "windows_failed": 1
+    }
+  },
+  "spend_usd": 0.021045,
+  "status": "published"
+}

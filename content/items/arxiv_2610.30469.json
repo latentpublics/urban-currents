@@ -1,0 +1,181 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Traffic management has traditionally focused on toll-based and road pricing solutions. However, road pricing often raises concerns about accessibility and public dissatisfaction, leading to its prohibition in some places, such as Finland. This study optimises the dynamic allocation of incentives to drivers, encouraging them to reroute onto alternative (potentially longer) paths to achieve greater societal benefit, reduced total travel time (TTT) and total emissions in the transportation network, contributing to sustainable urban mobility. We employ a multi-agent reinforcement learning approach to dynamically assign incentives to drivers to reduce both TTT and emissions, with travel times estimated using traffic simulation software. We demonstrate that, with an unlimited budget and an objective of minimising travel time, the incentive scheme reduces TTT by 16%, compared to the dynamic User-Equilibrium (UE) with a budget equivalent to about 11% of the UE total time. When the goal is to minimise emissions, a 9% reduction in CO2 emissions is observed under an unlimited budget. We demonstrate a critical trade-off: minimising TTT leads to an increase in emissions, while prioritising emission reductions raises TTT. However, with the right combination of weights in the multi-objective function, both TTT and total emissions are improved beyond the baseline.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Germán Pardo-González",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shaghayegh Vosough",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Katerina Papadaki",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Claudio Roncoli",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.MA",
+      "cs.LG",
+      "eess.SY"
+    ],
+    "comment": "6 pages, 5 figures. Accepted version of a paper published in the Proceedings of the 2025 9th International Conference on Models and Technologies for Intelligent Transportation Systems (MT-ITS), IEEE",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.30469v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.30469v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-21",
+    "repository_urls": [],
+    "title": "Learning to Incentivise: Using Reinforcement Learning for Sustainable Urban Mobility"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-22_2610.30469",
+    "members": [
+      "arxiv:2610.30469"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:traffic-assignment",
+        "label": "traffic assignment"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-21",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.30469",
+    "doi": "10.1109/mt-its68460.2025.11223596",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-23T23:49:01Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005024,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2023,
+      "out": 221
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9711,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3884,
+    "relevance": 0.9711
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The evaluated outcomes rely on ideal conditions with an unlimited incentive budget and synthetic traffic simulations rather than field-tested behavioral responses.",
+      "what": "This study applies multi-agent reinforcement learning within a traffic simulation to dynamically distribute monetary incentives to drivers, encouraging rerouting to optimize societal benefits. Assuming an unlimited budget, the framework decreases total travel time by 16% at a cost equal to 11% of baseline travel duration, or cuts CO2 emissions by 9%. Combining travel time and emission objectives in the reward function yields simultaneous reductions in both metrics over the User-Equilibrium baseline.",
+      "why": "The method offers a politically viable alternative to unpopular or legally restricted road pricing models by shifting traffic management strategies from punitive tolls to positive driver incentives."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-21",
+  "work_key": "arxiv:2610.30469"
+}

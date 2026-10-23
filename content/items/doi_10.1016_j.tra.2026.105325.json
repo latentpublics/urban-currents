@@ -1,0 +1,302 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The effectiveness of speed harmonization using connected and autonomous vehicles (CAVs) in urban mixed traffic depends on both traffic management center (TMC) functionality and the data available for control. Using multi-agent reinforcement learning (MARL), this study examines whether performance differences among TMC functionality configurations vary with data availability. Three TMC functionality configurations are considered, represented by distinct training and execution paradigms: centralized training and execution (CTE), centralized training with decentralized execution (CTDE), and decentralized training and execution (DTE). Each configuration is evaluated under standalone autonomous vehicle (SAV), infrastructure-assisted (IA), and fully connected (FC) conditions, representing progressively broader access to onboard sensing, infrastructure data, and planned route information. Experiments are conducted with 20 and 40 simultaneously controlled CAVs in a calibrated microsimulation and supplemented by an FC experiment in the TAVF-Hamburg network, where the existing sensing and communication infrastructure corresponds to the FC condition. CTE achieves the most consistent performance across SAV, IA, and FC, with the strongest overall results under FC. Under SAV and IA conditions with 20 CAVs, CTDE shows pronounced performance degradation, whereas its performance improves substantially with 40 CAVs. The independent-learner DTE configuration exhibits considerable variability in performance across data availability and fleet-size conditions. The results reveal an asymmetric and configuration-dependent relationship between TMC coordination authority and data availability. These findings indicate that institutional constraints on TMC functionality and regulatory restrictions on data access and sharing should be considered jointly when selecting configurations for early CAV deployment.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Seoul National University",
+            "ror": "04h9pn542"
+          }
+        ],
+        "name": "Seunghyeon Lee",
+        "openalex": "A5055169282",
+        "orcid": "https://orcid.org/0000-0003-2356-3677"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Seoul National University",
+            "ror": "04h9pn542"
+          },
+          {
+            "name": "New Generation University College",
+            "ror": "015aem925"
+          },
+          {
+            "name": "National University",
+            "ror": "003r3cg42"
+          }
+        ],
+        "name": "Hyunsoo Yun",
+        "openalex": "A5025092064",
+        "orcid": "https://orcid.org/0000-0002-2694-8321"
+      },
+      {
+        "institutions": [],
+        "name": "Seung Woo Ham",
+        "openalex": "A5005949085",
+        "orcid": "https://orcid.org/0000-0001-7531-9217"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Seoul National University",
+            "ror": "04h9pn542"
+          },
+          {
+            "name": "New Generation University College",
+            "ror": "015aem925"
+          },
+          {
+            "name": "National University",
+            "ror": "003r3cg42"
+          }
+        ],
+        "name": "Dong-Kyu Kim",
+        "openalex": "A5159177373",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.tra.2026.105325",
+      "pdf_url": null,
+      "source_id": "S159637997",
+      "source_name": "Transportation Research Part A Policy and Practice",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-22",
+    "repository_urls": [],
+    "title": "Impact of traffic management center functionality on speed harmonization in urban networks under mixed traffic environments"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-22_10.1016/j.tra.20",
+    "members": [
+      "doi:10.1016/j.tra.2026.105325"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04h9pn542",
+        "label": "Seoul National University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:015aem925",
+        "label": "New Generation University College"
+      },
+      {
+        "confidence": null,
+        "id": "ror:003r3cg42",
+        "label": "National University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2356-3677",
+        "label": "Seunghyeon Lee"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2694-8321",
+        "label": "Hyunsoo Yun"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7531-9217",
+        "label": "Seung Woo Ham"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159177373",
+        "label": "Dong-Kyu Kim"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": true,
+        "label": "Traffic control and management",
+        "score": 0.9839,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0073,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0021,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-10-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W316935178",
+      "openalex:W341403209",
+      "openalex:W1470377755",
+      "openalex:W2061545509",
+      "openalex:W2746652309",
+      "openalex:W2772589676",
+      "openalex:W2772982179",
+      "openalex:W2790005177",
+      "openalex:W2887421613",
+      "openalex:W2915117209",
+      "openalex:W2916767945",
+      "openalex:W2945374197",
+      "openalex:W3081312017",
+      "openalex:W3108984337",
+      "openalex:W3139822297",
+      "openalex:W3160112148",
+      "openalex:W3195140620",
+      "openalex:W3198116786",
+      "openalex:W4200086871",
+      "openalex:W4210405825",
+      "openalex:W4210782077",
+      "openalex:W4238746485",
+      "openalex:W4282005810",
+      "openalex:W4385144000",
+      "openalex:W4386519252",
+      "openalex:W4388257371",
+      "openalex:W4392160808",
+      "openalex:W4394804366",
+      "openalex:W4398231727",
+      "openalex:W4400316155",
+      "openalex:W4401370261",
+      "openalex:W4401702617",
+      "openalex:W4405355685",
+      "openalex:W4406489616",
+      "openalex:W4406699263",
+      "openalex:W4417163875"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.tra.2026.105325",
+    "openalex": "W7223154457",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-23T23:49:14Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005875,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2141,
+      "out": 296
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-23T23:49:14Z",
+    "doi": "10.1016/j.tra.2026.105325",
+    "journal": "Transportation Research Part A Policy and Practice",
+    "source_id": "S159637997",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings rely on microsimulations with low counts of simultaneously controlled vehicles, which may not capture dynamics in saturated, real-world networks with high CAV penetration rates.",
+      "what": "The study evaluated three traffic management center (TMC) configurations—centralized, hybrid, and decentralized—for CAV speed harmonization in urban networks using multi-agent reinforcement learning across varied data-sharing levels and fleet sizes of 20 and 40 vehicles, including validation in the TAVF-Hamburg network. Fully centralized training and execution produced the most stable improvements, whereas hybrid configurations suffered severe performance drops under limited data conditions with smaller CAV fleets but recovered as fleet sizes doubled. Fully decentralized independent learners demonstrated inconsistent performance across all data and fleet conditions.",
+      "why": "This reveals that traffic management authority and data-sharing capabilities cannot be designed independently, proving that centralized control is crucial for stabilizing traffic flows during early, low-penetration autonomous vehicle deployments when network data is sparse."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-22",
+  "work_key": "doi:10.1016/j.tra.2026.105325"
+}

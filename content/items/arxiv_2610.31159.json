@@ -1,0 +1,162 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "We apply higher-order information measures to urban growth across borders and spatial units. We analyse 8,808 functional urban areas using gridded GDP estimates allocated from national accounts. Negative estimated O-information occurs in 29.93% of cross-border triplets and 2.00% of domestic triplets. This fifteen-fold contrast falls to fourfold at comparable dependence strength and persists under data-quality restrictions. Target-specific decompositions show how information overlaps or combines across cities. Administrative subdivisions have mean O-information within matched random-map ranges inside countries. These findings show why interpreting geographic dependence requires specifying comparison cities and spatial units, while economic connections remain to be established independently.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Cillian Hourican",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Debraj Roy",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "econ.GN"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.31159v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.31159v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-22",
+    "repository_urls": [],
+    "title": "Beyond city pairs: Higher-order information in urban growth across borders"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-22_2610.31159",
+    "members": [
+      "arxiv:2610.31159"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.31159",
+    "doi": "10.48550/arxiv.2610.31159",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-23T23:49:01Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005101,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1793,
+      "out": 268
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9244,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3698,
+    "relevance": 0.9244
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The reliance on gridded GDP estimates derived from national accounts rather than direct local economic measurements requires establishing actual economic connections independently.",
+      "what": "An analysis of cross-border and domestic urban growth across 8,808 functional urban areas using higher-order information measures and gridded national accounts GDP data reveals that negative O-information appears in 29.93% of cross-border triplets compared to 2.00% of domestic triplets. This fifteen-fold disparity decreases to fourfold when controlling for dependence strength, and target-specific decompositions demonstrate how growth information combines across regions. Furthermore, administrative subdivisions yield mean O-information within expected ranges for randomized spatial maps.",
+      "why": "Researchers can no longer evaluate inter-urban spatial dependence using simple pairwise models, as higher-order interaction structures change fundamentally when crossing national boundaries versus internal administrative divisions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-22",
+  "work_key": "arxiv:2610.31159"
+}

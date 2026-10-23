@@ -1,0 +1,217 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Land use regression models relate intra-urban air temperature to spatial predictors such as building volume, tree canopy cover and topography, and are increasingly used to produce fine-scale temperature maps. However, the accuracy of these estimates can be compromised by unrepresentative monitoring networks. Here we show that reference weather station networks, designed for regional rather than intra-urban monitoring, sample only a narrow portion of a city's spatial heterogeneity, missing both the densely built core and the cool, vegetated periphery that set the two ends of the urban temperature range. As a result, city-wide predictions underestimate temperature differences, in ways that cross-validation against the station measurements does not detect. Using Zurich, Switzerland, as a case study, we compare multiple linear regression, generalized additive models and random forests as up to 117 low-cost temperature sensors are added to the four reference weather stations. When trained on reference stations alone, all three models achieve comparable cross-validated performance. As low-cost sensors broaden the sampled spatial heterogeneity, multiple linear regression scores lower on both metrics, whereas the non-linear models remain at their reference-only level. Although a third of the low-cost sensors already recovers nearly the full predicted temperature range, which predictors are identified, and with which sign, is determined by the station sample rather than the model class. At full coverage, only multiple linear regression leaves significant residual spatial autocorrelation, suggesting a linear form unable to capture non-linear responses of air temperature to urban form. Drawing on landscape ecology research on focal site study design, we provide a transferable framework for diagnosing station network representativeness and improving the reliability of city-wide environmental maps.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Martí Bosch",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Aldo Brandi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Christoph Bachofen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Perrine Hamel",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Roy P. Remme",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Emma E. Ramsay",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Gabriele Manoli",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Martin A. Schlaepfer",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Moritz Burger",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.ao-ph",
+      "physics.soc-ph"
+    ],
+    "comment": "29 pages. Code and data: https://doi.org/10.5281/zenodo.23527239",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.29423v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.29423v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-21",
+    "repository_urls": [],
+    "title": "Urban climate regressions require representative monitoring networks"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-21_2610.29423",
+    "members": [
+      "arxiv:2610.29423"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q72",
+        "label": "Zurich",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-21",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.29423",
+    "doi": "10.48550/arxiv.2610.29423",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-22T23:57:11Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005776,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2165,
+      "out": 281
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9065,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3626,
+    "relevance": 0.9065
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are derived from a single-city case study in Zurich, Switzerland, and rely primarily on a small baseline network of four reference stations.",
+      "what": "Using Zurich, Switzerland as a test case, this study evaluated multiple linear regression, generalized additive models, and random forests by incrementally adding up to 117 low-cost temperature sensors to four official reference weather stations. Training models strictly on standard reference stations caused all algorithms to underestimate the full city-wide temperature range because those stations miss extreme urban contexts, such as dense building cores and cool vegetated margins. Incorporating just one-third of the low-cost sensors captured nearly the entire predicted urban thermal range, though the selected predictor variables and their signs depended heavily on the underlying sensor locations rather than the model type used.",
+      "why": "Standard intra-urban climate maps built on official weather stations routinely obscure localized urban heat risks because standard cross-validation fails to flag unrepresentative station placement. Diagnosing spatial sampling gaps offers a practical pathway to ensure fine-scale temperature models correctly capture extreme thermal environments across cities."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-21",
+  "work_key": "arxiv:2610.29423"
+}

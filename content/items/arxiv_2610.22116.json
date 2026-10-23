@@ -104,12 +104,109 @@
         "label": "statistical modeling"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01j33xk10",
+        "label": "Fondazione Bruno Kessler"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01111rn36",
+        "label": "University of Bologna"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01an7q238",
+        "label": "University of California, Berkeley"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5120379626",
+        "label": "Alberto Amaduzzi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5076-8152",
+        "label": "Lucila G. Alvarez-Zuzek"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6147-5374",
+        "label": "Valeria d’Andrea"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9510-8000",
+        "label": "Simone Centellegher"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2843-2580",
+        "label": "Lorenzo Lucchini"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6047-082X",
+        "label": "Brennan Lake"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5158-8594",
+        "label": "Manlio De Domenico"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1275-2333",
+        "label": "Bruno Lepri"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8482-0318",
+        "label": "Marta C. González"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9633-0017",
+        "label": "Armando Bazzani"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8088-1973",
+        "label": "Riccardo Gallotti"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.9985,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10410",
+        "is_primary": false,
+        "label": "COVID-19 epidemiological studies",
+        "score": 0.0005,
+        "subfield": "2611"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0001,
+        "subfield": "2215"
+      }
+    ]
   },
   "first_published": "2026-10-15",
   "graph": {
@@ -120,7 +217,7 @@
   "ids": {
     "arxiv": "2610.22116",
     "doi": "10.48550/arxiv.2610.22116",
-    "openalex": null,
+    "openalex": "W7222437533",
     "pmid": null
   },
   "provenance": {
@@ -128,7 +225,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-16T23:26:01Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005513,
     "llm": {
@@ -216,6 +314,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-15",
+  "updated": "2026-10-22",
   "work_key": "arxiv:2610.22116"
 }

@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Nuclear power is increasingly seen as necessary for sustainable development, but this role depends on informed public engagement and support. Building this support requires understanding what citizens want to know, as reflected in their spontaneous online searches. To map this demand, we present the first long-term (2004-2024), prefecture-level analysis of Google Trends data on nuclear power in Japan. The results indicate that in routine periods, search interest followed a host-locality pattern, being significantly higher in prefectures hosting nuclear plants, with little spillover to their neighbors. Immediately after the Fukushima Daiichi accident in March 2011, this pattern changed, and interest instead declined with distance from Fukushima, before the host-locality pattern returned from 2012. During March 2011, searches leaned heavily toward general and live information rather than guidance on what to do. Their framing also varied with proximity, as those near Fukushima prioritized live updates and formal countermeasures, while others leaned toward background information and personal-scale questions. These patterns and the shift between them provide a behavioral evidence base for designing communication strategies in Japan and countries weighing the use of nuclear power. More broadly, the finding that searches vary with proximity can inform public communication in other geographically anchored crises.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Yifan Sun",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ken Kurosaki",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Benjamin C. McLellan",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.SI"
+    ],
+    "comment": "11 pages, 5 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.29924v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.29924v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-21",
+    "repository_urls": [],
+    "title": "Geospatial Dynamics of Online Attention to Nuclear Power in Japan Before and After Fukushima"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-21_2610.29924",
+    "members": [
+      "arxiv:2610.29924"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-analysis",
+        "label": "spatial analysis"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-21",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.29924",
+    "doi": "10.48550/arxiv.2610.29924",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-22T23:57:11Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005573,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2029,
+      "out": 281
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9274,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.371,
+    "relevance": 0.9274
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2004-2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Search interest serves as a proxy for information demand and public attention, which may not directly reflect underlying public opinion or policy support.",
+      "what": "An analysis of Google Trends data across Japan's prefectures from 2004 to 2024 reveals that routine online search interest in nuclear power concentrates heavily in host prefectures with little spillover to neighbors. Following the March 2011 Fukushima accident, this local pattern briefly shifted into a distance-decay effect centered on Fukushima, where closer prefectures focused on live updates and formal countermeasures while distant ones sought general background information. The original host-locality search distribution fully returned by 2012.",
+      "why": "The study replaces assumptions about public interest in nuclear energy with two decades of behavioral evidence, demonstrating that crisis-driven attention rapidly reverts to localized, host-prefecture baselines within a single year."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-21",
+  "work_key": "arxiv:2610.29924"
+}

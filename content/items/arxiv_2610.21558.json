@@ -74,11 +74,57 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5098921352",
+        "label": "Federico Bellisardi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5158925729",
+        "label": "Enrique Cano-Suñén"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8807-4917",
+        "label": "Ana Ruiz-Varona"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2499-6095",
+        "label": "José J. Ramasco"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": true,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.9844,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0122,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0014,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-10-15",
   "graph": {
@@ -89,7 +135,7 @@
   "ids": {
     "arxiv": "2610.21558",
     "doi": "10.48550/arxiv.2610.21558",
-    "openalex": null,
+    "openalex": "W7222462931",
     "pmid": null
   },
   "provenance": {
@@ -97,7 +143,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-16T23:26:01Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005042,
     "llm": {
@@ -185,6 +232,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-15",
+  "updated": "2026-10-22",
   "work_key": "arxiv:2610.21558"
 }

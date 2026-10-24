@@ -68,8 +68,40 @@
         "label": "machine learning"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0220mzb33",
+        "label": "King's College London"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5159114856",
+        "label": "Yunfei Bai"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5135577027",
+        "label": "Aaron Tesfa Tsion"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5091156502",
+        "label": "Raúl Rosales"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5135637258",
+        "label": "Barbara Shollock"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159147514",
+        "label": "Wei He"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -80,7 +112,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10121",
+        "is_primary": true,
+        "label": "Building Energy and Comfort Optimization",
+        "score": 0.8276,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13263",
+        "is_primary": false,
+        "label": "Building energy efficiency and sustainability",
+        "score": 0.1631,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11185",
+        "is_primary": false,
+        "label": "Integrated Energy Systems Optimization",
+        "score": 0.001,
+        "subfield": "2208"
+      }
+    ]
   },
   "first_published": "2026-10-17",
   "graph": {
@@ -91,7 +148,7 @@
   "ids": {
     "arxiv": "2610.24608",
     "doi": "10.48550/arxiv.2610.24608",
-    "openalex": null,
+    "openalex": "W7223035006",
     "pmid": null
   },
   "provenance": {
@@ -99,7 +156,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-23T23:49:12Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005918,
     "llm": {
@@ -187,6 +245,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-17",
+  "updated": "2026-10-24",
   "work_key": "arxiv:2610.24608"
 }

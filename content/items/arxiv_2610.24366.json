@@ -51,8 +51,25 @@
       }
     ],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:047s2c258",
+        "label": "University of Maryland, College Park"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5159133814",
+        "label": "Hsuan-Chih Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9416-6882",
+        "label": "Xianfeng “Terry” Yang"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -63,7 +80,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.9814,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11489",
+        "is_primary": false,
+        "label": "Air Traffic Management and Optimization",
+        "score": 0.0171,
+        "subfield": "2202"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11599",
+        "is_primary": false,
+        "label": "Aviation Industry Analysis and Trends",
+        "score": 0.0006,
+        "subfield": "2000"
+      }
+    ]
   },
   "first_published": "2026-10-17",
   "graph": {
@@ -74,7 +116,7 @@
   "ids": {
     "arxiv": "2610.24366",
     "doi": "10.48550/arxiv.2610.24366",
-    "openalex": null,
+    "openalex": "W7223038301",
     "pmid": null
   },
   "provenance": {
@@ -82,7 +124,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-20T23:45:54Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006139,
     "llm": {
@@ -170,6 +213,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-17",
+  "updated": "2026-10-24",
   "work_key": "arxiv:2610.24366"
 }

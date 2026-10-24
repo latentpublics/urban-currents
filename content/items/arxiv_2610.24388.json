@@ -62,12 +62,69 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0220mzb33",
+        "label": "King's College London"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5146893726",
+        "label": "Yunfei Bai"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5135577027",
+        "label": "Aaron Tesfa Tsion"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5091156502",
+        "label": "Raúl Rosales"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5135637258",
+        "label": "Barbara Shollock"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159147514",
+        "label": "Wei He"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11336",
+        "is_primary": true,
+        "label": "Energy and Environment Impacts",
+        "score": 0.6245,
+        "subfield": "2310"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12617",
+        "is_primary": false,
+        "label": "Energy, Environment, and Transportation Policies",
+        "score": 0.3254,
+        "subfield": "2105"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10632",
+        "is_primary": false,
+        "label": "Housing Market and Economics",
+        "score": 0.0173,
+        "subfield": "2002"
+      }
+    ]
   },
   "first_published": "2026-10-17",
   "graph": {
@@ -78,7 +135,7 @@
   "ids": {
     "arxiv": "2610.24388",
     "doi": "10.48550/arxiv.2610.24388",
-    "openalex": null,
+    "openalex": "W7223070252",
     "pmid": null
   },
   "provenance": {
@@ -86,7 +143,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-20T23:45:54Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005444,
     "llm": {
@@ -174,6 +232,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-17",
+  "updated": "2026-10-24",
   "work_key": "arxiv:2610.24388"
 }

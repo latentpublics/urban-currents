@@ -1,70 +1,128 @@
 {
-  "badges": [],
+  "badges": [
+    "data",
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Open science initiatives have strengthened scientific integrity and accelerated research progress across many fields, but the state of their practice within transportation research remains under-investigated. Key features of open science, defined here as data and code availability, are difficult to extract due to the inherent complexity of the field. Previous work has either been limited to small-scale studies due to the labor-intensive nature of manual analysis or has relied on large-scale bibliometric approaches that sacrifice contextual richness. This paper introduces an automatic and scalable feature-extraction pipeline that combines full-text extraction and human agreement analysis in order to measure code and data availability in transportation research. We employ Large Language Models (LLMs) for this task and validate their performance against a manually curated dataset and through an inter-rater agreement analysis. We applied this pipeline to examine 10,724 research articles published in the Transportation Research Part series of journals between 2019 and 2024. Our analysis found that only 5% of quantitative papers shared a code repository, 4% of quantitative papers shared a data repository, and about 3% of papers shared both, with trends differing across journals, topics, and geographic regions. We found no significant difference in citation counts or review duration between papers that provided data and code and those that did not, suggesting a misalignment between open science efforts and traditional academic metrics. Consequently, encouraging these practices will likely require structural interventions from journals and funding agencies to supplement the lack of direct author incentives. The pipeline developed in this study can be readily scaled to other journals, representing a critical step toward the automated measurement and monitoring of open science practices in transportation research. An interactive explorer can be found on the project page https://www.rerite.org/MOST.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Vanderbilt University",
+            "ror": "02vm5rt34"
+          }
+        ],
         "name": "Junyi Ji",
         "openalex": "A5123598289",
-        "orcid": null
+        "orcid": "https://orcid.org/0000-0003-1085-1573"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Massachusetts Institute of Technology",
+            "ror": "042nb2s44"
+          }
+        ],
         "name": "Ruth Lu",
         "openalex": "A5123557044",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Université Gustave Eiffel",
+            "ror": "03x42jk29"
+          }
+        ],
         "name": "Linda Belkessa",
         "openalex": "A5108344709",
         "orcid": "https://orcid.org/0009-0002-0298-1431"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Portland State University",
+            "ror": "00yn2fy02"
+          }
+        ],
         "name": "Liming Wang",
         "openalex": "A5123579314",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "École Nationale des Travaux Publics de l'État",
+            "ror": "05r0ccb59"
+          }
+        ],
         "name": "Silvia Varotto",
         "openalex": "A5123621802",
-        "orcid": null
+        "orcid": "https://orcid.org/0000-0003-4685-6333"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
         "name": "Yongqi Dong",
         "openalex": "A5123550736",
-        "orcid": null
+        "orcid": "https://orcid.org/0000-0003-1159-9584"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Polytechnique Montréal",
+            "ror": "05f8d4e86"
+          }
+        ],
         "name": "Nicolas Saunier",
         "openalex": "A5071891413",
         "orcid": "https://orcid.org/0000-0003-0218-7932"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Université Gustave Eiffel",
+            "ror": "03x42jk29"
+          }
+        ],
         "name": "Mostafa Ameli",
         "openalex": "A5056796193",
         "orcid": "https://orcid.org/0000-0002-2470-6812"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Brigham Young University",
+            "ror": "047rhhm47"
+          }
+        ],
         "name": "Gregory S. Macfarlane",
         "openalex": "A5085950558",
         "orcid": "https://orcid.org/0000-0003-3999-7584"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "École Nationale des Travaux Publics de l'État",
+            "ror": "05r0ccb59"
+          }
+        ],
         "name": "Bahman Madadi",
         "openalex": "A5005205905",
         "orcid": "https://orcid.org/0000-0002-7130-8825"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Massachusetts Institute of Technology",
+            "ror": "042nb2s44"
+          }
+        ],
         "name": "Cathy H. Wu",
         "openalex": "A5053761444",
         "orcid": "https://orcid.org/0000-0001-6379-8601"
@@ -93,8 +151,55 @@
   },
   "entities": {
     "data": [],
-    "methods": [],
-    "orgs": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02vm5rt34",
+        "label": "Vanderbilt University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:042nb2s44",
+        "label": "Massachusetts Institute of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03x42jk29",
+        "label": "Université Gustave Eiffel"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00yn2fy02",
+        "label": "Portland State University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05r0ccb59",
+        "label": "École Nationale des Travaux Publics de l'État"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02e2c7k09",
+        "label": "Delft University of Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05f8d4e86",
+        "label": "Polytechnique Montréal"
+      },
+      {
+        "confidence": null,
+        "id": "ror:047rhhm47",
+        "label": "Brigham Young University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -153,7 +258,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": [
       {
@@ -195,14 +300,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-10-23T23:49:14Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -224,26 +332,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.6,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.52,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2019 and 2024",
+      "url": null,
+      "value": true
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The dataset is restricted to six journals within the Transportation Research Part series, which may not represent all subfields or publishing venues in transportation studies.",
+      "what": "Using a large language model pipeline validated against human annotations, the study evaluated code and data sharing across 10,724 articles published in Transportation Research Parts A through F from 2019 to 2024. Among quantitative papers, only 5% shared code repositories, 4% shared data repositories, and 3% provided both. The analysis detected no statistically significant differences in citation counts or peer-review durations between open-science papers and non-sharing papers.",
+      "why": "It provides the first large-scale empirical baseline for open science practices in transportation, demonstrating that individual author incentives like higher citations or faster reviews are currently absent in the field."
+    }
   },
   "track": "papers",
-  "updated": "2026-10-22",
+  "updated": "2026-10-24",
   "work_key": "arxiv:2601.14429"
 }

@@ -4,13 +4,23 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Peking University",
+            "ror": "02v51f717"
+          }
+        ],
         "name": "Jin Rui",
         "openalex": "A5035005968",
         "orcid": "https://orcid.org/0000-0002-0926-0947"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Bologna",
+            "ror": "01111rn36"
+          }
+        ],
         "name": "Zhaowen Xu",
         "openalex": "A5159127605",
         "orcid": null
@@ -31,7 +41,7 @@
     "title": "Street-scale heat exposure mapping for urban cyclists: Integrating vision transformer-GAN with aggregated Strava cycling activity data"
   },
   "cluster": {
-    "cluster_id": "clu_2026-10-20_10.1016/j.tra.20",
+    "cluster_id": "clu_2026-10-23_10.1016/j.tra.20",
     "members": [
       "doi:10.1016/j.tra.2026.105317"
     ],
@@ -40,7 +50,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02v51f717",
+        "label": "Peking University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01111rn36",
+        "label": "University of Bologna"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -155,7 +176,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-10-21T23:58:33Z",
+    "collected_at": "2026-10-24T23:04:25Z",
     "collectors": [
       "openalex"
     ],
@@ -202,6 +223,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-10-20",
+  "updated": "2026-10-24",
   "work_key": "doi:10.1016/j.tra.2026.105317"
 }

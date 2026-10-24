@@ -1,46 +1,87 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Wildland–urban interface (WUI) is the zone where human settlements and wildland vegetation meet or intermingle. It is a key space where human communities and natural ecosystems are exposed to fire and other risks. Previous research on China's WUI has generally involved trade-offs among spatial resolution, temporal frequency, and long-term coverage, leaving room for a more detailed characterization of its spatiotemporal dynamics. In addition, its type composition and socioeconomic associations have received comparatively limited attention. Here, we mapped China's WUI using a buffer-overlap method at 30-m resolution at five-year intervals from 2000 to 2020, and classified it into forest, shrub, and grassland WUI. We analyzed WUI dynamics, quantified the direct contributions of urban and wildland changes, and examined socioeconomic associations using a two-step modeling framework at the prefecture level. Finally, we analyzed fire activity and population exposure within and around the WUI. In 2020, China's WUI zones covered approximately 528,000 km 2, accounting for 5.50% of the national land area. The WUI contrasted east–west, with higher density in eastern China and lower density in western China. Different WUI types showed substantial spatial heterogeneity. From 2000 to 2020, China's WUI area increased by 22.99%, with urban expansion being the principal direct contributor to WUI growth. After controlling for land cover composition, population density and road density had significant nonlinear effects on residual WUI variation. Both fire activity and population exposure peaked in the 0–1 km band outside the WUI. These findings can inform fire management, ecological conservation, and spatial planning.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Beijing Normal University",
+            "ror": "022k4wk35"
+          }
+        ],
         "name": "Kunran Liu",
         "openalex": "A5073431547",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Beijing Normal University",
+            "ror": "022k4wk35"
+          }
+        ],
         "name": "Yifan Gao",
         "openalex": "A5159256216",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Yunnan Normal University",
+            "ror": "00sc9n023"
+          },
+          {
+            "name": "Beijing Normal University",
+            "ror": "022k4wk35"
+          }
+        ],
         "name": "Changqing Song",
         "openalex": "A5159292409",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Beijing Normal University",
+            "ror": "022k4wk35"
+          }
+        ],
         "name": "Delin Fang",
         "openalex": "A5011704039",
         "orcid": "https://orcid.org/0000-0003-0238-328X"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Beijing Normal University",
+            "ror": "022k4wk35"
+          }
+        ],
         "name": "Sijing Ye",
         "openalex": "A5159271475",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Beijing Normal University",
+            "ror": "022k4wk35"
+          }
+        ],
         "name": "Yuanhui Wang",
         "openalex": "A5136771050",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Beijing Normal University",
+            "ror": "022k4wk35"
+          }
+        ],
         "name": "Peichao Gao",
         "openalex": "A5074601006",
         "orcid": "https://orcid.org/0000-0003-1714-779X"
@@ -70,7 +111,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:022k4wk35",
+        "label": "Beijing Normal University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00sc9n023",
+        "label": "Yunnan Normal University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -108,8 +160,15 @@
         "label": "Peichao Gao"
       }
     ],
-    "places": [],
-    "places_status": "not_attempted",
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
     "tools": [],
     "topics": [
       {
@@ -210,14 +269,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-10-23T23:49:14Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -239,26 +301,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2000 to 2020",
+      "url": null,
+      "value": true
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "Socioeconomic drivers were evaluated using a two-step model at the prefecture level, which may smooth out finer neighborhood-scale dynamics.",
+      "what": "Using a buffer-overlap method at 30-meter resolution across five-year steps from 2000 to 2020, this study mapped China's wildland-urban interface (WUI) and classified it by vegetation types: forest, shrub, and grassland. The national WUI expanded by 22.99% over two decades to reach 528,000 square kilometers (5.50% of China's land area), driven primarily by urban growth. Fire activity and human exposure concentrated heavily in the 0-1 km buffer surrounding the designated WUI boundaries.",
+      "why": "By demonstrating that fire activity and population exposure peak immediately outside defined WUI boundaries rather than inside them, the results challenge conventional spatial targeting for fire management and planning."
+    }
   },
   "track": "papers",
-  "updated": "2026-10-22",
+  "updated": "2026-10-24",
   "work_key": "doi:10.1016/j.apgeog.2026.104237"
 }

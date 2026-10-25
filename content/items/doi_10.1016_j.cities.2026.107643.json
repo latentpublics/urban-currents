@@ -1,22 +1,39 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Recent growth in apartment living in Australian cities has raised concerns about mental health disparities between apartment and house residents, often attributed to poor construction quality and amenity levels. Notably, apartment residents in Australian capital cities are predominantly renters in the private market, with evidence that tenure instability and inability to control home quality can adversely affect mental health. While there is established literature on the mental health effects of either tenure type or dwelling type, few studies have examined their combined effects and spatial distribution on long-term mental health. To address this gap, this study examined: (a) the effect of dwelling type on mental health; (b) effect modification by tenure type; and (c) variations across Australian capital cities. Fixed-effects regression models were constructed to analyse panel data from the Household, Income, and Labour Dynamics in Australia (HILDA) Survey from 2001 to 2019. Results indicated that there was no significant difference in mental health outcomes based on dwelling or tenure type at the national level – a finding that advances understanding by ruling out strong direct effects of dwelling type on mental health. There was no significant variation in dwelling type effects across cities as a whole, but city-stratified analysis revealed that living in an apartment was associated with better mental health compared to living in a house in Greater Sydney. This suggests that the mental health effects of dwelling type may be context-sensitive, highlighting the need for future research to investigate within-city factors affecting mental health in residential settings.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "The University of Melbourne",
+            "ror": "01ej9dk98"
+          }
+        ],
         "name": "Sook Yan Wong",
         "openalex": "A5159112407",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "The University of Melbourne",
+            "ror": "01ej9dk98"
+          }
+        ],
         "name": "Erika Martino",
         "openalex": "A5080178270",
         "orcid": "https://orcid.org/0000-0003-0827-6477"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "The University of Melbourne",
+            "ror": "01ej9dk98"
+          }
+        ],
         "name": "Ang Li",
         "openalex": "A5159155786",
         "orcid": null
@@ -46,7 +63,13 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01ej9dk98",
+        "label": "The University of Melbourne"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -65,7 +88,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": [
       {
@@ -147,14 +170,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-10-21T23:58:33Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -176,26 +202,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2001 to 2019",
+      "url": null,
+      "value": true
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The findings rely on self-reported survey data and focus on broad population averages, which may obscure intra-city micro-environmental conditions or building-specific quality issues.",
+      "what": "Using fixed-effects regression models on HILDA panel data spanning 2001 to 2019, this study evaluated the joint impact of housing structure and tenancy type on long-term mental health across major Australian metropolitan areas. Across the country, no statistically significant overall difference in mental health was found between apartment dwellers and house residents, or between renters and owners. However, city-specific models revealed that apartment residents in Greater Sydney experienced slightly better mental health outcomes compared to those residing in detached houses.",
+      "why": "This finding challenges the widespread assumption that apartment living inherently worsens mental health, demonstrating instead that structure type has no universal direct negative effect and that mental health outcomes depend heavily on local urban context."
+    }
   },
   "track": "papers",
-  "updated": "2026-10-20",
+  "updated": "2026-10-25",
   "work_key": "doi:10.1016/j.cities.2026.107643"
 }

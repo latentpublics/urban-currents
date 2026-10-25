@@ -1,0 +1,193 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Reliable lane markings are important for both human drivers and automated driving systems, but their condition is still commonly assessed through manual inspection. Existing autonomous-driving datasets primarily support lane detection and scene understanding and usually lack maintenance-oriented labels for lane-marking visibility, continuity, or degradation. In this study, we present a geo-referenced smartphone dashcam dataset and baseline framework for lane-marking quality assessment. The dataset contains 63,839 road-facing frames collected across South Texas using a GPS-enabled dashcam application. A subset of 3,339 frames is matched with OpenStreetMap-derived lane-count labels, which are used as weak supervision for lane-count regression and map-consistency evaluation. We propose three lane-quality measures: Contrast Stability Index (CSI), which captures lane-background contrast using Laplacian responses; Line Continuity Ratio (LCR), which estimates structural continuity using edge and Hough-line evidence; and Regression Lane Confidence Score (RLCS), which measures agreement between predicted and map-derived lane counts on matched frames. The baseline prediction models attained strong performance, with CSI (MAE $0.039$, $R^2=0.97$) and LCR (MAE $0.093$, $R^2=0.84$). Notably, CSI and LCR are no-reference, segmentation-derived quality metrics that can be computed without dense human labels. In a pilot validation using 50 human-ranked images, these proposed lane-specific metrics show stronger rank agreement with human lane-quality ordering (e.g., Spearman's $ρ=0.7316$ and Kendall's $τ=0.5472$ for LCR) than general image-quality measures such as PSNR, SSIM, BRISQUE, NIQE, and LPIPS. We believe the dataset, metrics, and baseline provide an initial step toward scalable, low-cost, location-aware lane-marking quality assessment. Data and code: https://github.com/Shaif95/Road_Quality",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Shaif Chowdhury",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Akhila Yeruvasu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Moshiur Rahman Tonmoy",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ayush Goyal",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dunren Che",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": "Accepted in the ICECER 2026",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.28508v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.28508v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-20",
+    "repository_urls": [],
+    "title": "Deep Learning-Based Road Lane Quality Assessment from Egocentric Dashcam Video"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-24_2610.28508",
+    "members": [
+      "arxiv:2610.28508"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-20",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.28508",
+    "doi": "10.48550/arxiv.2610.28508",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-25T23:09:15Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005951,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2371,
+      "out": 266
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.8,
+      "novelty": 0.0,
+      "relevance": 0.876,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.5104,
+    "relevance": 0.876
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/Shaif95/Road_Quality",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Human validation of the proposed quality metrics relies on a small pilot sample of 50 ranked images within a single geographic region.",
+      "what": "The authors developed a baseline framework and a geo-referenced smartphone dashcam dataset containing 63,839 frames from South Texas to automate lane-marking quality evaluations. The approach introduces three specific quality metrics: Contrast Stability Index ($R^2=0.97$), Line Continuity Ratio ($R^2=0.84$), and Regression Lane Confidence Score based on 3,339 OpenStreetMap-matched frames. In a pilot test of 50 images, these metrics achieved stronger rank correlation with human quality ratings (Spearman's $\\rho=0.7316$ for continuity) than standard image-quality algorithms.",
+      "why": "Road infrastructure monitoring can shift from manual field inspections to automated, low-cost video surveys using metrics specifically tailored to lane visibility and map consistency rather than general image metrics."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-20",
+  "work_key": "arxiv:2610.28508"
+}

@@ -1,0 +1,263 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Transportation planning requires anticipating how built environments, population characteristics, and aggregate travel indicators evolve over time. Conventional forecasting approaches often treat these dimensions separately, limiting their ability to represent spatial-demographic change. This study introduces the Demographics-Informed Neural Network (DINN), a deep learning framework that forecasts next-year county-level satellite imagery from historical image sequences while enforcing demographic consistency through a frozen demographic predictor. DINN combines an encoder-decoder image predictor, gated skip connections, demographic bottleneck fusion, and demographic consistency regularization. The frozen demographic encoder is then reused as a fixed feature extractor to estimate aggregate county-level commute-mode and vehicle-availability indicators. Experiments using US county data from 2012 to 2023 show that DINN achieves an MSE of 0.00379 and SSIM of 0.8342 for satellite image prediction. Across repeated grouped spatial splits, DINN provides modest but consistent improvements over ConvLSTM, transformer-based, and encoder-decoder baselines, with stronger performance on both image reconstruction and change-detection metrics. The demographic predictor explains approximately 80% of the variance in population characteristics from satellite imagery. Transfer learning results show higher accuracy for absolute travel-indicator counts than for scale-controlled shares, indicating that part of the signal reflects county population scale. Overall, the findings suggest that satellite-derived spatial representations capture built-environment and demographic correlates of aggregate travel indicators; however, the results should be interpreted as county-level predictive associations rather than causal behavioral inference.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "North Dakota State University",
+            "ror": "05h1bnb22"
+          }
+        ],
+        "name": "Eugene Kofi Okrah Denteh",
+        "openalex": null,
+        "orcid": "https://orcid.org/0009-0001-7597-6732"
+      },
+      {
+        "institutions": [
+          {
+            "name": "North Dakota State University",
+            "ror": "05h1bnb22"
+          }
+        ],
+        "name": "Andrews Danyo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "North Dakota State University",
+            "ror": "05h1bnb22"
+          }
+        ],
+        "name": "Joshua Kofi Asamoah",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "North Dakota State University",
+            "ror": "05h1bnb22"
+          }
+        ],
+        "name": "Blessing Agyei Kyem",
+        "openalex": null,
+        "orcid": "https://orcid.org/0009-0006-6360-6386"
+      },
+      {
+        "institutions": [
+          {
+            "name": "North Dakota State University",
+            "ror": "05h1bnb22"
+          }
+        ],
+        "name": "Armstrong Aboah",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1061/jtepbs.teeng-9868",
+      "pdf_url": null,
+      "source_id": "S4210178838",
+      "source_name": "Journal of Transportation Engineering Part A Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-24",
+    "repository_urls": [],
+    "title": "Demographics-Informed Neural Network for Multimodal Spatiotemporal Forecasting of Urban Growth and Travel Patterns Using Satellite Imagery"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-24_2506.12456",
+    "members": [
+      "arxiv:2506.12456"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05h1bnb22",
+        "label": "North Dakota State University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0001-7597-6732",
+        "label": "Eugene Kofi Okrah Denteh"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0006-6360-6386",
+        "label": "Blessing Agyei Kyem"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T13890",
+        "is_primary": true,
+        "label": "Remote Sensing and Land Use",
+        "score": 0.345,
+        "subfield": "1902"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.2051,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": false,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.0969,
+        "subfield": "2306"
+      }
+    ]
+  },
+  "first_published": "2026-10-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2506.12456",
+    "doi": "10.1061/jtepbs.teeng-9868",
+    "openalex": "W4417536283",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-25T23:09:22Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006443,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2159,
+      "out": 356
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-25T23:09:22Z",
+    "doi": "10.1061/jtepbs.teeng-9868",
+    "journal": "Journal of Transportation Engineering Part A Systems",
+    "source_id": "S4210178838",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2012 to 2023",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model's transfer learning performs significantly better on absolute counts than on scale-controlled shares, meaning its predictions largely track total population scale and reflect county-level associations rather than direct causal behavior.",
+      "what": "The study introduces the Demographics-Informed Neural Network (DINN), a deep learning framework designed to predict next-year county-level satellite imagery from past image sequences while maintaining demographic consistency. Evaluated on US county data spanning 2012 to 2023, the model achieved a satellite image prediction MSE of 0.00379 and an SSIM of 0.8342, outperforming ConvLSTM, transformer-based, and encoder-decoder baselines. Additionally, its demographic predictor explained roughly 80% of the variance in population characteristics, which were then used to forecast aggregate county-level vehicle availability and commute-mode counts.",
+      "why": "It demonstrates that satellite imagery sequence models can joint-predict spatial raster changes and aggregate demographic and transportation indicators, offering a unified forecasting pipeline across US counties."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-24",
+  "work_key": "arxiv:2506.12456"
+}

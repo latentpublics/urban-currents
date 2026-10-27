@@ -50,12 +50,59 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04z6c2n17",
+        "label": "University of Johannesburg"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5159119470",
+        "label": "Vincent Sello"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159102917",
+        "label": "Timothy Adeliyi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4075-722X",
+        "label": "Ridewaan Hanslo"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": true,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.6245,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10586",
+        "is_primary": false,
+        "label": "Robotic Path Planning Algorithms",
+        "score": 0.1335,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.1322,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-10-19",
   "graph": {
@@ -66,7 +113,7 @@
   "ids": {
     "arxiv": "2610.26346",
     "doi": "10.48550/arxiv.2610.26346",
-    "openalex": null,
+    "openalex": "W7223033438",
     "pmid": null
   },
   "provenance": {
@@ -74,7 +121,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-20T23:45:54Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005156,
     "llm": {
@@ -162,6 +210,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-19",
+  "updated": "2026-10-26",
   "work_key": "arxiv:2610.26346"
 }

@@ -150,11 +150,11 @@
     "components": {
       "artifact_completeness": 0.4,
       "novelty": 0.0,
-      "relevance": 0.974,
+      "relevance": 0.9658,
       "source_multiplicity": 0.0
     },
-    "headline": 0.4696,
-    "relevance": 0.974
+    "headline": 0.4663,
+    "relevance": 0.9658
   },
   "signals": {
     "code_available": {
@@ -202,12 +202,12 @@
   },
   "summary": {
     "en": {
-      "caveats": "Review counts were estimated rather than directly observed for four of the five study cities, and performance was compared against only a single crisp-mean baseline.",
-      "what": "An eco-friendly itinerary generator models variable travel times across six departure hours and platform review counts using Z-numbers, which couple fuzzy value bounds with fuzzy reliability scores. Evaluated across 150 seed-paired runs covering 15 points of interest in Baku, Dubai, Abu Dhabi, Tashkent, and Istanbul, the system reduced average trip carbon emissions from 3.24 to 2.61 kg (19.3%) and total travel time from 123 to 109 minutes (11.5%) compared to a crisp-mean baseline. Time reductions were statistically significant in Baku, Istanbul, and Abu Dhabi, while carbon reductions were strongest in Baku but insignificant in Tashkent.",
-      "why": "Trip planners can now explicitly account for traffic variability and review reliability to lower emissions and delay without collecting manual linguistic ratings or sacrificing routing quality."
+      "caveats": "Because all evaluated points of interest had over 3,000 reviews, rating reliability remained uniform across the sample, and performance improvements varied substantially by city spatial structure.",
+      "what": "This paper developed an eco-friendly tourism itinerary generator that models travel times and user ratings using Z-numbers derived from departure-hour routing data and total review counts. Using an adaptive large neighborhood search algorithm, the authors benchmarked the system against a crisp-mean planner across 15 points of interest in Baku, Dubai, Abu Dhabi, Tashkent, and Istanbul over 150 seed-paired runs. The proposed method reduced average trip carbon emissions by 19.3% (from 3.24 to 2.61 kg) and total travel time by 11.5% (from 123 to 109 minutes).",
+      "why": "It replaces exact-value assumptions in travel recommendation systems with uncertainty-aware fuzzy reliability, establishing that accounting for travel-time variance and rating volume directly lowers carbon emissions and transit duration."
     }
   },
   "track": "papers",
-  "updated": "2026-10-21",
+  "updated": "2026-10-26",
   "work_key": "arxiv:2610.29120"
 }

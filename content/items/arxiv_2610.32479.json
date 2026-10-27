@@ -1,0 +1,179 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Large-area accessibility analysis remains difficult to reproduce because multimodal routing, heterogeneous opportunity data, and reusable spatial outputs are rarely integrated in a single transparent workflow. We present MAPPER (Multimodal Accessibility and Place Profiling Engine for Arbitrary Regions), an open-data pipeline for multimodal accessibility analytics. The workflow builds walk, bike, car, and public transport travel-time graphs from OpenStreetMap and GTFS data, harmonizes mapped POI- and proxy layers representing the land-use side of the accessibility relation, and computes continuous accessibility fields using network kernel density estimation. A low-overhead native compute core (contraction-hierarchy routing, C++/OpenMP accessibility accumulation, DAG-style orchestration eliminating redundant computation) is the enabler that makes many graphs, large extents, and a broad layer set jointly tractable on commodity hardware. Outputs are sampled to a uniform H3 grid for downstream urban and regional analysis. A Germany-wide production run yields an H3-indexed accessibility dataset with nearly 40 million cells and 972 mode-layer fields across nine network and intermodal modes. Routing comparisons against an empirical mobility panel show low mean bias for walking, cycling, and car, while public transport results are interpreted more cautiously as schedule-based supply estimates sensitive to waiting and transfer assumptions. A Bavaria case study operationalizes the travel-time targets of the state's central-place planning system on the resulting fields and reveals strong modal differences in accessibility to basic services. The contribution is a reproducible framework for large-area multimodal accessibility analysis, with an aligned output structure designed for reuse in urban and regional analysis, planning support, and scenario modeling.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Till Zacher",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Louis Stille-Hönig",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Markus Lienkamp",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.32479v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.32479v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-23",
+    "repository_urls": [],
+    "title": "National-Scale Multimodal Accessibility Fields from Open Geospatial Data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-25_2610.32479",
+    "members": [
+      "arxiv:2610.32479"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:openstreetmap",
+        "label": "openstreetmap"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:poi",
+        "label": "points of interest"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-23",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.32479",
+    "doi": "10.48550/arxiv.2610.32479",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-27T00:20:40Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005908,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2169,
+      "out": 295
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.95,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.46,
+    "relevance": 0.95
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Public transit travel times rely on schedule supply models rather than observed trips, making them sensitive to default transfer and waiting time parameters.",
+      "what": "MAPPER is an open-data, C++/OpenMP-powered pipeline that builds walk, bike, car, and public transport travel-time graphs from OpenStreetMap and GTFS data to generate continuous accessibility fields using network kernel density estimation. A full-country deployment across Germany generated an H3-indexed grid dataset containing nearly 40 million cells and 972 mode-layer fields spanning nine intermodal and network modes. Validation against an empirical mobility panel confirmed low mean bias for road and active travel, while public transit outputs serve as schedule-based supply estimates.",
+      "why": "Researchers can now run continent- or national-scale multimodal accessibility models combining custom opportunity layers on standard commodity hardware without specialized computing infrastructure."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-23",
+  "work_key": "arxiv:2610.32479"
+}

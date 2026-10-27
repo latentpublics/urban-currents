@@ -1,6 +1,6 @@
 {
   "badges": [
-    "preprint"
+    "published"
   ],
   "bibliography": {
     "abstract": "The interaction between human infrastructures and external events results in loss of functionality or even complete system disruption through a snowball effect of cascading-failures. Their complex interplay challenges their prevention, affecting the human population that rely on their functionality. Understanding how these networks respond to external perturbations is crucial for predicting and mitigating the impacts of disruptive events. In particular, meteorological events, while not preventable, can have significant impacts on human infrastructure. Here, we propose a model coupling the dynamics of transportation systems to the dynamics of external events considered as fields, to capture at the same time the critical behavior of the former and the level of influence of the latter. The impact of rainfalls on real-world railway networks provides a compelling case study, showcasing local endemic and system-wide disruptions around a critical value of the rainfall strength. Remarkably, localized perturbations on the wider network reveals the local weaknesses of the global infrastructure, and we assess them in terms of system perturbability and corresponding societal risk. Our framework opens the door to the quantitative analysis of criticalities in essential human infrastructure imputable to vulnerabilities that are set to intensify due to climate change.",
@@ -53,23 +53,133 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00240q980",
+        "label": "University of Padua"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00z34yn88",
+        "label": "Istituto Nazionale di Fisica Nucleare, Sezione di Padova"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0706-3007",
+        "label": "Mauro Faccin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8617-4535",
+        "label": "Tomas Scagliarini"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5158-8594",
+        "label": "Manlio De Domenico"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11807",
+        "is_primary": true,
+        "label": "Infrastructure Resilience and Vulnerability Analysis",
+        "score": 0.9995,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10064",
+        "is_primary": false,
+        "label": "Complex Network Analysis Techniques",
+        "score": 0.0004,
+        "subfield": "3109"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13377",
+        "is_primary": false,
+        "label": "Ecosystem dynamics and resilience",
+        "score": 0.0,
+        "subfield": "2306"
+      }
+    ]
   },
   "first_published": "2026-10-19",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
+    "referenced_works": [
+      "openalex:W165416599",
+      "openalex:W1571763201",
+      "openalex:W1807089695",
+      "openalex:W1979100315",
+      "openalex:W1979691156",
+      "openalex:W1992015378",
+      "openalex:W1999653836",
+      "openalex:W2010846382",
+      "openalex:W2011303397",
+      "openalex:W2013092106",
+      "openalex:W2015444745",
+      "openalex:W2037202786",
+      "openalex:W2044347817",
+      "openalex:W2045239101",
+      "openalex:W2053542299",
+      "openalex:W2061896930",
+      "openalex:W2062217756",
+      "openalex:W2074478324",
+      "openalex:W2086290199",
+      "openalex:W2106034715",
+      "openalex:W2106253517",
+      "openalex:W2108466448",
+      "openalex:W2117899923",
+      "openalex:W2121336607",
+      "openalex:W2142522788",
+      "openalex:W2153268540",
+      "openalex:W2161062056",
+      "openalex:W2205836349",
+      "openalex:W2261655856",
+      "openalex:W2342114889",
+      "openalex:W2409704060",
+      "openalex:W2740673215",
+      "openalex:W2769051030",
+      "openalex:W2775754804",
+      "openalex:W2794757095",
+      "openalex:W2886281704",
+      "openalex:W2902646645",
+      "openalex:W2913513236",
+      "openalex:W2955607362",
+      "openalex:W2991067515",
+      "openalex:W3047737308",
+      "openalex:W3096253862",
+      "openalex:W3122436454",
+      "openalex:W3173660426",
+      "openalex:W3183552297",
+      "openalex:W4221093491",
+      "openalex:W4280523766",
+      "openalex:W4281619991",
+      "openalex:W4306254518",
+      "openalex:W4319724080",
+      "openalex:W4320170226",
+      "openalex:W4386215940",
+      "openalex:W4390675566",
+      "openalex:W4393182979",
+      "openalex:W4404877193",
+      "openalex:W4405245861",
+      "openalex:W4407552058"
+    ],
     "related_works": []
   },
   "ids": {
     "arxiv": "2610.26428",
     "doi": "10.1073/pnas.2532180123",
-    "openalex": null,
+    "openalex": "W7222478887",
     "pmid": null
   },
   "provenance": {
@@ -77,7 +187,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-20T23:45:54Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004987,
     "llm": {
@@ -91,11 +202,11 @@
     }
   },
   "publication_status": {
-    "detected_at": null,
-    "doi": null,
-    "journal": null,
-    "source_id": null,
-    "state": "preprint"
+    "detected_at": "2026-10-27T00:22:27Z",
+    "doi": "10.1073/pnas.2532180123",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "source_id": "S125754415",
+    "state": "published"
   },
   "review": {
     "edits": [],
@@ -105,12 +216,12 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 0.9101,
       "source_multiplicity": 0.0
     },
-    "headline": 0.364,
+    "headline": 0.404,
     "relevance": 0.9101
   },
   "signals": {
@@ -165,6 +276,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-19",
+  "updated": "2026-10-26",
   "work_key": "arxiv:2610.26428"
 }

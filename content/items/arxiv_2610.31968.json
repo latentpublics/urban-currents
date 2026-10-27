@@ -1,0 +1,179 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Accurate ambulance travel time estimation is critical for emergency medical dispatch, yet existing decision-support practices often rely on static lookup tables or simplified assumptions regarding how ambulance travel time differs from ordinary passenger-car travel. For instance, they assume ambulances simply travel a fixed percentage (e.g., 5%) faster than ordinary passenger cars. However, such assumptions are rarely validated using real ambulance operational data and may fail to capture the effects of trip priority, temporal context, and origin-destination. We address these limitations using historical ambulance trips from the Skåne region in Sweden. Our analysis reveals that ambulance travel times vary substantially by hour, day, and trip priority, and that commercial navigation systems fail to capture emergency-specific dynamics. We contribute a machine learning system to more accurately estimate ambulance travel time. To make the system interpretable, we explored SHapley Additive exPlanations and permutation importance techniques to ensure that our system captures operationally meaningful patterns.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Muhammad Adil Abid",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Johan Holmgren",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Fabian Lorig",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jesper Petersson",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": "8 pages, 4 figures, 2 tables, accepted at CoopIS 2026",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.31968v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.31968v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-22",
+    "repository_urls": [],
+    "title": "Beyond Heuristics and Commercial Navigation: An AI-Augmented Decision-Support for Ambulance Travel Time Estimation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-25_2610.31968",
+    "members": [
+      "arxiv:2610.31968"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.31968",
+    "doi": "10.48550/arxiv.2610.31968",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-27T00:20:40Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004438,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1909,
+      "out": 175
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9185,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3674,
+    "relevance": 0.9185
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The predictive system was trained and evaluated solely on historical emergency vehicle data from a single Swedish region.",
+      "what": "Analysis of historical emergency trips in Skåne, Sweden, shows that ambulance travel duration varies significantly by priority level, time of day, and day of the week, causing commercial navigation platforms to produce systematically inaccurate estimates. To resolve this, a machine learning model was developed and evaluated alongside SHAP and permutation importance interpretability tools to capture emergency routing dynamics.",
+      "why": "Dispatchers can replace unvalidated assumptions, like fixed 5% speed advantages over standard passenger traffic, with predictive software grounded in actual emergency operations data."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-22",
+  "work_key": "arxiv:2610.31968"
+}

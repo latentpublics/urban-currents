@@ -62,8 +62,45 @@
       }
     ],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:023rhb549",
+        "label": "Chongqing University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01an7q238",
+        "label": "University of California, Berkeley"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02jbv0t02",
+        "label": "Lawrence Berkeley National Laboratory"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5048950952",
+        "label": "Qinwen Tang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159094999",
+        "label": "Tianyi Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5111-6690",
+        "label": "Nan Zhou"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5092751092",
+        "label": "Minda Ma"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -80,7 +117,32 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10121",
+        "is_primary": true,
+        "label": "Building Energy and Comfort Optimization",
+        "score": 0.7397,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10471",
+        "is_primary": false,
+        "label": "Climate Change Policy and Economics",
+        "score": 0.0833,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13263",
+        "is_primary": false,
+        "label": "Building energy efficiency and sustainability",
+        "score": 0.0395,
+        "subfield": "2215"
+      }
+    ]
   },
   "first_published": "2026-10-19",
   "graph": {
@@ -91,7 +153,7 @@
   "ids": {
     "arxiv": "2610.26696",
     "doi": "10.48550/arxiv.2610.26696",
-    "openalex": null,
+    "openalex": "W7223020055",
     "pmid": null
   },
   "provenance": {
@@ -99,7 +161,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-20T23:45:54Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006167,
     "llm": {
@@ -187,6 +250,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-19",
+  "updated": "2026-10-26",
   "work_key": "arxiv:2610.26696"
 }

@@ -1,0 +1,179 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "During the COVID-19 restrictions, notifications of violence against women and girls may have changed unevenly across neighbourhoods. We asked whether the contribution of a shared neighbourhood pattern changed over this period, and whether any change was common to sexual and non-sexual violence or specific to one. We analysed 46,390 suspected cases notified to the public-health surveillance system of Medellín, Colombia, across 285 neighbourhoods in 2018-2022. A Bayesian shared-component model with age-standardised expected counts allowed the loading of a common spatial field on each form of violence to differ between the pre-pandemic (2018-2019), restriction (2020-2021) and post-restriction (2022) periods. Across the urban communes, the shared field was generally higher where living conditions were poorer. During the restrictions, its loading increased by 0.26 (95% credible interval 0.16-0.37) for non-sexual violence and by 0.23 (0.09-0.37) for sexual violence, without clear evidence of a change in their ratio. Between neighbourhoods at the 90th and 10th percentiles of the shared field, the shared component's contribution to their risk ratio widened by about 36% for non-sexual and 31% for sexual violence. In 2022, the non-sexual loading remained 0.19 (0.07-0.31) above its pre-pandemic value, whereas the sexual-violence loading was close to its pre-pandemic level. The direction of these changes was retained among notifications from health institutions only and under alternative specifications. Twenty-five neighbourhoods had joint probabilities above 0.95 of both relative risks exceeding one in all five years. The contribution of the shared neighbourhood pattern increased for both outcomes during the restrictions and remained elevated in 2022 for non-sexual violence.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Tomás Rodríguez-Taborda",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alejandra-Estefanía Patiño-Hoyos",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Simón Ruiz-Martínez",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Johnatan Cardona-Jiménez",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "24 pages, 14 figures, 10 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.31741v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.31741v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-22",
+    "repository_urls": [],
+    "title": "Changing contribution of a shared neighbourhood pattern to reported sexual and non-sexual violence against women and girls in Medellín, Colombia, 2018--2022"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-25_2610.31741",
+    "members": [
+      "arxiv:2610.31741"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:spatial-analysis",
+        "label": "spatial analysis"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.31741",
+    "doi": "10.48550/arxiv.2610.31741",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-27T00:20:40Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006377,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2397,
+      "out": 309
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9529,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3812,
+    "relevance": 0.9529
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2018-2022",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings rely on public-health surveillance notifications, which reflect reported incidents rather than total actual prevalence.",
+      "what": "Using a Bayesian shared-component model, this study analyzed 46,390 reported cases of violence against women and girls across 285 neighbourhoods in Medellín, Colombia, from 2018 to 2022. During pandemic restrictions, the influence of a shared neighbourhood spatial field—which correlated with poorer living conditions—increased by 0.26 for non-sexual violence and 0.23 for sexual violence, widening the risk ratio gap between high- and low-risk areas by over 30%. By 2022, the spatial loading for non-sexual violence remained 0.19 above pre-pandemic baselines, while sexual violence returned near historical levels.",
+      "why": "It demonstrates that urban spatial inequalities in gender-based violence intensified during pandemic lockdowns and sustained persistent, elevated risks for non-sexual domestic violence even after restrictions lifted."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-22",
+  "work_key": "arxiv:2610.31741"
+}

@@ -76,12 +76,74 @@
         "label": "clustering"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05htk5m33",
+        "label": "Hunan University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5159215183",
+        "label": "Bo Liu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159185543",
+        "label": "Tong Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1680-8218",
+        "label": "Jiapeng Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5126694870",
+        "label": "Zhu Xiao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159188865",
+        "label": "Zhuo Tang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5126685906",
+        "label": "Kenli Li"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.9614,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11106",
+        "is_primary": false,
+        "label": "Data Management and Algorithms",
+        "score": 0.035,
+        "subfield": "1711"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11500",
+        "is_primary": false,
+        "label": "Evacuation and Crowd Dynamics",
+        "score": 0.0006,
+        "subfield": "2212"
+      }
+    ]
   },
   "first_published": "2026-10-20",
   "graph": {
@@ -92,7 +154,7 @@
   "ids": {
     "arxiv": "2610.28467",
     "doi": "10.48550/arxiv.2610.28467",
-    "openalex": null,
+    "openalex": "W7223127669",
     "pmid": null
   },
   "provenance": {
@@ -100,7 +162,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-21T23:58:19Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005348,
     "llm": {
@@ -188,6 +251,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-20",
+  "updated": "2026-10-27",
   "work_key": "arxiv:2610.28467"
 }

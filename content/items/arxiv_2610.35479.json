@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "We evaluate ErouVe, a vehicular eco-routing protocol in which roadside units (RSUs) collect per-segment travel-time and CO2 reports from passing vehicles and answer route requests with the lowest-cost alternative, across a range of road architectures and traffic scenarios. We conduct the evaluation with a working implementation of the protocol inside Veins, adapted to drive SUMO's own router rather than a hand-rolled shortest-path search, on a network offering a short, signal-controlled route and a longer, signal-free bypass, under two traffic scenarios. This evaluation reveals clear strengths and weaknesses of the protocol. Under light, uncongested traffic, ErouVe's fleet-wide effect is light. Under traffic dense enough to stress the signalized route's throughput and produce a real, growing queue, the same protocol succeeds a medium fleet-wide CO2 reduction, with diverted vehicles individually saving even more fuels. We use these findings to propose three targeted corrective methods; a knowledge-gated cost-acceptance rule, a diversion-locking rule, and a distance-normalized CO2 cost function, that respectively address a cold-start knowledge asymmetry, decision flapping under noisy crowd-sourced data, and a per-second CO2 metric that rewards idling. Each of these weaknesses are generic pitfalls for any crowd-sourced routing signal and all proposed methods measurably restore protocol effectiveness.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Leandros Maglaras",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "George Boustras",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Azidine Guezzaz",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Naghmeh Moradpoor",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.NI",
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.35479v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.35479v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-26",
+    "repository_urls": [],
+    "title": "Routing Around the Queue: An Evaluation of Eco-Routing Protocol on different Traffic Scenarios"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-26_2610.35479",
+    "members": [
+      "arxiv:2610.35479"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:eclipse-sumo/sumo",
+        "label": "SUMO"
+      }
+    ],
+    "topics": []
+  },
+  "first_published": "2026-10-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.35479",
+    "doi": "10.48550/arxiv.2610.35479",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-28T00:24:19Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005596,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2081,
+      "out": 275
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9164,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3666,
+    "relevance": 0.9164
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The protocol evaluation was conducted on a synthetic road network with only two distinct route choices.",
+      "what": "The authors evaluated ErouVe, an RSU-based vehicular eco-routing protocol, using a Veins and SUMO simulation framework on a road network featuring a short signalized route and a longer signal-free bypass. Under light traffic, the protocol had minimal impact, but under dense traffic with active queuing, it achieved medium fleet-wide CO2 reductions and higher individual fuel savings for diverted vehicles. Based on these failure modes, the study designed three corrective mechanisms: a knowledge-gated cost rule, a diversion-locking rule, and a distance-normalized CO2 cost metric.",
+      "why": "It demonstrates that crowdsourced eco-routing only yields material emissions reductions under congested queuing conditions and provides concrete algorithmic fixes for common failure modes like decision flapping and metric bias toward idling."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-26",
+  "work_key": "arxiv:2610.35479"
+}

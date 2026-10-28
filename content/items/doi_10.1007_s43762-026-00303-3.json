@@ -1,0 +1,204 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "With the rapid expansion of urban vehicle scale, traffic flow and congestion prediction have become increasingly important. To address the issue of inaccurate prediction of traffic flow and congestion, a graph convolutional network is proposed, and a gate controlled recurrent unit is introduced to design a spatio-temporal graph convolutional network. The network is employed to predict traffic flow in smart cities, and traffic flow prediction in smart urban environments model grounded on spatio-temporal graph convolutional network is constructed. At the same time, based on the flow prediction results, an improved fuzzy C-means clustering algorithm incorporating entropy weight method is introduced to establish a traffic congestion prediction model. The performance comparison analysis of the developed traffic flow prediction model with other models shows that its average mean square error and precision are 1.176 and 97.99%, respectively, which are better than the comparison models. Subsequently, a performance comparison analysis is conducted between the proposed traffic congestion prediction model and other models. The findings show that the F1 value and recall rate of the model are 98.56% and 97.88%, respectively, significantly better than the comparison models. The above findings indicate that the proposed model contributes to improving the accuracy of traffic flow and congestion prediction, and can provide a theoretical basis for research in the area of smart city transportation systems.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Dong Hong",
+        "openalex": "A5159608686",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s43762-026-00303-3",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s43762-026-00303-3.pdf",
+      "source_id": "S4210175573",
+      "source_name": "Computational Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-26",
+    "repository_urls": [],
+    "title": "Smart city traffic flow and congestion prediction model based on spatio-temporal graph neural network"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-26_10.1007/s43762-0",
+    "members": [
+      "doi:10.1007/s43762-026-00303-3"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5159608686",
+        "label": "Dong Hong"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 1.0,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-10-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2756203131",
+      "openalex:W3171254206",
+      "openalex:W4210444499",
+      "openalex:W4308444436",
+      "openalex:W4313855753",
+      "openalex:W4321113904",
+      "openalex:W4365128490",
+      "openalex:W4366396441",
+      "openalex:W4376456657",
+      "openalex:W4377971464",
+      "openalex:W4382240004",
+      "openalex:W4384518989",
+      "openalex:W4388002397",
+      "openalex:W4388206621",
+      "openalex:W4391494932",
+      "openalex:W4391991593",
+      "openalex:W4393032924",
+      "openalex:W4402838336",
+      "openalex:W4407397950"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s43762-026-00303-3",
+    "openalex": "W7223681420",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-28T00:24:32Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005306,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2055,
+      "out": 247
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-28T00:24:32Z",
+    "doi": "10.1007/s43762-026-00303-3",
+    "journal": "Computational Urban Science",
+    "source_id": "S4210175573",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The abstract does not report the location, spatial resolution, or temporal duration of the evaluation dataset.",
+      "what": "A spatio-temporal graph convolutional network combining graph convolutions with a gated recurrent unit was built to forecast urban traffic flow, paired with an entropy-weighted fuzzy C-means clustering algorithm to predict congestion. The flow forecasting component achieved a mean square error of 1.176 and 97.99% accuracy, while the congestion prediction component attained an F1 score of 98.56% and a recall rate of 97.88%.",
+      "why": "Integrating entropy weighting into fuzzy clustering directly alongside graph-based spatial-temporal modeling raises baseline precision and recall for joint flow and congestion classification across smart city road networks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-26",
+  "work_key": "doi:10.1007/s43762-026-00303-3"
+}

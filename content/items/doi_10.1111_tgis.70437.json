@@ -1,0 +1,276 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "ABSTRACT OpenStreetMap (OSM) is a well‐known platform for Volunteered Geographic Information. Most studies on OSM 3D building quality focus on a single aspect, such as footprint shape errors or attribute completeness. Current machine learning approaches typically analyze 2D footprints, with little attention paid to 3D characteristics like roof geometry or building height. To fill this gap, we propose an integrated framework that combines geometric comparative evaluation with machine‐learning prediction. In this framework, based on footprint Intersection over Union (IoU) and centroid distance, OSM buildings are matched with authoritative or externally validated 3D reference datasets selected for each study area, for example, from national mapping agencies. For the matched OSM buildings, the spatial accuracy is evaluated using location error, height error, building area error, and 3D Hausdorff distance error. For the unmatched buildings, machine learning models are used to predict their quality. We validated the proposed framework in six study areas across Asia and Europe: Beijing, Ningbo, Osaka, Yokohama, Amsterdam, and Almere. In total, the evaluation covers more than 115,000 OSM buildings. Compared with traditional methods, the proposed framework significantly improves facade error detection, evaluation completeness, and the granularity of quality classification, offering new insights for assessing and improving OSM data quality. The results produced in this study are available at: https://github.com/Longtao2002/OSM‐3D‐Building‐Quality‐Assessment.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Nottingham Ningbo China",
+            "ror": "03y4dt428"
+          }
+        ],
+        "name": "Longtao Hu",
+        "openalex": "A5159651122",
+        "orcid": "https://orcid.org/0009-0007-4265-6461"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Nottingham Ningbo China",
+            "ror": "03y4dt428"
+          }
+        ],
+        "name": "Heshan Du",
+        "openalex": "A5013964678",
+        "orcid": "https://orcid.org/0000-0002-6300-3503"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1111/tgis.70437",
+      "pdf_url": null,
+      "source_id": "S859791518",
+      "source_name": "Transactions in GIS",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-26",
+    "repository_urls": [],
+    "title": "Assessing the Quality of OSM 3D Building Data Using 3D Geometric Comparison and Machine Learning"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-26_10.1111/tgis.704",
+    "members": [
+      "doi:10.1111/tgis.70437"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:openstreetmap",
+        "label": "openstreetmap"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03y4dt428",
+        "label": "University of Nottingham Ningbo China"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0007-4265-6461",
+        "label": "Longtao Hu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6300-3503",
+        "label": "Heshan Du"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q956",
+        "label": "Beijing",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q727",
+        "label": "Amsterdam",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": true,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.7495,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.1277,
+        "subfield": "2212"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12698",
+        "is_primary": false,
+        "label": "3D Modeling in Geospatial Applications",
+        "score": 0.1197,
+        "subfield": "2215"
+      }
+    ]
+  },
+  "first_published": "2026-10-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W202629165",
+      "openalex:W1678356000",
+      "openalex:W1996517959",
+      "openalex:W2027979434",
+      "openalex:W2039530979",
+      "openalex:W2063935068",
+      "openalex:W2070577465",
+      "openalex:W2075598345",
+      "openalex:W2122111042",
+      "openalex:W2135500318",
+      "openalex:W2165558283",
+      "openalex:W2282616409",
+      "openalex:W2412667021",
+      "openalex:W2549412929",
+      "openalex:W2684451029",
+      "openalex:W2766477812",
+      "openalex:W2903950532",
+      "openalex:W2911964244",
+      "openalex:W2945719065",
+      "openalex:W2966851014",
+      "openalex:W2991352180",
+      "openalex:W2994283657",
+      "openalex:W3047007122",
+      "openalex:W3082337080",
+      "openalex:W4213248026",
+      "openalex:W4229045143",
+      "openalex:W4239510810",
+      "openalex:W4313432678",
+      "openalex:W4361005400",
+      "openalex:W4366265100",
+      "openalex:W4383345515",
+      "openalex:W4389328131",
+      "openalex:W4392214064",
+      "openalex:W4401618682",
+      "openalex:W4406963126",
+      "openalex:W7133186244",
+      "openalex:W7133233387"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1111/tgis.70437",
+    "openalex": "W7223710491",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-28T00:24:29Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005986,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2125,
+      "out": 311
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-28T00:24:29Z",
+    "doi": "10.1111/tgis.70437",
+    "journal": "Transactions in GIS",
+    "source_id": "S859791518",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/Longtao2002/OSM",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "An integrated evaluation framework was developed to assess OpenStreetMap 3D building data quality by pairing 3D geometric comparisons with machine learning predictions. Tested on over 115,000 buildings across six cities in Asia and Europe—Beijing, Ningbo, Osaka, Yokohama, Amsterdam, and Almere—the model uses footprint Intersection over Union and centroid distances to pair crowd-sourced structures with official reference datasets, evaluating spatial precision through height, location, surface area, and 3D Hausdorff distance metrics.",
+      "why": "This framework moves beyond 2D footprint analyses to evaluate actual 3D building characteristics like facade geometry and height, allowing researchers to flag quality issues across incomplete mapping datasets where reference geometry is missing."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-26",
+  "work_key": "doi:10.1111/tgis.70437"
+}

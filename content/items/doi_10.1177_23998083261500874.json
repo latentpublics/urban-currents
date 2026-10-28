@@ -1,0 +1,219 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "The downtown business district is a fundamental unit of analysis in urban revitalization research, yet no nationally consistent, publicly available dataset of downtown boundaries exists for small and mid-sized U.S. cities and towns. This paper introduces an open data product containing 6,551 downtown polygons for pre-automobile-era places spanning 47 contiguous states. The dataset is constructed from a fully reproducible, open-source R workflow: a national universe of historically significant places is assembled using historical census records, contemporary population data, and metropolitan classification criteria; points-of-interest data from the Overture Maps Foundation are collected within each place boundary; and a kernel density estimation algorithm identifies the highest-concentration commercial cluster as the downtown core. The resulting boundaries are validated against Main Street program districts, which the polygons cover at high rates in the two states examined. The polygons are deposited at Harvard Dataverse under a CC0 1.0 license, with all R code available on GitHub. The dataset supports research on downtown revitalization, Main Street commercial activity, and the economic geography of small and mid-sized American cities.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Vermont",
+            "ror": "0155zta11"
+          }
+        ],
+        "name": "Andrew J. Van Leuven",
+        "openalex": "A5002671454",
+        "orcid": "https://orcid.org/0000-0003-4563-0770"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/23998083261500874",
+      "pdf_url": null,
+      "source_id": "S4210191690",
+      "source_name": "Environment and Planning B Urban Analytics and City Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-26",
+    "repository_urls": [],
+    "title": "A national dataset of downtown business district boundaries for pre-automobile U.S. cities and towns"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-26_10.1177/23998083",
+    "members": [
+      "doi:10.1177/23998083261500874"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0155zta11",
+        "label": "University of Vermont"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4563-0770",
+        "label": "Andrew J. Van Leuven"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11014",
+        "is_primary": true,
+        "label": "Regional Economics and Spatial Analysis",
+        "score": 0.4114,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.166,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12502",
+        "is_primary": false,
+        "label": "Urbanization and City Planning",
+        "score": 0.1335,
+        "subfield": "3322"
+      }
+    ]
+  },
+  "first_published": "2026-10-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W236257283",
+      "openalex:W2045312758",
+      "openalex:W2110210433",
+      "openalex:W2145346369",
+      "openalex:W2172074478",
+      "openalex:W2318065978",
+      "openalex:W2757758644",
+      "openalex:W3196218908",
+      "openalex:W3208616772",
+      "openalex:W4206223274",
+      "openalex:W4226078462",
+      "openalex:W4233014035",
+      "openalex:W4387835607",
+      "openalex:W4395112800"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1177/23998083261500874",
+    "openalex": "W7223674086",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-28T00:24:29Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005417,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1967,
+      "out": 274
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-28T00:24:29Z",
+    "doi": "10.1177/23998083261500874",
+    "journal": "Environment and Planning B Urban Analytics and City Science",
+    "source_id": "S4210191690",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 1.0,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.6,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Boundary validation was evaluated in only two states against Main Street districts, which may not capture commercial core patterns nationwide.",
+      "what": "The authors created an open-access dataset of 6,551 downtown business district polygons covering pre-automobile cities and towns across 47 U.S. states. Using historical census data, modern population statistics, and Overture Maps Foundation point-of-interest data, an open-source R workflow uses kernel density estimation to delineate each place's primary commercial cluster. The resulting boundaries were validated against official Main Street program districts in two states.",
+      "why": "Researchers studying small and mid-sized American towns now have a standardized, nationally consistent set of spatial boundaries to evaluate downtown revitalization and commercial activity without needing to draw local borders manually."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-26",
+  "work_key": "doi:10.1177/23998083261500874"
+}

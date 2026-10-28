@@ -1,0 +1,237 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Freight operations generate vast streams of location-based data that, if properly analyzed, support efficient freight logistics planning, tour-based modeling, supply chain optimization, and infrastructure development. While individual carriers can track their own trucks, state agencies or research institutes need insight into collective truck activity. Because agencies rely on anonymized probe data from commercial vendors, these products depend on vendor algorithms to infer trips, stops, and activity types. Understanding truck stop purposes is challenging when only anonymized global positioning system (GPS) data is available. This study develops a scalable GPS-only rule-based framework to identify truck stop purposes that support logistics analysis without relying on external datasets. The resulting stop purpose classification method could also enhance vendor algorithms and improve freight activity products for agencies and industry. The proposed method categorizes stops into four key types: “pickup/delivery,”“short rest” (<4 h), “long rest” (>4 h), and “staging,” while ensuring compatibility across both urban and non-urban environments. One-at-a-time sensitivity analysis identified key parameters influencing classification performance, leading to an optimized model with an 85% overall accuracy. The highest accuracy (94.5%) was seen for short rest classified stops. The model achieved 89.4% accuracy in non-urban areas and 81.1% accuracy in urban areas, demonstrating generalization across geographic contexts. The results demonstrate the algorithm’s effectiveness in distinguishing various stop purposes while highlighting challenges in differentiating pickup/delivery from short rest stops because of overlapping characteristics. The proposed approach enables improved representation of freight tours and facility interactions, providing actionable insights for logistics system analysis and infrastructure planning.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Arkansas at Fayetteville",
+            "ror": "05jbt9m15"
+          }
+        ],
+        "name": "Mehdi Zolali",
+        "openalex": "A5002666285",
+        "orcid": "https://orcid.org/0000-0001-6495-2252"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Arkansas at Fayetteville",
+            "ror": "05jbt9m15"
+          }
+        ],
+        "name": "Sarah V. Hernandez",
+        "openalex": "A5013431320",
+        "orcid": "https://orcid.org/0000-0002-4243-1461"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/03611981261491701",
+      "pdf_url": null,
+      "source_id": "S145575934",
+      "source_name": "Transportation Research Record Journal of the Transportation Research Board",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-25",
+    "repository_urls": [],
+    "title": "Rule-Based Technique for Classifying Stop Purposes Using Anonymous Truck GPS Data Across Urban and Non-Urban Settings"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-26_10.1177/03611981",
+    "members": [
+      "doi:10.1177/03611981261491701"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05jbt9m15",
+        "label": "University of Arkansas at Fayetteville"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6495-2252",
+        "label": "Mehdi Zolali"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4243-1461",
+        "label": "Sarah V. Hernandez"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12306",
+        "is_primary": true,
+        "label": "Urban and Freight Transport Logistics",
+        "score": 0.9985,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": false,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.0007,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14121",
+        "is_primary": false,
+        "label": "Logistics and Transportation Systems",
+        "score": 0.0002,
+        "subfield": "1404"
+      }
+    ]
+  },
+  "first_published": "2026-10-25",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1978847551",
+      "openalex:W1981096612",
+      "openalex:W1989386132",
+      "openalex:W2002845001",
+      "openalex:W2016210396",
+      "openalex:W2037783201",
+      "openalex:W2063215794",
+      "openalex:W2084401021",
+      "openalex:W2261144659",
+      "openalex:W2521497150",
+      "openalex:W2620920948",
+      "openalex:W2771867558",
+      "openalex:W2929436693",
+      "openalex:W2940601428",
+      "openalex:W2946039270",
+      "openalex:W3042080557",
+      "openalex:W3046532770",
+      "openalex:W4213088729",
+      "openalex:W4293052910",
+      "openalex:W4360949467",
+      "openalex:W4376277828",
+      "openalex:W4385223161",
+      "openalex:W4406605484",
+      "openalex:W7204224429"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1177/03611981261491701",
+    "openalex": "W7223671642",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-28T00:24:29Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005317,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2195,
+      "out": 225
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-28T00:24:29Z",
+    "doi": "10.1177/03611981261491701",
+    "journal": "Transportation Research Record Journal of the Transportation Research Board",
+    "source_id": "S145575934",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The classification rules struggle to reliably distinguish short rest stops from pickup and delivery activities due to overlapping duration and location profiles.",
+      "what": "Researchers created a scalable, rule-based framework that classifies anonymous truck GPS data into four stop categories: pickup/delivery, short rest, long rest, and staging. Evaluated through sensitivity analysis, the optimized model achieved an overall accuracy of 85%, performing at 94.5% for short rests, 89.4% in non-urban settings, and 81.1% in urban areas.",
+      "why": "Public agencies can now reconstruct freight stop purposes from vendor location streams without needing proprietary algorithms or external contextual datasets."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-25",
+  "work_key": "doi:10.1177/03611981261491701"
+}

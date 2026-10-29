@@ -1,0 +1,161 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban scaling research has established that many socioeconomic outputs increase superlinearly with city population, implying rising per-capita output. Although urban scaling models have incorporated infrastructural and dissipative costs, they have generally not identified the finite population scales implied by independently scaling benefits and diseconomies. We connect the classical urban-economic trade-off between agglomeration benefits and costs to a generalized scaling framework in which these quantities follow distinct power laws. When diseconomies scale more rapidly than benefits the model yields three ordered characteristic populations: the first (smallest) maximizes net benefit per capita; the second maximizes total net benefit; and the third (largest), at which aggregate benefits equal diseconomies. Their absolute values depend on the magnitudes of benefits and costs, but their relative separation depends only on the scaling exponents. We illustrate these relationships using published scaling estimates from several countries, and examine aggregate and extensive--intensive scaling across 102 Australian Significant Urban Areas. Aggregate employee income, rental payments and daily journey to work commuting distances for journeys scale superlinearly, although the aggregate rent--income exponent difference is statistically inconclusive. Mean rent per reporting renter household and estimated mean distance for daily commutes increase more rapidly with city population than mean employee income per earner. These findings reveal intensive differences obscured by aggregate scaling. The framework shows how superlinear agglomeration benefits can coexist with still faster-scaling diseconomies and produce finite characteristic urban scales without requiring benefits themselves to become sublinear.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Somwrita Sarkar",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": "20 pages, 3 figures, 3 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.37029v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.37029v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-27",
+    "repository_urls": [],
+    "title": "Superlinear cities, finite limits: Three characteristic scales of urban agglomeration"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-27_2610.37029",
+    "members": [
+      "arxiv:2610.37029"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.37029",
+    "doi": "10.48550/arxiv.2610.37029",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-29T00:45:06Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005032,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2095,
+      "out": 210
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9547,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3819,
+    "relevance": 0.9547
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The difference between aggregate rent and income scaling exponents in the Australian empirical test was statistically inconclusive.",
+      "what": "The authors developed a generalized scaling framework combining power-law agglomeration benefits and costs, identifying three distinct characteristic population limits: per-capita net benefit peak, total net benefit peak, and zero net benefit. They tested this model against published international scaling data and evaluated 102 Australian Significant Urban Areas using aggregate employee income, rental payments, and daily commuting distances. In Australia, mean rent per household and estimated mean commute distance grew faster with population size than mean income per earner, demonstrating that costs can outpace superlinear income gains.",
+      "why": "The framework demonstrates how cities can experience superlinear economic gains while still facing hard population limits driven by even faster-scaling cost diseconomies."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-27",
+  "work_key": "arxiv:2610.37029"
+}

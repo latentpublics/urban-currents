@@ -1,0 +1,192 @@
+{
+  "badges": [
+    "code",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Disaster research in high-income settings shows that better-resourced communities see population inflows and faster recovery, while disadvantaged communities suffer prolonged population loss. Whether this pattern holds in rapidly urbanizing cities of the Global South remains unclear. Here we show, using mobile phone data from Pune, India, and Bandung, Indonesia, how neighborhood-level changes in phone presence, a proxy for short-term population movement, relate to flooding and neighborhood deprivation. We combine satellite-derived flood maps with phone records to compare flooded and non-flooded areas over the 30 days around each flood. In both cities, less deprived neighborhoods see phone presence rise after flooding, while more deprived neighborhoods see it fall, consistent with resource-seeking interpretations documented in North American and European disaster research. The cities differed, however, in how deprivation relates to flood exposure: in Pune, more deprived flooded neighborhoods showed suggestive evidence of disproportionately larger decreases in detected device presence than similarly deprived non-flooded neighborhoods; no comparable interaction was observed in Bandung. Economic considerations are associated with post-flood device-presence changes in South and Southeast Asian cities in ways that parallel high-income contexts, though local context adds variation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Sukie Xiuqi Yang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Guangyuan Weng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shiyue Cui",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zhicong Chen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Catherine Chen",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY",
+      "physics.soc-ph"
+    ],
+    "comment": "31 pages, 4 figures, 10 tables (including appendix). Yang and Weng contributed equally. Code: https://github.com/turtleman99/post_flood_mobility",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.37418v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.37418v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-27",
+    "repository_urls": [],
+    "title": "Neighborhood Deprivation Shapes Post-Flood Population Losses in Pune and Bandung"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-27_2610.37418",
+    "members": [
+      "arxiv:2610.37418"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:mobile-phone",
+        "label": "mobile phone data"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.37418",
+    "doi": "10.48550/arxiv.2610.37418",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-29T00:45:06Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005221,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1987,
+      "out": 249
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9912,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4765,
+    "relevance": 0.9912
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "from the arXiv comment",
+      "url": "https://github.com/turtleman99/post_flood_mobility",
+      "value": true
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Mobile phone presence serves as an indirect proxy for population movements and may reflect changes in device usage or power access rather than physical displacement.",
+      "what": "Analysis of mobile phone device presence across 30-day windows surrounding floods in Pune, India, and Bandung, Indonesia reveals that post-flood mobility tracks neighborhood deprivation levels. Satellite flood mapping paired with mobile location data demonstrates that device counts increased after flooding in affluent areas, whereas disadvantaged neighborhoods experienced persistent declines. In Pune, flooded disadvantaged areas showed stronger drops in device presence compared to unflooded areas of similar deprivation, an interaction effect that did not appear in Bandung.",
+      "why": "The findings demonstrate that post-disaster population loss patterns in rapidly growing cities of the Global South mirror the resource-driven displacement documented in high-income nations."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-27",
+  "work_key": "arxiv:2610.37418"
+}

@@ -4,19 +4,34 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Università Iuav di Venezia",
+            "ror": "01e6ksd91"
+          }
+        ],
         "name": "Federico Cavallaro",
         "openalex": "A5158653613",
         "orcid": "https://orcid.org/0000-0003-4341-3924"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Università Iuav di Venezia",
+            "ror": "01e6ksd91"
+          }
+        ],
         "name": "Silvio Nocera",
         "openalex": "A5158614290",
         "orcid": "https://orcid.org/0000-0001-8891-6459"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Ca' Foscari University of Venice",
+            "ror": "04yzxz566"
+          }
+        ],
         "name": "Pesenti Raffaele",
         "openalex": "A5107447636",
         "orcid": "https://orcid.org/0000-0001-5890-4238"
@@ -37,7 +52,7 @@
     "title": "Evaluating mobility-as-a-service solutions for long-distance commuting"
   },
   "cluster": {
-    "cluster_id": "clu_2026-10-26_10.1016/j.tra.20",
+    "cluster_id": "clu_2026-10-27_10.1016/j.tra.20",
     "members": [
       "doi:10.1016/j.tra.2026.105316"
     ],
@@ -46,7 +61,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01e6ksd91",
+        "label": "Università Iuav di Venezia"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04yzxz566",
+        "label": "Ca' Foscari University of Venice"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -98,7 +124,18 @@
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W4409243048",
+      "openalex:W7135135063",
+      "openalex:W7153589931",
+      "openalex:W7127253301",
+      "openalex:W4400417817",
+      "openalex:W4401813681",
+      "openalex:W7203867941",
+      "openalex:W4405011298",
+      "openalex:W3196803528",
+      "openalex:W7220860529"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -109,7 +146,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-10-28T00:24:30Z",
+    "collected_at": "2026-10-29T00:45:20Z",
     "collectors": [
       "openalex"
     ],
@@ -156,6 +193,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "work_key": "doi:10.1016/j.tra.2026.105316"
 }

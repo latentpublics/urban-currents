@@ -1,0 +1,215 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Cities often extend beyond their administrative boundaries, complicating assessments of urban sustainability. Using Global Human Settlement Layer data for India's 50 largest urban agglomerations (1975--2025), we develop a percolation-based framework for urban delineation. Within district-based regions, we apply unrestricted DBSCAN to spatial coordinates of 100-m cells with positive population and built-up surface. We treat neighborhood distance as the percolation control parameter and the proportion of eligible cells in the largest connected cluster as the empirical order parameter. Sharp increases in this proportion reveal characteristic percolation transitions. Post-transition connection lengths declined (median:650m to 350m), indicating that previously disconnected settlements coalesce at progressively shorter spatial distances alongside increasing urban land consumption. Urban footprint increased from 447.6 to 1,382.7km$^2$, while population densities declined. SDG11.3.1 land-consumption-to-population-growth ratios generally exceeded unity. Zipf and allometric relationships describe cross-sectional urban structure, but land-consumptive growth shows little relationship with city size. Urban delineation thus shapes sustainability assessments.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Somwrita Sarkar",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chirag Deb",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Carolina Pantoja Mardones",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Anmol Gaur",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Arunim Anand",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rashi Shrivastava",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Anusha Roy",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Arnab Jana",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Eswar Rajasekaran",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "David Levinson",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": "30 pages, 6 figures, 1 table, Supplementary Information",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.37073v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.37073v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-27",
+    "repository_urls": [],
+    "title": "Beyond urban boundaries: Percolation reveals land-consumptive growth in India"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-27_2610.37073",
+    "members": [
+      "arxiv:2610.37073"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:clustering",
+        "label": "clustering"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.37073",
+    "doi": "10.48550/arxiv.2610.37073",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-29T00:45:06Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006053,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1989,
+      "out": 341
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.979,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3916,
+    "relevance": 0.979
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on 100-m spatial grid cells and global settlement datasets, which may smooth out local micro-variations in land development.",
+      "what": "Using Global Human Settlement Layer data from 1975 to 2025 across India's 50 largest urban agglomerations, the authors developed a percolation framework to define city boundaries by applying unrestricted DBSCAN to 100-m grid cells. The analysis reveals that post-transition connection lengths fell from a median of 650 m to 350 m, while total urban footprint expanded from 447.6 to 1,382.7 km² alongside declining population densities. Land-consumption-to-population-growth ratios (SDG 11.3.1) consistently exceeded 1.0, with land-consumptive growth showing minimal correlation with overall city size.",
+      "why": "This framework provides an objective physical threshold for mapping urban spillovers across administrative borders, demonstrating that spatial coalescence in Indian cities is accelerating at shorter physical distances even as built-up density drops."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-27",
+  "work_key": "arxiv:2610.37073"
+}

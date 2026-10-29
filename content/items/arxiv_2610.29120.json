@@ -89,8 +89,65 @@
       }
     ],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05mmnns11",
+        "label": "Azerbaijan State Oil and Industry University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01km6p862",
+        "label": "United Arab Emirates University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03ernr789",
+        "label": "Aqaba University of Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5159204224",
+        "label": "Aziz Nuriyev"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6661-8469",
+        "label": "Sherzod Turaev"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4374-8062",
+        "label": "Saja Al-Dabet"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159189502",
+        "label": "Mary John"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159285505",
+        "label": "Kanan Qasimzade"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159255935",
+        "label": "Alihuseyn Orujzada"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159612624",
+        "label": "Fatima Alblooshi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159263887",
+        "label": "Aisha Al Ali"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -101,18 +158,54 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": true,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.4026,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": false,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.1444,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10055",
+        "is_primary": false,
+        "label": "Diverse Aspects of Tourism Research",
+        "score": 0.0329,
+        "subfield": "3312"
+      }
+    ]
   },
   "first_published": "2026-10-21",
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W4226465272",
+      "openalex:W3131967108",
+      "openalex:W2295176504",
+      "openalex:W7214993851",
+      "openalex:W2982857020",
+      "openalex:W6922464568",
+      "openalex:W7211908017",
+      "openalex:W4402637210",
+      "openalex:W4389742735",
+      "openalex:W2897276459"
+    ]
   },
   "ids": {
     "arxiv": "2610.29120",
     "doi": "10.48550/arxiv.2610.29120",
-    "openalex": null,
+    "openalex": "W7223196901",
     "pmid": null
   },
   "provenance": {
@@ -120,7 +213,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-22T23:57:11Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006662,
     "llm": {
@@ -208,6 +302,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-26",
+  "updated": "2026-10-28",
   "work_key": "arxiv:2610.29120"
 }

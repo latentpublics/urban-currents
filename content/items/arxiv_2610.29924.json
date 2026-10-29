@@ -56,23 +56,86 @@
         "label": "spatial analysis"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02kpeqv85",
+        "label": "Kyoto University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05qs31q25",
+        "label": "Institute for Integrated Radiation and Nuclear Science, Kyoto University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5159288093",
+        "label": "Yifan Sun"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159288864",
+        "label": "Ken Kurosaki"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4802-3864",
+        "label": "Benjamin Craig McLellan"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11573",
+        "is_primary": true,
+        "label": "Risk Perception and Management",
+        "score": 0.5405,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11121",
+        "is_primary": false,
+        "label": "Public Relations and Crisis Communication",
+        "score": 0.3521,
+        "subfield": "3315"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11089",
+        "is_primary": false,
+        "label": "Radioactive contamination and transfer",
+        "score": 0.0332,
+        "subfield": "2306"
+      }
+    ]
   },
   "first_published": "2026-10-21",
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W4210867328",
+      "openalex:W4283698512",
+      "openalex:W3006675742",
+      "openalex:W1501840270",
+      "openalex:W2045994346",
+      "openalex:W4410183765",
+      "openalex:W107979627",
+      "openalex:W2580839603",
+      "openalex:W2624833860",
+      "openalex:W1925110410"
+    ]
   },
   "ids": {
     "arxiv": "2610.29924",
     "doi": "10.48550/arxiv.2610.29924",
-    "openalex": null,
+    "openalex": "W7223245109",
     "pmid": null
   },
   "provenance": {
@@ -80,7 +143,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-22T23:57:11Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005573,
     "llm": {
@@ -168,6 +232,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-21",
+  "updated": "2026-10-28",
   "work_key": "arxiv:2610.29924"
 }

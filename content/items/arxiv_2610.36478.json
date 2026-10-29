@@ -1,0 +1,193 @@
+{
+  "badges": [
+    "code",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Vehicle theft is a persistent urban problem with large economic and social costs. We analyze 521,098 stolen-vehicle reports filed with the Los Angeles Police Department from 2000 to 2022, at scales from hours to decades and from 100 m grid cells to census tracts. Much of the work lies in making the administrative records fit for analysis: we separate thefts from recoveries and traffic reports filed in the same records, repair time fields, validate the geocoding, and harmonize census data across changing tract boundaries. Theft is strongly and persistently concentrated: 10.8% of 250 m cells hold half of all thefts, and six census tracts are significant rate hotspots in all 23 years after false discovery rate control. Thefts close in space and time are more frequent than expected by chance, but about half of this excess comes from events at identical coordinates. Lower-income tracts have more thefts at equal exposure, monthly temperature shows no association with theft, and thefts peak in the evening. From 2015-2019 to 2021-2022, the share of Kia and Hyundai among stolen vehicles rose from 1.5% to 9.5% and from 1.6% to 7.7%, mostly among model years 2011-2021, which largely lacked a standard immobilizer. All findings are descriptive. We also describe how the data quality issues we corrected would otherwise distort several of these patterns.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Chaitanya Jobanputra",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "George Mohler",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sebastian Vollmer",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Gerrit Großmann",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": "18 pages, 8 figures, 6 tables. Preprint, under review. Code: https://github.com/gerritgr/car_theft",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.36478v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.36478v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-27",
+    "repository_urls": [],
+    "title": "Multi-Scale Spatio-Temporal Exploratory Analysis of Urban Vehicle Theft"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-27_2610.36478",
+    "members": [
+      "arxiv:2610.36478"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 0.9697,
+        "id": "method:spatial-clustering",
+        "label": "spatial clustering"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q65",
+        "label": "Los Angeles",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.36478",
+    "doi": "10.48550/arxiv.2610.36478",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-29T00:45:06Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005879,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2149,
+      "out": 295
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9742,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4697,
+    "relevance": 0.9742
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "from the arXiv comment",
+      "url": "https://github.com/gerritgr/car_theft",
+      "value": true
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2000 to 2022",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "All reported patterns are purely descriptive and restricted to LAPD administrative records from a single municipality.",
+      "what": "An analysis of 521,098 stolen-vehicle reports in Los Angeles from 2000 to 2022 reveals strong spatial concentration, with 10.8% of 250 m cells accounting for half of all incidents and six census tracts persisting as statistical hotspots for 23 consecutive years. Evening hours show peak activity, monthly temperature displays no correlation with theft rates, and lower-income tracts experience higher theft rates relative to vehicle exposure. Following a trend tied to missing engine immobilizers, Kia and Hyundai models increased their combined share of total stolen vehicles from 3.1% in 2015–2019 to 17.2% in 2021–2022.",
+      "why": "It demonstrates that administrative crime datasets require substantial cleaning—such as separating recoveries from thefts and handling identical co-located coordinates—to avoid misleading spatial and temporal patterns in urban safety models."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-27",
+  "work_key": "arxiv:2610.36478"
+}

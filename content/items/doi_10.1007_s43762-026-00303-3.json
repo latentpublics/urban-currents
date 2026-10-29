@@ -6,7 +6,12 @@
     "abstract": "With the rapid expansion of urban vehicle scale, traffic flow and congestion prediction have become increasingly important. To address the issue of inaccurate prediction of traffic flow and congestion, a graph convolutional network is proposed, and a gate controlled recurrent unit is introduced to design a spatio-temporal graph convolutional network. The network is employed to predict traffic flow in smart cities, and traffic flow prediction in smart urban environments model grounded on spatio-temporal graph convolutional network is constructed. At the same time, based on the flow prediction results, an improved fuzzy C-means clustering algorithm incorporating entropy weight method is introduced to establish a traffic congestion prediction model. The performance comparison analysis of the developed traffic flow prediction model with other models shows that its average mean square error and precision are 1.176 and 97.99%, respectively, which are better than the comparison models. Subsequently, a performance comparison analysis is conducted between the proposed traffic congestion prediction model and other models. The findings show that the F1 value and recall rate of the model are 98.56% and 97.88%, respectively, significantly better than the comparison models. The above findings indicate that the proposed model contributes to improving the accuracy of traffic flow and congestion prediction, and can provide a theoretical basis for research in the area of smart city transportation systems.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Guangxi Transport Vocational and Technical College",
+            "ror": "05mdy0d33"
+          }
+        ],
         "name": "Dong Hong",
         "openalex": "A5159608686",
         "orcid": null
@@ -36,7 +41,13 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05mdy0d33",
+        "label": "Guangxi Transport Vocational and Technical College"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -199,6 +210,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-26",
+  "updated": "2026-10-28",
   "work_key": "doi:10.1007/s43762-026-00303-3"
 }

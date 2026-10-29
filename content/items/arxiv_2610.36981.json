@@ -1,0 +1,204 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "We consider the centralized traffic routing (CTR) problem, where a central planner assigns routes to origin-destination (OD) vehicle flows to minimize congestion-dependent segment cost. Prior work formulates CTR efficiently as a mixed-integer linear program (MILP), but scaling this formulation to the full road network is computationally prohibitive within an operational time budget. Bounded Routes and Smart Routes speed up optimization using precomputed reduced networks; however, these methods do not account for vehicle information within each OD flow. Motivated by this gap, we propose a learning-based urban network reduction approach. A dedicated graph neural network (GNN) first scores road segments for each OD flow using the road network and vehicle-flow information. Highly ranked segments are then incorporated into complete OD routes, and the original segment-flow MILP is solved on the resulting reduced road network. The GNN thus guides the reduction of the road network, while the solver enforces feasibility and determines the routing. Experiments on four real urban networks -- Prague-Dejvice, London, New York, and Sydney -- show that the proposed approach achieves the smallest relative objective difference to the $30$-second full-graph reference in every city under both traffic regimes. Averaged across cities, this difference is more than six times lower than that of the best competing method. Moreover, traffic simulation results show that the optimization gains of the proposed method lead to more efficient routing, with the highest aggregate arrival rate and a competitive trip duration per arrival percentage point.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Nikolai Antonov",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Lukáš Chrpa",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Andrii Nyporko",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jan Hůla",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": "Submitted for review to Computers & Operations Research",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.36981v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.36981v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-27",
+    "repository_urls": [],
+    "title": "GNN-Guided Network Reduction for Centralized Urban Traffic Routing"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-27_2610.36981",
+    "members": [
+      "arxiv:2610.36981"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-network",
+        "label": "street network data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:gnn",
+        "label": "graph neural network"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q84",
+        "label": "London",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q60",
+        "label": "New York City",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q3130",
+        "label": "Sydney",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.36981",
+    "doi": "10.48550/arxiv.2610.36981",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-29T00:45:06Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005795,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2111,
+      "out": 292
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9605,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3842,
+    "relevance": 0.9605
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "A graph neural network (GNN) scores road segments for specific origin-destination (OD) flows based on network structure and vehicle information to prune the search space before solving a mixed-integer linear program (MILP) for centralized traffic routing. Evaluated across real road networks in Prague-Dejvice, London, New York, and Sydney, the GNN-guided framework achieved a relative objective difference to the 30-second full-graph baseline that was more than six times lower on average than existing reduction heuristics. Traffic simulations confirmed that this speedup produced higher aggregate vehicle arrival rates while preserving low trip durations.",
+      "why": "By incorporating dynamic vehicle-flow details into the network reduction phase rather than relying strictly on static spatial heuristics, city-scale traffic routing can now produce near-optimal congestion solutions within strict real-time operational windows."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-27",
+  "work_key": "arxiv:2610.36981"
+}

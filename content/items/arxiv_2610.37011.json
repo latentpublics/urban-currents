@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "In this paper, we analyze the dispatch-level feasibility of introducing premium membership into an on-demand taxi-sharing service using a sequential optimal insertion method. We propose two dispatch-level methods: deadline shortening for premium users, and deadline shortening with dedicated premium vehicles. We compare them with a baseline dispatch method through SUMO-based simulations under three demand scenarios: steady uniform demand, time-varying demand with a peak period, and urban-focused demand with concentrated peak traffic. Our results show that the suitable priority mechanism depends on operating conditions and premium ratio, suggesting that condition-dependent method switching may provide premium benefits while keeping non-premium-user burden smaller for overall optimization.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Nozomi Yamamoto",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hiroki Sakaji",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Itsuki Noda",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.MA",
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.37011v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.37011v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-27",
+    "repository_urls": [],
+    "title": "Evaluating Priority Dispatch for Premium Membership in On-demand Taxi-sharing"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-28_2610.37011",
+    "members": [
+      "arxiv:2610.37011"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:eclipse-sumo/sumo",
+        "label": "SUMO"
+      }
+    ],
+    "topics": []
+  },
+  "first_published": "2026-10-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.37011",
+    "doi": "10.1007/978-3-032-41794-7_30",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-30T00:57:02Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004606,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1781,
+      "out": 215
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9241,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3696,
+    "relevance": 0.9241
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Findings are based on synthetic traffic simulations rather than field trials or empirical dispatch data from an operating ride-hailing platform.",
+      "what": "SUMO-based traffic simulations evaluated two dispatch mechanisms for premium taxi-sharing memberships: deadline shortening for subscribers, and deadline shortening combined with dedicated premium vehicles. The performance of these strategies was tested against a standard baseline across uniform, peak-hour, and spatially concentrated high-density demand profiles.",
+      "why": "The analysis demonstrates that fleet managers cannot rely on a single priority rule; maximizing service quality for subscribers while minimizing performance drops for standard riders requires switching dispatch strategies based on real-time travel demand and subscriber proportions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-27",
+  "work_key": "arxiv:2610.37011"
+}

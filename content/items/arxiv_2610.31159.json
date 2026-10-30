@@ -46,22 +46,69 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-3161-0736",
+        "label": "Cillian Hourican"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1963-0056",
+        "label": "Debraj Roy"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11014",
+        "is_primary": true,
+        "label": "Regional Economics and Spatial Analysis",
+        "score": 0.8369,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12483",
+        "is_primary": false,
+        "label": "Global Urban Networks and Dynamics",
+        "score": 0.0664,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14051",
+        "is_primary": false,
+        "label": "Regional Economic and Spatial Analysis",
+        "score": 0.038,
+        "subfield": "2002"
+      }
+    ]
   },
   "first_published": "2026-10-22",
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W1500629316",
+      "openalex:W3047493846",
+      "openalex:W3000534719",
+      "openalex:W2263935216",
+      "openalex:W2954940567",
+      "openalex:W2601097868",
+      "openalex:W1597839074",
+      "openalex:W3216743680",
+      "openalex:W4317435255",
+      "openalex:W3015164595"
+    ]
   },
   "ids": {
     "arxiv": "2610.31159",
     "doi": "10.48550/arxiv.2610.31159",
-    "openalex": null,
+    "openalex": "W7223283313",
     "pmid": null
   },
   "provenance": {
@@ -69,7 +116,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-23T23:49:01Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005101,
     "llm": {
@@ -157,6 +205,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-22",
+  "updated": "2026-10-29",
   "work_key": "arxiv:2610.31159"
 }

@@ -1,0 +1,234 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract This study analyses 16,969,327 Metropolitan Police street-level crime report records covering December 2010 to July 2026, obtained from the UK Police Open Data platform. After cleaning (removing records with missing spatial identifiers and duplicates), a final analytical dataset of 14,245,882 records across 16,110 Lower Super Output Areas (LSOAs) and 16 crime categories was produced. The research integrates exploratory data analysis, LSOA-level spatial aggregation, time-series visualisation, and interpretable machine learning using a Decision Tree Regressor. A temporal train-test split was employed, using records before July 2024 for training and the final twenty-four months for testing. This split was chosen, as opposed to a random one to avoid data leakage and as a factor of 12 months to address the seasonality of crime. Model performance was compared against a naive baseline (mean crime count per LSOA-crime type combination, computed from the training period). The Decision Tree achieved a Mean Absolute Error of 0.242 crimes per LSOA-month, outperforming the naive baseline’s MAE of 0.266, indicating that for long-term crime pattern predictions, tree-based regressors can provide a better performing tool for police resource allocation than simple averages. Feature importance analysis revealed that LSOA location plays the most important role, followed by temporal features. The crime type features were observed to have the lowest importance. The framework emphasises reproducibility, transparency, and operational applicability within a public-sector context.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of the West of Scotland",
+            "ror": "04w3d2v20"
+          }
+        ],
+        "name": "Rashid Nuraliev",
+        "openalex": "A5160131867",
+        "orcid": "https://orcid.org/0009-0009-9922-5317"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of the West of Scotland",
+            "ror": "04w3d2v20"
+          }
+        ],
+        "name": "Jaš Šemrl",
+        "openalex": "A5052366481",
+        "orcid": "https://orcid.org/0000-0001-7440-8867"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s43762-026-00305-1",
+      "pdf_url": null,
+      "source_id": "S4210175573",
+      "source_name": "Computational Urban Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-28",
+    "repository_urls": [],
+    "title": "Metropolitan crime in London (2010–2026): a reproducible LSOA-level analytics framework"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-29_10.1007/s43762-0",
+    "members": [
+      "doi:10.1007/s43762-026-00305-1"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04w3d2v20",
+        "label": "University of the West of Scotland"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-9922-5317",
+        "label": "Rashid Nuraliev"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7440-8867",
+        "label": "Jaš Šemrl"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q84",
+        "label": "London",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10574",
+        "is_primary": true,
+        "label": "Crime Patterns and Interventions",
+        "score": 0.9922,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11076",
+        "is_primary": false,
+        "label": "Policing Practices and Perceptions",
+        "score": 0.0034,
+        "subfield": "3320"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12736",
+        "is_primary": false,
+        "label": "Criminal Justice and Penology",
+        "score": 0.0011,
+        "subfield": "3308"
+      }
+    ]
+  },
+  "first_published": "2026-10-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2076391334",
+      "openalex:W2103146779",
+      "openalex:W2128174617",
+      "openalex:W3020622509",
+      "openalex:W3030581860",
+      "openalex:W3094995629",
+      "openalex:W3162886737",
+      "openalex:W4220926084",
+      "openalex:W4249855545",
+      "openalex:W4380090191",
+      "openalex:W4380684657",
+      "openalex:W4381985381",
+      "openalex:W4389903412",
+      "openalex:W4402135335"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s43762-026-00305-1",
+    "openalex": "W7224627884",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-31T00:37:45Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006025,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2205,
+      "out": 302
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-31T00:37:45Z",
+    "doi": "10.1007/s43762-026-00305-1",
+    "journal": "Computational Urban Science",
+    "source_id": "S4210175573",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "14,245,882 records",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2010–2026",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The dataset includes records up to 2026, indicating that future projections or simulated synthetic time periods were bundled into the temporal framework.",
+      "what": "A Decision Tree Regressor evaluated on 14.2M clean street-level crime records in London predicts monthly crime counts across 16,110 Lower Layer Super Output Areas (LSOAs) with a Mean Absolute Error of 0.242. Using a temporal train-test split spanning 2010 to 2026, the model beat a naive historical-average baseline (0.266 MAE) and showed that LSOA geography was the primary driver of prediction performance, outranking temporal indicators and crime types.",
+      "why": "This establishes that basic interpretable machine learning models outperform traditional historical averages for long-term spatial crime forecasting, offering police departments a more reliable baseline for resource distribution without sacrificing operational transparency."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-28",
+  "work_key": "doi:10.1007/s43762-026-00305-1"
+}

@@ -1,0 +1,238 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "This study proposes GITSR, a Graph Interaction Transformer-based Scene Representation framework for multi-vehicle collaborative decision-making. In mixed traffic environments where connected automated vehicles (CAVs) and human-driven vehicles (HDVs) coexist, effective scene understanding and interaction modeling are essential for safe and efficient decision-making. GITSR first extracts driving environment features under an intelligent connected vehicle setting. Then, an agent-centric dynamic occupancy grid is encoded by a Transformer module to obtain local scene representations. Meanwhile, vehicle motion information is modeled as graph structures, and spatial interaction features among traffic participants are extracted using a Graph Neural Network (GNN). Finally, the collaborative decision-making process is formulated as a Markov Decision Process, and driving actions are generated through reinforcement learning algorithms. The proposed framework is validated in a challenging highway off-ramp scenario. Simulation results show that GITSR effectively captures scene representations and spatial interaction information, outperforming baseline methods across multiple evaluation metrics.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Xingyu Hu",
+        "openalex": "A5005794291",
+        "orcid": "https://orcid.org/0000-0001-6642-9086"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
+        "name": "Lijun Zhang",
+        "openalex": "A5100448160",
+        "orcid": "https://orcid.org/0000-0002-6944-1918"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1080/19427867.2026.2752027",
+      "pdf_url": null,
+      "source_id": "S70779598",
+      "source_name": "Transportation Letters",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-29",
+    "repository_urls": [],
+    "title": "GITSR: graph interaction transformer-based scene representation for multi-vehicle collaborative decision-making"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-29_2411.01608",
+    "members": [
+      "arxiv:2411.01608"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:transformer",
+        "label": "transformer"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:gnn",
+        "label": "graph neural network"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:reinforcement-learning",
+        "label": "reinforcement learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03rc6as71",
+        "label": "Tongji University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6642-9086",
+        "label": "Xingyu Hu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6944-1918",
+        "label": "Lijun Zhang"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": true,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.9717,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0194,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.0012,
+        "subfield": "2213"
+      }
+    ]
+  },
+  "first_published": "2026-10-29",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": [
+      "openalex:W4405305553",
+      "openalex:W4408697003",
+      "openalex:W4308080479",
+      "openalex:W7119049748",
+      "openalex:W4407128605",
+      "openalex:W4221150227",
+      "openalex:W4400648089",
+      "openalex:W7213543599",
+      "openalex:W4401798721",
+      "openalex:W4410988898"
+    ]
+  },
+  "ids": {
+    "arxiv": "2411.01608",
+    "doi": "10.1080/19427867.2026.2752027",
+    "openalex": "W4404352507",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-10-31T00:37:45Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005221,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1903,
+      "out": 263
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-10-31T00:37:45Z",
+    "doi": "10.1080/19427867.2026.2752027",
+    "journal": "Transportation Letters",
+    "source_id": "S70779598",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Evaluation is limited to simulated highway off-ramp scenarios and may not reflect performance in real-world urban street networks.",
+      "what": "The authors developed GITSR, a framework for multi-vehicle collaborative decision-making in mixed traffic consisting of connected automated vehicles and human-driven vehicles. The method combines a Transformer module to encode local scenes from agent-centric dynamic occupancy grids with a Graph Neural Network to extract spatial interactions from vehicle motion graphs. When paired with reinforcement learning in a Markov Decision Process formulation, the system outperformed baseline decision-making methods in a simulated highway off-ramp environment.",
+      "why": "It improves dynamic scene representation and spatial interaction modeling for autonomous driving fleets, allowing connected automated vehicles to navigate complex highway merge and off-ramp bottlenecks more effectively alongside human drivers."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-29",
+  "work_key": "arxiv:2411.01608"
+}

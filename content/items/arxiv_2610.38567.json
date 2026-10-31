@@ -1,0 +1,177 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Sustainable urban tourism depends on how environmental quality, public transport accessibility, and accommo dation clustering shape visitor mobility and destination development. This study examines these relationships in the budget hotel sector of Delhi National Capital Region, India, an emerging mega-destination marked by rapid urban expansion and uneven infrastructure provision. Using data from 857 budget hotels, we estimate a mixed geographically weighted spatial autoregressive model that captures both spatial heterogeneity and localized price spillovers. The model combines hotel attributes with satellite- derived indicators, including vegetation density, built-up area, night-time light intensity, and distances to metro stations, bus stops, airports, city centers, and tourist attractions. Results show that greenery has a place-dependent value: it generates a green premium in dense urban cores, where environmental amenities are scarce, but becomes a discount in peripheral areas where vegetation often reflects weaker tourism infrastructure. Metro accessibility creates a mobility pre mium, highlighting the role of public transport in supporting low-cost tourist movement. Local spatial spillovers reveal agglomeration benefits in established clusters and price cannibalization in peripheral markets. The find ings show how spatially differentiated planning can align green infrastructure, transit investment, and budget accommodation with more sustainable urban tourism development.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Indian Institute of Management Kozhikode",
+            "ror": null
+          }
+        ],
+        "name": "Shreyash Deshmukh",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Indian Institute of Management Kozhikode",
+            "ror": null
+          }
+        ],
+        "name": "Shovan Chowdhury",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.38567v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.38567v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-28",
+    "repository_urls": [],
+    "title": "Assessing the Role of Green Premium and Localized Price Spillovers in Budget Hotels: Evidence from Delhi National Capital Region (NCR)"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-29_2610.38567",
+    "members": [
+      "arxiv:2610.38567"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-28",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.38567",
+    "doi": "10.48550/arxiv.2610.38567",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-31T00:37:32Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00572,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2031,
+      "out": 297
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9947,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3979,
+    "relevance": 0.9947
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical analysis relies on a single metropolitan region, limiting the direct generalizability of these specific pricing thresholds to other mega-city contexts.",
+      "what": "Using a mixed geographically weighted spatial autoregressive model on 857 budget hotels in the Delhi National Capital Region, India, this study evaluates hotel room pricing relative to satellite-derived environmental indicators and transport proximity. The analysis reveals that vegetation density yields a price premium in dense urban cores where amenities are rare, but acts as a discount in peripheral zones where abundant green space correlates with poorer tourism infrastructure. Additionally, proximity to metro stations consistently drives up prices, while localized spatial spillovers produce agglomeration gains in established hotel hubs alongside price cannibalization in peripheral clusters.",
+      "why": "It establishes that the economic value of urban greenery is context-dependent rather than globally positive, demonstrating how environmental amenities can turn into financial liabilities for budget accommodation when decoupled from supportive infrastructure."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-28",
+  "work_key": "arxiv:2610.38567"
+}

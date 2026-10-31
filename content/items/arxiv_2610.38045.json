@@ -1,0 +1,179 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Objectives: Agencies invest in bicycle facilities but lack tools to assess whether cyclists use them as designed. We examine whether usage patterns follow facility configurations and whether higher bike lane usage is associated with less wrong-way riding. Methods: Motion-triggered cameras covered 19 deployments at 17 locations in Tempe, Arizona, in 2023. Manual review identified 1,963 cycling events; excluding 20 crossings left 1,943 labeled events for analysis. An automated pipeline on the same captures counted 92.9 percent of the full manual total (per-deployment r = 0.99), and every automated wrong-way call was visually verified. Deployments were classified using thresholds on facility usage shares. Findings: Deployments were bike-lane dominant (9), sidewalk dominant (6), or mixed (4). Cyclists in bike lanes rode against the flow in 4.6 percent of events; on sidewalks, riders opposed the near-side traffic flow in 49.6 percent. Across deployments, bike lane share and wrong-way rate were negatively correlated (Spearman rho = -0.87, p < 0.001, n = 16). An independent volunteer count in the same city showed a similar sidewalk-direction pattern (rho = 0.79). Novelty: The study combines multi-site still-camera observations with a fully hand-verified benchmark to characterize facility use and travel direction. Practical Applications: The workflow offers planners a low-cost screen for locations with high sidewalk cycling and travel against the near-side traffic flow, supporting more detailed site investigation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ao He",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mohit Gupta",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Deborah Salon",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ricardo Eiris",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Vivian W. H. Wong",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": "19 pages, 6 figures, 2 tables. Accepted for presentation at the 106th Transportation Research Board (TRB) Annual Meeting, Washington, D.C., January 10-14, 2027",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.38045v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.38045v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-27",
+    "repository_urls": [],
+    "title": "Classifying Urban Locations by Cyclist Facility Usage and Directional Alignment: A Validated Camera-Based Framework from Multi-Site Observations"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-29_2610.38045",
+    "members": [
+      "arxiv:2610.38045"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.38045",
+    "doi": "10.48550/arxiv.2610.38045",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-31T00:37:32Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006077,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2215,
+      "out": 306
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9908,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3963,
+    "relevance": 0.9908
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "n = 16",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Findings rely on data collected exclusively within a single city during a single year, which may limit generalizability to regions with different urban layouts or cycling cultures.",
+      "what": "Using motion-triggered cameras across 19 deployments at 17 locations in Tempe, Arizona in 2023, this study analyzed 1,943 manually labeled cycling events to classify sites into bike-lane dominant, sidewalk dominant, or mixed usage. The automated image processing pipeline achieved high agreement with manual counts (r = 0.99) and revealed that wrong-way riding occurred in only 4.6% of bike lane events compared to 49.6% of sidewalk events, yielding a strong negative correlation between bike lane share and wrong-way travel (Spearman rho = -0.87).",
+      "why": "It replaces manual counts with a verified, low-cost computer vision pipeline to quantitatively prove that dedicated bike lane infrastructure directly reduces counter-flow riding compared to sidewalk cycling."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-27",
+  "work_key": "arxiv:2610.38045"
+}

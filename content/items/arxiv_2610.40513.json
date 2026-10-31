@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This case study compares generalized linear models, generalized additive models, and semi-structured deep distributional regression for analyzing settlement patterns in historical land-cover maps. Using four reference years for Donau-Ries county (Landkreis Donau-Ries) in southern Germany, we quantify how distances to agricultural areas, forests, and rivers relate to residential presence, and we evaluate predictive performance through spatial block cross-validation. Classical models yield stable and interpretable distance effects, whereas the semi-structured framework improves prediction once local image context is included. The analysis illustrates a practical trade-off between interpretability, accuracy, and robustness when interpretable covariates are combined with deep components in spatio-temporal data analysis.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Mireille Fangueng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Frank Thiemann",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Monika Sester",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Philipp Otto",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "28 pages, 8 figures. Preprint prepared for Communications in Statistics: Case Studies, Data Analysis and Applications",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.40513v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.40513v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-29",
+    "repository_urls": [],
+    "title": "A case study of hybrid statistical models for analyzing spatio-temporal effects in historical map series of Donau-Ries county"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-29_2610.40513",
+    "members": [
+      "arxiv:2610.40513"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-29",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.40513",
+    "doi": "10.48550/arxiv.2610.40513",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-31T00:37:32Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005255,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1817,
+      "out": 281
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9364,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3746,
+    "relevance": 0.9364
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings are derived from a single county in southern Germany and may not generalize to regions with different historical settlement dynamics.",
+      "what": "The authors evaluated generalized linear models, generalized additive models, and semi-structured deep distributional regression to model historical settlement patterns in Donau-Ries county, Germany, across four reference years. Using spatial block cross-validation, the study measured how proximity to rivers, forests, and agricultural land relates to residential presence. While classical models produced stable and interpretable distance metrics, incorporating local image context via the semi-structured deep regression framework yielded superior predictive performance.",
+      "why": "It demonstrates how to combine interpretable spatial distance covariates with deep learning components, establishing the performance and interpretability trade-offs of hybrid statistical models on historical map series."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-29",
+  "work_key": "arxiv:2610.40513"
+}

@@ -1,0 +1,197 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Mega events can generate concentrated travel demand, intensifying congestion around venues and increasing travelers' environmental exposure. Existing traffic management strategies focus on travel efficiency, with limited attention to exposure risks. Taking mega-event travel as a short-term high-demand scenario, this study develops an exposure-aware multi-agent routing framework integrating road-network conditions, event-induced demand, background traffic, and environmental data within a unified simulation environment. Motorized travelers optimize travel efficiency, whereas micro-mobility travelers consider travel time and dynamic exposure to traffic-related PM2.5 and noise. We compare the framework with shortest-distance, congestion-aware, and exposure-aware routing baselines. Results show that, under high demand, the SARSA-based framework reduces vehicle travel time by 34.59% and cumulative environmental exposure by 58.65%, while micro-mobility travel time remains nearly unchanged. Exposure reduction is jointly driven by vehicle-side congestion mitigation and low-exposure routing. The framework provides quantitative support for vehicle diversion, low-exposure route guidance, and health-oriented traffic management in short-term high-demand scenarios.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Xinyue Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Qiumeng Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Suhong Zhou",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Junwen Lu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jiali Zhou",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Weipan Xu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.MA",
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.37702v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.37702v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-26",
+    "repository_urls": [],
+    "title": "Balancing Mobility Efficiency and Environmental Exposure During Mega Events: A Multi-agent Routing Framework"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-29_2610.37702",
+    "members": [
+      "arxiv:2610.37702"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:traffic-assignment",
+        "label": "traffic assignment"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-26",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.37702",
+    "doi": "10.48550/arxiv.2610.37702",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-10-31T00:37:37Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005102,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1979,
+      "out": 237
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.979,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3916,
+    "relevance": 0.979
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study developed a SARSA-based multi-agent simulation framework that routes motorized and micro-mobility travelers during high-demand events by balancing travel time against dynamic exposure to noise and traffic-related PM2.5. Evaluated against traditional routing baselines under heavy travel demand, the model decreased vehicle travel time by 34.59% and total environmental exposure by 58.65% without increasing micro-mobility travel times.",
+      "why": "It demonstrates that event traffic management can substantially lower health-damaging pollution exposure for active commuters without sacrificing efficiency or lengthening non-motorized trips."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-26",
+  "work_key": "arxiv:2610.37702"
+}

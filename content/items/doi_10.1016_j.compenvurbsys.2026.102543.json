@@ -4,19 +4,34 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "The University of Texas at Dallas",
+            "ror": "049emcs32"
+          }
+        ],
         "name": "Alexander Michels",
         "openalex": "A5081312398",
         "orcid": "https://orcid.org/0000-0002-7357-5206"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Kyung Hee University",
+            "ror": "01zqcg218"
+          }
+        ],
         "name": "Jeon‐Young Kang",
         "openalex": "A5063963511",
         "orcid": "https://orcid.org/0000-0001-8754-2897"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Kyung Hee University",
+            "ror": "01zqcg218"
+          }
+        ],
         "name": "Jinwoo Park",
         "openalex": "A5125120593",
         "orcid": "https://orcid.org/0000-0002-6774-216X"
@@ -43,7 +58,7 @@
     "title": "AgentAccess: Agent-Based Model for Place-Based Spatial Accessibility"
   },
   "cluster": {
-    "cluster_id": "clu_2026-10-29_10.1016/j.compen",
+    "cluster_id": "clu_2026-10-30_10.1016/j.compen",
     "members": [
       "doi:10.1016/j.compenvurbsys.2026.102543"
     ],
@@ -52,7 +67,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:049emcs32",
+        "label": "The University of Texas at Dallas"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01zqcg218",
+        "label": "Kyung Hee University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -167,7 +193,18 @@
       "openalex:W4414445493",
       "openalex:W4416387695"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W4388915987",
+      "openalex:W7071027578",
+      "openalex:W2787172110",
+      "openalex:W7125091732",
+      "openalex:W2963494773",
+      "openalex:W4236671476",
+      "openalex:W3173514281",
+      "openalex:W7135623121",
+      "openalex:W4285076227",
+      "openalex:W2298679731"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -178,7 +215,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-10-31T00:37:43Z",
+    "collected_at": "2026-11-01T00:04:59Z",
     "collectors": [
       "openalex"
     ],
@@ -225,6 +262,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-10-29",
+  "updated": "2026-10-31",
   "work_key": "doi:10.1016/j.compenvurbsys.2026.102543"
 }

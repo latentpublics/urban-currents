@@ -1,0 +1,249 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Long-term traffic modelling is fundamental to transport planning, but existing approaches often trade off interpretability, transferability, and predictive accuracy. Classical travel demand models provide behavioural structure but rely on strong assumptions and extensive calibration, whereas generic deep learning models capture complex patterns but often lack theoretical grounding and spatial transferability, limiting their usefulness for long-term planning applications. We propose DeepDemand, a theory-informed deep learning framework that embeds key components of travel demand theory to predict long-term highway traffic volumes using external socioeconomic features and road-network structure. The framework integrates a competitive two-source Dijkstra procedure for local origin–destination (OD) region extraction and OD pair screening with a differentiable architecture modelling OD interactions and travel-time deterrence. The model is evaluated using eight years (2017–2024) of observations on the UK strategic road network, covering 5088 highway segments. Under random cross-validation, DeepDemand achieves an R 2 of 0.706, an MAE of 7567 vehicles and a wMAPE of 30.0%, the best values on these three metrics among linear, gravity, tree-based, and graph neural network baselines. Performance remains strong under spatial cross-validation (R 2 = 0.647), indicating good geographic transferability. Interpretability analysis reveals a stable nonlinear travel-time deterrence pattern, the socioeconomic characteristics most associated with predicted demand, and polycentric OD interaction structures aligned with major employment centres and transport hubs. These results highlight the value of integrating transport theory with deep learning for interpretable long-term traffic estimation, network screening, and scenario exploration.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Cambridge",
+            "ror": "013meh722"
+          }
+        ],
+        "name": "Yue Li",
+        "openalex": "A5130951802",
+        "orcid": "https://orcid.org/0000-0002-0947-5374"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Cambridge",
+            "ror": "013meh722"
+          }
+        ],
+        "name": "Shujuan Chen",
+        "openalex": "A5071982582",
+        "orcid": "https://orcid.org/0000-0001-6829-6547"
+      },
+      {
+        "institutions": [],
+        "name": "Akihiro Shimoda",
+        "openalex": "A5019180048",
+        "orcid": "https://orcid.org/0000-0002-5116-3788"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Cambridge",
+            "ror": "013meh722"
+          }
+        ],
+        "name": "Ying Jin",
+        "openalex": "A5130932098",
+        "orcid": "https://orcid.org/0000-0003-2683-6829"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.106102",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-31",
+    "repository_urls": [],
+    "title": "Interpretable long-term traffic modelling on national road networks using theory-informed deep learning"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-10-31_2603.26440",
+    "members": [
+      "arxiv:2603.26440"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:013meh722",
+        "label": "University of Cambridge"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0947-5374",
+        "label": "Yue Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6829-6547",
+        "label": "Shujuan Chen"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5116-3788",
+        "label": "Akihiro Shimoda"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2683-6829",
+        "label": "Ying Jin"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.7852,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.2061,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0017,
+        "subfield": "2207"
+      }
+    ]
+  },
+  "first_published": "2026-10-31",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": [
+      "openalex:W7154623352",
+      "openalex:W2914743966",
+      "openalex:W3131991040",
+      "openalex:W7124466725",
+      "openalex:W4285293133",
+      "openalex:W4285128007",
+      "openalex:W4387934828",
+      "openalex:W4406407790",
+      "openalex:W7222938246",
+      "openalex:W3138998887"
+    ]
+  },
+  "ids": {
+    "arxiv": "2603.26440",
+    "doi": "10.1016/j.trc.2026.106102",
+    "openalex": "W7143396731",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-02T00:31:12Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006104,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2197,
+      "out": 312
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-02T00:31:12Z",
+    "doi": "10.1016/j.trc.2026.106102",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2017–2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The authors developed DeepDemand, a deep learning framework that incorporates travel demand theory to predict long-term highway traffic volumes using socioeconomic and road network data. Evaluated on 5,088 highway segments in the UK strategic road network across eight years of data (2017–2024), the model achieved an R2 of 0.706 and an MAE of 7,567 vehicles under random cross-validation. It outperformed linear, gravity, tree-based, and graph neural network baselines while maintaining performance under spatial cross-validation (R2 of 0.647).",
+      "why": "The framework bridges the gap between structured classical demand models and black-box neural networks, providing transferable, long-term traffic predictions on national road networks while extracting interpretable travel-time deterrence curves and polycentric origin-destination interactions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-31",
+  "work_key": "arxiv:2603.26440"
+}

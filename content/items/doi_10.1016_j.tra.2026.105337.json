@@ -4,19 +4,38 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Complex Engineering System Institute",
+            "ror": "04wnc7270"
+          },
+          {
+            "name": "University of Chile",
+            "ror": "047gc3g35"
+          }
+        ],
         "name": "Bastián I. Henríquez-Jara",
         "openalex": "A5076466384",
         "orcid": "https://orcid.org/0000-0003-1170-2537"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Chile",
+            "ror": "047gc3g35"
+          }
+        ],
         "name": "Diego Candia",
         "openalex": "A5014705242",
         "orcid": "https://orcid.org/0000-0003-4055-2451"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Cornell University",
+            "ror": "05bnh6r87"
+          }
+        ],
         "name": "Ricardo A. Daziano",
         "openalex": "A5056770504",
         "orcid": "https://orcid.org/0000-0002-5613-429X"
@@ -37,7 +56,7 @@
     "title": "Behavioral externalities and the hidden cost of fare evasion in Santiago de Chile and New York City"
   },
   "cluster": {
-    "cluster_id": "clu_2026-10-30_10.1016/j.tra.20",
+    "cluster_id": "clu_2026-10-31_10.1016/j.tra.20",
     "members": [
       "doi:10.1016/j.tra.2026.105337"
     ],
@@ -46,7 +65,23 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04wnc7270",
+        "label": "Complex Engineering System Institute"
+      },
+      {
+        "confidence": null,
+        "id": "ror:047gc3g35",
+        "label": "University of Chile"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05bnh6r87",
+        "label": "Cornell University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -145,7 +180,18 @@
       "openalex:W4406515938",
       "openalex:W6903537658"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W4410126128",
+      "openalex:W772352064",
+      "openalex:W2256563404",
+      "openalex:W4243703255",
+      "openalex:W2098686912",
+      "openalex:W2314003682",
+      "openalex:W2034444215",
+      "openalex:W2734525241",
+      "openalex:W164283971",
+      "openalex:W2335023006"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -156,7 +202,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-01T00:04:59Z",
+    "collected_at": "2026-11-02T00:31:12Z",
     "collectors": [
       "openalex"
     ],
@@ -203,6 +249,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-10-30",
+  "updated": "2026-11-01",
   "work_key": "doi:10.1016/j.tra.2026.105337"
 }

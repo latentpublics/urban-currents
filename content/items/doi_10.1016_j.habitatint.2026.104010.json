@@ -4,25 +4,49 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Johns Hopkins University",
+            "ror": "00za53h95"
+          }
+        ],
         "name": "Shima Hamidi",
         "openalex": "A5010133508",
         "orcid": "https://orcid.org/0000-0001-6717-5700"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Johns Hopkins University",
+            "ror": "00za53h95"
+          }
+        ],
         "name": "Seyed Sajjad Abdollahpour",
         "openalex": "A5058853336",
         "orcid": "https://orcid.org/0000-0001-7582-3931"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Johns Hopkins University",
+            "ror": "00za53h95"
+          }
+        ],
         "name": "Ebrahim Azimi",
         "openalex": "A5046728116",
         "orcid": "https://orcid.org/0009-0003-6437-3244"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "California Polytechnic State University",
+            "ror": "001gpfp45"
+          },
+          {
+            "name": "Cal Poly Corporation",
+            "ror": "001c8fh75"
+          }
+        ],
         "name": "Amir H. Hajrasouliha",
         "openalex": "A5031009232",
         "orcid": "https://orcid.org/0000-0002-3084-0145"
@@ -43,7 +67,7 @@
     "title": "Tracking the spatial evolution in the U.S Metropolitan structure: A new typology and empirical evaluation"
   },
   "cluster": {
-    "cluster_id": "clu_2026-10-30_10.1016/j.habita",
+    "cluster_id": "clu_2026-10-31_10.1016/j.habita",
     "members": [
       "doi:10.1016/j.habitatint.2026.104010"
     ],
@@ -52,7 +76,23 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00za53h95",
+        "label": "Johns Hopkins University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:001gpfp45",
+        "label": "California Polytechnic State University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:001c8fh75",
+        "label": "Cal Poly Corporation"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -183,7 +223,18 @@
       "openalex:W7155028517",
       "openalex:W7211974231"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W7038586592",
+      "openalex:W2778880435",
+      "openalex:W2622819242",
+      "openalex:W604978060",
+      "openalex:W2083092996",
+      "openalex:W2409562227",
+      "openalex:W4295021334",
+      "openalex:W2091792988",
+      "openalex:W2155638165",
+      "openalex:W2886917026"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -194,7 +245,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-01T00:04:59Z",
+    "collected_at": "2026-11-02T00:31:12Z",
     "collectors": [
       "openalex"
     ],
@@ -241,6 +292,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-10-30",
+  "updated": "2026-11-01",
   "work_key": "doi:10.1016/j.habitatint.2026.104010"
 }

@@ -1,0 +1,214 @@
+{
+  "badges": [
+    "code",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Location-based recommender systems shape where people go in cities and learn from the visits they steer, forming a human-AI feedback loop. This feedback loop shapes whom people share places with across income groups and which venues keep attracting customers. Yet platforms judge these systems by their offline accuracy on past visits, a test in which the suggestions never change where people go and which therefore cannot capture long-term effects. Studying these effects in cities is challenging because, unlike online resources, travel constraints and limited venue capacity shape where people can go, while each recommended visit also changes whom other visitors encounter. To capture such features, we build a long-term simulation framework based on fine-grained human mobility data from four U.S. metropolitan areas, with distance and capacity constraints. Focusing on food venues, we study two urban consequences: how unevenly people's exposure is distributed across income groups (experienced income segregation) and the share of venues receiving no visits from simulated residents (venue disappearance). We find that, under every algorithm and in every metropolitan area, at least a fifth of venues stop receiving visits, and that more than half of this loss arises from retraining. More importantly, more accurate algorithms leave people more segregated, and the most accurate algorithm leaves people 15-21% more segregated than they actually are. We then test a re-ranking intervention that favours less popular venues and runs on top of a platform's existing algorithm. It lowers both venue disappearance and segregation across algorithms, largely without directing people to venues where they may feel less comfortable. Our results suggest that impact assessments of recommender systems should account for the feedback loop and report segregation and venue disappearance beyond accuracy.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Guangyuan Weng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Lin Chen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ciro Beneduce",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Giovanni Mauro",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Massimiliano Luca",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Takahiro Yabe",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Bruno Lepri",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Luca Pappalardo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Esteban Moro",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.IR",
+      "cs.CY",
+      "cs.SI",
+      "physics.soc-ph"
+    ],
+    "comment": "13 pages, 5 figures, 7 tables. Code: https://github.com/SUNLab-NetSI/recsys-city-feedback",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.41911v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.41911v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-30",
+    "repository_urls": [],
+    "title": "Recommendation Feedback Loops Shape Urban Income Segregation and Venue Visitation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-01_2610.41911",
+    "members": [
+      "arxiv:2610.41911"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.41911",
+    "doi": "10.48550/arxiv.2610.41911",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-03T02:52:30Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005464,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2179,
+      "out": 244
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9428,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4571,
+    "relevance": 0.9428
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "from the arXiv comment",
+      "url": "https://github.com/SUNLab-NetSI/recsys-city-feedback",
+      "value": true
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "Using fine-grained human mobility data from four US metropolitan areas, this study simulated the long-term impact of location-based recommender systems on food venue visitation and experienced income segregation under distance and capacity constraints. Across all tested algorithms, retraining caused over half of the venue loss that led to at least 20% of venues receiving zero visits. Furthermore, the highest-performing algorithms increased income segregation by 15% to 21% compared to observed baseline levels, though a post-processing re-ranking intervention prioritizing less popular venues successfully reduced both segregation and venue desertion.",
+      "why": "Standard offline accuracy metrics obscure how recommendation feedback loops actively concentrate urban visits, establishing that optimizing for accuracy alone drives commercial decline and socioeconomic sorting in physical space."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-30",
+  "work_key": "arxiv:2610.41911"
+}

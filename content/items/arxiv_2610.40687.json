@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The public transportation networks of rapidly expanding urban centers confront a complex task in balancing operational efficiency with dynamic commuter needs. In response, data-driven approaches leveraging multi-perspective datasets offer critical insights into a city's systemic demand. In this work, we utilize the NetMob 2026 Data Challenge dataset for the city of Niteroi, Brazil, to investigate the structural dynamics of the municipal bus network. Specifically, our research framework is driven by three interconnected urban mobility objectives: first, analyzing urban movement patterns to determine whether passenger boarding logs trace periodic, routine, and predictable movement patterns across distinct urban zones; second, detecting operational anomalies and potential bottlenecks by analyzing vehicle trajectory profiles via GPS telemetry to identify both scheduled and unscheduled stops; and third, developing and evaluating a supervised learning framework capable of predicting continuous bus trip durations.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Evaldo Alves de Brito",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Luiz Sergio Pompeu Alves Filho",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Claudio E. C. Campelo",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.SI"
+    ],
+    "comment": "6 pages, 7 figures, paper was peer-reviewed and presented at NetMob 2026 (Data Challenge Track)",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2610.40687v1",
+      "pdf_url": "https://arxiv.org/pdf/2610.40687v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-27",
+    "repository_urls": [],
+    "title": "Urban Mobility and Demand Dynamics: A Telemetry and Ticketing Baseline for Niteroi's Bus Network"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-01_2610.40687",
+    "members": [
+      "arxiv:2610.40687"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-27",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2610.40687",
+    "doi": "10.48550/arxiv.2610.40687",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-03T02:52:36Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004687,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1859,
+      "out": 211
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9891,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3956,
+    "relevance": 0.9891
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The authors analyzed bus mobility in Niterói, Brazil, using the NetMob 2026 dataset to examine three aspects of network performance: passenger boarding patterns across urban zones, operational bottlenecks identified through vehicle GPS telemetry of stops, and continuous trip duration predictions using supervised learning.",
+      "why": "The framework establishes a baseline for combining passenger ticketing logs with vehicle telemetry to isolate unscheduled delays and predict travel times in a Latin American medium-sized city network."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-27",
+  "work_key": "arxiv:2610.40687"
+}

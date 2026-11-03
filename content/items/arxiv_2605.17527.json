@@ -1,0 +1,336 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Street-view imagery (SVI) is widely used to quantify key indicators of urban environment, such as greenery, sky, or road view indices. However, relatively few studies have examined controlled SVI synthesis that combines explicit target proportions of trees, sky, buildings, and roads with road-layout masks, while also testing conflicts between textual and spatial controls. To address this gap, we propose a generative multimodal AI framework that synthesizes alternative streetscapes conditioned on targeted visual metrics, enabling direct visual exploration of urban scenarios. We first construct a multimodal dataset that aligns SVIs with textual descriptions, segmentation maps, road masks, and quantitative metrics of visual elements in Chicago and Orlando. Using this dataset, we demonstrate that diffusion models can produce realistic and semantically consistent streetscape imagery while responding to both textual and imagery controls. Our quantitative evaluations show that incorporating visual controls can improve semantic consistency, reducing the LPIPS index by approximately 6% while maintaining global visual realism. In addition, overall semantic consistency increases by 23.7% in Orlando and 46.4% in Chicago, as measured by the mIoU index, with class-wise gains exceeding 100% improvement for building view indices. Streetscape generation shows directional and interpretable responses to both visual and textual prompts, and when textual and visual controls conflict, imagery controls tend to dominate, indicating a clear control hierarchy and the importance of further developing visual controls for urban scene generation. Overall, this work establishes an important benchmark for streetscape generation using SVIs and diffusion models, and illustrates how generative AI can support controllable and exploratory urban scenario visualization.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Florida",
+            "ror": "02y3ad647"
+          }
+        ],
+        "name": "Yuzhou Chen",
+        "openalex": "A5009756467",
+        "orcid": "https://orcid.org/0000-0002-1556-084X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Singapore-MIT Alliance for Research and Technology",
+            "ror": "05yb3w112"
+          }
+        ],
+        "name": "Yuebing Liang",
+        "openalex": "A5041224976",
+        "orcid": "https://orcid.org/0000-0003-2089-4606"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Texas A&M University",
+            "ror": "01f5ytq51"
+          }
+        ],
+        "name": "Lingqian Hu",
+        "openalex": "A5001267615",
+        "orcid": "https://orcid.org/0000-0002-5687-0764"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Singapore-MIT Alliance for Research and Technology",
+            "ror": "05yb3w112"
+          }
+        ],
+        "name": "Kailai Sun",
+        "openalex": "A5052099130",
+        "orcid": "https://orcid.org/0000-0003-1648-3409"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Florida",
+            "ror": "02y3ad647"
+          }
+        ],
+        "name": "Qingqi Song",
+        "openalex": "A5136490346",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Florida",
+            "ror": "02y3ad647"
+          }
+        ],
+        "name": "Chang Zhao",
+        "openalex": "A5029114955",
+        "orcid": "https://orcid.org/0000-0002-5389-0479"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Florida",
+            "ror": "02y3ad647"
+          }
+        ],
+        "name": "Shenhao Wang",
+        "openalex": "A5136471743",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1177/23998083261500883",
+      "pdf_url": null,
+      "source_id": "S4210191690",
+      "source_name": "Environment and Planning B Urban Analytics and City Science",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-10-30",
+    "repository_urls": [],
+    "title": "Generative AI for urban planning: Designing streetscapes from street-view imagery using diffusion models"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-01_2605.17527",
+    "members": [
+      "arxiv:2605.17527"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:diffusion-model",
+        "label": "diffusion model"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:remote-sensing-classification",
+        "label": "remote sensing classification"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02y3ad647",
+        "label": "University of Florida"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05yb3w112",
+        "label": "Singapore-MIT Alliance for Research and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01f5ytq51",
+        "label": "Texas A&M University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1556-084X",
+        "label": "Yuzhou Chen"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2089-4606",
+        "label": "Yuebing Liang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5687-0764",
+        "label": "Lingqian Hu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1648-3409",
+        "label": "Kailai Sun"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5136490346",
+        "label": "Qingqi Song"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5389-0479",
+        "label": "Chang Zhao"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5136471743",
+        "label": "Shenhao Wang"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1297",
+        "label": "Chicago",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10775",
+        "is_primary": true,
+        "label": "Generative Adversarial Networks and Image Synthesis",
+        "score": 0.9888,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0075,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10036",
+        "is_primary": false,
+        "label": "Advanced Neural Network Applications",
+        "score": 0.0005,
+        "subfield": "1707"
+      }
+    ]
+  },
+  "first_published": "2026-10-30",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": [
+      "openalex:W4400573484",
+      "openalex:W4414033052",
+      "openalex:W4413801762",
+      "openalex:W7223456576",
+      "openalex:W7169550620",
+      "openalex:W7212158156",
+      "openalex:W4400673269",
+      "openalex:W7077149713",
+      "openalex:W7223359727",
+      "openalex:W4415270273"
+    ]
+  },
+  "ids": {
+    "arxiv": "2605.17527",
+    "doi": "10.1177/23998083261500883",
+    "openalex": "W7161704392",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-03T02:52:40Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006029,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2171,
+      "out": 308
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-03T02:52:40Z",
+    "doi": "10.1177/23998083261500883",
+    "journal": "Environment and Planning B Urban Analytics and City Science",
+    "source_id": "S4210191690",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Evaluation and dataset construction are restricted to two US cities (Chicago and Orlando), which may limit immediate generalization to distinct international street layouts.",
+      "what": "A multimodal diffusion framework synthesizes streetscapes conditioned on explicit visual target proportions, text prompts, segmentation maps, and road masks, tested on street-view imagery from Chicago and Orlando. Incorporating visual controls reduced the perceptual difference (LPIPS) by 6% and boosted semantic consistency (mIoU) by 23.7% in Orlando and 46.4% in Chicago, with building view accuracy increasing over 100%. When textual and visual constraints conflict, spatial visual controls consistently override text prompts during generation.",
+      "why": "This establishes that fine-grained spatial and quantitative controls can reliably drive streetscape imagery synthesis, allowing planners to visually model precise physical modifications before deployment."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-30",
+  "work_key": "arxiv:2605.17527"
+}

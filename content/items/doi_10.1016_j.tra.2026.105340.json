@@ -4,15 +4,25 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Hanyang University",
+            "ror": "046865y68"
+          }
+        ],
         "name": "Donghyeok Park",
         "openalex": "A5009563643",
         "orcid": "https://orcid.org/0000-0002-6192-3816"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Hanyang University",
+            "ror": "046865y68"
+          }
+        ],
         "name": "Juneyoung Park",
-        "openalex": "A5160251162",
+        "openalex": "A5123426592",
         "orcid": null
       },
       {
@@ -22,15 +32,25 @@
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Kyonggi University",
+            "ror": "032xf8h46"
+          }
+        ],
         "name": "Junghwa Kim",
         "openalex": "A5007449670",
         "orcid": "https://orcid.org/0000-0001-9771-5755"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Samsung (South Korea)",
+            "ror": "04w3jy968"
+          }
+        ],
         "name": "Junhan Cho",
-        "openalex": "A5160274158",
+        "openalex": "A5123440540",
         "orcid": null
       }
     ],
@@ -49,7 +69,7 @@
     "title": "Analyzing the impact of high-risk recidivist drivers using nationwide automated enforcement data: policy innovations for managing habitual traffic violators"
   },
   "cluster": {
-    "cluster_id": "clu_2026-10-31_10.1016/j.tra.20",
+    "cluster_id": "clu_2026-11-01_10.1016/j.tra.20",
     "members": [
       "doi:10.1016/j.tra.2026.105340"
     ],
@@ -58,7 +78,23 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:046865y68",
+        "label": "Hanyang University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:032xf8h46",
+        "label": "Kyonggi University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04w3jy968",
+        "label": "Samsung (South Korea)"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -67,7 +103,7 @@
       },
       {
         "confidence": null,
-        "id": "openalex:A5160251162",
+        "id": "openalex:A5123426592",
         "label": "Juneyoung Park"
       },
       {
@@ -82,7 +118,7 @@
       },
       {
         "confidence": null,
-        "id": "openalex:A5160274158",
+        "id": "openalex:A5123440540",
         "label": "Junhan Cho"
       }
     ],
@@ -95,24 +131,24 @@
         "id": "openalex:T10370",
         "is_primary": true,
         "label": "Traffic and Road Safety",
-        "score": 0.9907,
+        "score": 0.9995,
         "subfield": "2213"
-      },
-      {
-        "confidence": null,
-        "id": "openalex:T14304",
-        "is_primary": false,
-        "label": "Transport Systems and Technology",
-        "score": 0.0011,
-        "subfield": "2210"
       },
       {
         "confidence": null,
         "id": "openalex:T13527",
         "is_primary": false,
         "label": "Transportation Systems and Logistics",
-        "score": 0.0011,
+        "score": 0.0001,
         "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14304",
+        "is_primary": false,
+        "label": "Transport Systems and Technology",
+        "score": 0.0001,
+        "subfield": "2210"
       }
     ]
   },
@@ -123,34 +159,38 @@
       "openalex:W101836494",
       "openalex:W1972149489",
       "openalex:W1973994549",
-      "openalex:W1979646154",
-      "openalex:W2054635285",
       "openalex:W2065293902",
       "openalex:W2073277188",
       "openalex:W2084858924",
-      "openalex:W2137222208",
-      "openalex:W2291740925",
-      "openalex:W2787894218",
-      "openalex:W2973903245",
-      "openalex:W3019913914",
       "openalex:W3194033047",
       "openalex:W4280529733",
       "openalex:W4287834347",
       "openalex:W4377104366",
       "openalex:W4400947694"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W2133811065",
+      "openalex:W7201851760",
+      "openalex:W2973666867",
+      "openalex:W4289766362",
+      "openalex:W561481109",
+      "openalex:W4381734654",
+      "openalex:W4385685035",
+      "openalex:W4412418432",
+      "openalex:W626090705",
+      "openalex:W2810090576"
+    ]
   },
   "ids": {
     "arxiv": null,
     "doi": "10.1016/j.tra.2026.105340",
-    "openalex": "W7224989708",
+    "openalex": "W7124910314",
     "pmid": null
   },
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-02T00:31:12Z",
+    "collected_at": "2026-11-03T02:52:40Z",
     "collectors": [
       "openalex"
     ],
@@ -197,6 +237,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-10-31",
+  "updated": "2026-11-02",
   "work_key": "doi:10.1016/j.tra.2026.105340"
 }

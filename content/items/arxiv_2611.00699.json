@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban environmental monitoring is crucial for climate-adaptive cities, yet current approaches rely heavily on human inspection, overhead remote sensing, or limited terrestrial RGB imagery, thereby lacking comprehensive multispectral perspectives at street level. To bridge this gap, this paper introduces UrbanScapes, an adaptable and flexible hardware-software co-design platform for large-scale, vision-based sensing of urban environments. Built on a modular architecture, UrbanScapes seamlessly integrates multispectral imaging channels, including Red, Green, Blue (RGB), Near-Infrared, and Thermal, to capture multispectral street-level imagery. The system is designed for both opportunistic deployment on bicycles, vehicles, or pedestrians and targeted deployments on municipal fleets, ensuring high spatio-temporal scalability without requiring hardware redesigns. Crucially, the platform utilizes on-device deep learning models to automatically remove personally identifiable information (PII) at the edge, addressing privacy concerns inherent in street-level data collection. By combining this multispectral street-level imagery with overhead multispectral remote sensing imagery, UrbanScapes enables scalable calculation of physics-based environmental indices, providing a foundational tool for advanced citywide analysis.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Akshit Gupta",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "R Venkatesha Prasad",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "eess.SY",
+      "cs.CV"
+    ],
+    "comment": "IEEE World Forum for Internet of Things 2026",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.00699v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.00699v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-31",
+    "repository_urls": [],
+    "title": "Vision-based Sensing of Urban Environment using Hardware-Software co-design at Scale"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-02_2611.00699",
+    "members": [
+      "arxiv:2611.00699"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-31",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.00699",
+    "doi": "10.48550/arxiv.2611.00699",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-04T01:11:52Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005314,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1977,
+      "out": 261
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9626,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.385,
+    "relevance": 0.9626
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The study presents UrbanScapes, an adaptable hardware-software platform combining street-level imagery across RGB, Near-Infrared, and Thermal spectrums with overhead satellite data to calculate physics-based urban environmental indices. Designed for mounting on bicycles, municipal vehicles, or pedestrians, the device uses edge-based deep learning to strip personally identifiable information locally prior to storage or processing.",
+      "why": "It replaces costly human surveys and low-resolution satellite measurements with a scalable street-level multispectral sensing system that preserves privacy directly at the hardware edge."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-31",
+  "work_key": "arxiv:2611.00699"
+}

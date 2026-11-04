@@ -1,0 +1,217 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "In response to climate goals, growing environmental awareness, and financial incentives, municipalities increasingly seek to electrify public transportation networks. We study the problem of locating stationary and dynamic inductive charging stations for electric vehicles (EVs), allowing detours from fixed transit routes and schedules. Dynamic charging, which enables energy transfer while driving, reduces space usage in dense urban areas and lowers vehicle idle times. We formulate a cost-minimization problem that considers both infrastructure and operational costs and propose an Iterated Local Search (ILS) algorithm to solve instances of realistic size. Each configuration requires solving a decomposed subproblem comprising multiple resource-constrained shortest-path problems. For this, we employ a bi-directional label-setting algorithm with lazy dominance checks based on local bounds. On adapted benchmark instances, our approach outperforms a commercial solver by up to 60% in solution quality. We further apply our method to a real-world case study in Hof, Germany. Results indicate that, under current cost structures calibrated from a test track in Bad Staffelstein, dynamic inductive charging is not yet cost-competitive with stationary alternatives. We quantify the value of allowing detours at up to 3.5% of the total system cost and show that integrating photovoltaics with decentralized energy storage can yield savings exceeding 20%.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Paul Bischoff",
+        "openalex": null,
+        "orcid": "https://orcid.org/0009-0003-5523-0364"
+      },
+      {
+        "institutions": [],
+        "name": "Salma Hammani",
+        "openalex": "A5119753502",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Maximilian Schiffer",
+        "openalex": "A5034416720",
+        "orcid": "https://orcid.org/0000-0003-2682-4975"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.106068",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-11-02",
+    "repository_urls": [],
+    "title": "Infrastructure planning for inductive charging in electrified shuttle systems"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-02_2505.18403",
+    "members": [
+      "arxiv:2505.18403"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0003-5523-0364",
+        "label": "Paul Bischoff"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5119753502",
+        "label": "Salma Hammani"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2682-4975",
+        "label": "Maximilian Schiffer"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10768",
+        "is_primary": true,
+        "label": "Electric Vehicles and Infrastructure",
+        "score": 0.9619,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": false,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.0152,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0055,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-11-02",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": [
+      "openalex:W3096214521",
+      "openalex:W7167214952",
+      "openalex:W4284682302",
+      "openalex:W4206231581",
+      "openalex:W4214674282",
+      "openalex:W4285099954",
+      "openalex:W2981737652",
+      "openalex:W7019901775",
+      "openalex:W3099199237",
+      "openalex:W4318962825"
+    ]
+  },
+  "ids": {
+    "arxiv": "2505.18403",
+    "doi": "10.1016/j.trc.2026.106068",
+    "openalex": "W4414581214",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-04T01:12:03Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005344,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2021,
+      "out": 257
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-04T01:12:03Z",
+    "doi": "10.1016/j.trc.2026.106068",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Economic conclusions depend heavily on cost calibrations derived from a single experimental test site in Bad Staffelstein.",
+      "what": "An Iterated Local Search algorithm was developed to optimize the placement of stationary and dynamic inductive charging infrastructure for electric transit shuttles while allowing flexible route detours. Evaluated on benchmark tests and a real-world network in Hof, Germany, the method improved solution quality by up to 60% compared to a commercial solver. Using cost parameters calibrated from a German test track, dynamic wireless charging proved less cost-effective than static alternatives, though detour flexibility saved up to 3.5% of overall costs, and pairing infrastructure with local photovoltaics and battery storage reduced total costs by over 20%.",
+      "why": "It establishes that dynamic wireless charging remains economically uncompetitive for municipal transit under current cost structures, while demonstrating that operational flexibilities like routing detours and co-located solar generation provide immediate financial savings."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-02",
+  "work_key": "arxiv:2505.18403"
+}

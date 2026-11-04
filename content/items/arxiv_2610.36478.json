@@ -69,8 +69,40 @@
         "label": "spatial clustering"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01ayc5b57",
+        "label": "German Research Centre for Artificial Intelligence"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02n2fzt79",
+        "label": "Boston College"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5158020217",
+        "label": "Chaitanya Jobanputra"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4293-5106",
+        "label": "George Mohler"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2831-1401",
+        "label": "Sebastian J. Vollmer"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4933-447X",
+        "label": "Gerrit Großmann"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -81,18 +113,54 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10574",
+        "is_primary": true,
+        "label": "Crime Patterns and Interventions",
+        "score": 0.9932,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11911",
+        "is_primary": false,
+        "label": "Spatial and Panel Data Analysis",
+        "score": 0.0015,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11076",
+        "is_primary": false,
+        "label": "Policing Practices and Perceptions",
+        "score": 0.001,
+        "subfield": "3320"
+      }
+    ]
   },
   "first_published": "2026-10-27",
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W2888794980",
+      "openalex:W2188108802",
+      "openalex:W2185798764",
+      "openalex:W2888964392",
+      "openalex:W2754085993",
+      "openalex:W2390379325",
+      "openalex:W3014038677",
+      "openalex:W2204985230",
+      "openalex:W2092208829",
+      "openalex:W2242984939"
+    ]
   },
   "ids": {
     "arxiv": "2610.36478",
     "doi": "10.48550/arxiv.2610.36478",
-    "openalex": null,
+    "openalex": "W7224122307",
     "pmid": null
   },
   "provenance": {
@@ -100,7 +168,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-29T00:45:06Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005879,
     "llm": {
@@ -188,6 +257,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-27",
+  "updated": "2026-11-03",
   "work_key": "arxiv:2610.36478"
 }

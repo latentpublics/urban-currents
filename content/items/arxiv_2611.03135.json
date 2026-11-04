@@ -1,0 +1,203 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The integration of electric vehicles (EVs) into urban mobility systems offers both opportunities and challenges for cities pursuing sustainability and energy efficiency. While simulation-based approaches have demonstrated the technical feasibility of advanced charging strategies, such as smart charging, bidirectional charging, and Vehicle-to-Grid (V2G), their real-world impact is often constrained by policy, business models, and stakeholder engagement. This paper introduces a purpose-driven technology transfer (PDTT) framework that systematically connects simulation insights with the needs of urban stakeholders. Leveraging a modular simulation architecture based on Simulation of Urban Mobility (SUMO), we evaluate the operational and sustainability impacts of advanced EV charging in complex urban scenarios, assessing indicators such as energy efficiency and CO2 emissions. The PDTT framework guides the translation of simulation results into actionable pathways for deployment, policy design, and market innovation, supporting co-creation with city planners, utilities, and communities. Our findings highlight the value of simulation as a diagnostic and engagement tool, and demonstrate how a multidimensional, stakeholder-centered approach can accelerate the sustainable adoption of advanced EV charging technologies in smart city contexts.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Shangqing Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Syed Irtaza Haider",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shiwei Shen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Faezeh Motazedian",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rico Radeke",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Laura del Rio Carazo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Frank H. P. Fitzek",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.03135v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.03135v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-02",
+    "repository_urls": [],
+    "title": "From Simulation to Sustainable Urban Mobility: A Purpose-Driven Framework for Advanced EV Charging Technology Transfer"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-02_2611.03135",
+    "members": [
+      "arxiv:2611.03135"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:traffic-assignment",
+        "label": "traffic assignment"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:eclipse-sumo/sumo",
+        "label": "SUMO"
+      }
+    ],
+    "topics": []
+  },
+  "first_published": "2026-11-02",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.03135",
+    "doi": "10.1007/978-3-032-42044-2_2",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-04T01:11:52Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004901,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1965,
+      "out": 217
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9673,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3869,
+    "relevance": 0.9673
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This paper introduces a purpose-driven technology transfer framework that pairs a modular Simulation of Urban Mobility (SUMO) architecture with stakeholder engagement to translate EV charging models into real-world deployments. The approach models advanced charging strategies, including smart charging, bidirectional charging, and Vehicle-to-Grid systems, evaluating performance based on energy efficiency and carbon dioxide emissions.",
+      "why": "It bridges the gap between urban transport simulation and practical implementation by providing a structured process to align technical modeling outputs with the policy, business, and community requirements of city planners and utilities."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-02",
+  "work_key": "arxiv:2611.03135"
+}

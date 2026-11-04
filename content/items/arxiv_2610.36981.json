@@ -68,8 +68,35 @@
         "label": "graph neural network"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03kqpb082",
+        "label": "Czech Technical University in Prague"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-0156-3561",
+        "label": "Nikolai Antonov"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9713-7748",
+        "label": "Lukáš Chrpa"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5535-4250",
+        "label": "Andrii Nyporko"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7639-864X",
+        "label": "Jan Hůla"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -92,18 +119,54 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": true,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.7866,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0971,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0737,
+        "subfield": "2215"
+      }
+    ]
   },
   "first_published": "2026-10-27",
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W4408062167",
+      "openalex:W7213520423",
+      "openalex:W7163592272",
+      "openalex:W7118301931",
+      "openalex:W3035597366",
+      "openalex:W4402028413",
+      "openalex:W4383531746",
+      "openalex:W3085989802",
+      "openalex:W4403616265",
+      "openalex:W7161484802"
+    ]
   },
   "ids": {
     "arxiv": "2610.36981",
     "doi": "10.48550/arxiv.2610.36981",
-    "openalex": null,
+    "openalex": "W7224125764",
     "pmid": null
   },
   "provenance": {
@@ -111,7 +174,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-29T00:45:06Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005795,
     "llm": {
@@ -199,6 +263,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-27",
+  "updated": "2026-11-03",
   "work_key": "arxiv:2610.36981"
 }

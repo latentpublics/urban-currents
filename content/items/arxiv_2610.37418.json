@@ -76,22 +76,84 @@
     ],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5136175028",
+        "label": "Sukie Xiuqi Yang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159809484",
+        "label": "Guangyuan Weng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5160019348",
+        "label": "Shiyue Cui"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0334-9454",
+        "label": "Zhicong Chen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5160022101",
+        "label": "Catherine Chen"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10747",
+        "is_primary": true,
+        "label": "Disaster Management and Resilience",
+        "score": 0.6479,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10930",
+        "is_primary": false,
+        "label": "Flood Risk Assessment and Management",
+        "score": 0.1688,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13800",
+        "is_primary": false,
+        "label": "Earthquake and Disaster Impact Studies",
+        "score": 0.1464,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-10-27",
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W3007447469",
+      "openalex:W7165043378",
+      "openalex:W4407340896",
+      "openalex:W2016341425",
+      "openalex:W38461284",
+      "openalex:W7135223852",
+      "openalex:W7126466207",
+      "openalex:W2942674846",
+      "openalex:W4390994655",
+      "openalex:W4413904294"
+    ]
   },
   "ids": {
     "arxiv": "2610.37418",
     "doi": "10.48550/arxiv.2610.37418",
-    "openalex": null,
+    "openalex": "W7224082205",
     "pmid": null
   },
   "provenance": {
@@ -99,7 +161,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-29T00:45:06Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005221,
     "llm": {
@@ -187,6 +250,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-27",
+  "updated": "2026-11-03",
   "work_key": "arxiv:2610.37418"
 }

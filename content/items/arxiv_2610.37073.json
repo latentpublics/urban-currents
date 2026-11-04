@@ -98,23 +98,121 @@
         "label": "clustering"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0384j8v12",
+        "label": "The University of Sydney"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02qyf5152",
+        "label": "Indian Institute of Technology Bombay"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2037-0979",
+        "label": "Somwrita Sarkar"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9634-6441",
+        "label": "Chirag Deb"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5160060394",
+        "label": "Carolina Pantoja Mardones"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5160034276",
+        "label": "Anmol Gaur"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3637-893X",
+        "label": "Arunim Anand"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5160017202",
+        "label": "Rashi Shrivastava"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5061759140",
+        "label": "Anusha Roy"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8210-1566",
+        "label": "Arnab Jana"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159988669",
+        "label": "Eswar Rajasekaran"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5160059870",
+        "label": "David Levinson"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10226",
+        "is_primary": true,
+        "label": "Land Use and Ecosystem Services",
+        "score": 0.3186,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.3101,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11014",
+        "is_primary": false,
+        "label": "Regional Economics and Spatial Analysis",
+        "score": 0.1731,
+        "subfield": "2002"
+      }
+    ]
   },
   "first_published": "2026-10-27",
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W4313518893",
+      "openalex:W6965046120",
+      "openalex:W4399378372",
+      "openalex:W4385408299",
+      "openalex:W7024736181",
+      "openalex:W3215155286",
+      "openalex:W2773780066",
+      "openalex:W3133681308",
+      "openalex:W2592390395",
+      "openalex:W3110440649"
+    ]
   },
   "ids": {
     "arxiv": "2610.37073",
     "doi": "10.48550/arxiv.2610.37073",
-    "openalex": null,
+    "openalex": "W7224080420",
     "pmid": null
   },
   "provenance": {
@@ -122,7 +220,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-29T00:45:06Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006053,
     "llm": {
@@ -152,11 +251,11 @@
     "components": {
       "artifact_completeness": 0.0,
       "novelty": 0.0,
-      "relevance": 0.979,
+      "relevance": 0.9794,
       "source_multiplicity": 0.0
     },
-    "headline": 0.3916,
-    "relevance": 0.979
+    "headline": 0.3918,
+    "relevance": 0.9794
   },
   "signals": {
     "code_available": {
@@ -189,27 +288,27 @@
     },
     "sample_size_reported": {
       "basis": "rule",
-      "confidence": "medium",
-      "detail": null,
+      "confidence": "high",
+      "detail": "47 cities",
       "url": null,
-      "value": false
+      "value": true
     },
     "temporal_coverage_reported": {
       "basis": "rule",
-      "confidence": "medium",
-      "detail": null,
+      "confidence": "high",
+      "detail": "1975-2025",
       "url": null,
-      "value": false
+      "value": true
     }
   },
   "summary": {
     "en": {
-      "caveats": "The study relies on 100-m spatial grid cells and global settlement datasets, which may smooth out local micro-variations in land development.",
-      "what": "Using Global Human Settlement Layer data from 1975 to 2025 across India's 50 largest urban agglomerations, the authors developed a percolation framework to define city boundaries by applying unrestricted DBSCAN to 100-m grid cells. The analysis reveals that post-transition connection lengths fell from a median of 650 m to 350 m, while total urban footprint expanded from 447.6 to 1,382.7 km² alongside declining population densities. Land-consumption-to-population-growth ratios (SDG 11.3.1) consistently exceeded 1.0, with land-consumptive growth showing minimal correlation with overall city size.",
-      "why": "This framework provides an objective physical threshold for mapping urban spillovers across administrative borders, demonstrating that spatial coalescence in Indian cities is accelerating at shorter physical distances even as built-up density drops."
+      "caveats": null,
+      "what": "Using percolation analysis across India's 50 largest urban agglomerations from 1975 to 2025, this study measures how separated built-up patches merge. Critical distances required for major settlement-merger events shrank in 47 cities, with the median threshold dropping 46% from 650 m to 350 m. The spatial expansion dynamics invert upon coalescence: footprint growth exceeds built-up surface growth prior to the largest merger (386% vs. 361%), whereas built-up surface expansion surpasses footprint growth immediately following the merger (315% vs. 287%).",
+      "why": "It identifies a distinct spatial inflection point in urban growth, demonstrating that the physical coalescence of settlements fundamentally shifts the dominant mode of land consumption from spatial footprint expansion to built-up infill regardless of total population size."
     }
   },
   "track": "papers",
-  "updated": "2026-10-27",
+  "updated": "2026-11-03",
   "work_key": "arxiv:2610.37073"
 }

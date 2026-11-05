@@ -4,19 +4,42 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Economic and Social Research Institute",
+            "ror": "04q0a4f84"
+          }
+        ],
         "name": "Adam Joachim Shier",
         "openalex": "A5107814252",
         "orcid": "https://orcid.org/0000-0003-2590-4447"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Economic and Social Research Institute",
+            "ror": "04q0a4f84"
+          },
+          {
+            "name": "Trinity College Dublin",
+            "ror": "02tyrky19"
+          }
+        ],
         "name": "Shane Timmons",
         "openalex": "A5035960008",
         "orcid": "https://orcid.org/0000-0002-0200-5927"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Economic and Social Research Institute",
+            "ror": "04q0a4f84"
+          },
+          {
+            "name": "Trinity College Dublin",
+            "ror": "02tyrky19"
+          }
+        ],
         "name": "Pete Lunn",
         "openalex": "A5090834734",
         "orcid": "https://orcid.org/0000-0002-7174-5320"
@@ -26,18 +49,18 @@
     "comment": null,
     "primary_location": {
       "landing_page_url": "https://doi.org/10.1016/j.tranpol.2026.104524",
-      "pdf_url": null,
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0967070X26005342/pdf",
       "source_id": "S186558940",
       "source_name": "Transport Policy",
       "type": "journal",
       "version": "publishedVersion"
     },
-    "publication_date": "2026-11-01",
+    "publication_date": "2026-11-02",
     "repository_urls": [],
-    "title": "Effects of Emissions Labels on Consumer Choice of Lower-Emission Flights"
+    "title": "Effects of emissions labels on consumer choice of lower-emission flights"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-02_10.1016/j.tranpo",
+    "cluster_id": "clu_2026-11-03_10.1016/j.tranpo",
     "members": [
       "doi:10.1016/j.tranpol.2026.104524"
     ],
@@ -46,7 +69,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04q0a4f84",
+        "label": "Economic and Social Research Institute"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02tyrky19",
+        "label": "Trinity College Dublin"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -94,7 +128,7 @@
       }
     ]
   },
-  "first_published": "2026-11-01",
+  "first_published": "2026-11-02",
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [
@@ -125,7 +159,7 @@
       "openalex:W3161606329",
       "openalex:W3176713037",
       "openalex:W4210415844",
-      "openalex:W4230437376",
+      "openalex:W4251353879",
       "openalex:W4281262747",
       "openalex:W4282570192",
       "openalex:W4291280621",
@@ -141,7 +175,18 @@
       "openalex:W4415195145",
       "openalex:W7105842838"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W4401454612",
+      "openalex:W7207882303",
+      "openalex:W3034872367",
+      "openalex:W6928754520",
+      "openalex:W3044940149",
+      "openalex:W7026380714",
+      "openalex:W4281262747",
+      "openalex:W7016013103",
+      "openalex:W3088731843",
+      "openalex:W6991880321"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -152,7 +197,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-04T01:12:03Z",
+    "collected_at": "2026-11-05T01:25:12Z",
     "collectors": [
       "openalex"
     ],
@@ -199,6 +244,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-01",
+  "updated": "2026-11-04",
   "work_key": "doi:10.1016/j.tranpol.2026.104524"
 }

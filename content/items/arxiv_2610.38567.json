@@ -60,23 +60,76 @@
       }
     ],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03m1xdc36",
+        "label": "Indian Institute of Management Kozhikode"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5113078029",
+        "label": "Shreyash Deshmukh"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5136410781",
+        "label": "Shovan Chowdhury"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10055",
+        "is_primary": true,
+        "label": "Diverse Aspects of Tourism Research",
+        "score": 0.8877,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10632",
+        "is_primary": false,
+        "label": "Housing Market and Economics",
+        "score": 0.0286,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11014",
+        "is_primary": false,
+        "label": "Agglomeration and Urban Systems",
+        "score": 0.0149,
+        "subfield": "2002"
+      }
+    ]
   },
   "first_published": "2026-10-28",
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W4399353398",
+      "openalex:W2159720073",
+      "openalex:W4404317449",
+      "openalex:W4400844273",
+      "openalex:W4415350877",
+      "openalex:W3212206122",
+      "openalex:W4320014831",
+      "openalex:W7221191414",
+      "openalex:W7117457192",
+      "openalex:W2886005685"
+    ]
   },
   "ids": {
     "arxiv": "2610.38567",
     "doi": "10.48550/arxiv.2610.38567",
-    "openalex": null,
+    "openalex": "W7224751165",
     "pmid": null
   },
   "provenance": {
@@ -84,7 +137,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-31T00:37:32Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00572,
     "llm": {
@@ -172,6 +226,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-28",
+  "updated": "2026-11-04",
   "work_key": "arxiv:2610.38567"
 }

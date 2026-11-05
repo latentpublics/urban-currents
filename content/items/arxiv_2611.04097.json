@@ -1,0 +1,175 @@
+{
+  "badges": [
+    "code",
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Individual-level trajectories are essential for applications that rely on user-level mobility behavior. Existing mobility-generation approaches face a fundamental tension between individual-level and population-level statistical fidelity: top-down models reproduce aggregate mobility statistics but struggle to guarantee realistic individual trajectories, while bottom-up generators synthesize individual trajectories yet often fail to preserve key population-level mobility regularities after aggregation. In particular, many bottom-up generated populations fail to reproduce the displacement distribution, whose heavy tail is well summarized by a truncated power law. We formalize this phenomenon as the \\textbf{Population-Level Displacement Gap}. To investigate its prevalence, we conduct a systematic evaluation of representative model-driven and data-driven trajectory generators. Our results provide evidence that the Population-Level Displacement Gap is prevalent across diverse generation paradigms. To diagnose this gap, we introduce the \\textbf{Scale Fidelity Profile (SFP)}, a scale-decomposed metric that quantifies discrepancies in trip allocations across spatial scales. SFP indicates that population-level displacement mismatches co-occur with systematic errors in how trips are allocated across spatial scales. Motivated by this observation, we develop \\textbf{ScaleTraj}, an autoregressive Transformer that decomposes location prediction into a Scale Selection Head that decides the movement scale and a Scale-Aware Cell Selection Head that predicts the destination conditioned on the selected scale. Experiments on two datasets show that ScaleTraj reduces the Population-Level Displacement Gap versus model-driven and data-driven baselines, while preserving fidelity. Our code is available at https://github.com/SCU-TrustworthyAI/ScaleTraj.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Yulin Zeng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yiheng Zhao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jun Yan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yuhong Liu",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.04097v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.04097v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-03",
+    "repository_urls": [],
+    "title": "ScaleTraj: Scale-Decomposed Human Trajectory Generation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-03_2611.04097",
+    "members": [
+      "arxiv:2611.04097"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-03",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.04097",
+    "doi": "10.48550/arxiv.2611.04097",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-05T01:25:00Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005207,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2157,
+      "out": 219
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.8,
+      "novelty": 0.0,
+      "relevance": 0.9285,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.5314,
+    "relevance": 0.9285
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://github.com/SCU-TrustworthyAI/ScaleTraj",
+      "value": true
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The authors developed ScaleTraj, an autoregressive Transformer model that separates individual trajectory generation into a scale selection step and a scale-aware destination step. Evaluated across two mobility datasets, the architecture addresses the Population-Level Displacement Gap by systematically evaluating trip allocation discrepancies using a newly introduced Scale Fidelity Profile metric.",
+      "why": "This approach resolves the trade-off between realistic single-person movements and heavy-tailed, population-level displacement distributions, allowing synthetic mobility generators to maintain aggregate fidelity without sacrificing individual trajectory quality."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-03",
+  "work_key": "arxiv:2611.04097"
+}

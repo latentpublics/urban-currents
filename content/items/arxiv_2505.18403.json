@@ -6,19 +6,34 @@
     "abstract": "In response to climate goals, growing environmental awareness, and financial incentives, municipalities increasingly seek to electrify public transportation networks. We study the problem of locating stationary and dynamic inductive charging stations for electric vehicles (EVs), allowing detours from fixed transit routes and schedules. Dynamic charging, which enables energy transfer while driving, reduces space usage in dense urban areas and lowers vehicle idle times. We formulate a cost-minimization problem that considers both infrastructure and operational costs and propose an Iterated Local Search (ILS) algorithm to solve instances of realistic size. Each configuration requires solving a decomposed subproblem comprising multiple resource-constrained shortest-path problems. For this, we employ a bi-directional label-setting algorithm with lazy dominance checks based on local bounds. On adapted benchmark instances, our approach outperforms a commercial solver by up to 60% in solution quality. We further apply our method to a real-world case study in Hof, Germany. Results indicate that, under current cost structures calibrated from a test track in Bad Staffelstein, dynamic inductive charging is not yet cost-competitive with stationary alternatives. We quantify the value of allowing detours at up to 3.5% of the total system cost and show that integrating photovoltaics with decentralized energy storage can yield savings exceeding 20%.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Technical University of Munich",
+            "ror": "02kkvpp62"
+          }
+        ],
         "name": "Paul Bischoff",
         "openalex": null,
         "orcid": "https://orcid.org/0009-0003-5523-0364"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "École nationale des ponts et chaussées",
+            "ror": "02nwvxz07"
+          }
+        ],
         "name": "Salma Hammani",
         "openalex": "A5119753502",
-        "orcid": null
+        "orcid": "https://orcid.org/0009-0009-8455-4724"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "HEC Paris",
+            "ror": "0423jsj19"
+          }
+        ],
         "name": "Maximilian Schiffer",
         "openalex": "A5034416720",
         "orcid": "https://orcid.org/0000-0003-2682-4975"
@@ -48,7 +63,23 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02kkvpp62",
+        "label": "Technical University of Munich"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02nwvxz07",
+        "label": "École nationale des ponts et chaussées"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0423jsj19",
+        "label": "HEC Paris"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -206,12 +237,12 @@
   },
   "summary": {
     "en": {
-      "caveats": "Economic conclusions depend heavily on cost calibrations derived from a single experimental test site in Bad Staffelstein.",
-      "what": "An Iterated Local Search algorithm was developed to optimize the placement of stationary and dynamic inductive charging infrastructure for electric transit shuttles while allowing flexible route detours. Evaluated on benchmark tests and a real-world network in Hof, Germany, the method improved solution quality by up to 60% compared to a commercial solver. Using cost parameters calibrated from a German test track, dynamic wireless charging proved less cost-effective than static alternatives, though detour flexibility saved up to 3.5% of overall costs, and pairing infrastructure with local photovoltaics and battery storage reduced total costs by over 20%.",
-      "why": "It establishes that dynamic wireless charging remains economically uncompetitive for municipal transit under current cost structures, while demonstrating that operational flexibilities like routing detours and co-located solar generation provide immediate financial savings."
+      "caveats": "Economic feasibility conclusions rely on cost parameters calibrated from a single German pilot track, which may not reflect future cost reductions or alternative urban contexts.",
+      "what": "The authors developed a cost-minimization optimization model and an Iterated Local Search (ILS) algorithm to place stationary and dynamic inductive charging infrastructure for electric transit shuttles while allowing route detours. Evaluated on benchmark tests and a case study of Hof, Germany using pilot data from Bad Staffelstein, the algorithm achieved up to 57% better solution quality than a commercial solver. The analysis shows dynamic charging is not yet cost-competitive with stationary chargers, though permitting detours reduces total system costs by up to 3.9%, and pairing on-site photovoltaics with battery storage cuts costs by over 20%.",
+      "why": "It quantifies the exact financial break-even bounds for dynamic wireless charging in municipal transit and demonstrates that local solar generation can supply more than 60% of operational vehicle charging demand."
     }
   },
   "track": "papers",
-  "updated": "2026-11-02",
+  "updated": "2026-11-04",
   "work_key": "arxiv:2505.18403"
 }

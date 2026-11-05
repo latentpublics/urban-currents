@@ -1,0 +1,168 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "In October 2026, social media pages named \\emph{Italia in Piazza} used several platforms to call for demonstrations in Italian cities. The mobilisation brought participants into a rapidly assembled network of Telegram chats, but disagreements over its direction and protest tactics became visible after the first demonstrations. We study how this online environment formed and subsequently fragmented. We first constructed an ecosystem of chats connected to the protests, then compared it with established conspiracy, radical-left and radical-right ecosystems. Few links or observed participants connected the protest ecosystem to these communities. Its messages nevertheless expressed a broader mix of political positions, brought together by a shared focus on the protests. Within this ecosystem, geographically distributed discussions were linked through a small administrative core and connections to TikTok and Instagram. The mobilisation subsequently developed into two distinct spaces: Movimento 17 Ottobre and a re-formed Italia in Piazza chat. The former contained more content classified as promoting violence or hate, while the latter retained part of the original staff and advocated organised, non-violent protest. Their observed populations showed little overlap. After the original chats became inaccessible, discussion was rebuilt on Telegram, while Movimento 17 Ottobre encouraged migration to Signal. The case connects the fragmentation of a shared mobilisation with questions of deplatforming and community governance: the loss of discussion spaces need not end collective activity, while the environments that emerge can develop markedly different norms around protest and violence.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Lorenzo Alvisi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Maurizio Tesconi",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.SI",
+      "cs.CY"
+    ],
+    "comment": "Submitted to ITASEC & SERICS 2027 (Joint National Conference on Cybersecurity)",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.00845v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.00845v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-31",
+    "repository_urls": [],
+    "title": "Rapid Mobilisation and Organisational Fragmentation: The Telegram Ecosystem during the 2026 Italian Student Protests"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-03_2611.00845",
+    "members": [
+      "arxiv:2611.00845"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:network-analysis",
+        "label": "network analysis"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-31",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.00845",
+    "doi": "10.48550/arxiv.2611.00845",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-05T01:25:05Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005852,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2101,
+      "out": 300
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.925,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.37,
+    "relevance": 0.925
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings rely on observational data from a single protest movement within one country and may not generalize to digital mobilizations with different institutional contexts.",
+      "what": "The authors tracked the formation and split of a Telegram network created during nationwide student demonstrations in Italy in October 2026. Network mapping showed minimal participant or link overlap with existing radical-left, radical-right, or conspiracy Telegram groups, despite sharing a broad mix of political stances coordinated via TikTok, Instagram, and a small administrative core. Following internal tactical disputes, the network split into two distinct spaces: Movimento 17 Ottobre, which exhibited higher rates of violent and hate speech while encouraging a shift to Signal, and a reformed Italia in Piazza chat focused on non-violent organization.",
+      "why": "It demonstrates that digital protest mobilizations can rapidly self-assemble without relying on established extremist digital networks, and shows how platform moderation and internal splits push sub-factions toward higher radicalization on alternative apps."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-31",
+  "work_key": "arxiv:2611.00845"
+}

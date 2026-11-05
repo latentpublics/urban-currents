@@ -62,23 +62,91 @@
         "label": "convolutional neural network"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02qyf5152",
+        "label": "Indian Institute of Technology Bombay"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0168r3w48",
+        "label": "University of California San Diego"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5160186581",
+        "label": "Mohammad Usaid"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5160218355",
+        "label": "Deepak Silaych"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5160202742",
+        "label": "Hrithik Mhatre"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6186-4513",
+        "label": "Archak Mittal"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": true,
+        "label": "Traffic control and management",
+        "score": 0.8682,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.1186,
+        "subfield": "2215"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10331",
+        "is_primary": false,
+        "label": "Video Surveillance and Tracking Methods",
+        "score": 0.0024,
+        "subfield": "1707"
+      }
+    ]
   },
   "first_published": "2026-10-28",
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W3200333070",
+      "openalex:W4360605051",
+      "openalex:W7221815155",
+      "openalex:W4410779340",
+      "openalex:W3202433055",
+      "openalex:W7221596918",
+      "openalex:W4206317563",
+      "openalex:W7213547020",
+      "openalex:W7055816243",
+      "openalex:W2795088576"
+    ]
   },
   "ids": {
     "arxiv": "2610.38497",
     "doi": "10.48550/arxiv.2610.38497",
-    "openalex": null,
+    "openalex": "W7224872505",
     "pmid": null
   },
   "provenance": {
@@ -86,7 +154,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-31T00:37:32Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005953,
     "llm": {
@@ -174,6 +243,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-28",
+  "updated": "2026-11-04",
   "work_key": "arxiv:2610.38497"
 }

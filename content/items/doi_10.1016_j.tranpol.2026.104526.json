@@ -4,19 +4,38 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Université de Toulon",
+            "ror": "02m9kbe37"
+          },
+          {
+            "name": "Toulon Var Technologies (France)",
+            "ror": "009n2kd47"
+          }
+        ],
         "name": "Gabriel Figueiredo de Oliveira",
         "openalex": "A5160372474",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Kedge Business School",
+            "ror": "00wk3s644"
+          }
+        ],
         "name": "Pierre Cariou",
         "openalex": "A5014122703",
         "orcid": "https://orcid.org/0000-0001-6658-5804"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Kedge Business School",
+            "ror": "00wk3s644"
+          }
+        ],
         "name": "Jason Monios",
         "openalex": "A5004879798",
         "orcid": "https://orcid.org/0000-0002-4916-9718"
@@ -26,7 +45,7 @@
     "comment": null,
     "primary_location": {
       "landing_page_url": "https://doi.org/10.1016/j.tranpol.2026.104526",
-      "pdf_url": null,
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0967070X26005366/pdf",
       "source_id": "S186558940",
       "source_name": "Transport Policy",
       "type": "journal",
@@ -37,7 +56,7 @@
     "title": "Spatial spillover effects in European dry bulk ports"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-02_10.1016/j.tranpo",
+    "cluster_id": "clu_2026-11-03_10.1016/j.tranpo",
     "members": [
       "doi:10.1016/j.tranpol.2026.104526"
     ],
@@ -46,7 +65,23 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02m9kbe37",
+        "label": "Université de Toulon"
+      },
+      {
+        "confidence": null,
+        "id": "ror:009n2kd47",
+        "label": "Toulon Var Technologies (France)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00wk3s644",
+        "label": "Kedge Business School"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -124,7 +159,18 @@
       "openalex:W4404919554",
       "openalex:W4412681397"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W631051713",
+      "openalex:W3127436159",
+      "openalex:W2969881940",
+      "openalex:W7074612658",
+      "openalex:W2800378654",
+      "openalex:W7001052669",
+      "openalex:W2409875577",
+      "openalex:W632340526",
+      "openalex:W3195692428",
+      "openalex:W7061726543"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -135,7 +181,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-04T01:12:03Z",
+    "collected_at": "2026-11-05T01:25:12Z",
     "collectors": [
       "openalex"
     ],
@@ -182,6 +228,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-01",
+  "updated": "2026-11-04",
   "work_key": "doi:10.1016/j.tranpol.2026.104526"
 }

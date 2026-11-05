@@ -1,0 +1,168 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Traffic incidents involving ambulances and fire engines during emergency-response driving can have serious consequences. Although autonomous driving technologies may reduce workload and improve safety, their introduction into emergency services requires consideration of first responders' trust, willingness to ride (WTR), and perceptions of responsibility. We surveyed 34 fire service personnel from a single fire station in Himeji, Japan, to examine their evaluations of autonomous ambulances and responsibility attribution under non-emergency and emergency driving conditions. Emergency driving was associated with lower perceived usefulness for improving safety, trust, and WTR, as well as greater anxiety. In contrast, responsibility attribution remained largely stable, with 30 participants ($88.2\\%$) selecting the same primary responsible party across conditions and the onboard crew most frequently selected in both. Among these 30 participants, 26 ($86.7\\%$) also assigned the same responsibility share. Open-ended responses revealed concerns about system reliability, the complexity of emergency driving, and the need for human judgment, as well as considerations regarding operator and organizational responsibility. These findings suggest that acceptance of autonomous ambulances is sensitive to driving conditions, while responsibility judgments may also reflect perceived professional roles and responsibilities.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Hirotake Yamazoe",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shingo Yamaguchi",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.HC",
+      "cs.CY"
+    ],
+    "comment": "The 2nd International Workshop on Trust and Blame in Multi-Person Multi-Agent Societies (TBSA_2nd) in conjunction with HAI 2026, 6 pages, 2 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.01132v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.01132v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-10-31",
+    "repository_urls": [],
+    "title": "Acceptance and Responsibility Attribution Toward Autonomous Ambulances Across Driving Conditions: A Preliminary Survey of Fire Service Personnel"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-03_2611.01132",
+    "members": [
+      "arxiv:2611.01132"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:survey",
+        "label": "survey"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-10-31",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.01132",
+    "doi": "10.48550/arxiv.2611.01132",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-05T01:25:05Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005387,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2007,
+      "out": 264
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9268,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3707,
+    "relevance": 0.9268
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings derive from a small sample of 34 emergency personnel at a single fire station in Japan, limiting generalizability to other jurisdictions or regional fire services.",
+      "what": "A survey of 34 fire service personnel from a single station in Himeji, Japan, evaluated acceptance and accountability for autonomous ambulances under emergency versus non-emergency conditions. Emergency driving led to reduced trust, lower willingness to ride, diminished perceived safety usefulness, and heightened anxiety. Accountability assignments remained largely static despite driving context, with 88.2% of respondents designating the same primary responsible party—most frequently the onboard crew—across both scenarios.",
+      "why": "This provides initial empirical evidence that first responder trust in autonomous emergency vehicles drops during high-stress operations, while perceived human accountability remains rigid regardless of the driving environment."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-10-31",
+  "work_key": "arxiv:2611.01132"
+}

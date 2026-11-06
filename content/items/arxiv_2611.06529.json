@@ -1,0 +1,185 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Human travel behaviour is characterised by high temporal and spatial regularity, as demonstrated by the Exploration and Preferential Return (EPR) mechanism, whereby individuals alternate between exploring new locations and preferentially returning to previously visited places. Yet, existing evidence is based on aggregated mobility data that cannot distinguish short trips or separate active mobility (i.e., walking and biking) from other mobility modes. This limits our ability to assess the benefits of walking activities and proximity-based policies such as the 15-minute city. Here, we analyse the spatial distribution and duration of walking habits of 1,318 participants, tracked during a 4-week time use survey in major Swiss cities - which are very close to the 15-minute city model. We find that walking activity is highly concentrated around individuals' home and work locations. These two attractors create walking patterns that are fundamentally different from other transport modes, which are instead used for longer trips and to connect home-workplace. We then introduce a dual-center EPR model, with empirically derived parameters, to simulate the decaying probability of walking away from the centers. Combining empirical data and the EPR framework, we find that groups with higher walking times show a stronger tendency to take long-distance walks and explore more destinations. In general, walking behavior reflects both individual circumstances and residential context: walking durations are shorter among people without a public transport pass, car owners, and residents of low-density rural areas. These findings provide a basis for more targeted assessments of walkability and active-mobility-oriented urban design.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Guo-Shiuan Lin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Martin Hendrick",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Maider Llaguno-Munitxa",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Gabriele Manoli",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.06529v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.06529v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-04",
+    "repository_urls": [],
+    "title": "Emergent regularity of walking patterns: evidence from Swiss cities"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-04_2611.06529",
+    "members": [
+      "arxiv:2611.06529"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:travel-survey",
+        "label": "travel survey"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.06529",
+    "doi": "10.48550/arxiv.2611.06529",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-06T01:28:26Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005849,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2135,
+      "out": 294
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9889,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3956,
+    "relevance": 0.9889
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings reflect cities that already closely mirror 15-minute city conditions, which may limit direct transferability to car-dependent or spatially expansive urban environments.",
+      "what": "Using a four-week time-use survey of 1,318 tracked participants across major Swiss cities, the study evaluates the spatial distribution and duration of individual walking routines. The authors developed a dual-center Exploration and Preferential Return (EPR) model incorporating home and work anchor points to simulate walking decay patterns. The results demonstrate that walking is heavily anchored around these two centers, with shorter durations observed among car owners, individuals without public transit passes, and residents of low-density rural areas.",
+      "why": "It adapts human mobility modeling specifically to active transportation by introducing dual anchor locations, demonstrating that walking dynamics follow distinct spatial decay mechanisms compared to motorized modes."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-04",
+  "work_key": "arxiv:2611.06529"
+}

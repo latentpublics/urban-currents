@@ -56,23 +56,91 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0304hq317",
+        "label": "Leibniz University Hannover"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00vtgdb53",
+        "label": "University of Glasgow"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5117216994",
+        "label": "Mireille Fangueng"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0895-9243",
+        "label": "Frank Thiemann"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6656-8809",
+        "label": "Monika Sester"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9796-6682",
+        "label": "Philipp Otto"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11911",
+        "is_primary": true,
+        "label": "Spatial and Panel Data Analysis",
+        "score": 0.9473,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10770",
+        "is_primary": false,
+        "label": "Soil Geostatistics and Mapping",
+        "score": 0.0063,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11830",
+        "is_primary": false,
+        "label": "Point processes and geometric inequalities",
+        "score": 0.006,
+        "subfield": "2604"
+      }
+    ]
   },
   "first_published": "2026-10-29",
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W1886274774",
+      "openalex:W4323652829",
+      "openalex:W7164734319",
+      "openalex:W3196032333",
+      "openalex:W2059215788",
+      "openalex:W3008199986",
+      "openalex:W4383314756",
+      "openalex:W127091678",
+      "openalex:W7097134287",
+      "openalex:W2187447325"
+    ]
   },
   "ids": {
     "arxiv": "2610.40513",
     "doi": "10.48550/arxiv.2610.40513",
-    "openalex": null,
+    "openalex": "W7224863577",
     "pmid": null
   },
   "provenance": {
@@ -80,7 +148,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-10-31T00:37:32Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005255,
     "llm": {
@@ -168,6 +237,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-29",
+  "updated": "2026-11-05",
   "work_key": "arxiv:2610.40513"
 }

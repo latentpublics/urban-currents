@@ -1,0 +1,185 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban services are unevenly distributed across the city, yet it is unclear when their joint presence signals fragility and when it instead outlines a neighbourhood's vocation. For Bologna and Florence, we integrate Foursquare and OpenStreetMap points of interest with Sentinel-2-derived green indicators based on the 3-30-300 rule, cluster urban areas accordingly, and benchmark the clusters against the demographic, social, economic and composite fragility indices produced by the municipal statistical offices, which are exogenous to the analysis. In both cities, we identify a subset of infrastructures, termed AGORA (Arts, Green environments, and Open Routes for Access and mobility), whose joint provision is associated with lower fragility. The AGORA Alignment score (AA), based on the rank correlation between AGORA endowment and composite fragility, indicates full alignment in Florence (AA = 1.00) and strong but incomplete alignment in Bologna (AA = 0.80). The remaining service categories instead show wide and heterogeneous distributions: they differentiate areas without tracking fragility and can be interpreted as expressions of urban vocations. The least fragile cluster, the only one with full AGORA endowment, hosts just 3.3% of residents in Bologna and 6.3% in Florence. The framework offers a procedure transferable to other contexts and identifies the expansion of AGORA infrastructures as a candidate lever for reducing fragility without altering existing vocations.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Eleonora Andreotti",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Munazza Usmani",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alice Barsanti",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Maurizio Napolitano",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.06289v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.06289v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-04",
+    "repository_urls": [],
+    "title": "AGORA cities: the hidden infrastructure shaping urban fragility"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-04_2611.06289",
+    "members": [
+      "arxiv:2611.06289"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:poi",
+        "label": "points of interest"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:clustering",
+        "label": "clustering"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.06289",
+    "doi": "10.48550/arxiv.2611.06289",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-06T01:28:26Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006263,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2069,
+      "out": 351
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9691,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3876,
+    "relevance": 0.9691
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The AGORA alignment framework relies on correlation with local municipal fragility indices, which may vary in definition and data quality across different administrative contexts.",
+      "what": "The authors integrated points of interest from Foursquare and OpenStreetMap with Sentinel-2 vegetation indicators based on the 3-30-300 rule for Bologna and Florence, benchmarking spatial clusters against municipal statistical office fragility indices. They identified a core set of features—termed AGORA (Arts, Green environments, and Open Routes for Access and mobility)—whose concurrent presence tracks lower composite fragility, achieving an alignment score of 1.00 in Florence and 0.80 in Bologna. However, the least fragile cluster containing the complete AGORA suite accommodates only 3.3% of Bologna's population and 6.3% of Florence's.",
+      "why": "It separates general urban service mix, which reflects localized neighborhood functionality, from a specific baseline infrastructural trialled to reduce urban fragility across cities."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-04",
+  "work_key": "arxiv:2611.06289"
+}

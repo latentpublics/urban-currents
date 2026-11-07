@@ -1,0 +1,181 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "A sequential engineering framework is presented for urban drone delivery, linking hub location, route planning, mission-specific vehicle sizing, and energy and operating cost assessment. Aggregate origin-destination demand is assumed known a priori. For each hub configuration, the maximum required link distance is minimized, and feasible routes that return to their departure hubs are generated. Route frequencies are determined using mixed-integer linear programming to satisfy delivery demand. The resulting range requirement guides motor-propeller selection and battery sizing to minimize vehicle takeoff mass. Flight distances and frequencies, cruise performance, and vehicle dimensions are combined to estimate monthly energy consumption, fleet size, hub area, staffing, and operating cost. The framework is applied to district-level Seoul delivery data. Increasing the number of hubs from one to four reduces the required range from 30.6 to 21.9 km and vehicle takeoff mass from 8.12 to 6.12 kg. Despite a 21.5% increase in total flight distance, monthly flight energy consumption decreases by 13.1%, from 15.2 to 13.2 MWh. Battery replacement is the largest vehicle-related operating expense, while operating cost per delivery increases from USD 1.18 to USD 2.20 because of higher rent and labor costs at the hubs. Among the designs evaluated, range-matched vehicles achieve the lowest operating cost in the two- and four-hub networks; a longer-range vehicle is least costly in the three-hub network. Sensitivity analyses further examine the effects of delivery demand and operating assumptions. The results demonstrate that reductions in vehicle mass and energy consumption do not necessarily lead to lower system operating cost.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Hong-Su Nam",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Seokhwan Lee",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jungwoo Cho",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hak-Tae Lee",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.RO",
+      "physics.soc-ph"
+    ],
+    "comment": "16 pages, 16 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.07808v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.07808v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-05",
+    "repository_urls": [],
+    "title": "A Sequential Framework for Urban Drone Delivery: Network Design, Vehicle Sizing, and Energy and Cost Assessment"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-05_2611.07808",
+    "members": [
+      "arxiv:2611.07808"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q8684",
+        "label": "Seoul",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.07808",
+    "doi": "10.48550/arxiv.2611.07808",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-07T00:49:44Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006272,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2213,
+      "out": 328
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9679,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3872,
+    "relevance": 0.9679
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model relies on known aggregate origin-destination demand and assumes drones always return to their departure hub after delivery.",
+      "what": "The authors developed a sequential engineering framework that integrates hub location, route planning, payload-matched drone sizing, and energy and cost estimation using district-level delivery data from Seoul. Expanding a single-hub network to four hubs reduced the required flight range from 30.6 to 21.9 km and takeoff mass from 8.12 to 6.12 kg, cutting monthly flight energy use by 13.1% (15.2 to 13.2 MWh) despite a 21.5% increase in total flight distance. However, additional hub rent and labor raised the operating cost per delivery from USD 1.18 to USD 2.20, with battery replacements forming the primary vehicle-level expense.",
+      "why": "The study demonstrates that optimizing drone size to cut vehicle mass and energy consumption can backfire economically, as decentralizing hub infrastructure adds fixed overhead costs that outweigh energy savings."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-05",
+  "work_key": "arxiv:2611.07808"
+}

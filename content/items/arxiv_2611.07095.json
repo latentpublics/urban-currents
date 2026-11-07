@@ -1,0 +1,161 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Public seating can support walking by providing opportunities to rest at useful positions along complete journeys. We introduce a route-based framework that assesses nearby seating, access to everyday destinations, and whether rests are well spaced along routes. One method finds the shortest route that does not exceed a chosen distance without rest; another allows longer stretches but adds a cost expressed as equivalent walking distance. We apply the framework to Mannheim, Germany. With a 1,000 m travel budget and a 500 m limit on walking without an opportunity to rest, 99.5% of older residents in Feudenheim lived within 500 m of a rest, yet only 33.5% could reach at least one destination in each of five categories (food shops, pharmacies, primary healthcare, public transport, and community services) on ordinary shortest routes meeting this limit. Finding alternative routes with sufficiently spaced rests increased this share to 61.4%; allowing longer stretches with an added cost raised it to 76.2%, compared with 89.7% when resting needs were ignored. Across Mannheim, 20.2% of older residents lost access to a reachable category when routes required a resting opportunity every 500 m, versus 7.1% when longer stretches were allowed at extra cost. Compared with the shortest physical distance, the least burdensome routes incurred extra costs from seating gaps: a median of 7.3 m of equivalent walking distance across city areas (90th percentile: 45.9 m). Better-placed seating could reduce this burden without changing street layouts. These measures help planners identify deficiencies, test improvements and guide route choices.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Nir Fulman",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Himshikhar Mazumdar",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.07095v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.07095v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-04",
+    "repository_urls": [],
+    "title": "REST: Routing with En-route Seating Thresholds for pedestrian accessibility"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-05_2611.07095",
+    "members": [
+      "arxiv:2611.07095"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-04",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.07095",
+    "doi": "10.48550/arxiv.2611.07095",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-07T00:49:44Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00677,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2197,
+      "out": 386
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9868,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3947,
+    "relevance": 0.9868
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The authors developed a route-based framework that evaluates pedestrian destination accessibility under specific resting constraints by incorporating maximum unseated distance thresholds and penalty costs for longer stretches without public benches. Applying this model to Mannheim, Germany, revealed that while 99.5% of older adults in the Feudenheim neighborhood lived within 500 m of a seat, ordinary shortest paths with a 500 m unseated limit enabled only 33.5% of them to reach five essential destination types within a 1,000 m travel budget. Rerouting to paths with adequate seating increased this access to 61.4%, and incorporating seating gap penalty costs raised it to 76.2%, compared to 89.7% baseline access when resting needs were unconstrained. Across the entire city, enforcing a strict 500 m unseated limit cut access to at least one reachable destination category for 20.2% of older residents, whereas accounting for seating gaps as an extra walking burden median of 7.3 m per route reduced that loss to 7.1%.",
+      "why": "The framework demonstrates that conventional distance-based accessibility metrics overestimate practical walking access for mobility-constrained populations by ignoring seating distribution, proving that strategically locating benches can recover lost urban access without physical street redesigns."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-04",
+  "work_key": "arxiv:2611.07095"
+}

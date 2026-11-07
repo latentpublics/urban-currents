@@ -1,0 +1,294 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Abstract Accurate geolocation of Early Years Providers in England is important for understanding the spatial distribution of childcare provision and for supporting service planning, equity monitoring, and linkage to other administrative and spatial datasets. However, provider records in the Ofsted Childcare Providers and Inspections dataset do not routinely include Unique Property Reference Numbers, requiring retrospective address matching. We evaluated five address-matching approaches for assigning Unique Property Reference Numbers to 6,442 Early Years Provider records from the 2017 Ofsted register extract. Preprocessing was standardised across methods. A stratified validation subset enriched for agreement, disagreement, and candidate ambiguity was manually reviewed to assign AddressBase® Premium reference identifiers for 585 records, of which 565 had a definitive AddressBase® Premium identifier. Linkage was defined as whether a method returned at least one Unique Property Reference Number. For methods returning a single identifier, matching performance was assessed using precision, recall, and the F1 score against the AddressBase® Premium reference. For the Ordnance Survey Match & Cleanse API, evaluation used a candidate-set match definition rather than deterministic selection of a single final identifier. Because the approaches differed in output structure and decision rules, results should be interpreted as a comparison of practical UPRN linkage workflows rather than a like-for-like comparison of algorithms. Within the validation subset, linkage coverage ranged from 51% to 99%. Among single-output methods, ASSIGN 1 and the bespoke SQL workflow provided the most balanced precision–recall profile. High linkage coverage did not guarantee correct matching. Routine inclusion of Unique Property Reference Numbers within childcare provider registers would strengthen the spatial visibility of early years provision and support more reliable planning and cross-sector linkage.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University College London",
+            "ror": "02jx3x895"
+          }
+        ],
+        "name": "Joana Cruz",
+        "openalex": "A5080194021",
+        "orcid": "https://orcid.org/0000-0001-5431-0520"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Leeds",
+            "ror": "024mrxd33"
+          }
+        ],
+        "name": "Bin Chi",
+        "openalex": "A5010702063",
+        "orcid": "https://orcid.org/0000-0002-5815-7428"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University College London",
+            "ror": "02jx3x895"
+          }
+        ],
+        "name": "Ed Lowther",
+        "openalex": "A5114424266",
+        "orcid": "https://orcid.org/0009-0007-0556-5245"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Ordnance Survey",
+            "ror": "02xqyv944"
+          }
+        ],
+        "name": "Peat Allan",
+        "openalex": "A5157502518",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University College London",
+            "ror": "02jx3x895"
+          }
+        ],
+        "name": "Pia Hardelid",
+        "openalex": "A5048530545",
+        "orcid": "https://orcid.org/0000-0002-0154-1306"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1007/s12061-026-10056-5",
+      "pdf_url": null,
+      "source_id": "S53719608",
+      "source_name": "Applied Spatial Analysis and Policy",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-11-05",
+    "repository_urls": [],
+    "title": "Improving the Property-Level Identification of Early Years Providers in England: A Comparison of Practical UPRN Linkage Approaches"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-05_10.1007/s12061-0",
+    "members": [
+      "doi:10.1007/s12061-026-10056-5"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02jx3x895",
+        "label": "University College London"
+      },
+      {
+        "confidence": null,
+        "id": "ror:024mrxd33",
+        "label": "University of Leeds"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02xqyv944",
+        "label": "Ordnance Survey"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5431-0520",
+        "label": "Joana Cruz"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5815-7428",
+        "label": "Bin Chi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0007-0556-5245",
+        "label": "Ed Lowther"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5157502518",
+        "label": "Peat Allan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0154-1306",
+        "label": "Pia Hardelid"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11719",
+        "is_primary": true,
+        "label": "Data Quality and Management",
+        "score": 1.0,
+        "subfield": "1710"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": false,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.0,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11539",
+        "is_primary": false,
+        "label": "Survey Methodology and Nonresponse",
+        "score": 0.0,
+        "subfield": "3312"
+      }
+    ]
+  },
+  "first_published": "2026-11-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2020311437",
+      "openalex:W2482683773",
+      "openalex:W2794391621",
+      "openalex:W2883029514",
+      "openalex:W2915075871",
+      "openalex:W3196997314",
+      "openalex:W4200013815",
+      "openalex:W4220931670",
+      "openalex:W4317538250",
+      "openalex:W4394931494",
+      "openalex:W4398784024",
+      "openalex:W4400748885",
+      "openalex:W4405821919"
+    ],
+    "related_works": [
+      "openalex:W4200013815",
+      "openalex:W4389090024",
+      "openalex:W3111207108",
+      "openalex:W2991047955",
+      "openalex:W2521227110",
+      "openalex:W4407744773",
+      "openalex:W4417134145",
+      "openalex:W4413790744",
+      "openalex:W4412818840",
+      "openalex:W2181761791"
+    ]
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1007/s12061-026-10056-5",
+    "openalex": "W7220474499",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-07T00:49:58Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.006365,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2227,
+      "out": 336
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-07T00:49:58Z",
+    "doi": "10.1007/s12061-026-10056-5",
+    "journal": "Applied Spatial Analysis and Policy",
+    "source_id": "S53719608",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "585 records",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Because the evaluated methods differed in decision rules and output formats, the results represent a practical comparison of linkage workflows rather than a controlled, algorithmic baseline.",
+      "what": "The study evaluated five address-matching methods to assign Unique Property Reference Numbers (UPRNs) to 6,442 Early Years Provider records from England's 2017 Ofsted register. A manually reviewed validation subset of 585 records was used to evaluate performance against AddressBase Premium identifiers, revealing that linkage coverage varied across methods from 51% to 99%. Among single-output methods, ASSIGN 1 and a custom SQL workflow produced the best balance between precision and recall.",
+      "why": "This research provides a benchmarked workflow for accurately geocoding administrative childcare registers that currently lack standardized spatial identifiers, highlighting that high match rates often mask incorrect property-level linkages."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-05",
+  "work_key": "doi:10.1007/s12061-026-10056-5"
+}

@@ -90,8 +90,80 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04t5xt781",
+        "label": "Northeastern University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05kacka20",
+        "label": "Istituto di Scienza e Tecnologie dell'Informazione \"Alessandro Faedo\""
+      },
+      {
+        "confidence": null,
+        "id": "ror:01j33xk10",
+        "label": "Fondazione Bruno Kessler"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0190ak572",
+        "label": "New York University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03aydme10",
+        "label": "Scuola Normale Superiore"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5159809484",
+        "label": "Guangyuan Weng"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5160363008",
+        "label": "Lin Chen"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-0587-3524",
+        "label": "Ciro Beneduce"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5160362738",
+        "label": "Giovanni Mauro"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6964-9877",
+        "label": "Massimiliano Luca"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8967-1967",
+        "label": "Takahiro Yabe"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1275-2333",
+        "label": "Bruno Lepri"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1547-6007",
+        "label": "Luca Pappalardo"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2894-1024",
+        "label": "Esteban Moro"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -102,18 +174,54 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10883",
+        "is_primary": true,
+        "label": "Ethics and Social Impacts of AI",
+        "score": 0.7056,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10203",
+        "is_primary": false,
+        "label": "Recommender Systems and Techniques",
+        "score": 0.1848,
+        "subfield": "1710"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0446,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-10-30",
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W7119529442",
+      "openalex:W4416547766",
+      "openalex:W6979772637",
+      "openalex:W2406388282",
+      "openalex:W2753354382",
+      "openalex:W3142170921",
+      "openalex:W6996574625",
+      "openalex:W4239284082",
+      "openalex:W7163022005",
+      "openalex:W6884894254"
+    ]
   },
   "ids": {
     "arxiv": "2610.41911",
     "doi": "10.48550/arxiv.2610.41911",
-    "openalex": null,
+    "openalex": "W7225125523",
     "pmid": null
   },
   "provenance": {
@@ -121,7 +229,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-03T02:52:30Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005464,
     "llm": {
@@ -209,6 +318,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-30",
+  "updated": "2026-11-06",
   "work_key": "arxiv:2610.41911"
 }

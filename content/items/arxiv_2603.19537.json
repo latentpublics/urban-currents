@@ -1,0 +1,234 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "ABSTRACT Governing equations are fundamental for describing and predicting dynamic urban geographic systems. Unlike physical systems guided by first principles, urban spatiotemporal phenomena emerge from coupled geographic processes that lack deterministic theoretical foundations, making the discovery of governing equations elusive and largely heuristic. Spatiotemporal dynamics in urban systems are often observed as sequential snapshots of spatial distribution, while the spatial interactions, or the flows, that cause such dynamics are often implied or unknown. In this study, we propose a general differential equation formalism that decomposes urban dynamics into a spatial interaction process and a self‐dynamic component. Building on this formalism, we introduce the Urban Discovery Framework (U‐Discovery), which integrates hypothesis generation, neural fitting, and governing equation identification for discovering the governing equations of spatial interaction. U‐Discovery leverages Large Language Models and literature‐based reasoning to propose differential equation candidates. Each candidate is calibrated from the observed spatiotemporal dynamics using a neural fitting method. The candidates are evaluated and ranked based on the fitting error and mathematical complexity. A synthetic experiment using simulated dynamics demonstrates that U‐Discovery can identify the governing equation from a candidate set. Empirical experiments examine real‐world active population dynamics in Hennepin County, Minnesota. Drawing on both literature‐derived scientific priors and broader knowledge from LLMs, U‐Discovery proposes original candidate equations and identifies those that best reproduce observed population dynamics. The discovered equations show an ability to recover the underlying mobility flows, while their varying performance across spatial scales suggests that different interaction mechanisms may dominate at different scales.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Minnesota",
+            "ror": "017zqws13"
+          }
+        ],
+        "name": "Zhongfu Ma",
+        "openalex": "A5100294916",
+        "orcid": "https://orcid.org/0009-0008-4416-5233"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Minnesota",
+            "ror": "017zqws13"
+          }
+        ],
+        "name": "Di Zhu",
+        "openalex": "A5130375316",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1111/tgis.70441",
+      "pdf_url": null,
+      "source_id": "S859791518",
+      "source_name": "Transactions in GIS",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-11-01",
+    "repository_urls": [],
+    "title": "Discovering Governing Spatial Interaction Equations in Dynamic Urban Systems"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-06_2603.19537",
+    "members": [
+      "arxiv:2603.19537"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:017zqws13",
+        "label": "University of Minnesota"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0008-4416-5233",
+        "label": "Zhongfu Ma"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5130375316",
+        "label": "Di Zhu"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": true,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.7837,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.1267,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11911",
+        "is_primary": false,
+        "label": "Spatial and Panel Data Analysis",
+        "score": 0.0249,
+        "subfield": "2002"
+      }
+    ]
+  },
+  "first_published": "2026-11-01",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2965341826",
+      "openalex:W4395686609",
+      "openalex:W4396570446",
+      "openalex:W4406317034",
+      "openalex:W4416131329"
+    ],
+    "related_works": [
+      "openalex:W7116067921",
+      "openalex:W2048074433",
+      "openalex:W4387301781",
+      "openalex:W7124446245",
+      "openalex:W1554171007",
+      "openalex:W7037382908",
+      "openalex:W4401839024",
+      "openalex:W7168580457",
+      "openalex:W2015607681",
+      "openalex:W2074062497"
+    ]
+  },
+  "ids": {
+    "arxiv": "2603.19537",
+    "doi": "10.1111/tgis.70441",
+    "openalex": "W7140074305",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-08T00:22:48Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005476,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2103,
+      "out": 258
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-08T00:22:48Z",
+    "doi": "10.1111/tgis.70441",
+    "journal": "Transactions in GIS",
+    "source_id": "S859791518",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical findings show scale-dependent performance, indicating that specific spatial interaction equations may not generalize across different spatial aggregations.",
+      "what": "This study introduces U-Discovery, a framework that discovers governing spatial interaction equations for dynamic urban systems by combining spatial differential equation formalisms, Large Language Model hypothesis generation, and neural parameter fitting. The authors validated the method using synthetic dynamic benchmarks and empirical active population observations in Hennepin County, Minnesota. The model successfully identifies governing equations that reconstruct unobserved underlying mobility flows, though performance varies across different spatial scales.",
+      "why": "It enables the automated discovery of mathematical governing equations for urban dynamic processes directly from spatial snapshots, bypassing the need for explicit mobility flow datasets."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-01",
+  "work_key": "arxiv:2603.19537"
+}

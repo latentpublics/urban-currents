@@ -4,13 +4,27 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "National University of Singapore",
+            "ror": "01tgyzw49"
+          },
+          {
+            "name": "Institute of Operations Research and Analytics",
+            "ror": "03gr3d554"
+          }
+        ],
         "name": "Anran Dai",
         "openalex": "A5160751364",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "National University of Singapore",
+            "ror": "01tgyzw49"
+          }
+        ],
         "name": "Kaidi Yang",
         "openalex": "A5075233338",
         "orcid": "https://orcid.org/0000-0001-5120-2866"
@@ -31,7 +45,7 @@
     "title": "Bus bunching mitigation through modular technology: A unified strategy with bus splitting and modular substitution"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-05_10.1016/j.trc.20",
+    "cluster_id": "clu_2026-11-06_10.1016/j.trc.20",
     "members": [
       "doi:10.1016/j.trc.2026.106111"
     ],
@@ -40,7 +54,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01tgyzw49",
+        "label": "National University of Singapore"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03gr3d554",
+        "label": "Institute of Operations Research and Analytics"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -119,7 +144,18 @@
       "openalex:W7125903437",
       "openalex:W7133188965"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W4320489247",
+      "openalex:W4387511159",
+      "openalex:W4415179911",
+      "openalex:W4310346538",
+      "openalex:W7223250291",
+      "openalex:W2601437746",
+      "openalex:W3015311992",
+      "openalex:W649141203",
+      "openalex:W2905889407",
+      "openalex:W1821040566"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -130,7 +166,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-07T00:49:55Z",
+    "collected_at": "2026-11-08T00:22:47Z",
     "collectors": [
       "openalex"
     ],
@@ -177,6 +213,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-05",
+  "updated": "2026-11-07",
   "work_key": "doi:10.1016/j.trc.2026.106111"
 }

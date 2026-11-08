@@ -51,23 +51,91 @@
         "label": "survey"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0151bmh98",
+        "label": "University of Hyogo"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9995-4346",
+        "label": "Hirotake Yamazoe"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0579-8501",
+        "label": "Shingo Yamaguchi"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10525",
+        "is_primary": true,
+        "label": "Human-Automation Interaction and Safety",
+        "score": 0.9956,
+        "subfield": "3307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10709",
+        "is_primary": false,
+        "label": "Social Robot Interaction and HRI",
+        "score": 0.0021,
+        "subfield": "3207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.0003,
+        "subfield": "2203"
+      }
+    ]
   },
   "first_published": "2026-10-31",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W1993257678",
+      "openalex:W2077026923",
+      "openalex:W2294390902",
+      "openalex:W2874244191",
+      "openalex:W2915959791",
+      "openalex:W2980015896",
+      "openalex:W3010810745",
+      "openalex:W4366828965",
+      "openalex:W4382561809",
+      "openalex:W4385278773",
+      "openalex:W4389827878",
+      "openalex:W4391754419",
+      "openalex:W4411711785",
+      "openalex:W7092364788"
+    ],
+    "related_works": [
+      "openalex:W7212318347",
+      "openalex:W2892461191",
+      "openalex:W4411711785",
+      "openalex:W2874244191",
+      "openalex:W4220766579",
+      "openalex:W2980015896",
+      "openalex:W6903765795",
+      "openalex:W4307717790",
+      "openalex:W4382561809",
+      "openalex:W7167461354"
+    ]
   },
   "ids": {
     "arxiv": "2611.01132",
     "doi": "10.48550/arxiv.2611.01132",
-    "openalex": null,
+    "openalex": "W7225198951",
     "pmid": null
   },
   "provenance": {
@@ -75,7 +143,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-05T01:25:05Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005387,
     "llm": {
@@ -163,6 +232,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-10-31",
+  "updated": "2026-11-07",
   "work_key": "arxiv:2611.01132"
 }

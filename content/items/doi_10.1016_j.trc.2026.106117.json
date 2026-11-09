@@ -4,25 +4,45 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Xi'an Jiaotong University",
+            "ror": "017zhmm22"
+          }
+        ],
         "name": "Xuan An",
         "openalex": "A5161041685",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Xi'an Jiaotong University",
+            "ror": "017zhmm22"
+          }
+        ],
         "name": "Huili Zhang",
         "openalex": "A5100659945",
         "orcid": "https://orcid.org/0000-0001-6658-5070"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Xi'an Technological University",
+            "ror": "01t8prc81"
+          }
+        ],
         "name": "Bing Su",
         "openalex": "A5101586067",
         "orcid": "https://orcid.org/0000-0002-8072-285X"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Georgia Southern University",
+            "ror": "04agmb972"
+          }
+        ],
         "name": "Weitian Tong",
         "openalex": "A5077372703",
         "orcid": "https://orcid.org/0000-0002-9815-2330"
@@ -43,7 +63,7 @@
     "title": "Fleet sizing for mixed autonomous and human-driven ride-hailing systems with endogenous service-region design"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-06_10.1016/j.trc.20",
+    "cluster_id": "clu_2026-11-07_10.1016/j.trc.20",
     "members": [
       "doi:10.1016/j.trc.2026.106117"
     ],
@@ -52,7 +72,23 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:017zhmm22",
+        "label": "Xi'an Jiaotong University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01t8prc81",
+        "label": "Xi'an Technological University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04agmb972",
+        "label": "Georgia Southern University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -84,15 +120,7 @@
         "id": "openalex:T11942",
         "is_primary": true,
         "label": "Transportation and Mobility Innovations",
-        "score": 0.9976,
-        "subfield": "3313"
-      },
-      {
-        "confidence": null,
-        "id": "openalex:T10698",
-        "is_primary": false,
-        "label": "Transportation Planning and Optimization",
-        "score": 0.0006,
+        "score": 0.9985,
         "subfield": "3313"
       },
       {
@@ -100,8 +128,16 @@
         "id": "openalex:T10567",
         "is_primary": false,
         "label": "Vehicle Routing Optimization Methods",
-        "score": 0.0004,
+        "score": 0.0006,
         "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0002,
+        "subfield": "3313"
       }
     ]
   },
@@ -134,7 +170,18 @@
       "openalex:W4392388900",
       "openalex:W4402536744"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W6891664584",
+      "openalex:W4414092878",
+      "openalex:W2593902284",
+      "openalex:W7214467442",
+      "openalex:W2914527952",
+      "openalex:W2616136470",
+      "openalex:W7165583796",
+      "openalex:W6947927063",
+      "openalex:W2574297562",
+      "openalex:W2978312515"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -145,7 +192,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-08T00:22:47Z",
+    "collected_at": "2026-11-09T00:42:19Z",
     "collectors": [
       "openalex"
     ],
@@ -192,6 +239,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-06",
+  "updated": "2026-11-08",
   "work_key": "doi:10.1016/j.trc.2026.106117"
 }

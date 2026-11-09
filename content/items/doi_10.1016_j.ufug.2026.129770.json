@@ -4,13 +4,23 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Charles University",
+            "ror": "024d6js02"
+          }
+        ],
         "name": "Bernadeta Baroková",
         "openalex": "A5129220386",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Charles University",
+            "ror": "024d6js02"
+          }
+        ],
         "name": "Eliška Vejchodská",
         "openalex": "A5048157401",
         "orcid": "https://orcid.org/0000-0002-2270-3589"
@@ -31,7 +41,7 @@
     "title": "Implementation of Urban Tree Protection Policy: How Street-Level Bureaucrats Shape Local Outcomes"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-06_10.1016/j.ufug.2",
+    "cluster_id": "clu_2026-11-07_10.1016/j.ufug.2",
     "members": [
       "doi:10.1016/j.ufug.2026.129770"
     ],
@@ -40,7 +50,13 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:024d6js02",
+        "label": "Charles University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -59,27 +75,27 @@
     "topics": [
       {
         "confidence": null,
-        "id": "openalex:T13801",
-        "is_primary": true,
-        "label": "Urban Arborization and Environmental Studies",
-        "score": 0.8745,
-        "subfield": "2308"
-      },
-      {
-        "confidence": null,
         "id": "openalex:T10213",
-        "is_primary": false,
+        "is_primary": true,
         "label": "Public Policy and Administration Research",
-        "score": 0.0979,
+        "score": 0.3,
         "subfield": "3321"
       },
       {
         "confidence": null,
-        "id": "openalex:T13247",
+        "id": "openalex:T13438",
         "is_primary": false,
-        "label": "Local Governance and Planning",
-        "score": 0.0109,
-        "subfield": "3305"
+        "label": "Environmental Conservation and Management",
+        "score": 0.2561,
+        "subfield": "2308"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13801",
+        "is_primary": false,
+        "label": "Urban Arborization and Environmental Studies",
+        "score": 0.2206,
+        "subfield": "2308"
       }
     ]
   },
@@ -116,7 +132,18 @@
       "openalex:W7121545912",
       "openalex:W7125899132"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W6903841394",
+      "openalex:W166823484",
+      "openalex:W2958862201",
+      "openalex:W2232183447",
+      "openalex:W7074163786",
+      "openalex:W3154854442",
+      "openalex:W2734848433",
+      "openalex:W3211009501",
+      "openalex:W2990745776",
+      "openalex:W2640741130"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -127,7 +154,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-08T00:22:52Z",
+    "collected_at": "2026-11-09T00:42:22Z",
     "collectors": [
       "openalex"
     ],
@@ -174,6 +201,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-01",
+  "updated": "2026-11-08",
   "work_key": "doi:10.1016/j.ufug.2026.129770"
 }

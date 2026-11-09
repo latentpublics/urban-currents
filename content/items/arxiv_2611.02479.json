@@ -1,0 +1,232 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "During urban flash floods, commuters and guiding agencies require awareness towards which roads remain passable when a vehicle actually arrives, rather than relying solely on which links appear open at initial departure. Most existing flood-routing tools apply a single static snapshot to each route; meaning that corridors that appear clear initially can become flooded before arrival. This paper presents a routing engine that ingests a two-hour water forecast, renewed every 15 minutes, and plans each journey around roads that the forecast closes for that specific vehicle class. Under this formulation, any road that closes mid-trip remains closed for that query, which keeps route calculation fast enough for live requests while operating inside a production GraphHopper routing server. Testing on a recorded storm in western Hanoi revealed that a router checking only departure conditions sent 7.8% of routes into roads flooded upon arrival. In comparable trips, the proposed rule produced longer routes in 3.95% of cases, requiring a median of only 9.2 s of additional travel time. Agencies and navigation platforms can employ this engine to schedule trips by vehicle type, allowing operators to establish depth limits and lookahead margins as policy parameters. However, several limitations must be noted, as the water depths originate from a hydrodynamic simulation that was not verified against measured water levels, the rainfall was replayed rather than forecast live, and depth cutoffs reflect policy settings rather than measured physical thresholds. Keywords: flood routing, time-dependent shortest path, sticky edge closure, forecast water depth, vehicle depth limit, Hanoi",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Mai Anh Tran",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Vy Nguyen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Vova Nguyen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Minh Hoa Bui",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.DC",
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.02479v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.02479v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-02",
+    "repository_urls": [],
+    "title": "Time-Aware Urban Flood Routing with Sticky Edge Closure on Forecast Depth: A Hanoi Case Study"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-07_2611.02479",
+    "members": [
+      "arxiv:2611.02479"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5158977555",
+        "label": "Mai Anh Tran"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5147101349",
+        "label": "Vy Nguyen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159155818",
+        "label": "Vova Nguyen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5107000163",
+        "label": "Bùi Minh Hòa"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10930",
+        "is_primary": true,
+        "label": "Flood Risk Assessment and Management",
+        "score": 0.8726,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.077,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": false,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.0056,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-11-02",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": [
+      "openalex:W7128621991",
+      "openalex:W3216011906",
+      "openalex:W3141407140",
+      "openalex:W2235404837",
+      "openalex:W7223060624",
+      "openalex:W7164491678",
+      "openalex:W3013285242",
+      "openalex:W2929635352",
+      "openalex:W4399989834",
+      "openalex:W2316235104"
+    ]
+  },
+  "ids": {
+    "arxiv": "2611.02479",
+    "doi": "10.48550/arxiv.2611.02479",
+    "openalex": "W7225161480",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-09T00:42:14Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.005893,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2135,
+      "out": 299
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8948,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3579,
+    "relevance": 0.8948
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The hydrodynamic flood model was not calibrated against field-measured water levels, rainfall data was replayed retroactively, and depth thresholds represent arbitrary policy parameters rather than verified vehicle physical capabilities.",
+      "what": "Researchers built a flood-routing engine inside GraphHopper that uses a rolling two-hour hydrodynamic forecast, updated every 15 minutes, to dynamically close roads based on vehicle-specific depth limits. The system uses a sticky edge closure rule where any road flooding mid-journey stays closed for the rest of that trip query. Tested on a recorded storm in western Hanoi, standard routers using initial departure conditions routed 7.8% of trips into roads that flooded before arrival, whereas the time-aware approach rerouted 3.95% of trips with a median delay of 9.2 seconds.",
+      "why": "This routing logic eliminates mid-trip flood traps in navigation engines while remaining computationally lightweight enough for real-time deployment and policy-based vehicle depth controls."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-02",
+  "work_key": "arxiv:2611.02479"
+}

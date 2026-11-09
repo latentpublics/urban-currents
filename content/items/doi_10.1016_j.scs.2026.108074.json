@@ -4,25 +4,45 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Politecnico di Milano",
+            "ror": "01nffqt88"
+          }
+        ],
         "name": "Liu Siyu",
         "openalex": "A5161124738",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Nanjing University",
+            "ror": "01rxvg760"
+          }
+        ],
         "name": "萧琴",
         "openalex": "A5077268318",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Nanjing University",
+            "ror": "01rxvg760"
+          }
+        ],
         "name": "Zhang Shanqi",
         "openalex": "A5161082263",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Nanjing University",
+            "ror": "01rxvg760"
+          }
+        ],
         "name": "Zhen Feng",
         "openalex": "A5100922071",
         "orcid": "https://orcid.org/0000-0003-4968-0417"
@@ -43,7 +63,7 @@
     "title": "How to Smartly Renew Community Spaces? -An Attempt at a Multi-Dimensional Augmentation Method for Large Language Models (LLMs)"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-06_10.1016/j.scs.20",
+    "cluster_id": "clu_2026-11-07_10.1016/j.scs.20",
     "members": [
       "doi:10.1016/j.scs.2026.108074"
     ],
@@ -52,7 +72,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01nffqt88",
+        "label": "Politecnico di Milano"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01rxvg760",
+        "label": "Nanjing University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -81,27 +112,27 @@
     "topics": [
       {
         "confidence": null,
-        "id": "openalex:T12995",
-        "is_primary": true,
-        "label": "Urban Development and Cultural Heritage",
-        "score": 0.6519,
-        "subfield": "3322"
-      },
-      {
-        "confidence": null,
         "id": "openalex:T11479",
-        "is_primary": false,
+        "is_primary": true,
         "label": "Smart Cities and Technologies",
-        "score": 0.0706,
+        "score": 0.7427,
         "subfield": "3322"
       },
       {
         "confidence": null,
-        "id": "openalex:T10028",
+        "id": "openalex:T12995",
         "is_primary": false,
-        "label": "Topic Modeling",
-        "score": 0.0393,
-        "subfield": "1702"
+        "label": "Urban Development and Cultural Heritage",
+        "score": 0.1078,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13920",
+        "is_primary": false,
+        "label": "Urban Planning and Valuation",
+        "score": 0.0734,
+        "subfield": "3305"
       }
     ]
   },
@@ -174,7 +205,18 @@
       "openalex:W7160408194",
       "openalex:W7162132069"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W20596925",
+      "openalex:W2511769120",
+      "openalex:W7130632747",
+      "openalex:W2284298510",
+      "openalex:W7011530660",
+      "openalex:W7213336001",
+      "openalex:W2601744774",
+      "openalex:W4391899061",
+      "openalex:W2171521297",
+      "openalex:W2919387367"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -185,7 +227,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-08T00:22:49Z",
+    "collected_at": "2026-11-09T00:42:21Z",
     "collectors": [
       "openalex"
     ],
@@ -232,6 +274,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-01",
+  "updated": "2026-11-08",
   "work_key": "doi:10.1016/j.scs.2026.108074"
 }

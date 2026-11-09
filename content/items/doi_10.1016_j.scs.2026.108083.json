@@ -4,31 +4,60 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "China University of Geosciences (Beijing)",
+            "ror": "04q6c7p66"
+          }
+        ],
         "name": "Yuxuan Lu",
         "openalex": "A5012205718",
         "orcid": "https://orcid.org/0009-0000-4195-9240"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "China University of Geosciences (Beijing)",
+            "ror": "04q6c7p66"
+          }
+        ],
         "name": "Peipei Wang",
         "openalex": "A5100393472",
         "orcid": "https://orcid.org/0000-0003-0154-7457"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "China University of Geosciences (Beijing)",
+            "ror": "04q6c7p66"
+          }
+        ],
         "name": "Xiaoyuan Zhang",
         "openalex": "A5038346437",
         "orcid": "https://orcid.org/0000-0001-7518-4631"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Ministry of Natural Resources",
+            "ror": "02kxqx159"
+          },
+          {
+            "name": "China University of Geosciences (Beijing)",
+            "ror": "04q6c7p66"
+          }
+        ],
         "name": "Xinqi Zheng",
         "openalex": "A5126572741",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "China University of Geosciences (Beijing)",
+            "ror": "04q6c7p66"
+          }
+        ],
         "name": "Xinqi Liu",
         "openalex": "A5006371192",
         "orcid": null
@@ -49,7 +78,7 @@
     "title": "A multi-layer network and explainable AI framework for urban resilience assessment and sustainable policy simulation: Evidence from the Beijing-Tianjin-Hebei region"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-06_10.1016/j.scs.20",
+    "cluster_id": "clu_2026-11-07_10.1016/j.scs.20",
     "members": [
       "doi:10.1016/j.scs.2026.108083"
     ],
@@ -58,7 +87,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04q6c7p66",
+        "label": "China University of Geosciences (Beijing)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02kxqx159",
+        "label": "Ministry of Natural Resources"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -92,27 +132,27 @@
     "topics": [
       {
         "confidence": null,
-        "id": "openalex:T11807",
-        "is_primary": true,
-        "label": "Infrastructure Resilience and Vulnerability Analysis",
-        "score": 0.5342,
-        "subfield": "2205"
-      },
-      {
-        "confidence": null,
         "id": "openalex:T10747",
-        "is_primary": false,
+        "is_primary": true,
         "label": "Disaster Management and Resilience",
-        "score": 0.2966,
+        "score": 0.8472,
         "subfield": "3312"
       },
       {
         "confidence": null,
-        "id": "openalex:T14410",
+        "id": "openalex:T11807",
         "is_primary": false,
-        "label": "Safety and Risk Management",
-        "score": 0.0234,
-        "subfield": "3311"
+        "label": "Infrastructure Resilience and Vulnerability Analysis",
+        "score": 0.1068,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13588",
+        "is_primary": false,
+        "label": "Regional resilience and development",
+        "score": 0.0206,
+        "subfield": "2002"
       }
     ]
   },
@@ -153,7 +193,18 @@
       "openalex:W4415534094",
       "openalex:W7125411374"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W7212415706",
+      "openalex:W4412767469",
+      "openalex:W6922673752",
+      "openalex:W7097653728",
+      "openalex:W2970909881",
+      "openalex:W2742872797",
+      "openalex:W2896297634",
+      "openalex:W7202171326",
+      "openalex:W4415534094",
+      "openalex:W2955823494"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -164,7 +215,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-08T00:22:49Z",
+    "collected_at": "2026-11-09T00:42:21Z",
     "collectors": [
       "openalex"
     ],
@@ -211,6 +262,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-01",
+  "updated": "2026-11-08",
   "work_key": "doi:10.1016/j.scs.2026.108083"
 }

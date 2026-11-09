@@ -1,0 +1,291 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Transportation policy assessment often involves causal questions, yet traditional travel behaviour lacks the ability of distinguishing causal association from non-causal correlations. We present the deep CAusal infeRence mOdel for traveL behavIour aNAlysis (CAROLINA), a novel framework that addresses both observed and unobserved confounders in discrete choice modelling through causal discovery and the strengths of deep neural networks. Within this interpretable framework, we also introduce a Generative Counterfactual model for forecasting individuals’ behaviour by adapting the Normalizing Flow method. Through the case studies of virtual reality-based pedestrian crossing behaviour, revealed preference travel behaviour from London, and synthetic data, we demonstrate the effectiveness of our proposed models in isolating causal relationships from confounding associations. Our proposed causal framework enhances predictive accuracy by employing data-driven algorithms, while maintaining interpretability. In addition, the counterfactual results show that intervention mechanisms that can reduce pedestrian stress levels lead to a 35.35% increase in individuals experiencing shorter waiting times. External interventions that reduce travel distances of non-mandatory trips in London lead to a 47% increase in the possible use of active and public transit modes.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Toronto Metropolitan University",
+            "ror": "05g13zd79"
+          }
+        ],
+        "name": "Kimia Kamal",
+        "openalex": "A5060245152",
+        "orcid": "https://orcid.org/0000-0001-8814-0398"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Toronto Metropolitan University",
+            "ror": "05g13zd79"
+          }
+        ],
+        "name": "Bilal Farooq",
+        "openalex": "A5048496396",
+        "orcid": "https://orcid.org/0000-0003-1980-5645"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.106120",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-11-07",
+    "repository_urls": [],
+    "title": "A deep causal inference model for interpretable travel behaviour analysis"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-07_2405.01708",
+    "members": [
+      "arxiv:2405.01708"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.9744,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:causal-inference",
+        "label": "causal inference"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05g13zd79",
+        "label": "Toronto Metropolitan University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8814-0398",
+        "label": "Kimia Kamal"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1980-5645",
+        "label": "Bilal Farooq"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q84",
+        "label": "London",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": true,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.5776,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10845",
+        "is_primary": false,
+        "label": "Advanced Causal Inference Techniques",
+        "score": 0.147,
+        "subfield": "2613"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0663,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-11-07",
+  "graph": {
+    "cited_by_count": 3,
+    "referenced_works": [
+      "openalex:W592990327",
+      "openalex:W797706260",
+      "openalex:W1516659296",
+      "openalex:W1603320667",
+      "openalex:W1967444754",
+      "openalex:W1978454975",
+      "openalex:W2008507853",
+      "openalex:W2024325291",
+      "openalex:W2039576068",
+      "openalex:W2073534662",
+      "openalex:W2100562136",
+      "openalex:W2105828903",
+      "openalex:W2106056259",
+      "openalex:W2108780933",
+      "openalex:W2118722179",
+      "openalex:W2143117649",
+      "openalex:W2156514048",
+      "openalex:W2163557510",
+      "openalex:W2229789268",
+      "openalex:W2303818082",
+      "openalex:W2344038835",
+      "openalex:W2557632452",
+      "openalex:W2720917562",
+      "openalex:W2730059782",
+      "openalex:W2765416540",
+      "openalex:W2767784255",
+      "openalex:W2789212782",
+      "openalex:W2803116794",
+      "openalex:W2920932425",
+      "openalex:W2948978827",
+      "openalex:W2992005611",
+      "openalex:W3004748517",
+      "openalex:W3006107677",
+      "openalex:W3048245313",
+      "openalex:W3083430313",
+      "openalex:W3122396129",
+      "openalex:W3216969810",
+      "openalex:W3217240983",
+      "openalex:W4205365706",
+      "openalex:W4221146053",
+      "openalex:W4319596756",
+      "openalex:W4366385227",
+      "openalex:W4389284528",
+      "openalex:W4394874164",
+      "openalex:W4394909415",
+      "openalex:W4417086190",
+      "openalex:W7128403054",
+      "openalex:W7135041175",
+      "openalex:W7161737212",
+      "openalex:W7162442688"
+    ],
+    "related_works": [
+      "openalex:W4405865508",
+      "openalex:W4406834943",
+      "openalex:W6926721955",
+      "openalex:W7064822811",
+      "openalex:W4385436460",
+      "openalex:W4393964974",
+      "openalex:W4400417613",
+      "openalex:W7134920244",
+      "openalex:W7196968308",
+      "openalex:W2576720614"
+    ]
+  },
+  "ids": {
+    "arxiv": "2405.01708",
+    "doi": "10.1016/j.trc.2026.106120",
+    "openalex": "W4396777605",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-09T00:42:19Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005381,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1973,
+      "out": 269
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-09T00:42:19Z",
+    "doi": "10.1016/j.trc.2026.106120",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The authors developed CAROLINA, a deep causal inference framework for discrete choice modeling that isolates causal effects from observed and unobserved confounders. Tested across synthetic data, virtual reality pedestrian experiments, and London revealed preference travel data, the model incorporates normalizing flows for counterfactual forecasting. Counterfactual evaluations indicate that interventions reducing pedestrian stress boost short crossing wait times by 35.35%, while reducing non-mandatory travel distances in London increases active and public transit adoption by 47%.",
+      "why": "It enables transportation analysts to evaluate policy interventions using observational travel data without confounding correlations inflating or distorting predicted behavioral changes."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-07",
+  "work_key": "arxiv:2405.01708"
+}

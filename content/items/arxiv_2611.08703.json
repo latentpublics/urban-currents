@@ -1,0 +1,179 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Pretrained trajectory models encode mobility patterns learned across cities, but their errors when transferred to a new city are usually treated only as performance limitations. We instead ask whether these residuals reveal systematic local conditions. Architectures such as UniTraj and TrajFM learn transferable trajectory representations, although cross-context transfer remains challenging. Using the NetMob26 bus location, ticketing, weather, network, and socioeconomic data for Niteroi, we analyze spatial and travel-time residuals of these recent trajectory foundation models. We test whether high residuals concentrate spatially, whether spatial and travel-time residuals overlap, and which urban-context variables explain their distribution. We interpret high residuals as candidate proxy signals of transit irregularity rather than direct evidence of service disruption, and analyze their contextual associations using Explainable AI (XAI). Insights into such varied environments are increasingly valuable for evaluating new urban paradigms; for instance, the 15-minute-city perspective serves as a key motivation for our approach, guiding our methods and expanding the analysis beyond standard mobility metrics.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Csaba I. Sidló",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jamil J. Ghazal",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Domonkos Rózsay",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rita Rónai",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "András J. Molnár",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": "2-page extended abstract accepted, but not presented as a poster at NetMob 2026",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.08703v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.08703v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-05",
+    "repository_urls": [],
+    "title": "Foundation-Model Residuals as Signals of Urban Bus Irregularity"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-08_2611.08703",
+    "members": [
+      "arxiv:2611.08703"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-05",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.08703",
+    "doi": "10.48550/arxiv.2611.08703",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-10T03:23:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005587,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1925,
+      "out": 300
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9796,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3918,
+    "relevance": 0.9796
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "High model residuals are evaluated as proxy signals of irregularity rather than validated direct observations of transit disruptions.",
+      "what": "The study analyzes spatial and travel-time prediction errors from UniTraj and TrajFM trajectory foundation models transferred to Niterói, Brazil, using the NetMob26 dataset covering bus locations, ticketing, weather, network, and socioeconomic variables. Explainable AI methods were applied to identify urban-context features that correlate with high model residuals. The results establish that foundation-model errors concentrate spatially and act as proxy signals for bus service irregularity.",
+      "why": "It reframes foundation model transfer errors from simple performance failures into actionable diagnostic tools for detecting localized urban transit disruptions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-05",
+  "work_key": "arxiv:2611.08703"
+}

@@ -1,0 +1,221 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Transit-Oriented Development (TOD) is a key strategy for advancing sustainable urban development by promoting high-density, mixed-use land development within walking distance of public transit stations. However, traditional TOD planning often relies on heuristic methods, making it difficult to efficiently identify quantitatively optimized transit-oriented land use patterns. This paper presents DRL4TOD, a deep reinforcement learning framework that automatically optimizes land use types and floor area ratios (FARs) around transit stations in alignment with TOD principles. DRL4TOD incorporates a graph neural network to capture spatial interdependencies among land parcels, road networks, and metro stations, and uses a DRL-based optimization strategy to assign land-use types and FARs to selected parcels. It jointly optimizes multiple objectives, including land use density, land use diversity, and transit capacity utilization, while minimizing reconstruction costs to account for development feasibility. Applied to two real-world station areas in Shanghai, DRL4TOD consistently outperforms rule-based approaches and genetic algorithms, achieving more effective TOD outcomes with lower reconstruction costs. By adjusting objective weights, the framework enables flexible prioritization, such as placing greater emphasis on cost minimization when financial feasibility is a concern. These results demonstrate DRL4TOD's potential as a decision-support tool for generating coordinated land-use and FAR configurations under planner-specified priorities, rather than prescribing a single fixed design. For policymakers, the framework provides parcel-level, constraint-aware alternatives that make trade-offs among competing objectives explicit and support targeted decisions about development intensity and feasibility.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Bo Yang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yuebing Liang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zhan Zhao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Fangyi Ding",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yunhan Zheng",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shenhao Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jinhua Zhao",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "comment": "44 pages, 15 figures, 8 tables",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.10281v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.10281v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-06",
+    "repository_urls": [],
+    "title": "Transit-Oriented Land Use Planning Using Deep Reinforcement Learning"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-08_2611.10281",
+    "members": [
+      "arxiv:2611.10281"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:land-use",
+        "label": "land use data"
+      },
+      {
+        "confidence": 0.96,
+        "id": "data:street-network",
+        "label": "street network data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:reinforcement-learning",
+        "label": "reinforcement learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:gnn",
+        "label": "graph neural network"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q8686",
+        "label": "Shanghai",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-06",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.10281",
+    "doi": "10.48550/arxiv.2611.10281",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-10T03:23:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005788,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2125,
+      "out": 289
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9839,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3936,
+    "relevance": 0.9839
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The optimization system was tested on only two station areas in a single city, which may limit how well the learned spatial strategies transfer to different urban regulatory contexts.",
+      "what": "The authors developed DRL4TOD, a deep reinforcement learning framework that combines graph neural networks to model spatial relationships between land parcels, road networks, and metro stations to assign land-use types and floor area ratios. Evaluated across two metro station areas in Shanghai, the model optimized parcel density, land-use diversity, transit capacity utilization, and reconstruction costs, outperforming genetic algorithms and rule-based baselines.",
+      "why": "The framework replaces manual heuristics with an automated spatial optimization method that allows planners to dynamically adjust objective weights, such as prioritizing financial cost limits while generating parcel-level land-use configurations."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-06",
+  "work_key": "arxiv:2611.10281"
+}

@@ -1,0 +1,186 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Understanding how online communication during extreme weather crises enables or constrains climate mobilization is critical. During a crisis, the online world connects distant audiences and complicates the relationship between place and political behavior. We analyze all sociopolitical content from Bluesky about the January 2025 Los Angeles wildfire event, reporting how participation in collective action and allocation of attention vary by geographic distance. Participation varies nonlinearly with proximity, with local and international users participating more than regional and national users. Attention concentrates around regional and national users engaging primarily in viral, non-participatory political discussion. Analysis reveals a geographic mismatch between participation and attention, illuminating how online communication concentrates attention away from collective action amid an exacerbating climate crisis.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Sofi Koponen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ali Salloum",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Luca Maria Aiello",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mikko Kivelä",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Arttu Malkamäki",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.SI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.10631v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.10631v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-07",
+    "repository_urls": [],
+    "title": "Place and Political Behavior Online during the Los Angeles Blaze"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-08_2611.10631",
+    "members": [
+      "arxiv:2611.10631"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q65",
+        "label": "Los Angeles",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.10631",
+    "doi": "10.48550/arxiv.2611.10631",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-10T03:23:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004661,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1787,
+      "out": 220
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9656,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3862,
+    "relevance": 0.9656
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Findings reflect user dynamics on a single social platform during one localized fire event.",
+      "what": "The authors analyzed all sociopolitical Bluesky posts regarding the January 2025 Los Angeles wildfire to measure how distance from the event shaped online activity. Local and international users showed higher rates of collective action participation compared to regional and national users. Conversely, attention concentrated among regional and national accounts, which engaged primarily in viral, non-participatory political talk.",
+      "why": "It identifies a spatial mismatch in digital crisis communication, showing that online attention concentrates among users least likely to engage in direct collective action."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-07",
+  "work_key": "arxiv:2611.10631"
+}

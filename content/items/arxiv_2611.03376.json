@@ -82,23 +82,110 @@
         "label": "survey"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0157pnt69",
+        "label": "Claremont Graduate University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05qpen692",
+        "label": "California Lutheran University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5160246002",
+        "label": "OLALEKAN DAVID-BANJO"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5160255835",
+        "label": "CHINAZUNWA UWAOMA"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5140581424",
+        "label": "Paul Witman"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10068",
+        "is_primary": true,
+        "label": "Technology Adoption and User Behaviour",
+        "score": 0.9844,
+        "subfield": "1802"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11479",
+        "is_primary": false,
+        "label": "Smart Cities and Technologies",
+        "score": 0.0027,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11446",
+        "is_primary": false,
+        "label": "Mobile Health and mHealth Applications",
+        "score": 0.0019,
+        "subfield": "3600"
+      }
+    ]
   },
   "first_published": "2026-11-02",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W1721421031",
+      "openalex:W2024297831",
+      "openalex:W2042093593",
+      "openalex:W2083285052",
+      "openalex:W2100379340",
+      "openalex:W2105846236",
+      "openalex:W2122517769",
+      "openalex:W2123601949",
+      "openalex:W2127089424",
+      "openalex:W2135255056",
+      "openalex:W2137045791",
+      "openalex:W2137125422",
+      "openalex:W2142225512",
+      "openalex:W2154876275",
+      "openalex:W2157619495",
+      "openalex:W2796152490",
+      "openalex:W2905811773",
+      "openalex:W2915477003",
+      "openalex:W2945992719",
+      "openalex:W2950750906",
+      "openalex:W2955829435",
+      "openalex:W3125976894",
+      "openalex:W4239824530"
+    ],
+    "related_works": [
+      "openalex:W7161464677",
+      "openalex:W7172310034",
+      "openalex:W7120779362",
+      "openalex:W3146094164",
+      "openalex:W1977544645",
+      "openalex:W7000261997",
+      "openalex:W2947737966",
+      "openalex:W3156379898",
+      "openalex:W4367171426",
+      "openalex:W7001130137"
+    ]
   },
   "ids": {
     "arxiv": "2611.03376",
     "doi": "10.5281/zenodo.23849017",
-    "openalex": null,
+    "openalex": "W7224994674",
     "pmid": null
   },
   "provenance": {
@@ -106,7 +193,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-04T01:11:52Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005192,
     "llm": {
@@ -194,6 +282,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-02",
+  "updated": "2026-11-09",
   "work_key": "arxiv:2611.03376"
 }

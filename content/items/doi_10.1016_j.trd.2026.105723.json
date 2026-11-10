@@ -4,49 +4,101 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Kunming University of Science and Technology",
+            "ror": "00xyeez13"
+          }
+        ],
         "name": "Xiangfen Cui",
         "openalex": "A5064428210",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Kunming University of Science and Technology",
+            "ror": "00xyeez13"
+          }
+        ],
         "name": "Lizhen Xu",
         "openalex": "A5161223989",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Kunming University of Science and Technology",
+            "ror": "00xyeez13"
+          }
+        ],
         "name": "Yuhan Tang",
         "openalex": "A5161262164",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "East China Normal University",
+            "ror": "02n96ep67"
+          }
+        ],
         "name": "Zhenxin Li",
         "openalex": "A5132620905",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Kunming University of Science and Technology",
+            "ror": "00xyeez13"
+          }
+        ],
         "name": "Yongkang Chen",
         "openalex": "A5060643794",
         "orcid": "https://orcid.org/0009-0004-6756-633X"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Kunming University of Science and Technology",
+            "ror": "00xyeez13"
+          }
+        ],
         "name": "Senlin Tian",
         "openalex": "A5161152927",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Kunming University of Science and Technology",
+            "ror": "00xyeez13"
+          },
+          {
+            "name": "East China Normal University",
+            "ror": "02n96ep67"
+          }
+        ],
         "name": "Haoran Yang",
         "openalex": "A5070246800",
         "orcid": "https://orcid.org/0000-0001-5572-9390"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Energy Institute",
+            "ror": "03fgcf430"
+          },
+          {
+            "name": "University College London",
+            "ror": "02jx3x895"
+          },
+          {
+            "name": "East China Normal University",
+            "ror": "02n96ep67"
+          }
+        ],
         "name": "Yanghui Cao",
         "openalex": "A5161259328",
         "orcid": null
@@ -67,7 +119,7 @@
     "title": "Nonlinear associations of neighborhood environments with older Adults’ travel mode by purpose"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-07_10.1016/j.trd.20",
+    "cluster_id": "clu_2026-11-08_10.1016/j.trd.20",
     "members": [
       "doi:10.1016/j.trd.2026.105723"
     ],
@@ -76,7 +128,28 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00xyeez13",
+        "label": "Kunming University of Science and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02n96ep67",
+        "label": "East China Normal University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03fgcf430",
+        "label": "Energy Institute"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02jx3x895",
+        "label": "University College London"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -128,7 +201,7 @@
         "id": "openalex:T10298",
         "is_primary": true,
         "label": "Urban Transport and Accessibility",
-        "score": 0.999,
+        "score": 1.0,
         "subfield": "3313"
       },
       {
@@ -136,7 +209,7 @@
         "id": "openalex:T10698",
         "is_primary": false,
         "label": "Transportation Planning and Optimization",
-        "score": 0.0004,
+        "score": 0.0001,
         "subfield": "3313"
       },
       {
@@ -144,7 +217,7 @@
         "id": "openalex:T10692",
         "is_primary": false,
         "label": "Urban Green Space and Health",
-        "score": 0.0002,
+        "score": 0.0,
         "subfield": "3322"
       }
     ]
@@ -210,7 +283,18 @@
       "openalex:W4414446783",
       "openalex:W4417416621"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W6939784568",
+      "openalex:W6959007389",
+      "openalex:W2587510093",
+      "openalex:W3205354533",
+      "openalex:W6921144382",
+      "openalex:W4313398324",
+      "openalex:W7136035741",
+      "openalex:W2808386817",
+      "openalex:W4416860163",
+      "openalex:W2914104902"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -221,7 +305,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-09T00:42:19Z",
+    "collected_at": "2026-11-10T03:23:32Z",
     "collectors": [
       "openalex"
     ],
@@ -268,6 +352,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-07",
+  "updated": "2026-11-09",
   "work_key": "doi:10.1016/j.trd.2026.105723"
 }

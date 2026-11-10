@@ -80,8 +80,65 @@
         "label": "traffic assignment"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00m8prc86",
+        "label": "Deutsche Telekom (Germany)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03n6nwv02",
+        "label": "Universidad Politécnica de Madrid"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02kfbaj13",
+        "label": "Centre for Tactile Internet with Human-in-the-Loop"
+      },
+      {
+        "confidence": null,
+        "id": "ror:042aqky30",
+        "label": "Technische Universität Dresden"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0003-9406-3554",
+        "label": "Shangqing Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5158-2413",
+        "label": "Syed Irtaza Haider"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0639-9492",
+        "label": "Shao-Yi Shen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5116971581",
+        "label": "Faezeh Motazedian"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5062120994",
+        "label": "Rico Radeke"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0947-3539",
+        "label": "Laura Del-Río-Carazo"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8469-9573",
+        "label": "Frank H. P. Fitzek"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [
@@ -91,18 +148,74 @@
         "label": "SUMO"
       }
     ],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10768",
+        "is_primary": true,
+        "label": "Electric Vehicles and Infrastructure",
+        "score": 1.0,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11942",
+        "is_primary": false,
+        "label": "Transportation and Mobility Innovations",
+        "score": 0.0,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10808",
+        "is_primary": false,
+        "label": "Electric and Hybrid Vehicle Technologies",
+        "score": 0.0,
+        "subfield": "2203"
+      }
+    ]
   },
   "first_published": "2026-11-02",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W177423208",
+      "openalex:W2010420651",
+      "openalex:W2028337795",
+      "openalex:W2536120915",
+      "openalex:W2738607267",
+      "openalex:W2750980748",
+      "openalex:W2942934107",
+      "openalex:W3006377120",
+      "openalex:W4210923753",
+      "openalex:W4238480034",
+      "openalex:W4285117752",
+      "openalex:W4288420729",
+      "openalex:W4307548964",
+      "openalex:W4313455432",
+      "openalex:W4383878151",
+      "openalex:W4409195008",
+      "openalex:W4410584060",
+      "openalex:W4410584325",
+      "openalex:W7161772730"
+    ],
+    "related_works": [
+      "openalex:W4415656030",
+      "openalex:W4409865237",
+      "openalex:W7117103772",
+      "openalex:W2982578629",
+      "openalex:W4391528912",
+      "openalex:W3128416682",
+      "openalex:W4403334110",
+      "openalex:W4406613366",
+      "openalex:W4399896901",
+      "openalex:W4407114686"
+    ]
   },
   "ids": {
     "arxiv": "2611.03135",
     "doi": "10.1007/978-3-032-42044-2_2",
-    "openalex": null,
+    "openalex": "W7225015106",
     "pmid": null
   },
   "provenance": {
@@ -110,7 +223,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-04T01:11:52Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004901,
     "llm": {
@@ -198,6 +312,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-02",
+  "updated": "2026-11-09",
   "work_key": "arxiv:2611.03135"
 }

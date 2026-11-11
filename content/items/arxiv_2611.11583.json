@@ -1,0 +1,161 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Autonomous vehicles use pedestrian crossing intention prediction (PCIP) to participate safely in traffic. Existing models are largely trained under favourable daytime conditions with sufficient daylight. Little is known about the robustness of these models under night-time and low-light conditions, due to the lack of datasets containing night-time footage. This paper investigates how a dataset, named NightSteps, can be constructed and evaluated as a baseline benchmark. The dataset is based on nighttime dashcam footage collected from six different cities around the world, capturing a wide variety of road conditions. The dataset consists of dashcam-recorded point-of-view footage, raw data of pedestrians' locations with corresponding 'track ids' and ground-truth labels containing accurate information about pedestrian crossing behaviour, resulting in a diverse dataset. Gemini, ChatGPT, and human assessment are used to demonstrate the usability of the dataset by predicting crossings in clips from the dataset and comparing the results with the initial ground-truth labels. These results show that human input achieves an accuracy of 88.17% and an F1-score of 80.21%. Predictions from Gemini and ChatGPT perform lower, with accuracies of 60% and 79.13% respectively, and F1-scores of 42.50% and 63.64%. The evaluation demonstrates that the NightSteps dataset can be used for future model evaluation to test the performance of PCIP, with the aim of improving road safety at night.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Sjoerd Takken",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shaodi You",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.11583v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.11583v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-08",
+    "repository_urls": [],
+    "title": "NightSteps: A Night-Time Dataset and Benchmark for Pedestrian Crossing Intention Prediction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-09_2611.11583",
+    "members": [
+      "arxiv:2611.11583"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-08",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.11583",
+    "doi": "10.48550/arxiv.2611.11583",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-11T01:14:01Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005843,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2119,
+      "out": 296
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9445,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3778,
+    "relevance": 0.9445
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The authors created NightSteps, a pedestrian crossing intention prediction dataset built from night-time dashcam footage collected across six global cities. The dataset includes pedestrian bounding boxes, tracking IDs, and ground-truth crossing labels. When benchmarked on crossing prediction tasks, human evaluators achieved an accuracy of 88.17% and an F1-score of 80.21%, outperforming ChatGPT (79.13% accuracy, 63.64% F1-score) and Gemini (60.00% accuracy, 42.50% F1-score).",
+      "why": "It establishes a dedicated benchmark for low-light pedestrian intention prediction, addressing a critical data gap in autonomous vehicle safety evaluation where existing models rely primarily on daytime footage."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-08",
+  "work_key": "arxiv:2611.11583"
+}

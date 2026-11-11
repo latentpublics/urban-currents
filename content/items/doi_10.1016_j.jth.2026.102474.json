@@ -4,31 +4,56 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Sohar University",
+            "ror": "02ftvf862"
+          }
+        ],
         "name": "Muhammad Ashraf Javid",
         "openalex": "A5040496688",
         "orcid": "https://orcid.org/0000-0003-3494-2891"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Engineering and Technology Lahore",
+            "ror": "0051w2v06"
+          }
+        ],
         "name": "Hina Saleemi",
         "openalex": "A5038102132",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Engineering and Technology Lahore",
+            "ror": "0051w2v06"
+          }
+        ],
         "name": "Saadia Tabassum",
         "openalex": "A5008020944",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Portsmouth",
+            "ror": "03ykbk197"
+          }
+        ],
         "name": "Nazam Ali",
         "openalex": "A5035390021",
         "orcid": "https://orcid.org/0000-0002-2113-7781"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "King Fahd University of Petroleum and Minerals",
+            "ror": "03yez3163"
+          }
+        ],
         "name": "Muhammad Abdullah",
         "openalex": "A5161289788",
         "orcid": null
@@ -49,7 +74,7 @@
     "title": "Behavioral drivers of work-from-home adoption under smog risk in Lahore: Implications for commuting, air quality, and public health"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-08_10.1016/j.jth.20",
+    "cluster_id": "clu_2026-11-09_10.1016/j.jth.20",
     "members": [
       "doi:10.1016/j.jth.2026.102474"
     ],
@@ -58,7 +83,28 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02ftvf862",
+        "label": "Sohar University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0051w2v06",
+        "label": "University of Engineering and Technology Lahore"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03ykbk197",
+        "label": "University of Portsmouth"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03yez3163",
+        "label": "King Fahd University of Petroleum and Minerals"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -95,24 +141,24 @@
         "id": "openalex:T10190",
         "is_primary": true,
         "label": "Air Quality and Health Impacts",
-        "score": 0.4255,
+        "score": 0.2813,
         "subfield": "2307"
       },
       {
         "confidence": null,
-        "id": "openalex:T10698",
+        "id": "openalex:T10898",
         "is_primary": false,
-        "label": "Transportation Planning and Optimization",
-        "score": 0.1711,
-        "subfield": "3313"
+        "label": "Pro-Environmental Behavior and Attitudes",
+        "score": 0.16,
+        "subfield": "2308"
       },
       {
         "confidence": null,
-        "id": "openalex:T10298",
+        "id": "openalex:T11573",
         "is_primary": false,
-        "label": "Urban Transport and Accessibility",
-        "score": 0.1388,
-        "subfield": "3313"
+        "label": "Risk Perception and Management",
+        "score": 0.1197,
+        "subfield": "3312"
       }
     ]
   },
@@ -171,7 +217,18 @@
       "openalex:W4413052348",
       "openalex:W4415737725"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W7009813888",
+      "openalex:W4402801932",
+      "openalex:W7017899459",
+      "openalex:W2286597022",
+      "openalex:W2949087526",
+      "openalex:W7009631212",
+      "openalex:W2409934177",
+      "openalex:W3020906470",
+      "openalex:W7024792019",
+      "openalex:W1623663573"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -182,7 +239,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-10T03:23:32Z",
+    "collected_at": "2026-11-11T01:14:21Z",
     "collectors": [
       "openalex"
     ],
@@ -229,6 +286,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-08",
+  "updated": "2026-11-10",
   "work_key": "doi:10.1016/j.jth.2026.102474"
 }

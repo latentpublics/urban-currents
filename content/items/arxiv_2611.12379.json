@@ -1,0 +1,201 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Micro-scale air quality models require hourly traffic data on every road segment, whereas permanent counters cover only a small part of the network. A graph neural network (GNN) was developed to reconstruct hourly traffic flows on the 32,163 road segments of Paris intra-muros from the 1,573 segments equipped with a counter (4.9%). The model adapts the Graph Neural Network for Urban Interpolation (GNNUI) to a real, sparse counting network. Flows are decoded on the edges of the junction graph (one edge per segment, both directions summed), a traffic climatology serves as an offset in a zero-inflated negative-binomial likelihood, and training proceeds by masking counters. Eight-fold spatial cross-validation, with counters sharing a published series merged before splitting, distinguishes interpolation at a withheld counter in an instrumented district (R${}^2$ = 0.89, error of a quarter of the mean flow) from extrapolation to a district without counters (R${}^2$ = 0.74, a third of the mean flow). These scores hold on main axes where counters are located, while relative errors are about 50% on the few counted local streets. Ablations show that the climatology offset tends to help extrapolation. Road attributes, time cycles and the live state of the counting network matter most, while weather inputs have no significant effect. The masking rate is the only inherited hyperparameter with a clear effect. When evaluated on January--August 2026 (outside the training period), the frozen model stayed around the error band of previous years.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "ICube",
+            "ror": null
+          }
+        ],
+        "name": "Xavier Jurado",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "ICube,ICube-SDC",
+            "ror": null
+          }
+        ],
+        "name": "C{é}dric Wemmert",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "ENGEES,ICube",
+            "ror": null
+          }
+        ],
+        "name": "Nicolas Reiminger",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.12379v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.12379v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-09",
+    "repository_urls": [],
+    "title": "Reconstructing hourly traffic on every street of a capital from a sparse counting network: a graph neural network applied to Paris"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-09_2611.12379",
+    "members": [
+      "arxiv:2611.12379"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:traffic-sensor",
+        "label": "traffic sensor data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:gnn",
+        "label": "graph neural network"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q90",
+        "label": "Paris",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.12379",
+    "doi": "10.48550/arxiv.2611.12379",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-11T01:14:01Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006109,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2195,
+      "out": 313
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9479,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3792,
+    "relevance": 0.9479
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "1,573 segments",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Model accuracy drops significantly on uncounted local streets, where relative errors reach roughly 50%, compared to the main arterial roads where counters are predominantly located.",
+      "what": "Researchers adapted a graph neural network model (GNNUI) to reconstruct hourly traffic volumes across all 32,163 road segments in inner Paris using data from only 1,573 counter-equipped segments (4.9% coverage). The model incorporates traffic climatology offsets and a zero-inflated negative-binomial likelihood function. Spatial cross-validation achieved an R2 of 0.89 for interpolation near existing counters and 0.74 for extrapolation to unmonitored districts, maintaining stable performance when evaluated out-of-sample on data from 2026.",
+      "why": "This framework enables urban environmental models, such as micro-scale air quality simulations, to access complete citywide hourly traffic estimates from sparse physical sensor networks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-09",
+  "work_key": "arxiv:2611.12379"
+}

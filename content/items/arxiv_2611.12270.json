@@ -1,0 +1,192 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "One of the most notorious measures taken by authorities in every country trying to prevent the uncontrollable spread of the Covid 19 pandemic was to impose severe measures to diminish the mobility of people. In recent publications we proposed a mathematical model to address the consequences of these measures and to predict the infections under different scenarios, for various different countries. In this paper we extend the model, called the BTH--SEIRS-model, to deal with the reduction of mobility in an urban area. The chosen region was the densely-populated metropolitan area around Helsinki, the capital of Finland. This choice obeyed to the fact that there are precise data related to mobility from a mobile telephone company, and that this region was completely isolated from the rest of the country for a short period during the pandemic. We also used public transport data from railways and the accommodation occupation rates in the area of interest. We show that the BTH--SEIRS model is capable of simulating the real infection data as well as the mobility-related economic activity, exhibiting the main trends present in the three indicators used for comparison. Our calculations allow us to highlight the difference of the behaviour of the pandemic in a totally different spatial scale, and to discover the hidden factors that govern the behaviour of people who are forced to commute every day from home to work.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Jan E. Snellman",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Rafael A. Barrio",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Cecilia I. Ventura",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Tzipe Govezensky",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Kimmo K. Kaski",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Maarit J. Korpi-Lagg",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.MA"
+    ],
+    "comment": "22 pages, 9 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.12270v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.12270v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-09",
+    "repository_urls": [],
+    "title": "Modelling socio-economic effects of the pandemic in a metropolitan area"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-09_2611.12270",
+    "members": [
+      "arxiv:2611.12270"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:mobile-phone",
+        "label": "mobile phone data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-09",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.12270",
+    "doi": "10.48550/arxiv.2611.12270",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-11T01:14:01Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005279,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2031,
+      "out": 248
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9741,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3896,
+    "relevance": 0.9741
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The framework relies on a specific period when Helsinki was physically isolated from the rest of Finland, which may not reflect typical urban mobility conditions during non-lockdown periods.",
+      "what": "The authors adapted the BTH-SEIRS mathematical model to evaluate mobility reductions and pandemic dynamics within the Helsinki metropolitan area. The model incorporates mobile phone tracking data, railway usage figures, and hotel occupancy rates to simulate actual infection rates alongside economic activity indicators during a period when the region was isolated from the rest of Finland.",
+      "why": "It demonstrates that a single spatial model can concurrently capture both epidemiological infection trajectories and real-time local economic activity driven by daily commuting patterns."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-09",
+  "work_key": "arxiv:2611.12270"
+}

@@ -68,23 +68,161 @@
         "label": "simulation"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02495e989",
+        "label": "UCLouvain"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02s376052",
+        "label": "École Polytechnique Fédérale de Lausanne"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0000-9868-5156",
+        "label": "Guo-Shiuan Lin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1306-3759",
+        "label": "Martin Hendrick"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5592-8901",
+        "label": "Maider Llaguno-Munitxa"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9245-2877",
+        "label": "Gabriele Manoli"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.6846,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.2852,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0169,
+        "subfield": "3322"
+      }
+    ]
   },
   "first_published": "2026-11-04",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W641940221",
+      "openalex:W1804959266",
+      "openalex:W1966514525",
+      "openalex:W1967493455",
+      "openalex:W1971334793",
+      "openalex:W1982300822",
+      "openalex:W1987228002",
+      "openalex:W1987233492",
+      "openalex:W2005544339",
+      "openalex:W2013271821",
+      "openalex:W2025557991",
+      "openalex:W2031766080",
+      "openalex:W2037064502",
+      "openalex:W2043614425",
+      "openalex:W2064489681",
+      "openalex:W2083178764",
+      "openalex:W2088856850",
+      "openalex:W2090978188",
+      "openalex:W2099788768",
+      "openalex:W2100228478",
+      "openalex:W2101790661",
+      "openalex:W2102216693",
+      "openalex:W2119616510",
+      "openalex:W2119670109",
+      "openalex:W2125768380",
+      "openalex:W2133286823",
+      "openalex:W2133400794",
+      "openalex:W2134946452",
+      "openalex:W2144512297",
+      "openalex:W2147726063",
+      "openalex:W2160169976",
+      "openalex:W2170803264",
+      "openalex:W2297198091",
+      "openalex:W2318951588",
+      "openalex:W2513226432",
+      "openalex:W2515868912",
+      "openalex:W2557456081",
+      "openalex:W2726248338",
+      "openalex:W2734880387",
+      "openalex:W2739753901",
+      "openalex:W2760942449",
+      "openalex:W2774941429",
+      "openalex:W2785593484",
+      "openalex:W2890695304",
+      "openalex:W2895924764",
+      "openalex:W2921712683",
+      "openalex:W2957221055",
+      "openalex:W3011586404",
+      "openalex:W3087330019",
+      "openalex:W3120694366",
+      "openalex:W3138188871",
+      "openalex:W3159861942",
+      "openalex:W3163497136",
+      "openalex:W3165093051",
+      "openalex:W4214876227",
+      "openalex:W4280507206",
+      "openalex:W4280596464",
+      "openalex:W4283207095",
+      "openalex:W4386222643",
+      "openalex:W4400763807",
+      "openalex:W4401404190",
+      "openalex:W4401510595",
+      "openalex:W4402784259",
+      "openalex:W4406917148",
+      "openalex:W4413118136",
+      "openalex:W4413968054",
+      "openalex:W4417220352",
+      "openalex:W6966488806",
+      "openalex:W7167588161"
+    ],
+    "related_works": [
+      "openalex:W2096133543",
+      "openalex:W2013271821",
+      "openalex:W4293100385",
+      "openalex:W2794336236",
+      "openalex:W2406819242",
+      "openalex:W7100428196",
+      "openalex:W2151470912",
+      "openalex:W4411569950",
+      "openalex:W2792755513",
+      "openalex:W7214006952"
+    ]
   },
   "ids": {
     "arxiv": "2611.06529",
     "doi": "10.48550/arxiv.2611.06529",
-    "openalex": null,
+    "openalex": "W7225318014",
     "pmid": null
   },
   "provenance": {
@@ -92,7 +230,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-06T01:28:26Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005849,
     "llm": {
@@ -180,6 +319,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-04",
+  "updated": "2026-11-11",
   "work_key": "arxiv:2611.06529"
 }

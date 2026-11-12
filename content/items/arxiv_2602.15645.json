@@ -1,0 +1,317 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Foundation models, including vision language models, are increasingly used in automated driving to interpret scenes, recommend actions, and generate natural language explanations. However, existing evaluation methods primarily assess outcome based performance, such as safety and trajectory accuracy, without determining whether model decisions reflect human relevant considerations. As a result, it remains unclear whether explanations produced by such models correspond to genuine reason responsive decision making or merely post hoc rationalizations. This limitation is especially significant in safety critical domains because it can create false confidence. To address this gap, we propose CARE Drive, Context Aware Reasons Evaluation for Driving, a model agnostic framework for evaluating reason responsiveness in vision language models applied to automated driving. CARE Drive compares baseline and reason augmented model decisions under controlled contextual variation to assess whether human reasons causally influence decision behavior. The framework employs a two stage evaluation process. Prompt calibration ensures stable outputs. Systematic contextual perturbation then measures decision sensitivity to human reasons such as safety margins, social pressure, and efficiency constraints. We demonstrate CARE Drive in a cyclist overtaking scenario involving competing normative considerations. Results show that explicit human reasons significantly influence model decisions, improving alignment with expert recommended behavior. However, responsiveness varies across contextual factors, indicating uneven sensitivity to different types of reasons. These findings provide empirical evidence that reason responsiveness in foundation models can be systematically evaluated without modifying model parameters.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Lucas Elbert Suryana",
+        "openalex": "A5133499874",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Farah Bierenga",
+        "openalex": "A5126345097",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sanne van Buuren",
+        "openalex": "A5126307858",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Pepijn W. Kooij",
+        "openalex": "A5004790905",
+        "orcid": "https://orcid.org/0000-0002-2619-0813"
+      },
+      {
+        "institutions": [],
+        "name": "Elsefien Tulleners",
+        "openalex": "A5092974881",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Federico Scarì",
+        "openalex": "A5119774876",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Simeon C. Calvert",
+        "openalex": "A5052655645",
+        "orcid": "https://orcid.org/0000-0002-1173-0071"
+      },
+      {
+        "institutions": [],
+        "name": "Bart van Arem",
+        "openalex": "A5133779081",
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Arkady Zgonnikov",
+        "openalex": "A5031929760",
+        "orcid": "https://orcid.org/0000-0002-6593-6948"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.106143",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-11-10",
+    "repository_urls": [],
+    "title": "CARE-Drive: A method for evaluating reason-responsiveness of vision–language models in automated driving"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-10_2602.15645",
+    "members": [
+      "arxiv:2602.15645"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5133499874",
+        "label": "Lucas Elbert Suryana"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5126345097",
+        "label": "Farah Bierenga"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5126307858",
+        "label": "Sanne van Buuren"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2619-0813",
+        "label": "Pepijn W. Kooij"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5092974881",
+        "label": "Elsefien Tulleners"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5119774876",
+        "label": "Federico Scarì"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1173-0071",
+        "label": "Simeon C. Calvert"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5133779081",
+        "label": "Bart van Arem"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6593-6948",
+        "label": "Arkady Zgonnikov"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12026",
+        "is_primary": true,
+        "label": "Explainable Artificial Intelligence (XAI)",
+        "score": 0.9131,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13295",
+        "is_primary": false,
+        "label": "Safety Systems Engineering in Autonomy",
+        "score": 0.0262,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.0209,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-11-10",
+  "graph": {
+    "cited_by_count": 1,
+    "referenced_works": [
+      "openalex:W1984011431",
+      "openalex:W2099265232",
+      "openalex:W2143318894",
+      "openalex:W2790245041",
+      "openalex:W2792435043",
+      "openalex:W2889984609",
+      "openalex:W2896129211",
+      "openalex:W2990471853",
+      "openalex:W3011462663",
+      "openalex:W4229000717",
+      "openalex:W4290629752",
+      "openalex:W4323572061",
+      "openalex:W4323832105",
+      "openalex:W4399073783",
+      "openalex:W4401109681",
+      "openalex:W4401202092",
+      "openalex:W4404064247",
+      "openalex:W4405627552",
+      "openalex:W4408540607",
+      "openalex:W4408697174",
+      "openalex:W4410202262",
+      "openalex:W4415274616",
+      "openalex:W4415798424",
+      "openalex:W4415935425",
+      "openalex:W7116094200",
+      "openalex:W7117109787",
+      "openalex:W7117122717",
+      "openalex:W7133204675",
+      "openalex:W7133209886",
+      "openalex:W7133224126",
+      "openalex:W7133228402",
+      "openalex:W7135019863",
+      "openalex:W7136105401"
+    ],
+    "related_works": [
+      "openalex:W4414199098",
+      "openalex:W7214791160",
+      "openalex:W7162763550",
+      "openalex:W7223263757",
+      "openalex:W4416365708",
+      "openalex:W7125422511",
+      "openalex:W4400042496",
+      "openalex:W7161675105",
+      "openalex:W4403842289",
+      "openalex:W7221747425"
+    ]
+  },
+  "ids": {
+    "arxiv": "2602.15645",
+    "doi": "10.1016/j.trc.2026.106143",
+    "openalex": "W7130398022",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-12T02:13:08Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005306,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2049,
+      "out": 248
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-12T02:13:08Z",
+    "doi": "10.1016/j.trc.2026.106143",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical demonstration is restricted to a single driving scenario involving cyclist overtaking.",
+      "what": "The authors developed CARE-Drive, a model-agnostic framework that evaluates whether vision-language models in automated driving make decisions based on human-relevant reasons rather than post-hoc rationalizations. Tested on a cyclist overtaking scenario involving tradeoffs between safety margins, social pressure, and efficiency, the method uses prompt calibration and systematic contextual perturbations to measure decision changes. Results show that including explicit human reasons improves model alignment with expert driving choices, though sensitivity varies across different contextual factors.",
+      "why": "It provides a method to audit whether foundation models in autonomous vehicles are genuinely driven by human safety logic without needing to alter internal model parameters or rely solely on trajectory accuracy metrics."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-10",
+  "work_key": "arxiv:2602.15645"
+}

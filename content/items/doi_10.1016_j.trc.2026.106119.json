@@ -4,37 +4,71 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "North China Electric Power University",
+            "ror": "04qr5t414"
+          }
+        ],
         "name": "Yujiang Ye",
         "openalex": "A5072295349",
         "orcid": "https://orcid.org/0009-0005-9766-8887"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "North China Electric Power University",
+            "ror": "04qr5t414"
+          }
+        ],
         "name": "Shunde Xuan",
         "openalex": "A5161328012",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "North China Electric Power University",
+            "ror": "04qr5t414"
+          }
+        ],
         "name": "Ruifeng Shi",
         "openalex": "A5065311957",
         "orcid": "https://orcid.org/0000-0002-7079-7428"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Beihang University",
+            "ror": "00wk2mp56"
+          }
+        ],
         "name": "Xiaolei Ma",
         "openalex": "A5157769294",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Chang'an University",
+            "ror": "05mxya461"
+          }
+        ],
         "name": "Zhuangzhuang Liu",
         "openalex": "A5161317035",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "North China Electric Power University",
+            "ror": "04qr5t414"
+          },
+          {
+            "name": "Beijing Jiaotong University",
+            "ror": "01yj56c84"
+          }
+        ],
         "name": "Limin Jia",
         "openalex": "A5100680032",
         "orcid": "https://orcid.org/0000-0003-2161-4637"
@@ -55,7 +89,7 @@
     "title": "Traffic-energy coordinated planning of highway self-contained energy system for electric vehicle hosting capacity enhancement under multiple uncertainties"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-09_10.1016/j.trc.20",
+    "cluster_id": "clu_2026-11-10_10.1016/j.trc.20",
     "members": [
       "doi:10.1016/j.trc.2026.106119"
     ],
@@ -64,7 +98,28 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04qr5t414",
+        "label": "North China Electric Power University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00wk2mp56",
+        "label": "Beihang University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05mxya461",
+        "label": "Chang'an University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01yj56c84",
+        "label": "Beijing Jiaotong University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -106,7 +161,7 @@
         "id": "openalex:T10768",
         "is_primary": true,
         "label": "Electric Vehicles and Infrastructure",
-        "score": 0.9165,
+        "score": 0.4861,
         "subfield": "2208"
       },
       {
@@ -114,7 +169,7 @@
         "id": "openalex:T11185",
         "is_primary": false,
         "label": "Integrated Energy Systems Optimization",
-        "score": 0.035,
+        "score": 0.4697,
         "subfield": "2208"
       },
       {
@@ -122,7 +177,7 @@
         "id": "openalex:T10454",
         "is_primary": false,
         "label": "Optimal Power Flow Distribution",
-        "score": 0.013,
+        "score": 0.0159,
         "subfield": "2208"
       }
     ]
@@ -162,7 +217,18 @@
       "openalex:W7123897961",
       "openalex:W7134249377"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W7117486806",
+      "openalex:W7024679041",
+      "openalex:W7220651822",
+      "openalex:W2848570217",
+      "openalex:W7220677112",
+      "openalex:W3005162364",
+      "openalex:W7009521899",
+      "openalex:W7204916084",
+      "openalex:W7220682839",
+      "openalex:W7113503393"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -173,7 +239,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-11T01:14:21Z",
+    "collected_at": "2026-11-12T02:13:08Z",
     "collectors": [
       "openalex"
     ],
@@ -220,6 +286,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-09",
+  "updated": "2026-11-11",
   "work_key": "doi:10.1016/j.trc.2026.106119"
 }

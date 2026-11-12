@@ -44,23 +44,112 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:038t36y30",
+        "label": "Heidelberg University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2629-2641",
+        "label": "Nir Fulman"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161082718",
+        "label": "Himshikhar Mazumdar"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.9932,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0036,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": false,
+        "label": "Urban Green Space and Health",
+        "score": 0.0011,
+        "subfield": "3322"
+      }
+    ]
   },
   "first_published": "2026-11-04",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W311217234",
+      "openalex:W1523325724",
+      "openalex:W1973573843",
+      "openalex:W1986161770",
+      "openalex:W1996686401",
+      "openalex:W2010619023",
+      "openalex:W2051956023",
+      "openalex:W2110503402",
+      "openalex:W2168523787",
+      "openalex:W2169528473",
+      "openalex:W2241137907",
+      "openalex:W2415974686",
+      "openalex:W2549766072",
+      "openalex:W2809880383",
+      "openalex:W2900433568",
+      "openalex:W3045703642",
+      "openalex:W3135870460",
+      "openalex:W3173608822",
+      "openalex:W3202915612",
+      "openalex:W3216867348",
+      "openalex:W4385186295",
+      "openalex:W4387622747",
+      "openalex:W4391818795",
+      "openalex:W4400413641",
+      "openalex:W4401906304",
+      "openalex:W4404326597",
+      "openalex:W4404612121",
+      "openalex:W4411220053",
+      "openalex:W4413165520",
+      "openalex:W4414205377",
+      "openalex:W7160934741",
+      "openalex:W7161846875",
+      "openalex:W7162538426",
+      "openalex:W7196927858",
+      "openalex:W7214603984"
+    ],
+    "related_works": [
+      "openalex:W7214603984",
+      "openalex:W7164176972",
+      "openalex:W7166000915",
+      "openalex:W3172340565",
+      "openalex:W2585475161",
+      "openalex:W2809880383",
+      "openalex:W2046779681",
+      "openalex:W7203771093",
+      "openalex:W7223154277",
+      "openalex:W2606528179"
+    ]
   },
   "ids": {
     "arxiv": "2611.07095",
     "doi": "10.48550/arxiv.2611.07095",
-    "openalex": null,
+    "openalex": "W7225418186",
     "pmid": null
   },
   "provenance": {
@@ -68,7 +157,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-07T00:49:44Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00677,
     "llm": {
@@ -156,6 +246,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-04",
+  "updated": "2026-11-11",
   "work_key": "arxiv:2611.07095"
 }

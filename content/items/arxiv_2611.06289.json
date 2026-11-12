@@ -68,23 +68,111 @@
         "label": "clustering"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01j33xk10",
+        "label": "Fondazione Bruno Kessler"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05trd4x28",
+        "label": "University of Trento"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4500-2435",
+        "label": "Eleonora Andreotti"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6469-1619",
+        "label": "Munazza Usmani"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5107622966",
+        "label": "Alice Barsanti"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7064-8334",
+        "label": "Maurizio Napolitano"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": true,
+        "label": "Urban Green Space and Health",
+        "score": 0.3003,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11645",
+        "is_primary": false,
+        "label": "Urban, Neighborhood, and Segregation Studies",
+        "score": 0.1076,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.1044,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-11-04",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W649044790",
+      "openalex:W1548779692",
+      "openalex:W1595071191",
+      "openalex:W1974395471",
+      "openalex:W1978393907",
+      "openalex:W2057808540",
+      "openalex:W2063935068",
+      "openalex:W2150593711",
+      "openalex:W3098208509",
+      "openalex:W4235169531",
+      "openalex:W4281550199",
+      "openalex:W4283782158",
+      "openalex:W4293118491",
+      "openalex:W4294405950",
+      "openalex:W4398218935",
+      "openalex:W4400946876",
+      "openalex:W4408119552",
+      "openalex:W4415069386",
+      "openalex:W7152538822"
+    ],
+    "related_works": [
+      "openalex:W4406326014",
+      "openalex:W2788256719",
+      "openalex:W7217391477",
+      "openalex:W6904700558",
+      "openalex:W2547710036",
+      "openalex:W7213907891",
+      "openalex:W3039928393",
+      "openalex:W2094431389",
+      "openalex:W3167784784",
+      "openalex:W7140029020"
+    ]
   },
   "ids": {
     "arxiv": "2611.06289",
     "doi": "10.48550/arxiv.2611.06289",
-    "openalex": null,
+    "openalex": "W7225298345",
     "pmid": null
   },
   "provenance": {
@@ -92,7 +180,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-06T01:28:26Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006263,
     "llm": {
@@ -180,6 +269,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-04",
+  "updated": "2026-11-11",
   "work_key": "arxiv:2611.06289"
 }

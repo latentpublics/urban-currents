@@ -4,19 +4,34 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
         "name": "Jiaqi Zhang",
         "openalex": "A5161360416",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Peking University",
+            "ror": "02v51f717"
+          }
+        ],
         "name": "Jin Rui",
         "openalex": "A5035005968",
         "orcid": "https://orcid.org/0000-0002-0926-0947"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
         "name": "Zhiqiang Wu",
         "openalex": "A5161305342",
         "orcid": null
@@ -37,7 +52,7 @@
     "title": "Accessible parks, unequal represented environmental quality? Child- and older-adult-related park-use contexts in Beijing through multimodal social media data"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-09_10.1016/j.apgeog",
+    "cluster_id": "clu_2026-11-10_10.1016/j.apgeog",
     "members": [
       "doi:10.1016/j.apgeog.2026.104246"
     ],
@@ -46,7 +61,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03rc6as71",
+        "label": "Tongji University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02v51f717",
+        "label": "Peking University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -73,24 +99,24 @@
         "id": "openalex:T10692",
         "is_primary": true,
         "label": "Urban Green Space and Health",
-        "score": 0.9912,
+        "score": 0.9995,
         "subfield": "3322"
-      },
-      {
-        "confidence": null,
-        "id": "openalex:T10298",
-        "is_primary": false,
-        "label": "Urban Transport and Accessibility",
-        "score": 0.005,
-        "subfield": "3313"
       },
       {
         "confidence": null,
         "id": "openalex:T12259",
         "is_primary": false,
         "label": "Environmental Justice and Health Disparities",
-        "score": 0.0024,
+        "score": 0.0004,
         "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0001,
+        "subfield": "3313"
       }
     ]
   },
@@ -150,7 +176,18 @@
       "openalex:W7140292576",
       "openalex:W7161846875"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W2943718015",
+      "openalex:W3096742325",
+      "openalex:W7028801291",
+      "openalex:W3020745078",
+      "openalex:W2335563873",
+      "openalex:W6922392453",
+      "openalex:W2955026866",
+      "openalex:W2796610931",
+      "openalex:W2621047081",
+      "openalex:W4399658908"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -161,7 +198,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-11T01:14:21Z",
+    "collected_at": "2026-11-12T02:13:08Z",
     "collectors": [
       "openalex"
     ],
@@ -208,6 +245,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-09",
+  "updated": "2026-11-11",
   "work_key": "doi:10.1016/j.apgeog.2026.104246"
 }

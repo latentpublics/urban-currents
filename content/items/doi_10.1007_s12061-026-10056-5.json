@@ -283,12 +283,12 @@
   },
   "summary": {
     "en": {
-      "caveats": "Because the evaluated methods differed in decision rules and output formats, the results represent a practical comparison of linkage workflows rather than a controlled, algorithmic baseline.",
-      "what": "The study evaluated five address-matching methods to assign Unique Property Reference Numbers (UPRNs) to 6,442 Early Years Provider records from England's 2017 Ofsted register. A manually reviewed validation subset of 585 records was used to evaluate performance against AddressBase Premium identifiers, revealing that linkage coverage varied across methods from 51% to 99%. Among single-output methods, ASSIGN 1 and a custom SQL workflow produced the best balance between precision and recall.",
-      "why": "This research provides a benchmarked workflow for accurately geocoding administrative childcare registers that currently lack standardized spatial identifiers, highlighting that high match rates often mask incorrect property-level linkages."
+      "caveats": "Because the tested approaches relied on varied input parameters, preprocessing techniques, and decision rules, the study compares practical workflows rather than isolated algorithmic performance.",
+      "what": "Five address-matching workflows were evaluated to assign Unique Property Reference Numbers (UPRNs) to 6,442 non-domestic early years childcare providers in England using the 2018 Ofsted extract. Performance was validated against 558 manually reviewed records, showing that linkage coverage spanned from 51% to 100%, while top-performing approaches achieved unweighted F1 scores of 0.707 and 0.712.",
+      "why": "This evaluation establishes that high address-linkage rates do not reliably indicate accuracy, providing practical baseline performance metrics for researchers attaching property identifiers to administrative childcare registers."
     }
   },
   "track": "papers",
-  "updated": "2026-11-05",
+  "updated": "2026-11-11",
   "work_key": "doi:10.1007/s12061-026-10056-5"
 }

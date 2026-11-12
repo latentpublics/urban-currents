@@ -1,0 +1,169 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Characterizing how people move through a city requires spatially and temporally fine-grained data that are often costly and difficult to obtain. Here, we introduce a computational framework that uses macroscopic, aggregated, and static urban data to construct a microscopic, dynamic, and spatially detailed representation of urban mobility. Building on an existing activity simulator, the framework combines a synthetic population, the built environment, and transport networks to generate daily trips and assign walking, car, or public transit. Applied to approximately 475,000 synthetic residents of Niterói, Brazil, simulated neighborhood-level transit patterns show a strong association with an empirical activity proxy (Pearson r=0.885). Walking is more prevalent in compact central areas, car use increases toward the periphery, and public-transit use remains comparatively high along bus corridors. Reducing walking times to and from bus stops by 30% increases the modeled public-transit-to-car ratio by 11.3%, with larger transit-share gains in several peripheral areas. These results reveal spatial differences in transportation choice and identify where improved transit access may have the greatest modeled effect.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Sandro Martinelli Reia",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Taylor Anderson",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Dieter Pfoser",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.MA",
+      "stat.OT"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.14499v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.14499v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-10",
+    "repository_urls": [],
+    "title": "Spatial patterns of transportation choice in Niterói"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-10_2611.14499",
+    "members": [
+      "arxiv:2611.14499"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.14499",
+    "doi": "10.48550/arxiv.2611.14499",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-12T02:12:49Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.0058,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1959,
+      "out": 318
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9951,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.398,
+    "relevance": 0.9951
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The mode-shift findings rely entirely on a synthetic population and simulation rules rather than observed behavioral responses to real-world transit infrastructure modifications.",
+      "what": "Researchers developed a computational framework that converts macroscopic, static urban data into microscopic, dynamic travel simulations, applying it to roughly 475,000 synthetic residents of Niterói, Brazil. The framework generates daily multimodal trips across walking, driving, and transit, producing simulated neighborhood transit patterns that match an empirical activity proxy with a Pearson correlation of r=0.885. Scenario modeling indicates that a 30% reduction in walking times to and from bus stops shifts mode split toward transit, increasing the transit-to-car ratio by 11.3% overall and driving the largest transit gains in peripheral neighborhoods.",
+      "why": "The framework demonstrates that high-resolution, agent-based mobility patterns can be reliably reconstructed from low-cost, aggregated urban datasets without relying on expensive mobility surveys."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-10",
+  "work_key": "arxiv:2611.14499"
+}

@@ -1,0 +1,197 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Regional traffic simulators increasingly combine mobile-phone, road-sensor and GPS data, but what each source contributes is rarely clear. We present an agent-based simulator of daily traffic in Emilia-Romagna, Italy: phone data give trips and their timing, half of the road sensors set the traffic level, all sensors correct it locally, and GPS traces guide route choice. We measure what each source adds against predictors without simulation, on sensors kept out of parameter calibration in winter 2020 and partly shared with it in summer 2021; as these sensors informed some modelling choices, the evaluation is not fully independent. Total traffic is within 1% of observations in winter and 10% in summer, and the simulator ranks roads better than a road-type predictor (Spearman 0.67-0.68 against 0.41-0.48, winter). GPS improves this ranking, sensors improve local estimates, and timing comes mostly from the demand. Single-road errors remain similar to those of simple predictors, and the test of specific origin-destination pairings was underpowered and inconclusive. These findings provide a practical framework for assessing the contribution and limitations of heterogeneous data sources in regional traffic simulation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Federico Bellisardi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chiara Mizzi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alessandro Fabbri",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Davide Micheli",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Aldo Vannelli",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Armando Bazzani",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.13947v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.13947v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-10",
+    "repository_urls": [],
+    "title": "Data-driven regional traffic simulation from heterogeneous mobility sources"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-10_2611.13947",
+    "members": [
+      "arxiv:2611.13947"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:mobile-phone",
+        "label": "mobile phone data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-10",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.13947",
+    "doi": "10.48550/arxiv.2611.13947",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-12T02:12:49Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005768,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2009,
+      "out": 306
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9768,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3907,
+    "relevance": 0.9768
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Individual road-level volume errors remain as large as simple baseline predictors, and out-of-calibration sensors were still partially used to inform preliminary modeling decisions.",
+      "what": "Researchers built an agent-based regional traffic simulator for Emilia-Romagna, Italy, combining mobile phone records for trip demand, loop detectors for volume calibration, and GPS traces for route choices. Evaluated on out-of-calibration sensors, the model tracked total regional traffic volume within 1% in winter 2020 and 10% in summer 2021. Integrating GPS traces improved relative road traffic ranking performance to a Spearman correlation of 0.67–0.68, outperforming static road-type predictors (0.41–0.48).",
+      "why": "It isolates the specific, additive value of distinct spatial data streams in regional transport models, demonstrating that GPS improves route choice rankings while mobile phone data primarily governs temporal demand patterns."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-10",
+  "work_key": "arxiv:2611.13947"
+}

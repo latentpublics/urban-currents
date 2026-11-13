@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Reliable forecasting of Municipal Solid Waste (MSW) production is pivotal for sustainable urban management, as it enables efficient resource planning, optimized collection schedules, and reduced environmental impacts. Existing works on MSW forecasting have some limitations, such as unavailability of granular data from lower administrative units, small datasets, limited or sometimes no consideration of important factors that can affect MSW generation, including holidays, weekends, seasonality, changes in temperature or humidity. This work presents a comprehensive comparative analysis of four popularly used time series forecasting models, namely Seasonal Autoregressive Integrated Moving Average with Exogenous Regressors (SARIMAX), Prophet, Long Short Term Memory (LSTM) and Gated Recurrent Unit (GRU), using a real-world MSW dataset from Sri Lanka spanning 2012-2018. A detailed factor-wise analysis is conducted to examine waste generation behaviour considering holidays, weekday-weekend variations, seasonal patterns, temperature and humidity. The results show lower waste generation during holidays and weekends, higher generation during Summer and Winter, and comparatively lower generation during Monsoon and Post-Monsoon. Temperature and humidity do not exhibit a direct linear relationship with waste generation, although their seasonal variations are associated with the changes in waste generation across different seasons. All model performances are evaluated using Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), Root Mean Squared Error (RMSE), and the coefficient of determination (R2). Among the evaluated models, LSTM and SARIMAX achieve the best overall forecasting performance.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Mitra Tithi Dey",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Punyasha Chatterjee",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Amlan Chakrabarti",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": "16 pages, 5 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.10579v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.10579v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-07",
+    "repository_urls": [],
+    "title": "Predictive Modelling of Solid Waste Generation through Time Series Analysis"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-11_2611.10579",
+    "members": [
+      "arxiv:2611.10579"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:rnn",
+        "label": "recurrent neural network"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.10579",
+    "doi": "10.48550/arxiv.2611.10579",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-13T01:46:08Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005744,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2113,
+      "out": 286
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.922,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3688,
+    "relevance": 0.922
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2012-2018",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings rely on a historical dataset from a single nation, which may limit direct transferability to regions with distinct waste management infrastructures or climatic patterns.",
+      "what": "The authors evaluated four time series models—SARIMAX, Prophet, LSTM, and GRU—to forecast municipal solid waste generation using daily waste records from Sri Lanka spanning 2012 to 2018. They assessed the models across MAE, MAPE, RMSE, and R2 metrics while analyzing the impact of environmental factors, holidays, and seasonal variations. LSTM and SARIMAX achieved the best overall predictive accuracy, revealing lower waste volumes on weekends and holidays alongside non-linear seasonal interactions with temperature and humidity.",
+      "why": "The study provides empirical evidence on how temporal and meteorological exogenous variables drive urban waste generation in a developing country context, demonstrating that simple deep learning and statistical time series models outperform other approaches for local municipal planning."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-07",
+  "work_key": "arxiv:2611.10579"
+}

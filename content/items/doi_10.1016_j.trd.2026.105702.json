@@ -4,19 +4,38 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Shenzhen Polytechnic University",
+            "ror": "00d2w9g53"
+          }
+        ],
         "name": "Fangning Wu",
         "openalex": "A5114058230",
         "orcid": "https://orcid.org/0000-0003-2825-6609"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "LocationMind (Japan)",
+            "ror": "02hz6a710"
+          },
+          {
+            "name": "The University of Tokyo",
+            "ror": "057zh3y96"
+          }
+        ],
         "name": "Wenjing Li",
         "openalex": "A5100442684",
         "orcid": "https://orcid.org/0000-0003-2590-5837"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Hong Kong",
+            "ror": "02zhqgq86"
+          }
+        ],
         "name": "Waishan Qiu",
         "openalex": "A5013220522",
         "orcid": "https://orcid.org/0000-0001-6461-7243"
@@ -37,7 +56,7 @@
     "title": "Unraveling subjective streetscape perceptions’ impact on walking-to-school-propensity using geospatial explainable machine learning"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-10_10.1016/j.trd.20",
+    "cluster_id": "clu_2026-11-11_10.1016/j.trd.20",
     "members": [
       "doi:10.1016/j.trd.2026.105702"
     ],
@@ -46,7 +65,28 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00d2w9g53",
+        "label": "Shenzhen Polytechnic University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02hz6a710",
+        "label": "LocationMind (Japan)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:057zh3y96",
+        "label": "The University of Tokyo"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02zhqgq86",
+        "label": "University of Hong Kong"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -73,7 +113,7 @@
         "id": "openalex:T10298",
         "is_primary": true,
         "label": "Urban Transport and Accessibility",
-        "score": 0.9917,
+        "score": 0.998,
         "subfield": "3313"
       },
       {
@@ -81,16 +121,16 @@
         "id": "openalex:T12325",
         "is_primary": false,
         "label": "Urban Design and Spatial Analysis",
-        "score": 0.0056,
+        "score": 0.001,
         "subfield": "3322"
       },
       {
         "confidence": null,
-        "id": "openalex:T10692",
+        "id": "openalex:T10370",
         "is_primary": false,
-        "label": "Urban Green Space and Health",
-        "score": 0.0008,
-        "subfield": "3322"
+        "label": "Traffic and Road Safety",
+        "score": 0.0004,
+        "subfield": "2213"
       }
     ]
   },
@@ -172,7 +212,18 @@
       "openalex:W7127983577",
       "openalex:W7155700693"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W7225651177",
+      "openalex:W4387796007",
+      "openalex:W2135773727",
+      "openalex:W7164809498",
+      "openalex:W2004802661",
+      "openalex:W3080335807",
+      "openalex:W7134970414",
+      "openalex:W6923313618",
+      "openalex:W4220707317",
+      "openalex:W7166000915"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -183,7 +234,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-12T02:13:08Z",
+    "collected_at": "2026-11-13T01:46:13Z",
     "collectors": [
       "openalex"
     ],
@@ -230,6 +281,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-10",
+  "updated": "2026-11-12",
   "work_key": "doi:10.1016/j.trd.2026.105702"
 }

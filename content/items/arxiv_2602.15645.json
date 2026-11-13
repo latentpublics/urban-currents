@@ -6,55 +6,104 @@
     "abstract": "Foundation models, including vision language models, are increasingly used in automated driving to interpret scenes, recommend actions, and generate natural language explanations. However, existing evaluation methods primarily assess outcome based performance, such as safety and trajectory accuracy, without determining whether model decisions reflect human relevant considerations. As a result, it remains unclear whether explanations produced by such models correspond to genuine reason responsive decision making or merely post hoc rationalizations. This limitation is especially significant in safety critical domains because it can create false confidence. To address this gap, we propose CARE Drive, Context Aware Reasons Evaluation for Driving, a model agnostic framework for evaluating reason responsiveness in vision language models applied to automated driving. CARE Drive compares baseline and reason augmented model decisions under controlled contextual variation to assess whether human reasons causally influence decision behavior. The framework employs a two stage evaluation process. Prompt calibration ensures stable outputs. Systematic contextual perturbation then measures decision sensitivity to human reasons such as safety margins, social pressure, and efficiency constraints. We demonstrate CARE Drive in a cyclist overtaking scenario involving competing normative considerations. Results show that explicit human reasons significantly influence model decisions, improving alignment with expert recommended behavior. However, responsiveness varies across contextual factors, indicating uneven sensitivity to different types of reasons. These findings provide empirical evidence that reason responsiveness in foundation models can be systematically evaluated without modifying model parameters.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Sampoerna University",
+            "ror": "05t91sk49"
+          },
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
         "name": "Lucas Elbert Suryana",
         "openalex": "A5133499874",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
         "name": "Farah Bierenga",
         "openalex": "A5126345097",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
         "name": "Sanne van Buuren",
         "openalex": "A5126307858",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
         "name": "Pepijn W. Kooij",
         "openalex": "A5004790905",
         "orcid": "https://orcid.org/0000-0002-2619-0813"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
         "name": "Elsefien Tulleners",
         "openalex": "A5092974881",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
         "name": "Federico Scarì",
         "openalex": "A5119774876",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
         "name": "Simeon C. Calvert",
         "openalex": "A5052655645",
         "orcid": "https://orcid.org/0000-0002-1173-0071"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
         "name": "Bart van Arem",
         "openalex": "A5133779081",
-        "orcid": null
+        "orcid": "https://orcid.org/0000-0001-8316-7794"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Delft University of Technology",
+            "ror": "02e2c7k09"
+          }
+        ],
         "name": "Arkady Zgonnikov",
         "openalex": "A5031929760",
         "orcid": "https://orcid.org/0000-0002-6593-6948"
@@ -84,7 +133,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05t91sk49",
+        "label": "Sampoerna University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02e2c7k09",
+        "label": "Delft University of Technology"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -306,12 +366,12 @@
   },
   "summary": {
     "en": {
-      "caveats": "The empirical demonstration is restricted to a single driving scenario involving cyclist overtaking.",
-      "what": "The authors developed CARE-Drive, a model-agnostic framework that evaluates whether vision-language models in automated driving make decisions based on human-relevant reasons rather than post-hoc rationalizations. Tested on a cyclist overtaking scenario involving tradeoffs between safety margins, social pressure, and efficiency, the method uses prompt calibration and systematic contextual perturbations to measure decision changes. Results show that including explicit human reasons improves model alignment with expert driving choices, though sensitivity varies across different contextual factors.",
-      "why": "It provides a method to audit whether foundation models in autonomous vehicles are genuinely driven by human safety logic without needing to alter internal model parameters or rely solely on trajectory accuracy metrics."
+      "caveats": "The evaluation was demonstrated on a single driving scenario involving a cyclist overtaking manoeuvre under synthetic contextual perturbations.",
+      "what": "The authors developed CARE-Drive, a method to test whether vision-language models (VLMs) alter their driving decisions based on specific contextual inputs rather than generating post-hoc rationalizations. Tested using GPT-4.1 on a simulated cyclist overtaking scenario, the framework uses a two-stage process that screens model configurations for consistency and measures decision shifts under varied safety, social pressure, and efficiency conditions. The model demonstrated context-sensitive decision shifts under full prompting, but its sensitivity was uneven across specific variables, such as time-to-collision, trailing vehicles, passenger urgency, and following time.",
+      "why": "The framework provides a way to audit whether autonomous driving foundation models act on human-relevant reasoning without needing access to alter internal model weights."
     }
   },
   "track": "papers",
-  "updated": "2026-11-10",
+  "updated": "2026-11-12",
   "work_key": "arxiv:2602.15645"
 }

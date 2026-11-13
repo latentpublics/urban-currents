@@ -58,7 +58,28 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2360-3990",
+        "label": "Hong-Su Nam"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161134403",
+        "label": "Seokhwan Lee"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161023837",
+        "label": "Jungwoo Cho"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0674-9931",
+        "label": "Hak-Tae Lee"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -69,18 +90,56 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": true,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.6924,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12306",
+        "is_primary": false,
+        "label": "Urban and Freight Transport Logistics",
+        "score": 0.2079,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11489",
+        "is_primary": false,
+        "label": "Air Traffic Management and Optimization",
+        "score": 0.0636,
+        "subfield": "2202"
+      }
+    ]
   },
   "first_published": "2026-11-05",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W7163530104"
+    ],
+    "related_works": [
+      "openalex:W7163530104",
+      "openalex:W2892159790",
+      "openalex:W2471190594",
+      "openalex:W3201231067",
+      "openalex:W4413972905",
+      "openalex:W4295356164",
+      "openalex:W4312422883",
+      "openalex:W4322707283",
+      "openalex:W7222879449",
+      "openalex:W4399580298"
+    ]
   },
   "ids": {
     "arxiv": "2611.07808",
     "doi": "10.48550/arxiv.2611.07808",
-    "openalex": null,
+    "openalex": "W7225395949",
     "pmid": null
   },
   "provenance": {
@@ -88,7 +147,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-07T00:49:44Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006272,
     "llm": {
@@ -176,6 +236,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-05",
+  "updated": "2026-11-12",
   "work_key": "arxiv:2611.07808"
 }

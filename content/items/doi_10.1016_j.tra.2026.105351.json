@@ -4,19 +4,34 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Korea Aerospace University",
+            "ror": "05jmm0651"
+          }
+        ],
         "name": "Seongyeon Ji",
         "openalex": "A5161443373",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Korea Aerospace University",
+            "ror": "05jmm0651"
+          }
+        ],
         "name": "Sungwoo Park",
         "openalex": "A5161484857",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Korea Aerospace University",
+            "ror": "05jmm0651"
+          }
+        ],
         "name": "Sang Hyun Kim",
         "openalex": "A5100353106",
         "orcid": "https://orcid.org/0000-0002-0145-5985"
@@ -37,7 +52,7 @@
     "title": "Ground risk-based airspace capacity assessment for small unmanned aircraft in urban environments"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-11_10.1016/j.tra.20",
+    "cluster_id": "clu_2026-11-12_10.1016/j.tra.20",
     "members": [
       "doi:10.1016/j.tra.2026.105351"
     ],
@@ -46,7 +61,13 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05jmm0651",
+        "label": "Korea Aerospace University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -73,7 +94,7 @@
         "id": "openalex:T11489",
         "is_primary": true,
         "label": "Air Traffic Management and Optimization",
-        "score": 0.9995,
+        "score": 1.0,
         "subfield": "2202"
       },
       {
@@ -81,16 +102,16 @@
         "id": "openalex:T12125",
         "is_primary": false,
         "label": "Aerospace and Aviation Technology",
-        "score": 0.0001,
+        "score": 0.0,
         "subfield": "2202"
       },
       {
         "confidence": null,
-        "id": "openalex:T10524",
+        "id": "openalex:T11357",
         "is_primary": false,
-        "label": "Traffic control and management",
+        "label": "Risk and Safety Analysis",
         "score": 0.0,
-        "subfield": "2207"
+        "subfield": "2213"
       }
     ]
   },
@@ -136,7 +157,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-13T01:46:13Z",
+    "collected_at": "2026-11-14T01:24:51Z",
     "collectors": [
       "openalex"
     ],
@@ -183,6 +204,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-11",
+  "updated": "2026-11-13",
   "work_key": "doi:10.1016/j.tra.2026.105351"
 }

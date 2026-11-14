@@ -62,23 +62,104 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:047dqcg40",
+        "label": "Korea University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0227as991",
+        "label": "Chungnam National University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5326-8148",
+        "label": "Daniel Lee"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5057187202",
+        "label": "신승원"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5123014175",
+        "label": "Seunghoon Han"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161309665",
+        "label": "Sungsu Lim"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161329437",
+        "label": "Susik Yoon"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 1.0,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11273",
+        "is_primary": false,
+        "label": "Advanced Graph Neural Networks",
+        "score": 0.0,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12120",
+        "is_primary": false,
+        "label": "Air Quality Monitoring and Forecasting",
+        "score": 0.0,
+        "subfield": "2305"
+      }
+    ]
   },
   "first_published": "2026-11-06",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W1662382123",
+      "openalex:W2519887557",
+      "openalex:W2756203131",
+      "openalex:W2768008502",
+      "openalex:W2965341826",
+      "openalex:W4286899198",
+      "openalex:W4394655428"
+    ],
+    "related_works": [
+      "openalex:W4403487515",
+      "openalex:W4401863455",
+      "openalex:W7204930392",
+      "openalex:W7167914163",
+      "openalex:W4413219376",
+      "openalex:W7125895624",
+      "openalex:W7077857348",
+      "openalex:W7214317289",
+      "openalex:W4414360143",
+      "openalex:W7138637845"
+    ]
   },
   "ids": {
     "arxiv": "2611.09015",
     "doi": "10.48550/arxiv.2611.09015",
-    "openalex": null,
+    "openalex": "W7225637401",
     "pmid": null
   },
   "provenance": {
@@ -86,7 +167,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-10T03:23:21Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.00452,
     "llm": {
@@ -174,6 +256,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-06",
+  "updated": "2026-11-13",
   "work_key": "arxiv:2611.09015"
 }

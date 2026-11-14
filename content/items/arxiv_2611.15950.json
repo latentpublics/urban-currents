@@ -1,0 +1,199 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Traffic-related air pollution is a major contributor to respiratory and cardiovascular disease, and travel time disproportionately drives daily exposure. Conventional routing algorithms minimize time or distance, ignoring street-level pollutant variability and leaving travelers exposed to avoidable risk. We develop a bi-objective routing framework that couples a high-resolution AERMOD-based PM2.5 dispersion surface with a shortest-path algorithm. The algorithm uses a deterministic, gradient-based weight-update scheme to enumerate Pareto-optimal paths along the time-exposure frontier. We apply the framework to 790,000 origin-destination pairs on New York City's road network, covering 1.48 million daily commuters. Link-level concentrations differed by a factor of two or more between adjacent parallel streets. Exposure-aware routes reduced cumulative exposure by about 38% at a median travel time increase of about 28%. The algorithm ran in 30 milliseconds per query and recovered more frontier paths than uniform weight sampling (4.5 vs. 2.4). These results show that exposure-aware routing is computationally practical at metropolitan scale and suitable for real-time navigation and infrastructure planning.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Cafer Avci",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zhaoyao Bao",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Maximilian Dittgen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Danni Lu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Alireza Yazdiani",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mohammad Tayarani",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "H. Oliver Gao",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CE",
+      "cs.CY"
+    ],
+    "comment": "29 pages, 4 figures, under-review with the journal",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.15950v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15950v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-11",
+    "repository_urls": [],
+    "title": "Modeling the Travel Time-Pollution Exposure Trade-off in Urban Route Choice"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-12_2611.15950",
+    "members": [
+      "arxiv:2611.15950"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q60",
+        "label": "New York City",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.15950",
+    "doi": "10.48550/arxiv.2611.15950",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-14T01:24:41Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005806,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1987,
+      "out": 314
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9655,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3862,
+    "relevance": 0.9655
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "A bi-objective routing framework couples high-resolution AERMOD PM2.5 dispersion modeling with a gradient-based shortest-path algorithm to map Pareto-optimal trade-offs between travel time and pollution exposure. Applied across 790,000 origin-destination pairs and 1.48 million daily commuters in New York City, exposure-aware routes reduced cumulative PM2.5 exposure by roughly 38% while incurring a median travel time penalty of about 28%. The algorithm executes in 30 milliseconds per query and identifies an average of 4.5 frontier paths compared to 2.4 using traditional uniform weight sampling.",
+      "why": "It demonstrates that micro-level pollution variations between adjacent streets can be leveraged for health-optimal navigation without causing severe computational overhead or excessive travel delays at metropolitan scales."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-11",
+  "work_key": "arxiv:2611.15950"
+}

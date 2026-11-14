@@ -1,0 +1,212 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "We study a stylized single-vehicle replenishment-routing problem in which the cities of a national logistics network are both demand points and supply points: a vehicle of limited capacity delivers to every city once, and when its load is insufficient for the next city it must detour to a city already served that can still supply goods. A 100-node benchmark is built from Korean population and geographic data, with the cities divided into 10 levels; the per-visit supply coefficient and the allowed number of stops decrease geometrically with the level. Building on matrix-based ant colony optimization, we keep the states of the whole colony in arrays, couple route construction with a fixed greedy replenishment-decoding policy, and evaluate the candidate moves of a local search in batches. With frozen parameters and 30 runs on seeds never used for tuning, the matrix-based ant colony search with the batch local search (MACO) reaches a mean total distance of 3081.7 km; a genetic algorithm equipped with the same local search at the same frequency reaches 3074.9 km (no significant difference), and a MAX-MIN ant system with the same local search 3142.2 km. Ablation identifies the batch local search as the main contributor to solution quality; a load-aware transition factor gives no significant gain. Within the parameter ranges tested, raising the supply coefficients of the cities below the top level shortens the route more than relaxing the stop limits, which are not binding here.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Jun Zhang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Wei-Jie Yu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Tong Qian",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Eui Jeong Kwak",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sang-Woon Jeon",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hua Ding",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Qijia Jiang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hu Jin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Haewoon Nam",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Changjun Zhou",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.NE",
+      "cs.AI",
+      "cs.CE",
+      "math.OC"
+    ],
+    "comment": "9 pages, 6 figures, 4 tables; code, data and raw records in the ancillary files",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.15338v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15338v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-11",
+    "repository_urls": [],
+    "title": "Matrix-Based Ant Colony Search with Batched Decoding for Hierarchical Replenishment Routing: A Stylized Case Study Based on Korean City Data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-12_2611.15338",
+    "members": [
+      "arxiv:2611.15338"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.15338",
+    "doi": "10.48550/arxiv.2611.15338",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-14T01:24:41Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006104,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2155,
+      "out": 319
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9153,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3661,
+    "relevance": 0.9153
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings rely on a stylized 100-node benchmark with fixed greedy replenishment logic rather than empirical dynamic supply operations or real-world road networks.",
+      "what": "The authors formalized a single-vehicle replenishment-routing problem using a 100-node network constructed from Korean demographic and spatial data, where cities serve as both demand and supply locations across 10 hierarchical levels. They evaluated a matrix-based ant colony search featuring batched local search evaluations (MACO), achieving a mean route length of 3081.7 km across 30 runs, which performed comparably to a genetic algorithm (3074.9 km) and outperformed a MAX-MIN ant system (3142.2 km). Sensitivity analyses revealed that increasing supply coefficients in lower-tier cities yields greater route reductions than expanding allowed stop limits.",
+      "why": "The study provides a computationally efficient vectorised search framework for hierarchical closed-loop routing problems and demonstrates that inventory availability at secondary nodes reduces total travel distance more effectively than expanding stop quotas."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-11",
+  "work_key": "arxiv:2611.15338"
+}

@@ -1,0 +1,171 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Unfamiliar walkers may follow the shortest route and miss nearby shade, indoor passages and multilevel connections. We define the resulting hidden solar cost as the direct-sun exposure avoidable through shade-informed routing without substantial detours. We developed a time-specific three-dimensional model of Hong Kong Island that combines indoor and outdoor walking networks with building geometry, vegetation mapped by light detection and ranging (LiDAR), and solar position. For 500 modelled journeys, we compared shortest and shade-informed routes at four daytime snapshots and five extra-distance limits. At noon, shade-informed routes reduced modelled direct-sun exposure by 13.5% relative to shortest routes under a 10% extra-distance limit. Route length increased by 2.85% on average. A 5% extra-distance limit delivered 77% of the reduction obtained at 10%. In a controlled comparison, outdoor shade information accounted for 86% of the reduction and indoor-protection information for 14%. Removing multilevel connections left only 191 of 500 journeys feasible within the original route-length limit. These route comparisons identify an avoidable solar cost when existing protection is missing from the information used to choose a route. Making protected routes visible and preserving their connections can reduce sun exposure without large detours.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Department of Urban Planning and Design, The University of Hong Kong, Hong Kong SAR, China",
+            "ror": null
+          }
+        ],
+        "name": "Lijia Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Department of Urban Planning and Design, The University of Hong Kong, Hong Kong SAR, China",
+            "ror": null
+          }
+        ],
+        "name": "Yimeng Song",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": "75 pages, 5 main figures. Includes 63 pages of Supplementary Material",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.14959v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.14959v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-11",
+    "repository_urls": [],
+    "title": "The hidden solar cost of urban unfamiliarity"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-12_2611.14959",
+    "members": [
+      "arxiv:2611.14959"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.14959",
+    "doi": "10.48550/arxiv.2611.14959",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-14T01:24:41Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005978,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2041,
+      "out": 324
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9626,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.385,
+    "relevance": 0.9626
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings reflect simulated pedestrian journeys within the specific dense, multi-layered urban topography of Hong Kong Island rather than observed human routing behavior.",
+      "what": "A time-specific three-dimensional network model of Hong Kong Island was constructed, integrating building geometry, LiDAR-derived vegetation, indoor passages, and multilevel footbridges to evaluate pedestrian direct-sun exposure across 500 simulated journeys. At noon under a 10% extra-distance budget, shade-conscious routing decreased direct solar exposure by 13.5% while increasing walk distance by an average of 2.85%. Outdoor shade provided 86% of this exposure reduction, while indoor passages supplied 14%, though removing multilevel linkages rendered over 60% of original journeys infeasible within length constraints.",
+      "why": "It quantifies the unnecessary heat and sun exposure pedestrians endure simply because navigation tools omit shade, indoor corridors, and elevated connections."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-11",
+  "work_key": "arxiv:2611.14959"
+}

@@ -56,23 +56,113 @@
         "label": "recurrent neural network"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02af4h012",
+        "label": "Jadavpur University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05m3f1s45",
+        "label": "Netaji Nagar Day College"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01e7v7w47",
+        "label": "University of Calcutta"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5161379803",
+        "label": "Mitra Tithi Dey"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8787-6923",
+        "label": "Punyasha Chatterjee"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159702188",
+        "label": "Amlan Chakrabarti"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11108",
+        "is_primary": true,
+        "label": "Municipal Solid Waste Management",
+        "score": 0.9404,
+        "subfield": "2311"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11918",
+        "is_primary": false,
+        "label": "Forecasting Techniques and Applications",
+        "score": 0.0385,
+        "subfield": "1803"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14179",
+        "is_primary": false,
+        "label": "Waste Management and Recycling",
+        "score": 0.0029,
+        "subfield": "2311"
+      }
+    ]
   },
   "first_published": "2026-11-07",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W2747599906",
+      "openalex:W3033661296",
+      "openalex:W3044183102",
+      "openalex:W3071711894",
+      "openalex:W3081618811",
+      "openalex:W3091967456",
+      "openalex:W3115452202",
+      "openalex:W3135141542",
+      "openalex:W3166302199",
+      "openalex:W3184281057",
+      "openalex:W3198305488",
+      "openalex:W4205430783",
+      "openalex:W4206703037",
+      "openalex:W4220727882",
+      "openalex:W4285046038",
+      "openalex:W4286801139",
+      "openalex:W4296516438",
+      "openalex:W4363609375",
+      "openalex:W4383891467",
+      "openalex:W4401607299",
+      "openalex:W4406754895"
+    ],
+    "related_works": [
+      "openalex:W7131088220",
+      "openalex:W7125794001",
+      "openalex:W3029459802",
+      "openalex:W4312698189",
+      "openalex:W2005423665",
+      "openalex:W7132819076",
+      "openalex:W2324898101",
+      "openalex:W7127589838",
+      "openalex:W1969002952",
+      "openalex:W2756280216"
+    ]
   },
   "ids": {
     "arxiv": "2611.10579",
     "doi": "10.48550/arxiv.2611.10579",
-    "openalex": null,
+    "openalex": "W7225732159",
     "pmid": null
   },
   "provenance": {
@@ -80,7 +170,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-13T01:46:08Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005744,
     "llm": {
@@ -168,6 +259,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-07",
+  "updated": "2026-11-14",
   "work_key": "arxiv:2611.10579"
 }

@@ -1,0 +1,243 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "When disasters strike, they not only damage infrastructure, buildings, and the economy, but also affect the mental health of affected populations. Research on the mental health effects of disasters has expanded rapidly and has become an important, well-funded area of psychology, public health, and related social sciences. However, the overall structure of this research landscape has not been systematically characterized. Using large language models, we conducted a review of all articles related to terms 'disaster' and 'mental health' indexed in PubMed. 7,859 articles' metadata were retrieved using the NCBI API, and then Claude Sonnet was used to extract structured variables from the abstracts. The results indicated that earthquakes and epidemics were the most commonly studied disasters while many other disasters such as heat and cold waves have received less attention. PTSD, depression, and anxiety were well investigated but many other mental health issues (e.g., aggression, suicide) are relatively ignored. Despite enjoying relatively large sample sizes (median = 452, IQR = 142 - 1,568), the field rarely utilizes machine learning algorithms. Hypothesis significance testing, reviews, qualitative methods, and structural equation modeling are respectively most common methods while agent-based modeling, machine learning, casual inference, and NLP each appear in less than 1% of articles. Studies are limited to a small number of countries, particularly the United States, Japan, and China, while many disaster-prone regions remain substantially underrepresented. This LLM-assisted computational map provides a broad overview of the disaster mental health literature while highlighting important methodological gaps, with particular emphasis on the underutilization of computational methods that could help advance the field.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Soheil Shapouri",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Saber Soleymani",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI",
+      "cs.CY",
+      "cs.DL"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.10390v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.10390v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-07",
+    "repository_urls": [],
+    "title": "A Computational Map of the Disaster Mental Health Research Landscape"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-13_2611.10390",
+    "members": [
+      "arxiv:2611.10390"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:012afjb06",
+        "label": "Lehigh University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03qt6ba18",
+        "label": "Georgia State University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9561-9751",
+        "label": "Soheil Shapouri"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161373594",
+        "label": "Saber Soleymani"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q148",
+        "label": "China",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10242",
+        "is_primary": true,
+        "label": "Posttraumatic Stress Disorder Research",
+        "score": 0.6274,
+        "subfield": "3203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13284",
+        "is_primary": false,
+        "label": "Psychology Research and Bibliometrics",
+        "score": 0.1895,
+        "subfield": "3205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11430",
+        "is_primary": false,
+        "label": "Disaster Response and Management",
+        "score": 0.0562,
+        "subfield": "3604"
+      }
+    ]
+  },
+  "first_published": "2026-11-07",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W4398809873"
+    ],
+    "related_works": [
+      "openalex:W2514358233",
+      "openalex:W2130315271",
+      "openalex:W4388646885",
+      "openalex:W4387001661",
+      "openalex:W4214489301",
+      "openalex:W2889343495",
+      "openalex:W4362509298",
+      "openalex:W7152657815",
+      "openalex:W1976210420",
+      "openalex:W7166554492"
+    ]
+  },
+  "ids": {
+    "arxiv": "2611.10390",
+    "doi": "10.48550/arxiv.2611.10390",
+    "openalex": "W7225700558",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-15T00:57:35Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.006398,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2183,
+      "out": 347
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9149,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.366,
+    "relevance": 0.9149
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "global"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings depend on LLM-based information extraction from abstracts rather than full-text articles, which may omit methodological details not summarized by authors.",
+      "what": "An automated review mapped 7,859 articles containing 'disaster' and 'mental health' terms from PubMed using the NCBI API and Claude Sonnet for abstract variable extraction. Earthquakes and epidemics dominated the literature, while PTSD, depression, and anxiety were the primary mental health outcomes studied. Methodological analysis showed that studies relied primarily on median sample sizes of 452 (IQR 142-1,568) and traditional statistical methods, whereas machine learning, causal inference, natural language processing, and agent-based modeling each appeared in fewer than 1% of the papers. Geographic coverage was heavily skewed toward the United States, Japan, and China.",
+      "why": "This study quantifies systemic blind spots in disaster mental health research, showing that computational methods and high-risk climate disasters like heatwaves remain severely underused despite a vast body of literature."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-07",
+  "work_key": "arxiv:2611.10390"
+}

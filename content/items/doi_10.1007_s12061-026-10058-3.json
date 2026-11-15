@@ -1,28 +1,50 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Over recent decades, gastronomy has become a central driver in the transformation of cities, acting as an economic, cultural, and symbolic force. This process known as ‘foodification’ is reflected in the concentration and intensification of food service establishments within consolidated urban areas, particularly those of high symbolic and touristic value. The present research applies circular statistics to analyze the spatial and temporal patterns of restaurant expansion in Madrid, Spain, between 2018 and 2024, with a specific focus on the Ríos Rosas neighborhood. This methodology enables the identification of seasonal rhythms and preferred directions for growth in the opening of new establishments. Results reveal a dominant trend of expansion toward the northern areas of the city (characterized by higher economic and touristic dynamism) as well as recurring temporal patterns. The findings also demonstrate the potential of circular statistics to quantify gastronomic intensification and to deepen understanding of how new urban foodscapes are configured.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Universidad Autónoma de Madrid",
+            "ror": "01cby8j38"
+          }
+        ],
         "name": "Carmen Hidalgo-Giralt",
         "openalex": "A5161648553",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Universidad de Extremadura",
+            "ror": "0174shg90"
+          }
+        ],
         "name": "María Eugenia Polo García",
         "openalex": "A5062001117",
         "orcid": "https://orcid.org/0000-0002-7598-9998"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Universidad Autónoma de Madrid",
+            "ror": "01cby8j38"
+          }
+        ],
         "name": "Diego Antonio Barrado-Timón",
         "openalex": "A5161588511",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Universidad Autónoma de Madrid",
+            "ror": "01cby8j38"
+          }
+        ],
         "name": "José Antonio Rodríguez Esteban",
         "openalex": "A5002747697",
         "orcid": "https://orcid.org/0000-0002-4772-2022"
@@ -52,7 +74,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01cby8j38",
+        "label": "Universidad Autónoma de Madrid"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0174shg90",
+        "label": "Universidad de Extremadura"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -75,8 +108,15 @@
         "label": "José Antonio Rodríguez Esteban"
       }
     ],
-    "places": [],
-    "places_status": "not_attempted",
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q2807",
+        "label": "Madrid",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
     "tools": [],
     "topics": [
       {
@@ -150,14 +190,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-11-14T01:24:52Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -179,26 +222,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2018 and 2024",
+      "url": null,
+      "value": true
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The granular neighborhood analysis focuses on a single district within Madrid, which may limit how directly the specific spatial trajectories apply to cities with different economic geographies.",
+      "what": "Using circular statistics, the study analyzed spatial directionality and temporal patterns in new restaurant openings across Madrid, Spain, between 2018 and 2024, focusing closely on the Ríos Rosas neighborhood. The analysis revealed a dominant expansion vector toward the city's economically dynamic northern sector alongside recurring seasonal opening cycles.",
+      "why": "It introduces a circular statistical approach to quantify spatial directionality and temporal rhythms in restaurant clustering, providing a method to track urban foodification as it moves through specific corridors over time."
+    }
   },
   "track": "papers",
-  "updated": "2026-11-12",
+  "updated": "2026-11-14",
   "work_key": "doi:10.1007/s12061-026-10058-3"
 }

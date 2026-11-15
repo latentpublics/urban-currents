@@ -62,8 +62,40 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:020hwjq30",
+        "label": "Aalto University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5136822782",
+        "label": "Sofi Koponen"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2381-6876",
+        "label": "Ali Salloum"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0654-2527",
+        "label": "Luca Maria Aiello"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2049-1954",
+        "label": "Mikko Kivelä"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7751-8831",
+        "label": "Arttu Malkamäki"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -74,18 +106,64 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10557",
+        "is_primary": true,
+        "label": "Social Media and Politics",
+        "score": 0.9312,
+        "subfield": "3315"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11488",
+        "is_primary": false,
+        "label": "Climate Change Communication and Perception",
+        "score": 0.0604,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11121",
+        "is_primary": false,
+        "label": "Public Relations and Crisis Communication",
+        "score": 0.0059,
+        "subfield": "3315"
+      }
+    ]
   },
   "first_published": "2026-11-07",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W1928856156",
+      "openalex:W2081584720",
+      "openalex:W2954944342",
+      "openalex:W3018413731",
+      "openalex:W4407953302",
+      "openalex:W4411120833",
+      "openalex:W4411900540",
+      "openalex:W7131718171",
+      "openalex:W7171523552"
+    ],
+    "related_works": [
+      "openalex:W7212353496",
+      "openalex:W2131307027",
+      "openalex:W3168314534",
+      "openalex:W1971204783",
+      "openalex:W3198563837",
+      "openalex:W2998759493",
+      "openalex:W2593452651",
+      "openalex:W4380083702",
+      "openalex:W7095643254",
+      "openalex:W2017802096"
+    ]
   },
   "ids": {
     "arxiv": "2611.10631",
     "doi": "10.48550/arxiv.2611.10631",
-    "openalex": null,
+    "openalex": "W7225761591",
     "pmid": null
   },
   "provenance": {
@@ -93,7 +171,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-10T03:23:21Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004661,
     "llm": {
@@ -181,6 +260,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-07",
+  "updated": "2026-11-14",
   "work_key": "arxiv:2611.10631"
 }

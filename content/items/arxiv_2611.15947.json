@@ -1,0 +1,168 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "New Zealand's Clean Car Discount (CCD) was a feebate scheme that offered rebates for low-emission vehicles from July 2021, added fees for high-emission vehicles from April 2022, and was abolished at the end of December 2023. Shortly afterwards, road user charges were introduced for electric vehicles (EVs). We study how EV adoption responded to the introduction and the abrupt repeal of the scheme, using monthly vehicle registration data from 2014 to 2024. A structural break analysis following Bai and Perron, combined with a regression discontinuity in time, shows that breaks in the registrations of battery electric, plug-in hybrid and conventional vehicles coincide with the policy dates. To estimate causal effects, we apply a difference-in-differences approach with Queensland, Australia, as a comparison region and Newey-West standard errors. Because the New Zealand market was about four times larger, the analysis uses log-transformed registrations, so that parallel trends refer to equal growth rates. The results are asymmetric. After the introduction of the rebates, EV registrations in New Zealand rose strongly, but by a similar proportion as in Queensland, and the average effect relative to Queensland is not statistically significant. A specification allowing for a change in slope suggests a gradual acceleration of EV uptake. After the repeal, EV registrations fell by about 72% relative to Queensland, and the decline persisted in 2025. Both policy dates were preceded by a rush of purchases. The average CO2 emissions of newly registered vehicles fell markedly during the scheme and rebounded after its end. The results suggest that an abrupt end of EV purchase incentives can cause a large and lasting drop in EV uptake, and that a gradual, pre-announced phase-out may be preferable.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Fabian Dunker",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jyotsna Garg",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "econ.EM",
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.15947v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15947v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-11",
+    "repository_urls": [],
+    "title": "Introducing and Repealing an EV Subsidy: Evidence from New Zealand's Clean Car Discount"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-14_2611.15947",
+    "members": [
+      "arxiv:2611.15947"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:causal-inference",
+        "label": "causal inference"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.15947",
+    "doi": "10.48550/arxiv.2611.15947",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-16T00:55:10Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006053,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2253,
+      "out": 297
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8882,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3553,
+    "relevance": 0.8882
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2014 to 2024",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "Using monthly registration data from 2014 to 2024, the study evaluated New Zealand's Clean Car Discount feebate policy and its repeal, using Queensland, Australia, as a synthetic control. A difference-in-differences model revealed that while the policy's initial implementation produced a gradual increase in electric vehicle (EV) uptake comparable to Queensland's growth rate, its abrupt December 2023 abolition caused a persistent 72% drop in EV registrations relative to Queensland through 2025. This sudden repeal also reversed earlier reductions in average CO2 emissions of newly registered vehicles, with both policy shifts triggering pronounced purchase-anticipation rushes.",
+      "why": "The findings show that policy removal creates an asymmetric shock, demonstrating that abruptly ending EV purchase incentives inflicts a severe, lasting penalty on adoption rates that outweighs the relative gains achieved during their implementation."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-11",
+  "work_key": "arxiv:2611.15947"
+}

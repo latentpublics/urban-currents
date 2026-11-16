@@ -63,23 +63,142 @@
       }
     ],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04h9pn542",
+        "label": "Seoul National University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:057zh3y96",
+        "label": "The University of Tokyo"
+      },
+      {
+        "confidence": null,
+        "id": "ror:047v5p666",
+        "label": "Institute of Construction and Environmental Engineering"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5126474766",
+        "label": "Dongjoon Park"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5126521061",
+        "label": "Sunjae Lee"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5127484500",
+        "label": "Jung woo Kim"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8551-7652",
+        "label": "Bumjoon Kang"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11606",
+        "is_primary": true,
+        "label": "Infrastructure Maintenance and Monitoring",
+        "score": 0.251,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12502",
+        "is_primary": false,
+        "label": "Urbanization and City Planning",
+        "score": 0.1667,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.1477,
+        "subfield": "1707"
+      }
+    ]
   },
   "first_published": "2026-11-09",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W631895740",
+      "openalex:W1493769376",
+      "openalex:W1832500336",
+      "openalex:W1976659067",
+      "openalex:W1987971958",
+      "openalex:W2072683781",
+      "openalex:W2082497901",
+      "openalex:W2117539524",
+      "openalex:W2142483841",
+      "openalex:W2340897893",
+      "openalex:W2498119267",
+      "openalex:W2762186317",
+      "openalex:W2794191739",
+      "openalex:W2962858109",
+      "openalex:W2971587063",
+      "openalex:W2973009426",
+      "openalex:W3109336491",
+      "openalex:W3140318999",
+      "openalex:W3142332301",
+      "openalex:W3195494505",
+      "openalex:W3214216810",
+      "openalex:W4282919413",
+      "openalex:W4296240352",
+      "openalex:W4308020308",
+      "openalex:W4308814165",
+      "openalex:W4316660916",
+      "openalex:W4323922489",
+      "openalex:W4376870471",
+      "openalex:W4382399040",
+      "openalex:W4383199654",
+      "openalex:W4386976242",
+      "openalex:W4391994466",
+      "openalex:W4392376278",
+      "openalex:W4394719564",
+      "openalex:W4394933720",
+      "openalex:W4401210999",
+      "openalex:W4402753899",
+      "openalex:W4406780241",
+      "openalex:W4408597752",
+      "openalex:W4413054572",
+      "openalex:W4413222935",
+      "openalex:W4415623260",
+      "openalex:W4415931580",
+      "openalex:W7131074653",
+      "openalex:W7154753329"
+    ],
+    "related_works": [
+      "openalex:W7212129292",
+      "openalex:W4408597752",
+      "openalex:W7172307813",
+      "openalex:W4366765114",
+      "openalex:W7125476223",
+      "openalex:W7118082149",
+      "openalex:W7164732306",
+      "openalex:W4255963855",
+      "openalex:W3140318999",
+      "openalex:W7207788799"
+    ]
   },
   "ids": {
     "arxiv": "2611.11893",
     "doi": "10.48550/arxiv.2611.11893",
-    "openalex": null,
+    "openalex": "W7225741933",
     "pmid": null
   },
   "provenance": {
@@ -87,7 +206,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-15T00:57:32Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006007,
     "llm": {
@@ -175,6 +295,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-09",
+  "updated": "2026-11-15",
   "work_key": "arxiv:2611.11893"
 }

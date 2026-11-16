@@ -4,31 +4,56 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Hawassa University",
+            "ror": "04r15fz20"
+          }
+        ],
         "name": "Tesfaye Gebeyehu Admasu",
         "openalex": "A5080798197",
         "orcid": "https://orcid.org/0000-0002-4640-978X"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Ardhi University",
+            "ror": "05k903r09"
+          }
+        ],
         "name": "Fredrick Bwire Magina",
         "openalex": "A5037281799",
         "orcid": "https://orcid.org/0000-0003-3743-7620"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Ardhi University",
+            "ror": "05k903r09"
+          }
+        ],
         "name": "John Modestus Lupala",
         "openalex": "A5082615987",
         "orcid": "https://orcid.org/0000-0002-8927-5208"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Cologne",
+            "ror": "00rcxh774"
+          }
+        ],
         "name": "Peter Dannenberg",
         "openalex": "A5036426093",
         "orcid": "https://orcid.org/0000-0002-4159-6635"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Cologne",
+            "ror": "00rcxh774"
+          }
+        ],
         "name": "Alexander Follmann",
         "openalex": "A5012855094",
         "orcid": "https://orcid.org/0000-0002-4727-4346"
@@ -38,7 +63,7 @@
     "comment": null,
     "primary_location": {
       "landing_page_url": "https://doi.org/10.1016/j.habitatint.2026.104039",
-      "pdf_url": null,
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0197397526003322/pdf",
       "source_id": "S4210229294",
       "source_name": "Habitat International",
       "type": "journal",
@@ -49,7 +74,7 @@
     "title": "Peri-Urban Transition and Housing Markets in Hawassa City, Ethiopia: Spatial Planning, Spontaneity and Actors"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-13_10.1016/j.habita",
+    "cluster_id": "clu_2026-11-14_10.1016/j.habita",
     "members": [
       "doi:10.1016/j.habitatint.2026.104039"
     ],
@@ -58,7 +83,23 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04r15fz20",
+        "label": "Hawassa University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05k903r09",
+        "label": "Ardhi University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00rcxh774",
+        "label": "University of Cologne"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -95,15 +136,7 @@
         "id": "openalex:T12147",
         "is_primary": true,
         "label": "Urban and Rural Development Challenges",
-        "score": 0.9907,
-        "subfield": "3322"
-      },
-      {
-        "confidence": null,
-        "id": "openalex:T12273",
-        "is_primary": false,
-        "label": "Latin American Urban Studies",
-        "score": 0.0039,
+        "score": 0.9922,
         "subfield": "3322"
       },
       {
@@ -111,7 +144,15 @@
         "id": "openalex:T10239",
         "is_primary": false,
         "label": "Urban Planning and Governance",
-        "score": 0.0022,
+        "score": 0.0035,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12273",
+        "is_primary": false,
+        "label": "Latin American Urban Studies",
+        "score": 0.0027,
         "subfield": "3322"
       }
     ]
@@ -198,7 +239,18 @@
       "openalex:W4378635581",
       "openalex:W4407382365"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W7208818742",
+      "openalex:W3201971751",
+      "openalex:W2794352714",
+      "openalex:W2275870719",
+      "openalex:W6986406901",
+      "openalex:W6941509531",
+      "openalex:W2306814842",
+      "openalex:W3216074913",
+      "openalex:W7038468115",
+      "openalex:W2004667474"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -209,7 +261,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-15T00:57:36Z",
+    "collected_at": "2026-11-16T00:55:16Z",
     "collectors": [
       "openalex"
     ],
@@ -256,6 +308,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-13",
+  "updated": "2026-11-15",
   "work_key": "doi:10.1016/j.habitatint.2026.104039"
 }

@@ -44,23 +44,79 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04dkp9463",
+        "label": "University of Amsterdam"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5161411439",
+        "label": "Sjoerd Takken"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8973-645X",
+        "label": "Shaodi You"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": true,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.9619,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10370",
+        "is_primary": false,
+        "label": "Traffic and Road Safety",
+        "score": 0.0326,
+        "subfield": "2213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10036",
+        "is_primary": false,
+        "label": "Advanced Neural Network Applications",
+        "score": 0.0011,
+        "subfield": "1707"
+      }
+    ]
   },
   "first_published": "2026-11-08",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W2522471310",
+      "openalex:W4390041933"
+    ],
+    "related_works": [
+      "openalex:W4410706709",
+      "openalex:W4400646537",
+      "openalex:W7225348500",
+      "openalex:W2771583656",
+      "openalex:W4391769361",
+      "openalex:W6995956933",
+      "openalex:W4200193879",
+      "openalex:W4400579159",
+      "openalex:W4406657648",
+      "openalex:W7131258756"
+    ]
   },
   "ids": {
     "arxiv": "2611.11583",
     "doi": "10.48550/arxiv.2611.11583",
-    "openalex": null,
+    "openalex": "W7225737142",
     "pmid": null
   },
   "provenance": {
@@ -68,7 +124,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-11T01:14:01Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005843,
     "llm": {
@@ -156,6 +213,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-08",
+  "updated": "2026-11-15",
   "work_key": "arxiv:2611.11583"
 }

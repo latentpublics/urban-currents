@@ -1,34 +1,69 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Land Use and Land Cover (LULC) dynamics play a crucial role in shaping environmental processes and flood risk, particularly the vulnerable coastal regions that experiences rapid urbanisation and climate-induced hazards. Therefore, the study examines spatio-temporal dynamics of LULC change and simulate future LULC pattern for a study area encompassing Jagatsinghpur district and its surrounding perimeter in Odisha, India. Three LULC classification workflows were assessed using multi-temporal and multi-source datasets with different classification algorithms: Approach 1 employed Maximum Likelihood Classification (MLC) on Landsat imagery; Approach 2 applied a Random Forest (RF) classifier to Sentinel-2 imagery; and Approach 3 employed the pre-classified ESRI Global LULC product. Accuracy assessment revealed overall agreement of the predicted maps of 45.06% (κ: 0.31), 78.08% (κ: 0.65), and 87.44% (κ: 0.79) for Approaches 1, 2, and 3 respectively, with the ESRI Global LULC product representing the highest agreement. The workflow showing highest agreement was selected as the basis for LULC projections for 2030, 2040, and 2050 using hybrid CA–ANN–Markov model. The projections reveal a 2.2-fold increase in built-up area, growing from approximately 298 km² in 2017 to 655 km² by 2050, driven predominantly at the expense of cropland, which declines from approximately 2128 km² to 1677 km² over the same period. Tree cover exhibits a gradual decline, rangeland expands progressively, bareland remains marginally stable and water bodies remain relatively stable throughout the projection horizon. The projected increase in built-up and decline in cropland by 2050 highlight the need to consider compact urban growth and agricultural land conservation in future planning. The projected LULC patterns provide a spatial basis for future hydrological and coastal flood risk assessments in the study area.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Indian Institute of Technology Roorkee",
+            "ror": "00582g326"
+          }
+        ],
         "name": "Avinash Kaur",
         "openalex": "A5161585398",
         "orcid": "https://orcid.org/0009-0009-5087-157X"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Indian Institute of Technology Roorkee",
+            "ror": "00582g326"
+          },
+          {
+            "name": "University of Michigan",
+            "ror": "00jmfr291"
+          }
+        ],
         "name": "Harshit Sosan Lakra",
         "openalex": "A5077035902",
         "orcid": "https://orcid.org/0000-0002-2462-0285"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "National Institute of Hydrology",
+            "ror": "03f394x19"
+          }
+        ],
         "name": "Ajay Ahirwar",
         "openalex": "A5029734331",
-        "orcid": null
+        "orcid": "https://orcid.org/0000-0002-8659-4924"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Indian Institute of Technology Roorkee",
+            "ror": "00582g326"
+          }
+        ],
         "name": "Sameer Ali",
         "openalex": "A5087130961",
         "orcid": "https://orcid.org/0000-0002-3966-5240"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Keio University",
+            "ror": "02kn6nx58"
+          },
+          {
+            "name": "Keio University Shonan Fujisawa",
+            "ror": "047khpn70"
+          }
+        ],
         "name": "Rajib Shaw",
         "openalex": "A5063853867",
         "orcid": "https://orcid.org/0000-0003-3153-1800"
@@ -57,8 +92,40 @@
   },
   "entities": {
     "data": [],
-    "methods": [],
-    "orgs": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:random-forest",
+        "label": "random forest"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00582g326",
+        "label": "Indian Institute of Technology Roorkee"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00jmfr291",
+        "label": "University of Michigan"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03f394x19",
+        "label": "National Institute of Hydrology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02kn6nx58",
+        "label": "Keio University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:047khpn70",
+        "label": "Keio University Shonan Fujisawa"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -87,7 +154,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": [
       {
@@ -173,7 +240,18 @@
       "openalex:W7162135681",
       "openalex:W7167674700"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W7169628022",
+      "openalex:W4292790988",
+      "openalex:W7162776786",
+      "openalex:W4281765896",
+      "openalex:W4213020874",
+      "openalex:W4367173901",
+      "openalex:W7160709976",
+      "openalex:W7203608992",
+      "openalex:W7225194960",
+      "openalex:W7212312979"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -182,14 +260,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-11-14T01:24:52Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -211,26 +292,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": null,
+      "what": "The authors evaluated three land use and land cover (LULC) classification workflows for Jagatsinghpur district and its surrounding area in Odisha, India, and used the top-performing workflow to project LULC changes through 2050. Using a hybrid CA-ANN-Markov model, the study shows that built-up areas will expand 2.2-fold from approximately 298 km² in 2017 to 655 km² by 2050, primarily consuming cropland, which drops from 2128 km² to 1677 km². Among the tested methods, the pre-classified ESRI Global LULC product achieved the highest agreement at 87.44% (κ: 0.79), outperforming Random Forest on Sentinel-2 (78.08%, κ: 0.65) and Maximum Likelihood Classification on Landsat (45.06%, κ: 0.31).",
+      "why": "The study quantifies the substantial gap in classification accuracy between off-the-shelf global LULC products and standard remote sensing workflows for local projection modeling in coastal India. It also provides specific spatial projections of cropland loss and urban expansion to support future coastal flood risk and hydrological assessments."
+    }
   },
   "track": "papers",
-  "updated": "2026-11-12",
+  "updated": "2026-11-15",
   "work_key": "doi:10.1007/s44327-026-00409-7"
 }

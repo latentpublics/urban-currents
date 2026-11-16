@@ -1,0 +1,161 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Spatiotemporal traffic data imputation is a key task of intelligent transportation systems (ITS), and urban traffic data inherently exhibits strong long-term temporal dependencies. Therefore, accurate modeling of these long-term temporal dynamics is the core prerequisite for high fidelity traffic data imputation. However, existing traffic data imputation methods still suffer from inherent limitations in long-sequence modeling, such as gradient vanishing, low efficiency, and insufficient capability to capture long-range temporal correlations. To address these issues, this paper proposes a Selective State Space Neural Tucker Factorization model (S3NTF) for robust traffic data imputation. This model combines the Selective State Space mechanism with Neural Tucker Factorization to capture complex spatial correlations and long-term temporal dynamics. A state space-based time encoder is proposed to effectively extracts long sequence dependencies with linear complexity, while the latent spatiotemporal feature interaction learning module models high-order cross modal interactions based on Tucker decomposition. Extensive experiments on six real traffic datasets have shown that our model outperforms existing models in terms of accuracy.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Zhenhao Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Peng Tang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.15502v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.15502v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-11",
+    "repository_urls": [],
+    "title": "Selective State-Space Neural Tucker Factorization for Temporal-aware Traffic Imputation"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-14_2611.15502",
+    "members": [
+      "arxiv:2611.15502"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-11",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.15502",
+    "doi": "10.48550/arxiv.2611.15502",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-16T00:55:10Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005009,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1923,
+      "out": 236
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8936,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3574,
+    "relevance": 0.8936
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The authors developed S3NTF, a traffic data imputation model that pairs a Selective State Space time encoder with Neural Tucker Factorization to capture long-term temporal dependencies alongside multi-way spatiotemporal interactions with linear time complexity. Evaluated across six real-world traffic datasets, the framework outperformed established baselines in imputation accuracy under missing-data conditions.",
+      "why": "It enables linear-complexity modeling of very long temporal sequences in traffic grids, bypassing the high computational costs and gradient degradation typical of existing recurrent or attention-based imputation methods."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-11",
+  "work_key": "arxiv:2611.15502"
+}

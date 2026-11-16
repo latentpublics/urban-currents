@@ -6,13 +6,23 @@
     "abstract": "Intelligent intersections play a pivotal role in urban mobility, demanding innovative solutions such as digital twins to enhance safety and efficiency. This literature review investigates the integration and application of digital twins for intelligent intersections, a critical area within smart urban traffic systems. The review systematically categorizes existing research into five key thematic areas: (i) Digital Twin Architectures and Frameworks; (ii) Data Processing and Simulation Techniques; (iii) Artificial Intelligence and Machine Learning for Adaptive Traffic Control; (iv) Safety and Protection of Vulnerable Road Users; and (v) Scaling from Localized Intersections to Citywide Traffic Networks. Each theme is explored comprehensively, highlighting significant advancements, current challenges, and critical insights. The findings reveal that multi-layered digital twin architectures incorporating real-time data fusion and AI-driven decision-making enhances traffic efficiency and safety. Advanced simulation techniques combined with sophisticated AI/ML algorithms demonstrate notable improvements in real-time responsiveness and predictive accuracy for traffic management. Additionally, the integration of digital twins has shown substantial promise in safeguarding vulnerable road users through proactive and adaptive safety strategies. Despite these advancements, key challenges persist, including interoperability of diverse data sources, scalability of digital twins for extensive traffic networks, and managing uncertainty within dynamic urban environments. Addressing these challenges will be essential for the future development and deployment of intelligent, adaptive, and sustainable intersection management systems.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Princeton University",
+            "ror": "00hx57361"
+          }
+        ],
         "name": "Alben Rome Bagabaldo",
         "openalex": "A5083874206",
         "orcid": "https://orcid.org/0000-0002-4455-4975"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Princeton University",
+            "ror": "00hx57361"
+          }
+        ],
         "name": "Jürgen Hackl",
         "openalex": "A5090774553",
         "orcid": "https://orcid.org/0000-0002-8849-5751"
@@ -41,8 +51,25 @@
   },
   "entities": {
     "data": [],
-    "methods": [],
-    "orgs": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:reinforcement-learning",
+        "label": "reinforcement learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:llm",
+        "label": "large language model"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00hx57361",
+        "label": "Princeton University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -331,11 +358,11 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "This literature review categorizes research on digital twins for smart intersections across five core themes: structural architectures, data processing and simulation, artificial intelligence for traffic control, safety for vulnerable road users, and network scaling. The synthesis highlights how multi-layered frameworks using real-time data fusion and predictive algorithms improve adaptive signal control and proactive safety measures.",
-      "why": "It establishes a structured taxonomy for intersection-level digital twins while pinpointing major technical barriers—specifically data interoperability, scalability to citywide networks, and managing real-time dynamic uncertainty—that currently impede wide-scale deployment."
+      "what": "This review synthesized 99 studies on digital twins (DTs) for intelligent intersections across five core themes: software architectures, data pipelines, AI-driven traffic control, vulnerable road user safety, and network scaling. By evaluating systems against explicit levels of operational coupling, it mapped current progress in edge-to-cloud deployments, co-simulation, and reinforcement learning while framing open challenges in real-world validation, interoperability, and governance.",
+      "why": "It establishes clear taxonomies that separate true bidirectional digital twins from simpler digital shadows or isolated simulators, preventing conceptual confusion as cities evaluate real-time traffic monitoring systems."
     }
   },
   "track": "papers",
-  "updated": "2026-11-13",
+  "updated": "2026-11-15",
   "work_key": "arxiv:2510.05374"
 }

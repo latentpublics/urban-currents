@@ -1,34 +1,61 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Urban Heat Islands (UHIs) elevate temperatures in cities relative to their surroundings, with consequences for energy demand, public health, and environmental justice. This study examines whether Land Surface Temperature (LST) in Tehran is systematically associated with socio-housing disadvantage across the city’s 116 districts. LST was derived from Landsat 8 imagery using Google Earth Engine, and eight social (population density, literacy rate, immigrant population rate, employment rate) and housing (housing price, compact urban fabric, homeownership rate, rental rate) indicators were compiled from census and housing-market data. Bivariate Spearman correlations and simple linear regressions showed that six of the eight indicators were significantly associated with LST, with the strongest relationships for housing price (ρ = -0.761, R² = 0.546) and homeownership rate (ρ = -0.622, R² = 0.355); immigrant population rate and employment rate were not significant. Principal Component Analysis was then applied to combine these indicators into a single Socio-Housing Disadvantage Index (KMO = 0.712; PC1 eigenvalue = 3.418, 42.7% of variance explained), which explained more LST variance (R² = 0.369) than any individual indicator except housing price. A hierarchical multiple regression controlling for the Normalized Difference Vegetation Index (NDVI), the Normalized Difference Built-up Index (NDBI), and elevation showed that these physical characteristics accounted for 70.8% of LST variance, but the Disadvantage Index remained a significant, independent predictor (β = +0.361, p < 0.001), raising explained variance to 80.1% with no evidence of multicollinearity (VIF < 2.1). Overlay mapping confirmed that multiple socio-housing disadvantages tend to co-occur spatially with elevated LST, concentrated in Tehran’s southern and western districts. These findings show that socio-housing disadvantage is associated with elevated LST in Tehran beyond what land cover and topography alone explain, reinforcing patterns of environmental injustice in a rapidly urbanizing megacity. The results support integrating housing quality and socioeconomic conditions into UHI mitigation planning, and provide a transferable composite-index approach for prioritizing heat-adaptation investment in cities with similarly uneven socio-housing landscapes.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Allameh Tabataba'i University",
+            "ror": "02cc4gc68"
+          }
+        ],
         "name": "Milad Borna",
         "openalex": "A5119179875",
         "orcid": "https://orcid.org/0009-0004-6716-5122"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Guilan",
+            "ror": "01bdr6121"
+          }
+        ],
         "name": "Mohammad Abbaspour Kalmarzi",
         "openalex": "A5087373412",
         "orcid": "https://orcid.org/0000-0003-0262-2316"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Guilan",
+            "ror": "01bdr6121"
+          }
+        ],
         "name": "Sajjad Shabani Kolachahi",
         "openalex": "A5161494566",
         "orcid": "https://orcid.org/0009-0000-9588-2541"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Tehran",
+            "ror": "05vf56z40"
+          }
+        ],
         "name": "Seyyed Alireza Mousavi Nezhad",
         "openalex": "A5161494053",
         "orcid": "https://orcid.org/0000-0002-8824-3853"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Tehran",
+            "ror": "05vf56z40"
+          }
+        ],
         "name": "Pedram Shadmoghaddam",
         "openalex": "A5161494628",
         "orcid": "https://orcid.org/0009-0008-8936-7402"
@@ -56,9 +83,37 @@
     "merge_basis": "singleton"
   },
   "entities": {
-    "data": [],
-    "methods": [],
-    "orgs": [],
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:dimensionality-reduction",
+        "label": "dimensionality reduction"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02cc4gc68",
+        "label": "Allameh Tabataba'i University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01bdr6121",
+        "label": "University of Guilan"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05vf56z40",
+        "label": "University of Tehran"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -87,8 +142,14 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
-    "tools": [],
+    "places_status": "unspecified",
+    "tools": [
+      {
+        "confidence": 1.0,
+        "id": "github:giswqs/geemap",
+        "label": "geemap"
+      }
+    ],
     "topics": [
       {
         "confidence": null,
@@ -170,7 +231,18 @@
       "openalex:W7117118597",
       "openalex:W7119168892"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W4220885029",
+      "openalex:W4313446519",
+      "openalex:W2298346024",
+      "openalex:W2904806488",
+      "openalex:W7204691786",
+      "openalex:W4416980525",
+      "openalex:W3157694543",
+      "openalex:W2969716483",
+      "openalex:W4293062249",
+      "openalex:W7133342611"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -179,14 +251,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-11-13T01:46:15Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -208,26 +283,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The study relies on Land Surface Temperature derived from satellite imagery as a proxy for human heat exposure rather than ambient air temperature or microclimate sensor measurements.",
+      "what": "Using Landsat 8 thermal imagery alongside census and housing market data across Tehran's 116 districts, this study constructed a Socio-Housing Disadvantage Index using Principal Component Analysis of eight social and residential indicators. Simple regressions showed housing prices (R² = 0.546) and homeownership rates (R² = 0.355) had the strongest individual correlations with Land Surface Temperature (LST). In a hierarchical multiple regression, the composite disadvantage index contributed a statistically significant independent effect (β = +0.361), increasing total explained LST variance from 70.8% (based on elevation, vegetation, and built-up indices alone) to 80.1%.",
+      "why": "The study demonstrates that socioeconomic and housing disadvantage independently exacerbates urban surface heat exposure beyond what physical land cover and topography account for, offering a transferable index method to target heat-mitigation interventions in megacities with pronounced spatial inequalities."
+    }
   },
   "track": "papers",
-  "updated": "2026-11-11",
+  "updated": "2026-11-15",
   "work_key": "doi:10.1007/s44327-026-00411-z"
 }

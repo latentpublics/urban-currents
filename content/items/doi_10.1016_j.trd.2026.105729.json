@@ -4,37 +4,67 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
         "name": "Shujie Chen",
         "openalex": "A5161834917",
         "orcid": "https://orcid.org/0009-0007-9267-8028"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
         "name": "Yilin Sun",
         "openalex": "A5161967496",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
         "name": "Fangyuan Jia",
         "openalex": "A5161874406",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Polytechnique Montréal",
+            "ror": "05f8d4e86"
+          }
+        ],
         "name": "E. Owen D. Waygood",
         "openalex": "A5013070159",
         "orcid": "https://orcid.org/0000-0002-7848-3191"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Zhejiang Institute of Communications",
+            "ror": "01q17sd51"
+          }
+        ],
         "name": "Liwei Liu",
         "openalex": "A5161813972",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
         "name": "Yifang Huang",
         "openalex": "A5161981861",
         "orcid": null
@@ -55,7 +85,7 @@
     "title": "From prediction to causality: A unified framework for two-stage MaaS subscription"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-13_10.1016/j.trd.20",
+    "cluster_id": "clu_2026-11-14_10.1016/j.trd.20",
     "members": [
       "doi:10.1016/j.trd.2026.105729"
     ],
@@ -64,7 +94,23 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00a2xv884",
+        "label": "Zhejiang University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05f8d4e86",
+        "label": "Polytechnique Montréal"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01q17sd51",
+        "label": "Zhejiang Institute of Communications"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -106,7 +152,15 @@
         "id": "openalex:T11942",
         "is_primary": true,
         "label": "Transportation and Mobility Innovations",
-        "score": 0.9878,
+        "score": 0.999,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.0007,
         "subfield": "3313"
       },
       {
@@ -114,16 +168,8 @@
         "id": "openalex:T10768",
         "is_primary": false,
         "label": "Electric Vehicles and Infrastructure",
-        "score": 0.004,
+        "score": 0.0001,
         "subfield": "2208"
-      },
-      {
-        "confidence": null,
-        "id": "openalex:T10698",
-        "is_primary": false,
-        "label": "Transportation Planning and Optimization",
-        "score": 0.0031,
-        "subfield": "3313"
       }
     ]
   },
@@ -170,7 +216,18 @@
       "openalex:W7125515186",
       "openalex:W7127187059"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W2800876527",
+      "openalex:W3014792322",
+      "openalex:W2990101659",
+      "openalex:W7047581832",
+      "openalex:W2885574584",
+      "openalex:W3196803528",
+      "openalex:W6909979672",
+      "openalex:W7207527651",
+      "openalex:W2912307463",
+      "openalex:W3189094189"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -181,7 +238,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-15T00:57:36Z",
+    "collected_at": "2026-11-16T00:55:16Z",
     "collectors": [
       "openalex"
     ],
@@ -228,6 +285,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-13",
+  "updated": "2026-11-15",
   "work_key": "doi:10.1016/j.trd.2026.105729"
 }

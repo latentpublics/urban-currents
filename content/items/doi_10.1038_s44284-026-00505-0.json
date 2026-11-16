@@ -4,7 +4,12 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Cambridge",
+            "ror": "013meh722"
+          }
+        ],
         "name": "Fiona Smyth",
         "openalex": "A5107572150",
         "orcid": "https://orcid.org/0000-0002-6779-8673"
@@ -25,7 +30,7 @@
     "title": "Streets of glass"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-13_10.1038/s44284-0",
+    "cluster_id": "clu_2026-11-14_10.1038/s44284-0",
     "members": [
       "doi:10.1038/s44284-026-00505-0"
     ],
@@ -34,7 +39,13 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:013meh722",
+        "label": "University of Cambridge"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -51,24 +62,24 @@
         "id": "openalex:T12188",
         "is_primary": true,
         "label": "Architecture, Modernity, and Design",
-        "score": 0.5322,
+        "score": 0.2107,
         "subfield": "2216"
       },
       {
         "confidence": null,
-        "id": "openalex:T12325",
+        "id": "openalex:T13513",
         "is_primary": false,
-        "label": "Urban Design and Spatial Analysis",
-        "score": 0.1041,
+        "label": "Urban and sociocultural dynamics",
+        "score": 0.1675,
         "subfield": "3322"
       },
       {
         "confidence": null,
-        "id": "openalex:T11479",
+        "id": "openalex:T11104",
         "is_primary": false,
-        "label": "Smart Cities and Technologies",
-        "score": 0.08,
-        "subfield": "3322"
+        "label": "Memory, Trauma, and Commemoration",
+        "score": 0.1197,
+        "subfield": "3316"
       }
     ]
   },
@@ -76,7 +87,18 @@
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W4233478480",
+      "openalex:W2036387912",
+      "openalex:W4230198194",
+      "openalex:W1650026012",
+      "openalex:W7143408035",
+      "openalex:W4231757594",
+      "openalex:W4256419783",
+      "openalex:W4256003269",
+      "openalex:W2506147338",
+      "openalex:W4229725840"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -87,7 +109,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-15T00:57:37Z",
+    "collected_at": "2026-11-16T00:55:18Z",
     "collectors": [
       "openalex"
     ],
@@ -134,6 +156,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-13",
+  "updated": "2026-11-15",
   "work_key": "doi:10.1038/s44284-026-00505-0"
 }

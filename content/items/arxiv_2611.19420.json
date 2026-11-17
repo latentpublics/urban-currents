@@ -1,0 +1,168 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Unhealthy diets are a major driver of cardiometabolic disease, yet the geospatial structure of dietary behavior and its links to population health remain poorly understood. While large-scale retail transaction data offer a unique view of population dietary behavior, conventional approaches reduce purchases to isolated items, not accounting for how foods are actually combined. Here, we analyze 51 million grocery receipts across 95 Danish municipalities using a statistically validated bipartite network framework to isolate co-purchases that product popularity alone cannot explain. We find that, although municipalities buy largely the same products, their co-purchasing networks reorganize along a continuous urban-to-peripheral gradient in how those products are combined. The network backbone can be resolved into modular dietary communities whose local cohesion allows us to predict cardiometabolic prescriptions, explaining a quarter to a half of the variance left after sociodemographic adjustment, beyond what product prevalence alone accounts for. Ultra-processed foods (UPFs) show no spatial gradient in prevalence and are located at the network periphery, where they share baskets with fresh foods but rarely form the combinations that hold the network together. Taken together, our findings show that geographic dietary differences are encoded not only in what people purchase, but in how foods are systematically combined within shopping baskets, offering a scalable network approach for population nutritional epidemiology.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Antonio Desiderio",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Leonardo Rodovero",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sune Lehmann",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "cs.SI"
+    ],
+    "comment": "24 pages, 3 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.19420v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.19420v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-14",
+    "repository_urls": [],
+    "title": "Food co-purchasing networks encode geographic disparities in cardiometabolic health"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-15_2611.19420",
+    "members": [
+      "arxiv:2611.19420"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.19420",
+    "doi": "10.48550/arxiv.2611.19420",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-17T03:39:26Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005246,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2033,
+      "out": 244
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9072,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3629,
+    "relevance": 0.9072
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "Using a statistically validated bipartite network framework on 51 million grocery receipts from 95 Danish municipalities, this study isolates food co-purchasing patterns that extend beyond individual product popularity. The resulting modular dietary communities explain 25% to 50% of the remaining variance in cardiometabolic prescription rates after controlling for sociodemographics, whereas ultra-processed food prevalence shows no spatial variation and sits at the network periphery.",
+      "why": "It demonstrates that geographic health disparities are driven by how foods are systematically paired in baskets rather than just the isolated consumption of specific items, offering a scalable method for spatial nutritional epidemiology."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-14",
+  "work_key": "arxiv:2611.19420"
+}

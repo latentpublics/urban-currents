@@ -77,8 +77,35 @@
         "label": "graph neural network"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00k4e5n71",
+        "label": "Laboratoire des Sciences de l'Ingénieur, de l'Informatique et de l'Imagerie"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02jhjzd11",
+        "label": "Ecole Nationale du Génie de l'Eau et de l'Environnement de Strasbourg (ENGEES)"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7055-6950",
+        "label": "Xavier Jurado"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161391077",
+        "label": "C{é}dric Wemmert"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2819-7154",
+        "label": "Nicolas Reiminger"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -89,18 +116,85 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.999,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10524",
+        "is_primary": false,
+        "label": "Traffic control and management",
+        "score": 0.0002,
+        "subfield": "2207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12120",
+        "is_primary": false,
+        "label": "Air Quality Monitoring and Forecasting",
+        "score": 0.0001,
+        "subfield": "2305"
+      }
+    ]
   },
   "first_published": "2026-11-09",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W1985986451",
+      "openalex:W2119634512",
+      "openalex:W2560136348",
+      "openalex:W2756203131",
+      "openalex:W2760103357",
+      "openalex:W2768008502",
+      "openalex:W2768397717",
+      "openalex:W2811136734",
+      "openalex:W2903709398",
+      "openalex:W2908510526",
+      "openalex:W2998048283",
+      "openalex:W3008051421",
+      "openalex:W3123909522",
+      "openalex:W3174686248",
+      "openalex:W3203175087",
+      "openalex:W4214928630",
+      "openalex:W4226002507",
+      "openalex:W4301861531",
+      "openalex:W4319453451",
+      "openalex:W4388936714",
+      "openalex:W4391933568",
+      "openalex:W4392882640",
+      "openalex:W4405316966",
+      "openalex:W4406033953",
+      "openalex:W4411078731",
+      "openalex:W4411535949",
+      "openalex:W4412772591",
+      "openalex:W7131666820",
+      "openalex:W7213540681",
+      "openalex:W7223455394"
+    ],
+    "related_works": [
+      "openalex:W7131666820",
+      "openalex:W4366150210",
+      "openalex:W7160946878",
+      "openalex:W7166890411",
+      "openalex:W6922463643",
+      "openalex:W2937569665",
+      "openalex:W4224282403",
+      "openalex:W7163675576",
+      "openalex:W4402666101",
+      "openalex:W7205005975"
+    ]
   },
   "ids": {
     "arxiv": "2611.12379",
     "doi": "10.48550/arxiv.2611.12379",
-    "openalex": null,
+    "openalex": "W7225697393",
     "pmid": null
   },
   "provenance": {
@@ -108,7 +202,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-11T01:14:01Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006109,
     "llm": {
@@ -196,6 +291,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-09",
+  "updated": "2026-11-16",
   "work_key": "arxiv:2611.12379"
 }

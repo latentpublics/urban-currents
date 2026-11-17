@@ -75,23 +75,147 @@
       }
     ],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:020hwjq30",
+        "label": "Aalto University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01tmp8f25",
+        "label": "Universidad Nacional Autónoma de México"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03cqe8w59",
+        "label": "Consejo Nacional de Investigaciones Científicas y Técnicas"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05m802881",
+        "label": "Bariloche Atomic Centre"
+      },
+      {
+        "confidence": null,
+        "id": "ror:048zgak80",
+        "label": "National University of Río Negro"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02zz52s52",
+        "label": "Instituto de Investigaciones Biomédicas, Universidad Nacional Autónoma de México"
+      },
+      {
+        "confidence": null,
+        "id": "ror:035dkdb55",
+        "label": "The Alan Turing Institute"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8230-6502",
+        "label": "Jan Eskil Snellman"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0987-0785",
+        "label": "Rafael A. Barrio"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5077692301",
+        "label": "C. I. Ventura"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0559-5379",
+        "label": "Tzipe Govezensky"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3805-9687",
+        "label": "Kimmo  K. Kaski"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5068464508",
+        "label": "Maarit J. Korpi–Lagg"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10410",
+        "is_primary": true,
+        "label": "COVID-19 epidemiological studies",
+        "score": 0.9961,
+        "subfield": "2611"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10482",
+        "is_primary": false,
+        "label": "Mathematical and Theoretical Epidemiology and Ecology Models",
+        "score": 0.0034,
+        "subfield": "2604"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11711",
+        "is_primary": false,
+        "label": "COVID-19 Pandemic Impacts",
+        "score": 0.0001,
+        "subfield": "2002"
+      }
+    ]
   },
   "first_published": "2026-11-09",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W2543910789",
+      "openalex:W2551962565",
+      "openalex:W2587590212",
+      "openalex:W3008443627",
+      "openalex:W3039119913",
+      "openalex:W3047132168",
+      "openalex:W3113648729",
+      "openalex:W3135257712",
+      "openalex:W3154748858",
+      "openalex:W3185059154",
+      "openalex:W3185300297",
+      "openalex:W3201179027",
+      "openalex:W4240607534",
+      "openalex:W4281719085",
+      "openalex:W4286502351",
+      "openalex:W4379795808",
+      "openalex:W4390672903",
+      "openalex:W4401575608",
+      "openalex:W4412605633",
+      "openalex:W7125767910"
+    ],
+    "related_works": [
+      "openalex:W4396887989",
+      "openalex:W3044014021",
+      "openalex:W4295030624",
+      "openalex:W3179211961",
+      "openalex:W3134208446",
+      "openalex:W3132412153",
+      "openalex:W3120958269",
+      "openalex:W4402259376",
+      "openalex:W3092231303",
+      "openalex:W3217001219"
+    ]
   },
   "ids": {
     "arxiv": "2611.12270",
     "doi": "10.48550/arxiv.2611.12270",
-    "openalex": null,
+    "openalex": "W7225728941",
     "pmid": null
   },
   "provenance": {
@@ -99,7 +223,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-11T01:14:01Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005279,
     "llm": {
@@ -187,6 +312,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-09",
+  "updated": "2026-11-16",
   "work_key": "arxiv:2611.12270"
 }

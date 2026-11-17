@@ -4,19 +4,34 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Peking University",
+            "ror": "02v51f717"
+          }
+        ],
         "name": "Jiahang Liu",
         "openalex": "A5162073318",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Peking University",
+            "ror": "02v51f717"
+          }
+        ],
         "name": "Xinxin Cui",
         "openalex": "A5162098200",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Peking University",
+            "ror": "02v51f717"
+          }
+        ],
         "name": "Qiyang Liu",
         "openalex": "A5042670832",
         "orcid": "https://orcid.org/0000-0003-0953-7050"
@@ -37,7 +52,7 @@
     "title": "The long and winding road: How car resources influence subjective well-being in urban China"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-14_10.1016/j.tbs.20",
+    "cluster_id": "clu_2026-11-15_10.1016/j.tbs.20",
     "members": [
       "doi:10.1016/j.tbs.2026.101443"
     ],
@@ -46,7 +61,13 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02v51f717",
+        "label": "Peking University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -73,7 +94,7 @@
         "id": "openalex:T10698",
         "is_primary": true,
         "label": "Transportation Planning and Optimization",
-        "score": 0.5981,
+        "score": 0.7515,
         "subfield": "3313"
       },
       {
@@ -81,7 +102,7 @@
         "id": "openalex:T10475",
         "is_primary": false,
         "label": "Psychological Well-being and Life Satisfaction",
-        "score": 0.2346,
+        "score": 0.1786,
         "subfield": "3207"
       },
       {
@@ -89,7 +110,7 @@
         "id": "openalex:T10298",
         "is_primary": false,
         "label": "Urban Transport and Accessibility",
-        "score": 0.0735,
+        "score": 0.0314,
         "subfield": "3313"
       }
     ]
@@ -261,7 +282,18 @@
       "openalex:W7167489195",
       "openalex:W7204121426"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W3198157809",
+      "openalex:W7112331487",
+      "openalex:W6908639864",
+      "openalex:W2997036671",
+      "openalex:W2750408759",
+      "openalex:W2204761951",
+      "openalex:W3002398483",
+      "openalex:W2239436183",
+      "openalex:W6927097006",
+      "openalex:W3135240752"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -272,7 +304,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-16T00:55:16Z",
+    "collected_at": "2026-11-17T03:39:36Z",
     "collectors": [
       "openalex"
     ],
@@ -319,6 +351,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-14",
+  "updated": "2026-11-16",
   "work_key": "doi:10.1016/j.tbs.2026.101443"
 }

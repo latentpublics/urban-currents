@@ -1,0 +1,174 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "As mobile traveler-information services expand, transportation agencies must determine whether aging roadside infrastructure can be retired while preserving public access and operational resilience. This study develops an evidence-based decision framework for screening highway advisory radio (HAR) and dynamic message sign (DMS) assets for retirement. The framework integrates carrier-specific connectivity measurements, asset inventories, and documented mobile-message receipts, while separating technical evidence, institutional decision rules, and requirements for subsequent agency review. A Maryland case study combines three-carrier drive tests across four corridors with an inventory of nine HAR sites and 234 DMS. Alternative screening scenarios examine how evidence availability, radio references, and institutional assumptions affect review categories. All 105 DMS with complete local radio observations pass the baseline connectivity screen, leaving inventory rules to differentiate their action-review categories. In analyst-defined scenarios, removing ownership-based retention increases decommissioning referrals from three to 21, whereas extending beacon retention to urban assets reduces them to zero. These results demonstrate that retirement screening depends substantially on institutional assumptions, even when the underlying radio evidence remains unchanged. Explicit treatment of missing and conditional evidence also identifies assets requiring further assessment. Because historical radio measurements are spatially associated with later message tests, the resulting references remain exploratory and do not establish delivery reliability. The framework provides an auditable basis for prioritizing asset reviews and documenting decision assumptions; final retirement decisions require asset-specific assessments of service equivalence, audience reach, resilience, and lifecycle costs.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Dianwei Chen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yuan-Zheng Lei",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Zheyu Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xianfeng Yang",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY",
+      "cs.DB"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.18886v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.18886v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-13",
+    "repository_urls": [],
+    "title": "An Evidence-Based Decision Framework for Retiring Roadside Traveler Information Infrastructure in the Mobile Era"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-15_2611.18886",
+    "members": [
+      "arxiv:2611.18886"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.18886",
+    "doi": "10.48550/arxiv.2611.18886",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-17T03:39:26Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005708,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2107,
+      "out": 283
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9737,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3895,
+    "relevance": 0.9737
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Drive-test radio measurements were spatially paired with subsequent mobile message receipts rather than captured simultaneously, making the connectivity references exploratory rather than a definitive test of delivery reliability.",
+      "what": "The authors developed a decision framework to evaluate highway advisory radio (HAR) and dynamic message signs (DMS) for retirement, separating physical connectivity evidence from institutional policy rules. Testing the framework on 9 HAR sites and 234 DMS across four corridors in Maryland showed that all 105 DMS with full radio coverage passed baseline connectivity checks, while altering policy assumptions shifted decommissioning referrals from 3 to 21 assets using identical drive-test data.",
+      "why": "It shows that roadside infrastructure retirement decisions are governed by administrative rules rather than signal gaps, giving transport agencies a transparent, auditable process to test policy assumptions before decommissioning legacy assets."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-13",
+  "work_key": "arxiv:2611.18886"
+}

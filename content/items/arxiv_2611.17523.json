@@ -1,0 +1,162 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Background. Human activities in areas with burnable land cover can lead to wildfire ignitions, and higher levels of human presence increase the likelihood of such fires. Building locations provide a widely available representation of human presence. Aims. This study examines how accurately proximity to buildings predicts wildfire ignition cause across different land-cover types. Methods. Supervised classification methods were applied to building, land-cover, and ignition data for the contiguous United States to estimate the conditional probability that an ignition is human-caused. Proximity to buildings was represented using either building density within surrounding zones or distance to nearby areas with high building density. Key results. Both methods, particularly the distance-based approach, showed that proximity to buildings is a strong predictor of ignition cause: approximately three quarters of both human- and lightning-caused ignitions were correctly classified. Retraining the models separately for individual states did not substantially improve classification performance relative to the national model. Conclusions. Building proximity is an effective predictor of wildfire ignition cause, and the relationship between ignition cause and building-related predictors is similar across many regions of the contiguous United States. Implications. Building-proximity variables can be incorporated into wildfire forecasting and risk assessment models to improve prediction of human-caused wildfire ignitions.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ardavan Yazdanbakhsh",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "17 pages, 5 figures. Under review at the International Journal of Wildland Fire",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.17523v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.17523v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-12",
+    "repository_urls": [],
+    "title": "A Spatial Analysis of Proximity to the Built Environment and Wildfire Ignition Cause in the United States"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-15_2611.17523",
+    "members": [
+      "arxiv:2611.17523"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q30",
+        "label": "United States",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-12",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.17523",
+    "doi": "10.48550/arxiv.2611.17523",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-17T03:39:26Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004694,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2019,
+      "out": 185
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9808,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3923,
+    "relevance": 0.9808
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "Supervised classification models were applied to building location, land-cover, and ignition data across the contiguous United States to predict whether wildfires were triggered by humans or lightning. Distance to high-building-density areas and surrounding building density both achieved correct classification for roughly 75% of human-caused and lightning-caused ignitions, with state-level retraining providing minimal improvement over the single national model.",
+      "why": "This demonstrates that building proximity functions as a consistent predictor of ignition source across diverse regions, allowing wildfire forecasting and risk models to estimate human-caused ignition probability nationwide without requiring localized retraining."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-12",
+  "work_key": "arxiv:2611.17523"
+}

@@ -1,0 +1,218 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Accurate pedestrian network data is foundational to urban accessibility, routing, and infrastructure planning, yet such data remains scarce and difficult to produce at scale. Automated extraction pipelines have made significant strides by leveraging computer vision to derive sidewalk networks from aerial imagery, and have seen real-world adoption by municipalities seeking cost-effective inventory solutions. Yet, these pipelines consistently produce topological errors (e.g., disconnected components, dangling edges, missed connections, malformed intersections) that undermine the utility of the extracted networks for routing and accessibility analysis. Correcting these errors requires situated human judgment that global automated repair strategies cannot replicate, yet practitioners currently lack dedicated tools to support this work efficiently. We present Sidewalk Stewards, a visual analytics system that bridges the gap between automated extraction and a deployment-ready pedestrian network. Sidewalk Stewards detects candidate topology errors, supports interactive user-guided correction through coordinated spatial views, and provides real-time quality feedback as edits are applied. We evaluate Sidewalk Stewards through a comparative user study, case studies across cities, and a quantitative evaluation. Compared with conventional workflows, the system facilitates error identification and enables faster and more complete correction. The case studies illustrate the workflow across different urban contexts, and the quantitative evaluation shows that a small number of user corrections can enhance multiple sidewalk quality metrics. Sidewalk Stewards is available at urbantk.org/sidewalk.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Stefan Cobeli",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Leonardo Ferreira",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Logan Loch",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Luiza Melo",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Peyman Baghershahi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Claudio D. G. Linhares",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Nivan Ferreira",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sourav Medya",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Fabio Miranda",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Maryam Hosseini",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.HC",
+      "cs.CV",
+      "cs.CY"
+    ],
+    "comment": "Under review",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.20330v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.20330v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-15",
+    "repository_urls": [],
+    "title": "Sidewalk Stewards: A Visual Analytics Approach for Interactive Topology Repair of Sidewalk Networks"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-16_2611.20330",
+    "members": [
+      "arxiv:2611.20330"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.20330",
+    "doi": "10.48550/arxiv.2611.20330",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-18T02:50:07Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005438,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2071,
+      "out": 259
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9597,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4639,
+    "relevance": 0.9597
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "Sidewalk Stewards is a visual analytics platform designed to clean topological errors in aerial-extracted sidewalk networks by flagging anomalies like disconnected components, dangling edges, and malformed intersections. The system combines coordinated spatial views for manual correction with live routing and accessibility metric updates. In comparative user tests, case studies across multiple cities, and quantitative evaluations, the interface allowed users to find and fix errors faster than standard workflows, with a minor volume of manual edits yielding broad spatial graph quality improvements.",
+      "why": "It replaces brute-force manual editing with an interactive, semi-automated process, turning imperfect computer vision outputs into routing-ready spatial networks for municipal accessibility planning."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-15",
+  "work_key": "arxiv:2611.20330"
+}

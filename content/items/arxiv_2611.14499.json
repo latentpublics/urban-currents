@@ -52,23 +52,104 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02jqj7156",
+        "label": "George Mason University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5817-5020",
+        "label": "Sandro M. Reia"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5124306033",
+        "label": "Taylor Anderson"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9197-0069",
+        "label": "Dieter Pfoser"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": true,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.7041,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.2507,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0225,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-11-10",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W1651166699",
+      "openalex:W1946685448",
+      "openalex:W1973573843",
+      "openalex:W1981806743",
+      "openalex:W1982300822",
+      "openalex:W1987228002",
+      "openalex:W1987233492",
+      "openalex:W2024208934",
+      "openalex:W2029440021",
+      "openalex:W2056495296",
+      "openalex:W2062389694",
+      "openalex:W2115240023",
+      "openalex:W2121097743",
+      "openalex:W2124499968",
+      "openalex:W2133400794",
+      "openalex:W2470143080",
+      "openalex:W2518756180",
+      "openalex:W2549766072",
+      "openalex:W3133545383",
+      "openalex:W3179398129",
+      "openalex:W3214313222",
+      "openalex:W4404784991"
+    ],
+    "related_works": [
+      "openalex:W2742277094",
+      "openalex:W2151952131",
+      "openalex:W6922663217",
+      "openalex:W1954949556",
+      "openalex:W2040671445",
+      "openalex:W4407172919",
+      "openalex:W2806312459",
+      "openalex:W3008253172",
+      "openalex:W4288886343",
+      "openalex:W3171641070"
+    ]
   },
   "ids": {
     "arxiv": "2611.14499",
     "doi": "10.48550/arxiv.2611.14499",
-    "openalex": null,
+    "openalex": "W7225777717",
     "pmid": null
   },
   "provenance": {
@@ -76,7 +157,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-12T02:12:49Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.0058,
     "llm": {
@@ -164,6 +246,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-10",
+  "updated": "2026-11-17",
   "work_key": "arxiv:2611.14499"
 }

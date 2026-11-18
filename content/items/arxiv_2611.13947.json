@@ -80,23 +80,163 @@
         "label": "agent-based model"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00pfxsh56",
+        "label": "Institute for Cross-Disciplinary Physics and Complex Systems"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00xmwgm53",
+        "label": "Telecom Italia (Italy)"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04j0x0h93",
+        "label": "Istituto Nazionale di Fisica Nucleare, Sezione di Bologna"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01111rn36",
+        "label": "University of Bologna"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5098921352",
+        "label": "Federico Bellisardi"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5066891524",
+        "label": "Chiara Mizzi"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5987-8086",
+        "label": "Alessandro Fabbri"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7851-0532",
+        "label": "Davide Micheli"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5079986396",
+        "label": "Aldo Vannelli"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9633-0017",
+        "label": "Armando Bazzani"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.4312,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.2297,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.1876,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-11-10",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W609233983",
+      "openalex:W924558455",
+      "openalex:W994344872",
+      "openalex:W1657732787",
+      "openalex:W1970238092",
+      "openalex:W1976710047",
+      "openalex:W1979236986",
+      "openalex:W1982300822",
+      "openalex:W1982978808",
+      "openalex:W1990898695",
+      "openalex:W1998277768",
+      "openalex:W2004080457",
+      "openalex:W2011504567",
+      "openalex:W2019663200",
+      "openalex:W2020281294",
+      "openalex:W2030525099",
+      "openalex:W2037585618",
+      "openalex:W2040297119",
+      "openalex:W2042493333",
+      "openalex:W2056188798",
+      "openalex:W2064770479",
+      "openalex:W2081120846",
+      "openalex:W2097699073",
+      "openalex:W2103968250",
+      "openalex:W2108658848",
+      "openalex:W2112738128",
+      "openalex:W2114092915",
+      "openalex:W2147457766",
+      "openalex:W2164768649",
+      "openalex:W2167598958",
+      "openalex:W2169528473",
+      "openalex:W2177295793",
+      "openalex:W2261655856",
+      "openalex:W2299288249",
+      "openalex:W2345172924",
+      "openalex:W2584179300",
+      "openalex:W2605264395",
+      "openalex:W2744637967",
+      "openalex:W2793759487",
+      "openalex:W2896374819",
+      "openalex:W2903709398",
+      "openalex:W2962917186",
+      "openalex:W4214928630",
+      "openalex:W4283709591",
+      "openalex:W4293222181",
+      "openalex:W4389480022",
+      "openalex:W4396844099",
+      "openalex:W4401253958",
+      "openalex:W4402836232",
+      "openalex:W4410061366",
+      "openalex:W4411339489"
+    ],
+    "related_works": [
+      "openalex:W2931990412",
+      "openalex:W4225922169",
+      "openalex:W764867131",
+      "openalex:W2941436443",
+      "openalex:W4408699870",
+      "openalex:W820534734",
+      "openalex:W3006913050",
+      "openalex:W4379795879",
+      "openalex:W2341789454",
+      "openalex:W4362496724"
+    ]
   },
   "ids": {
     "arxiv": "2611.13947",
     "doi": "10.48550/arxiv.2611.13947",
-    "openalex": null,
+    "openalex": "W7225800247",
     "pmid": null
   },
   "provenance": {
@@ -104,7 +244,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-12T02:12:49Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005768,
     "llm": {
@@ -192,6 +333,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-10",
+  "updated": "2026-11-17",
   "work_key": "arxiv:2611.13947"
 }

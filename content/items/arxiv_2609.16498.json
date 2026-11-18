@@ -1,0 +1,248 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Research data repositories are essential infrastructure for scientific inquiry and for ensuring research datasets follow FAIR (Findable, Accessible, Interoperable, and Reusable) principles. At the same time, the effectiveness of repositories at promoting reuse depends on the quality and completeness of geospatial and thematic metadata, which is usually supplied voluntarily by a data depositor or researcher. Yet, due to the voluntary nature of such user-derived metadata and the curation and resource constraints facing research data repositories, it is no surprise that even on the Harvard Dataverse Repository, the world’s largest general-purpose research repository, most metadata fields are missing. A missing metadata field represents a loss of information, so an incomplete metadata record is also a less interoperable record. In fact, we find that datasets with more missing metadata are associated with fewer downstream citations, and, more to the point of this paper, with fewer resolvable connections to other datasets. The implications for geospatial datasets are even more stark, as only 0.3 percent of research datasets outside a single archaeological deposit have a bounding box and nearly all such bounding boxes are archival data points rather than full geographic shapes. We find that the value in geospatial metadata is that location helps connect datasets’ concepts across disciplines. After embedding all of the datasets on the Harvard Dataverse into a metadata knowledge graph, we find that datasets are twice as likely to be connected across scientific disciplines through shared geospatial metadata as through keyword metadata, evidence that geographic metadata is the most reliable attribute we have for making datasets interoperable across the disciplinary boundaries. We train a small language model and fine-tune it on datasets that are stored on the Harvard Dataverse repository. We find that through geospatial metadata enrichment, we are able to increase the share of datasets from different disciplines that are connected via metadata elements from 58.5 to 63.2 percent.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Harvard University",
+            "ror": "03vek6s52"
+          }
+        ],
+        "name": "Daniel Ebanks",
+        "openalex": "A5151911357",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Harvard University",
+            "ror": "03vek6s52"
+          }
+        ],
+        "name": "Devika Jain",
+        "openalex": "A5124028080",
+        "orcid": "https://orcid.org/0000-0001-7800-929X"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.3390/ijgi15110508",
+      "pdf_url": null,
+      "source_id": "S2764431341",
+      "source_name": "ISPRS International Journal of Geo-Information",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-11-14",
+    "repository_urls": [],
+    "title": "Geospatial Metadata Improves Discoverability by Connecting Datasets Across Scientific Disciplines"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-16_2609.16498",
+    "members": [
+      "arxiv:2609.16498"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03vek6s52",
+        "label": "Harvard University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5151911357",
+        "label": "Daniel Ebanks"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7800-929X",
+        "label": "Devika Jain"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11937",
+        "is_primary": true,
+        "label": "Research Data Management Practices",
+        "score": 0.9941,
+        "subfield": "1710"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14330",
+        "is_primary": false,
+        "label": "Library Science and Information Systems",
+        "score": 0.0015,
+        "subfield": "1710"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14320",
+        "is_primary": false,
+        "label": "Optics and Image Analysis",
+        "score": 0.0005,
+        "subfield": "3309"
+      }
+    ]
+  },
+  "first_published": "2026-11-14",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1567491469",
+      "openalex:W2038319167",
+      "openalex:W2045657963",
+      "openalex:W2062881723",
+      "openalex:W2079488264",
+      "openalex:W2106721232",
+      "openalex:W2572147858",
+      "openalex:W2593537191",
+      "openalex:W2907809499",
+      "openalex:W2951111744",
+      "openalex:W2955244474",
+      "openalex:W2982441053",
+      "openalex:W3010336026",
+      "openalex:W3095701222",
+      "openalex:W3168867926",
+      "openalex:W3195722309",
+      "openalex:W4229010617",
+      "openalex:W4313347089",
+      "openalex:W4380086537",
+      "openalex:W4393002303",
+      "openalex:W4403529708",
+      "openalex:W4404350789",
+      "openalex:W4412999228",
+      "openalex:W7133233472",
+      "openalex:W7133239970"
+    ],
+    "related_works": [
+      "openalex:W2902355215",
+      "openalex:W7212307935",
+      "openalex:W2495737905",
+      "openalex:W2636040319",
+      "openalex:W6902056877",
+      "openalex:W7125206717",
+      "openalex:W3092485496",
+      "openalex:W7164174294",
+      "openalex:W4408429786",
+      "openalex:W3176000294"
+    ]
+  },
+  "ids": {
+    "arxiv": "2609.16498",
+    "doi": "10.3390/ijgi15110508",
+    "openalex": "W7213427859",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-18T02:50:17Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00569,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2257,
+      "out": 256
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-18T02:50:17Z",
+    "doi": "10.3390/ijgi15110508",
+    "journal": "ISPRS International Journal of Geo-Information",
+    "source_id": "S2764431341",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The findings and model evaluation are based exclusively on a single research repository, Harvard Dataverse.",
+      "what": "The authors analyzed metadata completeness across the Harvard Dataverse repository and constructed a metadata knowledge graph to test how location connects research datasets across disciplines. They fine-tuned a small language model on repository records to automatically enrich geospatial metadata, which raised the proportion of cross-disciplinary dataset connections from 58.5% to 63.2%. Currently, only 0.3% of non-archaeological datasets in the repository contain a geographic bounding box.",
+      "why": "Spatial coordinates serve as a significantly stronger bridge between disparate research fields than traditional keywords, providing a concrete mechanism to increase cross-disciplinary dataset reuse."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-14",
+  "work_key": "arxiv:2609.16498"
+}

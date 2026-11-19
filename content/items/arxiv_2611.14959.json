@@ -54,23 +54,76 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02zhqgq86",
+        "label": "University of Hong Kong"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5161892720",
+        "label": "Lijia Liu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161313135",
+        "label": "Yimeng Song"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10766",
+        "is_primary": true,
+        "label": "Urban Heat Island Mitigation",
+        "score": 0.4238,
+        "subfield": "2305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.3423,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0763,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-11-11",
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W4415103368",
+      "openalex:W4417282757",
+      "openalex:W7222090180",
+      "openalex:W3181954916",
+      "openalex:W4415149216",
+      "openalex:W4409885900",
+      "openalex:W6987449599",
+      "openalex:W4360999887",
+      "openalex:W3199778324",
+      "openalex:W4400315940"
+    ]
   },
   "ids": {
     "arxiv": "2611.14959",
     "doi": "10.48550/arxiv.2611.14959",
-    "openalex": null,
+    "openalex": "W7226014308",
     "pmid": null
   },
   "provenance": {
@@ -78,7 +131,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-14T01:24:41Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005978,
     "llm": {
@@ -166,6 +220,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-11",
+  "updated": "2026-11-18",
   "work_key": "arxiv:2611.14959"
 }

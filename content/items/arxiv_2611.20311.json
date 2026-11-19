@@ -1,0 +1,193 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Urban sensing initiatives increasingly produce multimodal datasets that combine visual and textual information to capture city characteristics and subjective factors such as safety, comfort, and accessibility. Yet, analyzing such data at scale remains difficult, as manual inspection is unfeasible and automated methods struggle to interpret subjective cues and uncover relationships across diverse data modalities. Moreover, existing workflows rarely make exploration steps explicit, hindering reproducibility. To address these challenges, we introduce Reveal, a provenance-aware visual analytics system for exploring heterogeneous urban data. Reveal enables users to build dataflows by combining text and image searches across coordinated views, chaining queries into pipelines, and applying set operations within an exploration diagram while capturing analytical provenance. We evaluate Reveal through two case studies focused on accessibility and walkability.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Leonardo Ferreira",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Joao Rulff",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Maryam Hosseini",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Aline Paes",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Daniel de Oliveira",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Fabio Miranda",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Marcos Lage",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.HC",
+      "cs.CY",
+      "cs.MM"
+    ],
+    "comment": "Accepted to SIBGRAPI 2026",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.20311v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.20311v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-15",
+    "repository_urls": [],
+    "title": "Reveal: A Provenance-Aware System for Multimodal Urban Data Exploration"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-17_2611.20311",
+    "members": [
+      "arxiv:2611.20311"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-15",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.20311",
+    "doi": "10.48550/arxiv.2611.20311",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-19T02:28:29Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004945,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1803,
+      "out": 249
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8915,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3566,
+    "relevance": 0.8915
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The system's performance and practical utility were evaluated solely through descriptive case studies rather than formal user testing.",
+      "what": "The authors developed Reveal, a visual analytics platform designed to query and process heterogeneous urban data combining text and images. The system lets users construct search pipelines, apply set operations across coordinated views, and record analytical provenance. The tool's capabilities were tested across two case studies focused on urban accessibility and walkability.",
+      "why": "It enables practitioners to track, reproduce, and structure complex multi-step analytical workflows when exploring subjective multimodal urban datasets."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-15",
+  "work_key": "arxiv:2611.20311"
+}

@@ -1,33 +1,57 @@
 {
   "badges": [
-    "preprint"
+    "published"
   ],
   "bibliography": {
     "abstract": "Urban services are unevenly distributed across the city, yet it is unclear when their joint presence signals fragility and when it instead outlines a neighbourhood's vocation. For Bologna and Florence, we integrate Foursquare and OpenStreetMap points of interest with Sentinel-2-derived green indicators based on the 3-30-300 rule, cluster urban areas accordingly, and benchmark the clusters against the demographic, social, economic and composite fragility indices produced by the municipal statistical offices, which are exogenous to the analysis. In both cities, we identify a subset of infrastructures, termed AGORA (Arts, Green environments, and Open Routes for Access and mobility), whose joint provision is associated with lower fragility. The AGORA Alignment score (AA), based on the rank correlation between AGORA endowment and composite fragility, indicates full alignment in Florence (AA = 1.00) and strong but incomplete alignment in Bologna (AA = 0.80). The remaining service categories instead show wide and heterogeneous distributions: they differentiate areas without tracking fragility and can be interpreted as expressions of urban vocations. The least fragile cluster, the only one with full AGORA endowment, hosts just 3.3% of residents in Bologna and 6.3% in Florence. The framework offers a procedure transferable to other contexts and identifies the expansion of AGORA infrastructures as a candidate lever for reducing fragility without altering existing vocations.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Fondazione Bruno Kessler",
+            "ror": "01j33xk10"
+          }
+        ],
         "name": "Eleonora Andreotti",
-        "openalex": null,
-        "orcid": null
+        "openalex": "A5108008810",
+        "orcid": "https://orcid.org/0000-0002-4500-2435"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Fondazione Bruno Kessler",
+            "ror": "01j33xk10"
+          }
+        ],
         "name": "Munazza Usmani",
-        "openalex": null,
-        "orcid": null
+        "openalex": "A5004620655",
+        "orcid": "https://orcid.org/0000-0002-6469-1619"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Trento",
+            "ror": "05trd4x28"
+          },
+          {
+            "name": "Fondazione Bruno Kessler",
+            "ror": "01j33xk10"
+          }
+        ],
         "name": "Alice Barsanti",
-        "openalex": null,
+        "openalex": "A5107622966",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Fondazione Bruno Kessler",
+            "ror": "01j33xk10"
+          }
+        ],
         "name": "Maurizio Napolitano",
-        "openalex": null,
-        "orcid": null
+        "openalex": "A5064421629",
+        "orcid": "https://orcid.org/0000-0002-7064-8334"
       }
     ],
     "categories": [
@@ -35,12 +59,12 @@
     ],
     "comment": null,
     "primary_location": {
-      "landing_page_url": "https://arxiv.org/abs/2611.06289v1",
-      "pdf_url": "https://arxiv.org/pdf/2611.06289v1",
-      "source_id": "S4306400194",
-      "source_name": "arXiv",
-      "type": "repository",
-      "version": "submittedVersion"
+      "landing_page_url": "https://doi.org/10.1177/23998083261509701",
+      "pdf_url": null,
+      "source_id": "S4210191690",
+      "source_name": "Environment and Planning B Urban Analytics and City Science",
+      "type": "journal",
+      "version": "publishedVersion"
     },
     "publication_date": "2026-11-04",
     "repository_urls": [],
@@ -59,6 +83,11 @@
         "confidence": 1.0,
         "id": "data:poi",
         "label": "points of interest"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
       }
     ],
     "methods": [
@@ -195,11 +224,11 @@
     }
   },
   "publication_status": {
-    "detected_at": null,
-    "doi": null,
-    "journal": null,
-    "source_id": null,
-    "state": "preprint"
+    "detected_at": "2026-11-19T02:28:34Z",
+    "doi": "10.1177/23998083261509701",
+    "journal": "Environment and Planning B Urban Analytics and City Science",
+    "source_id": "S4210191690",
+    "state": "published"
   },
   "review": {
     "edits": [],
@@ -209,13 +238,13 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
-      "relevance": 0.9691,
+      "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.3876,
-    "relevance": 0.9691
+    "headline": 0.44,
+    "relevance": 1.0
   },
   "signals": {
     "code_available": {
@@ -263,12 +292,12 @@
   },
   "summary": {
     "en": {
-      "caveats": "The AGORA alignment framework relies on correlation with local municipal fragility indices, which may vary in definition and data quality across different administrative contexts.",
-      "what": "The authors integrated points of interest from Foursquare and OpenStreetMap with Sentinel-2 vegetation indicators based on the 3-30-300 rule for Bologna and Florence, benchmarking spatial clusters against municipal statistical office fragility indices. They identified a core set of features—termed AGORA (Arts, Green environments, and Open Routes for Access and mobility)—whose concurrent presence tracks lower composite fragility, achieving an alignment score of 1.00 in Florence and 0.80 in Bologna. However, the least fragile cluster containing the complete AGORA suite accommodates only 3.3% of Bologna's population and 6.3% of Florence's.",
-      "why": "It separates general urban service mix, which reflects localized neighborhood functionality, from a specific baseline infrastructural trialled to reduce urban fragility across cities."
+      "caveats": "The empirical validation is limited to two historic Italian cities using municipal statistical indices as exogenous benchmarks.",
+      "what": "By combining Foursquare, OpenStreetMap, and Sentinel-2 satellite data for Bologna and Florence, this study evaluated how urban point-of-interest clusters align with official municipal fragility indices. The analysis uncovered a specific set of spatial features—termed AGORA, spanning arts, green space, and access routes—whose combined presence correlates strongly with lower social and economic fragility, exhibiting rank correlations of 1.00 in Florence and 0.80 in Bologna. However, the study finds that neighborhoods fully endowed with AGORA features house only 3.3% of Bologna's population and 6.3% of Florence's.",
+      "why": "It isolates a universal baseline set of physical and spatial assets associated with reduced neighborhood vulnerability, distinguishing essential protective infrastructure from general spatial activities that merely define a district's character."
     }
   },
   "track": "papers",
-  "updated": "2026-11-11",
+  "updated": "2026-11-18",
   "work_key": "arxiv:2611.06289"
 }

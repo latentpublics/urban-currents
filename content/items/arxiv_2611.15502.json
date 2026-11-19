@@ -45,22 +45,73 @@
     "data": [],
     "methods": [],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5161781562",
+        "label": "Zhenhao Li"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-5830-6377",
+        "label": "Peng Tang"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.998,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12303",
+        "is_primary": false,
+        "label": "Tensor decomposition and applications",
+        "score": 0.0007,
+        "subfield": "2605"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11106",
+        "is_primary": false,
+        "label": "Data Management and Algorithms",
+        "score": 0.0001,
+        "subfield": "1710"
+      }
+    ]
   },
   "first_published": "2026-11-11",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W4389326242",
+      "openalex:W4395064804",
+      "openalex:W4399794973"
+    ],
+    "related_works": [
+      "openalex:W7125949513",
+      "openalex:W4376312066",
+      "openalex:W4403677211",
+      "openalex:W4409692703",
+      "openalex:W4366306854",
+      "openalex:W4404102190",
+      "openalex:W4415907047",
+      "openalex:W4400524914",
+      "openalex:W4414360004",
+      "openalex:W7071681029"
+    ]
   },
   "ids": {
     "arxiv": "2611.15502",
     "doi": "10.48550/arxiv.2611.15502",
-    "openalex": null,
+    "openalex": "W7226030877",
     "pmid": null
   },
   "provenance": {
@@ -68,7 +119,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-16T00:55:10Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005009,
     "llm": {
@@ -156,6 +208,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-11",
+  "updated": "2026-11-18",
   "work_key": "arxiv:2611.15502"
 }

@@ -75,8 +75,50 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:05bnh6r87",
+        "label": "Cornell University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1009-8174",
+        "label": "Cafer Avcı"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9236-0761",
+        "label": "Zhaoyao Bao"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-1389-051X",
+        "label": "Maximilian Dittgen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161884463",
+        "label": "Danni Lu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4135-5209",
+        "label": "Alireza Yazdiani"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3405-3800",
+        "label": "Mohammad Tayarani"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161771323",
+        "label": "H. Oliver Gao"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -87,18 +129,83 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10190",
+        "is_primary": true,
+        "label": "Air Quality and Health Impacts",
+        "score": 0.6846,
+        "subfield": "2307"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.2213,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.0488,
+        "subfield": "3313"
+      }
+    ]
   },
   "first_published": "2026-11-11",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W1981754174",
+      "openalex:W2003662816",
+      "openalex:W2024355140",
+      "openalex:W2065888990",
+      "openalex:W2066148159",
+      "openalex:W2078301681",
+      "openalex:W2081689933",
+      "openalex:W2099618653",
+      "openalex:W2106856354",
+      "openalex:W2113661464",
+      "openalex:W2168148394",
+      "openalex:W2548602385",
+      "openalex:W2590252798",
+      "openalex:W2808579842",
+      "openalex:W2993884368",
+      "openalex:W2999568151",
+      "openalex:W3105520309",
+      "openalex:W4200046456",
+      "openalex:W4224283794",
+      "openalex:W4300109223",
+      "openalex:W4307992845",
+      "openalex:W4327813981",
+      "openalex:W4399284744",
+      "openalex:W4399470049",
+      "openalex:W4401729254",
+      "openalex:W4404438878",
+      "openalex:W4408331018",
+      "openalex:W6958826438"
+    ],
+    "related_works": [
+      "openalex:W2979504203",
+      "openalex:W2761576274",
+      "openalex:W7223718450",
+      "openalex:W2999568151",
+      "openalex:W7202257172",
+      "openalex:W2080279608",
+      "openalex:W2087193268",
+      "openalex:W7052904414",
+      "openalex:W4293152685",
+      "openalex:W1987297148"
+    ]
   },
   "ids": {
     "arxiv": "2611.15950",
     "doi": "10.48550/arxiv.2611.15950",
-    "openalex": null,
+    "openalex": "W7226026180",
     "pmid": null
   },
   "provenance": {
@@ -106,7 +213,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-14T01:24:41Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005806,
     "llm": {
@@ -194,6 +302,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-11",
+  "updated": "2026-11-18",
   "work_key": "arxiv:2611.15950"
 }

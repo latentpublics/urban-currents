@@ -95,23 +95,131 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01y1kjr75",
+        "label": "Nankai University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:046865y68",
+        "label": "Hanyang University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01vevwk45",
+        "label": "Zhejiang Normal University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01213g719",
+        "label": "Chaoyang Normal University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5161873240",
+        "label": "Jun Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9158-8134",
+        "label": "Weijie Yu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5027458370",
+        "label": "Qian Tong"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161790922",
+        "label": "Eui Jeong Kwak"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0199-2254",
+        "label": "Sang-Woon Jeon"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161990371",
+        "label": "Hua Ding"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3360-6784",
+        "label": "Qijia Jiang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161866133",
+        "label": "Hu Jin"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161879135",
+        "label": "Haewoon Nam"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5161762694",
+        "label": "Changjun Zhou"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": true,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.9951,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10100",
+        "is_primary": false,
+        "label": "Metaheuristic Optimization Algorithms Research",
+        "score": 0.0042,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11502",
+        "is_primary": false,
+        "label": "Facility Location and Emergency Management",
+        "score": 0.0001,
+        "subfield": "1803"
+      }
+    ]
   },
   "first_published": "2026-11-11",
   "graph": {
     "cited_by_count": 0,
     "referenced_works": [],
-    "related_works": []
+    "related_works": [
+      "openalex:W7005616618",
+      "openalex:W3030488483",
+      "openalex:W2387783769",
+      "openalex:W7095659638",
+      "openalex:W4391079070",
+      "openalex:W2282669440",
+      "openalex:W7225799909",
+      "openalex:W2360335154",
+      "openalex:W3113262535",
+      "openalex:W2391273756"
+    ]
   },
   "ids": {
     "arxiv": "2611.15338",
     "doi": "10.48550/arxiv.2611.15338",
-    "openalex": null,
+    "openalex": "W7226020628",
     "pmid": null
   },
   "provenance": {
@@ -119,7 +227,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-14T01:24:41Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.006104,
     "llm": {
@@ -207,6 +316,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-11",
+  "updated": "2026-11-18",
   "work_key": "arxiv:2611.15338"
 }

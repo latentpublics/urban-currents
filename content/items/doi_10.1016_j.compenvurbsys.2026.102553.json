@@ -1,0 +1,334 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Urban space is not equally accessible to all city inhabitants. For individuals with mobility disabilities, physically open spaces can remain functionally inaccessible, as inadequate sidewalk surfaces, excessive slopes, or insufficient clearance can turn a seemingly traversable area into an impassable one. Although the need to quantify these disparities is increasingly recognised, significant gaps persist in producing reliable, scalable, and actionable accessibility data. This study introduces a processing pipeline that leverages street-level imagery and deep learning techniques to estimate key characteristics of pedestrian sidewalk infrastructure — including sidewalk segmentation, surface type and condition detection, effective clearance estimation, and slope calculation — and synthesises them into an actionable dataset followed by a composite sidewalk wheelchair accessibility index (WHAI). The Wheelchair Accessibility Dataset (WHAD) pipeline combines monocular metric depth estimation, 3D point cloud reconstruction, and terrain model analysis to derive measurements from publicly available Mapillary street-level imagery. Results are validated against unmanned aerial vehicles (UAVs) and aerial orthoimagery across areas of varying accessibility in Łódź, Poland, and Heidelberg, Germany. The resulting index enables the identification of localised inaccessible enclaves that conventional spatial analyses often overlook, providing an explainable and comparable foundation for evidence-based urban planning and improvements to pedestrian routing.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Maciej Adamiak",
+        "openalex": "A5020568346",
+        "orcid": "https://orcid.org/0000-0002-8229-9661"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Gefei Kong",
+        "openalex": "A5041157601",
+        "orcid": "https://orcid.org/0000-0002-4641-7456"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Danielle Gatland",
+        "openalex": "A5116643567",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Andrzej K. Oleś",
+        "openalex": "A5024900824",
+        "orcid": "https://orcid.org/0000-0003-0285-2787"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Kirsten von Elverfeldt",
+        "openalex": "A5017781526",
+        "orcid": "https://orcid.org/0000-0003-1136-7206"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Alexander Zipf",
+        "openalex": "A5091474205",
+        "orcid": "https://orcid.org/0000-0003-4916-9838"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Heidelberg University",
+            "ror": "038t36y30"
+          }
+        ],
+        "name": "Sascha Fendrich",
+        "openalex": "A5089946206",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.compenvurbsys.2026.102553",
+      "pdf_url": null,
+      "source_id": "S60115552",
+      "source_name": "Computers Environment and Urban Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-11-17",
+    "repository_urls": [],
+    "title": "From street-level imagery to actionable mobility metrics: A deep learning framework for computing wheelchair accessibility from pedestrian sidewalk infrastructure features"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-17_10.1016/j.compen",
+    "members": [
+      "doi:10.1016/j.compenvurbsys.2026.102553"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:remote-sensing-classification",
+        "label": "remote sensing classification"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:038t36y30",
+        "label": "Heidelberg University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8229-9661",
+        "label": "Maciej Adamiak"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4641-7456",
+        "label": "Gefei Kong"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5116643567",
+        "label": "Danielle Gatland"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0285-2787",
+        "label": "Andrzej K. Oleś"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1136-7206",
+        "label": "Kirsten von Elverfeldt"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4916-9838",
+        "label": "Alexander Zipf"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5089946206",
+        "label": "Sascha Fendrich"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.5625,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.1956,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11606",
+        "is_primary": false,
+        "label": "Infrastructure Maintenance and Monitoring",
+        "score": 0.0792,
+        "subfield": "2205"
+      }
+    ]
+  },
+  "first_published": "2026-11-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1526399380",
+      "openalex:W2000936122",
+      "openalex:W2034647785",
+      "openalex:W2524960590",
+      "openalex:W2622715095",
+      "openalex:W2765193906",
+      "openalex:W2794318975",
+      "openalex:W2891554595",
+      "openalex:W3003150826",
+      "openalex:W3127387611",
+      "openalex:W3178743083",
+      "openalex:W3195494505",
+      "openalex:W4205906562",
+      "openalex:W4291016861",
+      "openalex:W4297883949",
+      "openalex:W4308814165",
+      "openalex:W4381059942",
+      "openalex:W4395080933",
+      "openalex:W4400427899",
+      "openalex:W4400982955",
+      "openalex:W4405236454",
+      "openalex:W4406226403",
+      "openalex:W4406465885",
+      "openalex:W4407989313",
+      "openalex:W7128744132"
+    ],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.compenvurbsys.2026.102553",
+    "openalex": "W7235648998",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-19T02:28:34Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00593,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2027,
+      "out": 321
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-19T02:28:34Z",
+    "doi": "10.1016/j.compenvurbsys.2026.102553",
+    "journal": "Computers Environment and Urban Systems",
+    "source_id": "S60115552",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Validation was limited to selected areas within two European cities, which may not capture the full diversity of global sidewalk conditions or image coverage gaps.",
+      "what": "The authors created the Wheelchair Accessibility Dataset pipeline, which processes Mapillary street-level imagery using monocular metric depth estimation, 3D point cloud reconstruction, and terrain models to measure sidewalk segmentation, surface condition, clearance, and slope. These measurements generate the Wheelchair Accessibility Index (WHAI), which was validated using aerial orthoimagery and unmanned aerial vehicle data across test locations in Łódź, Poland, and Heidelberg, Germany.",
+      "why": "This approach converts publicly available street images into granular 3D infrastructure metrics, allowing planners to detect micro-level physical barriers and inaccessible urban enclaves that standard network analyses miss."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-17",
+  "work_key": "doi:10.1016/j.compenvurbsys.2026.102553"
+}

@@ -1,0 +1,173 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "We investigate the urban population distribution of the Italian region of Sardinia through the kinetic theory of multi-agent systems on spatial networks, interpreting cities both as agents and vertices of a graph, and representing interurban links as edges. We consider various emigration rules to model the interactions between agents, obtaining two main results: the bimodal lognormal fit of the total population distribution among cities and the Pareto fit of the tail. Overall, our model provides results consistent with the actual distribution derived from ISTAT data of Sardinia; furthermore, the bimodal lognormal fit generally follows the distribution tail more accurately than the Pareto one, although the two coincide in the first half.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Valerio Taralli",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Andrea Tosin",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": "38 pages",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.24657v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.24657v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-18",
+    "repository_urls": [],
+    "title": "Modelling population distribution across cities on spatial networks using the kinetic theory of multi-agent systems"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-18_2611.24657",
+    "members": [
+      "arxiv:2611.24657"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:agent-based-model",
+        "label": "agent-based model"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.24657",
+    "doi": "10.48550/arxiv.2611.24657",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-20T02:13:33Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005381,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1781,
+      "out": 301
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9498,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3799,
+    "relevance": 0.9498
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The network model was validated against a single island region, which may possess unique geographical constraints that do not reflect continental urban systems.",
+      "what": "The authors modeled interurban population distributions across Sardinia, Italy, using the kinetic theory of multi-agent systems on spatial networks where cities act as graph nodes. By testing multiple emigration rules against official ISTAT census data, the model reproduced the empirical population spread via a bimodal lognormal distribution for the full system and a Pareto distribution for the upper tail. The bimodal lognormal fit matched the empirical tail data more precisely than the Pareto distribution, though both yielded identical representations for the lower portion of the tail.",
+      "why": "It establishes that multi-agent kinetic models on spatial networks can mechanisticly reproduce complex, multi-scale urban population distributions, offering a formal framework to predict how regional migration rules shape town size hierarchies."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-18",
+  "work_key": "arxiv:2611.24657"
+}

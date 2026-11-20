@@ -45,23 +45,78 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00p991c53",
+        "label": "Huazhong University of Science and Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9983-1503",
+        "label": "Conghao Wong"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5108989194",
+        "label": "Ziqian Zou"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T14002",
+        "is_primary": true,
+        "label": "Art, Technology, and Culture",
+        "score": 0.9717,
+        "subfield": "1213"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13308",
+        "is_primary": false,
+        "label": "Cybernetics and Technology in Society",
+        "score": 0.0052,
+        "subfield": "1207"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T14254",
+        "is_primary": false,
+        "label": "Digital Media and Visual Art",
+        "score": 0.0026,
+        "subfield": "1704"
+      }
+    ]
   },
   "first_published": "2026-11-12",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W4403780434"
+    ],
+    "related_works": [
+      "openalex:W3185104535",
+      "openalex:W7128618784",
+      "openalex:W4401906158",
+      "openalex:W7131902906",
+      "openalex:W4404467376",
+      "openalex:W4413962713",
+      "openalex:W7163525992",
+      "openalex:W7110502202",
+      "openalex:W7169829112",
+      "openalex:W4313256980"
+    ]
   },
   "ids": {
     "arxiv": "2611.16464",
     "doi": "10.48550/arxiv.2611.16464",
-    "openalex": null,
+    "openalex": "W7226028248",
     "pmid": null
   },
   "provenance": {
@@ -69,7 +124,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-16T00:55:10Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004354,
     "llm": {
@@ -157,6 +213,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-12",
+  "updated": "2026-11-19",
   "work_key": "arxiv:2611.16464"
 }

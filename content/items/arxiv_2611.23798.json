@@ -1,0 +1,174 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "This paper develops an Economic Progress Index (EPI), a composite measure built from Earth Observation (EO) and open geospatial data with unsupervised Principal Component Analysis (PCA) weighting. The index captures the observable productive and enabling capacity of local economies and the intensity with which economic space is used. Sub-national monitoring in developing economies is held back by sparse data: district GDP estimates arrive with multi-year lags, rely on price deflators and top-down allocation, and do not exist at the subdistrict (taluka/tehsil) scale where place-based policy is targeted. The EPI fuses multi-sensor satellite data, gridded population and OpenStreetMap road and amenity networks across 357 subdistricts of Maharashtra, India, over 46 quarters (2015 Q1 - 2026 Q2). Seasonal-Trend decomposition using LOESS (STL) separates long-run trends from monsoon and crop-cycle seasonality. A non-negative PCA gives sign-consistent, interpretable weights and rankings nearly identical to standard PCA ($ρ$ = 0.998). Across districts, the index explains 74% of the variation in the NFHS-5 wealth index, 52% in household consumption (HCES 2023-24) and about 78% in real district GDP levels (65% in logs), but does not track short-run output growth. Because it measures structural capacity rather than annual output, the index kept rising through the FY2020-21 COVID-19 contraction. Across Maharashtra's six revenue divisions, relative inequality fell by 44% even as the absolute gap between leading and lagging divisions widened by 32%; district-level $β$-convergence implies a half-life of about 14 years. The framework offers a scalable, deflator-free basis for structural monitoring in data-sparse economies.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Meenu Mohan",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Siddhartha Chattopadhyay",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "econ.EM",
+      "stat.AP"
+    ],
+    "comment": "52 pages (46 pages main text, 6 pages appendices), 5 figures, 13 tables (6 main text, 7 appendix). An earlier version was presented at the XKDR Alternate Data Workshop, Mumbai. JEL: R11, R12, O18, E01, C43, C38",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.23798v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.23798v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-18",
+    "repository_urls": [],
+    "title": "Developing a Subdistrict-Level Economic Progress Index Using Geospatial Data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-18_2611.23798",
+    "members": [
+      "arxiv:2611.23798"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.96,
+        "id": "data:street-network",
+        "label": "street network data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:dimensionality-reduction",
+        "label": "dimensionality reduction"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.23798",
+    "doi": "10.48550/arxiv.2611.23798",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-20T02:13:33Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.007142,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2301,
+      "out": 410
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9509,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3804,
+    "relevance": 0.9509
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The index measures long-run structural capacity and physical built environments rather than short-term economic output, causing it to completely miss temporary shocks like the COVID-19 GDP drop.",
+      "what": "The authors created an Economic Progress Index using Earth Observation, gridded population, and OpenStreetMap data to track local economic capacity across 357 subdistricts in Maharashtra, India, over 46 quarters from 2015 to 2026. Applying non-negative Principal Component Analysis and LOESS decomposition, the index explains 78% of the variation in real district GDP levels and 74% of the variation in the NFHS-5 wealth index. Over the study period, relative inter-divisional inequality dropped by 44% while absolute disparities expanded by 32%, with district convergence demonstrating a half-life of roughly 14 years.",
+      "why": "The index replaces lagged, top-down GDP estimates with a deflator-free, continuous measurement framework at the subdistrict level where local targeting occurs. It isolates long-term structural economic capacity from quarterly agricultural seasonality, revealing that structural infrastructure continued to expand during India's 2020-21 economic contraction."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-18",
+  "work_key": "arxiv:2611.23798"
+}

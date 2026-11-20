@@ -1,0 +1,253 @@
+{
+  "badges": [
+    "data",
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "ABSTRACT Geographically weighted principal component analysis (GWPCA) summarizes spatial multivariate structure through local eigen decompositions whose output depends strongly on a bandwidth, conventionally chosen by leave‐one‐out cross‐validation (CV). While locating the bandwidth that minimizes CV, several competing minima are frequently observed. We focus on the implications of multiple ambiguous minima as the object of study. We formalize it through the CV‐equivalent set () of bandwidths that the data do not distinguish from the CV minimum () and show that bandwidths within this set differ materially in their bias–variance composition and loading structure. Simulations across eight data‐generating processes show that wherever the covariance subspace varied locally, the equivalent set spanned roughly a quarter of the candidate range grid, and the oracle bandwidth typically lay inside the set while differing from. In applications to the Dublin voter turnout and the Kola geochemical survey, the same ambiguity appeared, and within‐set disagreement between local loadings concentrated where the local eigengap was small. We offer these findings as the first in‐depth study of the characteristics of CV as used in GWPCA, and recommend reporting standards to include the equivalent set, and mapping the local eigengap.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Southern California",
+            "ror": "03taz7m60"
+          },
+          {
+            "name": "Children's Hospital of Philadelphia",
+            "ror": "01z7r7q48"
+          }
+        ],
+        "name": "Andrew Kampfschulte",
+        "openalex": "A5057626641",
+        "orcid": "https://orcid.org/0000-0001-9368-690X"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1111/gean.70071",
+      "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/gean.70071",
+      "source_id": "S159894308",
+      "source_name": "Geographical Analysis",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-11-17",
+    "repository_urls": [
+      "https://doi.org/10.31235/osf.io/rbnep_v1",
+      "https://osf.io/rbnep"
+    ],
+    "title": "Cross‐Validation as a Bandwidth Criterion for Geographically Weighted PCA: An Ethics of Ambiguity"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-18_10.1111/gean.700",
+    "members": [
+      "doi:10.1111/gean.70071"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:simulation",
+        "label": "simulation"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03taz7m60",
+        "label": "University of Southern California"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01z7r7q48",
+        "label": "Children's Hospital of Philadelphia"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9368-690X",
+        "label": "Andrew Kampfschulte"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11911",
+        "is_primary": true,
+        "label": "Spatial and Panel Data Analysis",
+        "score": 0.9756,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13141",
+        "is_primary": false,
+        "label": "Statistical Methods and Applications",
+        "score": 0.0226,
+        "subfield": "2613"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11871",
+        "is_primary": false,
+        "label": "Advanced Statistical Methods and Models",
+        "score": 0.0002,
+        "subfield": "2613"
+      }
+    ]
+  },
+  "first_published": "2026-11-17",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1547066250",
+      "openalex:W1611105082",
+      "openalex:W1970377488",
+      "openalex:W1981552604",
+      "openalex:W1984125303",
+      "openalex:W2002607717",
+      "openalex:W2013624176",
+      "openalex:W2019145279",
+      "openalex:W2021325233",
+      "openalex:W2069083165",
+      "openalex:W2083336903",
+      "openalex:W2086415758",
+      "openalex:W2088911135",
+      "openalex:W2121325553",
+      "openalex:W2147279463",
+      "openalex:W2168673857",
+      "openalex:W2613369437",
+      "openalex:W2747207142",
+      "openalex:W2787894218",
+      "openalex:W2903129600",
+      "openalex:W2912855477",
+      "openalex:W2948613401",
+      "openalex:W2969583599",
+      "openalex:W3216454795",
+      "openalex:W4220785391",
+      "openalex:W4225143116",
+      "openalex:W4396561514"
+    ],
+    "related_works": [
+      "openalex:W4390372996",
+      "openalex:W2514459442",
+      "openalex:W1547066250",
+      "openalex:W2019145279",
+      "openalex:W7046188051",
+      "openalex:W2183733926",
+      "openalex:W6891712577",
+      "openalex:W2069184466",
+      "openalex:W2965811807",
+      "openalex:W2586594535"
+    ]
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1111/gean.70071",
+    "openalex": "W7213910645",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-20T02:16:47Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005458,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1995,
+      "out": 274
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-20T02:16:47Z",
+    "doi": "10.1111/gean.70071",
+    "journal": "Geographical Analysis",
+    "source_id": "S159894308",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.6,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.52,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": "https://doi.org/10.31235/osf.io/rbnep_v1",
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This study evaluates leave-one-out cross-validation (CV) for bandwidth selection in geographically weighted principal component analysis (GWPCA) using synthetic simulations across eight data-generating processes and two empirical datasets in Dublin and Kola. Results show that when covariance structure varies spatially, the set of bandwidths statistically indistinguishable from the CV minimum spans approximately 25% of the candidate grid, with the true oracle bandwidth frequently differing from the single estimated minimum. In practical applications, variance in local component loadings within this equivalent set concentrates in regions where the local eigengap is small.",
+      "why": "It exposes structural ambiguity in standard GWPCA parameter tuning, demonstrating that relying on a single cross-validation minimum can yield arbitrary local loadings in regions with small eigengaps."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-17",
+  "work_key": "doi:10.1111/gean.70071"
+}

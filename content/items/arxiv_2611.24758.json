@@ -1,0 +1,181 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The spatial distribution of infrastructure and activities, along with the networks and interactions that connect them, is key to understanding the relationship between urban form, function, and sustainability from a complex systems perspective. Within this dynamic relationship, the extent to which localized social infrastructure can reinforce existing functional centralities or create conditions for the emergence of new ones remains insufficiently understood. This study examines these relationships through the UTOPÍAS program in Iztapalapa, Mexico City, where 15 public social facilities have been established across a historically underserved urban territory. We develop a multilayer network framework integrating pedestrian infrastructure, GTFS-based public transport services, and UTOPÍAS as a target layer to assess multimodal connectivity, travel-time accessibility, and spatial coverage. These conditions are examined alongside indicators of local economic centrality (PCI and wPCI) to investigate how infrastructure interdependencies relate to the functional organization of urban space. The analysis reveals spatial heterogeneity in multimodal accessibility and differences in the integration of UTOPÍAS with existing transport networks. By relating these patterns to pre-existing economic centralities, we examine whether distributed social infrastructure may reinforce established functional centers or create conditions favorable to emerging centralities, without assuming that spatial decentralization necessarily produces polycentrality. The findings contribute a relational, data-driven approach to understanding how social infrastructure and mobility shape urban functions, emphasizing accessibility and territorial integration as critical conditions for more equitable and sustainable urban development.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Marco A. Rosas",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Gustavo Carreón",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Carlos Gershenson",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jesús Mario Siqueiros",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph",
+      "stat.ME"
+    ],
+    "comment": "With an anexs section",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.24758v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.24758v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-18",
+    "repository_urls": [],
+    "title": "Polycentrality in Urban Socioecological Systems: A Multilayer Analysis of Social Infrastructure in Iztapalapa, Mexico City"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-18_2611.24758",
+    "members": [
+      "arxiv:2611.24758"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1489",
+        "label": "Mexico City",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-18",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.24758",
+    "doi": "10.48550/arxiv.2611.24758",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-20T02:13:33Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005705,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2099,
+      "out": 284
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9947,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3979,
+    "relevance": 0.9947
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The spatial framework evaluates physical accessibility conditions and economic activity overlays rather than observing actual user travel behaviors or social facility visitation rates.",
+      "what": "The study models accessibility and functional centrality in Iztapalapa, Mexico City, using a multilayer network that combines pedestrian pathways, GTFS transit feeds, and 15 UTOPÍAS social infrastructure facilities. It evaluates travel times, spatial coverage, and local economic activity using Pedestrian Centrality Index (PCI) and weighted PCI metrics to trace how these new facilities integrate with existing public transit and economic centers. The spatial analysis demonstrates marked geographic variation in multimodal transport integration across the study area.",
+      "why": "Instead of assuming that scattered public investments automatically decentralize urban activity, this framework evaluates whether social facilities reinforce existing commercial nodes or establish conditions for new local centers to emerge."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-18",
+  "work_key": "arxiv:2611.24758"
+}

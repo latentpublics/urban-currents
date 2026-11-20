@@ -4,43 +4,78 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
         "name": "Chonghao Zhang",
         "openalex": "A5162582790",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
         "name": "Hao Yu",
         "openalex": "A5102925195",
         "orcid": "https://orcid.org/0000-0002-5662-5910"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Huazhong University of Science and Technology",
+            "ror": "00p991c53"
+          }
+        ],
         "name": "Yuxuan Luo",
         "openalex": "A5162599823",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Shanghai Maritime University",
+            "ror": "04z7qrj66"
+          }
+        ],
         "name": "Zixian Fang",
         "openalex": "A5140518262",
         "orcid": "https://orcid.org/0009-0006-7232-7346"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
         "name": "Hailiang Zhao",
         "openalex": "A5022282269",
         "orcid": "https://orcid.org/0009-0005-0146-9809"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Hong Kong Polytechnic University",
+            "ror": "0030zas98"
+          }
+        ],
         "name": "Xuanyu Liu",
         "openalex": "A5162518449",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          }
+        ],
         "name": "Xiao Qun Luo",
         "openalex": "A5101555711",
         "orcid": "https://orcid.org/0000-0001-6122-2211"
@@ -61,7 +96,7 @@
     "title": "Geo2Flow: Hierarchical urban commuting flow prediction via multi-scale satellite-behavioral alignment and mixture of experts"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-17_10.1016/j.trc.20",
+    "cluster_id": "clu_2026-11-18_10.1016/j.trc.20",
     "members": [
       "doi:10.1016/j.trc.2026.106109"
     ],
@@ -70,7 +105,33 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03rc6as71",
+        "label": "Tongji University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00p991c53",
+        "label": "Huazhong University of Science and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04z7qrj66",
+        "label": "Shanghai Maritime University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00a2xv884",
+        "label": "Zhejiang University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0030zas98",
+        "label": "Hong Kong Polytechnic University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -114,18 +175,10 @@
     "topics": [
       {
         "confidence": null,
-        "id": "openalex:T11344",
-        "is_primary": true,
-        "label": "Traffic Prediction and Management Techniques",
-        "score": 0.6113,
-        "subfield": "3313"
-      },
-      {
-        "confidence": null,
         "id": "openalex:T11980",
-        "is_primary": false,
+        "is_primary": true,
         "label": "Human Mobility and Location-Based Analysis",
-        "score": 0.3347,
+        "score": 0.5415,
         "subfield": "3313"
       },
       {
@@ -133,7 +186,15 @@
         "id": "openalex:T10698",
         "is_primary": false,
         "label": "Transportation Planning and Optimization",
-        "score": 0.0349,
+        "score": 0.1909,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": false,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.1239,
         "subfield": "3313"
       }
     ]
@@ -166,7 +227,18 @@
       "openalex:W7139073429",
       "openalex:W7213229780"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W7139041399",
+      "openalex:W7006598526",
+      "openalex:W7235749995",
+      "openalex:W2939457215",
+      "openalex:W7165551279",
+      "openalex:W6904068463",
+      "openalex:W3207869425",
+      "openalex:W6960199186",
+      "openalex:W4409254608",
+      "openalex:W7164171106"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -177,7 +249,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-19T02:28:34Z",
+    "collected_at": "2026-11-20T02:16:45Z",
     "collectors": [
       "openalex"
     ],
@@ -224,6 +296,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-17",
+  "updated": "2026-11-19",
   "work_key": "doi:10.1016/j.trc.2026.106109"
 }

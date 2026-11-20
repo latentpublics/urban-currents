@@ -4,7 +4,12 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of South Florida",
+            "ror": "032db5x82"
+          }
+        ],
         "name": "Youjung Kim",
         "openalex": "A5139401929",
         "orcid": "https://orcid.org/0000-0002-1617-3956"
@@ -25,7 +30,7 @@
     "title": "Beyond current floodplains: Evaluating elevation-based flood protection under sea-level rise"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-17_10.1016/j.apgeog",
+    "cluster_id": "clu_2026-11-18_10.1016/j.apgeog",
     "members": [
       "doi:10.1016/j.apgeog.2026.104249"
     ],
@@ -34,7 +39,13 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:032db5x82",
+        "label": "University of South Florida"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -51,7 +62,7 @@
         "id": "openalex:T10930",
         "is_primary": true,
         "label": "Flood Risk Assessment and Management",
-        "score": 0.999,
+        "score": 0.9995,
         "subfield": "2306"
       },
       {
@@ -59,16 +70,16 @@
         "id": "openalex:T10647",
         "is_primary": false,
         "label": "Coastal and Marine Dynamics",
-        "score": 0.0005,
+        "score": 0.0002,
         "subfield": "1904"
       },
       {
         "confidence": null,
-        "id": "openalex:T10577",
+        "id": "openalex:T10747",
         "is_primary": false,
-        "label": "Hydrology and Sediment Transport Processes",
+        "label": "Disaster Management and Resilience",
         "score": 0.0,
-        "subfield": "1904"
+        "subfield": "3312"
       }
     ]
   },
@@ -104,7 +115,18 @@
       "openalex:W7140312676",
       "openalex:W7166012832"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W2748820239",
+      "openalex:W2738663686",
+      "openalex:W3215760555",
+      "openalex:W7001092306",
+      "openalex:W2604748080",
+      "openalex:W3196672559",
+      "openalex:W2075877829",
+      "openalex:W2508269253",
+      "openalex:W3019471710",
+      "openalex:W2975981573"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -115,7 +137,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-19T02:28:34Z",
+    "collected_at": "2026-11-20T02:16:45Z",
     "collectors": [
       "openalex"
     ],
@@ -162,6 +184,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-17",
+  "updated": "2026-11-19",
   "work_key": "doi:10.1016/j.apgeog.2026.104249"
 }

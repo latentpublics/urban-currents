@@ -38,8 +38,25 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00awd9g61",
+        "label": "The Graduate Center, CUNY"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00wmhkr98",
+        "label": "City College of New York"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5037787408",
+        "label": "Ardavan Yazdanbakhsh"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -50,18 +67,73 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10555",
+        "is_primary": true,
+        "label": "Fire effects on ecosystems",
+        "score": 0.9922,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10747",
+        "is_primary": false,
+        "label": "Disaster Management and Resilience",
+        "score": 0.0013,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13388",
+        "is_primary": false,
+        "label": "Rangeland and Wildlife Management",
+        "score": 0.001,
+        "subfield": "2303"
+      }
+    ]
   },
   "first_published": "2026-11-12",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W1988713966",
+      "openalex:W2018994427",
+      "openalex:W2051188584",
+      "openalex:W2085696766",
+      "openalex:W2090191602",
+      "openalex:W2146904764",
+      "openalex:W2158698691",
+      "openalex:W2492857158",
+      "openalex:W2494719605",
+      "openalex:W2517342784",
+      "openalex:W2593972424",
+      "openalex:W2791729856",
+      "openalex:W2791997448",
+      "openalex:W2800035923",
+      "openalex:W3045258609",
+      "openalex:W4214689434",
+      "openalex:W4407557541",
+      "openalex:W4416782123"
+    ],
+    "related_works": [
+      "openalex:W4416782123",
+      "openalex:W4405983382",
+      "openalex:W2492857158",
+      "openalex:W4313065810",
+      "openalex:W2774920743",
+      "openalex:W4220930145",
+      "openalex:W2146326358",
+      "openalex:W4322209374",
+      "openalex:W2004835373",
+      "openalex:W7203978159"
+    ]
   },
   "ids": {
     "arxiv": "2611.17523",
     "doi": "10.48550/arxiv.2611.17523",
-    "openalex": null,
+    "openalex": "W7234056440",
     "pmid": null
   },
   "provenance": {
@@ -69,7 +141,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-17T03:39:26Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004694,
     "llm": {
@@ -157,6 +230,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-12",
+  "updated": "2026-11-19",
   "work_key": "arxiv:2611.17523"
 }

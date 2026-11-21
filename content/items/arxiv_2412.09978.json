@@ -271,12 +271,12 @@
   },
   "summary": {
     "en": {
-      "caveats": "The performance gains are demonstrated solely on a synthetic network of 100 vehicles modeled after Manhattan taxi trips, which may not capture full city-scale grid interactions or larger fleet dynamics.",
-      "what": "The authors developed a two-stage dynamic charging scheduling framework for electric ride-hailing fleets, combining day-ahead cost planning with real-time reactive vehicle dispatch and charger reservation. Evaluated on a 100-vehicle fleet simulated in a Manhattan-like street grid with 3,000 and 4,000 daily trips derived from New York City taxi records, the policy increased fleet profits by up to 21.68% and customer service rates by 22.22% compared to baseline strategies.",
-      "why": "The method provides ride-hailing operators with a way to mitigate charger queues and reduce operational downtime by dynamically balancing trip profit optimization with charger reservations under unpredictable real-time demand."
+      "caveats": "The framework was evaluated exclusively on a synthetic grid topology with a small fleet size of 100 vehicles, leaving its performance on larger fleets and actual road network geometries unverified.",
+      "what": "This study introduces a two-stage dynamic charging framework for electric ride-hailing fleets, combining a day-ahead planner that minimizes expected energy costs and queuing delays with an online reservation-based request scheduler that dynamically dispatches vehicles and assigns chargers. Tested on a synthetic Manhattan-like grid using NYC yellow taxi demand patterns across 100-vehicle fleets and daily loads of 3,000 to 4,000 customers, the model achieved up to a 21.68% increase in fleet profits and a 22.22% higher service rate compared to basic benchmark strategies under high-demand scenarios.",
+      "why": "It replaces static or uncoordinated charging routines with a real-time reservation scheme that dynamically balances grid congestion against fleet revenue opportunities under uncertain passenger demand."
     }
   },
   "track": "papers",
-  "updated": "2026-11-18",
+  "updated": "2026-11-20",
   "work_key": "arxiv:2412.09978"
 }

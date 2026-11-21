@@ -1,0 +1,503 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Informal settlements are a major yet poorly measured form of urbanization, particularly where small or fragmented clusters are embedded within otherwise formal urban fabric. Here, we develop a scalable geospatial framework for mapping morphological informality across African cities using open satellite imagery, global building data, and eight city-specific machine-learning models combined by equal averaging. Applied to all 84 African cities with projected populations exceeding one million in 2025, the framework generates 10 m probability surfaces. Mean leave-one-city-out F1 at training-selected thresholds was 0.876; independent validation using 1910 reference points yielded AUC of 0.972. Building-presence profiles were the leading SHAP contributor in all eight held-out cities, with height and spectral context providing additional signals. These results support retaining neighborhood building distributions alongside vertical structure and vegetation when mapping across diverse urban contexts. The share of selected area in patches smaller than 1 km 2 increased from 38.0% at p ≥ 0.2 to 72.4% at p ≥ 0.8. WorldPop 2023 allocated fewer people than community-reported counts in 89.0% of 308 settlement polygons, with a median WorldPop/community ratio of 0.263. Community records span 2013–2020, so the comparison diagnoses allocation discrepancies and motivates assessing settlement-specific population densities using contemporaneous evidence. The probability surfaces describe physical morphology, not tenure or household deprivation. Together, the findings identify shared morphological signals and population-allocation discrepancies that can guide local validation, surveys and future population modelling.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Southampton",
+            "ror": "01ryk1543"
+          }
+        ],
+        "name": "Wenbin Zhang",
+        "openalex": "A5069402058",
+        "orcid": "https://orcid.org/0000-0002-9295-1019"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Southampton",
+            "ror": "01ryk1543"
+          }
+        ],
+        "name": "Weixuan Fang",
+        "openalex": "A5080669996",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Milan",
+            "ror": "00wjc7c48"
+          }
+        ],
+        "name": "Alessandro Sorichetta",
+        "openalex": "A5016636311",
+        "orcid": "https://orcid.org/0000-0002-3576-5826"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Southampton",
+            "ror": "01ryk1543"
+          }
+        ],
+        "name": "Borys Nosatiuk",
+        "openalex": "A5124032769",
+        "orcid": "https://orcid.org/0009-0006-6381-1603"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Southampton",
+            "ror": "01ryk1543"
+          }
+        ],
+        "name": "Rhorom Priyatikanto",
+        "openalex": "A5058951535",
+        "orcid": "https://orcid.org/0000-0003-1203-2651"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Vrije Universiteit Amsterdam",
+            "ror": "008xxew50"
+          }
+        ],
+        "name": "Jasper van Vliet",
+        "openalex": "A5060008997",
+        "orcid": "https://orcid.org/0000-0001-7055-0815"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Southampton",
+            "ror": "01ryk1543"
+          }
+        ],
+        "name": "Tom McKeen",
+        "openalex": "A5092424089",
+        "orcid": "https://orcid.org/0000-0003-4499-7319"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Chinese Academy of Sciences",
+            "ror": "034t30j35"
+          },
+          {
+            "name": "Institute of Geographic Sciences and Natural Resources Research",
+            "ror": "04t1cdb72"
+          },
+          {
+            "name": "University College London",
+            "ror": "02jx3x895"
+          }
+        ],
+        "name": "Longwu Liang",
+        "openalex": "A5159653729",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Southampton",
+            "ror": "01ryk1543"
+          }
+        ],
+        "name": "Maksym Bondarenko",
+        "openalex": "A5162295537",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Southampton",
+            "ror": "01ryk1543"
+          }
+        ],
+        "name": "Shengjie Lai",
+        "openalex": "A5162178940",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Southampton",
+            "ror": "01ryk1543"
+          }
+        ],
+        "name": "Peter Atkinson",
+        "openalex": "A5133038835",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Lancaster University",
+            "ror": "04f2nsd36"
+          }
+        ],
+        "name": "P M Atkinson",
+        "openalex": "A5036718553",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Southampton",
+            "ror": "01ryk1543"
+          }
+        ],
+        "name": "Andrew J. Tatem",
+        "openalex": "A5026395399",
+        "orcid": "https://orcid.org/0000-0002-7270-941X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Southampton",
+            "ror": "01ryk1543"
+          }
+        ],
+        "name": "Natalia Tejedor‐Garavito",
+        "openalex": "A5030325103",
+        "orcid": "https://orcid.org/0000-0002-1140-6263"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.compenvurbsys.2026.102561",
+      "pdf_url": null,
+      "source_id": "S60115552",
+      "source_name": "Computers Environment and Urban Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-11-16",
+    "repository_urls": [],
+    "title": "Hidden and fragmented patterns of morphological informality across African cities revealed by open geospatial data"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-19_10.1016/j.compen",
+    "members": [
+      "doi:10.1016/j.compenvurbsys.2026.102561"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:building-footprint",
+        "label": "building footprints"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01ryk1543",
+        "label": "University of Southampton"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00wjc7c48",
+        "label": "University of Milan"
+      },
+      {
+        "confidence": null,
+        "id": "ror:008xxew50",
+        "label": "Vrije Universiteit Amsterdam"
+      },
+      {
+        "confidence": null,
+        "id": "ror:034t30j35",
+        "label": "Chinese Academy of Sciences"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04t1cdb72",
+        "label": "Institute of Geographic Sciences and Natural Resources Research"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02jx3x895",
+        "label": "University College London"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04f2nsd36",
+        "label": "Lancaster University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9295-1019",
+        "label": "Wenbin Zhang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5080669996",
+        "label": "Weixuan Fang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3576-5826",
+        "label": "Alessandro Sorichetta"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0006-6381-1603",
+        "label": "Borys Nosatiuk"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1203-2651",
+        "label": "Rhorom Priyatikanto"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7055-0815",
+        "label": "Jasper van Vliet"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4499-7319",
+        "label": "Tom McKeen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5159653729",
+        "label": "Longwu Liang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5162295537",
+        "label": "Maksym Bondarenko"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5162178940",
+        "label": "Shengjie Lai"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5133038835",
+        "label": "Peter Atkinson"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5036718553",
+        "label": "P M Atkinson"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7270-941X",
+        "label": "Andrew J. Tatem"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1140-6263",
+        "label": "Natalia Tejedor‐Garavito"
+      }
+    ],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T12147",
+        "is_primary": true,
+        "label": "Urban and Rural Development Challenges",
+        "score": 0.6958,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.1105,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.0864,
+        "subfield": "1707"
+      }
+    ]
+  },
+  "first_published": "2026-11-16",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1987779391",
+      "openalex:W2089228292",
+      "openalex:W2532435975",
+      "openalex:W2588275992",
+      "openalex:W2599875878",
+      "openalex:W2792491666",
+      "openalex:W2936528776",
+      "openalex:W2945096295",
+      "openalex:W3011445294",
+      "openalex:W3024731180",
+      "openalex:W3045659293",
+      "openalex:W3101927119",
+      "openalex:W3108189576",
+      "openalex:W3176833877",
+      "openalex:W4230351332",
+      "openalex:W4318778668",
+      "openalex:W4385804446",
+      "openalex:W4387800351",
+      "openalex:W4392454055",
+      "openalex:W4394733257",
+      "openalex:W4400422172",
+      "openalex:W4410025530",
+      "openalex:W4410728468",
+      "openalex:W4410728484",
+      "openalex:W4413087387",
+      "openalex:W4413251786",
+      "openalex:W4413946397",
+      "openalex:W4416283214",
+      "openalex:W6927465845",
+      "openalex:W6962738326",
+      "openalex:W7141418361",
+      "openalex:W7161847170",
+      "openalex:W7225017677"
+    ],
+    "related_works": [
+      "openalex:W4410728468",
+      "openalex:W7117782912",
+      "openalex:W6982549239",
+      "openalex:W4413183599",
+      "openalex:W4413087852",
+      "openalex:W3175482093",
+      "openalex:W2267151232",
+      "openalex:W3101927119",
+      "openalex:W6887971180",
+      "openalex:W4408930973"
+    ]
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.compenvurbsys.2026.102561",
+    "openalex": "W7163177772",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-21T02:10:58Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00614,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2209,
+      "out": 314
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-21T02:10:58Z",
+    "doi": "10.1016/j.compenvurbsys.2026.102561",
+    "journal": "Computers Environment and Urban Systems",
+    "source_id": "S60115552",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2013–2020",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The generated mapping probability surfaces reflect physical building patterns rather than underlying land tenure status, social vulnerability, or household deprivation.",
+      "what": "An ensemble of eight city-specific machine learning models trained on open satellite imagery and global building datasets mapped morphological informality across 84 major African cities at 10 m resolution. The framework achieved an independent validation AUC of 0.972, with spatial patterns demonstrating that informal spatial patches under 1 km² comprise up to 72.4% of total detected informal area. A cross-validation against WorldPop 2023 data across 308 community-mapped settlements showed that standard gridded datasets undercounted populations in 89.0% of cases, yielding a median population ratio of just 0.263 relative to ground counts.",
+      "why": "Researchers and planners can now detect highly fragmented informal settlements embedded within formal urban fabric across large continental scales, correcting systematic population underestimates in global datasets that miss small-scale informal pockets."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-16",
+  "work_key": "doi:10.1016/j.compenvurbsys.2026.102561"
+}

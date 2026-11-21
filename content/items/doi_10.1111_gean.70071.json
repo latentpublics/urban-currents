@@ -243,11 +243,11 @@
   "summary": {
     "en": {
       "caveats": null,
-      "what": "This study evaluates leave-one-out cross-validation (CV) for bandwidth selection in geographically weighted principal component analysis (GWPCA) using synthetic simulations across eight data-generating processes and two empirical datasets in Dublin and Kola. Results show that when covariance structure varies spatially, the set of bandwidths statistically indistinguishable from the CV minimum spans approximately 25% of the candidate grid, with the true oracle bandwidth frequently differing from the single estimated minimum. In practical applications, variance in local component loadings within this equivalent set concentrates in regions where the local eigengap is small.",
-      "why": "It exposes structural ambiguity in standard GWPCA parameter tuning, demonstrating that relying on a single cross-validation minimum can yield arbitrary local loadings in regions with small eigengaps."
+      "what": "The study evaluated leave-one-out cross-validation (CV) for bandwidth selection in Geographically Weighted PCA (GWPCA) using simulations across eight data-generating processes alongside two real-world datasets in Dublin and Kola. Results show that when local covariance varies, the set of bandwidths statistically indistinguishable from the CV minimum spans approximately 25% of the candidate grid range, with the optimal oracle bandwidth often differing from the absolute minimum. In empirical tests, local loading discrepancies within this equivalent set clustered specifically in areas with small local eigengaps.",
+      "why": "Researchers can no longer treat the single cross-validation minimum as an unambiguous optimal bandwidth for spatial dimension reduction, as distinct bandwidths within the acceptable range produce materially different spatial structures and bias-variance tradeoffs."
     }
   },
   "track": "papers",
-  "updated": "2026-11-17",
+  "updated": "2026-11-20",
   "work_key": "doi:10.1111/gean.70071"
 }

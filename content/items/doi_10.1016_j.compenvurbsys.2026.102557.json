@@ -1,0 +1,585 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Geoprivacy is often framed as a problem of protecting coordinates, masking traces, or managing user consent. This framing is now insufficient. In an era of pervasive datafication, AI-enabled inference, platform dependence, and corporate control over location and mobility data, the central question is no longer whether exact locations can be hidden, but whether meaningful control over location-derived knowledge remains possible at all. This paper asks: have we already lost geoprivacy? We argue that geoprivacy has not disappeared, but its conditions have fundamentally changed. Location data are now continuously produced through everyday digital participation, linked across platforms and modalities, and transformed by machine learning, large language models, and agentic systems into sensitive inferences about identity, behavior, association, vulnerability, and future action. At the same time, risks and protections are unevenly distributed: privacy increasingly functions as socioeconomic, political, and institutional privilege, while marginalized communities, sensitive places, non-human environments, and collective forms of knowledge face heightened exposure and risk. These challenges are intensified by corporate gateke eping, regulatory lag, harmful defaults, limited transparency, and epistemic blind spots within existing geoprivacy norms and directions. We therefore reposition geoprivacy as a socio-technical, legal, institutional, and political problem, not merely a technical one. Looking forward, we outline responsibilities for policymakers, researchers, communities, and industry, including privacy-protective defaults, regulation of spatial inference, public-good data governance, geoprivacy literacy, cyber-threat exercises, and community-controlled infrastructures. Rather than declaring geoprivacy lost, we argue that it must be continually renegotiated as a moving boundary, one that requires GI science to act not only as a technical field, but as a bridge between spatial reasoning, governance, justice, and democratic control over location-based data and futures.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Helsinki",
+            "ror": "040af2s02"
+          },
+          {
+            "name": "Tampere University",
+            "ror": "033003e23"
+          },
+          {
+            "name": "University of Tampere",
+            "ror": "05p6qqk79"
+          }
+        ],
+        "name": "Milad Malekzadeh",
+        "openalex": "A5044760115",
+        "orcid": "https://orcid.org/0000-0003-2275-0497"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Oregon State University",
+            "ror": "00ysfqy60"
+          }
+        ],
+        "name": "Jim Thatcher",
+        "openalex": "A5058508694",
+        "orcid": "https://orcid.org/0009-0009-4288-4856"
+      },
+      {
+        "institutions": [
+          {
+            "name": "McGill University",
+            "ror": "01pxwe438"
+          }
+        ],
+        "name": "Grant McKenzie",
+        "openalex": "A5067070198",
+        "orcid": "https://orcid.org/0000-0003-3247-2777"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Canterbury",
+            "ror": "03y7q9t39"
+          }
+        ],
+        "name": "Vanessa da Silva Brum-Bastos",
+        "openalex": "A5043370578",
+        "orcid": "https://orcid.org/0000-0002-5865-0204"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Münster",
+            "ror": "00pd74e08"
+          }
+        ],
+        "name": "Christian Kray",
+        "openalex": "A5001445016",
+        "orcid": "https://orcid.org/0000-0002-4199-8976"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Alabama",
+            "ror": "03xrrjk67"
+          }
+        ],
+        "name": "Kevin Michael Curtin",
+        "openalex": "A5045398284",
+        "orcid": "https://orcid.org/0000-0002-2850-7845"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Bochum University of Applied Sciences",
+            "ror": "04x02q560"
+          },
+          {
+            "name": "Aalborg University",
+            "ror": "04m5j1k67"
+          }
+        ],
+        "name": "Carsten Keßler",
+        "openalex": "A5043279301",
+        "orcid": "https://orcid.org/0000-0002-9724-820X"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Auckland",
+            "ror": "03b94tp07"
+          }
+        ],
+        "name": "Jessie Colbert",
+        "openalex": "A5049613226",
+        "orcid": "https://orcid.org/0000-0003-3906-9657"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Auckland",
+            "ror": "03b94tp07"
+          }
+        ],
+        "name": "Maike Gatzlaff",
+        "openalex": "A5161986387",
+        "orcid": "https://orcid.org/0000-0002-6651-1335"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Nottingham Ningbo China",
+            "ror": "03y4dt428"
+          }
+        ],
+        "name": "Nicholas Hamm",
+        "openalex": "A5019813634",
+        "orcid": "https://orcid.org/0000-0002-5105-7846"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Canterbury",
+            "ror": "03y7q9t39"
+          }
+        ],
+        "name": "Shane Orchard",
+        "openalex": "A5010093575",
+        "orcid": "https://orcid.org/0000-0002-9040-6404"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Alabama",
+            "ror": "03xrrjk67"
+          }
+        ],
+        "name": "H.J. Richardson",
+        "openalex": "A5041338218",
+        "orcid": "https://orcid.org/0009-0006-4401-1045"
+      },
+      {
+        "institutions": [
+          {
+            "name": "RMIT University",
+            "ror": "04ttjf776"
+          }
+        ],
+        "name": "Matt Duckham",
+        "openalex": "A5004605851",
+        "orcid": "https://orcid.org/0000-0002-7249-6709"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Auckland",
+            "ror": "03b94tp07"
+          }
+        ],
+        "name": "Katarzyna Siła-Nowicka",
+        "openalex": "A5016933110",
+        "orcid": "https://orcid.org/0000-0002-1850-1765"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.compenvurbsys.2026.102557",
+      "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0198971526001596/pdf",
+      "source_id": "S60115552",
+      "source_name": "Computers Environment and Urban Systems",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-11-13",
+    "repository_urls": [],
+    "title": "Have we already lost it? Geoprivacy in the age of AI, uncertainty, and corporate gatekeeping"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-19_10.1016/j.compen",
+    "members": [
+      "doi:10.1016/j.compenvurbsys.2026.102557"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:040af2s02",
+        "label": "University of Helsinki"
+      },
+      {
+        "confidence": null,
+        "id": "ror:033003e23",
+        "label": "Tampere University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05p6qqk79",
+        "label": "University of Tampere"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00ysfqy60",
+        "label": "Oregon State University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01pxwe438",
+        "label": "McGill University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03y7q9t39",
+        "label": "University of Canterbury"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00pd74e08",
+        "label": "University of Münster"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03xrrjk67",
+        "label": "University of Alabama"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04x02q560",
+        "label": "Bochum University of Applied Sciences"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04m5j1k67",
+        "label": "Aalborg University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03b94tp07",
+        "label": "University of Auckland"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03y4dt428",
+        "label": "University of Nottingham Ningbo China"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04ttjf776",
+        "label": "RMIT University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-2275-0497",
+        "label": "Milad Malekzadeh"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-4288-4856",
+        "label": "Jim Thatcher"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3247-2777",
+        "label": "Grant McKenzie"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5865-0204",
+        "label": "Vanessa da Silva Brum-Bastos"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-4199-8976",
+        "label": "Christian Kray"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2850-7845",
+        "label": "Kevin Michael Curtin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9724-820X",
+        "label": "Carsten Keßler"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3906-9657",
+        "label": "Jessie Colbert"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6651-1335",
+        "label": "Maike Gatzlaff"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5105-7846",
+        "label": "Nicholas Hamm"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9040-6404",
+        "label": "Shane Orchard"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0006-4401-1045",
+        "label": "H.J. Richardson"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7249-6709",
+        "label": "Matt Duckham"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-1850-1765",
+        "label": "Katarzyna Siła-Nowicka"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11045",
+        "is_primary": true,
+        "label": "Privacy, Security, and Data Protection",
+        "score": 0.9028,
+        "subfield": "3312"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10764",
+        "is_primary": false,
+        "label": "Privacy-Preserving Technologies in Data",
+        "score": 0.0634,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10883",
+        "is_primary": false,
+        "label": "Ethics and Social Impacts of AI",
+        "score": 0.015,
+        "subfield": "1702"
+      }
+    ]
+  },
+  "first_published": "2026-11-13",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1968064480",
+      "openalex:W2001601466",
+      "openalex:W2034380287",
+      "openalex:W2039856017",
+      "openalex:W2043165672",
+      "openalex:W2080453063",
+      "openalex:W2083513887",
+      "openalex:W2085154695",
+      "openalex:W2096899416",
+      "openalex:W2100704846",
+      "openalex:W2115240023",
+      "openalex:W2148283815",
+      "openalex:W2163359022",
+      "openalex:W2270573739",
+      "openalex:W2314210620",
+      "openalex:W2358802965",
+      "openalex:W2409989258",
+      "openalex:W2468341663",
+      "openalex:W2510199136",
+      "openalex:W2590124083",
+      "openalex:W2621100923",
+      "openalex:W2738363847",
+      "openalex:W2754509918",
+      "openalex:W2775721950",
+      "openalex:W2796141164",
+      "openalex:W2884666340",
+      "openalex:W2899941951",
+      "openalex:W2904896053",
+      "openalex:W2913788858",
+      "openalex:W2921764039",
+      "openalex:W2943904700",
+      "openalex:W2966401516",
+      "openalex:W2980056317",
+      "openalex:W3006354322",
+      "openalex:W3021970994",
+      "openalex:W3031053929",
+      "openalex:W3031832953",
+      "openalex:W3032696305",
+      "openalex:W3035082788",
+      "openalex:W3039732243",
+      "openalex:W3107637603",
+      "openalex:W3126102167",
+      "openalex:W3129809830",
+      "openalex:W3133814329",
+      "openalex:W3137759237",
+      "openalex:W3137834941",
+      "openalex:W3162007253",
+      "openalex:W3166943242",
+      "openalex:W3171122199",
+      "openalex:W3206172092",
+      "openalex:W4210590633",
+      "openalex:W4220722580",
+      "openalex:W4220969874",
+      "openalex:W4224011923",
+      "openalex:W4281779961",
+      "openalex:W4283831628",
+      "openalex:W4288086176",
+      "openalex:W4295136904",
+      "openalex:W4296182489",
+      "openalex:W4307449861",
+      "openalex:W4313479388",
+      "openalex:W4366122041",
+      "openalex:W4376255515",
+      "openalex:W4378574199",
+      "openalex:W4381930565",
+      "openalex:W4385453722",
+      "openalex:W4385483151",
+      "openalex:W4385622030",
+      "openalex:W4386114935",
+      "openalex:W4387119297",
+      "openalex:W4388456632",
+      "openalex:W4389625664",
+      "openalex:W4391468472",
+      "openalex:W4392699834",
+      "openalex:W4393868154",
+      "openalex:W4399684842",
+      "openalex:W4399864649",
+      "openalex:W4400061214",
+      "openalex:W4401906309",
+      "openalex:W4402114648",
+      "openalex:W4402953373",
+      "openalex:W4404311793",
+      "openalex:W4404375642",
+      "openalex:W4405192755",
+      "openalex:W4406954587",
+      "openalex:W4408926834",
+      "openalex:W4410031042",
+      "openalex:W4410756503",
+      "openalex:W4411376308",
+      "openalex:W4412903726",
+      "openalex:W4413076340",
+      "openalex:W4414623056",
+      "openalex:W4416868024",
+      "openalex:W4417490953",
+      "openalex:W7133201987",
+      "openalex:W7135224504",
+      "openalex:W7148910616",
+      "openalex:W7221783629"
+    ],
+    "related_works": [
+      "openalex:W4213299719",
+      "openalex:W2025695007",
+      "openalex:W6925191752",
+      "openalex:W6927334140",
+      "openalex:W2775721950",
+      "openalex:W1577234630",
+      "openalex:W4401534858",
+      "openalex:W4406826779",
+      "openalex:W4285042329",
+      "openalex:W3209816570"
+    ]
+  },
+  "ids": {
+    "arxiv": null,
+    "doi": "10.1016/j.compenvurbsys.2026.102557",
+    "openalex": "W7226040929",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-21T02:10:58Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005234,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2277,
+      "out": 202
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-21T02:10:58Z",
+    "doi": "10.1016/j.compenvurbsys.2026.102557",
+    "journal": "Computers Environment and Urban Systems",
+    "source_id": "S60115552",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "This paper establishes a conceptual framework reinterpreting geoprivacy as a political and socio-technical issue rather than a purely technical problem of masking spatial coordinates. It analyzes how modern AI, platform dependencies, and corporate control convert pervasive location traces into sensitive inferences about identity, behavior, and social vulnerability. The authors propose systemic interventions including spatial inference regulation, privacy-protective defaults, public-good data governance, and community-controlled digital infrastructures.",
+      "why": "It shifts the focus of location privacy from technical point-cloaking toward governing the inferred knowledge generated by spatial machine learning models. This challenges the standard GIScience approach of relying on consent forms or coordinate perturbation to protect user mobility data."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-13",
+  "work_key": "doi:10.1016/j.compenvurbsys.2026.102557"
+}

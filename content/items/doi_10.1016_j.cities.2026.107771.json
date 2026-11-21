@@ -4,31 +4,76 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          },
+          {
+            "name": "Ministry of Natural Resources",
+            "ror": "02kxqx159"
+          }
+        ],
         "name": "Shijia Lin",
         "openalex": "A5030970357",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          },
+          {
+            "name": "Ministry of Natural Resources",
+            "ror": "02kxqx159"
+          }
+        ],
         "name": "Niu Xinyi",
         "openalex": "A5102400341",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          },
+          {
+            "name": "Ministry of Natural Resources",
+            "ror": "02kxqx159"
+          }
+        ],
         "name": "Yujie Zhang",
         "openalex": "A5162452305",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          },
+          {
+            "name": "Ministry of Natural Resources",
+            "ror": "02kxqx159"
+          }
+        ],
         "name": "Yuxuan Wang",
         "openalex": "A5162593891",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tongji University",
+            "ror": "03rc6as71"
+          },
+          {
+            "name": "Ministry of Natural Resources",
+            "ror": "02kxqx159"
+          }
+        ],
         "name": "Chenyi Wang",
         "openalex": "A5162012085",
         "orcid": "https://orcid.org/0009-0000-4038-6700"
@@ -49,7 +94,7 @@
     "title": "Knowledge-grounded reasoning with multimodal large models for interpretable planning support: From spatial diagnosis to improvement"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-18_10.1016/j.cities",
+    "cluster_id": "clu_2026-11-19_10.1016/j.cities",
     "members": [
       "doi:10.1016/j.cities.2026.107771"
     ],
@@ -58,7 +103,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03rc6as71",
+        "label": "Tongji University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02kxqx159",
+        "label": "Ministry of Natural Resources"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -92,26 +148,26 @@
     "topics": [
       {
         "confidence": null,
-        "id": "openalex:T12325",
+        "id": "openalex:T12026",
         "is_primary": true,
+        "label": "Explainable Artificial Intelligence (XAI)",
+        "score": 0.7754,
+        "subfield": "1702"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
         "label": "Urban Design and Spatial Analysis",
-        "score": 0.3413,
+        "score": 0.0474,
         "subfield": "3322"
       },
       {
         "confidence": null,
-        "id": "openalex:T13247",
+        "id": "openalex:T11479",
         "is_primary": false,
-        "label": "Local Governance and Planning",
-        "score": 0.1121,
-        "subfield": "3305"
-      },
-      {
-        "confidence": null,
-        "id": "openalex:T10239",
-        "is_primary": false,
-        "label": "Urban Planning and Governance",
-        "score": 0.068,
+        "label": "Smart Cities and Technologies",
+        "score": 0.04,
         "subfield": "3322"
       }
     ]
@@ -179,7 +235,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-20T02:16:45Z",
+    "collected_at": "2026-11-21T02:10:58Z",
     "collectors": [
       "openalex"
     ],
@@ -226,6 +282,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "work_key": "doi:10.1016/j.cities.2026.107771"
 }

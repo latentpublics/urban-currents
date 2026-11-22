@@ -4,13 +4,27 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Xi’an Jiaotong-Liverpool University",
+            "ror": "03zmrmn05"
+          }
+        ],
         "name": "Zitao Li",
         "openalex": "A5163019852",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "China Meteorological Administration",
+            "ror": "00bx3rb98"
+          },
+          {
+            "name": "Xi’an Jiaotong-Liverpool University",
+            "ror": "03zmrmn05"
+          }
+        ],
         "name": "Jinglu Song",
         "openalex": "A5031869616",
         "orcid": "https://orcid.org/0000-0002-5220-6364"
@@ -31,7 +45,7 @@
     "title": "Cumulative lag associations of catchment-informed COD and NH3–N exposures with cancer incidence in China"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-19_10.1016/j.apgeog",
+    "cluster_id": "clu_2026-11-20_10.1016/j.apgeog",
     "members": [
       "doi:10.1016/j.apgeog.2026.104258"
     ],
@@ -40,7 +54,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03zmrmn05",
+        "label": "Xi’an Jiaotong-Liverpool University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00bx3rb98",
+        "label": "China Meteorological Administration"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -59,26 +84,26 @@
     "topics": [
       {
         "confidence": null,
-        "id": "openalex:T11493",
+        "id": "openalex:T11634",
         "is_primary": true,
-        "label": "Water Treatment and Disinfection",
-        "score": 0.2893,
-        "subfield": "2307"
+        "label": "Water Quality and Pollution Assessment",
+        "score": 0.3394,
+        "subfield": "2312"
       },
       {
         "confidence": null,
         "id": "openalex:T14169",
         "is_primary": false,
         "label": "Public Health and Environmental Issues",
-        "score": 0.1501,
+        "score": 0.1237,
         "subfield": "2307"
       },
       {
         "confidence": null,
-        "id": "openalex:T14393",
+        "id": "openalex:T11493",
         "is_primary": false,
-        "label": "Health, Environment, Cognitive Aging",
-        "score": 0.1084,
+        "label": "Water Treatment and Disinfection",
+        "score": 0.1158,
         "subfield": "2307"
       }
     ]
@@ -104,6 +129,7 @@
       "openalex:W2611387561",
       "openalex:W2765726697",
       "openalex:W2923358735",
+      "openalex:W2969619192",
       "openalex:W2999232952",
       "openalex:W3031220697",
       "openalex:W3088044773",
@@ -126,11 +152,25 @@
       "openalex:W4406960879",
       "openalex:W4409248102",
       "openalex:W4415702599",
+      "openalex:W7116769996",
+      "openalex:W7124453248",
+      "openalex:W7140688206",
       "openalex:W7163378013",
       "openalex:W7166691441",
       "openalex:W7169863550"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W4402299105",
+      "openalex:W3017822827",
+      "openalex:W2784994135",
+      "openalex:W6922774134",
+      "openalex:W3026632957",
+      "openalex:W4412983852",
+      "openalex:W574491446",
+      "openalex:W4245856599",
+      "openalex:W3125613272",
+      "openalex:W6902837288"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -141,7 +181,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-21T02:10:58Z",
+    "collected_at": "2026-11-22T01:08:26Z",
     "collectors": [
       "openalex"
     ],
@@ -188,6 +228,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-19",
+  "updated": "2026-11-21",
   "work_key": "doi:10.1016/j.apgeog.2026.104258"
 }

@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "data",
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Cardiometabolic diseases are leading causes of ill health, and neighbourhoods that support everyday walking may help reduce them. Studies often report lower disease prevalence in more walkable neighbourhoods. However, because walkability operates across multiple spatial scales, city-wide associations may conflate local neighbourhood form with broader metropolitan structure and co-varying environmental exposures. Here we show that while much of the walkability--morbidity association in Greater London operates through the city's macro-scale spatial structure, local alignment persists beyond it. Using an open five-component walkability index for 4,994 London census units and recorded prevalence of eight cardiometabolic conditions from primary-care registers, we found that higher walkability was inversely associated with all eight outcomes after adjusting for demographic composition and deprivation; one standard deviation higher walkability corresponded to 1.43 percentage points lower hypertension prevalence. Walkability followed a centre--periphery gradient, with a radial model explaining 74.2\\% of its variation. Coefficients were reduced by 2--43\\% within boroughs and 11--75\\% after centre--periphery adjustment. After spatial-error adjustment, no clear association remained for obesity; coefficients for the other seven were reduced by 83--99\\% relative to comparable log-scale models. Nevertheless, observed associations were more extreme than those from surrogate walkability surfaces preserving this spatial structure, for all eight outcomes in the primary analyses and for five after adjustment for nitrogen oxides. These findings caution against interpreting city-wide walkability coefficients as neighbourhood effects independent of wider metropolitan structure, and highlight the need for studies of neighbourhood form and health to disentangle global and local spatial structure explicitly.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Benjamin T. Pike",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Stephen Law",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Sanja Šćepanović",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Linus W. Dietz",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.26573v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.26573v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-19",
+    "repository_urls": [],
+    "title": "Neighbourhood Walkability and Cardiometabolic Morbidity in Greater London: A Fine-Grained Spatial Analysis"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-20_2611.26573",
+    "members": [
+      "arxiv:2611.26573"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-19",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.26573",
+    "doi": "10.48550/arxiv.2611.26573",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-22T01:08:03Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006269,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2223,
+      "out": 326
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.4,
+      "novelty": 0.0,
+      "relevance": 0.9887,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.4755,
+    "relevance": 0.9887
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": true
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical findings are based entirely on cross-sectional data from a single metropolitan area.",
+      "what": "The study evaluated an open five-component walkability index across 4,994 census units in Greater London alongside primary-care records for eight cardiometabolic conditions. A single standard deviation increase in walkability initially correlated with a 1.43 percentage point drop in hypertension prevalence. However, a radial centre-periphery model accounted for 74.2% of London's walkability variation, and adjusting for this spatial structure reduced effect sizes by 11% to 75%, while spatial-error controls diminished associations for seven outcomes by 83% to 99% and removed the obesity link entirely.",
+      "why": "It demonstrates that standard city-wide walkability estimates largely reflect broad metropolitan spatial gradients rather than isolated neighbourhood-level interventions. This challenges common epidemiological practices that interpret raw urban form coefficients as direct, local health benefits."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-19",
+  "work_key": "arxiv:2611.26573"
+}

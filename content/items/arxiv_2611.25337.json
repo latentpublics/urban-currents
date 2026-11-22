@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Background. Though resources embedded in social networks appear to shape health, past studies have not assessed this relationship directly. Using data from Agincourt Health and Demographic Surveillance System in South Africa, we examined the spillover effect of household wealth on mortality in the family network. Methods. We analysed cohort data from 2009 to 2018 to estimate the Average Total Effect (ATE) of household wealth on deaths, decomposing this into an Average Direct Effect (ADE) and Average Spillover Effect (ASE). We estimated these quantities separately for all deaths, deaths among children (<5 years old), premature deaths (among ages 15-59), and deaths among elders (60+). Results. Over the study period, 8750 individuals died. Overall, a one standard deviation increase in household wealth led to an ATE of -0.61% (95% CI: -0.74 to -0.48, P<0.001), an ADE of -0.53% (95% CI: -0.63 to -0.42, P<0.001) and an ASE of -0.08% (95% CI: -0.18 to 0.01, P=0.075). For premature mortality, these effect estimates were -0.37% (95% CI: -0.47 to -0.26, P<0.001), -0.29% (95% CI: -0.37 to -0.21, P<0.001), and -0.08% (95% CI: -0.15 to 0.00, P=0.038), respectively. Conclusions. Results provide evidence for the protective effect of household wealth on premature mortality across family relationships.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Keletso Makofane",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Eric Tchetgen Tchetgen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Mary T. Bassett",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Lisa F. Berkman",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP",
+      "stat.ME"
+    ],
+    "comment": "26 pages, 1 figure, 1 box, supplementary appendices S1-S4. Accepted for publication in the American Journal of Epidemiology (manuscript AJE-00063-2023) in 2023 following peer review; final manuscript submitted January 2025; not yet published",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.25337v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.25337v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-19",
+    "repository_urls": [],
+    "title": "Networked wealth and mortality in the Agincourt Health and Demographic Surveillance System, 2009--2018"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-20_2611.25337",
+    "members": [
+      "arxiv:2611.25337"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:causal-inference",
+        "label": "causal inference"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-19",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.25337",
+    "doi": "10.48550/arxiv.2611.25337",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-22T01:08:03Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.00623,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2341,
+      "out": 302
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8837,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3535,
+    "relevance": 0.8837
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "2009 to 2018",
+      "url": null,
+      "value": true
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The observed spillover effect of household wealth on overall mortality was statistically imprecise (P=0.075), with a lower bound spanning zero.",
+      "what": "Using cohort data from 2009 to 2018 covering 8,750 deaths within the Agincourt Health and Demographic Surveillance System in South Africa, this study evaluated how household wealth affects mortality across family networks. A one standard deviation increase in household wealth reduced overall mortality by an Average Total Effect of 0.61 percentage points and premature deaths by 0.37 percentage points, with family network spillovers accounting for 0.08 percentage points of the decrease in premature deaths.",
+      "why": "It directly quantifies the indirect health benefits that household economic resources confer onto extended family members, establishing a measured spillover effect for premature mortality within social networks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-19",
+  "work_key": "arxiv:2611.25337"
+}

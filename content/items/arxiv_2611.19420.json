@@ -51,23 +51,168 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00te2x188",
+        "label": "Institute for Scientific Interchange"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04qtj9h94",
+        "label": "Technical University of Denmark"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9971-450X",
+        "label": "Antonio Desiderio"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5162246562",
+        "label": "Leonardo Rodovero"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6099-2345",
+        "label": "Sune Lehmann"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10866",
+        "is_primary": true,
+        "label": "Nutritional Studies and Diet",
+        "score": 0.5073,
+        "subfield": "2739"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12057",
+        "is_primary": false,
+        "label": "Consumer Attitudes and Food Labeling",
+        "score": 0.3445,
+        "subfield": "2739"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12873",
+        "is_primary": false,
+        "label": "Nutrition, Health and Food Behavior",
+        "score": 0.1016,
+        "subfield": "2916"
+      }
+    ]
   },
   "first_published": "2026-11-14",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W1761701990",
+      "openalex:W1843750418",
+      "openalex:W1965014932",
+      "openalex:W2037561382",
+      "openalex:W2043057028",
+      "openalex:W2079017615",
+      "openalex:W2109401990",
+      "openalex:W2109872872",
+      "openalex:W2116169335",
+      "openalex:W2119674939",
+      "openalex:W2131681506",
+      "openalex:W2136427313",
+      "openalex:W2137734816",
+      "openalex:W2138427661",
+      "openalex:W2151604950",
+      "openalex:W2159856746",
+      "openalex:W2164998314",
+      "openalex:W2168462410",
+      "openalex:W2267223291",
+      "openalex:W2293621304",
+      "openalex:W2306028256",
+      "openalex:W2331747324",
+      "openalex:W2338167986",
+      "openalex:W2398564531",
+      "openalex:W2512714520",
+      "openalex:W2603592506",
+      "openalex:W2626277945",
+      "openalex:W2735387663",
+      "openalex:W2769580810",
+      "openalex:W2780422234",
+      "openalex:W2780588353",
+      "openalex:W2789577115",
+      "openalex:W2792720753",
+      "openalex:W2808671770",
+      "openalex:W2897946500",
+      "openalex:W2902416970",
+      "openalex:W2910131790",
+      "openalex:W2911640446",
+      "openalex:W2928467655",
+      "openalex:W2943138866",
+      "openalex:W2945386046",
+      "openalex:W2946128850",
+      "openalex:W2960924854",
+      "openalex:W2993619611",
+      "openalex:W3038703562",
+      "openalex:W3040316104",
+      "openalex:W3089085995",
+      "openalex:W3112124609",
+      "openalex:W3154717121",
+      "openalex:W4205784308",
+      "openalex:W4233850084",
+      "openalex:W4238369423",
+      "openalex:W4295907477",
+      "openalex:W4295929745",
+      "openalex:W4296293246",
+      "openalex:W4311123015",
+      "openalex:W4324044796",
+      "openalex:W4362636766",
+      "openalex:W4366162936",
+      "openalex:W4366742488",
+      "openalex:W4388635038",
+      "openalex:W4388656872",
+      "openalex:W4389918297",
+      "openalex:W4389938084",
+      "openalex:W4391652517",
+      "openalex:W4392600894",
+      "openalex:W4392808637",
+      "openalex:W4406334487",
+      "openalex:W4408119837",
+      "openalex:W4410447525",
+      "openalex:W4410586958",
+      "openalex:W4412156656",
+      "openalex:W4412391389",
+      "openalex:W4415926522",
+      "openalex:W4416347057",
+      "openalex:W4416554674",
+      "openalex:W7119508734",
+      "openalex:W7143595978",
+      "openalex:W7163217608",
+      "openalex:W7165126086",
+      "openalex:W7165183072"
+    ],
+    "related_works": [
+      "openalex:W2611066518",
+      "openalex:W4206674115",
+      "openalex:W7170955795",
+      "openalex:W2943138866",
+      "openalex:W3194948220",
+      "openalex:W4401657880",
+      "openalex:W3006852817",
+      "openalex:W7170344122",
+      "openalex:W6987834572",
+      "openalex:W3165274100"
+    ]
   },
   "ids": {
     "arxiv": "2611.19420",
     "doi": "10.48550/arxiv.2611.19420",
-    "openalex": null,
+    "openalex": "W7234477390",
     "pmid": null
   },
   "provenance": {
@@ -75,7 +220,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-17T03:39:26Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005246,
     "llm": {
@@ -163,6 +309,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-14",
+  "updated": "2026-11-21",
   "work_key": "arxiv:2611.19420"
 }

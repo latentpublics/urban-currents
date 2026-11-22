@@ -4,31 +4,60 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Qufu Normal University",
+            "ror": "03ceheh96"
+          },
+          {
+            "name": "Southwestern University of Finance and Economics",
+            "ror": "04ewct822"
+          }
+        ],
         "name": "Jing Zhang",
         "openalex": "A5162855951",
         "orcid": "https://orcid.org/0009-0002-6752-5541"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Southwestern University of Finance and Economics",
+            "ror": "04ewct822"
+          }
+        ],
         "name": "Yu Zhang",
         "openalex": "A5100433505",
         "orcid": "https://orcid.org/0000-0002-1873-2555"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Hamad bin Khalifa University",
+            "ror": "03eyq4y97"
+          }
+        ],
         "name": "Roberto Baldacci",
         "openalex": "A5016325556",
         "orcid": "https://orcid.org/0000-0003-0938-5798"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Hamad bin Khalifa University",
+            "ror": "03eyq4y97"
+          }
+        ],
         "name": "Mohammadamin Tavasoli",
         "openalex": "A5129730015",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Dongbei University of Finance and Economics",
+            "ror": "05db1pj03"
+          }
+        ],
         "name": "Jiafu Tang",
         "openalex": "A5060664084",
         "orcid": "https://orcid.org/0000-0002-0745-318X"
@@ -49,7 +78,7 @@
     "title": "Joint workforce planning and pricing for instant delivery with Ad-Hoc drivers"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-19_10.1016/j.trb.20",
+    "cluster_id": "clu_2026-11-20_10.1016/j.trb.20",
     "members": [
       "doi:10.1016/j.trb.2026.103646"
     ],
@@ -58,7 +87,28 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03ceheh96",
+        "label": "Qufu Normal University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04ewct822",
+        "label": "Southwestern University of Finance and Economics"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03eyq4y97",
+        "label": "Hamad bin Khalifa University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05db1pj03",
+        "label": "Dongbei University of Finance and Economics"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -95,7 +145,7 @@
         "id": "openalex:T12501",
         "is_primary": true,
         "label": "Digital Economy and Work Transformation",
-        "score": 0.2314,
+        "score": 0.4033,
         "subfield": "3312"
       },
       {
@@ -103,16 +153,16 @@
         "id": "openalex:T10567",
         "is_primary": false,
         "label": "Vehicle Routing Optimization Methods",
-        "score": 0.2275,
+        "score": 0.1996,
         "subfield": "2209"
       },
       {
         "confidence": null,
-        "id": "openalex:T12306",
+        "id": "openalex:T10328",
         "is_primary": false,
-        "label": "Urban and Freight Transport Logistics",
-        "score": 0.1877,
-        "subfield": "3313"
+        "label": "Supply Chain and Inventory Management",
+        "score": 0.1754,
+        "subfield": "1803"
       }
     ]
   },
@@ -129,10 +179,12 @@
       "openalex:W2331159541",
       "openalex:W2582670358",
       "openalex:W2732855062",
+      "openalex:W2785386996",
       "openalex:W2892219662",
       "openalex:W2908456107",
       "openalex:W2909772861",
       "openalex:W2911156056",
+      "openalex:W2922570500",
       "openalex:W3041561812",
       "openalex:W3121991813",
       "openalex:W3123290426",
@@ -161,7 +213,18 @@
       "openalex:W4414528982",
       "openalex:W7081933190"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W4253294155",
+      "openalex:W2997966470",
+      "openalex:W7204256369",
+      "openalex:W6997021204",
+      "openalex:W6992822037",
+      "openalex:W6992114794",
+      "openalex:W2618062931",
+      "openalex:W132080626",
+      "openalex:W7224997649",
+      "openalex:W7164861305"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -172,7 +235,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-21T02:10:58Z",
+    "collected_at": "2026-11-22T01:08:26Z",
     "collectors": [
       "openalex"
     ],
@@ -219,6 +282,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-19",
+  "updated": "2026-11-21",
   "work_key": "doi:10.1016/j.trb.2026.103646"
 }

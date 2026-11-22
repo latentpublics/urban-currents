@@ -4,37 +4,67 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Beijing Jiaotong University",
+            "ror": "01yj56c84"
+          }
+        ],
         "name": "Sida Luo",
         "openalex": "A5054379440",
         "orcid": "https://orcid.org/0000-0002-2803-956X"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Beijing Jiaotong University",
+            "ror": "01yj56c84"
+          }
+        ],
         "name": "Jinglu Niu",
         "openalex": "A5137474985",
         "orcid": "https://orcid.org/0009-0005-0592-0978"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Beihang University",
+            "ror": "00wk2mp56"
+          }
+        ],
         "name": "Letao Kang",
         "openalex": "A5140773706",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Hong Kong",
+            "ror": "02zhqgq86"
+          }
+        ],
         "name": "Jiawen Xie",
         "openalex": "A5163007120",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Beijing Jiaotong University",
+            "ror": "01yj56c84"
+          }
+        ],
         "name": "Yufeng Zhang",
         "openalex": "A5033875393",
         "orcid": "https://orcid.org/0000-0002-3184-5837"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Xinjiang University",
+            "ror": "059gw8r13"
+          }
+        ],
         "name": "Chunfu Shao",
         "openalex": "A5081982909",
         "orcid": "https://orcid.org/0000-0002-5495-8754"
@@ -55,7 +85,7 @@
     "title": "Beyond feeder trip volume: how built environment shapes dockless bike–subway integration patterns across cities"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-19_10.1016/j.tra.20",
+    "cluster_id": "clu_2026-11-20_10.1016/j.tra.20",
     "members": [
       "doi:10.1016/j.tra.2026.105376"
     ],
@@ -64,7 +94,28 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01yj56c84",
+        "label": "Beijing Jiaotong University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00wk2mp56",
+        "label": "Beihang University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02zhqgq86",
+        "label": "University of Hong Kong"
+      },
+      {
+        "confidence": null,
+        "id": "ror:059gw8r13",
+        "label": "Xinjiang University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -106,7 +157,7 @@
         "id": "openalex:T10298",
         "is_primary": true,
         "label": "Urban Transport and Accessibility",
-        "score": 0.9995,
+        "score": 0.999,
         "subfield": "3313"
       },
       {
@@ -114,7 +165,7 @@
         "id": "openalex:T11942",
         "is_primary": false,
         "label": "Transportation and Mobility Innovations",
-        "score": 0.0002,
+        "score": 0.0004,
         "subfield": "3313"
       },
       {
@@ -143,6 +194,7 @@
       "openalex:W2894078410",
       "openalex:W2915091860",
       "openalex:W2944511142",
+      "openalex:W2960856386",
       "openalex:W2963618363",
       "openalex:W2966151072",
       "openalex:W2988059475",
@@ -168,15 +220,31 @@
       "openalex:W4317663852",
       "openalex:W4322504774",
       "openalex:W4365514848",
+      "openalex:W4390666331",
+      "openalex:W4399186157",
       "openalex:W4401397795",
       "openalex:W4402290199",
       "openalex:W4403366465",
+      "openalex:W4407743269",
+      "openalex:W4409916476",
       "openalex:W4411980525",
       "openalex:W4413275425",
       "openalex:W4415944762",
+      "openalex:W7070935594",
       "openalex:W7160181563"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W3157754766",
+      "openalex:W7167035156",
+      "openalex:W3096198001",
+      "openalex:W3007578626",
+      "openalex:W4409916476",
+      "openalex:W6941251967",
+      "openalex:W7220840073",
+      "openalex:W3036980258",
+      "openalex:W3006786053",
+      "openalex:W4403350515"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -187,7 +255,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-21T02:10:58Z",
+    "collected_at": "2026-11-22T01:08:26Z",
     "collectors": [
       "openalex"
     ],
@@ -234,6 +302,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-19",
+  "updated": "2026-11-21",
   "work_key": "doi:10.1016/j.tra.2026.105376"
 }

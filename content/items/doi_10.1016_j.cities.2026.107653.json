@@ -1,16 +1,40 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Recent urban development in Dhaka has created injustices in access to Urban Ecosystem Services (UES), affecting resilience, health, and well-being. This study evaluates the status of justice in access to UES through spatial modeling. Four UES were analyzed: recreation and tourism (cultural), urban cooling (regulating), habitat quality (supporting), and water yield (provisioning), using the InVEST model. Accessibility within a 15-minute walk from ward centroids was assessed with the Enhanced Two-Step Floating Catchment Area method. In addition, a multidimensional environmental justice framework was operationalized to examine justice scenarios in Dhaka, using the Best–Worst Method. Finally, a composite Justice in Access to UES (JAU) Index was constructed by integrating UES supply, accessibility, and justice indicators through a fuzzy overlay operation. The findings highlight significant injustices in access to UES across Dhaka. The highest proportions of very low JAU values were observed for Cultural (51%) and Supporting (47%) UES. A clear divide emerged, with Dhaka South consistently lagging behind Dhaka North across all services. Dhaka North Ward 19 (Hatirjheel area) and Dhaka South Ward 03 (near Hatirjheel) recorded the highest JAU values across all UES types, yet large portions of the city remained underserved. Overall, the results demonstrate that justice in access to UES depends not only on supply or accessibility, but also on the interplay of spatial configuration, social vulnerability, and structural barriers. Addressing these injustices requires equity-focused urban planning to strengthen services in marginalized neighborhoods and promote inclusive, sustainable urban development in Dhaka.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Hiroshima University",
+            "ror": "03t78wx29"
+          },
+          {
+            "name": "Khulna University of Engineering and Technology",
+            "ror": "04y58d606"
+          },
+          {
+            "name": "Hiroshima City University",
+            "ror": "001et4e78"
+          }
+        ],
         "name": "Md. Nazmul Haque",
         "openalex": "A5075791147",
         "orcid": "https://orcid.org/0000-0003-3988-5654"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Hiroshima University",
+            "ror": "03t78wx29"
+          },
+          {
+            "name": "The University of Queensland",
+            "ror": "00rqy9422"
+          }
+        ],
         "name": "Ayyoob Sharifi",
         "openalex": "A5002835698",
         "orcid": "https://orcid.org/0000-0002-8983-8613"
@@ -38,9 +62,36 @@
     "merge_basis": "singleton"
   },
   "entities": {
-    "data": [],
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03t78wx29",
+        "label": "Hiroshima University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04y58d606",
+        "label": "Khulna University of Engineering and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:001et4e78",
+        "label": "Hiroshima City University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00rqy9422",
+        "label": "The University of Queensland"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -54,7 +105,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": [
       {
@@ -158,7 +209,18 @@
       "openalex:W4409589010",
       "openalex:W4412439938"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W2729406446",
+      "openalex:W4414886474",
+      "openalex:W2941215873",
+      "openalex:W7162311688",
+      "openalex:W7017325624",
+      "openalex:W6922517707",
+      "openalex:W2721907551",
+      "openalex:W6960065411",
+      "openalex:W2940749918",
+      "openalex:W2760920885"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -167,14 +229,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-11-21T02:10:58Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -196,26 +261,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": null,
+      "what": "The authors evaluated equitable access to four urban ecosystem services—recreation, cooling, habitat quality, and water yield—across Dhaka using InVEST models, a 15-minute walking accessibility metric, and fuzzy overlay mapping. Access varied dramatically by service type, with 51% of wards showing very low justice indices for cultural services and 47% for supporting services. Spatial modeling revealed a persistent north-south disparity, where Dhaka South consistently underperformed compared to Dhaka North, while high access remained clustered around specific areas like Hatirjheel.",
+      "why": "This provides empirical baseline measurements for environmental justice in a rapidly growing Global South megacity, demonstrating that physical ecosystem service supply alone does not translate to equitable access when socio-spatial barriers exist."
+    }
   },
   "track": "papers",
-  "updated": "2026-11-19",
+  "updated": "2026-11-21",
   "work_key": "doi:10.1016/j.cities.2026.107653"
 }

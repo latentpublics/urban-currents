@@ -4,19 +4,38 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Khulna University of Engineering and Technology",
+            "ror": "04y58d606"
+          }
+        ],
         "name": "Mohammad Ismail Hossain",
         "openalex": "A5102962997",
         "orcid": "https://orcid.org/0000-0001-9910-9302"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Tokyo Metropolitan University",
+            "ror": "00ws30h19"
+          }
+        ],
         "name": "Md Nahid Ferdous",
         "openalex": "A5032234988",
         "orcid": "https://orcid.org/0000-0002-2613-0642"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Khulna University of Engineering and Technology",
+            "ror": "04y58d606"
+          },
+          {
+            "name": "Department of Commerce",
+            "ror": "03dmtvy82"
+          }
+        ],
         "name": "Meghla Mondal",
         "openalex": "A5133161169",
         "orcid": "https://orcid.org/0009-0003-4317-2881"
@@ -37,7 +56,7 @@
     "title": "Modeling the spatial suitability of Aedes aegypti using GIS and maxent in Khulna City Corporation, Bangladesh"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-20_10.1007/s10708-0",
+    "cluster_id": "clu_2026-11-21_10.1007/s10708-0",
     "members": [
       "doi:10.1007/s10708-026-11752-y"
     ],
@@ -46,7 +65,23 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04y58d606",
+        "label": "Khulna University of Engineering and Technology"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00ws30h19",
+        "label": "Tokyo Metropolitan University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:03dmtvy82",
+        "label": "Department of Commerce"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -73,7 +108,7 @@
         "id": "openalex:T10166",
         "is_primary": true,
         "label": "Mosquito-borne diseases and control",
-        "score": 0.9717,
+        "score": 0.9951,
         "subfield": "2739"
       },
       {
@@ -81,16 +116,16 @@
         "id": "openalex:T10895",
         "is_primary": false,
         "label": "Species Distribution and Climate Change",
-        "score": 0.0198,
+        "score": 0.003,
         "subfield": "2302"
       },
       {
         "confidence": null,
-        "id": "openalex:T10296",
+        "id": "openalex:T14053",
         "is_primary": false,
-        "label": "Vector-borne infectious diseases",
-        "score": 0.0009,
-        "subfield": "2405"
+        "label": "Dengue and Mosquito Control Research",
+        "score": 0.0004,
+        "subfield": "2739"
       }
     ]
   },
@@ -163,7 +198,18 @@
       "openalex:W4406155223",
       "openalex:W7136684806"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W7204549578",
+      "openalex:W3042068185",
+      "openalex:W2902881042",
+      "openalex:W112736013",
+      "openalex:W2410962524",
+      "openalex:W6941326281",
+      "openalex:W2403011134",
+      "openalex:W2217868084",
+      "openalex:W7203735283",
+      "openalex:W2321738114"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -174,7 +220,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-22T01:08:26Z",
+    "collected_at": "2026-11-23T01:40:48Z",
     "collectors": [
       "openalex"
     ],
@@ -221,6 +267,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-20",
+  "updated": "2026-11-22",
   "work_key": "doi:10.1007/s10708-026-11752-y"
 }

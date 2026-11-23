@@ -76,23 +76,143 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02mpq6x41",
+        "label": "University of Illinois Chicago"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01evzkn27",
+        "label": "Fundação Getulio Vargas"
+      },
+      {
+        "confidence": null,
+        "id": "ror:01an7q238",
+        "label": "University of California, Berkeley"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02rjhbb08",
+        "label": "Universidade Federal Fluminense"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5162470592",
+        "label": "Leonardo Ferreira"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3341-7059",
+        "label": "João Rulff"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6366-1568",
+        "label": "Maryam Hosseini"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-9089-7303",
+        "label": "Aline Paes"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5162537098",
+        "label": "Daniel de Oliveira"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5134379805",
+        "label": "Fabio Miranda"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3868-8886",
+        "label": "Marcos Lage"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10799",
+        "is_primary": true,
+        "label": "Data Visualization and Analytics",
+        "score": 0.9966,
+        "subfield": "1704"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11986",
+        "is_primary": false,
+        "label": "Scientific Computing and Data Management",
+        "score": 0.0005,
+        "subfield": "1802"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": false,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.0005,
+        "subfield": "3305"
+      }
+    ]
   },
   "first_published": "2026-11-15",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W2002544066",
+      "openalex:W2101096088",
+      "openalex:W2132347265",
+      "openalex:W2145154883",
+      "openalex:W2507337634",
+      "openalex:W2751627669",
+      "openalex:W2753409831",
+      "openalex:W2759637878",
+      "openalex:W2941798514",
+      "openalex:W2982243661",
+      "openalex:W2996795042",
+      "openalex:W3081184337",
+      "openalex:W3135367836",
+      "openalex:W3212601981",
+      "openalex:W4210894218",
+      "openalex:W4225276231",
+      "openalex:W4226182655",
+      "openalex:W4256522398",
+      "openalex:W4281750094",
+      "openalex:W4288079959",
+      "openalex:W4362560386",
+      "openalex:W4387885600",
+      "openalex:W4387885690",
+      "openalex:W4402402085",
+      "openalex:W4413614625",
+      "openalex:W4417051924"
+    ],
+    "related_works": [
+      "openalex:W2763572577",
+      "openalex:W2728552064",
+      "openalex:W2462625002",
+      "openalex:W6945087006",
+      "openalex:W3103808452",
+      "openalex:W2893119764",
+      "openalex:W2145598348",
+      "openalex:W4206714606",
+      "openalex:W7225828288",
+      "openalex:W2952772880"
+    ]
   },
   "ids": {
     "arxiv": "2611.20311",
     "doi": "10.48550/arxiv.2611.20311",
-    "openalex": null,
+    "openalex": "W7235566746",
     "pmid": null
   },
   "provenance": {
@@ -100,7 +220,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-19T02:28:29Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004945,
     "llm": {
@@ -188,6 +309,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-15",
+  "updated": "2026-11-22",
   "work_key": "arxiv:2611.20311"
 }

@@ -1,0 +1,374 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Many travel decisions involve a degree of experience formation, where individuals learn their preferences over time. At the same time, there is extensive scope for heterogeneity across individual travellers, both in their underlying preferences and in how these evolve. The present paper puts forward a Latent Class Reinforcement Learning (LCRL) model that allows analysts to capture both of these phenomena. We apply the model to a driving simulator dataset and estimate the parameters through Variational Bayes. We identify three distinct classes of individuals that differ markedly in how they adapt their preferences: the first displays context-dependent preferences with context-specific exploitative tendencies; the second follows a persistent exploitative strategy regardless of context; and the third engages in an exploratory strategy combined with context-specific preferences.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "University of Leeds",
+            "ror": "024mrxd33"
+          }
+        ],
+        "name": "Georges Sfeir",
+        "openalex": null,
+        "orcid": "https://orcid.org/0000-0002-5656-3780"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Leeds",
+            "ror": "024mrxd33"
+          }
+        ],
+        "name": "Stephane Hess",
+        "openalex": "A5072345703",
+        "orcid": "https://orcid.org/0000-0002-3650-2518"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Leeds",
+            "ror": "024mrxd33"
+          }
+        ],
+        "name": "Thomas O. Hancock",
+        "openalex": "A5075860076",
+        "orcid": "https://orcid.org/0000-0002-8922-0901"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Filipe Rodrigues",
+        "openalex": null,
+        "orcid": "https://orcid.org/0000-0001-6979-6498"
+      },
+      {
+        "institutions": [
+          {
+            "name": "University of Leeds",
+            "ror": "024mrxd33"
+          }
+        ],
+        "name": "Jamal Amani Rad",
+        "openalex": "A5036441621",
+        "orcid": "https://orcid.org/0000-0002-7322-7412"
+      },
+      {
+        "institutions": [
+          {
+            "name": "The University of Sydney",
+            "ror": "0384j8v12"
+          }
+        ],
+        "name": "Michiel C.J. Bliemer",
+        "openalex": "A5030966216",
+        "orcid": "https://orcid.org/0000-0001-7602-5827"
+      },
+      {
+        "institutions": [
+          {
+            "name": "The University of Sydney",
+            "ror": "0384j8v12"
+          }
+        ],
+        "name": "Matthew J. Beck",
+        "openalex": "A5050198194",
+        "orcid": "https://orcid.org/0000-0003-1111-2852"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Al Yamamah University",
+            "ror": "036b03a90"
+          }
+        ],
+        "name": "Fayyaz Khan",
+        "openalex": null,
+        "orcid": "https://orcid.org/0000-0003-1075-5688"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.106171",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-11-21",
+    "repository_urls": [],
+    "title": "A Bayesian latent class reinforcement learning framework to capture adaptive, feedback-driven travel behaviour"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-21_2512.14713",
+    "members": [
+      "arxiv:2512.14713"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:024mrxd33",
+        "label": "University of Leeds"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04qtj9h94",
+        "label": "Technical University of Denmark"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0384j8v12",
+        "label": "The University of Sydney"
+      },
+      {
+        "confidence": null,
+        "id": "ror:036b03a90",
+        "label": "Al Yamamah University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-5656-3780",
+        "label": "Georges Sfeir"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3650-2518",
+        "label": "Stephane Hess"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-8922-0901",
+        "label": "Thomas O. Hancock"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-6979-6498",
+        "label": "Filipe Rodrigues"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-7322-7412",
+        "label": "Jamal Amani Rad"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7602-5827",
+        "label": "Michiel C.J. Bliemer"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1111-2852",
+        "label": "Matthew J. Beck"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1075-5688",
+        "label": "Fayyaz Khan"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": true,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.793,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10841",
+        "is_primary": false,
+        "label": "Economic and Environmental Valuation",
+        "score": 0.1024,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10315",
+        "is_primary": false,
+        "label": "Decision-Making and Behavioral Economics",
+        "score": 0.0308,
+        "subfield": "1800"
+      }
+    ]
+  },
+  "first_published": "2026-11-21",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W160989634",
+      "openalex:W1516111018",
+      "openalex:W1518408905",
+      "openalex:W1964832509",
+      "openalex:W2007414406",
+      "openalex:W2081030963",
+      "openalex:W2092420287",
+      "openalex:W2117726420",
+      "openalex:W2118123851",
+      "openalex:W2120340025",
+      "openalex:W2132513842",
+      "openalex:W2148435376",
+      "openalex:W2153392139",
+      "openalex:W2166851633",
+      "openalex:W2189854044",
+      "openalex:W2225156818",
+      "openalex:W2319674571",
+      "openalex:W2581941658",
+      "openalex:W2778689844",
+      "openalex:W2916029038",
+      "openalex:W2930108284",
+      "openalex:W2951791612",
+      "openalex:W2964121744",
+      "openalex:W2970971581",
+      "openalex:W2996601929",
+      "openalex:W3024570293",
+      "openalex:W3095503855",
+      "openalex:W3136535094",
+      "openalex:W3146681346",
+      "openalex:W3195926932",
+      "openalex:W3205395307",
+      "openalex:W4212855960",
+      "openalex:W4293052541",
+      "openalex:W4399562071",
+      "openalex:W4401871105",
+      "openalex:W4407218544",
+      "openalex:W4409595206",
+      "openalex:W4411070166",
+      "openalex:W7005651216",
+      "openalex:W7138341993"
+    ],
+    "related_works": [
+      "openalex:W4411070166",
+      "openalex:W2607571398",
+      "openalex:W2619677800",
+      "openalex:W7163064672",
+      "openalex:W4405753889",
+      "openalex:W7097592818",
+      "openalex:W1500932584",
+      "openalex:W2596201935",
+      "openalex:W2624151630",
+      "openalex:W7203903403"
+    ]
+  },
+  "ids": {
+    "arxiv": "2512.14713",
+    "doi": "10.1016/j.trc.2026.106171",
+    "openalex": "W4417214774",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-23T01:40:48Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.004664,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1813,
+      "out": 216
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-23T01:40:48Z",
+    "doi": "10.1016/j.trc.2026.106171",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The model empirical evaluation relies exclusively on data collected from a simulated driving experiment rather than real-world travel choices.",
+      "what": "The authors developed a Latent Class Reinforcement Learning (LCRL) model estimated via Variational Bayes to model how dynamic preferences evolve alongside individual heterogeneity. Applying the model to a driving simulator dataset revealed three distinct behavioral subgroups: one with context-dependent preferences and context-specific exploitation, one adhering to a persistent exploitative strategy across all contexts, and one combining an exploratory strategy with context-specific preferences.",
+      "why": "The framework provides a method to model individual differences in how travelers learn and update their choices over time, replacing static preference assumptions with adaptive, feedback-driven decision rules."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-21",
+  "work_key": "arxiv:2512.14713"
+}

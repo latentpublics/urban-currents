@@ -4,31 +4,56 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Razi University",
+            "ror": "02ynb0474"
+          }
+        ],
         "name": "Abdul Majid Ahmadi",
         "openalex": "A5163108646",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Tehran",
+            "ror": "05vf56z40"
+          }
+        ],
         "name": "Hamid Ganjaeian",
         "openalex": "A5053359386",
         "orcid": "https://orcid.org/0000-0001-5611-4160"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Shahid Beheshti University",
+            "ror": "0091vmj44"
+          }
+        ],
         "name": "Neda Karimi",
         "openalex": "A5163173557",
         "orcid": "https://orcid.org/0009-0004-8784-4480"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Shahid Beheshti University",
+            "ror": "0091vmj44"
+          }
+        ],
         "name": "Zinat Dekali",
         "openalex": "A5163070325",
         "orcid": null
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Urmia University",
+            "ror": "032fk0x53"
+          }
+        ],
         "name": "Meysam Noori Khanyourdi",
         "openalex": "A5160129918",
         "orcid": "https://orcid.org/0009-0001-6711-9650"
@@ -49,7 +74,7 @@
     "title": "Sports facility site selection considering spatial distribution principles: a case study of East Azerbaijan Province, Iran"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-20_10.1007/s10708-0",
+    "cluster_id": "clu_2026-11-21_10.1007/s10708-0",
     "members": [
       "doi:10.1007/s10708-026-11750-0"
     ],
@@ -58,7 +83,28 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02ynb0474",
+        "label": "Razi University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:05vf56z40",
+        "label": "University of Tehran"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0091vmj44",
+        "label": "Shahid Beheshti University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:032fk0x53",
+        "label": "Urmia University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -95,7 +141,7 @@
         "id": "openalex:T11502",
         "is_primary": true,
         "label": "Facility Location and Emergency Management",
-        "score": 0.9727,
+        "score": 0.3755,
         "subfield": "1803"
       },
       {
@@ -103,16 +149,16 @@
         "id": "openalex:T10050",
         "is_primary": false,
         "label": "Multi-Criteria Decision Making",
-        "score": 0.0058,
+        "score": 0.3162,
         "subfield": "1803"
       },
       {
         "confidence": null,
-        "id": "openalex:T11014",
+        "id": "openalex:T13058",
         "is_primary": false,
-        "label": "Agglomeration and Urban Systems",
-        "score": 0.0022,
-        "subfield": "2002"
+        "label": "Soil and Land Suitability Analysis",
+        "score": 0.1306,
+        "subfield": "2308"
       }
     ]
   },
@@ -151,7 +197,18 @@
       "openalex:W7160041102",
       "openalex:W7164932084"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W3125332282",
+      "openalex:W7166666535",
+      "openalex:W2751594845",
+      "openalex:W3088091227",
+      "openalex:W2273883005",
+      "openalex:W3149164934",
+      "openalex:W2229162779",
+      "openalex:W2208286413",
+      "openalex:W1988159793",
+      "openalex:W2969450585"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -162,7 +219,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-22T01:08:26Z",
+    "collected_at": "2026-11-23T01:40:48Z",
     "collectors": [
       "openalex"
     ],
@@ -209,6 +266,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-20",
+  "updated": "2026-11-22",
   "work_key": "doi:10.1007/s10708-026-11750-0"
 }

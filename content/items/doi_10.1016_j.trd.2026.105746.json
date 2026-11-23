@@ -4,25 +4,45 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Czech University of Life Sciences Prague",
+            "ror": "0415vcw02"
+          }
+        ],
         "name": "Tomáš Kušta",
         "openalex": "A5053665794",
         "orcid": "https://orcid.org/0000-0002-0065-8385"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Czech University of Life Sciences Prague",
+            "ror": "0415vcw02"
+          }
+        ],
         "name": "Miloš Ježek",
         "openalex": "A5038148675",
         "orcid": "https://orcid.org/0000-0002-4127-9947"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Czech University of Life Sciences Prague",
+            "ror": "0415vcw02"
+          }
+        ],
         "name": "Zdeněk Keken",
         "openalex": "A5090916976",
         "orcid": "https://orcid.org/0000-0001-8472-8637"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Czech University of Life Sciences Prague",
+            "ror": "0415vcw02"
+          }
+        ],
         "name": "Markéta Kalábová",
         "openalex": "A5013004834",
         "orcid": "https://orcid.org/0000-0002-4378-5376"
@@ -31,7 +51,7 @@
         "institutions": [],
         "name": "Jan Chalas",
         "openalex": "A5053025568",
-        "orcid": null
+        "orcid": "https://orcid.org/0009-0007-5185-8786"
       },
       {
         "institutions": [],
@@ -46,7 +66,12 @@
         "orcid": "https://orcid.org/0000-0002-5659-398X"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Czech University of Life Sciences Prague",
+            "ror": "0415vcw02"
+          }
+        ],
         "name": "Aleš Erber",
         "openalex": "A5163085916",
         "orcid": null
@@ -67,7 +92,7 @@
     "title": "AntiCrashSystem4Drivers: alerting wildlife-vehicle collisions risk in navigation applications through spatiotemporal risk data integration"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-20_10.1016/j.trd.20",
+    "cluster_id": "clu_2026-11-21_10.1016/j.trd.20",
     "members": [
       "doi:10.1016/j.trd.2026.105746"
     ],
@@ -76,7 +101,13 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:0415vcw02",
+        "label": "Czech University of Life Sciences Prague"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -100,7 +131,7 @@
       },
       {
         "confidence": null,
-        "id": "openalex:A5053025568",
+        "id": "orcid:0009-0007-5185-8786",
         "label": "Jan Chalas"
       },
       {
@@ -128,7 +159,15 @@
         "id": "openalex:T12644",
         "is_primary": true,
         "label": "Wildlife-Road Interactions and Conservation",
-        "score": 0.9863,
+        "score": 1.0,
+        "subfield": "2303"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10199",
+        "is_primary": false,
+        "label": "Wildlife Ecology and Conservation",
+        "score": 0.0001,
         "subfield": "2303"
       },
       {
@@ -136,16 +175,8 @@
         "id": "openalex:T10370",
         "is_primary": false,
         "label": "Traffic and Road Safety",
-        "score": 0.0099,
+        "score": 0.0001,
         "subfield": "2213"
-      },
-      {
-        "confidence": null,
-        "id": "openalex:T12406",
-        "is_primary": false,
-        "label": "IoT and GPS-based Vehicle Safety Systems",
-        "score": 0.0015,
-        "subfield": "2203"
       }
     ]
   },
@@ -198,7 +229,18 @@
       "openalex:W4413294378",
       "openalex:W4413859048"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W7208651474",
+      "openalex:W7108456251",
+      "openalex:W7145714931",
+      "openalex:W7080194179",
+      "openalex:W2990642167",
+      "openalex:W6941318575",
+      "openalex:W7214723203",
+      "openalex:W7165384166",
+      "openalex:W3026678699",
+      "openalex:W586020333"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -209,7 +251,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-22T01:08:26Z",
+    "collected_at": "2026-11-23T01:40:48Z",
     "collectors": [
       "openalex"
     ],
@@ -256,6 +298,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-20",
+  "updated": "2026-11-22",
   "work_key": "doi:10.1016/j.trd.2026.105746"
 }

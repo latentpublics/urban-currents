@@ -1,0 +1,192 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Inter-firm transaction networks underpin modern economies and are critical for economic growth and resilience. Previous studies have largely explained the formation of inter-firm ties through spatial proximity. Yet people routinely move across space, creating opportunities for encounters that extend beyond geographical proximity. How these opportunities relate to inter-firm transaction relationships remains poorly understood. Here, we combine large-scale mobile phone mobility data with a multi-year panel of transactions among 196,317 firms in Tokyo to quantify encounter opportunities between workers and examine their association with inter-firm transaction ties. We find that pairs of areas with greater opportunities for encounters one another are more likely to have transaction links and new link formation between previously unconnected firms. This association is particularly pronounced in information- and service-intensive industries, reflecting the importance of encounter opportunities for exchange involving intangible knowledge and service. Indirect connections through shared neighbors in the encounter network are also positively associated with subsequent transaction formation across industries, but not within industries. These findings suggest that urban policies shaping connectivity formed through human mobility could play a significant role in the development and resilience of economic networks.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Ketian Chen",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hiroyasu Inoue",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yoshihide Sekimoto",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yoshiki Ogawa",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Takahiro Yabe",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "physics.soc-ph"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.29191v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.29191v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-22",
+    "repository_urls": [],
+    "title": "Physical co-presence of workers is linked with the evolution of interfirm networks"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-22_2611.29191",
+    "members": [
+      "arxiv:2611.29191"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:network-analysis",
+        "label": "network analysis"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1490",
+        "label": "Tokyo",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.29191",
+    "doi": "10.48550/arxiv.2611.29191",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-24T05:14:34Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005525,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1955,
+      "out": 288
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9788,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3915,
+    "relevance": 0.9788
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on observational mobility and transaction data within a single metropolitan area, which limits causal claims and regional generalizability.",
+      "what": "By combining mobile phone mobility data with multi-year transaction records from 196,317 firms in Tokyo, this study measures worker encounter opportunities across urban areas to assess their relationship with economic tie formation. Pairs of locations with higher physical co-presence show higher rates of overall transaction links and increased probability of new tie creation between previously unconnected firms. This relationship is strongest in information- and service-intensive sectors, while indirect cross-neighborhood connections in the mobility network selectively correlate with new transaction links across different industries rather than within the same industry.",
+      "why": "The findings demonstrate that physical co-presence generated by daily human movement predicts firm-to-firm transaction networks beyond simple static geographic proximity, establishing worker mobility patterns as a measurable factor in local economic network growth."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-22",
+  "work_key": "arxiv:2611.29191"
+}

@@ -1,0 +1,184 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Natural spaces support health and well-being, but increasing recreational use can put pressure on ecologically sensitive sites. Understanding when, where and why people visit is important for planning, site management and evaluating interventions. Building on work by the Office for National Statistics, we developed statistical and machine learning models to predict visitor numbers at points located in natural spaces. We trained on automated people counter data across a range of green and blue spaces in England and Wales and tested the models' ability to generalise to unseen counter locations. Our models offer a scalable approach for predicting visitor numbers in natural spaces, reducing reliance on surveys and physical counters.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Yueyue Chai",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Elizabeth Galloway",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Peter Challenor",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Pippa Langford",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.27668v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.27668v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-20",
+    "repository_urls": [],
+    "title": "Statistical and Machine Learning Approaches for Estimating Visitation to Natural Spaces in the UK"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-22_2611.27668",
+    "members": [
+      "arxiv:2611.27668"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [
+      {
+        "confidence": 0.9714,
+        "id": "method:statistical-modeling",
+        "label": "statistical modeling"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:machine-learning",
+        "label": "machine learning"
+      }
+    ],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-20",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.27668",
+    "doi": "10.48550/arxiv.2611.27668",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-24T05:14:34Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004306,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1761,
+      "out": 185
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9783,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3913,
+    "relevance": 0.9783
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "Statistical and machine learning models were developed to predict visitor counts in green and blue natural spaces across England and Wales. The models were trained on data from automated physical counters and evaluated on their capacity to accurately estimate visitation at previously unseen locations.",
+      "why": "The framework provides a scalable method to track recreational pressure across diverse ecosystems without requiring the installation of permanent physical hardware or costly localized survey collection."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-20",
+  "work_key": "arxiv:2611.27668"
+}

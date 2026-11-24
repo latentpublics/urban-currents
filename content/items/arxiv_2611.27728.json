@@ -1,0 +1,180 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Using image data is becoming an important method for highway agencies to automatically evaluate pavement conditions. However, most studies focus on improving detection accuracy rather than obtaining quantitative measurements, such as the length or area of pavement distress. Although field camera calibration can provide such measurements, it is impractical for large volumes of onboard images collected from different vehicles. This study develops a method to quantitatively measure pavement distress directly from in-vehicle camera images without on-site camera calibration. A quadrilateral region of interest is first identified based on lane detection and used to construct a perspective transformation matrix for image correction. Size correction is then performed using the proportions of road markings in the image and a specified scale, which also enables estimation of the actual width of the selected region. The corrected images are subsequently processed using object detection algorithms to obtain quantitative distress measurements. The proposed method can efficiently perform perspective correction for images collected by the same vehicle camera with minimal manual effort. The measured pavement patch lengths show a trend consistent with pavement friction data. By calibrating vehicle cameras using only image information, this study enables quantitative pavement distress detection without additional field experiments. The approach provides a practical solution for processing large volumes of vehicle-camera data, particularly as connected vehicles generate increasing amounts of uncalibrated roadway imagery.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Sike Wang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yizhou Lin",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Shuo Li",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Yi Jiang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Chengcheng Tao",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.27728v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.27728v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-20",
+    "repository_urls": [],
+    "title": "Quantitative Measurement of Pavement Distress based on Vehicle Camera and Perspective Correction"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-22_2611.27728",
+    "members": [
+      "arxiv:2611.27728"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-20",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.27728",
+    "doi": "10.48550/arxiv.2611.27728",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-24T05:14:34Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005135,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2007,
+      "out": 236
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9289,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3716,
+    "relevance": 0.9289
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The scaling method relies on the presence and consistency of visible road markings within the camera's field of view.",
+      "what": "The study presents a method to extract length and area measurements of pavement distress from uncalibrated in-vehicle camera images without requiring physical camera calibration on-site. The pipeline calculates a perspective transformation matrix from lane lines and uses standard road marking dimensions to correct image scale, enabling object detection algorithms to quantify damage size. Validation demonstrates that estimated pavement patch lengths correlate with measured pavement friction levels.",
+      "why": "This approach allows road agencies to transform raw, uncalibrated imagery collected from fleet or connected vehicles into standardized physical pavement metrics without conducting manual field calibrations."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-20",
+  "work_key": "arxiv:2611.27728"
+}

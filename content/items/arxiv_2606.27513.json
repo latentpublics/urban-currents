@@ -1,20 +1,42 @@
 {
   "badges": [
-    "preprint"
+    "published"
   ],
   "bibliography": {
     "abstract": "Digital platforms increasingly shape how people experience and navigate cities, linking virtual information seeking with physical mobility. Despite this interdependence, online and offline activities are often studied separately in urban mobility research. This paper introduces the Feedback Network, a computational framework that captures interactions between cognitive activity in digital environments and behavior in physical space. Using Google Search and Location History data from the same individuals, collected through a data donation framework in Budapest, Hungary, between 2018 and 2022, we examine how online search patterns and offline visitation behavior co-evolve. We combine semantic and spatial analytical approaches. Radius of gyration is adapted to measure variation in geographic mobility and semantic exploration, enabling comparison between physical movement and online cognitive dispersion. A Feedback Network models transitions between search-related and location-related activity clusters and is evaluated using Concentration Entropy, which measures whether behavioral flows are concentrated around routine pathways or distributed across exploratory transitions. The results show that online exploration is more concentrated than offline mobility, suggesting narrower and more repetitive semantic interests, while physical movement remains relatively diverse. Persistent linkages between search and visitation activities related to retail and business services indicate stable cognitive-spatial behavioral loops. The COVID-19 pandemic disrupted spatial routines more strongly than cognitive exploration, widening the gap between digital engagement and realized movement. The findings demonstrate that urban mobility depends on the interaction between informational exposure and spatial encounter and provide a foundation for Hybrid Digital Twins of Society.",
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Eötvös Loránd University",
+            "ror": "01jsq2704"
+          },
+          {
+            "name": "ELTE Centre for Social Sciences",
+            "ror": "0492k9x16"
+          },
+          {
+            "name": "University of Amsterdam",
+            "ror": "04dkp9463"
+          }
+        ],
         "name": "Rafiazka Hilman",
-        "openalex": null,
-        "orcid": null
+        "openalex": "A5065680794",
+        "orcid": "https://orcid.org/0009-0003-9252-7765"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Eötvös Loránd University",
+            "ror": "01jsq2704"
+          },
+          {
+            "name": "ELTE Centre for Social Sciences",
+            "ror": "0492k9x16"
+          }
+        ],
         "name": "Julia Koltai",
-        "openalex": null,
+        "openalex": "A5139580907",
         "orcid": null
       }
     ],
@@ -23,12 +45,12 @@
     ],
     "comment": null,
     "primary_location": {
-      "landing_page_url": "https://arxiv.org/abs/2606.27513v1",
-      "pdf_url": "https://arxiv.org/pdf/2606.27513v1",
-      "source_id": "S4306400194",
-      "source_name": "arXiv",
-      "type": "repository",
-      "version": "submittedVersion"
+      "landing_page_url": "https://doi.org/10.1016/j.urbmob.2026.100319",
+      "pdf_url": null,
+      "source_id": "S4210216941",
+      "source_name": "Journal of Urban Mobility",
+      "type": "journal",
+      "version": "publishedVersion"
     },
     "publication_date": "2026-06-25",
     "repository_urls": [],
@@ -50,7 +72,23 @@
         "label": "spatial analysis"
       }
     ],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01jsq2704",
+        "label": "Eötvös Loránd University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:0492k9x16",
+        "label": "ELTE Centre for Social Sciences"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04dkp9463",
+        "label": "University of Amsterdam"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -96,8 +134,80 @@
   "first_published": "2026-06-25",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W151377110",
+      "openalex:W1982300822",
+      "openalex:W1987228002",
+      "openalex:W1987971958",
+      "openalex:W2104212223",
+      "openalex:W2109306365",
+      "openalex:W2125349172",
+      "openalex:W2126934437",
+      "openalex:W2129343844",
+      "openalex:W2134946452",
+      "openalex:W2159397589",
+      "openalex:W2161241389",
+      "openalex:W2328176884",
+      "openalex:W2601243251",
+      "openalex:W2760942449",
+      "openalex:W2786672974",
+      "openalex:W2970641574",
+      "openalex:W2983609278",
+      "openalex:W2990950455",
+      "openalex:W3011950450",
+      "openalex:W3046677190",
+      "openalex:W3080910472",
+      "openalex:W3098208509",
+      "openalex:W3105667161",
+      "openalex:W3125866593",
+      "openalex:W4213009331",
+      "openalex:W4220658899",
+      "openalex:W4220722580",
+      "openalex:W4224951333",
+      "openalex:W4250399327",
+      "openalex:W4284961432",
+      "openalex:W4292084222",
+      "openalex:W4308914937",
+      "openalex:W4310923309",
+      "openalex:W4367309382",
+      "openalex:W4377968954",
+      "openalex:W4390981512",
+      "openalex:W4391709827",
+      "openalex:W4391903458",
+      "openalex:W4392763830",
+      "openalex:W4398156679",
+      "openalex:W4400268981",
+      "openalex:W4401033172",
+      "openalex:W4403218327",
+      "openalex:W4403843709",
+      "openalex:W4403967671",
+      "openalex:W4404599510",
+      "openalex:W4404697240",
+      "openalex:W4406140135",
+      "openalex:W4406647967",
+      "openalex:W4408340208",
+      "openalex:W4408780138",
+      "openalex:W4409908886",
+      "openalex:W4413128700",
+      "openalex:W4413283991",
+      "openalex:W4413367123",
+      "openalex:W4415250962",
+      "openalex:W6925152177",
+      "openalex:W7135009774",
+      "openalex:W7160698213"
+    ],
+    "related_works": [
+      "openalex:W2161207539",
+      "openalex:W3184364077",
+      "openalex:W31586431",
+      "openalex:W4411283865",
+      "openalex:W7221906097",
+      "openalex:W2267329287",
+      "openalex:W3014954840",
+      "openalex:W2790533218",
+      "openalex:W6949103461",
+      "openalex:W7161273123"
+    ]
   },
   "ids": {
     "arxiv": "2606.27513",
@@ -125,11 +235,11 @@
     }
   },
   "publication_status": {
-    "detected_at": null,
-    "doi": null,
-    "journal": null,
-    "source_id": null,
-    "state": "preprint"
+    "detected_at": "2026-11-24T05:14:51Z",
+    "doi": "10.1016/j.urbmob.2026.100319",
+    "journal": "Journal of Urban Mobility",
+    "source_id": "S4210216941",
+    "state": "published"
   },
   "review": {
     "edits": [],
@@ -139,13 +249,13 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
-      "relevance": 0.9753,
+      "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.3901,
-    "relevance": 0.9753
+    "headline": 0.44,
+    "relevance": 1.0
   },
   "signals": {
     "code_available": {
@@ -193,12 +303,12 @@
   },
   "summary": {
     "en": {
-      "caveats": "The findings are based on a self-selected sample of individuals who donated their personal Google data in a single European capital, which may limit generalizability to other demographic groups or urban contexts.",
-      "what": "The study introduces the Feedback Network, a computational framework that models the co-evolution of online search patterns and offline physical mobility. Using Google Search and Location History data donated by individuals in Budapest, Hungary, between 2018 and 2022, the researchers adapted the radius of gyration and applied Concentration Entropy to compare semantic exploration with geographic movement. The analysis revealed that online cognitive exploration is more concentrated and repetitive than physical movement, and that the COVID-19 pandemic disrupted physical routines much more severely than digital search behaviors.",
-      "why": "It establishes a method to quantify and model the continuous feedback loop between digital information seeking and physical urban navigation. This provides a empirical foundation for building hybrid digital twins that simulate how virtual exposure shapes physical encounters in cities."
+      "caveats": "The study relies on a single-city sample of participants who voluntarily donated their personal Google activity logs.",
+      "what": "The authors developed a Feedback Network model using donated Google Search and Location History records from residents in Budapest, Hungary, spanning 2018 to 2022. By adapting the radius of gyration and calculating Concentration Entropy across paired semantic and spatial clusters, the study compared online cognitive exploration with physical movement routines. The analysis revealed that online search behavior is systematically more concentrated around repeated topics than physical mobility is around places, though persistent co-occurring links appeared within retail and professional service activities. Additionally, the COVID-19 pandemic caused a stronger disruption to spatial movement patterns than to online informational routines.",
+      "why": "It demonstrates that digital information-seeking operates under narrower behavioral routines than physical urban mobility, establishing a computational method to track how online search and real-world movement reinforce each other over time."
     }
   },
   "track": "papers",
-  "updated": "2026-06-25",
+  "updated": "2026-11-23",
   "work_key": "arxiv:2606.27513"
 }

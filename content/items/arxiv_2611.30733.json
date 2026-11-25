@@ -1,0 +1,181 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Descriptions of cities are shaped by human experience and institutional narratives. We introduce the SCD City Personality Assessment (SCD-CPA), a method that instantiates document-grounded ChatGPT city personas and interrogates each with an identical 24-statement instrument inspired by the four-pair structure of the Myers-Briggs Type Indicator. Rather than asking a general-purpose model to characterize cities freely, we configure a separate document-grounded conversational agent for each city and use alternative evidence portraits to compare documentary inputs. The resulting four bipolar dimensions and four-letter summaries use independently defined urban concepts and scoring rules. Tokyo, New York, and Paris form the methodological evaluation (33 assessments across repeated sessions, three GPT-6 effort settings, and alternative portraits): Tokyo's original portrait yielded 85.4% exact within-setting item agreement, while evidence substitutions shifted some dimension strengths. A five-city application to Shanghai, Dubai, Mumbai, Lagos, and Sao Paulo (15 assessments) yielded 77.8% exact and 99.4% within-one-point cross-setting agreement, indicating consistency under the tested configurations. By treating each city conversational agent as a reproducible, evidence-conditioned experimental configuration, SCD-CPA makes documented city-character perceptions comparable and exposes their sensitivity to source selection. Although the documentary evidence is explicitly controlled, the model's internal interpretation of that evidence cannot be fully observed. We also examine the robustness of SCD-CPA across three AI reasoning-effort settings. The observed consistency suggests that the methodology is relatively insensitive to the tested configuration differences and provides a framework for evaluating its stability as future generations of AI models become available.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Andrei Khurshudov",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.AI",
+      "cs.CY"
+    ],
+    "comment": "18 pages, 5 figures. Supplementary research materials: https://doi.org/10.5281/zenodo.24466311",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.30733v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.30733v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-23",
+    "repository_urls": [],
+    "title": "Can Cities Have Personalities? Introducing the SCD City Personality Assessment"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-23_2611.30733",
+    "members": [
+      "arxiv:2611.30733"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1490",
+        "label": "Tokyo",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q60",
+        "label": "New York City",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q90",
+        "label": "Paris",
+        "role": "study_area"
+      },
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q8686",
+        "label": "Shanghai",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-23",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.30733",
+    "doi": "10.48550/arxiv.2611.30733",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-25T04:04:15Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006379,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2189,
+      "out": 344
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9077,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3631,
+    "relevance": 0.9077
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "Because the methodology relies on large language models, the internal reasoning process used to interpret the provided documentary evidence remains unobservable.",
+      "what": "Researchers developed the SCD City Personality Assessment (SCD-CPA), a framework that evaluates document-grounded ChatGPT city personas using a 24-statement survey structured around four bipolar dimensions similar to the Myers-Briggs Type Indicator. Initial evaluations across Tokyo, New York, and Paris achieved 85.4% item agreement for Tokyo's baseline portrait, while a broader application to Shanghai, Dubai, Mumbai, Lagos, and São Paulo yielded 77.8% exact item agreement across three GPT-6 reasoning settings.",
+      "why": "The framework converts unstructured municipal narratives into standardized, quantitative city profiles, allowing researchers to systematically compare city perceptions and measure how sensitive AI-generated characterizations are to underlying source documents."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-23",
+  "work_key": "arxiv:2611.30733"
+}

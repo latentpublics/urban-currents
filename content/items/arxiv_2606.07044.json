@@ -1,0 +1,297 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Accurate and coherent passenger demand forecasting is essential for the operational management of Urban Rail Transit (URT) systems. Passenger demand has a hierarchical structure in which origin–destination (OD) flows aggregate to station-level inflows and outflows through conservation constraints. However, independently generated station- and OD-level forecasts can violate these constraints, resulting in cross-level inconsistency and limiting the effective integration of information across the hierarchy. This paper develops a hierarchical forecast reconciliation framework for joint station-level and OD-level demand prediction. A neural Fully Connected Reconciler (FCR) maps incoherent base forecasts to coherent predictions, with exact structural consistency guaranteed by construction. We benchmark FCR against classical and machine-learning-based reconciliation methods using one year of Rejsekort smart-card data and Banedanmark operational data from a 12-station subnetwork of the Copenhagen S-train system, considering one-step, multi-step, and disruption forecasting settings. We additionally compare against a joint multi-task station–OD baseline trained under a matched parameter budget, in which a soft aggregation-consistency penalty reduces but does not eliminate cross-level disagreement. Reconciliation improves the principal aggregate OD-accuracy metrics while enforcing exact coherence. Under standard conditions, FCR achieves the lowest one-step error at the OD, station, and full-hierarchy levels, with modest but statistically significant improvements over all evaluated MinT variants, and its shared-weight multi-step extension significantly outperforms horizon-specific MinT reconciliation at all six horizons. A counterfactual oracle experiment using observed target-interval station demand as the station-level input reduces OD MSE by approximately 34%. Under train delays and destination-side cancellations, FCR reduces OD MSE by 5–6%, significantly more than MinT-Sample. Because disruptions are concentrated in high-demand periods, the larger cross-level forecast disagreement and absolute reconciliation gains observed during disruptions largely reflect their timing, although relative gains remain larger for forecasts issued after a disruption has been observed. After accounting for the time of day, larger disagreement remains associated with greater reconciliation gains. Within the studied subnetwork, these results demonstrate that hierarchical reconciliation provides structural coherence and useful cross-level correction under both regular and disrupted operating conditions.",
+    "authors": [
+      {
+        "institutions": [
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Dang Viet Anh Nguyen",
+        "openalex": "A5011094724",
+        "orcid": "https://orcid.org/0009-0000-6208-0876"
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Alma Fazlagic",
+        "openalex": "A5138173199",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Kristine Pryds Loft",
+        "openalex": "A5138112598",
+        "orcid": null
+      },
+      {
+        "institutions": [
+          {
+            "name": "Technical University of Denmark",
+            "ror": "04qtj9h94"
+          }
+        ],
+        "name": "Filipe Rodrigues",
+        "openalex": "A5138151651",
+        "orcid": null
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.106180",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-11-24",
+    "repository_urls": [],
+    "title": "Hierarchical forecast reconciliation for urban rail transit demand prediction under operational disruptions"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-24_2606.07044",
+    "members": [
+      "arxiv:2606.07044"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:smart-card",
+        "label": "smart card data"
+      }
+    ],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:04qtj9h94",
+        "label": "Technical University of Denmark"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0000-6208-0876",
+        "label": "Dang Viet Anh Nguyen"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138173199",
+        "label": "Alma Fazlagic"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138112598",
+        "label": "Kristine Pryds Loft"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5138151651",
+        "label": "Filipe Rodrigues"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1748",
+        "label": "Copenhagen",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11344",
+        "is_primary": true,
+        "label": "Traffic Prediction and Management Techniques",
+        "score": 0.4529,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11568",
+        "is_primary": false,
+        "label": "Railway Systems and Energy Efficiency",
+        "score": 0.2717,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10698",
+        "is_primary": false,
+        "label": "Transportation Planning and Optimization",
+        "score": 0.1416,
+        "subfield": "3313"
+      }
+    ]
+  },
+  "first_published": "2026-11-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W1988115241",
+      "openalex:W2053811733",
+      "openalex:W2073210389",
+      "openalex:W2096571934",
+      "openalex:W2790781641",
+      "openalex:W2900471328",
+      "openalex:W3033888862",
+      "openalex:W3109146615",
+      "openalex:W3120276500",
+      "openalex:W3120975531",
+      "openalex:W3133396942",
+      "openalex:W3159709541",
+      "openalex:W3170024295",
+      "openalex:W3181215716",
+      "openalex:W4221046692",
+      "openalex:W4292074949",
+      "openalex:W4317384341",
+      "openalex:W4319998098",
+      "openalex:W4321608216",
+      "openalex:W4387476873",
+      "openalex:W4388626318",
+      "openalex:W4390399130",
+      "openalex:W4392931210",
+      "openalex:W4399393513",
+      "openalex:W4403836029",
+      "openalex:W4408871702",
+      "openalex:W4410333410",
+      "openalex:W7131104813",
+      "openalex:W7160653280"
+    ],
+    "related_works": [
+      "openalex:W3120975531",
+      "openalex:W4416095045",
+      "openalex:W4289171810",
+      "openalex:W4399273355",
+      "openalex:W4415546370",
+      "openalex:W4321608216",
+      "openalex:W1485931319",
+      "openalex:W4408041034",
+      "openalex:W7223323975",
+      "openalex:W4391388810"
+    ]
+  },
+  "ids": {
+    "arxiv": "2606.07044",
+    "doi": "10.1016/j.trc.2026.106180",
+    "openalex": "W7163893891",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-26T03:28:29Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.00623,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2413,
+      "out": 290
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-26T03:28:29Z",
+    "doi": "10.1016/j.trc.2026.106180",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The empirical evaluation is limited to a small 12-station subnetwork of the Copenhagen S-train system.",
+      "what": "The authors developed a neural Fully Connected Reconciler (FCR) framework that guarantees exact structural consistency between station-level and origin-destination (OD) passenger demand forecasts across an urban rail network. Evaluated on a 12-station Copenhagen S-train subnetwork using one year of smart-card and operational data, FCR outperformed classical reconciliation methods (such as MinT) across multi-step horizons and reduced OD mean squared error (MSE) by 5-6% during train delays and station cancellations. A counterfactual experiment substituting observed station demand into the reconciler reduced OD MSE by approximately 34%.",
+      "why": "Urban rail operators typically face conflicting demand predictions between individual stations and overall route flows; this approach guarantees mathematical coherence across the network hierarchy while improving accuracy during both routine operations and sudden service disruptions."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-24",
+  "work_key": "arxiv:2606.07044"
+}

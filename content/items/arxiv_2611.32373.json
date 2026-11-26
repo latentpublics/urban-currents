@@ -1,0 +1,161 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Transit-network design requires evaluating many candidates, but detailed accessibility calculations are too slow to repeat inside an optimization loop. We therefore train a neural surrogate to approximate them. Given a candidate bus network and fixed information about rail service and nearby opportunities, it predicts the calculated spatial change in accessibility. We compare its predictions with routing-derived targets in geographically held-out regions and test specified qualitative relations under controlled input changes. Reference calculations on constructed networks assess the applicability of relations that have a routing-level counterpart. Models with positive predictive skill can still fail basic connectivity tests. One targeted intervention substantially increases pass rates for two connectivity relations while predictive skill also improves. Average prediction error is therefore insufficient when a learned model becomes an optimization objective. Predictive agreement and controlled behavioral tests should be reported separately.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Till Zacher",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Markus Lienkamp",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.32373v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.32373v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-24",
+    "repository_urls": [],
+    "title": "Metamorphic Testing of Learned Spatial Surrogates for Transit Accessibility"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-24_2611.32373",
+    "members": [
+      "arxiv:2611.32373"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-24",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.32373",
+    "doi": "10.48550/arxiv.2611.32373",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-26T03:28:13Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.004694,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 1821,
+      "out": 218
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9502,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3801,
+    "relevance": 0.9502
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The study relies on constructed transit networks to benchmark qualitative relations rather than deploying the surrogate directly inside a full urban design optimization workflow.",
+      "what": "The authors developed a neural surrogate model to rapidly approximate spatial accessibility changes caused by candidate bus network modifications, bypassing slow explicit routing calculations. They evaluated the model's accuracy on geographically held-out regions and evaluated its consistency using metamorphic testing of qualitative connectivity rules. The evaluation showed that models with high predictive skill frequently fail basic connectivity logic, though targeted training interventions significantly reduced these failures while improving overall accuracy.",
+      "why": "It demonstrates that standard predictive accuracy metrics like mean error are insufficient for evaluating machine learning surrogates used in urban optimization, establishing that metamorphic testing of physical constraints must be evaluated independently."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-24",
+  "work_key": "arxiv:2611.32373"
+}

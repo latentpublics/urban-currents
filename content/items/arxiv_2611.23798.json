@@ -57,23 +57,99 @@
         "label": "dimensionality reduction"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03w5sq511",
+        "label": "Indian Institute of Technology Kharagpur"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5104273999",
+        "label": "Meenu Mohan"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2436-3477",
+        "label": "S. Chattopadhyay"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T14051",
+        "is_primary": true,
+        "label": "Regional Economic Trends and Sectoral Structure",
+        "score": 0.2883,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11963",
+        "is_primary": false,
+        "label": "Impact of Light on Environment and Health",
+        "score": 0.1593,
+        "subfield": "2306"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11014",
+        "is_primary": false,
+        "label": "Agglomeration and Urban Systems",
+        "score": 0.1278,
+        "subfield": "2002"
+      }
+    ]
   },
   "first_published": "2026-11-18",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W1536447791",
+      "openalex:W1625271478",
+      "openalex:W2162391545",
+      "openalex:W2999269364",
+      "openalex:W3015207864",
+      "openalex:W3027716283",
+      "openalex:W3125333792",
+      "openalex:W3126485073",
+      "openalex:W3134506530",
+      "openalex:W4251662535",
+      "openalex:W4286423356",
+      "openalex:W4385979569",
+      "openalex:W4401963395",
+      "openalex:W4406172375",
+      "openalex:W4411725998",
+      "openalex:W4417488607",
+      "openalex:W7126035572",
+      "openalex:W7126270583",
+      "openalex:W7128700210",
+      "openalex:W7130927600",
+      "openalex:W7148234776",
+      "openalex:W7216089679"
+    ],
+    "related_works": [
+      "openalex:W7167835569",
+      "openalex:W7098271935",
+      "openalex:W7214559949",
+      "openalex:W4413162442",
+      "openalex:W4229004105",
+      "openalex:W7214564567",
+      "openalex:W7112216762",
+      "openalex:W7215839226",
+      "openalex:W7214553015",
+      "openalex:W7223359942"
+    ]
   },
   "ids": {
     "arxiv": "2611.23798",
     "doi": "10.48550/arxiv.2611.23798",
-    "openalex": null,
+    "openalex": "W7236854568",
     "pmid": null
   },
   "provenance": {
@@ -81,7 +157,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-20T02:13:33Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.007142,
     "llm": {
@@ -169,6 +246,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-18",
+  "updated": "2026-11-25",
   "work_key": "arxiv:2611.23798"
 }

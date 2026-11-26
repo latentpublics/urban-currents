@@ -4,19 +4,34 @@
     "abstract": null,
     "authors": [
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Minnesota",
+            "ror": "017zqws13"
+          }
+        ],
         "name": "Mobina Nankali",
         "openalex": "A5119613417",
         "orcid": "https://orcid.org/0000-0003-0949-7378"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "University of Minnesota",
+            "ror": "017zqws13"
+          }
+        ],
         "name": "Michael W. Levin",
         "openalex": "A5027788495",
         "orcid": "https://orcid.org/0000-0002-8778-0964"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "North Carolina Agricultural and Technical State University",
+            "ror": "02aze4h65"
+          }
+        ],
         "name": "Venktesh Pandey",
         "openalex": "A5052969690",
         "orcid": "https://orcid.org/0000-0003-0213-702X"
@@ -37,7 +52,7 @@
     "title": "An exact solution algorithm for the bi-level optimization problem of bike lane network design"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-23_10.1016/j.tra.20",
+    "cluster_id": "clu_2026-11-24_10.1016/j.tra.20",
     "members": [
       "doi:10.1016/j.tra.2026.105372"
     ],
@@ -46,7 +61,18 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:017zqws13",
+        "label": "University of Minnesota"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02aze4h65",
+        "label": "North Carolina Agricultural and Technical State University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -138,7 +164,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-25T04:04:30Z",
+    "collected_at": "2026-11-26T03:28:29Z",
     "collectors": [
       "openalex"
     ],
@@ -185,6 +211,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-23",
+  "updated": "2026-11-25",
   "work_key": "doi:10.1016/j.tra.2026.105372"
 }

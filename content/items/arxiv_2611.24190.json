@@ -56,23 +56,94 @@
         "label": "deep learning"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00wdq3744",
+        "label": "Thapar Institute of Engineering & Technology"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5162834273",
+        "label": "Harsh Kashyap"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0000-6725-576X",
+        "label": "Taranum Wasu"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10689",
+        "is_primary": true,
+        "label": "Remote-Sensing Image Classification",
+        "score": 0.9824,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13890",
+        "is_primary": false,
+        "label": "Remote Sensing and Land Use",
+        "score": 0.0154,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": false,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.0013,
+        "subfield": "1707"
+      }
+    ]
   },
   "first_published": "2026-11-18",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W2804199516",
+      "openalex:W2891248708",
+      "openalex:W2896365540",
+      "openalex:W2908320224",
+      "openalex:W2964194231",
+      "openalex:W3027201985",
+      "openalex:W3027225766",
+      "openalex:W3037640242",
+      "openalex:W3130754787",
+      "openalex:W3180045188",
+      "openalex:W3186770666",
+      "openalex:W3202437347",
+      "openalex:W3202757651",
+      "openalex:W4221141623",
+      "openalex:W4311849222",
+      "openalex:W7117247012",
+      "openalex:W7172298503"
+    ],
+    "related_works": [
+      "openalex:W2907772606",
+      "openalex:W6990240584",
+      "openalex:W7167794460",
+      "openalex:W7048287386",
+      "openalex:W7165841456",
+      "openalex:W4286634176",
+      "openalex:W7160233299",
+      "openalex:W7225374401",
+      "openalex:W3004709995",
+      "openalex:W1982279421"
+    ]
   },
   "ids": {
     "arxiv": "2611.24190",
     "doi": "10.48550/arxiv.2611.24190",
-    "openalex": null,
+    "openalex": "W7236727763",
     "pmid": null
   },
   "provenance": {
@@ -80,7 +151,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-20T02:13:33Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005396,
     "llm": {
@@ -168,6 +240,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-18",
+  "updated": "2026-11-25",
   "work_key": "arxiv:2611.24190"
 }

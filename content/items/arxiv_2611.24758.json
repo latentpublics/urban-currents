@@ -57,8 +57,40 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:01tmp8f25",
+        "label": "Universidad Nacional Autónoma de México"
+      },
+      {
+        "confidence": null,
+        "id": "ror:008rmbt77",
+        "label": "Binghamton University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5036614180",
+        "label": "Marco A. P. Rosas"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5097770102",
+        "label": "Gustavo Carreón"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-0193-3067",
+        "label": "Carlos Gershenson"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5162949934",
+        "label": "Jesús Mario Siqueiros"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -69,18 +101,102 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10298",
+        "is_primary": true,
+        "label": "Urban Transport and Accessibility",
+        "score": 0.4719,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.4185,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11014",
+        "is_primary": false,
+        "label": "Agglomeration and Urban Systems",
+        "score": 0.0429,
+        "subfield": "2002"
+      }
+    ]
   },
   "first_published": "2026-11-18",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W627091442",
+      "openalex:W1534344254",
+      "openalex:W1973573843",
+      "openalex:W1977304233",
+      "openalex:W1978393907",
+      "openalex:W1991571474",
+      "openalex:W2032917993",
+      "openalex:W2046442636",
+      "openalex:W2083660537",
+      "openalex:W2090194996",
+      "openalex:W2095330274",
+      "openalex:W2099638684",
+      "openalex:W2133306792",
+      "openalex:W2135829604",
+      "openalex:W2140247562",
+      "openalex:W2210029069",
+      "openalex:W2769357562",
+      "openalex:W2790660067",
+      "openalex:W2802733409",
+      "openalex:W2900924948",
+      "openalex:W3037826211",
+      "openalex:W3082171545",
+      "openalex:W3085404930",
+      "openalex:W3089440935",
+      "openalex:W3108148579",
+      "openalex:W3108201082",
+      "openalex:W3172498663",
+      "openalex:W3173254974",
+      "openalex:W3196262419",
+      "openalex:W4200485362",
+      "openalex:W4232470758",
+      "openalex:W4280601176",
+      "openalex:W4301525288",
+      "openalex:W4312189935",
+      "openalex:W4360865031",
+      "openalex:W4383823320",
+      "openalex:W4388293254",
+      "openalex:W4395444333",
+      "openalex:W4400016799",
+      "openalex:W4401517975",
+      "openalex:W4403142565",
+      "openalex:W4403366429",
+      "openalex:W4410587968",
+      "openalex:W4415901051",
+      "openalex:W7119474867",
+      "openalex:W7140299012",
+      "openalex:W7214064715"
+    ],
+    "related_works": [
+      "openalex:W7224556486",
+      "openalex:W1545443552",
+      "openalex:W7161509550",
+      "openalex:W4401333469",
+      "openalex:W4391911563",
+      "openalex:W3008598927",
+      "openalex:W3151668021",
+      "openalex:W2164927722",
+      "openalex:W7117452037",
+      "openalex:W7162678818"
+    ]
   },
   "ids": {
     "arxiv": "2611.24758",
     "doi": "10.48550/arxiv.2611.24758",
-    "openalex": null,
+    "openalex": "W7236859934",
     "pmid": null
   },
   "provenance": {
@@ -88,7 +204,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-20T02:13:33Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005705,
     "llm": {
@@ -176,6 +293,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-18",
+  "updated": "2026-11-25",
   "work_key": "arxiv:2611.24758"
 }

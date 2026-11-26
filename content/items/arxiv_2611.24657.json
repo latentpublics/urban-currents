@@ -57,22 +57,88 @@
       }
     ],
     "orgs": [],
-    "people": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5162780997",
+        "label": "Valerio Taralli"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-4955-1818",
+        "label": "Andrea Tosin"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11270",
+        "is_primary": true,
+        "label": "Complex Systems and Time Series Analysis",
+        "score": 0.7773,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11014",
+        "is_primary": false,
+        "label": "Agglomeration and Urban Systems",
+        "score": 0.1018,
+        "subfield": "2002"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0617,
+        "subfield": "3322"
+      }
+    ]
   },
   "first_published": "2026-11-18",
   "graph": {
-    "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "cited_by_count": 1,
+    "referenced_works": [
+      "openalex:W1563673697",
+      "openalex:W1959220916",
+      "openalex:W1981163355",
+      "openalex:W1985672722",
+      "openalex:W2005739410",
+      "openalex:W2044881936",
+      "openalex:W2091476183",
+      "openalex:W2109691503",
+      "openalex:W2121821841",
+      "openalex:W2471737768",
+      "openalex:W2784007581",
+      "openalex:W2811387684",
+      "openalex:W2891442698",
+      "openalex:W3037085755",
+      "openalex:W3159975111",
+      "openalex:W4391484688",
+      "openalex:W6959973611",
+      "openalex:W7164917074"
+    ],
+    "related_works": [
+      "openalex:W2595918657",
+      "openalex:W7037084653",
+      "openalex:W2789500720",
+      "openalex:W2941766617",
+      "openalex:W2610237150",
+      "openalex:W2787172110",
+      "openalex:W1554171007",
+      "openalex:W747219576",
+      "openalex:W2960313186",
+      "openalex:W7017078354"
+    ]
   },
   "ids": {
     "arxiv": "2611.24657",
     "doi": "10.48550/arxiv.2611.24657",
-    "openalex": null,
+    "openalex": "W7236314616",
     "pmid": null
   },
   "provenance": {
@@ -80,7 +146,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-20T02:13:33Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005381,
     "llm": {
@@ -168,6 +235,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-18",
+  "updated": "2026-11-25",
   "work_key": "arxiv:2611.24657"
 }

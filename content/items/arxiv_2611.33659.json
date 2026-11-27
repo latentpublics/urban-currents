@@ -1,0 +1,184 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Japanese bus operators are withdrawing service for lack of drivers, and the choice of which trips to withdraw determines who keeps a bus. We measure service at each stop from vehicle GPS and smart-card records, without timetables, and use persistent homology of walking and walking-plus-waiting time to find enclosed service deserts: pockets surrounded by service but beyond walking distance from it. Around Tsukuba, 35 such pockets lie more than 800m from any station or hourly stop. The 17 that are fully ringed by walkable service hold 18,446 residents. We compare two 2020 timetable reductions by Kanto Railway with random reductions and a heuristic frontier of same-size, capacity-feasible alternatives. At two and four buses an hour, both reductions protected service better than random reductions. No alternative found by the sweep dominates the state-of-emergency timetable. The summer timetable is dominated: it withdrew hourly service from 5,253 residents around stops with almost no morning riders, whereas same-size alternatives kept it for all of them at equal waiting. Averages hide a tail: under the actual timetables, 5.9% and 3.9% of residents are at stops whose expected wait rises by 10 minutes or more, against 0.5% and 0.3% in the alternatives, and capping the increase at 10 minutes at every served stop is feasible at the operator's sizes. If half the removed hours become paid hours saved, the labor saving of both reductions and their main alternatives fall short of the fare revenue on the removed trips.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Fabiana Ferracina",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Ayane Nakmura",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Bala Krishnamoorthy",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hiroyasu Ando",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "stat.AP"
+    ],
+    "comment": "39 pages, 17 figures",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.33659v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.33659v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-25",
+    "repository_urls": [],
+    "title": "Cutting Bus Service Without Cutting Access: Persistent Homology of Service Deserts and Timetable Reductions"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-25_2611.33659",
+    "members": [
+      "arxiv:2611.33659"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:smart-card",
+        "label": "smart card data"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:census",
+        "label": "census data"
+      }
+    ],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-25",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.33659",
+    "doi": "10.48550/arxiv.2611.33659",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-27T03:35:20Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006266,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2191,
+      "out": 331
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9824,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.393,
+    "relevance": 0.9824
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The financial evaluation relies on the assumption that only half of the eliminated operational hours translate into labor cost savings.",
+      "what": "Using vehicle GPS and smart-card data, this study applies persistent homology to walking and waiting times around Tsukuba, Japan, identifying 35 service deserts that lie over 800 meters from hourly transit. Evaluating two 2020 service reductions by Kanto Railway against random cuts and a heuristic frontier, the authors found that actual cuts outperformed random ones, but the summer timetable needlessly removed hourly access from 5,253 residents. While actual cutbacks caused 3.9% to 5.9% of residents to experience wait-time increases exceeding 10 minutes, optimal same-size alternatives capped this increase at 10 minutes for everyone while preserving fare revenue better.",
+      "why": "It shows that transport operators can shrink bus schedules without creating isolated service deserts or severe waiting delays, providing a topological method to cut service based on actual usage rather than intuition."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-25",
+  "work_key": "arxiv:2611.33659"
+}

@@ -1,7 +1,9 @@
 {
-  "badges": [],
+  "badges": [
+    "published"
+  ],
   "bibliography": {
-    "abstract": null,
+    "abstract": "Urban traffic management and infrastructure planning depend on network-wide knowledge of link flows, yet instrumenting every link of a road network is prohibitively expensive for most cities. This study addresses two distinct problems. The first is the Sensor Location Problem: given a limited budget, where should a small number of counting sensors be placed? The second is link flow estimation: given readings from those sensors, what are the flows on the remaining, unobserved links? We introduce CountClusterNN, a two-step framework that answers both questions using GPS trajectories from floating cars, that is, probe vehicles that report their position as they travel and therefore require no fixed roadside hardware. The first step selects sensor locations by clustering trajectory-derived link counts with the K-Medoids algorithm and placing a sensor at each cluster medoid. The second step trains a neural network to map counts at the selected links to counts on the full network. The two steps are deliberately decoupled: placement is decided once from probe data alone, and the estimator is then fitted to that fixed sensor set. Because the estimator is trained entirely on probe-derived counts, no ground-truth flow data are required at any training stage, and the placement stage can be performed before any fixed sensors are installed. Evaluation on a calibrated microscopic simulation of Tartu, Estonia, validated to within 10% of real-world hourly counts, shows that 20 sensors (0.42% of the network’s 4,718 links) at a 25% probe penetration rate estimate link-level flows on a held-out day with a mean absolute error of 5.0 vehicles per hour, or 12.8% in weighted absolute percentage terms against a mean link-hour flow of 39.1 vehicles per hour. In this network, estimation quality is only mildly sensitive to the placement rule within the resolution of the observed training variability, and, at the network-aggregate level, total daily trip counts are recovered to within 0.03%. Requiring only aggregated link counts, the framework offers cities a low-cost route to network-wide flow monitoring from partial sensor coverage.",
     "authors": [
       {
         "institutions": [],
@@ -57,7 +59,13 @@
   },
   "entities": {
     "data": [],
-    "methods": [],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:deep-learning",
+        "label": "deep learning"
+      }
+    ],
     "orgs": [],
     "people": [
       {
@@ -87,7 +95,7 @@
       }
     ],
     "places": [],
-    "places_status": "not_attempted",
+    "places_status": "unspecified",
     "tools": [],
     "topics": [
       {
@@ -180,14 +188,17 @@
     "pmid": null
   },
   "provenance": {
-    "abstract_source": "none",
+    "abstract_source": "openalex",
     "classifier_version": "whitelist-membership",
     "collected_at": "2026-11-25T04:04:32Z",
     "collectors": [
       "openalex"
     ],
     "cost_usd": 0.0,
-    "llm": null,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
     "pipeline_version": "0.2.0",
     "tokens": {
       "in": 0,
@@ -209,26 +220,66 @@
   "schema_version": "0.2.0",
   "scores": {
     "components": {
-      "artifact_completeness": 0.0,
+      "artifact_completeness": 0.2,
       "novelty": 0.0,
       "relevance": 1.0,
       "source_multiplicity": 0.0
     },
-    "headline": 0.0,
+    "headline": 0.44,
     "relevance": 1.0
   },
   "signals": {
-    "code_available": null,
-    "data_available": null,
-    "geographic_scope": null,
-    "is_retracted": null,
-    "sample_size_reported": null,
-    "temporal_coverage_reported": null
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": "20 sensors",
+      "url": null,
+      "value": true
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
   },
   "summary": {
-    "en": null
+    "en": {
+      "caveats": "The system was evaluated on a microscopic traffic simulation of a single city rather than empirical physical sensor deployments.",
+      "what": "CountClusterNN uses GPS probe vehicle trajectories to select optimal roadside sensor locations via K-Medoids clustering and subsequently train a neural network that reconstructs traffic flows across unobserved roads. Evaluated on a calibrated simulation of Tartu, Estonia (4,718 links), placing just 20 sensors (0.42% network coverage) with a 25% probe penetration rate estimated link flows on a test day with a mean absolute error of 5.0 vehicles per hour (12.8% weighted absolute percentage error) and recovered total daily trips within 0.03%.",
+      "why": "The framework enables cities to deploy minimal counting hardware and infer full-network traffic flows without needing ground-truth volume data for training."
+    }
   },
   "track": "papers",
-  "updated": "2026-11-24",
+  "updated": "2026-11-26",
   "work_key": "doi:10.1007/s44327-026-00417-7"
 }

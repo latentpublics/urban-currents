@@ -1,0 +1,155 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "The rapid expansion of artificial intelligence and cloud computing has intensified debates about the environmental and socioeconomic impacts of data centers, including electricity and water consumption, noise, land use, and employment. A recurring methodological problem in these debates is the use of global data, or of evidence produced in a particular country, to draw conclusions about facilities located in very different settings. This paper argues that the impacts of a data center depend on the geographic, climatic, energy, technological, economic, and regulatory conditions of the territory where it operates, and must therefore be assessed at the appropriate territorial and technological scale. Using Brazil as a case, we discuss the country's predominantly renewable electricity mix and the curtailment of renewable generation, the reported prevalence of closed-loop cooling, national and municipal noise regulations, the water-efficiency requirement of the new Redata tax regime, and the ongoing litigation over the Pec{é}m data center in the state of Cear{á}. We also examine a recent study of data centers in Northern Virginia, showing the limits of its external validity and of its noise measurements. We propose a multiscale assessment framework and conclude that international evidence should inform which questions are asked, not predetermine the answers -- a principle that applies equally to claims of harm and to claims of safety.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Elzo Brito dos Santos Filho",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY"
+    ],
+    "comment": "11 pages, 1 table",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.34272v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.34272v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-25",
+    "repository_urls": [],
+    "title": "Data Centers: The Error of Generalizing Environmental and Socioeconomic Impacts. The Need for a Contextualized Assessment of Computing Infrastructure in Brazil and Worldwide"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-25_2611.34272",
+    "members": [
+      "arxiv:2611.34272"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-25",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.34272",
+    "doi": "10.48550/arxiv.2611.34272",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-27T03:35:20Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005134,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2055,
+      "out": 228
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9085,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3634,
+    "relevance": 0.9085
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The authors present a multiscale framework to evaluate the local environmental and socioeconomic impacts of data centers, using Brazil as a primary case study alongside an critique of existing research from Northern Virginia. The study analyzes contextual factors specific to Brazil, such as its predominantly renewable grid, closed-loop cooling practices, national noise limits, the water-efficiency mandates of the Redata tax program, and legal disputes surrounding the Pecém facility in Ceará.",
+      "why": "It challenges the common practice of applying data center impact metrics from the United States or global averages to vastly different regulatory, climatic, and energy contexts."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-25",
+  "work_key": "arxiv:2611.34272"
+}

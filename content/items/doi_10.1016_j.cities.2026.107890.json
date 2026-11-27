@@ -10,13 +10,23 @@
         "orcid": "https://orcid.org/0000-0002-3864-2602"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
         "name": "Sijie Chen",
         "openalex": "A5100738033",
         "orcid": "https://orcid.org/0000-0001-6553-7915"
       },
       {
-        "institutions": [],
+        "institutions": [
+          {
+            "name": "Zhejiang University",
+            "ror": "00a2xv884"
+          }
+        ],
         "name": "Qi Wu",
         "openalex": "A5164073679",
         "orcid": null
@@ -37,7 +47,7 @@
     "title": "Modeling the spatial evolution of newly developed housing through multi-agent interactions: A CA-ABM study of Hangzhou"
   },
   "cluster": {
-    "cluster_id": "clu_2026-11-24_10.1016/j.cities",
+    "cluster_id": "clu_2026-11-25_10.1016/j.cities",
     "members": [
       "doi:10.1016/j.cities.2026.107890"
     ],
@@ -46,7 +56,13 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:00a2xv884",
+        "label": "Zhejiang University"
+      }
+    ],
     "people": [
       {
         "confidence": null,
@@ -143,7 +159,18 @@
       "openalex:W4409594977",
       "openalex:W4414625120"
     ],
-    "related_works": []
+    "related_works": [
+      "openalex:W4290988240",
+      "openalex:W2969721502",
+      "openalex:W7239668560",
+      "openalex:W2789500720",
+      "openalex:W2606311374",
+      "openalex:W2607168192",
+      "openalex:W6982565693",
+      "openalex:W2903243868",
+      "openalex:W2331741081",
+      "openalex:W2595918657"
+    ]
   },
   "ids": {
     "arxiv": null,
@@ -154,7 +181,7 @@
   "provenance": {
     "abstract_source": "none",
     "classifier_version": "whitelist-membership",
-    "collected_at": "2026-11-26T03:28:29Z",
+    "collected_at": "2026-11-27T03:35:35Z",
     "collectors": [
       "openalex"
     ],
@@ -201,6 +228,6 @@
     "en": null
   },
   "track": "papers",
-  "updated": "2026-11-24",
+  "updated": "2026-11-26",
   "work_key": "doi:10.1016/j.cities.2026.107890"
 }

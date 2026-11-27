@@ -1,0 +1,162 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "High traffic demand during hurricane evacuations causes severe congestion on major highways, leading to delays and safety risks for evacuees. Predicting evacuation traffic in real-time can significantly enhance evacuation management efforts. However, evacuation traffic is highly dynamic and uncertain due to evolving hurricane characteristics and diverse population response. Each hurricane has unique characteristics and evacuation contexts, resulting in different spatial-temporal traffic patterns. Moreover, the structure of detector-based transportation networks varies across multiple hurricanes. Hence, a model trained on the data from one hurricane may not generalize well for others. This study proposes a generalized dynamic graph learning framework using traffic detectors and evacuation data from 12 historical hurricanes. Leveraging the dynamic nature of transportation network, we develop a Graph Convolutional Long Short-Term Memory (GCN-LSTM) model that predicts evacuation traffic up to 6 hours in advance. For an unseen hurricane (Milton, 2024), the model shows strong generalizability, achieving an RMSE of 280.6 and R2 of 0.96 for 1-hour prediction, and an RMSE of 459.8 and R2 of 0.89 for overall 6-hours prediction. We also introduce a modular training approach, where we evaluate performance improvements by sequentially incorporating data from multiple hurricanes. The proposed model outperforms state-of-the-art baseline models for overall 6-hour prediction horizons. Ablation experiments show an 8.4% improvement in RMSE for the proposed dynamic GCN-LSTM model compared to its static counterpart. Traffic management officials can use the developed model to understand future traffic conditions during hurricane evacuation in advance and take proactive measures to reduce delays during evacuation.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Md Nafees Fuad Rafi",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Samiul Hasan",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.34687v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.34687v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-25",
+    "repository_urls": [],
+    "title": "Evacuation Traffic Prediction for Dynamic Transportation Networks over Multiple Hurricanes: A Generalized Graph Learning Approach"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-25_2611.34687",
+    "members": [
+      "arxiv:2611.34687"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [],
+    "places_status": "unspecified",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-25",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.34687",
+    "doi": "10.48550/arxiv.2611.34687",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-27T03:35:20Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.005842,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2203,
+      "out": 282
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.9221,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3688,
+    "relevance": 0.9221
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "national"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "A generalized dynamic graph learning framework combines Graph Convolutional Networks and Long Short-Term Memory units (GCN-LSTM) to forecast hurricane evacuation traffic up to 6 hours ahead on changing detector networks. Trained on traffic and evacuation data from 12 historical hurricanes, the model achieved an R2 of 0.96 (RMSE 280.6) for 1-hour predictions and an R2 of 0.89 (RMSE 459.8) across the full 6-hour window when evaluated on Hurricane Milton (2024). Dynamic network modeling yielded an 8.4% improvement in RMSE compared to static graph architectures.",
+      "why": "The framework demonstrates that deep learning models can accurately predict evacuation traffic patterns for entirely unseen hurricanes and variable sensor network structures, moving past models limited to single historical events."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-25",
+  "work_key": "arxiv:2611.34687"
+}

@@ -67,23 +67,119 @@
         "label": "machine learning"
       }
     ],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03yghzc09",
+        "label": "University of Exeter"
+      },
+      {
+        "confidence": null,
+        "id": "ror:00r66pz14",
+        "label": "Natural England"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-1032-6015",
+        "label": "Yueyue Chai"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-8003-8000",
+        "label": "Elizabeth Galloway"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-8661-2718",
+        "label": "Peter Challenor"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0009-3667-6962",
+        "label": "Pippa Langford"
+      }
+    ],
     "places": [],
     "places_status": "unspecified",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10692",
+        "is_primary": true,
+        "label": "Urban Green Space and Health",
+        "score": 0.9595,
+        "subfield": "3322"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11980",
+        "is_primary": false,
+        "label": "Human Mobility and Location-Based Analysis",
+        "score": 0.0196,
+        "subfield": "3313"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11793",
+        "is_primary": false,
+        "label": "Recreation, Leisure, Wilderness Management",
+        "score": 0.0057,
+        "subfield": "1409"
+      }
+    ]
   },
   "first_published": "2026-11-20",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W1600498798",
+      "openalex:W2069026846",
+      "openalex:W2126292488",
+      "openalex:W2143768890",
+      "openalex:W2144015836",
+      "openalex:W2295598076",
+      "openalex:W2596669498",
+      "openalex:W2618851150",
+      "openalex:W2902918778",
+      "openalex:W2911964244",
+      "openalex:W2941186141",
+      "openalex:W2952548366",
+      "openalex:W2971985116",
+      "openalex:W2994706149",
+      "openalex:W3021158845",
+      "openalex:W3021336633",
+      "openalex:W3047235302",
+      "openalex:W3096081831",
+      "openalex:W3123739680",
+      "openalex:W3137211741",
+      "openalex:W3157179534",
+      "openalex:W4365142235",
+      "openalex:W4366991575",
+      "openalex:W4376879216",
+      "openalex:W4387835271",
+      "openalex:W4399030378",
+      "openalex:W4411962647"
+    ],
+    "related_works": [
+      "openalex:W7135385237",
+      "openalex:W7204794288",
+      "openalex:W4416785218",
+      "openalex:W1906816594",
+      "openalex:W7164987431",
+      "openalex:W2164062762",
+      "openalex:W4415914916",
+      "openalex:W3021869532",
+      "openalex:W2485516045",
+      "openalex:W4379647014"
+    ]
   },
   "ids": {
     "arxiv": "2611.27668",
     "doi": "10.48550/arxiv.2611.27668",
-    "openalex": null,
+    "openalex": "W7238725829",
     "pmid": null
   },
   "provenance": {
@@ -91,7 +187,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-24T05:14:34Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004306,
     "llm": {
@@ -179,6 +276,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-20",
+  "updated": "2026-11-27",
   "work_key": "arxiv:2611.27668"
 }

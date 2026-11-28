@@ -86,8 +86,80 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:027m9bs27",
+        "label": "University of Manchester"
+      },
+      {
+        "confidence": null,
+        "id": "ror:04f2nsd36",
+        "label": "Lancaster University"
+      },
+      {
+        "confidence": null,
+        "id": "ror:02jx3x895",
+        "label": "University College London"
+      },
+      {
+        "confidence": null,
+        "id": "ror:024mrxd33",
+        "label": "University of Leeds"
+      },
+      {
+        "confidence": null,
+        "id": "ror:052gg0110",
+        "label": "University of Oxford"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5143495564",
+        "label": "Andy Yuille"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-6179-927X",
+        "label": "Oliver Broad"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5163893890",
+        "label": "John Barrett"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-3872-7769",
+        "label": "Christian Brand"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0003-1538-8549",
+        "label": "Alice Garvey"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5057160169",
+        "label": "Jonathan Norman"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-7315-6469",
+        "label": "James Price"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5074142716",
+        "label": "Steve Pye"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0001-9551-7608",
+        "label": "Rebecca Willis"
+      }
+    ],
     "places": [
       {
         "confidence": 0.9,
@@ -98,18 +170,95 @@
     ],
     "places_status": "resolved",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10898",
+        "is_primary": true,
+        "label": "Pro-Environmental Behavior and Attitudes",
+        "score": 0.3721,
+        "subfield": "2308"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12617",
+        "is_primary": false,
+        "label": "Energy, Environment, and Transportation Policies",
+        "score": 0.2444,
+        "subfield": "2105"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10471",
+        "is_primary": false,
+        "label": "Climate Change Policy and Economics",
+        "score": 0.2393,
+        "subfield": "2002"
+      }
+    ]
   },
   "first_published": "2026-11-20",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W2021345707",
+      "openalex:W2034096388",
+      "openalex:W2055908663",
+      "openalex:W2137414337",
+      "openalex:W2162519804",
+      "openalex:W2166523275",
+      "openalex:W2315231244",
+      "openalex:W2729634612",
+      "openalex:W2800190939",
+      "openalex:W2800960450",
+      "openalex:W2889524319",
+      "openalex:W2901815052",
+      "openalex:W3012948672",
+      "openalex:W3090001233",
+      "openalex:W3117554180",
+      "openalex:W3131956693",
+      "openalex:W3139530407",
+      "openalex:W3194432533",
+      "openalex:W4200396199",
+      "openalex:W4206435469",
+      "openalex:W4236836887",
+      "openalex:W4296312013",
+      "openalex:W4297824570",
+      "openalex:W4313495514",
+      "openalex:W4318589279",
+      "openalex:W4379933456",
+      "openalex:W4381435368",
+      "openalex:W4386640064",
+      "openalex:W4390910204",
+      "openalex:W4391502532",
+      "openalex:W4392283070",
+      "openalex:W4393095954",
+      "openalex:W4393974772",
+      "openalex:W4399340294",
+      "openalex:W4403557488",
+      "openalex:W4404693279",
+      "openalex:W4410392659",
+      "openalex:W4413956688",
+      "openalex:W4414314768",
+      "openalex:W4416402475"
+    ],
+    "related_works": [
+      "openalex:W4416402475",
+      "openalex:W3011428612",
+      "openalex:W4416402432",
+      "openalex:W4403589419",
+      "openalex:W3207182786",
+      "openalex:W4379933456",
+      "openalex:W2954601987",
+      "openalex:W7135631136",
+      "openalex:W7023661886",
+      "openalex:W2912004386"
+    ]
   },
   "ids": {
     "arxiv": "2611.27834",
     "doi": "10.48550/arxiv.2611.27834",
-    "openalex": null,
+    "openalex": "W7238758643",
     "pmid": null
   },
   "provenance": {
@@ -117,7 +266,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-24T05:14:34Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.004892,
     "llm": {
@@ -205,6 +355,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-20",
+  "updated": "2026-11-27",
   "work_key": "arxiv:2611.27834"
 }

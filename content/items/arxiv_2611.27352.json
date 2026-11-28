@@ -1,0 +1,272 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Transportation models, whether they simulate traffic or support planning, are only as reliable as the road networks they run on, down to the lanes and turns at each intersection. Practitioners still take such a network from GIS files and supply its junction and movement data by hand, a task that recurs with each new base year and design alternative, or they generate it from open map data. OpenStreetMap's lane tags give the correct layout for only 13 of the 44 approaches we test; open map data are often incomplete or inaccurate. Satellite and street-level imagery, in contrast, cover all 44 and show their lanes as painted. Vision-language models (VLMs) can read such imagery, but asked directly they lose geometric consistency when the same lane must be matched across a satellite crop, street-level photos taken from different poses and an ID-labelled network. We therefore present PAVE (Perceive, Anchor, Verify, Edit), a harness in which code measures what can be measured, traffic engineering knowledge enters as general rules and checks, and the model makes only the open judgements, each anchored to network IDs so that checks catch answers that contradict a measurement, a second reading or a traffic rule. Scored against human labels at signalised intersections, PAVE raises the share of exactly correct lane layouts from 49-64% with a single request to 86-91% for two VLMs, with most of the gain coming from reading one approach at a time on traced lanes. The same division of work edits a real network to a planning brief: the model names the links and nodes of each part of a facility, and code builds the edit from a design template. Of 18 edits, 16 pass every network check, against none when the model writes its own code, and 2 contain a design or coding error, against 7. An analysis shows where VLMs lose geometric consistency and which check catches each failure.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Yajun Liu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Jinxi Wu",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Juan Pablo Millán Raya",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Xuesong Zhou",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.27352v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.27352v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-20",
+    "repository_urls": [],
+    "title": "PAVE: A Harness for Geometrically Consistent Road Network Modeling with Vision-Language Models"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-26_2611.27352",
+    "members": [
+      "arxiv:2611.27352"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 1.0,
+        "id": "data:satellite-imagery",
+        "label": "satellite imagery"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:street-view",
+        "label": "street view imagery"
+      }
+    ],
+    "methods": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:03efmqc40",
+        "label": "Arizona State University"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5152682559",
+        "label": "Yajun Liu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5163731117",
+        "label": "Jinxi Wu"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5163685542",
+        "label": "Juan Pablo Millán Raya"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5163831434",
+        "label": "Xuesong Zhou"
+      }
+    ],
+    "places": [],
+    "places_status": "not_applicable",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T13282",
+        "is_primary": true,
+        "label": "Automated Road and Building Extraction",
+        "score": 0.9316,
+        "subfield": "1707"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10757",
+        "is_primary": false,
+        "label": "Geographic Information Systems Studies",
+        "score": 0.0376,
+        "subfield": "3305"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T12325",
+        "is_primary": false,
+        "label": "Urban Design and Spatial Analysis",
+        "score": 0.0142,
+        "subfield": "3322"
+      }
+    ]
+  },
+  "first_published": "2026-11-20",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [
+      "openalex:W2005543925",
+      "openalex:W2069367750",
+      "openalex:W2897247459",
+      "openalex:W2939228328",
+      "openalex:W3172254473",
+      "openalex:W3179267034",
+      "openalex:W3214308963",
+      "openalex:W4221161695",
+      "openalex:W4377372007",
+      "openalex:W4386065691",
+      "openalex:W4387800098",
+      "openalex:W4396773007",
+      "openalex:W4402716288",
+      "openalex:W4402727815",
+      "openalex:W4403923795",
+      "openalex:W4409365606",
+      "openalex:W4411449940",
+      "openalex:W4412650746",
+      "openalex:W4414812402",
+      "openalex:W7103754783",
+      "openalex:W7106692312",
+      "openalex:W7138285799"
+    ],
+    "related_works": [
+      "openalex:W1038534809",
+      "openalex:W7225712935",
+      "openalex:W7213507056",
+      "openalex:W7204595056",
+      "openalex:W7164921104",
+      "openalex:W7164311326",
+      "openalex:W2804997759",
+      "openalex:W2125060846",
+      "openalex:W7165678292",
+      "openalex:W7225161102"
+    ]
+  },
+  "ids": {
+    "arxiv": "2611.27352",
+    "doi": "10.48550/arxiv.2611.27352",
+    "openalex": "W7238856728",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-28T03:12:26Z",
+    "collectors": [
+      "arxiv",
+      "openalex"
+    ],
+    "cost_usd": 0.006509,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2317,
+      "out": 337
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8634,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3454,
+    "relevance": 0.8634
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "not_applicable"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The system's performance was evaluated on a benchmark of 44 intersection approaches and 18 network edits.",
+      "what": "The authors created PAVE, a system that combines vision-language models (VLMs), algorithmic measurements, and traffic engineering rules to reconstruct road lane configurations and edit transportation networks from satellite and street-level photos. Evaluated against manual annotations at signalized intersections, PAVE increased the proportion of fully correct lane layouts from 49-64% using basic prompting to 86-91% across two VLMs, primarily by analyzing individual approaches along traced lanes. Applied to network editing tasks based on design briefs, the pipeline produced valid network edits in 16 out of 18 attempts, compared to zero successes when VLMs generated network code directly.",
+      "why": "It provides a method to automate the extraction of detailed, geometrically consistent intersection lane geometries and network modifications from visual imagery, bypassing the high error rates of OpenStreetMap lane tags and raw VLM outputs."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-20",
+  "work_key": "arxiv:2611.27352"
+}

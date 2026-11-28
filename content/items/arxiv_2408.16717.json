@@ -1,0 +1,338 @@
+{
+  "badges": [
+    "published"
+  ],
+  "bibliography": {
+    "abstract": "Due to the ongoing electrification of transportation systems, energy-based routing problems such as the Electric Vehicle Routing Problem (EVRP) are becoming increasingly important. Unlike Euclidean routing problems, the EVRP involves asymmetric energy costs caused by road topology. Existing learning-based routing approaches are based on graph neural networks (GNNs) or transformer architectures operating on Euclidean node coordinates, making them poorly suited for asymmetric, non-Euclidean edge-based metrics such as energy consumption. To address this, we propose the Graph Edge Attention Network (GREAT), a novel GNN-related architecture that operates purely in edge space rather than on node coordinates, making it naturally compatible with asymmetric routing costs. Integrated into an end-to-end reinforcement learning framework, GREAT jointly optimizes routing and charging decisions for the EVRP. We train the model using real-world energy consumption data from San Francisco, derived from physical road networks enriched with topological features, and evaluate generalization on datasets from San Francisco, Vienna, and Gothenburg. Across diverse battery sizes (15-40 kWh) and customer demand distributions, GREAT outperforms a strong HGS-based EVRP heuristic in most tested settings, achieving energy reductions of up to 8.78% while reducing runtime by a factor of 60. Moreover, we benchmark against a custom adaptive large neighborhood search (ALNS) that jointly optimizes routing and charging. GREAT achieves competitive performance at a faster runtime, and we show that the ALNS can profit from a warm start with the GREAT solution. We further evaluate GREAT on standard (asymmetric) routing problems, including Traveling Salesman Problem, Capacitated Vehicle Routing Problem, and Orienteering Problem, where it achieves state-of-the-art performance among neural methods for non-Euclidean settings.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Attila Lischka",
+        "openalex": "A5094274814",
+        "orcid": "https://orcid.org/0009-0003-1371-5996"
+      },
+      {
+        "institutions": [],
+        "name": "Filip Rydin",
+        "openalex": null,
+        "orcid": "https://orcid.org/0009-0002-4311-0771"
+      },
+      {
+        "institutions": [],
+        "name": "Jiaming Wu",
+        "openalex": "A5061731682",
+        "orcid": "https://orcid.org/0000-0002-0235-4246"
+      },
+      {
+        "institutions": [],
+        "name": "Morteza Haghir Chehreghani",
+        "openalex": "A5103015876",
+        "orcid": "https://orcid.org/0000-0002-2912-7422"
+      },
+      {
+        "institutions": [],
+        "name": "Balaźs Kulcsár",
+        "openalex": "A5017666102",
+        "orcid": "https://orcid.org/0000-0002-3688-1108"
+      }
+    ],
+    "categories": [],
+    "comment": null,
+    "primary_location": {
+      "landing_page_url": "https://doi.org/10.1016/j.trc.2026.106184",
+      "pdf_url": null,
+      "source_id": "S64511102",
+      "source_name": "Transportation Research Part C Emerging Technologies",
+      "type": "journal",
+      "version": "publishedVersion"
+    },
+    "publication_date": "2026-11-26",
+    "repository_urls": [],
+    "title": "GREAT: A graph edge attention network for the electric vehicle routing problem with asymmetric costs"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-26_2408.16717",
+    "members": [
+      "arxiv:2408.16717"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [
+      {
+        "confidence": 0.96,
+        "id": "data:street-network",
+        "label": "street network data"
+      },
+      {
+        "confidence": 1.0,
+        "id": "data:energy-consumption",
+        "label": "energy consumption data"
+      }
+    ],
+    "methods": [
+      {
+        "confidence": 1.0,
+        "id": "method:gnn",
+        "label": "graph neural network"
+      },
+      {
+        "confidence": 1.0,
+        "id": "method:reinforcement-learning",
+        "label": "reinforcement learning"
+      }
+    ],
+    "orgs": [],
+    "people": [
+      {
+        "confidence": null,
+        "id": "orcid:0009-0003-1371-5996",
+        "label": "Attila Lischka"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0002-4311-0771",
+        "label": "Filip Rydin"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-0235-4246",
+        "label": "Jiaming Wu"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-2912-7422",
+        "label": "Morteza Haghir Chehreghani"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0000-0002-3688-1108",
+        "label": "Balaźs Kulcsár"
+      }
+    ],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q62",
+        "label": "San Francisco",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T10567",
+        "is_primary": true,
+        "label": "Vehicle Routing Optimization Methods",
+        "score": 0.9951,
+        "subfield": "2209"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10768",
+        "is_primary": false,
+        "label": "Electric Vehicles and Infrastructure",
+        "score": 0.004,
+        "subfield": "2208"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10808",
+        "is_primary": false,
+        "label": "Electric and Hybrid Vehicle Technologies",
+        "score": 0.0001,
+        "subfield": "2203"
+      }
+    ]
+  },
+  "first_published": "2026-11-26",
+  "graph": {
+    "cited_by_count": 15,
+    "referenced_works": [
+      "openalex:W1429802841",
+      "openalex:W1554727768",
+      "openalex:W1965856911",
+      "openalex:W2024060531",
+      "openalex:W2056375546",
+      "openalex:W2094764575",
+      "openalex:W2105002757",
+      "openalex:W2109101401",
+      "openalex:W2119601963",
+      "openalex:W2119717200",
+      "openalex:W2325312983",
+      "openalex:W2509755532",
+      "openalex:W2750785333",
+      "openalex:W2766453196",
+      "openalex:W2784910652",
+      "openalex:W2787189213",
+      "openalex:W2805798351",
+      "openalex:W2887019600",
+      "openalex:W2898221481",
+      "openalex:W2907492528",
+      "openalex:W2912555327",
+      "openalex:W2914011715",
+      "openalex:W2918342466",
+      "openalex:W2948433391",
+      "openalex:W2964121744",
+      "openalex:W2970706905",
+      "openalex:W2970971581",
+      "openalex:W2971215169",
+      "openalex:W2996246179",
+      "openalex:W2999537755",
+      "openalex:W3090234698",
+      "openalex:W3098134815",
+      "openalex:W3113897290",
+      "openalex:W3121945093",
+      "openalex:W3122122318",
+      "openalex:W3123221884",
+      "openalex:W3146106549",
+      "openalex:W3164598369",
+      "openalex:W3175764193",
+      "openalex:W3177337956",
+      "openalex:W3182154954",
+      "openalex:W3185606095",
+      "openalex:W3187966659",
+      "openalex:W3201172961",
+      "openalex:W3203981070",
+      "openalex:W3205832574",
+      "openalex:W3207032584",
+      "openalex:W4285092328",
+      "openalex:W4319239077",
+      "openalex:W4321648960",
+      "openalex:W4382237551",
+      "openalex:W4385736039",
+      "openalex:W4386391167",
+      "openalex:W4393160633",
+      "openalex:W4399991036",
+      "openalex:W4402066757",
+      "openalex:W4414359712",
+      "openalex:W4414384547",
+      "openalex:W4415288733",
+      "openalex:W6910682436",
+      "openalex:W6967040879",
+      "openalex:W7126162222",
+      "openalex:W7129664726",
+      "openalex:W7133183399",
+      "openalex:W7133201009",
+      "openalex:W7133207347",
+      "openalex:W7133848572",
+      "openalex:W7160651523",
+      "openalex:W7238575360"
+    ],
+    "related_works": [
+      "openalex:W7160907549",
+      "openalex:W4414296791",
+      "openalex:W2167246044",
+      "openalex:W7161138171",
+      "openalex:W2287965649",
+      "openalex:W7123351219",
+      "openalex:W7098763023",
+      "openalex:W90342575",
+      "openalex:W4401018621",
+      "openalex:W4223438321"
+    ]
+  },
+  "ids": {
+    "arxiv": "2408.16717",
+    "doi": "10.1016/j.trc.2026.106184",
+    "openalex": "W4402712323",
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "whitelist-membership",
+    "collected_at": "2026-11-28T03:12:27Z",
+    "collectors": [
+      "openalex"
+    ],
+    "cost_usd": 0.005938,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2225,
+      "out": 289
+    }
+  },
+  "publication_status": {
+    "detected_at": "2026-11-28T03:12:27Z",
+    "doi": "10.1016/j.trc.2026.106184",
+    "journal": "Transportation Research Part C Emerging Technologies",
+    "source_id": "S64511102",
+    "state": "published"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.2,
+      "novelty": 0.0,
+      "relevance": 1.0,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.44,
+    "relevance": 1.0
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "multi_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": null,
+      "what": "The Graph Edge Attention Network (GREAT) optimizes electric vehicle routing and charging by operating entirely on edge-based energy metrics rather than Euclidean node coordinates. Trained within an end-to-end reinforcement learning framework using San Francisco road topology and physical energy consumption data, the model was evaluated across San Francisco, Vienna, and Gothenburg using battery capacities from 15 to 40 kWh. GREAT achieved up to an 8.78% energy reduction compared to a strong heuristic while running 60 times faster, and provided effective initializations for adaptive large neighborhood search algorithms.",
+      "why": "The model replaces traditional node-based neural solvers with an edge-centric architecture, enabling machine learning routing methods to natively handle asymmetric physical energy costs caused by real-world terrain and road networks."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-26",
+  "work_key": "arxiv:2408.16717"
+}

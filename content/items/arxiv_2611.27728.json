@@ -63,23 +63,114 @@
   "entities": {
     "data": [],
     "methods": [],
-    "orgs": [],
-    "people": [],
+    "orgs": [
+      {
+        "confidence": null,
+        "id": "ror:02dqehb95",
+        "label": "Purdue University West Lafayette"
+      },
+      {
+        "confidence": null,
+        "id": "ror:025j46253",
+        "label": "Indiana Department of Transportation"
+      }
+    ],
+    "people": [
+      {
+        "confidence": null,
+        "id": "openalex:A5114170129",
+        "label": "Sike Wang"
+      },
+      {
+        "confidence": null,
+        "id": "orcid:0009-0001-7716-7437",
+        "label": "Yizhou Lin"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5163947659",
+        "label": "Shuo Li"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5163913817",
+        "label": "Yi Jiang"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:A5163183942",
+        "label": "Chengcheng Tao"
+      }
+    ],
     "places": [],
     "places_status": "not_applicable",
     "tools": [],
-    "topics": []
+    "topics": [
+      {
+        "confidence": null,
+        "id": "openalex:T11606",
+        "is_primary": true,
+        "label": "Infrastructure Maintenance and Monitoring",
+        "score": 0.9985,
+        "subfield": "2205"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T11099",
+        "is_primary": false,
+        "label": "Autonomous Vehicle Technology and Safety",
+        "score": 0.0003,
+        "subfield": "2203"
+      },
+      {
+        "confidence": null,
+        "id": "openalex:T10264",
+        "is_primary": false,
+        "label": "Asphalt Pavement Performance Evaluation",
+        "score": 0.0002,
+        "subfield": "2205"
+      }
+    ]
   },
   "first_published": "2026-11-20",
   "graph": {
     "cited_by_count": 0,
-    "referenced_works": [],
-    "related_works": []
+    "referenced_works": [
+      "openalex:W2059208457",
+      "openalex:W2511745104",
+      "openalex:W2531409750",
+      "openalex:W2601564443",
+      "openalex:W2757455114",
+      "openalex:W2809991812",
+      "openalex:W2884786778",
+      "openalex:W3124942917",
+      "openalex:W3163559940",
+      "openalex:W4226252340",
+      "openalex:W4385662382",
+      "openalex:W4390905461",
+      "openalex:W4394832697",
+      "openalex:W4400589801",
+      "openalex:W4401283468",
+      "openalex:W4411639865",
+      "openalex:W4413734693"
+    ],
+    "related_works": [
+      "openalex:W4410940368",
+      "openalex:W2011122613",
+      "openalex:W7202380413",
+      "openalex:W4387040049",
+      "openalex:W2993587143",
+      "openalex:W2917162781",
+      "openalex:W4390497695",
+      "openalex:W4400840629",
+      "openalex:W7235844645",
+      "openalex:W2385701372"
+    ]
   },
   "ids": {
     "arxiv": "2611.27728",
     "doi": "10.48550/arxiv.2611.27728",
-    "openalex": null,
+    "openalex": "W7238891350",
     "pmid": null
   },
   "provenance": {
@@ -87,7 +178,8 @@
     "classifier_version": "clf-v2-2026-08-13",
     "collected_at": "2026-11-24T05:14:34Z",
     "collectors": [
-      "arxiv"
+      "arxiv",
+      "openalex"
     ],
     "cost_usd": 0.005135,
     "llm": {
@@ -175,6 +267,6 @@
     }
   },
   "track": "papers",
-  "updated": "2026-11-20",
+  "updated": "2026-11-27",
   "work_key": "arxiv:2611.27728"
 }

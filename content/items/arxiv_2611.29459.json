@@ -1,0 +1,170 @@
+{
+  "badges": [
+    "preprint"
+  ],
+  "bibliography": {
+    "abstract": "Community pharmacies sustain access to medicines after an earthquake only while open, staffed and stocked. Accessibility models rarely represent stock depletion, and the assumptions this requires may change conclusions about recovery. We examine these assumptions for over-the-counter (OTC) medicines supplied by 4,748 registered pharmacies in Tokyo's 23 wards during the first week after a magnitude-7.3 scenario earthquake. A two-step floating catchment area model computes walking accessibility for 2,651 grid cells (500 m) under 10,000 sampled combinations of stock duration, staffing, operation and demand. Results are expressed as Retention: post-disaster accessibility divided by the same cell's pre-disaster accessibility. First, the assumed link between stock and service, the supply a pharmacy can still provide, determines the recovery verdict. If service falls in proportion to remaining stock, mean Retention declines from 0.479 (days 2-3) to 0.273 (days 4-7). If service is maintained until stock falls below one quarter, the mean rises instead, although low-end (10th-percentile) outcomes still decline. Measuring at the start of each period rather than averaging over it also reverses the trend. Second, a simple model that rescales a fixed map by citywide supply and demand reproduces citywide patterns but cannot evaluate where pharmacies close or where capacity is added; a spatial model run once on average inputs can. Third, four floating catchment methods agree on overall rankings (rank correlation 0.81), but their lowest-ranked 10% of cells overlap only partially (Jaccard index 0.56). Disaster assessments should report stock assumptions and low-end outcomes, and treat local priority areas as method-dependent.",
+    "authors": [
+      {
+        "institutions": [],
+        "name": "Juanning Liang",
+        "openalex": null,
+        "orcid": null
+      },
+      {
+        "institutions": [],
+        "name": "Hiroki Baba",
+        "openalex": null,
+        "orcid": null
+      }
+    ],
+    "categories": [
+      "cs.CY",
+      "physics.soc-ph",
+      "stat.AP"
+    ],
+    "comment": "34 pages, 12 figures. Supplementary material is available as an ancillary file",
+    "primary_location": {
+      "landing_page_url": "https://arxiv.org/abs/2611.29459v1",
+      "pdf_url": "https://arxiv.org/pdf/2611.29459v1",
+      "source_id": "S4306400194",
+      "source_name": "arXiv",
+      "type": "repository",
+      "version": "submittedVersion"
+    },
+    "publication_date": "2026-11-22",
+    "repository_urls": [],
+    "title": "Pharmacy stock and post-earthquake access to medicines in Tokyo: modeling choices that change recovery judgments"
+  },
+  "cluster": {
+    "cluster_id": "clu_2026-11-26_2611.29459",
+    "members": [
+      "arxiv:2611.29459"
+    ],
+    "merge_basis": "singleton"
+  },
+  "entities": {
+    "data": [],
+    "methods": [],
+    "orgs": [],
+    "people": [],
+    "places": [
+      {
+        "confidence": 0.9,
+        "id": "wikidata:Q1490",
+        "label": "Tokyo",
+        "role": "study_area"
+      }
+    ],
+    "places_status": "resolved",
+    "tools": [],
+    "topics": []
+  },
+  "first_published": "2026-11-22",
+  "graph": {
+    "cited_by_count": 0,
+    "referenced_works": [],
+    "related_works": []
+  },
+  "ids": {
+    "arxiv": "2611.29459",
+    "doi": "10.48550/arxiv.2611.29459",
+    "openalex": null,
+    "pmid": null
+  },
+  "provenance": {
+    "abstract_source": "openalex",
+    "classifier_version": "clf-v2-2026-08-13",
+    "collected_at": "2026-11-28T03:12:21Z",
+    "collectors": [
+      "arxiv"
+    ],
+    "cost_usd": 0.006227,
+    "llm": {
+      "model": "gemini-3.5-flash",
+      "prompt_version": "summarize/papers@0.4.0"
+    },
+    "pipeline_version": "0.2.0",
+    "tokens": {
+      "in": 2267,
+      "out": 314
+    }
+  },
+  "publication_status": {
+    "detected_at": null,
+    "doi": null,
+    "journal": null,
+    "source_id": null,
+    "state": "preprint"
+  },
+  "review": {
+    "edits": [],
+    "reviewer_notes": null,
+    "status": "pending"
+  },
+  "schema_version": "0.2.0",
+  "scores": {
+    "components": {
+      "artifact_completeness": 0.0,
+      "novelty": 0.0,
+      "relevance": 0.8722,
+      "source_multiplicity": 0.0
+    },
+    "headline": 0.3489,
+    "relevance": 0.8722
+  },
+  "signals": {
+    "code_available": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "data_available": {
+      "basis": "rule",
+      "confidence": "low",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "geographic_scope": {
+      "basis": "llm",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": "single_city"
+    },
+    "is_retracted": {
+      "basis": "rule",
+      "confidence": "high",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "sample_size_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    },
+    "temporal_coverage_reported": {
+      "basis": "rule",
+      "confidence": "medium",
+      "detail": null,
+      "url": null,
+      "value": false
+    }
+  },
+  "summary": {
+    "en": {
+      "caveats": "The conclusions rely on a simulated earthquake scenario and synthetic parameter combinations rather than observed post-disaster operational data.",
+      "what": "The study modeled walking access to over-the-counter medicines across 2,651 500-meter grid cells in Tokyo's 23 wards following a simulated 7.3-magnitude earthquake. Using 4,748 registered pharmacies, a two-step floating catchment area model evaluated 10,000 combinations of staffing, demand, operation, and inventory depletion. Assuming service declines proportionally with remaining stock yields a drop in mean post-disaster access retention from 0.479 on days 2-3 down to 0.273 on days 4-7.",
+      "why": "It demonstrates that standard accessibility models missing inventory dynamics risk misjudging disaster recovery trends, showing that different supply depletion assumptions and catchment formulations invert accessibility trajectories and alter identified vulnerability hotspots."
+    }
+  },
+  "track": "papers",
+  "updated": "2026-11-22",
+  "work_key": "arxiv:2611.29459"
+}
